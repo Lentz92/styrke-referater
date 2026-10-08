@@ -77,7 +77,7 @@
   .rules a.rule + a.rule { margin-top: 16px; }
   .rules .aux { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .content h2 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; line-height: 28px; margin: 0; }
-  .areahead { display: flex; align-items: baseline; gap: 10px; }
+  .areahead { display: flex; align-items: baseline; gap: 10px; margin-bottom: 32px; }
   .areahead .sq { width: 10px; height: 10px; background: var(--ac); }
   .lede { color: var(--muted); margin: 4px 0 32px; }
   .content h3 { font-size: 13px; font-weight: 500; color: var(--muted); margin: 48px 0 16px; }
@@ -213,10 +213,14 @@ function pending(year) {
   }));
   return out.sort((a, b) => (R[a.ri].versions[a.vi].effective < R[b.ri].versions[b.vi].effective ? -1 : 1));
 }
-function staleSince(ri, year) {
+// Latest date (as a dkey) the rule was mentioned on or before the chosen year's cutoff; "" if never.
+function lastMention(ri, year) {
   const c = cutoff(year);
-  const last = R[ri].versions.filter((v) => (v.date || "") <= c).map((v) => (v.date || "").slice(0, 4)).sort().pop();
-  return last && year - Number(last) >= 5 ? last : "";
+  return R[ri].versions.filter((v) => (v.date || "") <= c).map((v) => dkey(v.date)).sort().pop() || "";
+}
+function staleSince(ri, year) {
+  const last = lastMention(ri, year).slice(0, 4);
+  return Number(last) && year - Number(last) >= 5 ? last : "";
 }
 function search(q) {
   q = q.trim().toLowerCase();
@@ -276,13 +280,13 @@ function draw() {
     h = `<h2>${hits.length} regler matcher «${esc(q)}»</h2><p class="lede">Viser reglerne, som de gælder ${when}.</p>
       <div class="rules">${hits.map((x) => ruleItem(x.ri)).join("")}</div>`;
   } else if (state.area >= 0) {
-    // DSF's own rules before international ones, then alphabetical.
-    const rules = inForce(y, state.area).filter((o) => keep(o.ri))
-      .sort((a, b) => R[a.ri].international - R[b.ri].international || R[a.ri].title.localeCompare(R[b.ri].title, "da"));
+    // Most recently mentioned first, then alphabetical; the origin filter separates DSF from international.
+    const rules = inForce(y, state.area).filter((o) => keep(o.ri)).map((o) => ({ ...o, last: lastMention(o.ri, y) }))
+      .sort((a, b) => (a.last < b.last ? 1 : a.last > b.last ? -1 : 0) || R[a.ri].title.localeCompare(R[b.ri].title, "da"));
     const central = rules.filter((o) => R[o.ri].central), minor = rules.filter((o) => !R[o.ri].central);
     h = `<button class="linkbtn back" id="back">← Alle beslutninger i ${y}</button>
       <div class="areahead" style="--ac:${AREA_INK[state.area]}"><span class="sq"></span><h2>${esc(D.areas[state.area])}</h2></div>
-      <p class="lede">${central.length} centrale regler gældende ${when}.</p><div class="rules">${central.map((o) => ruleItem(o.ri)).join("")}</div>
+      <div class="rules">${central.map((o) => ruleItem(o.ri)).join("")}</div>
       ${minor.length ? `<h3>Interne procedurer og detaljer</h3><div class="rules">${minor.map((o) => ruleItem(o.ri)).join("")}</div>` : ""}`;
   } else {
     const meets = meetings(y), shown = state.allMeetings ? meets : meets.slice(0, 5);
