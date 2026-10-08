@@ -1,0 +1,26 @@
+{
+  "note": "Thesaurus for the website search. Each group lists words that should find each other; a search for one also finds rules using the others (ranked a bit lower). Word forms are handled by stemming, so list base forms. Rebuild with: uv run website.py",
+  "groups": [
+    ["vm", "verdensmesterskab"],
+    ["em", "europamesterskab"],
+    ["dm", "danmarksmesterskab"],
+    ["nm", "nordisk mesterskab"],
+    ["kontingent", "årsafgift", "gebyr", "afgift", "pris", "koster", "betaling"],
+    ["udtagelse", "udtaget", "nominering", "nomineret", "udvælgelse"],
+    ["doping", "antidoping", "dopingkontrol", "dopingtest", "add", "wada"],
+    ["klassisk", "raw"],
+    ["udstyr", "equipped"],
+    ["klubskifte", "overflytning", "skifte klub"],
+    ["dragt", "landsholdsdragt", "trikot", "tøj", "beklædning"],
+    ["egenbetaling", "selvbetaling", "betaler selv"],
+    ["tilskud", "støtte", "refusion", "godtgørelse"],
+    ["kravtal", "kvalifikationskrav"],
+    ["master", "masters", "veteran"],
+    ["subjunior", "ungdom"],
+    ["repræsentantskabsmøde", "generalforsamling", "årsmøde"],
+    ["afbud", "afmelding", "framelding"],
+    ["tilmeldingsfrist", "deadline"],
+    ["coach", "træner", "holdleder"],
+    ["kursus", "uddannelse"]
+  ]
+}

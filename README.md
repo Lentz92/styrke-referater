@@ -37,6 +37,16 @@ consolidation), counted against the Claude subscription; a few new minutes cost 
 To preview the website locally, open `_site/index.html` after a run, or build only the site with
 `uv run website.py`.
 
+### Search
+
+The search runs in the browser (`website/search.js`): [MiniSearch](https://github.com/lucaong/minisearch)
+ranks with BM25 and tolerates typos and word starts, a Danish Snowball stemmer (same output as Python's
+`snowballstemmer`) matches word forms, compound words are also indexed by their parts
+("licensgebyr" → "licens" + "gebyr"), and `website/synonyms.json` is a hand-written thesaurus: each group
+lists words that should find each other (VM ↔ verdensmesterskab, kontingent ↔ gebyr ↔ pris …). Add a group
+when a search misses something it should find, then push; the site rebuilds itself.
+`website/vendor/minisearch.js` is MiniSearch 7.2.0 copied from npm.
+
 To share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
 
 ### Monthly run on GitHub
@@ -64,7 +74,7 @@ It does not call Claude.
 | 2. Extract decisions per document, each with a verbatim quote and page | `analyze.py` | `data/beslutninger/<id>.json` |
 | 3. Consolidate decisions per category into rule histories | `analyze.py` | `data/regler/<kategori>.json` |
 | 4. Work out which version applied in each year and write Markdown | `render.py` | `regelsaet/` |
-| 5. Embed the same rules and per-year state in one static page | `website.py`, `website/template.html` | `_site/` |
+| 5. Embed the same rules and per-year state in one static page with search | `website.py`, `website/` | `_site/` |
 
 `update.py` runs the steps in order. Step 2 reruns for a document when its file changes; step 3 reruns
 for a category when its decisions change. After editing a prompt in `analyze.py`, bump

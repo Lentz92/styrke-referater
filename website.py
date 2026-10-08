@@ -32,6 +32,7 @@ from scrape import ROOT, Doc
 SRC_DIR = ROOT / "website"
 OUT_DIR = ROOT / "_site"
 DATA_MARKER = "/*DATA*/null"
+ASSETS = ("logo.png", "search.js", "vendor/minisearch.js")  # copied next to the page as-is
 
 
 def build(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], today: date) -> Path:
@@ -40,12 +41,15 @@ def build(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], tod
     if template.count(DATA_MARKER) != 1:
         raise ValueError(f"website/template.html must contain {DATA_MARKER} exactly once")
     data = site_data({d.id: d for d in docs}, decisions, raw_rules, today)
+    data["synonyms"] = json.loads((SRC_DIR / "synonyms.json").read_text())["groups"]
     # "</" inside a JSON string would close the <script> element early.
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     OUT_DIR.mkdir(exist_ok=True)
     page = OUT_DIR / "index.html"
     page.write_text(template.replace(DATA_MARKER, payload))
-    shutil.copy(SRC_DIR / "logo.png", OUT_DIR / "logo.png")
+    for asset in ASSETS:
+        (OUT_DIR / asset).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(SRC_DIR / asset, OUT_DIR / asset)
     return page
 
 

@@ -77,6 +77,7 @@
   .rules a.rule + a.rule { margin-top: 16px; }
   .rules .aux { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .rules .warn { color: #9a3412; }
+  mark { background: #fdf0c2; color: var(--ink); border-radius: 2px; padding: 0 1px; }
   .content h2 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; line-height: 28px; margin: 0; }
   .areahead { display: flex; align-items: baseline; gap: 10px; margin-bottom: 32px; }
   .areahead .sq { width: 10px; height: 10px; background: var(--ac); }
@@ -176,10 +177,12 @@
 <div class="scrim" id="scrim"></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div>
 
+<script src="vendor/minisearch.js"></script>
+<script src="search.js"></script>
 <script>
 /* Data shape (see website.py): rules[] = { title, category, area, central, note, international, origin, slug,
    versions[] = { date, effective, from, effect, change, essence, text, organ, congress, votes, proposer, doc, docUrl, source, url } };
-   inForce[year] = [[rule index, version in force, version that adopted its content], …] */
+   inForce[year] = [[rule index, version in force, version that adopted its content], …]; synonyms = [[word, …], …] */
 const D = /*DATA*/null;
 const R = D.rules;
 const TODAY = D.today, CUR = Number(TODAY.slice(0, 4));
@@ -223,15 +226,23 @@ function staleSince(ri, year) {
   const last = lastMention(ri, year).slice(0, 4);
   return Number(last) && year - Number(last) >= 5 ? last : "";
 }
+// Search index over each rule's title, latest wording, whole history, note and area (see search.js).
+const SEARCH = RuleSearch.create(R.map((r, ri) => {
+  const latest = [...r.versions].reverse().find((v) => v.text) || r.versions[r.versions.length - 1];
+  return { id: ri, title: r.title, summary: `${essence(latest)} ${latest.text || ""}`, note: r.note, area: D.areas[r.area],
+    history: r.versions.map((v) => `${v.change || ""} ${v.text || ""}`).join(" ") };
+}), D.synonyms);
 function search(q) {
-  q = q.trim().toLowerCase();
-  const hits = [];
-  R.forEach((r, ri) => {
-    const inTitle = r.title.toLowerCase().includes(q);
-    if (inTitle || r.versions.some((v) => (v.text || v.change || "").toLowerCase().includes(q))) hits.push({ ri, score: inTitle ? 0 : 1 });
-  });
-  const live = (o) => (IDX[CUR].has(o.ri) ? 0 : 1);
-  return hits.sort((a, b) => a.score - b.score || live(a) - live(b) || R[a.ri].title.localeCompare(R[b.ri].title, "da")).slice(0, 60);
+  // Rules that apply in the chosen year rank above outdated ones.
+  return SEARCH.search(q, { boostDocument: (ri) => (IDX[state.year].has(ri) ? 1 : 0.6) }).slice(0, 60);
+}
+// The passage that explains a search hit, with the matched words in <mark>.
+function hitExcerpt(hit) {
+  const r = R[hit.id], cur = IDX[state.year].get(hit.id), v = cur ? r.versions[cur.vi] : r.versions[r.versions.length - 1];
+  const inTitle = Object.values(hit.match).some((fields) => fields.includes("title"));
+  // A title match is explained by the title; otherwise prefer the wording in force, then the history, newest first.
+  const texts = inTitle ? [essence(v)] : [essence(v), v.text, ...[...r.versions].reverse().flatMap((x) => [x.change, x.text]), r.note];
+  return SEARCH.excerpt(texts, hit.terms);
 }
 
 const state = { year: CUR, area: -1, q: "", origin: "all", allMeetings: false };
@@ -261,12 +272,12 @@ function decisionItem({ ri, vi }) {
   return `<a class="rule ${PROPOSALS.has(v.effect) ? "prop" : ""}" href="${href(ri)}">${areaLabel(ri)}<div><div class="title">${esc(r.title)}${intlMark(ri)}</div>
     <div class="desc"><span class="verb">${EFFECT[v.effect]}:</span> ${esc(v.change)}${v.from ? ` (fra ${longD(v.from)})` : ""}</div></div></a>`;
 }
-function ruleItem(ri) {
+function ruleItem(ri, descHtml = null) {
   const r = R[ri], cur = IDX[state.year].get(ri), stale = cur && staleSince(ri, state.year);
   const v = cur ? r.versions[cur.vi] : r.versions[r.versions.length - 1];
   const last = lastMention(ri, state.year).replace(/-00-00$/, ""); // undo dkey's padding of year-only dates
   return `<a class="rule" href="${href(ri)}">${areaLabel(ri)}<div><div class="title">${esc(r.title)}${intlMark(ri)}</div>
-    <div class="desc">${esc(essence(v))}</div>${last ? `<div class="aux">Sidst nævnt ${longD(last)}${stale ? ` · <span class="warn">kan være forældet</span>` : ""}</div>` : ""}</div></a>`;
+    <div class="desc">${descHtml || esc(essence(v))}</div>${last ? `<div class="aux">Sidst nævnt ${longD(last)}${stale ? ` · <span class="warn">kan være forældet</span>` : ""}</div>` : ""}</div></a>`;
 }
 
 function draw() {
@@ -278,9 +289,9 @@ function draw() {
 
   let h;
   if (q) {
-    const hits = search(q).filter((x) => keep(x.ri));
-    h = `<h2>${hits.length} regler matcher «${esc(q)}»</h2><p class="lede">Viser reglerne, som de gælder ${when}.</p>
-      <div class="rules">${hits.map((x) => ruleItem(x.ri)).join("")}</div>`;
+    const hits = search(q).filter((x) => keep(x.id));
+    h = `<h2>${hits.length} regler matcher «${esc(q)}»</h2><p class="lede">Bedste match først, med reglerne som de gælder ${when}.</p>
+      <div class="rules">${hits.map((x) => ruleItem(x.id, hitExcerpt(x))).join("")}</div>`;
   } else if (state.area >= 0) {
     // Most recently mentioned first, then alphabetical; the origin filter separates DSF from international.
     const rules = inForce(y, state.area).filter((o) => keep(o.ri)).map((o) => ({ ...o, last: lastMention(o.ri, y) }))
