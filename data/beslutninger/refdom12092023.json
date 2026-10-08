@@ -1,0 +1,65 @@
+{
+ "doc_id": "refdom12092023",
+ "sha256": "e8d15c3932003e4f615d84ff77b5bb15062bfc05dcc5a26d73797fb6b463282c",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2023-09-12",
+ "beslutninger": [
+  {
+   "emne": "Sletning af inaktive dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Reglen pr. 1. januar 2015 bekræftes: En dommer, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal i det efterfølgende år.",
+   "citat": "Hvis man ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes man som dommer.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2015-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Diætpenge til dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DSF giver diætpenge til dommere ved alle forbundsstævner, men ikke ved private stævner (fx TSK Cup, AASK, Jørgen Krog Cup, HaSK OPEN).",
+   "citat": "DSF giver diætpenge til alle forbundsstævner, men ikke private stævner som omfatter: TSK Cup, AASK, Jørgen Krog Cup, HaSK OPEN",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kørselsgodtgørelse til dommere ved private stævner",
+   "kategori": "dommere",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Forslag om, at private stævner skal give dommere benzinpenge, kan ikke gennemføres, da dommerudvalget ikke kan pålægge private stævner kørselsgodtgørelse. Private stævner opfordres blot til at kompensere dommerne.",
+   "citat": "Dommerudvalget kan ikke påtvinge private stævner at give kørselsgodtgørelse.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommerpåklædning",
+   "kategori": "dommere",
+   "udfald": "forkastet",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Forslag om shorts for dommere om sommeren afvises; dommernes påklædning følger de tekniske regler for sommer og vinter.",
+   "citat": "Nej, det er beskrevet i de tekniske regler for påklædning for henholdsvis sommer og vinter.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_29102017",
+ "sha256": "dafe108504bb99ebd81c0517475c39e437dc3437dd65cd5c94be93dc03153548",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2017-10-29",
+ "beslutninger": [
+  {
+   "emne": "Kvalifikationskrav DM klassisk",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Adgangskravet til DM klassisk åbnes, så et kvalifikationskrav lavet i en vilkårlig vægtklasse giver adgang til DM klassisk. Kravet kan laves fra 1. januar året før og indtil sidste tilmelding til stævnet, dvs. op til 14-15 måneder før.",
+   "citat": "Bestyrelsen beslutter at åbne adgangskravet til DM klassisk således, at kvalifikationskrav lavet uanset i hvilken klasse, giver adgang til DM klassisk.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Livestreaming ved DM/JM/SM i stævnekontrakt",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Fra 2018 er der krav om livestreaming fra DM/JM/SM. I stævnekontrakten med klubber, der afholder DM/JM/SM, tilføjes, at klubben skal sørge for internet til streaming af stævnerne.",
+   "citat": "I stævnekontrakten som indgås med alle klubber som afholder DM/JM/SM skal der tilføjes, at klubben skal sørge for internet til streaming af de fire nævnte stævner.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2018-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Lån af udstyr fra DSF til stævner",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Klubber skal melde tre uger før et stævne, hvilket udstyr de ønsker at låne af DSF. Ved bestilling i god tid kan udstyret blive afleveret i klubben.",
+   "citat": "Klubberne skal melde ud tre uger før et stævne, hvilket udstyr de ønsker at låne af DSF.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Hjemmesidens platform",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forbundets hjemmesides design skal laves i WordPress, og arbejdet påbegyndes snarest.",
+   "citat": "hjemmesidens design skal laves i wordpress, og går snarest i gang med dette.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

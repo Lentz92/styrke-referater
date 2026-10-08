@@ -1,0 +1,37 @@
+{
+ "doc_id": "refbest_290826.2",
+ "sha256": "0942e425e16d5a23594ee60ff02130d4b749305ba1e2c57cdf2f424678b6e9c6",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2026-08-29",
+ "beslutninger": [
+  {
+   "emne": "Pokal for bedste løfter ved JFM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævneudvalget har besluttet fremover at følge stævnereglerne og ikke uddele pokal for bedste løfter ved JFM, da det ikke er et krav. Der gives fortsat pokaler for bedste klub.",
+   "citat": "Da det ikke er et krav, ifølge stævnereglerne, at uddele pokal for bedste løfter ved JFM har stævneudvalget besluttet fremover at følge stævnereglerne.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Obligatorisk brush up onlinekursus for B-dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommerudvalget planlægger obligatoriske online opfølgningskurser for B-dommere, der afholdes 3 gange inden udgangen af året, så alle kan deltage.",
+   "citat": "Der planlægges datoer for obligatoriske online opfølgningskurser for B- dommere. Kurset vil blive afholdt 3 gange, så der er mulighed for alle for deltagelse.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true
+  }
+ ]
+}

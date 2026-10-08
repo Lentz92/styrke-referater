@@ -1,0 +1,65 @@
+{
+ "doc_id": "elite27062023",
+ "sha256": "4fd10ef15fa8e3e6d60d491e15acd9b3ff62195e97ba39be43a5c330b845637d",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2023-06-27",
+ "beslutninger": [
+  {
+   "emne": "Retningslinjer for landsholdsløftere ved rejse og ophold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget vil gennemgå de gældende retningslinjer for landsholdsløftere, som sidst er opdateret i 2018, og foretage nødvendige opdateringer og korrektioner, herunder retningslinjer for rejser og ophold med landsholdet.",
+   "citat": "Udvalget vil se på de gældende regler som sidst er opdateret i 2018 og foretage de nødvendige opdateringer og korrektioner, herunder retningslinjer for rejser og ophold med landsholdet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav VM og EM, klassisk trekamp",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "VM A-kravet i klassisk trekamp fastsættes som gennemsnittet af en 8. plads ved VM klassisk 2021-2023, afrundet til nærmeste tal deleligt med 2,5 kg; resultater lavere end 10% af højeste 8. plads fjernes. VM B er 95%, EM A 97,5% og EM B 92,5% af VM A. Øges et krav mere end 10% i forhold til 2022, begrænses det til 110% af 2022-kravet. I -84 kg sættes VM A til samme krav som i -76 kg og VM B til 95% heraf. Kravene gælder fra 1. januar 2024.",
+   "citat": "VM B krav fastsættes til 95%, EM A 97,5 % og EM B 92,5 % af VM A kravet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2024-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav trekamp udstyr og bænkpres",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kvalifikationstallene i trekamp udstyr og bænkpres reguleres ikke.",
+   "citat": "Der vil ikke blive reguleret i kvalifikationstallene i disciplinen trekamp udstyr eller bænkpres.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Forhåndsudtagelse til EM klassisk",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Til EM klassisk udtages de 8 kvinder med højest opnåede procent af EM-A-kravet inden udgangen af kvalificeringsperioden (sidste kvalifikationsstævne er JM/SM); øvrige kvinder med kravet bliver reserver. Herrer udtages som udgangspunkt, hvis de har opnået kravet, men maksimalt to løftere pr. vægtklasse; ved flere end to udtages de to med højeste total.",
+   "citat": "Til EM klassisk udtages 8 de 8 kvinder med højst opnåede procent af EM-A krav inden udgangen af kvalificeringsperioden (JM/SM sidste kvalifikationsstævne).",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

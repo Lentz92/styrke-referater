@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_22042017",
+ "sha256": "ce82bc39555e5114ac2340b2821ffce6952b8d1b0028af259dbd3f6044c0c087",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2017-04-22",
+ "beslutninger": [
+  {
+   "emne": "Stødende slogans på løftertøj",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "T-shirts/trikoter med slogans, der kan opfattes som stødende generelt og/eller mod styrkeløft, må ikke godkendes. Er de ved en fejl blevet godkendt, kan godkendelsen omstødes, hvis stævnelederen finder det relevant.",
+   "citat": "Hvis løftere konkurrerer i t-shirts/trikoter som indeholder slogans som kan opfattes som stødende både generelt og/eller imod styrkeløft, skal disse ikke godkendes.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Afgift for logo",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Afgift for logo: ét logo for én person koster 500 kr.; for alle medlemmer af en klub 1.000 kr.; for et spotterhold ved ét mesterskab 1.000 kr. (ikke hvis klubben har betalt for et klublogo); for logo til brug af enhver person under DSF 2.500 kr. I andre tilfælde sendes forespørgsel om pris til bestyrelsen.",
+   "citat": "Hvis et logo kun omfatter én person, er prisen kr. 500,- \nHvis et logo omfatter alle medlemmer af en klub, er prisen kr. 1.000,-",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Godkendelse af logo",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Alt, hvad der er stødende eller kan give sporten et dårligt ry, er forbudt på logoer. Et logo skal forelægges bestyrelsen til godkendelse.",
+   "citat": "Alt, hvad der er stødende eller kan give sporten et dårligt ry, er forbudt. Et logo skal derfor forelægges bestyrelsen til godkendelse.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Information til landsdækkende medier ved store mesterskaber",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved store mesterskaber skal landsdækkende medier informeres med en lille notits.",
+   "citat": "Ved store mesterskaber skal landsdækkende medier informeres med en lille notits.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "refstaevne20082026",
+ "sha256": "0fc4414a7a6c9d4d73e998442fea2c750a6ca6f99cb18fa3dcf8467874023e27",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2026-08-20",
+ "beslutninger": [
+  {
+   "emne": "Pokaler for bedste løfter ved SM og JFM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der bestilles fremover ikke pokaler til bedste løfter ved SM og JFM, da det ikke er et krav. Det skaber en klar forskel mellem disse stævner og DM.",
+   "citat": "Fremover vil der ikke blive bestilt pokaler til bedste løfter til SM og JFM. Derved er der også en klar forskel på disse stævner og DM’erne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Service til privatstævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Privatstævner kan som udgangspunkt ikke forvente den samme service fra Stævneudvalget som stævner under DSF.",
+   "citat": "privatstævner som udgangspunkt ikke kan forvente den samme service som stævner under DSF.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_230825",
+ "sha256": "5aaf321e85ceac2355c2bf334964d55df97a0eec1e7ccac850509cf1184b0778",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2025-08-23",
+ "beslutninger": [
+  {
+   "emne": "Adgangskontrol til opvarmning ved DM-uger",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der indføres fremadrettet adgangskontrol til opvarmningen for atleter og trænere ved alle DM-uger.",
+   "citat": "Det blev besluttet, at der fremadrettet ved alle DM-uger vil blive indført adgangskontrol til opvarmningen for atleter og trænere.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Initiativpulje, supplering af udstyr",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der afsættes fremadrettet midler i budgettet fra 2026 til at supplere køb af nyt udstyr til initiativpuljens udstyrspulje. For 2026 foreslås det, at der afsættes 25.000 kr.",
+   "citat": "blev det besluttet at afsætte midler i budgettet i 2026 og fremadrettet til at supplere køb af nyt udstyr. For 2026 forslås det afsættes 25.000 kr. til puljen.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": "2026-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Krav om IPF-træneruddannelse for internationale trænere",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Internationale trænere og deres assistenter skal have en IPF-træneruddannelse. Kravet træder i kraft fra 2027.",
+   "citat": "kravet om at internationale trænere og deres assistenter skal have en IPF- træneruddannelse. Kravet træder i kraft fra 2027.",
+   "side": 5,
+   "stemmer": null,
+   "gaelder_fra": "2027-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Krav om regelmæssig træning i klub",
+   "kategori": "medlemskab",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "For at stille op for en klub skal atleten træne regelmæssigt i klubben, mindst én gang om ugen. Ved lang afstand til en klub eller særlige omstændigheder kan klubben udstede en dispensation med vilkår for repræsentation. DSF's Antidoping-udvalg skal orienteres og godkende aftalen.",
+   "citat": "At Dansk Styrkeløft Forbund stiller krav om, at man for at kunne stille op for en klub skal træne regelmæssigt i pågældende klub – mindst én gang om ugen.",
+   "side": 5,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "elite25042022",
+ "sha256": "74c3a6fbdfdd676b7cd71c381a5cccdf50794e2d4d7a97b7afcdcb10e3f5db13",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2022-05-25",
+ "beslutninger": [
+  {
+   "emne": "Ugentlig træning i klub for landsholdsudøvere",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdsudøvere skal som minimum træne i deres klub 1 gang ugentligt i henhold til antidoping-politikken. Dispensation kan kun i yderste instans gives og kræver, at atleten rettidigt ansøger Antidoping-udvalget under DSF.",
+   "citat": "Antidoping-politikken foreskriver klart, at man som minimum træner i sin klub 1 gang ugentligt. Der kan i særlige tilfælde gives dispensation herfra, men det kræver, at der ansøges om dette hos Antidoping-udvalget under DSF",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Egenbetaling ved deltagelse i stævner uden for landsholdsprogram",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "En landsholdsløfter må deltage i Arnold Classic i England på betingelse af, at løfteren selv afholder alle udgifter i forbindelse med stævnet.",
+   "citat": "Eliteudvalget imødekommer ønsket på den betingelse at alle udgifter i forbindelse med stævnet afholdes af den pågældende løfter.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

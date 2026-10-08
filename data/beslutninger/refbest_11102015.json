@@ -1,0 +1,93 @@
+{
+ "doc_id": "refbest_11102015",
+ "sha256": "90063cbc2aea0cf04065ea2e764da04a02d40ad10a77741051e309e01091de63",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2015-10-11",
+ "beslutninger": [
+  {
+   "emne": "Nyhedsfolder",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der skal udkomme en nyhedsfolder to gange om året i A5-format med terminsliste på bagsiden, leder og udvalgsberetninger. Folderen sendes til alle postansvarlige i klubberne og skal kunne printes ud af modtageren.",
+   "citat": "Det blev besluttet, at der skal udkomme en nyhedsfolder to gange om året.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Overflytning af licens mellem klubber",
+   "kategori": "medlemskab",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ny klub anmoder om overførsel af licens. Den gamle klub har 14 dage til at gøre indsigelse, hvis løfteren har økonomisk gæld til klubben; ellers overføres licensen, og indsigelser behandles af stævneudvalget. En løfter, der efter tilmeldingsfristen er tilmeldt et stævne for sin gamle klub, kan først overflytte licens, når stævnet er afviklet.",
+   "citat": "Der var opbakning og enighed om dette forslag. Kenneth formulerer et udkast til en regel.",
+   "side": 5,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Pokaler til bedste løfter",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der kan uddeles pokaler til 1., 2. og 3. bedste løfter, hvis der er mere end 14 deltagere, og kun én pokal ved færre end 15 deltagere.",
+   "citat": "Der kan blive uddelt pokaler til 1.2. og 3. bedste løfter, hvis der er mere end 14 deltagere og kun en pokal ved færre end 15 deltagere.",
+   "side": 5,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommerkrav om antal stævner",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Reglen fra 1. januar 2015 er, at en dommer skal have dømt ved tre stævner inden for to år.",
+   "citat": "Reglen fra 1. januar 2015 er tre stævner inden for to år.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": "2015-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udstyr til stævner og bannere",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Et sæt udstyr er nok, men der anskaffes et ekstra banner, så der fremover er ét banner på Sjælland og ét i Jylland.",
+   "citat": "Der skal fremover være et banner på Sjælland og et i Jylland.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udviklingskonsulent",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen besluttede, at udviklingskonsulenten fortsætter sit arbejde.",
+   "citat": "Herefter besluttede bestyrelsen af udviklingskonsulenten skulle forsætte sit gode arbejde.",
+   "side": 6,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

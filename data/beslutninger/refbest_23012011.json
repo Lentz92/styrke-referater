@@ -1,0 +1,23 @@
+{
+ "doc_id": "refbest_23012011",
+ "sha256": "f0371df1cf3775a54d977720aafac4023e4633b1ffea72af9a5065a2eca6ab97",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2011-01-23",
+ "beslutninger": [
+  {
+   "emne": "Danske rekorder",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen oplyser, at der under de nye IPF-regler fortsat kan sættes danske rekorder i 2011. Kravene til rekorderne fremgår af forbundets hjemmeside.",
+   "citat": "Bestyrelsen kan oplyse at der kan sættes danske rekorder i år. Kravene til disse kan ses på vores hjemmeside.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2011-01-01",
+   "gaelder_til": "2011-12-31",
+   "citat_fundet": false
+  }
+ ]
+}

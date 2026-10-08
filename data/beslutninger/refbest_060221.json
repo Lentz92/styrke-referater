@@ -1,0 +1,93 @@
+{
+ "doc_id": "refbest_060221",
+ "sha256": "881d79c51f5bbe813457d5d2206017e3cf7c76ce7092a3156fb4b81eeb7f9337",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2021-02-06",
+ "beslutninger": [
+  {
+   "emne": "Retningslinjer for stævneafvikling",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved stævneafvikling skal der sørges for større afstand mellem indvejninger, mere styring med folk i opvarmningsområdet, færre personer i grupperne og en teknisk controller, som sikrer overholdelse af retningslinjerne.",
+   "citat": "Ifm. stævneafvikling skal der sørges for: 1. Større afstand mellem indvejninger. 2. Mere styring med folk i opvarmningsområdet. 3. Færre personer i grupperne. 4. Tilføjelse af en teknisk controller.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Placering af DM klassisk",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "DM klassisk senior afvikles særskilt i DM-ugen fra 2022 i samarbejde med DIF. Aflyser DIF DM-ugen, afvikles DM klassisk senior samme uge som DM-ugen. DM klassisk subjunior, junior og masters afvikles særskilt i første halvdel af april.",
+   "citat": "DM klassisk senior afvikles særskilt i DM-ugen fra 2021 i samarbejde med DIF.",
+   "side": 2,
+   "stemmer": "30 for, 2 undlod",
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Placering af SM og JM i styrkeløft og bænkpres",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021.",
+   "citat": "SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021",
+   "side": 3,
+   "stemmer": "32 for",
+   "gaelder_fra": "2021-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav DM klassisk, senior",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Fra 1-1-2022 gælder opdaterede kvalifikationskrav til DM Klassisk (åben klasse, senior), fx damer 47 kg: 245, 84+ kg: 385; herrer 59 kg: 380, 120+ kg: 645. Kravet skal laves i sæsonen inden DM, og løfter må skifte vægtklasse op og ned uanset hvor kravet er lavet. Kravet gælder kun åbne vægtklasser.",
+   "citat": "Der vil fra 1-1-2022 være opdaterede kvalifikationskrav for deltagelse ved DM Klassisk (DM-ugen)",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Danske rekorder i nye vægtklasser",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Rekorder sat i 72 kg-klassen for kvinder opgraderes til rekorder i 76 kg-klassen, og rekorder sat i 63 kg-klassen bruges som rekorder i 69 kg-klassen, så løft i de nye vægtklasser ikke alle er danske rekorder.",
+   "citat": "IPF og NPF har valgt at opgradere rekorder sat i 72 kg klassen til rekorder i 76 kg klassen. Dette vil også ske i DSF.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Plakatkrav ved DM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Regler og retningslinjer for afholdelse af DM opdateres med krav om plakater.",
+   "citat": "Regler og retningslinjer i forbindelse med afholdelse af DM vil blive opdateret med krav om plakater.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

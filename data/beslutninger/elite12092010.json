@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite12092010",
+ "sha256": "e31e93e259ea374d558721ef2b97c3476ad8352b6c49d8619423bf89d4c030c2",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2010-09-12",
+ "beslutninger": [
+  {
+   "emne": "Landsholdsdragt egenbetaling og depositum",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdsdragten kan beholdes til evigt eje mod betaling af 200 kr., forbundet dækker resten. Ønsker løfteren ikke dragten, indbetales et depositum på 400 kr., som refunderes, når dragten returneres.",
+   "citat": "For dem som ønsker dragten til evigt eje kan mod betaling af 200kr. få det, forbundet dækker resten. Skulle nogen ikke ønske dette, indbetales et depositum på 400kr.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Antal eliteudvalgsmøder",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget holder 4 møder om året for at undgå uønskede og uheldige omstændigheder.",
+   "citat": "Der var enighed om, at der skal holdes 4 møder i eliteudvalget om året",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Eksterne undervisere på landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Forslag om eksterne undervisere på samlingerne blev afvist af økonomiske årsager, da udbyttet ikke skønnes rentabelt i forhold til investeringen.",
+   "citat": "Forslaget med eksterne underviserer blev afvist af økonomiske årsager, da udbyttet kontra investeringen ikke skønnes rentabelt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Deltagelse for egen betaling ved EM/VM",
+   "kategori": "landshold",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Forslag om, at løftere der har løftet kravet til EM/VM, men ikke kan sendes af forbundet af økonomiske grunde, kan deltage mod egenbetaling (de dårligst placerede i vægtklassen), fik ikke tilslutning.",
+   "citat": "så kunne de dårligst placerede i vægtklassen, som måtte have løftet kravet deltage mod egenbetaling. Dette var der heller ikke tilslutning til.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Økonomisk støtte til junior-EM satsning",
+   "kategori": "landshold",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Forslag om at forbundet økonomisk støtter et samarbejde med sportshøjskolen om junior-EM 2012 fik ikke opbakning.",
+   "citat": "Dette var der ikke stemning for",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

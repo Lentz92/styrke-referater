@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite16022019.2",
+ "sha256": "ec8b5f0f80e732c70c5307495554b2764d70009661a6086969fd003af9abc1f3",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2019-02-16",
+ "beslutninger": [
+  {
+   "emne": "Centralt lager for landsholdsudstyr",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der etableres et centralt lager for alt udstyr, der vedrører landsholdene.",
+   "citat": "Der etableres et centralt lager for alt udstyr der vedrører landsholdene.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Ejerskab af udleveret landsholdsudstyr",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Udstyr, der uden beregning udleveres til landsholdsatleter, tilhører DSF i 12 måneder fra udlevering. Gennemfører atleten perioden, overgår udstyret til atletens personlige ejendom.",
+   "citat": "Udstyr der uden beregning udleveres til landsholdsatleter tilhører DSF i 12 mdr. fra udlevering. Hvis atleterne gennemfører perioden, overgår udstyret som deres personlige ejendom.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Indstilling af ekstra atleter til VM klassisk",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Hvis trænerteamet blandt de øvrige atleter finder potentielle atleter, der kan klare VM-A- eller B-krav ved DM Klassisk, kan de indstilles provisorisk til eliteudvalget og registreres i forhåndsnomineringen til VM, som skal foretages før DM Klassisk afvikles.",
+   "citat": "kan de indstilles provisorisk til eliteudvalget, hvorved de kan blive registreret i forhåndsnomineringen til VM som skal foretages før DM Klassisk afvikles.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2019-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Målsætning og udtagelse til EM (EPC) på hjemmebane",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "For seniorherrer og damer stilles som udgangspunkt det stærkest mulige hold i nationskonkurrencen ved EPC 2020, og der udtages især i vægtklasser med størst pointpotentiale. Landsholdet kan suppleres med wild cards til atleter, der deltager ved DM udstyr 2019.",
+   "citat": "Det betyder, at det vil blive vægtet højt, at udtage i vægtklasser der er størst pointpotentiale i.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2020-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Elitestrategi",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der udarbejdes en opdateret elitestrategi, som gælder fra 1/1-2020 til og med 2025.",
+   "citat": "Der vil i løbet af de kommende måneder blive udarbejdet en opdateret elitestrategi som vil være gældende fra d. 1/1-2020 og frem til og med 2025.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2020-01-01",
+   "gaelder_til": "2025-12-31",
+   "citat_fundet": true
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "refbest_010619",
+ "sha256": "6116eae0fea0bc76f8b18e8fb2e8d0cc0a6faaad01e3780f988b949e08753773",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2019-06-01",
+ "beslutninger": [
+  {
+   "emne": "Uddeling af pokaler til årets løftere",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Pokalerne til årets løftere 2018 uddeles ved DM i klassisk bænkpres (klassisk 3-kamp) og ved DM i udstyrsbænkpres (3-kamp i udstyr).",
+   "citat": "Pokalerne vil blive uddelt ved DM i klassisk bænkpres (klassisk 3 kamp ved klassisk bænkpres) og DM i bænkpres (3 kamp i udstyr uddeles ved DM i udstyrs bænkpres).",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Leverandør af medaljer og pokaler",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der fortsættes med det nuværende system for medaljer og pokaler året ud på grund af lagerbindinger. Herefter findes en ny leverandør til næste år.",
+   "citat": "Grundet lagerbindinger køre vi videre med nuværende system året ud, hvorefter en ny leverandør vil blive fundet til næste år.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2019-12-31",
+   "citat_fundet": true
+  }
+ ]
+}

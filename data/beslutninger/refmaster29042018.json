@@ -1,0 +1,79 @@
+{
+ "doc_id": "refmaster29042018",
+ "sha256": "5d337b7aeaa3b7ee016668445d595a3b69d9530e96843eb3037e95ba052c3e93",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2018-04-29",
+ "beslutninger": [
+  {
+   "emne": "Startgebyr ved framelding på masterstævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Klubber, der tilmelder løftere til et masterstævne uden at løfterne deltager, hæfter for startgebyret, som på tidspunktet er 140 Euro. Det følger af de nye EPF-regler om, at der skal betales startgebyr for alle løftere på forhåndstilmeldingen 60 dage før stævnestart, selv ved rettidig framelding.",
+   "citat": "Udvalget besluttede derfor, at de klubber der tilmelder løftere til et masterstævne, uden at løfterne deltager, hæfter for startgebyret, som pt er 140 Euro.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Forudbetaling til internationale masterstævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved stævner med krav om forudbetaling af start, hotel og transport fremsender koordinatoren faktura til klubber/løftere. Beløbet skal være på forbundets diversekonto senest 28 dage før stævnestart, ellers fjernes løfteren fra nomineringen.",
+   "citat": "Koordinatoren fremsender faktura til de enkelte klubber/løftere, og beløbet skal være på forbundets diversekonto senest 28 dage før stævnestart i modsat fald fjernes den/de pågældende løftere fra nomineringen.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Krav til deltagelse i internationale masterstævner",
+   "kategori": "master",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Forslag om at ændre stk. 4 i retningslinjerne for masterudvalget om krav til international deltagelse (kvalifikation inden for 14 måneder, deltagelse ved seneste DM/DM masters, fortrinsret efter bedste wilks, dispensation) blev ikke vedtaget. De nuværende retningslinjer er fortsat gældende.",
+   "citat": "Efter en god og konstruktiv debat blev der vedtaget ikke at ændre på retningslinjerne. De nuværende retningslinjer er således stadigvæk gældende for international deltagelse.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Koordinatorers og head coachs opgaver ved internationale masterstævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Koordinatorer for klassisk, bænkpres og styrkeløft indsamler informationer om international deltagelse og sender dem til formanden senest 7 dage før forhåndstilmeldingen. De er sammen med formanden ansvarlige for stævnebudgettet. Head coach udpeges af koordinator og formand og skal overholde Coach Responsibility, være til stede under hele stævnet og skrive beretning til hjemmesiden.",
+   "citat": "rettidig (senest 7 dage inden forhåndstilmeldingen) at indsende alle informationerne til formanden.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Sekretærens opgaver i masterudvalget",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Sekretæren skriver beslutningsreferater, sender indkaldelser og sørger for offentliggørelse på forbundets hjemmeside. Sammen med formanden sikrer sekretæren, at der indkaldes til møder i udvalget, mindst ét møde årligt.",
+   "citat": "Sekretæren sikrer sammen med formanden, at der indkaldes til møder i udvalget dog mindst et møde årligt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

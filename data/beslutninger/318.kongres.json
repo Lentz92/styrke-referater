@@ -1,0 +1,23 @@
+{
+ "doc_id": "318.kongres",
+ "sha256": "8397ba357b7ce5b77ff88edb5c0a8c90ad455f9945990ed51a4e9e2470799374",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2016-01-01",
+ "beslutninger": [
+  {
+   "emne": "Frist for ændringsforslag til IPF's vedtægter",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF-kongressen besluttede, at ændringsforslag til IPF's vedtægter kan sendes ind til kongressen hvert år og ikke kun hvert 4. år. For de tekniske regler gælder 4-årsreglen stadig.",
+   "citat": "Endelig blev det besluttet, at der kan sendes ændringsforslag ind til kongressen hvert år og ikke kun hvert 4. år.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

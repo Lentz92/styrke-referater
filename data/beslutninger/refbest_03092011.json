@@ -1,0 +1,51 @@
+{
+ "doc_id": "refbest_03092011",
+ "sha256": "520ce645f7bf26f30c87742ca84c161f9a340e3d0c4741e1485f38125d361bf4",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2011-09-03",
+ "beslutninger": [
+  {
+   "emne": "Masterklubbens tilknytning til forbundet",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Masterklubben kan beholdes som støtteklub uden økonomisk tilknytning til forbundet. Udtagelse m.m. for masterløftere skal fremover foregå gennem forbundet. Breddeudvalget udarbejder forslag til beskrivelse af en mulig tilknytning af Masterklubben som udvalg under DSF.",
+   "citat": "Man kan dog beholde Masterklubben som en støtteklub som intet har med forbundet at gøre økonomisk, udtagelse m.m vil fremover skulle foregå gennem forbundet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Nordland Cup som officielt stævne",
+   "kategori": "staevner",
+   "udfald": "trukket",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen vil lægge op til, at Nordland Cup bliver et officielt stævne under DSF. Forslaget skal behandles på næste repræsentantskabsmøde.",
+   "citat": "bestyrelsen vil lægge op til at stævnet bliver et officielt stævne under DSF  (forslaget vil blive behandlet på næste kommende repræsentantskabsmøde).",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Stævneregler i overensstemmelse med IPF's tekniske regler",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "DSF's stævneregler skal følge IPF's tekniske regler. Stævnereglerne opdateres hurtigst muligt i overensstemmelse hermed.",
+   "citat": "Forbundet stævneregler skal som bekendt følge PF’s tekniske regler hvilket har nødvendiggjort et behov for en opdatering af disse regler.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

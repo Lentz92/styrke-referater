@@ -1,0 +1,51 @@
+{
+ "doc_id": "elite17032021",
+ "sha256": "93f6b3da8d319bf5c4b06d0d469179a1153c840b6082a792de9b009901449c8a",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2021-03-16",
+ "beslutninger": [
+  {
+   "emne": "Deltagelse i EM",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Grundet WADAs udelukkelse af Rusland følger DSF WADAs afgørelse og sender ikke et hold til EM i Rusland. Fokus rettes i stedet mod VM i Kazakhstan.",
+   "citat": "vælger DSF, at følge WADAs afgørelse, og sender derfor ikke et hold til EM i Rusland, men i stedet rette fokus mod VM i Kazakhstan.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Genindtræden i landsholdstruppen",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der er et nyt landsholdskrav på 740 kg i 105 kg-klassen eller 762,5 kg i -120 kg-klassen. En løfter, der tidligere har forladt truppen, skal indfri kravet ved det kommende DM for at indtræde i truppen igen.",
+   "citat": "Eliteudvalget vurderer, at Lars til det kommende DM skal indfri det nye landsholdskrav som er 740 kg i 105 kl. eller 762,5 i -120 kg kl. for igen at indtræde i truppen.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Landsholdssamlinger ved restriktioner",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Hvis landsholdssamlinger ikke kan afholdes fysisk på grund af Covid-19, afholdes de som kategoriopdelte virtuelle møder mellem atleter, trænere og sportschefer, indtil fysiske samlinger igen er mulige.",
+   "citat": "vil den i stedet blive afholdt i kategoriopdelte virtuelle møder mellem atleter, trænere og sportschefer.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

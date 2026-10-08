@@ -1,0 +1,37 @@
+{
+ "doc_id": "refdom01102024",
+ "sha256": "8681fc65e4bb95f170104fe9e2d6b50bc2fe57edb3ac1bf022394306f1dff891",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-10-01",
+ "beslutninger": [
+  {
+   "emne": "Dommertørklæde",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommere må kun bære IPF-slips eller IPF-tørklæde. Den tidligere udmelding om, at kvindelige dommere kan bære et tørklæde, rulles tilbage, da et korrekt tørklæde er et IPF-tørklæde og ikke et tørklæde i blå farve.",
+   "citat": "at der kun bæres IPF-slips eller IPF-tørklæde, så den tidligere udmelding om at kvinder kan bære et tørklæde bliver rullet tilbage.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Hjælp til knækogere",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommerne skal afvise knævarmere, som løfteren har fået hjulpet på af en anden person eller ved hjælp af plastik glidemateriale, olie o.l. De tekniske regler siger intet om aftagning, så løfteren må gerne få hjælp til at tage knæ-/knækogere af. Strømper til at tage på er tilladt, da de er en naturlig del af løfterens udstyr.",
+   "citat": "De tekniske regler nævner ikke noget om aftagning, så her må løfteren gerne få hjælp til aftagning af knækogere.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

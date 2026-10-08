@@ -1,0 +1,51 @@
+{
+ "doc_id": "refbest_04082012",
+ "sha256": "3ce73ca568234b59ccbb214f634ea3ef2b5d49c67a94042ccf0b83944f9ff17e",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2012-08-04",
+ "beslutninger": [
+  {
+   "emne": "Udlån af DSF's udstyr",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF's udstyr kan lånes ved henvendelse til kontoret og afhentning i Horsens. En liste over udstyret udarbejdes og lægges på forbundets hjemmeside.",
+   "citat": "Udstyr vil kunne lånes, ved kontakt vis kontoret og afhentning i Horsens.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kasserer",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Peter overtager kasserer-jobbet fra Klaus hurtigst muligt og kontakter DIF med henblik på et møde om DSF's ønsker til regnskab og bogføring.",
+   "citat": "Bestyrelsen besluttede at Peter overtager jobbet som kasserer og kontakter DIF med henblik på et møde hvor DSF’ ønsker til regnskabet og bogføringen fremlægges.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Masterudvalgets budget",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Masterudvalget tildeles de midler, der er afsat i budgettet. Yderligere ansøgninger om økonomiske midler kan ikke forventes godkendt.",
+   "citat": "det blev besluttet at tildele udvalget de midler der er afsat i budgettet. Det skal dog bemærkes at yderligere ansøgning om økonomiske midler ikke kan forventes at blive godkendt.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

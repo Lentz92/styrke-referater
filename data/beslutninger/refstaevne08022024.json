@@ -1,0 +1,93 @@
+{
+ "doc_id": "refstaevne08022024",
+ "sha256": "02dc2b2272e1c83e17888f91d0436f5f2461dc49139b636180796e06e692e577",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-02-08",
+ "beslutninger": [
+  {
+   "emne": "Flere klubber om samme stævne",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Hvis to klubber ansøger om at afholde samme stævne, kontaktes den klub, der først blev kontaktet. Kontakten varetages af den stævneansvarlige for det pågældende stævne i udvalget.",
+   "citat": "I tilfælde af at to klubber ansøger om at afholde samme stævne, skal den klub der først er taget kontakt til kontaktes, hvis en anden klub byder ind på samme stævne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Afstand mellem rack og dommere ved stævner i Tårnby",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved stævner afholdt i Tårnby skal der være ekstra afstand mellem rack og dommere, så dommerne lettere kan vurdere løftene.",
+   "citat": "Ved stævner afholdt i Tårnby skal der være ekstra afstand mellem rack og dommere, så det bliver nemmere for dommerne at vurdere løftene.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Indvejningsvægt ved DM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved DM'er skal der bruges indvejningsvægt udlånt af DSF. Stævneudvalget hjælper med dette.",
+   "citat": "Ved DM’er skal der bruges indvejningsvægt udlånt af DSF.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Stævneansvarlig for DSF-stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "For alle stævner under DSF (ikke privatstævner) er der en stævneansvarlig fra stævneudvalget. Personen støtter arrangørklubber i at leve op til kravene for afvikling af danske mesterskaber, udarbejder stævneplaner til stævner med dommerpåsætning og godkender invitationer.",
+   "citat": "For alle stævner afholdt under DSF (ikke privatstævner) er der koblet en stævneansvarlig fra stævneudvalget på.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udlån af stævnevægt og dommerlys",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Den stævneansvarlige tager sig af udlån af stævnevægt og dommerlys, når en klub arrangerer et stævne. Ved behov for hjælp til konkurrencestyringssystem eller andet udstyr kontakter den stævneansvarlige en ekspert.",
+   "citat": "Udlåner stævnevægt samt dommerlys er en af opgaverne den stævneansvarlige påtager sig, når der kontakte en klub der arrangere et stævne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Årligt gennemsyn af stævneregler",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævnereglerne gennemgås årligt i starten af januar som fast punkt for at sikre, at de er tidssvarende.",
+   "citat": "Et årligt gennemsyn af stævnereglerne i starten af januar bliver et fast punkt, for at sikre at de er tidssvarend.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

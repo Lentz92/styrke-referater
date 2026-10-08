@@ -1,0 +1,93 @@
+{
+ "doc_id": "refbest_13092009",
+ "sha256": "61fb7a7ed9a41ffe9a3d336ac239692cdb86d2418ba3b3476180f9dd4dbd0af7",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2009-09-13",
+ "beslutninger": [
+  {
+   "emne": "Udlån af dommerlys",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF har indkøbt et dommerlys, som alle arrangerende klubber fremover kan låne. Lyset afleveres af en dommer eller sendes til klubben før stævnet og returneres efter stævnet; forbundet betaler fragt ved forsendelse. Startgebyret udbetales, når lyset er afprøvet, og den arrangerende klub hæfter for eventuelle ødelæggelser.",
+   "citat": "DSF har indkøbt et dommerlys som alle arrangerende klubber i fremtiden kan låne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Referent og sekretær",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen skal blive bedre til at lave referater og sende dem til webmaster til offentliggørelse på nettet. Det besluttes, at Tina fremover er sekretær.",
+   "citat": "Det besluttes derfor at Tina i fremtiden er sekretær.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udtagelse til VM masters bænkpres",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved udtagelse af løftere til VM 2011 har mastersløftere, der det seneste år har repræsenteret Danmark i udlandet, fortrinsret. Mastersklubben laver udtagelseskriterier og indstilling, og den endelige udtagelse foretages af DSF's bestyrelse.",
+   "citat": "Kriterier til udtagelse af løfterne laves af mastersklubben, ligesom en indstilling om udtagelse laves af mastersklubben. Den endelige udtagelse laves af DSF´s bestyrelse.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Krav til DM bænk og medaljer",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Det præciseres, at der er kvalifikationskrav til DM bænk. Der uddeles kun medaljer i vægtklasserne, hvis der er mindst 10 tilmeldte løftere i hver kategori; ved 9 eller færre løfter alle på wilks point.",
+   "citat": "Der uddeles kun medaljer i vægtklasserne, hvis der er min 10 tilmeldte løftere i hver kategori.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Tilmelding som dommer til stævner",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Man kan ikke tilmeldes som dommer til et stævne, hvis man selv skal løfte. Ved flerdagesstævner kan man tilmeldes som dommer den dag, man ikke selv løfter. Dommerne skal være påklædt efter IPF's regler.",
+   "citat": "Man kan IKKE tilmeldes som dommer til et stævne, hvis man selv skal løfte.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Angivelse af betalingsformål",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Klubberne skal blive bedre til at skrive, hvad deres indbetalinger vedrører.",
+   "citat": "Det henstilles til klubberne at de SKAL blive bedre til at skrive hvad deres indbetalinger vedrører.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

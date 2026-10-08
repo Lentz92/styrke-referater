@@ -1,0 +1,51 @@
+{
+ "doc_id": "refbest_13122015",
+ "sha256": "24e05e9ec6dbb976e956b4bec2714b11b74f6bd95c4878c0d5ec7e7d51565776",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2015-12-13",
+ "beslutninger": [
+  {
+   "emne": "Overførsel af masterudvalgets overskud",
+   "kategori": "master",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ønsket om at overføre overskud på masterudvalgets budget for 2015 som ekstra til budgettet for 2016 blev afvist, da budgettet for 2016 skal godkendes på repræsentantskabsmødet.",
+   "citat": "overskud på masterudvalgets budget for 2015 kan overføres som ekstra til budgettet for 2016 med henblik på at få så mange deltagere som muligt med til VM masters bænkpres i Rødby, hvilket blev afvist",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Antidopingpolitik",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen godkendte en antidopingpolitik for DSF, som Anti Doping Danmark har godkendt.",
+   "citat": "Antidopingpolitikken godkendes.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": false
+  },
+  {
+   "emne": "Udstyrsregler",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "IPF's tekniske regler inklusive godkendt udstyr for 2016 gælder i Danmark, når de offentliggøres i januar, dog skal trikot og bælter blot overholde de tekniske reglers mål og specifikationer. For løftere, der repræsenterer Danmark, skal alle IPF's udstyrsregler overholdes, så særreglen for trikot og bælter stadig gælder. Løftere anbefales kun at købe nyt udstyr hos IPF-sanktionerede forhandlere.",
+   "citat": "IPF's tekniske regler (inklusive godkendt udstyr) for 2016 vil, når de offentliggøres i januar, være gældende med undtagelse af trikot og bælter, som blot skal overholde de tekniske reglers mål og specifikationer.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2016-01-01",
+   "gaelder_til": "2016-12-31",
+   "citat_fundet": true
+  }
+ ]
+}

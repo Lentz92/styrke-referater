@@ -1,0 +1,51 @@
+{
+ "doc_id": "elite19092023",
+ "sha256": "e64e24150a586cf2fbafe85900578d60e526b9b42fc62dbf0519e9949e5162eb",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2023-09-19",
+ "beslutninger": [
+  {
+   "emne": "Lægeerklæring ved afbud",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved afbud til samlinger og internationale mesterskaber efter final nominations på grund af sygdom kan eliteudvalget kræve lægeerklæring. Udgiften til lægeerklæringen refunderes af eliteudvalget.",
+   "citat": "Ved afbud til samlinger og internatioale mesterskaber efter final nominations, grundet sygdom kan eliteudvalget fordre  lægeerklæring. Udgiften til lægeerklæringen refunderes af eliteudvalget.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Assistenttræner ved mesterskaber",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdsløftere kan af eliteudvalget udtages som assistenttræner til specifikke mesterskaber, hvis det skønnes hensigtsmæssigt.",
+   "citat": "Hvis man er en del af landsholdet kan man af eliteudvalget udtages som assistenttræner til specifikke mesterskaber, hvis det skønnes hensigtsmæssigt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Offentliggørelse af bruttolandshold og orlov",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Bruttolandsholdet, inklusive oplysning om hvem der er bevilget orlov, er tilgængeligt på landsholdssiden og opdateres fremover jævnligt.",
+   "citat": "Bruttolandsholdet, hvor det bl.a. fremgår, hvem der er en del af landsholdet og hvem der evt. er bevilget \norlov, er tilgængelig på landsholdssiden og vil fremover opdateres jævnligt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

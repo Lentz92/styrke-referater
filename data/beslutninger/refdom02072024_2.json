@@ -1,0 +1,79 @@
+{
+ "doc_id": "refdom02072024_2",
+ "sha256": "f389aeb1a05bc9375c7fc7cc6b3870ffce98016c4281ae78fd50c41a5f54a125",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-07-02",
+ "beslutninger": [
+  {
+   "emne": "Udlevering af slips og emblemer til dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Slips og emblemer udleveres til dommere ved endt uddannelse, da det er nemmest for udvalget at håndtere. Den nuværende procedure fastholdes.",
+   "citat": "De bliver udleveret ved endt uddannelse, det er nemmest at håndtere for udvalget. Derfor fastholdes nuværende procedure",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dresscode for dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dresscode for dommere til stævner skal overholdes. Slips bæres med hvid skjorte; kvinder kan vælge bluse eller skjorte, og vælges bluse bæres tørklæde i stedet for slips. Der skal bæres sorte sko, der ikke er sneakers, og sorte strømper.",
+   "citat": "Udvalget gør opmærksom på at slips skal bæres med en hvid skjorte. Kvinder kan vælge imellem en bluse eller skjorte, hvis man vælger en bluse, skal der bæres tørklæde og ikke slips.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommerbriefing før stævne",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævnelederen skal afholde dommerbriefing inden stævnestart til alle stævner, uanset om alle dommere har fået den før.",
+   "citat": "Stævneleder skal huske at afholde dommerbriefing inden stævnestart, dette gælder til alle stævner og uagtet om alle dommere har fået den før.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommeres mødetid før indvejning",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Alle dommere skal møde op 30 minutter før indvejning, så der er 2 dommere til indvejningen.",
+   "citat": "Alle dommere skal også huske at møde op 30 minutter inden indvejning, for at overholde 2 dommere til indvejning.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommerpåsætning og økonomi",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Udvalget sender ikke flere dommere til internationale stævner end nødvendigt og undgår at sende dommere på tværs af landet til nationale stævner, medmindre det er tvingende nødvendigt. Økonomi er et fast punkt på hvert udvalgsmøde.",
+   "citat": "Til nationale stævner bestræber vi ikke at sende dommere tværs over landet, medmindre det bliver tvingende nødvendigt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

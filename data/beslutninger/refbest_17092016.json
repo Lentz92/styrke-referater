@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_17092016",
+ "sha256": "cba3ab8750a6fc41325c0539e8298b34cd8088d5536f9ec7b176b2f4b9c6aba4",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2016-09-17",
+ "beslutninger": [
+  {
+   "emne": "Coaching og vægtvalg for landsholdsløftere",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget slår fast, at landsholdets løftere ikke selv bestemmer, hvem der coacher dem, og at løfteren ikke alene bestemmer, hvilke kilo der sættes på stangen til stævner.",
+   "citat": "Eliteudvalget slår fast at landsholdets løftere ikke selv skal bestemme hvem som coacher dem, og at løfteren ikke alene bestemmer hvilke kilo der sættes på stangen til stævner.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Headcoach ved masterstævner, krav til deltagere og opgaver",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Headcoach stilles kun til rådighed ved mindst 4 deltagere ved det pågældende stævne. Headcoach skal deltage i teknisk møde, være til stede og koordinere ved alle danske løftere, hjælpe løftere uden egen træner (eller finde en kompetent stedfortræder), skrive beretning til DSF's hjemmeside og deltage ved banket, hvis der er præmieoverrækkelse.",
+   "citat": "Bestyrelsen beslutter at headcoach (HC) kun stilles til rådighed ved min. 4 deltagere ved pågældende stævne.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Rekordliste og rekorddommere ved stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Sekretæren skal have en printet rekordliste, som speaker og sekretær kan se under stævnet, så de er opmærksomme på fx subjuniorrekorder ved open-stævner. En A-dommer skal kaldes til dommerbordet i god tid, når der dømmes en rekord for en B-dommer. Sekretæren skal via speakeren tilkalde de korrekte dommere til underskrivelse af protokol, så snart sidste løft er afsluttet.",
+   "citat": "Sekretæren skal være i besiddelse af en printet rekordliste, som speaker og sekretær kan se under stævnet.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Frist for betaling af stævnegebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Deadline for indbetaling af stævnegebyr til den afholdende klub er datoen på tilmeldingen. Betales der ikke rettidigt, må den afholdende klub udelukke den klub, som ikke har betalt. Dette blev besluttet på repræsentantskabsmødet 2015.",
+   "citat": "Deadline for indbetaling af stævnegebyr til den afholdende klub, er den dato som står på tilmeldingen.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

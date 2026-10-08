@@ -1,0 +1,65 @@
+{
+ "doc_id": "KvalifikationskravUdstyr2022",
+ "sha256": "93df5ce6a3a24c0dc8b4e39684744f5a3455ab3afc98aa3e3201befbd68a7102",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": null,
+ "beslutninger": [
+  {
+   "emne": "Kvalifikationskrav master, udstyr, herre 3-kamp",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kvalifikationskrav (total i kg) for master udstyr, herrer 3-kamp, gældende pr. 1-1-2022, angivet som Master 1/2/3/4: 59 kg: 335/305/285/255; 66 kg: 390/360/330/300; 74 kg: 407,5/377,5/347,5/317,5; 83 kg: 452,5/422,5/392,5/362,5; 93 kg: 522,5/492,5/462,5/432,5; 105 kg: 560/530/500/470; 120 kg: 565/535/505/475; 120+ kg: 580/550/520/490.",
+   "citat": "Gældende kvalifikationskrav master udstyr pr 1-1-2022",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav master, udstyr, herre bænkpres",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kvalifikationskrav (kg) for master udstyr, herrer bænkpres, gældende pr. 1-1-2022, angivet som Master 1/2/3/4: 59 kg: 85/65/45/25; 66 kg: 97,5/77,5/57,5/37,5; 74 kg: 107,5/87,5/67,5/47,5; 83 kg: 120/100/80/60; 93 kg: 142,5/122,5/102,5/82,5; 105 kg: 150/130/110/90; 120 kg: 165/145/125/105; 120+ kg: 180/160/140/120.",
+   "citat": "Gældende kvalifikationskrav master udstyr pr 1-1-2022",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav master, udstyr, dame 3-kamp",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kvalifikationskrav (total i kg) for master udstyr, damer 3-kamp, gældende pr. 1-1-2022, angivet som Master 1/2/3/4: 47 kg: 190/160/130/100; 52 kg: 215/185/155/125; 57 kg: 240/210/180/150; 63 kg: 270/240/210/180; 69 kg: 277,5/247,5/217,5/187,5; 76 kg: 305/272,5/242,5/207,5; 84 kg: 325/295/265/235; 84+ kg: 330/300/270/240.",
+   "citat": "Gældende kvalifikationskrav master udstyr pr 1-1-2022",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav master, udstyr, dame bænkpres",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kvalifikationskrav (kg) for master udstyr, damer bænkpres, gældende pr. 1-1-2022, angivet som Master 1/2/3/4: 47 kg: 35/30/27,5/25; 52 kg: 40/35/30/27,5; 57 kg: 47,5/42,5/37,5/32,5; 63 kg: 55/50/45/40; 69 kg: 60/55/50/45; 76 kg: 67,5/60/55/50; 84 kg: 72,5/67,5/65/60; 84+ kg: 77,5/72,5/67,5/62,5.",
+   "citat": "Gældende kvalifikationskrav master udstyr pr 1-1-2022",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

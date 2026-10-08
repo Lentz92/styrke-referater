@@ -1,0 +1,37 @@
+{
+ "doc_id": "refbest_220122",
+ "sha256": "4346e152fb69927c0400e8e6123a8472a540e92524bbcdf17180771d6cdcc7de",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2022-01-22",
+ "beslutninger": [
+  {
+   "emne": "Indberetning af internationale medaljer til DIF",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der oprettes en fast procedure efter hvert internationalt stævne, så medaljer indberettes til DIF umiddelbart efter begivenheden. Peter Andersen eller sportschefen skal senest 7 dage efter begivenheden indberette medaljerne til DIF.",
+   "citat": "Peter Andersen eller sportschefen skal senest 7 dage efter begivenheden indberette medaljerne til DIF.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Transkønnede i styrkeløft",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF følger DIF's retningslinjer og vægter lige konkurrencevilkår. Styrkeløft er en kønnet idræt, så transkønnede kan ikke deltage i officielle stævner, men søges inkluderet i klubbernes sportslige fællesskab, hvor de kan deltage i stævneaktivitet og klubkonkurrencer.",
+   "citat": "Transkønnede vil som følge heraf ikke kunne deltage i officielle stævner, men søges inkluderet på lige vilkår i det sportslige fællesskab i klubberne",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

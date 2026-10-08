@@ -1,0 +1,93 @@
+{
+ "doc_id": "rep2020",
+ "sha256": "79de374ed64eb5b8f2b4eaa8124cf2831687bf5608f9966f5e98a9f2916bee5b",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2020-08-30",
+ "beslutninger": [
+  {
+   "emne": "DM klassisk senior, afvikling",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "DM klassisk senior afvikles særskilt i DM-ugen fra 2022 i samarbejde med DIF. Aflyser DIF DM-ugen, afvikles DM klassisk senior samme uge som DM-ugen. DM klassisk subjunior, junior og masters afvikles særskilt i første halvdel af april.",
+   "citat": "DM klassisk senior afvikles særskilt i DM-ugen fra 2021 i samarbejde med DIF. I det tilfælde, at DM-ugen aflyses af DIF, afvikles DM klassisk senior samme uge som DM-ugen.",
+   "side": 17,
+   "stemmer": "30 for, 2 undlod",
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "SM og JM i styrkeløft og bænkpres, afvikling",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021.",
+   "citat": "SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021",
+   "side": 17,
+   "stemmer": "32 for",
+   "gaelder_fra": "2021-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Tilmeldingsfrister til stævner",
+   "kategori": "staevner",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Forslag om at følge IPF's tilmeldingsfrister: forhåndstilmelding 60 dage før og endelig tilmelding 21 dage før stævnet. Forslaget blev nedstemt.",
+   "citat": "Følge de retningslinjer IPF har vedr. tilmeldingsfrister. Dvs. 60 dage før med forhåndstilmelding og 21 dag før med den endelige.",
+   "side": 17,
+   "stemmer": "30 imod, 2 blanke",
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Betaling af stævnegebyr ved tilmelding",
+   "kategori": "okonomi",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Forslag om at ændre tilmeldingsproceduren, så atleterne selv betaler stævnegebyr via Billetto i stedet for klubberne. Forslaget faldt; klubberne bør fortsat stå for betalingerne.",
+   "citat": "Forslaget faldt med 32 stemmer imod.",
+   "side": 18,
+   "stemmer": "32 imod",
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Refusion af startgebyr ved aflyste stævner",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Startgebyr indbetalt til stævner, som ikke er afholdt (Covid-19), skal tilbageføres til klubberne.",
+   "citat": "Startgebyr, der er blevet indbetalt til stævner, som ikke er afholdt, skal tilbageføres til klubberne.",
+   "side": 19,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Årsafgift, licens og startgebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Årsafgift er uændret 1.000 kr., licens uændret 200 kr. og startgebyr uændret 300 kr. Kontorhold og telefonpenge til bestyrelsesmedlemmer er uændret 1.700 kr.",
+   "citat": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret). - Startgebyrer: kr. 300 (Uændret)- Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,- (Uændret).",
+   "side": 17,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

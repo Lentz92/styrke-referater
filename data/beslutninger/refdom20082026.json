@@ -1,0 +1,23 @@
+{
+ "doc_id": "refdom20082026",
+ "sha256": "103fa98cc19b8facc2e155ba07daa42adb0be760f84255aafa621d1133ca24ce",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2026-08-20",
+ "beslutninger": [
+  {
+   "emne": "Brush-up kursus for dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Brush-up online kurset er et obligatorisk opfriskningskursus for B-dommere og åbent for andre interesserede dommere. Kurset afholdes 3 gange, så alle har mulighed for at deltage, og programmet gennemgås og tilpasses nuværende behov.",
+   "citat": "Er et obligatorisk opfriskningskursus for B- dommere og andre dommere, der kunne være interesseret.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

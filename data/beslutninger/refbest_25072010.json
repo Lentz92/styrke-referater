@@ -1,0 +1,37 @@
+{
+ "doc_id": "refbest_25072010",
+ "sha256": "c717b97c3b76531bcbc37bbe292970eb20b8cfd7747f790a50c222ec5c954155",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2010-07-25",
+ "beslutninger": [
+  {
+   "emne": "Afregning af kørselsbilag for landsholdsløftere",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Landsholdsløftere skal indsende kørselsbilag til kassereren umiddelbart efter træningssamlinger og internationale stævner, så kassereren har dem senest 14 dage efter begivenheden. Ellers udbetales pengene ikke; det er ikke i orden at samle afregninger og indsende dem 1-2 gange om året.",
+   "citat": "skal indsende kørselsbilag til kasseren, så disse er ham i hænde senest 14 dage efter begivenheden. Ellers får man ikke sine penge.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udbetalingsfrist for kassereren til landsholdsløftere",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Kassereren har 14 dage til at udbetale pengene til løfterne efter modtagelse af afregningen.",
+   "citat": "Kasseren har ligeledes 14 dage til at udbetale pengene til løfterne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

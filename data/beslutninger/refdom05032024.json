@@ -1,0 +1,93 @@
+{
+ "doc_id": "refdom05032024",
+ "sha256": "b21be1d3876b26cedbfca377746b07fc0e610b7513ce30cab6ef05b7777fc024",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-03-05",
+ "beslutninger": [
+  {
+   "emne": "Dommerudvalgets størrelse",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Reglerne for dommerudvalget ændres, så udvalget består af 3-5 medlemmer i stedet for 3-4 medlemmer.",
+   "citat": "Derfor vil teksten blive ændret til: Udvalget består af 3-5 medlemmer.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Tilmelding til dommeruddannelse",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kandidater til dommeruddannelsen skal opgive to stævner, de vil dømme til efter bestået kursus. Kandidater tilmeldes kun, når to stævner er opgivet og sendt til dommerudvalget.",
+   "citat": "Kandidater til dommeruddannelse skal opgive to stævner, de vil dømme til efter bestået kursus.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Afholdelse af dommerprøver",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der afholdes dommerprøver (A og B) mindst en gang om året i henholdsvis Jylland og på Sjælland, og yderligere prøver afholdes efter behov. Dommerkandidater, der ikke består, kan tage prøven igen ved næste dommeruddannelse.",
+   "citat": "Det er ligeledes muligt at tage prøven igen ved næstekommende dommeruddannelse.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Minimumsaktivitet for dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommerudvalget sikrer løbende, at kravet overholdes.",
+   "citat": "Hvis man ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes man som dommer.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Offentliggørelse af stævneplan med dommerpåsætning",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævneplan med dommerpåsætning skal lægges på terminslisten senest 14 dage før stævnestart, efter at udvalget har godkendt den. Hvert stævneudvalgsmedlem er ansvarligt for udvalgte stævner, også private stævner.",
+   "citat": "14 dage inden stævnestart skal stævneplan med dommerpåsætning lægges på terminslisten.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Registrering af dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Fra 6. marts 2024 registreres dommere for hver indvejning, de har dømt, i stedet for pr. stævne.",
+   "citat": "Fra d.6.3.2024 vil dommere bliver registret for hver indvejning de har dømt.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2024-03-06",
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

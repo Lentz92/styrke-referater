@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_171020",
+ "sha256": "dd4118c38dbb5a21b7d195e95cd87a1571ba49d635ae7158fab0cd63b33efd1b",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2020-10-17",
+ "beslutninger": [
+  {
+   "emne": "Kompensation for manglende stævneindtægter",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Klubbers ansøgninger om kompensation for manglende stævneindtægter skal være modtaget af kassereren senest 1. december 2020. Hver ansøgning skal være motiveret og fratrukket udgifter til fortæring, medaljer, lys, lyd og lignende, og der skal oplyses om der er søgt kompensation andre steder, fx hos DIF.",
+   "citat": "ansøgninger om kompensation for manglende stævneindtægter skal være kassereren i henne senest 1. december 2020. Hver ansøgning skal være motiveret og fratrukket udgifter til fortæring, medaljer, lys, lyd og lignende.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2020-12-01",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dispensation fra kvalifikationskrav, DM klassisk",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der dispenseres fra kvalifikationskravene ved DM klassisk 2021 på grund af Covid-19.",
+   "citat": "Der vil blive dispenseret fra kvalifikationskravene ved DM klassisk 2021.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2021-01-01",
+   "gaelder_til": "2021-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dækning af øgede stævneudgifter pga. Covid-19",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF dækker øgede stævneudgifter i forbindelse med Covid-19 i 2021.",
+   "citat": "Øgede stævneudgifter i forbindelse med Covid 19 i 2021 vil blive dækket af DSF",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2021-01-01",
+   "gaelder_til": "2021-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Digitale officielle stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Efter de gældende stævneregler kan der ikke overgås til officielle stævner i digital form. 2021-kalenderen fastholdes som udgangspunkt under hensyn til krav fra DIF og Sundhedsstyrelsen.",
+   "citat": "Bestyrelsen kan dog ikke, som stævnereglerne er nu, overgå til officielle stævner i digital form.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

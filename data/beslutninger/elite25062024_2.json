@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite25062024_2",
+ "sha256": "1473b69b35f203a5466bd5c2dad50d41305141b58ae6f8796de0fe12e9c3ce56",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-06-25",
+ "beslutninger": [
+  {
+   "emne": "Kvalifikationskrav bænkpres",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der indføres nye kvalifikationskrav i bænkpres med og uden udstyr, som fremgår af de vedhæftede kvalifikationskrav for 2024.",
+   "citat": "Nye krav i bænkpres med og uden udstyr. Se vedhæftede.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationsstævner til EM og VM",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kun DM, JM/SM og internationale stævner sanktioneret af IPF/EPF/NPF kan bruges som kvalifikationsstævner til EM og VM. Hvis eliteudvalget kræver et stabilitetsresultat, kan det laves til et hvilket som helst officielt stævne, når løfteren allerede har lavet kvalifikationskrav til et kvalifikationsstævne i perioden.",
+   "citat": "Kun DM, JM/SM og internationale stævner (sanktioneret af IPF/EPF/NPF) kan benyttes som kvalifikationsstævner til EM og VM.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Egenbetaling landshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Fra 2025 gælder ny model: B-krav giver fuld egenbetaling (rejse, hotel, transfer), men DSF betaler tilmeldings- og antidopinggebyr (120 euro IPF, 150 euro EPF) samt coaches og dommere. A-krav giver delvis egenbetaling, hvis størrelse fastsættes senere. Refusion af egenbetaling: EM bronze 50%, sølv 75%, guld 100% (DIF anerkendt); VM top 5 25%, VM totalmedalje 100%; bænkpres som EM.",
+   "citat": "B-krav: ”Fuld” egenbetaling (rejse/fly, hotel, transfer fra/til lufthavn), men DSF betaler tilmeldings- og antidopinggebyr (120 euro IPF og 150 euro EPF) samt udgifter til coaches og dommere.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2025-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Booking af rejse ved fuld egenbetaling",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Atleter med fuld egenbetaling vælger selv at booke fly eller lade DSF booke og fakturere. Beslutningen tages ved preliminary nomination, datoer for overnatning angives senest den dag, og rejsedetaljer skal foreligge senest 10 dage før final nomination. Standard er to dage før til dagen efter egen konkurrence, minimum to overnatninger.",
+   "citat": "Rejsedetaljer (dato, tidspunkt og flightnr.) skal foreligge DSF senest 10 dage inden final nomination.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2025-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kæreste-regel på landsholdsture",
+   "kategori": "landshold",
+   "udfald": "forkastet",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget afviser at tage kæreste-reglen op til afstemning. Pårørende må rejse med, men arrangerer selv rejse og indgår ikke i landsholdstruppen, og DSF booker ikke hotel/fly til dem.",
+   "citat": "Dette afviser eliteudvalget at ville for nu.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

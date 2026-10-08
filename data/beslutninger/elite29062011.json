@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite29062011",
+ "sha256": "5db125e283ca0a64a5028f1a61d0f8feca15523a8bdeae878bc7039cb882f23d",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2011-06-29",
+ "beslutninger": [
+  {
+   "emne": "Udtagelse af landsholdsatleter",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landstræneren indstiller atleter til udtagelse. Eliteudvalget foretager den endelige udtagelse på baggrund af landstrænerens indstilling og øvrige faktorer som økonomi og udtagelseskrav.",
+   "citat": "Landstræneren indstiller atleter til udtagelse. Eliteudvalget foretager den endelige udtagelse på baggrund af landstrænerens indstilling, og øvrige faktorer som økonomi udtagelses krav m.m.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Clearing af udtagelser og tilmeldinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Udtagelser og tilmeldinger cleares internt i Eliteudvalget, før de offentliggøres og effektueres.",
+   "citat": "Udtagelser og tilmeldinger cleares internt i udvalget inden offentliggørelse og effektuering.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Økonomisk ansvarlig på udlandsrejser",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Teammanagerne, subsidiært træneren, er økonomisk ansvarlige på rejser i udlandet og varetager nødvendige betalinger, der ikke er foretaget på forhånd, før afrejse.",
+   "citat": "Økonomisk ansvarlig på rejser i udlandet er teammanagerne eller i subsidiært træneren.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Rapportering fra internationale mesterskaber",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Teammanageren er ansvarlig for, at der rapporteres hjem med rapporter og billeder fra internationale mesterskaber. Forbundet indkøber en mini-PC og et kamera, der følger landsholdene, og udgiften tilskrives bestyrelsen/administration.",
+   "citat": "Derfor var der også enighed om, at teammangeren er ansvarlig for, at der rapporteres hjem.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Mødefrekvens i Eliteudvalget",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget afholder fremover møder hver 3-4 måned.",
+   "citat": "Eliteudvalget besluttede fremover at afholde møder hver 3-4 md.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

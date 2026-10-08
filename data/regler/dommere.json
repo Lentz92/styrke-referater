@@ -1,0 +1,1058 @@
+{
+ "kategori": "dommere",
+ "version": 5,
+ "input_hash": "84a9bd92b28e50e99456cee49322d4654d36c2d0618cc0791167d9f6f3109f4f",
+ "model": "opus",
+ "regler": [
+  {
+   "titel": "Dommerbog og registrering af dommeraktivitet",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "repref2008#7",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "dommerbog underskrevet af stævneleder krav for afregning",
+     "kort_regel": "uden underskrevet dommerbog ingen honorar eller kørepenge"
+    },
+    {
+     "ref": "refdom05032024#6",
+     "effekt": "aendret",
+     "tekst": "Dommere skal medbringe dommerbog til hvert stævne, og den skal underskrives af stævnelederen; ellers sker ingen afregning af dommerhonorar, kørepenge og andre udlæg. Fra 6. marts 2024 registreres dommere for hver indvejning, de har dømt, i stedet for pr. stævne.",
+     "kort": "registrering pr. indvejning fra 6. marts 2024",
+     "kort_regel": "dommerbog underskrives; aktivitet registreres pr. indvejning"
+    },
+    {
+     "ref": "refstaevne10092024#1",
+     "effekt": "bekraeftet",
+     "tekst": "Dommere skal medbringe dommerbog til hvert stævne, og den skal underskrives af stævnelederen; ellers sker ingen afregning af dommerhonorar, kørepenge og andre udlæg. Hver indvejning registreres i dommerbogen (ikke blot pr. stævne).",
+     "kort": "registrering pr. indvejning bekræftet efter afstemning blandt dommere",
+     "kort_regel": "dommerbog underskrives; hver indvejning registreres"
+    }
+   ]
+  },
+  {
+   "titel": "Antal dommere i divisionsturneringen",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2009#4",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om kun én dommer forkastet",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Tilmelding som dommer ved egen deltagelse",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_13092009#5",
+     "effekt": "indfoert",
+     "tekst": "Man kan ikke tilmeldes som dommer til et stævne, hvis man selv skal løfte. Ved flerdagesstævner kan man tilmeldes som dommer den dag, man ikke selv løfter.",
+     "kort": "ikke dommer samme dag som man selv løfter",
+     "kort_regel": "kun dommer på dage hvor man ikke selv løfter"
+    }
+   ]
+  },
+  {
+   "titel": "Dommernes påklædning",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "vm2013#9",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "sorte sko og strømper påkrævet",
+     "kort_regel": "påklædning efter IPF; sorte sko og strømper"
+    },
+    {
+     "ref": "490#27",
+     "effekt": "bekraeftet",
+     "tekst": "Dommerne skal være påklædt efter IPF's regler. Sko og strømper skal være sorte. Grå jeans er ikke tilladt.",
+     "kort": "præciseret at grå jeans ikke er tilladt",
+     "kort_regel": "IPF-påklædning, sorte sko og strømper, ikke grå jeans"
+    },
+    {
+     "ref": "refdom12092023#4",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om shorts om sommeren afvist",
+     "kort_regel": null
+    },
+    {
+     "ref": "refdom02072024_2#2",
+     "effekt": "aendret",
+     "tekst": "Dommerne skal være påklædt efter IPF's tekniske regler for sommer og vinter, og dresscode skal overholdes. Slips bæres med hvid skjorte; kvinder kan vælge bluse eller skjorte, og vælges bluse bæres tørklæde i stedet for slips. Der skal bæres sorte sko, der ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
+     "kort": "hvid skjorte og slips; kvinder kan bære tørklæde; ikke sneakers",
+     "kort_regel": "hvid skjorte, slips/tørklæde, sorte sko (ikke sneakers), sorte strømper"
+    },
+    {
+     "ref": "refdom01102024#1",
+     "effekt": "aendret",
+     "tekst": "Dommerne skal være påklædt efter IPF's tekniske regler for sommer og vinter, og dresscode skal overholdes. Der bæres hvid skjorte (kvinder kan vælge bluse), og der må kun bæres IPF-slips eller IPF-tørklæde. Der skal bæres sorte sko, der ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
+     "kort": "kun IPF-slips eller IPF-tørklæde tilladt",
+     "kort_regel": "kun IPF-slips/-tørklæde, sorte sko og strømper"
+    }
+   ]
+  },
+  {
+   "titel": "Klubbers dommerpligt i divisionsturneringen",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_05122009#2",
+     "effekt": "indfoert",
+     "tekst": "Klubber skal påsætte dommer i ligaturneringen. I 2010 dispenseres der for klubber, som endnu ikke har en dommer.",
+     "kort": "dispensation 2010 for klubber uden dommer",
+     "kort_regel": "klubber skal stille dommer; dispensation 2010 uden dommer"
+    },
+    {
+     "ref": "refbest_30052010#1",
+     "effekt": "bekraeftet",
+     "tekst": "Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der er kun givet dispensation til klubber, der endnu ikke har en dommer, og de opfordres til at tilmelde folk til førstkommende dommerkursus.",
+     "kort": "mindst én dommer pr. runde bekræftet",
+     "kort_regel": "mindst én dommer pr. runde pr. klub"
+    }
+   ]
+  },
+  {
+   "titel": "Klubbers dommerforpligtelse ved DM, JM og SM",
+   "vigtig": true,
+   "note": "Vedtaget med 31 for, 7 imod og 7 blanke.",
+   "versioner": [
+    {
+     "ref": "refbest_10122016#5",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "overvejet afgift 500 kr. ved 3+ deltagere uden dommer",
+     "kort_regel": null
+    },
+    {
+     "ref": "rep2023#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "dommer ved over 5 deltagere; 2000 kr. pr. manglende dommer",
+     "kort_regel": "over 5 deltagere: 1 dommer, over 10: 2; ellers 2000 kr."
+    },
+    {
+     "ref": "rep2025#8",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "Ares' forslag med opgørelse ved årets afslutning trukket",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Honorering af klubber der stiller dommere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2023#3",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om 500 kr. pr. dommer via højere gebyrer nedstemt",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Regler for Dommerudvalget",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_15052011#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "beskrivelse af Dommerudvalgets arbejde vedtaget",
+     "kort_regel": "skriftlig beskrivelse af Dommerudvalgets arbejde"
+    },
+    {
+     "ref": "refbest_221023#1",
+     "effekt": "bekraeftet",
+     "tekst": "Dommerudvalget består af 3-4 medlemmer med en formand, hvoraf et medlem skal være i bestyrelsen. Udvalget uddanner og autoriserer dommere, påsætter dommere og jury og udarbejder årlig beretning til repræsentantskabsmødet. Bestyrelsesmedlemmet er ansvarligt for, at budgetrammen overholdes.",
+     "kort": "regler fremlagt: 3-4 medlemmer, ét fra bestyrelsen",
+     "kort_regel": "3-4 medlemmer; uddanner, autoriserer og påsætter dommere"
+    },
+    {
+     "ref": "refdom08042025#1",
+     "effekt": "aendret",
+     "tekst": "Dommerudvalget består af 3-4 medlemmer med en formand, hvoraf et medlem skal være i bestyrelsen. Udvalget uddanner og autoriserer dommere, påsætter dommere og jury og udarbejder årlig beretning til repræsentantskabsmødet. Bestyrelsesmedlemmet er ansvarligt for, at budgetrammen overholdes. Reglerne indeholder desuden tekster om tilmelding til A-dommerprøver og betaling af internationale dommere.",
+     "kort": "tekster om A-prøve og internationale dommere indarbejdet",
+     "kort_regel": "regler inkl. A-prøvetilmelding og betaling af internationale dommere"
+    }
+   ]
+  },
+  {
+   "titel": "Aktivitetskrav og sletning af inaktive dommere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_09022014#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "slettes uden 2 dømte stævner på 2 år",
+     "kort_regel": "mindst 2 stævner på 2 år, ellers sletning"
+    },
+    {
+     "ref": "refbest_08022015#5",
+     "effekt": "aendret",
+     "tekst": "Dommere skal være aktive mindst tre gange inden for en periode på to år; ellers slettes de som dommer.",
+     "kort": "krav hævet til 3 gange på 2 år",
+     "kort_regel": "mindst 3 stævner på 2 år"
+    },
+    {
+     "ref": "refbest_11102015#4",
+     "effekt": "bekraeftet",
+     "tekst": "Fra 1. januar 2015 skal en dommer have dømt ved tre stævner inden for to år; ellers slettes vedkommende som dommer.",
+     "kort": "3 stævner på 2 år fra 1.1.2015 bekræftet",
+     "kort_regel": "mindst 3 stævner på 2 år"
+    },
+    {
+     "ref": "refbest_091119#8",
+     "effekt": "bekraeftet",
+     "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer.",
+     "kort": "bekræftet: tre officielle stævner på 2 år",
+     "kort_regel": "mindst 3 officielle stævner på 2 år"
+    },
+    {
+     "ref": "rep2021#4",
+     "effekt": "aendret",
+     "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer. Alle dommere nulstilles, så kravet tæller fra genstart af stævneaktivitet efter Corona.",
+     "kort": "alle nulstillet; tæller fra genstart efter Corona",
+     "kort_regel": "3 officielle stævner på 2 år, talt fra Corona-genstart"
+    },
+    {
+     "ref": "refbest_080123#2",
+     "effekt": "bekraeftet",
+     "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer. Inaktive dommere kontaktes, inden de fjernes fra dommerlisten.",
+     "kort": "inaktive fjernes fra listen efter kontakt",
+     "kort_regel": "3 officielle stævner på 2 år; inaktive fjernes"
+    },
+    {
+     "ref": "refdom12092023#1",
+     "effekt": "aendret",
+     "tekst": "En dommer, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal i det efterfølgende år.",
+     "kort": "inaktive kontaktes i første kvartal",
+     "kort_regel": "3 officielle stævner på 2 år; kontakt i 1. kvartal"
+    },
+    {
+     "ref": "refbest_221023#3",
+     "effekt": "bekraeftet",
+     "tekst": "Hvis en dommer ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes vedkommende som dommer. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal i det efterfølgende år.",
+     "kort": "bekræftet; stævnerne skal være nationale",
+     "kort_regel": "3 nationale officielle stævner på 2 år"
+    },
+    {
+     "ref": "refdom05032024#4",
+     "effekt": "bekraeftet",
+     "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommerudvalget sikrer løbende, at kravet overholdes, og dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal i det efterfølgende år.",
+     "kort": "bekræftet; udvalget kontrollerer løbende",
+     "kort_regel": "3 nationale officielle stævner på 2 år"
+    },
+    {
+     "ref": "refdom12032026#5",
+     "effekt": "aendret",
+     "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommerudvalget sikrer løbende, at kravet overholdes, og dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal i det efterfølgende år. Dommere, der er kommet i kategorien pause, får kun dispensation ved helt særlige forhold.",
+     "kort": "dispensation fra pause kun ved helt særlige forhold",
+     "kort_regel": "3 stævner på 2 år; dispensation kun særlige forhold"
+    },
+    {
+     "ref": "refdom04062026#2",
+     "effekt": "bekraeftet",
+     "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommerudvalget sikrer løbende, at kravet overholdes, og dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal i det efterfølgende år. Dommere i kategorien pause får kun dispensation ved helt særlige forhold. Der fastsættes ikke et bestemt antal nationale dommere; der uddannes efter behov.",
+     "kort": "3 stævner på 2 år bekræftet; intet fast dommerantal",
+     "kort_regel": "mindst 3 stævner på 2 år"
+    }
+   ]
+  },
+  {
+   "titel": "Nye B-dommeres pligt til at dømme",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom16122025#4",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "forslag om sletning efter 12 mdr. uden aktivitet ikke besluttet",
+     "kort_regel": null
+    },
+    {
+     "ref": "refdom12032026#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "B-dommer uden dømning første år tages af listen",
+     "kort_regel": "skal dømme inden for et år efter eksamen"
+    }
+   ]
+  },
+  {
+   "titel": "Årlig opfordring til dommertilmelding",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom16122025#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "intet krav om ét stævne årligt, kun opfordring",
+     "kort_regel": "årlig mail opfordrer dommere til at tilmelde sig"
+    }
+   ]
+  },
+  {
+   "titel": "Forberedelse til international dommerprøve",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_12062016#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "vejledende prøve herhjemme før international prøve",
+     "kort_regel": "A-dommer tager vejledende prøve før international prøve"
+    },
+    {
+     "ref": "refbest_310819#4",
+     "effekt": "aendret",
+     "tekst": "En national A-dommer, der skal op til international dommerprøve, skal først bestå den nationale computertest, før vedkommende indstilles til den internationale prøve.",
+     "kort": "national computertest skal bestås før indstilling",
+     "kort_regel": "bestået national computertest før international prøve"
+    }
+   ]
+  },
+  {
+   "titel": "B-dommerprøve",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_091119#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "klub indstiller; teoretisk prøve min. 90 af 100 point",
+     "kort_regel": "klubindstilling, teoriprøve min. 90/100 point"
+    },
+    {
+     "ref": "refbest_221023#2",
+     "effekt": "aendret",
+     "tekst": "Klubber kan indstille medlemmer til B-dommerprøve. Kandidaten skal have kendskab til styrkeløft, sætte sig ind i de tekniske regler og efter bestået prøve stille sig til rådighed for DSF. B-dommerprøven er en teoretisk prøve med mindst 85 af 100 point.",
+     "kort": "bestågrænse sænket til 85 af 100 point",
+     "kort_regel": "teoretisk prøve, mindst 85 af 100 point"
+    }
+   ]
+  },
+  {
+   "titel": "A-dommerprøve og indstilling",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_091119#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "2 års dømning som B; teori 90/100, praksis 90 %",
+     "kort_regel": "2 år som B, teori 90/100, praksis 90 % rigtige"
+    },
+    {
+     "ref": "refdom07012025#1",
+     "effekt": "aendret",
+     "tekst": "B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøve. Indstilling sker via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Prøven har en teoretisk del med minimum 90 af 100 point og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft (fra 2. forsøg), hvor mindst 90 % af afgørelserne skal være rigtige.",
+     "kort": "indstilling via klubformand; kun klubløse selv",
+     "kort_regel": "indstilling via klubformand; 2 år som B; 90 % krav"
+    },
+    {
+     "ref": "refdom28012025#3",
+     "effekt": "aendret",
+     "tekst": "B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøve. Indstilling sker via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Dommerudvalget vurderer indstillingen, hvorefter der rettes henvendelse til dommeren. Prøven har en teoretisk del med minimum 90 af 100 point og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft (fra 2. forsøg), hvor mindst 90 % af afgørelserne skal være rigtige.",
+     "kort": "dommerudvalget vurderer indstillingen før henvendelse",
+     "kort_regel": "udvalget vurderer indstilling; 2 år som B; 90 % krav"
+    },
+    {
+     "ref": "refbest_080325#2",
+     "effekt": "bekraeftet",
+     "tekst": "B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøve. Indstilling sker via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Dommerudvalget vurderer indstillingen, hvorefter dommeren kontaktes. Teksten tilføjes indbydelser til dommeruddannelser. Prøven har en teoretisk del med minimum 90 af 100 point og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft (fra 2. forsøg), hvor mindst 90 % af afgørelserne skal være rigtige.",
+     "kort": "bestyrelsen godkender udvalgets vurdering af indstillinger",
+     "kort_regel": "udvalget vurderer indstilling; 2 år som B; 90 % krav"
+    }
+   ]
+  },
+  {
+   "titel": "Krav for international dommer",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_091119#7",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "udvalget kontakter A-dommere; min. 2 års virke som A",
+     "kort_regel": "min. 2 års regelmæssig virke som A-dommer"
+    }
+   ]
+  },
+  {
+   "titel": "Tilmelding til dommeruddannelse med to stævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom05032024#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "kandidater skal opgive to stævne at dømme",
+     "kort_regel": "tilmelding kræver to valgte stævner"
+    },
+    {
+     "ref": "refdom07012025#2",
+     "effekt": "bekraeftet",
+     "tekst": "Kandidater kan ikke tilmelde sig B-dommerprøven uden at have valgt to stævner, de vil dømme ved efter bestået prøve. Efter bestået dommeruddannelse sættes dommerne på de stævner, de har tilmeldt sig.",
+     "kort": "bekræftet; sættes på de valgte stævner",
+     "kort_regel": "to valgte stævner før tilmelding til B-prøve"
+    }
+   ]
+  },
+  {
+   "titel": "Afholdelse af dommerprøver",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom05032024#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "mindst årligt i Jylland og på Sjælland",
+     "kort_regel": "A- og B-prøver årligt i Jylland og Sjælland"
+    }
+   ]
+  },
+  {
+   "titel": "Teoretisk dommereksamen mod betaling",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#29",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "teoretisk eksamen kan tages mod betaling",
+     "kort_regel": "teoretisk eksamen mod betaling"
+    }
+   ]
+  },
+  {
+   "titel": "International dommereksamen ved åbent VM",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#28",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om forbud mod eksamen ved åbent VM nedstemt",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Genregistrering af internationale dommere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#30",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "min. 2 internationale og 2 nationale konkurrencer",
+     "kort_regel": "2 internationale og 2 nationale konkurrencer"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerkategori ved åbent VM",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#31",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "Norges forslag om kun kategori 1 trukket",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Juryens adgang til at omstøde dommere",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#32",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om omstødelse af 3 enige dommere nedstemt",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Markering af underkendt løft",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#25",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om kun ét fejlkort nedstemt",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Diskvalifikationsgrunde i dommerregler",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#11",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "\"Uncompleted lift\" under gul markering",
+     "kort_regel": "gul markering omfatter \"Uncompleted lift\""
+    }
+   ]
+  },
+  {
+   "titel": "Dommere ved private stævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_14012017#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "arrangør påsætter og afregner; udvalget ser planen",
+     "kort_regel": "arrangør påsætter og afregner; dommerudvalget godkender plan"
+    }
+   ]
+  },
+  {
+   "titel": "Indvejning af løftere af eget køn",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2017#18",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "fokus på indvejning af dommer af samme køn",
+     "kort_regel": "løftere indvejes af dommer/official af eget køn"
+    }
+   ]
+  },
+  {
+   "titel": "Jury og dommere ved officielle stævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2018#3",
+     "effekt": "indfoert",
+     "tekst": "Ved alle officielle stævner i Danmark skal der være en jury efter IPF's regler, med mindst A-certifikat. Ud over juryen er der tre dommere, som må være B-dommere. Der kan sættes danske rekorder ved alle officielle stævner undtagen divisionsturneringen, som heller ikke skal have jury. Dommerudvalget påsætter dommere og jury.",
+     "kort": "jury med A-certifikat plus tre dommere; ingen jury i division",
+     "kort_regel": "jury (min. A) og tre dommere ved officielle stævner"
+    }
+   ]
+  },
+  {
+   "titel": "Krav til dommere i jury",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28032024#8",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "mindst 4 dømte trekampsstævner for jury",
+     "kort_regel": "mindst 4 trekampsstævner, dispensation ved mangel"
+    }
+   ]
+  },
+  {
+   "titel": "Juryleders afgørelse ved ændring af forsøg",
+   "vigtig": false,
+   "note": "Midlertidig ordning indtil svar fra IPF's tekniske komité.",
+   "versioner": [
+    {
+     "ref": "refdom08042025#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "juryleder afgør tvivl om ændring af 2. forsøg",
+     "kort_regel": "juryleder træffer endelig beslutning"
+    }
+   ]
+  },
+  {
+   "titel": "Udpegning af stævneleder og overdommer",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28032024#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "højest rangerende dommer bliver stævneleder",
+     "kort_regel": "stævneleder efter kategori og anciennitet"
+    }
+   ]
+  },
+  {
+   "titel": "Stævnelederens rolle og opgaver",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28012025#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "A-dommere eller højere; overordnet ansvar på stævnedagen",
+     "kort_regel": "A-dommer eller højere med overordnet ansvar"
+    },
+    {
+     "ref": "refbest_080325#1",
+     "effekt": "aendret",
+     "tekst": "Stævnelederens rolle varetages af A-dommere og højere rangerende dommere. Stævnelederen har det overordnede ansvar på stævnedagen, kontrollerer udstyrstjek og indvejningsrum, står for uddeling af medaljer, pladser til TC'er/dommere/jury og dommerbriefing, træffer den endelige beslutning i tvivlsspørgsmål, herunder ved forhold der truer løfteres sikkerhed, grove regelbrud eller grove uregelmæssigheder, og sørger for at stævneprotokoller sendes til stævneudvalget. Beskrivelsen sendes til stævnelederen og lægges på hjemmesiden.",
+     "kort": "bestyrelsen vedtager detaljeret opgavebeskrivelse",
+     "kort_regel": "overordnet ansvar, kontrol, briefing, protokoller til stævneudvalg"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerbriefing før stævne",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom02072024_2#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "stævneleder holder briefing ved alle stævner",
+     "kort_regel": "dommerbriefing før hvert stævne"
+    },
+    {
+     "ref": "refdom12032026#4",
+     "effekt": "bekraeftet",
+     "tekst": "Stævnelederen skal afholde dommerbriefing inden stævnestart ved alle stævner, uanset om alle dommere har fået den før, med udgangspunkt i dokumentet på hjemmesiden og med fremhævelse af særligt vigtige regler og ændringer.",
+     "kort": "bekræftet; udgangspunkt i dokument på hjemmesiden",
+     "kort_regel": "dommerbriefing ved alle stævner"
+    }
+   ]
+  },
+  {
+   "titel": "Stævneplan med dommerpåsætning",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom05032024#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "på terminslisten senest 14 dage før stævne",
+     "kort_regel": "godkendt plan på terminslisten senest 14 dage før"
+    },
+    {
+     "ref": "refdom28032024#7",
+     "effekt": "aendret",
+     "tekst": "Stævneudvalget udarbejder stævneplanen med dommerpåsætning. Første udkast sendes til stævne- og dommerudvalget, som har 48 timer til at kommentere. Stævneplan med dommerpåsætning skal senest 14 dage før stævnet lægges på terminslisten. Hvert udvalgsmedlem er ansvarligt for udvalgte stævner, også private stævner.",
+     "kort": "stævneudvalget udarbejder; 48 timer til kommentarer",
+     "kort_regel": "stævneudvalget udarbejder; 48 timers høring; 14 dage før"
+    }
+   ]
+  },
+  {
+   "titel": "Stævneleders indberetning af ændret dommerpåsætning",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refstaevne16122025#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "ændringer på stævnedagen meldes til dommerudvalget",
+     "kort_regel": "stævneleder melder ændringer til dommerudvalget"
+    }
+   ]
+  },
+  {
+   "titel": "Adgang til dommerdatabasen",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28032024#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "dommer- og stævneudvalg har adgang; tre kan redigere",
+     "kort_regel": "udvalgene har adgang; få betroede redigerer"
+    },
+    {
+     "ref": "refstaevne04062024#3",
+     "effekt": "bekraeftet",
+     "tekst": "Alle medlemmer af dommerudvalget og stævneudvalget har adgang til dommerdatabasen, da stævneplan med dommerpåsætning udarbejdes i stævneudvalget. Kun betroede medlemmer af dommerudvalget redigerer i den.",
+     "kort": "stævneudvalgets adgang bekræftet",
+     "kort_regel": "dommer- og stævneudvalg har adgang"
+    }
+   ]
+  },
+  {
+   "titel": "Tilmelding af dommere via dommerdatabasen",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28032024#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "tilmelding i databasen; afbud skrives til dommerudvalget",
+     "kort_regel": "tilmelding i database; afbud via dommerudvalget"
+    },
+    {
+     "ref": "refbest_140424#1",
+     "effekt": "aendret",
+     "tekst": "Tilmeldingssystemet for dommere tages i brug fra og med DM-ugen 2024. Klubber og dommere tilmelder dommere til stævner i systemet, og al dommeraktivitet, herunder internationale dommergerninger, skal registreres i systemet. Kun dommerudvalget kan redigere i databasen. Ved afbud skriver dommeren til dommerudvalget, som registrerer afbuddet.",
+     "kort": "system i brug fra DM-ugen 2024; al aktivitet registreres",
+     "kort_regel": "klubber tilmelder dommere i systemet; afbud via udvalget"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerpåsætning via Excel-ark på Facebook",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28012025#1",
+     "effekt": "ophaevet",
+     "tekst": null,
+     "kort": "Excel-ark slettes; tilmelding via dommerdatabasen",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "Registrering af internationale dommergerninger",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_231125#7",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "dommer indsender internationale indvejninger til udvalget",
+     "kort_regel": "dommer indberetter; egen fane i databasen"
+    }
+   ]
+  },
+  {
+   "titel": "Årlig gennemgang af dommerdatabasen",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom18092025#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "årlig kontakt; 2026 færdig senest 1. marts",
+     "kort_regel": "alle dommere kontaktes årligt, data opdateres"
+    }
+   ]
+  },
+  {
+   "titel": "Hensyn ved dommerpåsætning",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28032024#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "vægt på aktivitetskrav, spredning og økonomi",
+     "kort_regel": "aktivitetskrav, spredning og økonomi vægtes"
+    },
+    {
+     "ref": "refdom02072024_2#5",
+     "effekt": "aendret",
+     "tekst": "Ved dommerpåsætning lægges særligt vægt på, at dommerne overholder deres aktivitetskrav, at de samme dommere ikke bruges for meget, og at påsætningen hænger økonomisk sammen. Der sendes ikke flere dommere til internationale stævner end nødvendigt, og dommere sendes kun på tværs af landet til nationale stævner, når det er tvingende nødvendigt. Økonomi er fast punkt på hvert udvalgsmøde.",
+     "kort": "færre dommere internationalt; undgå lange nationale rejser",
+     "kort_regel": "økonomisk påsætning; ingen unødige rejser"
+    }
+   ]
+  },
+  {
+   "titel": "Procedure for dommerpåsætning i udvalget",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom16122025#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "påsætning i god tid; kontaktede dommere noteres",
+     "kort_regel": "tidlig påsætning; noter kontaktede dommere"
+    }
+   ]
+  },
+  {
+   "titel": "Betroede personer til indvejning",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28032024#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "betroede personer ved dommermangel; to til indvejning",
+     "kort_regel": "betroede personer kun ved dommermangel"
+    }
+   ]
+  },
+  {
+   "titel": "Dommeres mødetid før indvejning",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom02072024_2#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "møde 30 minutter før indvejning",
+     "kort_regel": "møde 30 min. før indvejning; 2 dommere"
+    }
+   ]
+  },
+  {
+   "titel": "Nye dommere ved første stævne",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom12032026#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "erfaren dommer ved siden af, især ved indvejning",
+     "kort_regel": "ny dommer ledsages af erfaren dommer"
+    }
+   ]
+  },
+  {
+   "titel": "Udlevering af slips og emblemer",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom02072024_2#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "udleveres ved endt uddannelse",
+     "kort_regel": "slips og emblem ved endt uddannelse"
+    }
+   ]
+  },
+  {
+   "titel": "Diætpenge og godtgørelse til dommere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom12092023#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "diætpenge ved forbundsstævner, ikke private stævner",
+     "kort_regel": "diætpenge kun ved forbundsstævner"
+    },
+    {
+     "ref": "refdom12092023#3",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "krav om benzinpenge ved private stævner afvist",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "BroBizz-krav for kørselsgodtgørelse",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28032024#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "BroBizz krævet ved Storebæltskørsel for godtgørelse",
+     "kort_regel": "BroBizz påkrævet over Storebælt"
+    }
+   ]
+  },
+  {
+   "titel": "Betaling for internationale dommere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom28012025#4",
+     "effekt": "indfoert",
+     "tekst": "DSF betaler som udgangspunkt billigste transport med anerkendte udbydere og fornuftig rejsetid, hvis dommeren selv køber billetten. DSF betaler hotel fra dagen før dommergerningen starter til dagen efter, f.eks. 4 dage inkl. rejsedage ved under 14 løftere (2 dages dommergerning). Ekstra tid på destinationen er for dommerens egen regning.",
+     "kort": "billigste transport; hotel dagen før til dagen efter",
+     "kort_regel": "billigste transport, hotel dagen før til dagen efter"
+    },
+    {
+     "ref": "refbest_080325#3",
+     "effekt": "bekraeftet",
+     "tekst": "DSF betaler som udgangspunkt billigste transport, hvis dommeren selv køber billetten, og hotel fra dagen før dommergerningens start til dagen efter dens ophør (fx 4 dage inkl. rejsedage ved 2 dages dommergerning ved under 14 løftere). Ekstra tid på destinationen er for dommerens egen regning.",
+     "kort": "godkendt af bestyrelsen",
+     "kort_regel": "billigste transport, hotel dagen før til dagen efter"
+    }
+   ]
+  },
+  {
+   "titel": "Antal internationale dommere pr. stævne",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_151224#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "én dommer kan dække 2 dage, hvis IPF/EPF accepterer",
+     "kort_regel": "regler følges; én dommer kan bruges flere dage"
+    }
+   ]
+  },
+  {
+   "titel": "Tilbagetrækning af internationale dommere",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom16122025#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "kan trækkes tilbage ved få deltagende løftere",
+     "kort_regel": "tilbagetrækning mulig ved få løftere"
+    }
+   ]
+  },
+  {
+   "titel": "EPF-dommerregistrering",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "epf_kongres_2026#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "mere fleksibel tilmelding og registrering af dommergerninger",
+     "kort_regel": "fleksibel EPF-tilmelding og registrering af dommere"
+    }
+   ]
+  },
+  {
+   "titel": "Fortolkning af bænkpresregel om fødder på bænken",
+   "vigtig": true,
+   "note": "Midlertidig ordning indtil IPF fortolker reglen.",
+   "versioner": [
+    {
+     "ref": "refbest_080123#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "nyt opspænd; godkendes hvis fladt uden dybde",
+     "kort_regel": "nyt opspænd; flad løfter uden dybde godkendes"
+    }
+   ]
+  },
+  {
+   "titel": "Oversættelse af regel om greb om stangen",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom04062026#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "fuld kontakt; tommelfingre skal ikke omslutte stangen",
+     "kort_regel": "hænder og fingre i fuld kontakt med stangen"
+    }
+   ]
+  },
+  {
+   "titel": "Brush up-kursus for B-dommere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refdom03072025#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "obligatorisk online kursus på tre datoer",
+     "kort_regel": "obligatorisk online kursus, tre datoer"
+    },
+    {
+     "ref": "refdom18092025#1",
+     "effekt": "aendret",
+     "tekst": "Der afholdes et obligatorisk online brush up-kursus hvert år for B-dommere på tre forskellige datoer, med indhold der afspejler den viden, som på det pågældende tidspunkt er vigtigst at formidle, og med mulighed for at stille spørgsmål.",
+     "kort": "gøres årligt med aktuelt indhold",
+     "kort_regel": "årligt obligatorisk online kursus for B-dommere"
+    },
+    {
+     "ref": "refdom12032026#3",
+     "effekt": "bekraeftet",
+     "tekst": "Der afholdes et obligatorisk online brush up-kursus hvert år for B-dommere, i 2026 i efteråret, på tre forskellige datoer, med indhold baseret på sidste års kursus og aktuelle fokusområder, og med plads til spørgsmål.",
+     "kort": "efteråret 2026 bekræftet",
+     "kort_regel": "årligt obligatorisk online kursus for B-dommere"
+    },
+    {
+     "ref": "refdom04062026#3",
+     "effekt": "aendret",
+     "tekst": "Der afholdes et obligatorisk online brush up-kursus hvert år for B-dommere. Det udbydes 3 gange med indhold efter aktuelle fokusområder og plads til spørgsmål, og dommere, der ikke har deltaget, tilbydes et opsamlingsheat.",
+     "kort": "opsamlingsheat for dem der ikke deltog",
+     "kort_regel": "obligatorisk, 3 gange online plus opsamlingsheat"
+    },
+    {
+     "ref": "refdom20082026#1",
+     "effekt": "aendret",
+     "tekst": "Der afholdes et obligatorisk online brush up-kursus hvert år for B-dommere, åbent for andre interesserede dommere. Det udbydes 3 gange, programmet tilpasses nuværende behov, og dommere, der ikke har deltaget, tilbydes et opsamlingsheat.",
+     "kort": "åbnet for andre interesserede dommere",
+     "kort_regel": "obligatorisk for B-dommere, åbent for andre"
+    },
+    {
+     "ref": "refbest_290826.2#2",
+     "effekt": "bekraeftet",
+     "tekst": "Der afholdes et obligatorisk online brush up-kursus hvert år for B-dommere, åbent for andre interesserede dommere. Det udbydes 3 gange (i 2026 inden årets udgang), programmet tilpasses nuværende behov, og dommere, der ikke har deltaget, tilbydes et opsamlingsheat.",
+     "kort": "bestyrelsen bekræfter 3 kurser inden årets udgang",
+     "kort_regel": "obligatorisk for B-dommere, 3 gange online"
+    }
+   ]
+  }
+ ],
+ "udeladt": [
+  "refbest_080123#3",
+  "refdom03072025#1",
+  "refdom18092025#2",
+  "refdom12032026#1"
+ ],
+ "ikke_tildelt": []
+}

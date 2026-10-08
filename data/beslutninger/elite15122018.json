@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite15122018",
+ "sha256": "aca4a4a36b201df8bda5df22aae0af10312ea2e4c72abc8997c3a433c8df80e4",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2018-12-15",
+ "beslutninger": [
+  {
+   "emne": "Junior bænkpres i bruttolandshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Junior bænkpres tilhører fremadrettet projekt sub-junior og junior, blandt andet med henblik på NM-deltagelse på hjemmebane.",
+   "citat": "Det blev besluttet, at Junior bænkpres fremadrettet tilhører projekt sub-junior og junior.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Startgebyr ved manglende kvalifikation til EM",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Løftere uden A- eller B-krav kan deltage i EM, hvis de opnår kravet ved DM. Da en reserveløfter ikke kan tilmeldes uden at fjerne en forhåndstilmeldt løfter, hæfter løfteren for startgebyret på 140 Euro, hvis kvalifikationskravet til DM ikke opnås.",
+   "citat": "hæfter løfteren for startgebyret på 140 Euro, hvis vedkommende ikke opnår kvalkravet til DM.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dækning af udgifter ved VM i bænkpres",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Løfterne betaler selv transport og bestiller selv flybilletter. Forbundet dækker 4 overnatninger for A-krav og 2 overnatninger for B-krav samt betaler startgebyret.",
+   "citat": "Forbundet dækker 4 overnatninger for A krav og 2 overnatninger for B krav samt betaler startgebyr.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Egenbetaling EM i styrkeløft",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved udtagelse til EM i styrkeløft er egenbetalingen 1500 kr. for løftere med A-krav og 3000 kr. for løftere med B-krav.",
+   "citat": "Nickolaj Olsen \n83 \nB \n3000",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2019-01-01",
+   "gaelder_til": "2019-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Regel om tidligere resultater for international deltagelse",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "12 måneders-reglen ændres til 6 måneder. Der udtages fremadrettet til bruttolandsholdene 2 gange årligt: pr. 1/1 til bænkpres på baggrund af DM i bænkpres klassisk og udstyr, og pr. 1/7 i trekamp på baggrund af DM klassisk og udstyr.",
+   "citat": "vedtog at ændre denne til nu 6 måneder. Der vil fremadrettet blive udtaget til bruttolandsholdene 2 gange årligt.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

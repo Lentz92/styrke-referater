@@ -1,0 +1,51 @@
+{
+ "doc_id": "refbest_05122009",
+ "sha256": "bb55199535fbe84a0f84bab7e73bb3388fc0146dc7f886496f7a4055e677b937",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2009-12-05",
+ "beslutninger": [
+  {
+   "emne": "Ligaturnering, deltagergebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Fra 2010 er prisen for deltagelse i ligaturneringen 500 kr. pr. klub og ikke pr. hold.",
+   "citat": "Prisen bliver 500 kr. for hver klub og ikke pr hold.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2010-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Ligaturnering, dommerpåsætning",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "I ligaturneringen 2010 dispenseres der for klubber, som endnu ikke har en dommer, i forhold til kravet om dommerpåsætning.",
+   "citat": "Vedr. dommer påsætning så vil der i år dispenseres for de klubber som endnu ikke har en dommer.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2010-01-01",
+   "gaelder_til": "2010-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Ligaturnering, tilmeldingsfrist",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Tilmeldingsfristen til ligaturneringen 2010 er den 10. januar 2010.",
+   "citat": "Tilmeldingen til ligaen bliver 10/1 2010",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2010-01-10",
+   "citat_fundet": true
+  }
+ ]
+}

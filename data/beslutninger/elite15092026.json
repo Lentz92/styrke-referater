@@ -1,0 +1,93 @@
+{
+ "doc_id": "elite15092026",
+ "sha256": "e0af7d1d29c473cf8f48e6ff862f48618a2c020692e86e452cef828ae3ea48e9",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2026-09-15",
+ "beslutninger": [
+  {
+   "emne": "Kvalifikationskrav, beregning",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Fra 2028 beregnes kvalifikationskravene som et gennemsnit af de hidtidige krav og de traditionelt beregnede krav, da de traditionelt beregnede krav vurderes at være for høje i forhold til det sportslige niveau. Herefter reguleres kravene årligt.",
+   "citat": "Det er derfor besluttet af kravene beregnes som et gennemsnit af de hidtidige krav og de ”normalt” beregnede krav med effekt fra 2028. Herefter vil kravene blive reguleret årligt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2028-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Landsholdsdragter",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Fra 2027 skal alle landsholdsløftere selv købe deres landsholdsdragt fra JAKO, som koster kr. 615,00. Atleterne får fortsat udleveret en årlig udstyrspakke fra A7 uden beregning.",
+   "citat": "Fra 2027 vil alle landsholdsløftere blive pålagt at købe deres egen landsholdsdragt fra JAKO som i \nøjeblikket koster kr. 615,00.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2027-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Datoclash DM-ugen og VM",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Proceduren for atleter, der deltager ved VM Open Klassisk og samtidig er forpligtet til at deltage ved DM, er den samme som i indeværende år.",
+   "citat": "Proceduren for atleter som deltager ved VM og er forpligtiget til deltagelse ved DM er som i år.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2027-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Klassiske totaler som kvalifikation til udstyrsstævner",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Resultater fra klassiske stævner, der opfylder kravene til internationale udstyrsstævner, kan gælde som kvalifikation, hvis atleten har deltaget i DM styrkeløft (udstyr) og brugt udstyr i en eller flere discipliner.",
+   "citat": "Resultater opnået ved klassiske stævner som indfrier krav til internationale udstyrs stævner vil \nkunne fungere som kvalifikation, hvis atleten har deltaget i DM styrkeløft (udstyr)",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Skift af vægtklasse for landsholdsatleter",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Spørgsmål om skift af vægtklasse og frist for at lave krav til næste stævne rettes til sportschefen, som sammen med eliteudvalget beslutter i hvert enkelt tilfælde. Som udgangspunkt hører atleten til i den vægtklasse, der står i den underskrevne landsholdskontrakt.",
+   "citat": "Som udgangspunkt hører atleten til i den vægtklasse som er anført\ni den landsholdskontrakt atleten har underskrevet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Deltagelse ved EM og VM efter opnået krav",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "En atlet, der har klaret krav til både EM og VM, kan vælge kun at deltage i ét af mesterskaberne, hvis egenbetalingen bliver for stor en økonomisk byrde. En atlet, der har klaret krav til EM og/eller VM, er forpligtet til at deltage i mindst ét af de to.",
+   "citat": "En atlet der har klaret krav\ntil EM og/eller VM er forpligtiget til at deltage i minimum ét af de to.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

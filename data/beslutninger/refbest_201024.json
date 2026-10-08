@@ -1,0 +1,37 @@
+{
+ "doc_id": "refbest_201024",
+ "sha256": "4c2e58a838c9ee8d28558d804a0f6d51e60ed83ddcdb94f2a457a901dbbbf537",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-10-20",
+ "beslutninger": [
+  {
+   "emne": "Kommunikationsplan i nødsituationer",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen vedtog en kommunikationsplan til brug i nødsituationer efter gennemgang og justering. Planen opdateres på hjemmesiden.",
+   "citat": "Der er udarbejdet en kommunikationsplan til brug i nødsituationer. Planen blev gennemgået, justeret og vedtaget.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udsendelse af WADA's forbudsliste og opfordring til antidoping-kursus",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Den nye WADA-forbudsliste for 2025 rundsendes til klubberne sammen med en opfordring til at tage kurset 'antidoping 1'.",
+   "citat": "Den nye liste vil blive rundsendt til klubberne sammen med en opfordring til at tage ”antidoping 1”",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2025-01-01",
+   "gaelder_til": "2025-12-31",
+   "citat_fundet": true
+  }
+ ]
+}

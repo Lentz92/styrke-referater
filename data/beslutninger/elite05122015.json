@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite05122015",
+ "sha256": "25c3abf744ef2cccac33a6ea8ff80c0e34ac4057c329ad17604c0e7a624e549a",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2015-12-05",
+ "beslutninger": [
+  {
+   "emne": "Deltagelse ved VM bænkpres i Danmark uanset kategori",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Da VM i bænkpres 2016 afholdes i Rødby, kan etablerede bruttolandsholdsløftere og andre løftere uanset kategori deltage, hvis de har deltaget ved DM bænkpres 2015 og træner regelmæssigt i en styrkeløftklub med licens i denne. Hvis en DM-deltager er stærkere end en landsholdsløfter, har landsholdsløfteren førsteret til pladsen, hvis der skal begrænses.",
+   "citat": "Træne regelmæssig i en styrkeløft klub og have licens i denne. 3. Hvis en DM deltager er stærkere end en løfter på bruttolandsholdet har landsholds løfteren førsteret til pladsen",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2016-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Egenbetaling for A-kravsløftere ved landsholdsstævner",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "For alle A-kravsløftere gælder der en egenbetaling ud over de 3 forbundsbetalte dage. B-kravsløftere må påregne en egenbetaling.",
+   "citat": "For alle A-kravs løftere gælder det at der vil blive en egenbetaling ud over de 3 forbundsbetalte dage.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Afbud og advarsler til landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Afbud grundet arbejde, familiefester, flytning, ferie og lignende er ikke gyldige. En advarsel for udeblivelse/ulovligt afbud gælder i 24 måneder fra forseelsesdatoen. Afbud grundet sygdom skal dokumenteres med lægeerklæring, og et enigt eliteudvalg kan i helt særlige tilfælde dispensere fra reglerne om advarsler.",
+   "citat": "En advarsel er gældende i 24 måneder fra forseelsesdatoen, dvs. en advarsel for udeblivelse/ulovligt afbud til en samling 6/2 2016 udløber den 6/2 2018.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav landshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "De nuværende landsholdskrav fastholdes i 2016 og 2017. Der vil sandsynligvis komme nye krav i 2018.",
+   "citat": "De nuværende krav fastholdes i 2016 og 2017 der vil med stor sandsynlighed blive nye krav i 2018.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": "2016-01-01",
+   "gaelder_til": "2017-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Deltagelse i andre kategorier end landsholdskategori",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Efter repræsentantskabets beslutning kan landsholdsløftere kun deltage i den kategori, de er på landsholdet i, medmindre der er tale om et stævne på dansk jord.",
+   "citat": "man kun kan deltage i den kategori, som man er på landsholdet i, med mindre der er tale om et stævne på dansk jord.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

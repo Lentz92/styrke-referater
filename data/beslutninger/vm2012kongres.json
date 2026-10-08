@@ -1,0 +1,65 @@
+{
+ "doc_id": "vm2012kongres",
+ "sha256": "aeb1d1c8e3ad94c5c07f84566308f485b069a97460a6d3a61593d7260860398b",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2012-10-28",
+ "beslutninger": [
+  {
+   "emne": "RAW som officielt verdensmesterskab",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF's kongres godkendte DSF's forslag om at indføre RAW (uden udstyr) som officielt verdensmesterskab i de forskellige kategorier. Der skal ske en evaluering af de to former (RAW og udstyr) om to år.",
+   "citat": "Vores forslag blev derfor godkendt med et stort flertal. Med til forslaget hører, at der skal ske en evaluering af de to former om to år.",
+   "side": 1,
+   "stemmer": "stort flertal",
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Forbud mod Superkatana-bænkprestrøje",
+   "kategori": "udstyr",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "DSF's forslag om at gøre Superkatana-bænkprestrøjen ulovlig blev forkastet på IPF's kongres. Der blev kun afgivet 17 stemmer af 52 mulige, da EC stemte en bloc og mange delegerede stemte blankt.",
+   "citat": "Der blev således kun afgivet i alt 17 stemmer af de 52 mulige, og forslaget faldt.",
+   "side": 2,
+   "stemmer": "17 stemmer afgivet af 52 mulige",
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Understøttende bænkprestrøje",
+   "kategori": "udstyr",
+   "udfald": "trukket",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF's EC trak sit forslag om en understøttende bænkprestrøje tilbage.",
+   "citat": "trak IPF’s EC deres forslag om understøttende bænkprestrøje tilbage",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Certifikat til løftere med problemer med at strække armene",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Canadas forslag om et certifikat til løftere, der har problemer med at strække armene ud, blev ikke godkendt af IPF's kongres.",
+   "citat": "Canadas forslag om certifikat til løftere, som har problemer med at strække armene ud, blev ikke godkendt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

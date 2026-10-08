@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_19012019.2",
+ "sha256": "b75a496497d0c5176ddc15b9ceb0bdfbc787fed2af00382e189fb783e8d36655",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2019-01-19",
+ "beslutninger": [
+  {
+   "emne": "Beregningsmetode IPF-formular",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen fastholder den eksisterende beregningsmetode i 2019, men overgår fra januar 2020 til den nye IPF-formular.",
+   "citat": "Bestyrelsen vil i 2019 fastholde den eksisterende beregningsmetode, men vil fra januar 2020 overgå til den nye IPF-formular.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2020-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "IPF tekniske regler",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Regelændringerne vedtaget på IPF-kongressen i november 2018 træder i kraft pr. 1. januar 2019, dog ikke ændringen vedrørende IPF-formular.",
+   "citat": "Regelændringerne som blev vedtaget på IPF-kongressen i november 2018 træder i kraft pr 1-1-\n2019 med undtagelse af IPF-formular.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2019-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Reklamelinks på hjemmesiden",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Links til reklamer på forbundets hjemmeside koster 500 kr. årligt. Bestyrelsen vurderer fra sag til sag, hvem der må reklamere på siden.",
+   "citat": "Links koster 500 kr. årligt. Det er en vurderingssag fra bestyrelsens side, hvem der må reklamere på siden.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Afgift for logo på tøj",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Afgift for logo: ét person 500 kr.; alle medlemmer af en klub 1.000 kr.; spotterhold ved ét mesterskab 1.000 kr. (ikke hvis klubben betaler for klublogo); logo til brug for enhver under DSF 2.500 kr. Logoer skal godkendes af bestyrelsen, stødende logoer er forbudt, og godkendte logoer listes på hjemmesiden under regler for godkendt udstyr.",
+   "citat": "Hvis et logo kun omfatter én person, er prisen kr. 500,- Hvis et logo omfatter alle medlemmer af en klub, er prisen kr. 1.000,-",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

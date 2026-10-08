@@ -1,0 +1,65 @@
+{
+ "doc_id": "elite19122020",
+ "sha256": "03b158b8d6cfa6a4f2815cc24779318b8c1b40c74ac436d66682bbbc17bed22e",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2020-12-19",
+ "beslutninger": [
+  {
+   "emne": "Elitekrav for bibeholdelse af plads i bruttolandsholdet",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Atleter på bruttolandsholdet, som ikke har opnået elitekravet, skal for at bibeholde deres plads i truppen klare kravet ved DM-stævnerne i 2021.",
+   "citat": "Atleter som ikke har opnået elitekrav skal, for at bibeholde deres plads i truppen, klare kravet ved DM stævnerne i 2021",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2021-01-01",
+   "gaelder_til": "2021-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav i nye vægtklasser",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der er udarbejdet opdaterede kvalifikationskrav til de nye vægtklasser. Kravene gælder fra 2022, men skal opnås i løbet af 2021.",
+   "citat": "Jørgen har udarbejdet opdaterede kvalifikationskrav som er gældende fra 2022, men som skal opnås i løbet 2021.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udtagelse til internationale stævner og gyldighed af opnåede krav",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Udtagelser til EM/VM sker på baggrund af resultater ved DM 2021. Krav opnået fra 1/1-2019 er gældende for sæsonen 2021, og eliteudvalget/den landsholdsansvarlige kan efter aftale kræve et stabilitetsresultat indfriet ved et stævne.",
+   "citat": "Krav opnået i perioden fra 1/1-2019 til d.d. er gældende for sæsonen 2021 med den tilføjelse at eliteudvalget/den landsholdsansvarlige kan kræve et stabilitetsresultat indfriet ved et stævne efter aftale.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2021-01-01",
+   "gaelder_til": "2021-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Head coach medbringer kontanter til protest",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Head coachen medbringer fremover altid €75 i kontanter til internationale mesterskaber, så en påkrævet protest kan indgives på vegne af en dansk atlet.",
+   "citat": "Headcoach vil fremadrettet få 75 euro med til dette.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

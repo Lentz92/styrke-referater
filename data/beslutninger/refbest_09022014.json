@@ -1,0 +1,79 @@
+{
+ "doc_id": "refbest_09022014",
+ "sha256": "b1b277191ee71f91674fd3351f2cd4b9eea83803f742641eab5327d42b1f1c5d",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2014-02-09",
+ "beslutninger": [
+  {
+   "emne": "Træning i klub",
+   "kategori": "medlemskab",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "For at stille op for en klub skal en atlet træne regelmæssigt i klubben, mindst én gang om ugen. Bor atleten langt fra en klub, eller er der helt særlige omstændigheder, kan klubben udstede en dispensation med vilkår for, hvordan løfteren kan repræsentere klubben. DSF's dopingkontroludvalg orienteres herom.",
+   "citat": "For at kunne stille op for en klub, skal en atlet træne regelmæssigt i pågældende klub – mindst én gang om ugen.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommerpligt og sletning af inaktive dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommere, der ikke har dømt i 2 år, slettes som dommer. Der skal dømmes ved to stævner på de to år. Reglen gælder først fra 2014.",
+   "citat": "hvis man ikke har dømt i 2 år slettes man som dommer. Dette gælder dog først fra i år. Der skal dømmes ved to stævner på de to år.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2014-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommer som head coach ved mastersstævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Dommerudvalget forpligter sig til at sende en dommer med til mastersstævner, som fungerer som head coach. Kan der ikke stilles en dommer, finder udvalget og bestyrelsen en løsning.",
+   "citat": "Dommerudvalget forpligter sig derfor til at sende en dommer med til mastersstævner. Denne dommer fungerer så som head coach.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Fordeling af startgebyr",
+   "kategori": "okonomi",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen ønskede, at klubberne fra 1/1 fik hele startgebyret på kr. 200 ved stævner. Da det er en repræsentantskabsbeslutning, henskydes det til næste repræsentantskabsmøde.",
+   "citat": "Bestyrelsen ville gerne pr. 1/1 have startet med, at klubberne fik hele startgebyret på kr. 200 ved stævner. Men da dette er en repræsentantskabsbeslutning, så tages det op på næste repræsentantskabsmøde.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udsendelse af repræsentantskabsmøde-materiale",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Dagsorden til repræsentantskabsmødet udsendes sidste gang pr. post i 2014. Fremover sendes den pr. mail til de postansvarlige i klubberne.",
+   "citat": "dette bliver sidste år, hvor der udsendes pr. post. Fremover sendes pr. mail til de postansvarlige i klubberne.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

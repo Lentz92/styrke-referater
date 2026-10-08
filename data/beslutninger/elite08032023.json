@@ -1,0 +1,23 @@
+{
+ "doc_id": "elite08032023",
+ "sha256": "54460194c9eb8df24af6bc46bc12e3c07997227bd04fa9a1d83f258246031e84",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2023-03-08",
+ "beslutninger": [
+  {
+   "emne": "Egenbetaling ved flybilletter",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Atleter kan selv booke flybilletter, men har i så fald også eget ansvar for transport til og fra lufthavn. Beslutningen gælder hele kalenderåret og ikke kun enkelte stævner. Hvis en arrangør ændrer tidsplanen efter billetbooking, er det atletens eget ansvar og udgift at ændre billetter og dække ekstra hotelomkostninger.",
+   "citat": "Hvis man selv ønsker, at booke flybilleter er det muligt men omfatter i så fald også eget ansvar for transport til- og fra lufthavn. En sådan beslutning gælder hele kalenderåret og ikke kun enkelte stævner.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2023-01-01",
+   "gaelder_til": "2023-12-31",
+   "citat_fundet": true
+  }
+ ]
+}

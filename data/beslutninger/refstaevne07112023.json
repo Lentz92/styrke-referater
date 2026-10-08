@@ -1,0 +1,37 @@
+{
+ "doc_id": "refstaevne07112023",
+ "sha256": "e9876f552d0848c3788f91ffc9fc71d40e8c5a25a6078ee35d0ad88ca1a73148",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2023-11-07",
+ "beslutninger": [
+  {
+   "emne": "Stævneudvalgets ansvarlige ved stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævneudvalget udpeger en ansvarlig fra udvalget til hvert stævne.",
+   "citat": "Der er kommet en ansvarlig fra stævneudvalget til hvert stævne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Stævneregler: dommerafgift, divisionsrekorder og medaljer for bedste disciplin",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævnereglerne er opdateret med ændringer vedrørende dommerafgift, rekorder i division og medaljer for bedste disciplin.",
+   "citat": "Stævnereglerne er også blevet opdateret, både dommere afgift og rekorder i division samt medaljer for bedste disciplin.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

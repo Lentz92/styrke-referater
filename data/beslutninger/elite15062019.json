@@ -1,0 +1,37 @@
+{
+ "doc_id": "elite15062019",
+ "sha256": "c507e82ce79dc9be99b24ce20bb2c5c3e99dd7dd12891e1415b966d92756ed60",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2019-06-15",
+ "beslutninger": [
+  {
+   "emne": "Landsholdsløfter med job i udlandet",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "En landsholdsløfter med job i udlandet skal deltage i de 4 årlige samlinger samt DM. Udvalget skal have bekræftet, at den klub, løfteren træner i, er en styrkeløftklub og er underkastet reglerne om anti-doping.",
+   "citat": "Eliteudvalget stiller sig tilfreds med at den pågældende løfter deltager i de 4 årlige samlinger samt DM. Udvalget skal have bekræftet at klubben som den pågældende løfter træner i er en styrkeløftklub og underkastet reglerne om anti-doping.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Landsholdstrikot",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Da landsholdene er sponsoreret af Titan, er det et ufravigeligt krav, at den udleverede trikot bruges under konkurrence. Medbringer en løfter ikke det udleverede udstyr, nægtes vedkommende deltagelse i konkurrencen.",
+   "citat": "Da landsholdene er sponsoreret af Titan er det et ufravigeligt krav at den udleverede Trikot bruges under konkurrence. Hvis en løfter ikke medbringer det udleveret udstyr vil vedkommende blive nægtet deltagelse i konkurrencen.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

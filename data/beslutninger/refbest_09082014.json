@@ -1,0 +1,51 @@
+{
+ "doc_id": "refbest_09082014",
+ "sha256": "2c6747bf70d49dd66a0e5cc160a93bcf721eb5214efb6e5f3a0420443db41000",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2014-08-09",
+ "beslutninger": [
+  {
+   "emne": "Lån af streamingudstyr",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved lån af forbundets udstyr skal der underskrives en seddel, og der skal sendes en mail til forbundet (jacob@styrke.dk). Alt udstyr mærkes med lakpen.",
+   "citat": "Derudover skal der også sendes en mail til forbundet i forbindelse med lån af udstyr, mailen skal sendes til på jacob@styrke.dk.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Minimumskrav til hold ved ligafinale",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kravet til ligafinalen er, at der minimum skal være 10 hold fordelt mellem junior, raw og udstyr.",
+   "citat": "Kravet er, at der minimum skal være 10 hold til finalen fordelt mellem junior, raw og udstyr.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Klubtræner ved landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Hvis en klubtræner deltager ved landsholdssamlinger, skal det være udgiftsneutralt for forbundet. Det er op til landstræneren og assistenterne at vurdere, om der er overskud til det.",
+   "citat": "Hvis en klubtræner skulle deltage, må det være udgift neutralt.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

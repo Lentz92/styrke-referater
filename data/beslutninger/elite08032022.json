@@ -1,0 +1,51 @@
+{
+ "doc_id": "elite08032022",
+ "sha256": "e2511d6c38fbb31e78ba6c2b5085fc47e706a6418da931afd630876374981870",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2022-03-08",
+ "beslutninger": [
+  {
+   "emne": "Egenbetaling internationale stævner",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Egenbetaling for 2022: europæiske destinationer A-krav 1500 kr. og B-krav 2000 kr.; oversøiske destinationer A-krav 2000 kr. og B-krav 2500 kr. Ingen egenbetaling til World Games og VM i Viborg.",
+   "citat": "Europæiske destinationer:  A-krav kr. 1500,00 - B-krav kr. 2000,00\nOversøiske destinationer:  A-krav kr. 2000,00 - B-krav kr. 2500,00",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": "2022-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Frist for indbetaling af egenbetaling",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Egenbetalinger, herunder ekstraomkostninger ved forlængelse af den af DSF planlagte rejse, skal være DSF i hænde senest 10 dage før final nomination.",
+   "citat": "SKAL \nvære DSF i hænde SENEST 10 dage før final nomination.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2022-01-01",
+   "gaelder_til": "2022-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Deltagelse i VM bænkpres i Kazakhstan",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "VM-holdet tilmeldes VM bænkpres i Kazakhstan. Atleter, der ikke er trygge ved at deltage og melder fra, sanktioneres ikke.",
+   "citat": "atleter som ikke er trygge ved, at deltage og vælger, at melde fra vil ikke blive sanktioneret.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2022-12-31",
+   "citat_fundet": true
+  }
+ ]
+}

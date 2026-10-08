@@ -1,0 +1,51 @@
+{
+ "doc_id": "refstaevne24042025",
+ "sha256": "509e11dccb4720ab18ca0e1393305a336374c5f053d900d3e180c44b3b00ae92",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2025-04-24",
+ "beslutninger": [
+  {
+   "emne": "Streaming ved Danske Mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten om streaming under arrangørens ansvar og under DSF's ansvar (udlån af udstyr, internetforbindelse, varsel 60 dage før hvis arrangøren selv vil streame). Der skal blot stå streaming.",
+   "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Konkurrencestyringssystem ved Danske Mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten under konkurrencestyringssystem om udlån efter aftale under DSF's ansvar. Der skal blot stå konkurrencestyringssystem.",
+   "citat": "Under ’DSF har ansvaret for’ slettes teksten under konkurrencestyringssystem:",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Bagtæppe ved Danske Mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DSF har ansvar for bagtæppe ved Danske Mesterskaber. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

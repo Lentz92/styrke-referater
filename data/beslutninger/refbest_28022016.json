@@ -1,0 +1,79 @@
+{
+ "doc_id": "refbest_28022016",
+ "sha256": "639e2b05743ff56fe545600d34b9d3a83506fceb3a354a057a94fdc0ec5344d1",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2016-02-28",
+ "beslutninger": [
+  {
+   "emne": "Frist for klubforslag til repræsentantskabsmøde",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Klubberne skal indsende forslag til repræsentantskabsmødet senest 3 uger før mødet.",
+   "citat": "Klubberne skal indsende forslag senest 3 uger før mødet.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Sletning af resultater og rekorder ved dopingdom",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved dopingdom fjernes løfterens resultat, og placering samt rekord overgår til den næste løfter. I dette tilfælde overgik 1. pladsen og rekorden i 120+ til Thomas Skov med 192,5 kg.",
+   "citat": "Thomas Procidas resultat er fjernet, og 1. pladsen samt rekorden i 120+ er hermed gået til Thomas Skov fra Rødby Motion med et løft på 192,5 kg.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Ferielejr",
+   "kategori": "andet",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der afholdes endnu en ferielejr i 2016 på Sportshøjskolen, hvis der er 10 eller flere tilmeldte.",
+   "citat": "ved 10 eller flere tilmeldte vil en ferielejr finde sted.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2016-01-01",
+   "gaelder_til": "2016-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Landsholdsløfteres betalte træning af licensløftere",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Landsholdsløftere må fortsat tage betaling for at træne andre licensløftere; bestyrelsen opfordrer dem til at deltage i den generelle klubkultur, men ændrer ikke reglen.",
+   "citat": "Bestyrelsen opfordrer til, at alle løftere, som fungerer som trænere for andre licensløftere, tager del i den generelle klubkultur, men vil ellers ikke ændre på dette forhold.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Rejseregler til internationale stævner",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ændring af tommelfingerreglen om ankomst to dage før og hjemrejse dagen efter konkurrence overlades til Eliteudvalget, så længe budgettet overholdes, og der ikke kommer færre løftere til start.",
+   "citat": "Beslutningen må være op til eliteudvalget, så længe budgettet overholdes, og der ikke kommer færre løftere til start.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

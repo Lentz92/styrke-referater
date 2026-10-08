@@ -1,0 +1,79 @@
+{
+ "doc_id": "refbest_10122016",
+ "sha256": "8950adeeee0c3e26a9e57951dc6fced89a08b5e5a0e770c1b7181def97b3a495",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2016-12-10",
+ "beslutninger": [
+  {
+   "emne": "Kørselspenge ved samlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Løfterne modtager kun kørselspenge ved samlinger, hvis de kører sammen med mindst én anden. I særlige tilfælde afgør lederen af samlingen, om der kan gives kørselspenge. Ordningen evalueres næste år for at se, om der er opnået en besparelse.",
+   "citat": "derfor skal løfterne kun modtage penge, hvis de kører sammen med minimum en anden.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Headcoach for klubber ved stævner",
+   "kategori": "staevner",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forslaget om at udpege en headcoach for hver klub til nationale stævner med ansvar for klubbens løftere blev afvist. Klubberne skal i stedet tage større ansvar for deres atleters opførsel og oprydning.",
+   "citat": "Bestyrelsen mener at der ikke skal udpeges headcoaches for klubberne til stævner",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Stævneleders mandat til diskvalifikation",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Stævnelederen har mandat til at diskvalificere en løfter, der opfører sig upassende til et stævne. Stævnelederen skal have skærpet opmærksomhed på at tilse stævnets arealer og oprydning.",
+   "citat": "Stævnelederen har mandat til at diskvalificere en løfter, hvis denne opfører sig upassende til et stævne",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Medaljebestilling",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Fra 1. januar 2017 skal klubberne selv bestille medaljer og sørge for genbestilling og levering af manglende medaljer til rette modtager, jf. beslutningen på sidste repræsentantskabsmøde.",
+   "citat": "klubberne selv skal tage sig at medaljebestilling samt at få manglende medaljer genbestilt og leveret til rette modtager",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2017-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Klubbers dommerforpligtelse og afgift",
+   "kategori": "dommere",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen vil overveje at stille forslag til næste repræsentantskabsmøde om at genindføre en afgift på 500 kr. for klubber, der tilmelder 3 eller flere deltagere uden at stille en dommer til rådighed. Nye klubber fritages og får en tidsramme til at uddanne en dommer.",
+   "citat": "genindføre reglen om, at en klub skal betale en afgift på kr. 500, hvis klubben har tilmeldt 3 eller flere deltagere og ikke stiller en dommer til rådighed.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

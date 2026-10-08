@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_08052016",
+ "sha256": "a315dabbf4a78bae3b557acfca0d4944d766bfcc2b435a23ad1e7a84b4546872",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2016-05-08",
+ "beslutninger": [
+  {
+   "emne": "Eftertilmelding til stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Eftertilmelding til stævner er ikke mulig. Reglen skal være kendt af klubberne, som selv skal kunne vejlede deres medlemmer.",
+   "citat": "Der har været tilfælde hvor klubber af forskellige årsager har forsøgt at eftertilmelde sig; hvilket IKKE er muligt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Licensregel, frist før stævnedeltagelse",
+   "kategori": "medlemskab",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Licensreglen med 3 måneders frist fra ansøgningsdato før deltagelse i stævne kan der ikke dispenseres fra.",
+   "citat": "licensreglen (3 måneders frist fra ansøgningsdato før deltagelse i stævne). Dette er heller ikke muligt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udlevering af medaljer og pokaler",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Løftere, der ikke modtager deres medaljer og pokaler på stævnedagen, kan fremover aftale med den arrangerende klub, hvordan præmierne afleveres.",
+   "citat": "Løftere som ikke modtager deres medaljer og pokaler på stævnedagen, kan frem over aftale med den arrangerende klub hvordan præmierne afleveres.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Streaming fra danske mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Fra 2018 skal der være streaming fra alle danske mesterskaber. DSF vil inden da afholde kurser i opsætning og brug af stævneprogram og streaming.",
+   "citat": "Bestyrelsen fastsætter at fra 2018 skal der være streaming fra alle danske mesterskaber og DSF vil inden afholde kurser i opsætning/brug af stævneprogram og streaming.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2018-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

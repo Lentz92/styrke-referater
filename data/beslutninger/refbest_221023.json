@@ -1,0 +1,93 @@
+{
+ "doc_id": "refbest_221023",
+ "sha256": "da57845e60ba1a539ee654c22cb06e0fbe6193605956cfd520c2989bdc4faf5c",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2023-10-22",
+ "beslutninger": [
+  {
+   "emne": "Dommerudvalgets regler",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Regler for Dommerudvalget under DSF er fremlagt: udvalget består af 3-4 medlemmer med en formand, hvoraf et medlem skal være i bestyrelsen. Udvalget uddanner og autoriserer dommere, påsætter dommere og jury og udarbejder årlig beretning til repræsentantskabsmødet. Bestyrelsesmedlemmet er ansvarlig for at budgetrammen overholdes.",
+   "citat": "Udvalget består af 3-4 medlemmer, og der skal vælges en formand for udvalget.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommerprøver og dommerniveauer",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "B-dommerprøve er en teoretisk prøve med mindst 85 af 100 point. A-dommerprøve kræver 2 års regelmæssig dømning som B-dommer, mindst 90 af 100 point i teori og mindst 90 % rigtige afgørelser i praktisk prøve. International dommer kræver mindst 2 års regelmæssig virke som A-dommer.",
+   "citat": "Prøven er en teoretisk prøve, hvor mindst 85 % af spørgsmålene skal besvares korrekt, dvs. der skal opnås min. 85 af 100 points.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dommeres aktivitetskrav",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Hvis en dommer ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes vedkommende som dommer.",
+   "citat": "Hvis man ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes man som dommer.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2015-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Jury og meet director ved officielle stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved alle officielle stævner i Danmark skal der være en jury på 3 personer, alle mindst A-dommere, som følger IPF's juryregler. Den arrangerende klub stiller med en meet director, der er ansvarlig for teknisk udstyr og afvikling.",
+   "citat": "skal der være en jury, som består af 3 personer, som alle er min. A-dommere.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Officielle og uofficielle konkurrencer i app",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der skelnes mellem officielle og uofficielle konkurrencer. Klubmedlemmer under Gymdk, DVF og DSF kan deltage og sætte rekorder i officielle konkurrencer, mens øvrige kun kan deltage i uofficielle.",
+   "citat": "Skelen mellem officielle og uofficielle konkurrencer, hvor klubmedlemmer under Gymdk, DVF og DSF",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Krav til app-brugere og samtykke til dopingtest",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der kræves mobilnummer, billede og mail i app'en. Udøvere samtykker ved optagelse som bruger til, at Anti Doping Danmark kan teste dem, også selvom de ikke træner i et center under ADD-kontrol.",
+   "citat": "Der kommer til at være krav om mobilnummer, billede og mail i app’en og udøvere samtykker ved optagelse som bruger af app’en ift. at Antidoping Danmark kan teste dem",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

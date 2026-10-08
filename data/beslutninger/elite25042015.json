@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite25042015",
+ "sha256": "38458407f384c847c7aa597362d5d54cc35c35726b02feb11a03a117c425ed0e",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2015-04-25",
+ "beslutninger": [
+  {
+   "emne": "WEC deltagelse",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "WEC i 2015 kan have deltagelse af løftere, som har løftet EM B-krav, under forudsætning af at de ikke optager pladsen for den primære målgruppe.",
+   "citat": "Eliteudvalget har besluttet, at WEC i 2015 godt kan få deltagelse af løftere, som har løftet EM B krav under forudsætning af, at de ikke optager pladsen for den primære målgruppe.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2015-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav EM klassisk, andre kategorier",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Løftere fra andre kategorier kan deltage til EM Klassisk 2017 i Thisted, hvis kvalifikationskravet er opnået senest 70 dage før EM. Er en løfter fra en anden kategori bedre seedet end en klassisk løfter, har den klassiske løfter fortrinsret. Eliteudvalget kan, hvis det er sportsligt forsvarligt, udtage løftere uden opnået kvalifikationskrav for at stille stærkest muligt hold. Samme princip gælder ved EM bænkpres 2016 i Rødby.",
+   "citat": "Eliteudvalget åbner mulighed for, at andre kategorier kan deltage til EM Klassik i Thisted 2017 under forudsætning af, at kvalifikationskravet er opnået senest 70 dage før EM 2017.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2017-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Lægeerklæring ved afbud",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved sygdom/afbud til stævner og samlinger kræves der fortsat lægeerklæring.",
+   "citat": "Beslutningen blev at fortsætte som hidtil, nemlig ved sygdom/afbud til stævner og samlinger kræves der lægeerklæring.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "90 %-reglen til samlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "90 %-reglen til samlinger gælder som udgangspunkt stadig, men den samlingsansvarlige kan dispensere efter aftale med løfterne, hvis der foreligger en plan for afvigelserne.",
+   "citat": "Som udgangspunkt gælder reglen stadigvæk, dog kan den samlingsansvarlige dispensere fra reglen efter aftale med løfterne, hvis der foreligger en plan for afvigelserne.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Afbud og henvendelser til landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Alle afbud og henvendelser om landsholdssamlinger rettes til eliteudvalg@styrke.dk; telefonisk eller anden kontakt accepteres ikke. Henvendelser om de enkelte samlinger rettes til den respektive kategoritræner.",
+   "citat": "Alle afbud/henvendelser vedr. landsholdssamlinger rettes til eliteudvalg@styrke.dk Telefonisk eller anden kontakt accepteres ikke.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

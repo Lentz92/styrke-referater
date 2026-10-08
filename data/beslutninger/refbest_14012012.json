@@ -1,0 +1,93 @@
+{
+ "doc_id": "refbest_14012012",
+ "sha256": "aa66830cdade44af2a5585e5c734e4ad8cdf843cbf5d553120bf5278f10aa163",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2012-01-14",
+ "beslutninger": [
+  {
+   "emne": "Overrækkelse af pokal til årets løfter",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Pokal til årets løfter overrækkes ved det efterfølgende DM i løfterens alderskategori. Årets senior 3-kamp kåres ved DM-A, årets junior og øvrige kategorier i 3-kamp kåres ved DM-diverse, og årets løftere i bænkpres kåres ved DM i bænkpres.",
+   "citat": "Overrækkelsen af pokal til årets løftere sker ved efterfølgende DM i løfterens alderskategori.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "DSF's dopingpolitik",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DIF's ændring af reglen om tidligere dopingdømtes OL-deltagelse og andre ændringer i DIF's dopingpolitik medfører ingen ændringer i DSF's dopingpolitik.",
+   "citat": "Ændringer i DIF dopings politik afstedkommer ikke nogen ændringer i DSF’s dopingpolitik.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Regler og krav til afholdelse af DM-stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen udarbejder regler og krav til afholdelse af DM-stævner. Reglerne skal følges fremover, der sikres at de overholdes, og de forelægges Repræsentantskabet.",
+   "citat": "Bestyrelsen udarbejder regler/krav i forbindelsen med afholdelse af DM stævner, disse regler skal følges fremover",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Offentliggørelse af evaluering af foreningsbesøg",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der udarbejdes en samlet evaluering af foreningsbesøgene, som lægges på forbundets hjemmeside. Besøgene skal fordeles bedre, så alle klubber under DSF dækkes.",
+   "citat": "Samtidig blev det besluttet at der skal foretages en bedre fordeling af besøgende således at vi får dækket alle klubberne under DSF.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Offentliggørelse af breddeudvalgets arrangementer",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Alle arrangementer i Breddeudvalget offentliggøres på forbundets hjemmeside. Breddeudvalget støtter fremover seminarer som det i Faxe.",
+   "citat": "Alle arrangementer i Breddeudvalget vil blive offentliggjort på forbundets hjemmeside.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Masterregler",
+   "kategori": "master",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsens godkendelse af nye masterregler blev udskudt, da Masterudvalget ikke havde holdt møde. Der lægges op til et møde den 3. februar 2012.",
+   "citat": "Godkendelse af nye Master-regler, punktet blev udskudt idet Master udvalget ikke havde haft afholdt møde",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

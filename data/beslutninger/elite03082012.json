@@ -1,0 +1,51 @@
+{
+ "doc_id": "elite03082012",
+ "sha256": "59a6f0b4178fe53b65d6e55ff0e3cad25d2d30cd28df7ea8bde185111f290355",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2012-08-03",
+ "beslutninger": [
+  {
+   "emne": "Kvalifikationspulje",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der oprettes en særlig kvalifikationspulje i eliteudvalgets budget til atleter, som ved budgettets udarbejdelse ikke har opfyldt kvalifikationskravene, men som i løbet af året klarer kravet til VM eller EM, så længe der er penge tilbage i puljen.",
+   "citat": "Der skal laves en særlig kvalifikationspulje, som skal bruges til atleter, som ikke har klaret kvalifikationskravene ved budgettets udarbejdelse, men som klarer kravet til VM eller EM i løbet af året",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Orientering om udtagelser",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Løfterne skal så vidt muligt orienteres om udtagelser for det kommende år allerede ved årsskiftet.",
+   "citat": "Løfterne skal så vidt muligt orienteres om udtagelser for det kommende år allerede ved årsskiftet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Subjunior-/juniorprojekt",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der iværksættes et nyt subjunior-/juniorprojekt med NM junior/subjunior i Danmark i 2014 som mål. Juniorlandsholdsløftere, der bliver seniorer, overgår til seniorernes bruttotrup, mens løftere med 1 år tilbage som junior får 2 samlinger og mulighed for at deltage ved NMJ næste år. Juniorbænkpresprojektet slås sammen med 3-kampsprojektet mht. samlinger.",
+   "citat": "De løftere i projektet, som er på juniorlandsholdet, og som bliver seniorer, overgår til seniorernes bruttotrup.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

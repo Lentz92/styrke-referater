@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_220820",
+ "sha256": "625a0feeabbc172de36260161237544a2142564bc31079786267df1f8ec62565",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2020-08-22",
+ "beslutninger": [
+  {
+   "emne": "Kompensation til klubber for manglende kontingentindtægter",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der afsættes en pulje på fx 500.000 kr., som medlemsklubber kan søge om dækning af manglende kontingentindtægter under Covid-19. Dækningen baseres på regnskab for 2. kvartal 2020 sammenlignet med 1. kvartal 2020, og ansøgning skal sendes til DSF senest 30-9-2020 via et skema på hjemmesiden.",
+   "citat": "Manglende kontingent indtægter kan blive dækket af DSF baseret på regnskab 2. kvartal 2020 vs 1.kvartal 2020 ansøgning skal sendes til DSF inden 30-9-2020.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2020-09-30",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kompensation til klubber for udeblevne stævneindtægter og merudgifter",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Klubber kan efter konkret ansøgning til DSF få dækket manglende indtægter grundet aflyste stævner og merudgifter i forbindelse med afholdte stævner.",
+   "citat": "Manglende indtægter grundet ikke afholdte stævner og merudgifter i forbindelse med afholdte stævner efter konkret ansøgning til DSF.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Covid-19-forholdsregler ved mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved mesterskaber skærpes stævnelederens tilsyn med Covid-19-forholdsregler, og stævnelederen kan lukke stævnet, hvis reglerne ikke overholdes. Stævner afvikles i små grupper med grundig rengøring imellem. Spottere skal bære mundbind, og overdommeren skal bære mundbind eller visir. DSF dækker udgifter til nødvendige værnemidler.",
+   "citat": "I forbindelse med afvikling af stævnerne er det et krav at spotterne skal bære mundbind samt overdommeren enten mundbind eller visir. DSF dækker nødvendige udgifterne til værnemidler i forbindelse med stævnerne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Krav til VM-ansøgning om internationalt stævne",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "En ansøgning om at afholde VM i styrkeløft i Danmark i 2022 kræver, at der er en ansvarlig klub, som indgår en samarbejdsaftale med DSF.",
+   "citat": "Der stilles dog krav om at der skal være en ansvarlig klub der indgår en samarbejdsaftale med DSF.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "doc_id": "241kongres",
+ "sha256": "6fc961b74f550808ee4c4702a6430642e59a19ee5ca3152f739d96c508e61804",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": null,
+ "beslutninger": [
+  {
+   "emne": "EM-arrangørs betaling af ophold for EPF-officials",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "EPF foreslog, at arrangøren af et EM skal betale for 4 personers ophold i enkeltværelser fra 2 dage før til 1 dag efter konkurrencen samt transport til og fra lufthavnen. Forslaget blev klart nedstemt.",
+   "citat": "EPF ønskede, at arrangøren af et EM skulle betale for 4 personers ophold i enkeltværelser fra 2 dage før konkurrencen til 1 dag efter konkurrencen og hente og bringe dem i lufthavnen.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Bøde for overpriser på hotel ved stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Der fastsættes en bøde på op til 5.000 euro, hvis en arrangør ved et stævne sætter hotelpriserne højere op end de gængse priser.",
+   "citat": "der blev fastsat en bøde på op til 5.000 euro, hvis en arrangør ved et stævne sætter hotelpriserne højere op end de gængse priser.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Spotter-tøj ved europamesterskaber",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "EPF forbeholder sig retten til at levere T-shirts og shorts til spotterne ved alle europamesterskaber og selv få sponsorindtægten herfra.",
+   "citat": "EPF forbeholder sig retten til at levere T-shirts og shorts til spotterne ved alle europamesterskaber og selv få sponsorindtægten herved.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Godtgørelse til EPF-officials",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Det blev vedtaget, at der hvert år ydes et mindre beløb til EPF-officials.",
+   "citat": "Det blev vedtaget, at der ydes et mindre beløb til EPF-officials hvert år.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Priser til årets løftere i EPF",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Der overrækkes fremover priser til årets løftere både i klassisk styrkeløft og i styrkeløft med udstyr.",
+   "citat": "Der vil for fremtiden blive overrakt priser til årets løftere både i klassisk styrkeløft og i styrkeløft med udstyr.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

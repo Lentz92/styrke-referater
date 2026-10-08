@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite02072016",
+ "sha256": "4d37b363677e769fa5351d4fee696de49b14f01885b289437e0bc085aa5f6284",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2016-07-02",
+ "beslutninger": [
+  {
+   "emne": "Udtagelse til EM klassisk, begrænsning af deltagere",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget opretter et projekt mod EM klassisk 2017 i Thisted med max. deltagertal og fuldt hold. Hvis deltagerantallet skal begrænses, har landsholdsløftere fra bruttotruppen i klassisk førsteprioritet, og derefter vægtes de løftere højest, der kan bidrage til bedst mulig placering i nationskonkurrencen. Der kan blive tale om egenbetaling, hvis projektets budget ikke kan overholdes.",
+   "citat": "Hvor der bliver behov for at begrænsninger i antallet af deltagere, gøres dette efter følgende rækkefølge:",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2017-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav EM klassisk",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Seneste mulighed for at kvalificere sig til EM klassisk 2017 er JM/SM i styrkeløft 2016. Det bedste registrerede resultat fra EM klassisk 2016 og frem til og med JM/SM 2016 gælder som kvalifikationskrav.",
+   "citat": "Seneste mulighed for at kvalificere sig bliver JM / SM i styrkeløft 2016.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2017-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Holdstørrelse EM klassisk",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Holdet til EM klassisk 2017 er 7 damer + 3 reserver og 8 herrer + 3 reserver i seniorkategorien samt 8 damer + 3 reserver og 9 herrer + 3 reserver i sub-junior og junior. Eliteudvalget udtager det endelige projekt senest 15. september 2016.",
+   "citat": "Det vil sige 7 damer + 3 reserver og 8 herrer + 3 reserver i seniorkategorien",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2017-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Udlevering af landsholdstrikot",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kun løftere, der udtages til stævner, får udleveret en landsholdstrikot.",
+   "citat": "Det er kun de løftere, der udtages til stævner, der får udleveret en trikot.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav landshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der indføres nye kvalifikationskrav med virkning fra 2018, udarbejdet som de eksisterende og offentliggjort i løbet af 2017. Der indføres også kvalifikationskrav for junior i både styrkeløft og klassisk styrkeløft.",
+   "citat": "Der kommer nye kvalifikationskrav med virkning fra 2018.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2018-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

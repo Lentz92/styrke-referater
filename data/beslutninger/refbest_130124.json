@@ -1,0 +1,51 @@
+{
+ "doc_id": "refbest_130124",
+ "sha256": "03c6d9b5916171db9e1782c6253a2c47272e51856ecfbabe729c7be8debdbb5f",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-01-13",
+ "beslutninger": [
+  {
+   "emne": "Licensgebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen indstiller forslag til repræsentantskabsmødet 2024 om at hæve licensopkrævningen til 300 kr. Begrundelsen er øgede dommerudgifter og udgifter til medaljer og pokaler samt inflation, da gebyret har været uændret i over 20 år.",
+   "citat": "Licensopkrævning hæves til 300 kr.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Regler for stævneudvalget",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Reglerne for stævneudvalget opdateres. Ansøgninger fra klubber om at afholde stævne skal sendes til DSF og stævneudvalget senest 12 måneder før stævnet, og bekræftelse gives senest to måneder efter ansøgningsfristens udløb. Stævner afholdes som udgangspunkt på skift i Øst- og Vestdanmark, og stævneudvalget kan dispensere ved mangel på kvalificerede ansøgere (kun danske mesterskaber). Stævneudvalget mødes 2-4 gange årligt og gennemgår stævnereglerne hvert år i starten af januar.",
+   "citat": "Ansøgninger fra klubber, der ønsker at afholde et stævne under DSF, skal sendes til DSF og stævneudvalget senest 12 måneder før stævnet afholdes.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Procedure for stævneprotokoller efter stævne",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Efter hvert stævne skal stævneprotokollerne sendes som PDF eller billede til stævneudvalget på staevneudvalg@styrke.dk. Herefter godkendes rekorderne på styrke.dk. Stævnelederen er ansvarlig for at sende protokollerne.",
+   "citat": "I fremtiden vil stævneprotokollerne skulle sendes som PDF eller billede til stævneudvalget på mail til staevneudvalg@styrke.dk efter hver stævne.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

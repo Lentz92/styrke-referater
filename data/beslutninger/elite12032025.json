@@ -1,0 +1,51 @@
+{
+ "doc_id": "elite12032025",
+ "sha256": "b1d7f8e5fff652d098a49b0a0c920c3073d391af9b4fe1f076ad9e4d9929e8f3",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2025-03-12",
+ "beslutninger": [
+  {
+   "emne": "Overførsel af sanktioner fra U-landshold til seniorlandshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Sanktioner tildelt som deltager på U-landsholdet overføres til seniorlandsholdet ved udtagelse hertil. Reglen har virkning fra 1. juli 2025.",
+   "citat": "Sanktioner tildelt som deltager på U-landsholdet overføres, med virkning fra 1/7-2025, til \nseniorlandsholdet ved udtagelse her til.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2025-07-01",
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Dispensation for deltagelse i stævner uden for Danmark",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget kan ikke give dispensation for deltagelse i et VM i bænkpres, når stævnet ikke foregår i Danmark.",
+   "citat": "Da stævnet ikke foregår i Danmark kan eliteudvalget ikke dispensere for deltagelse.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav ved deltagelse i lavere vægtklasse til EM og VM",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Deltagelse i EM og VM i en lavere vægtklasse kræver, at kvalifikationskravet i den lavere vægtklasse er opnået inden for 12 måneder. Er det ikke opnået, kan eliteudvalget ikke imødekomme forespørgslen.",
+   "citat": "Da kravet i den lavere vægtklasse ikke er opnået indenfor 12 mdr kan eliteudvalget ikke \nimødekomme forespørgslen",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

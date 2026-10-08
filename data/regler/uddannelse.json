@@ -1,0 +1,38 @@
+{
+ "kategori": "uddannelse",
+ "version": 5,
+ "input_hash": "edd5314dcae0a08ce9d20c86e08b453803253028bbcfefbdf0adeb7e2e2fe1ba",
+ "model": "opus",
+ "regler": [
+  {
+   "titel": "Uddannelsesdage for landsholds- og klubtrænere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite14092021#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "uddannelsesdage for landsholds- og klubtrænere fra 2022",
+     "kort_regel": "årlige uddannelsesdage for landsholds- og klubtrænere, sportschef ansvarlig"
+    }
+   ]
+  },
+  {
+   "titel": "Certificeret workshop i udstyrsassistance",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refudstyr15052025#1",
+     "effekt": "indfoert",
+     "tekst": "Udstyrsgruppen afholder korte workshops i, hvordan man hjælper en udstyrsløfter både til træning og under konkurrence. Workshoppen underviser i grundlæggende viden, og deltagerne certificeres efter workshoppen.",
+     "kort": "workshops i udstyrsassistance med certificering indført",
+     "kort_regel": "Udstyrsgruppen holder workshops; deltagere certificeres i udstyrsassistance"
+    }
+   ]
+  }
+ ],
+ "udeladt": [],
+ "ikke_tildelt": []
+}

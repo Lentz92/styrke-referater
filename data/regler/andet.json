@@ -1,0 +1,27 @@
+{
+ "kategori": "andet",
+ "version": 5,
+ "input_hash": "e19cd7f6135e6ba26d56ed4b6d4db8dda35a3582eb98ff2eb6a7b2f4bf69cc01",
+ "model": "opus",
+ "regler": [
+  {
+   "titel": "Bestilling af medaljer",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_03052014#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "medaljer bestilles kun gennem Forma for at spare",
+     "kort_regel": "medaljer bestilles udelukkende gennem Forma"
+    }
+   ]
+  }
+ ],
+ "udeladt": [
+  "refbest_08022015#9",
+  "refbest_28022016#3"
+ ],
+ "ikke_tildelt": []
+}

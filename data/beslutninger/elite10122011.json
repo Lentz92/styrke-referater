@@ -1,0 +1,79 @@
+{
+ "doc_id": "elite10122011",
+ "sha256": "b60fd512742703da36873d990f790e022726a5adcbfd3354d1a6b05298e868c6",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2011-12-10",
+ "beslutninger": [
+  {
+   "emne": "Opvarmning ved internationale mesterskaber",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved internationale mesterskaber skal opvarmningen til disciplinerne ske i så god tid, at det sidste løft er foretaget i tide til eventuelle ændringer af startvægten. Det er trænerens og atletens fælles ansvar.",
+   "citat": "Fremover er det et krav, at opvarmningen til disciplinerne ved internationale mesterskaber sker i så god tid, at det sidste løft er foretaget i tide til at foretage eventuelle ændringer af startvægten.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Adfærdskodeks for landshold",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget vedtog, med enkelte korrektioner, et adfærdskodeks gældende for alle DSFs landshold.",
+   "citat": "Eliteudvalget vedtog, med enkelte korrektioner, KBs oplæg til adfærdskodeks gældende for alle DSFs landshold.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Rejser med landshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der accepteres ikke afvigelser fra rejseplanerne ved landsholdsrejser. Eliteudvalget bestemmer, hvordan og hvornår der rejses ud og hjem, og som udgangspunkt rejser man som hold under hensyn til priser.",
+   "citat": "Der accepteres ikke afvigelser fra rejseplanerne i forb. med rejser med landsholdene.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Rapportering fra internationale mesterskaber",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der skal laves rapporter, billeder og video fra internationale mesterskaber til hjemmesiden. Det er teammanagerens ansvar, at det sker, og rapporterne skal være af seriøs karakter. Webmaster slettes mindre lødige afsnit efter anmodning.",
+   "citat": "det er Teammanagerens ansvar at det sker. Dog skal rapporter være af ”seriøs” karakter.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Bruttotrup bænkpres sub-/junior",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der etableres en bruttotrup for subjuniorer og juniorer med henblik på fremtidige VM i bænkpres. Niels S er ansvarlig med reference til eliteudvalget.",
+   "citat": "blev det besluttet at etablere en bruttotrup for disse kategorier.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

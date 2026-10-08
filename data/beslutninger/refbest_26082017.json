@@ -1,0 +1,51 @@
+{
+ "doc_id": "refbest_26082017",
+ "sha256": "4f994ed12d7aa2059a3ab20e95d5832c83bcfc11662c216e71a02caf44ce5104",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2017-08-26",
+ "beslutninger": [
+  {
+   "emne": "Stævneafgift ved internationale stævner i Danmark",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Arrangerende klubber betaler fremover en stævneafgift på 10.000 kr. til DSF ved internationale stævner i Danmark, så DSF ikke har udgifter til officials. Tidligere modtog DSF 25% af entreindtægterne ved EM i Thisted.",
+   "citat": "derfor beslutter bestyrelsen, at klubberne fremover betaler en stævneafgift på 10.000 kr. så DSF ikke har udgifter.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Tilmelding til JM/SM i klubbens landsdel",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel, klubben er placeret. Tilmeldingsprogrammet tillader tilmelding begge steder, men ændres ikke.",
+   "citat": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel klubben er placeret.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Kvalifikationskrav DM klassisk, tilmeldingssystem",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Kvalifikationskravet til DM klassisk i tilmeldingssystemet er aftalt til en varighed på 7 timer.",
+   "citat": "Kvalifikationskrav til DM klassisk i tilmeldingssystem aftalt med Johnny af 7 timers varighed.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

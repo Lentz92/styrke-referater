@@ -1,0 +1,37 @@
+{
+ "doc_id": "refbest_140526",
+ "sha256": "ac5c373093b3c230686dafd4971075b9db1f20312470b907a93393e7f486a4a0",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2026-05-14",
+ "beslutninger": [
+  {
+   "emne": "Sponsorsøgning mod procentvis provision",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF vil ikke gøre brug af aftaler om procentvis provision til personer, der søger sponsorer, bl.a. fordi IPF og EPF har oplevet problemer med en sådan kontrakt.",
+   "citat": "Dette kan i princippet også ske med DSF, derfor vil vi ikke gøre brug af denne metode i DSF.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Geografisk klubsamarbejde om stævneafvikling",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævneudvalget vil forsøgsvis arbejde med geografisk klubsamarbejde, hvor mindre klubber knyttes til en nærliggende kraftklub og inviteres med til fællestræninger, kurser og stævneafvikling. Nye klubber sættes med det samme under en kraftklub.",
+   "citat": "I stævneudvalget vil der forsøgsvis arbejdes på at tænke geografisk i forhold til klubsamarbejde ved afvikling af stævner.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

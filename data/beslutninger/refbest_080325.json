@@ -1,0 +1,79 @@
+{
+ "doc_id": "refbest_080325",
+ "sha256": "1f3217224b5dccb148c891b5bef5e224a95b47ce1aa0745c3e08d53486b87b7a",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2025-03-08",
+ "beslutninger": [
+  {
+   "emne": "Stævnelederens opgaver og ansvar",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Bestyrelsen har vedtaget beskrivelsen af stævnelederens opgaver og ansvar ved stævner: overordnet ansvar på stævnedagen, kontrol af udstyrstjek og indvejningsrum, uddeling af medaljer, pladser til TC'er/dommere/jury, dommerbriefing, endelig beslutning i tvivlsspørgsmål og at stævneprotokoller sendes til stævneudvalget. Stævnelederen skal som udgangspunkt have dokumentet tilsendt.",
+   "citat": "Ovenstående er gennemgået af bestyrelsen og vedtaget. Stævnelederen skal som udgangspunkt have dokumentet tilsendt og oplyses om evt. justeringer/afbud.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Indstilling til A-dommerprøve",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "I reglerne for dommerudvalget under A-dommere indsættes, at når en B-dommer indstilles eller selv indstiller sig til A-dommerprøve, skal indstillingen vurderes af dommerudvalget, hvorefter dommeren kontaktes. Teksten tilføjes fremtidige indbydelser til dommeruddannelser.",
+   "citat": "Når en B- dommer bliver indstillet eller indstiller sig selv til at komme til A-dommerprøve, skal den enkelte dommers indstilling vurderes af dommerudvalget. Herefter rettes der henvendelse til dommeren.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Betaling for internationale dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF betaler som udgangspunkt billigste transport, hvis dommeren selv køber billetten, og hotel fra dagen før dommergerningens start til dagen efter dens ophør (fx 4 dage inkl. rejsedage ved 2 dages dommergerning ved under 14 løftere). Ekstra tid på destinationen er for dommerens egen regning.",
+   "citat": "DSF betaler for hotel fra dagen før dommergerningens start til dagen efter dommergerningers ophør.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Retningslinjer for sponsoraftaler",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Retningslinjer for sponsoraftaler i DSF-regi er godkendt og placeret på hjemmesiden. Medieudvalget er ansvarlig for det praktiske arbejde med håndhævelse af sponsoraftalerne.",
+   "citat": "Der er blevet udarbejdet retningslinjer for sponsoraftaler i DSF-regi og dokumentet er godkendt og placeret på hjemmesiden",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Honorar for sponsorindhentning",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forbundet tilbyder 30% af det kontante beløb i honorar til de personer, der skaffer sponsorer til forbundet.",
+   "citat": "forbundet tilbyder 30% af det kontante beløb i honorar til de personer der skaffer sponsorer til forbundet.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

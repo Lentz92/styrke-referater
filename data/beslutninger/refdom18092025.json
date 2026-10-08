@@ -1,0 +1,65 @@
+{
+ "doc_id": "refdom18092025",
+ "sha256": "5194dc98967edb684ebc15e671fabf9a1bda232f20772f4a6d0e4dcf774cbe65",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2025-09-18",
+ "beslutninger": [
+  {
+   "emne": "Brush up kursus for B-dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der afholdes et brush up kursus hvert år for B-dommere med indhold, der afspejler den viden, som på det pågældende tidspunkt er vigtigst at formidle.",
+   "citat": "Derfor vil vi holde et Brush up kursus hvert år for B-dommere med indhold, som afspejler den viden, som på pågældende tidspunkt er vigtigst at formidle.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Landsdækkende dommerkursus",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der afholdes et dommerkursus for hele landet i 2026. Detaljerne drøftes på næste dommerudvalgsmøde.",
+   "citat": "Vi vil afholde et dommerkursus i 2026 for hele landet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Årlig gennemgang af dommerdatabasen",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommerdatabasen gennemgås årligt: alle dommere kontaktes, og kontaktoplysninger opdateres i databasen. Gennemgangen i 2026 skal være færdig senest 1. marts 2026.",
+   "citat": "Det betyder, at alle dommer kontaktes og kontaktoplysninger skal opdateres i dommerdatabasen.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Jurybordets placering ved stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Jurymedlemmer ved konkurrencer kan i samarbejde med stævnearrangøren flytte jurybordet til den mest optimale placering for at optimere arbejdsforholdene.",
+   "citat": "Jurymedlemmer ved konkurrencer kan i samarbejde med stævnearrangøren flytte jurybordet til den mest optimale placering.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}

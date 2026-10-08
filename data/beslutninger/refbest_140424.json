@@ -1,0 +1,65 @@
+{
+ "doc_id": "refbest_140424",
+ "sha256": "853b0c647233494f439feb458cf9d29d92ac9c04050fa04e9248abe8b3aeae54",
+ "version": 1,
+ "model": "sonnet",
+ "moededato": "2024-04-14",
+ "beslutninger": [
+  {
+   "emne": "Dommertilmeldingssystem",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Tilmeldingssystemet for dommere tages i brug fra og med DM-ugen 2024. Klubber skal fremadrettet huske at tilmelde dommere, og al dommeraktivitet, herunder internationale dommergerninger, skal registreres i systemet. Medlemmer af stævne- og dommerudvalget får adgang til databasen, og dommerudvalget kan redigere i den.",
+   "citat": "Tilmeldingssystemet er klar til brug og vil blive taget i brug fra og med DM-ugen.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "Stævnegebyr ved DM-ugen, hjælpende klubber",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved DM-ugen 2024 i Herning bydes opgaver som spotter, stævnebord, opstilling og nedtagning ud til klubberne, og stævnegebyrerne tildeles de hjælpende klubber.",
+   "citat": "Stævnegebyrerne vil blive tildelt de hjælpende klubber.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2024-01-01",
+   "gaelder_til": "2024-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Tildeling af stævner og terminsliste",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Stævneudvalget udarbejder terminslisten for 2025 med stævneansvarlige. Klubber, der ønsker at afholde stævner i 2025, skal sende ansøgning til stævneudvalget inden tilmeldingsfristen, og udvalget tildeler mesterskaber efter demografi og ansøgninger.",
+   "citat": "De klubber der ønsker at byde ind på stævner i 2025, skal sende en ansøgning til stævneudvalget inden tilmeldingsfristens udløb.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2025-12-31",
+   "citat_fundet": true
+  },
+  {
+   "emne": "Beregning af vinder ved DM masters klassisk",
+   "kategori": "master",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forslag om fra 2025 at kåre placeringer ved DM-klassik for masters på tværs af alder og vægtklasser efter GL/IPF-point ganget med McCulloch Age Coefficients, med Champion of Champions-trofæer til de tre bedste kvinder og mænd, blev ikke gennemført, da der ikke er flertal eller ressourcer til det.",
+   "citat": "dog er det ikke noget, der på nuværende er flertal for eller ressourcer til at gennemføre.",
+   "side": 4,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
+}
