@@ -337,6 +337,6 @@ def test_a_run_log_that_cannot_be_written_only_warns(data, caplog, monkeypatch):
 
 
 def test_step_summary_shows_the_numbers_and_the_check_results():
-    text = update.step_summary({"extract": _step("Extract", 3, 1.5)}, Counter({"dato": 13, "virkning": 2}))
-    for number in ("3483", "3481", "52", "1.50", "claude-sonnet-5-5", "dato: 13", "virkning: 2"):
+    text = update.step_summary({"extract": _step("Extract", 3, 1.5)}, Counter({"date": 13, "effect": 2}))
+    for number in ("3483", "3481", "52", "1.50", "claude-sonnet-5-5", "date: 13", "effect: 2"):
         assert number in text

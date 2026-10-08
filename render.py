@@ -463,11 +463,11 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         f"- Engangsbeslutninger uden for reglerne (kun i data/beslutninger): "
         f"{sum(1 for d in decisions if d.ref not in assigned)}",
         f"- Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: "
-        f"{problems['forældet']}",
+        f"{problems['stale']}",
         f"- Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): "
-        f"{problems['virkning']}",
+        f"{problems['effect']}",
         f"- Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, "
-        f"eller en senere beslutning der gælder fra før en tidligere): {problems['dato']}",
+        f"eller en senere beslutning der gælder fra før en tidligere): {problems['date']}",
         "",
         "Udtrækket er lavet automatisk af Claude og kan indeholde fejl. Referatet er altid den gældende kilde.",
     ]

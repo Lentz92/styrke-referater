@@ -3,14 +3,19 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Literal, get_args
 
 import render
 from analyze import PROPOSAL_EFFECT, Decision
 
+# "stale": a rule left out; "effect": extraction and rule disagree; "date": a possible date trap.
+ProblemKind = Literal["stale", "effect", "date"]
+PROBLEM_KINDS: tuple[str, ...] = get_args(ProblemKind)  # each is counted on the index page
+
 
 @dataclass(frozen=True)
 class Problem:
-    kind: str  # "forældet" (a rule left out), "virkning" or "dato" (a possible date trap); counted on the index page
+    kind: ProblemKind
     message: str
 
 
@@ -27,9 +32,9 @@ def stale_versions(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[P
     for raw in raw_rules:
         refs = render.stale_refs(raw, by_ref)
         if refs:
-            reasons = ", ".join(f"{ref} {'er ændret' if ref in by_ref else 'findes ikke længere'}" for ref in refs)
-            problems.append(Problem("forældet", f"{raw['titel']} vises ikke, før kategorien er konsolideret "
-                                                f"igen: {reasons}"))
+            reasons = ", ".join(f"{ref} {'has changed' if ref in by_ref else 'no longer exists'}" for ref in refs)
+            problems.append(Problem("stale", f"{raw['titel']} is not shown until the category is consolidated "
+                                             f"again: {reasons}"))
     return problems
 
 
@@ -51,9 +56,9 @@ def effect_mismatches(rules: list[render.Rule]) -> list[Problem]:
             else:  # adopted: a content effect, or abolishing this rule while adopting something else
                 wrong = v.effekt not in (*render.CONTENT_EFFECTS, "ophaevet")
             if wrong:
-                problems.append(Problem("virkning", f"{rule.titel}: udtrækket af {d.ref} ({d.udfald}/"
-                                                    f"{d.handling}) og reglen ({v.effekt}) er uenige om "
-                                                    f"virkningen – tjek referatet"))
+                problems.append(Problem("effect", f"{rule.titel}: the extraction of {d.ref} ({d.udfald}/"
+                                                  f"{d.handling}) and the rule ({v.effekt}) disagree on the "
+                                                  f"effect; check the minutes"))
     return problems
 
 
@@ -65,16 +70,16 @@ def date_traps(rules: list[render.Rule]) -> list[Problem]:
         content = [v for v in rule.versions if v.effekt in render.CONTENT_EFFECTS]
         for before, after in zip(content, content[1:]):
             if before.decision.gaelder_til and not after.decision.gaelder_til and after.effekt == "bekraeftet":
-                problems.append(Problem("dato", f"{rule.titel}: {after.decision.ref} bekræfter en regel med "
-                                                f"slutdato uden selv at have en, så den gælder for altid"))
+                problems.append(Problem("date", f"{rule.titel}: {after.decision.ref} confirms a rule with an "
+                                                f"end date without having one itself, so it applies forever"))
         # in_force applies versions in effective order, so a newer decision that takes effect
         # before an older one is overridden by the older one.
         for i, newer in enumerate(content):
             older = next((v for v in content[i + 1:] if _is_full(newer.decision.dato) and _is_full(v.decision.dato)
                           and v.decision.dato < newer.decision.dato), None)
             if older:
-                problems.append(Problem("dato", f"{rule.titel}: {newer.decision.ref} er besluttet efter "
-                                                f"{older.decision.ref}, men gælder fra før den"))
+                problems.append(Problem("date", f"{rule.titel}: {newer.decision.ref} was decided after "
+                                                f"{older.decision.ref} but applies from before it"))
     return problems
 
 

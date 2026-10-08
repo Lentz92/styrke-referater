@@ -66,7 +66,7 @@ if step == "error":
     sys.exit(1)
 output = here / "output.json"
 print(json.dumps({**result, "result": "", "structured_output": json.loads(output.read_text()) if output.exists()
-                  else {"svar": "ok"}}))
+                  else {"answer": "ok"}}))
 """
 
 

@@ -93,7 +93,7 @@ class Link:
 
 def load_manifest() -> list[Doc]:
     if not MANIFEST.exists():
-        raise SystemExit(f"{MANIFEST} mangler – kør uden --offline først.")
+        raise SystemExit(f"{MANIFEST} is missing; run without --offline first.")
     return [Doc(**entry) for entry in json.loads(MANIFEST.read_text())]
 
 
@@ -110,7 +110,7 @@ def sync() -> list[Doc]:
         response = client.get(INDEX_URL)
         response.raise_for_status()
         links = parse_index(response.content)
-        log.info("Fandt %d dokumentlinks på %s", len(links), INDEX_URL)
+        log.info("Found %d document links on %s", len(links), INDEX_URL)
 
         docs: dict[str, Doc] = {}
         for link in links:
@@ -143,20 +143,20 @@ def sync() -> list[Doc]:
             if url:
                 working = _working_url(client, url)
                 if working is None:
-                    log.warning("Linket til %s virker ikke længere – bruger kopien i %s", url, rel)
+                    log.warning("The link to %s no longer works; using the copy in %s", url, rel)
                 url = working
             doc = _make_doc(path, old.title if old else path.stem, old.organ if old else path.parent.name, url)
             if old and doc.date is None:
                 doc = replace(doc, date=old.date)
             if doc.id in docs:
-                log.warning("Dublet-id %s: %s ignoreres", doc.id, rel)
+                log.warning("Duplicate id %s: ignoring %s", doc.id, rel)
                 continue
             docs[doc.id] = doc
 
     result = sorted(docs.values(), key=lambda d: (d.organ, d.date or "", d.id))
     DATA_DIR.mkdir(exist_ok=True)
     MANIFEST.write_text(json.dumps([asdict(d) for d in result], ensure_ascii=False, indent=1) + "\n")
-    log.info("Manifest: %d dokumenter", len(result))
+    log.info("Manifest: %d documents", len(result))
     return result
 
 
@@ -170,7 +170,7 @@ def parse_index(html: bytes) -> list[Link]:
         if el.name == "b":
             section = " ".join(el.get_text(" ", strip=True).split())
             if section not in SECTIONS:
-                log.warning("Ukendt sektion på referatsiden: %r", section)
+                log.warning("Unknown section on the minutes page: %r", section)
         elif _is_document(el.get("href", "")):
             organ = SECTIONS.get(section) or re.sub(r"\W+", "_", section.lower()).strip("_")
             links.append(_link(el, organ))
@@ -292,24 +292,24 @@ def _refresh(client: httpx.Client, url: str, path: Path, fallback: str) -> str |
     try:
         response = _head(client, url)
         if response is None:
-            log.warning("Linket til %s virker ikke længere – bruger kopien i %s", url, path.relative_to(ROOT))
+            log.warning("The link to %s no longer works; using the copy in %s", url, path.relative_to(ROOT))
             return None
         cited = str(response.url)
         size = _plain_size(response)
         if response.is_success and size is not None and size != path.stat().st_size:
             fresh = client.get(cited)
             if not fresh.is_success:
-                log.warning("HTTP %s for %s – beholder kopien", fresh.status_code, cited)
+                log.warning("HTTP %s for %s; keeping the copy", fresh.status_code, cited)
             elif len(fresh.content) != size:
                 # A cut-off transfer must not replace a good copy.
-                log.warning("%s gav %d bytes, ikke %d – beholder kopien", cited, len(fresh.content), size)
+                log.warning("%s returned %d bytes, not %d; keeping the copy", cited, len(fresh.content), size)
             else:
                 _write_atomic(path, fresh.content)
-                log.info("%s var ændret på styrke.dk og er hentet igen", path.relative_to(ROOT))
+                log.info("%s had changed on styrke.dk and was downloaded again", path.relative_to(ROOT))
     except httpx.HTTPError as exc:
-        log.warning("Kunne ikke tjekke %s: %s", url, exc)
+        log.warning("Could not check %s: %s", url, exc)
     except OSError as exc:
-        log.warning("Kunne ikke gemme %s: %s", path.relative_to(ROOT), exc)
+        log.warning("Could not save %s: %s", path.relative_to(ROOT), exc)
     time.sleep(0.1)
     return cited
 
@@ -338,7 +338,7 @@ def _download(client: httpx.Client, link: Link) -> tuple[Path, str] | None:
         try:
             response = client.get(url)
         except httpx.HTTPError as exc:
-            log.error("Kunne ikke hente %s: %s", url, exc)
+            log.error("Could not download %s: %s", url, exc)
             return None
         if response.status_code == 404:
             continue
@@ -350,9 +350,9 @@ def _download(client: httpx.Client, link: Link) -> tuple[Path, str] | None:
             dest.parent.mkdir(parents=True, exist_ok=True)
             _write_atomic(dest, response.content)
         except OSError as exc:
-            log.error("Kunne ikke gemme %s: %s", dest.relative_to(ROOT), exc)
+            log.error("Could not save %s: %s", dest.relative_to(ROOT), exc)
             return None
-        log.info("Hentet %s (%.0f KB)", dest.relative_to(ROOT), len(response.content) / 1024)
+        log.info("Downloaded %s (%.0f KB)", dest.relative_to(ROOT), len(response.content) / 1024)
         time.sleep(0.5)
         return dest, str(response.url)
 

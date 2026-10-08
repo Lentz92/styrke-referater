@@ -41,7 +41,7 @@ def _saved(data, doc: Doc) -> dict:
 def test_usage_is_read_from_the_cli_result(fake_claude):
     fake_claude.plan("ok")
     output, usage = _ask()
-    assert output == {"svar": "ok"}
+    assert output == {"answer": "ok"}
     assert usage.models == ("claude-sonnet-5-5",) and usage.answered_by == "claude-sonnet-5-5"
     assert (usage.input_tokens, usage.output_tokens, usage.cache_read_tokens, usage.cache_write_tokens) == \
         (2, 52, 967, 2514)
@@ -90,7 +90,7 @@ def test_a_failed_attempt_is_retried_and_its_cost_counted(fake_claude):
     fake_claude.plan("error", "ok")
     budget = RunBudget()
     output, usage = _ask(budget=budget)
-    assert output == {"svar": "ok"}
+    assert output == {"answer": "ok"}
     assert usage.attempts == 2 and fake_claude.invocations("call") == 2
     assert usage.cost_usd == pytest.approx(0.35) and budget.spent_usd == pytest.approx(0.35)
 
@@ -117,7 +117,7 @@ def test_failed_call_not_retried_after_the_deadline_reports_its_error(fake_claud
     assert fake_claude.invocations("call") == 1
 
     step = _run_parallel([1], lambda _: _ask(budget=budget), workers=1, label="Test")
-    assert step.failed == 1 and "fejlede: API Error: overloaded" in caplog.text
+    assert step.failed == 1 and "failed: API Error: overloaded" in caplog.text
 
 
 def test_an_error_after_a_successful_call_keeps_its_cost(fake_claude, data, monkeypatch):
