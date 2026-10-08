@@ -1,8 +1,24 @@
 {
  "doc_id": "elite11032026",
  "sha256": "98048e07422f0f46a8557918c075b3c1ecc133cb3b96d78630a4f1ddc6a59ec1",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2026-03-11",
- "beslutninger": []
+ "beslutninger": [
+  {
+   "emne": "Kvalifikationskrav junior enkeltbænk",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der skal udarbejdes kvalifikationskrav til juniorløftere i enkeltbænk som led i samarbejdet mellem junior- og seniorbænkpres. Opgaven er en prioritet for den kommende sportschef.",
+   "citat": "Der skal udarbejdes kvalkrav til juniorløfterne i enkeltbænk. Denne opgave bliver en prioritet for den kommende sportschef.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
 }

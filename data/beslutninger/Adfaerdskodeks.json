@@ -1,17 +1,18 @@
 {
  "doc_id": "Adfaerdskodeks",
  "sha256": "288e05e4140da47f69e793205d7b3fecc4c6696a7aaf2ea433a33c2ba26cbee1",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": null,
  "beslutninger": [
   {
-   "emne": "Adfærdskodeks for masterudvalget",
+   "emne": "Adfærdskodeks, generel adfærd",
    "kategori": "master",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Personer, der repræsenterer DSF i masterudvalget (deltagere, holdledere, ledere, dommere og trænere), skal tale pænt og respektfuldt til hinanden, acceptere forskellighed og bidrage til et godt miljø.",
+   "tekst": "Personer der repræsenterer DSF i masterudvalget (konkurrencedeltagere, holdledere, ledere, dommere og trænere) skal tale pænt og behandle hinanden ordentligt og respektfuldt, acceptere at vi er forskellige og alle bidrage til et godt miljø.",
    "citat": "At vi taler pænt til hinanden og behandler hinanden ordentligt og respektfuldt.",
    "side": 1,
    "stemmer": null,
@@ -20,12 +21,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "Adfærd under konkurrencer, masterudvalget",
+   "emne": "Adfærdskodeks, adfærd under konkurrencer",
    "kategori": "master",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Under konkurrencer skal man deltage i de aktiviteter, DSF eller arrangøren forventer, udvise respekt og etik over for konkurrenter og arrangører, blive til præmieoverrækkelsen og rejse sig til nationalmelodierne, overholde påklædningsreglerne og så vidt muligt bakke op om dansk deltagelse, om muligt med en dansk dommer til stede ved behov for protest.",
+   "tekst": "Under konkurrencer skal man deltage i de aktiviteter DSF eller arrangøren forventer, udvise respekt og etik over for konkurrenter og arrangører, blive til og deltage i præmieoverrækkelsen og rejse sig til nationalmelodierne, overholde påklædningsreglerne og så vidt muligt bakke op om hinanden, med en dansk dommer til stede om muligt.",
    "citat": "At vi, hvis vi har været involveret i en konkurrence som deltager, træner, leder, dommer m.v., bliver og tager del i den efterfølgende præmieoverrækkelse og rejser os til nationalmelodierne.",
    "side": 1,
    "stemmer": null,
@@ -34,12 +36,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "Alkohol under konkurrencer, masterudvalget",
+   "emne": "Adfærdskodeks, alkohol",
    "kategori": "master",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Der indtages kun alkohol i henhold til aftale, f.eks. ved den afsluttende banket. I tvivlstilfælde afgør holdlederen, om der må nydes alkohol.",
+   "tekst": "Alkohol indtages kun i henhold til aftale, f.eks. ved den afsluttende banket. I tvivlstilfælde afgør holdlederen, om der må nydes alkohol.",
    "citat": "At vi kun indtager alkohol i henhold til aftale, f.eks. ved den afsluttende banket. I tvivlstilfælde tager holdlederen stilling til, om der må nydes alkohol.",
    "side": 1,
    "stemmer": null,

@@ -38,8 +38,9 @@ EFFEKT_LABELS = {
     "aendret": "ændret",
     "bekraeftet": "bekræftet",
     "ophaevet": "ophævet",
+    "foreslaaet": "indkommet forslag",
     "forkastet": "forslag forkastet",
-    "trukket": "forslag trukket",
+    "trukket": "forslag trukket tilbage",
 }
 NIVEAU_LABELS = {
     "vedtaegt": "Vedtægt",
@@ -50,6 +51,8 @@ NIVEAU_LABELS = {
 }
 CONTENT_EFFECTS = ("indfoert", "aendret", "bekraeftet")
 PROPOSAL_EFFECTS = ("forkastet", "trukket")
+# Not news on a year page: a confirmation (unless it is the first sighting) or an undecided proposal.
+QUIET_EFFECTS = ("bekraeftet", "foreslaaet")
 MONTH_NAMES = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august",
                "september", "oktober", "november", "december"]
 WARNING = "⚠"
@@ -207,10 +210,10 @@ def _year_page(year: int, years: list[int], rules: list[Rule], today: date, link
         "",
     ]
 
-    # Confirmations are not news, except the first time a rule shows up.
+    # Confirmations and undecided proposals are not news (a confirmation is, the first time a rule shows up).
     events = [
         (v, rule) for rule in rules for i, v in enumerate(rule.versions)
-        if (v.decision.dato or "")[:4] == str(year) and (v.effekt != "bekraeftet" or i == 0)
+        if (v.decision.dato or "")[:4] == str(year) and _is_news(v, i)
     ]
     changes = [(v, rule) for v, rule in events if v.effekt not in PROPOSAL_EFFECTS]
     proposals = [(v, rule) for v, rule in events if v.effekt in PROPOSAL_EFFECTS]
@@ -394,7 +397,7 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         changes = sum(
             1 for rule in rules for i, v in enumerate(rule.versions)
             if (v.decision.dato or "")[:4] == str(year)
-            and v.effekt not in PROPOSAL_EFFECTS and (v.effekt != "bekraeftet" or i == 0)
+            and v.effekt not in PROPOSAL_EFFECTS and _is_news(v, i)
         )
         status = " (indeværende)" if year == today.year else " (kommende)" if year > today.year else ""
         lines.append(f"| [{year}]({year}.md){status} | {changes} | {central} | {len(active) - central} |")
@@ -477,6 +480,10 @@ class _Anchors:
         count = self.seen.get(base, 0)
         self.seen[base] = count + 1
         return base if count == 0 else f"{base}-{count}"
+
+
+def _is_news(v: Version, index: int) -> bool:
+    return v.effekt not in QUIET_EFFECTS or (v.effekt == "bekraeftet" and index == 0)
 
 
 def _cutoff(year: int, today: date) -> str:

@@ -1,23 +1,8 @@
 {
  "doc_id": "refbest_23092012",
  "sha256": "1466f4da08bd5d033dbcec48d73d663d7674fe4552329682742d4d9c7b0b00d2",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2012-09-23",
- "beslutninger": [
-  {
-   "emne": "Nyt konteringssystem",
-   "kategori": "organisation",
-   "udfald": "vedtaget",
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Der indføres et nyt konteringssystem i DSF, som implementeres sammen med DIF Økonomi. Efterfølgende modtager bestyrelsen kvartals- og halvårsregnskaber, så budgetopfølgning kan ske løbende.",
-   "citat": "der indføres et nyt konteringssystem. ",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true
-  }
- ]
+ "beslutninger": []
 }

@@ -1,17 +1,18 @@
 {
  "doc_id": "refstaevne16052024",
  "sha256": "607b7ca2a3f795e2d871bc88d97997500c2777b578e9cab5808a353ef85e7995",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2024-05-16",
  "beslutninger": [
   {
-   "emne": "Tildeling af DM-stævner øst/vest",
+   "emne": "Tildeling af DM'er øst/vest",
    "kategori": "staevner",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Stævneudvalget tildeler som udgangspunkt stævner, så DM'erne skiftevis afholdes i øst og vest. Der kan afviges herfra, hvis ingen klubber har budt ind på stævnet.",
+   "tekst": "Stævneudvalget tildeler som udgangspunkt stævner, så DM'erne skiftevis afholdes i øst og vest. Der kan afvigelser forekomme, hvis ingen klubber har budt ind på stævnet.",
    "citat": "Vi har som udgangspunkt gået efter at tildele stævner, så DM’erne skiftevis bliver afholdt i øst og vest. Dette kan vi blive nødt til at afvige fra, i de tilfælde hvor der ikke har været klubber, der har budt ind.",
    "side": 1,
    "stemmer": null,
@@ -23,14 +24,15 @@
    "emne": "Ansvarsperson for stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Hvert stævne har en ansvarsperson blandt stævneudvalgets medlemmer. Ansvarspersonen står til rådighed, hvis den arrangerende klub har brug for hjælp, og skal sikre, at kravene til afvikling af stævner overholdes. Ordningen er videreført fra 2024 til stævnerne i 2025.",
+   "tekst": "Stævnerne fordeles mellem stævneudvalgets medlemmer som ansvarspersoner. Ansvarspersonen står til rådighed for den arrangerende klub og skal sikre, at kravene til afvikling af stævner overholdes.",
    "citat": "At være ansvarsperson for et stævne betyder, at man står til rådighed, hvis den arrangerende klub får brug for hjælp fra stævneudvalget. Derudover skal personen også sikre at krav til afvikling af stævner bliver overholdt.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
-   "gaelder_til": "2025-12-31",
+   "gaelder_til": null,
    "citat_fundet": true
   }
  ]

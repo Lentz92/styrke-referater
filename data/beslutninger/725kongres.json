@@ -1,7 +1,7 @@
 {
  "doc_id": "725kongres",
  "sha256": "7c1e3151cf1c096cf6dbde09cdee3933dcc76393ac8dc8d73f538c7a2e9b0cd4",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2022-05-02",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Best Team-pris ved EM",
    "kategori": "internationalt",
    "udfald": "vedtaget",
+   "forslagsstiller": "EPF Exclusive Committee",
    "handling": "aendring",
    "niveau": "eksternt_krav",
-   "tekst": "EPF By-Law 104.3 ændres, så der gives Best Team-priser (5 medaljer) til hold på 1.-3. plads efter pointsystemet i de tekniske regler. Prisen for masters er valgfri. Priserne uddeles ved banketten, hvis mindst én repræsentant for løfterens nation er til stede. Det er for at følge IPF-standard.",
+   "tekst": "EPF By-Law 104.3 ændres, så 'Best Team'-prisen (5 medaljer) til hold på 1.-3. plads efter Technical Rules point uddeles ved stævnet, og uddeles til banketten kun hvis mindst én repræsentant fra løfternes nation er til stede. Priser til masters er valgfrie. Formålet er at følge IPF-standard.",
    "citat": "A “Best Team” award, represented by 5 medals, is given to teams placed first, second and third based on the Technical Rules score system. Awards for Masters are optional.",
    "side": 2,
    "stemmer": "alle for",
@@ -20,12 +21,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "Dopingtestgebyr og deltagergebyr ved EM",
+   "emne": "Doping- og deltagelsesgebyr EPF-mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",
+   "forslagsstiller": "EPF Exclusive Committee",
    "handling": "aendring",
    "niveau": "eksternt_krav",
-   "tekst": "EPF By-Law 103.2 ændres, så deltagende nationale forbund betaler et dopingtestgebyr på 60 EUR (tidligere 50) for hver tilmeldt løfter anført på final entry form. Derudover betales et deltagergebyr på 90 EUR pr. tilmeldt løfter. Det er for at følge IPF-regler.",
+   "tekst": "EPF By-Law 103.2 ændres, så deltagende nationale forbund betaler et dopingtestgebyr på 60 EUR (tidligere 50) for hver tilmeldt løfter samt et deltagergebyr på 90 EUR pr. løfter angivet på den endelige tilmelding. Formålet er at følge IPF-regler.",
    "citat": "The participating national federations shall pay a doping test fee of EUR 50 60 for each entered lifter and declared at the final entry form.",
    "side": 2,
    "stemmer": "17 for, 2 imod",
@@ -34,12 +36,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "EPF-standardmedaljer",
+   "emne": "Medaljer ved EPF-mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",
+   "forslagsstiller": "EPF Exclusive Committee",
    "handling": "aendring",
    "niveau": "eksternt_krav",
-   "tekst": "EPF By-Law 104.4.1 om medaljer ændres: EPF fastholder standardiserede medaljer. Bestilles de ikke hos EPF's generalsekretær, skal arrangøren sende et eksempel på layout senest 6 måneder før mesterskabet til godkendelse. IPF og EPF bestiller medaljer hos samme leverandør for at sænke prisen.",
+   "tekst": "EPF By-Law 104.4.1 ændres, så EPF's standardiserede medaljer er obligatoriske; bestilles de ikke via EPF's generalsekretær, skal arrangøren senest 6 måneder før mesterskabet fremvise layout til godkendelse. Medaljer gives for 1.-3. plads i hver kategori, og løfteren skal have en total for at kvalificere sig til en pris.",
    "citat": "If the medals are not ordered from the EPF Secretary General, the organizer must provide an example of the layout of the medals he will provide not later than 6 months before the championship",
    "side": 2,
    "stemmer": "18 for, 1 imod",
@@ -48,12 +51,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "Dommer på nationale hold ved EPF-stævner",
+   "emne": "International dommer på nationalt hold ved EPF-mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",
+   "forslagsstiller": "EPF Exclusive Committee",
    "handling": "aendring",
    "niveau": "eksternt_krav",
-   "tekst": "EPF By-Law 105.13: Nationer, der har været IPF-medlem i mere end 5 år og deltager med mere end 3 løftere i EPF-mesterskaber eller -cups, skal have mindst én international dommer blandt holdets officials til rådighed som dommer eller jurymedlem mindst to hele konkurrencedage. Formålet er at kunne lave en komplet dommer- og juryliste.",
+   "tekst": "EPF By-Law 105.13 ændres, så en nation, der har været IPF-medlem i mere end 5 år og deltager med mere end 3 løftere i EPF-mesterskaber eller -cups, skal have international(e) dommer(e) blandt sine officials til rådighed som dommer eller jurymedlem mindst to hele konkurrencedage. Det blev afklaret, at en ekstra dommer kan stilles til rådighed i kortere tid, så længe én dommer er til rådighed som krævet.",
    "citat": "Any nation, being a member of IPF more than 5 years, participating with more than 3 lifters in EPF championships or EPF cups, should include international referee(s) among its team officials",
    "side": 3,
    "stemmer": null,

@@ -1,17 +1,18 @@
 {
  "doc_id": "refudstyr15052025",
  "sha256": "cdf561d38ee55646cc121c7ffee71856df375c3e14429c656cd893d5e67b0930",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2025-05-15",
  "beslutninger": [
   {
-   "emne": "Certificeret workshop i udstyrsassistance",
+   "emne": "Uddannelse af hjælpere til udstyrsløftere",
    "kategori": "uddannelse",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Udstyrsgruppen afholder korte workshops i, hvordan man hjælper en udstyrsløfter både til træning og under konkurrence. Workshoppen underviser i grundlæggende viden, og deltagerne certificeres efter workshoppen. En pilotworkshop afvikles ved de tre fællestræninger i juni.",
+   "tekst": "Udstyrsgruppen afholder korte workshops i, hvordan man hjælper en udstyrsløfter til både træning og konkurrence. Der undervises i grundlæggende viden, og deltagerne certificeres efter workshoppen. Der afvikles en pilotworkshop ved de tre fællestræninger i juni, hvor forbedringer indarbejdes.",
    "citat": "Uddannelse vil foregå ved at vi holder korte workshops i, hvordan man hjælper en udstyrsløfter såvel til træning som under konkurrence.",
    "side": 2,
    "stemmer": null,

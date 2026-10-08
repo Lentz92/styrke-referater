@@ -1,7 +1,7 @@
 {
  "doc_id": "refbest_01062013",
  "sha256": "15a8594cd79ad50f09c8c488622148b3eaa119034f8dab949dc8416196d27b9c",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2013-06-01",
  "beslutninger": [
@@ -9,6 +9,7 @@
    "emne": "Landsholdsdragt ved præmieoverrækkelse",
    "kategori": "landshold",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
    "tekst": "De officielle landsholdsdragter skal være iført ved præmieoverrækkelser til internationale stævner.",
@@ -20,13 +21,14 @@
    "citat_fundet": true
   },
   {
-   "emne": "Træning i egen klub",
+   "emne": "Krav om træning i egen klub",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "aendring",
    "niveau": "bestyrelsesbeslutning",
    "tekst": "Atleter skal træne i den klub, de stiller op for. Hvis atleten ikke træner flere gange om ugen, skal det aftales, at atleten træner i klubben på den samme ugedag, så atleten er til rådighed for Antidoping Danmark.",
-   "citat": "Det blev her afgjort at atleter skal \ntræne i den klub de stiller op for. Hvis atleten ikke træner flere gange om \nugen, skal det aftales at atleten træner i klubben på den samme ugedag.",
+   "citat": "Det blev her afgjort at atleter skal træne i den klub de stiller op for. Hvis atleten ikke træner flere gange om ugen, skal det aftales at atleten træner i klubben på den samme ugedag.",
    "side": 2,
    "stemmer": null,
    "gaelder_fra": null,

@@ -1,7 +1,7 @@
 {
  "doc_id": "refbest_19042015",
  "sha256": "c765bbfac9e58db1d8a424cbe607ff53e068d3dc9b3075576105f5d9e820d81c",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2015-04-19",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Ekstern kommunikation",
    "kategori": "organisation",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Bestyrelsen og udvalgsmedlemmer melder ikke noget ud eksternt, før det er drøftet internt i udvalgene eller bestyrelsen. Udvalg reagerer kun på forhold, der er problematiske for en større gruppe eller er et gennemgående problem. Der lægges et link på Facebook, der opfordrer til god tone og sober debat, og ved for hård tone kontakter Jacob de involverede og evt. deres klubformand.",
+   "tekst": "Bestyrelsen og udvalgsmedlemmer melder ikke noget ud eksternt, før det er drøftet internt i udvalgene eller bestyrelsen. Der lægges et link på Facebook, der opfordrer til god tone og sober debat, og ved for hård tone kontakter Jacob de involverede og evt. formanden for deres klub.",
    "citat": "Bestyrelsen og udvalgsmedlemmer melder ikke noget ud ekstern, før det er blevet vendt intern i udvalgene eller i bestyrelsen.",
    "side": 5,
    "stemmer": null,

@@ -24,8 +24,8 @@ from pathlib import Path
 from scrape import DATA_DIR, Doc, document_text
 
 # Bump when a prompt or schema changes so cached results are recomputed.
-EXTRACT_VERSION = 1
-CONSOLIDATE_VERSION = 6
+EXTRACT_VERSION = 2
+CONSOLIDATE_VERSION = 7
 
 DECISIONS_DIR = DATA_DIR / "beslutninger"
 RULES_DIR = DATA_DIR / "regler"
@@ -45,7 +45,7 @@ CATEGORIES = {
     "andet": "Andet",
 }
 NIVEAUER = ["vedtaegt", "staevneregel", "bestyrelsesbeslutning", "udvalgsbeslutning", "eksternt_krav"]
-EFFEKTER = ["indfoert", "aendret", "bekraeftet", "ophaevet", "forkastet", "trukket"]
+EFFEKTER = ["indfoert", "aendret", "bekraeftet", "ophaevet", "foreslaaet", "forkastet", "trukket"]
 
 log = logging.getLogger(__name__)
 
@@ -65,6 +65,7 @@ class Decision:
     citat_fundet: bool
     side: int | None
     stemmer: str | None
+    forslagsstiller: str | None  # who submitted the proposal, e.g. a club or Bestyrelsen
     gaelder_fra: str | None
     gaelder_til: str | None
 
@@ -122,8 +123,13 @@ atleter (not IPF/EPF internal matters such as their own elections or budgets)
 Masterudvalget, including its budget, composition and selection) and landshold come before \
 okonomi, organisation and staevner. A rule about an obligation that includes a fee belongs to \
 the obligation's category; pure fee/rate decisions belong to okonomi.
-- udfald: vedtaget (adopted or decided), forkastet (voted down or rejected), trukket \
-(withdrawn or postponed without a decision).
+- udfald: vedtaget (adopted or decided), forkastet (voted down or rejected), trukket (only \
+when the minutes say the proposer withdrew it), ikke_afgjort (a proposal that is presented or \
+discussed without a decision at this meeting, e.g. the board reviewing "indkomne forslag" \
+from clubs before Repræsentantskabsmødet, or a proposal postponed).
+- forslagsstiller: who submitted the proposal (a club such as "Hvidovre", "Bestyrelsen", a \
+committee) when the minutes say so, else null. Many rules start as "indkomne forslag" from \
+clubs to Repræsentantskabsmødet.
 - handling: ny (new rule), aendring (changes an existing rule), bekraeftelse (restates, \
 confirms or clarifies an existing rule without changing it), ophaevelse (abolishes a rule).
 - niveau: vedtaegt (change to DSF's statutes, by Repræsentantskabet), staevneregel (other \
@@ -158,7 +164,8 @@ EXTRACT_SCHEMA = {
                 "properties": {
                     "emne": {"type": "string"},
                     "kategori": {"type": "string", "enum": list(CATEGORIES)},
-                    "udfald": {"type": "string", "enum": ["vedtaget", "forkastet", "trukket"]},
+                    "udfald": {"type": "string", "enum": ["vedtaget", "forkastet", "trukket", "ikke_afgjort"]},
+                    "forslagsstiller": {"type": ["string", "null"]},
                     "handling": {"type": "string", "enum": ["ny", "aendring", "bekraeftelse", "ophaevelse"]},
                     "niveau": {"type": "string", "enum": NIVEAUER},
                     "tekst": {"type": "string"},
@@ -168,7 +175,7 @@ EXTRACT_SCHEMA = {
                     "gaelder_fra": {"type": ["string", "null"]},
                     "gaelder_til": {"type": ["string", "null"]},
                 },
-                "required": ["emne", "kategori", "udfald", "handling", "niveau", "tekst", "citat",
+                "required": ["emne", "kategori", "udfald", "forslagsstiller", "handling", "niveau", "tekst", "citat",
                              "side", "stemmer", "gaelder_fra", "gaelder_til"],
                 "additionalProperties": False,
             },
@@ -252,6 +259,7 @@ def load_decisions(docs: list[Doc]) -> list[Decision]:
                 citat_fundet=d["citat_fundet"],
                 side=d["side"],
                 stemmer=d["stemmer"],
+                forslagsstiller=d.get("forslagsstiller"),
                 gaelder_fra=_valid_date(d["gaelder_fra"]),
                 gaelder_til=_valid_date(d["gaelder_til"]),
             ))
@@ -313,9 +321,11 @@ For each rule return:
 - versioner: the rule's decisions in chronological order, each with
   - ref: exactly as given in the input
   - effekt: indfoert (the rule first appears), aendret (its content changes), bekraeftet \
-(repeated, confirmed or clarified without changing content), ophaevet (abolished), forkastet \
-(a proposal to change it was rejected – rule unchanged), trukket (a proposal was withdrawn – \
-rule unchanged)
+(repeated, confirmed or clarified without changing content), ophaevet (abolished), foreslaaet \
+(an incoming proposal was presented or discussed without a decision yet – rule unchanged), \
+forkastet (a proposal was voted down – rule unchanged), trukket (the proposer withdrew the \
+proposal – rule unchanged). Use the decision's udfald: ikke_afgjort -> foreslaaet, forkastet \
+-> forkastet, trukket -> trukket.
   - tekst: for aendret and bekraeftet, the complete rule text in force AFTER this decision, in \
 Danish, merging earlier parts that still apply so the text stands alone, and covering only \
 this rule (leave out other rules mentioned in the same decision, e.g. other fees in a budget \
@@ -325,7 +335,8 @@ remove. For indfoert, null when the decision's own tekst states exactly this rul
 nothing else (the usual case), otherwise the rule-specific text. For other effects null.
   - kort: at most 12 Danish words saying what this decision did, keeping key numbers and \
 dates; no full sentence needed, e.g. "hævet fra 200 til 300 kr.", "ny klub anmoder via \
-licens@styrke.dk", "forslag om 12 mdr. karantæne forkastet".
+licens@styrke.dk". For proposals name the proposer when known, e.g. "Hvidovre foreslår \
+spærring ved skyldigt kontingent".
   - kort_regel: for indfoert, aendret and bekraeftet, at most 12 Danish words giving the \
 essence of the rule after this decision, e.g. "300 kr. pr. løfter pr. år", "mindst én dommer \
 ved over 5 tilmeldte"; null for other effects.
@@ -422,6 +433,7 @@ def _consolidation_input(d: Decision, organ: str) -> dict:
     item = {
         "ref": d.ref, "dato": d.dato, "organ": organ, "udfald": d.udfald, "handling": d.handling,
         "niveau": d.niveau, "emne": d.emne, "tekst": d.tekst, "stemmer": d.stemmer,
+        "forslagsstiller": d.forslagsstiller,
         "gaelder_fra": d.gaelder_fra, "gaelder_til": d.gaelder_til,
     }
     return {k: v for k, v in item.items() if v is not None}

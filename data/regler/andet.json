@@ -1,27 +1,26 @@
 {
  "kategori": "andet",
- "version": 6,
- "input_hash": "cda973121f41c0c4dc809dfd4c3109bc7209304e700f640acd33061b4ea6f4bb",
+ "version": 7,
+ "input_hash": "1a34cf1b7095f88ea4143bf590cc8e1ca838a31a2c0347d45ce3ed01ba068bb2",
  "model": "opus",
  "regler": [
   {
-   "titel": "Bestilling af medaljer",
-   "vigtig": false,
+   "titel": "Deltagelse i universitetsmesterskaber",
+   "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_03052014#3",
+     "ref": "refbest_220122#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "medaljer bestilles kun gennem Forma",
-     "kort_regel": "medaljer bestilles udelukkende gennem Forma"
+     "kort": "DSF åben for universitetsmesterskaber, universiteter finansierer selv",
+     "kort_regel": "DSF åben for deltagelse; universiteterne skaffer selv finansiering"
     }
    ]
   }
  ],
  "udeladt": [
-  "refbest_08022015#9",
-  "refbest_28022016#3"
+  "refbest_010619#2"
  ],
  "ikke_tildelt": []
 }

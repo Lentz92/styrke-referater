@@ -1,17 +1,18 @@
 {
  "doc_id": "rep2023ekstra",
  "sha256": "43fd0e73a72161809e54956969f7a36cffa5c185c3da8d7b5dcebb58b7d86c68",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2023-06-06",
  "beslutninger": [
   {
-   "emne": "Stævneudvalgets kompetence til at ændre stævner",
+   "emne": "Stævneudvalgets ret til at ændre stævners størrelse, placering og sammensætning",
    "kategori": "staevner",
    "udfald": "vedtaget",
+   "forslagsstiller": "Bestyrelsen",
    "handling": "aendring",
    "niveau": "vedtaegt",
-   "tekst": "Vedtægternes §13 udvides, så Stævneudvalget med godkendelse fra DSF's bestyrelse kan ændre stævnernes størrelse, placering og sammensætning, når det skønnes nødvendigt. Enhver ændring skal offentliggøres senest 8 uger før afholdelse af det pågældende mesterskab.",
+   "tekst": "Vedtægtens §13 udvides, så Stævneudvalget med godkendelse fra DSF's bestyrelse kan ændre stævners størrelse, placering og sammensætning, når det skønnes nødvendigt. Enhver ændring skal offentliggøres senest 8 uger før afholdelsen af det pågældende mesterskab.",
    "citat": "Stævneudvalget kan med godkendelse fra bestyrelsen i DSF ændre på stævnernes størrelse, placering og sammensætning i de tilfælde, det skønnes nødvendigt.",
    "side": 2,
    "stemmer": "37 for, 0 imod, 0 blanke",

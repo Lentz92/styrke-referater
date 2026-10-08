@@ -1,8 +1,39 @@
 {
  "doc_id": "refbest_060621",
  "sha256": "8b986ce0fc2a4e856579d3ede95fc2d549ef3d8d3b269f7f874819cfd12b24f4",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2021-06-06",
- "beslutninger": []
+ "beslutninger": [
+  {
+   "emne": "IPF-forslag: Konkurrenceplatform",
+   "kategori": "internationalt",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": "Jørgen Rasmussen og Klaus Brostrøm (DSF)",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "DSF foreslår over for IPF's kongres 2021, at alle løft udføres på en platform på mellem 2,5 x 2,5 m og 4,0 x 4,0 m, højst 10 cm høj, med flad, fast og plan overflade dækket af glat skridsikkert tæppe. Gummimmåtter og lignende materialer må ikke bruges. Forslaget er endnu ikke behandlet.",
+   "citat": "All lifts shall be carried out on a platform measuring between 2.5 m x 2.5 m minimum and 4.0 m x 4.0 m maximum.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  },
+  {
+   "emne": "IPF-forslag: Nationale forbunds dopingtest",
+   "kategori": "antidoping",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": "Jørgen Rasmussen og Klaus Brostrøm (DSF)",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "DSF foreslår over for IPF's kongres 2021 en ny regel 18.8, så alle nationale forbund skal gennemføre dopingtests både i og uden for konkurrence i overensstemmelse med IPF's antidopingregler og standarder. Forslaget er endnu ikke behandlet.",
+   "citat": "All National Federations shall carry out in and out of competition tests –in accordance with the IPF Anti-Doping Rules and standards.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
 }

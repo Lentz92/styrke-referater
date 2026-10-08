@@ -1,7 +1,7 @@
 {
  "doc_id": "refudstyr10072025",
  "sha256": "23b78877a2df761ea603950d3cf1decabd3896818dc4e0958a599adad1f00568",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2025-07-10",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Låneseddel ved udlån af udstyr",
    "kategori": "udstyr",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Ved udlån af forbundets udstyr skal låneren udfylde en låneseddel med oplysninger om antal deltagere, vægt, højde og erfaring, så samlingerne kan planlægges. Samme låneseddel bruges, når udstyr tilsendes via udviklingskonsulenten, og lånesedlerne gemmes i Dropbox og fysisk i mapper.",
+   "tekst": "Ved udlån af udstyr fra forbundet skal låneren udfylde en låneseddel med oplysninger om vægt, højde og erfaring (og antal deltagere ved samlinger). Samme låneseddel bruges, når udstyr tilsendes via udviklingskonsulenten. Lånesedlerne gemmes i Dropbox og fysisk i mapper.",
    "citat": "Det er et must, at der oplyses om, hvor mange, der deltog, deres vægt, højde og erfaring, for at der kan planlægges en god samling.",
    "side": 2,
    "stemmer": null,

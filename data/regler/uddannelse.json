@@ -1,11 +1,25 @@
 {
  "kategori": "uddannelse",
- "version": 6,
- "input_hash": "0e18e4449de2920a6b8a001e4913802592a3ffd7d35086b054f8eb3e1211986d",
+ "version": 7,
+ "input_hash": "83420f99c358918d3c9d1b23e6dc60e37afb21e760803daaf5c8208d37c39e15",
  "model": "opus",
  "regler": [
   {
-   "titel": "Uddannelsesdage for trænere",
+   "titel": "Træneruddannelsens udformning",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_10032013#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "Breddeudvalgets udkast til træneruddannelse godkendt",
+     "kort_regel": "Breddeudvalget udvikler træneruddannelsen ud fra godkendt udkast"
+    }
+   ]
+  },
+  {
+   "titel": "Uddannelsesdage for landsholds- og klubtrænere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -14,21 +28,49 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "uddannelsesdage for landsholds- og klubtrænere fra 2022",
-     "kort_regel": "årlige uddannelsesdage for landsholds- og klubtrænere, sportschef ansvarlig"
+     "kort_regel": "årlige uddannelsesdage for trænere, sportschefen står for oplægget"
     }
    ]
   },
   {
-   "titel": "Certificeret workshop i udstyrsassistance",
+   "titel": "Kursus i stævnestyringsprogram",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refstaevne04042024#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "krav om praksis ved to stævner, max ti pladser",
+     "kort_regel": "deltagere øver ved to stævner, 6 af 10 pladser åbne"
+    }
+   ]
+  },
+  {
+   "titel": "Certificering af hjælpere til udstyrsløftere",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
      "ref": "refudstyr15052025#1",
      "effekt": "indfoert",
-     "tekst": "Udstyrsgruppen afholder korte workshops i, hvordan man hjælper en udstyrsløfter både til træning og under konkurrence. Workshoppen underviser i grundlæggende viden, og deltagerne certificeres efter workshoppen.",
-     "kort": "workshops med certificering i hjælp til udstyrsløftere indført",
-     "kort_regel": "certificerende workshop i at hjælpe udstyrsløftere i træning og konkurrence"
+     "tekst": null,
+     "kort": "workshops med certificering af hjælpere til udstyrsløftere",
+     "kort_regel": "hjælpere til udstyrsløftere certificeres via workshop fra Udstyrsgruppen"
+    }
+   ]
+  },
+  {
+   "titel": "Krav til coaches ved IPF-nominering",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#10",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "IPF-krav om coach-certifikat fra 1. januar 2029",
+     "kort_regel": "coaches skal have IPF-basiscertifikat, headcoaches skal bestå WADA ADEL-program"
     }
    ]
   }

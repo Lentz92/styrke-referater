@@ -1,17 +1,18 @@
 {
  "doc_id": "elite24082022",
  "sha256": "71a0e6af0bbadf4e920808f6c4380295ed6110eee56d27ba52c57b499633681c",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2022-08-24",
  "beslutninger": [
   {
-   "emne": "Overnatning for landsholdet ved VM",
+   "emne": "Landsholdets rammer ved VM, overnatning",
    "kategori": "landshold",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Ved VM i Viborg tilbydes atleterne to overnatninger med morgenmad. Forlænget ophold er for egen regning. Trænere og officials tilbydes overnatning i hele den periode, de fungerer ved VM.",
+   "tekst": "Ved VM i Viborg tilbydes atleterne to overnatninger med morgenmad; forlænget ophold er for egen regning. Trænere og officials tilbydes overnatning i hele den periode, de fungerer ved VM.",
    "citat": "Ved VM i Viborg vil atleterne få tilbudt to overnatninger med morgenmad. Hvis der er ønske om, at forlænge opholdet vil det være for egen regning.",
    "side": 1,
    "stemmer": null,

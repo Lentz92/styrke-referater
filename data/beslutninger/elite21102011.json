@@ -1,7 +1,7 @@
 {
  "doc_id": "elite21102011",
  "sha256": "f65f689cbb07db56e143f31f9b0fc694537232bc1cb98c997aaabf84020b4445",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2011-10-21",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Startvægte over PR ved internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Senior landsholdsløftere må fremover ikke gå efter startvægte over deres personlige rekord (PR) ved internationale mesterskaber.",
+   "tekst": "Senior landsholdsløftere må fremover ikke have startvægte over deres personlige rekord (PR) ved internationale mesterskaber.",
    "citat": "Fremover vil startvægte over PR ved internationale mesterskaber, ikke være tilladt for  senior landsholdsløftere.",
    "side": 1,
    "stemmer": null,

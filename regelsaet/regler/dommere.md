@@ -8,178 +8,180 @@ Alle regler i området med fuld tekst og historik – også dem, der ikke længe
 
 **I kraft**
 
-B-dommere, der har dømt regelmæssigt i 2 år, kan anmode om A-dommerprøve. Prøven har en teoretisk del med minimum 90 af 100 point og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft (fra 2. forsøg), hvor mindst 90 % af afgørelserne skal være rigtige.
+B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøve via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Dommerudvalget vurderer indstillingen, hvorefter der rettes henvendelse til dommeren. Prøven har en teoretisk del (min. 90 af 100 point) og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft, hvor der kræves mindst 90 % rigtige afgørelser.
 
-*Udvalgsbeslutning · vedtaget 09.11.2019 af Bestyrelsen*
+*Bestyrelsesbeslutning · vedtaget 08.03.2025 af Bestyrelsen · senest bekræftet 08.04.2025*
 
-- 09.11.2019 · indført: 2 års B-dømning; teori 90/100, praktik 90 % rigtige · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
+- 09.11.2019 · indført: 2 års B-dømning; teori og praksis med 90 % · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
+- 07.01.2025 · ændret: indstilling via klubformand; kun klubløse indstiller sig selv · [refdom07012025 s. 1](https://filer.styrke.dk/referater/refdom07012025.pdf#page=1)
+- 28.01.2025 · indkommet forslag: Dommerudvalget foreslår udvalgsvurdering af indstillinger · [refdom28012025 s. 4](https://filer.styrke.dk/referater/refdom28012025.pdf#page=4)
+- 08.03.2025 · ændret: dommerudvalget vurderer indstilling og kontakter dommeren · [refbest_080325 s. 3](https://filer.styrke.dk/referater/refbest_080325.pdf#page=3)
+- 08.04.2025 · bekræftet: tekst indarbejdet i Regler for dommerudvalget · [refdom08042025 s. 2](https://filer.styrke.dk/referater/refdom08042025.pdf#page=2)
 
 ### Afholdelse af dommerprøver
 
 **I kraft**
 
-Der afholdes dommerprøver (A og B) mindst en gang om året i henholdsvis Jylland og på Sjælland, og yderligere prøver afholdes efter behov. Dommerkandidater, der ikke består, kan tage prøven igen ved næste dommeruddannelse.
+I 2026 afholdes kun én dommeruddannelse, den 25. april i Aarhus AK. De nyeste regelændringer integreres i den teoretiske og praktiske prøve.
 
-*Udvalgsbeslutning · vedtaget 05.03.2024 af Dommerudvalget*
+*Udvalgsbeslutning · vedtaget 18.09.2025 af Dommerudvalget · senest bekræftet 12.03.2026 · gælder til 31.12.2026*
 
-- 05.03.2024 · indført: mindst årligt i Jylland og på Sjælland · [refdom05032024 s. 1](https://filer.styrke.dk/referater/refdom05032024.pdf#page=1)
+- 05.03.2024 · indført: mindst årligt i både Jylland og Sjælland · [refdom05032024 s. 1](https://filer.styrke.dk/referater/refdom05032024.pdf#page=1)
+- 03.07.2025 · ændret: intet dommerkursus i 2025 · [refdom03072025 s. 1](https://filer.styrke.dk/referater/refdom03072025.pdf#page=1)
+- 18.09.2025 · ændret: ét landsdækkende dommerkursus i 2026 · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
+- 12.03.2026 · bekræftet: eneste uddannelse 25. april 2026 i Aarhus AK (fra 01.01.2026) · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
 
-> **Bemærk:** I 2025 blev der ikke holdt dommerkursus, og i 2026 kun ét, hvilket afviger fra kravet om årlige prøver i både Jylland og på Sjælland.
+> **Bemærk:** Dommerudvalget har efterfølgende aflyst kurset i 2025 og kun planlagt ét kursus i 2026, i strid med kravet om årlige prøver i både Jylland og Sjælland.
 
-### Aktivitetskrav og sletning af inaktive dommere
+### Ansvar og frist for dommerpåsætning
 
 **I kraft**
 
-Dommere skal dømme mindst 3 officielle stævner nationalt på 2 år; ellers slettes de som dommer. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal i det efterfølgende år. Dommere i kategorien pause får kun dispensation ved helt særlige forhold. Der fastsættes ikke et bestemt antal nationale dommere.
+Stævneudvalget sætter dommere og jury på forbundsstævner og godkender dem til andre stævner under DSF, også private. Den stævneansvarlige påbegynder påsætningen i god tid og noterer, hvem der er kontaktet. Udkast sendes til stævne- og dommerudvalget med 48 timer til kommentarer. Stævneplan med dommerpåsætning lægges på terminslisten senest 14 dage før stævnet.
 
-*Udvalgsbeslutning · vedtaget 12.03.2026 af Dommerudvalget · senest bekræftet 04.06.2026*
+*Udvalgsbeslutning · vedtaget 16.12.2025 af Dommerudvalget*
 
-- 09.02.2014 · indført: slettes uden dømning ved to stævner på 2 år (fra 01.01.2014) · [refbest_09022014 s. 2](https://filer.styrke.dk/referater/refbest_09022014.pdf#page=2)
-- 11.10.2015 · bekræftet: tre stævner på to år fra 1. jan. 2015 bekræftet (fra 01.01.2015) · [refbest_11102015 s. 4](https://filer.styrke.dk/referater/refbest_11102015.pdf#page=4)
-- 09.11.2019 · bekræftet: tre officielle stævner på 2 år bekræftet (fra 01.01.2015) · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
-- 12.09.2023 · bekræftet: ; inaktive kontaktes i første kvartal (fra 01.01.2015) · [refdom12092023 s. 1](https://filer.styrke.dk/referater/refdom12092023.pdf#page=1)
-- 22.10.2023 · bekræftet: tre nationale officielle stævner på 2 år bekræftet (fra 01.01.2015) · [refbest_221023 s. 2](https://filer.styrke.dk/referater/refbest_221023.pdf#page=2)
-- 08.02.2015 · ændret: hævet til tre gange på to år · [refbest_08022015 s. 3](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=3)
-- 20.06.2021 · ændret: alle dommere nulstillet efter Corona · [rep2021 s. 7](https://filer.styrke.dk/referater/rep2021.pdf#page=7)
-- 08.01.2023 · bekræftet: inaktive fjernes efter kontakt · [refbest_080123 s. 1](https://filer.styrke.dk/referater/refbest_080123.pdf#page=1)
-- 05.03.2024 · bekræftet: ; udvalget sikrer løbende overholdelse · [refdom05032024 s. 2](https://filer.styrke.dk/referater/refdom05032024.pdf#page=2)
-- 16.12.2025 · forslag trukket: forslag om sletning af B-dommere efter 12 mdr. ikke besluttet · [refdom16122025 s. 2](https://filer.styrke.dk/referater/refdom16122025.pdf#page=2)
-- 12.03.2026 · ændret: dispensation fra pause kun ved helt særlige forhold · [refdom12032026 s. 2](https://filer.styrke.dk/referater/refdom12032026.pdf#page=2)
-- 04.06.2026 · bekræftet: 3 stævner på 2 år bekræftet; intet fast dommerantal · [refdom04062026 s. 2](https://filer.styrke.dk/referater/refdom04062026.pdf#page=2)
+- 05.03.2024 · indført: stævneplan med dommere senest 14 dage før · [refdom05032024 s. 2](https://filer.styrke.dk/referater/refdom05032024.pdf#page=2)
+- 28.03.2024 · ændret: udkast med 48 timers kommentarfrist · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
+- 16.12.2025 · ændret: påsætning i god tid; kontaktede dommere noteres · [refdom16122025 s. 2](https://filer.styrke.dk/referater/refdom16122025.pdf#page=2)
+
+> **Bemærk:** Repræsentantskabet gav i 2018 Dommerudvalget ansvaret for påsætning af dommere og jury, mens udvalgsbeslutninger fra 2024 lægger påsætningen hos Stævneudvalget.
 
 ### B-dommerprøve
 
 **I kraft**
 
-Klubber kan indstille medlemmer til B-dommerprøve. Kandidaten skal have kendskab til styrkeløft, sætte sig ind i de tekniske regler og efter bestået prøve stille sig til rådighed for DSF. Prøven er teoretisk med mindst 85 af 100 point.
+Klubber kan indstille medlemmer til B-dommerprøve. Kandidater kan ikke tilmeldes uden at have valgt to stævner, de vil dømme efter bestået prøve, og sættes på disse stævner efter bestået uddannelse. Prøven er teoretisk, og der kræves mindst 85 af 100 point.
 
-*Udvalgsbeslutning · vedtaget 22.10.2023 af Bestyrelsen*
+*Udvalgsbeslutning · vedtaget 05.03.2024 af Dommerudvalget · senest bekræftet 07.01.2025*
 
-- 09.11.2019 · indført: klubber indstiller; teoretisk prøve min. 90 af 100 · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
-- 22.10.2023 · ændret: beståelseskrav sænket til 85 af 100 point · [refbest_221023 s. 2](https://filer.styrke.dk/referater/refbest_221023.pdf#page=2)
+- 22.10.2023 · ændret: beståelseskrav sænket til 85 af 100 point (fra 01.01.2015) · [refbest_221023 s. 2](https://filer.styrke.dk/referater/refbest_221023.pdf#page=2)
+- 09.11.2019 · indført: klubber indstiller; teoriprøve med 90 af 100 point · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
+- 05.03.2024 · ændret: kandidat skal opgive to stævner før tilmelding · [refdom05032024 s. 1](https://filer.styrke.dk/referater/refdom05032024.pdf#page=1)
+- 07.01.2025 · bekræftet: to valgte stævner før tilmelding bekræftet · [refdom07012025 s. 2](https://filer.styrke.dk/referater/refdom07012025.pdf#page=2)
 
 ### Betaling for internationale dommere
 
 **I kraft**
 
-DSF betaler som udgangspunkt billigste transport, hvis dommeren selv køber billetten, og hotel fra dagen før dommergerningens start til dagen efter dens ophør (fx 4 dage inkl. rejsedage ved 2 dages dommergerning ved under 14 løftere). Ekstra tid på destinationen er for dommerens egen regning.
+DSF betaler som udgangspunkt billigste transport med hensyn til anerkendte udbydere og fornuftig rejsetid, hvis dommeren selv køber billetten. DSF betaler hotel fra dagen før dommergerningen til dagen efter, fx i alt 4 dage inkl. rejsedage ved under 14 løftere. Ekstra ophold er for dommerens egen regning.
 
-*Udvalgsbeslutning · vedtaget 28.01.2025 af Dommerudvalget · senest bekræftet 08.03.2025*
+*Bestyrelsesbeslutning · vedtaget 08.03.2025 af Bestyrelsen*
 
-- 28.01.2025 · indført: billigste transport og hotel dagen før til dagen efter · [refdom28012025 s. 4](https://filer.styrke.dk/referater/refdom28012025.pdf#page=4)
-- 08.03.2025 · bekræftet: vedtaget af bestyrelsen · [refbest_080325 s. 3](https://filer.styrke.dk/referater/refbest_080325.pdf#page=3)
+- 28.01.2025 · indkommet forslag: Dommerudvalget foreslår betaling af billigste transport og hotel · [refdom28012025 s. 4](https://filer.styrke.dk/referater/refdom28012025.pdf#page=4)
+- 08.03.2025 · indført: billigste transport og hotel dagen før til dagen efter · [refbest_080325 s. 3](https://filer.styrke.dk/referater/refbest_080325.pdf#page=3)
 
 ### Betroede personer til indvejning
 
 **I kraft**
 
-Ved mangel på dommere til indvejning kan betroede personer varetage funktionen. Den afholdende klub bedes stille betroede personer til rådighed, det noteres på stævneplanen, og der skal være to personer til indvejning. Betroede personer bruges kun, hvis der mangler dommere.
+Ved mangel på dommere til indvejning kan betroede personer varetage indvejningen. Den arrangerende klub bedes stille dem til rådighed, det noteres på stævneplanen, og der skal være to personer til indvejning.
 
 *Udvalgsbeslutning · vedtaget 28.03.2024 af Dommerudvalget*
 
-- 28.03.2024 · indført: betroede personer ved dommermangel; to til indvejning · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
-
-### BroBizz-krav for kørselsgodtgørelse
-
-**I kraft**
-
-Dommere, der kører over Storebælt, skal have en BroBizz, hvis de ønsker kørselsgodtgørelse, da der spares penge ved Pay by Plate/BroBizz.
-
-*Udvalgsbeslutning · vedtaget 28.03.2024 af Dommerudvalget*
-
-- 28.03.2024 · indført: BroBizz krævet over Storebælt for godtgørelse · [refdom28032024 s. 1](https://filer.styrke.dk/referater/refdom28032024.pdf#page=1)
+- 28.03.2024 · indført: betroede personer kan indveje ved dommermangel · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
 
 ### Brush up-kursus for B-dommere
 
 **I kraft**
 
-Der afholdes hvert år et obligatorisk online brush up-kursus for B-dommere, som også er åbent for andre interesserede dommere. Det udbydes 3 gange (i 2026 inden årets udgang), programmet tilpasses nuværende behov, og dommere, der ikke har deltaget, tilbydes et opsamlingsheat.
+B-dommere skal deltage i det obligatoriske online brush up-kursus, som afholdes 3 gange inden årets udgang, så alle kan deltage; andre dommere kan også deltage.
 
-*Udvalgsbeslutning · vedtaget 20.08.2026 af Dommerudvalget · senest bekræftet 29.08.2026 · gælder til 31.12.2026*
+*Udvalgsbeslutning · vedtaget 04.06.2026 af Dommerudvalget · senest bekræftet 29.08.2026 · gælder til 31.12.2026*
 
-- 03.07.2025 · indført: obligatorisk online kursus på tre datoer · [refdom03072025 s. 1](https://filer.styrke.dk/referater/refdom03072025.pdf#page=1)
-- 18.09.2025 · ændret: gøres årligt med aktuelt indhold · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
-- 12.03.2026 · bekræftet: kursus i efteråret 2026 bekræftet · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
-- 04.06.2026 · ændret: opsamlingsheat for dommere, der ikke deltog · [refdom04062026 s. 2](https://filer.styrke.dk/referater/refdom04062026.pdf#page=2)
-- 20.08.2026 · ændret: åbnet for andre interesserede dommere · [refdom20082026 s. 1](https://filer.styrke.dk/referater/refdom20082026.pdf#page=1)
-- 29.08.2026 · bekræftet: bestyrelsen bekræfter 3 kurser inden udgangen af 2026 · [refbest_290826.2 s. 3](https://filer.styrke.dk/referater/refbest_290826.2.pdf#page=3)
+- 03.07.2025 · indført: tre obligatoriske online brush up-kurser · [refdom03072025 s. 1](https://filer.styrke.dk/referater/refdom03072025.pdf#page=1)
+- 18.09.2025 · ændret: brush up afholdes hvert år · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
+- 12.03.2026 · bekræftet: obligatorisk online kursus efteråret 2026 (fra 01.01.2026) · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
+- 04.06.2026 · ændret: udbydes 3 gange plus opsamlingsheat · [refdom04062026 s. 2](https://filer.styrke.dk/referater/refdom04062026.pdf#page=2)
+- 20.08.2026 · bekræftet: åbnet for andre interesserede dommere · [refdom20082026 s. 1](https://filer.styrke.dk/referater/refdom20082026.pdf#page=1)
+- 29.08.2026 · bekræftet: Bestyrelsen bekræfter obligatorisk kursus 3 gange i 2026 · [refbest_290826.2 s. 3](https://filer.styrke.dk/referater/refbest_290826.2.pdf#page=3)
 
-### Dansk oversættelse af regel om greb om stangen
-
-**I kraft**
-
-Den danske oversættelse af reglen om hænders greb om stangen ændres, så hænder, tommelfingre og fingre skal være i fuldstændig kontakt med stangen, og tommelfingrene ikke skal omslutte stangen.
-
-*Udvalgsbeslutning · vedtaget 04.06.2026 af Dommerudvalget*
-
-- 04.06.2026 · indført: fuld kontakt; tommelfingre skal ikke omslutte stangen · [refdom04062026 s. 3](https://filer.styrke.dk/referater/refdom04062026.pdf#page=3)
-
-### Diskvalifikationsgrunde i dommerregler
+### Dansk fortolkning af bænkpres-opspænd og dybde
 
 **I kraft**
 
-"Uncompleted lift" står under den gule markering blandt diskvalifikationsgrundene.
+Indtil IPF udmelder en fortolkning vil den danske procedure være, at overdommeren beder løfteren indtage en oprejst position og derefter forsøge et nyt opspænd i henhold til reglerne. Hvis en løfter ligger helt fladt på bænken og stadig ikke kan opnå korrekt dybde, godkendes løftet.
+
+*Bestyrelsesbeslutning · vedtaget 08.01.2023 af Bestyrelsen*
+
+- 08.01.2023 · indført: nyt opspænd; fladt liggende uden dybde godkendes · [refbest_080123 s. 1](https://filer.styrke.dk/referater/refbest_080123.pdf#page=1)
+
+### Diskvalifikationsgrunde i dommerreglerne
+
+**I kraft**
+
+Diskvalifikationsgrunde præciseres, så der står "Uncompleted lift" under den gule markering.
 
 *Eksternt krav · vedtaget 04.11.2018 af DIF/IPF/EPF*
 
 - 04.11.2018 · indført: "Uncompleted lift" under gul markering · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-### Diætpenge til dommere
+### Diæter til dommere
 
 **I kraft**
 
-DSF giver diætpenge til dommere ved alle forbundsstævner, men ikke ved private stævner (fx TSK Cup, AASK, Jørgen Krog Cup, HaSK OPEN).
+DSF giver diætpenge til dommere ved alle forbundsstævner, men ikke ved private stævner (fx TSK Cup, AASK, Jørgen Krog Cup, HaSK OPEN). Forslaget om diæter til alle stævner imødekommes dermed ikke.
 
 *Udvalgsbeslutning · vedtaget 12.09.2023 af Dommerudvalget*
 
-- 12.09.2023 · indført: diætpenge ved forbundsstævner, ikke private stævner · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
+- 12.09.2023 · indført: diæter ved forbundsstævner, ikke private stævner · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
 
-### Dommerbesætning og jury ved officielle stævner
-
-**I kraft**
-
-Ved alle officielle stævner i Danmark skal der være en jury efter IPF's regler, med mindst A-certifikat. Ud over juryen er der tre dommere, som må være B-dommere. Der kan sættes danske rekorder ved alle officielle stævner undtagen divisionsturneringen, som heller ikke skal have jury. Dommerudvalget påsætter dommere og jury.
-
-*Stævneregel · vedtaget 18.03.2018 af Repræsentantskabet (enstemmigt)*
-
-- 17.03.2009 · forslag forkastet: forslag om én dommer i divisionsturneringen forkastet · [rep2009](https://filer.styrke.dk/referater/rep2009.htm)
-- 18.03.2018 · ændret: jury med A-certifikat plus tre dommere; rekorder ej i division (fra 18.03.2018) · [rep2018 s. 7](https://filer.styrke.dk/referater/rep2018.pdf#page=7)
-
-### Dommerbog og registrering af dommeraktivitet
+### Dommerbriefing før stævnestart
 
 **I kraft**
 
-Dommere skal medbringe dommerbog til hvert stævne, og den skal underskrives af stævnelederen; ellers sker ingen afregning af dommerhonorar, kørepenge og andre udlæg. Hver indvejning registreres i dommerbogen (ikke blot pr. stævne).
-
-*Udvalgsbeslutning · vedtaget 05.03.2024 af Dommerudvalget · senest bekræftet 10.09.2024*
-
-- 09.03.2008 · indført: dommerbog skal medbringes og underskrives for afregning · [repref2008 s. 2](https://filer.styrke.dk/referater/repref2008.PDF#page=2)
-- 05.03.2024 · ændret: registrering pr. indvejning fra 6. marts 2024 (fra 06.03.2024) · [refdom05032024 s. 3](https://filer.styrke.dk/referater/refdom05032024.pdf#page=3)
-- 10.09.2024 · bekræftet: registrering pr. indvejning i dommerbogen bekræftet efter afstemning · [refstaevne10092024 s. 2](https://filer.styrke.dk/referater/refstaevne10092024.pdf#page=2)
-
-### Dommerbriefing før stævne
-
-**I kraft**
-
-Stævnelederen skal afholde dommerbriefing inden stævnestart ved alle stævner, uanset om dommerne har fået den før, med udgangspunkt i dokumentet på hjemmesiden og fremhævelse af særligt vigtige regler og ændringer.
+Stævnelederen skal afholde dommerbriefing inden stævnestart ved alle stævner med udgangspunkt i dokumentet Dommer briefing på hjemmesiden og kan fremhæve særligt vigtige regler og ændringer.
 
 *Udvalgsbeslutning · vedtaget 02.07.2024 af Dommerudvalget · senest bekræftet 12.03.2026*
 
-- 02.07.2024 · indført: stævneleder holder briefing ved alle stævner · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
-- 12.03.2026 · bekræftet: ; udgangspunkt i dokument på hjemmesiden · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
+- 02.07.2024 · indført: briefing ved alle stævner, uanset tidligere briefing · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
+- 12.03.2026 · bekræftet: briefing med udgangspunkt i hjemmesidens dokument · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
+
+### Dommerdatabase og tilmeldingssystem
+
+**I kraft**
+
+Dommere tilmeldes stævner udelukkende via tilmeldingssystemet, og al dommeraktivitet registreres i databasen. Afbud skrives til dommerudvalget. Databasen gennemgås årligt, og alle dommere kontaktes for opdatering af kontaktoplysninger (i 2026 senest 1. marts).
+
+*Udvalgsbeslutning · vedtaget 18.09.2025 af Dommerudvalget*
+
+- 28.03.2024 · indført: klubber og dommere tilmelder; afbud til dommerudvalget · [refdom28032024 s. 1](https://filer.styrke.dk/referater/refdom28032024.pdf#page=1)
+- 14.04.2024 · ændret: tilmeldingssystem i brug fra DM-ugen 2024 · [refbest_140424 s. 2](https://filer.styrke.dk/referater/refbest_140424.pdf#page=2)
+- 04.06.2024 · bekræftet: Stævneudvalget skal have adgang til databasen · [refstaevne04062024 s. 1](https://filer.styrke.dk/referater/refstaevne04062024.pdf#page=1)
+- 28.01.2025 · ændret: Excel-ark på Facebook slettet · [refdom28012025 s. 1](https://filer.styrke.dk/referater/refdom28012025.pdf#page=1)
+- 18.09.2025 · ændret: årlig gennemgang; frist 1. marts 2026 · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
 
 ### Dommere ved private stævner
 
 **I kraft**
 
-Arrangerende klubber skal selv stå for dommerpåsætning og afregning af dommere ved private stævner, men opfordres til at leve op til de normale krav om korrekte dommere ved rekordsætning. Dommerudvalget skal se dommer- og indvejningsplan før offentliggørelse, og stævnet afholdes i DSF's regi og efter forbundets regler.
+Arrangerende klubber står selv for dommerpåsætning og afregning ved private stævner, men opfordres til at leve op til de normale krav om korrekte dommere ved rekordsætning. Dommerudvalget skal se dommer- og indvejningsplan før offentliggørelse, og stævnet afholdes i DSF's regi og efter forbundets regler.
 
 *Bestyrelsesbeslutning · vedtaget 14.01.2017 af Bestyrelsen*
 
-- 14.01.2017 · indført: arrangør påsætter og afregner dommere; udvalget ser plan · [refbest_14012017 s. 3](https://filer.styrke.dk/referater/refbest_14012017.pdf#page=3)
-- 12.09.2023 · forslag forkastet: krav om benzinpenge ved private stævner afvist · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
+- 14.01.2017 · indført: arrangør står for dommerpåsætning; Dommerudvalget ser plan · [refbest_14012017 s. 3](https://filer.styrke.dk/referater/refbest_14012017.pdf#page=3)
 
-### Dommeres mødetid før indvejning
+### Dommeres aktivitetskrav
+
+**I kraft**
+
+Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommere i kategorien pause får kun dispensation ved helt særlige forhold. Dommere, der ikke har dømt nok eller ligger på kanten, kontaktes i årets sidste måned.
+
+*Udvalgsbeslutning · vedtaget 20.08.2026 af Dommerudvalget*
+
+- 09.02.2014 · indført: slettes uden to stævner på to år, fra 2014 (fra 01.01.2014) · [refbest_09022014 s. 2](https://filer.styrke.dk/referater/refbest_09022014.pdf#page=2)
+- 11.10.2015 · indkommet forslag: regel om tre stævner på to år drøftet (fra 01.01.2015) · [refbest_11102015 s. 4](https://filer.styrke.dk/referater/refbest_11102015.pdf#page=4)
+- 09.11.2019 · bekræftet: tre officielle stævner på to år bekræftet (fra 01.01.2015) · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
+- 12.09.2023 · ændret: inaktive kontaktes i første kvartal (fra 01.01.2015) · [refdom12092023 s. 1](https://filer.styrke.dk/referater/refdom12092023.pdf#page=1)
+- 08.02.2015 · ændret: hævet til tre gange inden for to år · [refbest_08022015 s. 3](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=3)
+- 20.06.2021 · ændret: alle dommere nulstillet efter coronanedlukningen · [rep2021 s. 7](https://filer.styrke.dk/referater/rep2021.pdf#page=7)
+- 08.01.2023 · bekræftet: inaktive dommere fjernes efter kontakt · [refbest_080123 s. 1](https://filer.styrke.dk/referater/refbest_080123.pdf#page=1)
+- 05.03.2024 · bekræftet: tre nationale stævner på to år bekræftet · [refdom05032024 s. 2](https://filer.styrke.dk/referater/refdom05032024.pdf#page=2)
+- 12.03.2026 · ændret: dispensation for pause kun ved helt særlige forhold · [refdom12032026 s. 2](https://filer.styrke.dk/referater/refdom12032026.pdf#page=2)
+- 04.06.2026 · bekræftet: tre stævner på to år fastholdt · [refdom04062026 s. 2](https://filer.styrke.dk/referater/refdom04062026.pdf#page=2)
+- 20.08.2026 · ændret: dommere med lav aktivitet kontaktes i årets sidste måned · [refdom20082026 s. 1](https://filer.styrke.dk/referater/refdom20082026.pdf#page=1)
+
+### Dommeres fremmøde før indvejning
 
 **I kraft**
 
@@ -189,39 +191,53 @@ Alle dommere skal møde op 30 minutter før indvejning, så der er 2 dommere til
 
 - 02.07.2024 · indført: møde 30 minutter før indvejning · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
 
+### Dommerforpligtelse ved internationale stævner (IPF/EPF)
+
+**I kraft**
+
+En nation skal medbringe dommere i forhold til antal løftere; ved 15 nominerede løftere kræves tilmelding af tre dommere. Bøden for ikke at sende det korrekte antal dommere er 1000 euro.
+
+*Eksternt krav · vedtaget 12.06.2026 af DIF/IPF/EPF (27 for, 17 imod, 15 blanke)*
+
+- 02.11.2014 · indført: over 4 deltagere kræver dommer, ellers 500 euro bøde · [199kongres s. 2](https://styrke.dk/filer/rapporter/199kongres.pdf#page=2)
+- 12.06.2026 · ændret: tre dommere ved 15 løftere; bøde sænket til 1000 euro · [1071kongres s. 15](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=15)
+
+> **Bemærk:** Bøden angives i 2026 at blive sænket fra 2000 euro, mens den tidligere kendte regel nævnte 500 euro; mellemliggende ændring er ikke registreret.
+
+### Dommerkrav i divisionsturneringen
+
+**I kraft**
+
+Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der er kun givet dispensation til klubber, der endnu ikke har en dommer, og disse opfordres til at tilmelde folk til førstkommende dommerkursus.
+
+*Bestyrelsesbeslutning · vedtaget 05.12.2009 af Bestyrelsen · senest bekræftet 30.05.2010*
+
+- 05.12.2009 · indført: dispensation i 2010 for klubber uden dommer (fra 01.01.2010) · [refbest_05122009 s. 1](https://filer.styrke.dk/referater/refbest_05122009.PDF#page=1)
+- 30.05.2010 · bekræftet: mindst én dommer pr. runde bekræftet · [refbest_30052010 s. 1](https://filer.styrke.dk/referater/refbest_30052010.PDF#page=1)
+
 ### Dommerpåklædning
 
 **I kraft**
 
-Dresscode for dommere til stævner skal overholdes efter de tekniske regler. Der bæres hvid skjorte (kvinder kan vælge bluse) med IPF-slips eller IPF-tørklæde; andre slips og tørklæder er ikke tilladt. Der skal bæres sorte sko, der ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.
+Dommere skal overholde dresscode ved stævner efter de tekniske regler. Der bæres hvid skjorte eller bluse med IPF-slips eller IPF-tørklæde; andre tørklæder (fx blåt) er ikke tilladt. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.
 
 *Udvalgsbeslutning · vedtaget 01.10.2024 af Dommerudvalget*
 
-- 09.06.2013 · indført: sorte sko og strømper krævet · [vm2013 s. 2](https://filer.styrke.dk/beretninger/vm2013.pdf#page=2)
-- 04.11.2018 · bekræftet: præciseret at grå jeans ikke er tilladt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
-- 12.09.2023 · forslag forkastet: forslag om shorts om sommeren afvist · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
-- 02.07.2024 · ændret: slips, hvid skjorte, sorte sko ikke sneakers; tørklæde til bluse · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
+- 02.06.2013 · indført: sorte sko og strømper for dommere · [vm2013 s. 2](https://filer.styrke.dk/beretninger/vm2013.pdf#page=2)
+- 04.11.2018 · ændret: præciseret at grå jeans ikke er tilladt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
+- 12.09.2023 · forslag forkastet: dommeres forslag om shorts om sommeren afvist · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
+- 02.07.2024 · ændret: dresscode: hvid skjorte, slips, sorte sko uden sneakers · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
 - 01.10.2024 · ændret: kun IPF-slips eller IPF-tørklæde tilladt · [refdom01102024 s. 2](https://filer.styrke.dk/referater/refdom01102024.pdf#page=2)
 
 ### Dommertilmelding når man selv løfter
 
 **I kraft**
 
-Man kan ikke tilmeldes som dommer til et stævne, hvis man selv skal løfte. Ved flerdagesstævner kan man tilmeldes som dommer den dag, man ikke selv løfter.
+Man kan ikke tilmeldes som dommer til et stævne, hvis man selv skal løfte, medmindre stævnet afholdes over flere dage, hvor man kan tilmeldes som dommer den dag, man ikke selv løfter.
 
 *Bestyrelsesbeslutning · vedtaget 13.09.2009 af Bestyrelsen*
 
-- 13.09.2009 · indført: ikke dommer samme dag som man selv løfter · [refbest_13092009 s. 2](https://filer.styrke.dk/referater/refbest_13092009.PDF#page=2)
-
-### Fortolkning af bænkpresregel om opspænd
-
-**I kraft**
-
-Indtil IPF kommer med en fortolkning af de nye dommerregler er den danske procedure, at overdommeren beder løfteren indtage en oprejst position og derefter forsøger et nyt opspænd i henhold til reglerne. Hvis en løfter ligger helt fladt på bænken og stadig ikke kan opnå korrekt dybde, godkendes løftet.
-
-*Bestyrelsesbeslutning · vedtaget 08.01.2023 af Bestyrelsen*
-
-- 08.01.2023 · indført: nyt opspænd; fladt liggende uden dybde godkendes · [refbest_080123 s. 1](https://filer.styrke.dk/referater/refbest_080123.pdf#page=1)
+- 13.09.2009 · indført: ingen dommertilmelding samme dag som man selv løfter · [refbest_13092009 s. 2](https://filer.styrke.dk/referater/refbest_13092009.PDF#page=2)
 
 ### Genregistrering af internationale dommere
 
@@ -231,76 +247,73 @@ Internationale dommere skal dømme minimum 2 internationale og 2 nationale konku
 
 *Eksternt krav · vedtaget 04.11.2018 af DIF/IPF/EPF*
 
-- 04.11.2018 · indført: min. 2 internationale og 2 nationale konkurrencer · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
+- 04.11.2018 · indført: mindst 2 internationale og 2 nationale stævner · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 
-### Indstilling til A-dommerprøve
-
-**I kraft**
-
-En B-dommer, der ønsker A-dommerprøve, indstilles via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Dommerudvalget vurderer indstillingen, hvorefter dommeren kontaktes. Teksten fremgår af indbydelser til dommeruddannelser.
-
-*Udvalgsbeslutning · vedtaget 28.01.2025 af Dommerudvalget · senest bekræftet 08.03.2025*
-
-- 07.01.2025 · indført: kun klubløse indstiller sig selv; ellers via klubformand · [refdom07012025 s. 1](https://filer.styrke.dk/referater/refdom07012025.pdf#page=1)
-- 28.01.2025 · ændret: dommerudvalget vurderer indstillingen og kontakter dommeren · [refdom28012025 s. 4](https://filer.styrke.dk/referater/refdom28012025.pdf#page=4)
-- 08.03.2025 · bekræftet: bestyrelsen godkender; tilføjes indbydelser · [refbest_080325 s. 3](https://filer.styrke.dk/referater/refbest_080325.pdf#page=3)
-
-### Indvejning af løftere af eget køn
+### Grebskrav i dansk oversættelse
 
 **I kraft**
 
-Dommerudvalget oplyser, at der fremover vil være større fokus på, at kvindelige løftere indvejes af kvindelig dommer/official og mandlige af mandlig, ved alle stævner.
+Hænder, tommelfingre og fingre skal være i fuldstændig kontakt med stangen; tommelfingrene er ikke krævet at omslutte stangen.
+
+*Udvalgsbeslutning · vedtaget 04.06.2026 af Dommerudvalget*
+
+- 04.06.2026 · ændret: oversættelse rettet: tommelfingre behøver ikke omslutte stangen · [refdom04062026 s. 3](https://filer.styrke.dk/referater/refdom04062026.pdf#page=3)
+
+### Indvejning ved dommer af samme køn
+
+**I kraft**
+
+Kvindelige løftere indvejes af kvindelig dommer/official og mandlige af mandlig; Dommerudvalget vil have større fokus på, at løfterne kan indvejes af eget køn til alle stævner.
 
 *Udvalgsbeslutning · vedtaget 26.03.2017 af Repræsentantskabet*
 
-- 26.03.2017 · indført: kvinder indvejes af kvinder, mænd af mænd · [rep2017 s. 14](https://filer.styrke.dk/referater/rep2017.pdf#page=14)
+- 26.03.2017 · indført: løftere indvejes af dommer af eget køn · [rep2017 s. 14](https://filer.styrke.dk/referater/rep2017.pdf#page=14)
 
-### Juryleders afgørelse ved ændring af forsøg
+### Jury og dommere ved officielle stævner
 
 **I kraft**
 
-Indtil IPF's tekniske komité har svaret, træffer lederen af juryen den endelige beslutning ved uenighed om ændring af et 2. forsøg.
+Ved alle officielle stævner skal der være en jury efter IPF's regler med mindst A-certifikat. Ud over juryen er der tre dommere, som må være B-dommere. Divisionsturneringen skal ikke have jury. Dommerudvalget har ansvar for påsætning af dommere og jury.
+
+*Stævneregel · vedtaget 18.03.2018 af Repræsentantskabet (enstemmigt)*
+
+- 18.03.2018 · indført: jury med A-certifikat plus tre dommere ved officielle stævner (fra 18.03.2018) · [rep2018 s. 7](https://filer.styrke.dk/referater/rep2018.pdf#page=7)
+
+### Juryens overruling af dommerbeslutninger
+
+**I kraft**
+
+Der indskrives i de tekniske regler, at juryen skal have en knap, de kan trykke på, når de ønsker at overrule en dommerbeslutning.
+
+*Eksternt krav · vedtaget 01.01.2023 af DIF/IPF/EPF*
+
+- 04.11.2018 · forslag forkastet: Frankrig: jury kan omstøde 3 enige dommere – nedstemt · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
+- 01.01.2023 · indført: juryen får knap til at overrule dommerbeslutning · [806kongres s. 1](https://styrke.dk/filer/rapporter/806kongres.pdf#page=1)
+
+### Jurylederens afgørelse ved ændring af forsøg
+
+**I kraft**
+
+Indtil dommerudvalget har fået tilbagemelding fra IPF's tekniske komité om en omstridt situation med ændring af et 2. forsøg, er det op til lederen af juryen at tage den endelige beslutning, hvis en lignende situation opstår.
 
 *Udvalgsbeslutning · vedtaget 08.04.2025 af Dommerudvalget*
 
-- 08.04.2025 · indført: juryleder afgør indtil IPF-svar · [refdom08042025 s. 2](https://filer.styrke.dk/referater/refdom08042025.pdf#page=2)
+- 08.04.2025 · indført: juryleder afgør tvivl om ændret 2. forsøg · [refdom08042025 s. 2](https://filer.styrke.dk/referater/refdom08042025.pdf#page=2)
 
 ### Klubbers dommerforpligtelse ved DM, JM og SM
 
 **I kraft**
 
-En klub, der har været medlem af DSF i mere end 3 år og tilmelder flere end 5 deltagere til DM, JM eller SM, skal sende mindst én dommer; tilmeldes mere end 10 løftere, skal der sendes mindst 2 dommere. Dommerne skal være til rådighed i mindst 1 indvejning. Kan klubben ikke stille dommere, betales et gebyr på 2000 kr. pr. manglende dommer, og kun de 4 bedste løftere tæller i kampen om bedste klub. Arrangerende klub er undtaget.
+En klub, der har været medlem af DSF i mere end 3 år og tilmelder flere end 5 deltagere til DM, JM eller SM, skal sende mindst én dommer; ved mere end 10 løftere mindst 2 dommere. Dommerne skal være til rådighed i minimum 1 indvejning. Kan klubben ikke stille de nødvendige dommere, betales et gebyr på 2000 kr. pr. manglende dommer, og kun klubbens 4 bedste løftere tæller i kampen om bedste klub. Den arrangerende klub er undtaget.
 
 *Stævneregel · vedtaget 19.03.2023 af Repræsentantskabet (31 for, 7 imod, 7 blanke)*
 
-- 10.12.2016 · forslag trukket: overvejet afgift 500 kr. ved 3+ deltagere uden dommer · [refbest_10122016 s. 4](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=4)
-- 19.03.2023 · indført: over 5 deltagere: 1 dommer, over 10: 2; 2000 kr. gebyr (fra 01.01.2024) · [rep2023 s. 14](https://filer.styrke.dk/referater/rep2023.pdf#page=14)
-- 23.03.2025 · forslag trukket: Ares' forslag om opgørelse ved årets afslutning trukket · [rep2025 s. 25](https://filer.styrke.dk/referater/rep2025.pdf#page=25)
+- 10.12.2016 · indkommet forslag: Bestyrelsen overvejer 500 kr. afgift uden stillet dommer · [refbest_10122016 s. 4](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=4)
+- 08.01.2023 · indkommet forslag: Bestyrelsen foreslår regel A7 med gebyr 2000 kr. · [refbest_080123 s. 2](https://filer.styrke.dk/referater/refbest_080123.pdf#page=2)
+- 19.03.2023 · indført: over 5 deltagere: dommer, ellers 2000 kr. pr. manglende (fra 01.01.2024) · [rep2023 s. 14](https://filer.styrke.dk/referater/rep2023.pdf#page=14)
+- 23.03.2025 · forslag trukket tilbage: Ares Rødovres ændringsforslag trukket · [rep2025 s. 25](https://filer.styrke.dk/referater/rep2025.pdf#page=25)
 
-### Klubbers dommerpligt i divisionsturneringen
-
-**I kraft**
-
-Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der gives kun dispensation til klubber, der endnu ikke har en dommer, og de opfordres til at tilmelde folk til førstkommende dommerkursus.
-
-*Bestyrelsesbeslutning · vedtaget 05.12.2009 af Bestyrelsen · senest bekræftet 30.05.2010*
-
-- 05.12.2009 · indført: dispensation i 2010 for klubber uden dommer (fra 01.01.2010) · [refbest_05122009 s. 1](https://filer.styrke.dk/referater/refbest_05122009.PDF#page=1)
-- 30.05.2010 · bekræftet: min. én dommer pr. runde bekræftet · [refbest_30052010 s. 1](https://filer.styrke.dk/referater/refbest_30052010.PDF#page=1)
-
-> **Bemærk:** Dispensationen for 2010 blev givet af bestyrelsen.
-
-### Krav om at nye B-dommere dømmer inden for første år
-
-**I kraft**
-
-En B-dommer, der ikke dømmer inden for en periode efter et år efter bestået dommereksamen, tages af dommerlisten.
-
-*Udvalgsbeslutning · vedtaget 12.03.2026 af Dommerudvalget*
-
-- 12.03.2026 · indført: B-dommer uden dømning året efter eksamen tages af listen · [refdom12032026 s. 2](https://filer.styrke.dk/referater/refdom12032026.pdf#page=2)
-
-### Krav til dommere i jury
+### Krav for at sidde i jury
 
 **I kraft**
 
@@ -308,209 +321,201 @@ For at sidde i jury skal dommeren have dømt ved mindst 4 trekampsstævner. Der 
 
 *Udvalgsbeslutning · vedtaget 28.03.2024 af Dommerudvalget*
 
-- 28.03.2024 · indført: min. 4 trekampsstævner dømt; kan fraviges · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
+- 28.03.2024 · indført: mindst 4 trekampsstævner for at sidde i jury · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
 
-### Krav til international dommer
-
-**I kraft**
-
-Dommerudvalget kontakter A-dommere med potentiale som internationale dommere. Det kræver min. 2 års regelmæssig dommervirksomhed som A-dommer; uddannelsen følger IPF's tekniske regler.
-
-*Udvalgsbeslutning · vedtaget 09.11.2019 af Bestyrelsen*
-
-- 09.11.2019 · indført: min. 2 års regelmæssig virke som A-dommer · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
-
-### National prøve før international dommerprøve
+### Kørselsgodtgørelse til dommere
 
 **I kraft**
 
-En national A-dommer, der skal op til international dommerprøve, skal først bestå den nationale computertest, før vedkommende indstilles til den internationale prøve.
+Dommere, der kører over Storebælt, skal have en BroBizz/Pay by Plate, hvis de ønsker kørselsgodtgørelse, da det sparer penge.
 
-*Bestyrelsesbeslutning · vedtaget 31.08.2019 af Bestyrelsen*
+*Udvalgsbeslutning · vedtaget 28.03.2024 af Dommerudvalget*
 
-- 12.06.2016 · indført: vejledende prøve herhjemme før international prøve · [refbest_12062016 s. 2](https://filer.styrke.dk/referater/refbest_12062016.pdf#page=2)
-- 31.08.2019 · ændret: national computertest skal bestås før indstilling · [refbest_310819 s. 3](https://filer.styrke.dk/referater/refbest_310819.pdf#page=3)
+- 12.09.2023 · forslag forkastet: dommeres forslag om benzinpenge ved private stævner afvist · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
+- 28.03.2024 · indført: BroBizz/Pay by Plate krav over Storebælt · [refdom28032024 s. 1](https://filer.styrke.dk/referater/refdom28032024.pdf#page=1)
+
+### Nye B-dommere skal dømme inden for første år
+
+**I kraft**
+
+Hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, tages personen af dommerlisten.
+
+*Udvalgsbeslutning · vedtaget 12.03.2026 af Dommerudvalget*
+
+- 16.12.2025 · indkommet forslag: Dommerudvalget foreslår sletning af B-dommere inaktive 12 måneder · [refdom16122025 s. 2](https://filer.styrke.dk/referater/refdom16122025.pdf#page=2)
+- 12.03.2026 · indført: B-dommer uden dømning første år tages af listen · [refdom12032026 s. 2](https://filer.styrke.dk/referater/refdom12032026.pdf#page=2)
 
 ### Nye dommere ved første stævne
 
 **I kraft**
 
-Ved nye dommeres første stævne skal de have en erfaren dommer ved deres side, særligt ved indvejningen.
+Nye dommere skal ved deres første stævne have en erfaren dommer ved deres side, særligt ved indvejningen.
 
 *Udvalgsbeslutning · vedtaget 12.03.2026 af Dommerudvalget*
 
-- 12.03.2026 · indført: erfaren dommer ved siden, især ved indvejning · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
+- 12.03.2026 · indført: erfaren dommer ved siden af ved første stævne · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
 
-### Offentliggørelse af stævneplan med dommerpåsætning
-
-**I kraft**
-
-Stævneudvalget udarbejder stævneplanen med dommerpåsætning. Første udkast sendes til stævne- og dommerudvalget, som har 48 timer til at kommentere. Stævneplan med dommerpåsætning skal senest 14 dage før stævnet lægges på terminslisten. Hvert udvalgsmedlem er ansvarligt for udvalgte stævner, også private.
-
-*Udvalgsbeslutning · vedtaget 05.03.2024 af Dommerudvalget · senest bekræftet 28.03.2024*
-
-- 05.03.2024 · indført: på terminslisten senest 14 dage før stævnestart · [refdom05032024 s. 2](https://filer.styrke.dk/referater/refdom05032024.pdf#page=2)
-- 28.03.2024 · bekræftet: stævneudvalget udarbejder; 48 timers kommentarfrist · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
-
-### Opfordring til dommeres stævnetilmelding
+### Omprøve ved dommerprøve
 
 **I kraft**
 
-Dommerudvalget stiller ikke krav om, at alle dommere tilmelder sig mindst ét stævne om året, men vil i stedet opfordre. I begyndelsen af hvert år sendes en mail til alle dommere om at tilmelde sig stævner.
+Kandidater og B-dommere, der ikke består, får forklaret, hvad der mangler, og kan tage prøven igen ved næstkommende dommeruddannelse.
 
-*Udvalgsbeslutning · vedtaget 16.12.2025 af Dommerudvalget*
+*Udvalgsbeslutning · vedtaget 05.03.2024 af Dommerudvalget*
 
-- 16.12.2025 · indført: intet krav om ét stævne årligt, kun opfordring pr. mail · [refdom16122025 s. 1](https://filer.styrke.dk/referater/refdom16122025.pdf#page=1)
+- 05.03.2024 · indført: dumpede får forklaring og kan tage prøven igen · [refdom05032024 s. 1](https://filer.styrke.dk/referater/refdom05032024.pdf#page=1)
 
-### Registrering af internationale dommergerninger
+### Placering af jurybord
 
 **I kraft**
 
-Den enkelte dommer indsender oplysninger om internationale indvejninger til dommerudvalget. I dommerdatabasen oprettes en fane 'internationale stævner', hvor den ansvarlige i bemærkninger skriver hvilket stævne det drejer sig om.
+Jurymedlemmer kan i samarbejde med stævnearrangøren flytte jurybordet til den mest optimale placering ved konkurrencer.
 
-*Bestyrelsesbeslutning · vedtaget 23.11.2025 af Bestyrelsen*
+*Udvalgsbeslutning · vedtaget 18.09.2025 af Dommerudvalget*
 
-- 23.11.2025 · indført: dommer indsender oplysninger; egen fane i databasen · [refbest_231125 s. 5](https://filer.styrke.dk/referater/refbest_231125.pdf#page=5)
+- 18.09.2025 · indført: jury kan flytte jurybordet med arrangøren · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
+
+### Registrering af dommeraktivitet
+
+**I kraft**
+
+Dommere registreres i dommerbogen for hver indvejning, de har dømt, og ikke pr. stævne. Den enkelte dommer indsender oplysninger om internationale indvejninger til dommerudvalget. Stævnelederen informerer dommerudvalget om ændringer i dommerpåsætning på stævnedagen.
+
+*Udvalgsbeslutning · vedtaget 16.12.2025 af Stævneudvalget*
+
+- 05.03.2024 · indført: registrering pr. indvejning i stedet for pr. stævne (fra 06.03.2024) · [refdom05032024 s. 3](https://filer.styrke.dk/referater/refdom05032024.pdf#page=3)
+- 10.09.2024 · bekræftet: registrering pr. indvejning bekræftet efter dommerafstemning · [refstaevne10092024 s. 2](https://filer.styrke.dk/referater/refstaevne10092024.pdf#page=2)
+- 23.11.2025 · ændret: dommer indsender selv internationale indvejninger · [refbest_231125 s. 5](https://filer.styrke.dk/referater/refbest_231125.pdf#page=5)
+- 16.12.2025 · ændret: stævneleder melder ændringer på stævnedagen til dommerudvalget · [refstaevne16122025 s. 3](https://filer.styrke.dk/referater/refstaevne16122025.pdf#page=3)
+
+### Squat: udretning med låste knæ
+
+**I kraft**
+
+Løfteren skal frivilligt og under fuld kontrol rejse sig til oprejst position med låste knæ.
+
+*Eksternt krav · vedtaget 04.11.2018 af DIF/IPF/EPF*
+
+- 04.11.2018 · indført: opretning under fuld kontrol med låste knæ · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
+
+### Stævneleder og overdommer
+
+**I kraft**
+
+Stævnelederen er den højest rangerende dommer efter kategori, eller anciennitet ved samme kategori. Overdommeren/hoveddommeren er som udgangspunkt den højest rangerende dommer blandt dem, der ikke sidder i jury. Ved samme rang kan en vilkårlig af dem sættes på.
+
+*Udvalgsbeslutning · vedtaget 28.03.2024 af Dommerudvalget*
+
+- 28.03.2024 · indført: højest rangerende dommer er stævneleder · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
 
 ### Stævnelederens opgaver og ansvar
 
 **I kraft**
 
-Stævnelederens rolle varetages af A-dommere og højere rangerende dommere. Stævnelederen har det overordnede ansvar på stævnedagen, kontrollerer udstyrstjek og indvejningsrum, uddeler medaljer, sørger for pladser til TC'er, dommere og jury, holder dommerbriefing, træffer endelig beslutning i tvivlsspørgsmål (herunder sikkerhed, grove regelbrud og uregelmæssigheder) og sender stævneprotokoller til stævneudvalget. Beskrivelsen sendes til stævnelederen og lægges på hjemmesiden.
+Stævnelederen, der er A-dommer eller højere rangerende, har det overordnede ansvar på stævnedagen, tjekker udstyrstjek, indvejningsrum, medaljeuddeling og pladser til TC'er, dommere og jury, afholder dommerbriefing, træffer endelig beslutning ved tvivlsspørgsmål om sikkerhed og grove regelbrud og sikrer, at stævneprotokoller sendes til stævneudvalget.
 
 *Bestyrelsesbeslutning · vedtaget 08.03.2025 af Bestyrelsen*
 
-- 28.01.2025 · indført: A-dommere eller højere; endelig beslutning ved alvorlige forhold · [refdom28012025 s. 2](https://filer.styrke.dk/referater/refdom28012025.pdf#page=2)
-- 08.03.2025 · ændret: bestyrelsen vedtager detaljeret opgavebeskrivelse · [refbest_080325 s. 2](https://filer.styrke.dk/referater/refbest_080325.pdf#page=2)
+- 28.01.2025 · indført: foreløbigt skriv om stævnelederens ansvar · [refdom28012025 s. 2](https://filer.styrke.dk/referater/refdom28012025.pdf#page=2)
+- 08.03.2025 · ændret: Bestyrelsen vedtager beskrivelse inkl. stævneprotokoller · [refbest_080325 s. 2](https://filer.styrke.dk/referater/refbest_080325.pdf#page=2)
 
-### Teoretisk dommereksamen mod betaling
-
-**I kraft**
-
-En dommer kan tage en teoretisk eksamen mod betaling.
-
-*Eksternt krav · vedtaget 04.11.2018 af DIF/IPF/EPF*
-
-- 04.11.2018 · indført: teoretisk eksamen kan tages mod betaling · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
-
-### Tilmelding og afbud via dommerdatabasen
+### Vejen til international dommer
 
 **I kraft**
 
-Klubber og dommere tilmelder dommere til stævner i tilmeldingssystemet/dommerdatabasen, hvor al dommeraktivitet registreres; Excel-arket på Facebook bruges ikke længere. Kun dommerudvalget kan redigere. Ved afbud skriver dommeren til dommerudvalget, som registrerer afbuddet.
+Internationale dommere udvælges blandt A-dommere med mindst 2 års regelmæssig dommervirksomhed som A-dommer. Kandidaten skal bestå den nationale computertest, før vedkommende indstilles til den internationale prøve. Uddannelsen følger IPF's tekniske regler.
 
-*Bestyrelsesbeslutning · vedtaget 14.04.2024 af Bestyrelsen · senest bekræftet 28.01.2025*
+*Udvalgsbeslutning · vedtaget 09.11.2019 af Bestyrelsen*
 
-- 28.03.2024 · indført: klubber og dommere tilmelder; afbud via dommerudvalget · [refdom28032024 s. 1](https://filer.styrke.dk/referater/refdom28032024.pdf#page=1)
-- 14.04.2024 · ændret: systemet i brug fra DM-ugen 2024; al aktivitet registreres · [refbest_140424 s. 2](https://filer.styrke.dk/referater/refbest_140424.pdf#page=2)
-- 28.01.2025 · bekræftet: Excel-ark på Facebook slettet; kun databasen bruges · [refdom28012025 s. 1](https://filer.styrke.dk/referater/refdom28012025.pdf#page=1)
+- 12.06.2016 · indført: vejledende prøve herhjemme før international dommerprøve · [refbest_12062016 s. 2](https://filer.styrke.dk/referater/refbest_12062016.pdf#page=2)
+- 31.08.2019 · ændret: national computertest skal bestås før indstilling · [refbest_310819 s. 3](https://filer.styrke.dk/referater/refbest_310819.pdf#page=3)
+- 09.11.2019 · ændret: krav om 2 års regelmæssig virksomhed som A-dommer · [refbest_091119 s. 5](https://filer.styrke.dk/referater/refbest_091119.pdf#page=5)
 
-### Tilmelding til dommeruddannelse
-
-**I kraft**
-
-Man kan ikke tilmelde sig B-dommerprøven uden at have valgt to stævner, man vil dømme ved efter bestået prøve. Efter bestået dommeruddannelse sættes dommerne på de stævner, de har tilmeldt sig.
-
-*Udvalgsbeslutning · vedtaget 05.03.2024 af Dommerudvalget · senest bekræftet 07.01.2025*
-
-- 05.03.2024 · indført: kandidat skal opgive to stævne at dømme · [refdom05032024 s. 1](https://filer.styrke.dk/referater/refdom05032024.pdf#page=1)
-- 07.01.2025 · bekræftet: ; sættes på de valgte stævner · [refdom07012025 s. 2](https://filer.styrke.dk/referater/refdom07012025.pdf#page=2)
-
-### Udpegning af stævneleder og overdommer
-
-**I kraft**
-
-Stævnelederen er den højest rangerende dommer efter kategori, eller efter anciennitet ved samme kategori. Overdommeren/hoveddommeren er som udgangspunkt den højest rangerende dommer blandt dem, der ikke sidder i jury. Ved samme rang kan enhver af dommerne sættes på opgaven.
-
-*Udvalgsbeslutning · vedtaget 28.03.2024 af Dommerudvalget*
-
-- 28.03.2024 · indført: højest rangerende dommer, derefter anciennitet · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
-
-### Underretning om ændringer i dommerpåsætning på stævnedagen
-
-**I kraft**
-
-Stævneleder skal informere dommerudvalget om ændringer i dommerpåsætning på stævnedagen, så dommernes aktivitet registreres korrekt i databasen.
-
-*Udvalgsbeslutning · vedtaget 16.12.2025 af Stævneudvalget*
-
-- 16.12.2025 · indført: stævneleder melder ændringer til dommerudvalget · [refstaevne16122025 s. 3](https://filer.styrke.dk/referater/refstaevne16122025.pdf#page=3)
-
-### Adgang til dommerdatabasen
+### A-dommerindstillinger som fast dagsordenspunkt
 
 **I kraft** · intern procedure/detalje
 
-Alle medlemmer af dommerudvalget og stævneudvalget har adgang til dommerdatabasen, da stævneplan med dommerpåsætning udarbejdes i stævneudvalget. Kun dommerudvalgets betroede medlemmer redigerer i den.
+Indstillinger til A-dommerprøve gøres til et fast punkt på dommerudvalgets dagsorden og drøftes på hvert møde. Der laves et skriv om reglerne til Facebook-siden, klubformænd og Styrke.dk.
 
-*Udvalgsbeslutning · vedtaget 28.03.2024 af Dommerudvalget · senest bekræftet 04.06.2024*
+*Udvalgsbeslutning · vedtaget 07.01.2025 af Dommerudvalget*
 
-- 28.03.2024 · indført: dommer- og stævneudvalg har adgang; tre redigerer · [refdom28032024 s. 1](https://filer.styrke.dk/referater/refdom28032024.pdf#page=1)
-- 04.06.2024 · bekræftet: stævneudvalgets adgang bekræftet · [refstaevne04062024 s. 1](https://filer.styrke.dk/referater/refstaevne04062024.pdf#page=1)
+- 07.01.2025 · indført: indstillinger drøftes på hvert dommerudvalgsmøde · [refdom07012025 s. 1](https://filer.styrke.dk/referater/refdom07012025.pdf#page=1)
 
-### Arbejdsgang ved dommerpåsætning
+### Antal dommere udsendt til EM
 
 **I kraft** · intern procedure/detalje
 
-Den stævneansvarlige påbegynder dommerpåsætning i god tid før stævner og beder om hjælp, hvis det er vanskeligt. Hvis et udvalgsmedlem har svært ved at finde dommere, noteres det, hvem der er kontaktet, så andre i udvalget ikke ringer til de samme.
+Hvis der samlet udtages flere end 13 senior- og juniorløftere til EM, skal der sendes to dommere med.
 
-*Udvalgsbeslutning · vedtaget 16.12.2025 af Dommerudvalget*
+*Udvalgsbeslutning · vedtaget 14.09.2019 af Eliteudvalget*
 
-- 16.12.2025 · indført: påsætning i god tid; kontaktede dommere noteres · [refdom16122025 s. 2](https://filer.styrke.dk/referater/refdom16122025.pdf#page=2)
+- 14.09.2019 · indført: over 13 løftere til EM: to dommere med · [elite14092019 s. 1](https://filer.styrke.dk/referater/elite14092019.pdf#page=1)
 
 ### Brug af internationale dommere
 
 **I kraft** · intern procedure/detalje
 
-De gældende regler skal som udgangspunkt overholdes. Hvor det giver mening, kan en dommer bruges mere end de påkrævede 2 dage, hvis IPF/EPF accepterer det som værende 2 dommere.
+De gældende regler overholdes som udgangspunkt. Hvor det giver mening, kan en international dommer bruges mere end de påkrævede 2 dage, hvis IPF/EPF accepterer det som 2 dommere. Internationale dommere kan trækkes tilbage fra et stævne ved få deltagende løftere.
 
-*Bestyrelsesbeslutning · vedtaget 15.12.2024 af Bestyrelsen*
+*Udvalgsbeslutning · vedtaget 16.12.2025 af Dommerudvalget*
 
-- 15.12.2024 · indført: én dommer kan bruges for to, hvis IPF/EPF accepterer · [refbest_151224 s. 2](https://filer.styrke.dk/referater/refbest_151224.pdf#page=2)
+- 15.12.2024 · indført: international dommer kan bruges over 2 dage, hvis IPF/EPF accepterer · [refbest_151224 s. 2](https://filer.styrke.dk/referater/refbest_151224.pdf#page=2)
+- 16.12.2025 · ændret: kan trækkes tilbage ved få løftere · [refdom16122025 s. 1](https://filer.styrke.dk/referater/refdom16122025.pdf#page=1)
 
-### EPF dommerregistrering
+### Dommerpåsætning af hensyn til økonomi
 
 **I kraft** · intern procedure/detalje
 
-EPF's kongres vedtog et forslag stillet af Danmark og EPF's EC om at ændre, hvordan man melder sig som dommer, og hvordan dommergerninger registreres, for at gøre det mere fleksibelt for dommere og EPF.
+Udvalget sender ikke flere dommere til internationale stævner end nødvendigt, og til nationale stævner bruges dommere, der bor tættest på stævnet.
+
+*Udvalgsbeslutning · vedtaget 02.07.2024 af Dommerudvalget · senest bekræftet 18.09.2025*
+
+- 02.07.2024 · indført: ikke flere dommere end nødvendigt; undgå lange nationale rejser · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
+- 18.09.2025 · bekræftet: nærmeste nationale dommere bruges · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
+
+### EPF dommertilmelding og registrering
+
+**I kraft** · intern procedure/detalje
+
+EPF har ændret måden, man melder sig som dommer, og hvordan dommergerninger registreres, for at gøre det mere fleksibelt.
 
 *Eksternt krav · vedtaget 18.03.2026 af DIF/IPF/EPF*
 
-- 18.03.2026 · indført: mere fleksibel tilmelding og registrering som EPF-dommer · [epf_kongres_2026 s. 3](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2026.pdf#page=3)
+- 18.03.2026 · ændret: EPF ændrer tilmelding og registrering efter dansk forslag · [epf_kongres_2026 s. 3](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2026.pdf#page=3)
 
-### Hensyn ved dommerpåsætning
+### International dommereksamen (IPF)
 
 **I kraft** · intern procedure/detalje
 
-Ved dommerpåsætning lægges vægt på, at dommerne overholder aktivitetskrav, at de samme dommere ikke bruges for meget, og at påsætningen hænger økonomisk sammen. Der sendes ikke flere dommere til internationale stævner end nødvendigt, og dommere sendes ikke på tværs af landet til nationale stævner, medmindre det er tvingende nødvendigt.
+En dommer kan tage en teoretisk eksamen mod betaling.
 
-*Udvalgsbeslutning · vedtaget 02.07.2024 af Dommerudvalget*
+*Eksternt krav · vedtaget 04.11.2018 af DIF/IPF/EPF*
 
-- 28.03.2024 · indført: aktivitetskrav, spredning og økonomi vægtes · [refdom28032024 s. 1](https://filer.styrke.dk/referater/refdom28032024.pdf#page=1)
-- 02.07.2024 · ændret: ingen unødige internationale eller landsdækkende påsætninger · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
+- 04.11.2018 · forslag forkastet: USAPL: ingen eksamen ved åbent VM – nedstemt · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
+- 04.11.2018 · indført: teoretisk eksamen mod betaling · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
+
+### Påmindelse om lånedommere
+
+**I kraft** · intern procedure/detalje
+
+Alle klubber får hvert halve år en mail, der minder dem om muligheden for at låne dommere.
+
+*Udvalgsbeslutning · vedtaget 03.07.2025 af Dommerudvalget*
+
+- 03.07.2025 · indført: klubber mindes hvert halve år om lånedommere · [refdom03072025 s. 1](https://filer.styrke.dk/referater/refdom03072025.pdf#page=1)
 
 ### Regler for Dommerudvalget
 
 **I kraft** · intern procedure/detalje
 
-Dommerudvalget består af 3-4 medlemmer med en formand, hvoraf et medlem skal være i bestyrelsen. Udvalget uddanner og autoriserer dommere, påsætter dommere og jury og udarbejder årlig beretning til repræsentantskabsmødet. Bestyrelsesmedlemmet er ansvarligt for at budgetrammen overholdes. Reglerne indeholder præciserede tekster om tilmelding til A-dommerprøver og betaling af internationale dommere.
+Dommerudvalget afholder A- og B-dommerprøver, vedligeholder dommerliste, sætter dommere og jury på forbundsstævner og sikrer oversættelse af IPF's tekniske regler. Udvalget består af 3-4 medlemmer, heraf et bestyrelsesmedlem, og formanden har afgørende stemme ved stemmelighed.
 
-*Bestyrelsesbeslutning · vedtaget 08.04.2025 af Dommerudvalget*
+*Udvalgsbeslutning · vedtaget 22.10.2023 af Bestyrelsen*
 
-- 15.05.2011 · indført: beskrivelse af udvalgets arbejde vedtaget · [refbest_15052011 s. 4](https://filer.styrke.dk/referater/refbest_15052011.PDF#page=4)
-- 22.10.2023 · bekræftet: regler fremlagt: 3-4 medlemmer, et fra bestyrelsen · [refbest_221023 s. 3](https://filer.styrke.dk/referater/refbest_221023.pdf#page=3)
-- 08.04.2025 · ændret: tekster om A-prøve og internationale dommere indarbejdet · [refdom08042025 s. 2](https://filer.styrke.dk/referater/refdom08042025.pdf#page=2)
+- 15.05.2011 · indført: kommissorium for Dommerudvalget vedtaget · [refbest_15052011 s. 4](https://filer.styrke.dk/referater/refbest_15052011.PDF#page=4)
+- 22.10.2023 · ændret: opgaver og sammensætning: 3-4 medlemmer inkl. bestyrelsesmedlem · [refbest_221023 s. 3](https://filer.styrke.dk/referater/refbest_221023.pdf#page=3)
 
-### Tilbagetrækning af internationale dommere ved få deltagere
-
-**I kraft** · intern procedure/detalje
-
-Det skrives ind under reglerne for internationale dommere, at internationale dommere kan trækkes tilbage fra et stævne i tilfælde af få deltagende løftere.
-
-*Udvalgsbeslutning · vedtaget 16.12.2025 af Dommerudvalget*
-
-- 16.12.2025 · indført: kan trækkes tilbage ved få løftere · [refdom16122025 s. 1](https://filer.styrke.dk/referater/refdom16122025.pdf#page=1)
-
-### Udlevering af slips og emblemer
+### Udlevering af slips og emblemer til dommere
 
 **I kraft** · intern procedure/detalje
 
@@ -518,56 +523,56 @@ Slips og emblemer udleveres til dommere ved endt uddannelse, da det er nemmest f
 
 *Udvalgsbeslutning · vedtaget 02.07.2024 af Dommerudvalget*
 
-- 02.07.2024 · indført: udleveres ved endt uddannelse · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
+- 02.07.2024 · indført: slips og emblemer udleveres ved endt uddannelse · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
 
-### Årlig gennemgang af dommerdatabasen
+### Årlig opfordring til dommertilmelding
 
 **I kraft** · intern procedure/detalje
 
-Dommerdatabasen gennemgås årligt: alle dommere kontaktes, og kontaktoplysninger opdateres i databasen. Gennemgangen i 2026 skal være færdig senest 1. marts 2026.
+Der indføres ikke krav om, at alle dommere tilmelder sig mindst ét stævne om året. I stedet opfordres dommerne: I begyndelsen af hvert år sendes en mail til alle dommere om at tilmelde sig stævner.
 
-*Udvalgsbeslutning · vedtaget 18.09.2025 af Dommerudvalget*
+*Udvalgsbeslutning · vedtaget 16.12.2025 af Dommerudvalget*
 
-- 18.09.2025 · indført: årlig kontakt; 2026 færdig senest 1. marts · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
+- 16.12.2025 · indført: intet krav; årlig mail med opfordring · [refdom16122025 s. 1](https://filer.styrke.dk/referater/refdom16122025.pdf#page=1)
 
-### Dommerhonorering via stævnegebyr og licens
-
-**Kun forslag – aldrig vedtaget**
-
-HaSK foreslog at hæve stævnegebyret fra 300 til 350 kr., så klubber der stiller dommere får 500 kr. pr. dommer pr. indvejning, og at hæve licensen fra 200 til 300 kr. til dommerkørsel og -beklædning. Forslaget blev nedstemt.
-
-- 19.03.2023 · forslag forkastet: forslag om 500 kr. pr. dommer forkastet 7-34 · [rep2023 s. 15](https://filer.styrke.dk/referater/rep2023.pdf#page=15)
-
-### Juryens mulighed for at omstøde dommere
+### Fødder på bænken ved bænkpres
 
 **Kun forslag – aldrig vedtaget**
 
-Forslag om at en jury kan omstøde 3 enige dommere blev nedstemt.
+Forslag om at løfteren ikke må placere fødderne på bænken for at øge opspænd blev nedstemt. Forslag om at ligge så fladt som muligt og om at fødderne ikke må røre hinanden blev trukket.
 
-- 04.11.2018 · forslag forkastet: forslag om omstødelse af 3 enige dommere nedstemt · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
+- 04.11.2018 · forslag forkastet: Sverige/EC: forbud mod fødder på bænken nedstemt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
+
+### Honorering af dommerstillende klubber
+
+**Kun forslag – aldrig vedtaget**
+
+Stævnegebyret hæves fra 300 til 350 kr., og 100 kr. skal gå til at honorere klubber, der stiller dommere med 500 kr. pr. dommer pr. indvejning. Deltagerlicensen hæves fra 200 til 300 kr. til kørselsrefusion og dommerbeklædning. Dommere, der ikke dømmer ved mindst 4 indvejninger inden for 2 år, får regning for beklædningen.
+
+- 19.03.2023 · forslag forkastet: Haderslev foreslår højere gebyrer til dommerhonorering – nedstemt · [rep2023 s. 15](https://filer.styrke.dk/referater/rep2023.pdf#page=15)
 
 ### Markering af underkendt løft
 
 **Kun forslag – aldrig vedtaget**
 
-Forslag om at dommerne kun skal markere et underkendt løft med ét fejlkort blev nedstemt.
+Forslag om at dommerne kun markerer et underkendt løft med et fejlkort blev nedstemt.
 
-- 04.11.2018 · forslag forkastet: forslag om kun ét fejlkort nedstemt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
+- 04.11.2018 · forslag forkastet: TC: kun ét fejlkort ved underkendt løft – nedstemt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
 
-### Dommerkategori ved åbent VM
+### Nedadgående bevægelse i dødløft
+
+**Kun forslag – aldrig vedtaget**
+
+Forslag om at et dødløft ikke underkendes ved lille nedadgående bevægelse pga. balanceproblem, hvis udstrakt position nås, faldt, da ingen var sekundant.
+
+- 04.11.2018 · forslag forkastet: Sveriges forslag faldt uden sekundant · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
+
+### Dommerkrav ved åbent VM
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
 
-Norges forslag om at kun internationale kategori 1-dommere kan dømme åbne VM blev trukket tilbage.
+Forslag om at kun internationale kategori 1-dommere kan dømme åbne verdensmesterskaber blev trukket tilbage.
 
-- 04.11.2018 · forslag trukket: Norges forslag om kun kategori 1-dommere trukket · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
-
-### International dommereksamen ved åbent VM
-
-**Kun forslag – aldrig vedtaget** · intern procedure/detalje
-
-Forslag om at international kategori-eksamen ikke kan tages ved et åbent VM blev nedstemt.
-
-- 04.11.2018 · forslag forkastet: forslag om forbud mod eksamen ved åbent VM nedstemt · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
+- 04.11.2018 · forslag trukket tilbage: Norge trak forslag om kun kategori 1-dommere · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 
 ⚠ ved en kilde betyder, at Claudes citat ikke kunne genfindes ordret i referatet.

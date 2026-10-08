@@ -1,7 +1,7 @@
 {
  "doc_id": "refudstyr27112025",
  "sha256": "af2d37a75dd533fa3b433f0cef95a4820b60494f0111a118a55b9081ab3cffbe",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2025-11-27",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Udstyrssamlinger",
    "kategori": "udstyr",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Der afholdes fortsat udstyrssamlinger i 2026: i alt seks, to i hver af Tårnby, Aarhus og Horsens. Datoerne sendes senest 6. december til udstyrsgruppen og Victoria.",
+   "tekst": "Der skal fortsat afholdes udstyrssamlinger i 2026: i alt 6, fordelt med 2 i hver af Tårnby, Aarhus og Horsens. Datoerne skal sendes til udstyrsgruppen og Victoria senest den 6. december.",
    "citat": "Der skal forsat være udstyrssamlinger i 2026 6 i alt 2 i henholdsvis Tårnby, Aarhus og Horsens.",
    "side": 1,
    "stemmer": null,

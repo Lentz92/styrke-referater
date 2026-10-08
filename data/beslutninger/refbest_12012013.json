@@ -1,18 +1,19 @@
 {
  "doc_id": "refbest_12012013",
  "sha256": "8d87a52f304c8701f1eb8958c3022c62b9e8efacdfb29328b3f9601db111123f",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2013-01-12",
  "beslutninger": [
   {
-   "emne": "Intern postgang",
+   "emne": "Intern post via mail",
    "kategori": "organisation",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Bestyrelsen er enig om, at al intern post fremover sendes elektronisk via mail og kun fremsendes én gang.",
-   "citat": "Peter efterlyser at al post internt sendes via mail og at det kun fremsendes EN gang. Bestyrelsen er helt enig og vil bestræbe sig på at al post sendes elektronisk.",
+   "tekst": "Bestyrelsen bestræber sig på, at al intern post sendes elektronisk via mail og kun fremsendes én gang.",
+   "citat": "Bestyrelsen er helt enig og vil bestræbe sig på at al post sendes elektronisk.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,

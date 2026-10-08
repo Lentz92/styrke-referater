@@ -1,7 +1,7 @@
 {
  "doc_id": "refstaevne18092025",
  "sha256": "aa07aa0c1df41ec6801d51d17c6bdda0ba670eb731e6803d11792342a2e989ff",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2025-09-18",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Stævneansvarliges opgaver ved danske mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Den stævneansvarlige fra stævneudvalget skal præsentere sig for den arrangerende klub, gennemgå kravene til afholdelse af danske mesterskaber og sikre, at stævneprogrammet er sat rigtigt op og står til rådighed. Ved afbud fra dommere giver den stævneansvarlige stævnelederen besked om afbuddet og om, hvilke dommere der står for indvejning og udstyrskontrol.",
+   "tekst": "Den stævneansvarlige fra stævneudvalget skal præsentere sig for den arrangerende klub, gennemgå kravene til afholdelse af danske mesterskaber og sikre, at stævneprogrammet er sat rigtigt op og står til rådighed. Ved afbud fra dommere informerer den stævneansvarlige stævnelederen om afbuddet og om, hvilke dommere der står for indvejning og udstyrskontrol.",
    "citat": "Det er vigtigt, at den stævneansvarlige fra stævneudvalget præsenterer sig for den arrangerende klub og gennemgår krav til afholdelse af danske mesterskaber samt sikrer, at stævneprogrammet er sat rigtigt op og står til rådighed.",
    "side": 1,
    "stemmer": null,

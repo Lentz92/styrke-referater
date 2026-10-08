@@ -1,8 +1,24 @@
 {
  "doc_id": "refbest_110523",
  "sha256": "3209de1eab55c5de022c67457e442c03b76257da7e7ca24924fb2c1977e75487",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2023-05-11",
- "beslutninger": []
+ "beslutninger": [
+  {
+   "emne": "Stævneudvalgets beføjelse til at ændre stævners størrelse, placering og sammensætning",
+   "kategori": "organisation",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": "Bestyrelsen",
+   "handling": "ny",
+   "niveau": "vedtaegt",
+   "tekst": "Forslag til tilføjelse til §13 i vedtægterne: Stævneudvalget kan med godkendelse fra bestyrelsen ændre på stævnernes størrelse, placering og sammensætning, når det skønnes nødvendigt. Forslaget fremlægges på ekstraordinært repræsentantskabsmøde den 6. juni 2023 og er ikke afgjort på bestyrelsesmødet.",
+   "citat": "Stævneudvalget kan med godkendelse fra bestyrelsen i DSF ændre på stævnernes størrelse, placering og sammensætning i de tilfælde, det skønnes nødvendigt.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
 }

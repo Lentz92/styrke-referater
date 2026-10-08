@@ -1,349 +1,202 @@
 {
  "kategori": "master",
- "version": 6,
- "input_hash": "477bd58b3a2f2952d6b9d5b2ce09edce6b80c1085b1d82365ceb7a2da90c527a",
+ "version": 7,
+ "input_hash": "e0cd912a96567c6e65d1f0a970aec9ad027c68a26db0deb784c672fc83296b59",
  "model": "opus",
  "regler": [
   {
-   "titel": "Masterklubbens rolle og kompetence til udtagelse",
+   "titel": "Udtagelse til internationale masterstævner",
    "vigtig": true,
-   "note": null,
+   "note": "Bestyrelsen lagde i 2010 udtagelseskriterierne under eliteudvalget. Masterudvalgets egne retningslinjer fra 2015 og 2024 fastsætter alligevel kriterierne, uden at en ny bestyrelsesbeslutning om kompetencen er registreret.",
    "versioner": [
     {
      "ref": "refbest_13092009#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "Mastersklubben indstiller, bestyrelsen udtager; fortrinsret ved international erfaring",
-     "kort_regel": "Mastersklubben indstiller, DSF's bestyrelse udtager endeligt"
+     "kort": "fortrinsret til VM 2011 for masterløftere med udlandserfaring",
+     "kort_regel": "Mastersklubben indstiller, bestyrelsen udtager endeligt"
     },
     {
      "ref": "refbest_30052010#2",
      "effekt": "aendret",
-     "tekst": "Masterklubben er et udvalg på lige fod med andre udvalg og kan ikke fastsætte udtagelseskriterier til internationale masterstævner. Udtagelseskriterier skal køre under eliteudvalget, som udtager de landsholdsløftere, DSF betaler for.",
-     "kort": "Masterklubben kan ikke fastsætte kriterier; eliteudvalget overtager",
-     "kort_regel": "Udtagelseskriterier fastsættes under eliteudvalget"
+     "tekst": "Masterklubben er kun et udvalg på lige fod med andre udvalg og kan ikke selv fastsætte udtagelseskriterier til internationale masterstævner. Udtagelseskriterier skal køre under eliteudvalget, som udtager de landsholdsløftere DSF betaler for.",
+     "kort": "kriterier flyttes fra masterklubben til eliteudvalget",
+     "kort_regel": "eliteudvalget fastsætter udtagelseskriterier for masters"
     },
-    {
-     "ref": "refbest_03092011#1",
-     "effekt": "aendret",
-     "tekst": "Masterklubben kan beholdes som støtteklub uden økonomisk tilknytning til forbundet. Udtagelse m.m. for masterløftere skal foregå gennem forbundet. Breddeudvalget udarbejder forslag til en mulig tilknytning af Masterklubben som udvalg under DSF.",
-     "kort": "Masterklubben bliver støtteklub; udtagelse sker gennem forbundet",
-     "kort_regel": "Udtagelse af masterløftere sker gennem forbundet"
-    },
-    {
-     "ref": "refbest_03022018#7",
-     "effekt": "aendret",
-     "tekst": "Masterforeningen er en forening uden for DSF uden økonomisk tilknytning til forbundet, og medlemskab af den er ikke krævet for at løfte som master til internationale stævner. Udtagelse m.m. for masterløftere foregår gennem forbundet.",
-     "kort": "medlemskab af Masterforeningen ikke krævet for internationale stævner",
-     "kort_regel": "Masterforening uden for DSF; medlemskab ikke krævet"
-    }
-   ]
-  },
-  {
-   "titel": "Krav til international deltagelse for masterløftere",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
     {
      "ref": "ReglerForMasterudvalget#7",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "krav: kvalifikation inden for 14 mdr. og deltagelse ved DM",
-     "kort_regel": "Kvalifikation inden 14 mdr., DM-deltagelse, fortrinsret efter wilks"
+     "effekt": "aendret",
+     "tekst": "Som udgangspunkt skal løfteren have fået godkendt kvalifikationskravene inden for de sidste 14 måneder før stævnet og have deltaget i sidst afholdte DM eller DM masters i den aktuelle kategori. Opfyldelse sikrer ret til deltagelse inden for nationens max antal, men ikke betaling af start- og antidopinggebyr, som afhænger af budgettet. Løftere med bedste godkendte wilks-resultat de sidste 14 måneder har fortrinsret, og udvalget kan undtagelsesvis dispensere.",
+     "kort": "krav: kvalifikation inden 14 måneder og deltagelse i DM",
+     "kort_regel": "kvalifikation inden 14 mdr., DM-deltagelse, wilks giver fortrinsret"
     },
     {
-     "ref": "refmaster29042018#3",
+     "ref": "refmaster29042018#5",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om ændring af stk. 4 forkastet",
+     "kort": "forslag om ændring af udtagelseskravene afvist",
      "kort_regel": null
     },
     {
      "ref": "KravForInternationalDeltagelse2024#1",
+     "effekt": "bekraeftet",
+     "tekst": "For at deltage i internationale stævner (EM/VM Master) kræves deltagelse i det sidst afholdte DM for senior eller master i samme kategori (udstyr eller klassisk); det samme gælder bænkpres som enkeltdisciplin. Løfteren skal inden for de sidste 14 måneder før stævnet have klaret kvalifikationskravene. Løftere med bedste godkendte wilks-resultat de sidste 14 måneder har fortrinsret, og udvalget kan undtagelsesvis dispensere.",
+     "kort": "DM-deltagelse (senior eller master) i samme kategori kræves",
+     "kort_regel": "sidste DM i samme kategori og kvalifikation inden 14 mdr."
+    },
+    {
+     "ref": "KravForInternationalDeltagelse2024#2",
+     "effekt": "bekraeftet",
+     "tekst": "For at deltage i internationale stævner (EM/VM Master) kræves deltagelse i det sidst afholdte DM for senior eller master i samme kategori (udstyr eller klassisk); det samme gælder bænkpres som enkeltdisciplin. Løfteren skal senest 14 måneder før stævnet have klaret de kvalifikationskrav, som Masterudvalget har fastsat på tilmeldingstidspunktet. Løftere med bedste godkendte wilks-resultat de sidste 14 måneder har fortrinsret, og udvalget kan undtagelsesvis dispensere.",
+     "kort": "14-måneders frist for kvalifikationskrav bekræftet",
+     "kort_regel": "sidste DM i samme kategori og kvalifikation inden 14 mdr."
+    },
+    {
+     "ref": "KravForInternationalDeltagelse2024#4",
      "effekt": "aendret",
-     "tekst": "For at deltage i internationale stævner kræves deltagelse i det sidst afholdte DM for senior eller master i samme kategori (udstyr eller klassisk), og for bænkpres i det sidste DM i bænkpres. Løfteren skal inden for de sidste 14 måneder før stævnet have klaret de kvalifikationskrav, som masterudvalget har fastsat på tilmeldingstidspunktet.",
-     "kort": "DM i samme kategori; bænkpres kræver DM i bænkpres",
-     "kort_regel": "Seneste DM i samme kategori og kvalifikationskrav inden 14 mdr."
+     "tekst": "For at deltage i internationale stævner (EM/VM Master) kræves deltagelse i det sidst afholdte DM for senior eller master i samme kategori (udstyr eller klassisk); det samme gælder bænkpres som enkeltdisciplin. Løfteren skal senest 14 måneder før stævnet have klaret de kvalifikationskrav, som Masterudvalget har fastsat på tilmeldingstidspunktet. Overstiger antallet af ansøgere de tildelte pladser, udtages de løftere, der inden for de seneste 14 måneder har lavet de bedste resultater efter point.",
+     "kort": "ved for mange ansøgere udtages bedste pointresultater",
+     "kort_regel": "DM-deltagelse, kvalifikation inden 14 mdr., bedste point udtages"
     }
    ]
   },
   {
-   "titel": "Dækning af udgifter og egenbetaling ved internationale masterstævner",
+   "titel": "Dækning af udgifter ved internationale masterstævner",
    "vigtig": true,
-   "note": null,
+   "note": "Masterudvalgets retningslinje fra 2024 nævner kun, at løftere, der har klaret kvalifikationskravene, selv kan betale startgebyret. Det ser ud til at stride mod Repræsentantskabets beslutning fra 2021, som også giver ikke-kvalificerede ret til at deltage for egen regning.",
    "versioner": [
     {
-     "ref": "refbest_24082013#4",
+     "ref": "refbest_24082013#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "ledere får højst 1.500 kr. hoteltilskud mod bilag",
-     "kort_regel": "Ledere: hoteltilskud højst 1.500 kr. mod bilag"
+     "kort": "ledere får hoteltilskud på højst 1.500 kr. mod bilag",
+     "kort_regel": "ledere: hoteltilskud på højst 1.500 kr. mod bilag"
     },
     {
      "ref": "ReglerForMasterudvalget#6",
      "effekt": "aendret",
-     "tekst": "Udtagne løftere kan inden for udvalgets budget få betalt startgebyr; øvrige udgifter afholder løfteren selv. Head coach får betalt rejse og ophold på stævnehotel. En dommer, der også er head coach, får dækket hotelophold og ekstra rejseomkostninger, som ikke er dækket via dommerhvervet.",
-     "kort": "startgebyr betales for udtagne; head coach får rejse og ophold",
-     "kort_regel": "Løftere får startgebyr; head coach rejse og hotel dækket"
+     "tekst": "Udtagede løftere kan inden for budgettet få betalt startgebyr, mens øvrige udgifter afholdes af løfteren. Head coach får betalt rejse og ophold på stævnehotellet. En udpeget dommer, der også er head coach, får dækket hotelophold og ekstra rejseomkostninger, som ikke dækkes via dommerhvervet.",
+     "kort": "løftere får startgebyr betalt, head coach rejse og ophold",
+     "kort_regel": "startgebyr betales inden for budget; head coach får rejse/ophold"
     },
     {
-     "ref": "rep2021#3",
+     "ref": "rep2021#5",
      "effekt": "aendret",
-     "tekst": "Udtagne løftere kan inden for udvalgets budget få betalt startgebyr; øvrige udgifter afholder løfteren selv. Masterløftere, der ikke opfylder kvalifikationskravet, kan deltage internationalt, hvis de selv betaler startgebyr og doping fee, og der er plads på holdet. Head coach får betalt rejse og ophold på stævnehotel; en dommer, der også er head coach, får dækket hotelophold og ekstra rejseomkostninger, som ikke er dækket via dommerhvervet.",
-     "kort": "ikke-kvalificerede kan deltage mod egenbetaling, hvis plads",
-     "kort_regel": "Ikke-kvalificerede deltager mod egenbetaling af startgebyr og doping fee"
+     "tekst": "Udtagede løftere kan inden for budgettet få betalt startgebyr, mens øvrige udgifter afholdes af løfteren. Masterløftere, der ikke opfylder kvalifikationskravet, kan deltage internationalt, hvis de selv betaler startgebyr og doping fee, og der er plads på holdet. Head coach får betalt rejse og ophold på stævnehotellet. En udpeget dommer, der også er head coach, får dækket hotelophold og ekstra rejseomkostninger, som ikke dækkes via dommerhvervet.",
+     "kort": "ikke-kvalificerede kan deltage, hvis de selv betaler",
+     "kort_regel": "ikke-kvalificerede deltager for egen regning, hvis der er plads"
     },
     {
-     "ref": "rep2023#6",
-     "effekt": "bekraeftet",
-     "tekst": "Udtagne løftere kan inden for udvalgets budget få betalt startgebyr; øvrige udgifter afholder løfteren selv. Masterløftere, der ikke opfylder kravet til international deltagelse, kan deltage, hvis de selv betaler startgebyr og doping fee, og der er plads på holdet. Head coach får betalt rejse og ophold på stævnehotel; en dommer, der også er head coach, får dækket hotelophold og ekstra rejseomkostninger, som ikke er dækket via dommerhvervet.",
-     "kort": "egenbetaling for ikke-kvalificerede bekræftet",
-     "kort_regel": "Ikke-kvalificerede deltager mod egenbetaling, hvis plads"
-    },
-    {
-     "ref": "KravForInternationalDeltagelse2024#2",
+     "ref": "KravForInternationalDeltagelse2024#3",
      "effekt": "aendret",
-     "tekst": "Masterudvalget betaler startgebyr for et antal løftere ud fra udvalgets økonomi fastlagt efter budget godkendt på repræsentantskabsmødet. Kvalificerede løftere kan selv betale startgebyret, men pladsantallet begrænses af internationale regler. Ved flere ansøgere end pladser udtages de løftere, der inden for de sidste 14 måneder har de bedste resultater efter point. Øvrige udgifter afholder løfteren selv. Head coach får betalt rejse og ophold på stævnehotel; en dommer, der også er head coach, får dækket hotelophold og ekstra rejseomkostninger, som ikke er dækket via dommerhvervet.",
-     "kort": "startgebyr for antal efter budget; flere ansøgere: bedste point",
-     "kort_regel": "Startgebyr efter budget; ved pladsmangel bedste point 14 mdr."
+     "tekst": "Masterudvalget betaler startgebyr for et antal løftere ud fra udvalgets økonomi (fastlagt ud fra budget godkendt på repræsentantskabsmødet); øvrige udgifter afholdes af løfteren. Løftere, der har klaret kvalifikationskravene, kan selv betale startgebyret og deltage inden for de internationale regler om antal deltagere. Masterløftere, der ikke opfylder kvalifikationskravet, kan deltage, hvis de selv betaler startgebyr og doping fee, og der er plads på holdet. Head coach får betalt rejse og ophold på stævnehotellet. En udpeget dommer, der også er head coach, får dækket hotelophold og ekstra rejseomkostninger, som ikke dækkes via dommerhvervet.",
+     "kort": "udvalget betaler startgebyr for et antal løftere efter budget",
+     "kort_regel": "startgebyr betales for et antal efter budget; ellers egenbetaling"
     }
    ]
   },
   {
-   "titel": "Head coach ved masterstævner",
+   "titel": "Head coach ved internationale masterstævner",
    "vigtig": true,
-   "note": "Masterudvalgets regler (2015) lader head coach findes blandt løfterne, mens bestyrelsens beslutning fra 2014 forpligter dommerudvalget til at sende en dommer; et udvalg kan ikke ændre en bestyrelsesbeslutning.",
+   "note": null,
    "versioner": [
     {
-     "ref": "refbest_09022014#3",
+     "ref": "refbest_09022014#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "dommerudvalget sender dommer som head coach til mastersstævner",
-     "kort_regel": "Dommer sendes med som head coach"
+     "kort": "Dommerudvalget sender en dommer, der fungerer som head coach",
+     "kort_regel": "en dommer fungerer som head coach ved mastersstævner"
     },
     {
      "ref": "ReglerForMasterudvalget#3",
      "effekt": "aendret",
-     "tekst": "Masterudvalget skal i god tid før hvert internationalt stævne sikre, at der udpeges en head coach, som er til stede, når Danmark har deltagere, og som er ajourført med gældende regler og DSF's adfærdskodeks. Head coach kan, når det er hensigtsmæssigt, findes blandt de deltagende løftere.",
-     "kort": "masterudvalget sikrer head coach; kan være deltagende løfter",
-     "kort_regel": "Masterudvalget udpeger head coach før hvert internationalt stævne"
+     "tekst": "Masterudvalget skal i god tid før hvert internationalt stævne sikre, at der udpeges en head coach, som er ajourført med gældende regler, forbundets adfærdskodeks og IPF/EPF-krav, og som er til stede, når Danmark stiller med deltagere. Dommerudvalget sender så vidt muligt en dommer, der fungerer som head coach; kan der ikke stilles en dommer, finder udvalget og bestyrelsen en løsning.",
+     "kort": "Masterudvalget sikrer udpegning af ajourført head coach",
+     "kort_regel": "udvalget udpeger head coach, når Danmark stiller med deltagere"
     },
     {
      "ref": "refbest_17092016#2",
      "effekt": "aendret",
-     "tekst": "Masterudvalget sikrer i god tid før hvert internationalt stævne, at der udpeges en head coach, som er ajourført med gældende regler og DSF's adfærdskodeks; head coach kan, når det er hensigtsmæssigt, findes blandt de deltagende løftere. Headcoach stilles kun til rådighed ved mindst 4 deltagere ved det pågældende stævne. Headcoach skal deltage i teknisk møde, være til stede og koordinere ved alle danske løftere, hjælpe løftere uden egen træner (eller finde en kompetent stedfortræder), skrive beretning til DSF's hjemmeside og deltage ved banket, hvis der er præmieoverrækkelse.",
-     "kort": "head coach kun ved mindst 4 deltagere; opgaver fastlagt",
-     "kort_regel": "Head coach ved mindst 4 deltagere, med faste opgaver"
+     "tekst": "Masterudvalget skal i god tid før hvert internationalt stævne sikre, at der udpeges en head coach, som er ajourført med gældende regler, forbundets adfærdskodeks og IPF/EPF-krav. Head coach stilles dog kun til rådighed ved stævner med mindst 4 danske deltagere. Dommerudvalget sender så vidt muligt en dommer, der fungerer som head coach; kan der ikke stilles en dommer, finder udvalget og bestyrelsen en løsning.",
+     "kort": "head coach kun ved mindst 4 danske deltagere",
+     "kort_regel": "head coach stilles ved mindst 4 danske deltagere"
+    }
+   ]
+  },
+  {
+   "titel": "Head coachs pligter ved masterstævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_17092016#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "pligter: teknisk møde, coaching, beretning og banket",
+     "kort_regel": "teknisk møde, coaching af løftere, beretning, banket"
+    },
+    {
+     "ref": "refmaster29042018#2",
+     "effekt": "aendret",
+     "tekst": "Head coach sikrer, at kravene i Coach Responsibility overholdes, og er til stede under hele stævnet: teknisk møde, når danske løftere løfter, og banketten. Head coach koordinerer ved alle danske løftere, hjælper løftere uden egen træner (eller finder en kompetent stedfortræder) og skriver beretning fra stævnet til forbundets hjemmeside.",
+     "kort": "krav i Coach Responsibility skal overholdes",
+     "kort_regel": "Coach Responsibility, til stede hele stævnet, skriver beretning"
     }
    ]
   },
   {
    "titel": "Koordinatorer for internationale masterstævner",
-   "vigtig": true,
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
      "ref": "ReglerForMasterudvalget#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "koordinator pr. landsholdskategori for tilmelding og head coach",
-     "kort_regel": "Koordinator pr. kategori står for tilmelding og startpenge"
+     "kort": "koordinator pr. landsholdskategori til tilmelding og head coach",
+     "kort_regel": "koordinator pr. kategori står for tilmelding og startpenge"
     },
     {
-     "ref": "refmaster29042018#4",
+     "ref": "refmaster29042018#1",
      "effekt": "aendret",
-     "tekst": "Der er en koordinator for hver landsholdskategori (klassisk, bænkpres, styrkeløft). Koordinatorerne indsamler informationer om international deltagelse og sender dem til formanden senest 7 dage før forhåndstilmeldingen og står for tilmelding og evt. indsamling af startpenge. De er sammen med formanden ansvarlige for stævnebudgettet. Head coach udpeges af koordinator og formand og skal overholde Coach Responsibility, være til stede under hele stævnet og skrive beretning til hjemmesiden.",
-     "kort": "info til formand 7 dage før forhåndstilmelding; fælles budgetansvar",
-     "kort_regel": "Koordinator sender info 7 dage før; udpeger head coach med formand"
+     "tekst": "For hver kategori (klassisk, bænkpres, styrkeløft) er der en koordinator, som indsamler alle oplysninger om international deltagelse til EM og VM og sender dem rettidigt til formanden senest 7 dage før forhåndstilmeldingen. Koordinatoren er sammen med formanden ansvarlig for stævnets budget, herunder opkrævning af forudbetaling, og udpeger i samråd med formanden en head coach.",
+     "kort": "frist 7 dage før forhåndstilmelding, fælles budgetansvar med formand",
+     "kort_regel": "koordinator indsender data 7 dage før forhåndstilmelding"
     },
     {
      "ref": "refbest_09062018#4",
      "effekt": "bekraeftet",
-     "tekst": "Der er en koordinator for hver landsholdskategori (klassisk, bænkpres, styrkeløft). Koordinatorerne indsamler informationer om international deltagelse og sender dem til formanden senest 7 dage før forhåndstilmeldingen og står for tilmelding og evt. indsamling af startpenge. Koordinator og formand er ansvarlige for stævnebudgettet, og head coach udpeges i samråd mellem koordinator og formand og skal overholde Coach Responsibility, være til stede under hele stævnet og skrive beretning til hjemmesiden.",
-     "kort": "bestyrelsen bekræfter koordinatorernes ansvar",
-     "kort_regel": "Koordinator sender info 7 dage før; udpeger head coach med formand"
+     "tekst": "For hver kategori (klassisk, bænkpres, styrkeløft) er der en koordinator, som indsamler alle oplysninger om international deltagelse og sender dem til formanden senest 7 dage før forhåndstilmeldingen. Koordinatoren er sammen med formanden ansvarlig for stævnets budget, herunder opkrævning af forudbetaling, og head coach udpeges i samråd mellem koordinator og formand.",
+     "kort": "bestyrelsen godkender koordinatorordningen",
+     "kort_regel": "koordinator indsender data 7 dage før forhåndstilmelding"
     }
    ]
   },
   {
-   "titel": "Masterudvalgets sammensætning",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "ReferatMastermoede_okt2011#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "3-5 personer, heraf ét bestyrelsesmedlem",
-     "kort_regel": "3-5 personer, ét bestyrelsesmedlem"
-    },
-    {
-     "ref": "ReglerForMasterudvalget#1",
-     "effekt": "aendret",
-     "tekst": null,
-     "kort": "3-7 personer; formand fra bestyrelsen, udpeget af bestyrelsen",
-     "kort_regel": "3-7 personer, formand er bestyrelsesmedlem"
-    }
-   ]
-  },
-  {
-   "titel": "Masterudvalgets møder og sekretær",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "ReglerForMasterudvalget#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "mindst ét møde årligt; dagsorden en uge før",
-     "kort_regel": "Mindst ét møde årligt, dagsorden en uge før"
-    },
-    {
-     "ref": "refmaster29042018#5",
-     "effekt": "aendret",
-     "tekst": "Udvalget mødes ved behov, dog mindst én gang om året. Dagsorden udsendes senest en uge før mødet. Sekretæren skriver beslutningsreferater, sender indkaldelser og sørger for offentliggørelse på forbundets hjemmeside, og sikrer sammen med formanden, at der indkaldes til møder. Et flertal kan anmode om møde og kan efter afstemning ekskludere et medlem.",
-     "kort": "sekretær offentliggør referater på hjemmesiden og indkalder",
-     "kort_regel": "Mindst ét møde årligt; sekretær offentliggør referater"
-    }
-   ]
-  },
-  {
-   "titel": "Masterudvalgets budget og tilskud",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "ReferatMastermoede_okt2011#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "støtte efter budget vedtaget på repræsentantskabsmødet",
-     "kort_regel": "Støtte efter repræsentantskabets budget"
-    },
-    {
-     "ref": "rep2012#6",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "forslag om 50.000 kr. til Master forkastet",
-     "kort_regel": null
-    },
-    {
-     "ref": "rep2012#8",
-     "effekt": "trukket",
-     "tekst": null,
-     "kort": "forslag om 25.000 til 100.000 kr. trukket",
-     "kort_regel": null
-    },
-    {
-     "ref": "refbest_04082012#3",
-     "effekt": "aendret",
-     "tekst": "Masterudvalget tildeles de midler, der er afsat i budgettet vedtaget på repræsentantskabsmødet. Yderligere ansøgninger om økonomiske midler kan ikke forventes godkendt.",
-     "kort": "kun budgetterede midler; ekstra ansøgninger forventes ikke godkendt",
-     "kort_regel": "Kun budgetterede midler, ingen ekstra bevillinger"
-    },
-    {
-     "ref": "rep2014#11",
-     "effekt": "aendret",
-     "tekst": "Masterudvalget tildeles de midler, der er afsat i budgettet vedtaget på repræsentantskabsmødet; for 2014 59.600 kr.: deltager-/dopinggebyr for 4 stævner á 8 personer à 800 kr. (25.600 kr.), head coach 4 x 6.000 kr. (24.000 kr.) og 3 årlige udvalgsmøder (10.000 kr.). Hvis head coach er dommer, betales rejsen. Yderligere ansøgninger kan ikke forventes godkendt.",
-     "kort": "budget 2014 godkendt med 59.600 kr.",
-     "kort_regel": "Budget 2014: 59.600 kr. inkl. gebyrer og head coach"
-    },
-    {
-     "ref": "ReglerForMasterudvalget#5",
-     "effekt": "aendret",
-     "tekst": "Masterudvalget tildeles de midler, der er afsat i budgettet vedtaget på repræsentantskabsmødet. Bestyrelsesmedlemmet i udvalget sikrer, at budgetrammerne overholdes; initiativer ud over rammerne skal godkendes af bestyrelsen. Udvalget indstiller inden årets udgang et detaljeret budget til bestyrelsen, og formanden sikrer en årlig beretning til repræsentantskabsmødet.",
-     "kort": "budgetindstilling inden årets udgang; årlig beretning",
-     "kort_regel": "Budgetramme overholdes; detaljeret budget indstilles årligt"
-    },
-    {
-     "ref": "refbest_13122015#1",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "overførsel af 2015-overskud til 2016 afvist",
-     "kort_regel": null
-    },
-    {
-     "ref": "rep2018#8",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "masterbudget på 88.000 kr. forkastet",
-     "kort_regel": null
-    }
-   ]
-  },
-  {
-   "titel": "Adfærdskodeks, generel adfærd",
+   "titel": "Klubbers hæftelse for startgebyr ved udeblivelse",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "Adfaerdskodeks#1",
+     "ref": "refmaster29042018#4",
      "effekt": "indfoert",
-     "tekst": null,
-     "kort": "respektfuld tone og godt miljø for DSF-repræsentanter",
-     "kort_regel": "Respektfuld omgang og accept af forskellighed"
-    }
-   ]
-  },
-  {
-   "titel": "Adfærd under konkurrencer",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "Adfaerdskodeks#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "deltag i aktiviteter, bliv til præmieoverrækkelse, overhold påklædning",
-     "kort_regel": "Respekt, deltagelse i præmieoverrækkelse, påklædningsregler"
-    }
-   ]
-  },
-  {
-   "titel": "Alkohol under konkurrencer",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "Adfaerdskodeks#3",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "alkohol kun efter aftale; holdleder afgør",
-     "kort_regel": "Alkohol kun efter aftale, holdleder afgør"
-    }
-   ]
-  },
-  {
-   "titel": "Hæftelse for startgebyr ved udeblivelse",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refmaster29042018#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "klubber hæfter for startgebyr på 140 euro",
-     "kort_regel": "Klub hæfter for startgebyr (140 euro) ved udeblivelse"
+     "tekst": "Klubber, der tilmelder løftere til et masterstævne uden at løfterne deltager, hæfter for startgebyret (pt. 140 euro), da EPF kræver startgebyr for alle forhåndstilmeldte 60 dage før stævnet.",
+     "kort": "klub hæfter for startgebyr på 140 euro ved udeblivelse",
+     "kort_regel": "klub hæfter for startgebyr (140 euro) ved udeblivelse"
     },
     {
      "ref": "refbest_09062018#2",
      "effekt": "bekraeftet",
-     "tekst": "Klubber der tilmelder løftere til et internationalt masterstævne uden at løfterne deltager, hæfter for startgebyret (pt. 140 euro), da EPF kræver startgebyr for alle på forhåndstilmeldingen 60 dage før stævnestart.",
-     "kort": "bestyrelsen bekræfter hæftelse for 140 euro",
-     "kort_regel": "Klub hæfter for startgebyr (140 euro) ved udeblivelse"
+     "tekst": "Klubber, der tilmelder løftere til et masterstævne uden at løfterne deltager, hæfter for startgebyret (pt. 140 euro), da EPF kræver startgebyr for alle på forhåndstilmeldingen 60 dage før stævnestart.",
+     "kort": "bestyrelsen godkender hæftelse for 140 euro",
+     "kort_regel": "klub hæfter for startgebyr (140 euro) ved udeblivelse"
     },
     {
-     "ref": "KravForInternationalDeltagelse2024#3",
+     "ref": "KravForInternationalDeltagelse2024#5",
      "effekt": "aendret",
-     "tekst": "Klubber, der tilmelder løftere til et internationalt masterstævne uden at løfterne deltager, hæfter for startgebyret (pt. 150 euro), da der skal betales startgebyr for alle på forhåndstilmeldingen.",
-     "kort": "startgebyr nu 150 euro",
-     "kort_regel": "Klub hæfter for startgebyr (150 euro) ved udeblivelse"
-    },
-    {
-     "ref": "Tilmeldingsfrister2026#3",
-     "effekt": "bekraeftet",
-     "tekst": "Man er bundet af forhåndstilmeldingen og startgebyret til internationale stævner. Klubber, der tilmelder løftere uden at de deltager, og løftere, der senere fortryder deltagelsen, hæfter for startgebyret.",
-     "kort": "bundet af forhåndstilmelding; fortrydelse giver hæftelse",
-     "kort_regel": "Forhåndstilmelding bindende; hæftelse for startgebyr"
+     "tekst": "Klubber, der tilmelder løftere til et internationalt masterstævne uden at løfterne deltager, hæfter for startgebyret, som er 150 euro.",
+     "kort": "startgebyr hævet fra 140 til 150 euro",
+     "kort_regel": "klub hæfter for startgebyr på 150 euro ved udeblivelse"
     }
    ]
   },
@@ -353,18 +206,18 @@
    "note": null,
    "versioner": [
     {
-     "ref": "refmaster29042018#2",
+     "ref": "refbest_09062018#3",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "betaling senest 28 dage før, ellers fjernes løfteren",
-     "kort_regel": "Betaling senest 28 dage før stævnestart"
+     "kort_regel": "betaling senest 28 dage før stævnestart"
     },
     {
-     "ref": "refbest_09062018#3",
+     "ref": "KravForInternationalDeltagelse2024#6",
      "effekt": "bekraeftet",
-     "tekst": "Ved stævner med krav om forudbetaling fremsender koordinatoren faktura. Beløb for startgebyr og evt. forudbetalt hotel og transport skal være indbetalt på forbundets diversekonto senest 28 dage før stævnestart, ellers fjernes løfterne fra nomineringen.",
-     "kort": "bestyrelsen bekræfter 28-dages frist",
-     "kort_regel": "Betaling senest 28 dage før stævnestart"
+     "tekst": "Beløb for startgebyr og evt. forudbetalt hotel og transport faktureres til klubber/løftere og skal være på forbundets konto senest 28 dage før stævnestart. Ellers fjernes løfterne fra nomineringen.",
+     "kort": "28-dages betalingsfrist bekræftet",
+     "kort_regel": "betaling senest 28 dage før stævnestart"
     }
    ]
   },
@@ -377,27 +230,41 @@
      "ref": "refbest_09062018#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "klub sender skema med lifters profile til masterudvalget@styrke.dk",
-     "kort_regel": "Klub tilmelder via skema til masterudvalget@styrke.dk"
+     "kort": "klubben indsender tilmeldingsskema med lifters profile",
+     "kort_regel": "klub sender skema og lifters profile til masterudvalget@styrke.dk"
     },
     {
      "ref": "refmaster09032019#2",
      "effekt": "aendret",
-     "tekst": "Tilmelding til internationale mesterskaber sker via tilmeldingsskema med lifters profile, indsendt af løfterens klub, til masterudvalget@styrke.dk. Al påkrævet information skal sendes; forhåndstilmelding i Goodlift uden foto og øvrige data fra lifters-profile er ikke mulig.",
-     "kort": "forhåndstilmelding kræver foto og data fra lifters-profile",
-     "kort_regel": "Fuld information inkl. foto krævet ved tilmelding"
+     "tekst": "Tilmelding til internationale masterstævner sker via tilmeldingsskema inkl. lifters profile fra masterudvalgets side på hjemmesiden, indsendt af løfterens klub til masterudvalget@styrke.dk. Al påkrævet information (fx billede og andre data fra lifters profile) skal sendes med, da forhåndstilmelding i Goodlift ikke er mulig uden disse data.",
+     "kort": "billede og profildata kræves på grund af Goodlift",
+     "kort_regel": "skema, billede og profildata til masterudvalget@styrke.dk"
     },
     {
      "ref": "Tilmeldingsfrister2027#1",
      "effekt": "aendret",
-     "tekst": "Alle løftere, der deltager i EPF/IPF-konkurrencer under DSF, skal indsende tilmeldingsskema med påkrævede data, underskrevet Consent Form i PDF-format og gyldigt ADEL-certifikat. Materialet sendes via klub/forening til masterudvalget@styrke.dk inden tilmeldingsfristen.",
-     "kort": "krav om Consent Form og gyldigt ADEL-certifikat",
-     "kort_regel": "Skema, Consent Form og ADEL-certifikat via klub"
+     "tekst": "Alle løftere, der deltager i EPF/IPF-konkurrencer under DSF, skal fremsende tilmeldingsskema, underskrevet Consent Form i PDF-format og gyldigt ADEL-certifikat samt påkrævede data som billede og lifters profile. Materialet sendes via klub/forening til masterudvalget@styrke.dk inden tilmeldingsfristen.",
+     "kort": "Consent Form og gyldigt ADEL-certifikat kræves",
+     "kort_regel": "skema, Consent Form og ADEL-certifikat via klub inden frist"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav for masters, generelt",
+   "titel": "Antidopinguddannelse for masterløftere",
+   "vigtig": true,
+   "note": "Tilmeldingskravene fra 2027 kræver et gyldigt ADEL-certifikat, så Anti Doping Danmarks uddannelse er formentlig ikke længere nok.",
+   "versioner": [
+    {
+     "ref": "refbest_310722#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "ADD-uddannelse tilladt i stedet for ADEL",
+     "kort_regel": "ADD-uddannelse godkendt, ADEL anbefales"
+    }
+   ]
+  },
+  {
+   "titel": "Fastsættelse af kvalifikationskrav for masters",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -411,21 +278,28 @@
     {
      "ref": "refmaster09032019#1",
      "effekt": "aendret",
-     "tekst": "Masterudvalget opstiller kvalifikationskrav i hver kategori og klasse for løftere, der vil deltage i internationale stævner, herunder klassisk og klassisk bænkpres fra 1. januar 2020. Kravene offentliggøres på hjemmesiden under fanen masterudvalg og kan justeres efter den internationale udvikling.",
-     "kort": "klassiske krav indføres fra 1. januar 2020",
-     "kort_regel": "Krav også for klassisk og klassisk bænkpres fra 2020"
+     "tekst": "Masterudvalget opstiller kvalifikationskrav i hver kategori og klasse for løftere, der vil deltage i internationale stævner, herunder fra 1. januar 2020 også til de klassiske masterstævner (klassisk og klassisk bænkpres). Kravene lægges på forbundets hjemmeside under fanen masterudvalg og kan med passende mellemrum justeres efter den internationale udvikling.",
+     "kort": "klassiske kvalifikationskrav indføres fra 1.1.2020",
+     "kort_regel": "krav for udstyr og klassisk, offentliggøres på hjemmesiden"
     },
     {
      "ref": "refbest_091119#4",
      "effekt": "bekraeftet",
-     "tekst": "Masterudvalget opstiller kvalifikationskrav i hver kategori og klasse for løftere, der vil deltage i internationale stævner, herunder klassisk og klassisk bænkpres fra 1. januar 2020. Kravene offentliggøres på hjemmesiden under fanen masterudvalg og kan justeres efter den internationale udvikling.",
-     "kort": "bestyrelsen noterer klassiske krav fra 1.1.2020",
-     "kort_regel": "Krav også for klassisk og klassisk bænkpres fra 2020"
+     "tekst": "Masterudvalget opstiller kvalifikationskrav i hver kategori og klasse for løftere, der vil deltage i internationale stævner, herunder fra 1. januar 2020 også til de klassiske internationale stævner. Kravene lægges på forbundets hjemmeside under fanen masterudvalg og kan med passende mellemrum justeres efter den internationale udvikling.",
+     "kort": "bestyrelsen godkender klassiske krav fra 1.1.2020",
+     "kort_regel": "krav for udstyr og klassisk, offentliggøres på hjemmesiden"
+    },
+    {
+     "ref": "refmaster13052022#2",
+     "effekt": "aendret",
+     "tekst": "Masterudvalget opstiller kvalifikationskrav i hver kategori og klasse for løftere, der vil deltage i internationale stævner, også klassisk og klassisk bænkpres. Kravene for kvinder i 69 og 76 kg er i 2022 opdateret til et niveau på linje med de øvrige, mens de øvrige vægtklasser er uændrede. Kravene offentliggøres under fanen masterudvalg på hjemmesiden og kan justeres efter den internationale udvikling.",
+     "kort": "kravene for kvinder i 69 og 76 kg opdateret",
+     "kort_regel": "krav pr. klasse; kvinder 69/76 kg justeret"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, klassisk 3-kamp herrer",
+   "titel": "Kvalifikationskrav master klassisk, herrer 3-kamp",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -433,13 +307,13 @@
      "ref": "KvalifikationskravKlassisk2022#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 83 kg M1 472,5",
-     "kort_regel": "Totalkrav pr. vægtklasse og M1-M4"
+     "kort": "totalkrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 83 kg: 472,5/435/397,5/365 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, klassisk bænkpres herrer",
+   "titel": "Kvalifikationskrav master klassisk, herrer bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -447,34 +321,27 @@
      "ref": "KvalifikationskravKlassisk2022#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 83 kg M1 112,5",
-     "kort_regel": "Bænkkrav pr. vægtklasse og M1-M4"
+     "kort": "bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 83 kg: 112,5/100/90/82,5 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, klassisk 3-kamp damer",
+   "titel": "Kvalifikationskrav master klassisk, damer 3-kamp",
    "vigtig": true,
-   "note": "Ændringen fra maj 2022 angiver ikke, om den gælder klassisk 3-kamp, bænkpres eller udstyr, og de nye værdier er ikke angivet.",
+   "note": null,
    "versioner": [
     {
      "ref": "KvalifikationskravKlassisk2022#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 63 kg M1 262,5",
-     "kort_regel": "Totalkrav pr. vægtklasse og M1-M4"
-    },
-    {
-     "ref": "refmaster13052022#1",
-     "effekt": "aendret",
-     "tekst": "Kvalifikationskrav for masterdamer pr. vægtklasse og M1-M4 som fastsat pr. 1-1-2022, dog med opdaterede krav i 69 og 76 kg på linje med de øvrige klasser. De opdaterede krav offentliggøres under fanen masterudvalg på hjemmesiden.",
-     "kort": "krav i 69 og 76 kg opdateret",
-     "kort_regel": "Krav som 2022, 69 og 76 kg opdateret"
+     "kort": "totalkrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 63 kg: 262,5/237,5/215/195 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, klassisk bænkpres damer",
+   "titel": "Kvalifikationskrav master klassisk, damer bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -482,13 +349,13 @@
      "ref": "KvalifikationskravKlassisk2022#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 63 kg M1 55",
-     "kort_regel": "Bænkkrav pr. vægtklasse og M1-M4"
+     "kort": "bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 63 kg: 55/47,5/42,5/37,5 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, udstyr 3-kamp herrer",
+   "titel": "Kvalifikationskrav master udstyr, herrer 3-kamp",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -496,13 +363,13 @@
      "ref": "KvalifikationskravUdstyr2022#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 83 kg M1 452,5",
-     "kort_regel": "Totalkrav pr. vægtklasse og M1-M4"
+     "kort": "totalkrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 83 kg: 452,5/422,5/392,5/362,5 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, udstyr bænkpres herrer",
+   "titel": "Kvalifikationskrav master udstyr, herrer bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -510,13 +377,13 @@
      "ref": "KvalifikationskravUdstyr2022#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 83 kg M1 120",
-     "kort_regel": "Bænkkrav pr. vægtklasse og M1-M4"
+     "kort": "bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 83 kg: 120/100/80/60 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, udstyr 3-kamp damer",
+   "titel": "Kvalifikationskrav master udstyr, damer 3-kamp",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -524,13 +391,13 @@
      "ref": "KvalifikationskravUdstyr2022#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 63 kg M1 270",
-     "kort_regel": "Totalkrav pr. vægtklasse og M1-M4"
+     "kort": "totalkrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 63 kg: 270/240/210/180 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "Kvalifikationskrav, udstyr bænkpres damer",
+   "titel": "Kvalifikationskrav master udstyr, damer bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -538,97 +405,237 @@
      "ref": "KvalifikationskravUdstyr2022#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kravtabel pr. 1-1-2022, fx 63 kg M1 55",
-     "kort_regel": "Bænkkrav pr. vægtklasse og M1-M4"
+     "kort": "bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022",
+     "kort_regel": "fx 63 kg: 55/50/45/40 kg (M1-M4)"
     }
    ]
   },
   {
-   "titel": "VM for masters i klassisk (RAW)",
-   "vigtig": true,
+   "titel": "Masterudvalgets sammensætning og placering",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "vm2013#6",
+     "ref": "refbest_03092011#1",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "Masterklubben opløses og vender tilbage som udvalg",
+     "kort_regel": null
+    },
+    {
+     "ref": "ReferatMastermoede_okt2011#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "IPF indfører VM for masters i RAW",
-     "kort_regel": "VM for masters i RAW afholdes"
+     "kort": "veteranudvalg på 3-5 personer, heraf ét bestyrelsesmedlem",
+     "kort_regel": "3-5 personer, ét bestyrelsesmedlem, under Breddeudvalget"
+    },
+    {
+     "ref": "refbest_04082012#4",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "bestyrelsen foreslår selvstændigt udvalg uden for Breddeudvalget",
+     "kort_regel": null
+    },
+    {
+     "ref": "refbest_08022015#8",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "forslag om at placere udvalget under eliteudvalget",
+     "kort_regel": null
+    },
+    {
+     "ref": "ReglerForMasterudvalget#1",
+     "effekt": "aendret",
+     "tekst": "Masterudvalget består af 3-7 personer, og mindst formanden skal være medlem af DSF's bestyrelse. Bestyrelsen udpeger formanden, og formandens stemme er afgørende ved stemmelighed. Udvalget supplerer sig selv, og nye medlemmer skal godkendes af et flertal i udvalget og af bestyrelsen.",
+     "kort": "3-7 medlemmer, formanden udpeges af bestyrelsen",
+     "kort_regel": "3-7 personer, formand fra bestyrelsen, supplerer sig selv"
     }
    ]
   },
   {
-   "titel": "Master 3-rekorder",
-   "vigtig": true,
+   "titel": "Masterudvalgets møder og sekretær",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "490#33",
+     "ref": "ReglerForMasterudvalget#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "højere master 3-rekord noteres i alle kategorier",
-     "kort_regel": "Master 3-rekord over yngre klasser noteres i alle"
+     "kort": "møde mindst én gang årligt, dagsorden en uge før",
+     "kort_regel": "mindst ét møde årligt, beslutningsreferat"
+    },
+    {
+     "ref": "refmaster29042018#3",
+     "effekt": "aendret",
+     "tekst": "Udvalget mødes ved behov, dog mindst én gang om året, og formand og sekretær sikrer, at der indkaldes. Dagsorden udsendes senest en uge før mødet. Sekretæren skriver beslutningsreferater, sender indkaldelser og sikrer offentliggørelse af referater på forbundets hjemmeside. Et flertal kan anmode om et møde og kan efter afstemning ekskludere et medlem.",
+     "kort": "sekretæren offentliggør referater på hjemmesiden",
+     "kort_regel": "mindst ét møde årligt, referater offentliggøres"
     }
    ]
   },
   {
-   "titel": "Vægtklassemedaljer for ældste masterklasser",
-   "vigtig": true,
+   "titel": "Masterudvalgets budget",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "490#5",
+     "ref": "ReferatMastermoede_okt2011#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "støtte efter repræsentantskabets vedtagne budget",
+     "kort_regel": "støtte efter vedtaget budget"
+    },
+    {
+     "ref": "rep2012#6",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om kun IPF-formel snævert nedstemt",
+     "kort": "TSK foreslår 50.000 kr. til Master",
+     "kort_regel": null
+    },
+    {
+     "ref": "rep2012#8",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "AK Atlas foreslår tilskud hævet fra 25.000 til 100.000 kr.",
+     "kort_regel": null
+    },
+    {
+     "ref": "refbest_04082012#3",
+     "effekt": "aendret",
+     "tekst": "Masterudvalget får støtte i henhold til det budget, der er vedtaget på repræsentantskabsmødet. Yderligere ansøgninger om økonomiske midler forventes ikke godkendt.",
+     "kort": "yderligere ansøgninger om midler forventes ikke godkendt",
+     "kort_regel": "kun budgetterede midler, ingen ekstra bevillinger"
+    },
+    {
+     "ref": "rep2014#2",
+     "effekt": "aendret",
+     "tekst": "Budgettet for masters er 59.600 kr., herunder deltager-/dopinggebyr for 4 stævner á 8 personer à 800 kr., head coach (krav fra IPF/EPF) 4 stævner à 6.000 kr. og 3 årlige mødeværelser (10.000 kr.). Yderligere ansøgninger om økonomiske midler forventes ikke godkendt.",
+     "kort": "budget for masters forhøjet til 59.600 kr.",
+     "kort_regel": "59.600 kr. til gebyrer, head coach og møder"
+    },
+    {
+     "ref": "ReglerForMasterudvalget#5",
+     "effekt": "aendret",
+     "tekst": "Masterudvalget får støtte efter det budget, der vedtages på repræsentantskabsmødet. Udvalget indstiller inden årets udgang et detaljeret budget for det kommende år til bestyrelsen, som sendes til afstemning på førstkommende repræsentantskabsmøde. Initiativer ud over budgetrammen skal godkendes af bestyrelsen, og formanden sikrer en årlig beretning til repræsentantskabsmødet.",
+     "kort": "udvalget indstiller årligt budget til repræsentantskabet",
+     "kort_regel": "budget indstilles årligt, ekstra initiativer kræver bestyrelsen"
+    },
+    {
+     "ref": "refbest_13122015#1",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Kenneth Kyvsgaard foreslår overført overskud fra 2015 til 2016",
+     "kort_regel": null
+    },
+    {
+     "ref": "rep2018#9",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Kim Dahl, Tårnby, foreslår 88.000 kr. i stedet for 50.000 kr.",
      "kort_regel": null
     }
    ]
   },
   {
-   "titel": "DM masters i squat og dødløft",
+   "titel": "Salg og lån af landsholdsdragter til masterløftere",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "rep2022#4",
+     "ref": "refbest_08022015#14",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "dragter sælges for 350 kr. eller lånes",
+     "kort_regel": "landsholdsdragt koster 350 kr., kan også lånes"
+    }
+   ]
+  },
+  {
+   "titel": "Adfærdskodeks, generel adfærd",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "Adfaerdskodeks#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "pæn og respektfuld omgang blandt DSF-repræsentanter",
+     "kort_regel": "pæn tale, respekt og et godt miljø"
+    }
+   ]
+  },
+  {
+   "titel": "Adfærdskodeks, adfærd under konkurrencer",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "Adfaerdskodeks#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "deltagelse i præmieoverrækkelse, påklædningsregler, gensidig opbakning",
+     "kort_regel": "respekt, præmieoverrækkelse, nationalmelodi, påklædningsregler"
+    }
+   ]
+  },
+  {
+   "titel": "Adfærdskodeks, alkohol",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "Adfaerdskodeks#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "alkohol kun efter aftale, holdlederen afgør tvivl",
+     "kort_regel": "alkohol kun efter aftale, fx ved banket"
+    }
+   ]
+  },
+  {
+   "titel": "Masterforeningens forhold til DSF",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_03022018#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "medlemskab af Masterforeningen kræves ikke internationalt",
+     "kort_regel": "Masterforeningen er uden for DSF, medlemskab ikke krævet"
+    }
+   ]
+  },
+  {
+   "titel": "DM i squat og dødløft for masters",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2022#3",
      "effekt": "trukket",
      "tekst": null,
-     "kort": "forslag om klassisk afvikling trukket",
+     "kort": "Randers Styrke og Motion foreslår klassisk eller kombineret afvikling",
      "kort_regel": null
     },
     {
-     "ref": "refmaster13052022#2",
+     "ref": "refmaster13052022#1",
      "effekt": "aendret",
-     "tekst": null,
+     "tekst": "DM i squat og dødløft for masters afvikles som et kombineret, uofficielt DM i squat og dødløft med både klassisk og udstyr. Da stævnet er uofficielt, kræver det, at klubber byder ind som arrangør, hvis det skal overleve.",
      "kort": "kombineret uofficielt DM, klassisk og udstyr",
-     "kort_regel": "Uofficielt kombineret DM, klassisk og udstyr"
+     "kort_regel": "kombineret uofficielt DM, klassisk og udstyr"
     },
     {
-     "ref": "refbest_310722#2",
-     "effekt": "bekraeftet",
-     "tekst": "DM i squat og dødløft for masters afvikles som et kombineret, uofficielt DM i squat og dødløft, klassisk samt udstyr. Da stævnet er uofficielt, kræver det, at klubber byder ind som arrangør, hvis det skal bestå.",
-     "kort": "bestyrelsen bekræfter kombineret uofficielt DM",
-     "kort_regel": "Uofficielt kombineret DM, klassisk og udstyr"
-    }
-   ]
-  },
-  {
-   "titel": "Antidopinguddannelse for masterløftere",
-   "vigtig": true,
-   "note": "Tilmeldingsreglerne fra 2027 kræver gyldigt ADEL-certifikat, så tilladelsen til Anti-Doping Danmarks uddannelse er muligvis ikke længere gældende.",
-   "versioner": [
-    {
      "ref": "refbest_310722#3",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "ADD-uddannelse tilladt i stedet for ADEL; ADEL anbefales",
-     "kort_regel": "ADD-uddannelse godkendt, ADEL anbefales"
+     "effekt": "bekraeftet",
+     "tekst": "Fra 2022 afvikles DM i squat og dødløft for masters som et kombineret, uofficielt DM i squat og dødløft, klassisk samt udstyr. Stævnet kræver, at klubber byder ind som arrangør, hvis det skal bestå.",
+     "kort": "bestyrelsen godkender kombineret uofficielt DM fra 2022",
+     "kort_regel": "kombineret uofficielt DM, klassisk og udstyr"
     }
    ]
   },
   {
-   "titel": "Placeringer ved DM masters klassisk",
+   "titel": "Pointberegning ved DM masters klassisk",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -636,27 +643,13 @@
      "ref": "refbest_140424#4",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om aldersjusteret pointkåring forkastet",
+     "kort": "John Terragni foreslår IPF-point med McCulloch-alderskoefficienter",
      "kort_regel": null
     }
    ]
   },
   {
-   "titel": "Best Lifter-priser for masters ved EPF-stævner",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "epf_kongres_2025#5",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "top 3 pr. aldersklasse og køn får priser",
-     "kort_regel": "Top 3 masters efter GL-point får Best Lifter-pris"
-    }
-   ]
-  },
-  {
-   "titel": "Masterskategori i DM Hold",
+   "titel": "Masterskategori ved DM Hold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -664,28 +657,69 @@
      "ref": "rep2026#10",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om samlet M1-M4 kategori forkastet",
+     "kort": "RSM foreslår samlet masterskategori M1-M4 ved DM Hold",
      "kort_regel": null
     }
    ]
   },
   {
-   "titel": "Landsholdsdragter til masterløftere",
+   "titel": "VM for masters, klassisk (RAW)",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_08022015#10",
+     "ref": "vm2013#6",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "dragter sælges for 350 kr.; lånedragter hos DSF",
-     "kort_regel": "Landsholdsdragt 350 kr., kan lånes"
+     "kort": "VM for masters i RAW indføres, første gang i Sydafrika",
+     "kort_regel": "IPF afholder VM for masters i RAW"
+    }
+   ]
+  },
+  {
+   "titel": "Master 3-rekorder i øvrige kategorier",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#34",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "master 3-rekord noteres i alle lavere kategorier",
+     "kort_regel": "højere M3-rekord noteres også i M2, M1 og åben"
+    }
+   ]
+  },
+  {
+   "titel": "Medaljer for master 4 herrer og master 3 damer",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#5",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "EC foreslår kun IPF-formel uden vægtklassemedaljer",
+     "kort_regel": null
+    }
+   ]
+  },
+  {
+   "titel": "IPF Masterkommission",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#7",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "IPF opretter Master-kommission",
+     "kort_regel": "IPF har en Master-kommission"
     }
    ]
   }
  ],
  "udeladt": [
-  "refbest_12092010#1",
   "refbest_14012012#6"
  ],
  "ikke_tildelt": []

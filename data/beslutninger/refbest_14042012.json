@@ -1,17 +1,18 @@
 {
  "doc_id": "refbest_14042012",
  "sha256": "f68ed53a3872afbad192d5a99de63f932e6987007e0b300617b3b28d4a06322a",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2012-04-15",
  "beslutninger": [
   {
-   "emne": "Regler for international deltagelse for dopingdømte masterløftere",
+   "emne": "Deltagelse i internationale konkurrencer for dopingdømte masterløftere",
    "kategori": "antidoping",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Reglerne for international deltagelse for dopingdømte gælder som beskrevet i vedtægterne og gælder også for masterløftere. Emnet belyses yderligere med Antidoping Danmark, hvilket evt. kan føre til forslag om ændring på næste repræsentantskabsmøde.",
+   "tekst": "Reglerne for international deltagelse for dopingdømte gælder som beskrevet i vedtægterne og gælder også for masters. Emnet tages op med Antidoping Danmark på baggrund af et mildere syn fra WADA/NADO, hvilket evt. kan føre til forslag om ændring på næste repræsentantskabsmøde.",
    "citat": "Reglerne for international deltagelse gælder som beskrevet og også for masters.",
    "side": 1,
    "stemmer": null,
@@ -20,9 +21,10 @@
    "citat_fundet": true
   },
   {
-   "emne": "Oversigt over DSF's udstyr til udlån",
+   "emne": "Udstyrsliste på hjemmesiden",
    "kategori": "udstyr",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
    "tekst": "Den opdaterede liste over DSF's udstyr lægges på forbundets hjemmeside, så klubberne kan se, hvad de kan låne ved stævneafholdelse.",

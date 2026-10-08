@@ -1,7 +1,7 @@
 {
  "doc_id": "refdom08042025",
  "sha256": "1f1832c11822ae9ed0ffd8aebf6ffebce61e6f6b1350cd99b1b569dedb4357fd",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2025-04-08",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Regler for dommerudvalget, tilmelding til A-dommerprøver og betaling af internationale dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
+   "forslagsstiller": "Dommerudvalget",
    "handling": "aendring",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Tekster om tilmelding til A-dommerprøver og betaling af internationale dommere er præciseret og indarbejdet i dokumentet Regler for dommerudvalget. Bestyrelsen i DSF var enig i rettelserne.",
+   "tekst": "Dommerudvalget har udarbejdet tekster om tilmelding til A-dommerprøver og betaling af internationale dommere for at præcisere processerne. Bestyrelsen var enig i rettelserne, og teksterne er indarbejdet i dokumentet Regler for dommerudvalget.",
    "citat": "Der var enighed om at det var gode rettelser og teksterne er nu rettet til i dokumentet Regler for dommerudvalget.",
    "side": 2,
    "stemmer": null,
@@ -20,12 +21,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "Afgørelse af jurylederen ved uenighed om ændring af forsøg",
+   "emne": "Jurylederens endelige afgørelse ved ændring af forsøg",
    "kategori": "dommere",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Indtil dommerudvalget har fået tilbagemelding fra IPF's tekniske komité, er det lederen af juryen, der tager den endelige beslutning, hvis en lignende situation om ændring af et 2. forsøg opstår igen.",
+   "tekst": "Indtil dommerudvalget har fået tilbagemelding fra IPF's tekniske komité om en omstridt situation med ændring af et 2. forsøg, er det op til lederen af juryen at tage den endelige beslutning, hvis en lignende situation opstår.",
    "citat": "Indtil da vil det være op til lederen af juryen at tage den endelige beslutning, hvis en lignede situation skulle opstå igen før mødet.",
    "side": 2,
    "stemmer": null,

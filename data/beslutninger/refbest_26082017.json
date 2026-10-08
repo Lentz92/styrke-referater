@@ -1,7 +1,7 @@
 {
  "doc_id": "refbest_26082017",
  "sha256": "4f994ed12d7aa2059a3ab20e95d5832c83bcfc11662c216e71a02caf44ce5104",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2017-08-26",
  "beslutninger": [
@@ -9,10 +9,11 @@
    "emne": "Stævneafgift ved internationale stævner i Danmark",
    "kategori": "okonomi",
    "udfald": "vedtaget",
-   "handling": "aendring",
+   "forslagsstiller": "Bestyrelsen",
+   "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Arrangerende klubber betaler fremover en stævneafgift på 10.000 kr. til DSF ved internationale stævner i Danmark, så DSF ikke har udgifter til officials. Tidligere modtog DSF 25% af entreindtægterne ved EM i Thisted.",
-   "citat": "derfor beslutter bestyrelsen, at klubberne fremover betaler en stævneafgift på 10.000 kr. så DSF ikke har udgifter.",
+   "tekst": "Klubber, der arrangerer internationale stævner i Danmark, betaler fremover en stævneafgift til DSF på 10.000 kr., så DSF ikke har udgifter til officials. Arrangerende klub står fortsat for overnatning og forplejning til DSF's officials samt stævne-fee.",
+   "citat": "beslutter bestyrelsen, at klubberne fremover betaler en stævneafgift på 10.000 kr. så DSF ikke har udgifter.",
    "side": 3,
    "stemmer": null,
    "gaelder_fra": null,
@@ -20,12 +21,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "Tilmelding til JM/SM i klubbens landsdel",
+   "emne": "Tilmelding til JM/SM efter landsdel",
    "kategori": "staevner",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel, klubben er placeret. Tilmeldingsprogrammet tillader tilmelding begge steder, men ændres ikke.",
+   "tekst": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel, klubben er placeret i. Tilmeldingsprogrammet tillader tilmelding begge steder, men programmet ændres ikke.",
    "citat": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel klubben er placeret.",
    "side": 3,
    "stemmer": null,
@@ -34,17 +36,18 @@
    "citat_fundet": true
   },
   {
-   "emne": "Kvalifikationskrav DM klassisk, tilmeldingssystem",
+   "emne": "Ingen E.R. Open",
    "kategori": "staevner",
    "udfald": "vedtaget",
-   "handling": "bekraeftelse",
+   "forslagsstiller": null,
+   "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Kvalifikationskravet til DM klassisk i tilmeldingssystemet er aftalt til en varighed på 7 timer.",
-   "citat": "Kvalifikationskrav til DM klassisk i tilmeldingssystem aftalt med Johnny af 7 timers varighed.",
-   "side": 3,
+   "tekst": "Der afholdes ikke E.R. Open i 2018.",
+   "citat": "Der afholdes ikke E.R. Open i 2018.",
+   "side": 4,
    "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
+   "gaelder_fra": "2018-01-01",
+   "gaelder_til": "2018-12-31",
    "citat_fundet": true
   }
  ]

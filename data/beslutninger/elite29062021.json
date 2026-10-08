@@ -1,23 +1,8 @@
 {
  "doc_id": "elite29062021",
  "sha256": "dc03f71c69bfda84203d74002d6114c7cc4c09d1d1f3809c6740cba1d1d933ae",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2021-06-29",
- "beslutninger": [
-  {
-   "emne": "Udstyrssponsor for landsholdene",
-   "kategori": "udstyr",
-   "udfald": "vedtaget",
-   "handling": "ny",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Da udstyrssponsoren Titan Equipment ikke har kunnet levere det nødvendige landsholdsudstyr, skal der udarbejdes en løsning med Titan senest primo september 2021. Lykkes det ikke, arbejder Eliteudvalget på snarest muligt at finde en ny udstyrssponsor.",
-   "citat": "Da forbundets udstyrssponsor Titan Equipment ikke har kunnet levere det fornødne udstyr besluttede udvalget at der skal udarbejdes en løsning med Titan senest primo september.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": "2021-09-30",
-   "citat_fundet": true
-  }
- ]
+ "beslutninger": []
 }

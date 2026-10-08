@@ -1,7 +1,7 @@
 {
  "doc_id": "ReferatMastermoede_okt2011",
  "sha256": "bce735cf0df881059c8c837c91dab8169ad1cca138a8db075b9c0720300a243c",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2011-10-08",
  "beslutninger": [
@@ -9,9 +9,10 @@
    "emne": "Veteranudvalgets/masterudvalgets sammensætning",
    "kategori": "master",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Veteranudvalget (masterudvalget) bør bestå af 3-5 personer, hvoraf én skal være medlem af DSF's bestyrelse. Udvalget forventes at blive et udvalg under Breddeudvalget.",
+   "tekst": "Det nye veteranudvalg (masterudvalg) skal bestå af 3-5 personer, hvoraf én skal være medlem af DSF's bestyrelse. Udvalget bliver formentlig et udvalg under Breddeudvalget.",
    "citat": "Udvalget bør bestå af 3-5 personer, hvoraf den ene skal være medlem af DSF’s bestyrelse.",
    "side": 1,
    "stemmer": null,
@@ -20,9 +21,10 @@
    "citat_fundet": true
   },
   {
-   "emne": "Veteranudvalgets støtte og økonomi",
+   "emne": "Veteranudvalgets støtte og budget",
    "kategori": "master",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "bestyrelsesbeslutning",
    "tekst": "Som udvalg under DSF får veteranudvalget støtte i henhold til det budget, der er vedtaget på repræsentantskabsmødet.",
@@ -34,12 +36,13 @@
    "citat_fundet": true
   },
   {
-   "emne": "Dommere ved internationale masterstævner",
+   "emne": "Gebyr for manglende dommer ved internationale masterstævner",
    "kategori": "internationalt",
-   "udfald": "vedtaget",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "eksternt_krav",
-   "tekst": "Der forventes fra næste år en udgift på 1.000 euro, hvis en nation med 3 eller flere deltagere ved internationale masterstævner ikke stiller med en dommer. Dette var et forslag til næste IPF-kongres.",
+   "tekst": "Der er forslag på næste IPF-kongres om, at en nation med 3 eller flere deltagere, der ikke stiller med en dommer, skal betale 1.000 euro. Dommerudvalget skal løse problemet med at stille dommere til internationale masterstævner fra næste år.",
    "citat": "Hvis der deltager 3 eller flere deltagere, skal vi fra næste år forvente en udgift på 1.000 euro, hvis en nation ikke stiller med en dommer (forslag på næste IPF-kongres).",
    "side": 1,
    "stemmer": null,

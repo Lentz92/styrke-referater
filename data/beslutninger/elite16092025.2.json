@@ -1,7 +1,7 @@
 {
  "doc_id": "elite16092025.2",
  "sha256": "60891c5324e0fee53cdff844db99153a1fb3e10756e69f136aa69d8e96855da3",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2025-09-16",
  "beslutninger": [
@@ -9,6 +9,7 @@
    "emne": "Landsholdskontrakt",
    "kategori": "landshold",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "aendring",
    "niveau": "udvalgsbeslutning",
    "tekst": "Landsholdskontrakten opdateres for 2026, og den opdaterede kontrakt udsendes til alle landsholdsløftere inden udgangen af 2025.",

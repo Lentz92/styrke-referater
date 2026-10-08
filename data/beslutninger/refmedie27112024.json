@@ -1,23 +1,8 @@
 {
  "doc_id": "refmedie27112024",
  "sha256": "5e353195fdf22bb5619ebfc9b7534e349ef30b996c6ea57a175aa4036e77be5f",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2024-11-27",
- "beslutninger": [
-  {
-   "emne": "Medieindhold og tovholder ved stævner",
-   "kategori": "staevner",
-   "udfald": "vedtaget",
-   "handling": "ny",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "I 2025 sendes et dokument til stævnearrangører, der skal sikre, at klubberne laver indhold til sociale medier og kontakter lokalavisen. Dokumentet er et 'nice to/need to', og der udpeges en tovholder for hvert stævne og anden aktivitet i DSF, som kontakter arrangørerne for at sikre, at materiale laves.",
-   "citat": "I 2025 kommer der et dokument som bliver sendt til stævnearrangører, og som skal være med til at sikre at klubberne også laver indhold til sociale medier, tager kontakt til den lokale avis og andre punkter.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": "2025-01-01",
-   "gaelder_til": null,
-   "citat_fundet": true
-  }
- ]
+ "beslutninger": []
 }

@@ -1,17 +1,18 @@
 {
  "doc_id": "dif_budgetmoede_2026",
  "sha256": "85f8bc329eb44d22c867160c28380bed753fde84e1626356a84b3f8255f6d4a8",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2026-11-02",
  "beslutninger": [
   {
-   "emne": "Dopingnævn og dopingsager i DIF's love",
+   "emne": "Dopingnævn i DIF's love",
    "kategori": "internationalt",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "aendring",
    "niveau": "eksternt_krav",
-   "tekst": "DIF's repræsentantskab vedtog lovændringer, så DIF's love lever op til 2027 World Anti-Doping Code. Dopingnævnet og Motionsdopingnævnet udgår som organer under DIF, DIF's Appelinstans behandler ikke længere dopingsager, og henvisninger til Dopingnævnet og motionsdopingreglementet udgår af DIF's regelsæt.",
+   "tekst": "DIF's love ændres, så de lever op til 2027 World Anti-Doping Code: Dopingnævnet og Motionsdopingnævnet udgår som organer under DIF, DIF's Appelinstans behandler ikke længere dopingsager, og henvisninger til Dopingnævnet og motionsdopingreglementet udgår af DIF's regelsæt.",
    "citat": "Ændringerne medfører, at Dopingnævnet og Motionsdopingnævnet udgår som organer under DIF, at DIF’s Appelinstans ikke længere behandler dopingsager",
    "side": 1,
    "stemmer": "Alle stemte for",

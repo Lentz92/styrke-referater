@@ -1,23 +1,8 @@
 {
  "doc_id": "refbest_12092010",
  "sha256": "176cacec9eb92a99ea4a611c61051913436addd720bb6fc017f3054b6353b463",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2010-09-12",
- "beslutninger": [
-  {
-   "emne": "DSF's bidrag til VM Master Bænk",
-   "kategori": "master",
-   "udfald": "vedtaget",
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "DSF stiller med en teknisk sekretær og en dommer til VM Master Bænk 2011 for alle fire stævnedage. DSF yder ikke tilskud til lyd og lys, og kontrakten fra arrangøren kan ikke underskrives, så arrangøren opfordres til at udarbejde en revideret kontrakt.",
-   "citat": "DSF indvilliger i at stille med en teknisk sekretær (til at sørge for forsøgssedler etc.) samt en dommer. Begge dele for alle fire stævnedage. DSF ser sig ikke i stand til at yde tilskud til lyd og lys.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": "2011-12-31",
-   "citat_fundet": true
-  }
- ]
+ "beslutninger": []
 }

@@ -1,8 +1,24 @@
 {
  "doc_id": "refbest_16112013",
  "sha256": "6fe3e1aed05e5a29d54b6a94ba9d36d37e151c5c224adb0b4f38135fea2207c9",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2013-11-16",
- "beslutninger": []
+ "beslutninger": [
+  {
+   "emne": "Betaling af startgebyr til arrangør",
+   "kategori": "okonomi",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": "Bestyrelsen",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Bestyrelsen foreslår at ændre indbetalingsproceduren, så startgebyr fremover betales direkte til den arrangerende klub, som modtager hele startgebyret. Det kræver beslutning i repræsentantskabet, og forslaget tages med på repræsentantskabsmødet næste år.",
+   "citat": "Bestyrelsen snakkede om at ændre indbetalingsproceduren så man fremover betalte direkte til den arrangerende klub, som så vil modtage hele startgebyret.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true
+  }
+ ]
 }

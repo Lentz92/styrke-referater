@@ -1,18 +1,19 @@
 {
  "doc_id": "elite30012011",
  "sha256": "c7ed08c412060375be869bc74b6e8be1613b333d0345984e2951fd13634a1420",
- "version": 1,
+ "version": 2,
  "model": "sonnet",
  "moededato": "2011-01-30",
  "beslutninger": [
   {
-   "emne": "Udtagelse til EM, klassisk senior",
+   "emne": "Udtagelse til EM, 3-kamp",
    "kategori": "landshold",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Da DM afholdes for sent i forhold til EM, skal truppens løftere (undtagen Danni Iversen og Thomas Bay) lave EM-kravet ved DM for at blive udtaget til EM. Sune Bak og Annette Pedersen er forhåndsudtaget, og Lise Ejlertsen skal lave EM-kravet (447,5 kg) ved DMA for at vise stabilitet.",
-   "citat": "Resten af truppen, minus Danni Iversen og Thomas Bay som er for langt fra pt., skal alle lave EM kravet til DM for at blive udtaget til EM.",
+   "tekst": "Da DM afholdes for sent i forhold til EM, er Sune Bak og Annette Pedersen forhåndsudtaget til EM i 3-kamp. Lise Ejlertsen skal lave EM-kravet (447,5 kg) ved DMA for at vise stabilitet. Resten af truppen (undtagen Danni Iversen og Thomas Bay) skal lave EM-kravet ved DM for at blive udtaget.",
+   "citat": "Lise Ejlertsen skal lave EM krav (447,5kg) ved DMA for at vise stabilitet. Sune Bak og Annette Pedersen er forhåndsudtaget til EM.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
@@ -20,9 +21,10 @@
    "citat_fundet": true
   },
   {
-   "emne": "Udtagelse til internationale stævner",
+   "emne": "Kvalifikationskrav til internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
+   "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
    "tekst": "Som udgangspunkt skal atleterne lave kvalifikationskravet til de internationale stævner for at blive udtaget.",
