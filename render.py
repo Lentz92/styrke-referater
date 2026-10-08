@@ -250,8 +250,8 @@ def _year_page(year: int, years: list[int], rules: list[Rule], today: date, link
     lines += [
         "## Gældende regler",
         "",
-        f"{central} centrale regler og {len(in_force) - central} øvrige (interne procedurer og detaljer, "
-        "nævnt til sidst under hvert område).",
+        f"{central} centrale regler og {len(in_force) - central} interne procedurer og detaljer "
+        "(nævnt til sidst under hvert område).",
         "",
     ]
     for area in AREAS:
@@ -273,7 +273,7 @@ def _year_page(year: int, years: list[int], rules: list[Rule], today: date, link
             lines.append("")
         minor = [rule for rule, _ in section if not rule.vigtig]
         if minor:
-            lines += [f"Også i kraft: {', '.join(link(rule) for rule in minor)}.", ""]
+            lines += [f"Interne procedurer og detaljer: {', '.join(link(rule) for rule in minor)}.", ""]
 
     lines += [f"{WARNING} ved en kilde betyder, at Claudes citat ikke kunne genfindes ordret i referatet.", ""]
     return "\n".join(lines).rstrip() + "\n"
@@ -327,7 +327,7 @@ def _rule_entry(rule: Rule, cutoff: str, links: _Links) -> list[str]:
     else:
         status = "**Kun forslag – aldrig vedtaget**"
     if not rule.vigtig:
-        status += " · detalje"
+        status += " · intern procedure/detalje"
 
     lines = [f"### {rule.titel}", "", status, "", shown.text if content else shown.decision.tekst, ""]
     if content:
@@ -385,7 +385,7 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         "Hver årsside starter med, hvad der er nyt det år, og viser derefter de regler, der var i kraft "
         "ved årets udgang (for indeværende år: i dag) – én linje pr. regel med kilde.",
         "",
-        "| År | Ændringer i året | Centrale regler i kraft | Øvrige regler i kraft |",
+        "| År | Ændringer i året | Centrale regler i kraft | Interne procedurer og detaljer i kraft |",
         "|---|---|---|---|",
     ]
     for year in reversed(years):

@@ -25,7 +25,7 @@ from scrape import DATA_DIR, Doc, document_text
 
 # Bump when a prompt or schema changes so cached results are recomputed.
 EXTRACT_VERSION = 1
-CONSOLIDATE_VERSION = 5
+CONSOLIDATE_VERSION = 6
 
 DECISIONS_DIR = DATA_DIR / "beslutninger"
 RULES_DIR = DATA_DIR / "regler"
@@ -327,9 +327,12 @@ essence of the rule after this decision, e.g. "300 kr. pr. løfter pr. år", "mi
 ved over 5 tilmeldte"; null for other effects.
 - vigtig: true when a club, athlete, coach or referee needs to know the rule: licence and \
 membership, fees and payment deadlines, eligibility, qualification and selection criteria, \
-sanctions, obligations on clubs, how championships are run. false for internal routines of \
-the board or committees, bookkeeping, details about one venue or one event, naming, and \
-logistics.
+sanctions and doping consequences for athletes, obligations on clubs, how championships and \
+competitions are run, and anything that affects a referee's or jury's decision (lifting \
+rules, disqualification grounds, attempt changes, records, equipment checks). false only for \
+internal routines of the board or committees (composition, meetings, internal \
+communication), bookkeeping and internal payments, IPF/EPF internal governance, details about \
+one venue or one named event, naming, and logistics. When in doubt, true.
 - note: null for almost every rule. Only give a short Danish note for a real caveat: \
 conflicting decisions, a lower body appearing to override a higher-level rule, a very weak \
 vote, or doubt about whether the rule is still in force. Never restate dates, the level, the \

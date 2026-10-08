@@ -1,7 +1,7 @@
 {
  "kategori": "medlemskab",
- "version": 5,
- "input_hash": "53cc8700b0a104374b16f9dd273affbe54aa2c4287e907086e54a1e81c16212d",
+ "version": 6,
+ "input_hash": "5c36c38428ba2732e9a3f2516d9513fbdcf0e65b0e45a570c2cba6c5916a8ae5",
  "model": "opus",
  "regler": [
   {
@@ -13,13 +13,13 @@
      "ref": "repref2008#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "klubskifte under turnering: nyt hold først næste års turnering",
-     "kort_regel": "ved klubskifte først på nyt hold næste års turnering"
+     "kort": "klubskifte under turnering: ny klubs hold først næste år",
+     "kort_regel": "ved klubskifte først på nyt hold i næste års turnering"
     }
    ]
   },
   {
-   "titel": "Navn og licensnummer ved licensbetaling",
+   "titel": "Licensbetaling ved stævnetilmelding",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -28,12 +28,12 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "navn og licensnummer påføres ved betaling af årslicens",
-     "kort_regel": "årslicens betalt ved tilmelding påføres navn og licensnummer"
+     "kort_regel": "navn og licensnummer skal påføres ved betaling af årslicens"
     }
    ]
   },
   {
-   "titel": "Klubskifte og overflytning af licens",
+   "titel": "Klubskifte og overførsel af licens",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -55,22 +55,22 @@
      "ref": "refbest_11102015#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "ny klub anmoder; gammel klub 14 dages indsigelsesfrist",
-     "kort_regel": "overførsel efter 14 dage medmindre gæld; ikke før tilmeldt stævne"
+     "kort": "ny klub anmoder; gammel klub har 14 dages indsigelsesfrist",
+     "kort_regel": "ny klub anmoder, 14 dages indsigelse ved gæld"
     },
     {
      "ref": "rep2016#1",
      "effekt": "aendret",
-     "tekst": "Ved klubskifte skal licensløfteren skriftligt meddele den gamle klub med kopi til den nye klub og stævneudvalget. Skiftet træder i kraft 14 dage efter, at DSF har modtaget orienteringen, og løfteren fortsætter på samme licens. Har den gamle klub krav (fx manglende kontingent), træder skiftet først i kraft, når kravet er indfriet; ved uenighed afgør DSF's bestyrelse. En løfter, der efter tilmeldingsfristen er tilmeldt et stævne for sin gamle klub, kan først skifte klub, når stævnet er afviklet.",
+     "tekst": "Ved klubskifte skal licensløfteren skriftligt meddele den gamle klub med kopi til den nye klub og stævneudvalget. Skiftet træder i kraft 14 dage efter, at DSF har modtaget orienteringen, og løfteren fortsætter på samme licens. Har den gamle klub krav (fx manglende kontingent), træder skiftet først i kraft, når kravet er indfriet; ved uenighed afgør DSF's bestyrelse. En løfter, der efter tilmeldingsfristen er tilmeldt et stævne for sin gamle klub, kan først skifte klub efter stævnet.",
      "kort": "løfter meddeler skriftligt; skifte efter 14 dage, fra 1.10.2016",
-     "kort_regel": "løfter melder skifte; i kraft efter 14 dage, krav indfries først"
+     "kort_regel": "løfter meddeler skriftligt, skifte efter 14 dage, krav indfries først"
     },
     {
      "ref": "rep2026#2",
      "effekt": "aendret",
-     "tekst": "Klubskifte for en licensløfter anmodes skriftligt til licens@styrke.dk af den nye klub. Forbundet kontakter den nuværende klub, og hvis der ikke er indvendinger, overføres licensen. Indvendinger skal indsendes senest 14 dage efter modtagelse af anmodningen. Løfteren fortsætter på samme licens. En løfter, der efter tilmeldingsfristen er tilmeldt et stævne for sin gamle klub, kan først skifte klub, når stævnet er afviklet.",
+     "tekst": "Klubskifte for en licensløfter anmodes skriftligt til licens@styrke.dk af den nye klub. Forbundet kontakter den nuværende klub, og hvis der ikke er indvendinger, overføres licensen. Indvendinger skal indsendes senest 14 dage efter modtagelse af anmodningen. Løfteren fortsætter på samme licens. En løfter, der efter tilmeldingsfristen er tilmeldt et stævne for sin gamle klub, kan først skifte klub efter stævnet.",
      "kort": "ny klub anmoder via licens@styrke.dk; indvendinger inden 14 dage",
-     "kort_regel": "ny klub anmoder via licens@styrke.dk; 14 dages indvendingsfrist"
+     "kort_regel": "ny klub anmoder via licens@styrke.dk, 14 dages indvendingsfrist"
     }
    ]
   },
@@ -83,83 +83,83 @@
      "ref": "rep2013#14",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "DIF/ADD-krav: 3 måneders registrering før stævner, ingen dispensation",
-     "kort_regel": "3 måneders registrering før officielle stævner, ingen dispensation"
+     "kort": "3 måneders registrering før officielle stævner, ingen dispensation",
+     "kort_regel": "registreret 3 mdr. før officielle stævner, ingen dispensation"
     },
     {
      "ref": "rep2014#8",
      "effekt": "aendret",
      "tekst": "En løfter skal have været medlem af en klub under DSF i 3 måneder, før der kan ansøges om licens. Licensen træder i kraft 3 måneder efter registrering af ansøgningen, og først derefter kan løfteren deltage i officielle stævner. Der kan ikke dispenseres.",
-     "kort": "krav om 3 mdr. medlemskab før licensansøgning tilføjet",
-     "kort_regel": "3 mdr. medlemskab før ansøgning; licens gælder 3 mdr. senere"
+     "kort": "3 mdr. medlemskab før ansøgning plus 3 mdr. til licens",
+     "kort_regel": "3 mdr. medlemskab, licens gælder 3 mdr. efter ansøgning"
     },
     {
      "ref": "refbest_07122014#3",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om at afskaffe 6-måneders-reglen ikke fremsat",
+     "kort": "forslag om afskaffelse af 6-måneders-reglen ikke fremsat",
      "kort_regel": null
     },
     {
      "ref": "rep2015#2",
      "effekt": "aendret",
-     "tekst": "Der kræves ikke forudgående medlemskab af en forening under DSF, før der kan anmodes om licens. Løfteren skal være registreret på listen over forventede licensløftere i 3 måneder før deltagelse i officielle stævner. Der kan ikke dispenseres.",
+     "tekst": "Der er intet krav om forudgående medlemskab af en forening under DSF, før der kan anmodes om licens. Løfteren skal være registreret på listen over forventede licensløftere i 3 måneder før deltagelse i officielle stævner. Der kan ikke dispenseres.",
      "kort": "krav om 3 mdr. medlemskab før licensansøgning slettet",
-     "kort_regel": "3 måneder på licenslisten før stævnedeltagelse"
+     "kort_regel": "3 mdr. på licenslisten før stævnedeltagelse"
     },
     {
      "ref": "refbest_08052016#2",
      "effekt": "bekraeftet",
-     "tekst": "Der kræves ikke forudgående medlemskab af en forening under DSF, før der kan anmodes om licens. Løfteren skal være registreret på listen over forventede licensløftere i 3 måneder fra ansøgningsdatoen før deltagelse i officielle stævner. Der kan ikke dispenseres.",
+     "tekst": "Løfteren skal være registreret på listen over forventede licensløftere i 3 måneder fra ansøgningsdato før deltagelse i officielle stævner. Der kan ikke dispenseres.",
      "kort": "bekræftet: ingen dispensation fra 3 måneders frist",
-     "kort_regel": "3 måneder fra ansøgning før stævne, ingen dispensation"
+     "kort_regel": "3 mdr. fra ansøgning før stævne, ingen dispensation"
     }
    ]
   },
   {
    "titel": "Udmeldelse, genindmeldelse og klubløse løftere",
    "vigtig": true,
-   "note": "rep2018#6 blev vedtaget med kun 5 stemmer for, 3 imod og 40 blanke.",
+   "note": "Ændringen i 2018 blev vedtaget med kun 5 stemmer for, 3 imod og 40 blanke.",
    "versioner": [
     {
      "ref": "rep2016#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "licens kan ikke gøres passiv; genindmeldelse 12 mdr. og 2.500 kr.",
-     "kort_regel": "genindmeldt løfter: 12 mdr. på listen, 2.500 kr. inden 4 år"
+     "kort": "licens kan ikke gøres passiv; genindmeldelse 12 mdr., 2.500 kr.",
+     "kort_regel": "genindmeldelse: 12 mdr. karens, 2.500 kr. inden for 4 år"
     },
     {
      "ref": "rep2016#3",
      "effekt": "aendret",
      "tekst": "En opnået licens kan ikke gøres passiv; ønsker man ikke at stå på licenslisten, skal man melde fra. Ved genindmeldelse skal løfteren stå på listen i 12 måneder, før vedkommende kan løfte i konkurrence igen. Betaling ved genindmeldelse inden for 4 år fra udmeldelsen er 2.500 kr. En løfter, der har været klubløs, skal ved indmeldelse i en ny klub have været medlem i 12 måneder, før han/hun kan deltage i officielle konkurrencer under DSF. En klub, der ønsker at udmelde en løfter, skal orientere løfteren skriftligt mindst 30 dage før udmeldelsen.",
-     "kort": "klubløse 12 mdr. medlemskab; klub udmelder med 30 dages varsel",
-     "kort_regel": "genindmeldt 12 mdr.; klubløse 12 mdr.; 30 dages udmeldelsesvarsel"
+     "kort": "klubløse 12 mdr. karens; klub udmelder med 30 dages varsel",
+     "kort_regel": "klubløse 12 mdr. karens; udmeldelse med 30 dages varsel"
+    },
+    {
+     "ref": "rep2017#10",
+     "effekt": "aendret",
+     "tekst": "En opnået licens kan ikke gøres passiv; ønsker man ikke at stå på licenslisten, skal man melde fra. En løfter, der aktivt har meldt sig af licenslisten, skal ved genindmeldelse stå på listen i 12 måneder, før vedkommende kan løfte i konkurrence igen, og betaler 2.500 kr. ved genindmeldelse inden for 4 år fra udmeldelsen. Løftere, der har været ude af sporten uden at melde fra, stilles som nye løftere med 3 måneders karensperiode. En løfter, der har været klubløs, skal ved indmeldelse i en ny klub have været medlem i 12 måneder, før han/hun kan deltage i officielle konkurrencer under DSF. En klub, der ønsker at udmelde en løfter, skal orientere løfteren skriftligt mindst 30 dage før udmeldelsen.",
+     "kort": "tilbagevendende som nye løftere, 3 mdr.; 12 mdr. kun ved udmeldelse",
+     "kort_regel": "12 mdr. kun ved aktiv udmeldelse, ellers 3 mdr."
     },
     {
      "ref": "rep2017#8",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om at fjerne klubløse-karens og 30 dages varsel forkastet",
+     "kort": "forslag om at fjerne klubløses karens og 30 dages varsel forkastet",
      "kort_regel": null
-    },
-    {
-     "ref": "rep2017#10",
-     "effekt": "aendret",
-     "tekst": "En opnået licens kan ikke gøres passiv; ønsker man ikke at stå på licenslisten, skal man melde fra. En løfter, der aktivt har meldt sig af licenslisten, skal ved genindmeldelse stå på listen i 12 måneder, før vedkommende kan løfte i konkurrence igen, og betaler 2.500 kr. ved genindmeldelse inden for 4 år fra udmeldelsen. Løftere, der har været ude af sporten uden aktivt at melde fra, stilles som nye løftere med 3 måneders karensperiode. En løfter, der har været klubløs, skal ved indmeldelse i en ny klub have været medlem i 12 måneder, før han/hun kan deltage i officielle konkurrencer under DSF. En klub, der ønsker at udmelde en løfter, skal orientere løfteren skriftligt mindst 30 dage før udmeldelsen.",
-     "kort": "12 mdr. kun ved aktiv afmelding; øvrige tilbagevendte 3 mdr.",
-     "kort_regel": "aktivt afmeldte 12 mdr.; øvrige tilbagevendte 3 mdr. karens"
     },
     {
      "ref": "rep2018#6",
      "effekt": "aendret",
-     "tekst": "En opnået licens kan ikke gøres passiv; ønsker man ikke at stå på licenslisten, skal man melde fra. En udmeldt løfter, der vender tilbage inden for 4 år, betaler 2.500 kr. og har 12 måneders karantæne med licens og klubtræning, før vedkommende kan løfte i konkurrence. Løftere, der har været ude af sporten uden aktivt at melde fra, stilles som nye løftere med 3 måneders karensperiode. En klubløs løfter har efter indmeldelse i en ny klub 6 måneders karantæne før deltagelse i officielle konkurrencer. Klubløse licensløftere skal holde deres kontaktoplysninger opdateret hos forbundet. En klub, der ønsker at udmelde en løfter, skal orientere løfteren skriftligt mindst 30 dage før udmeldelsen.",
-     "kort": "klubløse karantæne sænket fra 12 til 6 mdr.; kontaktpligt",
-     "kort_regel": "udmeldt: 2.500 kr. og 12 mdr.; klubløs: 6 mdr. karantæne"
+     "tekst": "En opnået licens kan ikke gøres passiv; ønsker man ikke at stå på licenslisten, skal man melde fra. En udmeldt løfter, der vender tilbage inden for 4 år, betaler 2.500 kr. og har 12 måneders karantæne med licens og klubtræning. Løftere, der har været ude af sporten uden at melde fra, stilles som nye løftere med 3 måneders karensperiode. En klubløs løfter har efter indmeldelse i en ny klub 6 måneders karantæne før deltagelse i officielle konkurrencer. Klubløse licensløftere skal holde deres kontaktoplysninger opdateret hos forbundet. En klub, der ønsker at udmelde en løfter, skal orientere løfteren skriftligt mindst 30 dage før udmeldelsen.",
+     "kort": "klubløse 6 mdr. karantæne; udmeldte 12 mdr. med licens og klubtræning",
+     "kort_regel": "udmeldte 12 mdr. og 2.500 kr.; klubløse 6 mdr."
     }
    ]
   },
   {
-   "titel": "Deltagelse i danske mesterskaber for udlændinge og dobbelt licens",
+   "titel": "Nationalitet og bopæl ved danske mesterskaber og rekorder",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -167,29 +167,29 @@
      "ref": "rep2013#8",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "udlændinge kræver 24 mdr. fast bopæl i Danmark",
-     "kort_regel": "udlænding: 24 mdr. fast bopæl før mesterskab"
+     "kort": "udlændinge 24 mdr. fast bopæl; danskere i udlandet efter aftale",
+     "kort_regel": "udlændinge kræver 24 mdr. fast bopæl i Danmark"
     },
     {
      "ref": "refbest_03022018#3",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om deltagelse med nordisk licens ikke fremsat",
+     "kort": "ingen forslag om deltagelse med nordisk licens; dobbelt licens forbudt",
      "kort_regel": null
     },
     {
      "ref": "refbest_07102018#2",
      "effekt": "bekraeftet",
-     "tekst": "En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder for at deltage i danske mesterskaber (DM, JM, SM). Man kan ikke deltage i danske mesterskaber eller sætte danske rekorder, hvis man repræsenterer en anden nation. Man kan ikke deltage i danske stævner uden dansk licens, og dobbelt licens i flere lande er ikke tilladt; begge krav skal være opfyldt for registrering af danske rekorder. En dansk statsborger, der i en periode opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende.",
-     "kort": "bekræftet: ingen DM eller rekorder ved repræsentation af anden nation",
-     "kort_regel": "24 mdr. bopæl; ingen dobbelt licens; ingen anden nation"
+     "tekst": "Man kan ikke deltage i danske mesterskaber (DM, JM, SM) eller sætte danske rekorder, hvis man repræsenterer en anden nation. En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder for at deltage i mesterskab. En dansk statsborger, der i en periode opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende. Man kan ikke deltage i danske stævner uden dansk licens, og dobbelt licens i flere lande er ikke tilladt. Begge krav skal være opfyldt for registrering af danske rekorder.",
+     "kort": "bekræftet; ingen DM eller rekorder ved repræsentation af anden nation",
+     "kort_regel": "24 mdr. bopæl, ingen anden nation, ingen dobbelt licens"
     },
     {
      "ref": "rep2026#3",
      "effekt": "aendret",
-     "tekst": "En udlænding skal have haft fast bopæl i Danmark i 6 på hinanden følgende måneder for at deltage i DSF-mesterskaber (DM, JM, SM). Man kan ikke deltage i danske mesterskaber eller sætte danske rekorder, hvis man repræsenterer en anden nation. Man kan ikke deltage i danske stævner uden dansk licens, og dobbelt licens i flere lande er ikke tilladt; begge krav skal være opfyldt for registrering af danske rekorder. En dansk statsborger, der i en periode opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende.",
-     "kort": "bopælskrav sænket fra 24 til 6 mdr. af hensyn til IPF",
-     "kort_regel": "udlænding: 6 mdr. fast bopæl; ingen dobbelt licens"
+     "tekst": "Man kan ikke deltage i danske mesterskaber (DM, JM, SM) eller sætte danske rekorder, hvis man repræsenterer en anden nation. En udlænding skal have haft fast bopæl i Danmark i 6 på hinanden følgende måneder for at deltage i DSF-mesterskaber. En dansk statsborger, der i en periode opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende. Man kan ikke deltage i danske stævner uden dansk licens, og dobbelt licens i flere lande er ikke tilladt. Begge krav skal være opfyldt for registrering af danske rekorder.",
+     "kort": "bopælskrav for udlændinge sænket fra 24 til 6 mdr.",
+     "kort_regel": "udlændinge kræver 6 mdr. fast bopæl i Danmark"
     }
    ]
   },
@@ -202,29 +202,43 @@
      "ref": "refbest_01062013#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "atleter skal træne i klubben, de stiller op for",
-     "kort_regel": "træning i egen klub, fast ugedag for dopingkontrol"
+     "kort": "træning i egen klub, fast ugedag af hensyn til dopingkontrol",
+     "kort_regel": "træning i klubben, fast ugedag hvis sjældent"
     },
     {
      "ref": "refbest_09022014#1",
      "effekt": "aendret",
-     "tekst": "For at stille op for en klub skal en atlet træne regelmæssigt i klubben, mindst én gang om ugen. Bor atleten langt fra en klub, eller er der helt særlige omstændigheder, kan klubben udstede en dispensation med vilkår for, hvordan løfteren kan repræsentere klubben. DSF's dopingkontroludvalg orienteres herom.",
-     "kort": "mindst én gang ugentligt; klub kan dispensere",
-     "kort_regel": "træning mindst ugentligt; klubdispensation med orientering af udvalg"
+     "tekst": null,
+     "kort": "mindst én gang om ugen; klub kan dispensere",
+     "kort_regel": "mindst ugentlig træning; klubdispensation, dopingkontroludvalg orienteres"
     },
     {
      "ref": "refbest_310819#3",
      "effekt": "aendret",
-     "tekst": "For at stille op for en klub skal en atlet træne regelmæssigt i klubben, mindst én gang om ugen. Bor atleten langt fra en klub, eller er der særlige omstændigheder, kan klubben udstede en dispensation med beskrevne vilkår for, hvordan løfteren kan repræsentere klubben. DSF's dopingkontroludvalg skal orienteres og godkende aftalen.",
-     "kort": "dopingkontroludvalget skal nu godkende dispensationen",
-     "kort_regel": "træning mindst ugentligt; dispensation godkendes af dopingkontroludvalg"
+     "tekst": "For at stille op for en klub skal man træne regelmæssigt i klubben, mindst én gang om ugen. Klubben kan give dispensation ved lang afstand eller særlige omstændigheder med beskrevne vilkår for, hvordan løfteren kan repræsentere klubben. DSF's dopingkontroludvalg skal orienteres og godkende aftalen.",
+     "kort": "dopingkontroludvalg skal nu også godkende dispensation",
+     "kort_regel": "ugentlig træning; dispensation godkendes af dopingkontroludvalg"
     },
     {
      "ref": "refbest_230825#4",
      "effekt": "bekraeftet",
      "tekst": "For at stille op for en klub skal atleten træne regelmæssigt i klubben, mindst én gang om ugen. Ved lang afstand til en klub eller særlige omstændigheder kan klubben udstede en dispensation med vilkår for repræsentation. DSF's Antidoping-udvalg skal orienteres og godkende aftalen.",
      "kort": "bekræftet; godkendelse nu hos Antidoping-udvalget",
-     "kort_regel": "træning mindst ugentligt; dispensation godkendes af Antidoping-udvalg"
+     "kort_regel": "ugentlig træning; dispensation godkendes af Antidoping-udvalg"
+    }
+   ]
+  },
+  {
+   "titel": "Karantæne ved start i andre forbund",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2014#4",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om 1 års karantæne ved bodybuilding/stærkmand forkastet",
+     "kort_regel": null
     }
    ]
   },
@@ -251,22 +265,8 @@
      "ref": "rep2026#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "licens ved klubbens licenserklæring til licens@styrke.dk",
+     "kort": "licens tildeles efter klubbens licenserklæring til licens@styrke.dk",
      "kort_regel": "klub indsender licenserklæring til licens@styrke.dk"
-    }
-   ]
-  },
-  {
-   "titel": "Karantæne ved start i andre forbund",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "rep2014#4",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "forslag om 1 års karantæne ved bodybuilding/stærkmand forkastet",
-     "kort_regel": null
     }
    ]
   }

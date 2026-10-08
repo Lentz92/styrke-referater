@@ -1,7 +1,7 @@
 {
  "kategori": "andet",
- "version": 5,
- "input_hash": "e19cd7f6135e6ba26d56ed4b6d4db8dda35a3582eb98ff2eb6a7b2f4bf69cc01",
+ "version": 6,
+ "input_hash": "cda973121f41c0c4dc809dfd4c3109bc7209304e700f640acd33061b4ea6f4bb",
  "model": "opus",
  "regler": [
   {
@@ -13,7 +13,7 @@
      "ref": "refbest_03052014#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "medaljer bestilles kun gennem Forma for at spare",
+     "kort": "medaljer bestilles kun gennem Forma",
      "kort_regel": "medaljer bestilles udelukkende gennem Forma"
     }
    ]
