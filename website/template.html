@@ -9,6 +9,8 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Visitor count without cookies; dashboard at https://lentz92.goatcounter.com. Ignores localhost and file previews. -->
+<script id="goatcounter" data-goatcounter="https://lentz92.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>
   /* One type scale (11 / 13 / 14 / 15 / 20 / 44 px), one spacing scale (4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 px),
      one font. Secondary text is muted grey rather than smaller-and-bold, so titles carry the hierarchy. */
@@ -373,8 +375,15 @@ function ruleDetail(ri) {
 
 /* The open rule lives in the URL (#regel/<slug>), so links can be shared and Back closes the popup. */
 let openRule = -1, returnFocus = null, navigatedHere = false;
+// Count each opened rule as a GoatCounter event; the counter script loads async, so wait for it if needed.
+function countRuleOpen(ri) {
+  const send = () => window.goatcounter?.count?.({ path: `regel/${R[ri].slug}`, title: R[ri].title, event: true });
+  if (window.goatcounter?.count) send();
+  else $("goatcounter")?.addEventListener("load", send, { once: true });
+}
 function showRule(ri) {
   if (openRule < 0) returnFocus = document.activeElement;
+  if (openRule !== ri) countRuleOpen(ri); // not when the year changes under an open rule
   openRule = ri;
   $("modal").innerHTML = ruleDetail(ri);
   $("modal").scrollTop = 0;
@@ -428,7 +437,7 @@ function init() {
   $("foot").innerHTML = `<span>Opdateret ${longD(TODAY)} · ${D.documents} referater og regeldokumenter ·
       <a href="https://styrke.dk/?page=referater" target="_blank" rel="noopener">styrke.dk</a> ·
       <a href="https://github.com/Lentz92/styrke-referater" target="_blank" rel="noopener">GitHub</a></span>
-    <span>Udtrukket automatisk – referatet er altid den gældende kilde.</span>`;
+    <span>Udtrukket automatisk – referatet er altid den gældende kilde. Besøg tælles anonymt uden cookies.</span>`;
   draw();
   syncWithHash();
 }

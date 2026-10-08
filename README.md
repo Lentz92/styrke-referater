@@ -47,6 +47,10 @@ lists words that should find each other (VM â†” verdensmesterskab, kontingent â†
 when a search misses something it should find, then push; the site rebuilds itself.
 `website/vendor/minisearch.js` is MiniSearch 7.2.0 copied from npm.
 
+Visits are counted without cookies by [GoatCounter](https://www.goatcounter.com/); the dashboard is
+<https://lentz92.goatcounter.com> (log in as the account owner). Opened rules show up there as events
+named `regel/<slug>`.
+
 To share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
 
 ### Monthly run on GitHub
