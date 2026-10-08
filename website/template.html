@@ -76,6 +76,7 @@
   a.rule.prop .verb { color: var(--muted); }
   .rules a.rule + a.rule { margin-top: 16px; }
   .rules .aux { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .rules .warn { color: #9a3412; }
   .content h2 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; line-height: 28px; margin: 0; }
   .areahead { display: flex; align-items: baseline; gap: 10px; margin-bottom: 32px; }
   .areahead .sq { width: 10px; height: 10px; background: var(--ac); }
@@ -261,10 +262,11 @@ function decisionItem({ ri, vi }) {
     <div class="desc"><span class="verb">${EFFECT[v.effect]}:</span> ${esc(v.change)}${v.from ? ` (fra ${longD(v.from)})` : ""}</div></div></a>`;
 }
 function ruleItem(ri) {
-  const r = R[ri], cur = IDX[state.year].get(ri), stale = cur ? staleSince(ri, state.year) : "";
+  const r = R[ri], cur = IDX[state.year].get(ri), stale = cur && staleSince(ri, state.year);
   const v = cur ? r.versions[cur.vi] : r.versions[r.versions.length - 1];
+  const last = lastMention(ri, state.year).replace(/-00-00$/, ""); // undo dkey's padding of year-only dates
   return `<a class="rule" href="${href(ri)}">${areaLabel(ri)}<div><div class="title">${esc(r.title)}${intlMark(ri)}</div>
-    <div class="desc">${esc(essence(v))}</div>${stale ? `<div class="aux">Sidst nævnt ${stale}</div>` : ""}</div></a>`;
+    <div class="desc">${esc(essence(v))}</div>${last ? `<div class="aux">Sidst nævnt ${longD(last)}${stale ? ` · <span class="warn">kan være forældet</span>` : ""}</div>` : ""}</div></a>`;
 }
 
 function draw() {
