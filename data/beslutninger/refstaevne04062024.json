@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 23,
+   "citat_side": 1
   },
   {
    "emne": "Tilmelding af hold til DM hold",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 125,
+   "citat_side": 1
   },
   {
    "emne": "Stævneudvalgets adgang til dommerdatabasen",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 184,
+   "citat_side": 1
   }
  ]
 }

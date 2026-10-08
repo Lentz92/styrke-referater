@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 98,
+   "citat_side": 1
   },
   {
    "emne": "Antal coaches i wrapping-området",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 131,
+   "citat_side": 1
   },
   {
    "emne": "Coach-observationszone ved stævner",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 153,
+   "citat_side": 1
   },
   {
    "emne": "Head coachs ansvar for adfærd og coachingzone",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 202,
+   "citat_side": 1
   },
   {
    "emne": "Akkreditering af assistentcoaches og træningstid",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 246,
+   "citat_side": 1
   },
   {
    "emne": "Oprydning af udstyr og træningsområde",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 290,
+   "citat_side": 1
   },
   {
    "emne": "Dokumentation og udstyrskontrol ved vejning",
@@ -108,7 +120,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 327,
+   "citat_side": 1
   },
   {
    "emne": "Coaches' overholdelse af IPF antidopingregler",
@@ -123,7 +137,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 371,
+   "citat_side": 1
   },
   {
    "emne": "Alkoholforbud i opvarmnings- og wrapping-område",
@@ -138,7 +154,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 452,
+   "citat_side": 1
   }
  ]
 }

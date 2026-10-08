@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2021-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 124,
+   "citat_side": 1
   },
   {
    "emne": "JM afvikling",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2021-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 181,
+   "citat_side": 1
   },
   {
    "emne": "Tilmeldingsfrister til stævner",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 212,
+   "citat_side": 2
   },
   {
    "emne": "Betaling af stævnegebyr",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 527,
+   "citat_side": 2
   }
  ]
 }

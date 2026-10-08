@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 77,
+   "citat_side": 1
   },
   {
    "emne": "Frist for kassererens udbetaling til landsholdsløftere",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 116,
+   "citat_side": 1
   },
   {
    "emne": "Meddelelse om flytning",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 192,
+   "citat_side": 1
   }
  ]
 }

@@ -58,6 +58,10 @@ Regler ophæves sjældent formelt, så en regel gælder her, indtil et senere re
 - Dokumenter der mangler analyse (kør `uv run update.py` igen): 0
 - Dokumenter uden regelbeslutninger (fx budgetmøder): 28
 - Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 1
+- Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): 6
 - Engangsbeslutninger uden for reglerne (kun i data/beslutninger): 55
+- Regelversioner hvis beslutning er ændret siden konsolideringen (vises ikke): 0
+- Regelversioner hvor virkningen ikke passer til beslutningen: 6
+- Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, eller en senere beslutning der gælder fra før en tidligere): 20
 
 Udtrækket er lavet automatisk af Claude og kan indeholde fejl. Referatet er altid den gældende kilde.

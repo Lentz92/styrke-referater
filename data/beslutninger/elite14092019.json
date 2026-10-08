@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2019-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 47,
+   "citat_side": 1
   },
   {
    "emne": "Antal dommere ved EM",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 63,
+   "citat_side": 1
   },
   {
    "emne": "Ekstern kommunikation i Eliteudvalget",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 91,
+   "citat_side": 1
   }
  ]
 }

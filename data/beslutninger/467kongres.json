@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 613,
+   "citat_side": 3
   },
   {
    "emne": "Stævnehoteller, overpriser og sanktioner",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 670,
+   "citat_side": 3
   },
   {
    "emne": "Stævnehoteller, bøde for fravalg",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 707,
+   "citat_side": 3
   },
   {
    "emne": "Suspendering af medlemmer",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 748,
+   "citat_side": 3
   },
   {
    "emne": "Reserveløfter ved forhåndstilmelding",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 793,
+   "citat_side": 3
   },
   {
    "emne": "Bøde for dommeres sene ændring af opgaver",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 820,
+   "citat_side": 3
   },
   {
    "emne": "Bøde for udeblivelse fra teknisk møde",
@@ -108,7 +120,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 851,
+   "citat_side": 4
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": "19 for, 15 imod, 18 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4466,
+   "citat_side": 13
   },
   {
    "emne": "IPF deltagergebyr for atleter",
@@ -33,7 +35,9 @@
    "stemmer": "19 for, 15 imod, 18 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4475,
+   "citat_side": 13
   },
   {
    "emne": "IPF gebyr pr. atlet og andel til arrangør",
@@ -48,7 +52,9 @@
    "stemmer": "13 for, 6 imod, 15 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4584,
+   "citat_side": 13
   },
   {
    "emne": "IPF gebyr for klager og anker",
@@ -63,7 +69,9 @@
    "stemmer": "33 for, 6 imod, 13 blanke (klager); 27 for, 7 imod, 18 blanke (anker)",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4033,
+   "citat_side": 12
   },
   {
    "emne": "Kønsbalance i IPF-ledelsesorganer",
@@ -78,7 +86,9 @@
    "stemmer": "27 for, 9 imod, 16 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3821,
+   "citat_side": 11
   },
   {
    "emne": "Godtgørelse til IPF EC-medlemmer",
@@ -93,7 +103,9 @@
    "stemmer": "25 for, 17 imod, 10 blanke (forslag 1)",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 265,
+   "citat_side": 1
   },
   {
    "emne": "IPF Masterkommission",
@@ -108,7 +120,9 @@
    "stemmer": "40 for, 5 imod, 7 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3749,
+   "citat_side": 11
   },
   {
    "emne": "Nomineringsfrist til IPF-konkurrencer",
@@ -123,7 +137,9 @@
    "stemmer": "32 for, 7 imod, 13 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4742,
+   "citat_side": 14
   },
   {
    "emne": "Antal officielle repræsentanter ved IPF-konkurrencer",
@@ -138,7 +154,9 @@
    "stemmer": "32 for, 6 imod, 14 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4776,
+   "citat_side": 14
   },
   {
    "emne": "Krav til coaches ved IPF-nominering",
@@ -153,7 +171,9 @@
    "stemmer": "22 for, 4 imod, 6 blanke",
    "gaelder_fra": "2029-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4845,
+   "citat_side": 14
   },
   {
    "emne": "Antal coaches ved bænkpresstævner",
@@ -168,7 +188,9 @@
    "stemmer": "38 for, 2 imod, 12 blanke",
    "gaelder_fra": "2027-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4998,
+   "citat_side": 14
   },
   {
    "emne": "Indsendelse af nationale mesterskabsresultater til IPF",
@@ -183,7 +205,9 @@
    "stemmer": "28 for, 8 imod, 18 blanke",
    "gaelder_fra": "2027-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5055,
+   "citat_side": 14
   },
   {
    "emne": "Kvalificerings- og nomineringsproces for atleter",
@@ -198,7 +222,9 @@
    "stemmer": "33 for, 6 imod, 11 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5222,
+   "citat_side": 15
   },
   {
    "emne": "Atlet selvbetaling ved international konkurrence",
@@ -213,7 +239,9 @@
    "stemmer": "31 for, 6 imod, 15 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5315,
+   "citat_side": 15
   },
   {
    "emne": "Dommere ved IPF-landshold",
@@ -228,7 +256,9 @@
    "stemmer": "27 for, 17 imod, 15 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5413,
+   "citat_side": 15
   },
   {
    "emne": "Beskyttelse af sub-junior atleter",
@@ -243,7 +273,9 @@
    "stemmer": "35 for, 2 imod, 15 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5775,
+   "citat_side": 18
   },
   {
    "emne": "Hotelkrav for coaches og dommere ved IPF-mesterskaber",
@@ -258,7 +290,9 @@
    "stemmer": "30 for, 6 imod, 16 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5844,
+   "citat_side": 18
   },
   {
    "emne": "Ændring af IPF's tekniske regler",
@@ -273,7 +307,9 @@
    "stemmer": "33 for, 3 imod, 16 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 6034,
+   "citat_side": 19
   },
   {
    "emne": "Forslag til IPF's tekniske regler via Rules Group",
@@ -288,7 +324,9 @@
    "stemmer": "39 for, 6 imod, 7 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3668,
+   "citat_side": 11
   },
   {
    "emne": "Ændring af IPF's forfatning om By-Laws",
@@ -303,7 +341,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 45,
+   "citat_side": 1
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 42,
+   "citat_side": 1
   },
   {
    "emne": "Afstand mellem rack og dommere ved stævner i Tårnby",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 142,
+   "citat_side": 1
   },
   {
    "emne": "Indvejningsvægt ved DM",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 173,
+   "citat_side": 1
   },
   {
    "emne": "Stævneansvarlig for DSF-stævner",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 205,
+   "citat_side": 1
   },
   {
    "emne": "Årligt gennemsyn af stævnereglerne",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 370,
+   "citat_side": 1
   },
   {
    "emne": "Godkendelse af rekorder",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 195,
+   "citat_side": 1
   }
  ]
 }

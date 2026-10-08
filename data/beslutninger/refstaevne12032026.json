@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 221,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav DM klassisk styrkeløft",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 312,
+   "citat_side": 1
   },
   {
    "emne": "Master løfter logo på T-shirt i konkurrence",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 368,
+   "citat_side": 2
   }
  ]
 }

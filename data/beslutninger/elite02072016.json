@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2017-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 229,
+   "citat_side": 1
   },
   {
    "emne": "Holdstørrelse EM klassisk",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2017-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 308,
+   "citat_side": 1
   },
   {
    "emne": "Landsholdstrikot",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 404,
+   "citat_side": 2
   },
   {
    "emne": "Kvalifikationskrav landshold",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": "2018-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 581,
+   "citat_side": 3
   }
  ]
 }

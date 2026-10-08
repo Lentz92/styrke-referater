@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2014-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 448,
+   "citat_side": 2
   },
   {
    "emne": "Tilskud til skoleprojekter",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 692,
+   "citat_side": 3
   },
   {
    "emne": "Bestilling af medaljer",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 941,
+   "citat_side": 3
   },
   {
    "emne": "EM Classic afholdelse i Danmark",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2015-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 894,
+   "citat_side": 3
   }
  ]
 }

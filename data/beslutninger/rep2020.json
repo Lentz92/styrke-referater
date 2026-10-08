@@ -18,7 +18,9 @@
    "stemmer": "30 for, 2 undlod",
    "gaelder_fra": "2022-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 8390,
+   "citat_side": 17
   },
   {
    "emne": "Tidspunkt for SM og JM",
@@ -33,7 +35,9 @@
    "stemmer": "32 for",
    "gaelder_fra": "2021-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 8491,
+   "citat_side": 17
   },
   {
    "emne": "Tilmeldingsfrister til stævner",
@@ -48,7 +52,9 @@
    "stemmer": "30 imod, 2 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 8532,
+   "citat_side": 17
   },
   {
    "emne": "Betaling af stævnegebyr ved tilmelding",
@@ -63,7 +69,9 @@
    "stemmer": "32 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 8879,
+   "citat_side": 18
   },
   {
    "emne": "Refusion af startgebyr ved aflyste stævner",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 9020,
+   "citat_side": 19
   },
   {
    "emne": "Årsafgift, licens og startgebyr",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 8337,
+   "citat_side": 17
   }
  ]
 }

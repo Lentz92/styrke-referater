@@ -18,7 +18,9 @@
    "stemmer": "23 for, 10 imod",
    "gaelder_fra": "2015-06-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2020,
+   "citat_side": 6
   },
   {
    "emne": "Licens: medlemskab før licensanmodning",
@@ -33,7 +35,9 @@
    "stemmer": "29 for, 8 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 602,
+   "citat_side": 2
   },
   {
    "emne": "Indvejning som RAW-løfter til udstyrsstævne",
@@ -48,7 +52,9 @@
    "stemmer": "7 for, 31 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 720,
+   "citat_side": 3
   },
   {
    "emne": "Holdkonkurrence ved DM",
@@ -63,7 +69,9 @@
    "stemmer": "4 for, 24 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1045,
+   "citat_side": 4
   },
   {
    "emne": "Betaling af licens",
@@ -78,7 +86,9 @@
    "stemmer": "35 for, 0 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1115,
+   "citat_side": 4
   },
   {
    "emne": "Divisionsturnering, afholdelse af alle indledende runder",
@@ -93,7 +103,9 @@
    "stemmer": "35 for, 0 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1211,
+   "citat_side": 4
   },
   {
    "emne": "Betegnelse for åbne danske mesterskaber",
@@ -108,7 +120,9 @@
    "stemmer": "37 for, 0 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1409,
+   "citat_side": 5
   },
   {
    "emne": "Sammenlægning af JM og SM",
@@ -123,7 +137,9 @@
    "stemmer": "34 for, 2 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1536,
+   "citat_side": 5
   },
   {
    "emne": "DM udstyr, aldersgrupper",
@@ -138,7 +154,9 @@
    "stemmer": "22 for, 12 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1573,
+   "citat_side": 5
   },
   {
    "emne": "Betaling af startgebyr og tilmelding",
@@ -153,7 +171,9 @@
    "stemmer": "36 for, 0 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1810,
+   "citat_side": 6
   },
   {
    "emne": "Offentliggørelse af dopingtests",
@@ -168,7 +188,9 @@
    "stemmer": "11 for, 25 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2076,
+   "citat_side": 7
   },
   {
    "emne": "Genoptagelse af ekskluderet klub",
@@ -183,7 +205,9 @@
    "stemmer": "5 for, 27 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2273,
+   "citat_side": 7
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 103,
+   "citat_side": 1
   },
   {
    "emne": "ADEL antidopinguddannelse ved internationale stævner",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 269,
+   "citat_side": 2
   },
   {
    "emne": "Startgebyr og stævnehotel ved internationale stævner",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 323,
+   "citat_side": 2
   },
   {
    "emne": "Trænerakkreditering ved internationale mesterskaber",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 387,
+   "citat_side": 2
   }
  ]
 }

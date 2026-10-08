@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2021-01-01",
    "gaelder_til": "2021-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 55,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav i nye vægtklasser",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2022-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 125,
+   "citat_side": 1
   },
   {
    "emne": "Udtagelse til internationale stævner og gyldighed af krav",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2021-01-01",
    "gaelder_til": "2021-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 174,
+   "citat_side": 1
   },
   {
    "emne": "Kontant protestgebyr for head coach",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 437,
+   "citat_side": 2
   }
  ]
 }

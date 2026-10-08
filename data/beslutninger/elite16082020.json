@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2020-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 405,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav landshold",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2019-01-01",
    "gaelder_til": "2021-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 437,
+   "citat_side": 1
   },
   {
    "emne": "Udtagelse til VM",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2020-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 484,
+   "citat_side": 1
   },
   {
    "emne": "Eliteudvalgsmøder",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 729,
+   "citat_side": 3
   }
  ]
 }

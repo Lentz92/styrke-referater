@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2020-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 327,
+   "citat_side": 2
   },
   {
    "emne": "Tilmelding til klassisk stævne i stævnesystemet",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 403,
+   "citat_side": 2
   }
  ]
 }

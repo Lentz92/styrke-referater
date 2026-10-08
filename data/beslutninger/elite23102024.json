@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-01-01",
    "gaelder_til": "2025-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 335,
+   "citat_side": 2
   },
   {
    "emne": "Egenbetaling ved dobbelt deltagelse EM/VM bænkpres",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 381,
+   "citat_side": 2
   },
   {
    "emne": "Skifte af vægtklasse ved internationale mesterskaber",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 423,
+   "citat_side": 2
   },
   {
    "emne": "Juniorers deltagelse i seniorsamlinger",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 296,
+   "citat_side": 1
   },
   {
    "emne": "Udstyr seniorlandshold (A7)",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-01-01",
    "gaelder_til": "2025-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 603,
+   "citat_side": 3
   },
   {
    "emne": "Dommer også som træner ved EM/VM, fee",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 637,
+   "citat_side": 3
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 153,
+   "citat_side": 1
   },
   {
    "emne": "Klassiske bænkpresmesterskaber",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 164,
+   "citat_side": 1
   },
   {
    "emne": "Formand for teknisk komité i IPF's bestyrelse",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 185,
+   "citat_side": 1
   },
   {
    "emne": "Sponsorlogo størrelse",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 202,
+   "citat_side": 1
   },
   {
    "emne": "Kontrol med trænere i opvarmningslokalet",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 218,
+   "citat_side": 1
   },
   {
    "emne": "Ændring af tekniske regler",
@@ -93,7 +103,9 @@
    "stemmer": "meget stort flertal",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 266,
+   "citat_side": 1
   },
   {
    "emne": "IPF medlemsafgift",
@@ -108,7 +120,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 291,
+   "citat_side": 1
   },
   {
    "emne": "IPF afgift for afholdelse af mesterskab",
@@ -123,7 +137,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 302,
+   "citat_side": 1
   },
   {
    "emne": "Dragt for muslimske kvinder",
@@ -138,7 +154,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 321,
+   "citat_side": 1
   },
   {
    "emne": "Verdensrekord i dødløft efter protest",
@@ -153,7 +171,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 369,
+   "citat_side": 1
   }
  ]
 }

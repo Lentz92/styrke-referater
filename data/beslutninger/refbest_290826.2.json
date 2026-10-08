@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 679,
+   "citat_side": 3
   },
   {
    "emne": "Obligatorisk brush up-kursus for B-dommere",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2026-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 878,
+   "citat_side": 3
   },
   {
    "emne": "Egenbetaling for landsholdsdragter",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2027-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1388,
+   "citat_side": 5
   }
  ]
 }

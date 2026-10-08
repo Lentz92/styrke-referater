@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2024-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 93,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav VM B og EM A/B, klassisk trekamp",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2024-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 131,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav VM, klassisk trekamp -84 kg",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2024-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 183,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav, trekamp udstyr og bænkpres",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 219,
+   "citat_side": 1
   },
   {
    "emne": "Udtagelse til EM klassisk",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 365,
+   "citat_side": 1
   }
  ]
 }

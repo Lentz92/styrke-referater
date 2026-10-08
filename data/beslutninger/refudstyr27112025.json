@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2026-01-01",
    "gaelder_til": "2026-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 266,
+   "citat_side": 1
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 177,
+   "citat_side": 1
   },
   {
    "emne": "Egenbetaling ved dobbelt senior deltagelse",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2023-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 190,
+   "citat_side": 1
   },
   {
    "emne": "Dispensationer fra landsholdskrav",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 213,
+   "citat_side": 1
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
  "kategori": "organisation",
  "version": 7,
- "input_hash": "635822e22a297e8dd8d6cec12151481f23eb11a4dde05ec6def02da1e21bbbbf",
+ "input_hash": "b074f76db0a3167bc2f6ea9222e3568203f82962f4f038d40ee6a591dafd2262",
  "model": "opus",
  "regler": [
   {
@@ -14,7 +14,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "TV-kontakt og indslag kræver forudgående godkendelse",
-     "kort_regel": "medieudvalgsformand godkender al TV-kontakt for medlemmer og løftere"
+     "kort_regel": "medieudvalgsformand godkender al TV-kontakt for medlemmer og løftere",
+     "dhash": "6569a027a236"
     }
    ]
   },
@@ -28,14 +29,16 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen udarbejder ændringsforslag til § 5",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "38bc2699b7d4"
     },
     {
      "ref": "refbest_28022010#7",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen fremsætter forslag til § 5; resten til ad hoc-udvalg",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "5761ffcf88fd"
     }
    ]
   },
@@ -49,21 +52,24 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen varsler forslag om ny mødedato",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "2721a3520114"
     },
     {
      "ref": "refbest_28022010#4",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår møde inden udgangen af april",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "decb1d84197d"
     },
     {
      "ref": "rep2010#1",
      "effekt": "aendret",
      "tekst": "Repræsentantskabsmødet i DSF afholdes inden udgangen af marts i stedet for på en fast dag (tidligere anden søndag i marts).",
      "kort": "fra anden søndag i marts til inden udgangen af marts",
-     "kort_regel": "afholdes inden udgangen af marts"
+     "kort_regel": "afholdes inden udgangen af marts",
+     "dhash": "dc8b2e00206a"
     }
    ]
   },
@@ -77,21 +83,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "4 møder om året",
-     "kort_regel": "4 eliteudvalgsmøder om året"
+     "kort_regel": "4 eliteudvalgsmøder om året",
+     "dhash": "3cb5b4e1f559"
     },
     {
      "ref": "elite29062011#5",
      "effekt": "aendret",
      "tekst": "Eliteudvalget afholder møder hver 3.-4. måned.",
      "kort": "møder hver 3-4 måned",
-     "kort_regel": "møde hver 3-4 måned"
+     "kort_regel": "møde hver 3-4 måned",
+     "dhash": "97b644c94c2f"
     },
     {
      "ref": "elite16082020#4",
      "effekt": "aendret",
      "tekst": "Eliteudvalget holder to fysiske møder årligt, især i december og august, suppleret med onlinemøder efter behov. Møderne holdes som udgangspunkt i Nordjylland i december og i Sydjylland i august for at spare udgifter.",
      "kort": "to fysiske møder årligt plus onlinemøder",
-     "kort_regel": "to fysiske møder (december, august) plus onlinemøder efter behov"
+     "kort_regel": "to fysiske møder (december, august) plus onlinemøder efter behov",
+     "dhash": "d3ecf5edc5fc"
     }
    ]
   },
@@ -105,7 +114,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om at kåre årets klub",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "021b0ecf4cc9"
     }
    ]
   },
@@ -119,7 +129,8 @@
      "effekt": "ophaevet",
      "tekst": null,
      "kort": "§ 14 om amatører fjernet efter forslag fra AAK",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "451128c23a1c"
     }
    ]
   },
@@ -133,7 +144,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "årets løfter i bænkpres i alle kategorier",
-     "kort_regel": "årets løfter kåres i bænkpres i alle kategorier"
+     "kort_regel": "årets løfter kåres i bænkpres i alle kategorier",
+     "dhash": "91584513e0c3"
     }
    ]
   },
@@ -147,7 +159,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "pokal overrækkes ved efterfølgende DM i kategorien",
-     "kort_regel": "senior DM-A, øvrige DM-diverse, bænkpres ved DM bænkpres"
+     "kort_regel": "senior DM-A, øvrige DM-diverse, bænkpres ved DM bænkpres",
+     "dhash": "3e9e988b007e"
     }
    ]
   },
@@ -161,14 +174,16 @@
      "effekt": "bekraeftet",
      "tekst": "Den hidtidige ordlyd af vedtægternes § 10 om udvalg gælder uændret.",
      "kort": "nuværende ordlyd af § 10 fastholdt",
-     "kort_regel": "§ 10 om udvalg uændret"
+     "kort_regel": "§ 10 om udvalg uændret",
+     "dhash": "c93b12335ca9"
     },
     {
      "ref": "rep2025#1",
      "effekt": "aendret",
      "tekst": "Vedtægternes § 10: Masterudvalg, medieudvalg og ungdomsudvalg indgår blandt DSF's udvalg. Der skal være mindst ét bestyrelsesmedlem i hvert udvalg, og bestyrelsen vælger formændene.",
      "kort": "master-, medie- og ungdomsudvalg tilføjet",
-     "kort_regel": "mindst ét bestyrelsesmedlem i hvert udvalg; bestyrelsen vælger formænd"
+     "kort_regel": "mindst ét bestyrelsesmedlem i hvert udvalg; bestyrelsen vælger formænd",
+     "dhash": "5b33bfca4175"
     }
    ]
   },
@@ -182,7 +197,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "standarddagsorden udarbejdes til bestyrelsens godkendelse",
-     "kort_regel": "bestyrelsesmøder følger standarddagsorden"
+     "kort_regel": "bestyrelsesmøder følger standarddagsorden",
+     "dhash": "40574ca8f30f"
     }
    ]
   },
@@ -196,7 +212,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Klaus Nielsens forslag om møder via pc afvist",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "30835f7dda7b"
     }
    ]
   },
@@ -210,7 +227,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "adfærdskodeks for alle landshold vedtaget",
-     "kort_regel": "adfærdskodeks gælder alle DSF's landshold"
+     "kort_regel": "adfærdskodeks gælder alle DSF's landshold",
+     "dhash": "91d409a56166"
     }
    ]
   },
@@ -224,7 +242,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "klubbesøg fordeles til alle klubber; evaluering på hjemmesiden",
-     "kort_regel": "alle klubber besøges; samlet evaluering offentliggøres"
+     "kort_regel": "alle klubber besøges; samlet evaluering offentliggøres",
+     "dhash": "53177721c437"
     }
    ]
   },
@@ -238,7 +257,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "breddeudvalgets arrangementer offentliggøres på hjemmesiden",
-     "kort_regel": "alle breddearrangementer på forbundets hjemmeside"
+     "kort_regel": "alle breddearrangementer på forbundets hjemmeside",
+     "dhash": "a851eccd0e4f"
     }
    ]
   },
@@ -252,7 +272,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "vedtagelser respekteres udadtil af alle medlemmer",
-     "kort_regel": "udvalgets vedtagelser respekteres udadtil trods uenighed"
+     "kort_regel": "udvalgets vedtagelser respekteres udadtil trods uenighed",
+     "dhash": "4635c8ed33fd"
     }
    ]
   },
@@ -266,7 +287,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "intern post sendes elektronisk og kun én gang",
-     "kort_regel": "intern post pr. mail, kun én gang"
+     "kort_regel": "intern post pr. mail, kun én gang",
+     "dhash": "e823b4f0d50a"
     }
    ]
   },
@@ -280,7 +302,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "Jan Lyhne bestiller rejser inden for budget",
-     "kort_regel": "ankomst to dage før, hjemrejse dagen efter, inden for budget"
+     "kort_regel": "ankomst to dage før, hjemrejse dagen efter, inden for budget",
+     "dhash": "c6012f136b94"
     }
    ]
   },
@@ -294,14 +317,16 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår retningslinjer for disponering jf. § 11",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "4ebe3d73acbf"
     },
     {
      "ref": "rep2013#7",
      "effekt": "aendret",
      "tekst": "Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer.",
      "kort": "kasserer og formand i forening i stedet for hver for sig",
-     "kort_regel": "kasserer og formand tegner i forening inden for rammer"
+     "kort_regel": "kasserer og formand tegner i forening inden for rammer",
+     "dhash": "ccac59a66b23"
     }
    ]
   },
@@ -315,7 +340,8 @@
      "effekt": "aendret",
      "tekst": null,
      "kort": "§ 4: krav til foreningsvedtægter efter DIF-krav",
-     "kort_regel": "navn, hjemsted, styrkeløftformål og pligt til at følge DSF-regler"
+     "kort_regel": "navn, hjemsted, styrkeløftformål og pligt til at følge DSF-regler",
+     "dhash": "186697b2c4a0"
     }
    ]
   },
@@ -329,7 +355,8 @@
      "effekt": "aendret",
      "tekst": "Forslag til repræsentantskabsmødet skal være forbundet i hænde senest 21 dage før mødet.",
      "kort": "frist hævet fra 14 til 21 dage",
-     "kort_regel": "forslag senest 21 dage før mødet"
+     "kort_regel": "forslag senest 21 dage før mødet",
+     "dhash": "1dcf2f487b59"
     }
    ]
   },
@@ -343,7 +370,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "medieplan for et halvt år ad gangen",
-     "kort_regel": "medieplan laves halvårligt"
+     "kort_regel": "medieplan laves halvårligt",
+     "dhash": "e476dbfa946c"
     }
    ]
   },
@@ -357,7 +385,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "fra 2015 pr. mail i stedet for post",
-     "kort_regel": "dagsorden mailes til klubbernes postansvarlige"
+     "kort_regel": "dagsorden mailes til klubbernes postansvarlige",
+     "dhash": "59fbc49eb7ea"
     }
    ]
   },
@@ -371,7 +400,8 @@
      "effekt": "aendret",
      "tekst": "Bestyrelsen består af 7 medlemmer: formand, næstformand, kasserer, sekretær og 3 øvrige medlemmer. Menigt medlem 3 vælges på lige årstal.",
      "kort": "udvidet fra 6 til 7 medlemmer",
-     "kort_regel": "7 medlemmer inkl. formand, næstformand, kasserer, sekretær"
+     "kort_regel": "7 medlemmer inkl. formand, næstformand, kasserer, sekretær",
+     "dhash": "ad4e2b57198a"
     }
    ]
   },
@@ -385,7 +415,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "holdledere/trænere sender rapporter og billeder til webmaster",
-     "kort_regel": "holdleder/træner ansvarlig for rapporter, kan uddelegeres"
+     "kort_regel": "holdleder/træner ansvarlig for rapporter, kan uddelegeres",
+     "dhash": "d7def25cca9d"
     }
    ]
   },
@@ -399,7 +430,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om kettlebell; udviklingskonsulent laver oplæg",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "39ddb6000f5a"
     }
    ]
   },
@@ -413,7 +445,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ingen reklamer i nyhedsbreve; inhabilitet ved sponsoraftaler",
-     "kort_regel": "ingen reklamer i nyhedsbreve, ikke-stødende reklamer, minimumsbeløb"
+     "kort_regel": "ingen reklamer i nyhedsbreve, ikke-stødende reklamer, minimumsbeløb",
+     "dhash": "edf2aae7c974"
     }
    ]
   },
@@ -427,7 +460,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "retningslinjer godkendt; medieudvalget håndhæver",
-     "kort_regel": "sponsorretningslinjer på hjemmesiden, håndhæves af medieudvalget"
+     "kort_regel": "sponsorretningslinjer på hjemmesiden, håndhæves af medieudvalget",
+     "dhash": "69131b456c07"
     }
    ]
   },
@@ -441,7 +475,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ingen provisionsmodel for sponsorfund",
-     "kort_regel": "ingen provision for at skaffe sponsorer"
+     "kort_regel": "ingen provision for at skaffe sponsorer",
+     "dhash": "1bcd0cc00bca"
     }
    ]
   },
@@ -455,7 +490,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om kraftcenter og højere klubafgift udskudt",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "ccc668176849"
     }
    ]
   },
@@ -469,7 +505,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "frivillighedspris oprettet; klubber indstiller",
-     "kort_regel": "uddeles ved repræsentantskabsmødet; klubber indstiller, bestyrelsen vælger"
+     "kort_regel": "uddeles ved repræsentantskabsmødet; klubber indstiller, bestyrelsen vælger",
+     "dhash": "d470e56ec353"
     }
    ]
   },
@@ -483,7 +520,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "intet meldes ud før intern drøftelse; god tone",
-     "kort_regel": "intern drøftelse før ekstern udmelding"
+     "kort_regel": "intern drøftelse før ekstern udmelding",
+     "dhash": "9dcb47c5d7a2"
     }
    ]
   },
@@ -497,7 +535,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "nyhedsfolder to gange årligt i A5",
-     "kort_regel": "to gange årligt til klubbernes postansvarlige"
+     "kort_regel": "to gange årligt til klubbernes postansvarlige",
+     "dhash": "26c8c41ed58b"
     }
    ]
   },
@@ -511,7 +550,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "landsdækkende medier informeres med notits",
-     "kort_regel": "notits til landsdækkende medier ved store mesterskaber"
+     "kort_regel": "notits til landsdækkende medier ved store mesterskaber",
+     "dhash": "2cabb1d7898f"
     }
    ]
   },
@@ -525,7 +565,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "KB udarbejder samlet regelsæt for udvalget",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "f1d2ccf77741"
     }
    ]
   },
@@ -539,7 +580,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "simple sager besvares af landsholdsansvarlig, større af formand",
-     "kort_regel": "simple: landsholdsansvarlig; større: udvalgsformand efter debat"
+     "kort_regel": "simple: landsholdsansvarlig; større: udvalgsformand efter debat",
+     "dhash": "40b37826083b"
     }
    ]
   },
@@ -553,7 +595,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "kategoriansvarlige kommunikerer eksternt i eget område",
-     "kort_regel": "kategoriansvarlige står for daglig ekstern kommunikation"
+     "kort_regel": "kategoriansvarlige står for daglig ekstern kommunikation",
+     "dhash": "7b97ecc909bc"
     }
    ]
   },
@@ -567,7 +610,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "DSF opretter alle stævnebegivenheder på Facebook i januar",
-     "kort_regel": "DSF opretter alle stævner offentligt på Facebook i januar"
+     "kort_regel": "DSF opretter alle stævner offentligt på Facebook i januar",
+     "dhash": "4e1d1b187979"
     }
    ]
   },
@@ -581,7 +625,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "procedure for mediekontakt om løftere til udlandet",
-     "kort_regel": "navne til Janni Weinke, Peter Andersen kontakter medier"
+     "kort_regel": "navne til Janni Weinke, Peter Andersen kontakter medier",
+     "dhash": "b235b74c409e"
     }
    ]
   },
@@ -595,7 +640,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "etiske retningslinjer for DSF's Facebookgrupper",
-     "kort_regel": "etiske retningslinjer med udgangspunkt i DIF's sanktioner"
+     "kort_regel": "etiske retningslinjer med udgangspunkt i DIF's sanktioner",
+     "dhash": "ba914690b6eb"
     }
    ]
   },
@@ -609,7 +655,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "upassende adfærd og dopingbeskyldninger tolereres ikke",
-     "kort_regel": "ingen hadske beskeder, dopingbeskyldninger eller skæv dømning"
+     "kort_regel": "ingen hadske beskeder, dopingbeskyldninger eller skæv dømning",
+     "dhash": "acaa933fe5b3"
     }
    ]
   },
@@ -623,7 +670,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "særskilt afsnit fra sportschefen i årsberetningen",
-     "kort_regel": "sportschefen har eget afsnit i beretningen"
+     "kort_regel": "sportschefen har eget afsnit i beretningen",
+     "dhash": "1509014ce9e0"
     }
    ]
   },
@@ -637,7 +685,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår tilføjelse til § 13",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "2c4cfe72ce51"
     }
    ]
   },
@@ -651,7 +700,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ingen ny strategiplan; strategiske spor erstatter",
-     "kort_regel": "strategiske spor erstatter strategiplan"
+     "kort_regel": "strategiske spor erstatter strategiplan",
+     "dhash": "d9fe803bb76a"
     }
    ]
   },
@@ -665,7 +715,8 @@
      "effekt": "aendret",
      "tekst": "Dommerudvalget består af 3-5 medlemmer.",
      "kort": "fra 3-4 til 3-5 medlemmer",
-     "kort_regel": "3-5 medlemmer"
+     "kort_regel": "3-5 medlemmer",
+     "dhash": "e6c9b166c7f9"
     }
    ]
   },
@@ -679,7 +730,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "nice to/need to-oversigt til klubber fra 2025",
-     "kort_regel": "oversigt over materiale klubber skal sende"
+     "kort_regel": "oversigt over materiale klubber skal sende",
+     "dhash": "6e0ca59f809a"
     }
    ]
   },
@@ -693,7 +745,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "kommunikationsplan for nødsituationer vedtaget",
-     "kort_regel": "nødkommunikationsplan på hjemmesiden"
+     "kort_regel": "nødkommunikationsplan på hjemmesiden",
+     "dhash": "c67455f12fad"
     }
    ]
   },
@@ -707,7 +760,8 @@
      "effekt": "aendret",
      "tekst": null,
      "kort": "§ 15 stk. 3: medlem kan klage mod mindst 5000 kr.",
-     "kort_regel": "gebyr mindst 5000 kr., frist 4 uger, mægling først"
+     "kort_regel": "gebyr mindst 5000 kr., frist 4 uger, mægling først",
+     "dhash": "de090ade1d44"
     }
    ]
   },
@@ -721,7 +775,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "grundformue til mindst 6 måneders drift",
-     "kort_regel": "formue til 6 måneders drift, lavrisiko-obligationer"
+     "kort_regel": "formue til 6 måneders drift, lavrisiko-obligationer",
+     "dhash": "a170a6064de6"
     }
    ]
   },
@@ -735,14 +790,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "kontaktperson til hvert stævne; Instagram-login til klubben",
-     "kort_regel": "kontaktperson pr. stævne; klub poster på Instagram"
+     "kort_regel": "kontaktperson pr. stævne; klub poster på Instagram",
+     "dhash": "db32bef82d4e"
     },
     {
      "ref": "refmedie09062026#1",
      "effekt": "bekraeftet",
      "tekst": "Hvert kommende stævne har en kontaktperson i medieudvalget. Kontaktpersonen sørger for, at arrangerende klub får login til Instagram for at poste før og under stævnet, at klubben laver en kort præsentation af venuet, og at der løbende kommer opslag med link til invitation, plan og livestream.",
      "kort": "ordning gentaget uændret",
-     "kort_regel": "kontaktperson pr. stævne; klub poster på Instagram"
+     "kort_regel": "kontaktperson pr. stævne; klub poster på Instagram",
+     "dhash": "4a82ff168620"
     }
    ]
   },
@@ -756,7 +813,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "opgavefordeling for opslag og billeder ved internationale stævner",
-     "kort_regel": "Daniel opslag, Jens masterbilleder, Peter mailadresser"
+     "kort_regel": "Daniel opslag, Jens masterbilleder, Peter mailadresser",
+     "dhash": "aa247c411df7"
     }
    ]
   }

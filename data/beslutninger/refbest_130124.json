@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 105,
+   "citat_side": 1
   },
   {
    "emne": "Regler for stævneudvalget",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 794,
+   "citat_side": 3
   },
   {
    "emne": "Ansøgning om afholdelse af mesterskaber",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 586,
+   "citat_side": 3
   },
   {
    "emne": "Procedure efter endt stævne",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 875,
+   "citat_side": 4
   },
   {
    "emne": "Registrering af europarekorder ved Nordiske Mesterskaber",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1009,
+   "citat_side": 4
   }
  ]
 }

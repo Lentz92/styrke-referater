@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2016-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 128,
+   "citat_side": 1
   },
   {
    "emne": "Egenbetaling for A-kravsløftere",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 432,
+   "citat_side": 3
   },
   {
    "emne": "Deltagelse i WEC",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2016-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 453,
+   "citat_side": 3
   },
   {
    "emne": "Afbud og advarsler ved landsholdssamlinger",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 594,
+   "citat_side": 3
   },
   {
    "emne": "Kvalifikationskrav landshold",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": "2016-01-01",
    "gaelder_til": "2017-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 670,
+   "citat_side": 4
   },
   {
    "emne": "Start i anden vægtklasse end landsholdskategori",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 723,
+   "citat_side": 4
   }
  ]
 }

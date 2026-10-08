@@ -14,7 +14,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "Breddeudvalgets udkast til træneruddannelse godkendt",
-     "kort_regel": "Breddeudvalget udvikler træneruddannelsen ud fra godkendt udkast"
+     "kort_regel": "Breddeudvalget udvikler træneruddannelsen ud fra godkendt udkast",
+     "dhash": "ccd3d3038960"
     }
    ]
   },
@@ -28,7 +29,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "uddannelsesdage for landsholds- og klubtrænere fra 2022",
-     "kort_regel": "årlige uddannelsesdage for trænere, sportschefen står for oplægget"
+     "kort_regel": "årlige uddannelsesdage for trænere, sportschefen står for oplægget",
+     "dhash": "a2aca231f35e"
     }
    ]
   },
@@ -42,7 +44,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "krav om praksis ved to stævner, max ti pladser",
-     "kort_regel": "deltagere øver ved to stævner, 6 af 10 pladser åbne"
+     "kort_regel": "deltagere øver ved to stævner, 6 af 10 pladser åbne",
+     "dhash": "b7622ce8ddd1"
     }
    ]
   },
@@ -56,7 +59,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "workshops med certificering af hjælpere til udstyrsløftere",
-     "kort_regel": "hjælpere til udstyrsløftere certificeres via workshop fra Udstyrsgruppen"
+     "kort_regel": "hjælpere til udstyrsløftere certificeres via workshop fra Udstyrsgruppen",
+     "dhash": "0295f9df82b4"
     }
    ]
   },
@@ -70,7 +74,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "IPF-krav om coach-certifikat fra 1. januar 2029",
-     "kort_regel": "coaches skal have IPF-basiscertifikat, headcoaches skal bestå WADA ADEL-program"
+     "kort_regel": "coaches skal have IPF-basiscertifikat, headcoaches skal bestå WADA ADEL-program",
+     "dhash": "475612711e10"
     }
    ]
   }

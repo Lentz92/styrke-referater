@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 604,
+   "citat_side": 3
   },
   {
    "emne": "Tilmelding til JM/SM efter landsdel",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 713,
+   "citat_side": 3
   },
   {
    "emne": "Ingen E.R. Open",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2018-01-01",
    "gaelder_til": "2018-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 818,
+   "citat_side": 4
   }
  ]
 }

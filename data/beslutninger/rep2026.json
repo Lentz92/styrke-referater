@@ -18,7 +18,9 @@
    "stemmer": "enstemmigt",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 12860,
+   "citat_side": 27
   },
   {
    "emne": "Klubskifte",
@@ -33,7 +35,9 @@
    "stemmer": "enstemmigt",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 12988,
+   "citat_side": 27
   },
   {
    "emne": "Karensperiode for udlændinge ved mesterskaber",
@@ -48,7 +52,9 @@
    "stemmer": "enstemmigt",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 13103,
+   "citat_side": 27
   },
   {
    "emne": "Adgangskontrol og trænere i opvarmning ved DM",
@@ -63,7 +69,9 @@
    "stemmer": "enstemmigt",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 13384,
+   "citat_side": 28
   },
   {
    "emne": "Påklædning ved præmieoverrækkelse",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 13488,
+   "citat_side": 29
   },
   {
    "emne": "Startgebyr og tilmeldingsfrist til mesterskaber",
@@ -93,7 +103,9 @@
    "stemmer": "enstemmigt",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 13689,
+   "citat_side": 29
   },
   {
    "emne": "DM i bænkpres for veteraner",
@@ -108,7 +120,9 @@
    "stemmer": "46 for, 2 imod",
    "gaelder_fra": "2026-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 13871,
+   "citat_side": 30
   },
   {
    "emne": "Medaljeoverrækkelse ved ny indvejning",
@@ -123,7 +137,9 @@
    "stemmer": "enstemmigt",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 14281,
+   "citat_side": 31
   },
   {
    "emne": "Indvejning ved DM Hold",
@@ -138,7 +154,9 @@
    "stemmer": "10 for, 10 undlod, 28 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 14430,
+   "citat_side": 31
   },
   {
    "emne": "Masterskategori ved DM Hold",
@@ -153,7 +171,9 @@
    "stemmer": "5 for, 7 undlod, 36 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 14655,
+   "citat_side": 32
   },
   {
    "emne": "Betaling til arrangør af DM Hold-runde",
@@ -168,7 +188,9 @@
    "stemmer": "46 for, 2 undlod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 14976,
+   "citat_side": 32
   },
   {
    "emne": "Pause mellem discipliner ved DM Hold",
@@ -183,7 +205,9 @@
    "stemmer": "48 for",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 14995,
+   "citat_side": 32
   },
   {
    "emne": "Aldersopdeling af JFM/SM",
@@ -198,7 +222,9 @@
    "stemmer": "42 for, 2 imod, 4 undlod",
    "gaelder_fra": "2027-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 15164,
+   "citat_side": 33
   },
   {
    "emne": "Omstrukturering af DM Hold",
@@ -213,7 +239,9 @@
    "stemmer": "3 for, 7 undlod, 38 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 16093,
+   "citat_side": 35
   },
   {
    "emne": "Årsafgift",
@@ -228,7 +256,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 12715,
+   "citat_side": 26
   },
   {
    "emne": "Licensgebyr",
@@ -243,7 +273,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 12720,
+   "citat_side": 26
   },
   {
    "emne": "Startgebyr",
@@ -258,7 +290,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 12724,
+   "citat_side": 26
   },
   {
    "emne": "Kontorhold og telefonpenge til bestyrelsen",
@@ -273,7 +307,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 12733,
+   "citat_side": 26
   },
   {
    "emne": "Godkendelse af jubilæumsstævne",
@@ -288,7 +324,9 @@
    "stemmer": "48 for",
    "gaelder_fra": "2026-08-29",
    "gaelder_til": "2026-08-29",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 15503,
+   "citat_side": 33
   }
  ]
 }

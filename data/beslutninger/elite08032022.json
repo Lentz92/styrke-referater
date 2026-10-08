@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2022-01-01",
    "gaelder_til": "2022-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 273,
+   "citat_side": 2
   },
   {
    "emne": "Frist for betaling af egenbetaling",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2022-01-01",
    "gaelder_til": "2022-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 306,
+   "citat_side": 2
   },
   {
    "emne": "Afmelding fra VM bænkpres ved usikkerhed om sikkerhed",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2022-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 250,
+   "citat_side": 2
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2020-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 135,
+   "citat_side": 1
   },
   {
    "emne": "IPF tekniske regler",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2019-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 158,
+   "citat_side": 1
   },
   {
    "emne": "Afgift for reklamelinks på hjemmesiden",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 234,
+   "citat_side": 2
   },
   {
    "emne": "Afgift for logo på tøj",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 255,
+   "citat_side": 2
   }
  ]
 }

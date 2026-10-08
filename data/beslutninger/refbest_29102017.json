@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 539,
+   "citat_side": 3
   },
   {
    "emne": "Livestreaming ved DM/JM/SM",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2018-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 312,
+   "citat_side": 2
   },
   {
    "emne": "Lån af udstyr fra DSF til stævner",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 636,
+   "citat_side": 3
   }
  ]
 }

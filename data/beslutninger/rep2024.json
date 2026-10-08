@@ -18,7 +18,9 @@
    "stemmer": "42 for, 3 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5962,
+   "citat_side": 14
   },
   {
    "emne": "Navn på divisionsturnering",
@@ -33,7 +35,9 @@
    "stemmer": "42 for, 2 imod, 1 blank",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 6460,
+   "citat_side": 15
   },
   {
    "emne": "AAK Open som årligt stævne",
@@ -48,7 +52,9 @@
    "stemmer": "39 for, 4 imod, 2 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 6647,
+   "citat_side": 16
   },
   {
    "emne": "JM over én weekend",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2024-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 6888,
+   "citat_side": 16
   },
   {
    "emne": "Årsafgift, licens og startgebyr",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5854,
+   "citat_side": 13
   }
  ]
 }

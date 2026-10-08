@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 137,
+   "citat_side": 1
   },
   {
    "emne": "Indstillinger til A-dommerprøve som fast dagsordenspunkt",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 165,
+   "citat_side": 1
   },
   {
    "emne": "Tilmelding til B-dommerprøve med to stævner",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 446,
+   "citat_side": 2
   }
  ]
 }
