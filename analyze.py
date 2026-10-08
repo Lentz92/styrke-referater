@@ -798,6 +798,15 @@ def load_rules() -> list[dict]:
     return rules
 
 
+def load_one_offs() -> dict[str, frozenset[str]]:
+    """Category -> the refs its consolidation left out as one-off decisions, not standing rules (udeladt)."""
+    one_offs = {}
+    for path in sorted(RULES_DIR.glob("*.json")):
+        cached = json.loads(path.read_text())
+        one_offs[cached["kategori"]] = frozenset(cached.get("udeladt", []))
+    return one_offs
+
+
 # --------------------------------------------------------------------------- rule slugs
 
 # Held while slugs are handed out or retired and the files holding them are written: consolidations run in

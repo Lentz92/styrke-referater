@@ -1,11 +1,14 @@
 name: Website
 
-# Rebuilds the site from data/ and publishes it on GitHub Pages. Pushes made by the monthly
-# update workflow use GITHUB_TOKEN and do not trigger `push`, so it is chained via workflow_run.
+# Rebuilds the site from data/ and publishes it on GitHub Pages, only from main and only when checks.py finds no
+# errors. Pushes made by the monthly update workflow use GITHUB_TOKEN and do not trigger `push`, so it is chained
+# via workflow_run: after a successful update that pushed to main. A failed update, or one whose result went to a
+# pull request for review, leaves the site as it is.
 on:
   workflow_run:
     workflows: ["Update rule overview"]
     types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:
@@ -22,10 +25,36 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false  # a queued build waits: cancelling one could leave a monthly update unpublished
 
 jobs:
+  # After the monthly update: go ahead only when it succeeded and pushed to main. It leaves main as it was when
+  # it had nothing new, or when its result went to a pull request for review.
+  gate:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      changed: ${{ steps.main.outputs.changed }}
+    steps:
+      - name: Check that the update changed main
+        id: main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          UPDATE_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          changed=true
+          if [ "$EVENT" = workflow_run ] \
+              && [ "$(gh api "repos/$GITHUB_REPOSITORY/commits/main" --jq .sha)" = "$UPDATE_SHA" ]; then
+            echo "The update did not change main; the site stays as it is."
+            changed=false
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
   build:
+    needs: gate
+    if: needs.gate.outputs.changed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -37,6 +66,9 @@ jobs:
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Check the data
+        run: uv run checks.py  # errors fail the build, so the site stays as it was
 
       - name: Build the site
         run: uv run website.py

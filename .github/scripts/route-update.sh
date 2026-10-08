@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+# Send the result of `uv run update.py` where it belongs, by its exit code:
+#   0      the checks passed: commit to the branch the run started from (main for the monthly run), and close
+#          the review pull request a previous run left open there;
+#   3      the checks found errors: commit to the review branch and open or update its pull request;
+#   other  the run failed: keep its partial results like 0 when its run-report.md says the checks passed (a
+#          report from a run that got that far), else like 3.
+# A result that cannot be pushed to its branch (it moved during the run) goes to review too. Run from the
+# repository root after update.py, with GH_TOKEN set for gh. Safe to repeat: the review branch is force-pushed
+# from this run's working tree, so there is one branch and at most one open pull request per base branch.
+set -euo pipefail
+
+code=${1:?usage: route-update.sh EXIT_CODE_OF_UPDATE_PY}
+report=${RUN_REPORT:-run-report.md}
+checks_passed="<!-- checks: passed -->"  # update.py's CHECKS_PASSED
+title="Monthly update needs review"
+max_body=60000  # GitHub refuses a pull request body over 65536 characters
+
+base=$(git rev-parse --abbrev-ref HEAD)
+if [ "$base" = HEAD ]; then
+  echo "::error::Not on a branch; check out the branch the update ran on." >&2
+  exit 1
+fi
+# A run on another branch (a test via "Run workflow") must not touch the pull request for main.
+review_branch=auto/update
+if [ "$base" != main ]; then
+  review_branch="auto/update-$base"
+fi
+
+case $code in
+  0) route=publish ;;
+  3) route=review ;;
+  *) if [ -f "$report" ] && head -n 1 "$report" | grep -qxF "$checks_passed"; then route=publish; else route=review; fi ;;
+esac
+
+open_review() {
+  # Forks may have a branch of the same name; only this repository's counts.
+  gh pr list --head "$review_branch" --state open --json number,isCrossRepository \
+    --jq 'map(select(.isCrossRepository | not)) | .[0].number // empty'
+}
+
+git config user.name "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+git add -A
+today=$(date -u +%Y-%m-%d)
+
+if git diff --cached --quiet; then
+  if [ "$code" = 3 ]; then
+    echo "::error::The checks found errors, but the run changed nothing: they are in $base already. Fix data/ there (see $report)." >&2
+    exit 1
+  fi
+  echo "No changes to commit."
+  exit 0
+fi
+
+note=""
+if [ "$route" = publish ]; then
+  git commit -q -m "Monthly rule overview update $today"
+  if git push -q origin "HEAD:refs/heads/$base"; then
+    echo "Committed the update to $base."
+    number=$(open_review)
+    if [ -n "$number" ]; then
+      gh pr close "$number" --comment "Superseded: a later run published its update to $base directly."
+      git push -q origin --delete "$review_branch" || echo "::warning::Could not delete $review_branch."
+    fi
+    exit 0
+  fi
+  # Someone pushed to the branch during the run. The result is still worth keeping, so it goes to review.
+  echo "::warning::$base changed during the run; sending the result to $review_branch instead."
+  git commit -q --amend -m "Monthly rule overview update $today (needs review)"
+  note="**$base changed while this run was going**, so its result could not be pushed there. Merge this if it still applies."
+else
+  git commit -q -m "Monthly rule overview update $today (needs review)"
+fi
+git push -q --force origin "HEAD:refs/heads/$review_branch"
+
+body=$(mktemp)
+if [ -n "$note" ]; then
+  printf '%s\n\n' "$note" > "$body"
+fi
+if [ -s "$report" ]; then
+  if [ "$(wc -c < "$report")" -gt "$max_body" ]; then
+    head -c "$max_body" "$report" | sed '$d' >> "$body"  # drop the last line, which may be cut short
+    printf '\n…\n\nThe report is cut short here; the run page has all of it.\n' >> "$body"
+  else
+    cat "$report" >> "$body"
+  fi
+else
+  echo "update.py wrote no run report; the run's log has what it found." >> "$body"
+fi
+if [ -n "${GITHUB_RUN_ID:-}" ]; then
+  printf '\nRun: %s/%s/actions/runs/%s\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
+fi
+
+number=$(open_review)
+if [ -n "$number" ]; then
+  gh pr edit "$number" --base "$base" --title "$title" --body-file "$body"
+  echo "Updated pull request #$number with this run's result."
+else
+  gh pr create --head "$review_branch" --base "$base" --title "$title" --body-file "$body"
+fi

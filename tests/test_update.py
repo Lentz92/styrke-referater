@@ -21,6 +21,7 @@ def data(tmp_path, monkeypatch):
     monkeypatch.setattr(analyze, "RULES_DIR", tmp_path / "regler")
     monkeypatch.setattr(update, "RUNS_LOG", tmp_path / "runs.jsonl")
     monkeypatch.setattr(update, "REBUILD_MARKER", tmp_path / "rebuild.json")
+    monkeypatch.setattr(update, "RUN_REPORT", tmp_path / "run-report.md")
     analyze.DECISIONS_DIR.mkdir()
     analyze.RULES_DIR.mkdir()
     return tmp_path
@@ -50,10 +51,12 @@ def _extracted(docs: list[Doc]) -> None:
              "moededato": None, "next_number": 2, "retired": [], "beslutninger": [decision]}))
 
 
-def _consolidated(docs: list[Doc], monkeypatch) -> None:
-    """The rule files a completed consolidation leaves."""
+def _consolidated(docs: list[Doc], monkeypatch, output: dict | None = None) -> None:
+    """The rule files a completed consolidation leaves; Claude's `output`, else every decision left out as a
+    one-off."""
+    output = output or {"regler": [], "udeladt": [d.ref for d in analyze.load_decisions(docs)]}
     with monkeypatch.context() as m:
-        m.setattr(analyze, "ask_claude", lambda *args, **kwargs: ({"regler": [], "udeladt": []}, Usage()))
+        m.setattr(analyze, "ask_claude", lambda *args, **kwargs: (output, Usage()))
         m.setattr(analyze, "cli_version", lambda: "2.1.294")
         analyze.consolidate(analyze.load_decisions(docs), {d.id: d.organ_label for d in docs}, model="opus",
                             effort=None, workers=1)
@@ -167,6 +170,13 @@ def test_the_refusal_names_the_reason_and_the_github_checkbox(analysed):
     assert f'description: "{update.REBUILD_INPUT_LABEL}"' in workflow
 
 
+def test_the_website_waits_for_queued_builds_and_skips_an_update_that_changed_nothing():
+    workflow = (Path(update.__file__).parent / ".github" / "workflows" / "pages.yml").read_text()
+    assert "cancel-in-progress: false" in workflow
+    build = workflow[workflow.index("\n  build:"):workflow.index("\n  deploy:")]
+    assert "needs: gate" in build and "if: needs.gate.outputs.changed == 'true'" in build
+
+
 # ---------------------------------------------------------------- main()
 
 @pytest.fixture
@@ -208,7 +218,7 @@ def test_only_consolidates_the_categories_of_the_selected_documents(run, analyse
     monkeypatch.setattr(analyze, "CONSOLIDATE_VERSION", analyze.CONSOLIDATE_VERSION + 1)  # all 4 categories due
     replaced = Doc(**{**analysed[1].__dict__, "sha256": "new"})  # doc1: one decision in master
     fake_claude.answer({"moededato": None, "beslutninger": [_raw("dommere", "Ny regel")], "regler": [],
-                        "udeladt": []})
+                        "udeladt": [*(f"{doc.id}#1" for doc in analysed), "doc1#2"]})
 
     run([analysed[0], replaced, *analysed[2:]], "--only", "^doc1$")
 
@@ -246,6 +256,9 @@ def test_the_step_summary_is_written_before_rendering(run, data, fake_claude, mo
     with pytest.raises(RuntimeError, match="render crashed"):
         run(_docs(data, 3), "--allow-rebuild")
     assert "| extract | 3 |" in summary.read_text()
+    report = update.RUN_REPORT.read_text()
+    assert "**The run failed**: writing the pages failed: RuntimeError: render crashed." in report
+    assert report.startswith(update.CHECKS_PASSED)  # the data is fine; only the pages are not written
 
 
 def test_skipped_calls_fail_the_run(run, data, fake_claude):
@@ -259,6 +272,8 @@ def test_the_guard_refuses_a_missing_rule_file_before_any_call(run, analysed, fa
     with pytest.raises(SystemExit, match="no rule file in data/regler/: master"):
         run(analysed)
     assert fake_claude.invocations("call") == 0
+    report = update.RUN_REPORT.read_text()  # new downloads are kept: the data passes the checks
+    assert report.startswith(update.CHECKS_PASSED) and "**The run failed**: Stopped before any Claude call" in report
 
 
 def test_an_interrupted_approved_rebuild_is_finished_by_plain_runs(run, data, fake_claude, monkeypatch):
@@ -286,7 +301,7 @@ def test_an_ordinary_run_cut_off_with_most_categories_left_is_continued(run, dat
     _consolidated(docs[:9], monkeypatch)
     # A big meeting with decisions in three of the four categories, whose consolidation then fails.
     fake_claude.answer({"moededato": None, "beslutninger": [_raw(c, f"Ny regel {c}") for c in CATEGORIES[:3]],
-                        "regler": [], "udeladt": []})
+                        "regler": [], "udeladt": [*(f"{doc.id}#1" for doc in docs), "doc9#2", "doc9#3"]})
     fake_claude.plan("ok", "error")
     with pytest.raises(SystemExit, match="failed"):
         run(docs)
@@ -295,6 +310,135 @@ def test_an_ordinary_run_cut_off_with_most_categories_left_is_continued(run, dat
     fake_claude.plan("ok")
     run(docs)
     assert not update.REBUILD_MARKER.exists()
+
+
+# ---------------------------------------------------------------- outcome: exit code and run report
+
+def _exit_code(run, *args) -> int:
+    with pytest.raises(SystemExit) as stopped:
+        run(*args)
+    return stopped.value.code if isinstance(stopped.value.code, int) else 1
+
+
+def test_a_run_whose_checks_pass_is_ready_to_publish(run, analysed):
+    run(analysed)
+    assert "**Ready to publish**" in update.RUN_REPORT.read_text()
+
+
+def test_a_decision_the_consolidation_drops_sends_the_run_to_review(run, analysed, data, fake_claude):
+    docs = _docs(data, 21)  # doc20 is new; its decision lands in okonomi, which leaves it out without a word
+    fake_claude.answer({"moededato": None, "beslutninger": [_raw("okonomi", "Ny regel")], "regler": [],
+                        "udeladt": [f"{doc.id}#1" for doc in analysed]})
+
+    assert _exit_code(run, docs) == update.EXIT_REVIEW
+    report = update.RUN_REPORT.read_text()
+    assert "**Needs review**" in report and "## Errors: 1" in report
+    assert report.startswith(update.CHECKS_FAILED) and "merging alone publishes nothing" in report
+    assert "- **unassigned**: doc20#1 (okonomi: Ny regel) is in no rule" in report
+
+
+def _dated_docs(data, **dates: str) -> list[Doc]:
+    docs = [Doc(id_, "bestyrelse", "Referat", dato, str(data / f"{id_}.htm"), None, f"sha-{id_}")
+            for id_, dato in dates.items()]
+    for doc in docs:
+        Path(doc.path).write_text("<p>Intet nyt.</p>")
+    return docs
+
+
+GEBYR = {"titel": "Gebyr", "vigtig": True, "note": None,
+         "versioner": [{"ref": "old#1", "effekt": "indfoert", "tekst": None, "kort": "indført", "kort_regel": None}]}
+
+
+@pytest.mark.parametrize("kept", [True, False])
+def test_a_run_that_changes_what_applied_in_past_years_needs_review(run, data, fake_claude, monkeypatch, kept):
+    docs = _dated_docs(data, old="2015-03-01", new="2024-03-01")
+    old = docs[0]
+    _extracted([old])
+    _consolidated([old], monkeypatch, {"regler": [GEBYR], "udeladt": []})
+    # new's decision lands in okonomi too, whose consolidation either keeps the rule or drops it as a one-off.
+    fake_claude.answer({"moededato": None, "beslutninger": [_raw("okonomi", "Ny regel")],
+                        "regler": [GEBYR] if kept else [], "udeladt": ["new#1"] if kept else ["old#1", "new#1"]})
+
+    if kept:
+        run(docs, "--allow-rebuild")
+        assert "No rule in force there changed." in update.RUN_REPORT.read_text()
+        return
+    assert _exit_code(run, docs, "--allow-rebuild") == update.EXIT_REVIEW
+    report = update.RUN_REPORT.read_text()
+    assert "- **history**: Gebyr (gebyr): what was in force in 2015–2026 changed, although none of its decisions " \
+           "did" in report
+    assert "| Gebyr (`gebyr`) | 2015–2026 | old#1 | not in force | none changed |" in report
+    assert "Merge the pull request to publish it" in report
+
+
+def test_a_retry_of_a_failed_consolidation_does_not_change_the_past(run, data, fake_claude, monkeypatch):
+    docs = _dated_docs(data, old="2015-03-01", new="2024-03-01")
+    _extracted(docs[:1])
+    _consolidated(docs[:1], monkeypatch, {"regler": [GEBYR], "udeladt": []})
+    changed = {"ref": "new#1", "effekt": "aendret", "tekst": None, "kort": "ændret", "kort_regel": None}
+    fake_claude.answer({"moededato": None, "beslutninger": [_raw("okonomi", "Ny regel")],
+                        "regler": [{**GEBYR, "versioner": [*GEBYR["versioner"], changed]}], "udeladt": []})
+
+    fake_claude.plan("ok", "error")  # new is extracted, and the consolidation fails
+    assert _exit_code(run, docs, "--allow-rebuild") == update.EXIT_FAILED
+    fake_claude.plan("ok")
+    run(docs, "--allow-rebuild")  # Gebyr takes up new#1 from 2024 on, which the first run did not get to
+
+
+def test_history_that_cannot_be_checked_is_not_published(run, analysed, monkeypatch):
+    def crash(*args):
+        raise RuntimeError("snapshot broke")
+
+    monkeypatch.setattr(update.checks, "check_history", crash)
+    assert _exit_code(run, analysed) == update.EXIT_REVIEW
+    assert "- **history**: history could not be checked: RuntimeError: snapshot broke" in update.RUN_REPORT.read_text()
+
+
+def test_the_outcome_is_reported_when_the_report_cannot_be_built(run, analysed, monkeypatch):
+    def crash(*args):
+        raise RuntimeError("report broke")
+
+    monkeypatch.setattr(update, "run_report", crash)
+    run(analysed)
+    report = update.RUN_REPORT.read_text()
+    assert report.startswith(update.CHECKS_PASSED) and "**Ready to publish**" in report
+
+
+def test_a_run_that_fails_with_errors_still_goes_to_review(run, analysed, monkeypatch):
+    path = analyze.RULES_DIR / "okonomi.json"
+    rules = json.loads(path.read_text())
+    path.write_text(json.dumps({**rules, "udeladt": []}))  # its decisions are dropped, not one-offs
+
+    def crash(*args, **kwargs):
+        raise RuntimeError("consolidation crashed")
+
+    monkeypatch.setattr(analyze, "consolidate", crash)
+    assert _exit_code(run, analysed) == update.EXIT_REVIEW
+    report = update.RUN_REPORT.read_text()
+    assert "The run also failed: the analysis stopped: RuntimeError: consolidation crashed." in report
+
+
+def test_a_failed_run_whose_checks_pass_keeps_its_results(run, data):
+    assert _exit_code(run, _docs(data, 3), "--allow-rebuild", "--max-cost", "0") == update.EXIT_FAILED
+    assert "**The run failed**: 3 Claude calls failed or were skipped." in update.RUN_REPORT.read_text()
+
+
+def test_the_checks_command_fails_on_errors_only(analysed, monkeypatch, capsys):
+    import checks
+
+    monkeypatch.setattr(checks.scrape, "load_manifest", lambda: analysed)
+    checks.main()
+    assert capsys.readouterr().out.startswith("Errors: 0\nWarnings: 0\n")
+
+    path = analyze.RULES_DIR / "master.json"
+    path.write_text(json.dumps({**json.loads(path.read_text()), "udeladt": []}))
+    with pytest.raises(SystemExit) as failed:
+        checks.main()
+    assert failed.value.code == 1
+    assert capsys.readouterr().out.startswith("Errors: 5 (unassigned 5)\n  unassigned: doc1#1 (master: Regel doc1)")
+
+    _edit_decision(analysed[1], tekst="Ændret regel")  # master is to be consolidated again: not an error yet
+    checks.main()
 
 
 # ---------------------------------------------------------------- run log and step summary
