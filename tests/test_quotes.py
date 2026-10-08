@@ -33,10 +33,44 @@ def test_repeated_quote_without_a_matching_page_takes_the_first():
 
 
 def test_line_break_hyphenation_still_locates_the_quote():
-    text = "[Side 3]\nDet blev besluttet at licens-\nopkrævningen hæves til 300 kr. pr. løfter fra næste sæson."
-    fields = quote_fields("licensopkrævningen hæves til 300 kr. pr. løfter fra næste sæson", DocWords.of(text), None)
-    assert fields["citat_pos"] is not None
-    assert fields["citat_side"] == 3
+    # The split word sits mid-quote, so neither half alone has enough matching trigrams.
+    text = ("[Side 2]\nPunkt 4.\n[Side 3]\nDet blev på mødet besluttet at licens-\nopkrævningen for alle aktive "
+            "løftere hæves til 300 kr fra næste sæson.")
+    quote = ("Det blev på mødet besluttet at licensopkrævningen for alle aktive løftere hæves til 300 kr "
+             "fra næste sæson")
+    words = DocWords.of(text)
+    fields = quote_fields(quote, words, None)
+    assert fields["citat_pos"] == words.words.index("det")
+    assert fields["citat_side"] == 3 and fields["citat_fundet"]
+
+
+def test_page_header_inside_the_quote_still_locates_it():
+    # As in rep2012: the page break puts the date header between "står" and "fast".
+    text = ("[Side 2]\nforeslås følgende: At DSF etablerer et fast løftested, hvor der står\n"
+            "[Side 3]\n2012-03-30\nfast pro.udstyr mm. til afholdelse af officielle stævner og kurser. Evt. Odense.")
+    quote = ("At DSF etablerer et fast løftested, hvor der står fast pro.udstyr mm. til afholdelse af officielle "
+             "stævner og kurser.")
+    words = DocWords.of(text)
+    fields = quote_fields(quote, words, 2)
+    assert fields["citat_pos"] == words.words.index("at")
+    assert fields["citat_side"] == 2 and fields["citat_fundet"]
+
+
+def test_an_earlier_match_of_the_first_words_does_not_move_the_start():
+    text = "[Side 1]\n4. The head coach.\n5. The head coach must ensure each of his assistant coaches receive a badge."
+    words = DocWords.of(text)
+    start = locate_quote("The head coach must ensure each of his assistant coaches receive a badge", words)
+    assert words.words[start:start + 4] == ["the", "head", "coach", "must"]
+
+
+def test_short_quote_is_located_verbatim():
+    text = "[Side 1]\nAntidopingpolitikken drøftes.\n[Side 2]\nAntidopingpolitikken godkendes.\n"
+    words = DocWords.of(text)
+    assert quote_fields("Antidopingpolitikken godkendes.", words, 1) == {
+        "citat_fundet": True, "citat_pos": 2, "citat_side": 2}
+    assert quote_fields("Antidopingpolitikken", words, 2)["citat_pos"] == 2  # Claude's page wins
+    assert quote_fields("Antidopingpolitikken", words, None)["citat_pos"] == 0  # else the first
+    assert quote_fields("Politikken forkastes.", words, 2)["citat_fundet"] is False
 
 
 def test_quote_not_in_document():
@@ -80,6 +114,11 @@ def test_claudes_page_is_kept_when_the_quote_was_not_located(load):
     assert d.side == 4 and not d.side_rettet
 
 
+def test_filling_in_a_page_claude_left_out_is_not_a_correction(load):
+    (d,) = load([_raw("x", pos=10, side=None, located_page=3)])
+    assert d.side == 3 and not d.side_rettet
+
+
 def _raw(emne: str, pos: int | None, side: int | None = 1, located_page: int | None = 1) -> dict:
     return {
         "emne": emne, "kategori": "okonomi", "udfald": "vedtaget", "forslagsstiller": None, "handling": "ny",
@@ -104,3 +143,13 @@ def test_extraction_stores_where_each_quote_is(tmp_path, monkeypatch):
 
     saved = json.loads((tmp_path / "doc.json").read_text())["beslutninger"]
     assert [(d["citat_fundet"], d["citat_side"]) for d in saved] == [(True, 1), (True, 2)]
+
+
+def test_opening_words_before_a_page_header_keep_claudes_page():
+    # The quote starts at the bottom of page 1; a header opens page 2 before the rest of it.
+    # Only two words stand before the header, so no trigram matches on page 1.
+    text = ("[Side 1]\nPunkt 7. Det blev besluttet at klubberne\n[Side 2]\nReferat 2012-03-30\n"
+            "skal stille med mindst en dommer ved hvert stævne i divisionsturneringen fra næste sæson.")
+    quote = "at klubberne skal stille med mindst en dommer ved hvert stævne i divisionsturneringen fra næste sæson"
+    fields = quote_fields(quote, DocWords.of(text), 1)
+    assert fields["citat_fundet"] and fields["citat_side"] == 1

@@ -15,7 +15,7 @@
      "tekst": null,
      "kort": "bestyrelsen fraråder deltagelse i stærkmandskonkurrencer",
      "kort_regel": "frarådes; mod dopingdømt giver 2 års karantæne (WADA)",
-     "dhash": "013e0c571d94"
+     "dhash": "c7c9ca078985"
     },
     {
      "ref": "rep2014#5",
@@ -23,7 +23,7 @@
      "tekst": null,
      "kort": "HSF foreslår 1 års karantæne ved bodybuilding/stærkmand; faldet",
      "kort_regel": null,
-     "dhash": "d25b9753fd6e"
+     "dhash": "27b2ea02dbec"
     }
    ]
   },
@@ -38,7 +38,7 @@
      "tekst": null,
      "kort": "rekorder sat efter 1.1.2011 slettes ved udelukkelse på mindst 2 år",
      "kort_regel": "nationale rekorder slettes ved dopingudelukkelse på mindst 2 år",
-     "dhash": "12593c9b153b"
+     "dhash": "2d0b6905ffca"
     },
     {
      "ref": "rep2019#15",
@@ -46,7 +46,7 @@
      "tekst": "Hvis en løfter er kendt skyldig i dopingbrud af Anti-doping Danmark, og Anti-dopingudvalget kan bekræfte en udelukkelse på 2 år eller mere, slettes løfterens nationale rekorder under DSF sat efter 1. januar 2011. Gælder også i IPF. Når en dopingsag er afsluttet med en dom, fjernes den pågældende løfters rekorder bagud, jf. Stævneregler 5. A. 3.",
      "kort": "rekorder fjernes bagud efter dopingdom, jf. stævneregel 5.A.3",
      "kort_regel": "rekorder fjernes bagud efter afsluttet dopingdom",
-     "dhash": "53ef8d846e6b"
+     "dhash": "3925667b0df9"
     },
     {
      "ref": "refbest_310819#1",
@@ -54,7 +54,7 @@
      "tekst": "Hvis en løfter er kendt skyldig i dopingbrud af Anti-doping Danmark, og Anti-dopingudvalget kan bekræfte en udelukkelse på 2 år eller mere, slettes løfterens nationale rekorder under DSF sat efter 1. januar 2011. Gælder også i IPF. Når en dopingsag er afsluttet med en dom, fjernes den pågældende løfters rekorder med tilbagevirkende kraft, jf. Stævneregler 5. A. 3. Resultater registreres som ikke valide fra forseelsen og frem, og løfterens profil fremstår som inaktiv.",
      "kort": "resultater ugyldige fra forseelsen, profil vises som inaktiv",
      "kort_regel": "rekorder fjernes bagud, resultater ugyldige, profil inaktiv",
-     "dhash": "14b62521751f"
+     "dhash": "165762d2d4df"
     }
    ]
   },
@@ -69,7 +69,7 @@
      "tekst": null,
      "kort": "Videbæk foreslår præcisering af § 5 om poster; forkastet",
      "kort_regel": null,
-     "dhash": "703ac3b961c0"
+     "dhash": "e42b917937f3"
     }
    ]
   },
@@ -84,7 +84,7 @@
      "tekst": "Reglerne for international deltagelse for dopingdømte gælder som beskrevet i vedtægterne og gælder også for masters.",
      "kort": "vedtægtens regler for dopingdømte gælder også masters",
      "kort_regel": "vedtægtens regler for dopingdømte gælder også masters",
-     "dhash": "6f58044145e2"
+     "dhash": "b94fdac0a741"
     },
     {
      "ref": "refbest_310722#7",
@@ -92,7 +92,7 @@
      "tekst": "Reglerne for international deltagelse for dopingdømte gælder som beskrevet i vedtægterne og gælder også for masters. En tidligere dopingdømt atlet kan efter endt karantæne ikke deltage på noget dansk landshold og ikke kåres til årets løfter.",
      "kort": "dopingdømte kan ikke kåres til årets løfter",
      "kort_regel": "tidligere dopingdømte aldrig på landshold eller årets løfter",
-     "dhash": "e26e52288665"
+     "dhash": "6940dcf8683b"
     }
    ]
   },
@@ -107,7 +107,7 @@
      "tekst": "DSF's dopingpolitik ændres ikke som følge af DIF's ophævelse af reglen om tidligere dopingdømtes OL-deltagelse og andre ændringer i DIF's dopingpolitik.",
      "kort": "DIF's ændringer medfører ingen ændring i DSF's dopingpolitik",
      "kort_regel": "DSF's dopingpolitik uændret trods DIF-ændringer",
-     "dhash": "854e951b084c"
+     "dhash": "6b337d44db9e"
     },
     {
      "ref": "refbest_13122015#2",
@@ -115,7 +115,7 @@
      "tekst": "DSF's antidopingpolitik, godkendt af Anti Doping Danmark og af DSF's bestyrelse, gælder.",
      "kort": "ny antidopingpolitik godkendt efter ADD-godkendelse",
      "kort_regel": "ADD-godkendt antidopingpolitik gælder",
-     "dhash": "0fc4577eda2e"
+     "dhash": "4ce901e6d9ae"
     }
    ]
   },
@@ -130,7 +130,7 @@
      "tekst": null,
      "kort": "WADA's nye dopingregler indarbejdet i IPF's regler",
      "kort_regel": "IPF's regler følger WADA's antidopingregler",
-     "dhash": "b7c093747581"
+     "dhash": "4e0759a403fd"
     }
    ]
   },
@@ -145,7 +145,7 @@
      "tekst": null,
      "kort": "bestyrelsen foreslår IPF-antidopingbestemmelser i vedtægterne",
      "kort_regel": null,
-     "dhash": "dc03dcf46363"
+     "dhash": "0e2eb4df872e"
     },
     {
      "ref": "rep2019#1",
@@ -153,7 +153,7 @@
      "tekst": null,
      "kort": "vedtægter: alle bundet af IPF's antidopingregler, artikel 17",
      "kort_regel": "DSF og medlemmer ubetinget bundet af IPF's antidopingregler",
-     "dhash": "179801c64d5f"
+     "dhash": "1775a38117ca"
     }
    ]
   },
@@ -168,7 +168,7 @@
      "tekst": null,
      "kort": "AK Ares foreslår offentliggørelse af alle tests; 11 for, 25 imod",
      "kort_regel": null,
-     "dhash": "a605d598602a"
+     "dhash": "26bc1155d728"
     },
     {
      "ref": "refbest_310819#2",
@@ -176,7 +176,7 @@
      "tekst": null,
      "kort": "positive tests meldes ud ved endelig dom",
      "kort_regel": "positive dopingtests offentliggøres ved endelig dom",
-     "dhash": "84ef1e52218b"
+     "dhash": "5f2334db4352"
     }
    ]
   },
@@ -191,7 +191,7 @@
      "tekst": null,
      "kort": "forbud mod kurser for dopede eller karantæneramte",
      "kort_regel": "bestyrelse/udvalg må ikke afholde kurser for dopede",
-     "dhash": "dd424cf2f028"
+     "dhash": "9b37ea74220f"
     }
    ]
   },
@@ -206,7 +206,7 @@
      "tekst": null,
      "kort": "coaches skal anerkende IPF's antidopingregler",
      "kort_regel": "coaches forpligtet til IPF's antidopingregler",
-     "dhash": "21a9bb38016f"
+     "dhash": "35e305b34df2"
     }
    ]
   },
@@ -221,7 +221,7 @@
      "tekst": null,
      "kort": "bestyrelsen overvejer sanktioner mod klubber med positive løftere",
      "kort_regel": null,
-     "dhash": "e2813d2ff76f"
+     "dhash": "23ef5d070d1a"
     },
     {
      "ref": "rep2016#4",
@@ -229,7 +229,7 @@
      "tekst": null,
      "kort": "klubsuspension 4 måneder ved to positive inden for et år",
      "kort_regel": "2 positive: 4 mdr. suspension; yderligere: 8 mdr.",
-     "dhash": "786638af0ebd"
+     "dhash": "7e63e1f39af5"
     },
     {
      "ref": "rep2016#5",
@@ -237,7 +237,7 @@
      "tekst": null,
      "kort": "forslag om 12/24 måneders suspension nedstemt 6-15",
      "kort_regel": null,
-     "dhash": "ad31dd2626e4"
+     "dhash": "032e0198cc15"
     }
    ]
   },
@@ -252,7 +252,7 @@
      "tekst": null,
      "kort": "klubber skal afvise licens til atleter uden tillid",
      "kort_regel": "licens er privilegium; klubber afviser utroværdige atleter",
-     "dhash": "b8c2f49cee94"
+     "dhash": "4b96ed3c5f98"
     }
    ]
   },
@@ -267,7 +267,7 @@
      "tekst": null,
      "kort": "DSF foreslår IPF-regel 18.8 om nationale dopingtests",
      "kort_regel": null,
-     "dhash": "cb75f2580044"
+     "dhash": "5456508175c9"
     }
    ]
   },
@@ -282,7 +282,7 @@
      "tekst": null,
      "kort": "tro og love-erklæring krævet før stævnetilmelding",
      "kort_regel": "antidopingerklæring skal udfyldes før tilmelding til stævner",
-     "dhash": "2455dc86f25c"
+     "dhash": "5be2a7f613f8"
     }
    ]
   },
@@ -297,7 +297,7 @@
      "tekst": null,
      "kort": "masters må bruge ADD-uddannelse; ADEL anbefales",
      "kort_regel": "masters: ADD-uddannelse tilladt, ADEL anbefales",
-     "dhash": "0bb06058adf7"
+     "dhash": "449709b102e9"
     },
     {
      "ref": "Tilmeldingsfrister2026#2",
@@ -305,7 +305,7 @@
      "tekst": "Løftere skal gennemføre IPF's antidopinguddannelse ADEL og sende kursusbeviset til masterudvalget@styrke.dk sammen med tilmeldingsskemaet. Det er ikke muligt at tilmelde løftere til internationale stævner uden kursusbevis. Trænere skal gennemføre ADEL-træneruddannelsen for at blive akkrediteret. ADEL skal fornyes hvert 2. år.",
      "kort": "ADEL obligatorisk for løftere og trænere, fornyes hvert 2. år",
      "kort_regel": "ADEL-bevis krævet til internationale stævner; fornyes hvert 2. år",
-     "dhash": "c5c10d16c5b3"
+     "dhash": "5beb7581e5ab"
     },
     {
      "ref": "Tilmeldingsfrister2027#2",
@@ -313,7 +313,7 @@
      "tekst": "Løftere skal gennemføre IPF's antidopinguddannelse ADEL og sende kursusbeviset til masterudvalget@styrke.dk sammen med tilmeldingsskemaet. Det er ikke muligt at tilmelde løftere til internationale stævner uden kursusbevis. ADEL-certifikatet er gyldigt i 2 år og skal være gyldigt på stævnedagen. Trænere skal også have gennemgået ADEL for at kunne akkrediteres.",
      "kort": "certifikat gyldigt 2 år, skal gælde på stævnedagen",
      "kort_regel": "gyldigt ADEL-bevis på stævnedagen; trænere også",
-     "dhash": "be18fd3de60d"
+     "dhash": "877260bb5086"
     }
    ]
   },
@@ -328,7 +328,7 @@
      "tekst": null,
      "kort": "landsholdsudøvere træner mindst 1 gang ugentligt i klubben",
      "kort_regel": "mindst én ugentlig klubtræning; dispensation via Antidoping-udvalget",
-     "dhash": "0f7631521645"
+     "dhash": "dd140a7f349f"
     }
    ]
   },
@@ -343,7 +343,7 @@
      "tekst": null,
      "kort": "appbrugere samtykker til test fra Anti Doping Danmark",
      "kort_regel": "appbrugere kan testes af ADD",
-     "dhash": "5d521a7e50e1"
+     "dhash": "d01a8b5849fd"
     }
    ]
   },
@@ -358,7 +358,7 @@
      "tekst": null,
      "kort": "Consent Form sendes inden tilmeldingsfrist",
      "kort_regel": "Consent Form krævet ved EPF/IPF-konkurrencer",
-     "dhash": "6bd715d3c834"
+     "dhash": "9ce333789c6d"
     }
    ]
   }

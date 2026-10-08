@@ -91,14 +91,17 @@ that styrke.dk replaces under the same name (a different size) is downloaded aga
 
 Code checks Claude's work where it can:
 
-- Each quote is looked up in the document text. One that cannot be found verbatim is flagged ⚠; one
-  found on another page than Claude cited gets the page where it actually stands.
+- Each quote is looked up in the document text, allowing for line-break hyphenation and a page header
+  inside it (at least 80% of its word triplets in place). One that cannot be found is flagged ⚠; one
+  found only on another page than Claude cited gets the page where it actually stands.
 - Decisions within a document are ordered by where their quote stands.
 - Each rule version stores a fingerprint of the decision it was built from. If the document is
-  re-analysed and the decision changes, the version is left out until its category is consolidated again.
+  re-analysed and the decision changes, the whole rule is left out until its category is consolidated
+  again (leaving out only that version could bring back a repealed rule).
 - The effect of an undecided, rejected or withdrawn proposal follows from its outcome, whatever Claude says.
-- `checks.py` reports versions whose effect contradicts the decision and possible date traps (a
-  seasonal rule confirmed without an end date, a newer decision that takes effect before an older one).
+- `checks.py` reports versions where the extraction and the rule disagree about the effect, and possible
+  date traps (a seasonal rule confirmed without an end date, a newer decision that takes effect before an
+  older one).
 
 `update.py` logs every finding, and `regelsaet/README.md` ends with the counts. The extraction is
 automatic: the minutes are always the authoritative source.

@@ -231,7 +231,7 @@ DM klassisk senior afvikles særskilt i DM-ugen fra 2022 i samarbejde med DIF; a
 
 *Stævneregel · vedtaget 30.08.2020 af Repræsentantskabet (30 for, 2 undlod) · senest bekræftet 06.02.2021*
 
-- 03.09.2011 · indkommet forslag: bestyrelsen vil gøre Nordland Cup officiel · [refbest_03092011 s. 2](https://filer.styrke.dk/referater/refbest_03092011.PDF#page=2)
+- 03.09.2011 · indkommet forslag: bestyrelsen vil gøre Nordland Cup officiel · [refbest_03092011 s. 2](https://filer.styrke.dk/referater/refbest_03092011.pdf#page=2)
 - 25.03.2012 · indført: Nordland Cup (Raw) bliver officielt dansk Raw-mesterskab · [rep2012 s. 4](https://filer.styrke.dk/referater/rep2012.pdf#page=4)
 - 14.03.2020 · indkommet forslag: forslag om DM klassisk senior i DM-ugen (fra 01.01.2021) · [refbest_140320 s. 1](https://filer.styrke.dk/referater/refbest_140320.pdf#page=1)
 - 30.08.2020 · ændret: senior i DM-ugen fra 2022; øvrige i april (fra 01.01.2022) · [rep2020 s. 17](https://filer.styrke.dk/referater/rep2020.pdf#page=17)
@@ -662,7 +662,7 @@ Forbundets stævneregler skal følge IPF's tekniske regler; opdaterede stævnere
 
 *Bestyrelsesbeslutning · vedtaget 03.09.2011 af Bestyrelsen · senest bekræftet 26.07.2015*
 
-- 03.09.2011 · indført: stævneregler skal følge IPF's tekniske regler · [refbest_03092011 s. 3](https://filer.styrke.dk/referater/refbest_03092011.PDF#page=3)
+- 03.09.2011 · indført: stævneregler skal følge IPF's tekniske regler · [refbest_03092011 s. 3](https://filer.styrke.dk/referater/refbest_03092011.pdf#page=3)
 - 24.03.2013 · bekræftet: generel opdatering, bestyrelsen får carte blanche · [rep2013 s. 3](https://filer.styrke.dk/referater/rep2013.pdf#page=3)
 - 08.02.2015 · indkommet forslag: forslag om udstyr og licensbetaling i stævnereglerne · [refbest_08022015 s. 7](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=7)
 - 26.07.2015 · bekræftet: opdaterede stævneregler og kalender godkendt · [refbest_26072015 s. 4](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=4)
@@ -1197,7 +1197,7 @@ DSF's udstyr, herunder streamingudstyr, kan lånes af klubberne til stævner. Kl
 *Bestyrelsesbeslutning · vedtaget 29.10.2017 af Bestyrelsen*
 
 - 15.04.2012 · indført: udstyrsliste lægges på hjemmesiden til klubbernes lån · [refbest_14042012 s. 1](https://filer.styrke.dk/referater/refbest_14042012.pdf#page=1)
-- 04.08.2012 · ændret: lån via kontoret, afhentning i Horsens · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.pdf#page=2)
+- 04.08.2012 · ændret: lån via kontoret, afhentning i Horsens · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.PDF#page=2)
 - 09.08.2014 · ændret: webkamera købt; låneseddel og mail ved udlån · [refbest_09082014 s. 1](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=1)
 - 07.12.2014 · ændret: følgeseddel, to sæt i kufferter, mangler rapporteres · [refbest_07122014 s. 4](https://filer.styrke.dk/referater/refbest_07122014.pdf#page=4)
 - 29.10.2017 · ændret: bestilling senest tre uger før stævnet · [refbest_29102017 s. 3](https://filer.styrke.dk/referater/refbest_29102017.pdf#page=3)

@@ -35,9 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": false,
-   "citat_pos": null,
-   "citat_side": null
+   "citat_fundet": true,
+   "citat_pos": 516,
+   "citat_side": 2
   },
   {
    "emne": "Udstyrsregler",

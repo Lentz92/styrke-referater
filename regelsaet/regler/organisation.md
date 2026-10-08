@@ -399,7 +399,7 @@ Der udarbejdes et forslag til en standarddagsorden for bestyrelsesmøder, som ru
 
 *Bestyrelsesbeslutning · vedtaget 15.05.2011 af Bestyrelsen*
 
-- 15.05.2011 · indført: standarddagsorden udarbejdes til bestyrelsens godkendelse · [refbest_15052011 s. 3](https://filer.styrke.dk/referater/refbest_15052011.PDF#page=3)
+- 15.05.2011 · indført: standarddagsorden udarbejdes til bestyrelsens godkendelse · [refbest_15052011 s. 3](https://filer.styrke.dk/referater/refbest_15052011.pdf#page=3)
 
 ### Strategiplan
 
@@ -466,7 +466,7 @@ Bestyrelsen fremsætter et ændringsforslag til paragraf 5 i DSFs vedtægter; yd
 
 Forslag om at afholde dele af bestyrelsesmøderne via pc blev ikke fulgt, da den fastlagte møderække vurderes at sikre planlægningen.
 
-- 15.05.2011 · forslag forkastet: Klaus Nielsens forslag om møder via pc afvist · [refbest_15052011 s. 4](https://filer.styrke.dk/referater/refbest_15052011.PDF#page=4)
+- 15.05.2011 · forslag forkastet: Klaus Nielsens forslag om møder via pc afvist · [refbest_15052011 s. 4](https://filer.styrke.dk/referater/refbest_15052011.pdf#page=4)
 
 ### DSF kraftcenter
 

@@ -5,12 +5,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 import render
-from analyze import PROPOSAL_EFFECT, Decision, version_matches
+from analyze import PROPOSAL_EFFECT, Decision
 
 
 @dataclass(frozen=True)
 class Problem:
-    kind: str  # "forældet", "virkning" or "dato" (a possible date trap); counted in the data-quality section
+    kind: str  # "forældet" (a rule left out), "virkning" or "dato" (a possible date trap); counted on the index page
     message: str
 
 
@@ -21,16 +21,25 @@ def find_problems(decisions: list[Decision], raw_rules: list[dict]) -> list[Prob
 
 
 def stale_versions(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Problem]:
-    """Versions whose decision changed after the rule was consolidated (render leaves them out)."""
-    return [
-        Problem("forældet", f"{raw['titel']}: {v['ref']} er ændret siden konsolideringen")
-        for raw in raw_rules for v in raw["versioner"]
-        if v["ref"] in by_ref and not version_matches(v, by_ref[v["ref"]])
-    ]
+    """One problem per rule that render leaves out because a decision behind it has changed or is
+    gone since the rule was consolidated."""
+    problems = []
+    for raw in raw_rules:
+        refs = render.stale_refs(raw, by_ref)
+        if refs:
+            reasons = ", ".join(f"{ref} {'er ændret' if ref in by_ref else 'findes ikke længere'}" for ref in refs)
+            problems.append(Problem("forældet", f"{raw['titel']} vises ikke, før kategorien er konsolideret "
+                                                f"igen: {reasons}"))
+    return problems
 
 
 def effect_mismatches(rules: list[render.Rule]) -> list[Problem]:
-    """Versions whose effect contradicts the decision's outcome or action."""
+    """Versions where the extraction and the rule disagree about the effect.
+
+    Either side can be wrong, but often it is the extraction's udfald: a board recommending a
+    proposal to Repræsentantskabet is extracted as "vedtaget", while the rule shows a proposal.
+    An abolition may legitimately show as "aendret": it can remove one part of a rule and keep the rest.
+    """
     problems = []
     for rule in rules:
         for v in rule.versions:
@@ -38,12 +47,13 @@ def effect_mismatches(rules: list[render.Rule]) -> list[Problem]:
             if d.udfald in PROPOSAL_EFFECT:
                 wrong = v.effekt != PROPOSAL_EFFECT[d.udfald]
             elif d.handling == "ophaevelse":
-                wrong = v.effekt != "ophaevet"
+                wrong = v.effekt not in ("ophaevet", "aendret")
             else:  # adopted: a content effect, or abolishing this rule while adopting something else
                 wrong = v.effekt not in (*render.CONTENT_EFFECTS, "ophaevet")
             if wrong:
-                problems.append(Problem("virkning", f"{rule.titel}: {d.ref} er {d.udfald}/{d.handling}, "
-                                                    f"men vises som {v.effekt}"))
+                problems.append(Problem("virkning", f"{rule.titel}: udtrækket af {d.ref} ({d.udfald}/"
+                                                    f"{d.handling}) og reglen ({v.effekt}) er uenige om "
+                                                    f"virkningen – tjek referatet"))
     return problems
 
 

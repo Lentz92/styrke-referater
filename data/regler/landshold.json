@@ -15,7 +15,7 @@
      "tekst": null,
      "kort": "kørselsbilag skal være kassereren i hænde senest 14 dage efter",
      "kort_regel": "kørselsbilag senest 14 dage efter begivenhed, ellers ingen udbetaling",
-     "dhash": "ee1cae289052"
+     "dhash": "5bbcfb505587"
     }
    ]
   },
@@ -30,7 +30,7 @@
      "tekst": null,
      "kort": "kassereren udbetaler senest 14 dage efter modtaget afregning",
      "kort_regel": "udbetaling senest 14 dage efter modtagelse af afregning",
-     "dhash": "152791d82076"
+     "dhash": "f7a54b770f19"
     }
    ]
   },
@@ -45,7 +45,7 @@
      "tekst": null,
      "kort": "dragt til eje for 200 kr. eller depositum 400 kr.",
      "kort_regel": "200 kr. for dragt til eje, ellers 400 kr. depositum",
-     "dhash": "9703d3c96671"
+     "dhash": "a1e6042ab4a7"
     },
     {
      "ref": "elite02072016#3",
@@ -53,7 +53,7 @@
      "tekst": "Kun løftere, der udtages til stævner, får udleveret en landsholdstrikot. Løftere, der ønsker landsholdsdragten til evigt eje, betaler 200 kr., og forbundet dækker resten. Ønsker løfteren ikke dragten, indbetales et depositum på 400 kr., som refunderes, når dragten returneres.",
      "kort": "kun løftere udtaget til stævner får landsholdstrikot",
      "kort_regel": "trikot kun til udtagne løftere; 200 kr. eller 400 kr. depositum",
-     "dhash": "93652b4a25ca"
+     "dhash": "cfd21c9ec9db"
     },
     {
      "ref": "refbest_290826.2#3",
@@ -61,7 +61,7 @@
      "tekst": null,
      "kort": "bestyrelsen drøfter egenbetaling for dragter fra 2027",
      "kort_regel": null,
-     "dhash": "ce5da0da5ac0"
+     "dhash": "4e7cc7f0c927"
     },
     {
      "ref": "elite15092026#2",
@@ -69,7 +69,7 @@
      "tekst": "Fra 2027 skal alle landsholdsløftere selv købe deres landsholdsdragt fra JAKO, som p.t. koster 615 kr. Atleterne udleveres fortsat en årlig udstyrspakke fra A7 uden beregning.",
      "kort": "fra 2027 køber løftere selv dragt fra JAKO, 615 kr.",
      "kort_regel": "løfter køber selv dragt (615 kr.); gratis årlig udstyrspakke",
-     "dhash": "3fad74da8e49"
+     "dhash": "78dce2737081"
     }
    ]
   },
@@ -84,7 +84,7 @@
      "tekst": null,
      "kort": "officiel landsholdsdragt påkrævet ved præmieoverrækkelser",
      "kort_regel": "landsholdsdragt ved præmieoverrækkelser til internationale stævner",
-     "dhash": "47e925f3017d"
+     "dhash": "5ab7e1c33a8a"
     },
     {
      "ref": "elite15062019#2",
@@ -92,7 +92,7 @@
      "tekst": "De officielle landsholdsdragter skal være iført ved præmieoverrækkelser til internationale stævner. Da landsholdene er sponsoreret af Titan, er det et ufravigeligt krav, at den udleverede trøje bruges under konkurrence. En løfter, der ikke medbringer det udleverede udstyr, nægtes deltagelse i konkurrencen.",
      "kort": "udleveret Titan-trøje skal bruges i konkurrence, ellers ingen deltagelse",
      "kort_regel": "sponsortrøje obligatorisk i konkurrence; dragt ved præmieoverrækkelse",
-     "dhash": "4b20549e35a9"
+     "dhash": "2f96bacf2f1d"
     },
     {
      "ref": "elite14122022#3",
@@ -100,7 +100,7 @@
      "tekst": "De officielle landsholdsdragter skal være iført ved præmieoverrækkelser til internationale stævner. De T-shirts, som ER Equipment sponserer til DSF's landshold, skal ufravigeligt bruges til internationale stævner og mesterskaber. En løfter, der ikke medbringer det udleverede udstyr, kan nægtes deltagelse i konkurrencen.",
      "kort": "ER Equipment T-shirts skal bruges ved internationale stævner",
      "kort_regel": "sponsor-T-shirts obligatoriske ved internationale stævner",
-     "dhash": "e58c14cddb31"
+     "dhash": "aec65b77cd2f"
     },
     {
      "ref": "refbest_231125#2",
@@ -108,7 +108,7 @@
      "tekst": "Fra 2026 er alle landshold ens klædt på i dragter fra ER Equipment. Dragterne skal bruges til alle officielle internationale aktiviteter, fx præmieceremoni, indmarch og holdbilleder. De sponsorerede T-shirts skal bruges til internationale stævner og mesterskaber.",
      "kort": "fra 2026 ens ER-dragter til alle officielle internationale aktiviteter",
      "kort_regel": "ER-dragter ved præmieceremoni, indmarch og holdbilleder",
-     "dhash": "fc9a5524ae5f"
+     "dhash": "81f18881c75f"
     }
    ]
   },
@@ -123,7 +123,7 @@
      "tekst": null,
      "kort": "eksterne undervisere afvist af økonomiske årsager",
      "kort_regel": null,
-     "dhash": "402ed4a84205"
+     "dhash": "3c50cb427b18"
     }
    ]
   },
@@ -138,7 +138,7 @@
      "tekst": null,
      "kort": "Niels Stærkjærs forslag om EM/VM for egen betaling afvist",
      "kort_regel": null,
-     "dhash": "67202ac19d36"
+     "dhash": "f01a634da0bd"
     },
     {
      "ref": "elite10112012#2",
@@ -146,7 +146,7 @@
      "tekst": null,
      "kort": "A-løftere får alt betalt til VM og EM",
      "kort_regel": "A-løftere fuldt betalt ved opfyldt krav og budget",
-     "dhash": "f8d554077192"
+     "dhash": "2e621a95490e"
     },
     {
      "ref": "elite31052014#2",
@@ -154,7 +154,7 @@
      "tekst": "A-løftere får alt betalt til VM og EM, hvis kravene er indfriet og der er penge på budgettet (udstyrstrekamp, RAW og bænkpres). I 2014 tilbydes atleter med VM B-krav deltagelse ved VM mod en egenbetaling på 2000 kr.",
      "kort": "VM B-krav 2014: egenbetaling 2000 kr.",
      "kort_regel": "A-løftere fuldt betalt; VM B-krav 2000 kr. i 2014",
-     "dhash": "ed59565c501c"
+     "dhash": "782b6840f657"
     },
     {
      "ref": "elite05122015#2",
@@ -162,7 +162,7 @@
      "tekst": "For A-kravsløftere betaler forbundet 3 dage; ophold ud over de 3 dage er for egen regning. B-kravsløftere må påregne en mindre egenbetaling.",
      "kort": "A-krav: egenbetaling ud over 3 forbundsbetalte dage",
      "kort_regel": "3 dage betalt for A-krav; B-krav mindre egenbetaling",
-     "dhash": "4cb117c8068e"
+     "dhash": "f3fc507b82d4"
     },
     {
      "ref": "elite09092017#6",
@@ -170,7 +170,7 @@
      "tekst": "For A-kravsløftere betaler forbundet 3 dage; ophold derudover er for egen regning. B-kravsløftere betaler en mindre egenbetaling; ved VM-trekamp 2017 forventeligt 1500 kr.",
      "kort": "B-krav VM-trekamp 2017: egenbetaling ca. 1500 kr.",
      "kort_regel": "B-krav VM-trekamp ca. 1500 kr.",
-     "dhash": "a6e0a2410f0f"
+     "dhash": "8471717948d5"
     },
     {
      "ref": "elite10122017#2",
@@ -178,7 +178,7 @@
      "tekst": "2018: VM klassisk senior: egenbetaling 1500 kr. ved A-krav og 5000 kr. ved B-krav. Løftere uden krav kan senest opnå det til DM Udstyr (3.-4. marts).",
      "kort": "VM klassisk senior 2018: A 1500, B 5000 kr.",
      "kort_regel": "VM klassisk senior: A 1500 kr., B 5000 kr.",
-     "dhash": "e038acb13ef9"
+     "dhash": "124066329a3c"
     },
     {
      "ref": "elite10122017#3",
@@ -186,7 +186,7 @@
      "tekst": "2018: VM klassisk senior og VM bænkpres: egenbetaling 1500 kr. ved A-krav og 5000 kr. ved B-krav.",
      "kort": "VM bænkpres 2018: A 1500, B 5000 kr.",
      "kort_regel": "VM klassisk og VM bænk: A 1500, B 5000 kr.",
-     "dhash": "49047b5d3e8f"
+     "dhash": "58ce232f0a2c"
     },
     {
      "ref": "elite10122017#4",
@@ -194,7 +194,7 @@
      "tekst": "2018: VM klassisk senior og VM bænkpres: 1500 kr. ved A-krav, 5000 kr. ved B-krav. EM junior/subjunior: 1000 kr. ved A-krav, 2000 kr. ved B-krav.",
      "kort": "EM junior/subjunior 2018: A 1000, B 2000 kr.",
      "kort_regel": "VM: A 1500/B 5000; EM ungdom: A 1000/B 2000 kr.",
-     "dhash": "5eb4df2a234d"
+     "dhash": "6074a673cc39"
     },
     {
      "ref": "elite10122017#5",
@@ -202,7 +202,7 @@
      "tekst": "2018: VM klassisk senior og VM bænkpres: 1500 kr. ved A-krav, 5000 kr. ved B-krav. EM junior/subjunior og EM Open: 1000 kr. ved A-krav, 2000 kr. ved B-krav.",
      "kort": "EM Open 2018: A 1000, B 2000 kr.",
      "kort_regel": "VM: A 1500/B 5000; EM: A 1000/B 2000 kr.",
-     "dhash": "5926fdaa298d"
+     "dhash": "8e20c7249dc9"
     },
     {
      "ref": "elite10122017#6",
@@ -210,7 +210,7 @@
      "tekst": "2018: VM klassisk senior og VM bænkpres: 1500 kr. ved A-krav, 5000 kr. ved B-krav. EM junior/subjunior, EM Open og VM klassisk bænk: 1000 kr. ved A-krav, 2000 kr. ved B-krav.",
      "kort": "VM klassisk bænk 2018: A 1000, B 2000 kr.",
      "kort_regel": "VM: A 1500/B 5000; øvrige: A 1000/B 2000 kr.",
-     "dhash": "fbe38e30042d"
+     "dhash": "00946d891243"
     },
     {
      "ref": "elite08092018#3",
@@ -218,7 +218,7 @@
      "tekst": "Egenbetaling afhænger af kravniveau: 1000 kr. ved A-krav og 2000 kr. ved B-krav til EM bænkpres og VM; 2000 kr. ved A-krav til EM i klassisk styrkeløft. Den kategoriansvarlige sender oversigten til kassereren.",
      "kort": "EM bænk/VM: A 1000, B 2000; EM klassisk A 2000 kr.",
      "kort_regel": "A 1000/B 2000 kr.; EM klassisk A 2000 kr.",
-     "dhash": "db93510554c0"
+     "dhash": "f3d5270b720f"
     },
     {
      "ref": "elite15122018#3",
@@ -226,7 +226,7 @@
      "tekst": "Egenbetaling: 1000 kr. ved A-krav og 2000 kr. ved B-krav til EM bænkpres og VM; 2000 kr. ved A-krav til EM klassisk. Ved EM i styrkeløft 2019: 1500 kr. ved A-krav og 3000 kr. ved B-krav.",
      "kort": "EM styrkeløft 2019: A 1500, B 3000 kr.",
      "kort_regel": "EM styrkeløft: A 1500/B 3000 kr.",
-     "dhash": "b278421868c9"
+     "dhash": "cbed0324f2eb"
     },
     {
      "ref": "elite15122018#4",
@@ -234,7 +234,7 @@
      "tekst": "Egenbetaling: 1000 kr. ved A-krav og 2000 kr. ved B-krav til EM bænkpres og VM; EM styrkeløft 2019: 1500 kr. ved A-krav og 3000 kr. ved B-krav. Ved VM i bænkpres afholder løfterne selv transport og bestiller selv flybilletter; forbundet dækker 4 overnatninger for A-krav og 2 for B-krav samt startgebyr.",
      "kort": "VM bænk: egen transport; 4/2 overnatninger og startgebyr dækkes",
      "kort_regel": "VM bænk: egen transport; DSF dækker 4/2 nætter og startgebyr",
-     "dhash": "caf5a40f87e6"
+     "dhash": "322c374f770c"
     },
     {
      "ref": "elite14092019#1",
@@ -242,7 +242,7 @@
      "tekst": "Ved EM i styrkeløft og EM i klassisk styrkeløft 2019 er egenbetalingen 1500 kr. ved A-krav og 3000 kr. ved B-krav. Ved VM bænkpres afholder løfterne selv transport; forbundet dækker 4 overnatninger for A-krav og 2 for B-krav samt startgebyr.",
      "kort": "EM klassisk 2019: A 1500, B 3000 kr.",
      "kort_regel": "EM: A 1500/B 3000 kr.",
-     "dhash": "e1d8b86a34fb"
+     "dhash": "3a5b80f870d9"
     },
     {
      "ref": "elite18052021#1",
@@ -250,7 +250,7 @@
      "tekst": "Egenbetaling for atleter udtaget til EM Equipped 2021 er 1000 kr. ved A-krav og 1500 kr. ved B-krav.",
      "kort": "EM Equipped 2021: A 1000, B 1500 kr.",
      "kort_regel": "EM udstyr: A 1000/B 1500 kr.",
-     "dhash": "bc25f977438f"
+     "dhash": "47971cd513e3"
     },
     {
      "ref": "elite14092021#1",
@@ -258,7 +258,7 @@
      "tekst": "Der opkræves fortsat egenbetaling til internationale mesterskaber i 2022, da DIF's retningslinjer ikke giver mulighed for at overføre yderligere midler; egenbetalingen bevares for at kunne sende flest mulige deltagere.",
      "kort": "egenbetaling fortsætter i 2022",
      "kort_regel": "egenbetaling opkræves til internationale mesterskaber",
-     "dhash": "ddb87a9f76eb"
+     "dhash": "781c8d05be42"
     },
     {
      "ref": "elite08032022#1",
@@ -266,7 +266,7 @@
      "tekst": "Egenbetaling 2022: europæiske destinationer A-krav 1500 kr. og B-krav 2000 kr.; oversøiske destinationer A-krav 2000 kr. og B-krav 2500 kr. Ingen egenbetaling til World Games og VM i Viborg.",
      "kort": "2022: Europa 1500/2000, oversøisk 2000/2500 kr.",
      "kort_regel": "Europa A 1500/B 2000; oversøisk A 2000/B 2500 kr.",
-     "dhash": "e5137f1dada1"
+     "dhash": "0262fe2b13f7"
     },
     {
      "ref": "elite14122022#2",
@@ -274,7 +274,7 @@
      "tekst": "Ingen egenbetaling til EM i Thisted 2023; atleter kan alternativt selv købe flybilletter, hvorved egenbetalingen bortfalder. Den endelige egenbetaling for 2023 fastsættes af bestyrelsen 7/1-2023.",
      "kort": "ingen egenbetaling EM Thisted; egne flybilletter fritager egenbetaling",
      "kort_regel": "egne flybilletter erstatter egenbetaling; 2023-satser fastsættes senere",
-     "dhash": "8893fb07e007"
+     "dhash": "b6755a17ffa1"
     },
     {
      "ref": "elite12122023#1",
@@ -282,7 +282,7 @@
      "tekst": "Egenbetaling 2024: europæiske destinationer A-krav 2500 kr. og B-krav 4000 kr.; oversøiske destinationer A-krav 3500 kr. og B-krav 5500 kr.",
      "kort": "2024: Europa 2500/4000, oversøisk 3500/5500 kr.",
      "kort_regel": "Europa A 2500/B 4000; oversøisk A 3500/B 5500 kr.",
-     "dhash": "7b5f25727060"
+     "dhash": "0bcde0c39006"
     },
     {
      "ref": "elite25062024_2#3",
@@ -290,7 +290,7 @@
      "tekst": "Fra 2025: B-krav betaler fuld egenbetaling af rejse, hotel og transfer, mens DSF betaler tilmeldings- og antidopinggebyr (120 euro IPF, 150 euro EPF) samt udgifter til coaches og dommere. A-krav betaler delvis egenbetaling, hvis størrelse fastsættes senere.",
      "kort": "ny model fra 2025: B fuld egenbetaling, A delvis",
      "kort_regel": "B-krav betaler rejse/hotel/transfer; A-krav delvis egenbetaling",
-     "dhash": "6f853955895c"
+     "dhash": "65541369a36a"
     },
     {
      "ref": "elite23102024#1",
@@ -298,7 +298,7 @@
      "tekst": "Egenbetaling 2025: A-krav betaler 3000 kr. minus eventuel bonus. B-krav betaler fuld egenbetaling (fly, transfer, hotel), mens DSF betaler participation fee og anti-doping fee (150/120 euro EM/VM). World Games: ingen egenbetaling.",
      "kort": "2025: A-krav 3000 kr. minus bonus; B-krav fuld",
      "kort_regel": "A-krav 3000 kr.; B-krav fuld egenbetaling; World Games gratis",
-     "dhash": "184474c42da9"
+     "dhash": "26b75a485b9e"
     },
     {
      "ref": "elite10122024#4",
@@ -306,7 +306,7 @@
      "tekst": "Egenbetaling 2025: A-krav betaler 3000 kr. minus eventuel bonus, dog aldrig mere end den fulde egenbetaling, som pålægges B-krav. B-krav betaler fuld egenbetaling (fly, transfer, hotel), mens DSF betaler participation fee og anti-doping fee. Den fastsatte egenbetaling betales til alle stævner, også ved billig lokation. World Games: ingen egenbetaling.",
      "kort": "egenbetaling gælder også billige lokationer; A højst som B",
      "kort_regel": "A-krav 3000 kr., højst B-niveau; B-krav fuld egenbetaling",
-     "dhash": "a796504862ac"
+     "dhash": "d4a2f8cae310"
     },
     {
      "ref": "elite09122025#2",
@@ -314,7 +314,7 @@
      "tekst": "For 2026 betaler løftere udtaget på EM B- og VM B-krav fuld egenbetaling af transport og hotel. A-krav betaler aldrig mere end den fulde egenbetaling.",
      "kort": "2026: EM B/VM B fuld egenbetaling af transport og hotel",
      "kort_regel": "B-krav betaler transport og hotel fuldt",
-     "dhash": "4b5a6425e73b"
+     "dhash": "905fee5d23bd"
     },
     {
      "ref": "elite09122025#3",
@@ -322,7 +322,7 @@
      "tekst": "For 2026 er egenbetalingen 3000 kr. for løftere udtaget på EM A- og VM A-krav, mens løftere udtaget på EM B- og VM B-krav betaler fuld egenbetaling af transport og hotel.",
      "kort": "2026: EM A/VM A egenbetaling 3000 kr.",
      "kort_regel": "A-krav 3000 kr.; B-krav fuld transport og hotel",
-     "dhash": "6eedc193ebfe"
+     "dhash": "b96c80260b7c"
     }
    ]
   },
@@ -337,7 +337,7 @@
      "tekst": null,
      "kort": "Jørgen Rasmussen foreslår krav efter svensk model",
      "kort_regel": null,
-     "dhash": "c86344a7aacc"
+     "dhash": "18a62ebbd165"
     },
     {
      "ref": "elite01062012#7",
@@ -345,7 +345,7 @@
      "tekst": null,
      "kort": "Niels Stærkjærs kvalifikationstal vedtaget med virkning fra 2014",
      "kort_regel": "kvalifikationstal efter Stærkjærs forslag fra 2014",
-     "dhash": "390ab73fa8c9"
+     "dhash": "325a31fe670f"
     },
     {
      "ref": "elite10112012#4",
@@ -353,7 +353,7 @@
      "tekst": "Kvalifikationstal efter Niels Stærkjærs forslag gælder fra 2014. I RAW er kravet 430 points for A-løftere og 410 points for B-løftere.",
      "kort": "RAW-krav: A 430 point, B 410 point",
      "kort_regel": "kvalifikationstal; RAW A 430/B 410 point",
-     "dhash": "529c80fab2c6"
+     "dhash": "6ddfabb62e3d"
     },
     {
      "ref": "elite15122013#4",
@@ -361,7 +361,7 @@
      "tekst": "Der gælder kvalifikationskrav (kravtal) for trekamp, bænkpres og RAW efter samme model; kravene for herrer og bænkpres justeres. Subjunior og junior er undtaget for kravtal.",
      "kort": "RAW-krav som trekamp/bænk; herre- og bænkkrav justeres",
      "kort_regel": "kravtal for trekamp, bænk og RAW; ungdom undtaget",
-     "dhash": "9b39531e7c81"
+     "dhash": "0472e8cece41"
     },
     {
      "ref": "elite05122015#5",
@@ -369,7 +369,7 @@
      "tekst": "De gældende kravtal for trekamp, bænkpres og RAW fastholdes i 2016 og 2017; nye krav ventes i 2018. Subjunior og junior er undtaget for kravtal.",
      "kort": "nuværende krav fastholdes 2016-2017",
      "kort_regel": "kravtal uændrede 2016-2017",
-     "dhash": "24d8d82cc4ba"
+     "dhash": "aa396a7177d7"
     },
     {
      "ref": "elite02072016#4",
@@ -377,7 +377,7 @@
      "tekst": "Nye kvalifikationskrav gælder fra 2018, udarbejdet som de eksisterende og offentliggjort i 2017. Der indføres også kvalifikationskrav for junior i styrkeløft og klassisk styrkeløft.",
      "kort": "nye krav fra 2018, også for junior",
      "kort_regel": "nye kravtal fra 2018 inkl. juniorkrav",
-     "dhash": "874868f18a72"
+     "dhash": "061bd22ea49b"
     },
     {
      "ref": "elite04122016#2",
@@ -385,7 +385,7 @@
      "tekst": "Nye kvalifikationskrav gælder fra 2018, også for junior i styrkeløft og klassisk styrkeløft. Fra 2017 gælder kvalifikationskrav i klassisk bænkpres; løftere, der honorerer elitekravet, kan udtages til bænkpreslandsholdet.",
      "kort": "kvalifikationskrav i klassisk bænkpres fra 2017",
      "kort_regel": "krav også i klassisk bænkpres fra 2017",
-     "dhash": "0b9e669218a3"
+     "dhash": "6772a36ada08"
     },
     {
      "ref": "elite04122016#3",
@@ -393,7 +393,7 @@
      "tekst": "Kvalifikationskrav for 2018 i klassisk styrkeløft er offentliggjort på hjemmesiden; krav for 2018 i bænk udstyr og trekamp udstyr (junior og senior) offentliggøres inden 1. januar 2017. Krav i klassisk bænkpres gælder fra 2017.",
      "kort": "klassiske krav 2018 offentliggjort; udstyrskrav før 1.1.2017",
      "kort_regel": "2018-krav offentliggjort på hjemmesiden",
-     "dhash": "fe3d1f4dc0bb"
+     "dhash": "2d56f514bf64"
     },
     {
      "ref": "elite08092018#4",
@@ -401,7 +401,7 @@
      "tekst": "De gældende kvalifikationskrav (fra 2018) for klassisk og udstyr, junior og senior, fastholdes foreløbig uden justering.",
      "kort": "nuværende krav fastholdes",
      "kort_regel": "2018-kravene gælder uændret",
-     "dhash": "d2e35a0efae2"
+     "dhash": "b0563375cf5e"
     },
     {
      "ref": "refbest_091119#3",
@@ -409,7 +409,7 @@
      "tekst": "Nye kvalifikationskrav offentliggøres inden 1.1.2020 og gælder fra 1.1.2021, så løfterne har 12 måneder til at opnå dem. Indtil da gælder de hidtidige krav.",
      "kort": "nye krav fra 1.1.2021, offentliggøres inden 1.1.2020",
      "kort_regel": "nye krav fra 2021; 12 måneders varsel",
-     "dhash": "a0402cd8d2a0"
+     "dhash": "1752dd0e08c4"
     },
     {
      "ref": "elite07122019#4",
@@ -417,7 +417,7 @@
      "tekst": "Nye kvalifikationskrav for 2021 offentliggøres senest 1. januar 2020 og gælder fra 1.1.2021. Indtil da gælder de hidtidige krav.",
      "kort": "2021-krav offentliggøres senest 1. januar 2020",
      "kort_regel": "nye krav fra 2021, kendt fra 1.1.2020",
-     "dhash": "f8ae274bc129"
+     "dhash": "2026c016e1f9"
     },
     {
      "ref": "elite16082020#2",
@@ -425,7 +425,7 @@
      "tekst": "På grund af Covid-19 udsættes de nye kvalifikationskrav til 2022. Krav/resultater opnået fra 1. januar 2019 kan bruges hele sæsonen 2020-2021.",
      "kort": "nye krav udsat til 2022 pga. Covid-19",
      "kort_regel": "nye krav fra 2022; resultater fra 2019 gælder 2020-21",
-     "dhash": "140b403af791"
+     "dhash": "9f226a66618b"
     },
     {
      "ref": "elite19122020#2",
@@ -433,7 +433,7 @@
      "tekst": "Opdaterede kvalifikationskrav i de nye vægtklasser gælder fra 2022 men skal opnås i løbet af 2021. Krav/resultater opnået fra 1. januar 2019 kan bruges i sæsonen 2021.",
      "kort": "krav i nye vægtklasser fra 2022, opnås i 2021",
      "kort_regel": "nye vægtklassekrav fra 2022",
-     "dhash": "32a6b77f1b3e"
+     "dhash": "56db6bc6b518"
     },
     {
      "ref": "rep2021#3",
@@ -441,7 +441,7 @@
      "tekst": "De nye kvalifikationskrav (nye vægtklasser) er udsat til 2022. Resultater opnået fra 1.1.2019 kan bruges i hele sæsonen 2021. Atleter uden elitekrav skal klare kravet ved DM 2021 for at beholde pladsen i truppen.",
      "kort": "repræsentantskabet bekræfter udsættelse til 2022",
      "kort_regel": "nye krav fra 2022; resultater fra 2019 gælder 2021",
-     "dhash": "1b1a79491197"
+     "dhash": "5ec424e858eb"
     },
     {
      "ref": "elite27062023#1",
@@ -449,7 +449,7 @@
      "tekst": "Fra 2024 fastsættes VM A-kravet i klassisk trekamp som gennemsnittet af 8. pladsen ved VM klassisk de seneste tre år, afrundet til nærmeste 2,5 kg. Resultater mere end 10 % under den højeste 8. plads udelades, og et krav kan højst stige til 110 % af det tilsvarende krav fra 2022. Krav i øvrige discipliner fastholdes.",
      "kort": "VM A klassisk: snit af 8. plads ved VM 2021-2023",
      "kort_regel": "VM A klassisk = snit af 8. plads, højst +10 %",
-     "dhash": "49cffa63969d"
+     "dhash": "2f2363c984c4"
     },
     {
      "ref": "elite27062023#2",
@@ -457,7 +457,7 @@
      "tekst": "Fra 2024 fastsættes VM A-kravet i klassisk trekamp som gennemsnittet af 8. pladsen ved VM klassisk 2021-2023, afrundet til nærmeste 2,5 kg, med udeladelse af resultater mere end 10 % under højeste 8. plads og en stigning på højst 10 % ift. 2022. VM B-krav er 95 %, EM A-krav 97,5 % og EM B-krav 92,5 % af VM A-kravet.",
      "kort": "VM B 95 %, EM A 97,5 %, EM B 92,5 %",
      "kort_regel": "øvrige klassiske krav i procent af VM A-krav",
-     "dhash": "6ab83092fbab"
+     "dhash": "8ea491ea5dc1"
     },
     {
      "ref": "elite27062023#3",
@@ -465,7 +465,7 @@
      "tekst": "Fra 2024 fastsættes VM A-kravet i klassisk trekamp som gennemsnittet af 8. pladsen ved VM klassisk 2021-2023 (afrundet til 2,5 kg, højst +10 % ift. 2022). VM B-krav er 95 %, EM A-krav 97,5 % og EM B-krav 92,5 % af VM A-kravet. I -84 kg sættes VM A-kravet lig kravet i -76 kg, og VM B-kravet til 95 % heraf.",
      "kort": "-84 kg VM A-krav sættes lig -76 kg",
      "kort_regel": "klassisk model; -84 kg ikke under -76 kg",
-     "dhash": "cacc5e9b59c9"
+     "dhash": "069575b70e23"
     },
     {
      "ref": "elite27062023#4",
@@ -473,7 +473,7 @@
      "tekst": "Klassisk trekamp: VM A-krav = gennemsnit af 8. plads ved VM 2021-2023 (afrundet til 2,5 kg, højst +10 % ift. 2022); VM B 95 %, EM A 97,5 %, EM B 92,5 % af VM A; -84 kg mindst som -76 kg. Kvalifikationstallene i trekamp udstyr og bænkpres reguleres ikke.",
      "kort": "krav i udstyr og bænkpres reguleres ikke",
      "kort_regel": "klassisk ny model; udstyr og bænk uændrede",
-     "dhash": "e8a9889990d6"
+     "dhash": "34e6fa790846"
     },
     {
      "ref": "elite20032024#2",
@@ -481,7 +481,7 @@
      "tekst": "Klassisk trekamp følger modellen med VM A-krav som gennemsnit af 8. pladser ved VM og øvrige krav i procent heraf. Kravene i bænkpres (klassisk og udstyr) og styrkeløft med udstyr opdateres efter samme model, justeret for lavere deltagelse, efter VM bænkpres og VM udstyr og gælder fra 1/1-2025.",
      "kort": "bænk- og udstyrskrav opdateres efter klassisk model fra 2025",
      "kort_regel": "samme model for alle discipliner fra 2025",
-     "dhash": "96057b0753d8"
+     "dhash": "e5a8d815407b"
     },
     {
      "ref": "elite25062024_2#1",
@@ -489,7 +489,7 @@
      "tekst": "Klassisk trekamp følger modellen med VM A-krav som gennemsnit af 8. pladser ved VM og øvrige krav i procent heraf. Der indføres nye kvalifikationskrav i bænkpres med og uden udstyr for 2024. Styrkeløft med udstyr opdateres efter samme model.",
      "kort": "nye bænkpreskrav med og uden udstyr for 2024",
      "kort_regel": "nye bænkkrav 2024; klassisk model",
-     "dhash": "5fb12c7f4ddb"
+     "dhash": "38d777ba0e4e"
     },
     {
      "ref": "elite10122024#1",
@@ -497,7 +497,7 @@
      "tekst": "Klassisk trekamp følger modellen med VM A-krav som gennemsnit af 8. pladser ved VM og øvrige krav i procent heraf; nye bænkpreskrav med og uden udstyr. Opdaterede EM- og VM-krav (A og B) i styrkeløft med udstyr gælder fra 1. juli 2025 og lægges på landsholdssiden.",
      "kort": "nye udstyrskrav (EM/VM, A/B) fra 1. juli 2025",
      "kort_regel": "opdaterede udstyrskrav fra 1.7.2025",
-     "dhash": "b4bc205540ce"
+     "dhash": "51ce3ec6a22a"
     },
     {
      "ref": "elite11032026#1",
@@ -505,7 +505,7 @@
      "tekst": "Kvalifikationskrav for klassisk trekamp, bænkpres og styrkeløft med udstyr fastsættes efter modellen med VM A-krav som gennemsnit af 8. pladser ved VM og øvrige krav i procent heraf. Der skal udarbejdes kvalifikationskrav til juniorløftere i enkeltbænk.",
      "kort": "krav til juniorer i enkeltbænk skal udarbejdes",
      "kort_regel": "krav efter 8.-pladsmodel; juniorbænkkrav på vej",
-     "dhash": "f4064ba725d7"
+     "dhash": "ea3c472de096"
     },
     {
      "ref": "elite01072026.2#3",
@@ -513,7 +513,7 @@
      "tekst": "Kvalifikationskrav fastsættes efter modellen med VM A-krav som gennemsnit af 8. pladser ved VM og øvrige krav i procent heraf. Krav for 2028 udarbejdes efter samme model, og fremover opdateres kravene årligt. Der udarbejdes krav til juniorløftere i enkeltbænk.",
      "kort": "2028-krav efter samme model; årlig opdatering fremover",
      "kort_regel": "kravene opdateres årligt efter samme model",
-     "dhash": "54bed6ac867d"
+     "dhash": "9a02c0eaa273"
     },
     {
      "ref": "elite15092026#1",
@@ -521,7 +521,7 @@
      "tekst": "Fra 2028 beregnes kvalifikationskravene som gennemsnittet af de hidtidige krav og de traditionelt beregnede krav (8.-pladsmodellen). Herefter reguleres kravene årligt. Der udarbejdes krav til juniorløftere i enkeltbænk.",
      "kort": "fra 2028 snit af hidtidige og beregnede krav",
      "kort_regel": "krav = snit af hidtidige og beregnede; årlig regulering",
-     "dhash": "665617114737"
+     "dhash": "e1fe0a07d915"
     }
    ]
   },
@@ -536,7 +536,7 @@
      "tekst": null,
      "kort": "kvalifikationskrav som udgangspunkt for udtagelse",
      "kort_regel": "udtagelse kræver som udgangspunkt opfyldt kvalifikationskrav",
-     "dhash": "e6c272101e58"
+     "dhash": "8511101a0697"
     },
     {
      "ref": "elite10112012#3",
@@ -544,7 +544,7 @@
      "tekst": "Som udgangspunkt skal atleterne lave kvalifikationskravet for at blive udtaget. B-løftere skal ligge over elitekravet og udtages efter placeringsmuligheder; der kan være delvis egenbetaling, som udmeldes på forhånd. Eliteudvalget beslutter udtagelse af en B-løfter.",
      "kort": "B-løftere udtages efter placeringsmuligheder, evt. egenbetaling",
      "kort_regel": "krav påkrævet; B-løftere efter placeringsmuligheder",
-     "dhash": "265597fe76f3"
+     "dhash": "f177a3469357"
     },
     {
      "ref": "elite29032021#1",
@@ -552,7 +552,7 @@
      "tekst": "Som udgangspunkt kræves opfyldt kvalifikationskrav; B-løftere udtages efter placeringsmuligheder. I 2021 kan landsholdsatleter udtages uden opfyldt krav, hvis formen indikerer, at de kunne klare kravet, eller de vurderes at kunne levere et resultat.",
      "kort": "2021: udtagelse mulig uden krav ved god form",
      "kort_regel": "2021: udtagelse uden krav ved dokumenteret form",
-     "dhash": "e6dae0c9563f"
+     "dhash": "1d343cefc49c"
     },
     {
      "ref": "elite18052021#2",
@@ -560,7 +560,7 @@
      "tekst": "Alle kvalificerede atleter med A-krav udtages som udgangspunkt til EM og VM. Der ses velvilligt på at finde finansiering til atleter med B-krav, som udtages efter placeringsmuligheder.",
      "kort": "A-kravsatleter udtages som udgangspunkt til EM og VM",
      "kort_regel": "A-krav udtages; B-krav efter finansiering",
-     "dhash": "3ccfc7ba855b"
+     "dhash": "e2f248630ced"
     },
     {
      "ref": "elite15092026#6",
@@ -568,7 +568,7 @@
      "tekst": "Alle kvalificerede atleter med A-krav udtages som udgangspunkt til EM og VM; der ses velvilligt på finansiering for B-krav. En atlet med krav til både EM og VM kan vælge begge eller kun ét mesterskab, men er forpligtet til at deltage i mindst ét af dem.",
      "kort": "atlet med krav skal deltage i mindst ét mesterskab",
      "kort_regel": "A-krav udtages; pligt til mindst ét af EM/VM",
-     "dhash": "a5c668cbdbf2"
+     "dhash": "26cd9eb25b20"
     }
    ]
   },
@@ -583,7 +583,7 @@
      "tekst": null,
      "kort": "landstræner indstiller, eliteudvalget udtager endeligt",
      "kort_regel": "landstræner indstiller; eliteudvalget udtager",
-     "dhash": "f3274e7e16f2"
+     "dhash": "e86805f03572"
     },
     {
      "ref": "elite29062011#2",
@@ -591,7 +591,7 @@
      "tekst": "Landstræneren indstiller atleter til udtagelse, og Eliteudvalget foretager den endelige udtagelse ud fra indstillingen, økonomi og udtagelseskrav. Udtagelser og tilmeldinger cleares internt i Eliteudvalget inden offentliggørelse.",
      "kort": "udtagelser cleares internt før offentliggørelse",
      "kort_regel": "udvalget udtager; intern clearing før offentliggørelse",
-     "dhash": "0940b9107298"
+     "dhash": "9b4d764d1ef3"
     },
     {
      "ref": "elite01062012#8",
@@ -599,7 +599,7 @@
      "tekst": "Landstræneren indstiller, og Eliteudvalget foretager den endelige udtagelse; udtagelser cleares internt før offentliggørelse. Vil et medlem udtage en løfter, der ikke er drøftet på møde, skal udvalget orienteres, og der skal være flertal. Udtagelser på baggrund af divisionsturneringen kræver enighed om vilkårene.",
      "kort": "udtagelse uden møde kræver flertal i udvalget",
      "kort_regel": "udvalget udtager med flertal; divisionsudtagelse kræver enighed",
-     "dhash": "39c6f598a0b0"
+     "dhash": "d6389aa7b678"
     }
    ]
   },
@@ -614,7 +614,7 @@
      "tekst": null,
      "kort": "teammanager, subsidiært træner, økonomisk ansvarlig på rejser",
      "kort_regel": "teammanager har økonomisk ansvar i udlandet",
-     "dhash": "48e7f7266f30"
+     "dhash": "00b41ce405fd"
     }
    ]
   },
@@ -629,7 +629,7 @@
      "tekst": null,
      "kort": "teammanager rapporterer; mini-PC og kamera indkøbes",
      "kort_regel": "teammanager ansvarlig for rapporter og billeder",
-     "dhash": "81cfa3c2613c"
+     "dhash": "1fb4b70b67bc"
     },
     {
      "ref": "elite10122011#4",
@@ -637,7 +637,7 @@
      "tekst": "Det er Teammanagerens ansvar, at der udarbejdes rapporter, billeder og video til hjemmesiden fra internationale mesterskaber. Rapporterne skal være seriøse, og webmaster kan blive bedt om at slette afsnit af mindre lødig karakter.",
      "kort": "også video; rapporter skal være seriøse",
      "kort_regel": "teammanager sikrer seriøse rapporter, billeder og video",
-     "dhash": "d506035ee0b8"
+     "dhash": "0ea56b0a4676"
     }
    ]
   },
@@ -652,7 +652,7 @@
      "tekst": null,
      "kort": "seniorer må ikke starte over personlig rekord",
      "kort_regel": "startvægt højst personlig rekord for seniorer",
-     "dhash": "5a8ccb3119ea"
+     "dhash": "e849241798fb"
     }
    ]
   },
@@ -667,7 +667,7 @@
      "tekst": null,
      "kort": "opvarmning færdig i tide til ændring af startvægt",
      "kort_regel": "sidste opvarmningsløft i tide til startvægtsændring",
-     "dhash": "6eb766916a6f"
+     "dhash": "cfeb1d5af982"
     }
    ]
   },
@@ -682,7 +682,7 @@
      "tekst": null,
      "kort": "ingen afvigelser fra rejseplaner; eliteudvalget bestemmer rejsemåde",
      "kort_regel": "eliteudvalget fastlægger rejse; holdet rejser samlet",
-     "dhash": "0208398726eb"
+     "dhash": "d21d22eb8cfc"
     },
     {
      "ref": "elite18052021#3",
@@ -690,7 +690,7 @@
      "tekst": "Som udgangspunkt arrangerer og planlægger DSF rejser til mesterskaber i udlandet. Eliteudvalget bestemmer rejsemåde samt ud- og hjemrejse, og man rejser som udgangspunkt som hold; afvigelser accepteres ikke.",
      "kort": "DSF arrangerer som udgangspunkt rejser",
      "kort_regel": "DSF planlægger rejser; holdet rejser samlet",
-     "dhash": "f2028a0bdf19"
+     "dhash": "2293f2dc9291"
     },
     {
      "ref": "elite08032023#1",
@@ -698,7 +698,7 @@
      "tekst": "Som udgangspunkt arrangerer DSF rejser til mesterskaber i udlandet. Landsholdsatleter kan i 2023 selv booke flybilletter for hele kalenderåret, men har så selv ansvaret for transport til og fra lufthavn og for udgifter ved ændrede tidsplaner, herunder ekstra hotel.",
      "kort": "atleter kan selv booke fly for hele året",
      "kort_regel": "egen booking mulig; atleten bærer risikoen",
-     "dhash": "49d077539849"
+     "dhash": "097bf46855a7"
     },
     {
      "ref": "elite25062024_2#5",
@@ -706,7 +706,7 @@
      "tekst": "Atleter med fuld egenbetaling kan selv booke fly eller lade DSF booke og fakturere; valget træffes ved preliminary nomination, hvor overnatningsdatoer også angives. Standard er to dage før til dagen efter egen konkurrence, mindst to overnatninger. Rejsedetaljer skal foreligge senest 10 dage før final nomination.",
      "kort": "valg af booking ved preliminary; rejsedetaljer 10 dage før final",
      "kort_regel": "selv- eller DSF-booking; detaljer 10 dage før final",
-     "dhash": "4ca2f0240b00"
+     "dhash": "1d30734717a7"
     },
     {
      "ref": "elite10122024#2",
@@ -714,7 +714,7 @@
      "tekst": "Atleter og trænere booker som udgangspunkt selv fly. Booker man via forbundet, lægges bookingfee (500-600 kr.) og eventuel prisforskel oveni egenbetalingen. Rejsedage aftales mindst 10 dage før preliminary nomination, og rejsetider og flynumre indsendes senest 10 dage før final nomination. Standard er to dage før til dagen efter egen konkurrence, mindst to overnatninger.",
      "kort": "egen flybooking som udgangspunkt; DSF-booking koster bookingfee",
      "kort_regel": "atleter booker selv fly; flynumre senest 10 dage før final",
-     "dhash": "a2506c6684e3"
+     "dhash": "f66a52628cbd"
     }
    ]
   },
@@ -729,7 +729,7 @@
      "tekst": "3 dages reglen gælder som hovedregel. Ønsker en atlet at blive sammen med holdet under hele stævnet, betales merprisen til DSF's kasserer i god tid før stævnet efter oplysning fra den budgetansvarlige.",
      "kort": "3 dages regel; længere ophold mod egenbetaling via kasserer",
      "kort_regel": "3 dage betalt; længere ophold for egen regning",
-     "dhash": "15f76dc918d1"
+     "dhash": "6ff50b4149c0"
     },
     {
      "ref": "refbest_28022016#4",
@@ -737,7 +737,7 @@
      "tekst": "Tommelfingerreglen om ankomst to dage før og hjemrejse dagen efter konkurrencen (3 dages reglen) kan ændres af eliteudvalget, så længe budgettet overholdes og der ikke kommer færre løftere til start. Længere ophold betales af atleten selv.",
      "kort": "eliteudvalget må ændre rejsetidspunkter inden for budget",
      "kort_regel": "ankomst 2 dage før, hjem dagen efter; udvalget kan ændre",
-     "dhash": "268bbf389754"
+     "dhash": "87999faee15f"
     }
    ]
   },
@@ -752,7 +752,7 @@
      "tekst": null,
      "kort": "bruttotrup for sub-/junior bænkpres oprettes",
      "kort_regel": "bruttotrup i bænkpres for subjuniorer og juniorer",
-     "dhash": "18f0c5c54c60"
+     "dhash": "aac442769a42"
     },
     {
      "ref": "elite04122016#4",
@@ -760,7 +760,7 @@
      "tekst": "Bænkpreslandsholdet omfatter både klassiske løftere og udstyrsløftere, som kan konkurrere i begge kategorier, hvis niveauet er der. Som udgangspunkt stilles der kun til 2 internationale konkurrencer årligt. Der er en bruttotrup for subjuniorer og juniorer i bænkpres.",
      "kort": "fælles klassisk/udstyr bænkpreslandshold, højst 2 konkurrencer årligt",
      "kort_regel": "klassisk og udstyr samlet; 2 internationale stævner årligt",
-     "dhash": "4c6dd0cbc6d5"
+     "dhash": "18829ccccdd7"
     },
     {
      "ref": "elite15122018#1",
@@ -768,7 +768,7 @@
      "tekst": "Bænkpreslandsholdet omfatter både klassiske løftere og udstyrsløftere; som udgangspunkt 2 internationale konkurrencer årligt. Junior bænkpres hører under projekt sub-junior og junior.",
      "kort": "junior bænkpres flyttes til sub-junior/junior-projektet",
      "kort_regel": "senior bænk samlet; junior bænk i ungdomsprojekt",
-     "dhash": "33c3a0a9b3f5"
+     "dhash": "5c1a36cc0036"
     }
    ]
   },
@@ -783,7 +783,7 @@
      "tekst": null,
      "kort": "kontrakter med alle landsholds- og bruttotrupatleter",
      "kort_regel": "kontrakt med alle landsholds-, bruttotrup- og udtagne atleter",
-     "dhash": "aec4bfeb5b5d"
+     "dhash": "b817b7043dce"
     },
     {
      "ref": "elite14122022#1",
@@ -791,7 +791,7 @@
      "tekst": "Der indgås landsholdskontrakt (atletaftale) med alle atleter på landshold og bruttotrup samt atleter udtaget til internationale mesterskaber. Den opdaterede kontrakt er godkendt med tilføjelse om løbende dialog om værdisættet og forventningerne til landsholdsløftere.",
      "kort": "opdateret atletaftale godkendt med dialog om værdisæt",
      "kort_regel": "atletaftale med dialog om værdier og forventninger",
-     "dhash": "16c8282c190c"
+     "dhash": "4b63cff85648"
     },
     {
      "ref": "elite16092025.2#1",
@@ -799,7 +799,7 @@
      "tekst": "Der indgås landsholdskontrakt med alle atleter på landshold og bruttotrup samt udtagne atleter, med løbende dialog om værdisæt og forventninger. Kontrakten opdateres for 2026 og udsendes til alle landsholdsløftere inden udgangen af 2025.",
      "kort": "kontrakt opdateres for 2026",
      "kort_regel": "opdateret 2026-kontrakt for alle landsholdsløftere",
-     "dhash": "517ac066b0c4"
+     "dhash": "856bcbadfbab"
     },
     {
      "ref": "elite09122025#1",
@@ -807,7 +807,7 @@
      "tekst": "Der indgås landsholdskontrakt med alle atleter på landshold og bruttotrup. Alle løftere på bruttolandsholdet skal underskrive 2026-kontrakten og sende den til Eliteudvalget på mail senest 30. december 2025; ellers figurerer løfteren ikke længere på bruttolandsholdet.",
      "kort": "underskrevet kontrakt senest 30.12.2025, ellers ude af truppen",
      "kort_regel": "uden underskrevet kontrakt ingen plads på bruttolandsholdet",
-     "dhash": "485c3393d399"
+     "dhash": "b8fd64258554"
     }
    ]
   },
@@ -822,7 +822,7 @@
      "tekst": null,
      "kort": "landstræner styrer træning; udvalget beslutter vægtklasse",
      "kort_regel": "landstræner udstikker retningslinjer; udvalget vælger vægtklasse",
-     "dhash": "780a9d79e542"
+     "dhash": "fb0740e31260"
     },
     {
      "ref": "elite15122013#1",
@@ -830,7 +830,7 @@
      "tekst": "Eliteudvalget er udfarende kraft for træningsdesign, teknik og træningsomfang, og landstræneren udstikker retningslinjerne, også ved uenighed med en klubtræner. Udvalget beslutter i dialog med løfterne vægtklasse. Det er de af DSF udpegede ledere og trænere, der assisterer og coacher landsholdets atleter ved internationale mesterskaber og stævner, jf. DSF's Adfærdskodeks.",
      "kort": "kun DSF-udpegede trænere coacher ved internationale stævner",
      "kort_regel": "DSF-udpegede trænere coacher; landstræner styrer træning",
-     "dhash": "e8b8d7cdca05"
+     "dhash": "c44c46a47537"
     },
     {
      "ref": "refbest_17092016#1",
@@ -838,7 +838,7 @@
      "tekst": "Landstræneren udstikker retningslinjerne for træning, og udvalget beslutter vægtklasse i dialog med løfterne. Det er de af DSF udpegede ledere og trænere, der coacher ved internationale stævner; løfteren bestemmer ikke selv, hvem der coacher, og bestemmer ikke alene, hvilke kilo der sættes på stangen.",
      "kort": "løfter vælger ikke coach og bestemmer ikke alene vægte",
      "kort_regel": "DSF vælger coach; løfter bestemmer ikke alene vægte",
-     "dhash": "69915faade25"
+     "dhash": "d6932ae8803a"
     },
     {
      "ref": "refbest_14012017#1",
@@ -846,7 +846,7 @@
      "tekst": "Landstræneren udstikker retningslinjerne for træning. Det er de af DSF udpegede ledere og trænere, der coacher ved internationale stævner; løfteren vælger ikke coach og bestemmer ikke alene vægtene. Der skal altid medtages en headcoach til stævner, og en løfter kan ikke være headcoach for sig selv; kan der ikke stilles headcoach, deltager DSF ikke.",
      "kort": "headcoach altid påkrævet; ellers ingen deltagelse",
      "kort_regel": "altid headcoach; DSF-udpeget coaching",
-     "dhash": "b118f048814e"
+     "dhash": "b02f629bc8fd"
     }
    ]
   },
@@ -861,7 +861,7 @@
      "tekst": null,
      "kort": "landstræneren får regionale trænere til rådighed",
      "kort_regel": "regionale trænere assisterer landstræneren",
-     "dhash": "3bd23895b238"
+     "dhash": "6c5250697c49"
     }
    ]
   },
@@ -876,7 +876,7 @@
      "tekst": null,
      "kort": "ingen budgetoverskridelser uden forudgående aftale",
      "kort_regel": "budgetoverskridelser kræver forhåndsaftale med eliteudvalget",
-     "dhash": "d7f6abd2c44c"
+     "dhash": "1b16461bcece"
     }
    ]
   },
@@ -891,7 +891,7 @@
      "tekst": null,
      "kort": "eliteudvalget arbejder med A- og B-bruttotrup",
      "kort_regel": "bruttotrup opdelt i A og B",
-     "dhash": "f4856859aa94"
+     "dhash": "867973765b67"
     }
    ]
   },
@@ -906,7 +906,7 @@
      "tekst": null,
      "kort": "udtagelse kun på resultater fra IPF/DSF-godkendte stævner",
      "kort_regel": "resultater fra officielle IPF/DSF-stævner",
-     "dhash": "e7cf5aea203f"
+     "dhash": "9e02928cf525"
     },
     {
      "ref": "elite10122017#8",
@@ -914,7 +914,7 @@
      "tekst": "Udtagelse til landshold kan kun ske på baggrund af resultat opnået ved DM.",
      "kort": "udtagelse kun på baggrund af DM-resultat",
      "kort_regel": "kun DM-resultater tæller",
-     "dhash": "cc21db8880d7"
+     "dhash": "5b45c57b8fae"
     },
     {
      "ref": "elite19122020#3",
@@ -922,7 +922,7 @@
      "tekst": "Udtagelse sker på baggrund af resultater ved DM. For sæsonen 2021 gælder krav opnået fra 1/1-2019 og frem, og eliteudvalget/den landsholdsansvarlige kan efter aftale kræve et stabilitetsresultat ved et stævne.",
      "kort": "2021: DM-resultater; krav fra 2019 gælder; stabilitetsresultat muligt",
      "kort_regel": "DM-resultater; evt. stabilitetsresultat",
-     "dhash": "0bbde3129e69"
+     "dhash": "67c03d031b9c"
     },
     {
      "ref": "elite25062024_2#2",
@@ -930,7 +930,7 @@
      "tekst": "Kun DM, JM/SM og internationale stævner sanktioneret af IPF/EPF/NPF kan bruges som kvalifikationsstævner til EM og VM. Kræver eliteudvalget et stabilitetsresultat, kan det laves til et hvilket som helst officielt stævne, hvis kvalifikationskravet allerede er lavet i perioden.",
      "kort": "DM, JM/SM og IPF/EPF/NPF-stævner er kvalifikationsstævner",
      "kort_regel": "kval. ved DM, JM/SM eller IPF/EPF/NPF-stævne",
-     "dhash": "84759ee2de55"
+     "dhash": "7e0408343077"
     },
     {
      "ref": "elite10122024#3",
@@ -938,7 +938,7 @@
      "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller DM. I særlige tilfælde og i dialog med sportschefen kan eliteudvalget ansøges om dispensation. Et krævet stabilitetsresultat kan laves ved ethvert officielt stævne.",
      "kort": "krav kun ved JM, SM eller DM; dispensation mulig",
      "kort_regel": "kval. kun ved JM, SM eller DM",
-     "dhash": "a5d72f85da38"
+     "dhash": "ddb8dc7f1c39"
     },
     {
      "ref": "elite12032025#2",
@@ -946,7 +946,7 @@
      "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller DM. Eliteudvalget kan i særlige tilfælde dispensere, men ikke for stævner, der ikke foregår i Danmark.",
      "kort": "ingen dispensation for kvalifikation ved stævner uden for Danmark",
      "kort_regel": "kval. ved JM/SM/DM; ingen udenlandsk dispensation",
-     "dhash": "5148c709dd8d"
+     "dhash": "08ab4e8c995a"
     },
     {
      "ref": "elite15092026#4",
@@ -954,7 +954,7 @@
      "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller DM; dispensation kun for stævner i Danmark. Resultater fra klassiske stævner, der opfylder kravene til internationale udstyrsstævner, kan bruges som kvalifikation, hvis atleten har deltaget i DM i styrkeløft (udstyr) og brugt udstyr i mindst én disciplin.",
      "kort": "klassiske totaler kan kvalificere til udstyrsstævner",
      "kort_regel": "klassisk total gælder til udstyr ved DM-udstyrsdeltagelse",
-     "dhash": "93c11a9651ba"
+     "dhash": "e28a62ade2d0"
     }
    ]
   },
@@ -969,7 +969,7 @@
      "tekst": null,
      "kort": "pulje til atleter, der klarer EM/VM-krav i løbet af året",
      "kort_regel": "pulje til sene kvalificerede, så længe der er midler",
-     "dhash": "6e1b0759ffe9"
+     "dhash": "12830d88867b"
     }
    ]
   },
@@ -984,7 +984,7 @@
      "tekst": null,
      "kort": "løftere orienteres om udtagelser ved årsskiftet",
      "kort_regel": "orientering om årets udtagelser ved årsskiftet",
-     "dhash": "7e3bed0f6c26"
+     "dhash": "5e0a08e97592"
     },
     {
      "ref": "elite15122013#5",
@@ -992,7 +992,7 @@
      "tekst": "Løfterne orienteres så vidt muligt om udtagelser for det kommende år ved årsskiftet. Udtagelser til bruttolandshold og internationale mesterskaber er ikke officielle og gældende, før de er godkendt af DSF og lagt ud på www.styrke.dk.",
      "kort": "udtagelser først gældende når offentliggjort på styrke.dk",
      "kort_regel": "udtagelse gælder først efter offentliggørelse på styrke.dk",
-     "dhash": "ecac502ba444"
+     "dhash": "53d651b3be03"
     },
     {
      "ref": "elite19092023#3",
@@ -1000,7 +1000,7 @@
      "tekst": "Udtagelser er først gældende, når de er godkendt af DSF og offentliggjort på styrke.dk. Bruttolandsholdet, inkl. hvem der har orlov, vises på landsholdssiden og opdateres jævnligt.",
      "kort": "bruttolandshold og orlov vises på landsholdssiden",
      "kort_regel": "bruttolandshold og orlov offentliggøres løbende",
-     "dhash": "305b7228087f"
+     "dhash": "60f462563e65"
     },
     {
      "ref": "elite09122025#4",
@@ -1008,7 +1008,7 @@
      "tekst": "Udtagelser er først gældende, når de er godkendt af DSF og offentliggjort på styrke.dk. Bruttolandsholdet vises på landsholdssiden og opdateres jævnligt; løftere med orlov figurerer ikke på oversigten.",
      "kort": "løftere med orlov fjernes fra oversigten",
      "kort_regel": "oversigt over landsholdsløftere uden orlovstagere",
-     "dhash": "a1cbddc5a3ab"
+     "dhash": "a20a688e9ec3"
     }
    ]
   },
@@ -1023,7 +1023,7 @@
      "tekst": null,
      "kort": "nyt sub-/juniorprojekt med NM 2014 som mål",
      "kort_regel": "ungdomsprojekt; juniorer der bliver seniorer overgår til seniortrup",
-     "dhash": "bb61c9cad483"
+     "dhash": "bbb87944a514"
     },
     {
      "ref": "elite10122017#1",
@@ -1031,7 +1031,7 @@
      "tekst": "Alle subjuniorer og juniorer (klassisk/udstyr/talent) samles i én trup bestående af juniorer med landsholdskrav og talenter lige under landsholdsniveau. Truppen holder ikke samlinger samme weekender som seniorlandsholdene.",
      "kort": "alle sub-/juniorer samles i én trup",
      "kort_regel": "én ungdomstrup med krav- og talentløftere",
-     "dhash": "f9caa5c41456"
+     "dhash": "55ad85e7f409"
     }
    ]
   },
@@ -1046,7 +1046,7 @@
      "tekst": null,
      "kort": "udstyr, RAW og bænkpres ligeværdige og tildeles midler",
      "kort_regel": "alle tre grene ligeværdige i samlinger og midler",
-     "dhash": "39a9289efba9"
+     "dhash": "5620847606fa"
     }
    ]
   },
@@ -1061,7 +1061,7 @@
      "tekst": null,
      "kort": "hold mindst 5 løftere; fem bedste tæller",
      "kort_regel": "hold = mindst 5 løftere, fem bedste tæller",
-     "dhash": "36236da1da5c"
+     "dhash": "1a81db99f74e"
     }
    ]
   },
@@ -1076,7 +1076,7 @@
      "tekst": null,
      "kort": "krav indfriet senest 70 dage før mesterskab",
      "kort_regel": "krav senest 70 dage før; budget skal tillade",
-     "dhash": "649a87907f1a"
+     "dhash": "7c074892de7c"
     }
    ]
   },
@@ -1091,7 +1091,7 @@
      "tekst": null,
      "kort": "krav klaret ved mesterskab gælder også næste år",
      "kort_regel": "opfyldt krav gælder næste år trods hævet krav",
-     "dhash": "fea7be2a5964"
+     "dhash": "6b0253f7b59c"
     }
    ]
   },
@@ -1106,7 +1106,7 @@
      "tekst": null,
      "kort": "ægtefæller og kærester kan ikke ledsage løfter",
      "kort_regel": "ingen ledsagelse af ægtefæller/kærester under mesterskab",
-     "dhash": "2eda8760d6d2"
+     "dhash": "17294f7df2f7"
     },
     {
      "ref": "elite12122023#5",
@@ -1114,7 +1114,7 @@
      "tekst": null,
      "kort": "landsholdsatleternes ønske om ny afstemning om familiereglen afvist",
      "kort_regel": null,
-     "dhash": "efab216bb62d"
+     "dhash": "2a67d44e436e"
     },
     {
      "ref": "elite25062024_2#6",
@@ -1122,7 +1122,7 @@
      "tekst": null,
      "kort": "afstemning om kærestereglen afvist; pårørende rejser selv",
      "kort_regel": null,
-     "dhash": "bee4fb7596a7"
+     "dhash": "a41e2fe6da1c"
     }
    ]
   },
@@ -1137,7 +1137,7 @@
      "tekst": null,
      "kort": "regionale samlinger og 4 hovedsamlinger årligt",
      "kort_regel": "regionale samlinger plus 4 éndags hovedsamlinger",
-     "dhash": "eebdb24f31da"
+     "dhash": "5ab3de7c06ca"
     },
     {
      "ref": "elite17032021#3",
@@ -1145,7 +1145,7 @@
      "tekst": "Der holdes regionale samlinger i lokale klubber ledet af regionstrænere samt 4 hovedsamlinger, normalt af én dags varighed. Kan en samling ikke afvikles fysisk pga. Covid-19, holdes den som kategoriopdelte virtuelle møder.",
      "kort": "virtuelle samlinger, når fysiske ikke er mulige",
      "kort_regel": "4 hovedsamlinger; virtuelt ved Covid-19",
-     "dhash": "a33803f993d1"
+     "dhash": "adff239dd327"
     },
     {
      "ref": "elite19092023#4",
@@ -1153,7 +1153,7 @@
      "tekst": "Der holdes regionale samlinger og 4 hovedsamlinger årligt; kan de ikke afvikles fysisk, holdes de virtuelt. Fra 2024 søges mere sparring og fællestræning på tværs af landsholdene.",
      "kort": "fra 2024 mere fællestræning på tværs af landshold",
      "kort_regel": "4 hovedsamlinger; mere fællestræning fra 2024",
-     "dhash": "b3f66783e1e6"
+     "dhash": "169c5199eb54"
     }
    ]
   },
@@ -1168,7 +1168,7 @@
      "tekst": null,
      "kort": "ungdom: potentiale; seniorer: elitekrav og vurdering",
      "kort_regel": "ungdom efter potentiale; seniorer efter elitekrav og potentiale",
-     "dhash": "b85c962cf532"
+     "dhash": "73601ff9daee"
     },
     {
      "ref": "elite20052017#1",
@@ -1176,7 +1176,7 @@
      "tekst": "For subjunior/junior kræves potentiale og engagement; NM har høj prioritet, og budgettet tillader det udtages 10-14 løftere til NM. For seniorer og bænkpres kræves som udgangspunkt DSF's elitekrav og dernæst en vurdering af potentiale og udvikling. Klubber kan indstille atleter.",
      "kort": "10-14 ungdomsløftere udtages til NM, hvis budgettet tillader",
      "kort_regel": "ungdom efter potentiale; 10-14 til NM",
-     "dhash": "b2021aa11c32"
+     "dhash": "170c1471e27d"
     },
     {
      "ref": "rep2018#8",
@@ -1184,7 +1184,7 @@
      "tekst": null,
      "kort": "OBBC's forslag om totalkrav, licens og 3 stævner trukket",
      "kort_regel": null,
-     "dhash": "939e46b1c621"
+     "dhash": "bcfeb1a25922"
     }
    ]
   },
@@ -1199,7 +1199,7 @@
      "tekst": null,
      "kort": "forhåndsudtagelse kræver DM med stabilitetskrav og samlinger",
      "kort_regel": "nationalt mesterskab med stabilitetskrav og samlingsdeltagelse",
-     "dhash": "efada6eab317"
+     "dhash": "fb43ef48b6d0"
     }
    ]
   },
@@ -1214,7 +1214,7 @@
      "tekst": null,
      "kort": "juniorer kun i egen kategori, undtagen ved hjemmestævner",
      "kort_regel": "junior/sub-junior kun i egen kategori, undtagen hjemmebane",
-     "dhash": "90898a1ce261"
+     "dhash": "35474cd96a90"
     },
     {
      "ref": "elite05122015#6",
@@ -1222,7 +1222,7 @@
      "tekst": "Løftere kan kun deltage internationalt i den kategori, de er på landsholdet i, medmindre stævnet er på dansk jord.",
      "kort": "eliteudvalget bekræfter repræsentantskabets kategoriregel",
      "kort_regel": "kun egen kategori, undtagen stævner i Danmark",
-     "dhash": "772666e5334a"
+     "dhash": "674833a6871f"
     }
    ]
   },
@@ -1237,7 +1237,7 @@
      "tekst": null,
      "kort": "udeblivelse giver skriftlig advarsel og evt. udelukkelse",
      "kort_regel": "pligt til samlinger; advarsel og evt. udelukkelse",
-     "dhash": "e3c4c16721e3"
+     "dhash": "8d4e041e6f2f"
     },
     {
      "ref": "elite05122015#4",
@@ -1245,7 +1245,7 @@
      "tekst": "Deltagelse i de fastlagte bruttolandsholdssamlinger er obligatorisk; udeblivelse giver skriftlig advarsel og om nødvendigt udelukkelse. Afbud pga. arbejde, familiefester, flytning, ferie o.l. er ikke gyldige. En advarsel gælder i 24 måneder. Sygdom dokumenteres med lægeerklæring, og et enigt eliteudvalg kan i helt særlige tilfælde dispensere.",
      "kort": "kun sygdom gyldigt afbud; advarsel gælder 24 måneder",
      "kort_regel": "advarsel gælder 24 mdr.; kun dokumenteret sygdom gyldig",
-     "dhash": "45a283b70185"
+     "dhash": "c2abf684e054"
     }
    ]
   },
@@ -1260,7 +1260,7 @@
      "tekst": null,
      "kort": "hovedparten af træningen i DSF-hjemklub eller ADD-aftaleklub",
      "kort_regel": "træning primært i DSF-klub eller ADD-aftalecenter",
-     "dhash": "98d9146b7f48"
+     "dhash": "5aa2852557e4"
     },
     {
      "ref": "elite15062019#1",
@@ -1268,7 +1268,7 @@
      "tekst": "Atleten skal henlægge hovedparten af sin træning i sin hjemklub under DSF, subsidiært i en klub/træningscenter med aftale med Antidoping Danmark. En landsholdsløfter med job i udlandet accepteres, hvis vedkommende deltager i de 4 årlige samlinger og DM, og klubben i udlandet er bekræftet som styrkeløftklub underlagt antidopingregler.",
      "kort": "løftere med job i udlandet accepteres på betingelser",
      "kort_regel": "udlandsløftere: 4 samlinger, DM og antidopingklub",
-     "dhash": "a38193a7b538"
+     "dhash": "898845b0df82"
     }
    ]
   },
@@ -1283,7 +1283,7 @@
      "tekst": null,
      "kort": "ingen konkurrence i crossfit, bodybuilding, strongman, vægtløftning",
      "kort_regel": "bruttolandsholdsatleter må ikke konkurrere i relaterede idrætter",
-     "dhash": "7ae636f386f6"
+     "dhash": "a8db22cc6c03"
     }
    ]
   },
@@ -1298,7 +1298,7 @@
      "tekst": null,
      "kort": "ansvarlig kan udpege assistenter med ansvar over for udvalget",
      "kort_regel": "arrangementsansvarlig kan udpege assistenter",
-     "dhash": "38ad5d08ad72"
+     "dhash": "94d74eaa82ea"
     }
    ]
   },
@@ -1313,7 +1313,7 @@
      "tekst": null,
      "kort": "dobbeltstart ved NM frarådes men kan tillades",
      "kort_regel": "dobbeltstart NM (trekamp og bænk) kan tillades",
-     "dhash": "ee61c045fd33"
+     "dhash": "df7fe5fed0d1"
     },
     {
      "ref": "elite29032021#3",
@@ -1321,7 +1321,7 @@
      "tekst": "Kvalificerede atleter kan deltage i flere kategorier (trekamp, bænkpres, klassisk og udstyr) ved internationale mesterskaber. Eliteudvalget vurderer hvert tilfælde sammen med atleten, og eventuel egenbetaling afklares fra gang til gang.",
      "kort": "kvalificerede kan deltage i flere kategorier efter vurdering",
      "kort_regel": "flere kategorier mulige efter udvalgets vurdering",
-     "dhash": "c20de30d758e"
+     "dhash": "1a1a26774554"
     }
    ]
   },
@@ -1336,7 +1336,7 @@
      "tekst": null,
      "kort": "udgiftsneutral klubtrænerdeltagelse foreslås, sendes til eliteudvalget",
      "kort_regel": null,
-     "dhash": "599c33d31e54"
+     "dhash": "bbdcd8b29bbc"
     }
    ]
   },
@@ -1351,7 +1351,7 @@
      "tekst": "Én stævnekoordinator i Eliteudvalget står for indtastning i Goodlift, nomineringer og transportbestilling. Kategorierne kan selv arrangere transport inden for eget budget.",
      "kort": "central stævnekoordinering af nomineringer og transport",
      "kort_regel": "central koordinator for nomineringer og transport",
-     "dhash": "d271ce4ee432"
+     "dhash": "234282f4111c"
     },
     {
      "ref": "elite09092017#3",
@@ -1359,7 +1359,7 @@
      "tekst": "Nomineringer m.m. varetages af den ansvarlige for det enkelte landshold; flybooking er ikke længere centralt placeret.",
      "kort": "nomineringer flyttes til den enkelte landsholdsansvarlige",
      "kort_regel": "landsholdsansvarlig står for nomineringer",
-     "dhash": "27cacff2e50b"
+     "dhash": "de74ef79e435"
     },
     {
      "ref": "elite29062022#1",
@@ -1367,7 +1367,7 @@
      "tekst": "Alle løftere til internationale mesterskaber tilmeldes via deres respektive landsholdsansvarlige, som varetager nomineringer.",
      "kort": "tilmelding kun via landsholdsansvarlig",
      "kort_regel": "tilmelding via landsholdsansvarlig",
-     "dhash": "4bc8e1075fd6"
+     "dhash": "5c93017094cf"
     }
    ]
   },
@@ -1382,7 +1382,7 @@
      "tekst": null,
      "kort": "2015: EM B-kravsløftere kan deltage uden at fortrænge målgruppen",
      "kort_regel": "WEC for løftere uden EM-krav; B-krav ved ledig plads",
-     "dhash": "ffefb25707db"
+     "dhash": "78c81838e19e"
     },
     {
      "ref": "elite05122015#3",
@@ -1390,7 +1390,7 @@
      "tekst": "Der sendes ikke deltagere til WEC i 2016, da senior trekampsløfterne har EM A- eller B-krav og forventes at deltage ved EM.",
      "kort": "ingen WEC-deltagelse i 2016",
      "kort_regel": "ingen deltagere til WEC 2016",
-     "dhash": "b373d650620c"
+     "dhash": "411b2f890037"
     }
    ]
   },
@@ -1405,7 +1405,7 @@
      "tekst": null,
      "kort": "lægeerklæring kræves ved sygdomsafbud",
      "kort_regel": "lægeerklæring ved afbud til stævner og samlinger",
-     "dhash": "6f41f5336862"
+     "dhash": "9e51668c6df6"
     },
     {
      "ref": "elite19092023#1",
@@ -1413,7 +1413,7 @@
      "tekst": "Ved sygdomsafbud til samlinger og internationale mesterskaber efter final nominations kan Eliteudvalget kræve lægeerklæring. Udgiften refunderes af Eliteudvalget.",
      "kort": "lægeerklæring kan kræves; udgift refunderes",
      "kort_regel": "lægeerklæring efter behov; udvalget betaler",
-     "dhash": "85493a9aa9f5"
+     "dhash": "05cd5dcc2edc"
     }
    ]
   },
@@ -1428,7 +1428,7 @@
      "tekst": null,
      "kort": "90 %-reglen gælder; samlingsansvarlig kan dispensere efter plan",
      "kort_regel": "træning på 90 % ved samlinger; dispensation efter plan",
-     "dhash": "8e812766b219"
+     "dhash": "52eef4cc64ac"
     },
     {
      "ref": "elite09092017#5",
@@ -1436,7 +1436,7 @@
      "tekst": "90 %-reglen gælder: løfteren forventes at præstere som aftalt med træneren, med løbende dialog om styrker, svagheder og fremgang. Den samlingsansvarlige kan dispensere efter aftale, hvis der foreligger en plan.",
      "kort": "90 %-reglen fastholdes trods kritik",
      "kort_regel": "præstation som aftalt med træner",
-     "dhash": "c723f2d12513"
+     "dhash": "f889fa402aa1"
     },
     {
      "ref": "elite07122019#1",
@@ -1444,7 +1444,7 @@
      "tekst": "90 %-reglen gælder, og udstyrsløftere træner i udstyr, medmindre andet er aftalt med den træningsansvarlige. Løfteren forventes at præstere som aftalt med træneren.",
      "kort": "udstyrsløftere træner i udstyr medmindre andet aftales",
      "kort_regel": "90 %; udstyrsløftere træner i udstyr",
-     "dhash": "f0ea315db198"
+     "dhash": "040fb4eed93a"
     },
     {
      "ref": "elite29032021#5",
@@ -1452,7 +1452,7 @@
      "tekst": "Kravet om at løfte +90 % og, for udstyrsløftere, i udstyr gælder, medmindre atleten med begrundelse har meddelt sportschefen før samlingen, at vedkommende afstår. Trænerne fastlægger forud for samlingerne belastningerne.",
      "kort": "fravalg kræver begrundet besked til sportschef før samling",
      "kort_regel": "+90 % og udstyr, medmindre meldt fra til sportschef",
-     "dhash": "8a5be91482fd"
+     "dhash": "04c7c122a366"
     }
    ]
   },
@@ -1467,7 +1467,7 @@
      "tekst": null,
      "kort": "afbud kun via eliteudvalg@styrke.dk",
      "kort_regel": "afbud til eliteudvalg@styrke.dk; ikke telefonisk",
-     "dhash": "5c3e6273c10f"
+     "dhash": "431038001566"
     }
    ]
   },
@@ -1482,7 +1482,7 @@
      "tekst": null,
      "kort": "landsholdsløftere må fortsat træne andre mod betaling",
      "kort_regel": "betalt trænerrolle for andre licensløftere tilladt",
-     "dhash": "d2b0fa117f8f"
+     "dhash": "94dd9cae8b0f"
     }
    ]
   },
@@ -1497,7 +1497,7 @@
      "tekst": null,
      "kort": "kørselspenge kun ved samkørsel med mindst én anden",
      "kort_regel": "kørselspenge kun ved samkørsel",
-     "dhash": "be76558004d8"
+     "dhash": "6c5402cab4be"
     },
     {
      "ref": "elite10122017#7",
@@ -1505,15 +1505,15 @@
      "tekst": null,
      "kort": "kørselspenge bortfalder pga. ændrede DIF-tilskudsregler",
      "kort_regel": null,
-     "dhash": "6211ccf788d8"
+     "dhash": "4ef9a8d2cd31"
     },
     {
      "ref": "refbest_03022018#5",
-     "effekt": "bekraeftet",
-     "tekst": "Der ydes ikke tilskud til kørsel til landsholdssamlinger.",
-     "kort": "bestyrelsen bekræfter bortfald af kørselstilskud",
-     "kort_regel": "ingen kørselstilskud til samlinger",
-     "dhash": "691e440ce2b3"
+     "effekt": "ophaevet",
+     "tekst": null,
+     "kort": "bestyrelsen noterer, at kørselstilskuddet er bortfaldet",
+     "kort_regel": null,
+     "dhash": "18c7a4485a43"
     }
    ]
   },
@@ -1528,7 +1528,7 @@
      "tekst": null,
      "kort": "bestyrelsen foreslår, at den selv giver dispensationer",
      "kort_regel": null,
-     "dhash": "b140a4b0b222"
+     "dhash": "50cd3a3c197a"
     },
     {
      "ref": "elite29062022#3",
@@ -1536,7 +1536,7 @@
      "tekst": null,
      "kort": "kun eliteudvalget giver dispensation; henvendelse via Bjarte",
      "kort_regel": "dispensation kun fra eliteudvalget",
-     "dhash": "d731d378a8fe"
+     "dhash": "152f59052d5e"
     }
    ]
   },
@@ -1551,7 +1551,7 @@
      "tekst": null,
      "kort": "1 år i bruttotrup før international deltagelse, kun seniorer",
      "kort_regel": "seniorer: 1 år i bruttotrup før international start",
-     "dhash": "e243ea454155"
+     "dhash": "2dc8bf856f86"
     },
     {
      "ref": "elite15122018#6",
@@ -1559,7 +1559,7 @@
      "tekst": "Seniorer skal have været i bruttotruppen i 6 måneder før international deltagelse. Der udtages 2 gange årligt: pr. 1/1 til bænkpres på baggrund af DM bænkpres (klassisk og udstyr) og pr. 1/7 til trekamp på baggrund af DM klassisk og udstyr.",
      "kort": "karenstid 6 måneder; udtagelse 1/1 bænk, 1/7 trekamp",
      "kort_regel": "6 mdr. karenstid; to årlige udtagelsesrunder",
-     "dhash": "4003c624ea04"
+     "dhash": "a22efe16dc50"
     },
     {
      "ref": "elite07122019#2",
@@ -1567,7 +1567,7 @@
      "tekst": "6 måneders karenstid for seniorer. Ingen udtagelser til bruttolandsholdet i trekamp i første halvår 2020, ud over juniorer der overgår til senior pr. 1/1-2020. Ellers udtages pr. 1/1 (bænk) og 1/7 (trekamp).",
      "kort": "ingen trekampsudtagelser første halvår 2020",
      "kort_regel": "udtagelser sat på pause første halvår 2020",
-     "dhash": "8d101f35867d"
+     "dhash": "4fec13a810a1"
     },
     {
      "ref": "elite16082020#1",
@@ -1575,7 +1575,7 @@
      "tekst": "6 måneders karenstid for seniorer. Der udtages ikke yderligere løftere til bruttolandsholdene før 1. januar 2021.",
      "kort": "ingen nye udtagelser før 1. januar 2021",
      "kort_regel": "udtagelsesstop til 2021",
-     "dhash": "2b35119b1255"
+     "dhash": "0bed7ed0a263"
     },
     {
      "ref": "elite14122021#1",
@@ -1583,7 +1583,7 @@
      "tekst": "6 måneders karenstid for seniorer før international deltagelse. Landsholdstrupperne evalueres og justeres halvårligt, første gang 1. juli 2022.",
      "kort": "trupperne evalueres halvårligt fra 1. juli 2022",
      "kort_regel": "halvårlig evaluering af trupper; 6 mdr. karenstid",
-     "dhash": "3e21eb51aa5f"
+     "dhash": "875fa9e7d400"
     }
    ]
   },
@@ -1598,7 +1598,7 @@
      "tekst": null,
      "kort": "2017-bonusser udbetales; systemet revideres pr. 1.1.2018",
      "kort_regel": "medaljebonus til brug hos ER eller SPD",
-     "dhash": "9f8b5c6f0781"
+     "dhash": "d9ce497ca5b4"
     },
     {
      "ref": "elite10122017#9",
@@ -1606,7 +1606,7 @@
      "tekst": null,
      "kort": "belønningssystemet bortfalder for at frigøre midler",
      "kort_regel": null,
-     "dhash": "21d3fd33b427"
+     "dhash": "1d6c5f89628f"
     }
    ]
   },
@@ -1621,7 +1621,7 @@
      "tekst": null,
      "kort": "EM-medalje 50/75/100 %; VM top 5 25 %",
      "kort_regel": "refusion efter medalje: EM 50-100 %, VM top 5 25 %",
-     "dhash": "8f619904fb56"
+     "dhash": "76a24b669f84"
     }
    ]
   },
@@ -1636,7 +1636,7 @@
      "tekst": null,
      "kort": "afbud efter nominering: betal udgifter og karantæne",
      "kort_regel": "afbud efter NM-nominering koster udgifter og karantæne",
-     "dhash": "5c870e04375b"
+     "dhash": "70c05b7a45aa"
     }
    ]
   },
@@ -1651,7 +1651,7 @@
      "tekst": null,
      "kort": "landsholdsansvarlig registrerer advarsler og afbud, samles årligt",
      "kort_regel": "advarsler registreres af landsholdsansvarlig",
-     "dhash": "fb17b4ed1109"
+     "dhash": "8a6c6edd4187"
     },
     {
      "ref": "elite14122022#4",
@@ -1659,7 +1659,7 @@
      "tekst": "Aftaler, afbud, påtaler/advarsler, sanktioner og udløbsdatoer registreres på en fælles platform, som er tilgængelig for Eliteudvalget.",
      "kort": "fælles platform til registrering af sanktioner",
      "kort_regel": "fælles registreringsplatform for Eliteudvalget",
-     "dhash": "252cff9096c7"
+     "dhash": "dbc830c0665e"
     }
    ]
   },
@@ -1674,7 +1674,7 @@
      "tekst": null,
      "kort": "juniorer overgår automatisk; 2 år til at klare elitekrav",
      "kort_regel": "automatisk overgang; 2 år til elitekrav",
-     "dhash": "bd13ee888b44"
+     "dhash": "2b56abce7db7"
     }
    ]
   },
@@ -1689,7 +1689,7 @@
      "tekst": null,
      "kort": "Horsens og Rødby bliver kraftcentre",
      "kort_regel": "kraftcentre i Horsens og Rødby",
-     "dhash": "a4d8d6e82e53"
+     "dhash": "dc96cb43862c"
     },
     {
      "ref": "elite15122018#5",
@@ -1697,7 +1697,7 @@
      "tekst": null,
      "kort": "kontrakt med kraftcentrene udarbejdes til gennemlæsning",
      "kort_regel": null,
-     "dhash": "8d8fa430554d"
+     "dhash": "bc856891ecb5"
     },
     {
      "ref": "refbest_021021#4",
@@ -1705,7 +1705,7 @@
      "tekst": "Kraftcentrene er Horsens og Rødby. Et kraftcenter kompenseres med 2.500 kr. pr. landsholdssamling for at lukke klubben og sender afregningsbilag til kassereren efter samlingen.",
      "kort": "kraftcentre får 2.500 kr. pr. samling",
      "kort_regel": "2.500 kr. pr. samling til kraftcenter",
-     "dhash": "9a1840b150aa"
+     "dhash": "dca85a7446d7"
     }
    ]
   },
@@ -1720,7 +1720,7 @@
      "tekst": null,
      "kort": "løfter hæfter for 140 euro, hvis krav ikke nås ved DM",
      "kort_regel": "forhåndstilmeldt uden krav hæfter for startgebyr",
-     "dhash": "3a290a2335e9"
+     "dhash": "e17b1b7e8ebc"
     }
    ]
   },
@@ -1735,7 +1735,7 @@
      "tekst": null,
      "kort": "centralt lager for landsholdsudstyr oprettes",
      "kort_regel": "alt landsholdsudstyr på centralt lager",
-     "dhash": "d12e4994ff94"
+     "dhash": "6f88eeeea0fb"
     }
    ]
   },
@@ -1750,7 +1750,7 @@
      "tekst": null,
      "kort": "gratis udstyr tilhører DSF i 12 måneder",
      "kort_regel": "udstyr bliver atletens efter 12 måneder",
-     "dhash": "cd2b7d7f44bb"
+     "dhash": "125b6d456cff"
     }
    ]
   },
@@ -1765,7 +1765,7 @@
      "tekst": null,
      "kort": "potentielle VM-atleter kan forhåndsnomineres før DM Klassisk",
      "kort_regel": "provisorisk forhåndsnominering af lovende atleter",
-     "dhash": "7e1baa848cb2"
+     "dhash": "c989a1512384"
     }
    ]
   },
@@ -1780,7 +1780,7 @@
      "tekst": null,
      "kort": "opdateret elitestrategi for 2020-2025",
      "kort_regel": "elitestrategi gældende 2020-2025",
-     "dhash": "14b9e5424d88"
+     "dhash": "62aff1135a31"
     }
    ]
   },
@@ -1795,7 +1795,7 @@
      "tekst": null,
      "kort": "Peter Andersen foreslår netværksmøder i samlingerne",
      "kort_regel": null,
-     "dhash": "a9b9c0be8c19"
+     "dhash": "b8c106839eea"
     }
    ]
   },
@@ -1810,7 +1810,7 @@
      "tekst": null,
      "kort": "kvittering sendes senest på dato angivet ved udtagelse",
      "kort_regel": "kvittering for egenbetaling inden fastsat dato",
-     "dhash": "ac0f38a9150f"
+     "dhash": "c5da54144a9f"
     },
     {
      "ref": "elite08032022#2",
@@ -1818,7 +1818,7 @@
      "tekst": "Egenbetalinger, herunder ekstraomkostninger ved forlængelse af den DSF-planlagte rejse, skal være DSF i hænde senest 10 dage før final nomination.",
      "kort": "betaling senest 10 dage før final nomination",
      "kort_regel": "egenbetaling senest 10 dage før final nomination",
-     "dhash": "926da0725763"
+     "dhash": "1c9e9a2cddf0"
     }
    ]
   },
@@ -1833,7 +1833,7 @@
      "tekst": null,
      "kort": "atleter uden elitekrav skal klare det ved DM 2021",
      "kort_regel": "elitekrav ved DM 2021 for at bevare pladsen",
-     "dhash": "4a424d9de6d3"
+     "dhash": "24928d2aa205"
     }
    ]
   },
@@ -1848,7 +1848,7 @@
      "tekst": null,
      "kort": "head coach medbringer 75 euro kontant til protest",
      "kort_regel": "head coach har 75 euro klar til protest",
-     "dhash": "1f00b93a28e6"
+     "dhash": "0a8d07764a33"
     }
    ]
   },
@@ -1863,7 +1863,7 @@
      "tekst": null,
      "kort": "VM klassisk-deltagere fritaget for DM klassisk i 2021",
      "kort_regel": "VM-deltagere fritaget for samtidigt DM klassisk",
-     "dhash": "6b31a134daee"
+     "dhash": "d9933ca0e12f"
     },
     {
      "ref": "elite12122023#2",
@@ -1871,7 +1871,7 @@
      "tekst": "Løftere, der deltager ved VM klassisk, får dispensation fra obligatorisk deltagelse ved DM klassisk, når stævnerne kolliderer (2024: samme uge). Deltagelse ved DM er velkommen, hvis det er praktisk muligt.",
      "kort": "samme dispensation i 2024",
      "kort_regel": "VM-deltagere fritaget for DM klassisk ved kollision",
-     "dhash": "88d1b231513a"
+     "dhash": "41b1d6e30371"
     },
     {
      "ref": "elite15092026#3",
@@ -1879,7 +1879,7 @@
      "tekst": "Atleter, der deltager ved VM og samtidig er forpligtet til DM, følger i 2027 samme procedure som i 2026, dvs. dispensation fra DM ved kollision.",
      "kort": "samme procedure i 2027 som i 2026",
      "kort_regel": "dispensation fra DM ved VM-kollision",
-     "dhash": "379af35d9e5f"
+     "dhash": "e46dbff8984c"
     }
    ]
   },
@@ -1894,7 +1894,7 @@
      "tekst": null,
      "kort": "spørgeskemaer er obligatoriske; manglende svar kan få konsekvenser",
      "kort_regel": "spørgeskemaer skal besvares",
-     "dhash": "bd32f4fd738a"
+     "dhash": "e5b109b280ff"
     }
    ]
   },
@@ -1909,7 +1909,7 @@
      "tekst": null,
      "kort": "præsentation af løftere og trænere skal prioriteres",
      "kort_regel": "landshold præsenteres på sociale medier",
-     "dhash": "a956d5f91ac8"
+     "dhash": "1688f366e4b7"
     }
    ]
   },
@@ -1924,7 +1924,7 @@
      "tekst": "En landsholdsløfter kan få lov til at deltage i Arnold Classic UK, hvis løfteren selv afholder alle udgifter.",
      "kort": "Arnold Classic UK tilladt for egen regning",
      "kort_regel": "ikke-landsholdsstævner for egen regning",
-     "dhash": "446bc429adee"
+     "dhash": "0151fa90be7d"
     },
     {
      "ref": "refbest_310722#4",
@@ -1932,7 +1932,7 @@
      "tekst": "Landsholdsløftere må deltage i Arnold Classic, hvis det ikke konflikter med landsholdskontrakten, og løfterne selv afholder udgifterne.",
      "kort": "Arnold Classic tilladt uden kontraktkonflikt, egen regning",
      "kort_regel": "Arnold Classic tilladt for egen regning",
-     "dhash": "a4f1d44eb97b"
+     "dhash": "ebe5112b4b42"
     },
     {
      "ref": "elite01072026.2#2",
@@ -1940,7 +1940,7 @@
      "tekst": "Landsholdsløftere må deltage i Arnold Classic for egen regning, hvis det ikke konflikter med kontrakten. Deltagelse i andre internationale stævner ud over EM/VM kræver tilladelse og behandles fra sag til sag, bl.a. ud fra om stævnet kolliderer med de primære mesterskaber.",
      "kort": "andre stævner vurderes individuelt fra sag til sag",
      "kort_regel": "øvrige internationale stævner kræver individuel tilladelse",
-     "dhash": "8c00fd491b55"
+     "dhash": "d55b46185ebd"
     }
    ]
   },
@@ -1955,7 +1955,7 @@
      "tekst": null,
      "kort": "dobbelt egenbetaling ved dobbelt seniordeltagelse fra 2023",
      "kort_regel": "dobbelt egenbetaling ved dobbelt seniordeltagelse",
-     "dhash": "fc26834a3cec"
+     "dhash": "8654445316a9"
     },
     {
      "ref": "elite23102024#2",
@@ -1963,7 +1963,7 @@
      "tekst": "Ved dobbelt deltagelse (klassisk + udstyr) ved EM/VM bænkpres betaler atleten egenbetaling for sin primære disciplin samt DSF's hoteludgifter for ekstra overnatninger og participation fee og anti-doping fee for den sekundære disciplin.",
      "kort": "bænk-dobbeltstart: primær egenbetaling plus ekstra hotel og gebyrer",
      "kort_regel": "primær egenbetaling + ekstra hotel og gebyrer",
-     "dhash": "441a00c69203"
+     "dhash": "f0fee249463a"
     }
    ]
   },
@@ -1978,7 +1978,7 @@
      "tekst": null,
      "kort": "landsholdsløftere skal som udgangspunkt deltage i DM",
      "kort_regel": "landsholdsløftere deltager i DM",
-     "dhash": "72e168fbb53f"
+     "dhash": "b52453ad6dab"
     },
     {
      "ref": "elite12032025#4",
@@ -1986,7 +1986,7 @@
      "tekst": "Landsholdsløftere skal som udgangspunkt deltage i DM. Afbud på grund af akut sygdom godtages.",
      "kort": "afbud ved akut sygdom godtages",
      "kort_regel": "DM-pligt; akut sygdom gyldigt afbud",
-     "dhash": "d7fc3c953b4a"
+     "dhash": "c043e2cf3553"
     },
     {
      "ref": "elite30042026#1",
@@ -1994,7 +1994,7 @@
      "tekst": "Landsholdsløftere skal deltage i DM; afbud ved akut sygdom godtages. Der er ingen krav til vægtklasse (man må stille op i en højere klasse) og ingen krav om maksimal præstation.",
      "kort": "DM-krav fastholdt; frit vægtklassevalg, ingen maksimalkrav",
      "kort_regel": "DM-pligt uden krav om vægtklasse eller maks.",
-     "dhash": "9189cdb9a289"
+     "dhash": "4031a3eb8626"
     },
     {
      "ref": "elite30042026#2",
@@ -2002,7 +2002,7 @@
      "tekst": "Landsholdsløftere skal deltage i DM; afbud ved akut sygdom godtages. Der er ingen krav til vægtklasse eller maksimal præstation, men der skal gennemføres et reelt (bona fide) forsøg i hver disciplin på mindst 80 % af løfterens bedste løft fra VM.",
      "kort": "bona fide-forsøg: mindst 80 % af bedste VM-løft",
      "kort_regel": "DM-pligt med forsøg ≥80 % af VM-løft",
-     "dhash": "fb279b29d866"
+     "dhash": "8f5842277b84"
     }
    ]
   },
@@ -2017,7 +2017,7 @@
      "tekst": null,
      "kort": "8 kvinder efter procent af krav; højst 2 herrer pr. klasse",
      "kort_regel": "kvinder efter %-krav; herrer max 2 pr. vægtklasse",
-     "dhash": "a544cf304854"
+     "dhash": "1d8324afd821"
     }
    ]
   },
@@ -2032,7 +2032,7 @@
      "tekst": null,
      "kort": "landsholdsmedlemmer kan udtages som assistenttræner",
      "kort_regel": "landsholdsmedlem kan være assistenttræner",
-     "dhash": "fa980ab98605"
+     "dhash": "740c2af4e00d"
     }
    ]
   },
@@ -2047,7 +2047,7 @@
      "tekst": null,
      "kort": "skift kræver krav i ny klasse uden at fortrænge andre",
      "kort_regel": "krav i ny vægtklasse og ingen fortrængning",
-     "dhash": "6075c317a6ec"
+     "dhash": "0d092e7c9977"
     },
     {
      "ref": "elite12032025#3",
@@ -2055,7 +2055,7 @@
      "tekst": "En løfter kan deltage i en anden vægtklasse, hvis kravet er lavet i den aktuelle klasse ved et officielt DSF-stævne inden final nomination, og det ikke tager pladsen fra en anden kvalificeret løfter; krav i en højere klasse end egen giver ret til at stille i den højere klasse. Start i en lavere vægtklasse kræver krav opnået i den klasse inden for 12 måneder.",
      "kort": "lavere klasse kræver krav opnået inden for 12 måneder",
      "kort_regel": "lavere klasse: krav inden for 12 mdr.",
-     "dhash": "0c5b97b08da3"
+     "dhash": "a8dc3acccac4"
     },
     {
      "ref": "elite15092026#5",
@@ -2063,7 +2063,7 @@
      "tekst": "Som udgangspunkt tilhører atleten den vægtklasse, der er anført i den underskrevne landsholdskontrakt. Spørgsmål om skift af vægtklasse og frist for krav rettes til sportschefen, som afgør sammen med eliteudvalget i hvert tilfælde. Skift må ikke tage pladsen fra en anden kvalificeret løfter, og start i lavere klasse kræver krav opnået i den klasse inden for 12 måneder.",
      "kort": "kontraktens vægtklasse gælder; sportschef og udvalg afgør skift",
      "kort_regel": "kontraktens vægtklasse; skift efter individuel afgørelse",
-     "dhash": "b0aae4a5907d"
+     "dhash": "861d14426799"
     }
    ]
   },
@@ -2078,7 +2078,7 @@
      "tekst": null,
      "kort": "udvalgte juniorer kan inviteres til seniorsamlinger",
      "kort_regel": "juniorer kan inviteres til seniorsamlinger",
-     "dhash": "74a4d10752e5"
+     "dhash": "68d3fa10774c"
     }
    ]
   },
@@ -2093,7 +2093,7 @@
      "tekst": null,
      "kort": "U-landsholdssanktioner følger med til seniorlandsholdet fra 1.7.2025",
      "kort_regel": "sanktioner overføres fra U-landshold til senior",
-     "dhash": "3e72f2ae4bf1"
+     "dhash": "2a95e04562f1"
     }
    ]
   },
@@ -2108,7 +2108,7 @@
      "tekst": null,
      "kort": "efter orlov kræves 2 samlinger før nominering",
      "kort_regel": "2 samlinger efter orlov, sidste senest 60 dage før",
-     "dhash": "7b37cc183453"
+     "dhash": "b3b6a77548c5"
     }
    ]
   }

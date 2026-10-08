@@ -17,7 +17,6 @@ import subprocess
 import tempfile
 import time
 from collections import defaultdict
-from collections.abc import Container
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date
@@ -36,10 +35,15 @@ RULES_DIR = DATA_DIR / "regler"
 EXTRACT_TIMEOUT = 600
 CONSOLIDATE_TIMEOUT = 1800
 
-# Share of a quote's word trigrams that must appear in the document for it to count as found.
+# Share of a quote's word trigrams that must line up in the document for it to count as found.
 QUOTE_THRESHOLD = 0.8
-# Words a quote may drift from its first trigram's position (line-break hyphenation adds a word).
+# Each quote trigram votes for the start its position implies, and votes near a start are pooled.
+# Words the document has inside the quote move later votes forward: a page header or footer at a
+# page break ("2012-03-30" is 3 words, "Bestyrelsesmøde DSF Dec. 2015" 4) or a hyphenated line break
+# that splits a word in two. Words the quote has that the document lacks move them back, which is
+# rarer and shorter. So votes are pooled from QUOTE_SLACK words before a start to QUOTE_GAP after it.
 QUOTE_SLACK = 2
+QUOTE_GAP = 8
 
 # The effect of a decision that did not adopt anything follows from its outcome alone.
 PROPOSAL_EFFECT = {"ikke_afgjort": "foreslaaet", "forkastet": "forkastet", "trukket": "trukket"}
@@ -78,7 +82,7 @@ class Decision:
     citat: str
     citat_fundet: bool
     side: int | None  # page of the quote as located in the document, else the page Claude gave
-    side_rettet: bool  # the quote was found on another page than Claude gave
+    side_rettet: bool  # Claude gave a page, and the quote was located on another one
     rank: int  # reading order within the document
     stemmer: str | None
     forslagsstiller: str | None  # who submitted the proposal, e.g. a club or Bestyrelsen
@@ -87,14 +91,23 @@ class Decision:
 
 
 def decision_hash(d: Decision) -> str:
-    """Fingerprint of what Claude extracted; a rule version built from different content no longer matches."""
-    fields = [d.emne, d.kategori, d.udfald, d.handling, d.niveau, d.tekst, d.citat]
+    """Fingerprint of the decision as the consolidation saw it; a rule version built from different
+    content no longer matches.
+
+    It covers exactly the decision's own fields in `_consolidation_input` plus its category. A change
+    to one of them also changes the category's input_hash, so the category is consolidated again and
+    the versions match once more. The quote is left out: Claude never saw it, so a re-extraction that
+    only changes the quote leaves input_hash alone, and a fingerprint covering it would hide the
+    versions for good. The date and organ belong to the document and change input_hash themselves.
+    """
+    fields = [d.emne, d.kategori, d.udfald, d.handling, d.niveau, d.tekst, d.stemmer, d.forslagsstiller,
+              d.gaelder_fra, d.gaelder_til]
     return hashlib.sha256(json.dumps(fields, ensure_ascii=False).encode()).hexdigest()[:12]
 
 
 def version_matches(version: dict, d: Decision) -> bool:
-    """A rule version still describes its decision (versions written before fingerprints count as matching)."""
-    return version.get("dhash") in (None, decision_hash(d))
+    """A rule version still describes its decision: its fingerprint equals the decision's."""
+    return version.get("dhash") == decision_hash(d)
 
 
 # --------------------------------------------------------------------------- extraction
@@ -275,7 +288,7 @@ def load_decisions(docs: list[Doc]) -> list[Decision]:
         meeting_date = _meeting_date(cached.get("moededato"), doc)
         raw = cached["beslutninger"]
         for n, (d, rank) in enumerate(zip(raw, _reading_order(raw)), start=1):
-            located_page = d.get("citat_side")
+            located_page, claude_page = d.get("citat_side"), d["side"]
             decisions.append(Decision(
                 ref=f"{doc.id}#{n}",
                 doc_id=doc.id,
@@ -288,8 +301,9 @@ def load_decisions(docs: list[Doc]) -> list[Decision]:
                 tekst=d["tekst"],
                 citat=d["citat"],
                 citat_fundet=d["citat_fundet"],
-                side=located_page if located_page is not None else d["side"],
-                side_rettet=located_page is not None and located_page != d["side"],
+                side=located_page if located_page is not None else claude_page,
+                # Filling in a page Claude left out is not a correction.
+                side_rettet=claude_page is not None and located_page not in (None, claude_page),
                 rank=rank,
                 stemmer=d["stemmer"],
                 forslagsstiller=d.get("forslagsstiller"),
@@ -334,19 +348,6 @@ def _words(text: str) -> list[str]:
     return re.findall(r"\w+", text.lower())
 
 
-def _trigrams(words: list[str]) -> set[tuple[str, ...]]:
-    return set(zip(words, words[1:], words[2:]))
-
-
-def _quote_found(quote: str, doc_trigrams: Container[tuple[str, ...]]) -> bool:
-    """True when the quote appears (near-)verbatim in the document; tolerates line-break hyphenation."""
-    quote_trigrams = list(_trigrams(_words(quote)))
-    if not quote_trigrams:
-        return False
-    hits = sum(gram in doc_trigrams for gram in quote_trigrams)
-    return hits / len(quote_trigrams) >= QUOTE_THRESHOLD
-
-
 _PAGE_MARKER = re.compile(r"\[Side (\d+)\]")
 
 
@@ -375,42 +376,77 @@ class DocWords:
 def locate_quote(quote: str, doc: DocWords, page: int | None = None) -> int | None:
     """Word offset where the quote starts in the document, or None when it is not there.
 
-    Each quote trigram votes for the start its position implies. Votes a few words apart are
-    pooled, so a hyphenated line break that splits one word in two still lines up. A quote can
-    occur more than once (a proposal and the decision adopting it); then the occurrence on `page`,
-    the page Claude cited, wins, else the best and earliest match.
+    A quote can occur more than once (a proposal and the decision adopting it); then the
+    occurrence on `page`, the page Claude cited, wins, else the best and earliest match.
     """
     words = _words(quote)
+    occurrences = _exact_occurrences(words, doc) if len(words) < 3 else _trigram_occurrences(words, doc)
+    on_page = [start for start in occurrences if page in _start_pages(start, words, doc)]
+    return (on_page or occurrences or [None])[0]
+
+
+def _start_pages(start: int, words: list[str], doc: DocWords) -> set[int | None]:
+    """Pages the quote located at `start` may begin on. When its first words don't match there,
+    they may stand before a page header, so the pages up to QUOTE_GAP words earlier count too."""
+    exact = doc.words[start:start + 3] == words[:3]
+    return set(doc.pages[start if exact else max(start - QUOTE_GAP, 0):start + 1])
+
+
+def _exact_occurrences(words: list[str], doc: DocWords) -> list[int]:
+    """Where a quote of one or two words occurs verbatim, in document order (it has no trigrams)."""
+    if not words:
+        return []
+    n = len(words)
+    return [i for i in range(len(doc.words) - n + 1) if doc.words[i:i + n] == words]
+
+
+def _trigram_occurrences(words: list[str], doc: DocWords) -> list[int]:
+    """One start per place the quote occurs, best match first.
+
+    Each quote trigram votes for the start its position implies. An anchor (a start with votes)
+    pools the votes from QUOTE_SLACK words before it to QUOTE_GAP words after it, taking each
+    trigram's vote nearest the anchor, so a stray earlier match of a common trigram doesn't win.
+    Anchors with the most pooled votes, then the most votes of their own, come first. The
+    occurrence starts where its first matching trigram implies: later trigrams may be pushed
+    forward by a header inside the quote. A vote counts for one occurrence only, so a quote
+    repeated right after itself (a proposal, then the vote on it) is two occurrences, while the
+    part of a quote after a header is not a second one.
+    """
     grams = list(zip(words, words[1:], words[2:]))
-    if not grams:
-        return None
     voters: dict[int, set[int]] = defaultdict(set)  # implied start -> quote trigrams that imply it
     for j, gram in enumerate(grams):
         for offset in doc.index.get(gram, ()):
             voters[offset - j].add(j)
 
-    def support(start: int) -> int:
-        return len(set().union(*(voters.get(start + d, ()) for d in range(-QUOTE_SLACK, QUOTE_SLACK + 1))))
+    def pool(anchor: int, taken: set[tuple[int, int]]) -> dict[int, int]:
+        """Quote trigram -> the start nearest the anchor it votes for, among votes not yet taken."""
+        window = sorted(range(anchor - QUOTE_SLACK, anchor + QUOTE_GAP + 1), key=lambda s: (abs(s - anchor), s))
+        found: dict[int, int] = {}
+        for start in window:
+            for j in voters.get(start, ()):
+                if (start, j) not in taken:
+                    found.setdefault(j, start)
+        return found
 
-    matches = sorted((s for s in voters if support(s) / len(grams) >= QUOTE_THRESHOLD), key=lambda s: (-support(s), s))
-    occurrences: list[int] = []  # one start per place the quote occurs, best match first
-    for start in matches:
-        if all(abs(start - seen) > 2 * QUOTE_SLACK for seen in occurrences):
-            occurrences.append(max(start, 0))
-    on_page = [start for start in occurrences if page is not None and doc.pages[start] == page]
-    return (on_page or occurrences or [None])[0]
+    occurrences: list[int] = []
+    taken: set[tuple[int, int]] = set()  # (start, trigram) votes used by an occurrence
+    for anchor in sorted(voters, key=lambda a: (-len(pool(a, set())), -len(voters[a]), a)):
+        votes = pool(anchor, taken)
+        if len(votes) / len(grams) >= QUOTE_THRESHOLD:
+            occurrences.append(max(votes[min(votes)], 0))
+            taken.update((start, j) for j, start in votes.items())
+    return occurrences
 
 
 def quote_fields(quote: str, doc: DocWords, page: int | None) -> dict:
-    """Whether the quote is in the document, and where: word offset and page (None when not located).
+    """Whether the quote was located in the document, and where: word offset and page (None when not).
 
     `page` is the page Claude cited; it is kept when the quote occurs there."""
     pos = locate_quote(quote, doc, page)
-    return {
-        "citat_fundet": _quote_found(quote, doc.index),
-        "citat_pos": pos,
-        "citat_side": doc.pages[pos] if pos is not None else None,
-    }
+    if pos is None:
+        return {"citat_fundet": False, "citat_pos": None, "citat_side": None}
+    on_cited_page = page is not None and page in _start_pages(pos, _words(quote), doc)
+    return {"citat_fundet": True, "citat_pos": pos, "citat_side": page if on_cited_page else doc.pages[pos]}
 
 
 # --------------------------------------------------------------------------- consolidation
@@ -612,6 +648,8 @@ def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: st
     """Run one headless Claude Code call with structured output; returns (output, list-price USD).
 
     Each attempt may take `timeout` seconds; no new attempt starts after `deadline` (time.monotonic()).
+    A call that failed and was not retried for lack of time is still a failure: ClaudeError with
+    the real error, not DeadlineReached, which only means the job never started.
     """
     claude = shutil.which("claude")
     if claude is None:
@@ -629,7 +667,7 @@ def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: st
     error = ""
     for attempt in range(1, attempts + 1):
         if attempt > 1 and _past(deadline):
-            raise DeadlineReached(f"tidsbudget brugt efter {attempt - 1} forsøg: {error}")
+            raise ClaudeError(f"{error} (ikke prøvet igen efter {attempt - 1} forsøg, fordi tidsbudgettet er brugt)")
         with tempfile.TemporaryDirectory() as cwd:
             try:
                 proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, check=False,

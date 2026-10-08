@@ -171,19 +171,28 @@ def covered_years(decisions: list[Decision], today: date) -> list[int]:
     return list(range(min(known_years), max(known_years) + 1))
 
 
+def stale_refs(raw: dict, by_ref: dict[str, Decision]) -> list[str]:
+    """Refs of a consolidated rule whose decision is gone or has changed since the consolidation."""
+    return [v["ref"] for v in raw["versioner"] if v["ref"] not in by_ref or not version_matches(v, by_ref[v["ref"]])]
+
+
 def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule]:
-    """Rules with their versions in effective order. A version whose decision has changed since the
-    rule was consolidated is left out (checks.py reports it) rather than shown with the wrong decision."""
+    """Rules with their versions in effective order.
+
+    A rule with a stale version (see stale_refs) is left out whole until its category is
+    consolidated again, and checks.py reports it. Dropping just that version could bring back a
+    repealed rule or show an older text as current, since each version builds on the ones before.
+    """
     rules = []
     for raw in raw_rules:
+        if not raw["versioner"] or stale_refs(raw, by_ref):
+            continue
         # Claude writes each version's text as the rule after the versions before it, so versions
         # decided the same day keep the order Claude gave them.
         current = [
             (i, Version(by_ref[v["ref"]], v["effekt"], v["tekst"], v.get("kort"), v.get("kort_regel")))
-            for i, v in enumerate(raw["versioner"]) if v["ref"] in by_ref and version_matches(v, by_ref[v["ref"]])
+            for i, v in enumerate(raw["versioner"])
         ]
-        if not current:
-            continue
         current.sort(key=lambda item: (item[1].effective, item[1].decision.dato or "", item[0]))
         versions = [v for _, v in current]
         rules.append(Rule(raw["titel"], raw["kategori"], raw.get("vigtig", True), raw["note"], tuple(versions)))
@@ -453,8 +462,10 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         f"{sum(1 for d in decisions if d.side_rettet)}",
         f"- Engangsbeslutninger uden for reglerne (kun i data/beslutninger): "
         f"{sum(1 for d in decisions if d.ref not in assigned)}",
-        f"- Regelversioner hvis beslutning er ændret siden konsolideringen (vises ikke): {problems['forældet']}",
-        f"- Regelversioner hvor virkningen ikke passer til beslutningen: {problems['virkning']}",
+        f"- Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: "
+        f"{problems['forældet']}",
+        f"- Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): "
+        f"{problems['virkning']}",
         f"- Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, "
         f"eller en senere beslutning der gælder fra før en tidligere): {problems['dato']}",
         "",

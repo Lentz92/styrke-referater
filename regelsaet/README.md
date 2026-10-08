@@ -8,16 +8,16 @@ Hver årsside starter med, hvad der er nyt det år, og viser derefter de regler,
 
 | År | Ændringer i året | Centrale regler i kraft | Interne procedurer og detaljer i kraft |
 |---|---|---|---|
-| [2027](2027.md) (kommende) | 1 | 297 | 95 |
-| [2026](2026.md) (indeværende) | 59 | 297 | 95 |
-| [2025](2025.md) | 61 | 282 | 86 |
-| [2024](2024.md) | 63 | 263 | 79 |
-| [2023](2023.md) | 33 | 243 | 66 |
-| [2022](2022.md) | 38 | 233 | 62 |
-| [2021](2021.md) | 24 | 214 | 60 |
-| [2020](2020.md) | 18 | 206 | 57 |
-| [2019](2019.md) | 40 | 203 | 56 |
-| [2018](2018.md) | 48 | 188 | 52 |
+| [2027](2027.md) (kommende) | 1 | 296 | 95 |
+| [2026](2026.md) (indeværende) | 59 | 296 | 95 |
+| [2025](2025.md) | 61 | 281 | 86 |
+| [2024](2024.md) | 63 | 262 | 79 |
+| [2023](2023.md) | 33 | 242 | 66 |
+| [2022](2022.md) | 38 | 232 | 62 |
+| [2021](2021.md) | 24 | 213 | 60 |
+| [2020](2020.md) | 18 | 205 | 57 |
+| [2019](2019.md) | 40 | 202 | 56 |
+| [2018](2018.md) | 49 | 187 | 52 |
 | [2017](2017.md) | 37 | 161 | 49 |
 | [2016](2016.md) | 24 | 152 | 46 |
 | [2015](2015.md) | 65 | 139 | 46 |
@@ -36,7 +36,7 @@ Fuld tekst og historik for hver regel:
 - [Medlemskab, licens og gebyrer](regler/medlemskab.md) – 36 regler i kraft, 42 i alt
 - [Stævner og konkurrenceregler](regler/staevner.md) – 93 regler i kraft, 118 i alt
 - [Dommere](regler/dommere.md) – 47 regler i kraft, 52 i alt
-- [Elite og landshold](regler/elite.md) – 127 regler i kraft, 156 i alt
+- [Elite og landshold](regler/elite.md) – 126 regler i kraft, 156 i alt
 - [Master](regler/master.md) – 30 regler i kraft, 33 i alt
 - [Antidoping](regler/antidoping.md) – 16 regler i kraft, 18 i alt
 - [Forbund og organisation](regler/organisation.md) – 43 regler i kraft, 51 i alt
@@ -57,11 +57,11 @@ Regler ophæves sjældent formelt, så en regel gælder her, indtil et senere re
 
 - Dokumenter der mangler analyse (kør `uv run update.py` igen): 0
 - Dokumenter uden regelbeslutninger (fx budgetmøder): 28
-- Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 1
+- Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 0
 - Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): 6
 - Engangsbeslutninger uden for reglerne (kun i data/beslutninger): 55
-- Regelversioner hvis beslutning er ændret siden konsolideringen (vises ikke): 0
-- Regelversioner hvor virkningen ikke passer til beslutningen: 6
+- Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: 0
+- Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): 4
 - Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, eller en senere beslutning der gælder fra før en tidligere): 20
 
 Udtrækket er lavet automatisk af Claude og kan indeholde fejl. Referatet er altid den gældende kilde.

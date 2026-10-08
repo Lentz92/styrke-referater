@@ -15,7 +15,7 @@
      "tekst": "Man kan ikke tilmeldes som dommer til et stævne, hvis man selv skal løfte, medmindre stævnet afholdes over flere dage, hvor man kan tilmeldes som dommer den dag, man ikke selv løfter.",
      "kort": "ingen dommertilmelding samme dag som man selv løfter",
      "kort_regel": "kun dommer på dage hvor man ikke selv løfter",
-     "dhash": "652164361d07"
+     "dhash": "65cfe1b639b4"
     }
    ]
   },
@@ -30,7 +30,7 @@
      "tekst": null,
      "kort": "sorte sko og strømper for dommere",
      "kort_regel": "dommeres sko og strømper skal være sorte",
-     "dhash": "56193fbb4853"
+     "dhash": "8eab4083cc69"
     },
     {
      "ref": "490#28",
@@ -38,7 +38,7 @@
      "tekst": "Dommernes sko og strømper skal være sorte. Det fremgår tydeligt af påklædningsreglerne, at grå jeans ikke er tilladt.",
      "kort": "præciseret at grå jeans ikke er tilladt",
      "kort_regel": "sorte sko og strømper, ikke grå jeans",
-     "dhash": "2cf8516f8aab"
+     "dhash": "4103bc14dd53"
     },
     {
      "ref": "refdom12092023#4",
@@ -46,7 +46,7 @@
      "tekst": null,
      "kort": "dommeres forslag om shorts om sommeren afvist",
      "kort_regel": null,
-     "dhash": "650aed929434"
+     "dhash": "8f85b7b14097"
     },
     {
      "ref": "refdom02072024_2#2",
@@ -54,7 +54,7 @@
      "tekst": "Dommere skal overholde dresscode ved stævner efter de tekniske regler. Slips bæres med hvid skjorte; kvinder kan vælge bluse (med tørklæde, ikke slips) eller skjorte. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
      "kort": "dresscode: hvid skjorte, slips, sorte sko uden sneakers",
      "kort_regel": "hvid skjorte med slips, sorte sko og strømper",
-     "dhash": "8a70378c0e44"
+     "dhash": "019e4921a0d9"
     },
     {
      "ref": "refdom01102024#1",
@@ -62,7 +62,7 @@
      "tekst": "Dommere skal overholde dresscode ved stævner efter de tekniske regler. Der bæres hvid skjorte eller bluse med IPF-slips eller IPF-tørklæde; andre tørklæder (fx blåt) er ikke tilladt. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
      "kort": "kun IPF-slips eller IPF-tørklæde tilladt",
      "kort_regel": "kun IPF-slips/-tørklæde, sorte sko og strømper",
-     "dhash": "728aa112c799"
+     "dhash": "b38b3720845f"
     }
    ]
   },
@@ -77,7 +77,7 @@
      "tekst": null,
      "kort": "slips og emblemer udleveres ved endt uddannelse",
      "kort_regel": "slips og emblemer udleveres ved endt uddannelse",
-     "dhash": "9e35e7f5da64"
+     "dhash": "bf4e3272220f"
     }
    ]
   },
@@ -92,7 +92,7 @@
      "tekst": "Klubber skal stille dommer i ligaturneringen. I 2010 dispenseres der for klubber, som endnu ikke har en dommer.",
      "kort": "dispensation i 2010 for klubber uden dommer",
      "kort_regel": "klubber skal stille dommer; dispensation 2010 uden dommer",
-     "dhash": "3d67cae218f2"
+     "dhash": "90451e7ec29b"
     },
     {
      "ref": "refbest_30052010#1",
@@ -100,7 +100,7 @@
      "tekst": "Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der er kun givet dispensation til klubber, der endnu ikke har en dommer, og disse opfordres til at tilmelde folk til førstkommende dommerkursus.",
      "kort": "mindst én dommer pr. runde bekræftet",
      "kort_regel": "mindst én dommer pr. klub pr. runde",
-     "dhash": "e08fb11b0f27"
+     "dhash": "0165f4178cc0"
     }
    ]
   },
@@ -115,7 +115,7 @@
      "tekst": null,
      "kort": "kommissorium for Dommerudvalget vedtaget",
      "kort_regel": "kommissorium beskriver Dommerudvalgets arbejde",
-     "dhash": "172f9fbf7673"
+     "dhash": "3a7de031a885"
     },
     {
      "ref": "refbest_221023#1",
@@ -123,7 +123,7 @@
      "tekst": "Dommerudvalget afholder A- og B-dommerprøver, vedligeholder dommerliste, sætter dommere og jury på forbundsstævner og sikrer oversættelse af IPF's tekniske regler. Udvalget består af 3-4 medlemmer, heraf et bestyrelsesmedlem, og formanden har afgørende stemme ved stemmelighed.",
      "kort": "opgaver og sammensætning: 3-4 medlemmer inkl. bestyrelsesmedlem",
      "kort_regel": "3-4 medlemmer; prøver, dommerliste, påsætning, oversættelse",
-     "dhash": "b3d868c18063"
+     "dhash": "9ee6ab490106"
     }
    ]
   },
@@ -138,7 +138,7 @@
      "tekst": null,
      "kort": "slettes uden to stævner på to år, fra 2014",
      "kort_regel": "mindst to stævner på to år, ellers slettes",
-     "dhash": "caa06ffb1028"
+     "dhash": "b97b234f341a"
     },
     {
      "ref": "refbest_08022015#5",
@@ -146,7 +146,7 @@
      "tekst": "Dommere skal være aktive mindst tre gange inden for en periode på to år; ellers slettes de som dommer.",
      "kort": "hævet til tre gange inden for to år",
      "kort_regel": "mindst tre gange på to år",
-     "dhash": "0cd4b96444cf"
+     "dhash": "e94c36d12951"
     },
     {
      "ref": "refbest_11102015#4",
@@ -154,7 +154,7 @@
      "tekst": null,
      "kort": "regel om tre stævner på to år drøftet",
      "kort_regel": null,
-     "dhash": "a84f4eeaa6d1"
+     "dhash": "6f9296420340"
     },
     {
      "ref": "refbest_091119#8",
@@ -162,7 +162,7 @@
      "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer.",
      "kort": "tre officielle stævner på to år bekræftet",
      "kort_regel": "mindst tre officielle stævner på to år",
-     "dhash": "7a85a302b68b"
+     "dhash": "f682e09bc0e8"
     },
     {
      "ref": "rep2021#4",
@@ -170,7 +170,7 @@
      "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer. Alle dommere nulstilles, så perioden tæller fra genstart af stævneaktivitet efter coronanedlukningen.",
      "kort": "alle dommere nulstillet efter coronanedlukningen",
      "kort_regel": "tre stævner på to år, tæller fra genstart efter corona",
-     "dhash": "5c1f7cf37562"
+     "dhash": "d5b5424372a3"
     },
     {
      "ref": "refbest_080123#2",
@@ -178,7 +178,7 @@
      "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, fjernes fra dommerlisten efter at være kontaktet.",
      "kort": "inaktive dommere fjernes efter kontakt",
      "kort_regel": "inaktive fjernes fra listen efter kontakt",
-     "dhash": "70cb1d6dba57"
+     "dhash": "137e72664e8e"
     },
     {
      "ref": "refdom12092023#1",
@@ -186,7 +186,7 @@
      "tekst": "Dommere, der ikke har dømt mindst tre officielle stævner i løbet af en 2-årsperiode, slettes som dommer. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal af det efterfølgende år.",
      "kort": "inaktive kontaktes i første kvartal",
      "kort_regel": "tre stævner på to år; kontakt i første kvartal",
-     "dhash": "44840f0c5239"
+     "dhash": "9c00d8b3ec38"
     },
     {
      "ref": "refdom05032024#4",
@@ -194,7 +194,7 @@
      "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal af det efterfølgende år.",
      "kort": "tre nationale stævner på to år bekræftet",
      "kort_regel": "mindst tre nationale officielle stævner på to år",
-     "dhash": "770a82cd469e"
+     "dhash": "a828be9a416e"
     },
     {
      "ref": "refdom12032026#5",
@@ -202,7 +202,7 @@
      "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommere i kategorien pause får kun dispensation ved helt særlige forhold. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal af det efterfølgende år.",
      "kort": "dispensation for pause kun ved helt særlige forhold",
      "kort_regel": "tre stævner på to år; dispensation kun særlige forhold",
-     "dhash": "5b21b0a975b7"
+     "dhash": "a4af75e819fa"
     },
     {
      "ref": "refdom04062026#3",
@@ -210,7 +210,7 @@
      "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommere i kategorien pause får kun dispensation ved helt særlige forhold. Der fastsættes ikke et bestemt antal nationale dommere; dommere uddannes efter behov. Dommere, der ikke har dømt i det forgangne år, kontaktes i første kvartal af det efterfølgende år.",
      "kort": "tre stævner på to år fastholdt",
      "kort_regel": "mindst tre stævner på to år",
-     "dhash": "8ce129c34629"
+     "dhash": "0079f9afeacd"
     },
     {
      "ref": "refdom20082026#2",
@@ -218,7 +218,7 @@
      "tekst": "Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbet af en 2-årsperiode, slettes som dommer. Dommere i kategorien pause får kun dispensation ved helt særlige forhold. Dommere, der ikke har dømt nok eller ligger på kanten, kontaktes i årets sidste måned.",
      "kort": "dommere med lav aktivitet kontaktes i årets sidste måned",
      "kort_regel": "tre stævner på to år; kontakt i december",
-     "dhash": "1accb8bf460f"
+     "dhash": "daf3142f4896"
     }
    ]
   },
@@ -233,7 +233,7 @@
      "tekst": null,
      "kort": "Dommerudvalget foreslår sletning af B-dommere inaktive 12 måneder",
      "kort_regel": null,
-     "dhash": "82da3aba7552"
+     "dhash": "05884f868ed8"
     },
     {
      "ref": "refdom12032026#6",
@@ -241,7 +241,7 @@
      "tekst": null,
      "kort": "B-dommer uden dømning første år tages af listen",
      "kort_regel": "B-dommer skal dømme inden et år efter eksamen",
-     "dhash": "1012a2764582"
+     "dhash": "691d73c486ca"
     }
    ]
   },
@@ -256,7 +256,7 @@
      "tekst": null,
      "kort": "registrering pr. indvejning i stedet for pr. stævne",
      "kort_regel": "dommeraktivitet registreres pr. indvejning",
-     "dhash": "d488bf151dc9"
+     "dhash": "b0e33072dab2"
     },
     {
      "ref": "refstaevne10092024#1",
@@ -264,7 +264,7 @@
      "tekst": "Dommere registreres i dommerbogen for hver indvejning, de har dømt, og ikke pr. stævne.",
      "kort": "registrering pr. indvejning bekræftet efter dommerafstemning",
      "kort_regel": "dommeraktivitet registreres pr. indvejning",
-     "dhash": "fe8c85f921ad"
+     "dhash": "d413fc386656"
     },
     {
      "ref": "refbest_231125#8",
@@ -272,7 +272,7 @@
      "tekst": "Dommere registreres i dommerbogen for hver indvejning, de har dømt, og ikke pr. stævne. Den enkelte dommer indsender oplysninger om internationale indvejninger til dommerudvalget, og de registreres under fanen 'internationale stævner' i dommerdatabasen.",
      "kort": "dommer indsender selv internationale indvejninger",
      "kort_regel": "pr. indvejning; internationale indsendes af dommeren",
-     "dhash": "5aedd1869d36"
+     "dhash": "24ee8e533742"
     },
     {
      "ref": "refstaevne16122025#4",
@@ -280,7 +280,7 @@
      "tekst": "Dommere registreres i dommerbogen for hver indvejning, de har dømt, og ikke pr. stævne. Den enkelte dommer indsender oplysninger om internationale indvejninger til dommerudvalget. Stævnelederen informerer dommerudvalget om ændringer i dommerpåsætning på stævnedagen.",
      "kort": "stævneleder melder ændringer på stævnedagen til dommerudvalget",
      "kort_regel": "pr. indvejning; stævneleder melder ændringer",
-     "dhash": "4c081bd28647"
+     "dhash": "0dd53c361fef"
     }
    ]
   },
@@ -295,7 +295,7 @@
      "tekst": null,
      "kort": "over 4 deltagere kræver dommer, ellers 500 euro bøde",
      "kort_regel": "over 4 deltagere: én dommer, ellers 500 euro",
-     "dhash": "cabbc1ba6b7b"
+     "dhash": "9e062fffc203"
     },
     {
      "ref": "1071kongres#15",
@@ -303,7 +303,7 @@
      "tekst": "En nation skal medbringe dommere i forhold til antal løftere; ved 15 nominerede løftere kræves tilmelding af tre dommere. Bøden for ikke at sende det korrekte antal dommere er 1000 euro.",
      "kort": "tre dommere ved 15 løftere; bøde sænket til 1000 euro",
      "kort_regel": "tre dommere ved 15 løftere; bøde 1000 euro",
-     "dhash": "ba1af6eaf8ff"
+     "dhash": "a97bbc33583b"
     }
    ]
   },
@@ -318,7 +318,7 @@
      "tekst": null,
      "kort": "over 13 løftere til EM: to dommere med",
      "kort_regel": "over 13 senior- og juniorløftere: to dommere",
-     "dhash": "5516f1acc404"
+     "dhash": "a4a8c25f2677"
     }
    ]
   },
@@ -333,7 +333,7 @@
      "tekst": null,
      "kort": "international dommer kan bruges over 2 dage, hvis IPF/EPF accepterer",
      "kort_regel": "over 2 dage hvis godkendt som 2 dommere",
-     "dhash": "42c7c842a2cf"
+     "dhash": "b0cd13559a23"
     },
     {
      "ref": "refdom16122025#1",
@@ -341,7 +341,7 @@
      "tekst": "De gældende regler overholdes som udgangspunkt. Hvor det giver mening, kan en international dommer bruges mere end de påkrævede 2 dage, hvis IPF/EPF accepterer det som 2 dommere. Internationale dommere kan trækkes tilbage fra et stævne ved få deltagende løftere.",
      "kort": "kan trækkes tilbage ved få løftere",
      "kort_regel": "kan trækkes tilbage ved få løftere",
-     "dhash": "354116d5b55b"
+     "dhash": "b9f77449d770"
     }
    ]
   },
@@ -356,7 +356,7 @@
      "tekst": null,
      "kort": "ikke flere dommere end nødvendigt; undgå lange nationale rejser",
      "kort_regel": "færrest mulige dommere, korte rejser",
-     "dhash": "87a85d8e6b17"
+     "dhash": "ee1a6ab7068f"
     },
     {
      "ref": "refdom18092025#5",
@@ -364,7 +364,7 @@
      "tekst": "Udvalget sender ikke flere dommere til internationale stævner end nødvendigt, og til nationale stævner bruges dommere, der bor tættest på stævnet.",
      "kort": "nærmeste nationale dommere bruges",
      "kort_regel": "nationale dommere tæt på stævnet",
-     "dhash": "a5e69e162145"
+     "dhash": "88644cf5a372"
     }
    ]
   },
@@ -379,7 +379,7 @@
      "tekst": null,
      "kort": "vejledende prøve herhjemme før international dommerprøve",
      "kort_regel": "A-dommer tager vejledende prøve før international prøve",
-     "dhash": "b534e9ee9b5d"
+     "dhash": "f20f7164d239"
     },
     {
      "ref": "refbest_310819#4",
@@ -387,7 +387,7 @@
      "tekst": "En national A-dommer, der skal op til international dommerprøve, skal først bestå den nationale computertest, før kandidaten indstilles til den internationale prøve.",
      "kort": "national computertest skal bestås før indstilling",
      "kort_regel": "bestået national computertest før international prøve",
-     "dhash": "60f72fb8c3c0"
+     "dhash": "e1058fb869e1"
     },
     {
      "ref": "refbest_091119#7",
@@ -395,7 +395,7 @@
      "tekst": "Internationale dommere udvælges blandt A-dommere med mindst 2 års regelmæssig dommervirksomhed som A-dommer. Kandidaten skal bestå den nationale computertest, før vedkommende indstilles til den internationale prøve. Uddannelsen følger IPF's tekniske regler.",
      "kort": "krav om 2 års regelmæssig virksomhed som A-dommer",
      "kort_regel": "A-dommer i 2 år plus national computertest",
-     "dhash": "ae7cb699a9d1"
+     "dhash": "b2464adc5c41"
     }
    ]
   },
@@ -410,7 +410,7 @@
      "tekst": null,
      "kort": "USAPL: ingen eksamen ved åbent VM – nedstemt",
      "kort_regel": null,
-     "dhash": "9d258236cafd"
+     "dhash": "9aafb9e1aadd"
     },
     {
      "ref": "490#30",
@@ -418,7 +418,7 @@
      "tekst": null,
      "kort": "teoretisk eksamen mod betaling",
      "kort_regel": "teoretisk eksamen kan tages mod betaling",
-     "dhash": "b13061dc7e00"
+     "dhash": "21350a97bcd0"
     }
    ]
   },
@@ -433,7 +433,7 @@
      "tekst": null,
      "kort": "mindst 2 internationale og 2 nationale stævner",
      "kort_regel": "2 internationale og 2 nationale for genregistrering",
-     "dhash": "32751da99bb4"
+     "dhash": "e0a2c17eb152"
     }
    ]
   },
@@ -448,7 +448,7 @@
      "tekst": null,
      "kort": "Norge trak forslag om kun kategori 1-dommere",
      "kort_regel": null,
-     "dhash": "6f39c203c2ae"
+     "dhash": "7604a814d7f5"
     }
    ]
   },
@@ -463,7 +463,7 @@
      "tekst": null,
      "kort": "Bestyrelsen overvejer 500 kr. afgift uden stillet dommer",
      "kort_regel": null,
-     "dhash": "867d2554008c"
+     "dhash": "3aca5bbd69d7"
     },
     {
      "ref": "refbest_080123#3",
@@ -471,7 +471,7 @@
      "tekst": null,
      "kort": "Bestyrelsen foreslår regel A7 med gebyr 2000 kr.",
      "kort_regel": null,
-     "dhash": "abd265e7b2db"
+     "dhash": "ba405bb79360"
     },
     {
      "ref": "rep2023#1",
@@ -479,7 +479,7 @@
      "tekst": null,
      "kort": "over 5 deltagere: dommer, ellers 2000 kr. pr. manglende",
      "kort_regel": "over 5 løftere 1 dommer, over 10 to",
-     "dhash": "d8305951da45"
+     "dhash": "e334f656d413"
     },
     {
      "ref": "rep2025#8",
@@ -487,7 +487,7 @@
      "tekst": null,
      "kort": "Ares Rødovres ændringsforslag trukket",
      "kort_regel": null,
-     "dhash": "aad7a0f38ab1"
+     "dhash": "ad43fc23fc9d"
     }
    ]
   },
@@ -502,7 +502,7 @@
      "tekst": null,
      "kort": "Haderslev foreslår højere gebyrer til dommerhonorering – nedstemt",
      "kort_regel": null,
-     "dhash": "c7f45cb374a2"
+     "dhash": "4d9982ff251a"
     }
    ]
   },
@@ -517,7 +517,7 @@
      "tekst": null,
      "kort": "arrangør står for dommerpåsætning; Dommerudvalget ser plan",
      "kort_regel": "arrangør påsætter dommere; DSF-regler gælder",
-     "dhash": "e13da90aa063"
+     "dhash": "2c9d23257ddc"
     }
    ]
   },
@@ -532,7 +532,7 @@
      "tekst": null,
      "kort": "stævneplan med dommere senest 14 dage før",
      "kort_regel": "Stævneudvalget påsætter; plan senest 14 dage før",
-     "dhash": "51b80dc6d670"
+     "dhash": "b6ae046802a2"
     },
     {
      "ref": "refdom28032024#5",
@@ -540,7 +540,7 @@
      "tekst": "Stævneudvalget sætter dommere og jury på forbundsstævner og godkender dem til andre stævner under DSF, også private. Udkast sendes til stævne- og dommerudvalget, som har 48 timer til kommentarer. Stævneplan med dommerpåsætning skal lægges på terminslisten senest 14 dage før stævnet.",
      "kort": "udkast med 48 timers kommentarfrist",
      "kort_regel": "48 timers høring; plan senest 14 dage før",
-     "dhash": "ed06517e5f0c"
+     "dhash": "ad9ee373790f"
     },
     {
      "ref": "refdom16122025#3",
@@ -548,7 +548,7 @@
      "tekst": "Stævneudvalget sætter dommere og jury på forbundsstævner og godkender dem til andre stævner under DSF, også private. Den stævneansvarlige påbegynder påsætningen i god tid og noterer, hvem der er kontaktet. Udkast sendes til stævne- og dommerudvalget med 48 timer til kommentarer. Stævneplan med dommerpåsætning lægges på terminslisten senest 14 dage før stævnet.",
      "kort": "påsætning i god tid; kontaktede dommere noteres",
      "kort_regel": "påsætning i god tid; plan senest 14 dage før",
-     "dhash": "c385d77a8de0"
+     "dhash": "d79a9e7b65de"
     }
    ]
   },
@@ -563,7 +563,7 @@
      "tekst": null,
      "kort": "løftere indvejes af dommer af eget køn",
      "kort_regel": "kvinder indvejes af kvinder, mænd af mænd",
-     "dhash": "6e131d8ab01b"
+     "dhash": "05160f99cd50"
     }
    ]
   },
@@ -578,7 +578,7 @@
      "tekst": null,
      "kort": "betroede personer kan indveje ved dommermangel",
      "kort_regel": "to betroede personer kan indveje ved dommermangel",
-     "dhash": "a2243fcd0206"
+     "dhash": "3e7d732d4f95"
     }
    ]
   },
@@ -593,7 +593,7 @@
      "tekst": null,
      "kort": "møde 30 minutter før indvejning",
      "kort_regel": "dommere møder 30 minutter før indvejning",
-     "dhash": "24c875621c84"
+     "dhash": "54a3249d67e1"
     }
    ]
   },
@@ -608,7 +608,7 @@
      "tekst": "Ved alle officielle stævner skal der være en jury efter IPF's regler med mindst A-certifikat. Ud over juryen er der tre dommere, som må være B-dommere. Divisionsturneringen skal ikke have jury. Dommerudvalget har ansvar for påsætning af dommere og jury.",
      "kort": "jury med A-certifikat plus tre dommere ved officielle stævner",
      "kort_regel": "jury min. A-dommere, tre dommere; ikke i division",
-     "dhash": "cf11da1516b7"
+     "dhash": "ef6cd6646d46"
     }
    ]
   },
@@ -623,7 +623,7 @@
      "tekst": null,
      "kort": "mindst 4 trekampsstævner for at sidde i jury",
      "kort_regel": "dømt mindst 4 trekampsstævner, undtagelse ved mangel",
-     "dhash": "de29b8b80200"
+     "dhash": "b8c5b565ef23"
     }
    ]
   },
@@ -638,7 +638,7 @@
      "tekst": null,
      "kort": "Frankrig: jury kan omstøde 3 enige dommere – nedstemt",
      "kort_regel": null,
-     "dhash": "9b320c0928d1"
+     "dhash": "f3cf3b86bc41"
     },
     {
      "ref": "806kongres#2",
@@ -646,7 +646,7 @@
      "tekst": null,
      "kort": "juryen får knap til at overrule dommerbeslutning",
      "kort_regel": "jury har overrulingsknap",
-     "dhash": "947122e33252"
+     "dhash": "82698fd79733"
     }
    ]
   },
@@ -661,7 +661,7 @@
      "tekst": null,
      "kort": "juryleder afgør tvivl om ændret 2. forsøg",
      "kort_regel": "juryleder afgør indtil svar fra IPF TC",
-     "dhash": "89170eb19a7b"
+     "dhash": "3581ba3fa9a8"
     }
    ]
   },
@@ -676,7 +676,7 @@
      "tekst": null,
      "kort": "jury kan flytte jurybordet med arrangøren",
      "kort_regel": "jury og arrangør placerer jurybordet optimalt",
-     "dhash": "78c1d9461b16"
+     "dhash": "d14bfd07074b"
     }
    ]
   },
@@ -691,7 +691,7 @@
      "tekst": null,
      "kort": "\"Uncompleted lift\" under gul markering",
      "kort_regel": "gul markering omfatter \"Uncompleted lift\"",
-     "dhash": "60dfe424b93e"
+     "dhash": "f1ad9068cf31"
     }
    ]
   },
@@ -706,7 +706,7 @@
      "tekst": null,
      "kort": "TC: kun ét fejlkort ved underkendt løft – nedstemt",
      "kort_regel": null,
-     "dhash": "e60064e471f0"
+     "dhash": "c1ed46695a59"
     }
    ]
   },
@@ -721,7 +721,7 @@
      "tekst": "Løfteren skal frivilligt og under fuld kontrol rejse sig til oprejst position med låste knæ.",
      "kort": "opretning under fuld kontrol med låste knæ",
      "kort_regel": "oprejst position med låste knæ under kontrol",
-     "dhash": "5f6955c2a01d"
+     "dhash": "741e5a9e5c0c"
     }
    ]
   },
@@ -736,7 +736,7 @@
      "tekst": null,
      "kort": "Sverige/EC: forbud mod fødder på bænken nedstemt",
      "kort_regel": null,
-     "dhash": "0f06753408ea"
+     "dhash": "904c41a934ea"
     }
    ]
   },
@@ -751,7 +751,7 @@
      "tekst": null,
      "kort": "nyt opspænd; fladt liggende uden dybde godkendes",
      "kort_regel": "fladt liggende uden korrekt dybde godkendes",
-     "dhash": "d74371ba1589"
+     "dhash": "cb5868e74e0c"
     }
    ]
   },
@@ -766,7 +766,7 @@
      "tekst": null,
      "kort": "Sveriges forslag faldt uden sekundant",
      "kort_regel": null,
-     "dhash": "b40b2e19d19e"
+     "dhash": "f747117a4604"
     }
    ]
   },
@@ -781,7 +781,7 @@
      "tekst": "Hænder, tommelfingre og fingre skal være i fuldstændig kontakt med stangen; tommelfingrene er ikke krævet at omslutte stangen.",
      "kort": "oversættelse rettet: tommelfingre behøver ikke omslutte stangen",
      "kort_regel": "fuld kontakt med stangen; omslutning ikke krævet",
-     "dhash": "c2b9b11d9b75"
+     "dhash": "839549ceea81"
     }
    ]
   },
@@ -796,7 +796,7 @@
      "tekst": null,
      "kort": "klubber indstiller; teoriprøve med 90 af 100 point",
      "kort_regel": "teoriprøve min. 90/100; stå til rådighed",
-     "dhash": "83fa10b3cbb4"
+     "dhash": "83009020cbdc"
     },
     {
      "ref": "refbest_221023#2",
@@ -804,7 +804,7 @@
      "tekst": "Klubber kan indstille medlemmer til B-dommerprøve. Prøven er teoretisk, og der kræves mindst 85 af 100 point. Kandidaten skal stille sig til rådighed som dommer for DSF efter bestået prøve.",
      "kort": "beståelseskrav sænket til 85 af 100 point",
      "kort_regel": "teoriprøve min. 85/100 point",
-     "dhash": "63cba1431cda"
+     "dhash": "1ee17d340bd3"
     },
     {
      "ref": "refdom05032024#2",
@@ -812,7 +812,7 @@
      "tekst": "Klubber kan indstille medlemmer til B-dommerprøve. Kandidater tilmeldes først, når de har opgivet to stævner, de vil dømme efter bestået kursus. Prøven er teoretisk, og der kræves mindst 85 af 100 point. Kandidaten skal stille sig til rådighed som dommer for DSF efter bestået prøve.",
      "kort": "kandidat skal opgive to stævner før tilmelding",
      "kort_regel": "85/100 point; to stævner opgivet før tilmelding",
-     "dhash": "d98c79122462"
+     "dhash": "c23c076816fb"
     },
     {
      "ref": "refdom07012025#3",
@@ -820,7 +820,7 @@
      "tekst": "Klubber kan indstille medlemmer til B-dommerprøve. Kandidater kan ikke tilmeldes uden at have valgt to stævner, de vil dømme efter bestået prøve, og sættes på disse stævner efter bestået uddannelse. Prøven er teoretisk, og der kræves mindst 85 af 100 point.",
      "kort": "to valgte stævner før tilmelding bekræftet",
      "kort_regel": "85/100 point; to stævner valgt før tilmelding",
-     "dhash": "f6d7579d871e"
+     "dhash": "65c333c151c1"
     }
    ]
   },
@@ -835,7 +835,7 @@
      "tekst": null,
      "kort": "2 års B-dømning; teori og praksis med 90 %",
      "kort_regel": "2 år som B-dommer; 90 % teori og praksis",
-     "dhash": "b20ee9846481"
+     "dhash": "b7afcd87a025"
     },
     {
      "ref": "refdom07012025#1",
@@ -843,7 +843,7 @@
      "tekst": "B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøve via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Prøven har en teoretisk del (min. 90 af 100 point) og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft, hvor der kræves mindst 90 % rigtige afgørelser.",
      "kort": "indstilling via klubformand; kun klubløse indstiller sig selv",
      "kort_regel": "indstilling via klubformand; 90 % teori og praksis",
-     "dhash": "ceb037c0d8bb"
+     "dhash": "a1a3be460216"
     },
     {
      "ref": "refdom28012025#3",
@@ -851,7 +851,7 @@
      "tekst": null,
      "kort": "Dommerudvalget foreslår udvalgsvurdering af indstillinger",
      "kort_regel": null,
-     "dhash": "3d60402cf4cb"
+     "dhash": "5e00eff21d12"
     },
     {
      "ref": "refbest_080325#2",
@@ -859,7 +859,7 @@
      "tekst": "B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøve via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Dommerudvalget vurderer indstillingen, hvorefter der rettes henvendelse til dommeren. Prøven har en teoretisk del (min. 90 af 100 point) og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft, hvor der kræves mindst 90 % rigtige afgørelser.",
      "kort": "dommerudvalget vurderer indstilling og kontakter dommeren",
      "kort_regel": "udvalget vurderer indstilling; 90 % teori og praksis",
-     "dhash": "be4a9bca1873"
+     "dhash": "79e778ecbacc"
     },
     {
      "ref": "refdom08042025#1",
@@ -867,7 +867,7 @@
      "tekst": "B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøve via klubformanden til dommerudvalget; kun klubløse dommere kan indstille sig selv. Dommerudvalget vurderer indstillingen, hvorefter der rettes henvendelse til dommeren. Prøven har en teoretisk del (min. 90 af 100 point) og en praktisk del med bedømmelse af 25 forsøg i squat og 15 i bænkpres og dødløft, hvor der kræves mindst 90 % rigtige afgørelser.",
      "kort": "tekst indarbejdet i Regler for dommerudvalget",
      "kort_regel": "udvalget vurderer indstilling; 90 % teori og praksis",
-     "dhash": "2355443bd2c9"
+     "dhash": "8ce4f631c473"
     }
    ]
   },
@@ -882,7 +882,7 @@
      "tekst": null,
      "kort": "indstillinger drøftes på hvert dommerudvalgsmøde",
      "kort_regel": "A-indstillinger fast punkt på hvert møde",
-     "dhash": "5021e451f495"
+     "dhash": "f7b6a3c492d1"
     }
    ]
   },
@@ -897,7 +897,7 @@
      "tekst": null,
      "kort": "dumpede får forklaring og kan tage prøven igen",
      "kort_regel": "omprøve ved næstkommende dommeruddannelse",
-     "dhash": "0755bd4341de"
+     "dhash": "d73c607bc88b"
     }
    ]
   },
@@ -912,7 +912,7 @@
      "tekst": null,
      "kort": "mindst årligt i både Jylland og Sjælland",
      "kort_regel": "A- og B-prøver årligt i Jylland og Sjælland",
-     "dhash": "a89fc9780666"
+     "dhash": "5a15606b52bf"
     },
     {
      "ref": "refdom03072025#1",
@@ -920,7 +920,7 @@
      "tekst": "Der afholdes ikke dommerkursus i 2025, da der er de dommere, der er brug for. Ellers afholdes dommerprøver efter behov.",
      "kort": "intet dommerkursus i 2025",
      "kort_regel": "ingen dommerprøver i 2025",
-     "dhash": "28ea044283c2"
+     "dhash": "016d359a0ae9"
     },
     {
      "ref": "refdom18092025#2",
@@ -928,7 +928,7 @@
      "tekst": "Der afholdes ét dommerkursus for hele landet i 2026. Yderligere dommerprøver afholdes efter behov.",
      "kort": "ét landsdækkende dommerkursus i 2026",
      "kort_regel": "ét landsdækkende kursus i 2026",
-     "dhash": "7eb686b0fe4c"
+     "dhash": "42ebcb766c7f"
     },
     {
      "ref": "refdom12032026#1",
@@ -936,7 +936,7 @@
      "tekst": "I 2026 afholdes kun én dommeruddannelse, den 25. april i Aarhus AK. De nyeste regelændringer integreres i den teoretiske og praktiske prøve.",
      "kort": "eneste uddannelse 25. april 2026 i Aarhus AK",
      "kort_regel": "ét kursus 2026, Aarhus 25. april",
-     "dhash": "40a195d76724"
+     "dhash": "67bbb4d8fb7a"
     }
    ]
   },
@@ -951,7 +951,7 @@
      "tekst": null,
      "kort": "tre obligatoriske online brush up-kurser",
      "kort_regel": "obligatorisk online kursus, tre datoer",
-     "dhash": "fe33aa53cdee"
+     "dhash": "480fdc8e0599"
     },
     {
      "ref": "refdom18092025#1",
@@ -959,7 +959,7 @@
      "tekst": "Dommerudvalget afholder hvert år et obligatorisk online brush up-kursus for B-dommere, udbudt på flere datoer. Indholdet afspejler den viden, der på tidspunktet er vigtigst at formidle.",
      "kort": "brush up afholdes hvert år",
      "kort_regel": "årligt obligatorisk online brush up",
-     "dhash": "a69afc0973b8"
+     "dhash": "5ba9698e6e9f"
     },
     {
      "ref": "refdom12032026#3",
@@ -967,7 +967,7 @@
      "tekst": "Dommerudvalget afholder hvert år et obligatorisk online brush up-kursus for B-dommere; i 2026 i efteråret, baseret på sidste års kursus og aktuelle fokusområder, med plads til spørgsmål.",
      "kort": "obligatorisk online kursus efteråret 2026",
      "kort_regel": "årligt obligatorisk online brush up",
-     "dhash": "601068723783"
+     "dhash": "75c1b2fd0db0"
     },
     {
      "ref": "refdom04062026#2",
@@ -975,7 +975,7 @@
      "tekst": "Dommerudvalget afholder hvert år et obligatorisk online brush up-kursus for B-dommere. Det udbydes 3 gange, og dommere, der ikke har deltaget, får mulighed for et opsamlingsheat.",
      "kort": "udbydes 3 gange plus opsamlingsheat",
      "kort_regel": "obligatorisk, 3 gange plus opsamlingsheat",
-     "dhash": "46367ea5b111"
+     "dhash": "3f9b88b1a0c7"
     },
     {
      "ref": "refdom20082026#1",
@@ -983,7 +983,7 @@
      "tekst": "Dommerudvalget afholder hvert år et obligatorisk online brush up-kursus for B-dommere, åbent for andre interesserede dommere. Det udbydes 3 gange med opsamlingsheat, og programmet tilpasses nuværende behov.",
      "kort": "åbnet for andre interesserede dommere",
      "kort_regel": "obligatorisk for B-dommere, 3 gange online",
-     "dhash": "4600f1bee9d6"
+     "dhash": "1b45c20928b7"
     },
     {
      "ref": "refbest_290826.2#2",
@@ -991,7 +991,7 @@
      "tekst": "B-dommere skal deltage i det obligatoriske online brush up-kursus, som afholdes 3 gange inden årets udgang, så alle kan deltage; andre dommere kan også deltage.",
      "kort": "Bestyrelsen bekræfter obligatorisk kursus 3 gange i 2026",
      "kort_regel": "obligatorisk for B-dommere, 3 gange online",
-     "dhash": "b09814552444"
+     "dhash": "1db7e518623b"
     }
    ]
   },
@@ -1006,7 +1006,7 @@
      "tekst": null,
      "kort": "erfaren dommer ved siden af ved første stævne",
      "kort_regel": "ny dommer ledsages af erfaren dommer",
-     "dhash": "65bd9e50d21d"
+     "dhash": "55dc32138176"
     }
    ]
   },
@@ -1021,7 +1021,7 @@
      "tekst": null,
      "kort": "højest rangerende dommer er stævneleder",
      "kort_regel": "stævneleder og overdommer efter rang/anciennitet",
-     "dhash": "feac674c420a"
+     "dhash": "5fad1672fa63"
     }
    ]
   },
@@ -1036,7 +1036,7 @@
      "tekst": null,
      "kort": "foreløbigt skriv om stævnelederens ansvar",
      "kort_regel": "A-dommer har overordnet ansvar på stævnedagen",
-     "dhash": "3c7d5e109b7d"
+     "dhash": "2e1db0b5f2e3"
     },
     {
      "ref": "refbest_080325#1",
@@ -1044,7 +1044,7 @@
      "tekst": "Stævnelederen, der er A-dommer eller højere rangerende, har det overordnede ansvar på stævnedagen, tjekker udstyrstjek, indvejningsrum, medaljeuddeling og pladser til TC'er, dommere og jury, afholder dommerbriefing, træffer endelig beslutning ved tvivlsspørgsmål om sikkerhed og grove regelbrud og sikrer, at stævneprotokoller sendes til stævneudvalget.",
      "kort": "Bestyrelsen vedtager beskrivelse inkl. stævneprotokoller",
      "kort_regel": "overordnet ansvar, briefing, endelige afgørelser, protokoller",
-     "dhash": "c40a92b5baed"
+     "dhash": "86c66577b12e"
     }
    ]
   },
@@ -1059,7 +1059,7 @@
      "tekst": null,
      "kort": "briefing ved alle stævner, uanset tidligere briefing",
      "kort_regel": "stævneleder holder briefing ved alle stævner",
-     "dhash": "84bcb977cfb2"
+     "dhash": "c95b17d28b0c"
     },
     {
      "ref": "refdom12032026#4",
@@ -1067,7 +1067,7 @@
      "tekst": "Stævnelederen skal afholde dommerbriefing inden stævnestart ved alle stævner med udgangspunkt i dokumentet Dommer briefing på hjemmesiden og kan fremhæve særligt vigtige regler og ændringer.",
      "kort": "briefing med udgangspunkt i hjemmesidens dokument",
      "kort_regel": "briefing ved alle stævner efter fast dokument",
-     "dhash": "299dcfc7b359"
+     "dhash": "bd67288f6dc0"
     }
    ]
   },
@@ -1082,7 +1082,7 @@
      "tekst": null,
      "kort": "klubber og dommere tilmelder; afbud til dommerudvalget",
      "kort_regel": "tilmelding via database; afbud til dommerudvalget",
-     "dhash": "c7781f76bd71"
+     "dhash": "1c49c0b3299f"
     },
     {
      "ref": "refbest_140424#1",
@@ -1090,7 +1090,7 @@
      "tekst": "Tilmeldingssystemet for dommere bruges fra og med DM-ugen 2024. Klubber og dommere tilmelder dommere til stævner i systemet, og al dommeraktivitet, også internationale dommergerninger, registreres. Afbud skrives til dommerudvalget. Medlemmer af stævne- og dommerudvalget har adgang til databasen, og Dommerudvalget redigerer i den.",
      "kort": "tilmeldingssystem i brug fra DM-ugen 2024",
      "kort_regel": "klubber tilmelder dommere i systemet",
-     "dhash": "4ef4132df86d"
+     "dhash": "0facc4b0bb29"
     },
     {
      "ref": "refstaevne04062024#3",
@@ -1098,7 +1098,7 @@
      "tekst": "Tilmeldingssystemet for dommere bruges fra og med DM-ugen 2024. Klubber og dommere tilmelder dommere til stævner i systemet, og al dommeraktivitet registreres. Afbud skrives til dommerudvalget. Medlemmer af stævne- og dommerudvalget har adgang til databasen, og Dommerudvalget redigerer i den.",
      "kort": "Stævneudvalget skal have adgang til databasen",
      "kort_regel": "klubber tilmelder dommere i systemet",
-     "dhash": "7b20aacbee6b"
+     "dhash": "33384cfb2b46"
     },
     {
      "ref": "refdom28012025#1",
@@ -1106,7 +1106,7 @@
      "tekst": "Dommere tilmeldes stævner udelukkende via tilmeldingssystemet; Excel-arket med dommerpåsætning på Facebook er slettet. Al dommeraktivitet registreres i databasen. Afbud skrives til dommerudvalget. Medlemmer af stævne- og dommerudvalget har adgang, og Dommerudvalget redigerer.",
      "kort": "Excel-ark på Facebook slettet",
      "kort_regel": "tilmelding kun via tilmeldingssystemet",
-     "dhash": "f51883c9972a"
+     "dhash": "7858466a13f6"
     },
     {
      "ref": "refdom18092025#3",
@@ -1114,7 +1114,7 @@
      "tekst": "Dommere tilmeldes stævner udelukkende via tilmeldingssystemet, og al dommeraktivitet registreres i databasen. Afbud skrives til dommerudvalget. Databasen gennemgås årligt, og alle dommere kontaktes for opdatering af kontaktoplysninger (i 2026 senest 1. marts).",
      "kort": "årlig gennemgang; frist 1. marts 2026",
      "kort_regel": "tilmelding via system; årlig opdatering af kontaktdata",
-     "dhash": "0aa78592a6c8"
+     "dhash": "0cbbe1e52a43"
     }
    ]
   },
@@ -1129,7 +1129,7 @@
      "tekst": null,
      "kort": "intet krav; årlig mail med opfordring",
      "kort_regel": "årlig mail opfordrer dommere til tilmelding",
-     "dhash": "33d02849713f"
+     "dhash": "933bf1bc15f5"
     }
    ]
   },
@@ -1144,7 +1144,7 @@
      "tekst": null,
      "kort": "klubber mindes hvert halve år om lånedommere",
      "kort_regel": "halvårlig mail om lånedommere",
-     "dhash": "17de5396737d"
+     "dhash": "86221f638dd4"
     }
    ]
   },
@@ -1159,7 +1159,7 @@
      "tekst": null,
      "kort": "diæter ved forbundsstævner, ikke private stævner",
      "kort_regel": "diæter kun ved forbundsstævner",
-     "dhash": "85ad37951f6e"
+     "dhash": "1733b0f9a04f"
     }
    ]
   },
@@ -1174,7 +1174,7 @@
      "tekst": null,
      "kort": "dommeres forslag om benzinpenge ved private stævner afvist",
      "kort_regel": null,
-     "dhash": "48af168e2686"
+     "dhash": "d89ffa70380c"
     },
     {
      "ref": "refdom28032024#1",
@@ -1182,7 +1182,7 @@
      "tekst": null,
      "kort": "BroBizz/Pay by Plate krav over Storebælt",
      "kort_regel": "BroBizz krævet for godtgørelse over Storebælt",
-     "dhash": "0f4f36d4bf1b"
+     "dhash": "a7d579304732"
     }
    ]
   },
@@ -1197,7 +1197,7 @@
      "tekst": null,
      "kort": "Dommerudvalget foreslår betaling af billigste transport og hotel",
      "kort_regel": null,
-     "dhash": "ee3f143ca5f6"
+     "dhash": "221f2ca62a06"
     },
     {
      "ref": "refbest_080325#3",
@@ -1205,7 +1205,7 @@
      "tekst": null,
      "kort": "billigste transport og hotel dagen før til dagen efter",
      "kort_regel": "DSF betaler billigste rejse; hotel dag før–dag efter",
-     "dhash": "842de7dd7022"
+     "dhash": "d38728c8aa0b"
     }
    ]
   },
@@ -1220,7 +1220,7 @@
      "tekst": "EPF har ændret måden, man melder sig som dommer, og hvordan dommergerninger registreres, for at gøre det mere fleksibelt.",
      "kort": "EPF ændrer tilmelding og registrering efter dansk forslag",
      "kort_regel": "mere fleksibel EPF-tilmelding og registrering",
-     "dhash": "d9caecae8cc8"
+     "dhash": "9fee90e01f55"
     }
    ]
   }

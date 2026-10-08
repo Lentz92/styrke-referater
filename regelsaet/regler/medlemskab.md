@@ -82,7 +82,7 @@ Løfterne skal huske at melde flytning i klubben og/eller til kontoret, så adre
 
 *Bestyrelsesbeslutning · vedtaget 25.07.2010 af Bestyrelsen*
 
-- 25.07.2010 · indført: løftere skal melde flytning til klub eller kontor · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.PDF#page=1)
+- 25.07.2010 · indført: løftere skal melde flytning til klub eller kontor · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.pdf#page=1)
 
 ### Navn og licensnummer ved licensbetaling
 

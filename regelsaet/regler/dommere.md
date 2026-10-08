@@ -512,7 +512,7 @@ Dommerudvalget afholder A- og B-dommerprøver, vedligeholder dommerliste, sætte
 
 *Udvalgsbeslutning · vedtaget 22.10.2023 af Bestyrelsen*
 
-- 15.05.2011 · indført: kommissorium for Dommerudvalget vedtaget · [refbest_15052011 s. 4](https://filer.styrke.dk/referater/refbest_15052011.PDF#page=4)
+- 15.05.2011 · indført: kommissorium for Dommerudvalget vedtaget · [refbest_15052011 s. 4](https://filer.styrke.dk/referater/refbest_15052011.pdf#page=4)
 - 22.10.2023 · ændret: opgaver og sammensætning: 3-4 medlemmer inkl. bestyrelsesmedlem · [refbest_221023 s. 3](https://filer.styrke.dk/referater/refbest_221023.pdf#page=3)
 
 ### Udlevering af slips og emblemer til dommere

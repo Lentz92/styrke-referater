@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 
 import pytest
 
@@ -73,23 +74,45 @@ def test_proposals_do_not_change_the_rule(effekt):
 
 def test_same_day_versions_keep_claudes_order():
     # Claude's texts build on each other in the order it listed them, so that order must survive.
-    first = decision(ref="m#10", rank=1)
-    second = decision(ref="m#2", rank=0)
+    # Neither ref order ("m#10" < "m#2") nor reading order (rank) gives Claude's order here.
+    first = decision(ref="m#2", rank=1)
+    second = decision(ref="m#10", rank=0)
     rule = _built([first, second], _version(first, tekst="A"), _version(second, "aendret", tekst="A og B"))
     assert [v.text for v in rule.versions] == ["A", "A og B"]
 
 
-def test_version_of_a_changed_decision_is_left_out():
+def test_rule_with_a_changed_decision_is_left_out_whole():
+    # Dropping only the changed abolition would show the repealed rule as in force.
+    a = decision(ref="a#1", dato="2010-04-01")
+    b = decision(ref="b#1", dato="2015-04-01", handling="ophaevelse")
+    stale = {**_version(b, "ophaevet"), "dhash": "000000000000"}
+    assert build_rules([_rule(_version(a), stale)], {d.ref: d for d in (a, b)}) == []
+
+
+def test_rule_with_a_decision_that_is_gone_is_left_out_whole():
     a = decision(ref="a#1", dato="2010-04-01")
     b = decision(ref="b#1", dato="2015-04-01")
-    stale = {**_version(b, "aendret"), "dhash": "000000000000"}
-    rule = _built([a, b], _version(a), stale)
-    assert [v.decision for v in rule.versions] == [a]
+    assert build_rules([_rule(_version(a), _version(b, "aendret"))], {a.ref: a}) == []
 
 
-def test_versions_without_fingerprint_are_accepted():
+def test_other_rules_are_still_shown():
     a = decision(ref="a#1")
-    assert len(_built([a], _version(a, dhash=False)).versions) == 1
+    b = decision(ref="b#1")
+    raw = [_rule(_version(a), titel="Licensgebyr"), _rule({**_version(b), "dhash": "000000000000"}, titel="Andet")]
+    assert [r.titel for r in build_rules(raw, {d.ref: d for d in (a, b)})] == ["Licensgebyr"]
+
+
+def test_versions_without_fingerprint_are_left_out():
+    a = decision(ref="a#1")
+    assert build_rules([_rule(_version(a, dhash=False))], {a.ref: a}) == []
+
+
+def test_new_quote_alone_keeps_the_rule():
+    # The consolidation never saw the quote, so a re-extraction that only changes it must not hide the rule.
+    a = decision(ref="a#1")
+    version = _version(a)
+    assert len(_built([replace(a, citat="et andet citat")], version).versions) == 1
+    assert build_rules([_rule(version)], {a.ref: replace(a, stemmer="31 for, 7 imod")}) == []
 
 
 # ---------------------------------------------------------------- consolidation output
