@@ -1,10 +1,6 @@
-import subprocess
-import time
-
 import pytest
 
-import analyze
-from analyze import ClaudeError, _run_parallel, ask_claude
+from analyze import ClaudeError, RunBudget, Usage, _run_parallel
 
 
 def test_jobs_after_the_deadline_are_skipped_and_counted():
@@ -12,40 +8,56 @@ def test_jobs_after_the_deadline_are_skipped_and_counted():
 
     def job(n):
         ran.append(n)
-        return f"job {n}", 0.5
+        return f"job {n}", Usage(cost_usd=0.5)
 
-    cost, failed = _run_parallel([1, 2, 3], job, workers=2, label="Test", deadline=time.monotonic() - 1)
-    assert (ran, cost, failed) == ([], 0.0, 3)
+    step = _run_parallel([1, 2, 3], job, workers=2, label="Test", budget=RunBudget(minutes=-1))
+    assert (ran, step.calls, step.skipped, step.usage.cost_usd) == ([], 0, 3, 0.0)
 
 
-def test_failures_are_counted_and_the_rest_still_runs():
+def test_jobs_after_the_cost_limit_are_skipped_and_the_limit_is_named(caplog):
+    budget = RunBudget(max_cost_usd=1.0)
+
+    def job(n):
+        budget.add(0.5)  # ask_claude adds the cost of each attempt as it completes
+        return f"job {n}", Usage(cost_usd=0.5)
+
+    step = _run_parallel([1, 2, 3, 4], job, workers=1, label="Test", budget=budget)
+    assert (step.calls, step.skipped, step.usage.cost_usd) == (2, 2, 1.0)
+    assert "skipped 2 because the cost limit of 1.00 USD is reached" in caplog.text
+
+
+def test_failures_are_counted_with_their_usage_and_the_rest_still_runs():
     def job(n):
         if n == 2:
-            raise RuntimeError("boom")
-        return f"job {n}", 0.5
+            raise ClaudeError("boom", Usage(cost_usd=0.25, attempts=3))
+        return f"job {n}", Usage(model="sonnet", output_by_model={"claude-sonnet-5-5": 10}, cost_usd=0.5, attempts=1)
 
-    cost, failed = _run_parallel([1, 2, 3], job, workers=2, label="Test")
-    assert (cost, failed) == (1.0, 1)
+    step = _run_parallel([1, 2, 3], job, workers=2, label="Test")
+    assert (step.calls, step.failed, step.skipped) == (3, 1, 0)
+    assert (step.usage.cost_usd, step.usage.attempts, step.usage.output_tokens) == (1.25, 5, 20)
+    assert step.usage.models == ("claude-sonnet-5-5",)
 
 
-def test_failed_call_not_retried_after_the_deadline_reports_its_error(monkeypatch, caplog):
-    calls = []
+def test_budget_without_limits_is_never_exhausted():
+    budget = RunBudget()
+    budget.add(1000)
+    assert budget.exhausted() is None
 
-    def run(cmd, **kwargs):
-        calls.append(cmd)
-        return subprocess.CompletedProcess(cmd, 1, stdout="", stderr="API Error: overloaded")
 
-    monkeypatch.setattr(analyze.shutil, "which", lambda name: "/usr/bin/claude")
-    monkeypatch.setattr(analyze.subprocess, "run", run)
-    monkeypatch.setattr(analyze.time, "sleep", lambda _: None)
-    deadline = time.monotonic() - 1  # passed while the first attempt ran; that attempt still counts
+def test_budget_names_the_limit_that_was_hit():
+    assert RunBudget(minutes=60).exhausted() is None
+    assert "time budget" in RunBudget(minutes=-1).exhausted()
 
-    def job(_):
-        return ask_claude("system", "prompt", {}, model="sonnet", effort=None, timeout=1, deadline=deadline)
+    budget = RunBudget(max_cost_usd=1.0)
+    budget.add(0.6)
+    assert budget.exhausted() is None
+    budget.add(0.4)
+    assert budget.exhausted() == "the cost limit of 1.00 USD is reached"
+    assert budget.spent_usd == pytest.approx(1.0)
 
-    with pytest.raises(ClaudeError, match="API Error: overloaded.*tidsbudgettet"):
-        job(None)
-    assert len(calls) == 1
 
-    _, failed = _run_parallel([1], job, workers=1, label="Test")
-    assert failed == 1 and "fejlede: API Error: overloaded" in caplog.text
+def test_a_stopped_budget_reports_the_first_reason():
+    budget = RunBudget(max_cost_usd=100)
+    budget.stop("wrong model")
+    budget.stop("something else")
+    assert budget.exhausted() == "wrong model"

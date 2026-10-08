@@ -4,7 +4,7 @@ from dataclasses import replace
 import pytest
 
 import analyze
-from analyze import decision_hash
+from analyze import Usage, decision_hash
 from conftest import decision
 from render import build_rules
 
@@ -127,10 +127,10 @@ def test_consolidation_fixes_proposal_effects_and_fingerprints(tmp_path, monkeyp
         "udeladt": [],
     }
     monkeypatch.setattr(analyze, "RULES_DIR", tmp_path)
-    monkeypatch.setattr(analyze, "ask_claude", lambda *args, **kwargs: (claude_output, 0.0))
+    monkeypatch.setattr(analyze, "ask_claude", lambda *args, **kwargs: (claude_output, Usage()))
 
     analyze._consolidate_one("okonomi", items, "hash", {d.ref: decision_hash(d) for d in (adopted, rejected)},
-                             model="opus", effort=None, deadline=None)
+                             model="opus", effort=None, cli="2.1.294")
 
     (rule,) = json.loads((tmp_path / "okonomi.json").read_text())["regler"]
     assert [(v["ref"], v["effekt"]) for v in rule["versioner"]] == [("a#1", "indfoert"), ("b#1", "forkastet")]

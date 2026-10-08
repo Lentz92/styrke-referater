@@ -7,6 +7,7 @@ input (document hash, decisions in a category) or the prompt version changes.
 
 from __future__ import annotations
 
+import functools
 import hashlib
 import json
 import logging
@@ -15,10 +16,13 @@ import re
 import shutil
 import subprocess
 import tempfile
+import threading
 import time
 from collections import defaultdict
+from collections.abc import Iterator
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass
+from contextlib import contextmanager
+from dataclasses import dataclass, field, fields
 from datetime import date
 from pathlib import Path
 
@@ -226,18 +230,18 @@ EXTRACT_SCHEMA = {
 }
 
 
-def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int, deadline: float | None = None) -> int:
+def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int,
+            budget: RunBudget | None = None) -> StepSummary:
     """Extract decisions from every document whose cached result is missing or outdated.
 
-    Returns the number of documents that failed or were skipped (they are retried on the next run).
+    Documents that fail or are skipped are retried on the next run.
     """
     DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
     todo = [doc for doc in docs if not _extraction_is_current(doc)]
     log.info("Udtræk: %d af %d dokumenter skal analyseres", len(todo), len(docs))
-    cost, failures = _run_parallel(todo, lambda doc: _extract_one(doc, model, effort, deadline), workers, "Udtræk",
-                                   deadline)
-    log.info("Udtræk færdig (svarer til %.2f USD i API-pris, trækkes af abonnementet)", cost)
-    return failures
+    cli = cli_version() if todo else ""
+    return _run_parallel(todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget),
+                         workers, "Extract", budget)
 
 
 def missing_extractions(docs: list[Doc]) -> list[str]:
@@ -253,28 +257,31 @@ def _extraction_is_current(doc: Doc) -> bool:
     return cached.get("sha256") == doc.sha256 and cached.get("version") == EXTRACT_VERSION
 
 
-def _extract_one(doc: Doc, model: str, effort: str | None, deadline: float | None) -> tuple[str, float]:
+def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str,
+                 budget: RunBudget | None = None) -> tuple[str, Usage]:
     text = document_text(doc)
     prompt = (
         f"Dokument-id: {doc.id}\nOrgan: {doc.organ_label}\nTitel på styrke.dk: {doc.title}\n"
         f"Dato ifølge styrke.dk: {doc.date or 'ukendt'}\n\n<dokument>\n{text}\n</dokument>"
     )
-    output, cost = ask_claude(EXTRACT_SYSTEM, prompt, EXTRACT_SCHEMA, model=model, effort=effort,
-                              timeout=EXTRACT_TIMEOUT, deadline=deadline)
-    words = DocWords.of(text)
-    decisions = [{**d, **quote_fields(d["citat"], words, d["side"])} for d in output["beslutninger"]]
-    result = {
-        "doc_id": doc.id,
-        "sha256": doc.sha256,
-        "version": EXTRACT_VERSION,
-        "model": model,
-        "moededato": output["moededato"],
-        "beslutninger": decisions,
-    }
-    _write_json(DECISIONS_DIR / f"{doc.id}.json", result)
+    output, usage = ask_claude(EXTRACT_SYSTEM, prompt, EXTRACT_SCHEMA, model=model, effort=effort,
+                               timeout=EXTRACT_TIMEOUT, budget=budget)
+    with _usage_kept(usage):
+        words = DocWords.of(text)
+        decisions = [{**d, **quote_fields(d["citat"], words, d["side"])} for d in output["beslutninger"]]
+        result = {
+            "doc_id": doc.id,
+            "sha256": doc.sha256,
+            "version": EXTRACT_VERSION,
+            "model": model,
+            "provenance": provenance(usage, cli, EXTRACT_SYSTEM, EXTRACT_SCHEMA, effort),
+            "moededato": output["moededato"],
+            "beslutninger": decisions,
+        }
+        _write_json(DECISIONS_DIR / f"{doc.id}.json", result)
     missing = sum(not d["citat_fundet"] for d in decisions)
-    note = f", {missing} citat ikke genfundet" if missing else ""
-    return f"{doc.id}: {len(decisions)} beslutninger{note}", cost
+    note = f", {missing} quotes not found in the document" if missing else ""
+    return f"{doc.id}: {len(decisions)} decisions{note}", usage
 
 
 def load_decisions(docs: list[Doc]) -> list[Decision]:
@@ -549,35 +556,58 @@ CONSOLIDATE_SCHEMA = {
 }
 
 
-def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: str,
-                effort: str | None, workers: int, deadline: float | None = None) -> int:
+def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: str, effort: str | None,
+                workers: int, budget: RunBudget | None = None, categories: set[str] | None = None) -> StepSummary:
     """Group decisions into rule histories, one Claude call per category whose input changed.
 
-    Returns the number of categories that failed or were skipped (they are retried on the next run).
+    `categories` limits the calls to those categories (update.py --only); None means all. Categories that
+    fail or are skipped are retried on the next run.
     """
     RULES_DIR.mkdir(parents=True, exist_ok=True)
-    by_category: dict[str, list[dict]] = {}
-    for d in decisions:
-        by_category.setdefault(d.kategori, []).append(_consolidation_input(d, organ_of[d.doc_id]))
+    with_decisions = {d.kategori for d in decisions}
     fingerprints = {d.ref: decision_hash(d) for d in decisions}
 
     for stale in RULES_DIR.glob("*.json"):
-        if stale.stem not in by_category:
+        if stale.stem not in with_decisions:
             stale.unlink()
 
+    todo = consolidation_todo(decisions, organ_of)
+    if categories is not None:
+        todo = [job for job in todo if job.category in categories]
+    log.info("Consolidate: %d of %d categories need updating%s", len(todo), len(with_decisions),
+             "" if categories is None else f" among those of the selected documents ({len(categories)})")
+    cli = cli_version() if todo else ""
+    return _run_parallel(
+        todo,
+        lambda job: _consolidate_one(job.category, job.items, job.input_hash, fingerprints, model=model,
+                                     effort=effort, cli=cli, budget=budget),
+        workers, "Consolidate", budget,
+    )
+
+
+@dataclass(frozen=True)
+class CategoryJob:
+    category: str
+    items: list[dict]  # the consolidation input
+    input_hash: str
+    rules_missing: bool  # no rule file at all, as opposed to one built from other input
+
+
+def consolidation_todo(decisions: list[Decision], organ_of: dict[str, str]) -> list[CategoryJob]:
+    """Categories whose rule file is missing or was built from other input: other decisions, or another
+    CONSOLIDATE_VERSION. Reads data/regler/ only, so the rebuild guard can ask before any Claude call."""
+    by_category: dict[str, list[dict]] = {}
+    for d in decisions:
+        by_category.setdefault(d.kategori, []).append(_consolidation_input(d, organ_of[d.doc_id]))
     todo = []
     for category, items in by_category.items():
         input_hash = _hash(items, CONSOLIDATE_VERSION)
         path = RULES_DIR / f"{category}.json"
-        if not path.exists() or json.loads(path.read_text()).get("input_hash") != input_hash:
-            todo.append((category, items, input_hash))
-    log.info("Konsolidering: %d af %d kategorier skal opdateres", len(todo), len(by_category))
-    cost, failures = _run_parallel(
-        todo, lambda job: _consolidate_one(*job, fingerprints, model=model, effort=effort, deadline=deadline),
-        workers, "Konsolidering", deadline,
-    )
-    log.info("Konsolidering færdig (svarer til %.2f USD i API-pris, trækkes af abonnementet)", cost)
-    return failures
+        if not path.exists():
+            todo.append(CategoryJob(category, items, input_hash, rules_missing=True))
+        elif json.loads(path.read_text()).get("input_hash") != input_hash:
+            todo.append(CategoryJob(category, items, input_hash, rules_missing=False))
+    return todo
 
 
 def _consolidation_input(d: Decision, organ: str) -> dict:
@@ -591,14 +621,33 @@ def _consolidation_input(d: Decision, organ: str) -> dict:
 
 
 def _consolidate_one(category: str, items: list[dict], input_hash: str, fingerprints: dict[str, str], *,
-                     model: str, effort: str | None, deadline: float | None) -> tuple[str, float]:
+                     model: str, effort: str | None, cli: str, budget: RunBudget | None = None) -> tuple[str, Usage]:
     prompt = (
         f"Kategori: {CATEGORIES[category]}\n\n<beslutninger>\n"
         f"{json.dumps(items, ensure_ascii=False, indent=0)}\n</beslutninger>"
     )
-    output, cost = ask_claude(CONSOLIDATE_SYSTEM, prompt, CONSOLIDATE_SCHEMA, model=model, effort=effort,
-                              timeout=CONSOLIDATE_TIMEOUT, deadline=deadline)
+    output, usage = ask_claude(CONSOLIDATE_SYSTEM, prompt, CONSOLIDATE_SCHEMA, model=model, effort=effort,
+                               timeout=CONSOLIDATE_TIMEOUT, budget=budget)
+    with _usage_kept(usage):
+        rules, skipped, unassigned = _rules_from(output, items, fingerprints)
+        _write_json(RULES_DIR / f"{category}.json", {
+            "kategori": category,
+            "version": CONSOLIDATE_VERSION,
+            "input_hash": input_hash,
+            "model": model,
+            "provenance": provenance(usage, cli, CONSOLIDATE_SYSTEM, CONSOLIDATE_SCHEMA, effort),
+            "regler": rules,
+            "udeladt": skipped,
+            "ikke_tildelt": unassigned,
+        })
+    note = f", {len(unassigned)} unassigned" if unassigned else ""
+    return f"{category}: {len(items)} decisions -> {len(rules)} rules{note}", usage
 
+
+def _rules_from(output: dict, items: list[dict],
+                fingerprints: dict[str, str]) -> tuple[list[dict], list[str], list[str]]:
+    """Claude's rules with only known refs, each once, the effect of proposals fixed by their outcome and each
+    version's fingerprint; plus the refs Claude left out on purpose and those it did not assign at all."""
     outcome = {item["ref"]: item["udfald"] for item in items}
     seen: set[str] = set()
     rules = []
@@ -612,17 +661,7 @@ def _consolidate_one(category: str, items: list[dict], input_hash: str, fingerpr
             rules.append({**rule, "versioner": versions})
     skipped = [ref for ref in output["udeladt"] if ref in outcome and ref not in seen]
     unassigned = sorted(set(outcome) - seen - set(skipped))
-    _write_json(RULES_DIR / f"{category}.json", {
-        "kategori": category,
-        "version": CONSOLIDATE_VERSION,
-        "input_hash": input_hash,
-        "model": model,
-        "regler": rules,
-        "udeladt": skipped,
-        "ikke_tildelt": unassigned,
-    })
-    note = f", {len(unassigned)} ikke tildelt" if unassigned else ""
-    return f"{category}: {len(items)} beslutninger -> {len(rules)} regler{note}", cost
+    return rules, skipped, unassigned
 
 
 def load_rules() -> list[dict]:
@@ -635,27 +674,210 @@ def load_rules() -> list[dict]:
 
 # --------------------------------------------------------------------------- claude CLI
 
-class ClaudeError(RuntimeError):
-    pass
+@dataclass(frozen=True)
+class Usage:
+    """What Claude calls used, as the CLI reports it; adds up over the attempts of a call and the calls of a step.
 
-
-class DeadlineReached(RuntimeError):
-    """The run's time budget is spent; the remaining work is left for the next run."""
-
-
-def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: str | None, timeout: int,
-               deadline: float | None = None, attempts: int = 3) -> tuple[dict, float]:
-    """Run one headless Claude Code call with structured output; returns (output, list-price USD).
-
-    Each attempt may take `timeout` seconds; no new attempt starts after `deadline` (time.monotonic()).
-    A call that failed and was not retried for lack of time is still a failure: ClaudeError with
-    the real error, not DeadlineReached, which only means the job never started.
+    cost_usd is the CLI's estimate at API list price (`total_cost_usd`). The subscription is not billed
+    per call, but the estimate measures how much of it a run takes, and RunBudget limits it.
     """
+    model: str = ""  # as requested: an alias such as "sonnet", or a full id
+    output_by_model: dict[str, int] = field(default_factory=dict)  # canonical id -> output tokens
+    input_tokens: int = 0
+    cache_read_tokens: int = 0
+    cache_write_tokens: int = 0
+    cost_usd: float = 0.0
+    duration_s: float = 0.0  # time spent waiting on the CLI, retries included, back-off pauses not
+    attempts: int = 0
+
+    @classmethod
+    def of(cls, result: dict, model: str, duration_s: float) -> Usage:
+        """One attempt's usage from the CLI's JSON result, whose `modelUsage` has an entry per model used.
+        Entries it cannot read count as nothing rather than losing the attempt's cost."""
+        per_model = result.get("modelUsage")
+        per_model = per_model if isinstance(per_model, dict) else {}
+        entries = [(name, entry) for name, entry in per_model.items() if isinstance(entry, dict)]
+        output_by_model: dict[str, int] = {}
+        for name, entry in entries:
+            canonical = str(entry.get("canonicalModel") or name)
+            output_by_model[canonical] = output_by_model.get(canonical, 0) + _count(entry.get("outputTokens"))
+        return cls(
+            model=model,
+            output_by_model=output_by_model,
+            input_tokens=sum(_count(entry.get("inputTokens")) for _, entry in entries),
+            cache_read_tokens=sum(_count(entry.get("cacheReadInputTokens")) for _, entry in entries),
+            cache_write_tokens=sum(_count(entry.get("cacheCreationInputTokens")) for _, entry in entries),
+            cost_usd=_cost(result),
+            duration_s=duration_s,
+            attempts=1,
+        )
+
+    def __add__(self, other: Usage) -> Usage:
+        output_by_model = dict(self.output_by_model)
+        for name, tokens in other.output_by_model.items():
+            output_by_model[name] = output_by_model.get(name, 0) + tokens
+        counts = {f.name: getattr(self, f.name) + getattr(other, f.name)
+                  for f in fields(self) if f.name not in ("model", "output_by_model")}
+        return Usage(model=self.model or other.model, output_by_model=output_by_model, **counts)
+
+    @property
+    def models(self) -> tuple[str, ...]:
+        """Canonical ids the CLI reports having used, sorted."""
+        return tuple(sorted(self.output_by_model))
+
+    @property
+    def output_tokens(self) -> int:
+        return sum(self.output_by_model.values())
+
+    @property
+    def all_input_tokens(self) -> int:
+        """Input including the cached prompt: with caching, input_tokens alone is only the uncached tail."""
+        return self.input_tokens + self.cache_read_tokens + self.cache_write_tokens
+
+    @property
+    def answered_by(self) -> str:
+        """The canonical model behind the answer: the requested id when the CLI reports it, else the model that
+        wrote the most (an alias call may also use a small helper model)."""
+        if self.model in self.output_by_model or not self.output_by_model:
+            return self.model
+        return max(self.models, key=self.output_by_model.__getitem__)
+
+
+def _count(value: object) -> int:
+    return int(value) if isinstance(value, (int, float)) else 0
+
+
+def _cost(result: dict) -> float:
+    value = result.get("total_cost_usd")
+    return float(value) if isinstance(value, (int, float)) else 0.0
+
+
+class RunBudget:
+    """The run's limits: no Claude call or retry starts once the time is up, the list-price cost is reached,
+    or the run was stopped (a wrong CLI makes every call fail).
+
+    Calls already running finish, so the cost can end up to one call per worker over the limit.
+    Thread-safe: worker threads add the cost of each attempt as it completes.
+    """
+
+    def __init__(self, *, minutes: float | None = None, max_cost_usd: float | None = None) -> None:
+        self._deadline = None if minutes is None else time.monotonic() + 60 * minutes
+        self._max_cost_usd = max_cost_usd
+        self._spent_usd = 0.0
+        self._stopped: str | None = None
+        self._lock = threading.Lock()
+
+    @property
+    def spent_usd(self) -> float:
+        with self._lock:
+            return self._spent_usd
+
+    def add(self, cost_usd: float) -> None:
+        with self._lock:
+            self._spent_usd += cost_usd
+
+    def stop(self, reason: str) -> None:
+        """Start no more work in this run; the first reason given is the one reported."""
+        with self._lock:
+            self._stopped = self._stopped or reason
+
+    def exhausted(self) -> str | None:
+        """Why no new work may start, worded for the log, or None while there is room."""
+        with self._lock:
+            stopped, spent = self._stopped, self._spent_usd
+        if stopped:
+            return stopped
+        if self._deadline is not None and time.monotonic() >= self._deadline:
+            return "the time budget is spent"
+        if self._max_cost_usd is not None and spent >= self._max_cost_usd:
+            return f"the cost limit of {self._max_cost_usd:.2f} USD is reached"
+        return None
+
+
+class ClaudeError(RuntimeError):
+    """A Claude job failed, in the call or in handling its answer; `usage` is what it used all the same."""
+
+    def __init__(self, message: str, usage: Usage | None = None) -> None:
+        super().__init__(message)
+        self.usage = usage or Usage()
+
+
+class ModelMismatch(ClaudeError):
+    """The CLI answered with another model than the full id asked for: an older CLI may map an id it
+    does not know to another model. Not retried, and it stops the run: every other call would get the same."""
+
+
+class BudgetExhausted(RuntimeError):
+    """A run limit was reached before the job started; the job is left for the next run."""
+
+
+@contextmanager
+def _usage_kept(usage: Usage) -> Iterator[None]:
+    """Errors after a successful call (a quote that breaks the locator, a full disk) still carry the call's
+    usage, so its cost reaches the step summary and data/runs.jsonl."""
+    try:
+        yield
+    except Exception as exc:
+        raise ClaudeError(f"handling the answer failed: {type(exc).__name__}: {exc}", usage) from exc
+
+
+def provenance(usage: Usage, cli: str, system: str, schema: dict, effort: str | None) -> dict:
+    """What produced a cached result, to tell results apart when the model, CLI, prompt or effort changes.
+
+    Not part of any cache key: switching from an alias to the id it stands for must not re-run anything.
+    Claude Code does not report its default effort, so an unset one is recorded as "default".
+    """
+    return {"model": usage.answered_by, "cli": cli, "prompt": prompt_hash(system, schema),
+            "effort": effort or "default"}
+
+
+def prompt_hash(system: str, schema: dict) -> str:
+    """Short fingerprint of what Claude is told: the system prompt and the output schema."""
+    text = system + json.dumps(schema, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(text.encode()).hexdigest()[:12]
+
+
+@functools.cache
+def cli_version() -> str:
+    """The Claude Code version, e.g. "2.1.294", read once per run. It matters: the CLI decides which model
+    an alias stands for and what list price it reports. It never stops a run: results are just as valid
+    without it, so a version that cannot be read is recorded as "unknown"."""
     claude = shutil.which("claude")
     if claude is None:
-        raise SystemExit("Claude Code CLI ('claude') blev ikke fundet på PATH.")
+        log.warning("Cannot read the Claude Code version: 'claude' is not on PATH")
+        return "unknown"
+    try:
+        proc = subprocess.run([claude, "--version"], capture_output=True, text=True, encoding="utf-8",
+                              errors="replace", check=True, timeout=60)
+    except (OSError, subprocess.SubprocessError, ValueError) as exc:
+        log.warning("Cannot read the Claude Code version: %s", exc)
+        return "unknown"
+    match = re.match(r"\s*(\d+(?:\.\d+)+)", proc.stdout)
+    if not match:
+        log.warning("Cannot read the Claude Code version from %r", proc.stdout[:80])
+        return "unknown"
+    return match[1]
+
+
+def _claude_path() -> str:
+    claude = shutil.which("claude")
+    if claude is None:
+        raise SystemExit("Claude Code CLI ('claude') was not found on PATH.")
+    return claude
+
+
+def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: str | None, timeout: float,
+               budget: RunBudget | None = None, attempts: int = 3) -> tuple[dict, Usage]:
+    """Run one headless Claude Code call with structured output; returns (output, usage of all attempts).
+
+    Each attempt may take `timeout` seconds and adds its cost to `budget` before anything else is read from
+    its answer; no retry starts once the budget is exhausted. A call that failed and was not retried for
+    that reason is still a failure: ClaudeError with the real error, not BudgetExhausted, which only means
+    the job never started. A full model id ("claude-…") must be among the models the CLI reports using,
+    else ModelMismatch.
+    """
     cmd = [
-        claude, "-p", "--output-format", "json", "--no-session-persistence",
+        _claude_path(), "-p", "--output-format", "json", "--no-session-persistence",
         # No tools, plugins, hooks, CLAUDE.md or MCP servers: just the prompt and the schema.
         "--safe-mode", "--strict-mcp-config", "--disable-slash-commands", "--tools", "",
         "--model", model, "--system-prompt", system, "--json-schema", json.dumps(schema),
@@ -664,66 +886,102 @@ def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: st
         cmd += ["--effort", effort]
     env = {**os.environ, "CLAUDE_CODE_MAX_OUTPUT_TOKENS": os.environ.get("CLAUDE_CODE_MAX_OUTPUT_TOKENS", "64000")}
 
+    usage = Usage(model=model)
     error = ""
     for attempt in range(1, attempts + 1):
-        if attempt > 1 and _past(deadline):
-            raise ClaudeError(f"{error} (ikke prøvet igen efter {attempt - 1} forsøg, fordi tidsbudgettet er brugt)")
+        limit = budget.exhausted() if budget is not None and attempt > 1 else None
+        if limit:
+            raise ClaudeError(f"{error} (not retried after {attempt - 1} attempts because {limit})", usage)
+        started = time.monotonic()
         with tempfile.TemporaryDirectory() as cwd:
             try:
                 proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, check=False,
                                       timeout=timeout, cwd=cwd, env=env)
             except subprocess.TimeoutExpired:
+                usage += Usage(model=model, duration_s=time.monotonic() - started, attempts=1)
                 error = "timeout"
                 continue
-        try:
-            result = json.loads(proc.stdout)
-        except json.JSONDecodeError:
-            result = {}
+        result = _json_object(proc.stdout)
+        if budget is not None:
+            budget.add(_cost(result))
+        spent = Usage.of(result, model, time.monotonic() - started)
+        usage += spent
         output = result.get("structured_output")
         if proc.returncode == 0 and not result.get("is_error") and isinstance(output, dict):
-            return output, float(result.get("total_cost_usd") or 0)
+            if model.startswith("claude-") and model not in spent.models:
+                raise ModelMismatch(f"asked for {model}, but Claude Code answered with "
+                                    f"{', '.join(spent.models) or 'an unknown model'}; check its version", usage)
+            return output, usage
         error = str(result.get("result") or proc.stderr or proc.stdout)[-500:]
         if attempt < attempts:
             time.sleep(15 * attempt)
-    raise ClaudeError(error)
+    raise ClaudeError(error, usage)
 
 
-def _past(deadline: float | None) -> bool:
-    return deadline is not None and time.monotonic() > deadline
+def _json_object(text: str) -> dict:
+    try:
+        value = json.loads(text)
+    except json.JSONDecodeError:
+        return {}
+    return value if isinstance(value, dict) else {}
 
 
-def _run_parallel(jobs: list, fn, workers: int, label: str, deadline: float | None = None) -> tuple[float, int]:
+@dataclass(frozen=True)
+class StepSummary:
+    """One step's Claude calls, for the log, data/runs.jsonl and the GitHub step summary."""
+    label: str
+    calls: int  # jobs that started, whether they succeeded or failed
+    failed: int
+    skipped: int  # jobs that never started because a limit was reached; they run next time
+    usage: Usage  # summed over every attempt, failed ones included
+    seconds: float  # wall-clock time of the step
+
+
+def _run_parallel(jobs: list, fn, workers: int, label: str, budget: RunBudget | None = None) -> StepSummary:
     """Run fn over jobs in a thread pool; log progress and failures, keep going on errors.
 
-    Jobs that have not started when `deadline` (time.monotonic()) passes are skipped.
-    Returns (list-price USD of the successful calls, number of failed or skipped jobs).
+    fn returns (message, Usage). Jobs that have not started when the budget is exhausted are skipped.
+    The first ModelMismatch stops the budget, so the rest of the run is skipped too.
     """
-    def start(job):
-        if _past(deadline):
-            raise DeadlineReached("tidsbudget brugt")
-        return fn(job)
+    budget = budget if budget is not None else RunBudget()
 
-    total_cost = 0.0
-    failures = skipped = 0
+    def start(job):
+        if limit := budget.exhausted():
+            raise BudgetExhausted(limit)
+        try:
+            return fn(job)
+        except ModelMismatch:  # stop here, before this worker takes the next job
+            budget.stop("Claude Code answered with another model than requested (check its version)")
+            raise
+
+    started = time.monotonic()
+    usage = Usage()
+    failed = skipped = 0
+    limits: set[str] = set()
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {pool.submit(start, job): job for job in jobs}
         for done, future in enumerate(as_completed(futures), start=1):
             try:
-                message, cost = future.result()
-            except DeadlineReached:
+                message, job_usage = future.result()
+            except BudgetExhausted as exc:
                 skipped += 1
+                limits.add(str(exc))
                 continue
             except Exception as exc:  # one failed call must not stop the batch; rerun picks it up
-                failures += 1
+                failed += 1
+                if isinstance(exc, ClaudeError):
+                    usage += exc.usage
                 log.error("%s [%d/%d] fejlede: %s", label, done, len(jobs), exc)
                 continue
-            total_cost += cost
+            usage += job_usage
             log.info("%s [%d/%d] %s", label, done, len(jobs), message)
-    if failures:
-        log.warning("%s: %d fejlede – kør igen for at prøve dem igen", label, failures)
+    if failed:
+        log.warning("%s: %d failed; run again to retry them", label, failed)
     if skipped:
-        log.warning("%s: %d sprunget over, fordi tidsbudgettet er brugt – de køres næste gang", label, skipped)
-    return total_cost, failures + skipped
+        log.warning("%s: skipped %d because %s; they run next time", label, skipped, " and ".join(sorted(limits)))
+    log.info("%s done: %d calls, %d tokens in and %d out (%.2f USD at API list price, paid by the subscription)",
+             label, len(jobs) - skipped, usage.all_input_tokens, usage.output_tokens, usage.cost_usd)
+    return StepSummary(label, len(jobs) - skipped, failed, skipped, usage, time.monotonic() - started)
 
 
 def _hash(value: object, version: int) -> str:
