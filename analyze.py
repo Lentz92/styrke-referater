@@ -179,13 +179,17 @@ EXTRACT_SCHEMA = {
 }
 
 
-def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int) -> None:
-    """Extract decisions from every document whose cached result is missing or outdated."""
+def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int) -> int:
+    """Extract decisions from every document whose cached result is missing or outdated.
+
+    Returns the number of documents that failed (they are retried on the next run).
+    """
     DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
     todo = [doc for doc in docs if not _extraction_is_current(doc)]
     log.info("Udtræk: %d af %d dokumenter skal analyseres", len(todo), len(docs))
-    cost = _run_parallel(todo, lambda doc: _extract_one(doc, model, effort), workers, "Udtræk")
-    log.info("Udtræk færdig (%.2f USD listepris)", cost)
+    cost, failures = _run_parallel(todo, lambda doc: _extract_one(doc, model, effort), workers, "Udtræk")
+    log.info("Udtræk færdig (svarer til %.2f USD i API-pris, trækkes af abonnementet)", cost)
+    return failures
 
 
 def missing_extractions(docs: list[Doc]) -> list[str]:
@@ -386,8 +390,11 @@ CONSOLIDATE_SCHEMA = {
 
 
 def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: str,
-                effort: str | None, workers: int) -> None:
-    """Group decisions into rule histories, one Claude call per category whose input changed."""
+                effort: str | None, workers: int) -> int:
+    """Group decisions into rule histories, one Claude call per category whose input changed.
+
+    Returns the number of categories that failed (they are retried on the next run).
+    """
     RULES_DIR.mkdir(parents=True, exist_ok=True)
     by_category: dict[str, list[dict]] = {}
     for d in decisions:
@@ -404,8 +411,11 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
         if not path.exists() or json.loads(path.read_text()).get("input_hash") != input_hash:
             todo.append((category, items, input_hash))
     log.info("Konsolidering: %d af %d kategorier skal opdateres", len(todo), len(by_category))
-    cost = _run_parallel(todo, lambda job: _consolidate_one(*job, model=model, effort=effort), workers, "Konsolidering")
-    log.info("Konsolidering færdig (%.2f USD listepris)", cost)
+    cost, failures = _run_parallel(
+        todo, lambda job: _consolidate_one(*job, model=model, effort=effort), workers, "Konsolidering"
+    )
+    log.info("Konsolidering færdig (svarer til %.2f USD i API-pris, trækkes af abonnementet)", cost)
+    return failures
 
 
 def _consolidation_input(d: Decision, organ: str) -> dict:
@@ -500,8 +510,11 @@ def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: st
     raise ClaudeError(error)
 
 
-def _run_parallel(jobs: list, fn, workers: int, label: str) -> float:
-    """Run fn over jobs in a thread pool; log progress and failures, keep going on errors."""
+def _run_parallel(jobs: list, fn, workers: int, label: str) -> tuple[float, int]:
+    """Run fn over jobs in a thread pool; log progress and failures, keep going on errors.
+
+    Returns (list-price USD of the successful calls, number of failed jobs).
+    """
     total_cost = 0.0
     failures = 0
     with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -517,7 +530,7 @@ def _run_parallel(jobs: list, fn, workers: int, label: str) -> float:
             log.info("%s [%d/%d] %s", label, done, len(jobs), message)
     if failures:
         log.warning("%s: %d fejlede – kør igen for at prøve dem igen", label, failures)
-    return total_cost
+    return total_cost, failures
 
 
 def _hash(value: object, version: int) -> str:

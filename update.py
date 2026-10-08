@@ -46,10 +46,11 @@ def main() -> None:
 
     docs = scrape.load_manifest() if args.offline or args.render_only else scrape.sync()
 
+    failures = 0
     if not args.render_only:
         targets = [d for d in docs if re.search(args.only, d.id)] if args.only else docs
-        analyze.extract(targets, model=args.extract_model, effort=args.effort, workers=args.workers)
-        analyze.consolidate(
+        failures += analyze.extract(targets, model=args.extract_model, effort=args.effort, workers=args.workers)
+        failures += analyze.consolidate(
             analyze.load_decisions(docs),
             {d.id: d.organ_label for d in docs},
             model=args.consolidate_model,
@@ -60,6 +61,9 @@ def main() -> None:
     pages = render.render(docs, analyze.load_decisions(docs), analyze.load_rules(),
                           analyze.missing_extractions(docs), date.today())
     logging.info("Skrev %d sider i %s", len(pages), render.OUT_DIR.relative_to(scrape.ROOT))
+    if failures:
+        # Partial results are cached and the pages are written; fail so CI reports it.
+        raise SystemExit(f"{failures} Claude-kald fejlede – kør igen for at prøve dem igen.")
 
 
 if __name__ == "__main__":

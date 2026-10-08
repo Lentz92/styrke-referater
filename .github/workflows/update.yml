@@ -40,6 +40,8 @@ jobs:
           fi
           claude --version
           claude auth status | grep -E '"(loggedIn|authMethod|apiProvider)"' || true
+          # A tiny call proves the token works (and catches expiry) even in months with nothing new.
+          echo "Svar kun med ordet ok." | claude -p --tools "" --safe-mode --no-session-persistence --model haiku
 
       - name: Download new minutes and update the rule overview
         env:
@@ -47,6 +49,8 @@ jobs:
         run: uv run update.py
 
       - name: Commit and push changes
+        # Also after a failed update: partial results are valid cache and are retried next run.
+        if: success() || failure()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
