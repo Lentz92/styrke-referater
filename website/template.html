@@ -1,0 +1,421 @@
+<!doctype html>
+<!-- Built by website.py, which replaces the DATA marker below with the rules from data/. -->
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSF-regelsæt</title>
+<meta name="description" content="Uofficiel oversigt over Dansk Styrkeløft Forbunds regler og hvornår de blev besluttet, udtrukket af referaterne på styrke.dk.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* One type scale (11 / 13 / 14 / 15 / 20 / 44 px), one spacing scale (4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 px),
+     one font. Secondary text is muted grey rather than smaller-and-bold, so titles carry the hierarchy. */
+  :root { --ink: #111; --muted: #63666c; --line: #ebebeb; --soft: #fafafa; --intl: #1d4ed8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: var(--ink); font: 14px/1.5 "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: underline; text-decoration-color: #d4d4d4; text-underline-offset: 3px; }
+  button, select, input { font: inherit; color: inherit; }
+  .mono { font-family: "Geist Mono", ui-monospace, monospace; }
+
+  /* hero */
+  .hero { text-align: center; padding: 56px 20px 0; }
+  .hero img { height: 84px; }
+  .hero h1 { font-size: 44px; font-weight: 700; letter-spacing: -.045em; line-height: 1.1; margin: 16px 0 8px; }
+  .hero p { font-size: 16px; color: var(--muted); margin: 0 auto 32px; }
+  .search-wrap { position: relative; max-width: 560px; margin: 0 auto; }
+  .search { appearance: none; width: 100%; height: 44px; padding: 0 56px 0 14px; font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 8px;
+    outline: none; transition: box-shadow .15s, border-color .15s; }
+  .search:focus { border-color: #a1a1a1; box-shadow: 0 0 0 3px rgba(0,0,0,.06); }
+  .kbd { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; background: var(--soft); }
+  .controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 16px; margin: 20px auto 0; }
+  .year { display: flex; align-items: center; gap: 8px; }
+  .year .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .year button { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 6px; background: #fff; font-size: 15px; cursor: pointer; }
+  .year button:hover:not(:disabled) { background: var(--soft); }
+  .year button:disabled { opacity: .4; cursor: default; }
+  .year select { height: 32px; padding: 0 8px; font-weight: 600; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; padding: 3px; background: var(--soft); }
+  .seg button { border: 0; background: none; font-size: 13px; padding: 5px 12px; border-radius: 6px; cursor: pointer; color: var(--muted); }
+  .seg button.on { background: #fff; color: var(--ink); font-weight: 500; box-shadow: 0 0 0 1px var(--line), 0 1px 2px rgba(0,0,0,.06); }
+
+  /* three columns: areas | decisions per meeting | what is on its way */
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .layout { display: grid; grid-template-columns: 176px minmax(0, 1fr) 248px; gap: 64px; margin-top: 80px; }
+  .head { font-size: 13px; font-weight: 500; color: var(--muted); line-height: 20px; margin: 0 0 12px; }
+  .lbl-area { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ac); line-height: 20px; }
+  .title { font-size: 15px; font-weight: 600; line-height: 20px; letter-spacing: -.01em; }
+  .desc { color: var(--muted); margin-top: 4px; }
+  .verb { color: var(--ink); font-weight: 500; }
+  .intl { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--intl); margin-left: 8px; white-space: nowrap; }
+  a.rule { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 16px; color: inherit; text-decoration: none; }
+  a.rule:hover .title { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #bbb; }
+  .linkbtn { background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: #bbb; text-underline-offset: 3px; }
+  .linkbtn.back { color: var(--muted); margin-bottom: 24px; }
+
+  .side { position: sticky; top: 32px; align-self: start; }
+  .areas button { display: flex; align-items: baseline; gap: 10px; width: 100%; padding: 6px 0; border: 0; background: none; text-align: left; cursor: pointer; }
+  .areas button:first-child { padding-top: 0; }
+  .areas .sq { width: 8px; height: 8px; background: var(--ac); flex-shrink: 0; }
+  .areas .lead { flex: 1; border-bottom: 1px dotted #c4c4c4; transform: translateY(-4px); min-width: 12px; }
+  .areas .num { font-variant-numeric: tabular-nums; color: var(--muted); }
+  .areas .on .name { font-weight: 600; }
+  .areas .on .num { color: var(--ink); }
+  .areas button:hover .name { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #bbb; }
+
+  .meet { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 24px; padding: 32px 0; border-top: 1px solid var(--line); }
+  .meet:first-child { padding-top: 0; border-top: 0; }
+  .meet .when { font-weight: 600; line-height: 20px; font-variant-numeric: tabular-nums; }
+  .meet .who { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .meet a.who { display: inline-block; margin-top: 2px; }
+  .meet a.rule + a.rule { margin-top: 20px; }
+  a.rule.prop .title { font-weight: 500; }
+  a.rule.prop .verb { color: var(--muted); }
+  .rules a.rule + a.rule { margin-top: 16px; }
+  .rules .aux { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .content h2 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; line-height: 28px; margin: 0; }
+  .areahead { display: flex; align-items: baseline; gap: 10px; }
+  .areahead .sq { width: 10px; height: 10px; background: var(--ac); }
+  .lede { color: var(--muted); margin: 4px 0 32px; }
+  .content h3 { font-size: 13px; font-weight: 500; color: var(--muted); margin: 48px 0 16px; }
+
+  .rail { align-self: start; }
+  .rail .when { font-weight: 600; line-height: 20px; margin: 32px 0 12px; }
+  .rail .head + .when { margin-top: 0; }
+  .rail a.pend { display: block; color: inherit; text-decoration: none; }
+  .rail a.pend + a.pend { margin-top: 16px; }
+  .rail a.pend:hover .title { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #bbb; }
+  .rail .lbl-area { display: block; line-height: 16px; margin-bottom: 4px; }
+  .rail .title { font-size: 14px; font-weight: 500; }
+  .rail .desc { font-size: 13px; margin-top: 2px; }
+
+  .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 64px; padding: 24px 0 64px;
+    border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+  /* rule popup – same font and scale as the page */
+  .scrim { position: fixed; inset: 0; z-index: 20; background: rgba(17,17,17,.28); opacity: 0; pointer-events: none; transition: opacity .15s; }
+  .modal { position: fixed; left: 50%; top: 50%; z-index: 21; width: min(640px, 94vw); max-height: 85vh; overflow: auto; padding: 32px;
+    background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,.16);
+    opacity: 0; pointer-events: none; transform: translate(-50%, -47%); transition: opacity .15s, transform .15s; }
+  .is-open .scrim, .is-open .modal { opacity: 1; pointer-events: auto; }
+  .is-open .modal { transform: translate(-50%, -50%); }
+  .close { position: absolute; top: 16px; right: 16px; width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 6px; background: #fff;
+    font-size: 15px; cursor: pointer; }
+  .kicker { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; line-height: 16px; margin-right: 44px; }
+  .modal h2 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; line-height: 28px; margin: 8px 44px 4px 0; }
+  .status { color: var(--muted); margin: 0; }
+  .status b { color: var(--ink); font-weight: 500; }
+  .status .warn { color: #9a3412; }
+  .ruletext { font-size: 15px; line-height: 1.6; margin: 16px 0 0; }
+  .hhead { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; margin: 32px 0 4px; }
+  .hhead h3 { font-size: 13px; font-weight: 600; margin: 0; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); }
+  .legend > span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend .dot { position: static; }
+  .hint { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+  .note { margin: 24px 0 0; }
+
+  /* history as a route map: one stop per decision, coloured by its status in the chosen year */
+  table.versions { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .versions td { padding: 8px 12px 8px 0; vertical-align: top; color: var(--muted); }
+  .versions td.date { width: 84px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .versions td.src { text-align: right; white-space: nowrap; padding-right: 0; }
+  .versions .verb { color: inherit; }
+  .versions tr.cur td, .versions tr.soon td { color: var(--ink); }
+  .versions tr.later td:not(.tl) { opacity: .55; }
+  .versions tr[data-url] { cursor: pointer; }
+  .versions tr[data-url]:hover td { background: var(--soft); }
+  /* the dot sits on the first text line: 8px padding + half of a 19.5px line */
+  .versions td.tl { position: relative; width: 28px; min-width: 28px; padding: 0; }
+  .src-inline { display: none; margin-top: 2px; overflow-wrap: anywhere; }
+  .tl .trk { position: absolute; left: 13px; border-left: 2px solid #d6d6d6; }
+  .tl .trk.up { top: 0; height: 18px; }
+  .tl .trk.down { top: 18px; bottom: 0; }
+  .tl .trk.dash { border-left-style: dashed; }
+  .dot { position: absolute; left: 9px; top: 13px; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #a3a3a3; }
+  .dot.cur { background: #1f9e76; box-shadow: 0 0 0 4px rgba(31, 158, 118, .2); }
+  .dot.soon { background: #f59e0b; box-shadow: 0 0 0 4px rgba(245, 158, 11, .2); }
+  .dot.gone { background: #dc2626; }
+  .dot.prop { background: #fff; border: 2px solid #a3a3a3; }
+  .dot.later { background: #fff; border: 2px solid #d4d4d4; }
+
+  @media (max-width: 1180px) { .layout { grid-template-columns: 176px minmax(0, 1fr); gap: 48px 56px; } .rail { grid-column: 2; } }
+  @media (max-width: 960px) { .meet { grid-template-columns: 1fr; gap: 12px; } }
+  @media (max-width: 720px) {
+    .wrap { padding: 0 16px; }
+    .hero { padding-top: 40px; } .hero h1 { font-size: 36px; }
+    .layout { grid-template-columns: 1fr; gap: 48px; margin-top: 48px; } .side { position: static; } .rail { grid-column: auto; }
+    a.rule { grid-template-columns: 1fr; gap: 4px; } .modal { padding: 24px 20px; }
+    .versions td.src { display: none; } .src-inline { display: block; } .versions td.date { width: 76px; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="logo.png" alt="Dansk Styrkeløft Forbunds logo">
+  <h1>DSF-regelsæt</h1>
+  <p>Hvad gælder – og hvornår blev det besluttet? Uofficiel oversigt udtrukket af DSF's referater.</p>
+  <div class="search-wrap"><input class="search" id="q" type="search" placeholder="Søg fx «klubskifte», «licens», «kravtal»…" aria-label="Søg i reglerne"><span class="kbd mono">⌘K</span></div>
+  <div class="controls">
+    <div class="year"><label class="lbl mono" for="year">Regler gældende i</label><button id="prev" title="Forrige år" aria-label="Forrige år">‹</button>
+      <select id="year"></select><button id="next" title="Næste år" aria-label="Næste år">›</button></div>
+    <div class="seg" id="origin" role="group" aria-label="Oprindelse"><button data-o="all">Alle</button><button data-o="dsf">DSF</button><button data-o="intl">Internationale</button></div>
+  </div>
+</header>
+<main class="wrap layout">
+  <nav class="side" id="side" aria-label="Områder"></nav>
+  <div class="content" id="content"></div>
+  <aside class="rail" id="rail"></aside>
+</main>
+<footer class="wrap"><div class="foot" id="foot"></div></footer>
+<noscript><p class="wrap">Siden kræver JavaScript. Reglerne findes også som tekst i <a href="https://github.com/Lentz92/styrke-referater/tree/main/regelsaet">regelsaet/ på GitHub</a>.</p></noscript>
+<div class="scrim" id="scrim"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div>
+
+<script>
+/* Data shape (see website.py): rules[] = { title, category, area, central, note, international, origin, slug,
+   versions[] = { date, effective, from, effect, change, essence, text, organ, congress, votes, proposer, doc, docUrl, source, url } };
+   inForce[year] = [[rule index, version in force, version that adopted its content], …] */
+const D = /*DATA*/null;
+const R = D.rules;
+const TODAY = D.today, CUR = Number(TODAY.slice(0, 4));
+const AREA_INK = ["#2563eb", "#c2410c", "#7c3aed", "#b91c1c", "#047857", "#be185d", "#475569"];
+const AREA_SHORT = ["Medlemskab", "Stævner", "Dommere", "Elite", "Master", "Antidoping", "Organisation"];
+const EFFECT = { indfoert: "Indført", aendret: "Ændret", bekraeftet: "Bekræftet", ophaevet: "Ophævet",
+  foreslaaet: "Indkommet forslag", forkastet: "Forkastet", trukket: "Trukket tilbage" };
+const PROPOSALS = new Set(["foreslaaet", "forkastet", "trukket"]);
+const STATUS = { cur: "Gældende", soon: "På vej", past: "Tidligere", gone: "Ophævet", prop: "Forslag", later: "Senere" };
+const MONTHS = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"];
+const IDX = {}; // year -> Map(rule index -> { vi: version in force, oi: version that adopted it })
+for (const y of D.years) IDX[y] = new Map((D.inForce[y] || []).map(([ri, vi, oi]) => [ri, { vi, oi }]));
+
+// Dates are ISO strings, or a bare year when the minutes give no exact date.
+const cutoff = (y) => (y === CUR ? TODAY : `${y}-12-31`);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const full = (d) => d && d.length === 10;
+const fmt = (d) => (!d ? "ukendt" : full(d) ? `${d.slice(8, 10)}.${d.slice(5, 7)}.${d.slice(0, 4)}` : d);
+const longD = (d) => (full(d) ? `${Number(d.slice(8, 10))}. ${MONTHS[Number(d.slice(5, 7)) - 1]} ${d.slice(0, 4)}` : d || "ukendt dato");
+const onDate = (d) => (full(d) ? `den ${longD(d)}` : `i ${longD(d)}`);
+const dkey = (d) => (full(d) ? d : `${d || ""}-00-00`); // year-only dates sort before dated ones
+const essence = (v) => v.essence || v.change || v.text || "";
+const src = (v) => (v.url ? `<a class="src" href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.source)}</a>` : esc(v.source));
+
+function inForce(year, area = -1) {
+  return [...IDX[year].entries()].map(([ri, o]) => ({ ri, ...o })).filter((o) => area < 0 || R[o.ri].area === area);
+}
+function pending(year) {
+  const c = cutoff(year), out = [];
+  R.forEach((r, ri) => r.versions.forEach((v, vi) => {
+    if ((v.date || "") <= c && c < v.effective && ["indfoert", "aendret", "ophaevet"].includes(v.effect)) out.push({ ri, vi });
+  }));
+  return out.sort((a, b) => (R[a.ri].versions[a.vi].effective < R[b.ri].versions[b.vi].effective ? -1 : 1));
+}
+function staleSince(ri, year) {
+  const c = cutoff(year);
+  const last = R[ri].versions.filter((v) => (v.date || "") <= c).map((v) => (v.date || "").slice(0, 4)).sort().pop();
+  return last && year - Number(last) >= 5 ? last : "";
+}
+function search(q) {
+  q = q.trim().toLowerCase();
+  const hits = [];
+  R.forEach((r, ri) => {
+    const inTitle = r.title.toLowerCase().includes(q);
+    if (inTitle || r.versions.some((v) => (v.text || v.change || "").toLowerCase().includes(q))) hits.push({ ri, score: inTitle ? 0 : 1 });
+  });
+  const live = (o) => (IDX[CUR].has(o.ri) ? 0 : 1);
+  return hits.sort((a, b) => a.score - b.score || live(a) - live(b) || R[a.ri].title.localeCompare(R[b.ri].title, "da")).slice(0, 60);
+}
+
+const state = { year: CUR, area: -1, q: "", origin: "all", allMeetings: false };
+const keep = (ri) => state.origin === "all" || (state.origin === "intl") === R[ri].international;
+const $ = (id) => document.getElementById(id);
+const href = (ri) => `#regel/${encodeURIComponent(R[ri].slug)}`;
+const areaLabel = (ri) => `<span class="lbl-area" style="--ac:${AREA_INK[R[ri].area]}">${AREA_SHORT[R[ri].area]}</span>`;
+const intlMark = (ri) => (R[ri].international ? `<span class="intl">International</span>` : "");
+
+function meetings(y) {
+  const groups = new Map();
+  R.forEach((r, ri) => r.versions.forEach((v, vi) => {
+    if ((v.date || "").slice(0, 4) !== String(y) || !keep(ri)) return;
+    // An undecided proposal is not a decision; a confirmation is news only the first time the rule is seen.
+    if (v.effect === "foreslaaet" || (v.effect === "bekraeftet" && vi !== 0)) return;
+    const key = `${v.date}|${v.doc}`;
+    if (!groups.has(key)) groups.set(key, { date: v.date, organ: v.organ, docUrl: v.docUrl, items: [] });
+    groups.get(key).items.push({ ri, vi });
+  }));
+  const prop = (o) => PROPOSALS.has(R[o.ri].versions[o.vi].effect);
+  return [...groups.values()].sort((a, b) => (dkey(a.date) < dkey(b.date) ? 1 : -1)).map((g) => ({
+    ...g, items: g.items.sort((a, b) => prop(a) - prop(b) || R[a.ri].area - R[b.ri].area || R[a.ri].title.localeCompare(R[b.ri].title, "da")),
+  }));
+}
+function decisionItem({ ri, vi }) {
+  const r = R[ri], v = r.versions[vi];
+  return `<a class="rule ${PROPOSALS.has(v.effect) ? "prop" : ""}" href="${href(ri)}">${areaLabel(ri)}<div><div class="title">${esc(r.title)}${intlMark(ri)}</div>
+    <div class="desc"><span class="verb">${EFFECT[v.effect]}:</span> ${esc(v.change)}${v.from ? ` (fra ${longD(v.from)})` : ""}</div></div></a>`;
+}
+function ruleItem(ri) {
+  const r = R[ri], cur = IDX[state.year].get(ri), stale = cur ? staleSince(ri, state.year) : "";
+  const v = cur ? r.versions[cur.vi] : r.versions[r.versions.length - 1];
+  return `<a class="rule" href="${href(ri)}">${areaLabel(ri)}<div><div class="title">${esc(r.title)}${intlMark(ri)}</div>
+    <div class="desc">${esc(essence(v))}</div>${stale ? `<div class="aux">Sidst nævnt ${stale}</div>` : ""}</div></a>`;
+}
+
+function draw() {
+  const y = state.year, when = y === CUR ? "i dag" : `i ${y}`, q = state.q.trim();
+  document.querySelectorAll("#origin button").forEach((b) => b.classList.toggle("on", b.dataset.o === state.origin));
+  $("year").value = y;
+  $("prev").disabled = !D.years.includes(y - 1);
+  $("next").disabled = !D.years.includes(y + 1);
+
+  let h;
+  if (q) {
+    const hits = search(q).filter((x) => keep(x.ri));
+    h = `<h2>${hits.length} regler matcher «${esc(q)}»</h2><p class="lede">Viser reglerne, som de gælder ${when}.</p>
+      <div class="rules">${hits.map((x) => ruleItem(x.ri)).join("")}</div>`;
+  } else if (state.area >= 0) {
+    // DSF's own rules before international ones, then alphabetical.
+    const rules = inForce(y, state.area).filter((o) => keep(o.ri))
+      .sort((a, b) => R[a.ri].international - R[b.ri].international || R[a.ri].title.localeCompare(R[b.ri].title, "da"));
+    const central = rules.filter((o) => R[o.ri].central), minor = rules.filter((o) => !R[o.ri].central);
+    h = `<button class="linkbtn back" id="back">← Alle beslutninger i ${y}</button>
+      <div class="areahead" style="--ac:${AREA_INK[state.area]}"><span class="sq"></span><h2>${esc(D.areas[state.area])}</h2></div>
+      <p class="lede">${central.length} centrale regler gældende ${when}.</p><div class="rules">${central.map((o) => ruleItem(o.ri)).join("")}</div>
+      ${minor.length ? `<h3>Interne procedurer og detaljer</h3><div class="rules">${minor.map((o) => ruleItem(o.ri)).join("")}</div>` : ""}`;
+  } else {
+    const meets = meetings(y), shown = state.allMeetings ? meets : meets.slice(0, 5);
+    h = shown.map((m) => `<section class="meet"><div><div class="when">${longD(m.date)}</div><div class="who">${esc(m.organ)}</div>
+        ${m.docUrl ? `<a class="who" href="${esc(m.docUrl)}" target="_blank" rel="noopener">Referat ↗</a>` : ""}</div>
+        <div>${m.items.map(decisionItem).join("")}</div></section>`).join("") || `<p class="lede">Ingen registrerede beslutninger i ${y}.</p>`;
+    if (meets.length > shown.length) h += `<button class="linkbtn" id="more">Vis alle ${meets.length} møder</button>`;
+  }
+  $("content").innerHTML = h;
+  $("back")?.addEventListener("click", () => { state.area = -1; draw(); });
+  $("more")?.addEventListener("click", () => { state.allMeetings = true; draw(); });
+
+  $("side").innerHTML = `<div class="head">Områder</div><div class="areas">` + D.areas.map((title, i) => {
+    const n = inForce(y, i).filter((o) => R[o.ri].central && keep(o.ri)).length;
+    return `<button data-area="${i}" class="${state.area === i && !q ? "on" : ""}" style="--ac:${AREA_INK[i]}" title="${esc(title)}" aria-pressed="${state.area === i && !q}">
+      <span class="sq"></span><span class="name">${AREA_SHORT[i]}</span><span class="lead"></span><span class="num">${n}</span></button>`;
+  }).join("") + `</div>`;
+
+  // Adopted but not yet in force, for the chosen area if any.
+  const pend = q ? [] : pending(y).filter((o) => keep(o.ri) && (state.area < 0 || R[o.ri].area === state.area));
+  const dates = [...new Set(pend.map((o) => R[o.ri].versions[o.vi].effective))];
+  $("rail").innerHTML = pend.length ? `<div class="head">På vej</div>` + dates.map((e) => `<div class="when">Fra ${longD(e)}</div>` +
+    pend.filter((o) => R[o.ri].versions[o.vi].effective === e).map((o) => `<a class="pend" href="${href(o.ri)}">${areaLabel(o.ri)}
+      <div class="title">${esc(R[o.ri].title)}</div><div class="desc">${esc(R[o.ri].versions[o.vi].change)}</div></a>`).join("")).join("") : "";
+}
+
+function versionStatus(v, i, c, cur) {
+  if ((v.date || "") > c) return "later"; // decided after the chosen year
+  if (cur && i === cur.vi) return "cur";
+  if (PROPOSALS.has(v.effect)) return "prop";
+  if (c < (v.effective || "")) return "soon";
+  return v.effect === "ophaevet" ? "gone" : "past";
+}
+function ruleDetail(ri) {
+  const r = R[ri], y = state.year, c = cutoff(y), cur = IDX[y].get(ri), when = y === CUR ? "i dag" : `i ${y}`;
+  const withText = r.versions.map((v, i) => i).filter((i) => r.versions[i].text);
+  const upcoming = r.versions.find((v) => (v.date || "") <= c && c < v.effective && ["indfoert", "aendret", "ophaevet"].includes(v.effect));
+  const shown = r.versions[cur ? cur.vi : withText.length ? withText[withText.length - 1] : r.versions.length - 1];
+
+  let status;
+  if (cur) {
+    const origin = r.versions[cur.oi], stale = staleSince(ri, y);
+    status = `<b>Gældende ${when}.</b> Vedtaget ${origin.congress ? "på" : "af"} ${esc(origin.organ)} ${onDate(origin.date)}${origin.votes ? ` (${esc(origin.votes)})` : ""}.` +
+      (cur.vi !== cur.oi ? ` Senest bekræftet ${onDate(r.versions[cur.vi].date)}.` : "") +
+      (stale ? ` <span class="warn">Ikke nævnt i referaterne siden ${stale} – kan være forældet.</span>` : "");
+  } else if (upcoming) status = `<b>Vedtaget ${longD(upcoming.date)}</b> – gælder fra ${longD(upcoming.effective)}.`;
+  else if (withText.length) status = `<b>Ikke gældende ${when}.</b>`;
+  else status = `<b>Kun forslag – aldrig vedtaget.</b>`;
+
+  const kicker = `<span style="color:${AREA_INK[r.area]}">${esc(D.areas[r.area])}</span> · ` +
+    (r.international ? `<span style="color:var(--intl)">International · ${esc(r.origin)}</span>` : `<span>DSF-regel</span>`);
+
+  // Newest first; a stretch of track that lies ahead of the chosen year is dashed.
+  const stops = r.versions.map((v, i) => ({ v, st: versionStatus(v, i, c, cur), i }))
+    .sort((a, b) => (dkey(a.v.date) < dkey(b.v.date) ? 1 : dkey(a.v.date) > dkey(b.v.date) ? -1 : b.i - a.i));
+  const ahead = (o) => o.st === "later" || o.st === "soon";
+  const rows = stops.map(({ v, st }, k) => `<tr class="${st}" ${v.url ? `data-url="${esc(v.url)}" title="Åbn referatet"` : ""}>
+      <td class="tl">${k > 0 ? `<span class="trk up ${ahead(stops[k - 1]) ? "dash" : ""}"></span>` : ""}${k < stops.length - 1 ? `<span class="trk down ${ahead(stops[k]) ? "dash" : ""}"></span>` : ""}<span class="dot ${st}"></span></td>
+      <td class="date">${fmt(v.date)}</td>
+      <td><span class="verb">${EFFECT[v.effect]}${v.proposer && PROPOSALS.has(v.effect) ? ` (${esc(v.proposer)})` : ""}:</span> ${esc(v.change)}<div class="src-inline">${src(v)}</div></td>
+      <td class="src">${src(v)}</td></tr>`).join("");
+  const legend = Object.entries(STATUS).filter(([k]) => stops.some((o) => o.st === k))
+    .map(([k, label]) => `<span><span class="dot ${k}"></span>${label}</span>`).join("");
+
+  return `<button class="close" id="close" title="Luk (Esc)" aria-label="Luk">✕</button><div class="kicker">${kicker}</div><h2 id="modal-title">${esc(r.title)}</h2>
+    <p class="status">${status}</p><p class="ruletext">${esc(shown.text || shown.change)}</p>
+    <div class="hhead"><h3>Historik</h3><div class="legend">${legend}</div></div>
+    <p class="hint">Klik på en linje for at åbne referatet. Vælg et andet år øverst for at se reglen, som den lød dengang.</p>
+    <table class="versions">${rows}</table>${r.note ? `<p class="note"><b>Bemærk:</b> ${esc(r.note)}</p>` : ""}`;
+}
+
+/* The open rule lives in the URL (#regel/<slug>), so links can be shared and Back closes the popup. */
+let openRule = -1, returnFocus = null, navigatedHere = false;
+function showRule(ri) {
+  if (openRule < 0) returnFocus = document.activeElement;
+  openRule = ri;
+  $("modal").innerHTML = ruleDetail(ri);
+  $("modal").scrollTop = 0;
+  document.body.classList.add("is-open");
+  $("close").focus({ preventScroll: true });
+}
+function hideRule() {
+  if (openRule < 0) return;
+  openRule = -1;
+  document.body.classList.remove("is-open");
+  returnFocus?.focus({ preventScroll: true });
+}
+function syncWithHash() {
+  const m = location.hash.match(/^#regel\/(.+)$/);
+  const ri = m ? R.findIndex((r) => r.slug === decodeURIComponent(m[1])) : -1;
+  ri >= 0 ? showRule(ri) : hideRule();
+}
+function closeRule() {
+  if (openRule < 0) return;
+  if (navigatedHere) { navigatedHere = false; history.back(); } // hashchange then hides it
+  else { history.replaceState(null, "", location.pathname + location.search); hideRule(); }
+}
+
+function init() {
+  $("year").innerHTML = [...D.years].reverse().map((y) => `<option value="${y}">${y}</option>`).join("");
+  const setYear = (y) => { if (D.years.includes(y)) { state.year = y; state.allMeetings = false; draw(); if (openRule >= 0) showRule(openRule); } };
+  $("year").onchange = (e) => setYear(Number(e.target.value));
+  $("prev").onclick = () => setYear(state.year - 1);
+  $("next").onclick = () => setYear(state.year + 1);
+  $("q").addEventListener("input", (e) => { state.q = e.target.value; draw(); });
+  $("origin").onclick = (e) => { const b = e.target.closest("button"); if (b) { state.origin = b.dataset.o; draw(); } };
+  $("side").onclick = (e) => {
+    const b = e.target.closest("[data-area]"); if (!b) return;
+    const a = Number(b.dataset.area);
+    state.area = state.area === a && !state.q.trim() ? -1 : a;
+    state.q = ""; $("q").value = "";
+    draw();
+    if ($("content").getBoundingClientRect().top < 0) $("content").scrollIntoView({ behavior: "smooth" });
+  };
+  $("scrim").onclick = closeRule;
+  $("modal").onclick = (e) => {
+    if (e.target.closest("#close")) return closeRule();
+    const row = e.target.closest("tr[data-url]");
+    if (row && !e.target.closest("a")) window.open(row.dataset.url, "_blank", "noopener");
+  };
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeRule();
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); $("q").focus(); }
+  });
+  window.addEventListener("hashchange", () => { navigatedHere = location.hash.startsWith("#regel/"); syncWithHash(); });
+  $("foot").innerHTML = `<span>Opdateret ${longD(TODAY)} · ${D.documents} referater og regeldokumenter ·
+      <a href="https://styrke.dk/?page=referater" target="_blank" rel="noopener">styrke.dk</a> ·
+      <a href="https://github.com/Lentz92/styrke-referater" target="_blank" rel="noopener">GitHub</a></span>
+    <span>Udtrukket automatisk – referatet er altid den gældende kilde.</span>`;
+  draw();
+  syncWithHash();
+}
+init();
+</script>
+</body>
+</html>

@@ -7,3 +7,6 @@
 __pycache__/
 *.pyc
 .venv/
+
+# Built website (published by .github/workflows/pages.yml)
+_site/

@@ -3,7 +3,10 @@
 Overview of the rules and agreements in Dansk Styrkeløft Forbund (DSF), extracted from the
 minutes and rule documents published at <https://styrke.dk/?page=referater>.
 
-**Read the result in [regelsaet/README.md](regelsaet/README.md):**
+**Website: <https://lentz92.github.io/styrke-referater/>** – search the rules, pick a year to see what
+applied then, and open a rule for its text and its history, with each decision linked to the minutes.
+
+The same overview as Markdown, starting at [regelsaet/README.md](regelsaet/README.md):
 
 - `regelsaet/<år>.md` – a short page per year: what was new that year, what is adopted but not yet
   in force, then one line per rule in force, grouped in seven areas, each with a link to the minutes.
@@ -26,10 +29,13 @@ consolidation), counted against the Claude subscription; a few new minutes cost 
 | Option | Use |
 |---|---|
 | `--offline` | skip styrke.dk and use the files already in `referater/` |
-| `--render-only` | only rebuild `regelsaet/` from `data/` (e.g. after editing `render.py`) |
+| `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
 | `--only REGEX` | only extract documents whose id matches (testing) |
 | `--extract-model`, `--consolidate-model` | defaults `sonnet` and `opus` |
 | `--workers N` | parallel Claude calls (default 4) |
+
+To preview the website locally, open `_site/index.html` after a run, or build only the site with
+`uv run website.py`.
 
 To share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
 
@@ -46,6 +52,10 @@ claude setup-token
 GH_TOKEN=$(gh auth token --user Lentz92) gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo Lentz92/styrke-referater
 ```
 
+`.github/workflows/pages.yml` then rebuilds the website and publishes it on GitHub Pages. It runs after
+each monthly update, on pushes that change `data/`, `website/` or the scripts, and via "Run workflow".
+It does not call Claude.
+
 ## How it works
 
 | Step | File | Output |
@@ -54,6 +64,7 @@ GH_TOKEN=$(gh auth token --user Lentz92) gh secret set CLAUDE_CODE_OAUTH_TOKEN -
 | 2. Extract decisions per document, each with a verbatim quote and page | `analyze.py` | `data/beslutninger/<id>.json` |
 | 3. Consolidate decisions per category into rule histories | `analyze.py` | `data/regler/<kategori>.json` |
 | 4. Work out which version applied in each year and write Markdown | `render.py` | `regelsaet/` |
+| 5. Embed the same rules and per-year state in one static page | `website.py`, `website/template.html` | `_site/` |
 
 `update.py` runs the steps in order. Step 2 reruns for a document when its file changes; step 3 reruns
 for a category when its decisions change. After editing a prompt in `analyze.py`, bump

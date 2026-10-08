@@ -145,10 +145,8 @@ def render(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], mi
 
 def build_pages(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[dict], missing: list[str],
                 today: date) -> dict[str, str]:
-    rules = _build_rules(raw_rules, {d.ref: d for d in decisions})
-    # Includes next year when documents for it exist already (e.g. deadlines for 2027).
-    known_years = {int(d.dato[:4]) for d in decisions if d.dato} | {today.year}
-    years = list(range(min(known_years), max(known_years) + 1))
+    rules = build_rules(raw_rules, {d.ref: d for d in decisions})
+    years = covered_years(decisions, today)
 
     pages: dict[str, str] = {}
     targets: dict[int, str] = {}  # id(rule) -> link from a year page to the rule on its area page
@@ -163,7 +161,13 @@ def build_pages(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list
     return pages
 
 
-def _build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule]:
+def covered_years(decisions: list[Decision], today: date) -> list[int]:
+    # Includes next year when documents for it exist already (e.g. deadlines for 2027).
+    known_years = {int(d.dato[:4]) for d in decisions if d.dato} | {today.year}
+    return list(range(min(known_years), max(known_years) + 1))
+
+
+def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule]:
     rules = []
     for raw in raw_rules:
         versions = [
@@ -182,7 +186,7 @@ def _build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rul
 
 def _year_page(year: int, years: list[int], rules: list[Rule], today: date, links: _Links,
                targets: dict[int, str]) -> str:
-    cutoff = _cutoff(year, today)
+    cutoff = year_cutoff(year, today)
     if year == today.year:
         cutoff_text = _long_date(today)
     elif year > today.year:
@@ -392,7 +396,7 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         "|---|---|---|---|",
     ]
     for year in reversed(years):
-        active = [rule for rule in rules if rule.in_force(_cutoff(year, today))]
+        active = [rule for rule in rules if rule.in_force(year_cutoff(year, today))]
         central = sum(1 for rule in active if rule.vigtig)
         changes = sum(
             1 for rule in rules for i, v in enumerate(rule.versions)
@@ -486,7 +490,7 @@ def _is_news(v: Version, index: int) -> bool:
     return v.effekt not in QUIET_EFFECTS or (v.effekt == "bekraeftet" and index == 0)
 
 
-def _cutoff(year: int, today: date) -> str:
+def year_cutoff(year: int, today: date) -> str:
     """The date a year page shows rules for: today for the current year, else 31 December."""
     return today.isoformat() if year == today.year else f"{year}-12-31"
 
