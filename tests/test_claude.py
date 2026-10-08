@@ -6,7 +6,7 @@ import re
 import pytest
 
 import analyze
-from analyze import ClaudeError, ModelMismatch, RunBudget, _run_parallel, ask_claude
+from analyze import ClaudeError, ModelMismatch, RunBudget, ask_claude, run_parallel
 from conftest import decision
 from scrape import Doc
 
@@ -76,8 +76,8 @@ def test_another_model_than_the_full_id_fails_without_retry_and_stops_the_run(fa
     assert fake_claude.invocations("call") == 1
 
     budget = RunBudget()
-    first = _run_parallel([1, 2, 3], lambda _: _ask(), workers=1, label="Extract", budget=budget)
-    second = _run_parallel([1, 2], lambda _: _ask(), workers=1, label="Consolidate", budget=budget)
+    first = run_parallel([1, 2, 3], lambda _: _ask(), workers=1, label="Extract", budget=budget)
+    second = run_parallel([1, 2], lambda _: _ask(), workers=1, label="Consolidate", budget=budget)
     assert (first.failed, first.skipped, first.usage.cost_usd) == (1, 2, 0.25)
     assert (second.calls, second.skipped) == (0, 2)
     assert fake_claude.invocations("call") == 2
@@ -116,7 +116,7 @@ def test_failed_call_not_retried_after_the_deadline_reports_its_error(fake_claud
         _ask(budget=budget)
     assert fake_claude.invocations("call") == 1
 
-    step = _run_parallel([1], lambda _: _ask(budget=budget), workers=1, label="Test")
+    step = run_parallel([1], lambda _: _ask(budget=budget), workers=1, label="Test")
     assert step.failed == 1 and "failed: API Error: overloaded" in caplog.text
 
 

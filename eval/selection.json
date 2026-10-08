@@ -1,0 +1,501 @@
+{
+ "as_of": "2026-10-09",
+ "seed": 2026,
+ "size_cuts": [
+  499,
+  878
+ ],
+ "rules": [
+  {
+   "slug": "licensgebyr",
+   "kategori": "okonomi",
+   "titel": "Licensgebyr",
+   "versions": 4,
+   "years": 4,
+   "reason": "required; 4 versions over 4 years; no. 1 of 3 recurring rules in okonomi"
+  },
+  {
+   "slug": "dommeres-aktivitetskrav",
+   "kategori": "dommere",
+   "titel": "Dommeres aktivitetskrav",
+   "versions": 10,
+   "years": 7,
+   "reason": "10 versions over 7 years; no. 1 of 4 recurring rules in dommere"
+  },
+  {
+   "slug": "bestilling-betaling-og-levering-af-medaljer-og-pokaler",
+   "kategori": "staevner",
+   "titel": "Bestilling, betaling og levering af medaljer og pokaler",
+   "versions": 7,
+   "years": 6,
+   "reason": "7 versions over 6 years; no. 1 of 11 recurring rules in staevner"
+  },
+  {
+   "slug": "stævner-hvor-kvalifikationskrav-kan-opnås",
+   "kategori": "landshold",
+   "titel": "Stævner hvor kvalifikationskrav kan opnås",
+   "versions": 7,
+   "years": 6,
+   "reason": "7 versions over 6 years; no. 1 of 10 recurring rules in landshold"
+  },
+  {
+   "slug": "trænergebyr-og-trænerakkreditering-ved-em-vm",
+   "kategori": "internationalt",
+   "titel": "Trænergebyr og trænerakkreditering ved EM/VM",
+   "versions": 6,
+   "years": 4,
+   "reason": "6 versions over 4 years; no. 1 of 2 recurring rules in internationalt"
+  },
+  {
+   "slug": "udtagelse-til-internationale-masterstævner",
+   "kategori": "master",
+   "titel": "Udtagelse til internationale masterstævner",
+   "versions": 6,
+   "years": 4,
+   "reason": "6 versions over 4 years; no. 1 of 3 recurring rules in master"
+  },
+  {
+   "slug": "godkendelse-af-logoer-på-løftertøj",
+   "kategori": "udstyr",
+   "titel": "Godkendelse af logoer på løftertøj",
+   "versions": 5,
+   "years": 4,
+   "reason": "5 versions over 4 years; no. 1 of 2 recurring rules in udstyr"
+  },
+  {
+   "slug": "krav-om-træning-i-egen-klub",
+   "kategori": "medlemskab",
+   "titel": "Krav om træning i egen klub",
+   "versions": 4,
+   "years": 4,
+   "reason": "4 versions over 4 years; no. 1 of 2 recurring rules in medlemskab"
+  },
+  {
+   "slug": "årsafgift",
+   "kategori": "okonomi",
+   "titel": "Årsafgift",
+   "versions": 8,
+   "years": 8,
+   "reason": "8 versions over 8 years; no. 2 of 3 recurring rules in okonomi"
+  },
+  {
+   "slug": "medaljeceremoni-og-personligt-fremmøde",
+   "kategori": "staevner",
+   "titel": "Medaljeceremoni og personligt fremmøde",
+   "versions": 6,
+   "years": 6,
+   "reason": "6 versions over 6 years; no. 2 of 11 recurring rules in staevner"
+  },
+  {
+   "slug": "bruttolandshold-udtagelsesrunder-og-karenstid",
+   "kategori": "landshold",
+   "titel": "Bruttolandshold: udtagelsesrunder og karenstid",
+   "versions": 5,
+   "years": 5,
+   "reason": "5 versions over 5 years; no. 2 of 10 recurring rules in landshold"
+  },
+  {
+   "slug": "b-dommerprøve",
+   "kategori": "dommere",
+   "titel": "B-dommerprøve",
+   "versions": 4,
+   "years": 4,
+   "reason": "4 versions over 4 years; no. 2 of 4 recurring rules in dommere"
+  },
+  {
+   "slug": "dækning-af-udgifter-ved-internationale-masterstævner",
+   "kategori": "master",
+   "titel": "Dækning af udgifter ved internationale masterstævner",
+   "versions": 4,
+   "years": 4,
+   "reason": "4 versions over 4 years; no. 2 of 3 recurring rules in master"
+  },
+  {
+   "slug": "ventetid-fra-licens-til-stævnedeltagelse",
+   "kategori": "medlemskab",
+   "titel": "Ventetid fra licens til stævnedeltagelse",
+   "versions": 4,
+   "years": 4,
+   "reason": "4 versions over 4 years; no. 2 of 2 recurring rules in medlemskab"
+  },
+  {
+   "slug": "lån-af-dsf-s-stævneudstyr",
+   "kategori": "udstyr",
+   "titel": "Lån af DSF's stævneudstyr",
+   "versions": 5,
+   "years": 3,
+   "reason": "5 versions over 3 years; no. 2 of 2 recurring rules in udstyr"
+  },
+  {
+   "slug": "coachlicens-og-ipf-træneruddannelse",
+   "kategori": "internationalt",
+   "titel": "Coachlicens og IPF-træneruddannelse",
+   "versions": 4,
+   "years": 3,
+   "reason": "4 versions over 3 years; no. 2 of 2 recurring rules in internationalt"
+  },
+  {
+   "slug": "startgebyr-ved-stævner",
+   "kategori": "okonomi",
+   "titel": "Startgebyr ved stævner",
+   "versions": 7,
+   "years": 7,
+   "reason": "7 versions over 7 years; no. 3 of 3 recurring rules in okonomi"
+  },
+  {
+   "slug": "afvikling-og-placering-af-sm-og-jm",
+   "kategori": "staevner",
+   "titel": "Afvikling og placering af SM og JM",
+   "versions": 5,
+   "years": 5,
+   "reason": "5 versions over 5 years; no. 3 of 11 recurring rules in staevner"
+  },
+  {
+   "slug": "rejseplanlægning-og-booking",
+   "kategori": "landshold",
+   "titel": "Rejseplanlægning og booking",
+   "versions": 5,
+   "years": 4,
+   "reason": "5 versions over 4 years; no. 3 of 10 recurring rules in landshold"
+  },
+  {
+   "slug": "afholdelse-af-dommerprøver",
+   "kategori": "dommere",
+   "titel": "Afholdelse af dommerprøver",
+   "versions": 4,
+   "years": 3,
+   "reason": "4 versions over 3 years; no. 3 of 4 recurring rules in dommere"
+  }
+ ],
+ "documents": [
+  {
+   "id": "490",
+   "organ": "dif_internationalt",
+   "date": "2018",
+   "era": "2018–22",
+   "words": 4922,
+   "size": "large",
+   "decisions": 38,
+   "rules": [],
+   "reason": "required; dif_internationalt, 2018–22, large"
+  },
+  {
+   "id": "1071kongres",
+   "organ": "dif_internationalt",
+   "date": "2026",
+   "era": "2023–26",
+   "words": 6739,
+   "size": "large",
+   "decisions": 20,
+   "rules": [],
+   "reason": "required; dif_internationalt, 2023–26, large"
+  },
+  {
+   "id": "rep2013",
+   "organ": "repraesentantskab",
+   "date": "2013",
+   "era": "2013–17",
+   "words": 1906,
+   "size": "large",
+   "decisions": 14,
+   "rules": [
+    "licensgebyr",
+    "årsafgift",
+    "ventetid-fra-licens-til-stævnedeltagelse",
+    "startgebyr-ved-stævner"
+   ],
+   "reason": "required; repraesentantskab, 2013–17, large; holds decisions of licensgebyr, årsafgift, ventetid-fra-licens-til-stævnedeltagelse, startgebyr-ved-stævner"
+  },
+  {
+   "id": "Tilmeldingsfrister2026",
+   "organ": "andet",
+   "date": "2026",
+   "era": "2023–26",
+   "words": 421,
+   "size": "small",
+   "decisions": 4,
+   "rules": [
+    "trænergebyr-og-trænerakkreditering-ved-em-vm"
+   ],
+   "reason": "andet 1 of 1; stratum 2023–26, small was furthest below its share; holds decisions of trænergebyr-og-trænerakkreditering-ved-em-vm"
+  },
+  {
+   "id": "refbest_30052010",
+   "organ": "bestyrelse",
+   "date": "2010-05-30",
+   "era": "2008–12",
+   "words": 731,
+   "size": "medium",
+   "decisions": 4,
+   "rules": [
+    "udtagelse-til-internationale-masterstævner"
+   ],
+   "reason": "bestyrelse 1 of 8; stratum 2008–12, medium was furthest below its share; holds decisions of udtagelse-til-internationale-masterstævner"
+  },
+  {
+   "id": "refdom12032026",
+   "organ": "dommerudvalg",
+   "date": "2026-03-12",
+   "era": "2023–26",
+   "words": 584,
+   "size": "medium",
+   "decisions": 7,
+   "rules": [
+    "dommeres-aktivitetskrav",
+    "afholdelse-af-dommerprøver"
+   ],
+   "reason": "dommerudvalg 1 of 2; stratum 2023–26, medium was furthest below its share; holds decisions of dommeres-aktivitetskrav, afholdelse-af-dommerprøver"
+  },
+  {
+   "id": "elite18052021",
+   "organ": "eliteudvalg",
+   "date": "2021-05-18",
+   "era": "2018–22",
+   "words": 439,
+   "size": "small",
+   "decisions": 4,
+   "rules": [
+    "rejseplanlægning-og-booking"
+   ],
+   "reason": "eliteudvalg 1 of 5; stratum 2018–22, small was furthest below its share; holds decisions of rejseplanlægning-og-booking"
+  },
+  {
+   "id": "CoachResponsibility",
+   "organ": "masterudvalget",
+   "date": "2015-08-24",
+   "era": "2013–17",
+   "words": 570,
+   "size": "medium",
+   "decisions": 9,
+   "rules": [],
+   "reason": "masterudvalget 1 of 1; stratum 2013–17, medium was furthest below its share"
+  },
+  {
+   "id": "refmedie09062026",
+   "organ": "medieudvalg",
+   "date": "2026-06-09",
+   "era": "2023–26",
+   "words": 428,
+   "size": "small",
+   "decisions": 2,
+   "rules": [],
+   "reason": "medieudvalg 1 of 1; stratum 2023–26, small was furthest below its share"
+  },
+  {
+   "id": "rep2019",
+   "organ": "repraesentantskab",
+   "date": "2019",
+   "era": "2018–22",
+   "words": 9330,
+   "size": "large",
+   "decisions": 15,
+   "rules": [
+    "godkendelse-af-logoer-på-løftertøj",
+    "årsafgift",
+    "medaljeceremoni-og-personligt-fremmøde"
+   ],
+   "reason": "repraesentantskab 2 of 2; stratum 2018–22, large was furthest below its share; holds decisions of godkendelse-af-logoer-på-løftertøj, årsafgift, medaljeceremoni-og-personligt-fremmøde"
+  },
+  {
+   "id": "refstaevne24042025",
+   "organ": "staevneudvalg",
+   "date": "2025-04-24",
+   "era": "2023–26",
+   "words": 635,
+   "size": "medium",
+   "decisions": 3,
+   "rules": [],
+   "reason": "staevneudvalg 1 of 2; stratum 2023–26, medium was furthest below its share"
+  },
+  {
+   "id": "refudstyr16092025",
+   "organ": "udstyrsgruppen",
+   "date": "2025-09-16",
+   "era": "2023–26",
+   "words": 427,
+   "size": "small",
+   "decisions": 0,
+   "rules": [],
+   "reason": "udstyrsgruppen 1 of 1; stratum 2023–26, small was furthest below its share"
+  },
+  {
+   "id": "refbest_24082013",
+   "organ": "bestyrelse",
+   "date": "2013-08-24",
+   "era": "2013–17",
+   "words": 1047,
+   "size": "large",
+   "decisions": 4,
+   "rules": [
+    "dækning-af-udgifter-ved-internationale-masterstævner"
+   ],
+   "reason": "bestyrelse 2 of 8; stratum 2013–17, large was furthest below its share; holds decisions of dækning-af-udgifter-ved-internationale-masterstævner"
+  },
+  {
+   "id": "refdom07012025",
+   "organ": "dommerudvalg",
+   "date": "2025-01-07",
+   "era": "2023–26",
+   "words": 788,
+   "size": "medium",
+   "decisions": 3,
+   "rules": [
+    "b-dommerprøve"
+   ],
+   "reason": "dommerudvalg 2 of 2; stratum 2023–26, medium was furthest below its share; holds decisions of b-dommerprøve"
+  },
+  {
+   "id": "elite13022009",
+   "organ": "eliteudvalg",
+   "date": "2009-02-13",
+   "era": "2008–12",
+   "words": 151,
+   "size": "small",
+   "decisions": 0,
+   "rules": [],
+   "reason": "eliteudvalg 2 of 5; stratum 2008–12, small was furthest below its share"
+  },
+  {
+   "id": "refstaevne10092024",
+   "organ": "staevneudvalg",
+   "date": "2024-09-10",
+   "era": "2023–26",
+   "words": 905,
+   "size": "large",
+   "decisions": 5,
+   "rules": [
+    "medaljeceremoni-og-personligt-fremmøde"
+   ],
+   "reason": "staevneudvalg 2 of 2; stratum 2023–26, large was furthest below its share; holds decisions of medaljeceremoni-og-personligt-fremmøde"
+  },
+  {
+   "id": "refbest_310819",
+   "organ": "bestyrelse",
+   "date": "2019-08-31",
+   "era": "2018–22",
+   "words": 623,
+   "size": "medium",
+   "decisions": 4,
+   "rules": [
+    "krav-om-træning-i-egen-klub"
+   ],
+   "reason": "bestyrelse 3 of 8; stratum 2018–22, medium was furthest below its share; holds decisions of krav-om-træning-i-egen-klub"
+  },
+  {
+   "id": "elite14122021",
+   "organ": "eliteudvalg",
+   "date": "2021-12-14",
+   "era": "2018–22",
+   "words": 334,
+   "size": "small",
+   "decisions": 3,
+   "rules": [
+    "bruttolandshold-udtagelsesrunder-og-karenstid"
+   ],
+   "reason": "eliteudvalg 3 of 5; stratum 2018–22, small was furthest below its share; holds decisions of bruttolandshold-udtagelsesrunder-og-karenstid"
+  },
+  {
+   "id": "refbest_09082014",
+   "organ": "bestyrelse",
+   "date": "2014-08-09",
+   "era": "2013–17",
+   "words": 1092,
+   "size": "large",
+   "decisions": 6,
+   "rules": [
+    "lån-af-dsf-s-stævneudstyr"
+   ],
+   "reason": "bestyrelse 4 of 8; stratum 2013–17, large was furthest below its share; holds decisions of lån-af-dsf-s-stævneudstyr"
+  },
+  {
+   "id": "elite10122024",
+   "organ": "eliteudvalg",
+   "date": "2024-12-10",
+   "era": "2023–26",
+   "words": 530,
+   "size": "medium",
+   "decisions": 4,
+   "rules": [
+    "stævner-hvor-kvalifikationskrav-kan-opnås",
+    "rejseplanlægning-og-booking"
+   ],
+   "reason": "eliteudvalg 4 of 5; stratum 2023–26, medium was furthest below its share; holds decisions of stævner-hvor-kvalifikationskrav-kan-opnås, rejseplanlægning-og-booking"
+  },
+  {
+   "id": "refbest_12092010",
+   "organ": "bestyrelse",
+   "date": "2010-09-12",
+   "era": "2008–12",
+   "words": 158,
+   "size": "small",
+   "decisions": 0,
+   "rules": [],
+   "reason": "bestyrelse 5 of 8; stratum 2008–12, small was furthest below its share"
+  },
+  {
+   "id": "elite09092017",
+   "organ": "eliteudvalg",
+   "date": "2017-09-09",
+   "era": "2013–17",
+   "words": 627,
+   "size": "medium",
+   "decisions": 9,
+   "rules": [
+    "bruttolandshold-udtagelsesrunder-og-karenstid"
+   ],
+   "reason": "eliteudvalg 5 of 5; stratum 2013–17, medium was furthest below its share; holds decisions of bruttolandshold-udtagelsesrunder-og-karenstid"
+  },
+  {
+   "id": "refbest_150723",
+   "organ": "bestyrelse",
+   "date": "2023-07-15",
+   "era": "2023–26",
+   "words": 1092,
+   "size": "large",
+   "decisions": 5,
+   "rules": [
+    "bestilling-betaling-og-levering-af-medaljer-og-pokaler",
+    "coachlicens-og-ipf-træneruddannelse"
+   ],
+   "reason": "bestyrelse 6 of 8; stratum 2023–26, large was furthest below its share; holds decisions of bestilling-betaling-og-levering-af-medaljer-og-pokaler, coachlicens-og-ipf-træneruddannelse"
+  },
+  {
+   "id": "refbest_130321",
+   "organ": "bestyrelse",
+   "date": "2021-03-13",
+   "era": "2018–22",
+   "words": 139,
+   "size": "small",
+   "decisions": 0,
+   "rules": [],
+   "reason": "bestyrelse 7 of 8; stratum 2018–22, small was furthest below its share"
+  },
+  {
+   "id": "refbest_230423",
+   "organ": "bestyrelse",
+   "date": "2023-04-23",
+   "era": "2023–26",
+   "words": 647,
+   "size": "medium",
+   "decisions": 3,
+   "rules": [
+    "afvikling-og-placering-af-sm-og-jm"
+   ],
+   "reason": "bestyrelse 8 of 8; stratum 2023–26, medium was furthest below its share; holds decisions of afvikling-og-placering-af-sm-og-jm"
+  }
+ ],
+ "summary": {
+  "decisions": 166,
+  "two_largest": [
+   "490",
+   "1071kongres"
+  ],
+  "two_largest_share": 0.349,
+  "without_decisions": [
+   "refudstyr16092025",
+   "elite13022009",
+   "refbest_12092010",
+   "refbest_130321"
+  ]
+ }
+}

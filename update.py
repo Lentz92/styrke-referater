@@ -354,12 +354,13 @@ def record_run(steps: dict[str, StepSummary]) -> None:
 def append_run_log(path: Path, steps: dict[str, StepSummary], cli: str, now: datetime) -> None:
     """Add one JSON line with what the run's Claude calls used, so cost and time can be followed over months."""
     line = {"time": now.isoformat(timespec="seconds"), "cli": cli,
-            "steps": {name: _step_json(step) for name, step in steps.items()}}
+            "steps": {name: step_json(step) for name, step in steps.items()}}
     with path.open("a") as log:
         log.write(json.dumps(line, ensure_ascii=False) + "\n")
 
 
-def _step_json(step: StepSummary) -> dict:
+def step_json(step: StepSummary) -> dict:
+    """One step's Claude usage as a line of a run log stores it (also evaluate.py's eval/runs.jsonl)."""
     usage = step.usage
     return {
         "calls": step.calls,

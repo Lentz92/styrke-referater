@@ -244,7 +244,7 @@ def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int,
     todo = [doc for doc in docs if not _extraction_is_current(doc)]
     log.info("Extract: %d of %d documents need extracting", len(todo), len(docs))
     cli = cli_version() if todo else ""
-    return _run_parallel(todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget),
+    return run_parallel(todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget),
                          workers, "Extract", budget)
 
 
@@ -261,30 +261,58 @@ def _extraction_is_current(doc: Doc) -> bool:
     return cached.get("sha256") == doc.sha256 and cached.get("version") == EXTRACT_VERSION
 
 
+def document_prompt(doc: Doc, text: str) -> str:
+    """The document as Claude gets it: its id, organ, title and date from styrke.dk, then its text. The extraction
+    sends exactly this; the answer key's judge (evaluate.py) sends it before the candidates."""
+    return (
+        f"Dokument-id: {doc.id}\nOrgan: {doc.organ_label}\nTitel på styrke.dk: {doc.title}\n"
+        f"Dato ifølge styrke.dk: {doc.date or 'ukendt'}\n\n<dokument>\n{text}\n</dokument>"
+    )
+
+
+@dataclass(frozen=True)
+class Extraction:
+    """One answer to the extraction prompt for a document."""
+    moededato: str | None  # as Claude read it, not yet checked against styrke.dk's date
+    decisions: list[dict]  # Claude's decisions in its order, each with its quote located (quote_fields)
+    words: DocWords  # the document's words, to locate other quotes in the same text
+
+
+def run_extraction(doc: Doc, *, model: str, effort: str | None,
+                   budget: RunBudget | None = None) -> tuple[Extraction, Usage]:
+    """Run the extraction prompt on one document and locate each decision's quote; writes nothing.
+
+    The one place the extraction prompt runs, so the pipeline (_extract_one, which adds ids and caches the result
+    in data/) and the evaluation (evaluate.py extract) measure the same thing. An error after the call carries
+    the call's usage (ClaudeError).
+    """
+    text = document_text(doc)
+    output, usage = ask_claude(EXTRACT_SYSTEM, document_prompt(doc, text), EXTRACT_SCHEMA, model=model,
+                               effort=effort, timeout=EXTRACT_TIMEOUT, budget=budget)
+    with usage_kept(usage):
+        words = DocWords.of(text)
+        decisions = [{**d, **quote_fields(d["citat"], words, d["side"])} for d in output["beslutninger"]]
+        extraction = Extraction(output["moededato"], decisions, words)
+    return extraction, usage
+
+
 def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str,
                  budget: RunBudget | None = None) -> tuple[str, Usage]:
     path = DECISIONS_DIR / f"{doc.id}.json"
     # Read before the call, so a previous result without ids fails before it costs anything.
     previous = _with_ids(json.loads(path.read_text()), path) if path.exists() else None
     referenced = _referenced_ids()
-    text = document_text(doc)
-    prompt = (
-        f"Dokument-id: {doc.id}\nOrgan: {doc.organ_label}\nTitel på styrke.dk: {doc.title}\n"
-        f"Dato ifølge styrke.dk: {doc.date or 'ukendt'}\n\n<dokument>\n{text}\n</dokument>"
-    )
-    output, usage = ask_claude(EXTRACT_SYSTEM, prompt, EXTRACT_SCHEMA, model=model, effort=effort,
-                               timeout=EXTRACT_TIMEOUT, budget=budget)
-    with _usage_kept(usage):
-        words = DocWords.of(text)
-        decisions = [{**d, **quote_fields(d["citat"], words, d["side"])} for d in output["beslutninger"]]
-        ids = assign_ids(doc.id, previous, decisions, words, date.today(), referenced)
+    extraction, usage = run_extraction(doc, model=model, effort=effort, budget=budget)
+    with usage_kept(usage):
+        decisions = extraction.decisions
+        ids = assign_ids(doc.id, previous, decisions, extraction.words, date.today(), referenced)
         result = {
             "doc_id": doc.id,
             "sha256": doc.sha256,
             "version": EXTRACT_VERSION,
             "model": model,
             "provenance": provenance(usage, cli, EXTRACT_SYSTEM, EXTRACT_SCHEMA, effort),
-            "moededato": output["moededato"],
+            "moededato": extraction.moededato,
             "next_number": ids.next_number,
             "retired": ids.retired,
             "beslutninger": [{"id": id_, **d} for id_, d in zip(ids.ids, decisions)],
@@ -373,11 +401,12 @@ def _with_ids(cached: dict, path: Path) -> dict:
     return cached
 
 
-def load_decisions(docs: list[Doc]) -> list[Decision]:
-    """All cached decisions for the given documents, in chronological and then reading order."""
+def load_decisions(docs: list[Doc], directory: Path | None = None) -> list[Decision]:
+    """All cached decisions for the given documents, in chronological and then reading order; from `directory`
+    instead of data/beslutninger when given (evaluate.py scores other extractions)."""
     decisions: list[Decision] = []
     for doc in docs:
-        path = DECISIONS_DIR / f"{doc.id}.json"
+        path = (directory or DECISIONS_DIR) / f"{doc.id}.json"
         if not path.exists():
             continue
         cached = _with_ids(json.loads(path.read_text()), path)
@@ -681,7 +710,7 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
     log.info("Consolidate: %d of %d categories need updating%s", len(todo), len(with_decisions),
              "" if categories is None else f" among those of the selected documents ({len(categories)})")
     cli = cli_version() if todo else ""
-    summary = _run_parallel(
+    summary = run_parallel(
         todo,
         lambda job: _consolidate_one(job.category, job.items, job.input_hash, fingerprints, model=model,
                                      effort=effort, cli=cli, budget=budget),
@@ -737,7 +766,7 @@ def _consolidate_one(category: str, items: list[dict], input_hash: str, fingerpr
     )
     output, usage = ask_claude(CONSOLIDATE_SYSTEM, prompt, CONSOLIDATE_SCHEMA, model=model, effort=effort,
                                timeout=CONSOLIDATE_TIMEOUT, budget=budget)
-    with _usage_kept(usage):
+    with usage_kept(usage):
         rules, skipped, unassigned = _rules_from(output, items, fingerprints)
         with _SLUGS_LOCK:  # categories run in parallel, and a new slug must be unique across all of them
             registry = load_slugs()
@@ -790,9 +819,10 @@ def _rules_from(output: dict, items: list[dict],
     return rules, skipped, unassigned
 
 
-def load_rules() -> list[dict]:
+def load_rules(directory: Path | None = None) -> list[dict]:
+    """Every rule with its category, from `directory` instead of data/regler when given."""
     rules = []
-    for path in sorted(RULES_DIR.glob("*.json")):
+    for path in sorted((directory or RULES_DIR).glob("*.json")):
         cached = json.loads(path.read_text())
         rules.extend({**rule, "kategori": cached["kategori"]} for rule in cached["regler"])
     return rules
@@ -1023,7 +1053,7 @@ class BudgetExhausted(RuntimeError):
 
 
 @contextmanager
-def _usage_kept(usage: Usage) -> Iterator[None]:
+def usage_kept(usage: Usage) -> Iterator[None]:
     """Errors after a successful call (a quote that breaks the locator, a full disk) still carry the call's
     usage, so its cost reaches the step summary and data/runs.jsonl."""
     try:
@@ -1148,7 +1178,7 @@ class StepSummary:
     seconds: float  # wall-clock time of the step
 
 
-def _run_parallel(jobs: list, fn, workers: int, label: str, budget: RunBudget | None = None) -> StepSummary:
+def run_parallel(jobs: list, fn, workers: int, label: str, budget: RunBudget | None = None) -> StepSummary:
     """Run fn over jobs in a thread pool; log progress and failures, keep going on errors.
 
     fn returns (message, Usage). Jobs that have not started when the budget is exhausted are skipped.

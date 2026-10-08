@@ -1,0 +1,47 @@
+{
+ "doc_id": "refmedie09062026",
+ "sha256": "e9ad2b874fba4f1637e56073e6b6a2a9095dd9139e1e0a45f1cf071705f52702",
+ "run": "stored",
+ "model": "sonnet",
+ "provenance": null,
+ "usage": null,
+ "moededato": "2026-06-09",
+ "beslutninger": [
+  {
+   "id": "refmedie09062026#1",
+   "emne": "Medieudvalgets kontaktpersoner og opgaver ved stævner",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Hvert kommende stævne har en kontaktperson i medieudvalget. Kontaktpersonen sørger for, at arrangerende klub får login til Instagram for at poste før og under stævnet, at klubben laver en kort præsentation af venuet, og at der løbende kommer opslag med link til invitation, plan og livestream.",
+   "citat": "Arrangerende klubber modtager login til instagram med henblik på at poste indhold op til og fra stævnerne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 59,
+   "citat_side": 1
+  },
+  {
+   "id": "refmedie09062026#2",
+   "emne": "Medieudvalgets dækning af internationale stævner",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Daniel laver opslag til internationale stævner med løftere, løftetider og link til livestream. Jens sørger for billeder af masterløftere ved internationale stævner, og Peter kan udlevere mailadresser på landsholdsløftere, hvis der mangler billeder.",
+   "citat": "Daniel laver opslag til de internationale stævner med løftere, deres løftetider og link til livestream.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 104,
+   "citat_side": 1
+  }
+ ]
+}
