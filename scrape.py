@@ -98,7 +98,7 @@ def load_manifest() -> list[Doc]:
 
 
 def sync() -> list[Doc]:
-    """Download new documents, index everything under referater/ and write the manifest."""
+    """Download new and replaced documents, index everything under referater/ and write the manifest."""
     previous = {doc.id: doc for doc in load_manifest()} if MANIFEST.exists() else {}
     local = {
         p.name.lower(): p
@@ -114,32 +114,40 @@ def sync() -> list[Doc]:
 
         docs: dict[str, Doc] = {}
         for link in links:
-            path = local.get(link.filename.lower()) or _download(client, link)
+            path = local.get(link.filename.lower())
+            url: str | None = link.url
+            if path is None:
+                path = _download(client, link)
+            else:
+                url = _refresh(client, link.url, path)
             if path is None:
                 continue
             local[path.name.lower()] = path
-            doc = _make_doc(path, link.title, link.organ, link.url)
+            doc = _make_doc(path, link.title, link.organ, url)
             if doc.date is None:
                 # Standing rule documents (e.g. Adfaerdskodeks) carry no date in name or title.
                 doc = replace(doc, date=_last_modified(client, link.url))
             docs.setdefault(doc.id, doc)
 
-    # Files we still have but styrke.dk no longer links to (e.g. last year's deadlines) keep
-    # their history value, so they stay in the manifest.
-    linked = {doc.path for doc in docs.values()}
-    for path in sorted(local.values()):
-        rel = str(path.relative_to(ROOT))
-        if rel in linked:
-            continue
-        old = previous.get(path.stem)
-        doc = _make_doc(path, old.title if old else path.stem, old.organ if old else path.parent.name,
-                        old.url if old else None)
-        if old and doc.date is None:
-            doc = replace(doc, date=old.date)
-        if doc.id in docs:
-            log.warning("Dublet-id %s: %s ignoreres", doc.id, rel)
-            continue
-        docs[doc.id] = doc
+        # Files we still have but styrke.dk no longer links to (e.g. last year's deadlines) keep
+        # their history value, so they stay in the manifest, citing their old URL while it works.
+        linked = {doc.path for doc in docs.values()}
+        for path in sorted(local.values()):
+            rel = str(path.relative_to(ROOT))
+            if rel in linked:
+                continue
+            old = previous.get(path.stem)
+            url = old.url if old else None
+            if url and not _exists(client, url):
+                log.warning("Linket til %s virker ikke længere – bruger kopien i %s", url, rel)
+                url = None
+            doc = _make_doc(path, old.title if old else path.stem, old.organ if old else path.parent.name, url)
+            if old and doc.date is None:
+                doc = replace(doc, date=old.date)
+            if doc.id in docs:
+                log.warning("Dublet-id %s: %s ignoreres", doc.id, rel)
+                continue
+            docs[doc.id] = doc
 
     result = sorted(docs.values(), key=lambda d: (d.organ, d.date or "", d.id))
     DATA_DIR.mkdir(exist_ok=True)
@@ -235,15 +243,59 @@ def _make_doc(path: Path, title: str, organ: str, url: str | None) -> Doc:
     )
 
 
-def _download(client: httpx.Client, link: Link) -> Path | None:
+def _variants(url: str) -> list[str]:
     # The file server is case-sensitive and some links say .pdf for files named .PDF.
-    candidates = [link.url]
-    if link.url.endswith(".pdf"):
-        candidates.append(link.url[:-4] + ".PDF")
-    elif link.url.endswith(".PDF"):
-        candidates.append(link.url[:-4] + ".pdf")
+    if url.endswith(".pdf"):
+        return [url, url[:-4] + ".PDF"]
+    if url.endswith(".PDF"):
+        return [url, url[:-4] + ".pdf"]
+    return [url]
 
-    for url in candidates:
+
+def _head(client: httpx.Client, url: str) -> httpx.Response | None:
+    """HEAD response for the first variant of the URL that exists; None when all answer 404.
+
+    Raises httpx.HTTPError when styrke.dk can't be reached.
+    """
+    for variant in _variants(url):
+        response = client.head(variant)
+        if response.status_code != 404:
+            return response
+    return None
+
+
+def _exists(client: httpx.Client, url: str) -> bool:
+    try:
+        return _head(client, url) is not None
+    except httpx.HTTPError:
+        return True  # unreachable is not the same as gone
+
+
+def _refresh(client: httpx.Client, url: str, path: Path) -> str | None:
+    """Check a file we already have against styrke.dk and return the URL to cite for it.
+
+    A file with another size than ours has been replaced there, so it is downloaded again. A link
+    that answers 404 is dead: the copy in referater/ stays, and the document gets no URL.
+    """
+    try:
+        response = _head(client, url)
+        if response is None:
+            log.warning("Linket til %s virker ikke længere – bruger kopien i %s", url, path.relative_to(ROOT))
+            return None
+        size = response.headers.get("content-length", "")
+        if response.is_success and size.isdigit() and int(size) != path.stat().st_size:
+            fresh = client.get(str(response.url))
+            if fresh.is_success:
+                path.write_bytes(fresh.content)
+                log.info("%s var ændret på styrke.dk og er hentet igen", path.relative_to(ROOT))
+    except httpx.HTTPError as exc:
+        log.warning("Kunne ikke tjekke %s: %s", url, exc)
+    time.sleep(0.1)
+    return url
+
+
+def _download(client: httpx.Client, link: Link) -> Path | None:
+    for url in _variants(link.url):
         try:
             response = client.get(url)
         except httpx.HTTPError as exc:

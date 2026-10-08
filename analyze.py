@@ -16,6 +16,8 @@ import shutil
 import subprocess
 import tempfile
 import time
+from collections import defaultdict
+from collections.abc import Container
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date
@@ -29,6 +31,18 @@ CONSOLIDATE_VERSION = 7
 
 DECISIONS_DIR = DATA_DIR / "beslutninger"
 RULES_DIR = DATA_DIR / "regler"
+
+# Seconds one Claude call may take before it is retried.
+EXTRACT_TIMEOUT = 600
+CONSOLIDATE_TIMEOUT = 1800
+
+# Share of a quote's word trigrams that must appear in the document for it to count as found.
+QUOTE_THRESHOLD = 0.8
+# Words a quote may drift from its first trigram's position (line-break hyphenation adds a word).
+QUOTE_SLACK = 2
+
+# The effect of a decision that did not adopt anything follows from its outcome alone.
+PROPOSAL_EFFECT = {"ikke_afgjort": "foreslaaet", "forkastet": "forkastet", "trukket": "trukket"}
 
 CATEGORIES = {
     "medlemskab": "Medlemskab, licens og klubskifte",
@@ -63,11 +77,24 @@ class Decision:
     tekst: str
     citat: str
     citat_fundet: bool
-    side: int | None
+    side: int | None  # page of the quote as located in the document, else the page Claude gave
+    side_rettet: bool  # the quote was found on another page than Claude gave
+    rank: int  # reading order within the document
     stemmer: str | None
     forslagsstiller: str | None  # who submitted the proposal, e.g. a club or Bestyrelsen
     gaelder_fra: str | None
     gaelder_til: str | None
+
+
+def decision_hash(d: Decision) -> str:
+    """Fingerprint of what Claude extracted; a rule version built from different content no longer matches."""
+    fields = [d.emne, d.kategori, d.udfald, d.handling, d.niveau, d.tekst, d.citat]
+    return hashlib.sha256(json.dumps(fields, ensure_ascii=False).encode()).hexdigest()[:12]
+
+
+def version_matches(version: dict, d: Decision) -> bool:
+    """A rule version still describes its decision (versions written before fingerprints count as matching)."""
+    return version.get("dhash") in (None, decision_hash(d))
 
 
 # --------------------------------------------------------------------------- extraction
@@ -186,15 +213,16 @@ EXTRACT_SCHEMA = {
 }
 
 
-def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int) -> int:
+def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int, deadline: float | None = None) -> int:
     """Extract decisions from every document whose cached result is missing or outdated.
 
-    Returns the number of documents that failed (they are retried on the next run).
+    Returns the number of documents that failed or were skipped (they are retried on the next run).
     """
     DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
     todo = [doc for doc in docs if not _extraction_is_current(doc)]
     log.info("Udtræk: %d af %d dokumenter skal analyseres", len(todo), len(docs))
-    cost, failures = _run_parallel(todo, lambda doc: _extract_one(doc, model, effort), workers, "Udtræk")
+    cost, failures = _run_parallel(todo, lambda doc: _extract_one(doc, model, effort, deadline), workers, "Udtræk",
+                                   deadline)
     log.info("Udtræk færdig (svarer til %.2f USD i API-pris, trækkes af abonnementet)", cost)
     return failures
 
@@ -212,15 +240,16 @@ def _extraction_is_current(doc: Doc) -> bool:
     return cached.get("sha256") == doc.sha256 and cached.get("version") == EXTRACT_VERSION
 
 
-def _extract_one(doc: Doc, model: str, effort: str | None) -> tuple[str, float]:
+def _extract_one(doc: Doc, model: str, effort: str | None, deadline: float | None) -> tuple[str, float]:
     text = document_text(doc)
     prompt = (
         f"Dokument-id: {doc.id}\nOrgan: {doc.organ_label}\nTitel på styrke.dk: {doc.title}\n"
         f"Dato ifølge styrke.dk: {doc.date or 'ukendt'}\n\n<dokument>\n{text}\n</dokument>"
     )
-    output, cost = ask_claude(EXTRACT_SYSTEM, prompt, EXTRACT_SCHEMA, model=model, effort=effort)
-    trigrams = _trigrams(_words(text))
-    decisions = [{**d, "citat_fundet": _quote_found(d["citat"], trigrams)} for d in output["beslutninger"]]
+    output, cost = ask_claude(EXTRACT_SYSTEM, prompt, EXTRACT_SCHEMA, model=model, effort=effort,
+                              timeout=EXTRACT_TIMEOUT, deadline=deadline)
+    words = DocWords.of(text)
+    decisions = [{**d, **quote_fields(d["citat"], words, d["side"])} for d in output["beslutninger"]]
     result = {
         "doc_id": doc.id,
         "sha256": doc.sha256,
@@ -236,7 +265,7 @@ def _extract_one(doc: Doc, model: str, effort: str | None) -> tuple[str, float]:
 
 
 def load_decisions(docs: list[Doc]) -> list[Decision]:
-    """All cached decisions for the given documents, in chronological order."""
+    """All cached decisions for the given documents, in chronological and then reading order."""
     decisions: list[Decision] = []
     for doc in docs:
         path = DECISIONS_DIR / f"{doc.id}.json"
@@ -244,7 +273,9 @@ def load_decisions(docs: list[Doc]) -> list[Decision]:
             continue
         cached = json.loads(path.read_text())
         meeting_date = _meeting_date(cached.get("moededato"), doc)
-        for n, d in enumerate(cached["beslutninger"], start=1):
+        raw = cached["beslutninger"]
+        for n, (d, rank) in enumerate(zip(raw, _reading_order(raw)), start=1):
+            located_page = d.get("citat_side")
             decisions.append(Decision(
                 ref=f"{doc.id}#{n}",
                 doc_id=doc.id,
@@ -257,13 +288,29 @@ def load_decisions(docs: list[Doc]) -> list[Decision]:
                 tekst=d["tekst"],
                 citat=d["citat"],
                 citat_fundet=d["citat_fundet"],
-                side=d["side"],
+                side=located_page if located_page is not None else d["side"],
+                side_rettet=located_page is not None and located_page != d["side"],
+                rank=rank,
                 stemmer=d["stemmer"],
                 forslagsstiller=d.get("forslagsstiller"),
                 gaelder_fra=_valid_date(d["gaelder_fra"]),
                 gaelder_til=_valid_date(d["gaelder_til"]),
             ))
-    return sorted(decisions, key=lambda d: (d.dato or "", d.ref))
+    return sorted(decisions, key=lambda d: (d.dato or "", d.doc_id, d.rank))
+
+
+def _reading_order(raw: list[dict]) -> list[int]:
+    """Rank of each decision by where its quote starts; one whose quote was not located stays
+    right after the decision Claude listed before it."""
+    keys, last_pos = [], -1
+    for i, d in enumerate(raw):
+        if d.get("citat_pos") is not None:
+            last_pos = d["citat_pos"]
+        keys.append((last_pos, i))
+    ranks = [0] * len(raw)
+    for rank, i in enumerate(sorted(range(len(raw)), key=keys.__getitem__)):
+        ranks[i] = rank
+    return ranks
 
 
 def _meeting_date(extracted: str | None, doc: Doc) -> str | None:
@@ -291,13 +338,79 @@ def _trigrams(words: list[str]) -> set[tuple[str, ...]]:
     return set(zip(words, words[1:], words[2:]))
 
 
-def _quote_found(quote: str, doc_trigrams: set[tuple[str, ...]]) -> bool:
+def _quote_found(quote: str, doc_trigrams: Container[tuple[str, ...]]) -> bool:
     """True when the quote appears (near-)verbatim in the document; tolerates line-break hyphenation."""
     quote_trigrams = list(_trigrams(_words(quote)))
     if not quote_trigrams:
         return False
     hits = sum(gram in doc_trigrams for gram in quote_trigrams)
-    return hits / len(quote_trigrams) >= 0.8
+    return hits / len(quote_trigrams) >= QUOTE_THRESHOLD
+
+
+_PAGE_MARKER = re.compile(r"\[Side (\d+)\]")
+
+
+@dataclass(frozen=True)
+class DocWords:
+    """A document's words without the [Side N] markers, with the page each word is on."""
+    words: list[str]
+    pages: list[int | None]  # None for documents without page markers (HTML)
+    index: dict[tuple[str, ...], list[int]]  # word trigram -> offsets where it starts
+
+    @classmethod
+    def of(cls, text: str) -> DocWords:
+        parts = _PAGE_MARKER.split(text)  # [before first marker, page, text, page, text, …]
+        words = _words(parts[0])
+        pages: list[int | None] = [None] * len(words)
+        for page, segment in zip(parts[1::2], parts[2::2]):
+            segment_words = _words(segment)
+            words += segment_words
+            pages += [int(page)] * len(segment_words)
+        index: dict[tuple[str, ...], list[int]] = defaultdict(list)
+        for offset, gram in enumerate(zip(words, words[1:], words[2:])):
+            index[gram].append(offset)
+        return cls(words, pages, dict(index))
+
+
+def locate_quote(quote: str, doc: DocWords, page: int | None = None) -> int | None:
+    """Word offset where the quote starts in the document, or None when it is not there.
+
+    Each quote trigram votes for the start its position implies. Votes a few words apart are
+    pooled, so a hyphenated line break that splits one word in two still lines up. A quote can
+    occur more than once (a proposal and the decision adopting it); then the occurrence on `page`,
+    the page Claude cited, wins, else the best and earliest match.
+    """
+    words = _words(quote)
+    grams = list(zip(words, words[1:], words[2:]))
+    if not grams:
+        return None
+    voters: dict[int, set[int]] = defaultdict(set)  # implied start -> quote trigrams that imply it
+    for j, gram in enumerate(grams):
+        for offset in doc.index.get(gram, ()):
+            voters[offset - j].add(j)
+
+    def support(start: int) -> int:
+        return len(set().union(*(voters.get(start + d, ()) for d in range(-QUOTE_SLACK, QUOTE_SLACK + 1))))
+
+    matches = sorted((s for s in voters if support(s) / len(grams) >= QUOTE_THRESHOLD), key=lambda s: (-support(s), s))
+    occurrences: list[int] = []  # one start per place the quote occurs, best match first
+    for start in matches:
+        if all(abs(start - seen) > 2 * QUOTE_SLACK for seen in occurrences):
+            occurrences.append(max(start, 0))
+    on_page = [start for start in occurrences if page is not None and doc.pages[start] == page]
+    return (on_page or occurrences or [None])[0]
+
+
+def quote_fields(quote: str, doc: DocWords, page: int | None) -> dict:
+    """Whether the quote is in the document, and where: word offset and page (None when not located).
+
+    `page` is the page Claude cited; it is kept when the quote occurs there."""
+    pos = locate_quote(quote, doc, page)
+    return {
+        "citat_fundet": _quote_found(quote, doc.index),
+        "citat_pos": pos,
+        "citat_side": doc.pages[pos] if pos is not None else None,
+    }
 
 
 # --------------------------------------------------------------------------- consolidation
@@ -401,15 +514,16 @@ CONSOLIDATE_SCHEMA = {
 
 
 def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: str,
-                effort: str | None, workers: int) -> int:
+                effort: str | None, workers: int, deadline: float | None = None) -> int:
     """Group decisions into rule histories, one Claude call per category whose input changed.
 
-    Returns the number of categories that failed (they are retried on the next run).
+    Returns the number of categories that failed or were skipped (they are retried on the next run).
     """
     RULES_DIR.mkdir(parents=True, exist_ok=True)
     by_category: dict[str, list[dict]] = {}
     for d in decisions:
         by_category.setdefault(d.kategori, []).append(_consolidation_input(d, organ_of[d.doc_id]))
+    fingerprints = {d.ref: decision_hash(d) for d in decisions}
 
     for stale in RULES_DIR.glob("*.json"):
         if stale.stem not in by_category:
@@ -423,7 +537,8 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
             todo.append((category, items, input_hash))
     log.info("Konsolidering: %d af %d kategorier skal opdateres", len(todo), len(by_category))
     cost, failures = _run_parallel(
-        todo, lambda job: _consolidate_one(*job, model=model, effort=effort), workers, "Konsolidering"
+        todo, lambda job: _consolidate_one(*job, fingerprints, model=model, effort=effort, deadline=deadline),
+        workers, "Konsolidering", deadline,
     )
     log.info("Konsolidering færdig (svarer til %.2f USD i API-pris, trækkes af abonnementet)", cost)
     return failures
@@ -439,24 +554,28 @@ def _consolidation_input(d: Decision, organ: str) -> dict:
     return {k: v for k, v in item.items() if v is not None}
 
 
-def _consolidate_one(category: str, items: list[dict], input_hash: str, model: str,
-                     effort: str | None) -> tuple[str, float]:
+def _consolidate_one(category: str, items: list[dict], input_hash: str, fingerprints: dict[str, str], *,
+                     model: str, effort: str | None, deadline: float | None) -> tuple[str, float]:
     prompt = (
         f"Kategori: {CATEGORIES[category]}\n\n<beslutninger>\n"
         f"{json.dumps(items, ensure_ascii=False, indent=0)}\n</beslutninger>"
     )
-    output, cost = ask_claude(CONSOLIDATE_SYSTEM, prompt, CONSOLIDATE_SCHEMA, model=model, effort=effort)
+    output, cost = ask_claude(CONSOLIDATE_SYSTEM, prompt, CONSOLIDATE_SCHEMA, model=model, effort=effort,
+                              timeout=CONSOLIDATE_TIMEOUT, deadline=deadline)
 
-    known = {item["ref"] for item in items}
+    outcome = {item["ref"]: item["udfald"] for item in items}
     seen: set[str] = set()
     rules = []
     for rule in output["regler"]:
-        versions = [v for v in rule["versioner"] if v["ref"] in known and v["ref"] not in seen]
+        versions = [
+            {**v, "effekt": PROPOSAL_EFFECT.get(outcome[v["ref"]], v["effekt"]), "dhash": fingerprints[v["ref"]]}
+            for v in rule["versioner"] if v["ref"] in outcome and v["ref"] not in seen
+        ]
         seen.update(v["ref"] for v in versions)
         if versions:
             rules.append({**rule, "versioner": versions})
-    skipped = [ref for ref in output["udeladt"] if ref in known and ref not in seen]
-    unassigned = sorted(known - seen - set(skipped))
+    skipped = [ref for ref in output["udeladt"] if ref in outcome and ref not in seen]
+    unassigned = sorted(set(outcome) - seen - set(skipped))
     _write_json(RULES_DIR / f"{category}.json", {
         "kategori": category,
         "version": CONSOLIDATE_VERSION,
@@ -484,9 +603,16 @@ class ClaudeError(RuntimeError):
     pass
 
 
-def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: str | None,
-               attempts: int = 3) -> tuple[dict, float]:
-    """Run one headless Claude Code call with structured output; returns (output, list-price USD)."""
+class DeadlineReached(RuntimeError):
+    """The run's time budget is spent; the remaining work is left for the next run."""
+
+
+def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: str | None, timeout: int,
+               deadline: float | None = None, attempts: int = 3) -> tuple[dict, float]:
+    """Run one headless Claude Code call with structured output; returns (output, list-price USD).
+
+    Each attempt may take `timeout` seconds; no new attempt starts after `deadline` (time.monotonic()).
+    """
     claude = shutil.which("claude")
     if claude is None:
         raise SystemExit("Claude Code CLI ('claude') blev ikke fundet på PATH.")
@@ -502,10 +628,12 @@ def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: st
 
     error = ""
     for attempt in range(1, attempts + 1):
+        if attempt > 1 and _past(deadline):
+            raise DeadlineReached(f"tidsbudget brugt efter {attempt - 1} forsøg: {error}")
         with tempfile.TemporaryDirectory() as cwd:
             try:
                 proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, check=False,
-                                      timeout=1800, cwd=cwd, env=env)
+                                      timeout=timeout, cwd=cwd, env=env)
             except subprocess.TimeoutExpired:
                 error = "timeout"
                 continue
@@ -522,18 +650,31 @@ def ask_claude(system: str, prompt: str, schema: dict, *, model: str, effort: st
     raise ClaudeError(error)
 
 
-def _run_parallel(jobs: list, fn, workers: int, label: str) -> tuple[float, int]:
+def _past(deadline: float | None) -> bool:
+    return deadline is not None and time.monotonic() > deadline
+
+
+def _run_parallel(jobs: list, fn, workers: int, label: str, deadline: float | None = None) -> tuple[float, int]:
     """Run fn over jobs in a thread pool; log progress and failures, keep going on errors.
 
-    Returns (list-price USD of the successful calls, number of failed jobs).
+    Jobs that have not started when `deadline` (time.monotonic()) passes are skipped.
+    Returns (list-price USD of the successful calls, number of failed or skipped jobs).
     """
+    def start(job):
+        if _past(deadline):
+            raise DeadlineReached("tidsbudget brugt")
+        return fn(job)
+
     total_cost = 0.0
-    failures = 0
+    failures = skipped = 0
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(fn, job): job for job in jobs}
+        futures = {pool.submit(start, job): job for job in jobs}
         for done, future in enumerate(as_completed(futures), start=1):
             try:
                 message, cost = future.result()
+            except DeadlineReached:
+                skipped += 1
+                continue
             except Exception as exc:  # one failed call must not stop the batch; rerun picks it up
                 failures += 1
                 log.error("%s [%d/%d] fejlede: %s", label, done, len(jobs), exc)
@@ -542,7 +683,9 @@ def _run_parallel(jobs: list, fn, workers: int, label: str) -> tuple[float, int]
             log.info("%s [%d/%d] %s", label, done, len(jobs), message)
     if failures:
         log.warning("%s: %d fejlede – kør igen for at prøve dem igen", label, failures)
-    return total_cost, failures
+    if skipped:
+        log.warning("%s: %d sprunget over, fordi tidsbudgettet er brugt – de køres næste gang", label, skipped)
+    return total_cost, failures + skipped
 
 
 def _hash(value: object, version: int) -> str:
