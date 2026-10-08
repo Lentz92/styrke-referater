@@ -33,6 +33,19 @@ consolidation), counted against the Claude subscription; a few new minutes cost 
 
 To share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
 
+### Monthly run on GitHub
+
+`.github/workflows/update.yml` runs `update.py` at 06:00 UTC on the 1st of every month (or via
+"Run workflow" in the Actions tab) and commits any changes to `main`. Claude runs on the Claude
+subscription through the repository secret `CLAUDE_CODE_OAUTH_TOKEN`; the workflow refuses to run if
+an `ANTHROPIC_API_KEY` is present, since that would be billed as API usage. The token is valid for one
+year. To create or renew it:
+
+```bash
+claude setup-token
+GH_TOKEN=$(gh auth token --user Lentz92) gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo Lentz92/styrke-referater
+```
+
 ## How it works
 
 | Step | File | Output |

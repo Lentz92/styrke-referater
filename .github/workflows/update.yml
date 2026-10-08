@@ -1,0 +1,59 @@
+name: Opdater regelsæt
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"  # 06:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install uv and Claude Code
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Check Claude runs on the subscription
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          # An API key takes precedence over the subscription token and would be billed separately.
+          if [ -n "${ANTHROPIC_API_KEY:-}" ]; then
+            echo "::error::ANTHROPIC_API_KEY is set; refusing to run on API billing."
+            exit 1
+          fi
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::error::Secret CLAUDE_CODE_OAUTH_TOKEN is missing. Create it with 'claude setup-token'."
+            exit 1
+          fi
+          claude --version
+          claude auth status | grep -E '"(loggedIn|authMethod|apiProvider)"' || true
+
+      - name: Download new minutes and update the rule overview
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: uv run update.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Ingen nye referater."
+          else
+            git commit -m "Månedlig opdatering af regelsæt $(date -u +%Y-%m-%d)"
+            git push
+          fi
