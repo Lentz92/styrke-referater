@@ -6,7 +6,7 @@ Alle regler i området med fuld tekst og historik – også dem, der ikke længe
 
 ## Stævner og mesterskaber
 
-<a id="regel/adgangskontrol-trænere-og-orden-i-opvarmning-ved-dm"></a>
+<a id="regel/adgangskontrol-traenere-og-orden-i-opvarmning-ved-dm"></a>
 ### Adgangskontrol, trænere og orden i opvarmning ved DM
 
 **I kraft**
@@ -22,7 +22,7 @@ Ved danske mesterskaber er der adgangskontrol til opvarmnings- og forberedelseso
 - 23.11.2025 · ændret: én taske pr. udøver og oprydningspligt (fra 01.01.2026) · [refbest_231125 s. 3](https://filer.styrke.dk/referater/refbest_231125.pdf#page=3)
 - 29.03.2026 · bekræftet: Repræsentantskabet vedtager reglerne i stævnereglerne · [rep2026 s. 28](https://filer.styrke.dk/referater/rep2026.pdf#page=28)
 
-<a id="regel/afvikling-og-placering-af-dm-styrkeløft-udstyr"></a>
+<a id="regel/afvikling-og-placering-af-dm-styrkeloeft-udstyr"></a>
 ### Afvikling og placering af DM styrkeløft (udstyr)
 
 **I kraft**
@@ -58,7 +58,7 @@ SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM i klassisk styr
 - 23.03.2025 · forslag forkastet: bestyrelsens aldersopdeling af JM/SM fra 2026 forkastet (fra 01.01.2026) · [rep2025 s. 24](https://filer.styrke.dk/referater/rep2025.pdf#page=24)
 - 29.03.2026 · ændret: fra 2027 Open og aldersklasser i hver sin weekend (fra 01.01.2027) · [rep2026 s. 33](https://filer.styrke.dk/referater/rep2026.pdf#page=33)
 
-<a id="regel/ansøgning-om-og-tildeling-af-stævner"></a>
+<a id="regel/ansoegning-om-og-tildeling-af-staevner"></a>
 ### Ansøgning om og tildeling af stævner
 
 **I kraft**
@@ -72,7 +72,7 @@ Klubber, der vil afholde stævner, sender ansøgning til stævneudvalget inden f
 - 14.04.2024 · ændret: udvalget tildeler efter demografi og laver terminsliste · [refbest_140424 s. 3](https://filer.styrke.dk/referater/refbest_140424.pdf#page=3)
 - 16.05.2024 · bekræftet: DM skiftevis øst og vest bekræftet · [refstaevne16052024 s. 1](https://filer.styrke.dk/referater/refstaevne16052024.pdf#page=1)
 
-<a id="regel/begynder-og-introstævner"></a>
+<a id="regel/begynder-og-introstaevner"></a>
 ### Begynder- og introstævner
 
 **I kraft**
@@ -101,7 +101,7 @@ Medaljer og pokaler bestilles efter en fast procedure i tæt kontakt mellem arra
 - 15.07.2023 · ændret: stævneprogram skal være sat op en uge før · [refbest_150723 s. 1](https://filer.styrke.dk/referater/refbest_150723.pdf#page=1)
 - 07.11.2023 · ændret: fast bestillingsprocedure med pokalbutik og skabeloner · [refstaevne07112023 s. 1](https://filer.styrke.dk/referater/refstaevne07112023.pdf#page=1)
 
-<a id="regel/danske-rekorder-ved-nye-vægtklasser-for-kvinder"></a>
+<a id="regel/danske-rekorder-ved-nye-vaegtklasser-for-kvinder"></a>
 ### Danske rekorder ved nye vægtklasser for kvinder
 
 **I kraft**
@@ -112,7 +112,7 @@ Rekorder sat i 72 kg-klassen opgraderes til rekorder i 76 kg-klassen, og rekorde
 
 - 06.02.2021 · indført: 72 kg-rekorder til 76 kg, 63 kg til 69 kg · [refbest_060221 s. 4](https://filer.styrke.dk/referater/refbest_060221.pdf#page=4)
 
-<a id="regel/diplomstævner-for-nye-klubber"></a>
+<a id="regel/diplomstaevner-for-nye-klubber"></a>
 ### Diplomstævner for nye klubber
 
 **I kraft**
@@ -137,7 +137,7 @@ Disciplinmedaljer udleveres kun ved nationale mesterskaber (DM styrkeløft og DM
 
 > **Bemærk:** Bestyrelsen udvidede i 2015 disciplinmedaljer til alle stævner (se medaljebestilling); Repræsentantskabet indskrænkede det igen i 2019.
 
-<a id="regel/divisionsturnering-arrangørtilskud-og-tilmeldingsgebyr"></a>
+<a id="regel/divisionsturnering-arrangoertilskud-og-tilmeldingsgebyr"></a>
 ### Divisionsturnering, arrangørtilskud og tilmeldingsgebyr
 
 **I kraft**
@@ -182,7 +182,7 @@ Mixhold er tilladt i divisionsturneringen, og kvinder på mixhold deltager med W
 - 28.02.2010 · indkommet forslag: bestyrelsen foreslår kvinder på mixhold med herre-Wilks · [refbest_28022010 s. 1](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=1)
 - 14.03.2010 · indført: mixhold tilladt, kvinder regnes efter kvinde-Wilks · [rep2010 s. 4](https://filer.styrke.dk/referater/rep2010.pdf#page=4)
 
-<a id="regel/divisionsturnering-offentliggørelse-af-resultater"></a>
+<a id="regel/divisionsturnering-offentliggoerelse-af-resultater"></a>
 ### Divisionsturnering, offentliggørelse af resultater
 
 **I kraft**
@@ -213,7 +213,7 @@ Der løftes efter IPF's regler; lokale runder kræver aftale med stævneudvalget
 - 29.03.2026 · forslag forkastet: OBBC foreslår individuel indvejning efter lotnummer · [rep2026 s. 31](https://filer.styrke.dk/referater/rep2026.pdf#page=31)
 - 29.03.2026 · forslag forkastet: AAK foreslår kvalifikation via stævner og én decemberfinale · [rep2026 s. 35](https://filer.styrke.dk/referater/rep2026.pdf#page=35)
 
-<a id="regel/dm-i-bænkpres-for-veteraner"></a>
+<a id="regel/dm-i-baenkpres-for-veteraner"></a>
 ### DM i bænkpres for veteraner
 
 **I kraft**
@@ -224,7 +224,7 @@ DSF afvikler fra 2026 et officielt DM i bænkpres for veteraner i DIF Soldaterpr
 
 - 29.03.2026 · indført: officielt veteran-DM i bænkpres efter Invictus-regler (fra 01.01.2026) · [rep2026 s. 30](https://filer.styrke.dk/referater/rep2026.pdf#page=30)
 
-<a id="regel/dm-i-klassisk-bænkpres"></a>
+<a id="regel/dm-i-klassisk-baenkpres"></a>
 ### DM i klassisk bænkpres
 
 **I kraft**
@@ -239,7 +239,7 @@ Der afholdes officielt DM i klassisk bænkpres i alle alderskategorier for herre
 - 15.12.2024 · indkommet forslag: bestyrelsen foreslår samlet med DM styrkeløft i foråret · [refbest_151224 s. 4](https://filer.styrke.dk/referater/refbest_151224.pdf#page=4)
 - 23.03.2025 · ændret: Aarhus AK: flyttes til foråret, formodentlig februar · [rep2025 s. 23](https://filer.styrke.dk/referater/rep2025.pdf#page=23)
 
-<a id="regel/dm-i-klassisk-styrkeløft-oprettelse-og-placering"></a>
+<a id="regel/dm-i-klassisk-styrkeloeft-oprettelse-og-placering"></a>
 ### DM i klassisk styrkeløft, oprettelse og placering
 
 **I kraft**
@@ -255,7 +255,7 @@ DM klassisk senior afvikles særskilt i DM-ugen fra 2022 i samarbejde med DIF; a
 - 06.02.2021 · bekræftet: bestyrelsen gentager placeringen (fra 01.01.2022) · [refbest_060221 s. 2](https://filer.styrke.dk/referater/refbest_060221.pdf#page=2)
 - 23.04.2023 · indkommet forslag: forslag om fire DM klassisk: master, subjunior, junior, senior · [refbest_230423 s. 4](https://filer.styrke.dk/referater/refbest_230423.pdf#page=4)
 
-<a id="regel/eftertilmelding-til-stævner"></a>
+<a id="regel/eftertilmelding-til-staevner"></a>
 ### Eftertilmelding til stævner
 
 **I kraft**
@@ -282,7 +282,7 @@ Forbundet udsender forbundskrav som rekordgrundlag, men pr. 1.1.2012 nulstilles 
 - 23.01.2011 · indført: rekorder under nye regler, krav på hjemmesiden (fra 01.01.2011) · [refbest_23012011 s. 1](https://filer.styrke.dk/referater/refbest_23012011.PDF#page=1)
 - 27.03.2011 · ændret: forbundskrav nulstilles 1.1.2012, bedste løft bliver rekord (fra 01.01.2012) · [rep2011 s. 2](https://filer.styrke.dk/referater/rep2011.pdf#page=2)
 
-<a id="regel/fremmøde-ved-indvejning"></a>
+<a id="regel/fremmoede-ved-indvejning"></a>
 ### Fremmøde ved indvejning
 
 **I kraft**
@@ -293,7 +293,7 @@ Løftere skal møde op ved 1. runde af indvejningen for at kunne deltage (ændre
 
 - 04.11.2018 · indført: løfter skal møde ved 1. indvejningsrunde · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/handlingsplan-for-akutte-hændelser"></a>
+<a id="regel/handlingsplan-for-akutte-haendelser"></a>
 ### Handlingsplan for akutte hændelser
 
 **I kraft**
@@ -304,7 +304,7 @@ Der er indført en handlingsplan for akutte hændelser ved styrkeløftstævner i
 
 - 15.12.2024 · indført: handlingsplan i tre faser; stævneleder standser stævnet · [refbest_151224 s. 3](https://filer.styrke.dk/referater/refbest_151224.pdf#page=3)
 
-<a id="regel/holdpræmier-for-bedste-klubber"></a>
+<a id="regel/holdpraemier-for-bedste-klubber"></a>
 ### Holdpræmier for bedste klubber
 
 **I kraft**
@@ -323,7 +323,7 @@ Holdpræmie beregnes med pointfordeling 12, 9, 8, 7, 6, 5, 4, 3, 2 for de 9 før
 
 > **Bemærk:** Wilks-reglen for SM og JM blev vedtaget med kun 18 mod 16 stemmer.
 
-<a id="regel/håndtering-af-stævneprotokoller-efter-stævner"></a>
+<a id="regel/haandtering-af-staevneprotokoller-efter-staevner"></a>
 ### Håndtering af stævneprotokoller efter stævner
 
 **I kraft**
@@ -338,7 +338,7 @@ Efter hvert stævne sender stævnelederen stævneprotokollerne som PDF eller bil
 - 13.01.2024 · ændret: protokoller sendes til staevneudvalg@styrke.dk · [refbest_130124 s. 4](https://filer.styrke.dk/referater/refbest_130124.pdf#page=4)
 - 12.03.2026 · bekræftet: dommerudvalget minder stævneledere om indsendelse · [refdom12032026 s. 2](https://filer.styrke.dk/referater/refdom12032026.pdf#page=2)
 
-<a id="regel/indvejningsvægt-ved-dm"></a>
+<a id="regel/indvejningsvaegt-ved-dm"></a>
 ### Indvejningsvægt ved DM
 
 **I kraft**
@@ -349,7 +349,7 @@ Ved danske mesterskaber skal der bruges indvejningsvægt udlånt af DSF. Stævne
 
 - 08.02.2024 · indført: DM skal bruge DSF's udlånte indvejningsvægt · [refstaevne08022024 s. 1](https://filer.styrke.dk/referater/refstaevne08022024.pdf#page=1)
 
-<a id="regel/invitation-tilmeldings-og-betalingsfrist-til-stævner"></a>
+<a id="regel/invitation-tilmeldings-og-betalingsfrist-til-staevner"></a>
 ### Invitation, tilmeldings- og betalingsfrist til stævner
 
 **I kraft**
@@ -367,7 +367,7 @@ DSF sender invitationen senest seks uger før stævnet. Sidste frist for tilmeld
 - 02.10.2021 · indkommet forslag: bestyrelsen foreslår 21-dagesfrist og medaljebetaling indskrevet (fra 01.01.2022) · [refbest_021021 s. 3](https://filer.styrke.dk/referater/refbest_021021.pdf#page=3)
 - 29.03.2026 · ændret: frist ændret fra 21 til 30 dage; sekretær udgår · [rep2026 s. 29](https://filer.styrke.dk/referater/rep2026.pdf#page=29)
 
-<a id="regel/ipf-klassiske-bænkpresmesterskaber"></a>
+<a id="regel/ipf-klassiske-baenkpresmesterskaber"></a>
 ### IPF klassiske bænkpresmesterskaber
 
 **I kraft**
@@ -378,7 +378,7 @@ IPF indfører klassiske bænkpresmesterskaber for subjunior, junior, åben klass
 
 - 01.01.2015 · indført: IPF indfører klassiske bænkpresmesterskaber i alle aldre · [257kongres s. 1](https://styrke.dk/filer/rapporter/257kongres.pdf#page=1)
 
-<a id="regel/jury-og-meet-director-ved-officielle-stævner"></a>
+<a id="regel/jury-og-meet-director-ved-officielle-staevner"></a>
 ### Jury og meet director ved officielle stævner
 
 **I kraft**
@@ -389,7 +389,7 @@ Ved alle officielle stævner i Danmark skal der være en jury på 3 personer, al
 
 - 22.10.2023 · indført: jury af 3 A-dommere; klubben stiller meet director · [refbest_221023 s. 2](https://filer.styrke.dk/referater/refbest_221023.pdf#page=2)
 
-<a id="regel/kontrakt-med-arrangørklub-ved-internationale-stævner"></a>
+<a id="regel/kontrakt-med-arrangoerklub-ved-internationale-staevner"></a>
 ### Kontrakt med arrangørklub ved internationale stævner
 
 **I kraft**
@@ -417,7 +417,7 @@ Ved danske mesterskaber har DSF ansvar for dommere, jury og stævneleder og stil
 - 07.11.2023 · ændret: kravene til DM opdateret · [refstaevne07112023 s. 1](https://filer.styrke.dk/referater/refstaevne07112023.pdf#page=1)
 - 04.04.2024 · ændret: ansvarsfordeling mellem DSF og arrangør præciseret · [refstaevne04042024 s. 1](https://filer.styrke.dk/referater/refstaevne04042024.pdf#page=1)
 
-<a id="regel/kvalifikationskrav-til-dm-klassisk-styrkeløft"></a>
+<a id="regel/kvalifikationskrav-til-dm-klassisk-styrkeloeft"></a>
 ### Kvalifikationskrav til DM klassisk styrkeløft
 
 **I kraft**
@@ -435,7 +435,7 @@ Kvalifikationskravene til DM i klassisk styrkeløft open er sat til et niveau p�
 
 > **Bemærk:** Kravene blev vedtaget af Repræsentantskabet med mandat til stævneudvalget om justering; senere ændringer er truffet af bestyrelse og udvalg, de seneste godkendt af Dommerudvalget, så det er uklart om alle ligger inden for mandatet.
 
-<a id="regel/medaljeceremoni-og-personligt-fremmøde"></a>
+<a id="regel/medaljeceremoni-og-personligt-fremmoede"></a>
 ### Medaljeceremoni og personligt fremmøde
 
 **I kraft**
@@ -452,7 +452,7 @@ Medaljer og pokaler uddeles lige efter hver kategori og skal modtages personligt
 - 29.03.2026 · forslag trukket tilbage: bestyrelsens forslag om træningstøj og sportssko trukket · [rep2026 s. 29](https://filer.styrke.dk/referater/rep2026.pdf#page=29)
 - 29.03.2026 · ændret: ved ny indvejning modtager klubrepræsentant medaljen · [rep2026 s. 31](https://filer.styrke.dk/referater/rep2026.pdf#page=31)
 
-<a id="regel/medaljer-og-wilks-præmiering-ved-dm-bænkpres"></a>
+<a id="regel/medaljer-og-wilks-praemiering-ved-dm-baenkpres"></a>
 ### Medaljer og Wilks-præmiering ved DM bænkpres
 
 **I kraft**
@@ -465,7 +465,7 @@ Ved DM bænkpres uddeles medaljer i vægtklasserne kun, hvis der er mindst 10 ti
 - 17.03.2009 · indført: højst 10 damer: præmiering på Wilks, udenfor holdkonkurrence · [rep2009](https://filer.styrke.dk/referater/rep2009.htm)
 - 13.09.2009 · ændret: medaljer i vægtklasser kun ved mindst 10 tilmeldte pr. kategori · [refbest_13092009 s. 1](https://filer.styrke.dk/referater/refbest_13092009.PDF#page=1)
 
-<a id="regel/navne-på-stævneprotokol"></a>
+<a id="regel/navne-paa-staevneprotokol"></a>
 ### Navne på stævneprotokol
 
 **I kraft**
@@ -476,7 +476,7 @@ Stævneprotokoller tildeles en ekstra linje, hvor dommere og stævneleder skrive
 
 - 16.12.2025 · indført: dommere og stævneleder skriver navne tydeligt på protokol · [refstaevne16122025 s. 1](https://filer.styrke.dk/referater/refstaevne16122025.pdf#page=1)
 
-<a id="regel/officielle-stævner-i-digital-form"></a>
+<a id="regel/officielle-staevner-i-digital-form"></a>
 ### Officielle stævner i digital form
 
 **I kraft**
@@ -522,7 +522,7 @@ DM Diverse flyttes til 1. hele weekend i april.
 
 - 09.03.2008 · indført: DM Diverse flyttes til 1. hele weekend i april · [repref2008 s. 2](https://filer.styrke.dk/referater/repref2008.PDF#page=2)
 
-<a id="regel/pointsystem-til-kåring-af-bedste-løfter"></a>
+<a id="regel/pointsystem-til-kaaring-af-bedste-loefter"></a>
 ### Pointsystem til kåring af bedste løfter
 
 **I kraft**
@@ -534,7 +534,7 @@ DSF bruger IPF's Goodlift-point med virkning fra 1.1.2020. Gamle IPF-point fra D
 - 19.01.2019 · indført: ny IPF-formel fra januar 2020 (fra 01.01.2020) · [refbest_19012019.2 s. 1](https://filer.styrke.dk/referater/refbest_19012019.2.pdf#page=1)
 - 24.05.2020 · ændret: overgang til Goodlift-point fra 1.1.2020 (fra 01.01.2020) · [refbest_240520 s. 2](https://filer.styrke.dk/referater/refbest_240520.pdf#page=2)
 
-<a id="regel/pokaler-til-bedste-løfter"></a>
+<a id="regel/pokaler-til-bedste-loefter"></a>
 ### Pokaler til bedste løfter
 
 **I kraft**
@@ -550,7 +550,7 @@ Ved individuelle DM gives pokaler til bedste herre- og dameløfter på IPF-point
 - 20.08.2026 · ændret: ingen pokaler for bedste løfter ved SM og JFM · [refstaevne20082026 s. 1](https://filer.styrke.dk/referater/refstaevne20082026.pdf#page=1)
 - 29.08.2026 · bekræftet: bestyrelsen bekræfter; klubpokaler fortsætter ved JFM · [refbest_290826.2 s. 3](https://filer.styrke.dk/referater/refbest_290826.2.pdf#page=3)
 
-<a id="regel/rekordbetingelser-total-bona-fide-og-klassisk-ved-udstyrsstævner"></a>
+<a id="regel/rekordbetingelser-total-bona-fide-og-klassisk-ved-udstyrsstaevner"></a>
 ### Rekordbetingelser: total, bona fide og klassisk ved udstyrsstævner
 
 **I kraft**
@@ -581,7 +581,7 @@ Der kan sættes divisionsturneringens rekorder i squat, bænkpres og dødløft, 
 - 19.03.2023 · ændret: divisionsrekorder og disciplinmedaljer på point indført · [rep2023 s. 14](https://filer.styrke.dk/referater/rep2023.pdf#page=14)
 - 07.11.2023 · bekræftet: indskrevet i stævnereglerne · [refstaevne07112023 s. 1](https://filer.styrke.dk/referater/refstaevne07112023.pdf#page=1)
 
-<a id="regel/rekordliste-og-rekordprocedure-under-stævner"></a>
+<a id="regel/rekordliste-og-rekordprocedure-under-staevner"></a>
 ### Rekordliste og rekordprocedure under stævner
 
 **I kraft**
@@ -592,7 +592,7 @@ Sekretæren skal have en printet rekordliste, som speaker og sekretær kan se un
 
 - 17.09.2016 · indført: printet rekordliste; A-dommer tilkaldes ved rekordforsøg · [refbest_17092016 s. 2](https://filer.styrke.dk/referater/refbest_17092016.pdf#page=2)
 
-<a id="regel/rengøring-af-stang-eller-platform"></a>
+<a id="regel/rengoering-af-stang-eller-platform"></a>
 ### Rengøring af stang eller platform
 
 **I kraft**
@@ -603,7 +603,7 @@ Henvendelse om rengøring af stang eller platform skal gives til den tekniske ko
 
 - 04.11.2018 · indført: henvendelse til teknisk kontrollør, ellers overdommer · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
 
-<a id="regel/rækkefølge-ved-nyt-forsøg-i-3-runde"></a>
+<a id="regel/raekkefoelge-ved-nyt-forsoeg-i-3-runde"></a>
 ### Rækkefølge ved nyt forsøg i 3. runde
 
 **I kraft**
@@ -614,7 +614,7 @@ Hvis en løfter tildeles nyt forsøg i 3. runde af dødløft eller i enkeltdisci
 
 - 04.11.2018 · indført: løfter efterfølger sig selv i dødløft/bænk 3. runde · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 
-<a id="regel/service-til-privatstævner"></a>
+<a id="regel/service-til-privatstaevner"></a>
 ### Service til privatstævner
 
 **I kraft**
@@ -625,7 +625,7 @@ Privatstævner kan som udgangspunkt ikke forvente den samme service som stævner
 
 - 20.08.2026 · indført: privatstævner får ikke samme service som DSF-stævner · [refstaevne20082026 s. 2](https://filer.styrke.dk/referater/refstaevne20082026.pdf#page=2)
 
-<a id="regel/skiver-til-rekordsætning"></a>
+<a id="regel/skiver-til-rekordsaetning"></a>
 ### Skiver til rekordsætning
 
 **I kraft**
@@ -636,7 +636,7 @@ Der tilføjes nye vægte til rekordsætning: 1 kg, 1,5 kg og 2 kg skiver.
 
 - 04.11.2018 · indført: 1, 1,5 og 2 kg skiver tilføjet til rekordforsøg · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/smitteforebyggelse-ved-stævner"></a>
+<a id="regel/smitteforebyggelse-ved-staevner"></a>
 ### Smitteforebyggelse ved stævner
 
 **I kraft**
@@ -664,7 +664,7 @@ Ved danske mesterskaber er streaming og konkurrencestyringssystem DSF's ansvar; 
 - 13.04.2025 · ændret: præcisering om klubbers egen streaming · [refbest_130425 s. 1](https://filer.styrke.dk/referater/refbest_130425.pdf#page=1)
 - 24.04.2025 · ændret: streaming og styringssystem under DSF; 60-dagesmelding slettet · [refstaevne24042025 s. 2](https://filer.styrke.dk/referater/refstaevne24042025.pdf#page=2)
 
-<a id="regel/stævneansvarlig-fra-stævneudvalget"></a>
+<a id="regel/staevneansvarlig-fra-staevneudvalget"></a>
 ### Stævneansvarlig fra stævneudvalget
 
 **I kraft**
@@ -681,7 +681,7 @@ For alle stævner under DSF (ikke privatstævner) knyttes en stævneansvarlig fr
 - 16.05.2024 · bekræftet: stævner fordelt mellem udvalgets medlemmer · [refstaevne16052024 s. 1](https://filer.styrke.dk/referater/refstaevne16052024.pdf#page=1)
 - 18.09.2025 · ændret: tjekker stævneprogram; informerer stævneleder ved dommerafbud · [refstaevne18092025 s. 1](https://filer.styrke.dk/referater/refstaevne18092025.pdf#page=1)
 
-<a id="regel/stævneleders-mandat-til-diskvalifikation"></a>
+<a id="regel/staevneleders-mandat-til-diskvalifikation"></a>
 ### Stævneleders mandat til diskvalifikation
 
 **I kraft**
@@ -692,7 +692,7 @@ Stævnelederen har mandat til at diskvalificere en løfter, der opfører sig upa
 
 - 10.12.2016 · indført: stævneleder kan diskvalificere ved upassende opførsel · [refbest_10122016 s. 3](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=3)
 
-<a id="regel/stævner-og-officials-ved-rekordsætning"></a>
+<a id="regel/staevner-og-officials-ved-rekordsaetning"></a>
 ### Stævner og officials ved rekordsætning
 
 **I kraft**
@@ -705,7 +705,7 @@ Der accepteres ikke rekordsætning ved stævner, hvis der ikke på forhånd er u
 - 18.03.2018 · forslag trukket tilbage: HSK foreslår rekorder kun ved DM og JM/SM · [rep2018 s. 7](https://filer.styrke.dk/referater/rep2018.pdf#page=7)
 - 31.07.2022 · indført: rekorder kræver forhåndsudpeget jury og dommere · [refbest_310722 s. 1](https://filer.styrke.dk/referater/refbest_310722.pdf#page=1)
 
-<a id="regel/stævnereglerne-følger-ipf-s-tekniske-regler"></a>
+<a id="regel/staevnereglerne-foelger-ipf-s-tekniske-regler"></a>
 ### Stævnereglerne følger IPF's tekniske regler
 
 **I kraft**
@@ -719,7 +719,7 @@ Forbundets stævneregler skal følge IPF's tekniske regler; opdaterede stævnere
 - 08.02.2015 · indkommet forslag: forslag om udstyr og licensbetaling i stævnereglerne · [refbest_08022015 s. 7](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=7)
 - 26.07.2015 · bekræftet: opdaterede stævneregler og kalender godkendt · [refbest_26072015 s. 4](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=4)
 
-<a id="regel/stævneudstyrskufferter"></a>
+<a id="regel/staevneudstyrskufferter"></a>
 ### Stævneudstyrskufferter
 
 **I kraft**
@@ -731,7 +731,7 @@ DSF har samlet stævneudstyr i kufferter til udlån. Klubber kvitterer med repr�
 - 08.02.2015 · indført: to sæt stævneudstyr indkøbes for højst 20.000 kr. · [refbest_08022015 s. 2](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=2)
 - 03.02.2018 · ændret: kvittering ved lån og tilbagelevering; nye hardcase-kufferter · [refbest_03022018 s. 4](https://filer.styrke.dk/referater/refbest_03022018.pdf#page=4)
 
-<a id="regel/stævneudvalgets-ret-til-at-ændre-stævner"></a>
+<a id="regel/staevneudvalgets-ret-til-at-aendre-staevner"></a>
 ### Stævneudvalgets ret til at ændre stævner
 
 **I kraft**
@@ -742,7 +742,7 @@ Vedtægtens §13 udvides, så Stævneudvalget med godkendelse fra DSF's bestyrel
 
 - 06.06.2023 · indført: §13: udvalget kan ændre stævner, varsel 8 uger · [rep2023ekstra s. 2](https://filer.styrke.dk/referater/rep2023ekstra.pdf#page=2)
 
-<a id="regel/størrelse-på-a-gruppe"></a>
+<a id="regel/stoerrelse-paa-a-gruppe"></a>
 ### Størrelse på A-gruppe
 
 **I kraft**
@@ -775,7 +775,7 @@ Klubber, der afholder stævner under DSF i passende omgivelser, får tilskud fra
 
 - 14.03.2010 · indført: tilskud til lys og lyd efter stævneudvalgets bedømmelse · [rep2010 s. 6](https://filer.styrke.dk/referater/rep2010.pdf#page=6)
 
-<a id="regel/trænere-ved-internationale-stævner"></a>
+<a id="regel/traenere-ved-internationale-staevner"></a>
 ### Trænere ved internationale stævner
 
 **I kraft**
@@ -787,7 +787,7 @@ Arrangøren af et internationalt stævne skal kontrollere antallet af trænere i
 - 01.01.2015 · indført: arrangør skal kontrollere antal trænere i opvarmning · [257kongres s. 1](https://styrke.dk/filer/rapporter/257kongres.pdf#page=1)
 - 04.11.2018 · ændret: trænerantal efter Head Coach-retningslinjer, fri adgang · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 
-<a id="regel/udlån-af-dommerlys"></a>
+<a id="regel/udlaan-af-dommerlys"></a>
 ### Udlån af dommerlys
 
 **I kraft**
@@ -798,7 +798,7 @@ DSF har indkøbt et dommerlys, som alle arrangerende klubber kan låne. Lyset af
 
 - 13.09.2009 · indført: dommerlys udlånes; arrangør hæfter for skader · [refbest_13092009 s. 1](https://filer.styrke.dk/referater/refbest_13092009.PDF#page=1)
 
-<a id="regel/verdensrekord-i-dødløft-efter-protest"></a>
+<a id="regel/verdensrekord-i-doedloeft-efter-protest"></a>
 ### Verdensrekord i dødløft efter protest
 
 **I kraft**
@@ -809,7 +809,7 @@ Hvis en løfter placeres sidst i runden efter en protest og vil sætte verdensre
 
 - 01.01.2015 · indført: øvrige rekordforsøgende øger 0,5 kg · [257kongres s. 1](https://styrke.dk/filer/rapporter/257kongres.pdf#page=1)
 
-<a id="regel/aak-open-som-årligt-stævne"></a>
+<a id="regel/aak-open-som-aarligt-staevne"></a>
 ### AAK Open som årligt stævne
 
 **I kraft** · intern procedure/detalje
@@ -820,7 +820,7 @@ AAK Open gøres til et tilbagevendende årligt open-stævne uden deltagerbegræn
 
 - 24.03.2024 · indført: årligt open-stævne uden deltagerbegrænsning, helst oktober · [rep2024 s. 16](https://filer.styrke.dk/referater/rep2024.pdf#page=16)
 
-<a id="regel/afstand-mellem-rack-og-dommere-i-tårnby"></a>
+<a id="regel/afstand-mellem-rack-og-dommere-i-taarnby"></a>
 ### Afstand mellem rack og dommere i Tårnby
 
 **I kraft** · intern procedure/detalje
@@ -831,7 +831,7 @@ Ved stævner afholdt i Tårnby skal der være ekstra afstand mellem rack og domm
 
 - 08.02.2024 · indført: ekstra afstand mellem rack og dommere i Tårnby · [refstaevne08022024 s. 1](https://filer.styrke.dk/referater/refstaevne08022024.pdf#page=1)
 
-<a id="regel/betegnelse-for-åbne-danske-mesterskaber"></a>
+<a id="regel/betegnelse-for-aabne-danske-mesterskaber"></a>
 ### Betegnelse for åbne danske mesterskaber
 
 **I kraft** · intern procedure/detalje
@@ -842,7 +842,7 @@ Betegnelserne for de åbne danske mesterskaber ændres til DM klassisk styrkelø
 
 - 22.03.2015 · indført: navne: DM klassisk styrkeløft og DM styrkeløft · [rep2015 s. 5](https://filer.styrke.dk/referater/rep2015.pdf#page=5)
 
-<a id="regel/geografisk-klubsamarbejde-om-stævner"></a>
+<a id="regel/geografisk-klubsamarbejde-om-staevner"></a>
 ### Geografisk klubsamarbejde om stævner
 
 **I kraft** · intern procedure/detalje
@@ -853,7 +853,7 @@ Stævneudvalget vil forsøgsvis tænke geografisk i klubsamarbejde, så kraftklu
 
 - 14.05.2026 · indført: forsøg med kraftklubber tilknyttet mindre klubber · [refbest_140526 s. 2](https://filer.styrke.dk/referater/refbest_140526.pdf#page=2)
 
-<a id="regel/godkendelse-af-rekorder-i-stævneudvalget"></a>
+<a id="regel/godkendelse-af-rekorder-i-staevneudvalget"></a>
 ### Godkendelse af rekorder i stævneudvalget
 
 **I kraft** · intern procedure/detalje
@@ -864,7 +864,7 @@ Godkendelse af rekorder varetages af Trine Bagger i stævneudvalget.
 
 - 08.02.2024 · indført: Trine Bagger godkender rekorder · [refstaevne08022024 s. 1](https://filer.styrke.dk/referater/refstaevne08022024.pdf#page=1)
 
-<a id="regel/ksk-s-udstyrsfrie-bænkpresstævne"></a>
+<a id="regel/ksk-s-udstyrsfrie-baenkpresstaevne"></a>
 ### KSK's udstyrsfrie bænkpresstævne
 
 **I kraft** · intern procedure/detalje
@@ -886,7 +886,7 @@ Der er et økonomisk loft på 50.000 kr. for indkøb af medaljer, og stævneudva
 
 - 08.02.2015 · indført: loft på 50.000 kr. til medaljer · [refbest_08022015 s. 2](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=2)
 
-<a id="regel/navn-på-divisionsturneringen"></a>
+<a id="regel/navn-paa-divisionsturneringen"></a>
 ### Navn på divisionsturneringen
 
 **I kraft** · intern procedure/detalje
@@ -897,7 +897,7 @@ Divisionsturneringens runder omdøbes til DM Hold runde 1, 2 og 3 (øst/vest) sa
 
 - 24.03.2024 · indført: omdøbt til DM Hold runde 1-3 og Finale · [rep2024 s. 15](https://filer.styrke.dk/referater/rep2024.pdf#page=15)
 
-<a id="regel/navn-på-regionsmesterskab-vest"></a>
+<a id="regel/navn-paa-regionsmesterskab-vest"></a>
 ### Navn på regionsmesterskab vest
 
 **I kraft** · intern procedure/detalje
@@ -930,7 +930,7 @@ Alt om divisionsturneringen skal stå i "Regler for divisionsturneringen". Det g
 
 - 20.06.2021 · indført: alle divisionsregler samles i særskilt regelsæt · [rep2021 s. 11](https://filer.styrke.dk/referater/rep2021.pdf#page=11)
 
-<a id="regel/plakater-bannere-og-bagtæppe-ved-dm"></a>
+<a id="regel/plakater-bannere-og-bagtaeppe-ved-dm"></a>
 ### Plakater, bannere og bagtæppe ved DM
 
 **I kraft** · intern procedure/detalje
@@ -968,7 +968,7 @@ Overskydende pokaler og medaljer skal returneres til stævneudvalget, så de kan
 - 03.12.2024 · indført: overskud gives videre til udvalg/bestyrelse til genbrug · [refstaevne03122024 s. 1](https://filer.styrke.dk/referater/refstaevne03122024.pdf#page=1)
 - 18.02.2025 · bekræftet: overskud returneres til stævneudvalget · [refstaevne18022025 s. 1](https://filer.styrke.dk/referater/refstaevne18022025.pdf#page=1)
 
-<a id="regel/stævneudvalgets-opgaver-og-årlige-regelgennemgang"></a>
+<a id="regel/staevneudvalgets-opgaver-og-aarlige-regelgennemgang"></a>
 ### Stævneudvalgets opgaver og årlige regelgennemgang
 
 **I kraft** · intern procedure/detalje
@@ -980,7 +980,7 @@ Stævneudvalget vejleder og støtter arrangørklubber, udarbejder stævneplaner,
 - 13.01.2024 · indført: regler for stævneudvalget opdateret · [refbest_130124 s. 3](https://filer.styrke.dk/referater/refbest_130124.pdf#page=3)
 - 08.02.2024 · bekræftet: årlig gennemgang af stævnereglerne i januar · [refstaevne08022024 s. 1](https://filer.styrke.dk/referater/refstaevne08022024.pdf#page=1)
 
-<a id="regel/tsk-cup-som-officielt-stævne"></a>
+<a id="regel/tsk-cup-som-officielt-staevne"></a>
 ### TSK Cup som officielt stævne
 
 **I kraft** · intern procedure/detalje
@@ -991,7 +991,7 @@ Under øvrige officielle stævner, pkt. 15 TSK Cup, ændres parentesen til: 'Bet
 
 - 25.03.2012 · indført: betingelse: udstyrsfri afdeling · [rep2012 s. 1](https://filer.styrke.dk/referater/rep2012.pdf#page=1)
 
-<a id="regel/udlån-af-indvejningsvægte"></a>
+<a id="regel/udlaan-af-indvejningsvaegte"></a>
 ### Udlån af indvejningsvægte
 
 **I kraft** · intern procedure/detalje
@@ -1002,7 +1002,7 @@ To nyindkøbte vægte til indvejning opbevares hos Peter Andersen og i HSK. De u
 
 - 23.04.2023 · indført: to vægte udlånes mod tro og love-erklæring · [refbest_230423 s. 4](https://filer.styrke.dk/referater/refbest_230423.pdf#page=4)
 
-<a id="regel/vejledning-til-arrangører-af-dm-hold-runder"></a>
+<a id="regel/vejledning-til-arrangoerer-af-dm-hold-runder"></a>
 ### Vejledning til arrangører af DM-hold runder
 
 **I kraft** · intern procedure/detalje
@@ -1022,7 +1022,7 @@ Forslag om at indføre en alderskategori dreng/pige i IPF blev ikke godkendt.
 
 - 02.11.2014 · forslag forkastet: IPF afviser alderskategori dreng/pige · [199kongres s. 1](https://styrke.dk/filer/rapporter/199kongres.pdf#page=1)
 
-<a id="regel/bona-fide-forsøg"></a>
+<a id="regel/bona-fide-forsoeg"></a>
 ### Bona fide forsøg
 
 **Kun forslag – aldrig vedtaget**
@@ -1044,7 +1044,7 @@ Kravet til DM B ændres fra 3 år til 1 år: atleter der ikke har opnået kravet
 - 17.03.2009 · indført: krav til DM B ændret fra 3 år til 1 år · [rep2009](https://filer.styrke.dk/referater/rep2009.htm)
 - 23.03.2014 · ophævet: DM B og DM C afskaffet · [rep2014 s. 5](https://filer.styrke.dk/referater/rep2014.pdf#page=5)
 
-<a id="regel/fortsættelse-efter-bomb-out"></a>
+<a id="regel/fortsaettelse-efter-bomb-out"></a>
 ### Fortsættelse efter bomb-out
 
 **Kun forslag – aldrig vedtaget**
@@ -1053,7 +1053,7 @@ Forslag om at løfter ikke længere må fortsætte efter bomb-out, og at der ikk
 
 - 04.11.2018 · forslag forkastet: Sveriges forslag om stop efter bomb-out nedstemt · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/headcoach-for-klubber-ved-nationale-stævner"></a>
+<a id="regel/headcoach-for-klubber-ved-nationale-staevner"></a>
 ### Headcoach for klubber ved nationale stævner
 
 **Kun forslag – aldrig vedtaget**
@@ -1063,7 +1063,7 @@ Der skal ikke udpeges en headcoach for hver klub til nationale stævner. Klubber
 - 17.09.2016 · indkommet forslag: bestyrelsen drøfter headcoach pr. klub · [refbest_17092016 s. 3](https://filer.styrke.dk/referater/refbest_17092016.pdf#page=3)
 - 10.12.2016 · forslag forkastet: ingen headcoach; klubber ansvarlige for opførsel · [refbest_10122016 s. 3](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=3)
 
-<a id="regel/individuel-bænkpresliga"></a>
+<a id="regel/individuel-baenkpresliga"></a>
 ### Individuel bænkpresliga
 
 **Kun forslag – aldrig vedtaget**
@@ -1081,7 +1081,7 @@ Forslag om at alle løftere skal deltage i SM/JM for at deltage i DM, og i DM fo
 
 - 20.03.2016 · forslag forkastet: ER Equipment foreslår SM/JM-krav for DM; forkastet · [rep2016 s. 4](https://filer.styrke.dk/referater/rep2016.pdf#page=4)
 
-<a id="regel/kvalifikationskrav-til-dm-a-og-dm-bænkpres"></a>
+<a id="regel/kvalifikationskrav-til-dm-a-og-dm-baenkpres"></a>
 ### Kvalifikationskrav til DM A og DM bænkpres
 
 **Kun forslag – aldrig vedtaget**
@@ -1091,7 +1091,7 @@ Kvalifikationskravene til DM A og DM bænkpres fjernes.
 - 24.08.2013 · indkommet forslag: bestyrelsen forbereder forslag om at fjerne kravene · [refbest_24082013 s. 2](https://filer.styrke.dk/referater/refbest_24082013.pdf#page=2)
 - 23.03.2014 · ophævet: kvalifikationskrav til DM A og DM bænkpres fjernet · [rep2014 s. 5](https://filer.styrke.dk/referater/rep2014.pdf#page=5)
 
-<a id="regel/offentliggørelse-af-stævne-og-dommerplan"></a>
+<a id="regel/offentliggoerelse-af-staevne-og-dommerplan"></a>
 ### Offentliggørelse af stævne- og dommerplan
 
 **Kun forslag – aldrig vedtaget**
@@ -1100,7 +1100,7 @@ Forslag om at stævne- og dommerplan skal offentliggøres på styrke.dk senest 1
 
 - 18.03.2018 · forslag forkastet: OBBC foreslår plan offentliggjort 14 dage før · [rep2018 s. 8](https://filer.styrke.dk/referater/rep2018.pdf#page=8)
 
-<a id="regel/placering-af-dm-bænkpres-udstyr"></a>
+<a id="regel/placering-af-dm-baenkpres-udstyr"></a>
 ### Placering af DM bænkpres (udstyr)
 
 **Kun forslag – aldrig vedtaget**
@@ -1131,7 +1131,7 @@ Eliteudvalget sender forslag til stævneudvalget om, at DM'er bør ligge minimum
 
 - 09.09.2017 · indkommet forslag: Eliteudvalget foreslår DM mindst 70 dage før VM/EM (fra 01.01.2019) · [elite09092017 s. 3](https://filer.styrke.dk/referater/elite09092017.pdf#page=3)
 
-<a id="regel/rettigheder-ved-dsf-stævner"></a>
+<a id="regel/rettigheder-ved-dsf-staevner"></a>
 ### Rettigheder ved DSF-stævner
 
 **Kun forslag – aldrig vedtaget**
@@ -1150,7 +1150,7 @@ Der skelnes mellem officielle og uofficielle konkurrencer: klubmedlemmer under G
 - 07.12.2014 · forslag forkastet: uofficielle konkurrencer afvist; diplom- og klubstævner findes · [refbest_07122014 s. 3](https://filer.styrke.dk/referater/refbest_07122014.pdf#page=3)
 - 22.10.2023 · indkommet forslag: skel mellem officielle og uofficielle konkurrencer i app · [refbest_221023 s. 4](https://filer.styrke.dk/referater/refbest_221023.pdf#page=4)
 
-<a id="regel/vægtøgning-på-0-5-kg-i-klassisk"></a>
+<a id="regel/vaegtoegning-paa-0-5-kg-i-klassisk"></a>
 ### Vægtøgning på 0,5 kg i klassisk
 
 **Kun forslag – aldrig vedtaget**
@@ -1159,7 +1159,7 @@ Forslag om at tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, også se
 
 - 04.11.2018 · forslag forkastet: Frankrigs forslag om 0,5 kg-øgninger nedstemt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
 
-<a id="regel/åben-klasse-ved-nm"></a>
+<a id="regel/aaben-klasse-ved-nm"></a>
 ### Åben klasse ved NM
 
 **Kun forslag – aldrig vedtaget**
@@ -1168,7 +1168,7 @@ Et forslag om at genindføre åben klasse ved Nordisk Mesterskab blev ikke vedta
 
 - 12.06.2016 · forslag forkastet: genindførelse af åben klasse ved NM afvist · [refbest_12062016 s. 2](https://filer.styrke.dk/referater/refbest_12062016.pdf#page=2)
 
-<a id="regel/crossfitstævner-i-forbundsregi"></a>
+<a id="regel/crossfitstaevner-i-forbundsregi"></a>
 ### Crossfitstævner i forbundsregi
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1177,7 +1177,7 @@ Forslag om at afholde Crossfitstævner i forbundsregi, hvilket kræver, at Cross
 
 - 09.08.2014 · indkommet forslag: crossfitstævner under DSF undersøges · [refbest_09082014 s. 3](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=3)
 
-<a id="regel/fast-løftested-til-officielle-stævner"></a>
+<a id="regel/fast-loeftested-til-officielle-staevner"></a>
 ### Fast løftested til officielle stævner
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1186,7 +1186,7 @@ Forslag om at DSF etablerer et fast løftested med fast professionelt udstyr til
 
 - 25.03.2012 · forslag forkastet: AK Atlas foreslår fast løftested, evt. Odense · [rep2012 s. 2](https://filer.styrke.dk/referater/rep2012.pdf#page=2)
 
-<a id="regel/forbundsejet-stævneudstyr"></a>
+<a id="regel/forbundsejet-staevneudstyr"></a>
 ### Forbundsejet stævneudstyr
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1209,7 +1209,7 @@ Muslimske kvinder må iføre sig en stramtsiddende dragt, der dækker arme og be
 
 - 01.01.2015 · indført: stramtsiddende dragt over arme og ben samt hijab tilladt · [257kongres s. 1](https://styrke.dk/filer/rapporter/257kongres.pdf#page=1)
 
-<a id="regel/fodtøj-under-konkurrence"></a>
+<a id="regel/fodtoej-under-konkurrence"></a>
 ### Fodtøj under konkurrence
 
 **I kraft**
@@ -1220,7 +1220,7 @@ Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence
 
 - 04.11.2018 · indført: kun indendørssportssko eller dødløftslippers · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/godkendelse-af-logoer-på-løftertøj"></a>
+<a id="regel/godkendelse-af-logoer-paa-loeftertoej"></a>
 ### Godkendelse af logoer på løftertøj
 
 **I kraft**
@@ -1238,7 +1238,7 @@ Stødende logoer er forbudt, og logoer skal godkendes af DSF. Der opkræves ikke
 
 > **Bemærk:** Repræsentantskabet afskaffede i 2019 afgiften på 500 kr., og bestyrelsens forslag om logoafgifter blev trukket; det er uklart, om afgifterne på 1.000 og 2.500 kr. stadig gælder.
 
-<a id="regel/ipf-s-udstyrsregler-ved-nationale-stævner"></a>
+<a id="regel/ipf-s-udstyrsregler-ved-nationale-staevner"></a>
 ### IPF's udstyrsregler ved nationale stævner
 
 **I kraft**
@@ -1253,7 +1253,7 @@ Fra 1. januar 2017 skal alle kategorier, både klassisk og udstyr, overholde IPF
 - 20.03.2016 · ændret: fuldt IPF-udstyrsregelsæt for alle fra 2017 (fra 01.01.2017) · [rep2016 s. 6](https://filer.styrke.dk/referater/rep2016.pdf#page=6)
 - 26.03.2017 · forslag trukket tilbage: Aarhus Atlet Klub ville fravige krav for ikke-støttende udstyr · [rep2017 s. 11](https://filer.styrke.dk/referater/rep2017.pdf#page=11)
 
-<a id="regel/knævarmere"></a>
+<a id="regel/knaevarmere"></a>
 ### Knævarmere
 
 **I kraft**
@@ -1280,7 +1280,7 @@ Alle, der løfter internationalt for DSF's landshold (sub-junior til master), sk
 - 23.10.2024 · indført: seniorlandsholdet i A7 trikot og strømper i 2025 (fra 01.01.2025) · [elite23102024 s. 3](https://filer.styrke.dk/referater/elite23102024.pdf#page=3)
 - 23.11.2025 · ændret: udvidet til alle landshold fra sub-junior til master · [refbest_231125 s. 1](https://filer.styrke.dk/referater/refbest_231125.pdf#page=1)
 
-<a id="regel/logostørrelse-på-udstyr"></a>
+<a id="regel/logostoerrelse-paa-udstyr"></a>
 ### Logostørrelse på udstyr
 
 **I kraft**
@@ -1292,7 +1292,7 @@ Logoer, der ikke er på den godkendte liste, må højst være 5x2 cm.
 - 01.01.2015 · indført: sponsorlogo ændret fra op til 10 cm til 5x2 cm · [257kongres s. 1](https://styrke.dk/filer/rapporter/257kongres.pdf#page=1)
 - 04.11.2018 · ændret: 5x2 cm gælder logoer uden for godkendt liste · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/lån-af-dsf-s-stævneudstyr"></a>
+<a id="regel/laan-af-dsf-s-staevneudstyr"></a>
 ### Lån af DSF's stævneudstyr
 
 **I kraft**
@@ -1318,7 +1318,7 @@ Overskydende materiale i skulderstropper, som overstiger 3 cm, skal placeres på
 
 - 02.06.2013 · indført: overskud over 3 cm på indersiden, ikke syet fast · [vm2013 s. 2](https://filer.styrke.dk/beretninger/vm2013.pdf#page=2)
 
-<a id="regel/snoning-af-stropper-på-dragter"></a>
+<a id="regel/snoning-af-stropper-paa-dragter"></a>
 ### Snoning af stropper på dragter
 
 **I kraft**
@@ -1340,7 +1340,7 @@ Sokker med udvendig gummi er ikke tilladt.
 
 - 04.11.2018 · indført: sokker med udvendig gummi forbudt · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/stødende-slogans-på-løftertøj"></a>
+<a id="regel/stoedende-slogans-paa-loeftertoej"></a>
 ### Stødende slogans på løftertøj
 
 **I kraft**
@@ -1351,7 +1351,7 @@ T-shirts/trikoter med slogans, der kan opfattes som stødende generelt eller mod
 
 - 22.04.2017 · indført: stødende slogans afvises; stævneleder kan omstøde godkendelse · [refbest_22042017 s. 1](https://filer.styrke.dk/referater/refbest_22042017.pdf#page=1)
 
-<a id="regel/t-shirt-under-løft"></a>
+<a id="regel/t-shirt-under-loeft"></a>
 ### T-shirt under løft
 
 **I kraft**
@@ -1362,7 +1362,7 @@ T-shirt skal bruges under udførelse af alle løft, undtagen ved brug af bænkpr
 
 - 04.11.2018 · indført: T-shirt påkrævet undtagen med bænkpresstrøje · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/udlån-af-udstyr-til-nye-udstyrsløftere"></a>
+<a id="regel/udlaan-af-udstyr-til-nye-udstyrsloeftere"></a>
 ### Udlån af udstyr til nye udstyrsløftere
 
 **I kraft**
@@ -1396,7 +1396,7 @@ Tekniske regler indefryses, og der lukkes for nye producenter/udstyr i de næste
 
 - 02.11.2014 · indført: tekniske regler og nye producenter indefrosset i 4 år (fra 02.11.2014) · [199kongres s. 2](https://styrke.dk/filer/rapporter/199kongres.pdf#page=2)
 
-<a id="regel/nedtrækning-af-knæbind-før-plateau"></a>
+<a id="regel/nedtraekning-af-knaebind-foer-plateau"></a>
 ### Nedtrækning af knæbind før plateau
 
 **Kun forslag – aldrig vedtaget**
@@ -1414,7 +1414,7 @@ Der kan ikke dispenseres fra safety-barene i stativer, da de bruges for løftere
 
 - 12.06.2016 · forslag forkastet: Alex T.'s ønske om dispensation fra safety-barer afvist · [refbest_12062016 s. 4](https://filer.styrke.dk/referater/refbest_12062016.pdf#page=4)
 
-<a id="regel/straps-i-dødløft"></a>
+<a id="regel/straps-i-doedloeft"></a>
 ### Straps i dødløft
 
 **Kun forslag – aldrig vedtaget**
@@ -1423,7 +1423,7 @@ Der kan ikke dispenseres fra de tekniske regler for brug af straps i dødløft, 
 
 - 13.04.2025 · forslag forkastet: dispensation for løfter med manglende fingre afvist · [refbest_130425 s. 2](https://filer.styrke.dk/referater/refbest_130425.pdf#page=2)
 
-<a id="regel/forbud-mod-superkatana-bænkpresdragt"></a>
+<a id="regel/forbud-mod-superkatana-baenkpresdragt"></a>
 ### Forbud mod Superkatana-bænkpresdragt
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1432,7 +1432,7 @@ DSF's forslag om at gøre bænkpresdragten Superkatana ulovlig blev forkastet p�
 
 - 28.10.2012 · forslag forkastet: DSF's forbudsforslag forkastet på IPF-kongressen · [vm2012kongres s. 2](https://styrke.dk/pages/R/vm2012kongres.pdf#page=2)
 
-<a id="regel/understøttende-bænkprestrøje"></a>
+<a id="regel/understoettende-baenkprestroeje"></a>
 ### Understøttende bænkprestrøje
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje

@@ -4,7 +4,7 @@
 
 Alle regler i området med fuld tekst og historik – også dem, der ikke længere gælder. Årssiderne viser, hvad der gjaldt i et bestemt år.
 
-<a id="regel/a-dommerprøve"></a>
+<a id="regel/a-dommerproeve"></a>
 ### A-dommerprøve
 
 **I kraft**
@@ -19,7 +19,7 @@ B-dommere, der har dømt regelmæssigt i 2 år, kan indstilles til A-dommerprøv
 - 08.03.2025 · ændret: dommerudvalget vurderer indstilling og kontakter dommeren · [refbest_080325 s. 3](https://filer.styrke.dk/referater/refbest_080325.pdf#page=3)
 - 08.04.2025 · bekræftet: tekst indarbejdet i Regler for dommerudvalget · [refdom08042025 s. 2](https://filer.styrke.dk/referater/refdom08042025.pdf#page=2)
 
-<a id="regel/afholdelse-af-dommerprøver"></a>
+<a id="regel/afholdelse-af-dommerproever"></a>
 ### Afholdelse af dommerprøver
 
 **I kraft**
@@ -35,7 +35,7 @@ I 2026 afholdes kun én dommeruddannelse, den 25. april i Aarhus AK. De nyeste r
 
 > **Bemærk:** Dommerudvalget har efterfølgende aflyst kurset i 2025 og kun planlagt ét kursus i 2026, i strid med kravet om årlige prøver i både Jylland og Sjælland.
 
-<a id="regel/ansvar-og-frist-for-dommerpåsætning"></a>
+<a id="regel/ansvar-og-frist-for-dommerpaasaetning"></a>
 ### Ansvar og frist for dommerpåsætning
 
 **I kraft**
@@ -50,7 +50,7 @@ Stævneudvalget sætter dommere og jury på forbundsstævner og godkender dem ti
 
 > **Bemærk:** Repræsentantskabet gav i 2018 Dommerudvalget ansvaret for påsætning af dommere og jury, mens udvalgsbeslutninger fra 2024 lægger påsætningen hos Stævneudvalget.
 
-<a id="regel/b-dommerprøve"></a>
+<a id="regel/b-dommerproeve"></a>
 ### B-dommerprøve
 
 **I kraft**
@@ -103,7 +103,7 @@ B-dommere skal deltage i det obligatoriske online brush up-kursus, som afholdes 
 - 20.08.2026 · bekræftet: åbnet for andre interesserede dommere · [refdom20082026 s. 1](https://filer.styrke.dk/referater/refdom20082026.pdf#page=1)
 - 29.08.2026 · bekræftet: Bestyrelsen bekræfter obligatorisk kursus 3 gange i 2026 · [refbest_290826.2 s. 3](https://filer.styrke.dk/referater/refbest_290826.2.pdf#page=3)
 
-<a id="regel/dansk-fortolkning-af-bænkpres-opspænd-og-dybde"></a>
+<a id="regel/dansk-fortolkning-af-baenkpres-opspaend-og-dybde"></a>
 ### Dansk fortolkning af bænkpres-opspænd og dybde
 
 **I kraft**
@@ -125,7 +125,7 @@ Diskvalifikationsgrunde præciseres, så der står "Uncompleted lift" under den 
 
 - 04.11.2018 · indført: "Uncompleted lift" under gul markering · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/diæter-til-dommere"></a>
+<a id="regel/diaeter-til-dommere"></a>
 ### Diæter til dommere
 
 **I kraft**
@@ -136,7 +136,7 @@ DSF giver diætpenge til dommere ved alle forbundsstævner, men ikke ved private
 
 - 12.09.2023 · indført: diæter ved forbundsstævner, ikke private stævner · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
 
-<a id="regel/dommerbriefing-før-stævnestart"></a>
+<a id="regel/dommerbriefing-foer-staevnestart"></a>
 ### Dommerbriefing før stævnestart
 
 **I kraft**
@@ -163,7 +163,7 @@ Dommere tilmeldes stævner udelukkende via tilmeldingssystemet, og al dommerakti
 - 28.01.2025 · ændret: Excel-ark på Facebook slettet · [refdom28012025 s. 1](https://filer.styrke.dk/referater/refdom28012025.pdf#page=1)
 - 18.09.2025 · ændret: årlig gennemgang; frist 1. marts 2026 · [refdom18092025 s. 1](https://filer.styrke.dk/referater/refdom18092025.pdf#page=1)
 
-<a id="regel/dommere-ved-private-stævner"></a>
+<a id="regel/dommere-ved-private-staevner"></a>
 ### Dommere ved private stævner
 
 **I kraft**
@@ -195,7 +195,7 @@ Dommere, der ikke har dømt ved mindst tre officielle stævner nationalt i løbe
 - 04.06.2026 · bekræftet: tre stævner på to år fastholdt · [refdom04062026 s. 2](https://filer.styrke.dk/referater/refdom04062026.pdf#page=2)
 - 20.08.2026 · ændret: dommere med lav aktivitet kontaktes i årets sidste måned · [refdom20082026 s. 1](https://filer.styrke.dk/referater/refdom20082026.pdf#page=1)
 
-<a id="regel/dommeres-fremmøde-før-indvejning"></a>
+<a id="regel/dommeres-fremmoede-foer-indvejning"></a>
 ### Dommeres fremmøde før indvejning
 
 **I kraft**
@@ -206,7 +206,7 @@ Alle dommere skal møde op 30 minutter før indvejning, så der er 2 dommere til
 
 - 02.07.2024 · indført: møde 30 minutter før indvejning · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
 
-<a id="regel/dommerforpligtelse-ved-internationale-stævner-ipf-epf"></a>
+<a id="regel/dommerforpligtelse-ved-internationale-staevner-ipf-epf"></a>
 ### Dommerforpligtelse ved internationale stævner (IPF/EPF)
 
 **I kraft**
@@ -232,7 +232,7 @@ Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der
 - 05.12.2009 · indført: dispensation i 2010 for klubber uden dommer (fra 01.01.2010) · [refbest_05122009 s. 1](https://filer.styrke.dk/referater/refbest_05122009.PDF#page=1)
 - 30.05.2010 · bekræftet: mindst én dommer pr. runde bekræftet · [refbest_30052010 s. 1](https://filer.styrke.dk/referater/refbest_30052010.PDF#page=1)
 
-<a id="regel/dommerpåklædning"></a>
+<a id="regel/dommerpaaklaedning"></a>
 ### Dommerpåklædning
 
 **I kraft**
@@ -247,7 +247,7 @@ Dommere skal overholde dresscode ved stævner efter de tekniske regler. Der bær
 - 02.07.2024 · ændret: dresscode: hvid skjorte, slips, sorte sko uden sneakers · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
 - 01.10.2024 · ændret: kun IPF-slips eller IPF-tørklæde tilladt · [refdom01102024 s. 2](https://filer.styrke.dk/referater/refdom01102024.pdf#page=2)
 
-<a id="regel/dommertilmelding-når-man-selv-løfter"></a>
+<a id="regel/dommertilmelding-naar-man-selv-loefter"></a>
 ### Dommertilmelding når man selv løfter
 
 **I kraft**
@@ -269,7 +269,7 @@ Internationale dommere skal dømme minimum 2 internationale og 2 nationale konku
 
 - 04.11.2018 · indført: mindst 2 internationale og 2 nationale stævner · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 
-<a id="regel/grebskrav-i-dansk-oversættelse"></a>
+<a id="regel/grebskrav-i-dansk-oversaettelse"></a>
 ### Grebskrav i dansk oversættelse
 
 **I kraft**
@@ -280,7 +280,7 @@ Hænder, tommelfingre og fingre skal være i fuldstændig kontakt med stangen; t
 
 - 04.06.2026 · ændret: oversættelse rettet: tommelfingre behøver ikke omslutte stangen · [refdom04062026 s. 3](https://filer.styrke.dk/referater/refdom04062026.pdf#page=3)
 
-<a id="regel/indvejning-ved-dommer-af-samme-køn"></a>
+<a id="regel/indvejning-ved-dommer-af-samme-koen"></a>
 ### Indvejning ved dommer af samme køn
 
 **I kraft**
@@ -291,7 +291,7 @@ Kvindelige løftere indvejes af kvindelig dommer/official og mandlige af mandlig
 
 - 26.03.2017 · indført: løftere indvejes af dommer af eget køn · [rep2017 s. 14](https://filer.styrke.dk/referater/rep2017.pdf#page=14)
 
-<a id="regel/jury-og-dommere-ved-officielle-stævner"></a>
+<a id="regel/jury-og-dommere-ved-officielle-staevner"></a>
 ### Jury og dommere ved officielle stævner
 
 **I kraft**
@@ -314,7 +314,7 @@ Der indskrives i de tekniske regler, at juryen skal have en knap, de kan trykke 
 - 04.11.2018 · forslag forkastet: Frankrig: jury kan omstøde 3 enige dommere – nedstemt · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 - 01.01.2023 · indført: juryen får knap til at overrule dommerbeslutning · [806kongres s. 1](https://styrke.dk/filer/rapporter/806kongres.pdf#page=1)
 
-<a id="regel/jurylederens-afgørelse-ved-ændring-af-forsøg"></a>
+<a id="regel/jurylederens-afgoerelse-ved-aendring-af-forsoeg"></a>
 ### Jurylederens afgørelse ved ændring af forsøg
 
 **I kraft**
@@ -350,7 +350,7 @@ For at sidde i jury skal dommeren have dømt ved mindst 4 trekampsstævner. Der 
 
 - 28.03.2024 · indført: mindst 4 trekampsstævner for at sidde i jury · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
 
-<a id="regel/kørselsgodtgørelse-til-dommere"></a>
+<a id="regel/koerselsgodtgoerelse-til-dommere"></a>
 ### Kørselsgodtgørelse til dommere
 
 **I kraft**
@@ -362,7 +362,7 @@ Dommere, der kører over Storebælt, skal have en BroBizz/Pay by Plate, hvis de 
 - 12.09.2023 · forslag forkastet: dommeres forslag om benzinpenge ved private stævner afvist · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
 - 28.03.2024 · indført: BroBizz/Pay by Plate krav over Storebælt · [refdom28032024 s. 1](https://filer.styrke.dk/referater/refdom28032024.pdf#page=1)
 
-<a id="regel/nye-b-dommere-skal-dømme-inden-for-første-år"></a>
+<a id="regel/nye-b-dommere-skal-doemme-inden-for-foerste-aar"></a>
 ### Nye B-dommere skal dømme inden for første år
 
 **I kraft**
@@ -374,7 +374,7 @@ Hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået d
 - 16.12.2025 · indkommet forslag: Dommerudvalget foreslår sletning af B-dommere inaktive 12 måneder · [refdom16122025 s. 2](https://filer.styrke.dk/referater/refdom16122025.pdf#page=2)
 - 12.03.2026 · indført: B-dommer uden dømning første år tages af listen · [refdom12032026 s. 2](https://filer.styrke.dk/referater/refdom12032026.pdf#page=2)
 
-<a id="regel/nye-dommere-ved-første-stævne"></a>
+<a id="regel/nye-dommere-ved-foerste-staevne"></a>
 ### Nye dommere ved første stævne
 
 **I kraft**
@@ -385,7 +385,7 @@ Nye dommere skal ved deres første stævne have en erfaren dommer ved deres side
 
 - 12.03.2026 · indført: erfaren dommer ved siden af ved første stævne · [refdom12032026 s. 1](https://filer.styrke.dk/referater/refdom12032026.pdf#page=1)
 
-<a id="regel/omprøve-ved-dommerprøve"></a>
+<a id="regel/omproeve-ved-dommerproeve"></a>
 ### Omprøve ved dommerprøve
 
 **I kraft**
@@ -421,7 +421,7 @@ Dommere registreres i dommerbogen for hver indvejning, de har dømt, og ikke pr.
 - 23.11.2025 · ændret: dommer indsender selv internationale indvejninger · [refbest_231125 s. 5](https://filer.styrke.dk/referater/refbest_231125.pdf#page=5)
 - 16.12.2025 · ændret: stævneleder melder ændringer på stævnedagen til dommerudvalget · [refstaevne16122025 s. 3](https://filer.styrke.dk/referater/refstaevne16122025.pdf#page=3)
 
-<a id="regel/squat-udretning-med-låste-knæ"></a>
+<a id="regel/squat-udretning-med-laaste-knae"></a>
 ### Squat: udretning med låste knæ
 
 **I kraft**
@@ -432,7 +432,7 @@ Løfteren skal frivilligt og under fuld kontrol rejse sig til oprejst position m
 
 - 04.11.2018 · indført: opretning under fuld kontrol med låste knæ · [490 s. 3](https://styrke.dk/filer/rapporter/490.pdf#page=3)
 
-<a id="regel/stævneleder-og-overdommer"></a>
+<a id="regel/staevneleder-og-overdommer"></a>
 ### Stævneleder og overdommer
 
 **I kraft**
@@ -443,7 +443,7 @@ Stævnelederen er den højest rangerende dommer efter kategori, eller anciennite
 
 - 28.03.2024 · indført: højest rangerende dommer er stævneleder · [refdom28032024 s. 2](https://filer.styrke.dk/referater/refdom28032024.pdf#page=2)
 
-<a id="regel/stævnelederens-opgaver-og-ansvar"></a>
+<a id="regel/staevnelederens-opgaver-og-ansvar"></a>
 ### Stævnelederens opgaver og ansvar
 
 **I kraft**
@@ -502,7 +502,7 @@ De gældende regler overholdes som udgangspunkt. Hvor det giver mening, kan en i
 - 15.12.2024 · indført: international dommer kan bruges over 2 dage, hvis IPF/EPF accepterer · [refbest_151224 s. 2](https://filer.styrke.dk/referater/refbest_151224.pdf#page=2)
 - 16.12.2025 · ændret: kan trækkes tilbage ved få løftere · [refdom16122025 s. 1](https://filer.styrke.dk/referater/refdom16122025.pdf#page=1)
 
-<a id="regel/dommerpåsætning-af-hensyn-til-økonomi"></a>
+<a id="regel/dommerpaasaetning-af-hensyn-til-oekonomi"></a>
 ### Dommerpåsætning af hensyn til økonomi
 
 **I kraft** · intern procedure/detalje
@@ -537,7 +537,7 @@ En dommer kan tage en teoretisk eksamen mod betaling.
 - 04.11.2018 · forslag forkastet: USAPL: ingen eksamen ved åbent VM – nedstemt · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 - 04.11.2018 · indført: teoretisk eksamen mod betaling · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 
-<a id="regel/påmindelse-om-lånedommere"></a>
+<a id="regel/paamindelse-om-laanedommere"></a>
 ### Påmindelse om lånedommere
 
 **I kraft** · intern procedure/detalje
@@ -571,7 +571,7 @@ Slips og emblemer udleveres til dommere ved endt uddannelse, da det er nemmest f
 
 - 02.07.2024 · indført: slips og emblemer udleveres ved endt uddannelse · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
 
-<a id="regel/årlig-opfordring-til-dommertilmelding"></a>
+<a id="regel/aarlig-opfordring-til-dommertilmelding"></a>
 ### Årlig opfordring til dommertilmelding
 
 **I kraft** · intern procedure/detalje
@@ -582,7 +582,7 @@ Der indføres ikke krav om, at alle dommere tilmelder sig mindst ét stævne om 
 
 - 16.12.2025 · indført: intet krav; årlig mail med opfordring · [refdom16122025 s. 1](https://filer.styrke.dk/referater/refdom16122025.pdf#page=1)
 
-<a id="regel/fødder-på-bænken-ved-bænkpres"></a>
+<a id="regel/foedder-paa-baenken-ved-baenkpres"></a>
 ### Fødder på bænken ved bænkpres
 
 **Kun forslag – aldrig vedtaget**
@@ -600,7 +600,7 @@ Stævnegebyret hæves fra 300 til 350 kr., og 100 kr. skal gå til at honorere k
 
 - 19.03.2023 · forslag forkastet: Haderslev foreslår højere gebyrer til dommerhonorering – nedstemt · [rep2023 s. 15](https://filer.styrke.dk/referater/rep2023.pdf#page=15)
 
-<a id="regel/markering-af-underkendt-løft"></a>
+<a id="regel/markering-af-underkendt-loeft"></a>
 ### Markering af underkendt løft
 
 **Kun forslag – aldrig vedtaget**
@@ -609,7 +609,7 @@ Forslag om at dommerne kun markerer et underkendt løft med et fejlkort blev ned
 
 - 04.11.2018 · forslag forkastet: TC: kun ét fejlkort ved underkendt løft – nedstemt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
 
-<a id="regel/nedadgående-bevægelse-i-dødløft"></a>
+<a id="regel/nedadgaaende-bevaegelse-i-doedloeft"></a>
 ### Nedadgående bevægelse i dødløft
 
 **Kun forslag – aldrig vedtaget**
@@ -618,7 +618,7 @@ Forslag om at et dødløft ikke underkendes ved lille nedadgående bevægelse pg
 
 - 04.11.2018 · forslag forkastet: Sveriges forslag faldt uden sekundant · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
 
-<a id="regel/dommerkrav-ved-åbent-vm"></a>
+<a id="regel/dommerkrav-ved-aabent-vm"></a>
 ### Dommerkrav ved åbent VM
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje

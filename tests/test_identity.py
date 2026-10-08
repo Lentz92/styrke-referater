@@ -280,3 +280,34 @@ def test_markdown_links_follow_the_slug_and_never_a_heading_anchor():
     assert '<a id="regel/licensgebyr-2"></a>\n### Licensgebyr\n' in area
     assert "[Licens (nyt navn)](regler/medlemskab.md#regel/licensgebyr)" in pages["2024.md"]
     assert "[Licensgebyr](regler/medlemskab.md#regel/licensgebyr-2)" in pages["2024.md"]
+
+
+def _shown(titel: str, slug: str, ref: str) -> tuple[dict, object]:
+    d = decision(ref=ref, dato="2024-03-24")
+    raw = {**_rule(titel, slug, ref), "kategori": "okonomi"}
+    raw["versioner"][0]["dhash"] = decision_hash(d)
+    return raw, d
+
+
+def test_markdown_anchors_are_ascii_while_the_website_keeps_the_slug():
+    # GitHub's viewer does not scroll to #regel/k%C3%B8rselspenge…, so the Markdown anchor spells ø as oe.
+    raw, d = _shown("Kørselspenge til samlinger", "kørselspenge-til-samlinger", "a#1")
+    pages = render.build_pages({}, [d], [raw], [], Counter(), date(2024, 10, 8))
+    area = pages["regler/medlemskab.md"]
+    assert '<a id="regel/koerselspenge-til-samlinger"></a>\n### Kørselspenge til samlinger\n' in area
+    assert "[Kørselspenge til samlinger](regler/medlemskab.md#regel/koerselspenge-til-samlinger)" in pages["2024.md"]
+    (rule,) = website.site_data({}, [d], [raw], {}, date(2024, 10, 8))["rules"]
+    assert rule["slug"] == "kørselspenge-til-samlinger"
+
+
+def test_ascii_anchors_spell_out_danish_letters_and_drop_other_accents():
+    assert render.ascii_anchor("æble-øl-åben-æøå") == "aeble-oel-aaben-aeoeaa"
+    assert render.ascii_anchor("café-über-ñandú-straße") == "cafe-uber-nandu-strasse"
+
+
+def test_two_slugs_with_the_same_ascii_anchor_on_one_page_fail_the_build():
+    first, d1 = _shown("Kæmpe", "kæmpe", "a#1")
+    second, d2 = _shown("Kaempe", "kaempe", "b#1")
+    clash = "regler/medlemskab.md: rules would share an anchor .regel/kaempe: kaempe, kæmpe"
+    with pytest.raises(ValueError, match=clash):
+        render.build_pages({}, [d1, d2], [first, second], [], Counter(), date(2024, 10, 8))

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import unicodedata
 from collections import Counter
 from dataclasses import dataclass
 from datetime import date
@@ -57,6 +58,10 @@ MONTH_NAMES = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "au
                "september", "oktober", "november", "december"]
 WARNING = "⚠"
 STALE_AFTER_YEARS = 5
+# Letters spelled out in Markdown anchors, which GitHub's viewer does not scroll to unless they are ASCII; other
+# accented letters lose their accent (NFKD), and anything else outside ASCII is dropped.
+ANCHOR_LETTERS = str.maketrans({"æ": "ae", "ø": "oe", "å": "aa", "Æ": "Ae", "Ø": "Oe", "Å": "Aa", "é": "e",
+                                "É": "E", "ü": "u", "Ü": "U", "ö": "o", "Ö": "O", "ä": "a", "Ä": "A", "ß": "ss"})
 
 
 @dataclass(frozen=True)
@@ -156,8 +161,10 @@ def build_pages(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list
     targets: dict[int, str] = {}  # id(rule) -> link from a year page to the rule on its area page
     for area in AREAS:
         area_rules = [rule for rule in rules if rule.kategori in area.categories]
-        pages[f"{AREA_DIR}/{area.file}.md"] = _area_page(area, area_rules, today, _Links(docs, "../../"))
-        targets.update({id(rule): f"{AREA_DIR}/{area.file}.md#{anchor(rule)}" for rule in area_rules})
+        page = f"{AREA_DIR}/{area.file}.md"
+        _check_anchors(page, area_rules)
+        pages[page] = _area_page(area, area_rules, today, _Links(docs, "../../"))
+        targets.update({id(rule): f"{page}#{anchor(rule)}" for rule in area_rules})
     for year in years:
         pages[f"{year}.md"] = _year_page(year, years, rules, today, _Links(docs, "../"), targets)
     pages["README.md"] = _index_page(years, rules, decisions, raw_rules, docs, missing, problems, today)
@@ -497,14 +504,34 @@ class _Links:
 
 
 def anchor(rule: Rule) -> str:
-    """The id of a rule's place on its area page: "regel/<slug>", like the website's #regel/<slug>.
+    """The id of a rule's place on its area page: "regel/<slug>" like the website's #regel/<slug>, in ASCII.
 
     Explicit, because the heading's own anchor follows the title, which may change. The "/" keeps it apart from
     GitHub's heading anchors, which never contain one: GitHub jumps to the first element with a matching id,
     and a heading named like another rule's slug (a renamed rule's old title, or a title used twice) would win.
-    GitHub renders the id as user-content-regel/<slug> and still scrolls to it for #regel/<slug>.
+    GitHub renders the id as user-content-regel/<slug> and scrolls to it for #regel/<slug>, but only when the
+    anchor is ASCII ("kørselspenge" stays at the top of the page), hence ascii_anchor. The website keeps the slug.
     """
-    return f"regel/{rule.slug}"
+    return f"regel/{ascii_anchor(rule.slug)}"
+
+
+def ascii_anchor(slug: str) -> str:
+    """The slug in ASCII: æ, ø and å spelled ae, oe and aa (ANCHOR_LETTERS), other accents dropped."""
+    decomposed = unicodedata.normalize("NFKD", slug.translate(ANCHOR_LETTERS))
+    return decomposed.encode("ascii", "ignore").decode()
+
+
+def _check_anchors(page: str, rules: list[Rule]) -> None:
+    """Fail when two rules of one page would get the same ASCII anchor ("kæmpe" and "kaempe"): GitHub would take
+    every link to either to the first, and a wrong link must not pass silently."""
+    by_anchor: dict[str, list[str]] = {}
+    for rule in rules:
+        by_anchor.setdefault(anchor(rule), []).append(rule.slug)
+    clashes = {a: slugs for a, slugs in by_anchor.items() if len(slugs) > 1}
+    if clashes:
+        listed = "; ".join(f"{a}: {', '.join(slugs)}" for a, slugs in sorted(clashes.items()))
+        raise ValueError(f"{OUT_DIR.name}/{page}: rules would share an anchor ({listed}); give one rule another "
+                         f"slug in data/regler/ and keep the old one as an alias in data/slugs.json")
 
 
 def _is_news(v: Version, index: int) -> bool:
