@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-04-24",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne24042025#1",
    "emne": "Krav til afvikling af DM, streaming og konkurrencestyringssystem",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refstaevne24042025#2",
    "emne": "Krav til afvikling af DM, bagtæppe",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refstaevne24042025#3",
    "emne": "Uddeling af medaljer og pokaler ved mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",

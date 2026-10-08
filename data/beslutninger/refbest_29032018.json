@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2018-03-29",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_29032018#1",
    "emne": "Udtagelse til EM 2020 i udstyrsstyrkeløft",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_29032018#2",
    "emne": "Tilmelding til klassisk stævne i stævnesystemet",
    "kategori": "staevner",
    "udfald": "vedtaget",

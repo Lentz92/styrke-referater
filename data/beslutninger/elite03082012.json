@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2012-08-03",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite03082012#1",
    "emne": "Kvalifikationspulje",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite03082012#2",
    "emne": "Orientering om udtagelser",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite03082012#3",
    "emne": "Subjunior-/juniorprojekt",
    "kategori": "landshold",
    "udfald": "vedtaget",

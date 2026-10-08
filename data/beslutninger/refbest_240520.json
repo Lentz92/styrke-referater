@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2020-05-24",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_240520#1",
    "emne": "Pointsystem",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_240520#2",
    "emne": "Divisionsturnering",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_240520#3",
    "emne": "Indsamling af stævneprotokoller",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_240520#4",
    "emne": "Liste med godkendte logoer",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_240520#5",
    "emne": "Deltagelse ved internationale mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",

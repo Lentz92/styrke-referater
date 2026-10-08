@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-05-02",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "725kongres#1",
    "emne": "Best Team-pris ved EM",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "725kongres#2",
    "emne": "Doping- og deltagelsesgebyr EPF-mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "725kongres#3",
    "emne": "Medaljer ved EPF-mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "725kongres#4",
    "emne": "International dommer på nationalt hold ved EPF-mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",

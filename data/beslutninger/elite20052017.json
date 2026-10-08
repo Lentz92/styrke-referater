@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2017-05-20",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite20052017#1",
    "emne": "Udtagelse til NM, subjunior/junior",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite20052017#2",
    "emne": "Samlet regelsæt for Eliteudvalget",
    "kategori": "organisation",
    "udfald": "ikke_afgjort",

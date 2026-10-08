@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2020-12-06",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_061220#1",
    "emne": "Smitteforebyggelse ved stævneafvikling",
    "kategori": "staevner",
    "udfald": "vedtaget",

@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Frist for indsendelse af kørselsbilag",
+   "slug": "frist-for-indsendelse-af-kørselsbilag",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -21,6 +22,7 @@
   },
   {
    "titel": "Kassererens frist for udbetaling til landsholdsløftere",
+   "slug": "kassererens-frist-for-udbetaling-til-landsholdsløftere",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -36,6 +38,7 @@
   },
   {
    "titel": "Anskaffelse af landsholdsdragt",
+   "slug": "anskaffelse-af-landsholdsdragt",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -75,6 +78,7 @@
   },
   {
    "titel": "Påklædning ved internationale stævner",
+   "slug": "påklædning-ved-internationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -114,6 +118,7 @@
   },
   {
    "titel": "Eksterne undervisere på landsholdssamlinger",
+   "slug": "eksterne-undervisere-på-landsholdssamlinger",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -129,6 +134,7 @@
   },
   {
    "titel": "Egenbetaling ved internationale mesterskaber",
+   "slug": "egenbetaling-ved-internationale-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -328,6 +334,7 @@
   },
   {
    "titel": "Kvalifikationskrav til landshold og internationale mesterskaber",
+   "slug": "kvalifikationskrav-til-landshold-og-internationale-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -527,6 +534,7 @@
   },
   {
    "titel": "Udtagelse til EM og VM på baggrund af A- og B-krav",
+   "slug": "udtagelse-til-em-og-vm-på-baggrund-af-a-og-b-krav",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -574,6 +582,7 @@
   },
   {
    "titel": "Kompetence til udtagelse",
+   "slug": "kompetence-til-udtagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -605,6 +614,7 @@
   },
   {
    "titel": "Økonomisk ansvar på landsholdsrejser",
+   "slug": "økonomisk-ansvar-på-landsholdsrejser",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -620,6 +630,7 @@
   },
   {
    "titel": "Rapportering fra internationale mesterskaber",
+   "slug": "rapportering-fra-internationale-mesterskaber",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -643,6 +654,7 @@
   },
   {
    "titel": "Startvægte ved internationale mesterskaber",
+   "slug": "startvægte-ved-internationale-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -658,6 +670,7 @@
   },
   {
    "titel": "Opvarmning ved internationale mesterskaber",
+   "slug": "opvarmning-ved-internationale-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -673,6 +686,7 @@
   },
   {
    "titel": "Rejseplanlægning og booking",
+   "slug": "rejseplanlægning-og-booking",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -720,6 +734,7 @@
   },
   {
    "titel": "Opholdslængde ved internationale stævner",
+   "slug": "opholdslængde-ved-internationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -743,6 +758,7 @@
   },
   {
    "titel": "Bænkpreslandshold",
+   "slug": "bænkpreslandshold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -774,6 +790,7 @@
   },
   {
    "titel": "Atletkontrakter",
+   "slug": "atletkontrakter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -813,6 +830,7 @@
   },
   {
    "titel": "Landstrænerens kompetence og coaching",
+   "slug": "landstrænerens-kompetence-og-coaching",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -852,6 +870,7 @@
   },
   {
    "titel": "Regionale trænere",
+   "slug": "regionale-trænere",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -867,6 +886,7 @@
   },
   {
    "titel": "Budgetoverskridelser i eliteudvalget",
+   "slug": "budgetoverskridelser-i-eliteudvalget",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -882,6 +902,7 @@
   },
   {
    "titel": "A- og B-bruttotrup",
+   "slug": "a-og-b-bruttotrup",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -897,6 +918,7 @@
   },
   {
    "titel": "Stævner hvor kvalifikationskrav kan opnås",
+   "slug": "stævner-hvor-kvalifikationskrav-kan-opnås",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -960,6 +982,7 @@
   },
   {
    "titel": "Kvalifikationspulje",
+   "slug": "kvalifikationspulje",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -975,6 +998,7 @@
   },
   {
    "titel": "Orientering og offentliggørelse af udtagelser",
+   "slug": "orientering-og-offentliggørelse-af-udtagelser",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1014,6 +1038,7 @@
   },
   {
    "titel": "Sub-junior- og juniorlandshold",
+   "slug": "sub-junior-og-juniorlandshold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1037,6 +1062,7 @@
   },
   {
    "titel": "Ligestilling af grene i elitearbejdet",
+   "slug": "ligestilling-af-grene-i-elitearbejdet",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1052,6 +1078,7 @@
   },
   {
    "titel": "Holddefinition og holdscore",
+   "slug": "holddefinition-og-holdscore",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1067,6 +1094,7 @@
   },
   {
    "titel": "Frist for opfyldelse af kvalifikationskrav",
+   "slug": "frist-for-opfyldelse-af-kvalifikationskrav",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1082,6 +1110,7 @@
   },
   {
    "titel": "Opfyldt EM/VM-krav gælder til næste års mesterskab",
+   "slug": "opfyldt-em-vm-krav-gælder-til-næste-års-mesterskab",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1097,6 +1126,7 @@
   },
   {
    "titel": "Ledsagelse af løftere under mesterskab",
+   "slug": "ledsagelse-af-løftere-under-mesterskab",
    "vigtig": true,
    "note": "Familiereglen er ifølge referaterne vedtaget af landsholdsløfterne i oktober 2022, men den beslutning findes ikke blandt de foreliggende beslutninger.",
    "versioner": [
@@ -1128,6 +1158,7 @@
   },
   {
    "titel": "Struktur på landsholdssamlinger",
+   "slug": "struktur-på-landsholdssamlinger",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1159,6 +1190,7 @@
   },
   {
    "titel": "Udtagelseskriterier til bruttolandshold",
+   "slug": "udtagelseskriterier-til-bruttolandshold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1190,6 +1222,7 @@
   },
   {
    "titel": "Betingelser for forhåndsudtagelse",
+   "slug": "betingelser-for-forhåndsudtagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1205,6 +1238,7 @@
   },
   {
    "titel": "Juniorer kun i egen kategori internationalt",
+   "slug": "juniorer-kun-i-egen-kategori-internationalt",
    "vigtig": true,
    "note": "Vedtaget med svagt flertal (17 for, 14 imod).",
    "versioner": [
@@ -1228,6 +1262,7 @@
   },
   {
    "titel": "Deltagelse i landsholdssamlinger og advarsler",
+   "slug": "deltagelse-i-landsholdssamlinger-og-advarsler",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1251,6 +1286,7 @@
   },
   {
    "titel": "Træning i hjemklub for bruttolandsholdsatleter",
+   "slug": "træning-i-hjemklub-for-bruttolandsholdsatleter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1274,6 +1310,7 @@
   },
   {
    "titel": "Forbud mod konkurrence i relaterede idrætsgrene",
+   "slug": "forbud-mod-konkurrence-i-relaterede-idrætsgrene",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1289,6 +1326,7 @@
   },
   {
    "titel": "Assistenter udpeget af den arrangementsansvarlige",
+   "slug": "assistenter-udpeget-af-den-arrangementsansvarlige",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1304,6 +1342,7 @@
   },
   {
    "titel": "Start i flere kategorier",
+   "slug": "start-i-flere-kategorier",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1327,6 +1366,7 @@
   },
   {
    "titel": "Klubtrænere på landsholdssamlinger",
+   "slug": "klubtrænere-på-landsholdssamlinger",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1342,6 +1382,7 @@
   },
   {
    "titel": "Tilmelding og nominering til internationale mesterskaber",
+   "slug": "tilmelding-og-nominering-til-internationale-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1373,6 +1414,7 @@
   },
   {
    "titel": "Deltagelse i WEC",
+   "slug": "deltagelse-i-wec",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1396,6 +1438,7 @@
   },
   {
    "titel": "Lægeerklæring ved afbud",
+   "slug": "lægeerklæring-ved-afbud",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1419,6 +1462,7 @@
   },
   {
    "titel": "Træningskrav på landsholdssamlinger (90 %-reglen)",
+   "slug": "træningskrav-på-landsholdssamlinger-90-reglen",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1458,6 +1502,7 @@
   },
   {
    "titel": "Henvendelser og afbud om landsholdssamlinger",
+   "slug": "henvendelser-og-afbud-om-landsholdssamlinger",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1473,6 +1518,7 @@
   },
   {
    "titel": "Landsholdsløftere som betalte trænere",
+   "slug": "landsholdsløftere-som-betalte-trænere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1488,6 +1534,7 @@
   },
   {
    "titel": "Kørselspenge til samlinger",
+   "slug": "kørselspenge-til-samlinger",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1519,6 +1566,7 @@
   },
   {
    "titel": "Dispensation fra landsholdskrav",
+   "slug": "dispensation-fra-landsholdskrav",
    "vigtig": true,
    "note": "Bestyrelsens forslag fra 2017 om at lægge dispensationskompetencen hos bestyrelsen ses ikke vedtaget; i 2022 giver eliteudvalget selv dispensationer.",
    "versioner": [
@@ -1542,6 +1590,7 @@
   },
   {
    "titel": "Bruttolandshold: udtagelsesrunder og karenstid",
+   "slug": "bruttolandshold-udtagelsesrunder-og-karenstid",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1589,6 +1638,7 @@
   },
   {
    "titel": "Bonus for medaljer",
+   "slug": "bonus-for-medaljer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1612,6 +1662,7 @@
   },
   {
    "titel": "Refusion af egenbetaling ved medaljer og placeringer",
+   "slug": "refusion-af-egenbetaling-ved-medaljer-og-placeringer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1627,6 +1678,7 @@
   },
   {
    "titel": "Afbud til NM efter nominering",
+   "slug": "afbud-til-nm-efter-nominering",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1642,6 +1694,7 @@
   },
   {
    "titel": "Registrering af advarsler og sanktioner",
+   "slug": "registrering-af-advarsler-og-sanktioner",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1665,6 +1718,7 @@
   },
   {
    "titel": "Overgang fra junior- til seniorlandshold",
+   "slug": "overgang-fra-junior-til-seniorlandshold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1680,6 +1734,7 @@
   },
   {
    "titel": "Kraftcentre",
+   "slug": "kraftcentre",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1711,6 +1766,7 @@
   },
   {
    "titel": "Startgebyr-hæftelse ved manglende kvalifikation",
+   "slug": "startgebyr-hæftelse-ved-manglende-kvalifikation",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1726,6 +1782,7 @@
   },
   {
    "titel": "Centralt lager for landsholdsudstyr",
+   "slug": "centralt-lager-for-landsholdsudstyr",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1741,6 +1798,7 @@
   },
   {
    "titel": "Ejerskab af udleveret landsholdsudstyr",
+   "slug": "ejerskab-af-udleveret-landsholdsudstyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1756,6 +1814,7 @@
   },
   {
    "titel": "Provisorisk indstilling til forhåndsnominering til VM klassisk",
+   "slug": "provisorisk-indstilling-til-forhåndsnominering-til-vm-klassisk",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1771,6 +1830,7 @@
   },
   {
    "titel": "Elitestrategi",
+   "slug": "elitestrategi",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1786,6 +1846,7 @@
   },
   {
    "titel": "Netværksmøder i landsholdssamlinger",
+   "slug": "netværksmøder-i-landsholdssamlinger",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1801,6 +1862,7 @@
   },
   {
    "titel": "Frist for betaling af egenbetaling",
+   "slug": "frist-for-betaling-af-egenbetaling",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1824,6 +1886,7 @@
   },
   {
    "titel": "Bevarelse af plads i bruttolandsholdet",
+   "slug": "bevarelse-af-plads-i-bruttolandsholdet",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1839,6 +1902,7 @@
   },
   {
    "titel": "Kontant protestgebyr",
+   "slug": "kontant-protestgebyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1854,6 +1918,7 @@
   },
   {
    "titel": "Dispensation fra DM ved kollision med VM",
+   "slug": "dispensation-fra-dm-ved-kollision-med-vm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1885,6 +1950,7 @@
   },
   {
    "titel": "Obligatorisk spørgeskema for landsholdsatleter",
+   "slug": "obligatorisk-spørgeskema-for-landsholdsatleter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1900,6 +1966,7 @@
   },
   {
    "titel": "Præsentation af landsholdsløftere på sociale medier",
+   "slug": "præsentation-af-landsholdsløftere-på-sociale-medier",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1915,6 +1982,7 @@
   },
   {
    "titel": "Deltagelse i andre internationale stævner",
+   "slug": "deltagelse-i-andre-internationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1946,6 +2014,7 @@
   },
   {
    "titel": "Egenbetaling ved dobbelt deltagelse",
+   "slug": "egenbetaling-ved-dobbelt-deltagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1969,6 +2038,7 @@
   },
   {
    "titel": "Pligt til DM-deltagelse",
+   "slug": "pligt-til-dm-deltagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2008,6 +2078,7 @@
   },
   {
    "titel": "Udtagelse til EM klassisk ved flere kvalificerede",
+   "slug": "udtagelse-til-em-klassisk-ved-flere-kvalificerede",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2023,6 +2094,7 @@
   },
   {
    "titel": "Landsholdsmedlemmer som assistenttrænere",
+   "slug": "landsholdsmedlemmer-som-assistenttrænere",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2038,6 +2110,7 @@
   },
   {
    "titel": "Skift af vægtklasse ved internationale mesterskaber",
+   "slug": "skift-af-vægtklasse-ved-internationale-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2069,6 +2142,7 @@
   },
   {
    "titel": "Juniorer på seniorsamlinger",
+   "slug": "juniorer-på-seniorsamlinger",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2084,6 +2158,7 @@
   },
   {
    "titel": "Overførsel af sanktioner fra U-landshold",
+   "slug": "overførsel-af-sanktioner-fra-u-landshold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2099,6 +2174,7 @@
   },
   {
    "titel": "Orlov fra landsholdet",
+   "slug": "orlov-fra-landsholdet",
    "vigtig": true,
    "note": null,
    "versioner": [

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-07-03",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom03072025#1",
    "emne": "Dommerkursus",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom03072025#2",
    "emne": "Brush up-kursus for B-dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom03072025#3",
    "emne": "Påmindelse om lånedommere",
    "kategori": "dommere",
    "udfald": "vedtaget",

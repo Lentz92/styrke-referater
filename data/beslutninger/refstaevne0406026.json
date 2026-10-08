@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-06-04",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne0406026#1",
    "emne": "Kvalifikationskrav DM, klassisk styrkeløft open",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refstaevne0406026#2",
    "emne": "Startgebyr-ordning for afsætning af stævner",
    "kategori": "okonomi",
    "udfald": "ikke_afgjort",

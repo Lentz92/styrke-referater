@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-05-15",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refudstyr15052025#1",
    "emne": "Uddannelse af hjælpere til udstyrsløftere",
    "kategori": "uddannelse",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-05-16",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne16052024#1",
    "emne": "Tildeling af DM'er øst/vest",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne16052024#2",
    "emne": "Ansvarsperson for stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",

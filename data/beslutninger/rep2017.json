@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2017-03-26",
+ "next_number": 20,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2017#1",
    "emne": "Frist for bilag til tilgodehavender",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2017#2",
    "emne": "Tilmeldings- og betalingsfrist til stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2017#3",
    "emne": "Danske rekorder kun ved bestemte stævner",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2017#4",
    "emne": "Fast pris på medaljesæt",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2017#5",
    "emne": "Kvalifikationskrav DM, klassisk senior",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 7
   },
   {
+   "id": "rep2017#6",
    "emne": "Optagelse af ny klub",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 8
   },
   {
+   "id": "rep2017#7",
    "emne": "Licens som privilegium og klubbers antidopingansvar",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 9
   },
   {
+   "id": "rep2017#8",
    "emne": "Medlemstid i klub før licens",
    "kategori": "medlemskab",
    "udfald": "forkastet",
@@ -142,6 +152,7 @@
    "citat_side": 10
   },
   {
+   "id": "rep2017#9",
    "emne": "Deltagelse i divisionsfinalen",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -159,6 +170,7 @@
    "citat_side": 10
   },
   {
+   "id": "rep2017#10",
    "emne": "Karensperiode for løftere der vender tilbage",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -176,6 +188,7 @@
    "citat_side": 11
   },
   {
+   "id": "rep2017#11",
    "emne": "Fravigelse af IPF's udstyrskrav",
    "kategori": "udstyr",
    "udfald": "trukket",
@@ -193,6 +206,7 @@
    "citat_side": 11
   },
   {
+   "id": "rep2017#12",
    "emne": "Adskillelse af udstyrs- og klassiske rekorder",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -210,6 +224,7 @@
    "citat_side": 12
   },
   {
+   "id": "rep2017#13",
    "emne": "Terminsliste JM/SM styrkeløft og klassisk",
    "kategori": "staevner",
    "udfald": "trukket",
@@ -227,6 +242,7 @@
    "citat_side": 12
   },
   {
+   "id": "rep2017#14",
    "emne": "Placering af åben og master/junior ved DM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -244,6 +260,7 @@
    "citat_side": 12
   },
   {
+   "id": "rep2017#15",
    "emne": "Tilmelding til stævner efter IPF's regler",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -261,6 +278,7 @@
    "citat_side": 13
   },
   {
+   "id": "rep2017#16",
    "emne": "Faktura for licens og årsafgift",
    "kategori": "okonomi",
    "udfald": "forkastet",
@@ -278,6 +296,7 @@
    "citat_side": 13
   },
   {
+   "id": "rep2017#17",
    "emne": "Betaling af medaljer",
    "kategori": "okonomi",
    "udfald": "trukket",
@@ -295,6 +314,7 @@
    "citat_side": 13
   },
   {
+   "id": "rep2017#18",
    "emne": "Indvejning af løftere ved dommer af samme køn",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -312,6 +332,7 @@
    "citat_side": 14
   },
   {
+   "id": "rep2017#19",
    "emne": "Egne sokker til at trække knækogere op",
    "kategori": "udstyr",
    "udfald": "vedtaget",

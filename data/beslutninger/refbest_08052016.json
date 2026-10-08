@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2016-05-08",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_08052016#1",
    "emne": "Eftertilmelding til stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_08052016#2",
    "emne": "Licensregel, frist før stævnedeltagelse",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_08052016#3",
    "emne": "Udlevering af medaljer og pokaler",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_08052016#4",
    "emne": "Streaming fra danske mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",

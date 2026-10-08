@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-10-01",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom01102024#1",
    "emne": "Dommertørklæde for kvindelige dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refdom01102024#2",
    "emne": "Hjælp til knævarmere",
    "kategori": "udstyr",
    "udfald": "vedtaget",

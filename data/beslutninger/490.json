@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2018-11-04",
+ "next_number": 39,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "490#1",
    "emne": "Deltagelse i flere kategorier ved kombinationsstævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#2",
    "emne": "Kvalifikationskrav til VM",
    "kategori": "internationalt",
    "udfald": "trukket",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#3",
    "emne": "World Games klassisk styrkeløft",
    "kategori": "internationalt",
    "udfald": "trukket",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#4",
    "emne": "Startalder sub-junior",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#5",
    "emne": "Medaljer master 4 herrer og master 3 damer",
    "kategori": "master",
    "udfald": "forkastet",
@@ -91,6 +98,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#6",
    "emne": "Antal kvinder på nationshold ved VM",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#7",
    "emne": "Holdpokaler",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#8",
    "emne": "Bedste løfter-pokal",
    "kategori": "internationalt",
    "udfald": "trukket",
@@ -142,6 +152,7 @@
    "citat_side": 2
   },
   {
+   "id": "490#9",
    "emne": "Fortsættelse efter bomb-out",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -159,6 +170,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#10",
    "emne": "Skiver til rekordsætning",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -176,6 +188,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#11",
    "emne": "Diskvalifikationsgrunde i dommerregler",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -193,6 +206,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#12",
    "emne": "Snoning af stropper på dragter",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -210,6 +224,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#13",
    "emne": "T-shirt under løft",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -227,6 +242,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#14",
    "emne": "Fodtøj under konkurrence",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -244,6 +260,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#15",
    "emne": "Sokker med gummi",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -261,6 +278,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#16",
    "emne": "Nedtrækning af knæbind før plateau",
    "kategori": "udstyr",
    "udfald": "forkastet",
@@ -278,6 +296,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#17",
    "emne": "Fremmøde ved indvejning",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -295,6 +314,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#18",
    "emne": "Logostørrelse på udstyr",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -312,6 +332,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#19",
    "emne": "Teknisk regel: udretning i knæ",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -329,6 +350,7 @@
    "citat_side": 3
   },
   {
+   "id": "490#20",
    "emne": "Fødder på bænk ved bænkpres",
    "kategori": "dommere",
    "udfald": "forkastet",
@@ -346,6 +368,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#21",
    "emne": "Nedadgående bevægelse i dødløft",
    "kategori": "dommere",
    "udfald": "forkastet",
@@ -363,6 +386,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#22",
    "emne": "Størrelse på A-gruppe",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -380,6 +404,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#23",
    "emne": "Pause mellem discipliner ved én løftegruppe",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -397,6 +422,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#24",
    "emne": "Pause mellem discipliner ved flere grupper",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -414,6 +440,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#25",
    "emne": "Vægtøgning på 0,5 kg i klassisk",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -431,6 +458,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#26",
    "emne": "Markering af underkendt løft",
    "kategori": "dommere",
    "udfald": "forkastet",
@@ -448,6 +476,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#27",
    "emne": "Henvendelse om rengøring af stang eller platform",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -465,6 +494,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#28",
    "emne": "Dommerpåklædning",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -482,6 +512,7 @@
    "citat_side": 4
   },
   {
+   "id": "490#29",
    "emne": "Dommereksamen ved åbent VM",
    "kategori": "dommere",
    "udfald": "forkastet",
@@ -499,6 +530,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#30",
    "emne": "Teoretisk dommereksamen",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -516,6 +548,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#31",
    "emne": "Genregistrering af internationale dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -533,6 +566,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#32",
    "emne": "Dommerkrav ved åbent VM",
    "kategori": "dommere",
    "udfald": "trukket",
@@ -550,6 +584,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#33",
    "emne": "Jury kan omstøde dommere",
    "kategori": "dommere",
    "udfald": "forkastet",
@@ -567,6 +602,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#34",
    "emne": "Master 3 rekorder noteret i alle kategorier",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -584,6 +620,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#35",
    "emne": "Bænkpresrekord i styrkeløft",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -601,6 +638,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#36",
    "emne": "Bona fide forsøg",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -618,6 +656,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#37",
    "emne": "Rækkefølge ved nyt forsøg i 3. runde",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -635,6 +674,7 @@
    "citat_side": 5
   },
   {
+   "id": "490#38",
    "emne": "Antal trænere tilmeldt stævne",
    "kategori": "staevner",
    "udfald": "vedtaget",

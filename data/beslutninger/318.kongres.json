@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2016-01-01",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "318.kongres#1",
    "emne": "Frist for ændringsforslag til IPF's vedtægter",
    "kategori": "internationalt",
    "udfald": "vedtaget",

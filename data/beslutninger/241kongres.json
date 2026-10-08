@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-01-01",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "241kongres#1",
    "emne": "Arrangørs betaling af ophold for EPF-repræsentanter ved EM",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "241kongres#2",
    "emne": "Bøde for overskredne hotelpriser ved stævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "241kongres#3",
    "emne": "Godtgørelse til EPF-officials",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "241kongres#4",
    "emne": "Priser til årets løftere i EPF",
    "kategori": "internationalt",
    "udfald": "vedtaget",

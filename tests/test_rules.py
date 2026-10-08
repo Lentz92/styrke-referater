@@ -15,7 +15,8 @@ def _version(d, effekt="indfoert", tekst=None, dhash=True):
 
 
 def _rule(*versions, titel="Licensgebyr"):
-    return {"titel": titel, "kategori": "okonomi", "vigtig": True, "note": None, "versioner": list(versions)}
+    return {"titel": titel, "slug": titel.lower(), "kategori": "okonomi", "vigtig": True, "note": None,
+            "versioner": list(versions)}
 
 
 def _built(decisions, *versions):

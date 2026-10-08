@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2017-10-29",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_29102017#1",
    "emne": "Kvalifikationskrav DM klassisk, åben klasse",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_29102017#2",
    "emne": "Livestreaming ved DM/JM/SM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_29102017#3",
    "emne": "Lån af udstyr fra DSF til stævner",
    "kategori": "udstyr",
    "udfald": "vedtaget",

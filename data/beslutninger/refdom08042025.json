@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-04-08",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom08042025#1",
    "emne": "Regler for dommerudvalget, tilmelding til A-dommerprøver og betaling af internationale dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refdom08042025#2",
    "emne": "Jurylederens endelige afgørelse ved ændring af forsøg",
    "kategori": "dommere",
    "udfald": "vedtaget",

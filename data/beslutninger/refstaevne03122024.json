@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-12-03",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne03122024#1",
    "emne": "Aflevering af overskydende medaljer og pokaler",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne03122024#2",
    "emne": "Placering af DM-hold finale på terminslisten",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",

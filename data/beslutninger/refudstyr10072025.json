@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-07-10",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refudstyr10072025#1",
    "emne": "Låneseddel ved udlån af udstyr",
    "kategori": "udstyr",
    "udfald": "vedtaget",

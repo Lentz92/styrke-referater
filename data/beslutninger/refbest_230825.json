@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-08-23",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_230825#1",
    "emne": "Adgangskontrol til opvarmning ved DM-uge",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_230825#2",
    "emne": "Initiativpulje, afsætning til udstyr",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_230825#3",
    "emne": "Krav om IPF-træneruddannelse for internationale trænere",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_230825#4",
    "emne": "Krav om regelmæssig træning i klub for at stille op for klubben",
    "kategori": "medlemskab",
    "udfald": "vedtaget",

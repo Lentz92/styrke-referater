@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2011-12-10",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite10122011#1",
    "emne": "Opvarmning ved internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite10122011#2",
    "emne": "Adfærdskodeks for landshold",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite10122011#3",
    "emne": "Rejseplaner for landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite10122011#4",
    "emne": "Rapportering fra internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite10122011#5",
    "emne": "Bruttotrup bænkpres sub-/junior",
    "kategori": "landshold",
    "udfald": "vedtaget",

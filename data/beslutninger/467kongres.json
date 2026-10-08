@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-01-01",
+ "next_number": 8,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "467kongres#1",
    "emne": "Test af rekorder",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 3
   },
   {
+   "id": "467kongres#2",
    "emne": "Stævnehoteller, overpriser og sanktioner",
    "kategori": "internationalt",
    "udfald": "trukket",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "467kongres#3",
    "emne": "Stævnehoteller, bøde for fravalg",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "467kongres#4",
    "emne": "Suspendering af medlemmer",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "467kongres#5",
    "emne": "Reserveløfter ved forhåndstilmelding",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 3
   },
   {
+   "id": "467kongres#6",
    "emne": "Bøde for dommeres sene ændring af opgaver",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 3
   },
   {
+   "id": "467kongres#7",
    "emne": "Bøde for udeblivelse fra teknisk møde",
    "kategori": "internationalt",
    "udfald": "forkastet",

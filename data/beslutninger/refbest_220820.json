@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2020-08-22",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_220820#1",
    "emne": "Kompensationspulje til klubber",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_220820#2",
    "emne": "Dækning af manglende stævneindtægter og merudgifter",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_220820#3",
    "emne": "Covid-19-forholdsregler ved mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_220820#4",
    "emne": "Krav til arrangør af internationalt stævne",
    "kategori": "internationalt",
    "udfald": "vedtaget",

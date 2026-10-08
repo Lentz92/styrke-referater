@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-08-31",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_310819#1",
    "emne": "Rekorder og resultater ved positiv dopingtest",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_310819#2",
    "emne": "Offentliggørelse af positive dopingtests",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_310819#3",
    "emne": "Krav om regelmæssig træning i klub",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_310819#4",
    "emne": "Dommerprøve national A til international",
    "kategori": "dommere",
    "udfald": "vedtaget",

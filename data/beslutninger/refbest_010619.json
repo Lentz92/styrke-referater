@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-06-01",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_010619#1",
    "emne": "Uddeling af pokaler til årets løftere",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_010619#2",
    "emne": "Leverandør af medaljer og pokaler",
    "kategori": "andet",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-01-01",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "806kongres#1",
    "emne": "Klage til juryen over løfter fra anden nation",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "806kongres#2",
    "emne": "Juryens overrulingsknap",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "806kongres#3",
    "emne": "Kvalifikation til World Games, direkte kvalifikation",
    "kategori": "internationalt",
    "udfald": "vedtaget",

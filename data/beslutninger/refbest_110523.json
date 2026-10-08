@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-05-11",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_110523#1",
    "emne": "Stævneudvalgets beføjelse til at ændre stævners størrelse, placering og sammensætning",
    "kategori": "organisation",
    "udfald": "ikke_afgjort",

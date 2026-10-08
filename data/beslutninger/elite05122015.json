@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-12-05",
+ "next_number": 7,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite05122015#1",
    "emne": "Deltagelse i VM bænkpres uanset kategori",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite05122015#2",
    "emne": "Egenbetaling for A-kravsløftere",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "elite05122015#3",
    "emne": "Deltagelse i WEC",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "elite05122015#4",
    "emne": "Afbud og advarsler ved landsholdssamlinger",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "elite05122015#5",
    "emne": "Kvalifikationskrav landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 4
   },
   {
+   "id": "elite05122015#6",
    "emne": "Start i anden vægtklasse end landsholdskategori",
    "kategori": "landshold",
    "udfald": "vedtaget",

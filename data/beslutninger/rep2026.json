@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-03-29",
+ "next_number": 20,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2026#1",
    "emne": "Licenstildeling",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 27
   },
   {
+   "id": "rep2026#2",
    "emne": "Klubskifte",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 27
   },
   {
+   "id": "rep2026#3",
    "emne": "Karensperiode for udlændinge ved mesterskaber",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 27
   },
   {
+   "id": "rep2026#4",
    "emne": "Adgangskontrol og trænere i opvarmning ved DM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 28
   },
   {
+   "id": "rep2026#5",
    "emne": "Påklædning ved præmieoverrækkelse",
    "kategori": "staevner",
    "udfald": "trukket",
@@ -91,6 +98,7 @@
    "citat_side": 29
   },
   {
+   "id": "rep2026#6",
    "emne": "Startgebyr og tilmeldingsfrist til mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 29
   },
   {
+   "id": "rep2026#7",
    "emne": "DM i bænkpres for veteraner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 30
   },
   {
+   "id": "rep2026#8",
    "emne": "Medaljeoverrækkelse ved ny indvejning",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -142,6 +152,7 @@
    "citat_side": 31
   },
   {
+   "id": "rep2026#9",
    "emne": "Indvejning ved DM Hold",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -159,6 +170,7 @@
    "citat_side": 31
   },
   {
+   "id": "rep2026#10",
    "emne": "Masterskategori ved DM Hold",
    "kategori": "master",
    "udfald": "forkastet",
@@ -176,6 +188,7 @@
    "citat_side": 32
   },
   {
+   "id": "rep2026#11",
    "emne": "Betaling til arrangør af DM Hold-runde",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -193,6 +206,7 @@
    "citat_side": 32
   },
   {
+   "id": "rep2026#12",
    "emne": "Pause mellem discipliner ved DM Hold",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -210,6 +224,7 @@
    "citat_side": 32
   },
   {
+   "id": "rep2026#13",
    "emne": "Aldersopdeling af JFM/SM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -227,6 +242,7 @@
    "citat_side": 33
   },
   {
+   "id": "rep2026#14",
    "emne": "Omstrukturering af DM Hold",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -244,6 +260,7 @@
    "citat_side": 35
   },
   {
+   "id": "rep2026#15",
    "emne": "Årsafgift",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -261,6 +278,7 @@
    "citat_side": 26
   },
   {
+   "id": "rep2026#16",
    "emne": "Licensgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -278,6 +296,7 @@
    "citat_side": 26
   },
   {
+   "id": "rep2026#17",
    "emne": "Startgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -295,6 +314,7 @@
    "citat_side": 26
   },
   {
+   "id": "rep2026#18",
    "emne": "Kontorhold og telefonpenge til bestyrelsen",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -312,6 +332,7 @@
    "citat_side": 26
   },
   {
+   "id": "rep2026#19",
    "emne": "Godkendelse af jubilæumsstævne",
    "kategori": "staevner",
    "udfald": "vedtaget",

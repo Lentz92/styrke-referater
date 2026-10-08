@@ -6,7 +6,7 @@ from render import build_rules
 
 def _rules(*pairs):
     """One rule from (decision, effekt) pairs."""
-    raw = {"titel": "Regel", "kategori": "okonomi", "vigtig": True, "note": None,
+    raw = {"titel": "Regel", "slug": "regel", "kategori": "okonomi", "vigtig": True, "note": None,
            "versioner": [{"ref": d.ref, "effekt": e, "tekst": None, "kort": None, "kort_regel": None,
                           "dhash": decision_hash(d)} for d, e in pairs]}
     return build_rules([raw], {d.ref: d for d, _ in pairs})
@@ -69,3 +69,74 @@ def test_every_problem_kind_is_counted_on_the_index_page():
     counts = Counter({kind: 101 + i for i, kind in enumerate(PROBLEM_KINDS)})
     page = render._index_page([2026], [], [], [], {}, [], counts, date(2026, 10, 8))
     assert all(f"{n}" in page for n in counts.values())
+
+
+def _identity_rule(titel, slug, *refs, kategori="okonomi"):
+    return {"titel": titel, "kategori": kategori, "versioner": [{"ref": ref} for ref in refs],
+            **({"slug": slug} if slug is not None else {})}
+
+
+def test_each_identity_problem_is_reported():
+    from checks import identity_problems
+    from matching import FormerSlug, SlugRegistry
+
+    decisions = [decision(ref=ref) for ref in ("a#1", "a#1", "b#1", "c#1", "m#1", "u#1")]
+    raw = [_identity_rule("Licensgebyr", "licensgebyr", "a#1", "x#9"), _identity_rule("Licens", "licensgebyr", "b#1"),
+           _identity_rule("Uden slug", None, "c#1"), _identity_rule("Uden slug 2", "", "c#1"),
+           _identity_rule("Klubskifte", "klubskifte", "r#1"),
+           _identity_rule("Masterlicens", "masterlicens", "m#1", kategori="master")]
+    slugs = SlugRegistry(
+        aliases={"gebyr": FormerSlug("okonomi", "Gebyr", frozenset({"a#1"}), "licensgebyr"),
+                 "startgebyr": FormerSlug("okonomi", "Startgebyr", frozenset(), "findes-ikke"),
+                 "rabat": FormerSlug("okonomi", "Rabat", frozenset(), "licensgebyr"),
+                 "licens": FormerSlug("okonomi", "Licens", frozenset({"m#1"}), "licensgebyr"),
+                 # u#1 still exists but no rule holds it, and masterlicens is not titled "Engangsgebyr"
+                 "engangsgebyr": FormerSlug("master", "Engangsgebyr", frozenset({"u#1"}), "masterlicens")},
+        retired={"klubskifte": FormerSlug("okonomi", "Klubskifte", frozenset()),
+                 "rabat": FormerSlug("okonomi", "Rabat", frozenset()),
+                 "masters": FormerSlug("master", "Masters", frozenset({"m#1"}))})
+
+    messages = [p.message for p in identity_problems(decisions, {"b#1", "r#1"}, raw, slugs)]
+    expected = ["decision id a#1 is used 2 times", "decision id b#1 is both in use and retired",
+                "Licensgebyr: version x#9 refers to no decision", "Uden slug (okonomi) has no slug",
+                "Uden slug 2 (okonomi) has no slug", "slug licensgebyr is held by 2 rules",
+                "alias startgebyr leads to findes-ikke, which no rule holds",
+                "slug klubskifte is held by a rule but also an alias or retired",
+                "slug rabat is both an alias and retired",
+                "former slug licens leads to licensgebyr, but masterlicens holds most of its decisions",
+                "former slug masters leads to nothing, but masterlicens holds most of its decisions",
+                "alias engangsgebyr leads to masterlicens, which holds none of its decisions"]
+    assert len(messages) == len(expected)
+    assert all(any(text in message for message in messages) for text in expected)
+
+
+def test_an_alias_to_a_namesake_needs_it_to_be_the_only_one_in_its_category():
+    from checks import identity_problems
+    from matching import FormerSlug, SlugRegistry
+
+    report = "Rapportering fra internationale mesterskaber"
+    raw = [_identity_rule(report, "rapportering", "l#1", kategori="landshold"),
+           _identity_rule(report, "rapportering-3", "o#9", kategori="organisation")]
+    decisions = [decision(ref=ref) for ref in ("l#1", "o#9", "o#1")]  # o#1: a one-off now, in no rule
+
+    def problems(to: str) -> list[str]:
+        alias = FormerSlug("organisation", report, frozenset({"o#1"}), to)
+        return [p.message for p in identity_problems(decisions, set(), raw, SlugRegistry(aliases={"r-2": alias}))]
+
+    assert problems("rapportering-3") == []  # the only rule of that title in organisation
+    wrong = ("alias r-2 leads to rapportering, which holds none of its decisions and is not the only rule of "
+             "organisation titled like 'Rapportering fra internationale mesterskaber'")
+    assert problems("rapportering") == [wrong]  # landshold's rule of that name is another rule
+
+
+def test_consistent_ids_and_slugs_report_nothing():
+    from checks import identity_problems
+    from matching import FormerSlug, SlugRegistry
+
+    # A retired ref is a stale rule, not an identity problem; an alias whose decisions no longer exist keeps the
+    # target it had; a former slug whose decisions are gone and that has no target leads nowhere.
+    raw = [_identity_rule("Licensgebyr", "licensgebyr", "a#1", "r#1")]
+    slugs = SlugRegistry(aliases={"gebyr": FormerSlug("okonomi", "Gebyr", frozenset({"a#1"}), "licensgebyr"),
+                                  "licens": FormerSlug("okonomi", "Licens", frozenset({"b#8"}), "licensgebyr")},
+                         retired={"x": FormerSlug("okonomi", "X", frozenset({"q#1"}))})
+    assert identity_problems([decision(ref="a#1")], {"r#1"}, raw, slugs) == []

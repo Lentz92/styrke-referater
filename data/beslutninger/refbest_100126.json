@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-01-10",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_100126#1",
    "emne": "Licens, tildeling",
    "kategori": "medlemskab",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_100126#2",
    "emne": "Klubskifte",
    "kategori": "medlemskab",
    "udfald": "ikke_afgjort",

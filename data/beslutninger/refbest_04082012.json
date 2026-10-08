@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2012-08-04",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_04082012#1",
    "emne": "Kasserer",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_04082012#2",
    "emne": "Lån af DSF's udstyr",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_04082012#3",
    "emne": "Masterudvalgets budget",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_04082012#4",
    "emne": "Masterudvalgets placering",
    "kategori": "master",
    "udfald": "ikke_afgjort",

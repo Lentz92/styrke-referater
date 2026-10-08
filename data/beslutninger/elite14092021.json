@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2021-09-14",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite14092021#1",
    "emne": "Egenbetaling til internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite14092021#2",
    "emne": "Uddannelsesdage for landsholdstrænere og klubtrænere",
    "kategori": "uddannelse",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite14092021#3",
    "emne": "Bestilling og udlevering af landsholdsdragter",
    "kategori": "landshold",
    "udfald": "vedtaget",

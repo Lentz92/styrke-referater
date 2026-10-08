@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2016-12-04",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite04122016#1",
    "emne": "Kørselsgodtgørelse EM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite04122016#2",
    "emne": "Kvalifikationskrav klassisk bænkpres",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite04122016#3",
    "emne": "Kvalifikationskrav klassisk styrkeløft",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite04122016#4",
    "emne": "BænkpresLandshold struktur",
    "kategori": "landshold",
    "udfald": "vedtaget",

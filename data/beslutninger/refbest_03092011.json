@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2011-09-03",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_03092011#1",
    "emne": "Masterklubbens tilknytning til forbundet",
    "kategori": "master",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_03092011#2",
    "emne": "Nordland Cup som officielt stævne",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_03092011#3",
    "emne": "Stævneregler i overensstemmelse med IPF's tekniske regler",
    "kategori": "staevner",
    "udfald": "vedtaget",

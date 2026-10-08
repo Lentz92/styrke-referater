@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-03-11",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite11032026#1",
    "emne": "Kvalifikationskrav junior enkeltbænk",
    "kategori": "landshold",
    "udfald": "vedtaget",

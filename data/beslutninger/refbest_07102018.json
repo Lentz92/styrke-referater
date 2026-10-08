@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2018-10-07",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_07102018#1",
    "emne": "Pligt til deltagelse i medaljeceremoni",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_07102018#2",
    "emne": "Deltagelse i danske mesterskaber og danske rekorder for udlændinge/dobbelt licens",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_07102018#3",
    "emne": "Klubskifte under igangværende divisionsturnering",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_07102018#4",
    "emne": "Deltagelse i ikke-sanktionerede stævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",

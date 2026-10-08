@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-03-18",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "epf_kongres_2026#1",
    "emne": "EPF gebyrer",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 4
   },
   {
+   "id": "epf_kongres_2026#2",
    "emne": "EPF dommertilmelding og registrering",
    "kategori": "dommere",
    "udfald": "vedtaget",

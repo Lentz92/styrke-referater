@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2017-08-26",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_26082017#1",
    "emne": "Stævneafgift ved internationale stævner i Danmark",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_26082017#2",
    "emne": "Tilmelding til JM/SM efter landsdel",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_26082017#3",
    "emne": "Ingen E.R. Open",
    "kategori": "staevner",
    "udfald": "vedtaget",

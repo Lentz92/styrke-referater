@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2016-12-10",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_10122016#1",
    "emne": "Kørselspenge ved samlinger",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_10122016#2",
    "emne": "Headcoach for klubber ved nationale stævner",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_10122016#3",
    "emne": "Stævneleders mandat til diskvalifikation ved upassende opførsel",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_10122016#4",
    "emne": "Medaljebestilling",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_10122016#5",
    "emne": "Dommerafgift for klubber uden stillet dommer",
    "kategori": "dommere",
    "udfald": "ikke_afgjort",

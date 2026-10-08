@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2021-05-18",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite18052021#1",
    "emne": "Egenbetaling landsholdsudtagelse EM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite18052021#2",
    "emne": "Udtagelse til EM og VM af atleter med A- og B-krav",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite18052021#3",
    "emne": "Rejsearrangement ved internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite18052021#4",
    "emne": "IPF obligatorisk WADA-modul ADEL",
    "kategori": "internationalt",
    "udfald": "vedtaget",

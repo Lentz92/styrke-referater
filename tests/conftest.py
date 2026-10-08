@@ -23,6 +23,13 @@ def decision(**changes) -> Decision:
     return replace(_BASE, **changes)
 
 
+@pytest.fixture(autouse=True)
+def _slug_registry(tmp_path_factory, monkeypatch):
+    """Every test gets its own data/slugs.json, so none can write the real one; outside the test's tmp_path,
+    which some tests use as data/regler/ itself."""
+    monkeypatch.setattr(analyze, "SLUGS_PATH", tmp_path_factory.mktemp("registry") / "slugs.json")
+
+
 # A fake `claude` that prints what Claude Code 2.1.294 prints. plan.json lists what each call does, in order
 # (the last step repeats): "ok"; "error" (exit 1, costs 0.10); "other" (answers with Haiku); "sleep";
 # "helper-before"/"helper-after" (a helper model that writes less, sorting before/after the main one);

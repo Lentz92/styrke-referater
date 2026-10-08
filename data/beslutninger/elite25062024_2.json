@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-06-25",
+ "next_number": 7,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite25062024_2#1",
    "emne": "Kvalifikationskrav bænkpres",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite25062024_2#2",
    "emne": "Kvalifikationsstævner til EM og VM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite25062024_2#3",
    "emne": "Egenbetaling landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite25062024_2#4",
    "emne": "Refusion af egenbetaling landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite25062024_2#5",
    "emne": "Rejsebooking og overnatning landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite25062024_2#6",
    "emne": "Kærestereglen på landsholdsture",
    "kategori": "landshold",
    "udfald": "forkastet",

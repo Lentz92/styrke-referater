@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-07-02",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom02072024_2#1",
    "emne": "Udlevering af slips og emblemer til dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom02072024_2#2",
    "emne": "Dresscode for dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom02072024_2#3",
    "emne": "Dommerbriefing før stævnestart",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom02072024_2#4",
    "emne": "Dommeres fremmøde før indvejning",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom02072024_2#5",
    "emne": "Dommerpåsætning af hensyn til økonomi",
    "kategori": "dommere",
    "udfald": "vedtaget",

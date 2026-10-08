@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-09-18",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom18092025#1",
    "emne": "Brush up kursus for B-dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom18092025#2",
    "emne": "Dommerkursus",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom18092025#3",
    "emne": "Årlig gennemgang af dommerdatabasen",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom18092025#4",
    "emne": "Placering af jurybord",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom18092025#5",
    "emne": "Nationale dommere tæt på stævnet",
    "kategori": "dommere",
    "udfald": "vedtaget",

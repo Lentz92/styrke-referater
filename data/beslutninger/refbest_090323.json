@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-03-09",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_090323#1",
    "emne": "Etisk regelsæt og adfærd",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_090323#2",
    "emne": "Afvikling af DM klassisk i Kono på to platforme",
    "kategori": "staevner",
    "udfald": "vedtaget",

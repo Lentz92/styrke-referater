@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Træneruddannelsens udformning",
+   "slug": "træneruddannelsens-udformning",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -21,6 +22,7 @@
   },
   {
    "titel": "Uddannelsesdage for landsholds- og klubtrænere",
+   "slug": "uddannelsesdage-for-landsholds-og-klubtrænere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -36,6 +38,7 @@
   },
   {
    "titel": "Kursus i stævnestyringsprogram",
+   "slug": "kursus-i-stævnestyringsprogram",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -51,6 +54,7 @@
   },
   {
    "titel": "Certificering af hjælpere til udstyrsløftere",
+   "slug": "certificering-af-hjælpere-til-udstyrsløftere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -66,6 +70,7 @@
   },
   {
    "titel": "Krav til coaches ved IPF-nominering",
+   "slug": "krav-til-coaches-ved-ipf-nominering",
    "vigtig": true,
    "note": null,
    "versioner": [

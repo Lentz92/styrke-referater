@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2021-12-14",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite14122021#1",
    "emne": "Evaluering af landsholdstrupper",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14122021#2",
    "emne": "Udtagelsesprocedure VM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14122021#3",
    "emne": "Supplering af VM-hold med atleter uden for landsholdet",
    "kategori": "landshold",
    "udfald": "vedtaget",

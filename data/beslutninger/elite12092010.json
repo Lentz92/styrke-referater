@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2010-09-12",
+ "next_number": 7,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite12092010#1",
    "emne": "Landsholdsdragt, egenbetaling og depositum",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite12092010#2",
    "emne": "Antal eliteudvalgsmøder",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite12092010#3",
    "emne": "Eksterne undervisere på landsholdssamlinger",
    "kategori": "landshold",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite12092010#4",
    "emne": "Økonomisk støtte til junior-EM satsning",
    "kategori": "landshold",
    "udfald": "forkastet",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite12092010#5",
    "emne": "Deltagelse i EM/VM for egen betaling",
    "kategori": "landshold",
    "udfald": "forkastet",
@@ -91,6 +98,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite12092010#6",
    "emne": "Kvalifikationskrav VM, klassisk",
    "kategori": "landshold",
    "udfald": "ikke_afgjort",

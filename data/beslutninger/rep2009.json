@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2009-03-17",
+ "next_number": 8,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2009#1",
    "emne": "DM Bænk, antal kategorier",
    "kategori": "staevner",
    "udfald": "trukket",
@@ -23,6 +26,7 @@
    "citat_side": null
   },
   {
+   "id": "rep2009#2",
    "emne": "Holdkonkurrence DM Bænk, damer",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": null
   },
   {
+   "id": "rep2009#3",
    "emne": "Sammenlægning af DM B, C og Diverse",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": null
   },
   {
+   "id": "rep2009#4",
    "emne": "Dommerkrav i Divisionsturneringen",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -74,6 +80,7 @@
    "citat_side": null
   },
   {
+   "id": "rep2009#5",
    "emne": "Startgebyr ved stævner",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": null
   },
   {
+   "id": "rep2009#6",
    "emne": "Deltagerkrav DM B",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": null
   },
   {
+   "id": "rep2009#7",
    "emne": "Licensbetaling ved stævnetilmelding",
    "kategori": "medlemskab",
    "udfald": "vedtaget",

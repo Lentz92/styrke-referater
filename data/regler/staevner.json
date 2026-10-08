@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Afvikling og placering af DM styrkeløft (udstyr)",
+   "slug": "afvikling-og-placering-af-dm-styrkeløft-udstyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -53,6 +54,7 @@
   },
   {
    "titel": "Placering af DM Diverse",
+   "slug": "placering-af-dm-diverse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -68,6 +70,7 @@
   },
   {
    "titel": "Placering af DM bænkpres (udstyr)",
+   "slug": "placering-af-dm-bænkpres-udstyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -83,6 +86,7 @@
   },
   {
    "titel": "Medaljer og Wilks-præmiering ved DM bænkpres",
+   "slug": "medaljer-og-wilks-præmiering-ved-dm-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -114,6 +118,7 @@
   },
   {
    "titel": "Kvalifikationskrav til DM A og DM bænkpres",
+   "slug": "kvalifikationskrav-til-dm-a-og-dm-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -137,6 +142,7 @@
   },
   {
    "titel": "DM B og C",
+   "slug": "dm-b-og-c",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -168,6 +174,7 @@
   },
   {
    "titel": "Divisionsturnering, struktur og afvikling",
+   "slug": "divisionsturnering-struktur-og-afvikling",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -255,6 +262,7 @@
   },
   {
    "titel": "Divisionsturnering, holdopstilling, tilmelding og klubskifte",
+   "slug": "divisionsturnering-holdopstilling-tilmelding-og-klubskifte",
    "vigtig": true,
    "note": "Bestyrelsen ændrede i 2018 klubskiftereglen, som var vedtaget af Repræsentantskabet; ændringen blev først bekræftet af Repræsentantskabet i 2019.",
    "versioner": [
@@ -326,6 +334,7 @@
   },
   {
    "titel": "Divisionsturnering, mixhold",
+   "slug": "divisionsturnering-mixhold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -349,6 +358,7 @@
   },
   {
    "titel": "Divisionsturnering, arrangørtilskud og tilmeldingsgebyr",
+   "slug": "divisionsturnering-arrangørtilskud-og-tilmeldingsgebyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -380,6 +390,7 @@
   },
   {
    "titel": "Rekorder i divisionsturneringen",
+   "slug": "rekorder-i-divisionsturneringen",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -419,6 +430,7 @@
   },
   {
    "titel": "Divisionsturnering, offentliggørelse af resultater",
+   "slug": "divisionsturnering-offentliggørelse-af-resultater",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -434,6 +446,7 @@
   },
   {
    "titel": "Placering af regler for divisionsturneringen",
+   "slug": "placering-af-regler-for-divisionsturneringen",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -449,6 +462,7 @@
   },
   {
    "titel": "Navn på divisionsturneringen",
+   "slug": "navn-på-divisionsturneringen",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -464,6 +478,7 @@
   },
   {
    "titel": "Pause mellem discipliner ved DM Hold",
+   "slug": "pause-mellem-discipliner-ved-dm-hold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -487,6 +502,7 @@
   },
   {
    "titel": "Placering af DM Hold finale",
+   "slug": "placering-af-dm-hold-finale",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -534,6 +550,7 @@
   },
   {
    "titel": "Udlån af dommerlys",
+   "slug": "udlån-af-dommerlys",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -549,6 +566,7 @@
   },
   {
    "titel": "Forbundsejet stævneudstyr",
+   "slug": "forbundsejet-stævneudstyr",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -572,6 +590,7 @@
   },
   {
    "titel": "Fast løftested til officielle stævner",
+   "slug": "fast-løftested-til-officielle-stævner",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -587,6 +606,7 @@
   },
   {
    "titel": "Tilskud til leje af lys og lyd",
+   "slug": "tilskud-til-leje-af-lys-og-lyd",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -602,6 +622,7 @@
   },
   {
    "titel": "Stævneudstyrskufferter",
+   "slug": "stævneudstyrskufferter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -625,6 +646,7 @@
   },
   {
    "titel": "Opbevaring af DSF's konkurrenceudstyr",
+   "slug": "opbevaring-af-dsf-s-konkurrenceudstyr",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -640,6 +662,7 @@
   },
   {
    "titel": "Udlån af indvejningsvægte",
+   "slug": "udlån-af-indvejningsvægte",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -655,6 +678,7 @@
   },
   {
    "titel": "Indvejningsvægt ved DM",
+   "slug": "indvejningsvægt-ved-dm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -670,6 +694,7 @@
   },
   {
    "titel": "Stævneansvarlig fra stævneudvalget",
+   "slug": "stævneansvarlig-fra-stævneudvalget",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -733,6 +758,7 @@
   },
   {
    "titel": "Stævneudvalgets opgaver og årlige regelgennemgang",
+   "slug": "stævneudvalgets-opgaver-og-årlige-regelgennemgang",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -756,6 +782,7 @@
   },
   {
    "titel": "Godkendelse af rekorder i stævneudvalget",
+   "slug": "godkendelse-af-rekorder-i-stævneudvalget",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -771,6 +798,7 @@
   },
   {
    "titel": "Forbundskrav og nulstilling af danske rekorder",
+   "slug": "forbundskrav-og-nulstilling-af-danske-rekorder",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -794,6 +822,7 @@
   },
   {
    "titel": "Rekordbetingelser: total, bona fide og klassisk ved udstyrsstævner",
+   "slug": "rekordbetingelser-total-bona-fide-og-klassisk-ved-udstyrsstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -857,6 +886,7 @@
   },
   {
    "titel": "Stævner og officials ved rekordsætning",
+   "slug": "stævner-og-officials-ved-rekordsætning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -888,6 +918,7 @@
   },
   {
    "titel": "Skiver til rekordsætning",
+   "slug": "skiver-til-rekordsætning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -903,6 +934,7 @@
   },
   {
    "titel": "Danske rekorder ved nye vægtklasser for kvinder",
+   "slug": "danske-rekorder-ved-nye-vægtklasser-for-kvinder",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -918,6 +950,7 @@
   },
   {
    "titel": "Rekordliste og rekordprocedure under stævner",
+   "slug": "rekordliste-og-rekordprocedure-under-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -933,6 +966,7 @@
   },
   {
    "titel": "Verdensrekord i dødløft efter protest",
+   "slug": "verdensrekord-i-dødløft-efter-protest",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -948,6 +982,7 @@
   },
   {
    "titel": "Håndtering af stævneprotokoller efter stævner",
+   "slug": "håndtering-af-stævneprotokoller-efter-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -995,6 +1030,7 @@
   },
   {
    "titel": "Navne på stævneprotokol",
+   "slug": "navne-på-stævneprotokol",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1010,6 +1046,7 @@
   },
   {
    "titel": "Stævnereglerne følger IPF's tekniske regler",
+   "slug": "stævnereglerne-følger-ipf-s-tekniske-regler",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1049,6 +1086,7 @@
   },
   {
    "titel": "DM i klassisk styrkeløft, oprettelse og placering",
+   "slug": "dm-i-klassisk-styrkeløft-oprettelse-og-placering",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1104,6 +1142,7 @@
   },
   {
    "titel": "Placering af DM i forhold til VM og EM",
+   "slug": "placering-af-dm-i-forhold-til-vm-og-em",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1119,6 +1158,7 @@
   },
   {
    "titel": "DM i klassisk bænkpres",
+   "slug": "dm-i-klassisk-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1166,6 +1206,7 @@
   },
   {
    "titel": "IPF klassiske bænkpresmesterskaber",
+   "slug": "ipf-klassiske-bænkpresmesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1181,6 +1222,7 @@
   },
   {
    "titel": "Afvikling og placering af SM og JM",
+   "slug": "afvikling-og-placering-af-sm-og-jm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1276,6 +1318,7 @@
   },
   {
    "titel": "Tilmelding til JM/SM efter landsdel",
+   "slug": "tilmelding-til-jm-sm-efter-landsdel",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1291,6 +1334,7 @@
   },
   {
    "titel": "Navn på regionsmesterskab vest",
+   "slug": "navn-på-regionsmesterskab-vest",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1306,6 +1350,7 @@
   },
   {
    "titel": "Betegnelse for åbne danske mesterskaber",
+   "slug": "betegnelse-for-åbne-danske-mesterskaber",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1321,6 +1366,7 @@
   },
   {
    "titel": "Krav om SM/JM- og DM-deltagelse",
+   "slug": "krav-om-sm-jm-og-dm-deltagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1336,6 +1382,7 @@
   },
   {
    "titel": "Kvalifikationskrav til DM klassisk styrkeløft",
+   "slug": "kvalifikationskrav-til-dm-klassisk-styrkeløft",
    "vigtig": true,
    "note": "Kravene blev vedtaget af Repræsentantskabet med mandat til stævneudvalget om justering; senere ændringer er truffet af bestyrelse og udvalg, de seneste godkendt af Dommerudvalget, så det er uklart om alle ligger inden for mandatet.",
    "versioner": [
@@ -1391,6 +1438,7 @@
   },
   {
    "titel": "Invitation, tilmeldings- og betalingsfrist til stævner",
+   "slug": "invitation-tilmeldings-og-betalingsfrist-til-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1462,6 +1510,7 @@
   },
   {
    "titel": "Eftertilmelding til stævner",
+   "slug": "eftertilmelding-til-stævner",
    "vigtig": true,
    "note": "Ophævelsen forudsætter en regel om eftertilmelding mod dobbelt startgebyr, selv om Repræsentantskabet forkastede et sådant forslag i 2012.",
    "versioner": [
@@ -1493,6 +1542,7 @@
   },
   {
    "titel": "Holdpræmier for bedste klubber",
+   "slug": "holdpræmier-for-bedste-klubber",
    "vigtig": true,
    "note": "Wilks-reglen for SM og JM blev vedtaget med kun 18 mod 16 stemmer.",
    "versioner": [
@@ -1556,6 +1606,7 @@
   },
   {
    "titel": "Disciplinmedaljer",
+   "slug": "disciplinmedaljer",
    "vigtig": true,
    "note": "Bestyrelsen udvidede i 2015 disciplinmedaljer til alle stævner (se medaljebestilling); Repræsentantskabet indskrænkede det igen i 2019.",
    "versioner": [
@@ -1579,6 +1630,7 @@
   },
   {
    "titel": "Bestilling, betaling og levering af medaljer og pokaler",
+   "slug": "bestilling-betaling-og-levering-af-medaljer-og-pokaler",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1650,6 +1702,7 @@
   },
   {
    "titel": "Medaljebudget",
+   "slug": "medaljebudget",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1665,6 +1718,7 @@
   },
   {
    "titel": "Returnering af overskydende medaljer og pokaler",
+   "slug": "returnering-af-overskydende-medaljer-og-pokaler",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1688,6 +1742,7 @@
   },
   {
    "titel": "Medaljeceremoni og personligt fremmøde",
+   "slug": "medaljeceremoni-og-personligt-fremmøde",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1751,6 +1806,7 @@
   },
   {
    "titel": "Praktisk uddeling af medaljer og pokaler",
+   "slug": "praktisk-uddeling-af-medaljer-og-pokaler",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1774,6 +1830,7 @@
   },
   {
    "titel": "Pokaler til bedste løfter",
+   "slug": "pokaler-til-bedste-løfter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1829,6 +1886,7 @@
   },
   {
    "titel": "Pointsystem til kåring af bedste løfter",
+   "slug": "pointsystem-til-kåring-af-bedste-løfter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1852,6 +1910,7 @@
   },
   {
    "titel": "Krav til afholdelse af danske mesterskaber",
+   "slug": "krav-til-afholdelse-af-danske-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1915,6 +1974,7 @@
   },
   {
    "titel": "Streaming ved danske mesterskaber",
+   "slug": "streaming-ved-danske-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1962,6 +2022,7 @@
   },
   {
    "titel": "Plakater, bannere og bagtæppe ved DM",
+   "slug": "plakater-bannere-og-bagtæppe-ved-dm",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2001,6 +2062,7 @@
   },
   {
    "titel": "Adgangskontrol, trænere og orden i opvarmning ved DM",
+   "slug": "adgangskontrol-trænere-og-orden-i-opvarmning-ved-dm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2056,6 +2118,7 @@
   },
   {
    "titel": "Trænere ved internationale stævner",
+   "slug": "trænere-ved-internationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2079,6 +2142,7 @@
   },
   {
    "titel": "Smitteforebyggelse ved stævner",
+   "slug": "smitteforebyggelse-ved-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2110,6 +2174,7 @@
   },
   {
    "titel": "Officielle stævner i digital form",
+   "slug": "officielle-stævner-i-digital-form",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2125,6 +2190,7 @@
   },
   {
    "titel": "Stævneudvalgets ret til at ændre stævner",
+   "slug": "stævneudvalgets-ret-til-at-ændre-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2140,6 +2206,7 @@
   },
   {
    "titel": "Ansøgning om og tildeling af stævner",
+   "slug": "ansøgning-om-og-tildeling-af-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2179,6 +2246,7 @@
   },
   {
    "titel": "Stævneleders mandat til diskvalifikation",
+   "slug": "stævneleders-mandat-til-diskvalifikation",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2194,6 +2262,7 @@
   },
   {
    "titel": "Headcoach for klubber ved nationale stævner",
+   "slug": "headcoach-for-klubber-ved-nationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2217,6 +2286,7 @@
   },
   {
    "titel": "Jury og meet director ved officielle stævner",
+   "slug": "jury-og-meet-director-ved-officielle-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2232,6 +2302,7 @@
   },
   {
    "titel": "Handlingsplan for akutte hændelser",
+   "slug": "handlingsplan-for-akutte-hændelser",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2247,6 +2318,7 @@
   },
   {
    "titel": "Kontrakt med arrangørklub ved internationale stævner",
+   "slug": "kontrakt-med-arrangørklub-ved-internationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2262,6 +2334,7 @@
   },
   {
    "titel": "Uofficielle konkurrencer",
+   "slug": "uofficielle-konkurrencer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2285,6 +2358,7 @@
   },
   {
    "titel": "Begynder- og introstævner",
+   "slug": "begynder-og-introstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2300,6 +2374,7 @@
   },
   {
    "titel": "Diplomstævner for nye klubber",
+   "slug": "diplomstævner-for-nye-klubber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2315,6 +2390,7 @@
   },
   {
    "titel": "Service til privatstævner",
+   "slug": "service-til-privatstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2330,6 +2406,7 @@
   },
   {
    "titel": "Rettigheder ved DSF-stævner",
+   "slug": "rettigheder-ved-dsf-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2345,6 +2422,7 @@
   },
   {
    "titel": "Individuel bænkpresliga",
+   "slug": "individuel-bænkpresliga",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2360,6 +2438,7 @@
   },
   {
    "titel": "Crossfitstævner i forbundsregi",
+   "slug": "crossfitstævner-i-forbundsregi",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2375,6 +2454,7 @@
   },
   {
    "titel": "DM i bænkpres for veteraner",
+   "slug": "dm-i-bænkpres-for-veteraner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2390,6 +2470,7 @@
   },
   {
    "titel": "Offentliggørelse af stævne- og dommerplan",
+   "slug": "offentliggørelse-af-stævne-og-dommerplan",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2405,6 +2486,7 @@
   },
   {
    "titel": "KSK's udstyrsfrie bænkpresstævne",
+   "slug": "ksk-s-udstyrsfrie-bænkpresstævne",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2420,6 +2502,7 @@
   },
   {
    "titel": "TSK Cup som officielt stævne",
+   "slug": "tsk-cup-som-officielt-stævne",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2435,6 +2518,7 @@
   },
   {
    "titel": "AAK Open som årligt stævne",
+   "slug": "aak-open-som-årligt-stævne",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2450,6 +2534,7 @@
   },
   {
    "titel": "Afstand mellem rack og dommere i Tårnby",
+   "slug": "afstand-mellem-rack-og-dommere-i-tårnby",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2465,6 +2550,7 @@
   },
   {
    "titel": "Vejledning til arrangører af DM-hold runder",
+   "slug": "vejledning-til-arrangører-af-dm-hold-runder",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2480,6 +2566,7 @@
   },
   {
    "titel": "Geografisk klubsamarbejde om stævner",
+   "slug": "geografisk-klubsamarbejde-om-stævner",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -2495,6 +2582,7 @@
   },
   {
    "titel": "Alderskategori dreng/pige i IPF",
+   "slug": "alderskategori-dreng-pige-i-ipf",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2510,6 +2598,7 @@
   },
   {
    "titel": "Åben klasse ved NM",
+   "slug": "åben-klasse-ved-nm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2525,6 +2614,7 @@
   },
   {
    "titel": "Fremmøde ved indvejning",
+   "slug": "fremmøde-ved-indvejning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2540,6 +2630,7 @@
   },
   {
    "titel": "Størrelse på A-gruppe",
+   "slug": "størrelse-på-a-gruppe",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2555,6 +2646,7 @@
   },
   {
    "titel": "Pause mellem discipliner (IPF)",
+   "slug": "pause-mellem-discipliner-ipf",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2578,6 +2670,7 @@
   },
   {
    "titel": "Vægtøgning på 0,5 kg i klassisk",
+   "slug": "vægtøgning-på-0-5-kg-i-klassisk",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2593,6 +2686,7 @@
   },
   {
    "titel": "Rengøring af stang eller platform",
+   "slug": "rengøring-af-stang-eller-platform",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2608,6 +2702,7 @@
   },
   {
    "titel": "Bona fide forsøg",
+   "slug": "bona-fide-forsøg",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2623,6 +2718,7 @@
   },
   {
    "titel": "Rækkefølge ved nyt forsøg i 3. runde",
+   "slug": "rækkefølge-ved-nyt-forsøg-i-3-runde",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -2638,6 +2734,7 @@
   },
   {
    "titel": "Fortsættelse efter bomb-out",
+   "slug": "fortsættelse-efter-bomb-out",
    "vigtig": true,
    "note": null,
    "versioner": [

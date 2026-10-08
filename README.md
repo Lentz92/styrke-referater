@@ -117,6 +117,17 @@ for a category when its decisions change. After editing a prompt in `analyze.py`
 Each result records its `provenance`: the model that answered, the CLI version, a fingerprint of the prompt
 and schema, and the effort. It is not part of the cache key, so changing the model alone reruns nothing.
 
+Decisions and rules keep their identity when Claude redoes them, so links never break. Each decision has a
+stored id (`<document>#<n>`). When a document is extracted again, each new decision is matched to a previous
+one by where its quote stands and by its wording (`matching.py`) and keeps that id; the others get new
+numbers, and previous decisions without a match are listed under `retired` in the file. A number is never
+used twice. Each rule has a stored slug, its address on the website (`#regel/<slug>`) and in `regelsaet/`
+(`regler/<område>.md#regel/<slug>`). When a category is consolidated again, a rule keeps the slug of the
+previous rule it shares most decisions with, whatever its title. `data/slugs.json` keeps every slug no rule
+holds any more, with the title and decisions it last stood for. After each consolidation run, each is led to
+the rule, in any category, holding most of those decisions (or else one with the same title), and the website
+opens that rule for it; a slug with neither is retired until one turns up. None is ever given to another rule.
+
 Files that disappear from styrke.dk stay in `referater/` and in the analysis, because they still
 document the rules of their year; when their link stops working, they are cited without one. A file
 that styrke.dk replaces under the same name (a different size) is downloaded again and re-analysed.
@@ -131,9 +142,9 @@ Code checks Claude's work where it can:
   re-analysed and the decision changes, the whole rule is left out until its category is consolidated
   again (leaving out only that version could bring back a repealed rule).
 - The effect of an undecided, rejected or withdrawn proposal follows from its outcome, whatever Claude says.
-- `checks.py` reports versions where the extraction and the rule disagree about the effect, and possible
+- `checks.py` reports versions where the extraction and the rule disagree about the effect, possible
   date traps (a seasonal rule confirmed without an end date, a newer decision that takes effect before an
-  older one).
+  older one), and decision ids or slugs that are missing, used twice or lead nowhere.
 
 `update.py` logs every finding, and `regelsaet/README.md` ends with the counts. The extraction is
 automatic: the minutes are always the authoritative source.

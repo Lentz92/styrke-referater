@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2011-01-23",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_23012011#1",
    "emne": "Tilskud til klubbers indkøb af udstyr",
    "kategori": "okonomi",
    "udfald": "forkastet",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_23012011#2",
    "emne": "Årets klub",
    "kategori": "organisation",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_23012011#3",
    "emne": "Danske rekorder",
    "kategori": "staevner",
    "udfald": "vedtaget",

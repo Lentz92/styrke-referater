@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-03-20",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite20032024#1",
    "emne": "Coach fee for assistenter",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite20032024#2",
    "emne": "Kvalifikationskrav bænkpres og udstyr",
    "kategori": "landshold",
    "udfald": "vedtaget",

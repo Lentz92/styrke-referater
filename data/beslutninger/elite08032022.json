@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-03-08",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite08032022#1",
    "emne": "Egenbetaling til internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite08032022#2",
    "emne": "Frist for betaling af egenbetaling",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite08032022#3",
    "emne": "Afmelding fra VM bænkpres ved usikkerhed om sikkerhed",
    "kategori": "landshold",
    "udfald": "vedtaget",

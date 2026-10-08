@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-09-25",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refmedie25092024#1",
    "emne": "Retningslinjer for klubbers materiale til medieudvalget",
    "kategori": "organisation",
    "udfald": "vedtaget",

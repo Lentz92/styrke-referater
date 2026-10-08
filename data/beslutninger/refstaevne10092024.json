@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-09-10",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne10092024#1",
    "emne": "Registrering i dommerbog",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refstaevne10092024#2",
    "emne": "Uddeling af medaljer og pokaler",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refstaevne10092024#3",
    "emne": "Holdpræmier ved DM, SM og JM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refstaevne10092024#4",
    "emne": "DM-hold finale i DM-ugen",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "refstaevne10092024#5",
    "emne": "Færøerne under DSF's regler",
    "kategori": "internationalt",
    "udfald": "vedtaget",

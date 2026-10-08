@@ -6,6 +6,7 @@ Alle regler i området med fuld tekst og historik – også dem, der ikke længe
 
 ## Organisation og vedtægter
 
+<a id="regel/adfærdskodeks-for-landshold"></a>
 ### Adfærdskodeks for landshold
 
 **I kraft**
@@ -16,6 +17,7 @@ Eliteudvalget vedtog, med enkelte korrektioner, et oplæg til adfærdskodeks gæ
 
 - 10.12.2011 · indført: adfærdskodeks for alle landshold vedtaget · [elite10122011 s. 1](https://filer.styrke.dk/referater/elite10122011.pdf#page=1)
 
+<a id="regel/bestilling-af-rejser-til-internationale-stævner"></a>
 ### Bestilling af rejser til internationale stævner
 
 **I kraft**
@@ -26,6 +28,7 @@ Jan Lyhne har på Elitudvalgets vegne ansvaret for at bestille rejser til alle i
 
 - 10.03.2013 · indført: Jan Lyhne bestiller rejser inden for budget · [refbest_10032013 s. 1](https://filer.styrke.dk/referater/refbest_10032013.pdf#page=1)
 
+<a id="regel/etisk-regelsæt-og-adfærd"></a>
 ### Etisk regelsæt og adfærd
 
 **I kraft**
@@ -36,6 +39,7 @@ Upassende adfærd på sociale medier og i det offentlige rum tolereres ikke. Det
 
 - 09.03.2023 · indført: upassende adfærd og dopingbeskyldninger tolereres ikke · [refbest_090323 s. 1](https://filer.styrke.dk/referater/refbest_090323.pdf#page=1)
 
+<a id="regel/etiske-retningslinjer-for-facebookgrupper"></a>
 ### Etiske retningslinjer for Facebookgrupper
 
 **I kraft**
@@ -46,6 +50,7 @@ Der udarbejdes og offentliggøres etiske retningslinjer for brug af DSF's Facebo
 
 - 09.11.2019 · indført: etiske retningslinjer for DSF's Facebookgrupper · [refbest_091119 s. 1](https://filer.styrke.dk/referater/refbest_091119.pdf#page=1)
 
+<a id="regel/frist-for-forslag-til-repræsentantskabsmødet"></a>
 ### Frist for forslag til repræsentantskabsmødet
 
 **I kraft**
@@ -56,6 +61,7 @@ Forslag til repræsentantskabsmødet skal være forbundet i hænde senest 21 dag
 
 - 24.03.2013 · ændret: frist hævet fra 14 til 21 dage · [rep2013 s. 2](https://filer.styrke.dk/referater/rep2013.pdf#page=2)
 
+<a id="regel/frivillighedspris"></a>
 ### Frivillighedspris
 
 **I kraft**
@@ -66,6 +72,7 @@ Der oprettes en frivillighedspris, som uddeles ved repræsentantskabsmøderne. K
 
 - 08.02.2015 · indført: frivillighedspris oprettet; klubber indstiller · [refbest_08022015 s. 4](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=4)
 
+<a id="regel/godkendelse-af-kontakt-til-tv-medier"></a>
 ### Godkendelse af kontakt til TV-medier
 
 **I kraft**
@@ -76,6 +83,7 @@ Al kontakt til TV-medier skal forud godkendes af formanden for medieudvalget, og
 
 - 11.01.2008 · indført: TV-kontakt og indslag kræver forudgående godkendelse · [refbest_11012008 s. 1](https://filer.styrke.dk/referater/refbest_11012008.PDF#page=1)
 
+<a id="regel/klage-uden-om-forening"></a>
 ### Klage uden om forening
 
 **I kraft**
@@ -86,6 +94,7 @@ Vedtægternes §15 stk. 3 ændres, så et medlem af en forening kan indstille en
 
 - 23.03.2025 · ændret: § 15 stk. 3: medlem kan klage mod mindst 5000 kr. · [rep2025 s. 22](https://filer.styrke.dk/referater/rep2025.pdf#page=22)
 
+<a id="regel/klubbers-materiale-til-medieudvalget"></a>
 ### Klubbers materiale til medieudvalget
 
 **I kraft**
@@ -96,6 +105,7 @@ Medieudvalget udarbejder en 'nice to/need to'-oversigt til klubberne over, hvilk
 
 - 25.09.2024 · indført: nice to/need to-oversigt til klubber fra 2025 (fra 01.01.2025) · [refmedie25092024 s. 2](https://filer.styrke.dk/referater/refmedie25092024.pdf#page=2)
 
+<a id="regel/krav-til-foreningers-vedtægter-ved-optagelse"></a>
 ### Krav til foreningers vedtægter ved optagelse
 
 **I kraft**
@@ -106,6 +116,7 @@ Vedtægt §4 ændres, så foreningens vedtægter skal nævne navn og hjemsted, a
 
 - 24.03.2013 · ændret: § 4: krav til foreningsvedtægter efter DIF-krav · [rep2013 s. 2](https://filer.styrke.dk/referater/rep2013.pdf#page=2)
 
+<a id="regel/medieudvalgets-kontaktpersoner-ved-stævner"></a>
 ### Medieudvalgets kontaktpersoner ved stævner
 
 **I kraft**
@@ -117,6 +128,7 @@ Hvert kommende stævne har en kontaktperson i medieudvalget. Kontaktpersonen sø
 - 16.04.2026 · indført: kontaktperson til hvert stævne; Instagram-login til klubben · [refmedie16042026 s. 1](https://filer.styrke.dk/referater/refmedie16042026.pdf#page=1)
 - 09.06.2026 · bekræftet: ordning gentaget uændret · [refmedie09062026 s. 1](https://filer.styrke.dk/referater/refmedie09062026.pdf#page=1)
 
+<a id="regel/rapportering-fra-internationale-mesterskaber-2"></a>
 ### Rapportering fra internationale mesterskaber
 
 **I kraft**
@@ -127,6 +139,7 @@ Holdledere/trænere er ansvarlige for, at der fra internationale mesterskaber me
 
 - 31.05.2014 · indført: holdledere/trænere sender rapporter og billeder til webmaster · [elite31052014 s. 2](https://filer.styrke.dk/referater/elite31052014.pdf#page=2)
 
+<a id="regel/retningslinjer-for-sponsoraftaler"></a>
 ### Retningslinjer for sponsoraftaler
 
 **I kraft**
@@ -137,6 +150,7 @@ Retningslinjer for sponsoraftaler i DSF-regi er godkendt og placeret på hjemmes
 
 - 08.03.2025 · indført: retningslinjer godkendt; medieudvalget håndhæver · [refbest_080325 s. 3](https://filer.styrke.dk/referater/refbest_080325.pdf#page=3)
 
+<a id="regel/stævner-på-sociale-medier"></a>
 ### Stævner på sociale medier
 
 **I kraft**
@@ -147,6 +161,7 @@ DSF står for alle begivenheder på de sociale medier vedrørende stævner. Alle
 
 - 05.01.2019 · indført: DSF opretter alle stævnebegivenheder på Facebook i januar · [refmedie05012019 s. 1](https://filer.styrke.dk/referater/refmedie05012019.pdf#page=1)
 
+<a id="regel/tidspunkt-for-repræsentantskabsmøde"></a>
 ### Tidspunkt for repræsentantskabsmøde
 
 **I kraft**
@@ -159,6 +174,7 @@ Repræsentantskabsmødet i DSF afholdes inden udgangen af marts i stedet for på
 - 28.02.2010 · indkommet forslag: bestyrelsen foreslår møde inden udgangen af april · [refbest_28022010 s. 2](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=2)
 - 14.03.2010 · ændret: fra anden søndag i marts til inden udgangen af marts · [rep2010 s. 4](https://filer.styrke.dk/referater/rep2010.pdf#page=4)
 
+<a id="regel/udsendelse-af-repræsentantskabsmødets-dagsorden"></a>
 ### Udsendelse af repræsentantskabsmødets dagsorden
 
 **I kraft**
@@ -169,6 +185,7 @@ Dagsorden til repræsentantskabsmødet udsendes sidste gang pr. post i 2014. Fre
 
 - 09.02.2014 · indført: fra 2015 pr. mail i stedet for post · [refbest_09022014 s. 3](https://filer.styrke.dk/referater/refbest_09022014.pdf#page=3)
 
+<a id="regel/årets-løfter-i-bænkpres"></a>
 ### Årets løfter i bænkpres
 
 **I kraft**
@@ -179,6 +196,7 @@ Der skal i alle kategorier, på samme måde som i trekamp, kåres "Årets løfte
 
 - 27.03.2011 · indført: årets løfter i bænkpres i alle kategorier · [rep2011 s. 2](https://filer.styrke.dk/referater/rep2011.pdf#page=2)
 
+<a id="regel/bestyrelsens-sammensætning"></a>
 ### Bestyrelsens sammensætning
 
 **I kraft** · intern procedure/detalje
@@ -189,6 +207,7 @@ Bestyrelsen består af 7 medlemmer: formand, næstformand, kasserer, sekretær o
 
 - 23.03.2014 · ændret: udvidet fra 6 til 7 medlemmer · [rep2014 s. 4](https://filer.styrke.dk/referater/rep2014.pdf#page=4)
 
+<a id="regel/besvarelse-af-henvendelser-til-eliteudvalget"></a>
 ### Besvarelse af henvendelser til Eliteudvalget
 
 **I kraft** · intern procedure/detalje
@@ -199,6 +218,7 @@ Simple henvendelser besvares af den ansvarlige for landsholdet med Eliteudvalget
 
 - 09.09.2017 · indført: simple sager besvares af landsholdsansvarlig, større af formand · [elite09092017 s. 2](https://filer.styrke.dk/referater/elite09092017.pdf#page=2)
 
+<a id="regel/dommerudvalgets-størrelse"></a>
 ### Dommerudvalgets størrelse
 
 **I kraft** · intern procedure/detalje
@@ -209,6 +229,7 @@ Dommerudvalget består af 3-5 medlemmer.
 
 - 05.03.2024 · ændret: fra 3-4 til 3-5 medlemmer · [refdom05032024 s. 2](https://filer.styrke.dk/referater/refdom05032024.pdf#page=2)
 
+<a id="regel/egenkapitalens-størrelse"></a>
 ### Egenkapitalens størrelse
 
 **I kraft** · intern procedure/detalje
@@ -219,6 +240,7 @@ Bestyrelsen arbejder ud fra at have en grundformue, der kan drifte DSF i minimum
 
 - 13.04.2025 · indført: grundformue til mindst 6 måneders drift · [refbest_130425 s. 2](https://filer.styrke.dk/referater/refbest_130425.pdf#page=2)
 
+<a id="regel/ekstern-kommunikation-fra-bestyrelse-og-udvalg"></a>
 ### Ekstern kommunikation fra bestyrelse og udvalg
 
 **I kraft** · intern procedure/detalje
@@ -229,6 +251,7 @@ Bestyrelsen og udvalgsmedlemmer melder ikke noget ud eksternt, før det er drøf
 
 - 19.04.2015 · indført: intet meldes ud før intern drøftelse; god tone · [refbest_19042015 s. 5](https://filer.styrke.dk/referater/refbest_19042015.pdf#page=5)
 
+<a id="regel/eliteudvalgets-eksterne-kommunikation"></a>
 ### Eliteudvalgets eksterne kommunikation
 
 **I kraft** · intern procedure/detalje
@@ -239,6 +262,7 @@ De kategoriansvarlige i Eliteudvalget står for den daglige eksterne kommunikati
 
 - 14.09.2019 · indført: kategoriansvarlige kommunikerer eksternt i eget område · [elite14092019 s. 1](https://filer.styrke.dk/referater/elite14092019.pdf#page=1)
 
+<a id="regel/eliteudvalgets-mødefrekvens"></a>
 ### Eliteudvalgets mødefrekvens
 
 **I kraft** · intern procedure/detalje
@@ -251,6 +275,7 @@ Eliteudvalget holder to fysiske møder årligt, især i december og august, supp
 - 29.06.2011 · ændret: møder hver 3-4 måned · [elite29062011 s. 2](https://filer.styrke.dk/referater/elite29062011.pdf#page=2)
 - 16.08.2020 · ændret: to fysiske møder årligt plus onlinemøder · [elite16082020 s. 3](https://filer.styrke.dk/referater/elite16082020.pdf#page=3)
 
+<a id="regel/foreningsbesøg"></a>
 ### Foreningsbesøg
 
 **I kraft** · intern procedure/detalje
@@ -261,6 +286,7 @@ Der foretages en bedre fordeling af klubbesøg, så alle klubber under DSF dækk
 
 - 14.01.2012 · indført: klubbesøg fordeles til alle klubber; evaluering på hjemmesiden · [refbest_14012012 s. 2](https://filer.styrke.dk/referater/refbest_14012012.pdf#page=2)
 
+<a id="regel/information-til-landsdækkende-medier-ved-store-mesterskaber"></a>
 ### Information til landsdækkende medier ved store mesterskaber
 
 **I kraft** · intern procedure/detalje
@@ -271,6 +297,7 @@ Ved store mesterskaber skal landsdækkende medier informeres med en lille notits
 
 - 22.04.2017 · indført: landsdækkende medier informeres med notits · [refbest_22042017 s. 3](https://filer.styrke.dk/referater/refbest_22042017.pdf#page=3)
 
+<a id="regel/intern-post-via-mail"></a>
 ### Intern post via mail
 
 **I kraft** · intern procedure/detalje
@@ -281,6 +308,7 @@ Bestyrelsen bestræber sig på, at al intern post sendes elektronisk via mail og
 
 - 12.01.2013 · indført: intern post sendes elektronisk og kun én gang · [refbest_12012013 s. 1](https://filer.styrke.dk/referater/refbest_12012013.pdf#page=1)
 
+<a id="regel/kommunikationsplan-i-nødsituationer"></a>
 ### Kommunikationsplan i nødsituationer
 
 **I kraft** · intern procedure/detalje
@@ -291,6 +319,7 @@ Bestyrelsen vedtog en kommunikationsplan til brug i nødsituationer, som lægges
 
 - 20.10.2024 · indført: kommunikationsplan for nødsituationer vedtaget · [refbest_201024 s. 2](https://filer.styrke.dk/referater/refbest_201024.pdf#page=2)
 
+<a id="regel/kontakt-til-nyhedsmedier-om-udlandsløftere"></a>
 ### Kontakt til nyhedsmedier om udlandsløftere
 
 **I kraft** · intern procedure/detalje
@@ -301,6 +330,7 @@ Peter Andersen sender navnene på de løftere, der skal udenlands, til Janni Wei
 
 - 05.01.2019 · indført: procedure for mediekontakt om løftere til udlandet · [refmedie05012019 s. 1](https://filer.styrke.dk/referater/refmedie05012019.pdf#page=1)
 
+<a id="regel/medieplan"></a>
 ### Medieplan
 
 **I kraft** · intern procedure/detalje
@@ -311,6 +341,7 @@ Medieplanen laves fremover for et halvt år ad gangen.
 
 - 24.08.2013 · indført: medieplan for et halvt år ad gangen · [refbest_24082013 s. 2](https://filer.styrke.dk/referater/refbest_24082013.pdf#page=2)
 
+<a id="regel/medieudvalgets-dækning-af-internationale-stævner"></a>
 ### Medieudvalgets dækning af internationale stævner
 
 **I kraft** · intern procedure/detalje
@@ -321,6 +352,7 @@ Daniel laver opslag til internationale stævner med løftere, løftetider og lin
 
 - 09.06.2026 · indført: opgavefordeling for opslag og billeder ved internationale stævner · [refmedie09062026 s. 1](https://filer.styrke.dk/referater/refmedie09062026.pdf#page=1)
 
+<a id="regel/nyhedsfolder"></a>
 ### Nyhedsfolder
 
 **I kraft** · intern procedure/detalje
@@ -331,6 +363,7 @@ Der skal udkomme en nyhedsfolder to gange om året i A5-format med leder, udvalg
 
 - 11.10.2015 · indført: nyhedsfolder to gange årligt i A5 · [refbest_11102015 s. 4](https://filer.styrke.dk/referater/refbest_11102015.pdf#page=4)
 
+<a id="regel/offentliggørelse-af-breddeudvalgets-arrangementer"></a>
 ### Offentliggørelse af breddeudvalgets arrangementer
 
 **I kraft** · intern procedure/detalje
@@ -341,6 +374,7 @@ Alle arrangementer i Breddeudvalget offentliggøres på forbundets hjemmeside.
 
 - 14.01.2012 · indført: breddeudvalgets arrangementer offentliggøres på hjemmesiden · [refbest_14012012 s. 3](https://filer.styrke.dk/referater/refbest_14012012.pdf#page=3)
 
+<a id="regel/overrækkelse-af-pokal-til-årets-løfter"></a>
 ### Overrækkelse af pokal til årets løfter
 
 **I kraft** · intern procedure/detalje
@@ -351,6 +385,7 @@ Pokal til årets løfter overrækkes ved det efterfølgende DM i løfterens alde
 
 - 14.01.2012 · indført: pokal overrækkes ved efterfølgende DM i kategorien · [refbest_14012012 s. 3](https://filer.styrke.dk/referater/refbest_14012012.pdf#page=3)
 
+<a id="regel/provision-ved-sponsorfund"></a>
 ### Provision ved sponsorfund
 
 **I kraft** · intern procedure/detalje
@@ -361,6 +396,7 @@ DSF vil ikke benytte en model, hvor en person får procenter eller provision for
 
 - 14.05.2026 · indført: ingen provisionsmodel for sponsorfund · [refbest_140526 s. 2](https://filer.styrke.dk/referater/refbest_140526.pdf#page=2)
 
+<a id="regel/reklamer-og-sponsorer-i-nyhedsbreve-og-på-hjemmeside"></a>
 ### Reklamer og sponsorer i nyhedsbreve og på hjemmeside
 
 **I kraft** · intern procedure/detalje
@@ -371,6 +407,7 @@ Der må ikke bruges reklamer eller sponsorer i nyhedsbreve eller nyhedsrullen. R
 
 - 07.12.2014 · indført: ingen reklamer i nyhedsbreve; inhabilitet ved sponsoraftaler · [refbest_07122014 s. 5](https://filer.styrke.dk/referater/refbest_07122014.pdf#page=5)
 
+<a id="regel/respekt-for-eliteudvalgets-vedtagelser"></a>
 ### Respekt for eliteudvalgets vedtagelser
 
 **I kraft** · intern procedure/detalje
@@ -381,6 +418,7 @@ Alle vedtagelser i eliteudvalget respekteres af alle udadtil, også selvom et el
 
 - 01.06.2012 · indført: vedtagelser respekteres udadtil af alle medlemmer · [elite01062012 s. 1](https://filer.styrke.dk/referater/elite01062012.pdf#page=1)
 
+<a id="regel/sportschefens-afsnit-i-eliteudvalgets-beretning"></a>
 ### Sportschefens afsnit i Eliteudvalgets beretning
 
 **I kraft** · intern procedure/detalje
@@ -391,6 +429,7 @@ Fremover indgår et særskilt afsnit fra sportschefen i Eliteudvalgets beretning
 
 - 14.12.2022 · indført: særskilt afsnit fra sportschefen i årsberetningen · [elite14122022 s. 1](https://filer.styrke.dk/referater/elite14122022.pdf#page=1)
 
+<a id="regel/standarddagsorden-for-bestyrelsesmøder"></a>
 ### Standarddagsorden for bestyrelsesmøder
 
 **I kraft** · intern procedure/detalje
@@ -401,6 +440,7 @@ Der udarbejdes et forslag til en standarddagsorden for bestyrelsesmøder, som ru
 
 - 15.05.2011 · indført: standarddagsorden udarbejdes til bestyrelsens godkendelse · [refbest_15052011 s. 3](https://filer.styrke.dk/referater/refbest_15052011.pdf#page=3)
 
+<a id="regel/strategiplan"></a>
 ### Strategiplan
 
 **I kraft** · intern procedure/detalje
@@ -411,6 +451,7 @@ Der udarbejdes ikke en ny strategiplan, da den gamle er udløbet og erstattet af
 
 - 15.07.2023 · indført: ingen ny strategiplan; strategiske spor erstatter · [refbest_150723 s. 2](https://filer.styrke.dk/referater/refbest_150723.pdf#page=2)
 
+<a id="regel/tegningsret"></a>
 ### Tegningsret
 
 **I kraft** · intern procedure/detalje
@@ -422,6 +463,7 @@ Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening
 - 10.03.2013 · indkommet forslag: bestyrelsen foreslår retningslinjer for disponering jf. § 11 · [refbest_10032013 s. 2](https://filer.styrke.dk/referater/refbest_10032013.pdf#page=2)
 - 24.03.2013 · ændret: kasserer og formand i forening i stedet for hver for sig · [rep2013 s. 2](https://filer.styrke.dk/referater/rep2013.pdf#page=2)
 
+<a id="regel/udvalg-i-vedtægterne"></a>
 ### Udvalg i vedtægterne
 
 **I kraft** · intern procedure/detalje
@@ -433,6 +475,7 @@ Vedtægternes § 10: Masterudvalg, medieudvalg og ungdomsudvalg indgår blandt D
 - 27.03.2011 · bekræftet: nuværende ordlyd af § 10 fastholdt · [rep2011 s. 3](https://filer.styrke.dk/referater/rep2011.pdf#page=3)
 - 23.03.2025 · ændret: master-, medie- og ungdomsudvalg tilføjet · [rep2025 s. 21](https://filer.styrke.dk/referater/rep2025.pdf#page=21)
 
+<a id="regel/amatørparagraf"></a>
 ### Amatørparagraf
 
 **Kun forslag – aldrig vedtaget**
@@ -441,6 +484,7 @@ Vedtægternes § 14 om amatører fjernes.
 
 - 27.03.2011 · ophævet: § 14 om amatører fjernet efter forslag fra AAK · [rep2011 s. 2](https://filer.styrke.dk/referater/rep2011.pdf#page=2)
 
+<a id="regel/stævneudvalgets-beføjelse-til-at-ændre-stævner"></a>
 ### Stævneudvalgets beføjelse til at ændre stævner
 
 **Kun forslag – aldrig vedtaget**
@@ -449,6 +493,7 @@ Forslag til tilføjelse til §13 i vedtægterne: Stævneudvalget kan med godkend
 
 - 11.05.2023 · indkommet forslag: bestyrelsen foreslår tilføjelse til § 13 · [refbest_110523 s. 1](https://filer.styrke.dk/referater/refbest_110523.pdf#page=1)
 
+<a id="regel/vedtægternes-5"></a>
 ### Vedtægternes § 5
 
 **Kun forslag – aldrig vedtaget**
@@ -460,6 +505,7 @@ Bestyrelsen fremsætter et ændringsforslag til paragraf 5 i DSFs vedtægter; yd
 
 > **Bemærk:** Indholdet af forslaget fremgår ikke, og der er ingen kendt afgørelse.
 
+<a id="regel/bestyrelsesmøder-via-pc"></a>
 ### Bestyrelsesmøder via pc
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -468,6 +514,7 @@ Forslag om at afholde dele af bestyrelsesmøderne via pc blev ikke fulgt, da den
 
 - 15.05.2011 · forslag forkastet: Klaus Nielsens forslag om møder via pc afvist · [refbest_15052011 s. 4](https://filer.styrke.dk/referater/refbest_15052011.pdf#page=4)
 
+<a id="regel/dsf-kraftcenter"></a>
 ### DSF kraftcenter
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -476,6 +523,7 @@ Forslag om et DSF kraftcenter og højere klubårsafgift blev ikke afgjort, da de
 
 - 08.02.2015 · indkommet forslag: forslag om kraftcenter og højere klubafgift udskudt · [refbest_08022015 s. 6](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=6)
 
+<a id="regel/kettlebell-som-aktivitet"></a>
 ### Kettlebell som aktivitet
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -484,6 +532,7 @@ Forslag om at indlemme kettlebell som aktivitet i forbundet. Udviklingskonsulent
 
 - 09.08.2014 · indkommet forslag: forslag om kettlebell; udviklingskonsulent laver oplæg · [refbest_09082014 s. 3](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=3)
 
+<a id="regel/samlet-regelsæt-for-eliteudvalget"></a>
 ### Samlet regelsæt for Eliteudvalget
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -492,6 +541,7 @@ Alle regler for Eliteudvalgets arbejde forsøges sammenskrevet i ét dokument. K
 
 - 20.05.2017 · indkommet forslag: KB udarbejder samlet regelsæt for udvalget · [elite20052017 s. 2](https://filer.styrke.dk/referater/elite20052017.pdf#page=2)
 
+<a id="regel/årets-klub"></a>
 ### Årets klub
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -502,6 +552,7 @@ Der blev foreslået at kåre en 'årets klub' som en måde at hjælpe klubberne 
 
 ## Andet
 
+<a id="regel/deltagelse-i-universitetsmesterskaber"></a>
 ### Deltagelse i universitetsmesterskaber
 
 **I kraft**

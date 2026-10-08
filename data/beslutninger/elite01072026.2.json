@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-07-01",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite01072026.2#1",
    "emne": "Orlov for landsholdsatleter",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite01072026.2#2",
    "emne": "Deltagelse i internationale stævner ud over EM/VM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite01072026.2#3",
    "emne": "Opdatering af kvalifikationskrav",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite01072026.2#4",
    "emne": "Advarsler ved landsholdssamling",
    "kategori": "landshold",
    "udfald": "vedtaget",

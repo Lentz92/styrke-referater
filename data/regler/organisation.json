@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Godkendelse af kontakt til TV-medier",
+   "slug": "godkendelse-af-kontakt-til-tv-medier",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -21,6 +22,7 @@
   },
   {
    "titel": "Vedtægternes § 5",
+   "slug": "vedtægternes-5",
    "vigtig": true,
    "note": "Indholdet af forslaget fremgår ikke, og der er ingen kendt afgørelse.",
    "versioner": [
@@ -44,6 +46,7 @@
   },
   {
    "titel": "Tidspunkt for repræsentantskabsmøde",
+   "slug": "tidspunkt-for-repræsentantskabsmøde",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -75,6 +78,7 @@
   },
   {
    "titel": "Eliteudvalgets mødefrekvens",
+   "slug": "eliteudvalgets-mødefrekvens",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -106,6 +110,7 @@
   },
   {
    "titel": "Årets klub",
+   "slug": "årets-klub",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -121,6 +126,7 @@
   },
   {
    "titel": "Amatørparagraf",
+   "slug": "amatørparagraf",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -136,6 +142,7 @@
   },
   {
    "titel": "Årets løfter i bænkpres",
+   "slug": "årets-løfter-i-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -151,6 +158,7 @@
   },
   {
    "titel": "Overrækkelse af pokal til årets løfter",
+   "slug": "overrækkelse-af-pokal-til-årets-løfter",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -166,6 +174,7 @@
   },
   {
    "titel": "Udvalg i vedtægterne",
+   "slug": "udvalg-i-vedtægterne",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -189,6 +198,7 @@
   },
   {
    "titel": "Standarddagsorden for bestyrelsesmøder",
+   "slug": "standarddagsorden-for-bestyrelsesmøder",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -204,6 +214,7 @@
   },
   {
    "titel": "Bestyrelsesmøder via pc",
+   "slug": "bestyrelsesmøder-via-pc",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -219,6 +230,7 @@
   },
   {
    "titel": "Adfærdskodeks for landshold",
+   "slug": "adfærdskodeks-for-landshold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -234,6 +246,7 @@
   },
   {
    "titel": "Foreningsbesøg",
+   "slug": "foreningsbesøg",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -249,6 +262,7 @@
   },
   {
    "titel": "Offentliggørelse af breddeudvalgets arrangementer",
+   "slug": "offentliggørelse-af-breddeudvalgets-arrangementer",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -264,6 +278,7 @@
   },
   {
    "titel": "Respekt for eliteudvalgets vedtagelser",
+   "slug": "respekt-for-eliteudvalgets-vedtagelser",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -279,6 +294,7 @@
   },
   {
    "titel": "Intern post via mail",
+   "slug": "intern-post-via-mail",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -294,6 +310,7 @@
   },
   {
    "titel": "Bestilling af rejser til internationale stævner",
+   "slug": "bestilling-af-rejser-til-internationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -309,6 +326,7 @@
   },
   {
    "titel": "Tegningsret",
+   "slug": "tegningsret",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -332,6 +350,7 @@
   },
   {
    "titel": "Krav til foreningers vedtægter ved optagelse",
+   "slug": "krav-til-foreningers-vedtægter-ved-optagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -347,6 +366,7 @@
   },
   {
    "titel": "Frist for forslag til repræsentantskabsmødet",
+   "slug": "frist-for-forslag-til-repræsentantskabsmødet",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -362,6 +382,7 @@
   },
   {
    "titel": "Medieplan",
+   "slug": "medieplan",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -377,6 +398,7 @@
   },
   {
    "titel": "Udsendelse af repræsentantskabsmødets dagsorden",
+   "slug": "udsendelse-af-repræsentantskabsmødets-dagsorden",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -392,6 +414,7 @@
   },
   {
    "titel": "Bestyrelsens sammensætning",
+   "slug": "bestyrelsens-sammensætning",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -407,6 +430,7 @@
   },
   {
    "titel": "Rapportering fra internationale mesterskaber",
+   "slug": "rapportering-fra-internationale-mesterskaber-2",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -422,6 +446,7 @@
   },
   {
    "titel": "Kettlebell som aktivitet",
+   "slug": "kettlebell-som-aktivitet",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -437,6 +462,7 @@
   },
   {
    "titel": "Reklamer og sponsorer i nyhedsbreve og på hjemmeside",
+   "slug": "reklamer-og-sponsorer-i-nyhedsbreve-og-på-hjemmeside",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -452,6 +478,7 @@
   },
   {
    "titel": "Retningslinjer for sponsoraftaler",
+   "slug": "retningslinjer-for-sponsoraftaler",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -467,6 +494,7 @@
   },
   {
    "titel": "Provision ved sponsorfund",
+   "slug": "provision-ved-sponsorfund",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -482,6 +510,7 @@
   },
   {
    "titel": "DSF kraftcenter",
+   "slug": "dsf-kraftcenter",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -497,6 +526,7 @@
   },
   {
    "titel": "Frivillighedspris",
+   "slug": "frivillighedspris",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -512,6 +542,7 @@
   },
   {
    "titel": "Ekstern kommunikation fra bestyrelse og udvalg",
+   "slug": "ekstern-kommunikation-fra-bestyrelse-og-udvalg",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -527,6 +558,7 @@
   },
   {
    "titel": "Nyhedsfolder",
+   "slug": "nyhedsfolder",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -542,6 +574,7 @@
   },
   {
    "titel": "Information til landsdækkende medier ved store mesterskaber",
+   "slug": "information-til-landsdækkende-medier-ved-store-mesterskaber",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -557,6 +590,7 @@
   },
   {
    "titel": "Samlet regelsæt for Eliteudvalget",
+   "slug": "samlet-regelsæt-for-eliteudvalget",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -572,6 +606,7 @@
   },
   {
    "titel": "Besvarelse af henvendelser til Eliteudvalget",
+   "slug": "besvarelse-af-henvendelser-til-eliteudvalget",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -587,6 +622,7 @@
   },
   {
    "titel": "Eliteudvalgets eksterne kommunikation",
+   "slug": "eliteudvalgets-eksterne-kommunikation",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -602,6 +638,7 @@
   },
   {
    "titel": "Stævner på sociale medier",
+   "slug": "stævner-på-sociale-medier",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -617,6 +654,7 @@
   },
   {
    "titel": "Kontakt til nyhedsmedier om udlandsløftere",
+   "slug": "kontakt-til-nyhedsmedier-om-udlandsløftere",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -632,6 +670,7 @@
   },
   {
    "titel": "Etiske retningslinjer for Facebookgrupper",
+   "slug": "etiske-retningslinjer-for-facebookgrupper",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -647,6 +686,7 @@
   },
   {
    "titel": "Etisk regelsæt og adfærd",
+   "slug": "etisk-regelsæt-og-adfærd",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -662,6 +702,7 @@
   },
   {
    "titel": "Sportschefens afsnit i Eliteudvalgets beretning",
+   "slug": "sportschefens-afsnit-i-eliteudvalgets-beretning",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -677,6 +718,7 @@
   },
   {
    "titel": "Stævneudvalgets beføjelse til at ændre stævner",
+   "slug": "stævneudvalgets-beføjelse-til-at-ændre-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -692,6 +734,7 @@
   },
   {
    "titel": "Strategiplan",
+   "slug": "strategiplan",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -707,6 +750,7 @@
   },
   {
    "titel": "Dommerudvalgets størrelse",
+   "slug": "dommerudvalgets-størrelse",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -722,6 +766,7 @@
   },
   {
    "titel": "Klubbers materiale til medieudvalget",
+   "slug": "klubbers-materiale-til-medieudvalget",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -737,6 +782,7 @@
   },
   {
    "titel": "Kommunikationsplan i nødsituationer",
+   "slug": "kommunikationsplan-i-nødsituationer",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -752,6 +798,7 @@
   },
   {
    "titel": "Klage uden om forening",
+   "slug": "klage-uden-om-forening",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -767,6 +814,7 @@
   },
   {
    "titel": "Egenkapitalens størrelse",
+   "slug": "egenkapitalens-størrelse",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -782,6 +830,7 @@
   },
   {
    "titel": "Medieudvalgets kontaktpersoner ved stævner",
+   "slug": "medieudvalgets-kontaktpersoner-ved-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -805,6 +854,7 @@
   },
   {
    "titel": "Medieudvalgets dækning af internationale stævner",
+   "slug": "medieudvalgets-dækning-af-internationale-stævner",
    "vigtig": false,
    "note": null,
    "versioner": [

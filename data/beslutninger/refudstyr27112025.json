@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-11-27",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refudstyr27112025#1",
    "emne": "Udstyrssamlinger",
    "kategori": "udstyr",
    "udfald": "vedtaget",

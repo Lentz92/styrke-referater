@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2018-04-29",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refmaster29042018#1",
    "emne": "Koordinatorer for internationale mesterskaber",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmaster29042018#2",
    "emne": "Head coach ved internationale masterstævner",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmaster29042018#3",
    "emne": "Sekretærens opgaver i Masterudvalget",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmaster29042018#4",
    "emne": "Startgebyr ved udeblivelse fra masterstævne",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "refmaster29042018#5",
    "emne": "Krav til deltagelse i internationale masterstævner",
    "kategori": "master",
    "udfald": "forkastet",

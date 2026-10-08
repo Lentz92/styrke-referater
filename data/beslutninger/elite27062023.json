@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-06-27",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite27062023#1",
    "emne": "Kvalifikationskrav VM, klassisk trekamp",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite27062023#2",
    "emne": "Kvalifikationskrav VM B og EM A/B, klassisk trekamp",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite27062023#3",
    "emne": "Kvalifikationskrav VM, klassisk trekamp -84 kg",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite27062023#4",
    "emne": "Kvalifikationskrav, trekamp udstyr og bænkpres",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite27062023#5",
    "emne": "Udtagelse til EM klassisk",
    "kategori": "landshold",
    "udfald": "vedtaget",

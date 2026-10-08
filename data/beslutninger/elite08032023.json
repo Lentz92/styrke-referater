@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-03-08",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite08032023#1",
    "emne": "Egen booking af flybilletter på landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-04-23",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_230423#1",
    "emne": "Udlån af indvejningsvægte",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_230423#2",
    "emne": "Opdeling af DM klassisk",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_230423#3",
    "emne": "Opdeling af JM",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2010-03-14",
+ "next_number": 8,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2010#1",
    "emne": "Tidspunkt for repræsentantskabsmøde",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2010#2",
    "emne": "Divisionsturnering, mixhold",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2010#3",
    "emne": "Tilmeldingsgebyr divisionsturnering",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2010#4",
    "emne": "Licensgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2010#5",
    "emne": "Dokumentation for betalt startgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2010#6",
    "emne": "Tilskud til leje af lys og lyd ved stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 6
   },
   {
+   "id": "rep2010#7",
    "emne": "Indkøb af stævneudstyr til forbundet",
    "kategori": "staevner",
    "udfald": "forkastet",

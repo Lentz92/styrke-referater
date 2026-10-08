@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-09-15",
+ "next_number": 7,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite15092026#1",
    "emne": "Kvalifikationskrav, beregning",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite15092026#2",
    "emne": "Landsholdsdragt",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite15092026#3",
    "emne": "Datokollision DM-uge og VM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite15092026#4",
    "emne": "Klassiske totaler som kvalifikation til udstyrsstævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite15092026#5",
    "emne": "Skift af vægtklasse",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite15092026#6",
    "emne": "Deltagelse i EM og VM ved opfyldt krav",
    "kategori": "landshold",
    "udfald": "vedtaget",

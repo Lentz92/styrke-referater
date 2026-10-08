@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-04-13",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_130425#1",
    "emne": "Krav for afholdelse af danske mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_130425#2",
    "emne": "Egenkapitalens størrelse",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_130425#3",
    "emne": "Straps i dødløft",
    "kategori": "udstyr",
    "udfald": "forkastet",

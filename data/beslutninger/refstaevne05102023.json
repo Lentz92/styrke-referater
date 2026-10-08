@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-10-05",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne05102023#1",
    "emne": "Stævnepapirer efter stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",

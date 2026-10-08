@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-03-19",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2023#1",
    "emne": "Dommerforpligtelse ved DM, JM og SM",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 14
   },
   {
+   "id": "rep2023#2",
    "emne": "Rekorder i divisionsturneringen",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 14
   },
   {
+   "id": "rep2023#3",
    "emne": "Honorering af dommerstillende klubber og forhøjede gebyrer",
    "kategori": "dommere",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 15
   },
   {
+   "id": "rep2023#4",
    "emne": "Gebyrer og årsafgift",
    "kategori": "okonomi",
    "udfald": "vedtaget",

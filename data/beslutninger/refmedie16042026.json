@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-04-16",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refmedie16042026#1",
    "emne": "Medieudvalgets kontaktpersoner ved stævner",
    "kategori": "organisation",
    "udfald": "vedtaget",

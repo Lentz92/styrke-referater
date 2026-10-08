@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Implementering af IPF's regler i DSF",
+   "slug": "implementering-af-ipf-s-regler-i-dsf",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -29,6 +30,7 @@
   },
   {
    "titel": "Bøde for manglende dommer ved IPF-masterstævner",
+   "slug": "bøde-for-manglende-dommer-ved-ipf-masterstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -44,6 +46,7 @@
   },
   {
    "titel": "Dommerkrav for nationer ved EPF-stævner",
+   "slug": "dommerkrav-for-nationer-ved-epf-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -67,6 +70,7 @@
   },
   {
    "titel": "Bøde for dommeres sene ændring af opgaver",
+   "slug": "bøde-for-dommeres-sene-ændring-af-opgaver",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -82,6 +86,7 @@
   },
   {
    "titel": "RAW som officielt verdensmesterskab",
+   "slug": "raw-som-officielt-verdensmesterskab",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -97,6 +102,7 @@
   },
   {
    "titel": "Klassisk EM for subjuniorer, juniorer og åben klasse",
+   "slug": "klassisk-em-for-subjuniorer-juniorer-og-åben-klasse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -112,6 +118,7 @@
   },
   {
    "titel": "Certifikat ved problemer med at strække armene",
+   "slug": "certifikat-ved-problemer-med-at-strække-armene",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -127,6 +134,7 @@
   },
   {
    "titel": "Indberetning af dopingkontrol til IPF",
+   "slug": "indberetning-af-dopingkontrol-til-ipf",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -142,6 +150,7 @@
   },
   {
    "titel": "Atletrepræsentant i IPF's bestyrelse",
+   "slug": "atletrepræsentant-i-ipf-s-bestyrelse",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -157,6 +166,7 @@
   },
   {
    "titel": "Godtgørelse til IPF's ledelse",
+   "slug": "godtgørelse-til-ipf-s-ledelse",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -180,6 +190,7 @@
   },
   {
    "titel": "Ansvarsdokument for cheftrænere",
+   "slug": "ansvarsdokument-for-cheftrænere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -195,6 +206,7 @@
   },
   {
    "titel": "Antal coaches i opvarmningsområdet",
+   "slug": "antal-coaches-i-opvarmningsområdet",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -210,6 +222,7 @@
   },
   {
    "titel": "Antal coaches i wrapping-området",
+   "slug": "antal-coaches-i-wrapping-området",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -225,6 +238,7 @@
   },
   {
    "titel": "Observationszone for coaches",
+   "slug": "observationszone-for-coaches",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -240,6 +254,7 @@
   },
   {
    "titel": "Head coachs ansvar for adfærd og coachingzone",
+   "slug": "head-coachs-ansvar-for-adfærd-og-coachingzone",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -255,6 +270,7 @@
   },
   {
    "titel": "Akkreditering af assistentcoaches og træningstid",
+   "slug": "akkreditering-af-assistentcoaches-og-træningstid",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -270,6 +286,7 @@
   },
   {
    "titel": "Oprydning af udstyr og træningsområde",
+   "slug": "oprydning-af-udstyr-og-træningsområde",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -285,6 +302,7 @@
   },
   {
    "titel": "Dokumentation og udstyrskontrol ved vejning",
+   "slug": "dokumentation-og-udstyrskontrol-ved-vejning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -300,6 +318,7 @@
   },
   {
    "titel": "Alkoholforbud i opvarmnings- og wrapping-område",
+   "slug": "alkoholforbud-i-opvarmnings-og-wrapping-område",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -315,6 +334,7 @@
   },
   {
    "titel": "Nomineringsfrist til IPF-konkurrencer",
+   "slug": "nomineringsfrist-til-ipf-konkurrencer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -338,6 +358,7 @@
   },
   {
    "titel": "Frist for endelig nominering til EPF-stævner",
+   "slug": "frist-for-endelig-nominering-til-epf-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -353,6 +374,7 @@
   },
   {
    "titel": "Frist for afmelding fra EPF-nomineringsliste",
+   "slug": "frist-for-afmelding-fra-epf-nomineringsliste",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -368,6 +390,7 @@
   },
   {
    "titel": "Frist for afmelding fra IPF-nomineringsliste",
+   "slug": "frist-for-afmelding-fra-ipf-nomineringsliste",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -383,6 +406,7 @@
   },
   {
    "titel": "EPF's sanktionsgebyr for stævner",
+   "slug": "epf-s-sanktionsgebyr-for-stævner",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -398,6 +422,7 @@
   },
   {
    "titel": "EPF's medlemsafgift for nationer",
+   "slug": "epf-s-medlemsafgift-for-nationer",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -413,6 +438,7 @@
   },
   {
    "titel": "Betaling af hotelomkostninger ved EPF-stævner",
+   "slug": "betaling-af-hotelomkostninger-ved-epf-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -428,6 +454,7 @@
   },
   {
    "titel": "Bøde for overpriser på stævnehoteller",
+   "slug": "bøde-for-overpriser-på-stævnehoteller",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -451,6 +478,7 @@
   },
   {
    "titel": "Ophold på stævnehotel og bindende tilmelding",
+   "slug": "ophold-på-stævnehotel-og-bindende-tilmelding",
    "vigtig": true,
    "note": "Minimumskravet på 2 nætter ved EM og kravet om ophold i hele stævneperioden stemmer ikke helt overens.",
    "versioner": [
@@ -490,6 +518,7 @@
   },
   {
    "titel": "Hotelkrav for coaches og dommere ved IPF-mesterskaber",
+   "slug": "hotelkrav-for-coaches-og-dommere-ved-ipf-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -505,6 +534,7 @@
   },
   {
    "titel": "Procedure for ændring af IPF's tekniske regler",
+   "slug": "procedure-for-ændring-af-ipf-s-tekniske-regler",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -552,6 +582,7 @@
   },
   {
    "titel": "Skift af nationalt tilhørsforhold",
+   "slug": "skift-af-nationalt-tilhørsforhold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -575,6 +606,7 @@
   },
   {
    "titel": "Godkendt udstyr ved internationale stævner",
+   "slug": "godkendt-udstyr-ved-internationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -606,6 +638,7 @@
   },
   {
    "titel": "EM-arrangørs betaling af ophold for EPF-repræsentanter",
+   "slug": "em-arrangørs-betaling-af-ophold-for-epf-repræsentanter",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -621,6 +654,7 @@
   },
   {
    "titel": "Godtgørelse til EPF-officials",
+   "slug": "godtgørelse-til-epf-officials",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -636,6 +670,7 @@
   },
   {
    "titel": "Priser til årets løftere i EPF",
+   "slug": "priser-til-årets-løftere-i-epf",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -651,6 +686,7 @@
   },
   {
    "titel": "World Cup for universitetsstuderende",
+   "slug": "world-cup-for-universitetsstuderende",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -666,6 +702,7 @@
   },
   {
    "titel": "Formand for teknisk komité i IPF's bestyrelse",
+   "slug": "formand-for-teknisk-komité-i-ipf-s-bestyrelse",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -681,6 +718,7 @@
   },
   {
    "titel": "IPF's medlemsgebyr",
+   "slug": "ipf-s-medlemsgebyr",
    "vigtig": false,
    "note": "Vedtaget med meget svagt flertal (19 for, 15 imod, 18 blanke).",
    "versioner": [
@@ -704,6 +742,7 @@
   },
   {
    "titel": "Afgift for afholdelse af IPF-mesterskab",
+   "slug": "afgift-for-afholdelse-af-ipf-mesterskab",
    "vigtig": false,
    "note": "Gebyret for at søge VM og kombinationsstævner blev hævet fra 1000 til 1500 euro i 1071kongres#1.",
    "versioner": [
@@ -719,6 +758,7 @@
   },
   {
    "titel": "Deltagelse i ikke-sanktionerede konkurrencer",
+   "slug": "deltagelse-i-ikke-sanktionerede-konkurrencer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -750,6 +790,7 @@
   },
   {
    "titel": "Deltagelse i flere kategorier ved kombinationsstævner",
+   "slug": "deltagelse-i-flere-kategorier-ved-kombinationsstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -765,6 +806,7 @@
   },
   {
    "titel": "Kvalifikationskrav til VM",
+   "slug": "kvalifikationskrav-til-vm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -780,6 +822,7 @@
   },
   {
    "titel": "World Games format og kvalifikation",
+   "slug": "world-games-format-og-kvalifikation",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -803,6 +846,7 @@
   },
   {
    "titel": "Startalder for sub-juniorer",
+   "slug": "startalder-for-sub-juniorer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -818,6 +862,7 @@
   },
   {
    "titel": "Antal kvinder på nationshold ved VM",
+   "slug": "antal-kvinder-på-nationshold-ved-vm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -833,6 +878,7 @@
   },
   {
    "titel": "Holdpokaler ved IPF-mesterskaber",
+   "slug": "holdpokaler-ved-ipf-mesterskaber",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -848,6 +894,7 @@
   },
   {
    "titel": "Bedste løfter-pokal ved IPF-mesterskaber",
+   "slug": "bedste-løfter-pokal-ved-ipf-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -863,6 +910,7 @@
   },
   {
    "titel": "Best Team-pris ved EM",
+   "slug": "best-team-pris-ved-em",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -878,6 +926,7 @@
   },
   {
    "titel": "Medaljer ved EPF-mesterskaber",
+   "slug": "medaljer-ved-epf-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -893,6 +942,7 @@
   },
   {
    "titel": "Best Lifter-priser ved EPF-stævner",
+   "slug": "best-lifter-priser-ved-epf-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -908,6 +958,7 @@
   },
   {
    "titel": "Test af rekorder",
+   "slug": "test-af-rekorder",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -923,6 +974,7 @@
   },
   {
    "titel": "Registrering af europarekorder ved Nordiske Mesterskaber",
+   "slug": "registrering-af-europarekorder-ved-nordiske-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -938,6 +990,7 @@
   },
   {
    "titel": "Suspendering af medlemmer i EPF",
+   "slug": "suspendering-af-medlemmer-i-epf",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -953,6 +1006,7 @@
   },
   {
    "titel": "Reserveløfter ved forhåndstilmelding",
+   "slug": "reserveløfter-ved-forhåndstilmelding",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -968,6 +1022,7 @@
   },
   {
    "titel": "Bøde for udeblivelse fra teknisk møde",
+   "slug": "bøde-for-udeblivelse-fra-teknisk-møde",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -983,6 +1038,7 @@
   },
   {
    "titel": "ADEL og dokumentkrav for internationale løftere",
+   "slug": "adel-og-dokumentkrav-for-internationale-løftere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1006,6 +1062,7 @@
   },
   {
    "titel": "Konkurrenceplatform",
+   "slug": "konkurrenceplatform",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1021,6 +1078,7 @@
   },
   {
    "titel": "Indberetning af internationale medaljer til DIF",
+   "slug": "indberetning-af-internationale-medaljer-til-dif",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1036,6 +1094,7 @@
   },
   {
    "titel": "Doping- og deltagergebyr ved EPF-mesterskaber",
+   "slug": "doping-og-deltagergebyr-ved-epf-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1075,6 +1134,7 @@
   },
   {
    "titel": "IPF's deltagergebyr for atleter",
+   "slug": "ipf-s-deltagergebyr-for-atleter",
    "vigtig": true,
    "note": "Andelen til arrangøren blev vedtaget med meget svag opbakning (13 for, 6 imod, 15 blanke).",
    "versioner": [
@@ -1098,6 +1158,7 @@
   },
   {
    "titel": "Trænergebyr og trænerakkreditering ved EM/VM",
+   "slug": "trænergebyr-og-trænerakkreditering-ved-em-vm",
    "vigtig": true,
    "note": "Tilmeldingsfristerne siger, at alle trænere betaler 50 euro, hvilket strider mod EPF's fritagelse for trænere, der også løfter eller dømmer.",
    "versioner": [
@@ -1153,6 +1214,7 @@
   },
   {
    "titel": "Antal coaches ved kombinerede bænkpresstævner",
+   "slug": "antal-coaches-ved-kombinerede-bænkpresstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1168,6 +1230,7 @@
   },
   {
    "titel": "Klage til juryen over løfter fra anden nation",
+   "slug": "klage-til-juryen-over-løfter-fra-anden-nation",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1183,6 +1246,7 @@
   },
   {
    "titel": "Coachlicens og IPF-træneruddannelse",
+   "slug": "coachlicens-og-ipf-træneruddannelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1222,6 +1286,7 @@
   },
   {
    "titel": "Færøerne under DSF's regler",
+   "slug": "færøerne-under-dsf-s-regler",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1237,6 +1302,7 @@
   },
   {
    "titel": "Ændring af EPF's forfatning om By-Laws",
+   "slug": "ændring-af-epf-s-forfatning-om-by-laws",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1252,6 +1318,7 @@
   },
   {
    "titel": "EC's autoritet over IPF's By-Laws",
+   "slug": "ec-s-autoritet-over-ipf-s-by-laws",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1267,6 +1334,7 @@
   },
   {
    "titel": "Indsendelse af nationale mesterskabsresultater til IPF",
+   "slug": "indsendelse-af-nationale-mesterskabsresultater-til-ipf",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1282,6 +1350,7 @@
   },
   {
    "titel": "Kvalificerings- og nomineringsproces for atleter",
+   "slug": "kvalificerings-og-nomineringsproces-for-atleter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1297,6 +1366,7 @@
   },
   {
    "titel": "Atleters selvbetaling ved international konkurrence",
+   "slug": "atleters-selvbetaling-ved-international-konkurrence",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1312,6 +1382,7 @@
   },
   {
    "titel": "Beskyttelse af sub-junior atleter",
+   "slug": "beskyttelse-af-sub-junior-atleter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1327,6 +1398,7 @@
   },
   {
    "titel": "Gebyr for klager og anker i IPF",
+   "slug": "gebyr-for-klager-og-anker-i-ipf",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1342,6 +1414,7 @@
   },
   {
    "titel": "Kønsbalance i ledelsesorganer",
+   "slug": "kønsbalance-i-ledelsesorganer",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1357,6 +1430,7 @@
   },
   {
    "titel": "Antal officielle repræsentanter ved IPF-konkurrencer",
+   "slug": "antal-officielle-repræsentanter-ved-ipf-konkurrencer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1372,6 +1446,7 @@
   },
   {
    "titel": "Dopingsager i DIF's love",
+   "slug": "dopingsager-i-dif-s-love",
    "vigtig": true,
    "note": null,
    "versioner": [

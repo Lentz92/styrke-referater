@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2010-01-21",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_21012010#1",
    "emne": "Stævneansvarlig",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_21012010#2",
    "emne": "Vedtægtsændring §5",
    "kategori": "organisation",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_21012010#3",
    "emne": "Divisionsturnering",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_21012010#4",
    "emne": "Tidspunkt for repræsentantskabsmøde",
    "kategori": "organisation",
    "udfald": "ikke_afgjort",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_21012010#5",
    "emne": "Godkendelse af nyt stævne",
    "kategori": "staevner",
    "udfald": "vedtaget",

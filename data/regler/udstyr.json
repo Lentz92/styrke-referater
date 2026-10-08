@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Lån af DSF's stævneudstyr",
+   "slug": "lån-af-dsf-s-stævneudstyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -53,6 +54,7 @@
   },
   {
    "titel": "Udlån af udstyr til nye udstyrsløftere",
+   "slug": "udlån-af-udstyr-til-nye-udstyrsløftere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -76,6 +78,7 @@
   },
   {
    "titel": "Forbud mod Superkatana-bænkpresdragt",
+   "slug": "forbud-mod-superkatana-bænkpresdragt",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -91,6 +94,7 @@
   },
   {
    "titel": "Understøttende bænkprestrøje",
+   "slug": "understøttende-bænkprestrøje",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -106,6 +110,7 @@
   },
   {
    "titel": "Overskydende materiale i skulderstropper",
+   "slug": "overskydende-materiale-i-skulderstropper",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -121,6 +126,7 @@
   },
   {
    "titel": "Snoning af stropper på dragter",
+   "slug": "snoning-af-stropper-på-dragter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -136,6 +142,7 @@
   },
   {
    "titel": "Knævarmere",
+   "slug": "knævarmere",
    "vigtig": true,
    "note": "Dommerudvalgets fortolkning fra 2024, at løfteren må få hjælp til at tage knævarmere af, strider mod IPF-beslutningen fra 2013 om, at de skal kunne tages af og på uden assistance.",
    "versioner": [
@@ -167,6 +174,7 @@
   },
   {
    "titel": "Indefrysning af tekniske regler og udstyrsproducenter",
+   "slug": "indefrysning-af-tekniske-regler-og-udstyrsproducenter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -182,6 +190,7 @@
   },
   {
    "titel": "IPF's udstyrsregler ved nationale stævner",
+   "slug": "ipf-s-udstyrsregler-ved-nationale-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -229,6 +238,7 @@
   },
   {
    "titel": "Logostørrelse på udstyr",
+   "slug": "logostørrelse-på-udstyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -252,6 +262,7 @@
   },
   {
    "titel": "Godkendelse af logoer på løftertøj",
+   "slug": "godkendelse-af-logoer-på-løftertøj",
    "vigtig": true,
    "note": "Repræsentantskabet afskaffede i 2019 afgiften på 500 kr., og bestyrelsens forslag om logoafgifter blev trukket; det er uklart, om afgifterne på 1.000 og 2.500 kr. stadig gælder.",
    "versioner": [
@@ -307,6 +318,7 @@
   },
   {
    "titel": "Stødende slogans på løftertøj",
+   "slug": "stødende-slogans-på-løftertøj",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -322,6 +334,7 @@
   },
   {
    "titel": "Dragt for muslimske kvinder",
+   "slug": "dragt-for-muslimske-kvinder",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -337,6 +350,7 @@
   },
   {
    "titel": "T-shirt under løft",
+   "slug": "t-shirt-under-løft",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -352,6 +366,7 @@
   },
   {
    "titel": "Fodtøj under konkurrence",
+   "slug": "fodtøj-under-konkurrence",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -367,6 +382,7 @@
   },
   {
    "titel": "Sokker med gummi",
+   "slug": "sokker-med-gummi",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -382,6 +398,7 @@
   },
   {
    "titel": "Nedtrækning af knæbind før plateau",
+   "slug": "nedtrækning-af-knæbind-før-plateau",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -397,6 +414,7 @@
   },
   {
    "titel": "Safety-barer i stativer",
+   "slug": "safety-barer-i-stativer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -412,6 +430,7 @@
   },
   {
    "titel": "Straps i dødløft",
+   "slug": "straps-i-dødløft",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -427,6 +446,7 @@
   },
   {
    "titel": "Landsholdsudstyr fra sponsor",
+   "slug": "landsholdsudstyr-fra-sponsor",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -450,6 +470,7 @@
   },
   {
    "titel": "Budgetmidler til udstyrspuljen",
+   "slug": "budgetmidler-til-udstyrspuljen",
    "vigtig": false,
    "note": null,
    "versioner": [

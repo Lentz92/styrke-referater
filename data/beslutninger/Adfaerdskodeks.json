@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": null,
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "Adfaerdskodeks#1",
    "emne": "Adfærdskodeks, generel adfærd",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "Adfaerdskodeks#2",
    "emne": "Adfærdskodeks, adfærd under konkurrencer",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "Adfaerdskodeks#3",
    "emne": "Adfærdskodeks, alkohol",
    "kategori": "master",
    "udfald": "vedtaget",

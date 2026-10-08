@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2020-08-30",
+ "next_number": 7,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2020#1",
    "emne": "Tidspunkt for DM klassisk",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 17
   },
   {
+   "id": "rep2020#2",
    "emne": "Tidspunkt for SM og JM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 17
   },
   {
+   "id": "rep2020#3",
    "emne": "Tilmeldingsfrister til stævner",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 17
   },
   {
+   "id": "rep2020#4",
    "emne": "Betaling af stævnegebyr ved tilmelding",
    "kategori": "okonomi",
    "udfald": "forkastet",
@@ -74,6 +80,7 @@
    "citat_side": 18
   },
   {
+   "id": "rep2020#5",
    "emne": "Refusion af startgebyr ved aflyste stævner",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 19
   },
   {
+   "id": "rep2020#6",
    "emne": "Årsafgift, licens og startgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",

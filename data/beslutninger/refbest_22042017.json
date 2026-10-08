@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2017-04-22",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_22042017#1",
    "emne": "Afgift for logo",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_22042017#2",
    "emne": "Godkendelse af logo",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_22042017#3",
    "emne": "Stødende slogans på løftertøj",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_22042017#4",
    "emne": "Information til landsdækkende medier ved store mesterskaber",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_22042017#5",
    "emne": "Eliteudvalgets regelsæt",
    "kategori": "landshold",
    "udfald": "vedtaget",

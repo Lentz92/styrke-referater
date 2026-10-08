@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-04-25",
+ "next_number": 7,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite25042015#1",
    "emne": "Stævnekoordinering i Eliteudvalget",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite25042015#2",
    "emne": "Deltagelse i WEC",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite25042015#3",
    "emne": "Kvalifikation EM Klassisk og EM bænkpres, andre kategorier",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite25042015#4",
    "emne": "Lægeerklæring ved afbud",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite25042015#5",
    "emne": "90 %-reglen til landsholdssamlinger",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite25042015#6",
    "emne": "Henvendelser om landsholdssamlinger",
    "kategori": "landshold",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2020-03-14",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_140320#1",
    "emne": "DM klassisk afvikling",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_140320#2",
    "emne": "JM afvikling",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_140320#3",
    "emne": "Tilmeldingsfrister til stævner",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_140320#4",
    "emne": "Betaling af stævnegebyr",
    "kategori": "okonomi",
    "udfald": "ikke_afgjort",

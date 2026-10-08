@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Dommertilmelding når man selv løfter",
+   "slug": "dommertilmelding-når-man-selv-løfter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -21,6 +22,7 @@
   },
   {
    "titel": "Dommerpåklædning",
+   "slug": "dommerpåklædning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -68,6 +70,7 @@
   },
   {
    "titel": "Udlevering af slips og emblemer til dommere",
+   "slug": "udlevering-af-slips-og-emblemer-til-dommere",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -83,6 +86,7 @@
   },
   {
    "titel": "Dommerkrav i divisionsturneringen",
+   "slug": "dommerkrav-i-divisionsturneringen",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -106,6 +110,7 @@
   },
   {
    "titel": "Regler for Dommerudvalget",
+   "slug": "regler-for-dommerudvalget",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -129,6 +134,7 @@
   },
   {
    "titel": "Dommeres aktivitetskrav",
+   "slug": "dommeres-aktivitetskrav",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -224,6 +230,7 @@
   },
   {
    "titel": "Nye B-dommere skal dømme inden for første år",
+   "slug": "nye-b-dommere-skal-dømme-inden-for-første-år",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -247,6 +254,7 @@
   },
   {
    "titel": "Registrering af dommeraktivitet",
+   "slug": "registrering-af-dommeraktivitet",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -286,6 +294,7 @@
   },
   {
    "titel": "Dommerforpligtelse ved internationale stævner (IPF/EPF)",
+   "slug": "dommerforpligtelse-ved-internationale-stævner-ipf-epf",
    "vigtig": true,
    "note": "Bøden angives i 2026 at blive sænket fra 2000 euro, mens den tidligere kendte regel nævnte 500 euro; mellemliggende ændring er ikke registreret.",
    "versioner": [
@@ -309,6 +318,7 @@
   },
   {
    "titel": "Antal dommere udsendt til EM",
+   "slug": "antal-dommere-udsendt-til-em",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -324,6 +334,7 @@
   },
   {
    "titel": "Brug af internationale dommere",
+   "slug": "brug-af-internationale-dommere",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -347,6 +358,7 @@
   },
   {
    "titel": "Dommerpåsætning af hensyn til økonomi",
+   "slug": "dommerpåsætning-af-hensyn-til-økonomi",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -370,6 +382,7 @@
   },
   {
    "titel": "Vejen til international dommer",
+   "slug": "vejen-til-international-dommer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -401,6 +414,7 @@
   },
   {
    "titel": "International dommereksamen (IPF)",
+   "slug": "international-dommereksamen-ipf",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -424,6 +438,7 @@
   },
   {
    "titel": "Genregistrering af internationale dommere",
+   "slug": "genregistrering-af-internationale-dommere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -439,6 +454,7 @@
   },
   {
    "titel": "Dommerkrav ved åbent VM",
+   "slug": "dommerkrav-ved-åbent-vm",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -454,6 +470,7 @@
   },
   {
    "titel": "Klubbers dommerforpligtelse ved DM, JM og SM",
+   "slug": "klubbers-dommerforpligtelse-ved-dm-jm-og-sm",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -493,6 +510,7 @@
   },
   {
    "titel": "Honorering af dommerstillende klubber",
+   "slug": "honorering-af-dommerstillende-klubber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -508,6 +526,7 @@
   },
   {
    "titel": "Dommere ved private stævner",
+   "slug": "dommere-ved-private-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -523,6 +542,7 @@
   },
   {
    "titel": "Ansvar og frist for dommerpåsætning",
+   "slug": "ansvar-og-frist-for-dommerpåsætning",
    "vigtig": true,
    "note": "Repræsentantskabet gav i 2018 Dommerudvalget ansvaret for påsætning af dommere og jury, mens udvalgsbeslutninger fra 2024 lægger påsætningen hos Stævneudvalget.",
    "versioner": [
@@ -554,6 +574,7 @@
   },
   {
    "titel": "Indvejning ved dommer af samme køn",
+   "slug": "indvejning-ved-dommer-af-samme-køn",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -569,6 +590,7 @@
   },
   {
    "titel": "Betroede personer til indvejning",
+   "slug": "betroede-personer-til-indvejning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -584,6 +606,7 @@
   },
   {
    "titel": "Dommeres fremmøde før indvejning",
+   "slug": "dommeres-fremmøde-før-indvejning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -599,6 +622,7 @@
   },
   {
    "titel": "Jury og dommere ved officielle stævner",
+   "slug": "jury-og-dommere-ved-officielle-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -614,6 +638,7 @@
   },
   {
    "titel": "Krav for at sidde i jury",
+   "slug": "krav-for-at-sidde-i-jury",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -629,6 +654,7 @@
   },
   {
    "titel": "Juryens overruling af dommerbeslutninger",
+   "slug": "juryens-overruling-af-dommerbeslutninger",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -652,6 +678,7 @@
   },
   {
    "titel": "Jurylederens afgørelse ved ændring af forsøg",
+   "slug": "jurylederens-afgørelse-ved-ændring-af-forsøg",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -667,6 +694,7 @@
   },
   {
    "titel": "Placering af jurybord",
+   "slug": "placering-af-jurybord",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -682,6 +710,7 @@
   },
   {
    "titel": "Diskvalifikationsgrunde i dommerreglerne",
+   "slug": "diskvalifikationsgrunde-i-dommerreglerne",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -697,6 +726,7 @@
   },
   {
    "titel": "Markering af underkendt løft",
+   "slug": "markering-af-underkendt-løft",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -712,6 +742,7 @@
   },
   {
    "titel": "Squat: udretning med låste knæ",
+   "slug": "squat-udretning-med-låste-knæ",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -727,6 +758,7 @@
   },
   {
    "titel": "Fødder på bænken ved bænkpres",
+   "slug": "fødder-på-bænken-ved-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -742,6 +774,7 @@
   },
   {
    "titel": "Dansk fortolkning af bænkpres-opspænd og dybde",
+   "slug": "dansk-fortolkning-af-bænkpres-opspænd-og-dybde",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -757,6 +790,7 @@
   },
   {
    "titel": "Nedadgående bevægelse i dødløft",
+   "slug": "nedadgående-bevægelse-i-dødløft",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -772,6 +806,7 @@
   },
   {
    "titel": "Grebskrav i dansk oversættelse",
+   "slug": "grebskrav-i-dansk-oversættelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -787,6 +822,7 @@
   },
   {
    "titel": "B-dommerprøve",
+   "slug": "b-dommerprøve",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -826,6 +862,7 @@
   },
   {
    "titel": "A-dommerprøve",
+   "slug": "a-dommerprøve",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -873,6 +910,7 @@
   },
   {
    "titel": "A-dommerindstillinger som fast dagsordenspunkt",
+   "slug": "a-dommerindstillinger-som-fast-dagsordenspunkt",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -888,6 +926,7 @@
   },
   {
    "titel": "Omprøve ved dommerprøve",
+   "slug": "omprøve-ved-dommerprøve",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -903,6 +942,7 @@
   },
   {
    "titel": "Afholdelse af dommerprøver",
+   "slug": "afholdelse-af-dommerprøver",
    "vigtig": true,
    "note": "Dommerudvalget har efterfølgende aflyst kurset i 2025 og kun planlagt ét kursus i 2026, i strid med kravet om årlige prøver i både Jylland og Sjælland.",
    "versioner": [
@@ -942,6 +982,7 @@
   },
   {
    "titel": "Brush up-kursus for B-dommere",
+   "slug": "brush-up-kursus-for-b-dommere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -997,6 +1038,7 @@
   },
   {
    "titel": "Nye dommere ved første stævne",
+   "slug": "nye-dommere-ved-første-stævne",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1012,6 +1054,7 @@
   },
   {
    "titel": "Stævneleder og overdommer",
+   "slug": "stævneleder-og-overdommer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1027,6 +1070,7 @@
   },
   {
    "titel": "Stævnelederens opgaver og ansvar",
+   "slug": "stævnelederens-opgaver-og-ansvar",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1050,6 +1094,7 @@
   },
   {
    "titel": "Dommerbriefing før stævnestart",
+   "slug": "dommerbriefing-før-stævnestart",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1073,6 +1118,7 @@
   },
   {
    "titel": "Dommerdatabase og tilmeldingssystem",
+   "slug": "dommerdatabase-og-tilmeldingssystem",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1120,6 +1166,7 @@
   },
   {
    "titel": "Årlig opfordring til dommertilmelding",
+   "slug": "årlig-opfordring-til-dommertilmelding",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1135,6 +1182,7 @@
   },
   {
    "titel": "Påmindelse om lånedommere",
+   "slug": "påmindelse-om-lånedommere",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -1150,6 +1198,7 @@
   },
   {
    "titel": "Diæter til dommere",
+   "slug": "diæter-til-dommere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1165,6 +1214,7 @@
   },
   {
    "titel": "Kørselsgodtgørelse til dommere",
+   "slug": "kørselsgodtgørelse-til-dommere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1188,6 +1238,7 @@
   },
   {
    "titel": "Betaling for internationale dommere",
+   "slug": "betaling-for-internationale-dommere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -1211,6 +1262,7 @@
   },
   {
    "titel": "EPF dommertilmelding og registrering",
+   "slug": "epf-dommertilmelding-og-registrering",
    "vigtig": false,
    "note": null,
    "versioner": [

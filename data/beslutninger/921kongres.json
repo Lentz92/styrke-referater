@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-01-01",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "921kongres#1",
    "emne": "Træneruddannelse for Head Coaches",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "921kongres#2",
    "emne": "Løftere i flere lande",
    "kategori": "internationalt",
    "udfald": "forkastet",
