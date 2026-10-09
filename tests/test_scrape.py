@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import bs4.dammit
 import httpx
 import pytest
 
@@ -119,3 +120,28 @@ def test_new_file_that_cannot_be_saved_is_skipped(local_file, monkeypatch):
 
     monkeypatch.setattr(Path, "write_bytes", disk_full)
     assert scrape._download(_client(_only_upper_case), scrape.Link(URL, "Referat", "repraesentantskab")) is None
+
+
+def _htm_text(tmp_path, monkeypatch, data: bytes) -> str:
+    monkeypatch.setattr(scrape, "ROOT", tmp_path)
+    (tmp_path / "rep2009.htm").write_bytes(data)
+    doc = scrape.Doc(id="rep2009", organ="repraesentantskab", title="Referat", date="2009", path="rep2009.htm",
+                     url=None, sha256="")
+    return scrape.document_text(doc)
+
+
+def test_undeclared_utf8_minute_is_read_as_utf8_whatever_detector_is_installed(tmp_path, monkeypatch):
+    # chardet (installed on GitHub's runner) guesses windows-1252 for short Danish UTF-8: "Uændret" -> "UÃ¦ndret".
+    monkeypatch.setattr(bs4.dammit, "_chardet_dammit", lambda _: "windows-1252")
+    text = _htm_text(tmp_path, monkeypatch, "<p>Licens: kr. 200,- (Uændret). Kørsel på stævner.</p>".encode())
+    assert text == "Licens: kr. 200,- (Uændret). Kørsel på stævner."
+
+
+def test_declared_charset_is_used(tmp_path, monkeypatch):
+    html = '<meta http-equiv="Content-Type" content="text/html;CHARSET=iso-8859-1"><p>Kørsel på stævner</p>'
+    assert _htm_text(tmp_path, monkeypatch, html.encode("iso-8859-1")) == "Kørsel på stævner"
+
+
+def test_undeclared_minute_that_is_not_utf8_is_read_as_windows_1252(tmp_path, monkeypatch):
+    text = "<p>\u201cUændret\u201d \u2013 200 \u20ac</p>"
+    assert _htm_text(tmp_path, monkeypatch, text.encode("windows-1252")) == "\u201cUændret\u201d \u2013 200 \u20ac"
