@@ -2,7 +2,7 @@
 
 Drawings in the spirit of the C4 model, as Mermaid `flowchart` diagrams, of `main` as of October 2026. Part 1 shows
 how a run decides what is true; part 2 shows the code in C4 levels 1 to 3. Every model name, number, file name and
-flag comes from the code, the workflows and scripts in `.github/`, `data/runs.jsonl` or the READMEs. The `%%`
+flag comes from the code, the workflows and scripts in `.github/`, `data/runs.jsonl` or the other docs. The `%%`
 comments in each diagram name the constant, function or file the less obvious ones come from: check a figure there,
 and update the drawing when it changes.
 
@@ -383,7 +383,7 @@ reference, Sonnet with v2 or v3 fails (`eval/reports/decisions-gate.md`).
 
 ```mermaid
 flowchart TB
-  %% Sources. README.md On GitHub and Website. GoatCounter: website/template.html.
+  %% Sources. docs/operations.md On GitHub, docs/how-it-works.md Website. GoatCounter: website/template.html.
   %% Token: update.yml and audit.yml read the secret CLAUDE_CODE_OAUTH_TOKEN and refuse ANTHROPIC_API_KEY.
 
   nicki(["<b>Nicki</b><br/>[Person, maintainer]<br/>reviews the bot's pull requests, starts migrations<br/>and audits, tunes the pipeline with the answer key"]):::person
