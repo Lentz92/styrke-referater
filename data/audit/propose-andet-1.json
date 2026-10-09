@@ -1,0 +1,54 @@
+{
+ "fingerprint": "19d9e4d5782e8617",
+ "time": "2026-10-09T10:31:56+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 5779,
+  "output": 1661,
+  "cost_usd": 0.0799,
+  "seconds": 19,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "merge",
+    "rules": [
+     "udlån-af-forbundets-udstyr",
+     "udlån-af-udstyr-til-nye-udstyrsløftere"
+    ],
+    "title": "Udlån af udstyr til løftere",
+    "category": "udstyr",
+    "parts": [],
+    "reason": "Both rules regulate the procedure by which lifters borrow the federation's equipment against a signed loan form; the 2025 decisions replace the 2014 procedure of borrowing by mail.",
+    "refs": [
+     "refbest_04082012#2",
+     "refbest_09082014#7"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "leverandør-af-medaljer"
+    ],
+    "title": null,
+    "category": "staevner",
+    "parts": [],
+    "reason": "The rule fixes the supplier of the medals for meets, which is part of medal ordering for competitions, handled in staevner.",
+    "refs": [
+     "refbest_03052014#3"
+    ]
+   }
+  ]
+ }
+}

@@ -27,9 +27,19 @@ For at deltage i et mesterskab under DSF skal en udlænding have haft fast bopæ
 *Stævneregel · vedtaget 29.03.2026 af Repræsentantskabet (enstemmigt)*
 
 - 24.03.2013 · indført: udlændinge kræver 24 måneders fast bopæl i Danmark · [rep2013 s. 2](https://filer.styrke.dk/referater/rep2013.pdf#page=2)
-- 07.10.2018 · bekræftet: løftere for anden nation: ingen DM/JM/SM eller rekorder · [refbest_07102018 s. 2](https://filer.styrke.dk/referater/refbest_07102018.pdf#page=2)
-- 07.10.2018 · bekræftet: 24 måneders bopælskrav bekræftet · [refbest_07102018 s. 2](https://filer.styrke.dk/referater/refbest_07102018.pdf#page=2)
+- 07.10.2018 · bekræftet: 24 måneders bopælskrav og udlandsaftale bekræftet · [refbest_07102018 s. 2](https://filer.styrke.dk/referater/refbest_07102018.pdf#page=2)
 - 29.03.2026 · ændret: bopælskrav nedsat fra 24 til 6 måneder (IPF) · [rep2026 s. 27](https://filer.styrke.dk/referater/rep2026.pdf#page=27)
+
+<a id="regel/deltagelse-i-danske-mesterskaber-for-loeftere-der-repraesenterer-en-anden-nation"></a>
+### Deltagelse i danske mesterskaber for løftere der repræsenterer en anden nation
+
+**I kraft**
+
+En løfter, der stiller op for en anden nation inden for IPF, kan ikke deltage i danske mesterskaber (DM, JM og SM) og kan ikke sætte danske rekorder. Løfteren kan dog deltage i andre stævner i Danmark. Efter 2 års bopæl i Danmark kan løfteren deltage i danske mesterskaber.
+
+*Bestyrelsesbeslutning · vedtaget 07.10.2018 af Bestyrelsen*
+
+- 07.10.2018 · indført: løftere for anden IPF-nation udelukket fra DM/JM/SM og rekorder · [refbest_07102018 s. 2](https://filer.styrke.dk/referater/refbest_07102018.pdf#page=2)
 
 <a id="regel/forbud-mod-dobbelt-licens"></a>
 ### Forbud mod dobbelt licens
@@ -69,7 +79,8 @@ En løfter skal være medlem af en forening under DSF for at anmode om licens og
 *Stævneregel · vedtaget 22.03.2015 af Repræsentantskabet (29 for, 8 imod) · senest bekræftet 08.05.2016*
 
 - 24.03.2013 · indført: 3 måneder på licenslisten før stævner, krav fra DIF/ADD · [rep2013 s. 6](https://filer.styrke.dk/referater/rep2013.pdf#page=6)
-- 23.03.2014 · ændret: 3 måneders medlemskab før licensansøgning, licens efter 3 måneder · [rep2014 s. 5](https://filer.styrke.dk/referater/rep2014.pdf#page=5)
+- 23.03.2014 · ændret: 3 måneders medlemskab før licensansøgning, licens gyldig efter 3 måneder · [rep2014 s. 5](https://filer.styrke.dk/referater/rep2014.pdf#page=5)
+- 07.12.2014 · forslag forkastet: bestyrelsen vil ikke foreslå afskaffelse af 6-månedersreglen · [refbest_07122014 s. 3](https://filer.styrke.dk/referater/refbest_07122014.pdf#page=3)
 - 22.03.2015 · ændret: krav om 3 måneders medlemskab før licensansøgning slettet · [rep2015 s. 2](https://filer.styrke.dk/referater/rep2015.pdf#page=2)
 - 08.05.2016 · bekræftet: 3 måneder fra ansøgningsdato, ingen dispensation · [refbest_08052016 s. 1](https://filer.styrke.dk/referater/refbest_08052016.pdf#page=1)
 
@@ -223,26 +234,14 @@ Klubberne skal angive, hvad deres indbetalinger til forbundet vedrører, f.eks. 
 
 **I kraft**
 
-Arrangøren af en indledende runde af DM-Hold tildeles 5.000 kr. Det særlige beløb på 10.000 kr. til en klub, der afholder alle tre runder, er fjernet. Finalen afvikles så vidt muligt skiftevis i øst og vest.
+Arrangøren af en indledende runde af DM-Hold tildeles 5.000 kr. for afholdelse af runden. Der gives ikke et særligt beløb til en klub, der afholder alle tre runder. Finalen afvikles så vidt muligt skiftevis i øst og vest.
 
 *Stævneregel · vedtaget 29.03.2026 af Repræsentantskabet (46 for, 2 undlod)*
 
 - 25.03.2012 · indført: 2.500 kr. til arrangør af indledende runde · [rep2012 s. 3](https://filer.styrke.dk/referater/rep2012.pdf#page=3)
+- 08.02.2015 · indkommet forslag: forslag: 10.000 kr. og finale til arrangør af alle runder · [refbest_08022015 s. 5](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=5)
+- 22.03.2015 · ændret: 10.000 kr. for alle tre runder plus tilbud om finale · [rep2015 s. 4](https://filer.styrke.dk/referater/rep2015.pdf#page=4)
 - 29.03.2026 · ændret: hævet fra 2.500 til 5.000 kr.; 10.000-kr.-ordning fjernet · [rep2026 s. 32](https://filer.styrke.dk/referater/rep2026.pdf#page=32)
-
-<a id="regel/betaling-af-startgebyr-og-tilmelding"></a>
-### Betaling af startgebyr til arrangørklub
-
-**I kraft**
-
-Fristen for indbetaling af stævnegebyr til den afholdende klub er den dato, der står på tilmeldingen. Betales der ikke rettidigt, må den afholdende klub udelukke den klub, som ikke har betalt (besluttet på repræsentantskabsmødet 2015).
-
-*Stævneregel · vedtaget 17.09.2016 af Bestyrelsen*
-
-- 28.02.2010 · indkommet forslag: bestyrelsen foreslår dokumentation for betalt startgebyr før start · [refbest_28022010 s. 1](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=1)
-- 17.09.2016 · indført: frist er tilmeldingsdato; arrangør må udelukke ikke-betalende klub · [refbest_17092016 s. 3](https://filer.styrke.dk/referater/refbest_17092016.pdf#page=3)
-- 14.03.2020 · indkommet forslag: Holstebro foreslår atleter betaler selv via Billetto · [refbest_140320 s. 2](https://filer.styrke.dk/referater/refbest_140320.pdf#page=2)
-- 30.08.2020 · forslag forkastet: Holstebros forslag om betaling via Billetto forkastet · [rep2020 s. 18](https://filer.styrke.dk/referater/rep2020.pdf#page=18)
 
 <a id="regel/medaljer-til-staevner"></a>
 ### Betaling for medaljer
@@ -280,6 +279,17 @@ DSF giver diætpenge til dommere ved alle forbundsstævner, men ikke ved private
 *Udvalgsbeslutning · vedtaget 12.09.2023 af Dommerudvalget*
 
 - 12.09.2023 · indført: diæter kun ved forbundsstævner, ikke private stævner · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
+
+<a id="regel/dopinggebyr-ved-nm"></a>
+### Dopinggebyr ved NM
+
+**I kraft**
+
+På NPF-kongressen blev det vedtaget, at der kun skal betales dopinggebyr, hvis der tages dopingtest.
+
+*Eksternt krav · vedtaget 29.03.2026 af Repræsentantskabet*
+
+- 29.03.2026 · indført: dopinggebyr kun ved faktisk dopingtest · [rep2026 s. 10](https://filer.styrke.dk/referater/rep2026.pdf#page=10)
 
 <a id="regel/selvbestilling-af-rejser"></a>
 ### Egen bestilling af rejser til landsholdsopgaver
@@ -463,6 +473,19 @@ Klubber, der gennemfører et klubudviklingsprojekt i samarbejde med forbundet, f
 
 - 26.07.2015 · indført: 2.500 kr. ved klubudviklingsprojekt med forbundet · [refbest_26072015 s. 5](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=5)
 
+<a id="regel/tilskud-til-leje-af-lys-og-lyd"></a>
+### Tilskud til lys- og lydudstyr ved stævner
+
+**I kraft**
+
+Klubber, der afholder DSF-stævner i passende omgivelser, får tilskud fra DSF til leje af lys- og lydudstyr efter stævneudvalgets bedømmelse. Reglen erstatter TSK's oprindelige forslag om, at forbundet skulle købe stævneudstyr. Ændringen skal skrives ind i stævnereglerne, og beløbsrammen skal diskuteres senere.
+
+*Stævneregel · vedtaget 14.03.2010 af Repræsentantskabet (stort flertal)*
+
+- 28.02.2010 · indkommet forslag: TSK foreslår, at forbundet køber stævneudstyr · [refbest_28022010 s. 2](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=2)
+- 28.02.2010 · indkommet forslag: bestyrelsen foreslår tilskud til lys og lyd uden for klublokaler · [refbest_28022010 s. 2](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=2)
+- 14.03.2010 · indført: tilskud til leje af lys og lyd i stedet for køb · [rep2010 s. 6](https://filer.styrke.dk/referater/rep2010.pdf#page=6)
+
 <a id="regel/tilskud-til-skoleprojekter"></a>
 ### Tilskud til skolesamarbejde
 
@@ -630,14 +653,14 @@ DSF betaler de nødvendige udgifter til værnemidler og dækker arrangørernes �
 - 22.08.2020 · indført: DSF betaler værnemidler ved stævner · [refbest_220820 s. 1](https://filer.styrke.dk/referater/refbest_220820.pdf#page=1)
 - 17.10.2020 · ændret: udvidet til alle øgede covid-udgifter i 2021 (fra 01.01.2021) · [refbest_171020 s. 3](https://filer.styrke.dk/referater/refbest_171020.pdf#page=3)
 
-<a id="regel/tilskud-til-leje-af-lys-og-lydudstyr"></a>
-### Tilskud til lys og lyd ved stævner
+<a id="regel/honorering-af-dommerstillende-klubber"></a>
+### Honorering af klubber, der stiller dommere
 
 **Kun forslag – aldrig vedtaget**
 
-Bestyrelsen foreslår repræsentantskabsmødet, at klubber, der flytter stævner ud af klublokalerne, får tilskud til leje af lys- og lydudstyr.
+Forslag om at hæve startgebyret fra 300 kr. til 350 kr., hvor 100 kr. pr. start går til at honorere klubber, der stiller dommere, med 500 kr. pr. dommer pr. indvejning.
 
-- 28.02.2010 · indkommet forslag: bestyrelsen foreslår tilskud ved stævner uden for klublokaler · [refbest_28022010 s. 2](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=2)
+- 19.03.2023 · forslag forkastet: HaSK foreslår startgebyr 350 kr. til dommerhonorar · [rep2023 s. 15](https://filer.styrke.dk/referater/rep2023.pdf#page=15)
 
 <a id="regel/honorar-for-sponsorindhentning"></a>
 ### Honorar for at skaffe sponsorer

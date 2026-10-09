@@ -1,0 +1,92 @@
+{
+ "fingerprint": "783ac61959030301",
+ "time": "2026-10-09T10:31:09+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 108316,
+  "output": 5434,
+  "cost_usd": 0.9757,
+  "seconds": 51,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "split",
+    "rules": [
+     "dispensation-fra-dm-ved-kollision-med-vm"
+    ],
+    "title": null,
+    "category": null,
+    "parts": [
+     {
+      "title": "Pligt til DM-deltagelse for landsholdsløftere",
+      "refs": [
+       "rep2016#11",
+       "elite29032021#2",
+       "refbest_310722#5",
+       "elite12122023#2",
+       "elite30042026#1",
+       "elite15092026#3"
+      ]
+     },
+     {
+      "title": "Vægtklasse ved pligtig DM-deltagelse for landsholdsløftere",
+      "refs": [
+       "elite30042026#3"
+      ]
+     },
+     {
+      "title": "Præstationskrav ved pligtig DM-deltagelse for landsholdsløftere",
+      "refs": [
+       "elite30042026#2"
+      ]
+     }
+    ],
+    "reason": "Besides the duty itself to take part in DM, the rule holds two separate decisions of the same date: the free choice of weight class at the mandatory DM and the performance requirement (real attempt at 80 % of VM lifts), each of which can change independently.",
+    "refs": [
+     "elite30042026#1",
+     "elite30042026#3",
+     "elite30042026#2"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "ansvarsdokument-for-cheftrænere"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "The decision is an EPF/IPF requirement that head coaches sign a responsibility document at IPF and EPF championships, an international requirement binding DSF rather than a DSF national-team rule.",
+    "refs": [
+     "vm2013#4"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "udstyrsregler-for-løftere-der-repræsenterer-danmark",
+     "godkendt-udstyr-ved-internationale-stævner"
+    ],
+    "title": null,
+    "category": "udstyr",
+    "parts": [],
+    "reason": "Both rules require Danish lifters competing internationally to use only IPF-approved equipment; the 2015 decision restates that requirement and only adds that the Danish special rule does not apply abroad.",
+    "refs": [
+     "refbest_13122015#4"
+    ]
+   }
+  ]
+ }
+}

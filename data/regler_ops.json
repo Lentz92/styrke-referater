@@ -1,0 +1,1391 @@
+{
+ "version": 1,
+ "audit": "2026-10-09T10:28:46+00:00",
+ "proposed": "2026-10-09T10:32:31+00:00",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "similarity": 0.1,
+ "categories": [
+  "medlemskab",
+  "okonomi",
+  "antidoping",
+  "staevner",
+  "dommere",
+  "landshold",
+  "master",
+  "udstyr",
+  "uddannelse",
+  "organisation",
+  "internationalt",
+  "andet"
+ ],
+ "data": "48d4580a9b41dad4",
+ "complete": true,
+ "missing": [],
+ "notes": [],
+ "ops": [
+  {
+   "id": 1,
+   "op": "merge",
+   "rules": [
+    "arrangørtilskud-ved-dm-hold-divisionsturnering",
+    "divisionsturnering-arrangørtilskud-og-tilmeldingsgebyr"
+   ],
+   "agreed": true,
+   "keeps": "arrangørtilskud-ved-dm-hold-divisionsturnering",
+   "title": "Arrangørtilskud ved DM-Hold (divisionsturnering)",
+   "category": "okonomi",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "okonomi",
+     "title": null,
+     "category": "okonomi",
+     "reason": "Both regulate the subsidy paid to the organiser of divisionsturnering/DM-Hold rounds; the 2026 decision raising it to 5.000 kr. explicitly removed the 10.000-kr. scheme held by the other rule.",
+     "refs": [
+      "rep2012#10",
+      "rep2026#23"
+     ]
+    },
+    {
+     "run": 1,
+     "call": "staevner",
+     "title": "Arrangørtilskud ved DM-Hold (divisionsturnering)",
+     "category": "okonomi",
+     "reason": "Both rules set the subsidy DSF pays clubs for hosting division-tournament rounds (10,000 kr. for three rounds vs. 5,000 kr. per round), so they are versions of one rule.",
+     "refs": [
+      "refbest_08022015#11",
+      "rep2015#6"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "okonomi",
+     "title": null,
+     "category": "okonomi",
+     "reason": "Both regulate the subsidy paid to clubs that host DM-Hold (divisionsturnering) rounds; the 2026 decision raising the per-round subsidy explicitly removed the 10,000 kr. arrangement filed under the other rule.",
+     "refs": [
+      "rep2012#10",
+      "rep2026#23"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "staevner",
+     "title": null,
+     "category": "okonomi",
+     "reason": "Both regulate the subsidy DSF pays the organiser of the division tournament (DM-Hold) rounds; the 10,000 kr. for three rounds is an earlier version of the per-round amount.",
+     "refs": [
+      "refbest_08022015#11",
+      "rep2015#6"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "arrangørtilskud-ved-dm-hold-divisionsturnering",
+    "aliases": [
+     "divisionsturnering-arrangørtilskud-og-tilmeldingsgebyr"
+    ],
+    "category": "okonomi",
+    "title": "Arrangørtilskud ved DM-Hold (divisionsturnering)"
+   }
+  },
+  {
+   "id": 2,
+   "op": "merge",
+   "rules": [
+    "betaling-af-startgebyr-og-tilmelding",
+    "invitation-tilmeldings-og-betalingsfrist-til-stævner"
+   ],
+   "agreed": true,
+   "keeps": "invitation-tilmeldings-og-betalingsfrist-til-stævner",
+   "title": "Tilmelding, frist og betaling af startgebyr",
+   "category": "staevner",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "staevner",
+     "title": null,
+     "category": "staevner",
+     "reason": "Both rules regulate the same entry and entry-fee payment deadline for meets, with exclusion if the fee is unpaid; the decisions were filed under identical subjects (documentation of paid fee, tilmelding og betaling af startgebyr).",
+     "refs": [
+      "rep2010#5",
+      "rep2015#10",
+      "rep2017#2",
+      "rep2022#2"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "okonomi",
+     "title": null,
+     "category": "staevner",
+     "reason": "Both regulate when and how clubs pay the entry fee to the host club at registration for meets (proof of payment, deadline, Billetto proposal); the decisions share the same subjects across the two rules.",
+     "refs": [
+      "refbest_28022010#1",
+      "refbest_17092016#6",
+      "rep2020#11"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "staevner",
+     "title": null,
+     "category": "staevner",
+     "reason": "Both hold decisions on the same entry and payment deadline for meets: documentation of a paid entry fee, payment to the organiser by the entry deadline, and exclusion of lifters who have not paid.",
+     "refs": [
+      "rep2010#5",
+      "rep2015#10",
+      "rep2017#2",
+      "rep2022#2",
+      "rep2026#6",
+      "rep2026#22"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "invitation-tilmeldings-og-betalingsfrist-til-stævner",
+    "aliases": [
+     "betaling-af-startgebyr-og-tilmelding"
+    ],
+    "category": "staevner",
+    "title": "Tilmelding, frist og betaling af startgebyr"
+   }
+  },
+  {
+   "id": 3,
+   "op": "merge",
+   "rules": [
+    "dommerpåklædning",
+    "dommerpåklædning-2"
+   ],
+   "agreed": true,
+   "keeps": "dommerpåklædning",
+   "title": "Dommeres påklædning",
+   "category": null,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "dommere",
+     "title": null,
+     "category": null,
+     "reason": "Both rules regulate the dress code for judges; the IPF ban on grey jeans is another version of the same judges' clothing requirement that already includes IPF-originated changes such as black shoes and socks.",
+     "refs": [
+      "refbest_13092009#9",
+      "vm2013#9",
+      "refdom02072024_2#2"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "internationalt",
+     "title": null,
+     "category": "dommere",
+     "reason": "Both rules regulate the dress code for referees; the IPF clarification that grey jeans are not allowed is a version of the same referee dress code.",
+     "refs": [
+      "490#28"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "dommerpåklædning",
+    "aliases": [
+     "dommerpåklædning-2"
+    ],
+    "category": "dommere",
+    "title": "Dommeres påklædning"
+   }
+  },
+  {
+   "id": 4,
+   "op": "merge",
+   "rules": [
+    "ophold-på-stævnehotel",
+    "ophold-på-stævnehotel-og-bindende-tilmelding"
+   ],
+   "agreed": true,
+   "keeps": "ophold-på-stævnehotel-og-bindende-tilmelding",
+   "title": "Ophold på officielt hotel ved EPF-stævner",
+   "category": "internationalt",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "master",
+     "title": null,
+     "category": "internationalt",
+     "reason": "Both rules regulate the EPF/IPF requirement that lifters stay at the official competition hotel for the whole event period; the 2026 decision is a version of the same international requirement.",
+     "refs": [
+      "Tilmeldingsfrister2026#7"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "master",
+     "title": null,
+     "category": "internationalt",
+     "reason": "Both rules hold the EPF/IPF requirement that participants stay at the official competition hotel for the whole competition; the 2026 restatement is just one version of the requirement that the other rule tracks through 2027.",
+     "refs": [
+      "Tilmeldingsfrister2026#7"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "ophold-på-stævnehotel-og-bindende-tilmelding",
+    "aliases": [
+     "ophold-på-stævnehotel"
+    ],
+    "category": "internationalt",
+    "title": "Ophold på officielt hotel ved EPF-stævner"
+   }
+  },
+  {
+   "id": 5,
+   "op": "merge",
+   "rules": [
+    "seksmånedersreglen-for-stævnedeltagelse",
+    "ventetid-fra-licens-til-stævnedeltagelse"
+   ],
+   "agreed": true,
+   "keeps": "ventetid-fra-licens-til-stævnedeltagelse",
+   "title": "Karensperiode før stævnedeltagelse",
+   "category": "medlemskab",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "staevner",
+     "title": null,
+     "category": "medlemskab",
+     "reason": "The 6-month rule is the waiting period on the licence list before a lifter may compete, later set at 3 months; the rejected proposal to abolish it belongs to that rule.",
+     "refs": [
+      "refbest_07122014#3"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "staevner",
+     "title": null,
+     "category": "medlemskab",
+     "reason": "The 6-month rule is the waiting period on the licence list before a lifter may compete, the same rule later set at 3 months in the medlemskab rule.",
+     "refs": [
+      "refbest_07122014#3"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "ventetid-fra-licens-til-stævnedeltagelse",
+    "aliases": [
+     "seksmånedersreglen-for-stævnedeltagelse"
+    ],
+    "category": "medlemskab",
+    "title": "Karensperiode før stævnedeltagelse"
+   }
+  },
+  {
+   "id": 6,
+   "op": "merge",
+   "rules": [
+    "tilskud-til-leje-af-lys-og-lyd",
+    "tilskud-til-leje-af-lys-og-lydudstyr"
+   ],
+   "agreed": true,
+   "keeps": "tilskud-til-leje-af-lys-og-lyd",
+   "title": "Tilskud til lys- og lydudstyr ved stævner",
+   "category": "okonomi",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "okonomi",
+     "title": "Tilskud til lys- og lydudstyr ved stævner",
+     "category": "okonomi",
+     "reason": "Both rules regulate the same subsidy to clubs for renting light and sound equipment at competitions; the board's February 2010 proposal was decided in March 2010 under the other rule.",
+     "refs": [
+      "refbest_28022010#5"
+     ]
+    },
+    {
+     "run": 1,
+     "call": "staevner",
+     "title": "Tilskud til lys og lyd ved stævner",
+     "category": "okonomi",
+     "reason": "Both rules hold the same subsidy for clubs renting light and sound equipment for meets: the board's 2010 proposal and the representatives' decision introducing it.",
+     "refs": [
+      "refbest_28022010#9",
+      "rep2010#6"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "okonomi",
+     "title": null,
+     "category": "okonomi",
+     "reason": "The board's February 2010 proposal of a subsidy for renting light and sound equipment for meets held outside club premises is the proposal the March 2010 decision in the staevner rule settled; both regulate the same subsidy.",
+     "refs": [
+      "refbest_28022010#5"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "staevner",
+     "title": null,
+     "category": "okonomi",
+     "reason": "Both rules concern the same subsidy to clubs for renting light and sound equipment for meets; the 2010 board proposal filed in okonomi is the one the Repræsentantskab adopted in 2010.",
+     "refs": [
+      "refbest_28022010#9",
+      "rep2010#6"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "tilskud-til-leje-af-lys-og-lyd",
+    "aliases": [
+     "tilskud-til-leje-af-lys-og-lydudstyr"
+    ],
+    "category": "okonomi",
+    "title": "Tilskud til lys- og lydudstyr ved stævner"
+   }
+  },
+  {
+   "id": 7,
+   "op": "merge",
+   "rules": [
+    "trænerakkreditering-ved-em-og-vm",
+    "trænergebyr-og-trænerakkreditering-ved-em-vm"
+   ],
+   "agreed": true,
+   "keeps": "trænergebyr-og-trænerakkreditering-ved-em-vm",
+   "title": "Trænergebyr ved EPF-stævner",
+   "category": "internationalt",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "master",
+     "title": null,
+     "category": "internationalt",
+     "reason": "Both regulate the EPF coach accreditation fee of 50 euro at EM/VM; the internationalt rule already holds decisions on 'Trænerakkreditering ved EM og VM'.",
+     "refs": [
+      "Tilmeldingsfrister2026#4"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "master",
+     "title": null,
+     "category": "internationalt",
+     "reason": "Both regulate the same 50 euro coach accreditation fee and coach limit at EM/VM; the other rule already holds decisions under the subject 'Trænerakkreditering ved EM og VM', so the 2026 decision is a version of the same rule.",
+     "refs": [
+      "Tilmeldingsfrister2026#4"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "trænergebyr-og-trænerakkreditering-ved-em-vm",
+    "aliases": [
+     "trænerakkreditering-ved-em-og-vm"
+    ],
+    "category": "internationalt",
+    "title": "Trænergebyr ved EPF-stævner"
+   }
+  },
+  {
+   "id": 8,
+   "op": "merge",
+   "rules": [
+    "udlån-af-forbundets-udstyr",
+    "udlån-af-udstyr-til-nye-udstyrsløftere"
+   ],
+   "agreed": true,
+   "keeps": "udlån-af-forbundets-udstyr",
+   "title": "Udlån af forbundets udstyr",
+   "category": "udstyr",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "udstyr",
+     "title": "Udlån af udstyr til løftere",
+     "category": "udstyr",
+     "reason": "Both rules regulate the procedure for lifters borrowing the federation's equipment against a signed loan slip; the 2025 Udstyrsgruppen decisions replace the earlier procedure via e-mail to a contact person.",
+     "refs": [
+      "refudstyr06032025#1",
+      "refudstyr10072025#2"
+     ]
+    },
+    {
+     "run": 1,
+     "call": "andet",
+     "title": "Udlån af udstyr til løftere",
+     "category": "udstyr",
+     "reason": "Both rules regulate the procedure by which lifters borrow the federation's equipment against a signed loan form; the 2025 decisions replace the 2014 procedure of borrowing by mail.",
+     "refs": [
+      "refbest_04082012#2",
+      "refbest_09082014#7"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "udstyr",
+     "title": "Udlån af forbundets udstyr",
+     "category": "udstyr",
+     "reason": "Both rules set the procedure for lifters to borrow the federation's own equipment against a signed loan slip (låneseddel), so the 2025 decisions replace the earlier procedure.",
+     "refs": [
+      "refudstyr06032025#1",
+      "refudstyr10072025#2"
+     ]
+    }
+   ],
+   "applied": {
+    "slug": "udlån-af-forbundets-udstyr",
+    "aliases": [
+     "udlån-af-udstyr-til-nye-udstyrsløftere"
+    ],
+    "category": "udstyr",
+    "title": "Udlån af forbundets udstyr"
+   }
+  },
+  {
+   "id": 9,
+   "op": "split",
+   "rules": [
+    "bestilling-betaling-og-levering-af-medaljer-og-pokaler"
+   ],
+   "agreed": true,
+   "parts": [
+    {
+     "title": "Disciplinmedaljer",
+     "refs": [
+      "refbest_03052014#1",
+      "refbest_26072015#8",
+      "rep2019#10"
+     ],
+     "keeps": false
+    },
+    {
+     "title": "Bestilling, betaling og levering af medaljer og pokaler",
+     "refs": [
+      "rep2015#1",
+      "refbest_10122016#4",
+      "refbest_14012017#2",
+      "refbest_021021#2",
+      "refbest_021021#7",
+      "rep2022#12",
+      "refbest_150723#2"
+     ],
+     "keeps": true
+    }
+   ],
+   "proposals": [
+    {
+     "run": 1,
+     "call": "staevner",
+     "parts": [
+      {
+       "title": "Disciplinmedaljer",
+       "refs": [
+        "refbest_03052014#1",
+        "refbest_26072015#8",
+        "rep2019#10"
+       ]
+      },
+      {
+       "title": "Bestilling, betaling og levering af medaljer og pokaler",
+       "refs": [
+        "rep2015#1",
+        "refbest_10122016#4",
+        "refbest_14012017#2",
+        "refbest_021021#2",
+        "refbest_021021#7",
+        "rep2022#12",
+        "refbest_150723#2"
+       ]
+      }
+     ],
+     "reason": "The rule mixes which championships award discipline medals with who orders, pays for and delivers medals and trophies; these are separate rules.",
+     "refs": [
+      "refbest_03052014#1",
+      "rep2019#10",
+      "refbest_021021#2",
+      "rep2022#12"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "staevner",
+     "parts": [
+      {
+       "title": "Disciplinmedaljer ved mesterskaber",
+       "refs": [
+        "refbest_03052014#1",
+        "refbest_26072015#8",
+        "rep2019#10"
+       ]
+      },
+      {
+       "title": "Bestilling, betaling og levering af medaljer og pokaler",
+       "refs": [
+        "rep2015#1",
+        "refbest_10122016#4",
+        "refbest_14012017#2",
+        "refbest_021021#2",
+        "refbest_021021#7",
+        "rep2022#12",
+        "refbest_150723#2"
+       ]
+      }
+     ],
+     "reason": "The rule mixes decisions on which meets award discipline medals with decisions on who orders, pays for and delivers medals and trophies, which change independently.",
+     "refs": [
+      "refbest_03052014#1",
+      "rep2019#10",
+      "rep2022#12",
+      "refbest_021021#2"
+     ]
+    }
+   ],
+   "applied": {
+    "slugs": [
+     "disciplinmedaljer",
+     "bestilling-betaling-og-levering-af-medaljer-og-pokaler"
+    ],
+    "category": "staevner",
+    "revived": [
+     "disciplinmedaljer"
+    ]
+   }
+  },
+  {
+   "id": 10,
+   "op": "split",
+   "rules": [
+    "bopælskrav-nationalitet-og-dobbelt-licens-ved-danske-mesterskaber"
+   ],
+   "agreed": true,
+   "parts": [
+    {
+     "title": "Bopælskrav og deltagelse i danske mesterskaber",
+     "refs": [
+      "rep2013#8",
+      "refbest_07102018#6",
+      "rep2026#3"
+     ],
+     "keeps": true
+    },
+    {
+     "title": "Deltagelse i danske mesterskaber for løftere der repræsenterer en anden nation",
+     "refs": [
+      "refbest_07102018#5"
+     ],
+     "keeps": false
+    }
+   ],
+   "proposals": [
+    {
+     "run": 1,
+     "call": "medlemskab",
+     "parts": [
+      {
+       "title": "Bopælskrav for udlændinge ved danske mesterskaber",
+       "refs": [
+        "rep2013#8",
+        "refbest_07102018#6",
+        "rep2026#3"
+       ]
+      },
+      {
+       "title": "Deltagelse i danske mesterskaber for løftere der repræsenterer en anden nation",
+       "refs": [
+        "refbest_07102018#5"
+       ]
+      }
+     ],
+     "reason": "The rule holds the residence requirement for foreigners (24 months, later 6 months) and a separate ban on lifters who represent another nation taking part in DM/JM/SM or setting records. These are two different requirements, and each needs its own version in force.",
+     "refs": [
+      "rep2013#8",
+      "refbest_07102018#5",
+      "refbest_07102018#6",
+      "rep2026#3"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "medlemskab",
+     "parts": [
+      {
+       "title": "Bopælskrav for udlændinge ved mesterskaber",
+       "refs": [
+        "rep2013#8",
+        "refbest_07102018#6",
+        "rep2026#3"
+       ]
+      },
+      {
+       "title": "Deltagelse i danske mesterskaber for løftere der repræsenterer en anden nation",
+       "refs": [
+        "refbest_07102018#5"
+       ]
+      }
+     ],
+     "reason": "Three decisions set the residence period required of foreigners (24 months, confirmed, then 6 months), while one decision bars lifters representing another nation from DM/JM/SM and records, a separate rule.",
+     "refs": [
+      "rep2013#8",
+      "refbest_07102018#5",
+      "refbest_07102018#6",
+      "rep2026#3"
+     ]
+    }
+   ],
+   "applied": {
+    "slugs": [
+     "bopælskrav-nationalitet-og-dobbelt-licens-ved-danske-mesterskaber",
+     "deltagelse-i-danske-mesterskaber-for-løftere-der-repræsenterer-en-anden-nation"
+    ],
+    "category": "medlemskab"
+   }
+  },
+  {
+   "id": 11,
+   "op": "split",
+   "rules": [
+    "dispensation-fra-dm-ved-kollision-med-vm"
+   ],
+   "agreed": true,
+   "parts": [
+    {
+     "title": "Pligt til DM-deltagelse for landsholdsløftere",
+     "refs": [
+      "rep2016#11",
+      "elite29032021#2",
+      "refbest_310722#5",
+      "elite12122023#2",
+      "elite30042026#1",
+      "elite15092026#3"
+     ],
+     "keeps": true
+    },
+    {
+     "title": "Vægtklasse ved pligtig DM-deltagelse for landsholdsløftere",
+     "refs": [
+      "elite30042026#3"
+     ],
+     "keeps": false
+    },
+    {
+     "title": "Præstationskrav ved pligtig DM-deltagelse for landsholdsløftere",
+     "refs": [
+      "elite30042026#2"
+     ],
+     "keeps": false
+    }
+   ],
+   "proposals": [
+    {
+     "run": 1,
+     "call": "landshold",
+     "parts": [
+      {
+       "title": "Pligt til DM-deltagelse for landsholdsløftere",
+       "refs": [
+        "rep2016#11",
+        "elite29032021#2",
+        "refbest_310722#5",
+        "elite12122023#2",
+        "elite30042026#1",
+        "elite15092026#3"
+       ]
+      },
+      {
+       "title": "Vægtklasse ved pligtig DM-deltagelse for landsholdsløftere",
+       "refs": [
+        "elite30042026#3"
+       ]
+      },
+      {
+       "title": "Præstationskrav ved pligtig DM-deltagelse for landsholdsløftere",
+       "refs": [
+        "elite30042026#2"
+       ]
+      }
+     ],
+     "reason": "Besides the obligation to take part in DM, the rule holds two separate rules adopted on the same day: free choice of weight class at that DM and a requirement of a real attempt at 80 % of the VM lifts.",
+     "refs": [
+      "elite30042026#1",
+      "elite30042026#2",
+      "elite30042026#3"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "landshold",
+     "parts": [
+      {
+       "title": "Pligt til DM-deltagelse for landsholdsløftere",
+       "refs": [
+        "rep2016#11",
+        "elite29032021#2",
+        "refbest_310722#5",
+        "elite12122023#2",
+        "elite30042026#1",
+        "elite15092026#3"
+       ]
+      },
+      {
+       "title": "Vægtklasse ved pligtig DM-deltagelse for landsholdsløftere",
+       "refs": [
+        "elite30042026#3"
+       ]
+      },
+      {
+       "title": "Præstationskrav ved pligtig DM-deltagelse for landsholdsløftere",
+       "refs": [
+        "elite30042026#2"
+       ]
+      }
+     ],
+     "reason": "Besides the duty itself to take part in DM, the rule holds two separate decisions of the same date: the free choice of weight class at the mandatory DM and the performance requirement (real attempt at 80 % of VM lifts), each of which can change independently.",
+     "refs": [
+      "elite30042026#1",
+      "elite30042026#3",
+      "elite30042026#2"
+     ]
+    }
+   ],
+   "applied": {
+    "slugs": [
+     "dispensation-fra-dm-ved-kollision-med-vm",
+     "vægtklasse-ved-pligtig-dm-deltagelse-for-landsholdsløftere",
+     "præstationskrav-ved-pligtig-dm-deltagelse-for-landsholdsløftere"
+    ],
+    "category": "landshold"
+   }
+  },
+  {
+   "id": 12,
+   "op": "split",
+   "rules": [
+    "godkendelse-af-logoer-på-løftertøj"
+   ],
+   "agreed": true,
+   "parts": [
+    {
+     "title": "Godkendelse af logoer og sponsorreklame",
+     "refs": [
+      "refbest_22042017#2",
+      "refbest_19012019.2#5",
+      "rep2019#11",
+      "refstaevne12032026#3"
+     ],
+     "keeps": true
+    },
+    {
+     "title": "Logoafgift",
+     "refs": [
+      "rep2019#23"
+     ],
+     "keeps": false
+    }
+   ],
+   "proposals": [
+    {
+     "run": 1,
+     "call": "udstyr",
+     "parts": [
+      {
+       "title": "Godkendelse af logoer på løftertøj",
+       "refs": [
+        "refbest_22042017#2",
+        "refbest_19012019.2#5",
+        "rep2019#11",
+        "refstaevne12032026#3"
+       ]
+      },
+      {
+       "title": "Logoafgift",
+       "refs": [
+        "rep2019#23"
+       ]
+      }
+     ],
+     "reason": "Most decisions regulate which logos on competition clothing need DSF approval and registration, while the withdrawn 2019 proposal concerns the logo fee rates (500-2,500 kr.), a separate fee rule.",
+     "refs": [
+      "rep2019#23",
+      "refbest_22042017#2",
+      "refbest_19012019.2#5"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "udstyr",
+     "parts": [
+      {
+       "title": "Godkendelse af logoer og sponsorreklame",
+       "refs": [
+        "refbest_22042017#2",
+        "refbest_19012019.2#5",
+        "rep2019#11",
+        "refstaevne12032026#3"
+       ]
+      },
+      {
+       "title": "Logoafgift",
+       "refs": [
+        "rep2019#23"
+       ]
+      }
+     ],
+     "reason": "The rule regulates which logos may be worn on lifting clothing and how they are approved and registered. The withdrawn 2019 proposal concerned a separate logo fee of 500-2,500 kr., which belongs to the logo-fee rule.",
+     "refs": [
+      "rep2019#23",
+      "refbest_22042017#2",
+      "refstaevne12032026#3"
+     ]
+    }
+   ],
+   "applied": {
+    "slugs": [
+     "godkendelse-af-logoer-på-løftertøj",
+     "logoafgift"
+    ],
+    "category": "udstyr"
+   }
+  },
+  {
+   "id": 13,
+   "op": "move",
+   "rules": [
+    "ansvarsdokument-for-cheftrænere"
+   ],
+   "agreed": true,
+   "category": "internationalt",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "landshold",
+     "category": "internationalt",
+     "reason": "The decision concerns an EPF responsibility document for head coaches that also applies at IPF championships, an international requirement binding DSF.",
+     "refs": [
+      "vm2013#4"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "landshold",
+     "category": "internationalt",
+     "reason": "The decision is an EPF/IPF requirement that head coaches sign a responsibility document at IPF and EPF championships, an international requirement binding DSF rather than a DSF national-team rule.",
+     "refs": [
+      "vm2013#4"
+     ]
+    }
+   ],
+   "applied": {
+    "category": "internationalt",
+    "from": "landshold"
+   }
+  },
+  {
+   "id": 14,
+   "op": "move",
+   "rules": [
+    "dopinggebyr-ved-nm"
+   ],
+   "agreed": true,
+   "category": "okonomi",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "internationalt",
+     "category": "okonomi",
+     "reason": "The Representantskab decided when the doping fee at the Nordic championships is paid (only when a test is actually done). This is a pure fee decision by DSF, not an IPF/EPF/DIF requirement.",
+     "refs": [
+      "rep2026#26"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "internationalt",
+     "category": "okonomi",
+     "reason": "A Representative Council decision that the doping fee at the Nordic championship is only paid when testing occurs; a pure fee decision, not one made by IPF, EPF or DIF.",
+     "refs": [
+      "rep2026#26"
+     ]
+    }
+   ],
+   "applied": {
+    "category": "okonomi",
+    "from": "internationalt"
+   }
+  },
+  {
+   "id": 15,
+   "op": "move",
+   "rules": [
+    "honorering-af-dommerstillende-klubber"
+   ],
+   "agreed": true,
+   "category": "okonomi",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "dommere",
+     "category": "okonomi",
+     "reason": "The only decision is a rejected proposal to raise the start fee to 350 kr. and allocate part of it as payment to clubs providing judges, which is a pure fee and fee-distribution matter.",
+     "refs": [
+      "rep2023#3"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "dommere",
+     "category": "okonomi",
+     "reason": "The only decision is a rejected proposal to raise the start fee to 350 kr. and allocate 100 kr. per start as payment to clubs providing judges, a pure fee and fee-distribution decision.",
+     "refs": [
+      "rep2023#3"
+     ]
+    }
+   ],
+   "applied": {
+    "category": "okonomi",
+    "from": "dommere"
+   }
+  },
+  {
+   "id": 16,
+   "op": "move",
+   "rules": [
+    "nordisk-mesterskab-for-masters"
+   ],
+   "agreed": true,
+   "category": "master",
+   "proposals": [
+    {
+     "run": 1,
+     "call": "internationalt",
+     "category": "master",
+     "reason": "The only decision is Denmark's rejected NPF proposal to create a Nordic championship for masters. It concerns only masters and is not an IPF/EPF/DIF requirement.",
+     "refs": [
+      "rep2026#27"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "internationalt",
+     "category": "master",
+     "reason": "The rejected Danish proposal to create a Nordic championship for masters concerns only masters.",
+     "refs": [
+      "rep2026#27"
+     ]
+    }
+   ],
+   "applied": {
+    "category": "master",
+    "from": "internationalt"
+   }
+  },
+  {
+   "id": 17,
+   "op": "merge",
+   "rules": [
+    "a-dommer-ved-rekordforsøg",
+    "stævner-og-officials-ved-rekordsætning"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "dommere",
+     "title": null,
+     "category": "staevner",
+     "reason": "Both rules set the judge requirement for Danish record attempts: the 2016 requirement of an A-judge at record attempts was later replaced by the rule that B-judges are sufficient for records, so they are versions of one requirement.",
+     "refs": [
+      "refbest_17092016#7"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 18,
+   "op": "merge",
+   "rules": [
+    "deltagelse-i-stærkmands-og-bodybuildingkonkurrencer",
+    "karantæne-ved-deltagelse-i-bodybuilding-og-stærkmandskonkurrencer"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "medlemskab",
+     "title": "Deltagelse i stærkmands- og bodybuildingkonkurrencer",
+     "category": "antidoping",
+     "reason": "The rejected 2014 proposal of a 1-year quarantine for competing in bodybuilding/strongman federations would have changed the existing rule on DSF lifters' participation in strongman competitions and its quarantine.",
+     "refs": [
+      "rep2014#5"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 19,
+   "op": "merge",
+   "rules": [
+    "dispensation-fra-landsholdskrav",
+    "ingen-dispensation-fra-kvalifikationskrav"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "landshold",
+     "title": "Dispensation fra kvalifikationskrav",
+     "category": null,
+     "reason": "Both rules regulate whether and by whom national-team lifters can get dispensation from the qualification requirements; the 2022 rule that only Eliteudvalget grants dispensations replaces the 2011 rule of no dispensation at all.",
+     "refs": [
+      "elite29062011#6",
+      "refbest_14012017#4",
+      "elite29062022#3"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 20,
+   "op": "merge",
+   "rules": [
+    "godkendt-udstyr-ved-internationale-stævner",
+    "udstyrsregler-for-løftere-der-repræsenterer-danmark"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "landshold",
+     "title": null,
+     "category": "udstyr",
+     "reason": "Both rules require Danish lifters competing internationally to use only IPF-approved equipment; the 2015 decision restates that requirement and only adds that the Danish special rule does not apply abroad.",
+     "refs": [
+      "refbest_13122015#4"
+     ]
+    },
+    {
+     "run": 2,
+     "call": "internationalt",
+     "title": null,
+     "category": "internationalt",
+     "reason": "Both rules state the same requirement: lifters competing internationally may only use equipment on IPF's approved list.",
+     "refs": [
+      "refbest_07122014#6"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 21,
+   "op": "merge",
+   "rules": [
+    "navn-og-licensnummer-ved-licensbetaling",
+    "opkrævning-af-licens"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "medlemskab",
+     "title": null,
+     "category": "okonomi",
+     "reason": "The 2009 rule on stating name and licence number when paying the annual licence is about how the licence is paid, which was later replaced by the licence being invoiced.",
+     "refs": [
+      "rep2009#7"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 22,
+   "op": "merge",
+   "rules": [
+    "rejseplanlægning-og-booking",
+    "selvbestilling-af-rejser"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "okonomi",
+     "title": null,
+     "category": "landshold",
+     "reason": "The 2024 decision letting national-team lifters book their own travel within the committee's budget changes the national-team rule on booking travel to international meets, which already covers lifters booking their own flights.",
+     "refs": [
+      "refbest_151224#3"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 23,
+   "op": "split",
+   "rules": [
+    "rejseplanlægning-og-booking"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "landshold",
+     "parts": [
+      {
+       "title": "Bestilling af rejser til internationale stævner",
+       "refs": [
+        "elite25042015#7",
+        "elite18052021#3",
+        "elite14122022#2",
+        "elite08032023#1",
+        "elite10122024#2",
+        "elite25062024_2#5"
+       ]
+      },
+      {
+       "title": "Frister for rejseoplysninger til internationale stævner",
+       "refs": [
+        "elite10122024#5"
+       ]
+      }
+     ],
+     "reason": "The rule mixes who books travel and what booking through the federation costs with a separate deadline for reporting travel details; both are in force at the same time.",
+     "refs": [
+      "elite10122024#2",
+      "elite10122024#5"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 24,
+   "op": "rename",
+   "rules": [
+    "ansvarsdokument-for-cheftrænere"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "landshold",
+     "title": "Ansvarsdokument for cheftrænere ved IPF- og EPF-mesterskaber",
+     "reason": "The document is the EPF head-coach responsibility document required at EPF and IPF championships.",
+     "refs": [
+      "vm2013#4"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 25,
+   "op": "rename",
+   "rules": [
+    "breddeudvalgets-aktiviteter-og-sammensætning"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "organisation",
+     "title": "Adgang til Breddeudvalgets lejre",
+     "reason": "The only decision regulates who may take part in Breddeudvalget's camps: they are for DSF members, and outsiders can join if there is room and they pay. It says nothing about the committee's composition.",
+     "refs": [
+      "refbest_09062018#12"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 26,
+   "op": "move",
+   "rules": [
+    "adel-uddannelse-for-trænere"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "master",
+     "category": "internationalt",
+     "reason": "The rule regulates the ADEL coach-education requirement for accreditation at international EPF/IPF competitions, which applies to all coaches rather than only to masters.",
+     "refs": [
+      "Tilmeldingsfrister2026#6"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 27,
+   "op": "move",
+   "rules": [
+    "behandling-af-dopingsager-i-dif"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "antidoping",
+     "category": "internationalt",
+     "reason": "The rule records a DIF decision abolishing DIF's doping tribunals and adapting to the 2027 WADA code, a DIF requirement that binds how DSF's doping cases are handled.",
+     "refs": [
+      "dif_budgetmoede_2026#1"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 28,
+   "op": "move",
+   "rules": [
+    "brobizz-som-krav-for-kørselsgodtgørelse"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "dommere",
+     "category": "okonomi",
+     "reason": "The rule sets a condition (BroBizz/Pay by Plate) for reimbursing judges' bridge costs, a reimbursement matter belonging with the mileage allowance rules in okonomi.",
+     "refs": [
+      "refdom28032024#1"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 29,
+   "op": "move",
+   "rules": [
+    "fælles-stævnepulje-for-klubber"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "staevner",
+     "category": "okonomi",
+     "reason": "The proposal is a 2,000 kr. deposit every club pays yearly and gets back if it hosts a meet, a pure fee and subsidy matter.",
+     "refs": [
+      "refstaevne0406026#2"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 30,
+   "op": "move",
+   "rules": [
+    "indberetning-af-dopingkontrolresultater-til-ipf"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 2,
+     "call": "antidoping",
+     "category": "internationalt",
+     "reason": "The rule is an IPF requirement binding DSF to report doping control results annually by 31 March under penalty of a 500 euro fine and suspension, like the other IPF/EPF obligations filed under internationalt.",
+     "refs": [
+      "vm2013#1"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 31,
+   "op": "move",
+   "rules": [
+    "leverandør-af-medaljer"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "andet",
+     "category": "staevner",
+     "reason": "The rule fixes the supplier of the medals for meets, which is part of medal ordering for competitions, handled in staevner.",
+     "refs": [
+      "refbest_03052014#3"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 32,
+   "op": "move",
+   "rules": [
+    "procedure-for-internationale-betalinger"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "okonomi",
+     "category": "landshold",
+     "reason": "The procedure governs payments and receipts handed to the team manager before departure on national-team trips abroad.",
+     "refs": [
+      "refbest_150723#1"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 33,
+   "op": "move",
+   "rules": [
+    "selvbestilling-af-rejser"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "okonomi",
+     "category": "landshold",
+     "reason": "The decision lets national-team lifters book their own travel within the committee's travel budget, a national-team rule.",
+     "refs": [
+      "refbest_151224#3"
+     ]
+    }
+   ],
+   "applied": null
+  },
+  {
+   "id": 34,
+   "op": "move",
+   "rules": [
+    "stævneudvalgets-ret-til-at-ændre-stævner"
+   ],
+   "agreed": false,
+   "proposals": [
+    {
+     "run": 1,
+     "call": "staevner",
+     "category": "organisation",
+     "reason": "The rule is an amendment to the statutes (§13) giving Stævneudvalget the power to change championships, which is a committee power and belongs under organisation.",
+     "refs": [
+      "refbest_110523#1",
+      "rep2023ekstra#1"
+     ]
+    }
+   ],
+   "applied": null
+  }
+ ],
+ "rejected": [],
+ "applied": {
+  "time": "2026-10-09T10:34:06+00:00",
+  "data": "b711bcdc45c972b6"
+ }
+}

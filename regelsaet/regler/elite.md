@@ -52,17 +52,6 @@ Arbejde, familiefester, flytning, ferie og lignende er ikke gyldige afbudsgrunde
 - 05.12.2015 · ændret: arbejde, fester, ferie ikke gyldige afbudsgrunde · [elite05122015 s. 3](https://filer.styrke.dk/referater/elite05122015.pdf#page=3)
 - 19.09.2023 · ændret: Eliteudvalget kan kræve lægeerklæring; udgift refunderes · [elite19092023 s. 1](https://filer.styrke.dk/referater/elite19092023.pdf#page=1)
 
-<a id="regel/ansvarsdokument-for-cheftraenere"></a>
-### Ansvarsdokument for cheftrænere
-
-**I kraft**
-
-Det ansvarsdokument for cheftrænere, der anvendes i EPF, gælder nu også ved IPF-mesterskaber.
-
-*Eksternt krav · vedtaget 2013 af DIF/IPF/EPF*
-
-- 2013 · indført: EPF-ansvarsdokument gælder også ved IPF-mesterskaber · [vm2013 s. 1](https://filer.styrke.dk/beretninger/vm2013.pdf#page=1)
-
 <a id="regel/antal-dommere-udsendt-til-em"></a>
 ### Antal dommere med landsholdet
 
@@ -587,7 +576,7 @@ Løftere på sub-junior-/juniorlandsholdet, der bliver seniorer, overgår automa
 
 **I kraft**
 
-Landsholdsløftere skal deltage ved DM uden dispensation og kan frit vælge vægtklasse, også en højere. Der er ikke krav om maksimal præstation, men de skal gennemføre et reelt forsøg i hver disciplin på mindst 80 % af deres bedste løft fra VM.
+Landsholdsløftere skal deltage ved DM, også når DM ligger kort efter et internationalt mesterskab. Der gives ikke dispensation fra deltagelsen.
 
 *Udvalgsbeslutning · vedtaget 30.04.2026 af Eliteudvalget*
 
@@ -596,11 +585,20 @@ Landsholdsløftere skal deltage ved DM uden dispensation og kan frit vælge væg
 - 31.07.2022 · bekræftet: landsholdsløftere skal som udgangspunkt deltage i DM · [refbest_310722 s. 3](https://filer.styrke.dk/referater/refbest_310722.pdf#page=3)
 - 12.12.2023 · ændret: VM klassisk 2024-deltagere fritaget for DM klassisk · [elite12122023 s. 2](https://filer.styrke.dk/referater/elite12122023.pdf#page=2)
 - 30.04.2026 · ændret: DM-pligt fastholdes; ingen dispensation · [elite30042026 s. 1](https://filer.styrke.dk/referater/elite30042026.pdf#page=1)
-- 30.04.2026 · ændret: frit valg af vægtklasse ved pligtig DM · [elite30042026 s. 1](https://filer.styrke.dk/referater/elite30042026.pdf#page=1)
-- 30.04.2026 · ændret: reelt forsøg på mindst 80 % af VM-løft · [elite30042026 s. 1](https://filer.styrke.dk/referater/elite30042026.pdf#page=1)
 - 15.09.2026 · bekræftet: samme procedure ved datosammenfald i 2027 (fra 01.01.2027) · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
 
 > **Bemærk:** Repræsentantskabet forkastede i 2016 et krav om DM-deltagelse, men Eliteudvalget har senere indført og strammet kravet. Det er også uklart, hvilken procedure der gælder ved datosammenfald i 2027, når der fra 2026 ikke gives dispensation.
+
+<a id="regel/praestationskrav-ved-pligtig-dm-deltagelse-for-landsholdsloeftere"></a>
+### Præstationskrav ved pligtig DM-deltagelse for landsholdsløftere
+
+**I kraft**
+
+Landsholdsløftere har ikke krav om maksimal præstation ved DM. De skal dog gennemføre et reelt (bona fide) forsøg i hver disciplin. Et sådant forsøg skal være på mindst 80 % af løfterens bedste løft fra VM.
+
+*Udvalgsbeslutning · vedtaget 30.04.2026 af Eliteudvalget*
+
+- 30.04.2026 · indført: reelt forsøg i hver disciplin, mindst 80 % af VM-løft · [elite30042026 s. 1](https://filer.styrke.dk/referater/elite30042026.pdf#page=1)
 
 <a id="regel/refusion-af-egenbetaling-ved-medaljer-og-placeringer"></a>
 ### Refusion af egenbetaling ved medaljer
@@ -850,6 +848,17 @@ Som udgangspunkt hører atleten til i den vægtklasse, der står i den underskre
 - 23.10.2024 · ændret: skift af vægtklasse kræver krav i ny klasse · [elite23102024 s. 2](https://filer.styrke.dk/referater/elite23102024.pdf#page=2)
 - 12.03.2025 · ændret: krav i vægtklassen inden for 12 måneder · [elite12032025 s. 1](https://filer.styrke.dk/referater/elite12032025.pdf#page=1)
 - 15.09.2026 · ændret: vægtklasse efter kontrakt; skift afgøres af sportschef · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
+
+<a id="regel/vaegtklasse-ved-pligtig-dm-deltagelse-for-landsholdsloeftere"></a>
+### Vægtklasse ved pligtig DM-deltagelse for landsholdsløftere
+
+**I kraft**
+
+Landsholdsløftere, der skal deltage ved DM, har ikke krav om at stille op i en bestemt vægtklasse. De må gerne stille op i en højere vægtklasse.
+
+*Udvalgsbeslutning · vedtaget 30.04.2026 af Eliteudvalget*
+
+- 30.04.2026 · indført: landsholdsløftere frit valg af vægtklasse ved pligtig DM · [elite30042026 s. 1](https://filer.styrke.dk/referater/elite30042026.pdf#page=1)
 
 <a id="regel/administration-af-egenbetaling"></a>
 ### Administration af egenbetaling
@@ -1396,6 +1405,17 @@ En anmodning om rengøring af stang eller platform skal gives til den tekniske k
 
 - 04.11.2018 · indført: anmodning til teknisk kontrollør, ellers overdommer · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
 
+<a id="regel/ansvarsdokument-for-cheftraenere"></a>
+### Ansvarsdokument for cheftrænere
+
+**I kraft**
+
+Det ansvarsdokument for cheftrænere, der anvendes i EPF, gælder nu også ved IPF-mesterskaber.
+
+*Eksternt krav · vedtaget 2013 af DIF/IPF/EPF*
+
+- 2013 · indført: EPF-ansvarsdokument gælder også ved IPF-mesterskaber · [vm2013 s. 1](https://filer.styrke.dk/beretninger/vm2013.pdf#page=1)
+
 <a id="regel/antal-coaches-i-wrapping-omraadet"></a>
 ### Antal coaches i bandageområdet
 
@@ -1611,28 +1631,6 @@ Nationer med over tre års medlemskab af IPF bør medbringe mindst én internati
 - 12.06.2026 · ændret: tre dommere ved 15 løftere, bøde sænket fra 2000 til 1000 euro · [1071kongres s. 15](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=15)
 
 > **Bemærk:** Sanktionen er beskrevet forskelligt (bøde på 500, 2000 og 1000 euro samt holdtælling af kun 4 løftere); det er uklart hvordan reglerne forholder sig til hinanden.
-
-<a id="regel/dommerpaaklaedning-2"></a>
-### Dommerpåklædning
-
-**I kraft**
-
-Reglerne for dommerpåklædning præciseres, så det tydeligt fremgår, at grå jeans ikke er tilladt.
-
-*Eksternt krav · vedtaget 04.11.2018 af DIF/IPF/EPF*
-
-- 04.11.2018 · indført: præciseret at grå jeans ikke er tilladt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
-
-<a id="regel/dopinggebyr-ved-nm"></a>
-### Dopinggebyr ved NM
-
-**I kraft**
-
-På NPF-kongressen blev det vedtaget, at der kun skal betales dopinggebyr, hvis der tages dopingtest.
-
-*Eksternt krav · vedtaget 29.03.2026 af Repræsentantskabet*
-
-- 29.03.2026 · indført: dopinggebyr kun ved faktisk dopingtest · [rep2026 s. 10](https://filer.styrke.dk/referater/rep2026.pdf#page=10)
 
 <a id="regel/test-af-rekorder"></a>
 ### Dopingtest af rekorder ved EPF-stævner
@@ -1939,13 +1937,14 @@ IPF indfører RAW (klassisk styrkeløft) som officielt verdensmesterskab i de fo
 
 **I kraft**
 
-Ved alle europamesterskaber er minimumsopholdet på det officielle hotel 2 på hinanden følgende nætter.
+Deltagere skal bo på stævnehotellet i hele deres stævneperiode, fx 4 overnatninger, hvis man løfter mandag og hjælper en anden løfter torsdag. Ved europamesterskaber er minimumsopholdet på det officielle hotel 2 på hinanden følgende nætter.
 
-*Eksternt krav · vedtaget 19.03.2025 af DIF/IPF/EPF (Enstemmigt)*
+*Eksternt krav · vedtaget 2026 af Andet*
 
-- 2019 · forslag forkastet: Great Britain PF's forslag om 100 euro bøde faldt snævert · [467kongres s. 3](https://styrke.dk/filer/rapporter/467kongres.pdf#page=3)
-- 19.03.2025 · indført: minimum 2 nætter på officielt hotel ved EM · [epf_kongres_2025 s. 6](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2025.pdf#page=6)
-- 2027 · bekræftet: bopæl på officielt hotel krav for akkreditering · [Tilmeldingsfrister2027 s. 1](https://filer.styrke.dk/masterudvalg/Tilmeldingsfrister2027.pdf#page=1)
+- 2019 · forslag forkastet: Great Britain PF foreslår 100 euro bøde i stedet; faldt snævert · [467kongres s. 3](https://styrke.dk/filer/rapporter/467kongres.pdf#page=3)
+- 19.03.2025 · indført: minimum 2 sammenhængende nætter på officielt hotel ved EM · [epf_kongres_2025 s. 6](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2025.pdf#page=6)
+- 2026 · ændret: krav om ophold på stævnehotel i hele stævneperioden · [Tilmeldingsfrister2026 s. 2](../../referater/andet/Tilmeldingsfrister2026.pdf)
+- 2027 · bekræftet: ; ophold på officielt hotel krav for akkreditering · [Tilmeldingsfrister2027 s. 1](https://filer.styrke.dk/masterudvalg/Tilmeldingsfrister2027.pdf#page=1)
 
 <a id="regel/oprydning-af-udstyr-og-traeningsomraade"></a>
 ### Oprydning i trænings- og stævneområde
@@ -2107,14 +2106,17 @@ DIF tillader ikke længere, at forbundet giver atleterne tilskud til rejser. Ør
 
 **I kraft**
 
-Trænere ved EPF-stævner skal betale coach capitation fee, medmindre de selv deltager i samme stævne som atlet eller dommer.
+Der er loft over antallet af trænere ved Europa- og Verdensmesterskaber. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro, medmindre de selv deltager i samme stævne som atlet eller dommer.
 
-*Eksternt krav · vedtaget 19.03.2025 af DIF/IPF/EPF (Alle for undtagen Danmark, som undlod at stemme)*
+*Eksternt krav · vedtaget 2026 af Andet*
 
-- 20.03.2024 · indført: ingen coach fee for atleter der er assistenter · [elite20032024 s. 1](https://filer.styrke.dk/referater/elite20032024.pdf#page=1)
+- 20.03.2024 · indført: ingen coach fee for atleter, der er assistenter · [elite20032024 s. 1](https://filer.styrke.dk/referater/elite20032024.pdf#page=1)
 - 19.03.2025 · ændret: også dommere fritaget, Danmark undlod at stemme · [epf_kongres_2025 s. 4](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2025.pdf#page=4)
-- 2027 · bekræftet: 50 euro og ADEL for trænerakkreditering ved EM/VM · [Tilmeldingsfrister2027 s. 1](https://filer.styrke.dk/masterudvalg/Tilmeldingsfrister2027.pdf#page=1)
-- 18.03.2026 · ændret: trænergebyr 50 euro fra 2027 (fra 01.01.2027) · [epf_kongres_2026 s. 4](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2026.pdf#page=4)
+- 2026 · ændret: loft over antal trænere og gebyr på 50 euro · [Tilmeldingsfrister2026 s. 2](../../referater/andet/Tilmeldingsfrister2026.pdf)
+- 2027 · ændret: krav om gennemført ADEL tilføjet, kontakt masterudvalget · [Tilmeldingsfrister2027 s. 1](https://filer.styrke.dk/masterudvalg/Tilmeldingsfrister2027.pdf#page=1)
+- 18.03.2026 · bekræftet: EPF-forslag 16.7: trænergebyr 50 euro fra 2027 (fra 01.01.2027) · [epf_kongres_2026 s. 4](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2026.pdf#page=4)
+
+> **Bemærk:** Det er uklart, om fritagelsen for trænere, der selv deltager som atlet eller dommer, stadig gælder efter indførelsen af gebyret på 50 euro.
 
 <a id="regel/traenergebyr-ved-ipf-mesterskaber"></a>
 ### Trænergebyr ved IPF-mesterskaber
@@ -2595,15 +2597,6 @@ Forslag om at den tekniske kontrollør beder løfteren trække knævarmerne ned,
 Forslag om kvalifikationskrav for deltagelse i VM blev trukket tilbage på IPF-kongressen.
 
 - 04.11.2018 · forslag trukket tilbage: Norges forslag om VM-kvalifikationskrav trukket · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
-
-<a id="regel/nordisk-mesterskab-for-masters"></a>
-### Nordisk mesterskab for masters
-
-**Kun forslag – aldrig vedtaget**
-
-Dansk forslag på NPF-kongressen om at oprette et nordisk mesterskab for masters blev forkastet, da et stævne kombineret med sub-junior og junior ville blive for langt og svært at afholde.
-
-- 29.03.2026 · forslag forkastet: Danmarks forslag om nordisk masters-mesterskab forkastet · [rep2026 s. 10](https://filer.styrke.dk/referater/rep2026.pdf#page=10)
 
 <a id="regel/pause-mellem-discipliner-ved-en-loeftegruppe"></a>
 ### Pause mellem discipliner ved én løftegruppe

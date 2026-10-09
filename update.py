@@ -825,8 +825,9 @@ def extraction_cost(model: str, prompt: str, path: Path) -> tuple[float, int, tu
 def full_consolidation_cost(model: str, categories: int, path: Path) -> tuple[float, str] | None:
     """Cost per category of the last full consolidation by `model` in data/runs.jsonl, and when it ran: the last run
     in full mode whose consolidation called Claude for at least `categories` categories. Lines without a mode are
-    from before it was logged; the monthly runs then consolidated in full."""
-    for line in reversed(_log_lines(path)):
+    from before it was logged; the monthly runs then consolidated in full. Last by time, not by place in the file:
+    a merge of two branches that both logged runs keeps both sides' lines (.gitattributes), not in time order."""
+    for line in sorted(_log_lines(path), key=lambda line: line.get("time", ""), reverse=True):
         step = line.get("steps", {}).get("consolidate")
         if (step and line.get("consolidate_mode", "full") == "full" and model in step.get("models", ())
                 and step["calls"] >= max(categories, 1)):

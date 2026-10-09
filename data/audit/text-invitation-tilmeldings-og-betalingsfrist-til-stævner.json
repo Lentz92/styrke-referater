@@ -1,0 +1,155 @@
+{
+ "fingerprint": "b62ce110a2c9bc15",
+ "time": "2026-10-09T10:33:41+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 785,
+  "cache_write": 9874,
+  "output": 4509,
+  "cost_usd": 0.1693,
+  "seconds": 38,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "refbest_28022010#1",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "bestyrelsen foreslår dokumentation for betalt startgebyr før start",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2010#5",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "krav om dokumentation for betalt startgebyr",
+    "kort_regel": "dokumentation for betalt startgebyr kræves for at stille op"
+   },
+   {
+    "ref": "rep2012#3",
+    "effekt": "aendret",
+    "tekst": "DSF sender invitationen til foreningerne senest seks uger før stævnet, og tilmeldinger skal sendes via e-mail til DSF senest tre uger før stævnet. Samtidig med tilmeldingen overføres startgebyr og evt. licens til DSF's bankkonto; en tilmelding er kun rettidig, hvis også startgebyr og evt. licens er overført rettidigt. Der skal være dokumentation for, at løfterne har betalt startgebyr.",
+    "kort": "invitation 6 uger før, tilmelding og betaling 3 uger før",
+    "kort_regel": "tilmelding og betaling til DSF senest tre uger før"
+   },
+   {
+    "ref": "rep2012#14",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "KSK foreslår bindende vægtklasser og deltagerliste 14 dage før",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2012#5",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "TSK's forslag om løbende tilmelding forkastet",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2015#10",
+    "effekt": "aendret",
+    "tekst": "DSF sender invitation senest seks uger før stævnet, og rettidig og bindende tilmelding skal ske til DSF via online system senest tre uger før stævnet. Startgebyr betales til arrangørens konto efter oplysningerne i invitationen og ikke længere til DSF samtidig med tilmeldingen; licens betales ikke ved tilmeldingen, men opkræves bagudrettet af DSF ud fra nomineringslisterne. Der skal fortsat være dokumentation for, at løfterne har betalt startgebyr.",
+    "kort": "online tilmelding; startgebyr til arrangør; licens opkræves bagud",
+    "kort_regel": "online tilmelding 3 uger før; startgebyr til arrangørens konto"
+   },
+   {
+    "ref": "refbest_17092016#6",
+    "effekt": "bekraeftet",
+    "tekst": "DSF sender invitation senest seks uger før stævnet, og rettidig og bindende tilmelding skal ske til DSF via online system senest tre uger før stævnet. Startgebyr betales til arrangørens konto efter oplysningerne i invitationen; fristen for indbetalingen er den dato, der står på tilmeldingen. Betales der ikke rettidigt, må den afholdende klub udelukke den klub, som ikke har betalt.",
+    "kort": "betalingsfrist er tilmeldingsdatoen; arrangør må udelukke ikke-betalende klub",
+    "kort_regel": "betaling inden tilmeldingsfrist, ellers kan arrangør udelukke klubben"
+   },
+   {
+    "ref": "rep2017#2",
+    "effekt": "aendret",
+    "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding via online system og for betaling af startgebyr til arrangørens konto er 21 dage før stævnestart. 3 bankdage efter fristens udløb kontrollerer den arrangerende klub, hvem der har betalt, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Klubberne orienterer selv deres løftere.",
+    "kort": "frist 21 dage før; ubetalte løftere kan ikke deltage",
+    "kort_regel": "tilmelding og betaling senest 21 dage før stævnestart"
+   },
+   {
+    "ref": "rep2017#26",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "Aalborg foreslår IPF's tilmeldingsregler, forkastet ved stemmelighed",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2018#17",
+    "effekt": "trukket",
+    "tekst": null,
+    "kort": "Jan Vestergaard foreslår tilmelding 60 dage før, trukket",
+    "kort_regel": null
+   },
+   {
+    "ref": "refbest_140320#3",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "AASK foreslår forhåndstilmelding 60 dage før; bestyrelsen imod",
+    "kort_regel": null
+   },
+   {
+    "ref": "refbest_140320#5",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "Holstebro foreslår atleter betaler selv via Billetto; bestyrelsen imod",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2020#3",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "AASK's forslag om IPF-frister (60/21 dage) forkastet",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2020#11",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "Holstebros forslag om betaling via Billetto forkastet",
+    "kort_regel": null
+   },
+   {
+    "ref": "refbest_021021#9",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "bestyrelsen foreslår 21-dages fristen videreført i stævneregler 2022",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2022#2",
+    "effekt": "bekraeftet",
+    "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding via online system og for betaling af startgebyr til arrangørens konto er 21 dage før stævnestart. 3 bankdage efter fristens udløb kontrollerer arrangøren betalingerne, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Klubberne orienterer selv deres løftere.",
+    "kort": "21-dages frist og betalingskontrol bekræftet",
+    "kort_regel": "tilmelding og betaling senest 21 dage før stævnestart"
+   },
+   {
+    "ref": "rep2026#6",
+    "effekt": "aendret",
+    "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding til DSF-mesterskaber via online system og for betaling af startgebyr til arrangørens konto er 30 dage før stævnestart, medmindre andet er påført invitationen. 3 bankdage efter fristens udløb kontrollerer arrangøren betalingerne, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Klubberne orienterer selv deres løftere.",
+    "kort": "frist ændret fra 21 til 30 dage før",
+    "kort_regel": "tilmelding og betaling senest 30 dage før, medmindre invitation siger andet"
+   },
+   {
+    "ref": "rep2026#22",
+    "effekt": "aendret",
+    "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding til DSF-mesterskaber via online system og for betaling af startgebyr til arrangørens konto er 30 dage før stævnestart, medmindre andet er påført invitationen. 3 bankdage efter fristens udløb kontrollerer den arrangerende klub, hvem der har betalt, og giver selv klubber med løftere, der ikke har betalt, besked om, at de ikke kan deltage. Arrangøren overfører fortsat 50 kr. pr. deltager til DSF efter faktura.",
+    "kort": "arrangøren giver besked om manglende betaling, ikke sekretæren",
+    "kort_regel": "frist 30 dage; arrangør kontrollerer betaling og giver besked"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

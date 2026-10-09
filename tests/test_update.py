@@ -205,11 +205,14 @@ def test_a_rebuild_is_priced_from_measured_extractions_and_the_last_full_consoli
           "steps": {"extract": _logged_step(4, 0.6, opus)}},
          {"command": "score", "runs": ["stored"]})
     _log(update.RUNS_LOG,
+         {"time": "2026-10-01T06:00:00+00:00", "steps": {"consolidate": _logged_step(4, 4.0, opus)}},
          {"time": "2026-11-01T06:00:00+00:00", "steps": {"consolidate": _logged_step(4, 2.0, opus)}},
          {"time": "2026-12-01T06:00:00+00:00", "consolidate_mode": "full",
           "steps": {"consolidate": _logged_step(1, 0.9, opus)}},  # one category: no full consolidation
          {"time": "2027-01-01T06:00:00+00:00", "consolidate_mode": "incremental",
-          "steps": {"consolidate": _logged_step(30, 3.0, opus)}})
+          "steps": {"consolidate": _logged_step(30, 3.0, opus)}},
+         # Merged from another branch (.gitattributes): later in the file, earlier in time.
+         {"time": "2026-09-01T06:00:00+00:00", "steps": {"consolidate": _logged_step(4, 8.0, opus)}})
     work = update.pending_work(analysed, prompt=OTHER_PROMPT)  # all 20 documents, and their 4 categories
 
     estimate = update.estimate_cost(work, update.Plan(OTHER_PROMPT, opus, mode="full", consolidate_model=opus))

@@ -1,7 +1,7 @@
 {
  "kategori": "internationalt",
  "version": 7,
- "input_hash": "78d6e0fc1c652b02c2032bc5a3ee1e80a1c812d7e27835315c50df83bcfced7e",
+ "input_hash": "b1eae10210624dccfb6b9d4b0aa346475777b5157c5fca529854ddeea4212835",
  "model": "claude-opus-5-5",
  "provenance": {
   "model": "claude-opus-5-5",
@@ -1363,22 +1363,6 @@
    ]
   },
   {
-   "titel": "Dommerpåklædning",
-   "slug": "dommerpåklædning-2",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "490#28",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "præciseret at grå jeans ikke er tilladt",
-     "kort_regel": "grå jeans ikke tilladt for dommere",
-     "dhash": "db4a2ef29425"
-    }
-   ]
-  },
-  {
    "titel": "Internationale dommereksamener ved åbne VM",
    "slug": "internationale-dommereksamener-ved-åbne-vm",
    "vigtig": true,
@@ -1590,39 +1574,72 @@
    "titel": "Trænergebyr ved EPF-stævner",
    "slug": "trænergebyr-og-trænerakkreditering-ved-em-vm",
    "vigtig": true,
-   "note": null,
+   "note": "Det er uklart, om fritagelsen for trænere, der selv deltager som atlet eller dommer, stadig gælder efter indførelsen af gebyret på 50 euro.",
    "versioner": [
     {
      "ref": "elite20032024#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "ingen coach fee for atleter der er assistenter",
-     "kort_regel": "atleter som assistenter fritaget, hvis på officielt hotel",
-     "dhash": "cf2d174bcd18"
+     "kort": "ingen coach fee for atleter, der er assistenter",
+     "kort_regel": "atleter som assistenter fritaget, hvis de bor på officielt hotel",
+     "dhash": "cf2d174bcd18",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "epf_kongres_2025#9",
      "effekt": "aendret",
      "tekst": "Trænere ved EPF-stævner skal betale coach capitation fee, medmindre de selv deltager i samme stævne som atlet eller dommer.",
      "kort": "også dommere fritaget, Danmark undlod at stemme",
-     "kort_regel": "coach fee undtagen for atleter og dommere i stævnet",
-     "dhash": "60c4c3c5142c"
+     "kort_regel": "coach fee, undtagen for atleter og dommere i stævnet",
+     "dhash": "60c4c3c5142c",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
-     "ref": "epf_kongres_2026#5",
+     "ref": "Tilmeldingsfrister2026#4",
      "effekt": "aendret",
-     "tekst": "Trænere ved EPF-stævner skal betale coach capitation fee på 50 euro fra 2027, medmindre de selv deltager i samme stævne som atlet eller dommer.",
-     "kort": "trænergebyr 50 euro fra 2027",
-     "kort_regel": "50 euro, undtagen atleter og dommere i stævnet",
-     "dhash": "0ed7ec8e3891"
+     "tekst": "Der er loft over antallet af trænere ved Europa- og Verdensmesterskaber. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro, medmindre de selv deltager i samme stævne som atlet eller dommer.",
+     "kort": "loft over antal trænere og gebyr på 50 euro",
+     "kort_regel": "begrænset antal trænere, akkrediteringsgebyr 50 euro",
+     "dhash": "b8b007cb54bb",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "Tilmeldingsfrister2027#3",
+     "effekt": "aendret",
+     "tekst": "Der er loft over antallet af trænere ved Europa- og Verdensmesterskaber. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro og have gennemført ADEL, medmindre de selv deltager i samme stævne som atlet eller dommer. Trænere skal kontakte masterudvalget.",
+     "kort": "krav om gennemført ADEL tilføjet, kontakt masterudvalget",
+     "kort_regel": "50 euro og ADEL for trænerakkreditering ved EM/VM",
+     "dhash": "3d651c204bd5",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "epf_kongres_2026#5",
      "effekt": "bekraeftet",
-     "tekst": "Der er loft over antallet af trænere. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro og have gennemført ADEL, medmindre de selv deltager i samme stævne som atlet eller dommer. Trænere skal kontakte masterudvalget.",
-     "kort": "50 euro og ADEL for trænerakkreditering ved EM/VM",
+     "tekst": "Der er loft over antallet af trænere ved Europa- og Verdensmesterskaber. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr (coach capitation fee) på 50 euro fra 2027 og have gennemført ADEL, medmindre de selv deltager i samme stævne som atlet eller dommer. Trænere skal kontakte masterudvalget.",
+     "kort": "EPF-forslag 16.7: trænergebyr 50 euro fra 2027",
      "kort_regel": "50 euro og ADEL for trænerakkreditering",
-     "dhash": "3d651c204bd5"
+     "dhash": "0ed7ec8e3891",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     }
    ]
   },
@@ -1676,25 +1693,53 @@
      "ref": "467kongres#3",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "Great Britain PF's forslag om 100 euro bøde faldt snævert",
+     "kort": "Great Britain PF foreslår 100 euro bøde i stedet; faldt snævert",
      "kort_regel": null,
-     "dhash": "dfb1190ee108"
+     "dhash": "dfb1190ee108",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:21+00:00"
+     }
     },
     {
      "ref": "epf_kongres_2025#6",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "minimum 2 nætter på officielt hotel ved EM",
-     "kort_regel": "mindst 2 sammenhængende nætter på officielt hotel",
-     "dhash": "aa2c0a20486d"
+     "kort": "minimum 2 sammenhængende nætter på officielt hotel ved EM",
+     "kort_regel": "mindst 2 sammenhængende nætter på officielt hotel ved EM",
+     "dhash": "aa2c0a20486d",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:21+00:00"
+     }
+    },
+    {
+     "ref": "Tilmeldingsfrister2026#7",
+     "effekt": "aendret",
+     "tekst": "Deltagere skal bo på stævnehotellet i hele deres stævneperiode, fx 4 overnatninger, hvis man løfter mandag og hjælper en anden løfter torsdag. Ved europamesterskaber er minimumsopholdet på det officielle hotel 2 på hinanden følgende nætter.",
+     "kort": "krav om ophold på stævnehotel i hele stævneperioden",
+     "kort_regel": "bo på stævnehotel hele stævneperioden, ved EM mindst 2 nætter",
+     "dhash": "c5968c079c24",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:21+00:00"
+     }
     },
     {
      "ref": "Tilmeldingsfrister2027#6",
      "effekt": "bekraeftet",
-     "tekst": "Atleter og trænere skal bo på det eller de officielle stævnehoteller i stævneperioden for at beholde deres akkreditering; ved europamesterskaber er minimumsopholdet 2 på hinanden følgende nætter.",
-     "kort": "bopæl på officielt hotel krav for akkreditering",
-     "kort_regel": "officielt hotel påkrævet for akkreditering",
-     "dhash": "a7fd286f4071"
+     "tekst": "Atleter og trænere skal bo på det eller de officielle stævnehoteller i hele stævneperioden for at beholde deres akkreditering, fx 4 overnatninger, hvis man løfter mandag og hjælper en anden løfter torsdag. Ved europamesterskaber er minimumsopholdet på det officielle hotel 2 på hinanden følgende nætter.",
+     "kort": "bekræftet; ophold på officielt hotel krav for akkreditering",
+     "kort_regel": "officielt hotel hele stævneperioden påkrævet for akkreditering",
+     "dhash": "a7fd286f4071",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:21+00:00"
+     }
     }
    ]
   },
@@ -2283,34 +2328,18 @@
    ]
   },
   {
-   "titel": "Nordisk mesterskab for masters",
-   "slug": "nordisk-mesterskab-for-masters",
+   "titel": "Ansvarsdokument for cheftrænere",
+   "slug": "ansvarsdokument-for-cheftrænere",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "rep2026#27",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "Danmarks forslag om nordisk masters-mesterskab forkastet",
-     "kort_regel": null,
-     "dhash": "4486209c813b"
-    }
-   ]
-  },
-  {
-   "titel": "Dopinggebyr ved NM",
-   "slug": "dopinggebyr-ved-nm",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "rep2026#26",
+     "ref": "vm2013#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "dopinggebyr kun ved faktisk dopingtest",
-     "kort_regel": "dopinggebyr betales kun når der testes",
-     "dhash": "042071a06cc6"
+     "kort": "EPF-ansvarsdokument gælder også ved IPF-mesterskaber",
+     "kort_regel": "cheftrænere underskriver ansvarsdokument ved IPF og EPF",
+     "dhash": "2fd64ba3a879"
     }
    ]
   }

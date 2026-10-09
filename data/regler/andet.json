@@ -1,7 +1,7 @@
 {
  "kategori": "andet",
  "version": 7,
- "input_hash": "cd33b00a6d2767fe8ba4bb95465946f210de27d1779a26083edfd28e56d4acb5",
+ "input_hash": "2c5a9fe8bdd52cbc5fc318123b6ad12bc37f224a73bfbec66ade871136900c79",
  "model": "claude-opus-5-5",
  "provenance": {
   "model": "claude-opus-5-5",
@@ -10,30 +10,6 @@
   "effort": "default"
  },
  "regler": [
-  {
-   "titel": "Udlån af forbundets udstyr",
-   "slug": "udlån-af-forbundets-udstyr",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_04082012#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "udstyrsliste på hjemmesiden, lån via kontoret, afhentning i Horsens",
-     "kort_regel": "udstyr lånes via kontoret og hentes i Horsens",
-     "dhash": "739ae5cab9c4"
-    },
-    {
-     "ref": "refbest_09082014#7",
-     "effekt": "aendret",
-     "tekst": "Der laves en liste over DSF's udstyr, som lægges ud på forbundets hjemmeside. Klubber og andre, der vil låne forbundets udstyr (f.eks. streamingudstyr), skal sende en mail til forbundet på jacob@styrke.dk og underskrive en låneseddel ved lån af udstyret. Udstyret hentes i Horsens.",
-     "kort": "lån via mail til jacob@styrke.dk, låneseddel skal underskrives",
-     "kort_regel": "lån via mail til jacob@styrke.dk mod underskrevet låneseddel",
-     "dhash": "ec23abd075fc"
-    }
-   ]
-  },
   {
    "titel": "Leverandør af medaljer",
    "slug": "leverandør-af-medaljer",

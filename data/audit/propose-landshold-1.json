@@ -1,0 +1,139 @@
+{
+ "fingerprint": "9f5a68b10d5f766a",
+ "time": "2026-10-09T10:30:59+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 108315,
+  "output": 5911,
+  "cost_usd": 0.9852,
+  "seconds": 54,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "merge",
+    "rules": [
+     "ingen-dispensation-fra-kvalifikationskrav",
+     "dispensation-fra-landsholdskrav"
+    ],
+    "title": "Dispensation fra kvalifikationskrav",
+    "category": null,
+    "parts": [],
+    "reason": "Both rules regulate whether and by whom national-team lifters can get dispensation from the qualification requirements; the 2022 rule that only Eliteudvalget grants dispensations replaces the 2011 rule of no dispensation at all.",
+    "refs": [
+     "elite29062011#6",
+     "refbest_14012017#4",
+     "elite29062022#3"
+    ]
+   },
+   {
+    "op": "split",
+    "rules": [
+     "dispensation-fra-dm-ved-kollision-med-vm"
+    ],
+    "title": null,
+    "category": null,
+    "parts": [
+     {
+      "title": "Pligt til DM-deltagelse for landsholdsløftere",
+      "refs": [
+       "rep2016#11",
+       "elite29032021#2",
+       "refbest_310722#5",
+       "elite12122023#2",
+       "elite30042026#1",
+       "elite15092026#3"
+      ]
+     },
+     {
+      "title": "Vægtklasse ved pligtig DM-deltagelse for landsholdsløftere",
+      "refs": [
+       "elite30042026#3"
+      ]
+     },
+     {
+      "title": "Præstationskrav ved pligtig DM-deltagelse for landsholdsløftere",
+      "refs": [
+       "elite30042026#2"
+      ]
+     }
+    ],
+    "reason": "Besides the obligation to take part in DM, the rule holds two separate rules adopted on the same day: free choice of weight class at that DM and a requirement of a real attempt at 80 % of the VM lifts.",
+    "refs": [
+     "elite30042026#1",
+     "elite30042026#2",
+     "elite30042026#3"
+    ]
+   },
+   {
+    "op": "split",
+    "rules": [
+     "rejseplanlægning-og-booking"
+    ],
+    "title": null,
+    "category": null,
+    "parts": [
+     {
+      "title": "Bestilling af rejser til internationale stævner",
+      "refs": [
+       "elite25042015#7",
+       "elite18052021#3",
+       "elite14122022#2",
+       "elite08032023#1",
+       "elite10122024#2",
+       "elite25062024_2#5"
+      ]
+     },
+     {
+      "title": "Frister for rejseoplysninger til internationale stævner",
+      "refs": [
+       "elite10122024#5"
+      ]
+     }
+    ],
+    "reason": "The rule mixes who books travel and what booking through the federation costs with a separate deadline for reporting travel details; both are in force at the same time.",
+    "refs": [
+     "elite10122024#2",
+     "elite10122024#5"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "ansvarsdokument-for-cheftrænere"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "The decision concerns an EPF responsibility document for head coaches that also applies at IPF championships, an international requirement binding DSF.",
+    "refs": [
+     "vm2013#4"
+    ]
+   },
+   {
+    "op": "rename",
+    "rules": [
+     "ansvarsdokument-for-cheftrænere"
+    ],
+    "title": "Ansvarsdokument for cheftrænere ved IPF- og EPF-mesterskaber",
+    "category": null,
+    "parts": [],
+    "reason": "The document is the EPF head-coach responsibility document required at EPF and IPF championships.",
+    "refs": [
+     "vm2013#4"
+    ]
+   }
+  ]
+ }
+}

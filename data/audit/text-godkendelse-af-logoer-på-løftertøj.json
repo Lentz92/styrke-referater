@@ -1,0 +1,57 @@
+{
+ "fingerprint": "cba01edd8f03cd96",
+ "time": "2026-10-09T10:34:06+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 2529,
+  "output": 1289,
+  "cost_usd": 0.0466,
+  "seconds": 12,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "refbest_22042017#2",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "stødende logoer forbudt; alle logoer godkendes af bestyrelsen",
+    "kort_regel": "alle logoer godkendes af bestyrelsen"
+   },
+   {
+    "ref": "refbest_19012019.2#5",
+    "effekt": "aendret",
+    "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. Derfor skal alle logoer forelægges bestyrelsen til godkendelse. Listen over godkendte logoer lægges på hjemmesiden under reglerne for godkendt udstyr.",
+    "kort": "liste over godkendte logoer lægges på hjemmesiden",
+    "kort_regel": "logoer godkendes af bestyrelsen, liste på hjemmesiden"
+   },
+   {
+    "ref": "rep2019#11",
+    "effekt": "aendret",
+    "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt; afgiften på 500 kr. pr. sponsorreklame pr. år er afskaffet. Sponsorlogoer (dokumenteret sponsor) ud over klublogoet, der er større end 5x2 cm, skal indsendes til DSF til godkendelse og opføres på en godkendt liste på hjemmesiden.",
+    "kort": "sponsorafgift 500 kr. afskaffet; logoer over 5x2 cm godkendes",
+    "kort_regel": "sponsorlogoer over 5x2 cm godkendes, ingen afgift"
+   },
+   {
+    "ref": "refstaevne12032026#3",
+    "effekt": "bekraeftet",
+    "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden afgift. Sponsorlogoer (dokumenteret sponsor) ud over klublogoet, der er større end 5x2 cm, skal indsendes til DSF til godkendelse og opføres på den godkendte liste på hjemmesiden. En T-shirt med Master Løfter-logo er ikke en klub-T-shirt og må kun bruges under konkurrence, hvis logoet er godkendt af DSF og registreret på hjemmesiden.",
+    "kort": "Master Løfter-T-shirt kræver godkendt, registreret logo",
+    "kort_regel": "ikke-klublogoer kræver DSF-godkendelse og registrering på hjemmesiden"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

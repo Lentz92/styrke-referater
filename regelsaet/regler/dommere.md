@@ -184,12 +184,13 @@ Alle dommere skal møde op 30 minutter før indvejningen, så kravet om 2 dommer
 
 **I kraft**
 
-Dommere skal overholde dresscoden til stævner efter de tekniske regler: hvid skjorte med IPF-slips; kvinder kan vælge bluse eller skjorte og ved bluse bære IPF-tørklæde i stedet for slips. Kun IPF-slips eller IPF-tørklæde er tilladt. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper.
+Dommere skal overholde dresscoden til stævner efter IPF's tekniske regler: hvid skjorte med IPF-slips; kvinder kan vælge bluse eller skjorte og ved bluse bære IPF-tørklæde i stedet for slips. Kun IPF-slips eller IPF-tørklæde er tilladt. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.
 
 *Udvalgsbeslutning · vedtaget 01.10.2024 af Dommerudvalget*
 
 - 13.09.2009 · indført: påklædning efter IPF's regler indskærpes · [refbest_13092009 s. 2](https://filer.styrke.dk/referater/refbest_13092009.PDF#page=2)
 - 2013 · ændret: krav om sorte sko og sorte strømper · [vm2013 s. 2](https://filer.styrke.dk/beretninger/vm2013.pdf#page=2)
+- 04.11.2018 · ændret: præciseret at grå jeans ikke er tilladt · [490 s. 4](https://styrke.dk/filer/rapporter/490.pdf#page=4)
 - 12.09.2023 · forslag forkastet: dommeres forslag om shorts om sommeren afvist · [refdom12092023 s. 2](https://filer.styrke.dk/referater/refdom12092023.pdf#page=2)
 - 02.07.2024 · ændret: dresscode præciseret: hvid skjorte, slips/tørklæde, ikke sneakers · [refdom02072024_2 s. 1](https://filer.styrke.dk/referater/refdom02072024_2.pdf#page=1)
 - 01.10.2024 · ændret: kun IPF-slips eller IPF-tørklæde tilladt · [refdom01102024 s. 2](https://filer.styrke.dk/referater/refdom01102024.pdf#page=2)
@@ -549,14 +550,5 @@ Under afsnittet om internationale dommere tilføjes en bemærkning om, at påsat
 *Udvalgsbeslutning · vedtaget 16.12.2025 af Dommerudvalget*
 
 - 16.12.2025 · indført: kan trækkes tilbage ved få deltagende løftere · [refdom16122025 s. 1](https://filer.styrke.dk/referater/refdom16122025.pdf#page=1)
-
-<a id="regel/honorering-af-dommerstillende-klubber"></a>
-### Honorering af klubber, der stiller dommere
-
-**Kun forslag – aldrig vedtaget**
-
-Forslag om at hæve startgebyret fra 300 kr. til 350 kr., hvor 100 kr. pr. start går til at honorere klubber, der stiller dommere, med 500 kr. pr. dommer pr. indvejning.
-
-- 19.03.2023 · forslag forkastet: HaSK foreslår startgebyr 350 kr. til dommerhonorar · [rep2023 s. 15](https://filer.styrke.dk/referater/rep2023.pdf#page=15)
 
 ⚠ ved en kilde betyder, at Claudes citat ikke kunne genfindes ordret i referatet.

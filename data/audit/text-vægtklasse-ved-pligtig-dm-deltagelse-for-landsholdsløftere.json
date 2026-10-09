@@ -1,0 +1,36 @@
+{
+ "fingerprint": "6a9a26b2cd192988",
+ "time": "2026-10-09T10:33:54+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 1189,
+  "output": 512,
+  "cost_usd": 0.0203,
+  "seconds": 7,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "elite30042026#3",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "landsholdsløftere frit valg af vægtklasse ved pligtig DM",
+    "kort_regel": "ingen bestemt vægtklasse krævet; højere vægtklasse tilladt"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

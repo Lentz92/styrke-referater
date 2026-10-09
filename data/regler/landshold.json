@@ -1,7 +1,7 @@
 {
  "kategori": "landshold",
  "version": 7,
- "input_hash": "f3df06d0cac129f7d8bba3b2857d5f59482732217b2cf69efb023831cb2a5eb5",
+ "input_hash": "13fad8c6c796723063ae8ed77c0e0257910c783cf78e05b48f37b0f41540efd0",
  "model": "claude-opus-5-5",
  "provenance": {
   "model": "claude-opus-5-5",
@@ -1443,22 +1443,6 @@
    ]
   },
   {
-   "titel": "Ansvarsdokument for cheftrænere",
-   "slug": "ansvarsdokument-for-cheftrænere",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "vm2013#4",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "EPF-ansvarsdokument gælder også ved IPF-mesterskaber",
-     "kort_regel": "cheftrænere underskriver ansvarsdokument ved IPF og EPF",
-     "dhash": "2fd64ba3a879"
-    }
-   ]
-  },
-  {
    "titel": "Coaching og forsøgsvægte for landsholdsatleter",
    "slug": "landstrænerens-kompetence-og-coaching",
    "vigtig": true,
@@ -2182,15 +2166,25 @@
      "tekst": null,
      "kort": "ER Equipment foreslår DM-krav for international repræsentation",
      "kort_regel": null,
-     "dhash": "26f3f38fc7d4"
+     "dhash": "26f3f38fc7d4",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:59+00:00"
+     }
     },
     {
      "ref": "elite29032021#2",
      "effekt": "indfoert",
-     "tekst": "Landsholdsløftere skal deltage i DM. Atleter, der deltager i VM klassisk september/oktober 2021, får dispensation fra DM klassisk september 2021.",
+     "tekst": "Landsholdsløftere skal deltage i DM. Atleter, der deltager i VM klassisk i september/oktober 2021, får dispensation fra DM klassisk i september 2021.",
      "kort": "VM klassisk-deltagere fritaget for DM klassisk 2021",
      "kort_regel": "DM-pligt; VM-deltagere 2021 fritaget",
-     "dhash": "92941a734a66"
+     "dhash": "92941a734a66",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:59+00:00"
+     }
     },
     {
      "ref": "refbest_310722#5",
@@ -2198,47 +2192,93 @@
      "tekst": "Landsholdsløftere skal som udgangspunkt deltage i DM.",
      "kort": "landsholdsløftere skal som udgangspunkt deltage i DM",
      "kort_regel": "DM-deltagelse som udgangspunkt",
-     "dhash": "12daae78714d"
+     "dhash": "12daae78714d",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:59+00:00"
+     }
     },
     {
      "ref": "elite12122023#2",
      "effekt": "aendret",
-     "tekst": "Landsholdsløftere skal som udgangspunkt deltage i DM. Deltagere ved VM klassisk 2024 får dispensation fra DM klassisk 2024, da stævnerne er i samme uge; deltagelse er dog velkommen.",
+     "tekst": "Landsholdsløftere skal som udgangspunkt deltage i DM. Deltagere ved VM klassisk 2024 får dispensation fra den obligatoriske deltagelse ved DM klassisk 2024, da stævnerne afholdes i samme uge; deltagelse ved DM klassisk er dog velkommen, hvis det er praktisk muligt.",
      "kort": "VM klassisk 2024-deltagere fritaget for DM klassisk",
      "kort_regel": "DM-pligt; dispensation ved VM samme uge",
-     "dhash": "786ead758066"
+     "dhash": "786ead758066",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:59+00:00"
+     }
     },
     {
      "ref": "elite30042026#1",
      "effekt": "aendret",
-     "tekst": "Landsholdsløftere skal deltage ved DM, også når DM ligger kort efter et internationalt mesterskab. Der gives ikke dispensation.",
+     "tekst": "Landsholdsløftere skal deltage ved DM, også når DM ligger kort efter et internationalt mesterskab. Der gives ikke dispensation fra deltagelsen.",
      "kort": "DM-pligt fastholdes; ingen dispensation",
      "kort_regel": "DM-pligt uden dispensation",
-     "dhash": "7cbc3ae8a39c"
-    },
-    {
-     "ref": "elite30042026#3",
-     "effekt": "aendret",
-     "tekst": "Landsholdsløftere skal deltage ved DM, også kort efter et internationalt mesterskab, og der gives ikke dispensation. De har ikke krav om at stille op i en bestemt vægtklasse og må gerne stille op i en højere.",
-     "kort": "frit valg af vægtklasse ved pligtig DM",
-     "kort_regel": "DM-pligt; frit valg af vægtklasse",
-     "dhash": "1056eeb19500"
-    },
-    {
-     "ref": "elite30042026#2",
-     "effekt": "aendret",
-     "tekst": "Landsholdsløftere skal deltage ved DM uden dispensation og kan frit vælge vægtklasse, også en højere. Der er ikke krav om maksimal præstation, men de skal gennemføre et reelt forsøg i hver disciplin på mindst 80 % af deres bedste løft fra VM.",
-     "kort": "reelt forsøg på mindst 80 % af VM-løft",
-     "kort_regel": "DM-pligt; forsøg mindst 80 % af VM-løft",
-     "dhash": "84c58e63ec29"
+     "dhash": "7cbc3ae8a39c",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:59+00:00"
+     }
     },
     {
      "ref": "elite15092026#3",
      "effekt": "bekraeftet",
-     "tekst": "Landsholdsløftere skal deltage ved DM med frit valg af vægtklasse og et reelt forsøg på mindst 80 % af bedste VM-løft i hver disciplin. Ved datosammenfald i 2027 mellem DM-ugen og VM Open Klassisk gælder samme procedure som i 2026.",
+     "tekst": "Landsholdsløftere skal deltage ved DM, også når DM ligger kort efter et internationalt mesterskab. Der gives ikke dispensation fra deltagelsen. Ved datosammenfald i 2027 mellem DM-ugen og VM Open Klassisk gælder samme procedure som i 2026 for atleter, der deltager ved VM og samtidig er forpligtet til at deltage ved DM.",
      "kort": "samme procedure ved datosammenfald i 2027",
      "kort_regel": "DM-pligt; 2026-procedure ved sammenfald 2027",
-     "dhash": "5010ddbdae43"
+     "dhash": "5010ddbdae43",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:59+00:00"
+     }
+    }
+   ]
+  },
+  {
+   "titel": "Vægtklasse ved pligtig DM-deltagelse for landsholdsløftere",
+   "slug": "vægtklasse-ved-pligtig-dm-deltagelse-for-landsholdsløftere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite30042026#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "landsholdsløftere frit valg af vægtklasse ved pligtig DM",
+     "kort_regel": "ingen bestemt vægtklasse krævet; højere vægtklasse tilladt",
+     "dhash": "1056eeb19500",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:54+00:00"
+     }
+    }
+   ]
+  },
+  {
+   "titel": "Præstationskrav ved pligtig DM-deltagelse for landsholdsløftere",
+   "slug": "præstationskrav-ved-pligtig-dm-deltagelse-for-landsholdsløftere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite30042026#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "reelt forsøg i hver disciplin, mindst 80 % af VM-løft",
+     "kort_regel": "ingen maksimalkrav; forsøg mindst 80 % af bedste VM-løft",
+     "dhash": "84c58e63ec29",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:03+00:00"
+     }
     }
    ]
   },

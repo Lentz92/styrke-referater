@@ -651,18 +651,6 @@ Den udløbne strategiplan erstattes af de strategiske spor, og der udarbejdes ik
 
 ## Andet
 
-<a id="regel/udlaan-af-forbundets-udstyr"></a>
-### Udlån af forbundets udstyr
-
-**I kraft**
-
-Der laves en liste over DSF's udstyr, som lægges ud på forbundets hjemmeside. Klubber og andre, der vil låne forbundets udstyr (f.eks. streamingudstyr), skal sende en mail til forbundet på jacob@styrke.dk og underskrive en låneseddel ved lån af udstyret. Udstyret hentes i Horsens.
-
-*Bestyrelsesbeslutning · vedtaget 09.08.2014 af Bestyrelsen*
-
-- 04.08.2012 · indført: udstyrsliste på hjemmesiden, lån via kontoret, afhentning i Horsens · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.PDF#page=2)
-- 09.08.2014 · ændret: lån via mail til jacob@styrke.dk, låneseddel skal underskrives · [refbest_09082014 s. 1](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=1)
-
 <a id="regel/leverandoer-af-medaljer"></a>
 ### Leverandør af medaljer
 

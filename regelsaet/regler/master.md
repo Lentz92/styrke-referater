@@ -355,17 +355,6 @@ Masterforeningen er en forening uden for DSF. Masterløftere behøver ikke være
 
 - 03.02.2018 · indført: medlemskab af Masterforeningen ikke krav for international deltagelse · [refbest_03022018 s. 5](https://filer.styrke.dk/referater/refbest_03022018.pdf#page=5)
 
-<a id="regel/ophold-paa-staevnehotel"></a>
-### Ophold på stævnehotel
-
-**I kraft**
-
-Det er et EPF/IPF-krav, at deltagere skal bo på stævnehotellet i hele deres stævneperiode, fx 4 overnatninger hvis man løfter mandag og hjælper en anden løfter torsdag.
-
-*Eksternt krav · vedtaget 2026 af Andet*
-
-- 2026 · indført: EPF/IPF-krav om ophold på stævnehotel hele perioden · [Tilmeldingsfrister2026 s. 2](../../referater/andet/Tilmeldingsfrister2026.pdf)
-
 <a id="regel/tilmelding-til-internationale-masterstaevner"></a>
 ### Tilmelding til internationale masterstævner
 
@@ -391,17 +380,6 @@ Sidste frist for tilmelding til internationale masterstævner i 2026: EM Masters
 
 - 2026 · indført: frister for 2026, fx EM Classic 6. december 2025 · [Tilmeldingsfrister2026 s. 1](../../referater/andet/Tilmeldingsfrister2026.pdf)
 - 2027 · ændret: frister for 2027, fx EM Classic 22. november 2026 · [Tilmeldingsfrister2027 s. 1](https://filer.styrke.dk/masterudvalg/Tilmeldingsfrister2027.pdf#page=1)
-
-<a id="regel/traenerakkreditering-ved-em-og-vm"></a>
-### Trænerakkreditering ved EM og VM
-
-**I kraft**
-
-Efter ændring af IPF/EPF's vedtægter indføres et loft over antallet af trænere, og alle der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber skal betale et gebyr på 50 euro.
-
-*Eksternt krav · vedtaget 2026 af Andet*
-
-- 2026 · indført: loft over trænere og akkrediteringsgebyr på 50 euro · [Tilmeldingsfrister2026 s. 2](../../referater/andet/Tilmeldingsfrister2026.pdf)
 
 <a id="regel/vm-for-masters-klassisk-raw"></a>
 ### VM for masters i klassisk styrkeløft
@@ -550,6 +528,15 @@ En udpeget head coach ved internationale masterstævner får betalt rejse og oph
 
 - 09.02.2014 · indført: ingen midler til head coach; medsendt dommer fungerer som head coach · [refbest_09022014 s. 1](https://filer.styrke.dk/referater/refbest_09022014.pdf#page=1)
 - 27.06.2015 · ændret: head coach får rejse og stævnehotel betalt · [ReglerForMasterudvalget s. 2](https://filer.styrke.dk/masterudvalg/ReglerForMasterudvalget.pdf#page=2)
+
+<a id="regel/nordisk-mesterskab-for-masters"></a>
+### Nordisk mesterskab for masters
+
+**Kun forslag – aldrig vedtaget**
+
+Dansk forslag på NPF-kongressen om at oprette et nordisk mesterskab for masters blev forkastet, da et stævne kombineret med sub-junior og junior ville blive for langt og svært at afholde.
+
+- 29.03.2026 · forslag forkastet: Danmarks forslag om nordisk masters-mesterskab forkastet · [rep2026 s. 10](https://filer.styrke.dk/referater/rep2026.pdf#page=10)
 
 <a id="regel/pointberegning-ved-dm-masters-klassisk"></a>
 ### Placeringsberegning ved DM masters klassisk

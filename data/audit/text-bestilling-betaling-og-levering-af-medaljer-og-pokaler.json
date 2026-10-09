@@ -1,0 +1,78 @@
+{
+ "fingerprint": "ed69ab93a65b2a8d",
+ "time": "2026-10-09T10:34:02+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 3929,
+  "output": 2545,
+  "cost_usd": 0.0829,
+  "seconds": 21,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "rep2015#1",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "arrangør bestiller og betaler medaljer; forbund betaler pokaler",
+    "kort_regel": "arrangør betaler medaljer; disciplinmedaljer ved alle stævner"
+   },
+   {
+    "ref": "refbest_10122016#4",
+    "effekt": "bekraeftet",
+    "tekst": "Fra 1. januar 2017 bestiller den arrangerende klub selv medaljerne hos forbundets officielle medaljeforhandler, betaler dem og sørger selv for, at manglende medaljer bliver genbestilt og leveret til den rette modtager. Pokaler betales af forbundet. Der udleveres disciplinmedaljer i alle kategorier til alle stævner.",
+    "kort": "klubber bestiller selv fra 2017 og genbestiller manglende medaljer",
+    "kort_regel": "klubber bestiller, betaler og genbestiller medaljer"
+   },
+   {
+    "ref": "refbest_14012017#2",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "bestyrelsen foreslår central medaljebestilling hos Formo mod fast beløb",
+    "kort_regel": null
+   },
+   {
+    "ref": "refbest_021021#2",
+    "effekt": "aendret",
+    "tekst": "Stævneudvalget bestiller medaljer og pokaler 3 uger før stævnestart, umiddelbart efter at tilmeldingen er lukket. Medaljer og pokaler skal være formanden for den arrangerende klub i hænde senest en uge før stævnestart, og stævneudvalget kontakter formanden telefonisk en uge før for at tjekke leveringen. Den arrangerende klub betaler medaljerne, mens pokaler betales af forbundet. Der udleveres disciplinmedaljer i alle kategorier til alle stævner.",
+    "kort": "stævneudvalget bestiller 3 uger før; levering senest en uge før",
+    "kort_regel": "stævneudvalget bestiller; levering senest en uge før stævnet"
+   },
+   {
+    "ref": "refbest_021021#7",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "bestyrelsen foreslår 100 kr. pr. medaljesæt; disciplinmedaljer kun ved DM",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2022#12",
+    "effekt": "aendret",
+    "tekst": "Forbundet bestiller medaljerne hos sin officielle medaljeforhandler (via stævneudvalget, 3 uger før stævnestart, når tilmeldingen er lukket), og arrangøren opkræves 100 kr. pr. medaljesæt (en placeringsmedalje plus eventuelle tilhørende disciplinmedaljer); i øvrigt betales pokaler og medaljer af forbundet. Medaljer og pokaler skal være formanden for den arrangerende klub i hænde senest en uge før stævnestart, og stævneudvalget tjekker leveringen telefonisk. Der uddeles disciplinmedaljer i alle kategorier ved de nationale mesterskaber DM styrkeløft og DM klassisk trekamp.",
+    "kort": "forbund bestiller; arrangør betaler 100 kr. pr. medaljesæt",
+    "kort_regel": "arrangør betaler 100 kr. pr. sæt; disciplinmedaljer kun ved DM"
+   },
+   {
+    "ref": "refbest_150723#2",
+    "effekt": "bekraeftet",
+    "tekst": "Forbundet bestiller medaljerne hos sin officielle medaljeforhandler (via stævneudvalget, 3 uger før stævnestart, når tilmeldingen er lukket), og arrangøren opkræves 100 kr. pr. medaljesæt (en placeringsmedalje plus eventuelle tilhørende disciplinmedaljer); i øvrigt betales pokaler og medaljer af forbundet. Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Der uddeles disciplinmedaljer i alle kategorier ved de nationale mesterskaber DM styrkeløft og DM klassisk trekamp.",
+    "kort": "bekræfter levering af pokaler og medaljer senest en uge før",
+    "kort_regel": "arrangør betaler 100 kr. pr. sæt; levering uge før"
+   }
+  ],
+  "vigtig": true,
+  "note": "Fra 2015 bestilte klubberne selv medaljer efter Repræsentantskabets beslutning. Bestyrelsen lod i 2021 stævneudvalget bestille dem, før Repræsentantskabet ændrede reglen i 2022.",
+  "misfiled": []
+ }
+}
