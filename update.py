@@ -50,6 +50,8 @@ from analyze import StepSummary
 from scrape import Doc
 
 EFFORTS = ["low", "medium", "high", "xhigh", "max"]
+EXTRACT_MODEL = "claude-sonnet-5-5"  # the pipeline's extraction model (--extract-model's default)
+CONSOLIDATE_MODEL = "claude-opus-5-5"
 # How rule files are brought up to date: "full" consolidates each changed category anew (analyze.consolidate);
 # "incremental" files each new decision into its rule and leaves the others as they are (incremental.py).
 CONSOLIDATE_MODES = ("full", "incremental")
@@ -60,6 +62,11 @@ REBUILD_MARKER = scrape.DATA_DIR / "rebuild.json"
 REBUILD_SHARE = 0.10
 # More categories than this to consolidate before any extraction means a new CONSOLIDATE_VERSION or similar.
 REBUILD_CATEGORY_SHARE = 0.5
+# evaluate.py's run log: what one extraction costs, by model and prompt, measured on the answer key's documents.
+EVAL_RUNS_LOG = scrape.ROOT / "eval" / "runs.jsonl"
+# A full consolidation's list-price cost with Opus (the README's figure), for a rebuild's estimate until
+# data/runs.jsonl has a full run of its own.
+FULL_CONSOLIDATION_USD = 5.0
 # The label GitHub shows for the workflow input that passes --allow-rebuild (its description in update.yml).
 REBUILD_INPUT_LABEL = "Allow a rebuild (--allow-rebuild)"
 # What the run found, for the pull request that reviews it (its body) and the GitHub step summary; not committed.
@@ -75,10 +82,13 @@ def main() -> None:
     parser.add_argument("--only", metavar="REGEX",
                         help="only extract documents whose id matches, and only consolidate the categories their "
                              "decisions are in (for testing; skips the rebuild guard)")
-    parser.add_argument("--extract-model", default="claude-sonnet-5-5",
-                        help="model for extraction per document (default: claude-sonnet-5-5)")
-    parser.add_argument("--consolidate-model", default="claude-opus-5-5",
-                        help="model for consolidation (default: claude-opus-5-5)")
+    parser.add_argument("--extract-model", default=EXTRACT_MODEL,
+                        help=f"model for extraction per document (default: {EXTRACT_MODEL})")
+    parser.add_argument("--extract-prompt", choices=list(analyze.EXTRACT_PROMPTS),
+                        help=f"extraction prompt (default: v{analyze.EXTRACT_VERSION}); another one extracts every "
+                             f"document again, which the rebuild guard stops until --allow-rebuild")
+    parser.add_argument("--consolidate-model", default=CONSOLIDATE_MODEL,
+                        help=f"model for consolidation (default: {CONSOLIDATE_MODEL})")
     parser.add_argument("--assign-model", default="claude-sonnet-5-5",
                         help="model for the votes on which rule a new decision belongs to, in incremental mode "
                              "(default: claude-sonnet-5-5); --consolidate-model breaks ties and updates the rules")
@@ -96,6 +106,10 @@ def main() -> None:
     parser.add_argument("--allow-rebuild", action="store_true",
                         help="allow work the rebuild guard stops, e.g. after a new prompt version")
     args = parser.parse_args()
+    if args.consolidate_mode == "incremental" and analyze.extract_prompt(args.extract_prompt).version \
+            != analyze.EXTRACT_VERSION:
+        parser.error("another extraction prompt changes the decisions of every document: consolidate them with "
+                     "--consolidate-mode full, which is cheaper and cleaner than updating every rule")
     budget = analyze.RunBudget(minutes=args.time_budget, max_cost_usd=args.max_cost)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -112,7 +126,7 @@ def main() -> None:
         RUN_REPORT.unlink(missing_ok=True)  # the routing trusts a report only from the run that wrote it
         try:
             if not args.only:  # a test run on a few documents
-                check_rebuild(docs, allowed=args.allow_rebuild, mode=args.consolidate_mode)
+                check_rebuild(docs, allowed=args.allow_rebuild, mode=args.consolidate_mode, plan=Plan.of(args))
         except SystemExit as exc:  # nothing is analysed, but the data is checked and the pages written as usual
             failures.append(str(exc))
             stop = exc
@@ -144,7 +158,8 @@ def main() -> None:
 
     if data is not None:
         try:
-            pages = render.render(docs, data.decisions, data.raw_rules, analyze.missing_extractions(docs),
+            pages = render.render(docs, data.decisions, data.raw_rules,
+                                  analyze.missing_extractions(docs, args.extract_prompt),
                                   Counter(problem.kind for problem in problems), today)
             logging.info("Wrote %d pages to %s", len(pages), render.OUT_DIR.relative_to(scrape.ROOT))
             site = website.build(docs, data.decisions, data.raw_rules, data.slugs.targets(), today)
@@ -181,7 +196,7 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
         known = (incremental.known_inputs(analyze.load_decisions(docs), incremental.RuleBook.load(), docs)
                  if args.consolidate_mode == "incremental" else None)
         steps["extract"] = analyze.extract(targets, model=args.extract_model, effort=args.extract_effort,
-                                           workers=args.workers, budget=budget)
+                                           workers=args.workers, budget=budget, prompt=args.extract_prompt)
         if args.consolidate_mode == "incremental":
             settings = incremental.Settings(args.assign_model, args.consolidate_model, args.consolidate_effort,
                                             args.workers)
@@ -203,9 +218,10 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
         failures.append(f"the analysis stopped: {type(exc).__name__}: {exc}")
         return exc
     finally:
-        record_run(steps)
+        record_run(steps, {"extract_prompt": analyze.extract_prompt(args.extract_prompt).name,
+                           "consolidate_mode": args.consolidate_mode})
     if not args.only:
-        update_rebuild_marker(docs, args.consolidate_mode)
+        update_rebuild_marker(docs, args.consolidate_mode, Plan.of(args))
     return None
 
 
@@ -225,6 +241,7 @@ class Work:
     sources: dict[str, frozenset[str]]  # category -> ids of the documents its cached decisions come from
     total_documents: int
     total_categories: int
+    extract_version: int  # the version of the extraction prompt the documents are extracted with
 
     def reasons(self) -> list[str]:
         """Why this is more than an ordinary month's work; empty when it is ordinary.
@@ -263,14 +280,47 @@ class Work:
 @dataclass(frozen=True)
 class Approval:
     """Work approved with --allow-rebuild (or left by a run that was allowed to start it), for the prompt
-    versions in force then. Saved in data/rebuild.json so plain runs, the monthly one included, finish it."""
+    versions in force then. Saved in data/rebuild.json so later runs with the same settings (plain ones, the monthly
+    one included, when they are the defaults) finish it."""
     documents: frozenset[str]
     categories: frozenset[str]
+    extract_prompt: str  # the extraction prompt's name, e.g. "v3"
+    extract_model: str | None  # None in an approval saved before the model was recorded
 
 
-def pending_work(docs: list[Doc], mode: str = "full") -> Work:
-    """The work before extraction, from data/ alone: no Claude call. The categories to consolidate are those whose
-    input changed (full), or those the incremental work queue changes (incremental.queue_categories)."""
+@dataclass(frozen=True)
+class Plan:
+    """What a run does its Claude work with: the extraction prompt (None: the pipeline's), the models, and its cost
+    limit (--max-cost). The rebuild guard prices the work with it, and keeps an approved rebuild on one extraction
+    model: the cache key leaves the model out, so a migration resumed on another model would mix two silently."""
+    prompt: str | None = None
+    extract_model: str = EXTRACT_MODEL
+    consolidate_model: str = CONSOLIDATE_MODEL
+    max_cost: float | None = None
+
+    @classmethod
+    def of(cls, args: argparse.Namespace) -> Plan:
+        return cls(args.extract_prompt, args.extract_model, args.consolidate_model, args.max_cost)
+
+    @property
+    def prompt_name(self) -> str:
+        return analyze.extract_prompt(self.prompt).name
+
+    def command(self) -> str:
+        return run_command(self.prompt_name, self.extract_model)
+
+
+def run_command(prompt: str, extract_model: str) -> str:
+    """The update.py command that extracts with this prompt and model; options at their default are left out."""
+    options = [f"--extract-prompt {prompt}"] if prompt != f"v{analyze.EXTRACT_VERSION}" else []
+    options += [f"--extract-model {extract_model}"] if extract_model != EXTRACT_MODEL else []
+    return " ".join(["uv run update.py", *options])
+
+
+def pending_work(docs: list[Doc], mode: str = "full", prompt: str | None = None) -> Work:
+    """The work before extraction with the extraction prompt named `prompt` (None: the pipeline's), from data/
+    alone: no Claude call. The categories to consolidate are those whose input changed (full), or those the
+    incremental work queue changes (incremental.queue_categories)."""
     decisions = analyze.load_decisions(docs)
     if mode == "incremental":
         book = incremental.RuleBook.load()
@@ -285,66 +335,122 @@ def pending_work(docs: list[Doc], mode: str = "full") -> Work:
     for d in decisions:
         sources.setdefault(home[d.ref], set()).add(d.doc_id)
     return Work(
-        documents=frozenset(analyze.missing_extractions(docs)),
+        documents=frozenset(analyze.missing_extractions(docs, prompt)),
         categories=categories,
         lost=lost,
         sources={category: frozenset(ids) for category, ids in sources.items()},
         total_documents=len(docs),
         total_categories=len(sources),
+        extract_version=analyze.extract_prompt(prompt).version,
     )
 
 
-def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = "full") -> None:
+def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = "full", plan: Plan = Plan()) -> None:
     """Stop before any Claude call when the run would do more than an ordinary month's work unapproved.
 
     --allow-rebuild approves the work and saves it in data/rebuild.json before anything starts. A later run
     goes ahead while the part of its work outside that approval is ordinary: new minutes may arrive while a
-    rebuild is unfinished, but other extra work (lost data, another prompt change) needs a new approval.
+    rebuild is unfinished, but other extra work (lost data, another prompt change) needs a new approval. The
+    approval records the extraction prompt and model, and while documents it approved are left to extract, a run
+    with another extraction model is refused unless it approves anew. The work's estimated cost is logged first,
+    so it is known before it is approved.
     """
-    work = pending_work(docs, mode)
+    work = pending_work(docs, mode, plan.prompt)
+    approval = _load_approval(work.extract_version)
+    switch = _model_switch(approval, work, plan)
+    if switch and not allowed:
+        raise SystemExit(f"Stopped before any Claude call: {switch}; or pass --allow-rebuild to extract the rest with "
+                         f"{plan.extract_model}, mixing the two models.")
+    if switch:
+        logging.warning("Approving anew: %s", switch)
     reasons = work.reasons()
     if not reasons:
         return
+    log_estimate(work, plan, mode)
     if allowed:
-        _save_approval(work)
+        _save_approval(work, plan)
         logging.warning("Approved, saved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
         return
-    approval = _load_approval()
     if approval is not None:
         outside = work.outside(approval).reasons()
         if not outside:
             logging.warning("Continuing the work approved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
             return
         reasons = [f"beyond the work approved in {REBUILD_MARKER.name}, {reason}" for reason in outside]
-    raise SystemExit(
-        f"Stopped before any Claude call: {'; '.join(reasons)}. If this work is intended, run "
-        f"`uv run update.py --allow-rebuild`, or on GitHub: Actions > Update rule overview > Run workflow with "
-        f"'{REBUILD_INPUT_LABEL}' ticked. The approval is saved in data/rebuild.json, and plain runs, the "
-        f"monthly one included, continue the work if it is cut off."
-    )
+    raise SystemExit(_refusal(reasons, plan))
 
 
-def update_rebuild_marker(docs: list[Doc], mode: str = "full") -> None:
-    """After the analysis: approve what is left while it is more than ordinary, else remove the approval.
+def _model_switch(approval: Approval | None, work: Work, plan: Plan) -> str | None:
+    """Why this run would mix extraction models in an approved rebuild, or None: documents the approval covers are
+    still to extract, and it was given for another model."""
+    if approval is None or approval.extract_model in (None, plan.extract_model):
+        return None
+    left = approval.documents & work.documents
+    if not left:
+        return None
+    return (f"the rebuild approved in {REBUILD_MARKER.name} extracts with {approval.extract_model}, not "
+            f"{plan.extract_model}, and {len(left)} of its documents are left; continue it with "
+            f"`{run_command(approval.extract_prompt, approval.extract_model)}`")
+
+
+def _refusal(reasons: list[str], plan: Plan) -> str:
+    """Why the guard stopped the run, with which extraction settings, the exact commands that approve the work and
+    continue it, and the one that continues a rebuild approved for other settings."""
+    stopped = (f"Stopped before any Claude call: {'; '.join(reasons)} (extracting with prompt {plan.prompt_name} and "
+               f"{plan.extract_model}).")
+    command = plan.command()
+    if command == run_command(f"v{analyze.EXTRACT_VERSION}", EXTRACT_MODEL):
+        how = (f" If this work is intended, run `{command} --allow-rebuild`, or on GitHub: Actions > Update rule "
+               f"overview > Run workflow with '{REBUILD_INPUT_LABEL}' ticked. The approval is saved in "
+               f"data/rebuild.json, and plain runs, the monthly one included, continue the work if it is cut off.")
+    else:
+        how = (f" If this work is intended, run `{command} --allow-rebuild`. The approval is saved in "
+               f"data/rebuild.json, and `{command}` continues the work if it is cut off; plain runs, the monthly one "
+               f"included, cannot, as they use the defaults.")
+    return stopped + how + _other_rebuild(plan)
+
+
+def _other_rebuild(plan: Plan) -> str:
+    """A sentence naming the command that continues a rebuild approved for other extraction settings, if any."""
+    marker = _read_marker()
+    if marker is None:
+        return ""
+    approval = _approval_of(marker)
+    command = run_command(approval.extract_prompt, approval.extract_model or EXTRACT_MODEL)
+    if command == plan.command():
+        return ""
+    return f" {REBUILD_MARKER.name} holds an unfinished rebuild approved for other extraction settings: `{command}` " \
+           f"continues it."
+
+
+def update_rebuild_marker(docs: list[Doc], mode: str = "full", plan: Plan = Plan()) -> None:
+    """After the analysis: approve what is left while it is more than ordinary or approved documents are left to
+    extract, else remove the approval.
 
     Leftovers of an ordinary run count too (consolidation failing for most categories after a big meeting):
     the run was allowed to start that work, so the following runs may finish it. The new approval covers
-    only what is left.
+    only what is left. It is kept until the approved documents are extracted, however few are left, so the runs
+    that finish them keep to its extraction model.
     """
-    work = pending_work(docs, mode)
+    work = pending_work(docs, mode, plan.prompt)
     reasons = work.reasons()
-    if reasons:
-        _save_approval(work)
-        logging.warning("Unfinished: %s. Plain runs continue it (approval in %s)", "; ".join(reasons),
+    approval = _load_approval(work.extract_version)
+    left = approval.documents & work.documents if approval is not None else frozenset()
+    if reasons or left:
+        _save_approval(work, plan)
+        logging.warning("Unfinished: %s. `%s` continues it (approval in %s)",
+                        "; ".join(reasons) or f"{len(left)} approved documents to extract", plan.command(),
                         REBUILD_MARKER.name)
     elif REBUILD_MARKER.exists():
         REBUILD_MARKER.unlink(missing_ok=True)
         logging.info("Approved work finished; removed %s", REBUILD_MARKER.name)
 
 
-def _save_approval(work: Work) -> None:
+def _save_approval(work: Work, plan: Plan) -> None:
     marker = {
-        "extract_version": analyze.EXTRACT_VERSION,
+        "extract_version": work.extract_version,
+        "extract_prompt": plan.prompt_name,
+        "extract_model": plan.extract_model,
         "consolidate_version": analyze.CONSOLIDATE_VERSION,
         "documents": sorted(work.documents),
         "categories": sorted(work.approved_categories()),
@@ -357,34 +463,151 @@ def _save_approval(work: Work) -> None:
         logging.warning("Could not save the approval in %s: %s", REBUILD_MARKER, exc)
 
 
-def _load_approval() -> Approval | None:
-    """The saved approval, if it was given for the prompt versions in force now."""
+def _read_marker() -> dict | None:
     try:
         marker = json.loads(REBUILD_MARKER.read_text())
     except (OSError, ValueError):
         return None
-    if not isinstance(marker, dict) or marker.get("extract_version") != analyze.EXTRACT_VERSION \
+    return marker if isinstance(marker, dict) else None
+
+
+def _approval_of(marker: dict) -> Approval:
+    return Approval(frozenset(marker.get("documents") or ()), frozenset(marker.get("categories") or ()),
+                    marker.get("extract_prompt") or f"v{marker.get('extract_version')}", marker.get("extract_model"))
+
+
+def _load_approval(extract_version: int) -> Approval | None:
+    """The saved approval, if it was given for the prompt versions this run uses."""
+    marker = _read_marker()
+    if marker is None or marker.get("extract_version") != extract_version \
             or marker.get("consolidate_version") != analyze.CONSOLIDATE_VERSION:
         return None
-    return Approval(frozenset(marker.get("documents") or ()), frozenset(marker.get("categories") or ()))
+    return _approval_of(marker)
+
+
+# --------------------------------------------------------------------------- rebuild cost
+
+@dataclass(frozen=True)
+class CostEstimate:
+    """A rebuild's list-price cost, estimated before its first call; a part is None when nothing measured it."""
+    extract_usd: float | None
+    extract_basis: str
+    consolidate_usd: float | None
+    consolidate_basis: str
+
+    @property
+    def total_usd(self) -> float | None:
+        parts = (self.extract_usd, self.consolidate_usd)
+        return None if None in parts else sum(parts)
+
+    def describe(self, max_cost: float | None) -> str:
+        """One line for the log, with what each part rests on and whether --max-cost will cut the run off."""
+        def usd(value: float | None) -> str:
+            return "unknown" if value is None else f"{value:.2f} USD"
+
+        text = (f"Estimated cost at list price: extraction {usd(self.extract_usd)} ({self.extract_basis}); "
+                f"consolidation {usd(self.consolidate_usd)} ({self.consolidate_basis}); total {usd(self.total_usd)}")
+        if max_cost is not None and self.total_usd is not None and self.total_usd > max_cost:
+            text += (f", more than --max-cost {max_cost:g}: this run stops there, and running it again continues "
+                     f"the rest (or raise --max-cost)")
+        return text
+
+
+def estimate_cost(work: Work, plan: Plan, mode: str = "full") -> CostEstimate:
+    """The work's cost: each document to extract at the mean measured cost of one extraction by the model
+    (eval/runs.jsonl), and each category to consolidate at its share of the last full consolidation
+    (data/runs.jsonl, else FULL_CONSOLIDATION_USD)."""
+    name = plan.prompt_name
+    documents = len(work.documents)
+    measured = extraction_cost(plan.extract_model, name, EVAL_RUNS_LOG)
+    if not documents:
+        extract: tuple[float | None, str] = (0.0, "no documents to extract")
+    elif measured is None:
+        extract = (None, f"{documents} documents; eval/runs.jsonl has no extraction by {plan.extract_model}")
+    else:
+        per_document, calls, prompts = measured
+        extract = (documents * per_document,
+                   f"{documents} documents with prompt {name} × {per_document:.3f} USD, the mean of {calls} "
+                   f"extractions by {plan.extract_model} with prompt {', '.join(prompts)} in eval/runs.jsonl")
+    categories = len(work.approved_categories())
+    if mode != "full":
+        consolidate: tuple[float | None, str] = (None, f"{categories} categories, incremental: not estimated")
+    elif not categories:
+        consolidate = (0.0, "no categories to consolidate")
+    else:
+        logged = full_consolidation_cost(plan.consolidate_model, work.total_categories, RUNS_LOG)
+        if logged is None:
+            per_category = FULL_CONSOLIDATION_USD / max(work.total_categories, 1)
+            basis = (f"{categories} categories at the README's {FULL_CONSOLIDATION_USD:g} USD for a full "
+                     f"consolidation with Opus; data/runs.jsonl has none by {plan.consolidate_model}")
+        else:
+            per_category, when = logged
+            basis = f"{categories} categories × {per_category:.2f} USD, as in the full consolidation of {when}"
+        consolidate = (categories * per_category, basis)
+    return CostEstimate(*extract, *consolidate)
+
+
+def log_estimate(work: Work, plan: Plan, mode: str) -> None:
+    """Log the work's estimated cost. An unreadable run log only warns: the estimate informs, it never stops a run."""
+    try:
+        text = estimate_cost(work, plan, mode).describe(plan.max_cost)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        logging.warning("Could not estimate the cost of this work: %s: %s", type(exc).__name__, exc)
+        return
+    logging.warning("%s", text)
+
+
+def _log_lines(path: Path) -> list[dict]:
+    """The lines of a run log; none when it does not exist yet."""
+    if not path.exists():
+        return []
+    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+
+
+def extraction_cost(model: str, prompt: str, path: Path) -> tuple[float, int, tuple[str, ...]] | None:
+    """Mean list-price cost of one extraction by `model` in evaluate.py's runs (eval/runs.jsonl), how many
+    extractions that is the mean of, and with which prompts: those with `prompt` when there are any, since another
+    prompt may ask for more, else all. Lines without a prompt are from before it was logged, when every run used v2."""
+    runs = [(line.get("prompt", "v2"), line["steps"]["extract"]) for line in _log_lines(path)
+            if line.get("command") == "extract" and line.get("model") == model and "extract" in line.get("steps", {})]
+    chosen = [(name, step) for name, step in runs if name == prompt] or runs
+    calls = sum(step["calls"] for _, step in chosen)
+    if not calls:
+        return None
+    return sum(step["cost_usd"] for _, step in chosen) / calls, calls, tuple(sorted({name for name, _ in chosen}))
+
+
+def full_consolidation_cost(model: str, categories: int, path: Path) -> tuple[float, str] | None:
+    """Cost per category of the last full consolidation by `model` in data/runs.jsonl, and when it ran: the last run
+    in full mode whose consolidation called Claude for at least `categories` categories. Lines without a mode are
+    from before it was logged; the monthly runs then consolidated in full."""
+    for line in reversed(_log_lines(path)):
+        step = line.get("steps", {}).get("consolidate")
+        if (step and line.get("consolidate_mode", "full") == "full" and model in step.get("models", ())
+                and step["calls"] >= max(categories, 1)):
+            return step["cost_usd"] / step["calls"], line["time"]
+    return None
 
 
 # --------------------------------------------------------------------------- run log
 
-def record_run(steps: dict[str, StepSummary]) -> None:
-    """Append the run's Claude usage to data/runs.jsonl. A run without calls adds nothing: the log follows
-    what runs cost, not how often they ran. A write error only warns, so it never hides the run's outcome."""
+def record_run(steps: dict[str, StepSummary], settings: dict | None = None) -> None:
+    """Append the run's Claude usage to data/runs.jsonl, with its `settings` (prompt, consolidation mode). A run
+    without calls adds nothing: the log follows what runs cost, not how often they ran. A write error only warns,
+    so it never hides the run's outcome."""
     if not any(step.calls for step in steps.values()):
         return
     try:
-        append_run_log(RUNS_LOG, steps, analyze.cli_version(), datetime.now(timezone.utc))
+        append_run_log(RUNS_LOG, steps, analyze.cli_version(), datetime.now(timezone.utc), settings)
     except OSError as exc:
         logging.warning("Could not write %s: %s", RUNS_LOG, exc)
 
 
-def append_run_log(path: Path, steps: dict[str, StepSummary], cli: str, now: datetime) -> None:
-    """Add one JSON line with what the run's Claude calls used, so cost and time can be followed over months."""
-    line = {"time": now.isoformat(timespec="seconds"), "cli": cli,
+def append_run_log(path: Path, steps: dict[str, StepSummary], cli: str, now: datetime,
+                   settings: dict | None = None) -> None:
+    """Add one JSON line with what the run's Claude calls used, so cost and time can be followed over months; the
+    settings tell a full consolidation (the rebuild estimate's measure) from an incremental one."""
+    line = {"time": now.isoformat(timespec="seconds"), "cli": cli, **(settings or {}),
             "steps": {name: step_json(step) for name, step in steps.items()}}
     with path.open("a") as log:
         log.write(json.dumps(line, ensure_ascii=False) + "\n")

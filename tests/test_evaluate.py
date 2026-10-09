@@ -305,6 +305,25 @@ def test_pilot_and_cost_limit_are_respected(corpus, fake_claude):
     assert line["steps"]["extract"]["skipped"] == 2 and line["documents"] == ["rep2024"]
 
 
+def test_an_extraction_run_can_use_another_prompt_and_its_provenance_tells_them_apart(corpus, fake_claude):
+    _selection(corpus, "rep2024")
+    fake_claude.answer({"moededato": None, "beslutninger": []})
+    command = ["extract", "--name", "sonnet-v3-1", "--model", "claude-sonnet-5-5", "--max-cost", "5"]
+    evaluate.main([*command, "--prompt", "v3"])
+    argv = fake_claude.calls()[0]
+    assert argv[argv.index("--system-prompt") + 1] == analyze.EXTRACT_PROMPTS["v3"]
+    run = json.loads(evaluate.run_path("sonnet-v3-1", "rep2024").read_text())
+    assert run["prompt"] == "v3"
+    assert run["provenance"]["prompt"] == analyze.prompt_hash(analyze.EXTRACT_PROMPTS["v3"], analyze.EXTRACT_SCHEMA)
+    assert run["provenance"]["prompt"] != analyze.prompt_hash(analyze.EXTRACT_PROMPTS["v2"], analyze.EXTRACT_SCHEMA)
+    assert _runs_log(corpus)[-1]["prompt"] == "v3"
+
+    evaluate.main([*command, "--prompt", "v3"])
+    assert fake_claude.invocations("call") == 1  # current with v3
+    with pytest.raises(SystemExit, match="--force"):
+        evaluate.main([*command, "--prompt", "v2"])  # one name, one configuration
+
+
 def test_a_small_cost_limit_runs_one_worker():
     parse = evaluate.parser().parse_args
     assert evaluate.workers_for(parse(["key-rules", "--max-cost", "5"])) == 1
@@ -749,6 +768,66 @@ def test_score_reports_pooled_and_per_document_figures_and_warns(corpus):
     assert _runs_log(corpus)[-1]["metrics"]["a"]["recall_doc_avg"] == 1
 
 
+def test_stability_is_the_share_of_two_runs_decisions_matched_one_to_one_pooled_over_documents():
+    first = [[_run("Licensgebyr", 0), _run("Startgebyr", 20)], [_run("Klubskifte", 0)]]
+    second = [[_run("Licensgebyr", 0)], [_run("Klubskifte", 0), _run("Noget helt andet", 40)]]
+    assert evaluate.stability(zip(first, second)) == pytest.approx(2 * 2 / 6)
+    assert evaluate.stability([([_run("Licensgebyr", 0)], [_run("Licensgebyr", 0), _run("Licensgebyr", 0)])]) == \
+        pytest.approx(2 / 3)  # one to one: a decision split in two matches only once
+    assert evaluate.stability([([], [])]) is None
+
+
+def _configured_run(run: str, decisions: list[dict], model: str | None = None, prompt: str | None = None) -> None:
+    """A run of rep2024 with the provenance of `model` and the extraction prompt named `prompt` (default: the
+    pipeline's); the stored run has none."""
+    pipeline = evaluate.pipeline_configuration()
+    provenance = None if run == "stored" else {
+        "model": model or pipeline.model, "cli": "2.1.294", "effort": "default",
+        "prompt": analyze.prompt_hash(analyze.extract_prompt(prompt).system, analyze.EXTRACT_SCHEMA)}
+    evaluate.write_json(evaluate.run_path(run, "rep2024"),
+                        {"sha256": "sha-rep2024", "provenance": provenance, "beslutninger": decisions})
+
+
+def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpus):
+    evaluate.write_json(evaluate.key_dir("decisions") / "rep2024.json", {**KEY, "sha256": "sha-rep2024",
+                                                                         "doc_id": "rep2024"})
+    both = [_run("Licensgebyr", 0), _run("Startgebyr", 20)]
+    _configured_run("stored", [_run("Licensgebyr", 0)])  # recall 50%, precision and three fields 100%, no over-split
+    _configured_run("sonnet-1", [_run("Licensgebyr", 0)])
+    _configured_run("sonnet-2", both)  # today's pipeline twice: one of three decisions not matched, 66.7%
+    _configured_run("opus-v3-1", both, "claude-opus-5-5", "v3")
+    _configured_run("opus-v3-2", both, "claude-opus-5-5", "v3")
+    _configured_run("haiku-v3-1", [*both, _run("Opgave", 40)], "claude-haiku-5-5", "v3")  # a rejected candidate
+    _configured_run("haiku-v3-2", [_run("Startgebyr", 20), _run("Klubskifte", 60)], "claude-haiku-5-5", "v3")
+    split = [_run("Licensgebyr", 0), _run("Licensgebyr i år", 1), _run("Startgebyr", 20)]  # K1 twice
+    _configured_run("sonnet-v3-1", split, prompt="v3")
+    _configured_run("sonnet-v3-2", split, prompt="v3")
+    runs = ["stored", "sonnet-1", "sonnet-2", "opus-v3-1", "opus-v3-2", "haiku-v3-1", "haiku-v3-2", "sonnet-v3-1",
+            "sonnet-v3-2"]
+    evaluate.main(["score", *(arg for run in runs for arg in ("--run", run)), "--report", "gate"])
+
+    report = (evaluate.EVAL_DIR / "reports" / "gate.md").read_text()
+    assert "| 1 | 0 | 0 | 0 | 0 | – |" in report  # the stored run is no other run's repeat
+    assert report.count("| 2 | 0 | 0 | 0 | 0 | 100.0% |") == 2  # the opus runs found the same decisions
+    assert "| needs | | ≥ 50.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
+    pipeline = f"claude-sonnet-5-5, prompt {analyze.extract_prompt().name}, effort default (today's pipeline)"
+    assert f"| {pipeline} | sonnet-1, sonnet-2 | 50.0% | 100.0% | 100.0% | 0.0% | 66.7% | yes |" in report
+    assert ("| claude-opus-5-5, prompt v3, effort default | opus-v3-1, opus-v3-2 | 100.0% | 100.0% | 100.0% | 0.0% | "
+            "100.0% | yes |") in report
+    assert ("| claude-haiku-5-5, prompt v3, effort default | haiku-v3-1, haiku-v3-2 | 50.0% | 66.7% | 100.0% | 0.0% | "
+            "40.0% | no: precision, stability |") in report
+    assert ("| claude-sonnet-5-5, prompt v3, effort default | sonnet-v3-1, sonnet-v3-2 | 100.0% | 100.0% | 100.0% | "
+            "50.0% | 100.0% | no: over_split |") in report
+    line = _runs_log(corpus)[-1]
+    assert line["metrics"]["sonnet-1"]["stability"] == pytest.approx(0.6667, abs=1e-4)
+    assert line["metrics"]["stored"]["stability"] is None
+    assert line["gate"]["claude-opus-5-5, prompt v3, effort default"]["failed"] == []
+
+    evaluate.main(["score", "--run", "stored", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "unpaired"])
+    report = (evaluate.EVAL_DIR / "reports" / "unpaired.md").read_text()
+    assert "were not scored, so no configuration passes" in report and "| no: stability |" in report
+
+
 # ---------------------------------------------------------------- scoring rules
 
 def _event(event_id, doc, effect, value, quote, status="certain"):
@@ -876,7 +955,8 @@ def test_nothing_is_written_outside_eval(corpus):
 
 
 def test_the_judges_get_the_extraction_criteria_verbatim():
-    assert evaluate.DECISION_CRITERIA in analyze.EXTRACT_SYSTEM and evaluate.FIELD_RULES in analyze.EXTRACT_SYSTEM
+    judged_by = analyze.EXTRACT_PROMPTS[evaluate.KEY_PROMPT]  # pinned: a new pipeline prompt leaves the key alone
+    assert evaluate.DECISION_CRITERIA in judged_by and evaluate.FIELD_RULES in judged_by
     assert evaluate.DECISION_CRITERIA.startswith("Extract every decision")
     assert f"{evaluate.DECISION_CRITERIA}\n\n{evaluate.FIELD_RULES}" in evaluate.DECISIONS_JUDGE_SYSTEM
     assert evaluate.DECISION_CRITERIA in evaluate.RULES_JUDGE_SYSTEM

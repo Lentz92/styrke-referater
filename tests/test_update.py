@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -13,6 +14,8 @@ from analyze import StepSummary, Usage
 from scrape import Doc
 
 CATEGORIES = ["okonomi", "master", "dommere", "staevner"]
+# The extraction prompt the pipeline does not use (v3 until a migration makes it the default).
+OTHER_PROMPT = next(name for name in analyze.EXTRACT_PROMPTS if name != analyze.extract_prompt().name)
 
 
 @pytest.fixture
@@ -20,6 +23,7 @@ def data(tmp_path, monkeypatch):
     monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path / "beslutninger")
     monkeypatch.setattr(analyze, "RULES_DIR", tmp_path / "regler")
     monkeypatch.setattr(update, "RUNS_LOG", tmp_path / "runs.jsonl")
+    monkeypatch.setattr(update, "EVAL_RUNS_LOG", tmp_path / "eval-runs.jsonl")
     monkeypatch.setattr(update, "REBUILD_MARKER", tmp_path / "rebuild.json")
     monkeypatch.setattr(update, "RUN_REPORT", tmp_path / "run-report.md")
     analyze.DECISIONS_DIR.mkdir()
@@ -168,6 +172,117 @@ def test_the_refusal_names_the_reason_and_the_github_checkbox(analysed):
     assert update.REBUILD_INPUT_LABEL in str(refusal.value)
     workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
     assert f'description: "{update.REBUILD_INPUT_LABEL}"' in workflow
+
+
+def _log(path: Path, *lines: dict) -> None:
+    path.write_text("".join(json.dumps(line) + "\n" for line in lines))
+
+
+def _logged_step(calls: int, cost: float, model: str) -> dict:
+    return {"calls": calls, "failed": 0, "skipped": 0, "cost_usd": cost, "models": [model]}
+
+
+def test_a_rebuild_is_priced_from_measured_extractions_and_the_last_full_consolidation(analysed):
+    opus = "claude-opus-5-5"
+    _log(update.EVAL_RUNS_LOG,
+         {"command": "extract", "model": opus, "steps": {"extract": _logged_step(10, 1.0, opus)}},  # v2: no prompt
+         {"command": "extract", "model": opus, "prompt": OTHER_PROMPT,
+          "steps": {"extract": _logged_step(4, 0.6, opus)}},
+         {"command": "score", "runs": ["stored"]})
+    _log(update.RUNS_LOG,
+         {"time": "2026-11-01T06:00:00+00:00", "steps": {"consolidate": _logged_step(4, 2.0, opus)}},
+         {"time": "2026-12-01T06:00:00+00:00", "consolidate_mode": "full",
+          "steps": {"consolidate": _logged_step(1, 0.9, opus)}},  # one category: no full consolidation
+         {"time": "2027-01-01T06:00:00+00:00", "consolidate_mode": "incremental",
+          "steps": {"consolidate": _logged_step(30, 3.0, opus)}})
+    work = update.pending_work(analysed, prompt=OTHER_PROMPT)  # all 20 documents, and their 4 categories
+
+    estimate = update.estimate_cost(work, update.Plan(OTHER_PROMPT, opus, opus))
+    assert estimate.extract_usd == pytest.approx(20 * 0.15)  # the runs with this prompt only
+    assert estimate.consolidate_usd == pytest.approx(4 * 0.5)  # the full consolidation of November
+    assert estimate.total_usd == pytest.approx(5.0)
+    assert "more than --max-cost 4" in estimate.describe(4.0) and "--max-cost" not in estimate.describe(15.0)
+
+    sonnet = update.estimate_cost(work, update.Plan(OTHER_PROMPT, "claude-sonnet-5-5", "claude-sonnet-5-5"))
+    assert sonnet.extract_usd is None and sonnet.total_usd is None  # no Sonnet extraction measured
+    assert sonnet.consolidate_usd == pytest.approx(update.FULL_CONSOLIDATION_USD)  # none logged: the README's
+    assert "unknown" in sonnet.describe(15.0)
+
+
+def _one_rule_each(docs: list[Doc]) -> dict:
+    """A consolidation that gives each document's decision a rule of its own (filtered to each category's refs)."""
+    return {"regler": [{"titel": f"Regel {doc.id}", "vigtig": True, "note": None,
+                        "versioner": [{"ref": f"{doc.id}#1", "effekt": "indfoert", "tekst": None, "kort": "indført",
+                                       "kort_regel": None}]} for doc in docs],
+            "udeladt": []}
+
+
+def test_a_migration_to_another_prompt_is_approved_resumed_on_its_model_and_reviewed_when_cut_off(
+        run, data, fake_claude, monkeypatch, caplog):
+    docs = _docs(data, 20)
+    _extracted(docs)
+    _consolidated(docs, monkeypatch, _one_rule_each(docs))
+    opus = ("--extract-prompt", OTHER_PROMPT, "--extract-model", "claude-opus-5-5")
+    resume = f"uv run update.py --extract-prompt {OTHER_PROMPT} --extract-model claude-opus-5-5"
+    # Each document's decision comes back reworded, in order (one worker); each category keeps its rules.
+    fake_claude.answers(*({"moededato": None, "beslutninger": [_raw(CATEGORIES[i % 4], f"Regel {doc.id}, ny")],
+                           **_one_rule_each(docs)} for i, doc in enumerate(docs)))
+
+    with pytest.raises(SystemExit, match=f"20 of 20 documents need extraction.*claude-opus-5-5.*`{resume} "
+                                         f"--allow-rebuild`"):
+        run(docs, *opus)
+    assert fake_claude.invocations("call") == 0 and "Estimated cost at list price" in caplog.text
+
+    # Cut off after 10 extractions (0.25 USD each): their rules are stale, so the result goes to review.
+    assert _exit_code(run, docs, *opus, "--allow-rebuild", "--workers", "1", "--max-cost", "2.5") == \
+        update.EXIT_REVIEW
+    assert "- **stale**" in update.RUN_REPORT.read_text()
+    marker = json.loads(update.REBUILD_MARKER.read_text())
+    assert (marker["extract_prompt"], marker["extract_model"], len(marker["documents"])) == \
+        (OTHER_PROMPT, "claude-opus-5-5", 10)
+
+    # Stopped before any call, each says how to continue; the stale rules still send the result to review.
+    assert _exit_code(run, docs) == update.EXIT_REVIEW  # it would extract the first ten back with the default prompt
+    assert re.search(f"holds an unfinished rebuild.*`{resume}` continues it", update.RUN_REPORT.read_text())
+    assert _exit_code(run, docs, "--extract-prompt", OTHER_PROMPT) == update.EXIT_REVIEW  # the rest with Sonnet
+    assert re.search(f"extracts with claude-opus-5-5, not claude-sonnet-5-5.*`{resume}`", update.RUN_REPORT.read_text())
+    assert fake_claude.invocations("call") == 10
+
+    run(docs, *opus, "--workers", "1")  # the same options continue it without a new approval
+    chosen = analyze.extract_prompt(OTHER_PROMPT)
+    systems = [argv[argv.index("--system-prompt") + 1] for argv in fake_claude.calls()]
+    assert systems == [chosen.system] * 20 + [analyze.CONSOLIDATE_SYSTEM] * 4  # then every category in full
+    for doc in docs:
+        saved = json.loads((analyze.DECISIONS_DIR / f"{doc.id}.json").read_text())
+        assert (saved["version"], saved["model"]) == (chosen.version, "claude-opus-5-5")
+        assert [d["id"] for d in saved["beslutninger"]] == [f"{doc.id}#1"]  # carried over
+        assert saved["provenance"]["prompt"] == analyze.prompt_hash(chosen.system, analyze.EXTRACT_SCHEMA)
+    assert "**Ready to publish**" in update.RUN_REPORT.read_text() and not update.REBUILD_MARKER.exists()
+    assert {k: _run_log()[-1][k] for k in ("extract_prompt", "consolidate_mode")} == \
+        {"extract_prompt": OTHER_PROMPT, "consolidate_mode": "full"}
+
+    with pytest.raises(SystemExit) as refused:  # a changed extraction is consolidated in full, never incrementally
+        run(docs, *opus, "--consolidate-mode", "incremental")
+    assert refused.value.code == 2  # argparse's usage error
+
+
+def test_a_few_approved_documents_left_keep_the_approval_and_its_model(analysed, monkeypatch):
+    plan = update.Plan(OTHER_PROMPT, "claude-opus-5-5")
+    update.check_rebuild(analysed, allowed=True, plan=plan)  # all 20 documents
+    _extracted(analysed)  # 19 of them done with the other prompt: one left is ordinary, but keeps the approval
+    for doc in analysed[1:]:
+        _edit_version(doc, analyze.extract_prompt(OTHER_PROMPT).version)
+    update.update_rebuild_marker(analysed, plan=plan)
+    assert json.loads(update.REBUILD_MARKER.read_text())["documents"] == ["doc0"]
+    with pytest.raises(SystemExit, match="1 of its documents are left"):
+        update.check_rebuild(analysed, allowed=False, plan=update.Plan(OTHER_PROMPT))
+    update.check_rebuild(analysed, allowed=False, plan=plan)
+
+
+def _edit_version(doc: Doc, version: int) -> None:
+    path = analyze.DECISIONS_DIR / f"{doc.id}.json"
+    cached = json.loads(path.read_text())
+    path.write_text(json.dumps({**cached, "version": version}))
 
 
 def test_the_website_waits_for_queued_builds_and_skips_an_update_that_changed_nothing():

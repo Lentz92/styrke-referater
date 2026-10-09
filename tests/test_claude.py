@@ -202,3 +202,34 @@ def test_the_prompt_fingerprint_follows_the_prompt(fake_claude, data, monkeypatc
 
     assert re.fullmatch(r"[0-9a-f]{12}", first)
     assert changed != first and again == first
+
+
+def test_v3_is_v2_plus_the_rule_to_split_fees_and_nothing_else():
+    v2, v3 = analyze.EXTRACT_PROMPTS["v2"], analyze.EXTRACT_PROMPTS["v3"]
+    assert v3.count(analyze.EXTRACT_SPLIT_RULE) == 1 and v3.replace(analyze.EXTRACT_SPLIT_RULE, "") == v2
+    assert v3.index("Field rules:") < v3.index(analyze.EXTRACT_SPLIT_RULE) < v3.index("- tekst:")
+    with pytest.raises(ValueError, match="no extraction prompt 'v9'"):
+        analyze.extract_prompt("v9")
+
+
+def test_the_pipeline_prompt_keeps_its_cache_and_another_prompt_extracts_again(fake_claude, data):
+    fake_claude.answer(NOTHING_FOUND)
+    pipeline = analyze.extract_prompt()
+    other = next(name for name in analyze.EXTRACT_PROMPTS if name != pipeline.name)  # v3 until it is the default
+    docs = _docs(data, "a", "b")
+    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
+    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1, prompt=pipeline.name)
+    assert fake_claude.invocations("call") == 2  # the pipeline's prompt by name is the same prompt: cached
+    assert analyze.missing_extractions(docs) == [] and analyze.missing_extractions(docs, other) == ["a", "b"]
+
+    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1, prompt=other)
+    systems = [argv[argv.index("--system-prompt") + 1] for argv in fake_claude.calls()]
+    assert systems == [pipeline.system] * 2 + [analyze.EXTRACT_PROMPTS[other]] * 2
+    hashes = {name: analyze.prompt_hash(analyze.EXTRACT_PROMPTS[name], analyze.EXTRACT_SCHEMA)
+              for name in (pipeline.name, other)}
+    assert hashes[pipeline.name] != hashes[other]
+    for doc in docs:
+        saved = _saved(data, doc)
+        assert saved["version"] == analyze.extract_prompt(other).version
+        assert saved["provenance"]["prompt"] == hashes[other]
+    assert analyze.missing_extractions(docs, other) == [] and analyze.missing_extractions(docs) == ["a", "b"]

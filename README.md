@@ -30,14 +30,20 @@ consolidation), counted against the Claude subscription; a few new minutes cost 
 A run with more than an ordinary month's work stops before calling Claude and says why: more than 10% of
 the documents to extract, a category with decisions but no file in `data/regler/`, or more than half the
 categories to consolidate again before anything new is extracted (a new `CONSOLIDATE_VERSION`, for example).
+Before it stops or goes ahead, it logs the work's estimated cost at list price: each document at the mean cost
+of one extraction by the chosen model measured in `eval/runs.jsonl` (with the chosen prompt when measured), each
+category at its share of the last full consolidation in `data/runs.jsonl` (the 5 USD above until one is logged),
+and whether `--max-cost` will cut the run off.
 If that work is intended, run `uv run update.py --allow-rebuild`. The approval is saved in
 `data/rebuild.json` before any Claude call: the documents to extract, the categories to consolidate (plus
-those the documents' decisions are in, since re-extracting them changes those categories), and the prompt
-versions. When the time or cost limit or failed calls cut the work off, run `uv run update.py` again,
-without the flag, until it ends without failures; the monthly run does the same. A later run goes ahead
-while everything outside the approval would pass on its own (a few new minutes may arrive meanwhile);
-anything more, or another prompt version, needs a new approval. The file is removed once the remaining work
-is ordinary. A run that is cut off with much left in an ordinary month (consolidation failing for most
+those the documents' decisions are in, since re-extracting them changes those categories), the prompt
+versions and the extraction model. When the time or cost limit or failed calls cut the work off, run `uv run update.py`
+again, without the flag but with the same `--extract-prompt` and `--extract-model`, until it ends without failures;
+the monthly run does the same when those are the defaults. A later run goes ahead while everything outside the
+approval would pass on its own (a few new minutes may arrive meanwhile); anything more, or another prompt version,
+needs a new approval, and a run with another extraction model is refused while approved documents are left to
+extract, since the cache would then mix two models (each refusal names the command that continues the work). The
+file is removed once the approved documents are extracted and the remaining work is ordinary. A run that is cut off with much left in an ordinary month (consolidation failing for most
 categories after a big meeting) leaves the same kind of approval for what is left.
 
 | Option | Use |
@@ -46,6 +52,7 @@ categories after a big meeting) leaves the same kind of approval for what is lef
 | `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
 | `--only REGEX` | only extract documents whose id matches, and only consolidate the categories their decisions are in, before or after extraction (testing); skips the rebuild check |
 | `--extract-model`, `--consolidate-model` | defaults `claude-sonnet-5-5` and `claude-opus-5-5`; a full id fails the call if Claude Code answers with another model |
+| `--extract-prompt` | the extraction prompt, `v2` (default) or `v3` (`analyze.EXTRACT_PROMPTS`); another than the default extracts every document again, a rebuild (see Extraction model and prompt) |
 | `--consolidate-mode` | `full` (default): consolidate each category with changed decisions anew; `incremental`: file each new decision into its rule and leave every other rule as it is (see below) |
 | `--assign-model` | incremental mode: the model that votes on which rule a new decision belongs to (default `claude-sonnet-5-5`) |
 | `--extract-effort`, `--consolidate-effort` | `low` … `max`; default is Claude Code's own |
@@ -153,8 +160,11 @@ Actions > General > Workflow permissions. The routing is `.github/scripts/route-
 | 5. Embed the same rules and per-year state in one static page with search | `website.py`, `website/` | `_site/` |
 
 `update.py` runs the steps in order. Step 2 reruns for a document when its file changes; step 3 reruns
-for a category when its decisions change. After editing a prompt in `analyze.py`, bump
-`EXTRACT_VERSION` or `CONSOLIDATE_VERSION` so cached results are recomputed (a rebuild, see Update).
+for a category when its decisions change. A new extraction prompt goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, and
+an extraction records the n of the prompt it was made with as its version, so `--extract-prompt` (and
+`evaluate.py extract --prompt`) can run it while the cache stays valid for the default; setting `EXTRACT_VERSION` to n
+makes it the pipeline's. After editing the consolidation prompt, bump `CONSOLIDATE_VERSION`. Either way cached
+results are recomputed (a rebuild, see Update).
 Each result records its `provenance`: the model that answered, the CLI version, a fingerprint of the prompt
 and schema, and the effort. It is not part of the cache key, so changing the model alone reruns nothing.
 
@@ -176,8 +186,8 @@ fingerprint of every decision it reflects (`inputs`); a category whose decisions
 left for `full`. A decision filed under another category's rule is consolidated with that category by `full` too, so
 no decision lands in two rules (`checks.py` reports one that does).
 
-Known limit: a decision that sets several rules at once (a budget setting several fees) is one decision, and goes to
-one rule; splitting it is left for a later change.
+Known limit of extraction prompt v2: a decision that sets several rules at once (a budget setting several fees) is one
+decision, and goes to one rule. Prompt v3 splits it (see Extraction model and prompt).
 
 Decisions and rules keep their identity when Claude redoes them, so links never break. Each decision has a
 stored id (`<document>#<n>`). When a document is extracted again, each new decision is matched to a previous
@@ -273,6 +283,55 @@ Errors a check against the minutes finds in the judges' answers go to `eval/key/
 reason and evidence (document and quote). They are applied on top of the judges whenever a key is written or
 scored, and listed in the reports. A rule marked `soft` in `eval/selection.json` (loosely scoped, so which
 decisions are its events is arbitrary) is reported but left out of the overall rules figures.
+
+**Extraction model and prompt.** The pipeline extracts with Sonnet and prompt v2 until another configuration passes
+the gate below. Measured on the decisions key (25 documents, 193 certain decisions;
+`eval/reports/decisions-stored+sonnet-1+sonnet-2+haiku-1+opus-1.md`):
+
+| Run | Recall | Precision | All four fields | Three (no handling) | Stability |
+|---|--:|--:|--:|--:|--:|
+| stored (today's `data/`, Sonnet, v2) | 79.8% | 93.9% | 63.8% | 75.2% | – |
+| fresh Sonnet, v2, two runs | 67.4% / 71.5% | 92.2% / 93.9% | 69.2% / 73.5% | 81.5% / 85.4% | 91.7% |
+| Haiku, v2 | 91.7% | 92.7% | 44.6% | 54.2% | – |
+| Opus, v2 | 91.2% | 96.7% | 93.7% | 95.4% | – |
+
+Sonnet misses a fifth to a third of the decisions, mostly in the large congress documents. And v2 extracts a budget
+line that sets or confirms several fees as one decision, which only one rule can hold, so the licence fee's yearly
+confirmations end up in "Årsafgift": a main cause of the rules key's 51.9% years with the same content in force. Prompt
+v3 (`analyze.EXTRACT_PROMPTS["v3"]`) is v2 plus one field rule (`analyze.EXTRACT_SPLIT_RULE`) that applies the key's
+own granularity: one decision per rule, so a budget line setting or confirming different fees (licens, årsafgift,
+startgebyr) gives one decision per fee, while the tiers of one fee and a list adopted as a whole for one rule (a
+season's entry deadlines) stay one decision; a fee restated unchanged with the budget is handling bekraeftelse. The
+key's judges keep v2's rules (`evaluate.KEY_PROMPT`), whose granularity notes already say this, so the key stays as
+it is. Each candidate configuration is run twice (with v2 a run cost about 0.95 USD with
+Sonnet and 2.35 with Opus):
+
+```bash
+uv run evaluate.py extract --name sonnet-v3-1 --model claude-sonnet-5-5 --prompt v3 --max-cost 3
+uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5   # and -2 of each
+uv run evaluate.py score --run stored --run sonnet-1 --run sonnet-2 --run sonnet-v3-1 --run sonnet-v3-2 \
+    --run opus-v3-1 --run opus-v3-2
+```
+
+`score` gives each configuration scored with two runs (the same model, prompt fingerprint and effort in their
+provenance) its stability: the share of the two runs' decisions matched one to one (the matcher that carries decision
+ids over), per document and pooled. The key cannot show it, and an unstable extraction rewrites rules every time a
+document is extracted again. The gate, in the report: a configuration passes when its worse run is at least the stored
+run on recall and on the three fields, at most 2 points below it on precision and at most 2 points above it on
+over-split (a prompt that splits more than the key asks for would otherwise pass on recall), and its two runs are at
+least as stable as the two fresh runs of today's pipeline.
+
+To migrate to a configuration that passes, run
+`uv run update.py --extract-prompt v3 --extract-model <model> --allow-rebuild`, with `--max-cost 35` for Opus (the
+default 15 would cut it off). It logs the estimate first (with today's measurements about 14 USD with Sonnet and 27
+with Opus, consolidation included), extracts every document again, carries the decision ids over, and consolidates
+every category in full (`--consolidate-mode incremental` is refused with another prompt: updating every rule one by
+one would cost more and leave the rules less clean). A run cut off before every category is consolidated leaves rules
+out (stale), so its result goes to review; run it again with the same `--extract-prompt` and `--extract-model`. A
+plain run stops instead of extracting everything back with v2, and one with another model stops instead of mixing
+the two; both name the command that continues. Then commit the data with `EXTRACT_VERSION = 3` (and `EXTRACT_MODEL`
+in `update.py`, if the model changes), which makes v3 the default. Bumping first and running
+`uv run update.py --extract-model <model> --allow-rebuild` does the same.
 
 `DSF_Generelt_Regelsaet.docx` and `DSF_Verificeringsrapport.docx` are the earlier manual analysis
 (March 2026), kept for reference.
