@@ -580,6 +580,21 @@ def test_a_continued_migration_keeps_the_model_and_effort_it_was_approved_with(m
     assert efforts == ["high", "high", None, None, None, "high", "high"]  # the votes have no consolidation effort
 
 
+def test_a_test_run_on_one_document_ignores_an_open_migration(migrating, fake_claude, run):
+    world = migrating
+    marker = json.loads(update.REBUILD_MARKER.read_text())
+    update.REBUILD_MARKER.write_text(json.dumps({**marker, "consolidate_effort": "high"}))
+    saved, outdated = update.REBUILD_MARKER.read_bytes(), {c: world.files()[f"{c}.json"] for c in ("okonomi",
+                                                                                                   "medlemskab")}
+    fake_claude.answers(*_filed_dom2024(world)[2:])  # the votes and updates for dom2024 only
+    run("--only", "^dom2024$")
+    assert _models(fake_claude) == [SONNET] * 3 + [OPUS, OPUS]  # incremental, its own categories only
+    assert all("--effort" not in args for args in fake_claude.calls())  # not the approval's settings either
+    assert [v["ref"] for v in world.rule("dommere", "dommerkrav")["versioner"]] == ["dom2019#1", "dom2024#1"]
+    assert {c: world.files()[f"{c}.json"] for c in outdated} == outdated  # the migration is not touched
+    assert update.REBUILD_MARKER.read_bytes() == saved
+
+
 def test_an_unfinished_approval_without_a_mode_was_given_for_full(run, world):
     def marker(**extra) -> None:
         update.REBUILD_MARKER.write_text(json.dumps({

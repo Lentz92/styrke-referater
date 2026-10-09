@@ -127,7 +127,7 @@ def main() -> None:
         RUN_REPORT.unlink(missing_ok=True)  # the routing trusts a report only from the run that wrote it
         try:
             run = resolve_consolidation(args.consolidate_mode, args.consolidate_model, args.consolidate_effort,
-                                        args.allow_rebuild)
+                                        args.allow_rebuild, only=bool(args.only))
             if not args.only:  # a test run on a few documents
                 # Continuing an open full approval, --allow-rebuild approves nothing more: no silent widening.
                 check_rebuild(docs, allowed=args.allow_rebuild and run.continued is None, mode=run.mode,
@@ -368,13 +368,15 @@ def consolidation_mode(asked: str | None) -> str:
     return "full" if approval is not None and approval.mode == "full" else DEFAULT_CONSOLIDATE_MODE
 
 
-def resolve_consolidation(asked: str | None, model: str | None, effort: str | None, allowed: bool) -> Consolidation:
+def resolve_consolidation(asked: str | None, model: str | None, effort: str | None, allowed: bool,
+                          only: bool = False) -> Consolidation:
     """How this run consolidates. A run that asks for a mode with --allow-rebuild approves its work anew, through
-    check_rebuild's scope check. Any other run continues an unfinished approval: in full, within its scope, when it
-    was given for full and no mode is asked for; and with the consolidation model and effort it was approved with,
-    so a migration is never finished with other settings than it was started with. A run asking for other ones is
-    refused (SystemExit), naming what to run instead."""
-    approval = None if allowed and asked is not None else _load_approval()
+    check_rebuild's scope check; a test run on a few documents (`only`, update.py --only) ignores any approval, as it
+    skips the rebuild guard and leaves data/rebuild.json alone. Any other run continues an unfinished approval: in
+    full, within its scope, when it was given for full and no mode is asked for; and with the consolidation model and
+    effort it was approved with, so a migration is never finished with other settings than it was started with. A run
+    asking for other ones is refused (SystemExit), naming what to run instead."""
+    approval = None if only or allowed and asked is not None else _load_approval()
     continued = approval if approval is not None and approval.mode == "full" and asked is None else None
     if approval is not None and approval.settings is not None:
         bound_model, bound_effort = approval.settings
