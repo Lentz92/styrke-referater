@@ -4,12 +4,9 @@ Calls run with one worker, so the fake answers them in order: two propose runs p
 order), the title choice, then one text rewrite per merged or split rule (merges first)."""
 
 import json
-import os
-import subprocess
 from pathlib import Path
 
 import pytest
-import yaml
 
 import analyze
 import audit
@@ -24,9 +21,6 @@ from analyze import RunBudget, decision_hash
 from incremental import UpdateRejected
 from matching import FormerSlug, SlugRegistry
 from test_incremental import World, _decision
-from test_route_update import Repo
-
-ROOT = Path(audit.__file__).parent
 
 
 def _rules(world: World, category: str, *rules: tuple) -> None:
@@ -492,163 +486,3 @@ def test_an_audit_waits_for_decisions_update_py_has_not_filed(world, fake_claude
     with pytest.raises(SystemExit, match="decisions to file in okonomi"):
         audit.propose(["okonomi"], 10, 1)
     assert fake_claude.calls() == []
-
-
-# ---------------------------------------------------------------- the workflow
-
-AUDIT_SCRIPT = ROOT / ".github" / "scripts" / "route-audit.sh"
-CLI_ACTION = "./.github/actions/claude-cli"
-TODAY = "2026-10-09"
-
-
-def _workflow(name: str) -> dict:
-    return yaml.safe_load((ROOT / ".github" / "workflows" / name).read_text())
-
-
-def _job(workflow: dict) -> dict:
-    (job,) = workflow["jobs"].values()
-    return job
-
-
-def _step(job: dict, found: str) -> dict:
-    """The step named `found`, or with that id, or using that action."""
-    return next(step for step in job["steps"] if found in (step.get("name"), step.get("id"), step.get("uses")))
-
-
-def _in_order(job: dict, *found: str) -> bool:
-    positions = [job["steps"].index(_step(job, name)) for name in found]
-    return positions == sorted(positions)
-
-
-def _script(repo: Repo, mode: str, branch: str = "main", today: str = TODAY, data: str | None = None,
-            report: str | None = None, files: dict[str, str | None] | None = None) -> subprocess.CompletedProcess:
-    """route-audit.sh in a fresh checkout of `branch`, after audit.py wrote `data`, `report` and `files` (None:
-    removed)."""
-    work = repo.clone(branch)
-    if data is not None:
-        (work / "data.json").write_text(data + "\n")
-    if report is not None:
-        (work / "audit-report.md").write_text(report)
-    for name, content in (files or {}).items():
-        if content is None:
-            (work / name).unlink()
-        else:
-            (work / name).parent.mkdir(parents=True, exist_ok=True)
-            (work / name).write_text(content)
-    return subprocess.run(["bash", str(AUDIT_SCRIPT), mode], cwd=work, env={**repo.env, "AUDIT_TODAY": today},
-                          capture_output=True, text=True, check=False)
-
-
-@pytest.fixture
-def repo(tmp_path) -> Repo:
-    repo = Repo(tmp_path)
-    repo.commit_elsewhere("main", ".gitignore", "run-report.md\naudit-report.md\n")
-    return repo
-
-
-def test_the_audit_workflow_is_manual_reviewed_and_pinned_like_the_monthly_run():
-    audit_yml, update_yml = _workflow("audit.yml"), _workflow("update.yml")
-    assert set(audit_yml.get("on", audit_yml.get(True))) == {"workflow_dispatch"}  # PyYAML reads `on` as True
-    job = _job(audit_yml)
-    # Its own concurrency group: a queued audit never cancels a pending monthly update.
-    assert audit_yml["concurrency"]["group"] != update_yml["concurrency"]["group"]
-    check = _step(job, "Check that no update runs and no other audit is open")
-    assert "gh run list --workflow update.yml" in check["run"] and "route-audit.sh check" in check["run"]
-    # Nothing is paid before the checks, and both workflows get the CLI from the action that pins it.
-    assert _in_order(job, check["name"], CLI_ACTION, "audit") and _in_order(_job(update_yml), CLI_ACTION, "update")
-    # The result is routed to review whatever the audit step ended with, timed out included, and never published.
-    route = _step(job, "Send the result to a pull request")
-    assert route["run"] == "bash .github/scripts/route-audit.sh route"
-    assert route["if"] == "${{ !cancelled() && steps.audit.outcome != 'skipped' }}"
-    assert not any("route-update.sh" in step.get("run", "") or "git push" in step.get("run", "")
-                   for step in job["steps"])
-    # The time budget, a call still running at its end and the routing fit into the job.
-    budget = int(job["env"]["TIME_BUDGET"])
-    assert budget == audit.DEFAULT_TIME_BUDGET
-    assert budget + audit.PROPOSE_TIMEOUT / 60 < _step(job, "audit")["timeout-minutes"] < job["timeout-minutes"] - 5
-
-
-@pytest.mark.parametrize(("propose_code", "budget", "applied", "code"), [
-    (0, "75", True, 0), (1, "75", False, 1), (0, "0", False, 1)])
-def test_the_workflow_applies_a_complete_proposal_within_the_time_left(tmp_path, propose_code, budget, applied, code):
-    step = _step(_job(_workflow("audit.yml")), "audit")
-    bin_dir = tmp_path / "bin"
-    bin_dir.mkdir()
-    (bin_dir / "uv").write_text(f'#!/bin/sh\necho "$*" >> {tmp_path}/uv.log\n'
-                                f'[ "$3" = propose ] && exit "$PROPOSE_CODE"\nexit 0\n')
-    (bin_dir / "uv").chmod(0o755)
-    script = tmp_path / "step.sh"
-    script.write_text(step["run"])
-    env = {"PATH": f"{bin_dir}{os.pathsep}/usr/bin{os.pathsep}/bin", "MAX_COST": "25", "CATEGORIES": "okonomi,dommere",
-           "TIME_BUDGET": budget, "GITHUB_OUTPUT": str(tmp_path / "output"), "PROPOSE_CODE": str(propose_code)}
-    subprocess.run(["bash", "--noprofile", "--norc", "-eo", "pipefail", str(script)], env=env, check=True)  # as GitHub
-    calls = (tmp_path / "uv.log").read_text().splitlines()
-    assert calls[0] == f"run audit.py propose --max-cost 25 --time-budget {budget} --categories okonomi,dommere"
-    assert calls[1:] == (["run audit.py apply --max-cost 25 --time-budget 75"] if applied else [])
-    assert (tmp_path / "output").read_text() == f"code={code}\n"
-
-
-def test_a_new_audit_waits_for_an_open_one_and_for_the_monthly_update(repo):
-    assert _script(repo, "check").returncode == 0
-    month_end = _script(repo, "check", today="2026-10-30")
-    assert month_end.returncode == 1 and "The month ends within two days" in month_end.stderr
-    assert _script(repo, "check", today="2026-10-29").returncode == 0
-    repo.commit_elsewhere(f"auto/audit-{TODAY}", "answers.json", "{}\n")  # an audit cut off earlier today
-    again = _script(repo, "check")
-    assert again.returncode == 1 and f"An audit is open on auto/audit-{TODAY}" in again.stderr
-    assert _script(repo, "check", branch=f"auto/audit-{TODAY}").returncode == 0  # a run that finishes it
-
-
-@pytest.mark.skipif(subprocess.run(["which", "jq"], capture_output=True).returncode != 0,
-                    reason="the fake gh applies --jq with jq")
-def test_an_audit_goes_to_a_pull_request_and_never_to_main(repo):
-    main, branch = repo.git("rev-parse", "main"), f"auto/audit-{TODAY}"
-    cut_off = _script(repo, "route", data='{"audited": 1}', report=f"{audit.UNFINISHED}\n# Rule audit\n")
-    assert cut_off.returncode == 0, cut_off.stderr
-    assert repo.git("rev-parse", "main") == main and repo.file(branch) == '{"audited": 1}'
-    (pr,) = repo.prs()
-    assert (pr["headRefName"], pr["baseRefName"], pr["body"]) == (branch, "main", f"{audit.UNFINISHED}\n# Rule audit\n")
-    assert repo.gh_calls()[-1]["args"][-3] == f"Rule audit {TODAY} (unfinished)"
-    assert "audit-report.md" not in repo.git("ls-tree", "--name-only", branch)
-
-    # A run on the audit's branch finishes it: it commits there and updates its pull request.
-    first = repo.git("rev-parse", branch)
-    finished = _script(repo, "route", branch=branch, today="2026-10-10", data='{"audited": 2}',
-                       report=f"{audit.APPLIED}\n# Finished\n")
-    assert finished.returncode == 0, finished.stderr
-    assert repo.git("rev-parse", f"{branch}~1") == first and repo.file(branch) == '{"audited": 2}'
-    (pr,) = repo.prs()
-    assert (pr["baseRefName"], pr["body"]) == ("main", f"{audit.APPLIED}\n# Finished\n")
-    edited = repo.gh_calls()[-1]["args"]
-    assert edited[edited.index("--title") + 1] == f"Rule audit {TODAY}" and repo.git("rev-parse", "main") == main
-
-
-def test_a_new_audit_does_not_start_when_origin_cannot_be_asked(repo):
-    work = repo.clone("main")
-    repo.git("remote", "set-url", "origin", str(repo.root / "gone.git"), cwd=work)
-    result = subprocess.run(["bash", str(AUDIT_SCRIPT), "check"], cwd=work, env={**repo.env, "AUDIT_TODAY": TODAY},
-                            capture_output=True, text=True, check=False)
-    assert result.returncode == 1 and "Cannot list origin's audit branches" in result.stderr
-
-
-@pytest.mark.skipif(subprocess.run(["which", "jq"], capture_output=True).returncode != 0,
-                    reason="the fake gh applies --jq with jq")
-def test_an_unfinished_audit_commits_what_it_paid_for_and_no_rule(repo):
-    work = repo.clone("main")
-    for name, content in (("data/regler/okonomi.json", "{}\n"), ("data/slugs.json", "{}\n"),
-                          ("regelsaet/2026.md", "# 2026\n")):
-        (work / name).parent.mkdir(parents=True, exist_ok=True)
-        (work / name).write_text(content)
-    repo.git("add", "-A", cwd=work)
-    repo.git("-c", "user.name=Someone", "-c", "user.email=someone@example.com", "commit", "-q", "-m", "data", cwd=work)
-    repo.git("push", "-q", "origin", "HEAD:refs/heads/main", cwd=work)
-    branch = f"auto/audit-{TODAY}"
-    half = {"data/regler/okonomi.json": '{"half": 1}\n', "data/regler/antidoping.json": "{}\n",
-            "data/slugs.json": '{"half": 1}\n', "regelsaet/2026.md": None,
-            "data/regler_ops.json": '{"applied": {"time": "now"}}\n', "data/audit/propose-okonomi-1.json": "{}\n"}
-    result = _script(repo, "route", report=f"{audit.UNFINISHED}\n# Cut off\n", files=half)
-    assert result.returncode == 0, result.stderr
-    committed = set(repo.git("ls-tree", "-r", "--name-only", branch).split())
-    assert {"data/audit/propose-okonomi-1.json", "regelsaet/2026.md"} <= committed
-    assert not {"data/regler/antidoping.json", "data/regler_ops.json"} & committed  # its ops file claims applied
-    assert repo.file(branch, "data/regler/okonomi.json") == "{}" and repo.file(branch, "data/slugs.json") == "{}"

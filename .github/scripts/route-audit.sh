@@ -15,11 +15,11 @@
 # branch) commits there and updates its pull request into main. GH_TOKEN must be set for gh; AUDIT_TODAY (YYYY-MM-DD)
 # replaces today's date in tests.
 set -euo pipefail
+source "$(dirname "${BASH_SOURCE[0]}")/pr.sh"
 
 mode=${1:?usage: route-audit.sh check|route}
 report=audit-report.md  # audit.py's REPORT
 applied_marker="<!-- audit: applied -->"  # audit.py's APPLIED
-max_body=60000  # GitHub refuses a pull request body over 65536 characters
 today=${AUDIT_TODAY:-$(date -u +%Y-%m-%d)}
 
 current=$(git rev-parse --abbrev-ref HEAD)
@@ -70,37 +70,14 @@ if ! { [ -f "$report" ] && head -n 1 "$report" | grep -qxF "$applied_marker"; };
   fi
 fi
 
-git config user.name "github-actions[bot]"
-git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add -A
+stage_result
 if git diff --cached --quiet; then
   echo "The audit changed nothing; no pull request."
   exit 0
 fi
 git commit -q -m "$title"
-git push -q --force origin "HEAD:refs/heads/$review_branch"
 
 body=$(mktemp)
-if [ -s "$report" ]; then
-  if [ "$(wc -c < "$report")" -gt "$max_body" ]; then
-    head -c "$max_body" "$report" | sed '$d' > "$body"  # drop the last line, which may be cut short
-    printf '\n…\n\nThe report is cut short here; data/regler_ops.json has every op.\n' >> "$body"
-  else
-    cat "$report" > "$body"
-  fi
-else
-  echo "audit.py wrote no report; the run's log has what it did." > "$body"
-fi
-if [ -n "${GITHUB_RUN_ID:-}" ]; then
-  printf '\nRun: %s/%s/actions/runs/%s\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
-fi
-
-# Forks may have a branch of the same name; only this repository's counts.
-number=$(gh pr list --head "$review_branch" --state open --json number,isCrossRepository \
-  --jq 'map(select(.isCrossRepository | not)) | .[0].number // empty')
-if [ -n "$number" ]; then
-  gh pr edit "$number" --base "$base" --title "$title" --body-file "$body"
-  echo "Updated pull request #$number with this audit."
-else
-  gh pr create --head "$review_branch" --base "$base" --title "$title" --body-file "$body"
-fi
+pr_body "$report" "data/regler_ops.json has every op." "audit.py wrote no report; the run's log has what it did." \
+  > "$body"
+send_to_review "$review_branch" "$base" "$title" "$body"

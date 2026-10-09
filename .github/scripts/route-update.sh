@@ -9,12 +9,12 @@
 # repository root after update.py, with GH_TOKEN set for gh. Safe to repeat: the review branch is force-pushed
 # from this run's working tree, so there is one branch and at most one open pull request per base branch.
 set -euo pipefail
+source "$(dirname "${BASH_SOURCE[0]}")/pr.sh"
 
 code=${1:?usage: route-update.sh EXIT_CODE_OF_UPDATE_PY}
 report=${RUN_REPORT:-run-report.md}
 checks_passed="<!-- checks: passed -->"  # update.py's CHECKS_PASSED
 title="Monthly update needs review"
-max_body=60000  # GitHub refuses a pull request body over 65536 characters
 
 base=$(git rev-parse --abbrev-ref HEAD)
 if [ "$base" = HEAD ]; then
@@ -33,15 +33,7 @@ case $code in
   *) if [ -f "$report" ] && head -n 1 "$report" | grep -qxF "$checks_passed"; then route=publish; else route=review; fi ;;
 esac
 
-open_review() {
-  # Forks may have a branch of the same name; only this repository's counts.
-  gh pr list --head "$review_branch" --state open --json number,isCrossRepository \
-    --jq 'map(select(.isCrossRepository | not)) | .[0].number // empty'
-}
-
-git config user.name "github-actions[bot]"
-git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add -A
+stage_result
 today=$(date -u +%Y-%m-%d)
 
 if git diff --cached --quiet; then
@@ -58,7 +50,7 @@ if [ "$route" = publish ]; then
   git commit -q -m "Monthly rule overview update $today"
   if git push -q origin "HEAD:refs/heads/$base"; then
     echo "Committed the update to $base."
-    number=$(open_review)
+    number=$(open_pr "$review_branch")
     if [ -n "$number" ]; then
       gh pr close "$number" --comment "Superseded: a later run published its update to $base directly."
       git push -q origin --delete "$review_branch" || echo "::warning::Could not delete $review_branch."
@@ -72,30 +64,11 @@ if [ "$route" = publish ]; then
 else
   git commit -q -m "Monthly rule overview update $today (needs review)"
 fi
-git push -q --force origin "HEAD:refs/heads/$review_branch"
 
 body=$(mktemp)
 if [ -n "$note" ]; then
   printf '%s\n\n' "$note" > "$body"
 fi
-if [ -s "$report" ]; then
-  if [ "$(wc -c < "$report")" -gt "$max_body" ]; then
-    head -c "$max_body" "$report" | sed '$d' >> "$body"  # drop the last line, which may be cut short
-    printf '\n…\n\nThe report is cut short here; the run page has all of it.\n' >> "$body"
-  else
-    cat "$report" >> "$body"
-  fi
-else
-  echo "update.py wrote no run report; the run's log has what it found." >> "$body"
-fi
-if [ -n "${GITHUB_RUN_ID:-}" ]; then
-  printf '\nRun: %s/%s/actions/runs/%s\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
-fi
-
-number=$(open_review)
-if [ -n "$number" ]; then
-  gh pr edit "$number" --base "$base" --title "$title" --body-file "$body"
-  echo "Updated pull request #$number with this run's result."
-else
-  gh pr create --head "$review_branch" --base "$base" --title "$title" --body-file "$body"
-fi
+pr_body "$report" "the run page has all of it." "update.py wrote no run report; the run's log has what it found." \
+  >> "$body"
+send_to_review "$review_branch" "$base" "$title" "$body"
