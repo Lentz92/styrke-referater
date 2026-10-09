@@ -1,0 +1,1336 @@
+{
+ "doc_id": "CoachResponsibility",
+ "sha256": "347e2d57f1fc511dcadc59c4ca8fda21459f8644754f7ecde71e9fb107654c52",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Antal coaches i opvarmningsområdet",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved internationale IPF-stævner må der pr. løftegruppe i opvarmningsområdet være højst 3 coaches ved 1 atlet, 5 coaches ved 2-3 atleter og 6 coaches ved 4 atleter, hvilket er det maksimale antal.",
+   "citat": "The number of Coaches for each lifting group in the warm-up  \n1 Athlete = 3 Coaches  \n2- 3 Athletes = 5 Coaches  \n4 Athletes = 6 Coaches which is the maximum number of Coaches allowed.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 86,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "4 Athletes = 6 Coaches which is the maximum number of Coaches allowed.",
+     "citat_pos": 107
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2
+   ],
+   "emne": "Antal coaches i wrapping-området",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved internationale IPF-stævner må der pr. løftegruppe i wrapping-området være højst 2 coaches ved 1 atlet, 3 coaches ved 2-3 atleter og 4 coaches ved 4 atleter, hvilket er det maksimale antal.",
+   "citat": "The number of Coaches for each lifting group in the wrapping area \n1 Athlete = 2 Coaches \n2-3 Athletes = 3 Coaches \n4 Athletes = 4 Coaches which is the maximum number of Coaches allowed.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 119,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "4 Athletes = 4 Coaches which is the maximum number of Coaches allowed.",
+     "citat_pos": 140
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "Coach-observationszone ved stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Arrangøren skal indrette en observationszone for coaches i wrapping-området med TV-monitor med forbindelse til løfteplatformen, så coaches kan følge løftene. Er det ikke muligt, skal der etableres en observationszone bag speakerbordet.",
+   "citat": "Promoters to install a Coach Observation zone in the wrapping area with a TV monitor link to the      \n    Lifting platform for coaches to be able to follow the lifting",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 153,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Promoters to install a Coach Observation zone in the wrapping area with a TV monitor link to the",
+     "citat_pos": 153
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Én coach i coachingzonen",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach skal sikre, at kun én coach følger atleterne til coachingzonen, og at denne coach er korrekt påklædt.",
+   "citat": "The Head Coach must ensure only one coach goes with the athletes to the coaching zone  \n    and must be properly dress",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 202,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The Head Coach must ensure only one coach goes with the athletes to the coaching zone",
+     "citat_pos": 202
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Head coachs ansvar for adfærd i opvarmnings- og wrapping-området",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach er ansvarlig for coaches' og løfteres adfærd i opvarmnings- og wrapping-området ved internationale stævner.",
+   "citat": "The behaviour of the coaches and lifters in the warm up and wrapping area is the responsibility    \n     of the Head Coach",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 224,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The behaviour of the coaches and lifters in the warm up and wrapping area is the responsibility",
+     "citat_pos": 224
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Akkreditering af assistentcoaches",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach skal sikre, at hver assistentcoach får et badge med foto, som giver adgang til opvarmnings-, wrapping- og løfteområdet.",
+   "citat": "The Head Coach must ensure each of his assistant coaches receive a badge with photo to gain access \n     to the warm up, wrapping and lifting area",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 246,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The Head Coach must ensure each of his assistant coaches receive a badge with photo to gain access",
+     "citat_pos": 246
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7
+   ],
+   "emne": "Oprydning af udstyr og træningsområde",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach skal sikre, at udstyr brugt under træning sættes tilbage på stativerne, og at platforme og træningsområde efterlades rene og ryddelige (intet affald); det samme gælder efter stævnet.",
+   "citat": "The Head Coach must ensure all equipment used during training is replace on racks and the platforms \nis left tidy and the trainings area leaves in clean conditions (no garbage etc.) same applies after the  \nCompetition",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 290,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The Head Coach must arranged with the organizer a fix training time for his/her team",
+     "citat_pos": 273
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "Dokumentation ved vejning",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach skal sikre, at løfterne ved vejningen fremviser Appendix 2, løfterprofil og pas for dommerne.",
+   "citat": "The Head Coach must ensure at weigh-in his/her lifters must present the following to the Referees: \nAppendix 2, Lifters profile and passport.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 327,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The Head Coach must ensure at weigh-in his/her lifters must present the following to the Referees",
+     "citat_pos": 327
+    }
+   ]
+  },
+  {
+   "id": "K9",
+   "status": "certain",
+   "candidates": [
+    9
+   ],
+   "emne": "Udstyrskontrol efter IPF's tekniske regler",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach skal sikre, at løfternes udstyr ved udstyrskontrollen er i overensstemmelse med IPF's tekniske regler.",
+   "citat": "The Head Coach must ensure at the equipment check lifters equipment is in accordance with IPF  \n    Technical rules",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 352,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The Head Coach must ensure at the equipment check lifters equipment is in accordance with IPF",
+     "citat_pos": 352
+    }
+   ]
+  },
+  {
+   "id": "K10",
+   "status": "certain",
+   "candidates": [
+    10
+   ],
+   "emne": "Coaches' overholdelse af IPF's antidopingregler",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach og assistentcoaches i opvarmnings-, wrapping- og løfteområdet skal anerkende, at de er forpligtet til at overholde alle IPF's antidopingregler.",
+   "citat": "The Head Coach and assistant coaches in the warm-up, wrapping and lifting area must acknowledge their  \n       Requirement to adhere to all the IPF Anti-Doping rules.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 371,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Requirement to adhere to all the IPF Anti-Doping rules.",
+     "citat_pos": 388
+    }
+   ]
+  },
+  {
+   "id": "K11",
+   "status": "certain",
+   "candidates": [
+    11
+   ],
+   "emne": "Løfteres parathed til platformen",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach skal sikre, at løfterne er forberedt og klar til at gå på platformen, når deres navn kaldes op.",
+   "citat": "The Head Coach to ensure the lifters is prepared and ready to take the platform when his/her name is",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 399,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The Head Coach to ensure the lifters is prepared and ready to take the platform when his/her name is",
+     "citat_pos": 399
+    }
+   ]
+  },
+  {
+   "id": "K12",
+   "status": "certain",
+   "candidates": [
+    12
+   ],
+   "emne": "Løfteres parathed til præmieoverrækkelse",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach skal sikre, at løfterne er forberedt og klar til at gå på platformen, når deres navn kaldes op til præmieoverrækkelsen.",
+   "citat": "The Head Coach to ensure the lifters is prepared and ready to take the platform when his/her name is  \n       called For the victory ceremony.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 421,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "called For the victory ceremony.",
+     "citat_pos": 441
+    }
+   ]
+  },
+  {
+   "id": "K13",
+   "status": "certain",
+   "candidates": [
+    13
+   ],
+   "emne": "Alkoholforbud i opvarmnings- og wrapping-område",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Indtagelse af alkohol er strengt forbudt for head coach, assistentcoaches og løftere i opvarmnings- og wrapping-området, og ingen alkoholpåvirket person må på noget tidspunkt opholde sig i opvarmningsrummet. Head Coach skal sikre dette.",
+   "citat": "any drinking of  alcohol by Head Coach, assistant coaches and your  \n        lifters in the mentioned areas above is strictly forbidden",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 452,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "lifters in the mentioned areas above is strictly forbidden",
+     "citat_pos": 463
+    }
+   ]
+  },
+  {
+   "id": "K14",
+   "status": "certain",
+   "candidates": [
+    14
+   ],
+   "emne": "Coachansvarserklæring",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head Coach og coaches skal med navn, nationalt forbund og underskrift bekræfte, at de har læst og forstået coachansvaret. Overtrædelser kan medføre disciplinærsag ved IPF's disciplinærkomité eller, for antidopingforhold, behandling efter IPF's antidopingregler.",
+   "citat": "I understand that abuse of these \nexpectations will render me liable for disciplinary action by the IPF Disciplinary Committee",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 511,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "expectations will render me liable for disciplinary action by the IPF Disciplinary Committee",
+     "citat_pos": 517
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Antal coaches i opvarmningsområdet",
+     "tekst": "IPF begrænser antal coaches pr. løftegruppe i opvarmningsområdet: 1 atlet = 3 coaches, 2-3 atleter = 5 coaches, 4 atleter = 6 coaches, som er det maksimale antal.",
+     "udfald": "vedtaget",
+     "span": [
+      98,
+      119
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Antal coaches i opvarmningsområdet",
+     "tekst": "Antal coaches pr. løftergruppe i opvarmningsområdet: 1 atlet = 3 coaches, 2-3 atleter = 5 coaches, 4 atleter = 6 coaches, som er det maksimalt tilladte.",
+     "udfald": "vedtaget",
+     "span": [
+      98,
+      119
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Antal coaches i opvarmnings- og wrapping-område",
+     "tekst": "Ved internationale stævner må der pr. løftergruppe højst være 3 coaches ved 1 atlet, 5 ved 2-3 atleter og 6 ved 4 atleter i opvarmningsområdet. I wrapping-området er grænsen 2 coaches ved 1 atlet, 3 ved 2-3 atleter og 4 ved 4 atleter.",
+     "udfald": "vedtaget",
+     "span": [
+      98,
+      119
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Antal trænere i opvarmningsområdet",
+     "tekst": "Antallet af trænere pr. løftergruppe i opvarmningsområdet er: 1 løfter = 3 trænere, 2-3 løftere = 5 trænere og 4 løftere = 6 trænere, som er det maksimale antal trænere.",
+     "udfald": "vedtaget",
+     "span": [
+      107,
+      119
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Antal coaches i opvarmningsområdet",
+     "tekst": "Ved internationale IPF-stævner må hver løftergruppe have følgende antal coaches i opvarmningsområdet: 1 atlet = 3 coaches, 2-3 atleter = 5 coaches, 4 atleter = 6 coaches, hvilket er det maksimale antal.",
+     "udfald": "vedtaget",
+     "span": [
+      86,
+      119
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The number of Coaches for each lifting group in the warm-up  \n1 Athlete = 3 Coaches  \n2- 3 Athletes = 5 Coaches  \n4 Athletes = 6 Coaches which is the maximum number of Coaches allowed."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "4 Athletes = 6 Coaches which is the maximum number of Coaches allowed."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Antal coaches i wrapping-området",
+     "tekst": "IPF begrænser antal coaches pr. løftegruppe i wrapping-området: 1 atlet = 2 coaches, 2-3 atleter = 3 coaches, 4 atleter = 4 coaches, som er det maksimale antal.",
+     "udfald": "vedtaget",
+     "span": [
+      131,
+      152
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Antal coaches i bandageområdet",
+     "tekst": "Antal coaches pr. løftergruppe i bandageområdet (wrapping area): 1 atlet = 2 coaches, 2-3 atleter = 3 coaches, 4 atleter = 4 coaches, som er det maksimalt tilladte.",
+     "udfald": "vedtaget",
+     "span": [
+      131,
+      152
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Antal trænere i bandageområdet",
+     "tekst": "Antallet af trænere pr. løftergruppe i bandageområdet (wrapping area) er: 1 løfter = 2 trænere, 2-3 løftere = 3 trænere og 4 løftere = 4 trænere, som er det maksimale antal trænere.",
+     "udfald": "vedtaget",
+     "span": [
+      140,
+      152
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Antal coaches i bandageområdet",
+     "tekst": "Ved internationale IPF-stævner må hver løftergruppe have følgende antal coaches i bandageområdet (wrapping area): 1 atlet = 2 coaches, 2-3 atleter = 3 coaches, 4 atleter = 4 coaches, hvilket er det maksimale antal.",
+     "udfald": "vedtaget",
+     "span": [
+      119,
+      152
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The number of Coaches for each lifting group in the wrapping area \n1 Athlete = 2 Coaches \n2-3 Athletes = 3 Coaches \n4 Athletes = 4 Coaches which is the maximum number of Coaches allowed."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "4 Athletes = 4 Coaches which is the maximum number of Coaches allowed."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Coach-observationszone ved stævner",
+     "tekst": "Arrangøren skal indrette en observationszone for coaches i wrapping-området med TV-monitor til løfteplatformen. Er det ikke muligt, skal der etableres en observationszone bag speakerbordet.",
+     "udfald": "vedtaget",
+     "span": [
+      153,
+      182
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Coach-observationszone ved stævner",
+     "tekst": "Arrangøren skal indrette en observationszone for coaches i bandageområdet med tv-monitor med billede fra løfteplatformen. Er det ikke muligt, skal der indrettes en observationszone bag speakerbordet.",
+     "udfald": "vedtaget",
+     "span": [
+      153,
+      173
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Trænerobservationszone",
+     "tekst": "Arrangøren skal etablere en trænerobservationszone i bandageområdet med tv-skærmforbindelse til løfteplatformen, så trænerne kan følge løftene; er dette ikke muligt, skal der etableres en observationszone bag speakerbordet.",
+     "udfald": "vedtaget",
+     "span": [
+      153,
+      171
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Observationszone for coaches",
+     "tekst": "Arrangøren af internationale IPF-stævner skal indrette en observationszone for coaches i bandageområdet med TV-skærm forbundet til løfteplatformen. Er det ikke muligt, skal der være en observationszone bag speakerbordet, hvorfra coaches kan se løftene.",
+     "udfald": "vedtaget",
+     "span": [
+      153,
+      195
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Promoters to install a Coach Observation zone in the wrapping area with a TV monitor link to the      \n    Lifting platform for coaches to be able to follow the lifting"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Promoters to install a Coach Observation zone in the wrapping area with a TV monitor link to the"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Head coachs ansvar for adfærd og coachingzone",
+     "tekst": "Head Coach skal sikre, at kun én coach følger atleterne til coachingzonen, og at vedkommende er korrekt klædt. Head Coach er ansvarlig for coaches' og løfteres adfærd i opvarmnings- og wrapping-området.",
+     "udfald": "vedtaget",
+     "span": [
+      202,
+      223
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Adgang til coachingzonen",
+     "tekst": "Head Coach skal sikre, at kun én træner følger løfterne til coachingzonen, og at vedkommende er korrekt klædt på.",
+     "udfald": "vedtaget",
+     "span": [
+      202,
+      218
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Coach i coachingzonen",
+     "tekst": "Cheftræneren skal sikre, at kun én coach følger atleten til coachingzonen, og at denne coach er korrekt påklædt.",
+     "udfald": "vedtaget",
+     "span": [
+      202,
+      223
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure only one coach goes with the athletes to the coaching zone  \n    and must be properly dress"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure only one coach goes with the athletes to the coaching zone"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Head coachs ansvar ved internationale stævner",
+     "tekst": "Head coach er ansvarlig for adfærd i opvarmnings- og bandageområdet, at kun én coach følger atleterne til coachingzonen (ordentligt klædt), at assistenttrænere har badge med foto, at fast træningstid aftales med arrangøren, og at udstyr og lokaler efterlades ryddelige.",
+     "udfald": "vedtaget",
+     "span": [
+      224,
+      245
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Head coachs ansvar for adfærd, adgang og orden",
+     "tekst": "Head coach er ansvarlig for coaches' og løfteres adfærd i opvarmnings- og wrapping-området, kun én coach må følge atleterne til coachingzonen og skal være korrekt klædt. Head coach skal sikre, at assistenttrænere har badge med foto, at udstyr og træningsområde efterlades ryddeligt, og at løfterne er klar til at gå på platformen, når de kaldes, også til sejrsceremonien.",
+     "udfald": "vedtaget",
+     "span": [
+      224,
+      245
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Ansvar for adfærd i opvarmnings- og bandageområdet",
+     "tekst": "Head Coach er ansvarlig for trænernes og løfternes adfærd i opvarmnings- og bandageområdet.",
+     "udfald": "vedtaget",
+     "span": [
+      224,
+      241
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Cheftrænerens ansvar for adfærd",
+     "tekst": "Cheftræneren er ansvarlig for coaches' og løfteres adfærd i opvarmnings- og bandageområdet ved internationale IPF-stævner.",
+     "udfald": "vedtaget",
+     "span": [
+      224,
+      245
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The behaviour of the coaches and lifters in the warm up and wrapping area is the responsibility    \n     of the Head Coach"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The behaviour of the coaches and lifters in the warm up and wrapping area is the responsibility"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Akkreditering af assistentcoaches og træningstid",
+     "tekst": "Head Coach skal sikre, at hver assistentcoach får et badge med foto for adgang til opvarmnings-, wrapping- og løfteområdet, og skal aftale en fast træningstid for holdet med arrangøren.",
+     "udfald": "vedtaget",
+     "span": [
+      246,
+      272
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Adgangsbadges til trænere",
+     "tekst": "Head Coach skal sikre, at hver assistenttræner modtager et badge med foto, som giver adgang til opvarmnings-, bandage- og løfteområdet.",
+     "udfald": "vedtaget",
+     "span": [
+      246,
+      264
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 5,
+     "emne": "Akkreditering af coaches",
+     "tekst": "Cheftræneren skal sikre, at hver assisterende coach får et badge med foto, som giver adgang til opvarmnings-, bandage- og løfteområdet.",
+     "udfald": "vedtaget",
+     "span": [
+      246,
+      272
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure each of his assistant coaches receive a badge with photo to gain access \n     to the warm up, wrapping and lifting area"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure each of his assistant coaches receive a badge with photo to gain access"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 5,
+     "emne": "Oprydning af udstyr og træningsområde",
+     "tekst": "Head Coach skal sikre, at udstyr sættes tilbage på stativer, og at platforme og træningsområde efterlades rene og ryddelige, både efter træning og efter stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      290,
+      326
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 6,
+     "emne": "Fast træningstid og oprydning",
+     "tekst": "Head Coach skal aftale en fast træningstid for holdet med arrangøren og sikre, at udstyr brugt under træning sættes tilbage på stativerne, at platformene efterlades ryddelige, og at træningsområdet efterlades rent, både under træning og efter konkurrencen.",
+     "udfald": "vedtaget",
+     "span": [
+      273,
+      289
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 6,
+     "emne": "Træningstid og oprydning ved internationale stævner",
+     "tekst": "Cheftræneren skal aftale en fast træningstid for holdet med arrangøren og sikre, at alt udstyr sættes tilbage i stativerne, platformene efterlades ryddelige og træningsområdet efterlades rent, både under træning og efter stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      273,
+      310
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure all equipment used during training is replace on racks and the platforms \nis left tidy and the trainings area leaves in clean conditions (no garbage etc.) same applies after the  \nCompetition"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must arranged with the organizer a fix training time for his/her team"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 6,
+     "emne": "Dokumentation og udstyrskontrol ved vejning",
+     "tekst": "Head Coach skal sikre, at løftere ved vejning afleverer Appendix 2, løfterprofil og pas til dommerne, og at løfternes udstyr ved udstyrskontrollen er i overensstemmelse med IPF's tekniske regler.",
+     "udfald": "vedtaget",
+     "span": [
+      327,
+      351
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 7,
+     "emne": "Dokumentation ved vejning",
+     "tekst": "Head Coach skal sikre, at løfterne ved vejningen fremviser Appendix 2, løfterprofil og pas over for dommerne.",
+     "udfald": "vedtaget",
+     "span": [
+      327,
+      345
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 7,
+     "emne": "Dokumenter ved indvejning",
+     "tekst": "Cheftræneren skal sikre, at løfterne ved indvejningen fremviser Appendix 2, løfterprofil og pas for dommerne.",
+     "udfald": "vedtaget",
+     "span": [
+      327,
+      351
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure at weigh-in his/her lifters must present the following to the Referees: \nAppendix 2, Lifters profile and passport."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure at weigh-in his/her lifters must present the following to the Referees"
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "status": "certain",
+   "role": "decision",
+   "key": "K9",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Head coachs ansvar ved vejning og udstyrskontrol",
+     "tekst": "Head coach skal sikre, at løfterne ved vejning fremviser Appendix 2, løfterprofil og pas for dommerne, og at løfternes udstyr ved udstyrskontrollen er i overensstemmelse med IPF's tekniske regler.",
+     "udfald": "vedtaget",
+     "span": [
+      352,
+      370
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Head coachs ansvar ved vejning og udstyrskontrol",
+     "tekst": "Head coach skal sikre, at løftere ved vejning fremviser Appendix 2, løfterprofil og pas for dommerne, og at løfternes udstyr ved udstyrskontrollen er i overensstemmelse med IPF's tekniske regler.",
+     "udfald": "vedtaget",
+     "span": [
+      352,
+      370
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 8,
+     "emne": "Udstyrskontrol efter IPF-regler",
+     "tekst": "Head Coach skal ved udstyrskontrollen sikre, at løfternes udstyr er i overensstemmelse med IPF's tekniske regler.",
+     "udfald": "vedtaget",
+     "span": [
+      352,
+      368
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 8,
+     "emne": "Udstyrskontrol",
+     "tekst": "Cheftræneren skal sikre, at løfternes udstyr ved udstyrskontrollen er i overensstemmelse med IPF's tekniske regler.",
+     "udfald": "vedtaget",
+     "span": [
+      352,
+      370
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure at the equipment check lifters equipment is in accordance with IPF  \n    Technical rules"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach must ensure at the equipment check lifters equipment is in accordance with IPF"
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "status": "certain",
+   "role": "decision",
+   "key": "K10",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 7,
+     "emne": "Coaches' overholdelse af IPF antidopingregler",
+     "tekst": "Head Coach og assistentcoaches i opvarmnings-, wrapping- og løfteområdet skal anerkende, at de er forpligtet til at overholde alle IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      371,
+      398
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 5,
+     "emne": "Coaches' overholdelse af IPF antidopingregler",
+     "tekst": "Head coach og assistenttrænere i opvarmnings-, bandage- og løfteområdet skal anerkende pligten til at overholde alle IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      385,
+      398
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Coaches' overholdelse af IPF antidopingregler",
+     "tekst": "Head coach og assistenttrænere i opvarmnings-, wrapping- og løfteområdet skal anerkende kravet om at overholde alle IPF's antidopingregler. Overtrædelse behandles efter IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      371,
+      398
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 9,
+     "emne": "Overholdelse af IPF antidopingregler for trænere",
+     "tekst": "Head Coach og assistenttrænere i opvarmnings-, bandage- og løfteområdet skal erkende, at de er forpligtet til at overholde alle IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      371,
+      388
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 9,
+     "emne": "Coaches' forpligtelse til IPF's antidopingregler",
+     "tekst": "Cheftræneren og assisterende coaches i opvarmnings-, bandage- og løfteområdet skal anerkende, at de er forpligtet til at overholde alle IPF's antidopingregler. Overtrædelser behandles efter IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      371,
+      398
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach and assistant coaches in the warm-up, wrapping and lifting area must acknowledge their  \n       Requirement to adhere to all the IPF Anti-Doping rules."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Requirement to adhere to all the IPF Anti-Doping rules."
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "status": "certain",
+   "role": "decision",
+   "key": "K11",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 10,
+     "emne": "Klargøring af løfter til platform og prisoverrækkelse",
+     "tekst": "Head Coach skal sikre, at løfterne er klar til at gå på platformen, når deres navn kaldes, herunder ved prisoverrækkelsen.",
+     "udfald": "vedtaget",
+     "span": [
+      399,
+      419
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach to ensure the lifters is prepared and ready to take the platform when his/her name is"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach to ensure the lifters is prepared and ready to take the platform when his/her name is"
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "status": "certain",
+   "role": "decision",
+   "key": "K12",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 10,
+     "emne": "Løfteres parathed til platform og præmieoverrækkelse",
+     "tekst": "Cheftræneren skal sikre, at løfterne er klar til at gå på platformen, når deres navn kaldes op, både til løft og til præmieoverrækkelsen.",
+     "udfald": "vedtaget",
+     "span": [
+      421,
+      446
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "The Head Coach to ensure the lifters is prepared and ready to take the platform when his/her name is  \n       called For the victory ceremony."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "called For the victory ceremony."
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "status": "certain",
+   "role": "decision",
+   "key": "K13",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 8,
+     "emne": "Alkoholforbud i opvarmnings- og wrapping-område",
+     "tekst": "Indtagelse af alkohol er strengt forbudt for head coach, assistentcoaches og løftere i opvarmnings- og wrapping-området, og ingen alkoholpåvirket person må opholde sig i opvarmningsrummet. Head Coach skal sikre dette.",
+     "udfald": "vedtaget",
+     "span": [
+      452,
+      472
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 6,
+     "emne": "Alkoholforbud i opvarmnings- og bandageområdet",
+     "tekst": "Indtagelse af alkohol er strengt forbudt for head coach, assistenttrænere og løftere i opvarmnings- og bandageområdet, og ingen påvirket person må opholde sig i opvarmningsrummet. Head coach skal sikre dette.",
+     "udfald": "vedtaget",
+     "span": [
+      452,
+      472
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Alkoholforbud i opvarmnings- og wrapping-område",
+     "tekst": "Head coach, assistenttrænere og løftere må ikke drikke alkohol i opvarmnings- og wrapping-områderne, og ingen påvirket af alkohol må opholde sig i opvarmningsrummet. Head coach skal sikre dette.",
+     "udfald": "vedtaget",
+     "span": [
+      452,
+      472
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 11,
+     "emne": "Alkoholforbud i opvarmnings- og bandageområdet",
+     "tekst": "Alkohol er strengt forbudt for Head Coach, assistenttrænere og løfter i opvarmnings- og bandageområdet, og ingen person under alkoholpåvirkning må opholde sig i opvarmningsrummet; Head Coach skal sikre dette.",
+     "udfald": "vedtaget",
+     "span": [
+      469,
+      479
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 11,
+     "emne": "Alkoholforbud i opvarmnings- og bandageområdet",
+     "tekst": "Det er strengt forbudt for cheftræner, assisterende coaches og løftere at drikke alkohol i opvarmnings- og bandageområdet, og ingen påvirket person må opholde sig i opvarmningsrummet. Cheftræneren skal sikre, at forbuddet overholdes.",
+     "udfald": "vedtaget",
+     "span": [
+      452,
+      492
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "any drinking of  alcohol by Head Coach, assistant coaches and your  \n        lifters in the mentioned areas above is strictly forbidden"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "lifters in the mentioned areas above is strictly forbidden"
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "status": "certain",
+   "role": "decision",
+   "key": "K14",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 12,
+     "emne": "Coachansvarserklæring",
+     "tekst": "Cheftræner og coaches skal med navn, nationalt forbund og underskrift bekræfte, at de har læst og forstået coachansvaret. Overtrædelser kan medføre disciplinær sag ved IPF's disciplinærkomité eller, for antidoping, behandling efter IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      511,
+      530
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "I understand that abuse of these \nexpectations will render me liable for disciplinary action by the IPF Disciplinary Committee"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "expectations will render me liable for disciplinary action by the IPF Disciplinary Committee"
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 7047,
+    "output": 5046,
+    "cost_usd": 0.1582,
+    "seconds": 38,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 6988,
+    "output": 5221,
+    "cost_usd": 0.1612,
+    "seconds": 40,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

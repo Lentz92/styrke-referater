@@ -1,0 +1,1556 @@
+{
+ "slug": "afvikling-og-placering-af-sm-og-jm",
+ "kategori": "staevner",
+ "titel": "Afvikling og placering af SM og JM",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "aldersopdeling",
+  "opdeling",
+  "sammenlægning",
+  "jfm",
+  "alders",
+  "raw",
+  "weekend",
+  "terminsliste",
+  "placering",
+  "afvikling",
+  "én",
+  "jm",
+  "tidspunkt",
+  "sm"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "repref2008",
+   "date": "2008",
+   "page": 2,
+   "start": 275,
+   "end": 477,
+   "source": "related"
+  },
+  {
+   "id": "P2",
+   "doc": "rep2009",
+   "date": "2009",
+   "page": null,
+   "start": 369,
+   "end": 596,
+   "source": "keyword"
+  },
+  {
+   "id": "P3",
+   "doc": "refbest_13092009",
+   "date": "2009-09-13",
+   "page": 1,
+   "start": 143,
+   "end": 305,
+   "source": "keyword"
+  },
+  {
+   "id": "P4",
+   "doc": "refbest_13092009",
+   "date": "2009-09-13",
+   "page": 2,
+   "start": 449,
+   "end": 610,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 1,
+   "start": 77,
+   "end": 238,
+   "source": "keyword"
+  },
+  {
+   "id": "P6",
+   "doc": "refbest_21012010",
+   "date": "2010-01-21",
+   "page": 1,
+   "start": 2,
+   "end": 186,
+   "source": "related"
+  },
+  {
+   "id": "P7",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 1,
+   "start": 293,
+   "end": 480,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 2,
+   "start": 480,
+   "end": 658,
+   "source": "related"
+  },
+  {
+   "id": "P9",
+   "doc": "refbest_25072010",
+   "date": "2010-07-25",
+   "page": 1,
+   "start": 0,
+   "end": 109,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "refbest_25072010",
+   "date": "2010-07-25",
+   "page": 1,
+   "start": 163,
+   "end": 257,
+   "source": "keyword"
+  },
+  {
+   "id": "P11",
+   "doc": "refbest_23012011",
+   "date": "2011-01-23",
+   "page": 1,
+   "start": 115,
+   "end": 276,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "elite29062011",
+   "date": "2011-07-29",
+   "page": 2,
+   "start": 338,
+   "end": 499,
+   "source": "keyword"
+  },
+  {
+   "id": "P13",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 3,
+   "start": 509,
+   "end": 688,
+   "source": "related"
+  },
+  {
+   "id": "P14",
+   "doc": "refbest_04082012",
+   "date": "2012-08-04",
+   "page": 2,
+   "start": 346,
+   "end": 369,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "refbest_04082012",
+   "date": "2012-08-04",
+   "page": 2,
+   "start": 369,
+   "end": 545,
+   "source": "related"
+  },
+  {
+   "id": "P16",
+   "doc": "elite10112012",
+   "date": "2012-11-10",
+   "page": 1,
+   "start": 54,
+   "end": 233,
+   "source": "related"
+  },
+  {
+   "id": "P17",
+   "doc": "elite10112012",
+   "date": "2012-11-10",
+   "page": 1,
+   "start": 304,
+   "end": 704,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 3,
+   "start": 809,
+   "end": 985,
+   "source": "related"
+  },
+  {
+   "id": "P19",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 5,
+   "start": 1217,
+   "end": 1242,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 5,
+   "start": 1242,
+   "end": 1417,
+   "source": "related"
+  },
+  {
+   "id": "P21",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 3,
+   "start": 905,
+   "end": 1086,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 2,
+   "start": 419,
+   "end": 819,
+   "source": "keyword"
+  },
+  {
+   "id": "P23",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 3,
+   "start": 819,
+   "end": 965,
+   "source": "keyword"
+  },
+  {
+   "id": "P24",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 3,
+   "start": 965,
+   "end": 1138,
+   "source": "related"
+  },
+  {
+   "id": "P25",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 4,
+   "start": 1319,
+   "end": 1456,
+   "source": "keyword"
+  },
+  {
+   "id": "P26",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 5,
+   "start": 1456,
+   "end": 1642,
+   "source": "rule"
+  },
+  {
+   "id": "P27",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 5,
+   "start": 1422,
+   "end": 1597,
+   "source": "rule"
+  },
+  {
+   "id": "P28",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 4,
+   "start": 1172,
+   "end": 1531,
+   "source": "rule"
+  },
+  {
+   "id": "P29",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 3,
+   "start": 610,
+   "end": 852,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "elite02072016",
+   "date": "2016-07-02",
+   "page": 1,
+   "start": 149,
+   "end": 316,
+   "source": "related"
+  },
+  {
+   "id": "P31",
+   "doc": "elite02072016",
+   "date": "2016-07-02",
+   "page": 2,
+   "start": 488,
+   "end": 650,
+   "source": "keyword"
+  },
+  {
+   "id": "P32",
+   "doc": "refbest_17092016",
+   "date": "2016-09-17",
+   "page": 1,
+   "start": 27,
+   "end": 188,
+   "source": "keyword"
+  },
+  {
+   "id": "P33",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 4,
+   "start": 776,
+   "end": 950,
+   "source": "related"
+  },
+  {
+   "id": "P34",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 12,
+   "start": 3341,
+   "end": 3464,
+   "source": "keyword"
+  },
+  {
+   "id": "P35",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 12,
+   "start": 3464,
+   "end": 3739,
+   "source": "rule"
+  },
+  {
+   "id": "P36",
+   "doc": "refbest_26082017",
+   "date": "2017-08-26",
+   "page": 3,
+   "start": 633,
+   "end": 807,
+   "source": "related"
+  },
+  {
+   "id": "P37",
+   "doc": "elite09092017",
+   "date": "2017-09-09",
+   "page": 2,
+   "start": 430,
+   "end": 619,
+   "source": "related"
+  },
+  {
+   "id": "P38",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 1,
+   "start": 232,
+   "end": 420,
+   "source": "related"
+  },
+  {
+   "id": "P39",
+   "doc": "490",
+   "date": "2018",
+   "page": 13,
+   "start": 2424,
+   "end": 2585,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 3,
+   "start": 393,
+   "end": 580,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 6,
+   "start": 1239,
+   "end": 1495,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 7,
+   "start": 1554,
+   "end": 1724,
+   "source": "related"
+  },
+  {
+   "id": "P43",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 8,
+   "start": 1745,
+   "end": 1913,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 2,
+   "start": 276,
+   "end": 360,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 2,
+   "start": 360,
+   "end": 539,
+   "source": "related"
+  },
+  {
+   "id": "P46",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 2,
+   "start": 539,
+   "end": 625,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 5,
+   "start": 1299,
+   "end": 1461,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 18,
+   "start": 7844,
+   "end": 8007,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 19,
+   "start": 8266,
+   "end": 8444,
+   "source": "related"
+  },
+  {
+   "id": "P50",
+   "doc": "elite15062019",
+   "date": "2019-06-15",
+   "page": 2,
+   "start": 489,
+   "end": 759,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "refbest_310819",
+   "date": "2019-08-31",
+   "page": 2,
+   "start": 341,
+   "end": 585,
+   "source": "keyword"
+  },
+  {
+   "id": "P52",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 2,
+   "start": 321,
+   "end": 658,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 15,
+   "start": 8016,
+   "end": 8359,
+   "source": "keyword"
+  },
+  {
+   "id": "P54",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 17,
+   "start": 8411,
+   "end": 8597,
+   "source": "rule"
+  },
+  {
+   "id": "P55",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 17,
+   "start": 8597,
+   "end": 8774,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "refbest_140320",
+   "date": "2020-03-14",
+   "page": 1,
+   "start": 44,
+   "end": 281,
+   "source": "rule"
+  },
+  {
+   "id": "P57",
+   "doc": "refbest_140320",
+   "date": "2020-03-14",
+   "page": 3,
+   "start": 620,
+   "end": 781,
+   "source": "keyword"
+  },
+  {
+   "id": "P58",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 2,
+   "start": 330,
+   "end": 518,
+   "source": "related"
+  },
+  {
+   "id": "P59",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 2,
+   "start": 518,
+   "end": 822,
+   "source": "keyword"
+  },
+  {
+   "id": "P60",
+   "doc": "refbest_220820",
+   "date": "2020-08-22",
+   "page": 1,
+   "start": 99,
+   "end": 356,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 9,
+   "start": 3412,
+   "end": 3588,
+   "source": "related"
+  },
+  {
+   "id": "P62",
+   "doc": "refbest_060221",
+   "date": "2021-02-06",
+   "page": 2,
+   "start": 614,
+   "end": 800,
+   "source": "rule"
+  },
+  {
+   "id": "P63",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 1,
+   "start": 14,
+   "end": 175,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 2,
+   "start": 413,
+   "end": 601,
+   "source": "related"
+  },
+  {
+   "id": "P65",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 2,
+   "start": 601,
+   "end": 830,
+   "source": "keyword"
+  },
+  {
+   "id": "P66",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 14,
+   "start": 6379,
+   "end": 6471,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 14,
+   "start": 6471,
+   "end": 6657,
+   "source": "related"
+  },
+  {
+   "id": "P68",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 15,
+   "start": 6994,
+   "end": 7174,
+   "source": "related"
+  },
+  {
+   "id": "P69",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 16,
+   "start": 7174,
+   "end": 7284,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "elite29062022",
+   "date": "2022-06-29",
+   "page": 1,
+   "start": 49,
+   "end": 303,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 1,
+   "start": 186,
+   "end": 347,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "refbest_121122",
+   "date": "2022-11-12",
+   "page": 2,
+   "start": 502,
+   "end": 614,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 4,
+   "start": 1606,
+   "end": 1767,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 12,
+   "start": 5278,
+   "end": 5439,
+   "source": "keyword"
+  },
+  {
+   "id": "P75",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 14,
+   "start": 5663,
+   "end": 5853,
+   "source": "related"
+  },
+  {
+   "id": "P76",
+   "doc": "rep2023ekstra",
+   "date": "2023",
+   "page": 2,
+   "start": 265,
+   "end": 446,
+   "source": "related"
+  },
+  {
+   "id": "P77",
+   "doc": "refbest_080123",
+   "date": "2023-01-08",
+   "page": 1,
+   "start": 213,
+   "end": 403,
+   "source": "related"
+  },
+  {
+   "id": "P78",
+   "doc": "refbest_090323",
+   "date": "2023-03-09",
+   "page": 1,
+   "start": 111,
+   "end": 237,
+   "source": "related"
+  },
+  {
+   "id": "P79",
+   "doc": "refbest_230423",
+   "date": "2023-04-23",
+   "page": 4,
+   "start": 432,
+   "end": 607,
+   "source": "rule"
+  },
+  {
+   "id": "P80",
+   "doc": "refbest_230423",
+   "date": "2023-04-23",
+   "page": 4,
+   "start": 607,
+   "end": 647,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "refbest_110523",
+   "date": "2023-05-11",
+   "page": 1,
+   "start": 75,
+   "end": 256,
+   "source": "related"
+  },
+  {
+   "id": "P82",
+   "doc": "elite27062023",
+   "date": "2023-06-27",
+   "page": 1,
+   "start": 20,
+   "end": 181,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "refstaevne05102023",
+   "date": "2023-10-05",
+   "page": 1,
+   "start": 179,
+   "end": 349,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 2,
+   "start": 628,
+   "end": 804,
+   "source": "related"
+  },
+  {
+   "id": "P85",
+   "doc": "refstaevne07112023",
+   "date": "2023-11-07",
+   "page": 1,
+   "start": 246,
+   "end": 391,
+   "source": "keyword"
+  },
+  {
+   "id": "P86",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 1,
+   "start": 0,
+   "end": 134,
+   "source": "keyword"
+  },
+  {
+   "id": "P87",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 5,
+   "start": 1465,
+   "end": 1626,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 13,
+   "start": 5557,
+   "end": 5917,
+   "source": "keyword"
+  },
+  {
+   "id": "P89",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 14,
+   "start": 6117,
+   "end": 6334,
+   "source": "keyword"
+  },
+  {
+   "id": "P90",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 15,
+   "start": 6531,
+   "end": 6808,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 16,
+   "start": 6808,
+   "end": 6973,
+   "source": "rule"
+  },
+  {
+   "id": "P92",
+   "doc": "refstaevne08022024",
+   "date": "2024-02-08",
+   "page": 1,
+   "start": 125,
+   "end": 301,
+   "source": "related"
+  },
+  {
+   "id": "P93",
+   "doc": "elite20032024",
+   "date": "2024-03-20",
+   "page": 1,
+   "start": 346,
+   "end": 508,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "refstaevne04042024",
+   "date": "2024-04-04",
+   "page": 1,
+   "start": 0,
+   "end": 360,
+   "source": "related"
+  },
+  {
+   "id": "P95",
+   "doc": "refstaevne16052024",
+   "date": "2024-05-16",
+   "page": 1,
+   "start": 0,
+   "end": 82,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "refstaevne16052024",
+   "date": "2024-05-16",
+   "page": 1,
+   "start": 82,
+   "end": 197,
+   "source": "related"
+  },
+  {
+   "id": "P97",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 1,
+   "start": 113,
+   "end": 293,
+   "source": "related"
+  },
+  {
+   "id": "P98",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "start": 293,
+   "end": 621,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "refbest_270724",
+   "date": "2024-07-27",
+   "page": 6,
+   "start": 1864,
+   "end": 2002,
+   "source": "keyword"
+  },
+  {
+   "id": "P100",
+   "doc": "refbest_270724",
+   "date": "2024-07-27",
+   "page": 6,
+   "start": 2002,
+   "end": 2205,
+   "source": "related"
+  },
+  {
+   "id": "P101",
+   "doc": "refstaevne10092024",
+   "date": "2024-09-10",
+   "page": 1,
+   "start": 374,
+   "end": 562,
+   "source": "related"
+  },
+  {
+   "id": "P102",
+   "doc": "refbest_201024",
+   "date": "2024-10-20",
+   "page": 1,
+   "start": 255,
+   "end": 556,
+   "source": "related"
+  },
+  {
+   "id": "P103",
+   "doc": "refstaevne03122024",
+   "date": "2024-12-03",
+   "page": 2,
+   "start": 830,
+   "end": 1013,
+   "source": "related"
+  },
+  {
+   "id": "P104",
+   "doc": "elite10122024",
+   "date": "2024-12-10",
+   "page": 2,
+   "start": 367,
+   "end": 530,
+   "source": "related"
+  },
+  {
+   "id": "P105",
+   "doc": "refbest_151224",
+   "date": "2024-12-15",
+   "page": 1,
+   "start": 131,
+   "end": 303,
+   "source": "related"
+  },
+  {
+   "id": "P106",
+   "doc": "refbest_151224",
+   "date": "2024-12-15",
+   "page": 4,
+   "start": 952,
+   "end": 1129,
+   "source": "related"
+  },
+  {
+   "id": "P107",
+   "doc": "refbest_151224",
+   "date": "2024-12-15",
+   "page": 4,
+   "start": 1129,
+   "end": 1263,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 1,
+   "start": 0,
+   "end": 135,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 17,
+   "start": 8743,
+   "end": 8904,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 22,
+   "start": 11382,
+   "end": 11553,
+   "source": "related"
+  },
+  {
+   "id": "P111",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 22,
+   "start": 11553,
+   "end": 11747,
+   "source": "keyword"
+  },
+  {
+   "id": "P112",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 23,
+   "start": 11747,
+   "end": 12220,
+   "source": "rule"
+  },
+  {
+   "id": "P113",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 24,
+   "start": 12220,
+   "end": 12383,
+   "source": "keyword"
+  },
+  {
+   "id": "P114",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 24,
+   "start": 12532,
+   "end": 12696,
+   "source": "related"
+  },
+  {
+   "id": "P115",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 26,
+   "start": 12747,
+   "end": 12968,
+   "source": "keyword"
+  },
+  {
+   "id": "P116",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 27,
+   "start": 13092,
+   "end": 13257,
+   "source": "keyword"
+  },
+  {
+   "id": "P117",
+   "doc": "refstaevne18022025",
+   "date": "2025-02-18",
+   "page": 2,
+   "start": 390,
+   "end": 537,
+   "source": "keyword"
+  },
+  {
+   "id": "P118",
+   "doc": "refstaevne24042025",
+   "date": "2025-04-24",
+   "page": 1,
+   "start": 139,
+   "end": 334,
+   "source": "keyword"
+  },
+  {
+   "id": "P119",
+   "doc": "refstaevne24042025",
+   "date": "2025-04-24",
+   "page": 2,
+   "start": 334,
+   "end": 533,
+   "source": "related"
+  },
+  {
+   "id": "P120",
+   "doc": "refudstyr16092025",
+   "date": "2025-09-16",
+   "page": 1,
+   "start": 0,
+   "end": 214,
+   "source": "keyword"
+  },
+  {
+   "id": "P121",
+   "doc": "refdom18092025",
+   "date": "2025-09-18",
+   "page": 1,
+   "start": 241,
+   "end": 344,
+   "source": "related"
+  },
+  {
+   "id": "P122",
+   "doc": "refstaevne16122025",
+   "date": "2025-12-12",
+   "page": 3,
+   "start": 608,
+   "end": 786,
+   "source": "related"
+  },
+  {
+   "id": "P123",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 1,
+   "start": 0,
+   "end": 133,
+   "source": "keyword"
+  },
+  {
+   "id": "P124",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 27,
+   "start": 13158,
+   "end": 13376,
+   "source": "keyword"
+  },
+  {
+   "id": "P125",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 29,
+   "start": 13540,
+   "end": 13735,
+   "source": "keyword"
+  },
+  {
+   "id": "P126",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 32,
+   "start": 15084,
+   "end": 15260,
+   "source": "rule"
+  },
+  {
+   "id": "P127",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 33,
+   "start": 15260,
+   "end": 15460,
+   "source": "keyword"
+  },
+  {
+   "id": "P128",
+   "doc": "refmedie16042026",
+   "date": "2026-04-16",
+   "page": 1,
+   "start": 0,
+   "end": 107,
+   "source": "keyword"
+  },
+  {
+   "id": "P129",
+   "doc": "refbest_140526",
+   "date": "2026-05-14",
+   "page": 2,
+   "start": 384,
+   "end": 570,
+   "source": "keyword"
+  },
+  {
+   "id": "P130",
+   "doc": "refbest_140526",
+   "date": "2026-05-14",
+   "page": 3,
+   "start": 855,
+   "end": 1084,
+   "source": "keyword"
+  },
+  {
+   "id": "P131",
+   "doc": "refstaevne0406026",
+   "date": "2026-06-04",
+   "page": 3,
+   "start": 497,
+   "end": 646,
+   "source": "keyword"
+  },
+  {
+   "id": "P132",
+   "doc": "refmedie09062026",
+   "date": "2026-06-09",
+   "page": 1,
+   "start": 0,
+   "end": 116,
+   "source": "keyword"
+  },
+  {
+   "id": "P133",
+   "doc": "refstaevne20082026",
+   "date": "2026-08-20",
+   "page": 1,
+   "start": 215,
+   "end": 402,
+   "source": "related"
+  },
+  {
+   "id": "P134",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 2,
+   "start": 531,
+   "end": 853,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 4,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P26",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 5,
+   "effect": "indfoert",
+   "quote": "Ovennævnte blev godkendt med den tilføjelse, at JM 3-kamp og JM Bænkpres skal afvikles over to dage med 3-kamp den ene dag og bænkpres den anden. Det samme gælder for SM.",
+   "value_after": "JM/SM 3-kamp og bænkpres samlet over to dage",
+   "span": [
+    1529,
+    1562
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P28",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 4,
+   "effect": "aendret",
+   "quote": "ER Equipment Powerlifting Team foreslår, at der i fremtiden arrangeres SM / JM i klassisk Bænk og klassisk 3-kamp i styrkeløft.",
+   "value_after": "SM/JM afholdes også i klassisk 3-kamp og klassisk bænkpres",
+   "span": [
+    1252,
+    1273
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P35",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 12,
+   "effect": "trukket",
+   "quote": "Forslaget trækkes tilbage på baggrund af tidligere på mødet vedtagne regler, om at JM/SM kan bruges til at lave krav til DM.",
+   "value_after": null,
+   "span": [
+    3544,
+    3567
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P54",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 17,
+   "effect": "aendret",
+   "quote": "Ændringsforslag: teksten ændres til ”SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021” Forslaget blev vedtaget med 32 stemmer for.",
+   "value_after": "SM/JM udstyr og klassisk samlet, første eller anden weekend i september",
+   "span": [
+    8487,
+    8524
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P79",
+   "doc": "refbest_230423",
+   "date": "2023-04-23",
+   "page": 4,
+   "effect": "aendret",
+   "quote": "JM opdeles således at, Open herrer klassisk 3 kamp køres i en weekend for sig. Damer, JM bænkpres, JM klassisk bænkpres og JM i styrkeløft i en weekend for sig. Der er ikke behov for at opdele SM stævnerne i øjeblikket.",
+   "value_after": "JM over to weekender, herrer klassisk 3-kamp særskilt; SM samlet",
+   "span": [
+    512,
+    553
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E6",
+   "status": "certain",
+   "passage": "P91",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 16,
+   "effect": "trukket",
+   "quote": "Efter en kort debat, hvor det blev anbefalet at kontakte stævneudvalget og bruge mulighederne i vedtægternes §13, blev forslag 2 trukket tilbage.",
+   "value_after": null,
+   "span": [
+    6871,
+    6893
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E7",
+   "status": "certain",
+   "passage": "P112",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 23,
+   "effect": "forkastet",
+   "quote": "Fra 2026 at opdele regionmesterskaberne således at sidste weekend i august vil være JM/SM Open og den efterfølgende weekend vil være JM sub-junior, junior og masters",
+   "value_after": null,
+   "span": [
+    12028,
+    12056
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E8",
+   "status": "certain",
+   "passage": "P127",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 33,
+   "effect": "aendret",
+   "quote": "Forslag 12 fra TVF blev vedtaget med 42 stemmer for, 2 stemmer imod og 4 undlod at stemme.  \n \nSM vil som udgangspunkt stadigvæk blive afviklet over en weekend.",
+   "value_after": "JFM/SM Open sidste augustweekend; JFM sub-junior/junior/masters weekenden efter",
+   "span": [
+    15264,
+    15292
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2015,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "JM/SM 3-kamp og bænkpres samlet over to dage"
+  },
+  {
+   "year": 2016,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "JM/SM 3-kamp og bænkpres samlet over to dage"
+  },
+  {
+   "year": 2017,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "JM/SM 3-kamp og bænkpres samlet over to dage"
+  },
+  {
+   "year": 2018,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "SM/JM afholdes også i klassisk 3-kamp og klassisk bænkpres"
+  },
+  {
+   "year": 2019,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "SM/JM afholdes også i klassisk 3-kamp og klassisk bænkpres"
+  },
+  {
+   "year": 2020,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "SM/JM afholdes også i klassisk 3-kamp og klassisk bænkpres"
+  },
+  {
+   "year": 2021,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E4",
+   "event": "E4",
+   "value": "SM/JM udstyr og klassisk samlet, første eller anden weekend i september"
+  },
+  {
+   "year": 2022,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E4",
+   "event": "E4",
+   "value": "SM/JM udstyr og klassisk samlet, første eller anden weekend i september"
+  },
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E5",
+   "event": "E5",
+   "value": "JM over to weekender, herrer klassisk 3-kamp særskilt; SM samlet"
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E5",
+   "event": "E5",
+   "value": "JM over to weekender, herrer klassisk 3-kamp særskilt; SM samlet"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E5",
+   "event": "E5",
+   "value": "JM over to weekender, herrer klassisk 3-kamp særskilt; SM samlet"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E5",
+   "event": "E5",
+   "value": "JM over to weekender, herrer klassisk 3-kamp særskilt; SM samlet"
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 82742,
+    "output": 5506,
+    "cost_usd": 0.7725,
+    "seconds": 49,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 82744,
+    "output": 5164,
+    "cost_usd": 0.7657,
+    "seconds": 49,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 82743,
+    "output": 6901,
+    "cost_usd": 0.8004,
+    "seconds": 64,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

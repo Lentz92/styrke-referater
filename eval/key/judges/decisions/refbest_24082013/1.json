@@ -1,0 +1,106 @@
+{
+ "fingerprint": "43c0dd2c09dd4870",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 5221,
+  "output": 1714,
+  "cost_usd": 0.0769,
+  "seconds": 15,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Orientering fra dopingudvalget om ADD's holdning, ikke en beslutning om en regel.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Medieplan",
+    "kategori": "organisation",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "DSF's medieplan udarbejdes fremover for et halvt år ad gangen.",
+    "citat": "Der er lavet en medieplan af Peter og Klaus, og fremover laves denne for et 1/2 år ad gangen.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Betaling af udgifter ved stævnerejser",
+    "kategori": "okonomi",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Ved rejser til stævner skal udgifter til f.eks. ophold så vidt muligt betales hjemmefra, så der ikke skal medbringes så mange penge a conto.",
+    "citat": "Men fremover SKAL så meget som muligt betales hjemmefra, så der ikke skal så mange penge med a conto.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Kvalifikationskrav DM A og DM senior bænk",
+    "kategori": "staevner",
+    "udfald": "ikke_afgjort",
+    "handling": "ophaevelse",
+    "niveau": "staevneregel",
+    "tekst": "Forslag om at fjerne kvalifikationskravene til DM A og DM senior bænkpres for at få et højere deltagerantal. Bestyrelsen udarbejder forslaget til repræsentantskabsmødet.",
+    "citat": "Der var forslag om at fjerne krav til DM A og DM senior bænk for at få et højere deltagerantal. Bestyrelsen vil udarbejde forslaget til repmødet.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 5,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Tilskud til ledere ved mastersstævner",
+    "kategori": "master",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Ledere ved mastersstævner kan få tilskud til hoteludgifter på maksimalt 1.500 kr. Tilskuddet udbetales kun mod fremsendelse af bilag for hotelregningen.",
+    "citat": "Tilskud til ledere ved mastersstævner; Der er tale om et tilskud til hoteludgifter, og der udbetales MAX 1.500,00. Og kun hvis man sender bilag på hotelregningen.",
+    "side": 3,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

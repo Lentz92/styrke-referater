@@ -1,0 +1,26 @@
+{
+ "doc_id": "refmedie09062026",
+ "sha256": "e9ad2b874fba4f1637e56073e6b6a2a9095dd9139e1e0a45f1cf071705f52702",
+ "run": "haiku-1",
+ "model": "claude-haiku-5-5",
+ "provenance": {
+  "model": "claude-haiku-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 2136,
+  "output": 631,
+  "cost_usd": 0.0008,
+  "seconds": 5,
+  "attempts": 1,
+  "models": [
+   "claude-haiku-5-5"
+  ]
+ },
+ "moededato": "2026-06-09",
+ "beslutninger": []
+}

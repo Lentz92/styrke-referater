@@ -1,0 +1,1251 @@
+{
+ "slug": "trænergebyr-og-trænerakkreditering-ved-em-vm",
+ "kategori": "internationalt",
+ "titel": "Trænergebyr og trænerakkreditering ved EM/VM",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "capitation",
+  "holdleder",
+  "assistenter",
+  "akkreditering",
+  "europamesterskab",
+  "afgift",
+  "koster",
+  "kontingent",
+  "verdensmesterskab",
+  "fee",
+  "gebyr",
+  "årsafgift",
+  "coach",
+  "betaling",
+  "epf",
+  "pris",
+  "trænere"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "refbest_13092009",
+   "date": "2009-09-13",
+   "page": 2,
+   "start": 521,
+   "end": 682,
+   "source": "keyword"
+  },
+  {
+   "id": "P2",
+   "doc": "elite29062011",
+   "date": "2011-07-29",
+   "page": 1,
+   "start": 7,
+   "end": 174,
+   "source": "keyword"
+  },
+  {
+   "id": "P3",
+   "doc": "ReferatMastermoede_okt2011",
+   "date": "2011-10-08",
+   "page": 1,
+   "start": 240,
+   "end": 432,
+   "source": "related"
+  },
+  {
+   "id": "P4",
+   "doc": "elite10122011",
+   "date": "2011-12-10",
+   "page": 1,
+   "start": 170,
+   "end": 426,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "vm2012kongres",
+   "date": "2012",
+   "page": 1,
+   "start": 259,
+   "end": 576,
+   "source": "keyword"
+  },
+  {
+   "id": "P6",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 1,
+   "start": 106,
+   "end": 270,
+   "source": "related"
+  },
+  {
+   "id": "P7",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 1,
+   "start": 270,
+   "end": 308,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 3,
+   "start": 957,
+   "end": 1232,
+   "source": "keyword"
+  },
+  {
+   "id": "P9",
+   "doc": "vm2013",
+   "date": "2013",
+   "page": 1,
+   "start": 162,
+   "end": 359,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "elite15122013",
+   "date": "2013-12-15",
+   "page": 1,
+   "start": 11,
+   "end": 176,
+   "source": "keyword"
+  },
+  {
+   "id": "P11",
+   "doc": "199kongres",
+   "date": "2014",
+   "page": 1,
+   "start": 231,
+   "end": 461,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "em2014kongres",
+   "date": "2014",
+   "page": 1,
+   "start": 0,
+   "end": 145,
+   "source": "keyword"
+  },
+  {
+   "id": "P13",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 2,
+   "start": 533,
+   "end": 916,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 3,
+   "start": 1033,
+   "end": 1179,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "elite31052014",
+   "date": "2014-05-31",
+   "page": 2,
+   "start": 349,
+   "end": 531,
+   "source": "keyword"
+  },
+  {
+   "id": "P16",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 3,
+   "start": 673,
+   "end": 849,
+   "source": "keyword"
+  },
+  {
+   "id": "P17",
+   "doc": "241kongres",
+   "date": "2015",
+   "page": 1,
+   "start": 0,
+   "end": 321,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "257kongres",
+   "date": "2015",
+   "page": 1,
+   "start": 0,
+   "end": 388,
+   "source": "keyword"
+  },
+  {
+   "id": "P19",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 6,
+   "start": 2054,
+   "end": 2241,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "elite25042015",
+   "date": "2015-04-25",
+   "page": 2,
+   "start": 477,
+   "end": 564,
+   "source": "keyword"
+  },
+  {
+   "id": "P21",
+   "doc": "Adfaerdskodeks",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 0,
+   "end": 125,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "CoachResponsibility",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 0,
+   "end": 166,
+   "source": "keyword"
+  },
+  {
+   "id": "P23",
+   "doc": "CoachResponsibility",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 166,
+   "end": 352,
+   "source": "related"
+  },
+  {
+   "id": "P24",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 1,
+   "start": 105,
+   "end": 414,
+   "source": "keyword"
+  },
+  {
+   "id": "P25",
+   "doc": "318.kongres",
+   "date": "2016",
+   "page": 1,
+   "start": 119,
+   "end": 333,
+   "source": "keyword"
+  },
+  {
+   "id": "P26",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 6,
+   "start": 2128,
+   "end": 2228,
+   "source": "keyword"
+  },
+  {
+   "id": "P27",
+   "doc": "refbest_10122016",
+   "date": "2016-12-10",
+   "page": 2,
+   "start": 259,
+   "end": 420,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 4,
+   "start": 799,
+   "end": 1049,
+   "source": "keyword"
+  },
+  {
+   "id": "P29",
+   "doc": "refbest_22042017",
+   "date": "2017-04-22",
+   "page": 2,
+   "start": 309,
+   "end": 579,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "refbest_26082017",
+   "date": "2017-08-26",
+   "page": 2,
+   "start": 430,
+   "end": 645,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "elite09092017",
+   "date": "2017-09-09",
+   "page": 1,
+   "start": 205,
+   "end": 374,
+   "source": "keyword"
+  },
+  {
+   "id": "P32",
+   "doc": "490",
+   "date": "2018",
+   "page": 4,
+   "start": 971,
+   "end": 1310,
+   "source": "keyword"
+  },
+  {
+   "id": "P33",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 5,
+   "start": 999,
+   "end": 1183,
+   "source": "keyword"
+  },
+  {
+   "id": "P34",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 11,
+   "start": 3015,
+   "end": 3256,
+   "source": "keyword"
+  },
+  {
+   "id": "P35",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 12,
+   "start": 3285,
+   "end": 3459,
+   "source": "related"
+  },
+  {
+   "id": "P36",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 1,
+   "start": 96,
+   "end": 496,
+   "source": "keyword"
+  },
+  {
+   "id": "P37",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 3,
+   "start": 727,
+   "end": 1020,
+   "source": "keyword"
+  },
+  {
+   "id": "P38",
+   "doc": "elite08092018",
+   "date": "2018-09-08",
+   "page": 1,
+   "start": 286,
+   "end": 449,
+   "source": "keyword"
+  },
+  {
+   "id": "P39",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 2,
+   "start": 526,
+   "end": 819,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "elite15122018",
+   "date": "2018-12-15",
+   "page": 1,
+   "start": 343,
+   "end": 506,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "467kongres",
+   "date": "2019",
+   "page": 1,
+   "start": 0,
+   "end": 205,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 13,
+   "start": 6510,
+   "end": 6683,
+   "source": "related"
+  },
+  {
+   "id": "P43",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 17,
+   "start": 7553,
+   "end": 7915,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "refmedie05012019",
+   "date": "2019-01-05",
+   "page": 1,
+   "start": 57,
+   "end": 249,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "refbest_19012019.2",
+   "date": "2019-01-19",
+   "page": 1,
+   "start": 143,
+   "end": 411,
+   "source": "keyword"
+  },
+  {
+   "id": "P46",
+   "doc": "refmaster09032019",
+   "date": "2019-03-09",
+   "page": 1,
+   "start": 42,
+   "end": 370,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "elite15062019",
+   "date": "2019-06-15",
+   "page": 1,
+   "start": 294,
+   "end": 457,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "elite07122019",
+   "date": "2019-12-07",
+   "page": 2,
+   "start": 317,
+   "end": 507,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 18,
+   "start": 8633,
+   "end": 9033,
+   "source": "keyword"
+  },
+  {
+   "id": "P50",
+   "doc": "refbest_140320",
+   "date": "2020-03-14",
+   "page": 2,
+   "start": 317,
+   "end": 645,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 4,
+   "start": 961,
+   "end": 1361,
+   "source": "keyword"
+  },
+  {
+   "id": "P52",
+   "doc": "elite16082020",
+   "date": "2020-08-16",
+   "page": 1,
+   "start": 505,
+   "end": 728,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "elite19122020",
+   "date": "2020-12-19",
+   "page": 1,
+   "start": 290,
+   "end": 451,
+   "source": "keyword"
+  },
+  {
+   "id": "P54",
+   "doc": "elite19122020_bud_reg_2021",
+   "date": "2020-12-19",
+   "page": 1,
+   "start": 0,
+   "end": 116,
+   "source": "keyword"
+  },
+  {
+   "id": "P55",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 5,
+   "start": 1736,
+   "end": 1905,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "elite17032021",
+   "date": "2021-03-17",
+   "page": 1,
+   "start": 3,
+   "end": 338,
+   "source": "keyword"
+  },
+  {
+   "id": "P57",
+   "doc": "elite29032021",
+   "date": "2021-03-29",
+   "page": 1,
+   "start": 0,
+   "end": 151,
+   "source": "keyword"
+  },
+  {
+   "id": "P58",
+   "doc": "elite18052021",
+   "date": "2021-05-18",
+   "page": 1,
+   "start": 55,
+   "end": 439,
+   "source": "keyword"
+  },
+  {
+   "id": "P59",
+   "doc": "elite14092021",
+   "date": "2021-09-14",
+   "page": 1,
+   "start": 178,
+   "end": 362,
+   "source": "keyword"
+  },
+  {
+   "id": "P60",
+   "doc": "725kongres",
+   "date": "2022",
+   "page": 2,
+   "start": 489,
+   "end": 889,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 6,
+   "start": 2921,
+   "end": 3250,
+   "source": "keyword"
+  },
+  {
+   "id": "P62",
+   "doc": "elite08032022",
+   "date": "2022-03-08",
+   "page": 2,
+   "start": 303,
+   "end": 526,
+   "source": "keyword"
+  },
+  {
+   "id": "P63",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 7,
+   "start": 3295,
+   "end": 3572,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 12,
+   "start": 5559,
+   "end": 5853,
+   "source": "related"
+  },
+  {
+   "id": "P65",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 14,
+   "start": 5972,
+   "end": 6140,
+   "source": "related"
+  },
+  {
+   "id": "P66",
+   "doc": "refbest_080123",
+   "date": "2023-01-08",
+   "page": 1,
+   "start": 213,
+   "end": 403,
+   "source": "related"
+  },
+  {
+   "id": "P67",
+   "doc": "elite08032023",
+   "date": "2023-03-08",
+   "page": 1,
+   "start": 0,
+   "end": 137,
+   "source": "keyword"
+  },
+  {
+   "id": "P68",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 2,
+   "start": 593,
+   "end": 857,
+   "source": "keyword"
+  },
+  {
+   "id": "P69",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 1,
+   "start": 118,
+   "end": 315,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "elite12122023",
+   "date": "2023-12-12",
+   "page": 1,
+   "start": 0,
+   "end": 131,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "921kongres",
+   "date": "2024",
+   "page": 3,
+   "start": 656,
+   "end": 834,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 9,
+   "start": 4048,
+   "end": 4209,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 13,
+   "start": 5882,
+   "end": 6048,
+   "source": "related"
+  },
+  {
+   "id": "P74",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 1,
+   "start": 25,
+   "end": 190,
+   "source": "related"
+  },
+  {
+   "id": "P75",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 4,
+   "start": 867,
+   "end": 1148,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "elite20032024",
+   "date": "2024-03-20",
+   "page": 1,
+   "start": 0,
+   "end": 46,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "elite20032024",
+   "date": "2024-03-20",
+   "page": 1,
+   "start": 46,
+   "end": 231,
+   "source": "rule"
+  },
+  {
+   "id": "P78",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 1,
+   "start": 123,
+   "end": 409,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "start": 448,
+   "end": 618,
+   "source": "keyword"
+  },
+  {
+   "id": "P80",
+   "doc": "elite23102024",
+   "date": "2024-10-23",
+   "page": 1,
+   "start": 276,
+   "end": 481,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "elite23102024",
+   "date": "2024-10-23",
+   "page": 2,
+   "start": 557,
+   "end": 666,
+   "source": "rule"
+  },
+  {
+   "id": "P82",
+   "doc": "elite10122024",
+   "date": "2024-12-10",
+   "page": 1,
+   "start": 216,
+   "end": 422,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "refbest_151224",
+   "date": "2024-12-15",
+   "page": 2,
+   "start": 299,
+   "end": 496,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 3,
+   "start": 558,
+   "end": 746,
+   "source": "rule"
+  },
+  {
+   "id": "P85",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 3,
+   "start": 746,
+   "end": 948,
+   "source": "keyword"
+  },
+  {
+   "id": "P86",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 4,
+   "start": 948,
+   "end": 1237,
+   "source": "rule"
+  },
+  {
+   "id": "P87",
+   "doc": "ipf_kongres_2025",
+   "date": "2025",
+   "page": 2,
+   "start": 848,
+   "end": 1155,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 7,
+   "start": 2835,
+   "end": 3024,
+   "source": "keyword"
+  },
+  {
+   "id": "P89",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 21,
+   "start": 11161,
+   "end": 11553,
+   "source": "related"
+  },
+  {
+   "id": "P90",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 24,
+   "start": 12279,
+   "end": 12501,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 24,
+   "start": 12532,
+   "end": 12696,
+   "source": "related"
+  },
+  {
+   "id": "P92",
+   "doc": "refbest_230825",
+   "date": "2025-08-23",
+   "page": 1,
+   "start": 8,
+   "end": 353,
+   "source": "keyword"
+  },
+  {
+   "id": "P93",
+   "doc": "refbest_230825",
+   "date": "2025-08-23",
+   "page": 4,
+   "start": 357,
+   "end": 674,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 3,
+   "start": 1054,
+   "end": 1296,
+   "source": "keyword"
+  },
+  {
+   "id": "P95",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 1,
+   "start": 201,
+   "end": 513,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 12,
+   "start": 3953,
+   "end": 4134,
+   "source": "related"
+  },
+  {
+   "id": "P97",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 13,
+   "start": 4386,
+   "end": 4685,
+   "source": "related"
+  },
+  {
+   "id": "P98",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 13,
+   "start": 4685,
+   "end": 5085,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 18,
+   "start": 5764,
+   "end": 5943,
+   "source": "related"
+  },
+  {
+   "id": "P100",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 2,
+   "start": 307,
+   "end": 421,
+   "source": "rule"
+  },
+  {
+   "id": "P101",
+   "doc": "dif_budgetmoede_2026",
+   "date": "2026",
+   "page": 2,
+   "start": 644,
+   "end": 838,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "epf_kongres_2026",
+   "date": "2026",
+   "page": 1,
+   "start": 265,
+   "end": 665,
+   "source": "keyword"
+  },
+  {
+   "id": "P103",
+   "doc": "epf_kongres_2026",
+   "date": "2026",
+   "page": 4,
+   "start": 787,
+   "end": 980,
+   "source": "related"
+  },
+  {
+   "id": "P104",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 27,
+   "start": 13140,
+   "end": 13400,
+   "source": "keyword"
+  },
+  {
+   "id": "P105",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 34,
+   "start": 15785,
+   "end": 16081,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "refbest_140526",
+   "date": "2026-05-14",
+   "page": 2,
+   "start": 209,
+   "end": 398,
+   "source": "keyword"
+  },
+  {
+   "id": "P107",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 1,
+   "start": 166,
+   "end": 358,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 3,
+   "start": 918,
+   "end": 1172,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "start": 0,
+   "end": 179,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "start": 179,
+   "end": 381,
+   "source": "rule"
+  }
+ ],
+ "unread_amounts": 0,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P77",
+   "doc": "elite20032024",
+   "date": "2024-03-20",
+   "page": 1,
+   "effect": "indfoert",
+   "quote": "Jørgen kunne endvidere berette at der på baggrund af en ihærdig indsats af Bjarte ikke skal betales coach fee for atleter som agerer assistenter ved samme stævne/mesterskab som de selv deltager, forudsat at de bor på det officielle hotel.",
+   "value_after": "Coach fee; deltagende atleter som assistenter fritaget ved ophold på officielt hotel",
+   "span": [
+    111,
+    151
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P81",
+   "doc": "elite23102024",
+   "date": "2024-10-23",
+   "page": 2,
+   "effect": "aendret",
+   "quote": "Efter en dialog med IPF kunne Jørgen Rasmussen meddele at hvis man deltager ved EM/VM som dommer skal man ikke betale de obligatoriske 50€ i fee for også at agere som træner ved samme mesterskab.",
+   "value_after": "50 € coach fee; deltagende løftere og dommere fritaget",
+   "span": [
+    627,
+    663
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P84",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 3,
+   "effect": "bekraeftet",
+   "quote": "Et flertal valgte at godkende budgettet, hvor Danmark som eneste land ikke stemte for. Derved skal der betales gebyr for trænere, der ikke selv løfter eller er dommere.",
+   "value_after": "50 € coach fee; deltagende løftere og dommere fritaget",
+   "span": [
+    638,
+    666
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P86",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 4,
+   "effect": "bekraeftet",
+   "quote": "“Coaches participating in the same event as athletes or referees are exempt from paying the coach capitation fee.”",
+   "value_after": "50 € coach fee; deltagende løftere og dommere fritaget",
+   "span": [
+    1070,
+    1088
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P100",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 2,
+   "effect": "bekraeftet",
+   "quote": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr",
+   "value_after": "50 euro gebyr for trænerakkreditering ved EM/VM, ADEL påkrævet",
+   "span": [
+    406,
+    421
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E6",
+   "status": "certain",
+   "passage": "P103",
+   "doc": "epf_kongres_2026",
+   "date": "2026",
+   "page": 4,
+   "effect": "bekraeftet",
+   "quote": "Økonomisk har vedtagelse af forslag 16.7 den konsekvens, at fra 2027 kræves der følgende ændret gebyr:",
+   "value_after": "Coach Capitation Fee 50 euro",
+   "span": [
+    850,
+    867
+   ],
+   "judges": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E7",
+   "status": "certain",
+   "passage": "P110",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "effect": "bekraeftet",
+   "quote": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr.  Trænere skal også have gennemgået ADEL for at kunne akkrediteres.",
+   "value_after": "50 euro gebyr for trænerakkreditering ved EM/VM, ADEL påkrævet",
+   "span": [
+    259,
+    284
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "50 € coach fee; deltagende løftere og dommere fritaget"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E4",
+   "value": "50 € coach fee; deltagende løftere og dommere fritaget"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E5",
+   "value": "50 € coach fee; deltagende løftere og dommere fritaget"
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 79999,
+    "output": 3569,
+    "cost_usd": 0.7118,
+    "seconds": 33,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 79997,
+    "output": 2617,
+    "cost_usd": 0.6928,
+    "seconds": 26,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 79998,
+    "output": 4692,
+    "cost_usd": 0.7343,
+    "seconds": 43,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

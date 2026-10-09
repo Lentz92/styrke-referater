@@ -1,0 +1,128 @@
+{
+ "fingerprint": "e36ec26a448336b4",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 83332,
+  "output": 3555,
+  "cost_usd": 0.7382,
+  "seconds": 33,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P20",
+    "quote": "Samtidig vil det blive indskærpet at hvis man ikke har dømt i 2 år slettes man som dommer. Dette gælder dog først fra i år. Der skal dømmes ved to stævner på de to år.",
+    "value_after": "mindst 2 stævner inden for 2 år, ellers slettes man som dommer",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P30",
+    "quote": "Det er nu krav om, at dommere er aktive mindst tre gange inden for en periode af to år.",
+    "value_after": "mindst 3 stævner inden for 2 år, ellers slettes man som dommer",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P59",
+    "quote": "Krav til dommerne:  \nRegel pr. 1. januar 2015: Hvis man ikke har dømt ved mindst tre officielle stævner i løbet af en 2-årsperiode, slettes man som dommer.",
+    "value_after": "mindst 3 officielle stævner inden for 2 år, ellers slettes man",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P67",
+    "quote": "Dommerudvalget har besluttet, at vi nulstiller alle dommere, og derfor tæller kravene til at have dømt, fra vi starter op igen, forhåbentlig snart.",
+    "value_after": "3 stævner på 2 år; alle dommere nulstillet, tælles fra genstart",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P124",
+    "quote": "Vi mener, at efter 12 måneder, hvor det ikke har været muligt for disse dommere at tilmelde sig et stævne, er det rimeligt, at de slettes fra dommerlisten.",
+    "value_after": null,
+    "effect": "foreslaaet"
+   },
+   {
+    "passage": "P129",
+    "quote": "Derfor vil der fremover kun blive givet dispensation fra udvalget ved helt særlige forhold.",
+    "value_after": "3 stævner på 2 år; nye B-dommere skal dømme inden 1 år",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 6
+   }
+  ]
+ }
+}

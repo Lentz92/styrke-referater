@@ -1,0 +1,58 @@
+{
+ "fingerprint": "387a30941c68d14f",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 2766,
+  "output": 820,
+  "cost_usd": 0.0394,
+  "seconds": 9,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Mediedækning af stævner",
+    "kategori": "organisation",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Ved kommende stævner har medieudvalget en kontaktperson, der sørger for tre ting: Den arrangerende klub får login til forbundets Instagram, så den kan poste indhold før og under stævnet. Klubben laver en kort præsentation af stedet, hvor stævnet holdes. Der kommer løbende opslag med link til stævnets invitation, plan og livestream.",
+    "citat": "Arrangerende klubber modtager login til instagram med henblik på at poste \nindhold op til og fra stævnerne.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Opgavefordeling til navngivne personer, ikke en stående regel.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

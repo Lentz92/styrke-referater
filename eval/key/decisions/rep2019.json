@@ -1,0 +1,2416 @@
+{
+ "doc_id": "rep2019",
+ "sha256": "e15ea4ef94bd5a412b2eccde171bc943d3048b811fa52bdb49bf7679e0a0c8ea",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Sletning af rekorder ved dopingdom",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Når en dopingsag mod en løfter er afsluttet med en dom, fjernes løfterens rekorder bagud, jf. Stævneregler 5. A. 3.",
+   "citat": "Ja, så snart en sag er afsluttet med en dom (jævnfør Stævneregler 5. A. 3.), skal vi fjerne rekorderne fra en sådan person.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1325,
+   "citat_side": 4,
+   "uncertain_fields": [
+    "niveau"
+   ],
+   "quotes": [
+    {
+     "citat": "Ja, så snart en sag er afsluttet med en dom (jævnfør Stævneregler 5. A. 3.), skal vi fjerne rekorderne fra en sådan person.",
+     "citat_pos": 1325
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Årsafgift",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Klubbernes årsafgift til DSF er fastsat til uændret 1.000 kr. med budgettet for 2019.",
+   "citat": "Årsafgift: kr. 1.000,- (Uændret)",
+   "side": 15,
+   "gaelder_fra": "2019-01-01",
+   "gaelder_til": "2019-12-31",
+   "citat_fundet": true,
+   "citat_pos": 6590,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)",
+     "citat_pos": 6590
+    },
+    {
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)",
+     "citat_pos": 6590
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Licensgebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Licensen er fastsat til uændret 200 kr. med budgettet for 2019.",
+   "citat": "Licens: kr. 200,- (Uændret)",
+   "side": 15,
+   "gaelder_fra": "2019-01-01",
+   "gaelder_til": "2019-12-31",
+   "citat_fundet": true,
+   "citat_pos": 6595,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Licens: kr. 200,- (Uændret).",
+     "citat_pos": 6595
+    },
+    {
+     "citat": "Licens: kr. 200,- (Uændret)",
+     "citat_pos": 6595
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Startgebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Startgebyret er fastsat til uændret 300 kr. med budgettet for 2019.",
+   "citat": "Startgebyrer: kr. 300 (Uændret)",
+   "side": 15,
+   "gaelder_fra": "2019-01-01",
+   "gaelder_til": "2019-12-31",
+   "citat_fundet": true,
+   "citat_pos": 6599,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Startgebyrer: kr. 300 (Uændret)",
+     "citat_pos": 6599
+    },
+    {
+     "citat": "Startgebyrer: kr. 300 (Uændret)",
+     "citat_pos": 6599
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7
+   ],
+   "emne": "Kontorhold, telefonpenge og kørselsgodtgørelse til bestyrelsesmedlemmer",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Bestyrelsesmedlemmer får uændret 1.700 kr. i kontorhold og telefonpenge, og kørselsgodtgørelsen er uændret, jf. budgettet for 2019.",
+   "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,- (Uændret). Kørselsgodtgørelse: (Uændret).",
+   "side": 15,
+   "gaelder_fra": "2019-01-01",
+   "gaelder_til": "2019-12-31",
+   "citat_fundet": true,
+   "citat_pos": 6603,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,- (Uændret). Kørselsgodtgørelse: (Uændret).",
+     "citat_pos": 6603
+    },
+    {
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,- (Uændret). Kørselsgodtgørelse: (Uændret).",
+     "citat_pos": 6603
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "IPF's antidopingregler i vedtægterne",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "vedtaegt",
+   "tekst": "Efter krav fra WADA og IPF optages i DSF's vedtægter, at DSF og alle dets medlemmer, atleter og personale som betingelse for medlemskab af IPF ubetinget er bundet af IPF's antidopingregler, og at DSF efter bedste evne respekterer og overholder kravene i artikel 17 i IPF's antidopingregler.",
+   "citat": "Som betingelse for medlemskab af IPF skal Dansk Styrkeløft Forbund og alle dets medlemmer, atleter og personale erklære, at de ubetinget er bundet af IPF’s antidopingregler.",
+   "side": 15,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 6691,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Som betingelse for medlemskab af IPF skal Dansk Styrkeløft Forbund og alle dets medlemmer, atleter og personale erklære, at de ubetinget er bundet af IPF’s antidopingregler.",
+     "citat_pos": 6691
+    },
+    {
+     "citat": "Som betingelse for medlemskab af IPF skal Dansk Styrkeløft Forbund og alle dets medlemmer, atleter og personale erklære, at de ubetinget er bundet af IPF’s antidopingregler.",
+     "citat_pos": 6691
+    }
+   ]
+  },
+  {
+   "id": "K9",
+   "status": "certain",
+   "candidates": [
+    9
+   ],
+   "emne": "Deltagelse i ikke godkendte konkurrencer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "vedtaegt",
+   "tekst": "Efter krav fra IPF indføres vedtægtens pkt. 14.9: En løfter, træner, dommer eller official, der deltager i en international styrkeløft- eller bænkpreskonkurrence, som ikke er afholdt, sanktioneret eller godkendt af IPF, kan ikke deltage i nogen IPF international eller regional konkurrence i 12 måneder fra datoen for deltagelsen.",
+   "citat": "kan vedkommende ikke tillades at deltage i nogen form for IPF international eller regional konkurrence i en periode på 12 måneder at regne fra den dato, hvor vedkommende deltog i den ikke godkendte konkurrence.",
+   "side": 15,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 6822,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "kan vedkommende ikke tillades at deltage i nogen form for IPF international eller regional konkurrence i en periode på 12 måneder at regne fra den dato, hvor vedkommende deltog i den ikke godkendte konkurrence.",
+     "citat_pos": 6822
+    },
+    {
+     "citat": "kan vedkommende ikke tillades at deltage i nogen form for IPF international eller regional konkurrence i en periode på 12 måneder at regne fra den dato, hvor vedkommende deltog i den ikke godkendte konkurrence.",
+     "citat_pos": 6822
+    }
+   ]
+  },
+  {
+   "id": "K10",
+   "status": "certain",
+   "candidates": [
+    10
+   ],
+   "emne": "Divisionsturnering, holdsammensætning og tilmelding",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Et hold i divisionsturneringen består af tre løftere: én i squat, én i bænkpres og én i dødløft, og alle hold (herre-, kvinde- og mixhold på tværs af aldersklasser) deltager i samme turnering, dog om muligt inddelt i grupper efter afdeling. Hold tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde (ændret fra foreslåede 7 dage efter ønske fra Hvidovre), og holdopstillingen må ændres fra runde til runde.",
+   "citat": "Holdene skal tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde. Der må gerne ændres på holdopstillingerne fra runde til runde.",
+   "side": 16,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7066,
+   "citat_side": 16,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Holdene skal tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde. Der må gerne ændres på holdopstillingerne fra runde til runde.",
+     "citat_pos": 7066
+    },
+    {
+     "citat": "Holdene skal tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde. Der må gerne ændres på holdopstillingerne fra runde til runde.",
+     "citat_pos": 7066
+    }
+   ]
+  },
+  {
+   "id": "K11",
+   "status": "certain",
+   "candidates": [
+    11
+   ],
+   "emne": "Divisionsturnering, klubskifte under turnering",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "staevneregel",
+   "tekst": "Skifter en atlet klub under en igangværende divisionsturnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Det gælder kun, hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+   "citat": "Hvis en atlet skifter klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Dette gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+   "side": 16,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7101,
+   "citat_side": 16,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Hvis en atlet skifter klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Dette gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+     "citat_pos": 7101
+    },
+    {
+     "citat": "Hvis en atlet skifter klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Dette gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+     "citat_pos": 7101
+    }
+   ]
+  },
+  {
+   "id": "K12",
+   "status": "certain",
+   "candidates": [
+    12,
+    13
+   ],
+   "emne": "Divisionsturnering, konkurrenceregler",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "I divisionsturneringen løftes efter IPF's regler; de tre første runder må afvikles lokalt i klubberne efter aftale med stævneudvalget, men reglerne for indvejning, udstyr og dommerpåsætning skal overholdes, og der skal foreligge en officiel resultatliste underskrevet af dommerne (der kan dispenseres for resultat- og kilotavle). 3. forsøg kan ikke ændres, undtagen i dødløft i finalen. Efter tre runder med vinder i Øst- og Vestdanmark går de bedste 4 hold i hver kategori (udstyr og klassisk) til finalen om DM-holdmesterskabet, højst ét hold pr. klub pr. kategori; har mindst 4 juniorhold deltaget og ønsker fire at stille op, deltager de også i finalen.",
+   "citat": "Der afvikles tre runder, hvor der kåres en vinder i Østdanmark og en vinder i Vestdanmark inden for begge kategorier.",
+   "side": 16,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7233,
+   "citat_side": 16,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Der kan ikke foretages ændringer af 3. forsøgene i nogen af disciplinerne - undtagen i finalestævnet i dødløft. Der afvikles tre runder, hvor der kåres en vinder i Østdanmark og en vinder i Vestdanmark inden for begge kategorier.",
+     "citat_pos": 7216
+    },
+    {
+     "citat": "Der afvikles tre runder, hvor der kåres en vinder i Østdanmark og en vinder i Vestdanmark inden for begge kategorier.",
+     "citat_pos": 7233
+    }
+   ]
+  },
+  {
+   "id": "K14",
+   "status": "certain",
+   "candidates": [
+    14,
+    15
+   ],
+   "emne": "Divisionsturnering, finale",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW, højst ét hold pr. klub pr. kategori; alle løftere løfter i samme pulje (8 deltagere i hver disciplin) plus op til 4 juniordeltagere. Melder et kvalificeret hold fra, går pladsen videre til nr. 5 osv. Der overføres ingen point fra de indledende runder, holdet med flest point i finalen er dansk mester, og der må foretages to ændringer af 3. forsøget i dødløft.",
+   "citat": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW.",
+   "side": 17,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7339,
+   "citat_side": 17,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW.",
+     "citat_pos": 7339
+    },
+    {
+     "citat": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW.",
+     "citat_pos": 7339
+    }
+   ]
+  },
+  {
+   "id": "K16",
+   "status": "certain",
+   "candidates": [
+    16
+   ],
+   "emne": "Divisionsturnering, offentliggørelse af resultater",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Resultaterne fra hver runde i divisionsturneringen offentliggøres på forbundets hjemmeside senest 14 dage efter runden (ændringsforslag fra KSK).",
+   "citat": "Stævneprotokollen: Resultaterne offentliggøres senest 14 dage efter hver runde på forbundets hjemmeside.",
+   "side": 17,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7491,
+   "citat_side": 17,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Stævneprotokollen: Resultaterne offentliggøres senest 14 dage efter hver runde på forbundets hjemmeside.",
+     "citat_pos": 7491
+    },
+    {
+     "citat": "Stævneprotokollen: Resultaterne offentliggøres senest 14 dage efter hver runde på forbundets hjemmeside.",
+     "citat_pos": 7491
+    }
+   ]
+  },
+  {
+   "id": "K17",
+   "status": "certain",
+   "candidates": [
+    17
+   ],
+   "emne": "Pokaler til bedste løftere ved DM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Ved de individuelle danske mesterskaber gives pokaler til bedste herre- og dameløfter på de gældende IPF-point (i stedet for Wilks-point) i alle kategorier (senior, sub-junior, junior og master 1-4): 1 pokal ved under 15 deltagere og 3 ved flere deltagere.",
+   "citat": "Ved de individuelle danske mesterskaber gives der pokaler for bedste Herre- og dameløfter på de gældende IPF-point i alle kategorier, 1 pokal under 15 deltagere. 3 ved flere deltagere i alle kategorier",
+   "side": 17,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7566,
+   "citat_side": 17,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ved de individuelle danske mesterskaber gives der pokaler for bedste Herre- og dameløfter på de gældende IPF-point i alle kategorier, 1 pokal under 15 deltagere.",
+     "citat_pos": 7566
+    },
+    {
+     "citat": "gives der pokaler for bedste Herre- og dameløfter på de gældende IPF-point i alle kategorier, 1 pokal under 15 deltagere.",
+     "citat_pos": 7571
+    }
+   ]
+  },
+  {
+   "id": "K18",
+   "status": "certain",
+   "candidates": [
+    18
+   ],
+   "emne": "Administrationsgebyr ved manglende betaling",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "staevneregel",
+   "tekst": "Har en klub ikke betalt årsafgift og/eller licens i rette tid, pålægges et administrationsgebyr på 100 kr. pr. mangel. Betalingsfristen er senest 14 dage efter fremsendt 1. rykker; betales der ikke, udelukkes klubben fra deltagelse i stævner, indtil forbundets tilgodehavende er betalt.",
+   "citat": "Hvis en klub ikke har betalt årsafgift og/eller licens i rette tid vil der blive pålagt et administrationsgebyr på 100 kr. pr mangel.",
+   "side": 17,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7627,
+   "citat_side": 17,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Hvis en klub ikke har betalt årsafgift og/eller licens i rette tid vil der blive pålagt et administrationsgebyr på 100 kr. pr mangel.",
+     "citat_pos": 7627
+    },
+    {
+     "citat": "vil der blive pålagt et administrationsgebyr på 100 kr. pr mangel. Hvis der ikke bliver betalt efter rykker 1., bliver klubben udelukket for deltagelse i stævner indtil forbundets tilgodehavende er betalt.",
+     "citat_pos": 7640
+    }
+   ]
+  },
+  {
+   "id": "K20",
+   "status": "certain",
+   "candidates": [
+    20,
+    19
+   ],
+   "emne": "Afgift for logo",
+   "kategori": "udstyr",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Bestyrelsen foreslog differentierede logoafgifter: 500 kr. for logo for én person, 1.000 kr. for logo for alle medlemmer af en klub, 1.000 kr. for logo for et spotterhold ved ét mesterskab (medmindre klubben har betalt klublogo) og 2.500 kr. for logo til enhver person under DSF, samt at logoer skal godkendes af bestyrelsen og listes på hjemmesiden. Forslaget blev trukket.",
+   "citat": "Forslaget blev trukket",
+   "side": 18,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7858,
+   "citat_side": 18,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslaget blev trukket",
+     "citat_pos": 7858
+    },
+    {
+     "citat": "Forslaget blev trukket",
+     "citat_pos": 7858
+    }
+   ]
+  },
+  {
+   "id": "K21",
+   "status": "certain",
+   "candidates": [
+    21
+   ],
+   "emne": "Disciplinmedaljer",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Disciplinmedaljer udleveres i alle kategorier kun ved nationale mesterskaber (DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp) og ikke længere ved alle stævner. Reglen omfatter ikke bænkpres, hvor der ikke uddeles disciplinmedaljer.",
+   "citat": "”Der udleveres disciplinmedaljer i alle kategorier til alle nationale mesterskaber, hvilket vil sige DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp.”",
+   "side": 18,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 7893,
+   "citat_side": 18,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Der udleveres disciplinmedaljer i alle kategorier til alle nationale mesterskaber, hvilket vil sige DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp.",
+     "citat_pos": 7893
+    },
+    {
+     "citat": "Der udleveres disciplinmedaljer i alle kategorier til alle nationale mesterskaber, hvilket vil sige DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp.",
+     "citat_pos": 7893
+    }
+   ]
+  },
+  {
+   "id": "K22",
+   "status": "certain",
+   "candidates": [
+    22,
+    23
+   ],
+   "emne": "Sponsorreklame på løftedragt",
+   "kategori": "udstyr",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden at betale den hidtidige afgift til DSF på 500 kr. pr. sponsorreklame pr. år. Dokumenterede sponsorlogoer ud over klublogoet, der overskrider 5x2 cm, skal indsendes til DSF til godkendelse og påføres en godkendt liste på forbundets hjemmeside.",
+   "citat": "til ”En klub eller atlet, der har en sponsor, må bære denne sponsors reklame på løftedragt eller T-shirt.”.",
+   "side": 18,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 8163,
+   "citat_side": 18,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "til ”En klub eller atlet, der har en sponsor, må bære denne sponsors reklame på løftedragt eller T-shirt.”.",
+     "citat_pos": 8163
+    },
+    {
+     "citat": "Forslaget blev godkendt med 41 for 0 imod 5 blanket",
+     "citat_pos": 8306
+    }
+   ]
+  },
+  {
+   "id": "K24",
+   "status": "certain",
+   "candidates": [
+    24,
+    25,
+    26
+   ],
+   "emne": "Medaljeceremoni ved danske mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "staevneregel",
+   "tekst": "Ved danske mesterskaber holdes medaljeceremoni efter hvert stævneafsnit med fælles indmarch for alle atleter omkring præmiepodiet. Atleter, der er fraværende, bevarer deres placering, men modtager ikke medalje/pokal; der kan ikke indsættes stand-in, og pladsen på podiet står tom. Juryen kan i særlige tilfælde dispensere fra reglen.",
+   "citat": "Medaljeceremoni efter hvert stævne afsnit",
+   "side": 19,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 8331,
+   "citat_side": 19,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Medaljeceremoni efter hvert stævne afsnit",
+     "citat_pos": 8331
+    },
+    {
+     "citat": "Hvis atleter er fraværende til medaljeceremonien, vil de bevare deres placering i konkurrencen, men ikke modtage medalje/pokal. Der kan ikke indsættes stand in, og pladsen på præmiepodiet vil i så fald stå tom.",
+     "citat_pos": 8346
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 14,
+     "emne": "Sletning af rekorder ved dopingdom",
+     "tekst": "Når en dopingsag er afsluttet med en dom, fjernes den pågældende løfters rekorder bagud, jf. Stævneregler 5. A. 3.",
+     "udfald": "vedtaget",
+     "span": [
+      1325,
+      1348
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 14,
+     "emne": "Fjernelse af rekorder ved dopingdom",
+     "tekst": "Når en dopingsag er afsluttet med en dom, fjernes den pågældende løfters rekorder bagud, jf. stævneregler 5. A. 3.",
+     "udfald": "vedtaget",
+     "span": [
+      1325,
+      1348
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Sletning af rekorder ved dopingsag",
+     "tekst": "Når en dopingsag er afsluttet med en dom, fjernes løfterens rekorder bagud, jf. Stævneregler 5. A. 3.",
+     "udfald": "vedtaget",
+     "span": [
+      1325,
+      1348
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Ja, så snart en sag er afsluttet med en dom (jævnfør Stævneregler 5. A. 3.), skal vi fjerne rekorderne fra en sådan person."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Svar på et spørgsmål i formandens beretning om en eksisterende regel; ikke en beslutning truffet på mødet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "bestyrelsesbeslutning",
+     "citat": "Ja, så snart en sag er afsluttet med en dom (jævnfør Stævneregler 5. A. 3.), skal vi fjerne rekorderne fra en sådan person."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Orientering i ungdomsafdelingens beretning, ikke en beslutning truffet på mødet.",
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 5,
+     "emne": "Obligatorisk mesterskabsdeltagelse for ungdomstruppen",
+     "tekst": "Atleter i ungdomstruppen (sub-juniorer og juniorer) skal deltage i både DM og JM/SM, ud over eventuelle internationale opgaver.",
+     "udfald": "vedtaget",
+     "span": [
+      4409,
+      4424
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Orientering i ungdomsafdelingens beretning, ikke en beslutning truffet på mødet."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Beskrivelse i Ungdomsafdelingens beretning; ikke en beslutning truffet på mødet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ungdomstruppens atleter deltager obligatorisk i både DM og JM/SM ud over eventuelle internationale opgaver."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Kun en hensigtserklæring i stævneudvalgets beretning, ingen egentlig beslutning.",
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 6,
+     "emne": "Aflysning af stævner uden arrangør",
+     "tekst": "Stævner, som der ikke findes en arrangør til, bliver aflyst i stedet for at blive slået sammen med andre stævner.",
+     "udfald": "vedtaget",
+     "span": [
+      5787,
+      5802
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Kun en hensigtserklæring i stævneudvalgets beretning, ingen egentlig beslutning."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Hensigtserklæring i stævneudvalgets beretning, ikke en vedtaget regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Stævneudvalget udtrykker kun en hensigt; der er ikke truffet en beslutning."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 13,
+     "emne": "Kontingent og gebyrer",
+     "tekst": "Med budgettet blev årsafgift (1.000 kr.), licens (200 kr.), startgebyr (300 kr.) og kontorhold/telefon til bestyrelsesmedlemmer (1.700 kr.) fastholdt uændret.",
+     "udfald": "vedtaget",
+     "span": [
+      6590,
+      6603
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 13,
+     "emne": "Årsafgift, licens og startgebyr",
+     "tekst": "Med budgettet for 2019 fastholdes årsafgift på 1.000 kr., licens på 200 kr. og startgebyr på 300 kr. samt kontorhold/telefon til bestyrelsesmedlemmer på 1.700 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      6590,
+      6603
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Årsafgift, licens og startgebyr",
+     "tekst": "Budget 2019 vedtaget med uændrede satser: årsafgift 1.000 kr., licens 200 kr., startgebyr 300 kr. og kontorhold/telefon til bestyrelsesmedlemmer 1.700 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      6590,
+      6603
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Årsafgift",
+     "tekst": "Årsafgiften for klubber er kr. 1.000 i budget 2019 (uændret).",
+     "udfald": "vedtaget",
+     "span": [
+      6590,
+      6595
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Årsafgift for klubber",
+     "tekst": "Klubbernes årsafgift til DSF er uændret 1.000 kr. Den blev vedtaget sammen med budgettet for 2019.",
+     "udfald": "vedtaget",
+     "span": [
+      6590,
+      6595
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Licensgebyr",
+     "tekst": "Licens koster kr. 200 i budget 2019 (uændret).",
+     "udfald": "vedtaget",
+     "span": [
+      6595,
+      6599
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Licensgebyr",
+     "tekst": "Licensen er uændret 200 kr. Den blev vedtaget sammen med budgettet for 2019.",
+     "udfald": "vedtaget",
+     "span": [
+      6595,
+      6599
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Licens: kr. 200,- (Uændret)"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Licens: kr. 200,- (Uændret)."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Licens: kr. 200,- (Uændret)"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Startgebyr",
+     "tekst": "Startgebyret er kr. 300 i budget 2019 (uændret).",
+     "udfald": "vedtaget",
+     "span": [
+      6599,
+      6603
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Startgebyr",
+     "tekst": "Startgebyret er uændret 300 kr. Det blev vedtaget sammen med budgettet for 2019.",
+     "udfald": "vedtaget",
+     "span": [
+      6599,
+      6603
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Startgebyrer: kr. 300 (Uændret)"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Startgebyrer: kr. 300 (Uændret)"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Startgebyrer: kr. 300 (Uændret)"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Kontorhold og telefonpenge til bestyrelsesmedlemmer",
+     "tekst": "Bestyrelsesmedlemmer får uændret 1.700 kr. til kontorhold og telefon. Kørselsgodtgørelsen er også uændret.",
+     "udfald": "vedtaget",
+     "span": [
+      6603,
+      6614
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,- (Uændret). Kørselsgodtgørelse: (Uændret)."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,- (Uændret). Kørselsgodtgørelse: (Uændret)."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,- (Uændret). Kørselsgodtgørelse: (Uændret)."
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "IPF's antidopingregler i vedtægterne",
+     "tekst": "DSF's vedtægter skal indeholde, at DSF og alle dets medlemmer, atleter og personale ubetinget er bundet af IPF's antidopingregler, og at DSF lover at respektere og overholde kravene i artikel 17 i IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      6691,
+      6718
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "IPF's antidopingregler i vedtægterne",
+     "tekst": "Vedtægterne udvides med krav fra WADA og IPF: DSF og alle medlemmer, atleter og personale er ubetinget bundet af IPF's antidopingregler, og DSF skal respektere og overholde kravene i artikel 17 i IPF's antidopingregler.",
+     "udfald": "vedtaget",
+     "span": [
+      6691,
+      6718
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "IPF's antidopingregler i vedtægter",
+     "tekst": "Vedtægterne udvides, så DSF og alle medlemmer, atleter og personale ubetinget er bundet af IPF's antidopingregler, og DSF skal respektere og overholde kravene i artikel 17 i IPF's antidopingregler. Det er et krav fra WADA og IPF.",
+     "udfald": "vedtaget",
+     "span": [
+      6691,
+      6718
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Antidopingregler i vedtægterne",
+     "tekst": "Som betingelse for medlemskab af IPF skal DSF og alle dets medlemmer, atleter og personale erklære, at de ubetinget er bundet af IPF's antidopingregler. DSF skal respektere og overholde kravene i IPF's antidopingregler artikel 17.",
+     "udfald": "vedtaget",
+     "span": [
+      6691,
+      6718
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 7,
+     "emne": "Binding til IPF's antidopingregler i vedtægterne",
+     "tekst": "Vedtægterne skal fastslå, at DSF og alle dets medlemmer, atleter og personale ubetinget er bundet af IPF's antidopingregler, fordi det er en betingelse for medlemskab af IPF. DSF skal efter bedste evne respektere og overholde alle krav i artikel 17 i IPF's antidopingregler. Ændringen er et krav fra WADA og IPF.",
+     "udfald": "vedtaget",
+     "span": [
+      6691,
+      6718
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "vedtaegt",
+     "citat": "Som betingelse for medlemskab af IPF skal Dansk Styrkeløft Forbund og alle dets medlemmer, atleter og personale erklære, at de ubetinget er bundet af IPF’s antidopingregler."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "vedtaegt",
+     "citat": "Som betingelse for medlemskab af IPF skal Dansk Styrkeløft Forbund og alle dets medlemmer, atleter og personale erklære, at de ubetinget er bundet af IPF’s antidopingregler."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "vedtaegt",
+     "citat": "Som betingelse for medlemskab af IPF skal Dansk Styrkeløft Forbund og alle dets medlemmer, atleter og personale erklære, at de ubetinget er bundet af IPF’s antidopingregler."
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "status": "certain",
+   "role": "decision",
+   "key": "K9",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Deltagelse i ikke godkendte konkurrencer",
+     "tekst": "Deltager en løfter, træner, dommer eller official i en international konkurrence, der ikke er sanktioneret af IPF, kan vedkommende ikke deltage i IPF international eller regional konkurrence i 12 måneder fra deltagelsen.",
+     "udfald": "vedtaget",
+     "span": [
+      6822,
+      6843
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Deltagelse i ikke-godkendte konkurrencer",
+     "tekst": "Løfter, træner, dommer eller official der deltager i en international styrkeløft- eller bænkpreskonkurrence, som ikke er sanktioneret af IPF, kan ikke deltage i IPF international eller regional konkurrence i 12 måneder fra deltagelsen.",
+     "udfald": "vedtaget",
+     "span": [
+      6822,
+      6843
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Deltagelse i ikke godkendte konkurrencer",
+     "tekst": "Løfter, træner, dommer eller official, der deltager i en international styrkeløft- eller bænkpreskonkurrence, som ikke er sanktioneret af IPF, kan ikke deltage i IPF international eller regional konkurrence i 12 måneder fra deltagelsen. Kravet stammer fra IPF.",
+     "udfald": "vedtaget",
+     "span": [
+      6822,
+      6843
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Deltagelse i ikke-godkendte konkurrencer",
+     "tekst": "Hvis en løfter, træner, dommer eller official deltager i en international styrkeløft- eller bænkpreskonkurrence, som ikke er afholdt, sanktioneret eller godkendt af IPF, kan vedkommende i 12 måneder fra deltagelsen ikke tillades at deltage i IPF-internationale eller regionale konkurrencer.",
+     "udfald": "vedtaget",
+     "span": [
+      6822,
+      6843
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 8,
+     "emne": "Deltagelse i ikke-godkendte konkurrencer",
+     "tekst": "Vedtægternes § 14.9 lyder nu sådan: En løfter, træner, dommer eller official, der deltager i en international styrkeløft- eller bænkpreskonkurrence, som ikke er afholdt, sanktioneret eller godkendt af IPF, må ikke deltage i nogen IPF international eller regional konkurrence i 12 måneder. Perioden regnes fra datoen for den ikke-godkendte konkurrence. Bestemmelsen er et krav fra IPF.",
+     "udfald": "vedtaget",
+     "span": [
+      6822,
+      6856
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "vedtaegt",
+     "citat": "kan vedkommende ikke tillades at deltage i nogen form for IPF international eller regional konkurrence i en periode på 12 måneder at regne fra den dato, hvor vedkommende deltog i den ikke godkendte konkurrence."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "vedtaegt",
+     "citat": "kan vedkommende ikke tillades at deltage i nogen form for IPF international eller regional konkurrence i en periode på 12 måneder at regne fra den dato, hvor vedkommende deltog i den ikke godkendte konkurrence."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "vedtaegt",
+     "citat": "kan vedkommende ikke tillades at deltage i nogen form for IPF international eller regional konkurrence i en periode på 12 måneder at regne fra den dato, hvor vedkommende deltog i den ikke godkendte konkurrence."
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "status": "certain",
+   "role": "decision",
+   "key": "K10",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Divisionsturnering, holdsammensætning og tilmelding",
+     "tekst": "Et hold består af tre løftere (squat, bænkpres, dødløft). Alle hold deltager i samme turnering. Hold tilmeldes via hjemmesiden senest 2 dage før hver runde (ændret fra 7 dage efter forslag fra Hvidovre), og opstillingen må ændres fra runde til runde.",
+     "udfald": "vedtaget",
+     "span": [
+      7066,
+      7079
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Divisionsturnering, holdsammensætning og tilmelding",
+     "tekst": "Et hold består af tre løftere (squat, bænkpres, dødløft). Alle hold deltager i samme turnering uanset køn og afdeling. Hold tilmeldes via hjemmesidens tilmeldingssystem senest 2 dage før hver runde (ændret fra 7 dage efter forslag fra Hvidovre), og opstillingen må ændres fra runde til runde.",
+     "udfald": "vedtaget",
+     "span": [
+      7066,
+      7079
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Divisionsturnering, holdsammensætning og tilmelding",
+     "tekst": "Et divisionshold består af tre løftere (squat, bænkpres, dødløft); alle hold deltager i samme turnering. Holdene tilmeldes via hjemmesiden senest 2 dage før hver runde (ændret fra 7 efter forslag fra Hvidovre), og opstillingen må ændres fra runde til runde.",
+     "udfald": "vedtaget",
+     "span": [
+      7066,
+      7079
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Holdsammensætning, divisionsturnering",
+     "tekst": "Et divisionshold består af tre løftere: en i squat, en i bænkpres og en i dødløft. Alle tilmeldte hold deltager i samme turnering, og holdopstillingen må ændres fra runde til runde. Holdene skal tilmeldes via hjemmesidens tilmeldingssystem senest 2 dage før hver runde.",
+     "udfald": "vedtaget",
+     "span": [
+      7066,
+      7079
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 9,
+     "emne": "Divisionsturnering, holdsammensætning og tilmelding",
+     "tekst": "Et hold i divisionsturneringen består af tre løftere: én i squat, én i bænkpres og én i dødløft. Alle hold deltager i samme turnering, uanset om det er herre-, kvinde- eller mixhold og uanset aldersklasse. Løfterne inddeles så vidt muligt i grupper inden for samme afdeling. Holdene tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde, og holdopstillingen må ændres fra runde til runde.",
+     "udfald": "vedtaget",
+     "span": [
+      7066,
+      7089
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Holdene skal tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde. Der må gerne ændres på holdopstillingerne fra runde til runde."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Holdene skal tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde. Der må gerne ændres på holdopstillingerne fra runde til runde."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Holdene skal tilmeldes via tilmeldingssystemet på hjemmesiden senest 2 dage før hver runde. Der må gerne ændres på holdopstillingerne fra runde til runde."
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "status": "certain",
+   "role": "decision",
+   "key": "K11",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Divisionsturnering, klubskifte under turnering",
+     "tekst": "Skifter en atlet klub under en igangværende turnering, kan atleten først deltage for den nye klub i næste års turnering. Gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+     "udfald": "vedtaget",
+     "span": [
+      7101,
+      7123
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Divisionsturnering, klubskifte under turnering",
+     "tekst": "Skifter en atlet klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+     "udfald": "vedtaget",
+     "span": [
+      7101,
+      7123
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Divisionsturnering, klubskifte under turnering",
+     "tekst": "Skifter en atlet klub under en igangværende divisionsturnering, kan atleten først deltage på den nye klubs hold i næste års turnering. Gælder kun hvis den gamle klub har et hold tilmeldt.",
+     "udfald": "vedtaget",
+     "span": [
+      7110,
+      7123
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 6,
+     "emne": "Klubskifte under divisionsturnering",
+     "tekst": "Skifter en atlet klub under en igangværende divisionsturnering, kan atleten først deltage for den nye klubs hold i den følgende års turnering. Dette gælder kun, hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+     "udfald": "vedtaget",
+     "span": [
+      7101,
+      7123
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 10,
+     "emne": "Divisionsturnering, klubskifte under turneringen",
+     "tekst": "En atlet, der skifter klub under en igangværende divisionsturnering, kan først deltage på den nye klubs hold i det næste års turnering. Reglen gælder kun, hvis den gamle klub har et hold tilmeldt divisionsturneringen.",
+     "udfald": "vedtaget",
+     "span": [
+      7101,
+      7135
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Hvis en atlet skifter klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Dette gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Hvis en atlet skifter klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Dette gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Hvis en atlet skifter klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering. Dette gælder kun hvis den gamle klub har et hold tilmeldt divisionsturneringen."
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "status": "certain",
+   "role": "decision",
+   "key": "K12",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 7,
+     "emne": "Konkurrenceregler, divisionsturnering",
+     "tekst": "Divisionsturneringen løftes efter IPF's regler. De tre første runder må afvikles lokalt efter aftale med stævneudvalget, men regler for indvejning, udstyr og dommerpåsætning skal overholdes, og der skal foreligge en underskrevet officiel resultatliste. Der afvikles tre runder med en vinder i Østdanmark og en i Vestdanmark i hver kategori (udstyr og klassisk); de bedste 4 hold i hver kategori går til finalen om DM-holdmesterskab, og højst ét hold pr. klub pr. kategori må deltage. Der må ikke ændres 3. forsøg, undtagen i dødløft i finalen.",
+     "udfald": "vedtaget",
+     "span": [
+      7233,
+      7253
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 11,
+     "emne": "Divisionsturnering, konkurrenceregler",
+     "tekst": "Der løftes efter IPF's regler. De tre indledende runder må afvikles lokalt i klubberne efter aftale med stævneudvalget, men reglerne for indvejning, udstyr og dommerpåsætning skal overholdes, og der skal foreligge en officiel resultatliste underskrevet af dommerne. 3. forsøget må ikke ændres i nogen disciplin, undtagen i dødløft i finalestævnet. Der kåres vindere i Øst- og Vestdanmark i begge kategorier, og de bedste 4 hold fra udstyrsafdelingen og den klassiske afdeling går videre til finalen om DM for hold, dog højst ét hold pr. klub pr. kategori. Juniorhold deltager i finalen, hvis mindst 4 juniorhold har været med i turneringen, og fire hold ønsker at stille op.",
+     "udfald": "vedtaget",
+     "span": [
+      7216,
+      7253
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Der afvikles tre runder, hvor der kåres en vinder i Østdanmark og en vinder i Vestdanmark inden for begge kategorier."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Der kan ikke foretages ændringer af 3. forsøgene i nogen af disciplinerne - undtagen i finalestævnet i dødløft. Der afvikles tre runder, hvor der kåres en vinder i Østdanmark og en vinder i Vestdanmark inden for begge kategorier."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Der afvikles tre runder, hvor der kåres en vinder i Østdanmark og en vinder i Vestdanmark inden for begge kategorier."
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "status": "certain",
+   "role": "decision",
+   "key": "K12",
+   "verdict": "duplicate",
+   "reason": "Samme forslag c.3 om konkurrenceregler i divisionsturneringen.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Divisionsturnering, konkurrenceregler og finale",
+     "tekst": "Der løftes efter IPF's regler; lokale runder kræver aftale med stævneudvalget og officiel resultatliste underskrevet af dommerne. Tre runder kårer vinder i Øst- og Vestdanmark i hver kategori, og de 4 bedste hold i hver afdeling går i finalen, max ét hold pr. klub pr. kategori. I finalen overføres ingen points, alle løfter i samme pulje, og der må foretages to ændringer af 3. forsøg i dødløft.",
+     "udfald": "vedtaget",
+     "span": [
+      7253,
+      7276
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Divisionsturnering, konkurrenceregler og finale",
+     "tekst": "Der løftes efter IPF's regler; de tre første runder må afvikles lokalt efter aftale med stævneudvalget, men regler for indvejning, udstyr og dommerpåsætning skal overholdes, og der skal foreligge en underskrevet resultatliste. Der kåres vinder i Øst- og Vestdanmark i hver kategori, og de 4 bedste hold fra udstyr og klassisk går i finalen med max ét hold pr. klub pr. kategori. Ingen point overføres til finalen, og der må foretages to ændringer af 3. forsøg i dødløft.",
+     "udfald": "vedtaget",
+     "span": [
+      7253,
+      7276
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 5,
+     "emne": "Divisionsturnering, konkurrenceregler og finale",
+     "tekst": "Der løftes efter IPF's regler; de tre første runder må afvikles lokalt efter aftale med stævneudvalget, men regler for indvejning, udstyr og dommerpåsætning skal overholdes. Tre runder giver en vinder i Øst og Vest pr. kategori, og de 4 bedste hold i hver afdeling går i finalen (ét hold pr. klub pr. kategori, ingen points overføres, to ændringer af 3. forsøg i dødløft i finalen).",
+     "udfald": "vedtaget",
+     "span": [
+      7253,
+      7276
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 12,
+     "reason": "Samme forslag c.3 om konkurrenceregler i divisionsturneringen."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 12,
+     "reason": "Samme forslag c.3 om konkurrenceregler i divisionsturneringen."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 12,
+     "reason": "Samme forslag c.3 om konkurrenceregler som kandidat 12."
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "status": "certain",
+   "role": "decision",
+   "key": "K14",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 8,
+     "emne": "Finale, divisionsturnering",
+     "tekst": "De 4 bedste hold i hver afdeling (udstyr og klassisk) deltager i finalen om DM-hold udstyr og DM RAW, med højst ét hold pr. klub pr. kategori. Alle løftere løfter i samme pulje (8 deltagere i hver disciplin) plus op til 4 juniorer. Der overføres ingen point fra de indledende runder, og der må foretages to ændringer af 3. forsøg i dødløft i finalen.",
+     "udfald": "vedtaget",
+     "span": [
+      7339,
+      7356
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW."
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "status": "certain",
+   "role": "decision",
+   "key": "K14",
+   "verdict": "duplicate",
+   "reason": "Samme forslag c.4 om finalen i divisionsturneringen.",
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 12,
+     "emne": "Divisionsturnering, finale",
+     "tekst": "De 4 bedste hold i hver afdeling deltager i finalen om DM-hold udstyr og DM RAW, dog højst ét hold pr. klub pr. kategori. Alle løftere løfter i samme pulje, og op til 4 juniordeltagere kan komme oveni. Hvis et kvalificeret hold melder fra, går pladsen videre til nr. 5 osv. Point fra de indledende runder overføres ikke, holdet med flest point i finalen er dansk mester, og der må foretages to ændringer af 3. forsøget i dødløft.",
+     "udfald": "vedtaget",
+     "span": [
+      7427,
+      7459
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 14,
+     "reason": "Samme forslag c.4 om finalen i divisionsturneringen."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 14,
+     "reason": "Samme forslag c.4 om finalen i divisionsturneringen."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 14,
+     "reason": "Samme forslag c.4 om finalen som kandidat 14."
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "status": "certain",
+   "role": "decision",
+   "key": "K16",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 5,
+     "emne": "Divisionsturnering, offentliggørelse af resultater",
+     "tekst": "Resultater fra divisionsturneringen offentliggøres på forbundets hjemmeside senest 14 dage efter hver runde.",
+     "udfald": "vedtaget",
+     "span": [
+      7491,
+      7503
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 5,
+     "emne": "Divisionsturnering, offentliggørelse af resultater",
+     "tekst": "Resultater fra hver runde i divisionsturneringen offentliggøres på forbundets hjemmeside senest 14 dage efter runden.",
+     "udfald": "vedtaget",
+     "span": [
+      7491,
+      7503
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 6,
+     "emne": "Divisionsturnering, offentliggørelse af resultater",
+     "tekst": "Resultater fra hver runde i divisionsturneringen offentliggøres på forbundets hjemmeside senest 14 dage efter runden.",
+     "udfald": "vedtaget",
+     "span": [
+      7491,
+      7503
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 9,
+     "emne": "Offentliggørelse af resultater, divisionsturnering",
+     "tekst": "Resultaterne af divisionsturneringen offentliggøres på forbundets hjemmeside senest 14 dage efter hver runde.",
+     "udfald": "vedtaget",
+     "span": [
+      7492,
+      7503
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 13,
+     "emne": "Divisionsturnering, offentliggørelse af resultater",
+     "tekst": "Resultaterne fra hver runde i divisionsturneringen offentliggøres på forbundets hjemmeside senest 14 dage efter runden.",
+     "udfald": "vedtaget",
+     "span": [
+      7491,
+      7503
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Stævneprotokollen: Resultaterne offentliggøres senest 14 dage efter hver runde på forbundets hjemmeside."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Stævneprotokollen: Resultaterne offentliggøres senest 14 dage efter hver runde på forbundets hjemmeside."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Stævneprotokollen: Resultaterne offentliggøres senest 14 dage efter hver runde på forbundets hjemmeside."
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "status": "certain",
+   "role": "decision",
+   "key": "K17",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 6,
+     "emne": "Pokaler til bedste løfter ved DM",
+     "tekst": "Ved individuelle DM gives pokaler til bedste herre- og dameløfter på de gældende IPF-point (ikke Wilks) i alle kategorier: 1 pokal under 15 deltagere, 3 ved flere.",
+     "udfald": "vedtaget",
+     "span": [
+      7566,
+      7587
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 6,
+     "emne": "Pokaler til bedste løfter ved DM",
+     "tekst": "Ved individuelle DM gives pokaler til bedste herre- og dameløfter efter de gældende IPF-point (ikke Wilks) i alle kategorier: 1 pokal under 15 deltagere, 3 ved flere.",
+     "udfald": "vedtaget",
+     "span": [
+      7566,
+      7587
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 7,
+     "emne": "Pokaler til bedste løfter ved DM",
+     "tekst": "Ved individuelle DM gives pokaler for bedste herre- og dameløfter på de gældende IPF-point (i stedet for Wilks) i alle kategorier; 1 pokal under 15 deltagere, 3 ved flere.",
+     "udfald": "vedtaget",
+     "span": [
+      7571,
+      7592
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 10,
+     "emne": "Pokaler ved danske mesterskaber",
+     "tekst": "Ved de individuelle danske mesterskaber gives pokaler til bedste herre- og damevløfter målt på de gældende IPF-point i alle kategorier (senior, sub-junior, junior og master 1-4). Der gives 1 pokal ved under 15 deltagere og 3 pokaler ved flere deltagere.",
+     "udfald": "vedtaget",
+     "span": [
+      7571,
+      7592
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 14,
+     "emne": "Pokaler for bedste løfter ved DM",
+     "tekst": "Ved de individuelle danske mesterskaber gives der pokaler til bedste herre- og dameløfter efter de gældende IPF-point i alle kategorier (senior, sub-junior, junior og master 1-4). Der gives 1 pokal ved under 15 deltagere og 3 pokaler ved flere deltagere.",
+     "udfald": "vedtaget",
+     "span": [
+      7566,
+      7599
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Ved de individuelle danske mesterskaber gives der pokaler for bedste Herre- og dameløfter på de gældende IPF-point i alle kategorier, 1 pokal under 15 deltagere. 3 ved flere deltagere i alle kategorier"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Ved de individuelle danske mesterskaber gives der pokaler for bedste Herre- og dameløfter på de gældende IPF-point i alle kategorier, 1 pokal under 15 deltagere."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "gives der pokaler for bedste Herre- og dameløfter på de gældende IPF-point i alle kategorier, 1 pokal under 15 deltagere."
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "status": "certain",
+   "role": "decision",
+   "key": "K18",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 7,
+     "emne": "Administrationsgebyr ved manglende betaling",
+     "tekst": "Betaler en klub ikke årsafgift og/eller licens til tiden, pålægges et administrationsgebyr på 100 kr. pr. mangel. Betales der ikke senest 14 dage efter 1. rykker, udelukkes klubben fra stævner, til forbundets tilgodehavende er betalt.",
+     "udfald": "vedtaget",
+     "span": [
+      7640,
+      7651
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 7,
+     "emne": "Administrationsgebyr ved manglende betaling",
+     "tekst": "Betaler en klub ikke årsafgift og/eller licens i rette tid, pålægges et administrationsgebyr på 100 kr. pr. mangel. Betales der ikke senest 14 dage efter 1. rykker, udelukkes klubben fra stævner indtil forbundets tilgodehavende er betalt.",
+     "udfald": "vedtaget",
+     "span": [
+      7640,
+      7651
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 8,
+     "emne": "Administrationsgebyr ved manglende betaling",
+     "tekst": "Betaler en klub ikke årsafgift og/eller licens i rette tid, pålægges et administrationsgebyr på 100 kr. pr. mangel. Betales der ikke senest 14 dage efter 1. rykker, udelukkes klubben fra stævner, til forbundets tilgodehavende er betalt.",
+     "udfald": "vedtaget",
+     "span": [
+      7640,
+      7651
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 11,
+     "emne": "Administrationsgebyr for sen betaling",
+     "tekst": "Hvis en klub ikke betaler årsafgift og/eller licens i tide, pålægges klubben et administrationsgebyr på 100 kr. pr. mangel. Betaling skal ske senest 14 dage efter 1. rykker; sker det ikke, udelukkes klubben fra deltagelse i stævner, indtil tilgodehavendet er betalt.",
+     "udfald": "vedtaget",
+     "span": [
+      7627,
+      7651
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 15,
+     "emne": "Administrationsgebyr og udelukkelse ved manglende betaling",
+     "tekst": "En klub, der ikke betaler årsafgift og/eller licens til tiden, pålægges et administrationsgebyr på 100 kr. pr. mangel. Betalingsfristen er senest 14 dage efter 1. rykker. Betaler klubben ikke efter 1. rykker, udelukkes den fra stævner, indtil forbundets tilgodehavende er betalt.",
+     "udfald": "vedtaget",
+     "span": [
+      7640,
+      7671
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Hvis en klub ikke har betalt årsafgift og/eller licens i rette tid vil der blive pålagt et administrationsgebyr på 100 kr. pr mangel."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Hvis en klub ikke har betalt årsafgift og/eller licens i rette tid vil der blive pålagt et administrationsgebyr på 100 kr. pr mangel."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "vil der blive pålagt et administrationsgebyr på 100 kr. pr mangel. Hvis der ikke bliver betalt efter rykker 1., bliver klubben udelukket for deltagelse i stævner indtil forbundets tilgodehavende er betalt."
+    }
+   ]
+  },
+  {
+   "number": 19,
+   "status": "certain",
+   "role": "decision",
+   "key": "K20",
+   "verdict": "duplicate",
+   "reason": "Samme trukne forslag om logoafgift.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 12,
+     "emne": "Afgift for logo på udstyr",
+     "tekst": "Foreslået ændring (trukket af bestyrelsen): logo for én person koster kr. 500, logo for alle medlemmer af en klub kr. 1.000, logo for et spotterhold ved ét mesterskab kr. 1.000 og logo til enhver under DSF kr. 2.500. Logoer skal godkendes af bestyrelsen og ligge på en liste på hjemmesiden.",
+     "udfald": "trukket",
+     "span": [
+      7710,
+      7721
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 16,
+     "emne": "Afgift for logo",
+     "tekst": "Forslaget lød på en differentieret logoafgift: 500 kr. for et logo til én person, 1.000 kr. for et klublogo, 1.000 kr. for et spotterhold ved ét mesterskab og 2.500 kr. for et logo, som alle under DSF må bruge. Logoer skulle godkendes af bestyrelsen, og stødende logoer skulle være forbudt. Forslaget blev trukket.",
+     "udfald": "trukket",
+     "span": [
+      7710,
+      7735
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 20,
+     "reason": "Samme trukne forslag om logoafgift."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 20,
+     "reason": "Samme trukne forslag om logoafgift."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 20,
+     "reason": "Samme trukne forslag om logoafgift som kandidat 20."
+    }
+   ]
+  },
+  {
+   "number": 20,
+   "status": "certain",
+   "role": "decision",
+   "key": "K20",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 8,
+     "emne": "Afgift for logo",
+     "tekst": "Forslag om nye logoafgifter (500 kr. for en person, 1.000 kr. for klub eller spotterhold, 2.500 kr. for logo til alle under DSF) og godkendelse af logoer i bestyrelsen.",
+     "udfald": "trukket",
+     "span": [
+      7858,
+      7861
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 8,
+     "emne": "Afgift for logo",
+     "tekst": "Forslag om nye logoafgifter (500 kr. for én person, 1.000 kr. for en klub eller spotterhold, 2.500 kr. for alle under DSF) og godkendelse af logoer af bestyrelsen. Forslaget blev trukket.",
+     "udfald": "trukket",
+     "span": [
+      7858,
+      7861
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 9,
+     "emne": "Afgift for logo",
+     "tekst": "Forslag om nye logo-afgifter (500 kr. for én person, 1.000 kr. for klub eller spotterhold, 2.500 kr. for generelt logo) og krav om bestyrelsens godkendelse af logoer. Forslaget blev trukket.",
+     "udfald": "trukket",
+     "span": [
+      7858,
+      7861
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "udstyr",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Forslaget blev trukket"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "udstyr",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Forslaget blev trukket"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Forslaget blev trukket"
+    }
+   ]
+  },
+  {
+   "number": 21,
+   "status": "certain",
+   "role": "decision",
+   "key": "K21",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 9,
+     "emne": "Disciplinmedaljer",
+     "tekst": "Disciplinmedaljer udleveres kun ved nationale mesterskaber (DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp), ikke til alle stævner. Bestyrelsen påpegede, at der ikke uddeles disciplinmedaljer i bænkpres.",
+     "udfald": "vedtaget",
+     "span": [
+      7893,
+      7917
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 9,
+     "emne": "Disciplinmedaljer",
+     "tekst": "Disciplinmedaljer udleveres kun ved nationale mesterskaber (DM-styrkeløft, DM-bænk, DM-bænk klassisk, DM klassisk trekamp), ikke ved alle stævner. Der uddeles ikke disciplinmedaljer i bænkpres.",
+     "udfald": "vedtaget",
+     "span": [
+      7893,
+      7903
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 10,
+     "emne": "Disciplinmedaljer",
+     "tekst": "Disciplinmedaljer udleveres kun ved nationale mesterskaber (DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp), ikke til alle stævner. Bestyrelsen bemærkede, at der ikke uddeles disciplinmedaljer i bænkpres.",
+     "udfald": "vedtaget",
+     "span": [
+      7893,
+      7917
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 13,
+     "emne": "Disciplinmedaljer ved stævner",
+     "tekst": "Der udleveres disciplinmedaljer i alle kategorier kun til nationale mesterskaber, nemlig DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp. Ved øvrige stævner uddeles der ikke disciplinmedaljer. Bænkpres uddeler ikke disciplinmedaljer.",
+     "udfald": "vedtaget",
+     "span": [
+      7893,
+      7917
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 17,
+     "emne": "Disciplinmedaljer",
+     "tekst": "Disciplinmedaljer udleveres kun ved nationale mesterskaber, dvs. DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp, og ikke længere ved alle stævner. Bænkpres er ikke omfattet, da der ikke uddeles disciplinmedaljer dér.",
+     "udfald": "vedtaget",
+     "span": [
+      7893,
+      7917
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "”Der udleveres disciplinmedaljer i alle kategorier til alle nationale mesterskaber, hvilket vil sige DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp.”"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Der udleveres disciplinmedaljer i alle kategorier til alle nationale mesterskaber, hvilket vil sige DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Der udleveres disciplinmedaljer i alle kategorier til alle nationale mesterskaber, hvilket vil sige DM-styrkeløft, DM-bænk, DM-bænk klassisk og DM klassisk trekamp."
+    }
+   ]
+  },
+  {
+   "number": 22,
+   "status": "certain",
+   "role": "decision",
+   "key": "K22",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 18,
+     "emne": "Afgift for sponsorreklame",
+     "tekst": "Afgiften til DSF på 500 kr. pr. anvendt sponsorreklame pr. år er afskaffet. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden afgift.",
+     "udfald": "vedtaget",
+     "span": [
+      8163,
+      8182
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "udstyr",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "til ”En klub eller atlet, der har en sponsor, må bære denne sponsors reklame på løftedragt eller T-shirt.”."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "udstyr",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "til ”En klub eller atlet, der har en sponsor, må bære denne sponsors reklame på løftedragt eller T-shirt.”."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "udstyr",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Forslaget blev godkendt med 41 for 0 imod 5 blanket"
+    }
+   ]
+  },
+  {
+   "number": 23,
+   "status": "certain",
+   "role": "decision",
+   "key": "K22",
+   "verdict": "duplicate",
+   "reason": "Tillægget blev vedtaget sammen med forslag f i én afstemning.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 10,
+     "emne": "Sponsorreklame på løftedragt",
+     "tekst": "Afgiften på 500 kr. for sponsorreklame afskaffes. Dokumenterede sponsorlogoer ud over klublogoet, der overskrider 5x2 cm, skal indsendes til DSF og påføres en godkendt liste på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      8280,
+      8298
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 10,
+     "emne": "Sponsorreklame og afgift",
+     "tekst": "Afgiften på 500 kr. pr. sponsorreklame pr. år afskaffes. Klub eller atlet med sponsor må bære reklamen på løftedragt eller T-shirt. Sponsorlogoer over 5x2 cm ud over klublogo skal indsendes til DSF og påføres en godkendt liste på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      8280,
+      8298
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 11,
+     "emne": "Sponsorreklame på løftedragt",
+     "tekst": "Afgiften på 500 kr. pr. sponsorreklame pr. år afskaffes; klub eller atlet med sponsor må bære reklamen på løftedragt eller T-shirt. Sponsorlogoer ud over klublogo, der overskrider 5x2 cm, skal indsendes til DSF og påføres en godkendt liste på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      8280,
+      8298
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 14,
+     "emne": "Sponsorreklame på løftedragt og T-shirt",
+     "tekst": "En klub eller atlet med sponsor må bære sponsorreklame på løftedragt eller T-shirt uden afgift til DSF (den tidligere afgift på 500 kr. pr. sponsorreklame pr. år udgår). Sponsorlogoer ud over klublogoet, der overstiger 5x2 cm, skal indsendes til DSF og optages på en godkendt liste på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      8280,
+      8303
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 19,
+     "emne": "Godkendelse af sponsorlogoer",
+     "tekst": "Ud over klublogoet skal alle sponsorlogoer (med dokumenteret sponsor), der er større end 5x2 cm, sendes til DSF til godkendelse. Godkendte logoer føres på en liste på forbundets hjemmeside.",
+     "udfald": "vedtaget",
+     "span": [
+      8277,
+      8306
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 22,
+     "reason": "Tillægget blev vedtaget sammen med forslag f i én afstemning."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 22,
+     "reason": "Samme vedtagne forslag fra Hvidovre om sponsorreklame inkl. tillæg."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 22,
+     "reason": "Samme vedtagne forslag fra Hvidovre om sponsorreklame som kandidat 22."
+    }
+   ]
+  },
+  {
+   "number": 24,
+   "status": "certain",
+   "role": "decision",
+   "key": "K24",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 15,
+     "emne": "Medaljeceremoni ved danske mesterskaber",
+     "tekst": "Der afholdes medaljeceremoni efter hvert stævneafsnit med fælles indmarch for atleterne på præmiepodiet. Atleter, der udebliver fra medaljeceremonien, beholder deres placering men modtager ingen medalje, og der må ikke stilles stand-in op. Juryen kan i særlige tilfælde dispensere fra reglen.",
+     "udfald": "vedtaget",
+     "span": [
+      8331,
+      8336
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Medaljeceremoni efter hvert stævne afsnit"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Medaljeceremoni efter hvert stævne afsnit"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Hvis atleter er fraværende til medaljeceremonien, vil de bevare deres placering i konkurrencen, men ikke modtage medalje/pokal. Der kan ikke indsættes stand in, og pladsen på præmiepodiet vil i så fald stå tom."
+    }
+   ]
+  },
+  {
+   "number": 25,
+   "status": "certain",
+   "role": "decision",
+   "key": "K24",
+   "verdict": "duplicate",
+   "reason": "Samme forslag om medaljeceremoni.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 11,
+     "emne": "Medaljeceremoni ved DM",
+     "tekst": "Ved danske mesterskaber holdes medaljeceremoni efter hvert stævneafsnit med fælles indmarch. Fraværende atleter beholder placeringen men modtager ikke medalje/pokal, og stand-in kan ikke bruges. Juryen kan i særlige tilfælde dispensere.",
+     "udfald": "vedtaget",
+     "span": [
+      8346,
+      8364
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 12,
+     "emne": "Medaljeceremoni ved DM",
+     "tekst": "Ved danske mesterskaber afholdes medaljeceremoni efter hvert stævneafsnit med fælles indmarch. Udeblivende atleter bevarer placeringen, men modtager ikke medalje/pokal, og stand-in er ikke tilladt. Juryen kan i særlige tilfælde dispensere.",
+     "udfald": "vedtaget",
+     "span": [
+      8346,
+      8364
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 20,
+     "emne": "Medaljeceremoni ved danske mesterskaber",
+     "tekst": "Ved danske mesterskaber holdes der medaljeceremoni efter hvert stævneafsnit med fælles indmarch for alle atleter. Atleter, der ikke er til stede ved ceremonien, beholder deres placering, men får ikke medalje eller pokal. Der må ikke indsættes stand-in, så pladsen på podiet står tom. Juryen kan i særlige tilfælde dispensere fra reglen.",
+     "udfald": "vedtaget",
+     "span": [
+      8346,
+      8380
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 24,
+     "reason": "Samme forslag om medaljeceremoni."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 24,
+     "reason": "Samme vedtagne forslag om medaljeceremoni."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 24,
+     "reason": "Samme regel om medaljeceremoni som kandidat 24."
+    }
+   ]
+  },
+  {
+   "number": 26,
+   "status": "certain",
+   "role": "decision",
+   "key": "K24",
+   "verdict": "duplicate",
+   "reason": "Samme forslag om medaljeceremoni.",
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 11,
+     "emne": "Medaljeceremoni ved DM",
+     "tekst": "Ved danske mesterskaber afholdes medaljeceremoni efter hvert afsnit med fælles indmarch. Atleter der udebliver bevarer placeringen, men modtager ikke medalje/pokal; stand-in er ikke tilladt og pladsen står tom. Juryen kan i særlige tilfælde dispensere.",
+     "udfald": "vedtaget",
+     "span": [
+      8444,
+      8452
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 24,
+     "reason": "Samme forslag om medaljeceremoni."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 24,
+     "reason": "Samme vedtagne forslag om medaljeceremoni."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 24,
+     "reason": "Samme regel om medaljeceremoni som kandidat 24."
+    }
+   ]
+  },
+  {
+   "number": 27,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Udnævnelse af en navngiven person som æresmedlem er ikke en regel.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 12,
+     "emne": "Udnævnelse af æresmedlem",
+     "tekst": "Forslag om at indstille Søren Lind Jensen som æresmedlem af DSF blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      8906,
+      8920
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 12,
+     "emne": "Æresmedlemskab",
+     "tekst": "Forslag om at indstille Søren Lind Jensen som æresmedlem af DSF blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      8906,
+      8920
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 13,
+     "emne": "Æresmedlemskab",
+     "tekst": "Forslag om at indstille Søren Lind Jensen som æresmedlem af DSF blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      8906,
+      8920
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Udnævnelse af en navngiven person som æresmedlem er ikke en regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Indstilling af en navngiven person som æresmedlem er en udnævnelse, ikke en regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Udnævnelse af en navngiven person til æresmedlem er ikke en regel."
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 36467,
+    "output": 9093,
+    "cost_usd": 0.4745,
+    "seconds": 70,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 36655,
+    "output": 8934,
+    "cost_usd": 0.4728,
+    "seconds": 69,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 36581,
+    "output": 10181,
+    "cost_usd": 0.4971,
+    "seconds": 79,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

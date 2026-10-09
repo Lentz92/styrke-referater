@@ -1,0 +1,95 @@
+{
+ "doc_id": "refbest_310819",
+ "sha256": "8463a00240e10e35b2770a718cbbd622a16ee1baf49b32328fd04bbd062d2ae3",
+ "run": "opus-1",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 2639,
+  "output": 1417,
+  "cost_usd": 0.0501,
+  "seconds": 13,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "moededato": "2019-08-31",
+ "beslutninger": [
+  {
+   "emne": "Konsekvens af positiv dopingtest for rekorder og resultater",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved en positiv dopingtest fjernes løfterens rekorder med tilbagevirkende kraft. Resultaterne registreres som ikke valide fra forseelsen og frem, og løfterens profil vises som inaktiv.",
+   "citat": "Rekorder fjerne efter positive test med tilbagevirkende kraft. Resultater bliver registeret som ikke valide fra forseelsen og frem, og løfters profil vil fremstå som inaktiv.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 331,
+   "citat_side": 2
+  },
+  {
+   "emne": "Offentliggørelse af positive dopingtest",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "En positiv dopingtest meldes officielt ud, så snart der foreligger en endelig dom. Tidligere blev det kun meddelt på repræsentantskabsmøderne.",
+   "citat": "Der vil blive meldt officielt ud ved en evt. positive test så snart, at der forlægger en endelig dom, og ikke som tidligere kun til repræsentantskabsmøder.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 360,
+   "citat_side": 2
+  },
+  {
+   "emne": "Krav om træning i klub",
+   "kategori": "medlemskab",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "For at stille op for en klub skal en løfter træne regelmæssigt i klubben, mindst én gang om ugen. Hvis atleten bor langt fra en klub, eller der er helt særlige omstændigheder, kan klubben give en dispensation, der beskriver vilkårene for at repræsentere klubben. DSF's dopingkontroludvalg skal orienteres om dispensationen og godkende den.",
+   "citat": "At Dansk Styrkeløft Forbund stiller krav om, at man for at kunne stille op for en klub skal træne regelmæssigt i pågældende klub – mindst én gang om ugen.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 397,
+   "citat_side": 2
+  },
+  {
+   "emne": "Indstilling til international dommerprøve",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "En national A-dommer, der skal op til en international dommerprøve, skal først bestå den nationale computertest, før vedkommende indstilles til den internationale prøve.",
+   "citat": "Ved dommerprøver, hvor en national A dommer skal op til en international prøve, vil kandidaten skulle bestå den nationale computertest, inden kandidaten indstilles til den internationale prøve.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 527,
+   "citat_side": 3
+  }
+ ]
+}

@@ -1,0 +1,1609 @@
+{
+ "doc_id": "rep2013",
+ "sha256": "9a88907c63d44b76531712e108f61a0930ed8903ed552cc2a981da8891c9461e",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Årsafgift",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Klubbernes årsafgift til DSF fastholdes uændret på 1.000 kr.",
+   "citat": "Årsafgift: kr. 1.000,- (Uændret)",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 177,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)",
+     "citat_pos": 177
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2
+   ],
+   "emne": "Licensgebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Licensgebyret fastholdes uændret på 200 kr.",
+   "citat": "Licens: kr. 200,- (Uændret).",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 182,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Licens: kr. 200,- (Uændret).",
+     "citat_pos": 182
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "Startgebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Startgebyret ændres til 200 kr. Gebyret var ikke ændret i flere år, og der er omkostninger ved at administrere startpengene.",
+   "citat": "Startgebyrer: kr. 200,- (Ændret).",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 186,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Startgebyrer: kr. 200,- (Ændret).",
+     "citat_pos": 186
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Kontorhold og telefonpenge til bestyrelsesmedlemmer",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Godtgørelsen for kontorhold og telefon til bestyrelsesmedlemmer fastholdes uændret på 1.700 kr.",
+   "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,-.(Uændret).",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 190,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,-.(Uændret).",
+     "citat_pos": 190
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Fordeling af startgebyr",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Startgebyret på 200 kr. fordeles med 150 kr. til klubberne og 50 kr. til forbundet.",
+   "citat": "Startgebyret foreslås fordelt med kr. 150 til klubberne og kr. 50 til forbundet.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 199,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Startgebyret foreslås fordelt med kr. 150 til klubberne og kr. 50 til forbundet.",
+     "citat_pos": 199
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Optagelse af foreninger, krav til foreningsvedtægter",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "vedtaegt",
+   "tekst": "Vedtægternes § 4 ændres, så en forenings vedtægter, der vedlægges optagelsesansøgningen, skal nævne foreningens navn og hjemsted, at formålet er at fremme sporten styrkeløft, og at foreningen og dens medlemmer er forpligtet til at overholde DSF's vedtægter og bestemmelser. Ændringen er et krav fra DIF.",
+   "citat": "Vedtægterne skal nævne foreningens navn og hjemsted, at formålet er at fremme sporten styrkeløft, og at foreningen og dens medlemmer er forpligtigede til at overholde DSF’s vedtægter og bestemmelser.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 298,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Vedtægterne skal nævne foreningens navn og hjemsted, at formålet er at fremme sporten styrkeløft, og at foreningen og dens medlemmer er forpligtigede til at overholde DSF’s vedtægter og bestemmelser.",
+     "citat_pos": 298
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7
+   ],
+   "emne": "Frist for forslag til repræsentantskabsmødet",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "vedtaegt",
+   "tekst": "Vedtægternes § 7 ændres, så forslag, der ønskes behandlet på repræsentantskabsmødet, skal være forbundet i hænde senest 21 dage før mødet i stedet for 14 dage.",
+   "citat": "Bør ændres til: … skal være forbundet i hænde senest 21 dage før mødet.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 361,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Bør ændres til: … skal være forbundet i hænde senest 21 dage før mødet.",
+     "citat_pos": 361
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "Tegningsret",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "vedtaegt",
+   "tekst": "Vedtægternes § 11 ændres, så forbundet ved økonomiske dispositioner tegnes af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer. Før kunne de underskrive hver for sig.",
+   "citat": "Foreslås ændret til: ”Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer”.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 484,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Foreslås ændret til: ”Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer”.",
+     "citat_pos": 484
+    }
+   ]
+  },
+  {
+   "id": "K9",
+   "status": "certain",
+   "candidates": [
+    9
+   ],
+   "emne": "Bopælskrav for deltagelse i mesterskaber",
+   "kategori": "medlemskab",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "For at deltage ved et mesterskab under DSF skal en udlænding have haft fast bopæl i Danmark i 24 på hinanden følgende måneder. En dansk statsborger, der i en periode opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende derom.",
+   "citat": "”En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder. En dansk statsborger, som i en periode opholder sig i udlandet, kan repræsentere Danmark, hvis DSF/Eliteudvalget har en aftale med vedkommende derom, og deltage i danske mesterskaber”.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 591,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "”En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder. En dansk statsborger, som i en periode opholder sig i udlandet, kan repræsentere Danmark, hvis DSF/Eliteudvalget har en aftale med vedkommende derom, og deltage i danske mesterskaber”.",
+     "citat_pos": 591
+    }
+   ]
+  },
+  {
+   "id": "K10",
+   "status": "certain",
+   "candidates": [
+    10
+   ],
+   "emne": "Holdpræmier for bedste klubber ved DM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Ved de individuelle DM i udstyrstrekamp, RAW og bænkpres gives holdpræmier til de bedste foreninger efter fastlagte kategorier. Herrer senior og masters får 3 holdpræmier. Ved junior og subjunior tæller både damernes og herrernes resultater med. Reglen om 1 holdpræmie ved under 15 deltagere og 3 ved flere gælder alle stævner, herunder også JM/SM.",
+   "citat": "Forslaget blev vedtaget med den ændring at formuleringen ” 1 holdpræmie under 15 deltagere. 3 ved flere deltagere” gælder alle stævner, herunder også JM/SM",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 881,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslaget blev vedtaget med den ændring at formuleringen ” 1 holdpræmie under 15 deltagere. 3 ved flere deltagere” gælder alle stævner, herunder også JM/SM",
+     "citat_pos": 881
+    }
+   ]
+  },
+  {
+   "id": "K11",
+   "status": "certain",
+   "candidates": [
+    11
+   ],
+   "emne": "DM i bænkpres RAW",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "staevneregel",
+   "tekst": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+   "citat": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+   "side": 3,
+   "gaelder_fra": "2014-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 913,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+     "citat_pos": 913
+    }
+   ]
+  },
+  {
+   "id": "K12",
+   "status": "certain",
+   "candidates": [
+    12
+   ],
+   "emne": "Generel opdatering af stævnereglerne",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Stævnereglerne opdateres generelt efter bilaget \"Stævneregler\". Bestyrelsen får carte blanche til at færdiggøre stævnereglerne med de ændringer, der vedtages på repræsentantskabsmødet.",
+   "citat": "Når de er modtaget, beder bestyrelsen om carte blanche til at færdiggøre Stævnereglerne med de ændringer, som vedtages på repræsentantskabsmødet",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1000,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Når de er modtaget, beder bestyrelsen om carte blanche til at færdiggøre Stævnereglerne med de ændringer, som vedtages på repræsentantskabsmødet",
+     "citat_pos": 1000
+    }
+   ]
+  },
+  {
+   "id": "K13",
+   "status": "certain",
+   "candidates": [
+    13
+   ],
+   "emne": "Skyldigt kontingent ved klubskifte",
+   "kategori": "medlemskab",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "staevneregel",
+   "tekst": "Hvidovre foreslog, at et medlem med licens under DSF, der skylder kontingent til en DSF-klub, ikke kan optages i en anden DSF-klub, før beløbet er betalt. Forslaget blev ikke vedtaget.",
+   "citat": "Hvidovre var ikke repræsenteret og kunne derfor ikke fremlægge forslaget. Repræsentantskabet diskuterede forslaget, som dog ikke blev vedtaget.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1197,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Repræsentantskabet diskuterede forslaget, som dog ikke blev vedtaget.",
+     "citat_pos": 1207
+    }
+   ]
+  },
+  {
+   "id": "K14",
+   "status": "certain",
+   "candidates": [
+    14
+   ],
+   "emne": "Divisionsturnering, RAW-afdeling",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Divisionsturneringen skal fremover have både en afdeling for udstyrsstyrkeløft og en for RAW-styrkeløft. Begge afdelinger afholdes samme tid og sted i de tre runder og i finalen, og finalen reduceres til fire hold i hver afdeling.",
+   "citat": "at der fremover skal være både en afdeling for udstyr og RAW styrkeløft i divisionsturneringen. Begge afdelinger i de tre runder afholdes samme tid og sted – det samme gælder for finalen, som forslås reduceret til fire hold for hver af de to afdelinger.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1244,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "at der fremover skal være både en afdeling for udstyr og RAW styrkeløft i divisionsturneringen. Begge afdelinger i de tre runder afholdes samme tid og sted – det samme gælder for finalen, som forslås reduceret til fire hold for hver af de to afdelinger.",
+     "citat_pos": 1244
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Årsafgift",
+     "tekst": "Årsafgiften fastholdes uændret på 1.000 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      177,
+      182
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Årsafgift",
+     "tekst": "Årsafgiften fastholdes uændret på 1.000 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      177,
+      182
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Årsafgift",
+     "tekst": "Årsafgiften fastholdes uændret på 1.000 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      177,
+      182
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Årsafgift",
+     "tekst": "Årsafgiften til DSF er fastsat til kr. 1.000 og er uændret.",
+     "udfald": "vedtaget",
+     "span": [
+      177,
+      190
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Årsafgift for klubber",
+     "tekst": "Klubbernes årsafgift til DSF er uændret 1.000 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      177,
+      182
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Årsafgift: kr. 1.000,- (Uændret)"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Licensgebyr",
+     "tekst": "Licensgebyret fastholdes uændret på 200 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      182,
+      186
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Licensgebyr",
+     "tekst": "Licensgebyret fastholdes uændret på 200 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      182,
+      186
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Licensgebyr",
+     "tekst": "Licensgebyret fastholdes uændret på 200 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      182,
+      186
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Licensgebyr",
+     "tekst": "Licensen under DSF koster kr. 200 og er uændret.",
+     "udfald": "vedtaget",
+     "span": [
+      182,
+      186
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Licensgebyr",
+     "tekst": "Licensgebyret er uændret 200 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      182,
+      186
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Licens: kr. 200,- (Uændret)."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Licens: kr. 200,- (Uændret)."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Startgebyr",
+     "tekst": "Startgebyret ændres til 200 kr. og fordeles med 150 kr. til klubberne og 50 kr. til forbundet, bl.a. på grund af administrationsomkostninger og fordi gebyret ikke har været ændret i flere år.",
+     "udfald": "vedtaget",
+     "span": [
+      186,
+      190
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Startgebyr og fordeling",
+     "tekst": "Startgebyret ændres til 200 kr., fordelt med 150 kr. til klubberne og 50 kr. til forbundet, bl.a. på grund af administrationsomkostninger og at gebyret ikke har været ændret i flere år.",
+     "udfald": "vedtaget",
+     "span": [
+      199,
+      212
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Startgebyr",
+     "tekst": "Startgebyret ændres til 200 kr. og fordeles med 150 kr. til klubberne og 50 kr. til forbundet, bl.a. på grund af administrationsomkostninger og at gebyret ikke har været ændret i flere år.",
+     "udfald": "vedtaget",
+     "span": [
+      186,
+      190
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Startgebyr",
+     "tekst": "Startgebyret for stævner er fastsat til kr. 200, hvilket er en ændring i forhold til tidligere.",
+     "udfald": "vedtaget",
+     "span": [
+      186,
+      190
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Startgebyr og fordeling",
+     "tekst": "Startgebyret ændres til 200 kr. og fordeles med 150 kr. til klubberne og 50 kr. til forbundet, bl.a. for at dække forbundets omkostninger til administration af startpengene.",
+     "udfald": "vedtaget",
+     "span": [
+      186,
+      212
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Startgebyrer: kr. 200,- (Ændret)."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Startgebyrer: kr. 200,- (Ændret)."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Kontorhold og telefonpenge til bestyrelsesmedlemmer",
+     "tekst": "Kontorhold og telefonpenge til bestyrelsesmedlemmer fastholdes uændret på 1.700 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      190,
+      199
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Kontorhold og telefonpenge til bestyrelsen",
+     "tekst": "Kontorhold og telefonpenge til bestyrelsesmedlemmer fastholdes uændret på 1.700 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      190,
+      199
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Kontorhold og telefonpenge til bestyrelsesmedlemmer",
+     "tekst": "Kontorhold og telefonpenge til bestyrelsesmedlemmer fastholdes uændret på 1.700 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      190,
+      199
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Kontorhold og telefonpenge til bestyrelsen",
+     "tekst": "Bestyrelsesmedlemmer får kontorhold og telefonpenge på kr. 1.700, uændret.",
+     "udfald": "vedtaget",
+     "span": [
+      190,
+      199
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Kontorhold og telefonpenge til bestyrelsesmedlemmer",
+     "tekst": "Bestyrelsesmedlemmer modtager uændret 1.700 kr. i kontorhold og telefonpenge.",
+     "udfald": "vedtaget",
+     "span": [
+      190,
+      199
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,-.(Uændret)."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "staevneregel",
+     "citat": "Kontorhold og telefonpenge til bestyrelsesmedlemmer: kr. 1.700,-.(Uændret)."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Fordeling af startgebyr",
+     "tekst": "Startgebyret fordeles, så kr. 150 tilfalder klubberne og kr. 50 tilfalder forbundet.",
+     "udfald": "vedtaget",
+     "span": [
+      199,
+      212
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Startgebyret foreslås fordelt med kr. 150 til klubberne og kr. 50 til forbundet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Startgebyret foreslås fordelt med kr. 150 til klubberne og kr. 50 til forbundet."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Optagelse af foreninger, krav til foreningsvedtægter",
+     "tekst": "Vedtægt §4 ændres, så foreningens vedtægter skal nævne navn og hjemsted, at formålet er at fremme styrkeløft, og at foreningen og dens medlemmer er forpligtet til at overholde DSF's vedtægter og bestemmelser. Det er et krav fra DIF.",
+     "udfald": "vedtaget",
+     "span": [
+      298,
+      328
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Optagelse af foreninger, krav til foreningsvedtægter",
+     "tekst": "Vedtægtens §4 ændres, så en ansøgende forenings vedtægter skal nævne foreningens navn og hjemsted, at formålet er at fremme styrkeløft, og at foreningen og dens medlemmer er forpligtede til at overholde DSF's vedtægter og bestemmelser. Det er et DIF-krav.",
+     "udfald": "vedtaget",
+     "span": [
+      298,
+      328
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Optagelse af foreninger, krav til foreningsvedtægter",
+     "tekst": "Vedtægternes §4 ændres, så en forenings vedtægter skal nævne foreningens navn og hjemsted, at formålet er at fremme styrkeløft, og at foreningen og dens medlemmer er forpligtede til at overholde DSF's vedtægter og bestemmelser. Det er et krav fra DIF.",
+     "udfald": "vedtaget",
+     "span": [
+      298,
+      328
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Optagelse i DSF, vedtægtskrav",
+     "tekst": "Foreningers vedtægter skal nævne foreningens navn og hjemsted, at formålet er at fremme sporten styrkeløft, og at foreningen og dens medlemmer er forpligtet til at overholde DSF's vedtægter og bestemmelser (§ 4).",
+     "udfald": "vedtaget",
+     "span": [
+      298,
+      328
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Optagelse af foreninger – krav til foreningsvedtægter",
+     "tekst": "§ 4 suppleres, så en forening, der søger optagelse i DSF, skal have vedtægter, der nævner foreningens navn og hjemsted, at formålet er at fremme styrkeløft, og at foreningen og dens medlemmer er forpligtet til at overholde DSF's vedtægter og bestemmelser. Kravet stammer fra DIF.",
+     "udfald": "vedtaget",
+     "span": [
+      298,
+      328
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "vedtaegt",
+     "citat": "Vedtægterne skal nævne foreningens navn og hjemsted, at formålet er at fremme sporten styrkeløft, og at foreningen og dens medlemmer er forpligtigede til at overholde DSF’s vedtægter og bestemmelser."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "vedtaegt",
+     "citat": "Vedtægterne skal nævne foreningens navn og hjemsted, at formålet er at fremme sporten styrkeløft, og at foreningen og dens medlemmer er forpligtigede til at overholde DSF’s vedtægter og bestemmelser."
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 5,
+     "emne": "Frist for forslag til repræsentantskabsmødet",
+     "tekst": "Forslag til repræsentantskabsmødet skal være forbundet i hænde senest 21 dage før mødet i stedet for 14 dage.",
+     "udfald": "vedtaget",
+     "span": [
+      361,
+      374
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 5,
+     "emne": "Frist for forslag til repræsentantskabsmødet",
+     "tekst": "Forslag til repræsentantskabsmødet skal være forbundet i hænde senest 21 dage før mødet i stedet for 14 dage.",
+     "udfald": "vedtaget",
+     "span": [
+      364,
+      374
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 5,
+     "emne": "Frist for indsendelse af forslag til repræsentantskabsmødet",
+     "tekst": "Forslag til repræsentantskabsmødet skal være forbundet i hænde senest 21 dage før mødet (tidligere 14 dage).",
+     "udfald": "vedtaget",
+     "span": [
+      364,
+      374
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 6,
+     "emne": "Frist for forslag til repræsentantskabsmøde",
+     "tekst": "Forslag, som ønskes behandlet på repræsentantskabsmødet, skal være forbundet i hænde senest 21 dage før mødet (tidligere 14 dage) (§ 7).",
+     "udfald": "vedtaget",
+     "span": [
+      364,
+      374
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 5,
+     "emne": "Frist for forslag til repræsentantskabsmødet",
+     "tekst": "Forslag, der ønskes behandlet på repræsentantskabsmødet, skal være forbundet i hænde senest 21 dage før mødet (tidligere 14 dage).",
+     "udfald": "vedtaget",
+     "span": [
+      361,
+      374
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "vedtaegt",
+     "citat": "Bør ændres til: … skal være forbundet i hænde senest 21 dage før mødet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "vedtaegt",
+     "citat": "Bør ændres til: … skal være forbundet i hænde senest 21 dage før mødet."
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 6,
+     "emne": "Tegningsret",
+     "tekst": "Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer, i stedet for hver for sig.",
+     "udfald": "vedtaget",
+     "span": [
+      487,
+      505
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 6,
+     "emne": "Tegningsret",
+     "tekst": "Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de rammer bestyrelsen fastlægger, i stedet for hver for sig.",
+     "udfald": "vedtaget",
+     "span": [
+      487,
+      505
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 6,
+     "emne": "Tegningsret",
+     "tekst": "Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer (tidligere hver for sig), jf. DIF's anbefaling.",
+     "udfald": "vedtaget",
+     "span": [
+      487,
+      505
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 7,
+     "emne": "Tegningsret for økonomiske dispositioner",
+     "tekst": "Ved økonomiske dispositioner tegnes DSF af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer (§ 11).",
+     "udfald": "vedtaget",
+     "span": [
+      484,
+      505
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 6,
+     "emne": "Tegningsret ved økonomiske dispositioner",
+     "tekst": "Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer (tidligere kunne de underskrive hver for sig).",
+     "udfald": "vedtaget",
+     "span": [
+      487,
+      505
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "vedtaegt",
+     "citat": "Foreslås ændret til: ”Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer”."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "vedtaegt",
+     "citat": "Foreslås ændret til: ”Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer”."
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "status": "certain",
+   "role": "decision",
+   "key": "K9",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 7,
+     "emne": "Bopælskrav for deltagelse i mesterskaber",
+     "tekst": "En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder for at deltage i DSF-mesterskaber. En dansk statsborger, der opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende.",
+     "udfald": "vedtaget",
+     "span": [
+      591,
+      606
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 7,
+     "emne": "Bopælskrav for deltagelse i mesterskaber",
+     "tekst": "En udlænding skal have haft fast bopæl i Danmark i 24 sammenhængende måneder for at deltage i DSF-mesterskaber. En dansk statsborger, der opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende.",
+     "udfald": "vedtaget",
+     "span": [
+      591,
+      606
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 7,
+     "emne": "Bopælskrav for deltagelse i mesterskaber",
+     "tekst": "En udlænding skal have haft fast bopæl i Danmark i 24 sammenhængende måneder for at deltage i DSF-mesterskaber. En dansk statsborger, der opholder sig i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende.",
+     "udfald": "vedtaget",
+     "span": [
+      591,
+      606
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 8,
+     "emne": "Bopælskrav for deltagelse i mesterskaber",
+     "tekst": "En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder for at deltage i DSF's mesterskaber. En dansk statsborger, der i en periode opholder sig i udlandet, kan repræsentere Danmark, hvis DSF/Eliteudvalget har en aftale med vedkommende, og deltage i danske mesterskaber.",
+     "udfald": "vedtaget",
+     "span": [
+      591,
+      606
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 7,
+     "emne": "Bopælskrav for deltagelse i mesterskaber",
+     "tekst": "For at deltage i et mesterskab under DSF skal en udlænding have haft fast bopæl i Danmark i 24 på hinanden følgende måneder. En dansk statsborger, der i en periode opholder sig i udlandet, kan repræsentere Danmark, hvis DSF/Eliteudvalget har en aftale med vedkommende, og kan deltage i danske mesterskaber.",
+     "udfald": "vedtaget",
+     "span": [
+      591,
+      634
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "medlemskab",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "”En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder. En dansk statsborger, som i en periode opholder sig i udlandet, kan repræsentere Danmark, hvis DSF/Eliteudvalget har en aftale med vedkommende derom, og deltage i danske mesterskaber”."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "medlemskab",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "”En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder. En dansk statsborger, som i en periode opholder sig i udlandet, kan repræsentere Danmark, hvis DSF/Eliteudvalget har en aftale med vedkommende derom, og deltage i danske mesterskaber”."
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "status": "certain",
+   "role": "decision",
+   "key": "K10",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 8,
+     "emne": "Holdpræmier for bedste klubber ved DM",
+     "tekst": "Der fastsættes præcise regler for holdpræmier til de bedste foreninger ved DM i udstyr, RAW og bænkpres. Reglen om 1 holdpræmie under 15 deltagere og 3 ved flere gælder alle stævner, herunder JM/SM.",
+     "udfald": "vedtaget",
+     "span": [
+      889,
+      905
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 8,
+     "emne": "Holdpræmier ved DM",
+     "tekst": "Reglerne for holdpræmier til bedste klubber ved DM præciseres pr. disciplin og kategori. Hovedreglen er 1 holdpræmie under 15 deltagere og 3 ved flere, og den gælder alle stævner, også JM/SM.",
+     "udfald": "vedtaget",
+     "span": [
+      889,
+      905
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 8,
+     "emne": "Holdpræmier ved DM",
+     "tekst": "Reglerne for holdpræmier til bedste klubber ved DM præciseres pr. kategori. Reglen om 1 holdpræmie under 15 deltagere og 3 ved flere gælder alle stævner, herunder JM/SM.",
+     "udfald": "vedtaget",
+     "span": [
+      898,
+      905
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 9,
+     "emne": "Holdpræmier ved DM",
+     "tekst": "Holdpræmier ved de individuelle danske mesterskaber uddeles til de bedste klubber efter fastlagte kategorier (fx DM-A herrer senior udstyrstrekamp: 3 holdpræmier; DM RAW damer senior: 1 holdpræmie under 15 deltagere og 3 ved flere). Formuleringen '1 holdpræmie under 15 deltagere. 3 ved flere deltagere' gælder alle stævner, herunder også JM/SM.",
+     "udfald": "vedtaget",
+     "span": [
+      881,
+      905
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 8,
+     "emne": "Holdpræmier ved DM",
+     "tekst": "Ved individuelle DM gives holdpræmier til de bedste foreninger: 3 holdpræmier i herrer senior (udstyr, RAW og bænkpres) samt i junior udstyr og masters (alle kategorier samlet); i øvrige kategorier gives 1 holdpræmie ved under 15 deltagere og 3 ved flere. I blandede kategorier tæller både damers og herrers resultater. Reglen om 1 holdpræmie under 15 deltagere og 3 ved flere gælder alle stævner, herunder JM/SM.",
+     "udfald": "vedtaget",
+     "span": [
+      881,
+      905
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Forslaget blev vedtaget med den ændring at formuleringen ” 1 holdpræmie under 15 deltagere. 3 ved flere deltagere” gælder alle stævner, herunder også JM/SM"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Forslaget blev vedtaget med den ændring at formuleringen ” 1 holdpræmie under 15 deltagere. 3 ved flere deltagere” gælder alle stævner, herunder også JM/SM"
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "status": "certain",
+   "role": "decision",
+   "key": "K11",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 9,
+     "emne": "DM i bænkpres RAW",
+     "tekst": "Der indføres officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+     "udfald": "vedtaget",
+     "span": [
+      913,
+      930
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 9,
+     "emne": "Officielt DM i bænkpres RAW",
+     "tekst": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+     "udfald": "vedtaget",
+     "span": [
+      913,
+      930
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 9,
+     "emne": "Officielt DM i bænkpres RAW",
+     "tekst": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+     "udfald": "vedtaget",
+     "span": [
+      913,
+      930
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 10,
+     "emne": "DM i bænkpres RAW",
+     "tekst": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+     "udfald": "vedtaget",
+     "span": [
+      913,
+      930
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 9,
+     "emne": "DM i bænkpres RAW",
+     "tekst": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014.",
+     "udfald": "vedtaget",
+     "span": [
+      913,
+      930
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Der indføres et officielt DM i bænkpres RAW i alle alderskategorier for herrer og damer fra 2014."
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "status": "certain",
+   "role": "decision",
+   "key": "K12",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 10,
+     "emne": "Generel opdatering af stævnereglerne",
+     "tekst": "Stævnereglerne opdateres generelt, og bestyrelsen får carte blanche til at færdiggøre dem med de ændringer, der vedtages på repræsentantskabsmødet.",
+     "udfald": "vedtaget",
+     "span": [
+      1005,
+      1020
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 10,
+     "emne": "Generel opdatering af stævneregler",
+     "tekst": "Den generelle opdatering af stævnereglerne godkendes, og bestyrelsen får carte blanche til at færdiggøre stævnereglerne med de vedtagne ændringer.",
+     "udfald": "vedtaget",
+     "span": [
+      1005,
+      1020
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 10,
+     "emne": "Generel opdatering af stævneregler",
+     "tekst": "Stævnereglerne opdateres generelt som i bilaget, og bestyrelsen får carte blanche til at færdiggøre dem med de ændringer, der vedtages på repræsentantskabsmødet.",
+     "udfald": "vedtaget",
+     "span": [
+      1005,
+      1020
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 10,
+     "emne": "Generel opdatering af stævnereglerne",
+     "tekst": "Stævnereglerne opdateres generelt efter bestyrelsens bilag, og bestyrelsen får carte blanche til at færdiggøre stævnereglerne med de ændringer, der vedtages på repræsentantskabsmødet.",
+     "udfald": "vedtaget",
+     "span": [
+      1000,
+      1020
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Når de er modtaget, beder bestyrelsen om carte blanche til at færdiggøre Stævnereglerne med de ændringer, som vedtages på repræsentantskabsmødet"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "Når de er modtaget, beder bestyrelsen om carte blanche til at færdiggøre Stævnereglerne med de ændringer, som vedtages på repræsentantskabsmødet"
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "status": "certain",
+   "role": "decision",
+   "key": "K13",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 11,
+     "emne": "Skyldigt kontingent ved klubskifte",
+     "tekst": "Forslag om, at et medlem med licens, der skylder kontingent til en DSF-klub, ikke kan optages i en anden DSF-klub, før beløbet er betalt. Forslaget blev ikke vedtaget.",
+     "udfald": "forkastet",
+     "span": [
+      1043,
+      1077
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 11,
+     "emne": "Klubskifte ved skyldigt kontingent",
+     "tekst": "Forslag om at et medlem med licens, der skylder kontingent til en DSF-klub, ikke kan optages i en anden DSF-klub før beløbet er betalt. Forslaget blev ikke vedtaget.",
+     "udfald": "forkastet",
+     "span": [
+      1043,
+      1077
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 11,
+     "emne": "Skyldigt kontingent ved klubskifte",
+     "tekst": "Forslag om at et licensmedlem, der skylder kontingent til en DSF-klub, ikke kan optages i en anden DSF-klub, før det skyldige beløb er betalt. Forslaget blev ikke vedtaget.",
+     "udfald": "forkastet",
+     "span": [
+      1043,
+      1077
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 11,
+     "emne": "Licens og kontingentrestance ved klubskifte",
+     "tekst": "Et medlem med licens under DSF, der skylder kontingent til en klub i DSF, kan ikke optages i en anden DSF-klub, før det skyldige beløb er betalt. Forslaget blev ikke vedtaget.",
+     "udfald": "forkastet",
+     "span": [
+      1043,
+      1077
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 11,
+     "emne": "Klubskifte ved kontingentrestance",
+     "tekst": "Forslag om, at et medlem med licens under DSF, som skylder kontingent til en klub i DSF, ikke kan optages i en anden klub under DSF, før det skyldige beløb er betalt. Bestyrelsen fandt det unødvendigt, da den afgivende klub kan tilbageholde licensen.",
+     "udfald": "forkastet",
+     "span": [
+      1043,
+      1077
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "medlemskab",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Hvidovre var ikke repræsenteret og kunne derfor ikke fremlægge forslaget. Repræsentantskabet diskuterede forslaget, som dog ikke blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "medlemskab",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "staevneregel",
+     "citat": "Repræsentantskabet diskuterede forslaget, som dog ikke blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "status": "certain",
+   "role": "decision",
+   "key": "K14",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 12,
+     "emne": "Divisionsturnering, RAW-afdeling",
+     "tekst": "Divisionsturneringen får både en afdeling for udstyr og en for RAW styrkeløft. Begge afdelinger afholdes samme tid og sted i de tre runder, og finalen reduceres til fire hold i hver afdeling.",
+     "udfald": "vedtaget",
+     "span": [
+      1245,
+      1259
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 12,
+     "emne": "Divisionsturnering for RAW",
+     "tekst": "Divisionsturneringen får fremover både en afdeling for udstyr og en for RAW styrkeløft. Begge afholdes samme tid og sted i de tre runder, og finalen reduceres til fire hold i hver afdeling.",
+     "udfald": "vedtaget",
+     "span": [
+      1245,
+      1259
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 12,
+     "emne": "Divisionsturnering for RAW",
+     "tekst": "Divisionsturneringen får både en afdeling for udstyr og en for RAW styrkeløft. Begge afdelinger afvikles samme tid og sted i de tre runder, og finalen reduceres til fire hold i hver afdeling.",
+     "udfald": "vedtaget",
+     "span": [
+      1245,
+      1259
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 12,
+     "emne": "Divisionsturnering med udstyr- og RAW-afdelinger",
+     "tekst": "Divisionsturneringen består fremover af både en afdeling for udstyr og en afdeling for RAW styrkeløft. Begge afdelinger afholdes i de tre runder samme tid og sted, og finalen reduceres til fire hold i hver afdeling.",
+     "udfald": "vedtaget",
+     "span": [
+      1245,
+      1259
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 12,
+     "emne": "Divisionsturnering for RAW",
+     "tekst": "Divisionsturneringen får både en afdeling for udstyr og en for RAW-styrkeløft. Begge afdelinger afholdes samme tid og sted i de tre runder og i finalen, som reduceres til fire hold i hver afdeling.",
+     "udfald": "vedtaget",
+     "span": [
+      1244,
+      1287
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "at der fremover skal være både en afdeling for udstyr og RAW styrkeløft i divisionsturneringen. Begge afdelinger i de tre runder afholdes samme tid og sted – det samme gælder for finalen, som forslås reduceret til fire hold for hver af de to afdelinger."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "staevneregel",
+     "citat": "at der fremover skal være både en afdeling for udstyr og RAW styrkeløft i divisionsturneringen. Begge afdelinger i de tre runder afholdes samme tid og sted – det samme gælder for finalen, som forslås reduceret til fire hold for hver af de to afdelinger."
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Det er en orientering under eventuelt som svar på et spørgsmål, ikke en beslutning.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 13,
+     "emne": "Registreringsperiode før deltagelse i stævner",
+     "tekst": "Løftere skal være registreret i 3 måneder, før de kan deltage i officielle stævner. Det er et krav fra DIF og ADD, og der blev ikke givet dispensation.",
+     "udfald": "vedtaget",
+     "span": [
+      1773,
+      1794
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 13,
+     "emne": "Registreringsperiode før deltagelse i stævner",
+     "tekst": "Det er et krav fra DIF og ADD, at løftere er registreret i 3 måneder før deltagelse i officielle stævner, så der ikke kan dispenseres fra reglen. Klubberne opfordres til at arrangere diplomstævner.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      1773,
+      1794
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 13,
+     "emne": "Ventetid på licensliste før stævnedeltagelse",
+     "tekst": "Det er et krav fra DIF og ADD, at løftere er registreret i 3 måneder, før de deltager i officielle stævner; der blev ikke givet dispensation.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      1773,
+      1794
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 13,
+     "emne": "Karensperiode på licenslisten før stævnedeltagelse",
+     "tekst": "Det er et krav fra DIF og Anti Doping Danmark, at løftere skal have været registreret på licenslisten i 3 måneder, før de kan deltage i officielle stævner; der kan ikke dispenseres.",
+     "udfald": "vedtaget",
+     "span": [
+      1769,
+      1794
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Det er en orientering under eventuelt som svar på et spørgsmål, ikke en beslutning."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Formanden oplyser blot om et eksisterende krav under Eventuelt; der blev ikke truffet nogen beslutning."
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 11453,
+    "output": 4875,
+    "cost_usd": 0.19,
+    "seconds": 36,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 11456,
+    "output": 5263,
+    "cost_usd": 0.1978,
+    "seconds": 40,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

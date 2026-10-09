@@ -1,0 +1,58 @@
+{
+ "doc_id": "refbest_130321",
+ "sha256": "7c493a2a04ada958ceac39027161f45175e48ffe546b8bb59aa43fcf6c763b5a",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [],
+ "candidates": [],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 1263,
+    "output": 120,
+    "cost_usd": 0.0134,
+    "seconds": 4,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 1264,
+    "output": 112,
+    "cost_usd": 0.0132,
+    "seconds": 4,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

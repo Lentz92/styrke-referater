@@ -1,0 +1,209 @@
+{
+ "doc_id": "refmedie09062026",
+ "sha256": "e9ad2b874fba4f1637e56073e6b6a2a9095dd9139e1e0a45f1cf071705f52702",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Fordeling af navngivne kontaktpersoner og deres praktiske opgaver ved konkrete stævner er en intern arbejdsfordeling, ikke en stående regel.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Medieudvalgets kontaktpersoner og opgaver ved stævner",
+     "tekst": "Hvert kommende stævne har en kontaktperson i medieudvalget. Kontaktpersonen sørger for, at arrangerende klub får login til Instagram for at poste før og under stævnet, at klubben laver en kort præsentation af venuet, og at der løbende kommer opslag med link til invitation, plan og livestream.",
+     "udfald": "vedtaget",
+     "span": [
+      59,
+      76
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Mediedækning af stævner",
+     "tekst": "Medieudvalgets kontaktperson ved hvert stævne sørger for, at arrangerende klub får login til Instagram for at poste før og under stævnet, at klubben laver en kort præsentation af venuet op til stævnet, og at der løbende kommer opslag med link til invitation, plan og livestream.",
+     "udfald": "vedtaget",
+     "span": [
+      59,
+      76
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Medieudvalgets kontaktpersoner og arrangørklubbers medieopgaver ved stævner",
+     "tekst": "Ved stævner har medieudvalget en kontaktperson, der sørger for, at arrangerende klubber modtager login til Instagram for at poste indhold op til og fra stævnet. Arrangerende klub laver en kort præsentation af venuet op til stævnet, og opslag med link til invitation, plan og livestream lægges løbende op.",
+     "udfald": "vedtaget",
+     "span": [
+      59,
+      76
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Medieudvalgets kontaktpersoner og arrangørklubbers sociale medier ved stævner",
+     "tekst": "Ved stævner har medieudvalget en kontaktperson. Kontaktpersonen sørger for, at den arrangerende klub får login til forbundets Instagram, så klubben kan poste indhold op til og fra stævnet. Den arrangerende klub laver en kort præsentation af stedet før stævnet, og opslag med link til invitation, tidsplan og livestream lægges op løbende.",
+     "udfald": "vedtaget",
+     "span": [
+      55,
+      87
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Fordeling af navngivne kontaktpersoner og deres praktiske opgaver ved konkrete stævner er en intern arbejdsfordeling, ikke en stående regel."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Arrangerende klubber modtager login til instagram med henblik på at poste \nindhold op til og fra stævnerne."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Praktiske opgaver for medieudvalgets kontaktpersoner ved konkrete kommende stævner, ikke en stående regel."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Opgaver og aftaler med navngivne personer om opslag og billeder er handlingspunkter, ikke en regel.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Medieudvalgets dækning af internationale stævner",
+     "tekst": "Daniel laver opslag til internationale stævner med løftere, løftetider og link til livestream. Jens sørger for billeder af masterløftere ved internationale stævner, og Peter kan udlevere mailadresser på landsholdsløftere, hvis der mangler billeder.",
+     "udfald": "vedtaget",
+     "span": [
+      104,
+      119
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Mediedækning af internationale stævner",
+     "tekst": "Daniel laver opslag til internationale stævner med løftere, deres løftetider og link til livestream. Jens sørger for billeder af masterløftere i forbindelse med internationale stævner.",
+     "udfald": "vedtaget",
+     "span": [
+      104,
+      119
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Medieopslag om internationale stævner",
+     "tekst": "Medieudvalget laver opslag til internationale stævner med løftere, deres løftetider og link til livestream. Billeder af mastersløftere ved internationale stævner sørges for af Jens, og mailadresser på landsholdsløftere uden billeder kan indhentes hos Peter.",
+     "udfald": "vedtaget",
+     "span": [
+      104,
+      119
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Opgaver og aftaler med navngivne personer om opslag og billeder er handlingspunkter, ikke en regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Opgavefordeling til navngivne personer, ikke en stående regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Opgavefordeling og praktiske aftaler med navngivne personer, ikke en regelbeslutning."
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 4,
+    "cache_read": 11524,
+    "cache_write": 3464,
+    "output": 961,
+    "cost_usd": 0.0493,
+    "seconds": 11,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 2766,
+    "output": 820,
+    "cost_usd": 0.0394,
+    "seconds": 9,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 2836,
+    "output": 1069,
+    "cost_usd": 0.0449,
+    "seconds": 12,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

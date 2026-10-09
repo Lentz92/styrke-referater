@@ -458,13 +458,19 @@ def _pid(task, doc_id: str) -> str:
 
 def test_rule_passages_take_related_decisions_and_trim_keyword_windows(corpus):
     task = _rule_task(corpus)
-    assert task.keywords[("licens",)] == 1.0 and task.keywords[("årsafgift",)] == evaluate.SYNONYM_WEIGHT
+    decisions = analyze.load_decisions(corpus.docs)
+    weights = evaluate.rule_keywords("Licensgebyr", task.emner, evaluate.load_synonyms(),
+                                     evaluate.KeywordIndex(corpus.docs, evaluate.Texts()),
+                                     evaluate.decision_vocabulary(decisions))
+    assert weights[("licens",)] == 1.0 and weights[("årsafgift",)] == evaluate.SYNONYM_WEIGHT
     sources = {(p.doc.id, p.source) for p in task.passages}
     assert {("rep2010", "rule"), ("rep2013", "rule"), ("rep2019", "related"), ("rep2024", "related"),
             ("best2015", "keyword"), ("rep2016", "keyword")} <= sources
-    decision, *keyword = [p for p in task.passages if p.doc.id == "rep2016"]
-    assert decision.source == "related" and keyword[0].start == decision.end  # trimmed, not dropped
-    assert task.gathering.unread_amounts == []
+    # The keyword window around "Licens: kr. 250" overlaps the decision's window: trimmed, not dropped, and then
+    # joined to it, as the two touch.
+    assert [(p.start, p.end, p.source) for p in task.passages if p.doc.id == "rep2016"] == \
+        [(0, 231, "related"), (261, 377, "keyword")]
+    assert task.unread_amounts == ()
     assert "Today: 2026-10-08" in task.prompt
 
 
@@ -472,7 +478,7 @@ def test_amounts_the_word_budget_leaves_out_are_reported(corpus, monkeypatch):
     monkeypatch.setattr(evaluate, "PASSAGE_BUDGET", 0)
     task = _rule_task(corpus)
     assert {p.source for p in task.passages} == {"rule"}
-    unread = task.gathering.unread_amounts
+    unread = task.unread_amounts
     assert {hit["doc"] for hit in unread} == {"rep2016", "rep2019", "rep2024"}
     assert any("Licens: kr. 275" in hit["text"] for hit in unread)
 
@@ -492,6 +498,50 @@ def test_decision_windows_a_few_words_apart_join(corpus, monkeypatch, gap, passa
     index = evaluate.KeywordIndex(corpus.docs, evaluate.Texts())
     gathered = evaluate.gather_passages([], related, {}, [], index, {d.id: d for d in corpus.docs})
     assert [p.source for p in gathered.passages] == ["related"] * passages
+
+
+def test_a_passage_is_extended_to_its_proposal_heading_and_outcome(tmp_path):
+    lines = ["Forslag 3 fra bestyrelsen", "Om licens", FILLER[:400], "Licensgebyret hæves til 400 kr.", FILLER[:500],
+             "Forslag 3 blev vedtaget enstemmigt", "Forslag 4 fra Hvidovre", FILLER]
+    path = tmp_path / "rep2017.htm"
+    path.write_text("<p>" + "\n".join(lines) + "</p>")
+    doc = Doc("rep2017", "repraesentantskab", "rep2017", "2017", str(path), None, "sha")
+    texts = evaluate.Texts()
+    words = texts.words(doc).words
+    quote = analyze.locate_quote("Licensgebyret hæves til 400 kr", texts.words(doc))
+    outcome = words.index("enstemmigt") + 1
+
+    def extended(start: int, end: int) -> str:
+        p = evaluate._extended(evaluate.Passage("", doc, None, start, end, "related", 0.0), texts)
+        return texts.excerpt(doc, p.start, p.end)
+
+    # From the middle of the proposal to its outcome: back to the heading. From the heading: on to the outcome.
+    assert extended(quote - 8, outcome).startswith("Forslag 3 fra bestyrelsen")
+    assert extended(0, quote + 14).endswith("Forslag 3 blev vedtaget enstemmigt")
+    assert extended(0, outcome) == extended(0, outcome + 2)[:len(extended(0, outcome))]  # whole already
+    assert evaluate._extended(evaluate.Passage("", doc, None, 0, outcome, "rule", 0.0), texts).end == outcome
+    assert "Hvidovre" not in extended(0, quote + 14)
+
+
+def _two_judges(task, first: list[tuple], second: list[tuple]):
+    return evaluate.RuleTimeline.of(task, [_timeline(first, {}), _timeline(second, {})])
+
+
+def test_events_cited_from_two_passages_are_one_decision(corpus):
+    task = _rule_task(corpus)
+    first, second = [p.id for p in task.passages if p.doc.id == "rep2016"]
+    proposal = (first, "aendret", "Licensgebyret er hævet til 250 kr", "250 kr.")
+    budget = (second, "aendret", "Licens: kr. 275 i næste budget", "250,00 kr. fra 1.1.2017")
+    joined = _two_judges(task, [proposal], [budget])
+    assert len(joined.clusters) == 1 and joined.events[0].status == "certain"
+    other_amount = (second, "aendret", "Licens: kr. 275 i næste budget", "275 kr.")
+    assert len(_two_judges(task, [proposal], [other_amount]).clusters) == 2
+    one_decision = replace(task, extracted={"rep2016": [(0, 400)]})  # one extracted decision quotes both
+    assert len(_two_judges(one_decision, [proposal], [other_amount]).clusters) == 1
+    # Without amounts, two outcomes in one document stay two: they may be two proposals.
+    rejected = [(first, "forkastet", "Licensgebyret er hævet til 250 kr", None)]
+    other_rejection = [(second, "forkastet", "Licens: kr. 275 i næste budget", None)]
+    assert len(_two_judges(task, rejected, other_rejection).clusters) == 2
 
 
 def test_windows_merge_when_they_overlap_or_nearly_touch():
@@ -566,6 +616,42 @@ def test_key_rules_judges_only_the_named_rules_and_reuses_their_answers(corpus, 
     assert fake_claude.invocations("call") == 4  # startgebyr's answers are reused; licensgebyr is new
 
 
+def test_rederiving_uses_the_judged_passages_and_never_calls(corpus, fake_claude, monkeypatch):
+    _selection(corpus, "rep2024")
+    fake_claude.answer(_timeline([("P1", "indfoert", "Licensgebyret er hævet til 150 kr. pr. løfter", "150 kr.")],
+                                 {year: 1 for year in range(2010, 2027)}))
+    evaluate.main(["key-rules", "--max-cost", "5"])
+    path = evaluate.key_dir("rules") / "licensgebyr.json"
+    judged = json.loads(path.read_text())
+    monkeypatch.setattr(evaluate, "PASSAGE_BUDGET", 0)  # the gathering has changed since
+    with pytest.raises(SystemExit, match="--rejudge"):
+        evaluate.main(["key-rules", "--max-cost", "5"])
+    evaluate.write_json(evaluate.corrections_path(), [
+        {"kind": "rule-year", "target": {"rule": "licensgebyr", "years": [2010]}, "change": {"status": "uncertain"},
+         "reason": "Test.", "evidence": []}])
+    evaluate.main(["key-rules", "--max-cost", "0", "--rederive"])
+    assert fake_claude.invocations("call") == 2
+    rederived = json.loads(path.read_text())
+    assert rederived["passages"] == judged["passages"] and rederived["years"][0]["status"] == "uncertain"
+    (evaluate.judge_path("rules", "licensgebyr", 2)).unlink()
+    with pytest.raises(SystemExit, match="licensgebyr judge 2"):
+        evaluate.main(["key-rules", "--max-cost", "5", "--rederive"])
+    assert fake_claude.invocations("call") == 2
+
+
+def test_some_rules_can_be_judged_again_while_the_others_keep_their_answers(corpus, fake_claude, monkeypatch):
+    _selection(corpus, "rep2024", rules=("licensgebyr", "startgebyr"))
+    fake_claude.answer(_timeline([], {}))
+    evaluate.main(["key-rules", "--max-cost", "5"])
+    kept = (evaluate.key_dir("rules") / "startgebyr.json").read_text()
+    monkeypatch.setattr(evaluate, "PASSAGE_BUDGET", 0)  # the gathering changes for both rules
+    evaluate.main(["key-rules", "--max-cost", "5", "--rejudge", "--rules", "licensgebyr"])
+    assert fake_claude.invocations("call") == 6
+    evaluate.main(["key-rules", "--max-cost", "0", "--rederive"])  # each on the passages it was judged on
+    assert fake_claude.invocations("call") == 6
+    assert (evaluate.key_dir("rules") / "startgebyr.json").read_text() == kept
+
+
 @pytest.mark.parametrize("change", ["effort", "prompt", "model"])
 def test_answers_for_other_input_are_asked_again_only_with_rejudge(corpus, fake_claude, monkeypatch, change):
     _selection(corpus, "rep2024")
@@ -625,6 +711,10 @@ def test_a_run_is_scored_on_recall_precision_over_split_and_agreed_fields():
     # The best match of K1 is right (the worse one has another kategori); K2's handling is not agreed, so not scored.
     assert metrics["over_split"] == 0.5 and metrics["field_kategori"] == 1 and metrics["field_udfald"] == 0.5
     assert metrics["field_handling"] == 1 and metrics["field_all"] == 1  # only K1 has all four agreed
+    assert metrics["field_three"] == 0.5  # K2's udfald is wrong; its handling is left out anyway
+
+    only_handling = evaluate.score_document(KEY, [_run("Startgebyr", 20, handling="aendring")])
+    assert evaluate.METRICS["field_three"](only_handling) == 1  # K2's handling is not agreed: not held against it
 
     missed = evaluate.score_document(KEY, [_run("Startgebyr", 20)])
     assert evaluate.METRICS["recall"](missed) == 0.5 and evaluate.METRICS["precision"](missed) == 1
@@ -645,13 +735,18 @@ def test_score_reports_pooled_and_per_document_figures_and_warns(corpus):
     evaluate.write_json(evaluate.run_path("a", "rep2024"), {"sha256": "sha-rep2024",
                                                            "beslutninger": [_run("Licensgebyr", 0)]})
     evaluate.write_json(evaluate.run_path("b", "rep2024"), {"sha256": "older", "beslutninger": []})
-    evaluate.write_json(evaluate.key_dir("decisions") / "rep2024.json", {**KEY, "sha256": "sha-rep2024"})
+    evaluate.write_json(evaluate.key_dir("decisions") / "rep2024.json", {**KEY, "sha256": "sha-rep2024",
+                                                                         "doc_id": "rep2024"})
+    evaluate.write_json(evaluate.corrections_path(), [
+        {"kind": "decision", "target": {"doc": "rep2024", "id": "K2"}, "change": {"status": "uncertain"},
+         "reason": "Not a rule.", "evidence": [{"doc": "rep2024", "quote": "Startgebyr"}]}])
     evaluate.main(["score", "--run", "a", "--run", "b"])
     report = (evaluate.EVAL_DIR / "reports" / "decisions-a+b.md").read_text()
-    assert "| a | 50.0% | 50.0% | 100.0% | 100.0% |" in report and "median (min–max)" in report
+    assert "| a | 100.0% | 100.0% | 100.0% | 100.0% |" in report and "median (min–max)" in report  # K2 is out
+    assert "decision doc rep2024, id K2 (K2)" in report
     assert "Not candidate runs: a, b" in report and "run b extracted another version of rep2024" in report
     assert "- stored: 2 of 3 kept" in report
-    assert _runs_log(corpus)[-1]["metrics"]["a"]["recall_doc_avg"] == 0.5
+    assert _runs_log(corpus)[-1]["metrics"]["a"]["recall_doc_avg"] == 1
 
 
 # ---------------------------------------------------------------- scoring rules
@@ -715,6 +810,47 @@ def test_the_home_rule_holds_most_events_and_years_compare_event_and_content(cor
     score = _score(corpus, rules)
     assert (score.home, score.found, score.elsewhere, score.rules, score.effects, score.years, score.same_event,
             score.same_content) == expected
+
+
+CORRECTIONS = [
+    {"kind": "rule-event", "target": {"rule": "licensgebyr", "doc": "rep2010", "quote": "hævet til 150 kr"},
+     "change": {"status": "uncertain"}, "reason": "Doubtful.", "evidence": [{"doc": "rep2013", "quote": "uændret"}]},
+    {"kind": "rule-year", "target": {"rule": "licensgebyr", "years": [2010, 2011, 2012]},
+     "change": {"status": "uncertain"}, "reason": "Not shown.", "evidence": []},
+    {"kind": "rule-event", "target": {"rule": "licensgebyr", "doc": "rep2013", "quote": "Licens: kr. 200"},
+     "change": {"effect_status": "uncertain"}, "reason": "Either.", "evidence": []},
+    {"kind": "rule-event", "target": {"rule": "licensgebyr", "doc": "rep2099", "quote": "x"},
+     "change": {"status": "uncertain"}, "reason": "Gone.", "evidence": []},
+]
+
+
+def test_corrections_apply_on_top_of_the_judges_when_scoring(corpus):
+    corrected = evaluate.correct_rule_key(_rule_key(corpus), CORRECTIONS)
+    assert [c["matched"] for c in corrected["corrections"]] == [["E1"], [2010, 2011, 2012], ["E2"], []]
+    assert evaluate.correct_rule_key(corrected, CORRECTIONS) == corrected
+    score = evaluate.score_rule(corrected, analyze.load_decisions(corpus.docs), analyze.load_rules(),
+                                {d.id: d for d in corpus.docs}, evaluate.Texts())
+    # E1 is no longer counted, nor 2010-2012; E2's effect is not compared.
+    assert (score.events, score.found, score.effects, score.effect_events, score.years) == (3, 1, 0, 0, 14)
+    with pytest.raises(SystemExit, match="correction 1"):
+        evaluate.write_json(evaluate.corrections_path(), [{**CORRECTIONS[0], "change": {"titel": "x"}}])
+        evaluate.load_corrections()
+
+
+def test_soft_rules_and_corrections_are_reported_apart(corpus):
+    evaluate.write_json(evaluate.key_dir("rules") / "licensgebyr.json", _rule_key(corpus))
+    evaluate.write_json(evaluate.key_dir("rules") / "startgebyr.json", {
+        **_rule_key(corpus, []), "slug": "startgebyr", "titel": "Startgebyr", "years": []})
+    evaluate.write_json(evaluate.selection_path(), {"as_of": "2026-01-15", "rules": [
+        {"slug": "licensgebyr", "soft": True, "soft_reason": "loosely scoped"}, {"slug": "startgebyr"}],
+        "documents": []})
+    evaluate.write_json(evaluate.corrections_path(), CORRECTIONS[3:])
+    evaluate.main(["score-rules"])
+    report = (evaluate.EVAL_DIR / "reports" / "rules-regler.md").read_text()
+    assert "| licensgebyr (soft) | licensgebyr | 4 |" in report and "| **all** | | 0 | 0 |" in report
+    assert "left out of the totals and the summary: licensgebyr: loosely scoped" in report
+    assert "(NOTHING: the key has changed, check the correction)" in report
+    assert _runs_log(corpus)[-1]["soft"] == ["licensgebyr"]
 
 
 def test_score_rules_reads_another_rules_directory_and_writes_a_report(corpus):

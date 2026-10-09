@@ -1,0 +1,122 @@
+{
+ "fingerprint": "049eac60313ff390",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 4976,
+  "output": 2669,
+  "cost_usd": 0.0941,
+  "seconds": 25,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Dommertilmelding i divisionsturneringen",
+    "kategori": "dommere",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der gives kun dispensation til klubber, der endnu ikke har en dommer, og disse opfordres til at tilmelde folk til førstkommende dommerkursus.",
+    "citat": "Klubberne skal tilmelde minimum én dommer pr. runde. Der er kun givet dispensation til de \nklubber, der endnu ikke har en dommer.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Masterudvalgets kompetence",
+    "kategori": "master",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Masterklubben er kun et udvalg på lige fod med forbundets andre udvalg og kan ikke fastsætte udtagelseskriterier for international deltagelse i masterstævner (fx hvilke stævner man skal stille op til eller hvilke kg man skal løfte). Udtagelseskriterier hører under eliteudvalget.",
+    "citat": "Masterklubben kan dermed ikke \neksempelvis fastsætte udtagelseskriterier",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Det er en opfordring til kassereren og ikke en beslutning om en regel.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Mødepligten nævnes kun som begrundelse for at flytte TSK Cup og er ikke en beslutning.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 5,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Stævneansvarlig ved forbundsstævner",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Til alle forbundsstævner (DM'er, SM'er og JM'er, men ikke Thy Cup, Nordland Cup og TSK Cup) udpeges en stævneansvarlig fra stævneudvalget i forbindelse med udsendelsen af startlisten. Den stævneansvarlige sørger for kontrol af betalt startgebyr (løftere/klubber skal medbringe kvittering), stævnepapirer, stempler til udstyrsgodkendelse, podiets og opvarmningslokalets beskaffenhed samt lokaler til indvejning og dopingkontrol. Den stævneansvarlige har også ansvaret for, at stævnepapirerne afleveres til kontoret med kopi til webmaster, og skal besøge stævnestedet inden stævnet.",
+    "citat": "En fra stævneudvalget udpeges i forbindelse med udsendelsen af startlisten",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 6,
+    "verdict": "duplicate",
+    "duplicate_of": 5,
+    "reason": "Kravet om kvittering er en del af den stævneansvarliges opgaveliste.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

@@ -1,0 +1,118 @@
+{
+ "fingerprint": "71647ed4975aec89",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 83617,
+  "output": 3683,
+  "cost_usd": 0.743,
+  "seconds": 33,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P25",
+    "quote": "Løftere som ikke modtager deres medaljer og pokaler på stævnedagen, kan frem over aftale med den arrangerende klub hvordan præmierne afleveres.",
+    "value_after": "Fraværende løftere aftaler aflevering af præmier med arrangerende klub",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P39",
+    "quote": "Der udarbejdes et forslag til stævnereglerne. Hvor der står: ”der er pligt til at deltage i medaljeceremonien. Ved udeblivelse vil den pågældendes klub blive orienteret og der vil ikke blive eftersendt medaljer.”",
+    "value_after": null,
+    "effect": "foreslaaet"
+   },
+   {
+    "passage": "P45",
+    "quote": "Hvis atleter er fraværende til medaljeceremonien, vil de bevare deres placering i konkurrencen, men ikke modtage medalje/pokal. Der kan ikke indsættes stand in, og pladsen på præmiepodiet vil i så fald stå tom.",
+    "value_after": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P122",
+    "quote": "reglen om, at man skal tage personligt imod sin medalje og/eller pokal ved præmieoverrækkelsen. Andre må ikke modtage præmierne på vegne af fraværende løftere, og de kan heller ikke længere blive eftersendt.",
+    "value_after": "Personligt fremmøde påkrævet; ingen stand in eller eftersendelse",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P128",
+    "quote": "Løftere forventes at være iklædt træningstøj og sportssko ved præmieoverrækkelser ved stævner under DSF.",
+    "value_after": null,
+    "effect": "trukket"
+   },
+   {
+    "passage": "P130",
+    "quote": "Tilføjes: Såfremt en løfter er forhindret pga. deltagelse i ny indvejning, udleveres medaljen til en repræsentant fra løfterens klub.",
+    "value_after": "Personligt fremmøde; klubrepræsentant modtager ved kollision med ny indvejning",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 6
+   }
+  ]
+ }
+}

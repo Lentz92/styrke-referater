@@ -1,0 +1,112 @@
+{
+ "doc_id": "refbest_150723",
+ "sha256": "7091c0b3903c81ae1aa6da4182ac4c67d63189de61317b7f051f8655c8a105db",
+ "run": "sonnet-2",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 3902,
+  "output": 1358,
+  "cost_usd": 0.0298,
+  "seconds": 9,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2023-07-15",
+ "beslutninger": [
+  {
+   "emne": "Internationale betalinger",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Internationale betalinger skal foretages hurtigt. Kvitteringer for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+   "citat": "Det blev besluttet, at de internationale betalinger skal falde hurtigt. Kvitteringerne for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 83,
+   "citat_side": 1
+  },
+  {
+   "emne": "Levering af pokaler og medaljer og opsætning af stævneprogram",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Stævneudvalget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Stævneprogrammet skal være sat op en uge før stævnet, så den ansvarlige i stævneudvalget kan kontrollere det.",
+   "citat": "Det skal sikres, at pokaler og medaljer er den arrangerende klub i hænde senest en uge før stævnestart.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 187,
+   "citat_side": 1
+  },
+  {
+   "emne": "Strategiplan",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der udarbejdes ikke en ny strategiplan, da den er erstattet af de strategiske spor. Vision og mission opdateres i de strategiske spor.",
+   "citat": "Det blev besluttet, at der ikke udarbejdes en ny strategiplan, men i de strategiske spor vil vision og mission blive opdateret.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 473,
+   "citat_side": 2
+  },
+  {
+   "emne": "Coach-licens for head coaches ved internationale mesterskaber",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Fra 1. januar 2025 skal alle head coaches nomineret til internationale, internationale regionale eller verdensmesterskaber uploade deres coach-licens i Goodlift-systemet.",
+   "citat": "starting on January 01, 2025, all Head Coaches, nominated for an International, International Regional, or World Championship, will be required to upload their Coach License into the Goodlift System.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": "2025-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 702,
+   "citat_side": 3
+  },
+  {
+   "emne": "Dokumentkrav for nominerede løftere til EPF-mesterskaber",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Nominerede løftere skal have ADEL-certifikat for internationalt niveau, korrekt udfyldt og underskrevet samtykkeerklæring med fulde navn samt et foto i god kvalitet i Goodlift. Afviste løftere skal medbringe korrekt samtykkeerklæring til indvejning, ellers udelukkes de.",
+   "citat": "all nominated lifters must complete the educational course ADEL for INTERNATIONAL LEVEL ATHLETE.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 801,
+   "citat_side": 3
+  }
+ ]
+}

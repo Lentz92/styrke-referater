@@ -1,0 +1,122 @@
+{
+ "fingerprint": "edbb8dd9823396f8",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 4980,
+  "output": 2878,
+  "cost_usd": 0.0983,
+  "seconds": 25,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Klubbers dommerforpligtelse i divisionsturneringen",
+    "kategori": "dommere",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Klubberne skal tilmelde mindst én dommer pr. runde i divisionsturneringen. Kun klubber, der endnu ikke har en dommer, har fået dispensation, og de opfordres til at tilmelde folk til førstkommende dommerkursus.",
+    "citat": "Klubberne skal tilmelde minimum én dommer pr. runde. Der er kun givet dispensation til de klubber, der endnu ikke har en dommer.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Masterudvalgets kompetence",
+    "kategori": "master",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Masterklubben er kun et udvalg på lige fod med forbundets andre udvalg og ikke en selvstændig forening. Den kan derfor ikke selv fastsætte udtagelseskriterier til internationale masterstævner (fx hvilke stævner man skal deltage i, eller hvilke kg man skal løfte). Udtagelseskriterier hører under eliteudvalget, der udtager de landsholdsløftere, som DSF betaler for.",
+    "citat": "Masterklubben kan dermed ikke eksempelvis fastsætte udtagelseskriterier",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Betalingsfrist for refusion af bilag",
+    "kategori": "okonomi",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Kassereren skal overholde betalingsfristen på 14 dage for udbetaling af penge for modtagne bilag/kvitteringer.",
+    "citat": "Klaus opfordres til at overholde betalingsfristen på 14 dage for modtaget bilag.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Mødepligten nævnes kun som begrundelse i et terminslistepunkt og blev ikke besluttet på mødet.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 5,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Stævneansvarlig ved forbundsstævner",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Til alle forbundsstævner (DM'er, SM'er og JM'er, men ikke Thy Cup, Nordland Cup og TSK Cup) udpeges en stævneansvarlig fra stævneudvalget, når startlisten sendes ud. Den stævneansvarlige skal se stævnestedet inden stævnet. Vedkommende sikrer, at alle har betalt, at stævnepapirer og stempler til udstyrsgodkendelse er til stede, at podie, opvarmningslokale og lokaler til indvejning og dopingkontrol er i orden, og at stævnepapirerne afleveres til kontoret med kopi til webmaster.",
+    "citat": "En fra stævneudvalget udpeges i forbindelse med udsendelsen af startlisten",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 6,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Dokumentation for betalt startgebyr",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Ved forbundsstævner skal løftere/klubber medbringe kvittering for betalt startgebyr, og den stævneansvarlige kontrollerer, at alle tilmeldte har betalt.",
+    "citat": "Sørge for, at alle der er tilmeldt/stiller op, har betalt (løftere/klubber skal medbringe kvittering for betalt startgebyr)",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

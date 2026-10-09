@@ -1,0 +1,138 @@
+{
+ "fingerprint": "d8918f097b8fdb82",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 83970,
+  "output": 3655,
+  "cost_usd": 0.7453,
+  "seconds": 32,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P10",
+    "quote": "Udtagelser skal ske på baggrund af resultater opnået i officielle stævner godkendt af IPF og DSF.",
+    "value_after": "resultater fra officielle stævner godkendt af IPF og DSF",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P41",
+    "quote": "Desuden blev det vedtaget, at udtagelse til landshold kun kan ske på baggrund af resultat opnået ved DM.",
+    "value_after": "udtagelse til landshold kun på baggrund af resultat ved DM",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P64",
+    "quote": "Udtagelser bliver foretaget på baggrund af resultater opnået ved DM 2021.",
+    "value_after": "udtagelse på baggrund af resultater opnået ved DM",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P94",
+    "quote": "Kun DM, JM/SM og internationale stævner (sanktioneret af IPF/EPF/NPF) kan benyttes som kvalifikationsstævner til EM og VM.",
+    "value_after": "kun DM, JM/SM og IPF/EPF/NPF-sanktionerede internationale stævner",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P98",
+    "quote": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med sportschefen, kan eliteudvalget ansøges om dispensation",
+    "value_after": "kun DM, JM/SM og internationale stævner; dispensation i særlige tilfælde",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P123",
+    "quote": "Resultater opnået ved klassiske stævner som indfrier krav til internationale udstyrs stævner vil kunne fungere som kvalifikation, hvis atleten har deltaget i DM styrkeløft (udstyr) og gjort brug af udstyr i én eller flere discipliner.",
+    "value_after": "DM, JM/SM, internationale; klassiske totaler gælder til udstyr ved DM-udstyrsdeltagelse",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2012,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 6
+   }
+  ]
+ }
+}

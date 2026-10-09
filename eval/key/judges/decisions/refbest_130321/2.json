@@ -1,0 +1,25 @@
+{
+ "fingerprint": "ff5e3be07a6841e9",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 1264,
+  "output": 112,
+  "cost_usd": 0.0132,
+  "seconds": 4,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [],
+  "missing": []
+ }
+}

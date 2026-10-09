@@ -1,0 +1,4815 @@
+{
+ "doc_id": "490",
+ "sha256": "2fd29d7abf29ff41cd3633f5bc6003d5eedecc3376dc66312b5c4ac8db2f51d2",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Deltagelse i flere kategorier ved kombinationsstævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved IPF-kombinationsstævner kan en løfter deltage i flere kategorier, f.eks. både som junior og senior ved samme mesterskab, mod at der betales startgebyr og doping fee i alle kategorierne.",
+   "citat": "Forslaget omkring at man ved kombinationsstævner kan deltage i flere kategorier blev vedtaget, dog mod at der betales startgebyr samt doping Fee i alle kategorierne.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 227,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslaget omkring at man ved kombinationsstævner kan deltage i flere kategorier blev vedtaget, dog mod at der betales startgebyr samt doping Fee i alle kategorierne.",
+     "citat_pos": 227
+    },
+    {
+     "citat": "Forslaget omkring at man ved kombinationsstævner kan deltage i flere kategorier blev vedtaget, dog mod at der betales startgebyr samt doping Fee i alle kategorierne.",
+     "citat_pos": 227
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2
+   ],
+   "emne": "Kvalifikationskrav til VM",
+   "kategori": "internationalt",
+   "udfald": "trukket",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Norges forslag til IPF-kongressen om kvalifikationskrav for deltagelse i VM blev trukket tilbage.",
+   "citat": "Kvalifikationskrav til VM. Forslaget blev trukket tilbage",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 273,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Kvalifikationskrav til VM. Forslaget blev trukket tilbage",
+     "citat_pos": 273
+    },
+    {
+     "citat": "Kvalifikationskrav til VM. Forslaget blev trukket tilbage",
+     "citat_pos": 273
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "Klassisk styrkeløft ved World Games",
+   "kategori": "internationalt",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Frankrigs forslag om at World Games skal være klassisk styrkeløft fra 2021 blev trukket tilbage, da programmet frem mod 2021 ikke kan ændres. World Games bliver dog klassisk fra 2025, hvis nationerne får bedre styr på deres antidopingarbejde.",
+   "citat": "World Games skal være klassisk fra 2021. Forslaget blev efter en hed debat trukket tilbage, idet der ikke kan ændres i programmet mod 2021.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 283,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "World Games skal være klassisk fra 2021. Forslaget blev efter en hed debat trukket tilbage, idet der ikke kan ændres i programmet mod 2021.",
+     "citat_pos": 283
+    },
+    {
+     "citat": "World Games skal være klassisk fra 2021. Forslaget blev efter en hed debat trukket tilbage, idet der ikke kan ændres i programmet mod 2021.",
+     "citat_pos": 283
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Startalder for sub-junior",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Sveriges forslag om at man kan deltage som sub-junior i hele det kalenderår, hvor man fylder 14, i stedet for først når man er fyldt 14, blev nedstemt. De enkelte nationer må dog afholde mesterskaber for løftere under 14 år.",
+   "citat": "Ændring af starttidspunktet for deltagelse som Sub-junior til hele det kalenderår, hvor man fylder 14, frem for de eksisterede regler, hvor man skal være fyldt 14 blev nedstemt.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 332,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ændring af starttidspunktet for deltagelse som Sub-junior til hele det kalenderår, hvor man fylder 14, frem for de eksisterede regler, hvor man skal være fyldt 14 blev nedstemt.",
+     "citat_pos": 332
+    },
+    {
+     "citat": "Ændring af starttidspunktet for deltagelse som Sub-junior til hele det kalenderår, hvor man fylder 14, frem for de eksisterede regler, hvor man skal være fyldt 14 blev nedstemt.",
+     "citat_pos": 332
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Vægtklassemedaljer til de ældste masterkategorier",
+   "kategori": "master",
+   "udfald": "forkastet",
+   "handling": "ophaevelse",
+   "niveau": "eksternt_krav",
+   "tekst": "EC's forslag om at afskaffe vægtklassemedaljer til master 4 herrer og master 3 damer, så de i stedet kun konkurrerer på IPF-formel på tværs af vægtklasserne, blev snævert nedstemt.",
+   "citat": "I stedet skulle løfterne kun konkurrer på IPF formular (tidligere Wilks point) på tværs af vægtklasserne. Forslaget blev snævert nedstemt.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 394,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "I stedet skulle løfterne kun konkurrer på IPF formular (tidligere Wilks point) på tværs af vægtklasserne. Forslaget blev snævert nedstemt.",
+     "citat_pos": 394
+    },
+    {
+     "citat": "Forslaget blev snævert nedstemt.",
+     "citat_pos": 410
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Vægtklasser for kvinder",
+   "kategori": "internationalt",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "USAPL's forslag om at tilføje en vægtklasse for kvinder eller vende tilbage til de gamle vægtklasser, så der er lige mange herre- og dameløftere på nationsholdene, blev trukket tilbage til en senere kongres.",
+   "citat": "Tilføjelse af en vægtklasse for kvinder eller ændring af vægtklasserne til de gamle således, at der var lige mange herre- og dameløftere på nationsholdene. Forslaget blev trukket tilbage til en senere kongres",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 417,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Tilføjelse af en vægtklasse for kvinder eller ændring af vægtklasserne til de gamle således, at der var lige mange herre- og dameløftere på nationsholdene. Forslaget blev trukket tilbage til en senere kongres",
+     "citat_pos": 417
+    },
+    {
+     "citat": "Forslaget blev trukket tilbage til en senere kongres",
+     "citat_pos": 441
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7
+   ],
+   "emne": "Antal kvinder på nationshold ved IPF-mesterskaber",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Nationerne må tilmelde en ekstra kvinde på holdene, så der i open må være 8 kvinder og i sub-junior/junior 9 kvinder. Det er valgfrit i hvilken vægtklasse den ekstra tilmeldes, men der må stadig kun være 2 deltagere pr. vægtklasse pr. nation.",
+   "citat": "det blev vedtaget, at der må tilmeldes en ekstra kvinde på holdene fra således, at der i open nu er 8 kvinder og subjunior/junior 9 kvinder.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 450,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "det blev vedtaget, at der må tilmeldes en ekstra kvinde på holdene fra således, at der i open nu er 8 kvinder og subjunior/junior 9 kvinder.",
+     "citat_pos": 450
+    },
+    {
+     "citat": "men det blev vedtaget, at der må tilmeldes en ekstra kvinde på holdene fra således, at der i open nu er 8 kvinder og subjunior/junior 9 kvinder.",
+     "citat_pos": 449
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "Holdpokaler",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Holdpokalerne ved IPF-mesterskaber erstattes med certifikater.",
+   "citat": "Holdpokalerne skal erstattes med certifikater. Forslaget blev vedtaget.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 501,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Holdpokalerne skal erstattes med certifikater. Forslaget blev vedtaget.",
+     "citat_pos": 501
+    },
+    {
+     "citat": "Holdpokalerne skal erstattes med certifikater. Forslaget blev vedtaget.",
+     "citat_pos": 501
+    }
+   ]
+  },
+  {
+   "id": "K9",
+   "status": "certain",
+   "candidates": [
+    9
+   ],
+   "emne": "Bedste løfter-pokal",
+   "kategori": "internationalt",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "EC's forslag om at erstatte bedste løfter-pokalen ved IPF-mesterskaber med certifikater blev trukket tilbage efter en heftig debat.",
+   "citat": "Bedste løfter pokalen erstattes med certifikater. Efter en heftig debat blev forslaget trukket tilbage.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 512,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Bedste løfter pokalen erstattes med certifikater. Efter en heftig debat blev forslaget trukket tilbage.",
+     "citat_pos": 512
+    },
+    {
+     "citat": "Bedste løfter pokalen erstattes med certifikater. Efter en heftig debat blev forslaget trukket tilbage.",
+     "citat_pos": 512
+    }
+   ]
+  },
+  {
+   "id": "K10",
+   "status": "certain",
+   "candidates": [
+    10
+   ],
+   "emne": "Fortsættelse i konkurrencen efter bomb-out",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Sveriges forslag om at en løfter ikke længere kan fortsætte i konkurrencen efter at have bombet ud, og at der ikke kan uddeles disciplinmedaljer til løftere, der ikke gennemfører konkurrencen, blev nedstemt.",
+   "citat": "Det skal ikke længere være muligt at forsætte i konkurrencen, hvis man bummede ud, og der kan ikke uddeles disciplinmedaljer til løftere, der ikke gennemføre konkurrencen. Forslaget blev nedstemt.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 544,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det skal ikke længere være muligt at forsætte i konkurrencen, hvis man bummede ud, og der kan ikke uddeles disciplinmedaljer til løftere, der ikke gennemføre konkurrencen. Forslaget blev nedstemt.",
+     "citat_pos": 544
+    },
+    {
+     "citat": "Det skal ikke længere være muligt at forsætte i konkurrencen, hvis man bummede ud, og der kan ikke uddeles disciplinmedaljer til løftere, der ikke gennemføre konkurrencen. Forslaget blev nedstemt.",
+     "citat_pos": 544
+    }
+   ]
+  },
+  {
+   "id": "K11",
+   "status": "certain",
+   "candidates": [
+    11
+   ],
+   "emne": "Vægtskiver til rekordforsøg",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Der tilføjes nye vægte til rekordsætning, nemlig skiver på 1 kg, 1,5 kg og 2 kg.",
+   "citat": "Tilføjelse af nye vægte til rekordsætning. 1kg, 1,5kg,2kg skiver. Forslaget blev vedtaget.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 576,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Tilføjelse af nye vægte til rekordsætning. 1kg, 1,5kg,2kg skiver. Forslaget blev vedtaget.",
+     "citat_pos": 576
+    },
+    {
+     "citat": "Tilføjelse af nye vægte til rekordsætning. 1kg, 1,5kg,2kg skiver. Forslaget blev vedtaget.",
+     "citat_pos": 576
+    }
+   ]
+  },
+  {
+   "id": "K12",
+   "status": "certain",
+   "candidates": [
+    12
+   ],
+   "emne": "Diskvalifikationsgrunde i dommerreglerne",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Diskvalifikationsgrundene i IPF's dommerregler præciseres, så der står \"Uncompleted lift\" under den gule markering.",
+   "citat": "Præcisering af diskvalifikationsgrunde i dommerreglerne, så der står ”Uncompleatet lift” under den gule markering. Forslaget blev vedtaget.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 593,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Præcisering af diskvalifikationsgrunde i dommerreglerne, så der står ”Uncompleatet lift” under den gule markering. Forslaget blev vedtaget.",
+     "citat_pos": 593
+    },
+    {
+     "citat": "Præcisering af diskvalifikationsgrunde i dommerreglerne, så der står ”Uncompleatet lift” under den gule markering. Forslaget blev vedtaget.",
+     "citat_pos": 593
+    }
+   ]
+  },
+  {
+   "id": "K13",
+   "status": "certain",
+   "candidates": [
+    13
+   ],
+   "emne": "Snoning af stropper på dragter og trikoter",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Det er forbudt at sno stropperne på dragter og trikoter.",
+   "citat": "Forbud mod at sno stropperne på dragter samt trikoter. Forslaget blev vedtaget.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 613,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forbud mod at sno stropperne på dragter samt trikoter. Forslaget blev vedtaget.",
+     "citat_pos": 613
+    },
+    {
+     "citat": "Forbud mod at sno stropperne på dragter samt trikoter. Forslaget blev vedtaget.",
+     "citat_pos": 613
+    }
+   ]
+  },
+  {
+   "id": "K14",
+   "status": "certain",
+   "candidates": [
+    14
+   ],
+   "emne": "T-shirt under løft",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Der skal bruges T-shirt under udførelsen af alle løft, undtagen når der bruges bænkpresstrøje.",
+   "citat": "Brug af T-shirts under udførsels af alle løft, undtagen ved brug af bænkprestrøje. Forslaget blev godkendt.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 628,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Brug af T-shirts under udførsels af alle løft, undtagen ved brug af bænkprestrøje. Forslaget blev godkendt.",
+     "citat_pos": 628
+    },
+    {
+     "citat": "Brug af T-shirts under udførsels af alle løft, undtagen ved brug af bænkprestrøje. Forslaget blev godkendt.",
+     "citat_pos": 628
+    }
+   ]
+  },
+  {
+   "id": "K15",
+   "status": "certain",
+   "candidates": [
+    15
+   ],
+   "emne": "Fodtøj under konkurrence",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Under konkurrence må der kun bruges indendørssportssko eller dødløftslippers.",
+   "citat": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence. Forslaget blev godkendt.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 648,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence. Forslaget blev godkendt.",
+     "citat_pos": 648
+    },
+    {
+     "citat": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence. Forslaget blev godkendt.",
+     "citat_pos": 648
+    }
+   ]
+  },
+  {
+   "id": "K16",
+   "status": "certain",
+   "candidates": [
+    16
+   ],
+   "emne": "Sokker med udvendig gummi",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Sokker med udvendig gummi er ikke tilladt.",
+   "citat": "Sokker med udvendig gummi er ikke tilladt. Forslaget blev godkendt.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 663,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Sokker med udvendig gummi er ikke tilladt. Forslaget blev godkendt.",
+     "citat_pos": 663
+    },
+    {
+     "citat": "Sokker med udvendig gummi er ikke tilladt. Forslaget blev godkendt.",
+     "citat_pos": 663
+    }
+   ]
+  },
+  {
+   "id": "K17",
+   "status": "certain",
+   "candidates": [
+    17
+   ],
+   "emne": "Kontrol af knæbind før plateauet",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Danmarks og Coaching Commissions forslag om at den tekniske kontrollør skal bede løfteren trække knæbindene ned, inden løfteren går på plateauet, blev snævert nedstemt.",
+   "citat": "Den teknisk kontrollør vil bede løfteren om at trække knækogerne ned, inden denne går på plateauet. Forslaget blev snævert nedstemt.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 679,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Den teknisk kontrollør vil bede løfteren om at trække knækogerne ned, inden denne går på plateauet. Forslaget blev snævert nedstemt.",
+     "citat_pos": 679
+    },
+    {
+     "citat": "Den teknisk kontrollør vil bede løfteren om at trække knækogerne ned, inden denne går på plateauet. Forslaget blev snævert nedstemt.",
+     "citat_pos": 679
+    }
+   ]
+  },
+  {
+   "id": "K18",
+   "status": "certain",
+   "candidates": [
+    18
+   ],
+   "emne": "Fremmøde ved indvejning",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Løftere skal møde op ved 1. runde af indvejningen for at få lov at deltage. Det oprindelige svenske forslag om at melde deltagelse til overdommeren ved udstyrskontrollen 30 minutter før indvejningen blev ændret til dette.",
+   "citat": "Forslaget blev ændret til, at løftere skal møde op ved 1.runde af indvejningen for at kunne få lov at deltage. Ændringsforslaget blev vedtaget.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 724,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslaget blev ændret til, at løftere skal møde op ved 1.runde af indvejningen for at kunne få lov at deltage. Ændringsforslaget blev vedtaget.",
+     "citat_pos": 724
+    },
+    {
+     "citat": "Forslaget blev ændret til, at løftere skal møde op ved 1.runde af indvejningen for at kunne få lov at deltage. Ændringsforslaget blev vedtaget.",
+     "citat_pos": 724
+    }
+   ]
+  },
+  {
+   "id": "K19",
+   "status": "certain",
+   "candidates": [
+    19
+   ],
+   "emne": "Logostørrelse på udstyr",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Logoer, der ikke er på den godkendte liste, må have en størrelse på 5x2 cm.",
+   "citat": "Logo størrelse, som ikke er på den godkendte liste, ændres til 5x2cm. Forslaget blev godkendt.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 751,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Logo størrelse, som ikke er på den godkendte liste, ændres til 5x2cm. Forslaget blev godkendt.",
+     "citat_pos": 751
+    },
+    {
+     "citat": "Logo størrelse, som ikke er på den godkendte liste, ændres til 5x2cm. Forslaget blev godkendt.",
+     "citat_pos": 751
+    }
+   ]
+  },
+  {
+   "id": "K20",
+   "status": "certain",
+   "candidates": [
+    20
+   ],
+   "emne": "Afslutning af squat",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Reglen ændres, så løfteren frivilligt og under fuld kontrol skal rejse sig til oprejst stilling med låste knæ (\"The lifter must recover at will, under full control, to an upright position with the knees locked\").",
+   "citat": "The lifter must recover at will, under full control, to an upright position with the knees locked. Den markerede tekst blev godkendt.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 769,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The lifter must recover at will, under full control, to an upright position with the knees locked. Den markerede tekst blev godkendt.",
+     "citat_pos": 769
+    },
+    {
+     "citat": "The lifter must recover at will, under full control, to an upright position with the knees locked. Den markerede tekst blev godkendt.",
+     "citat_pos": 769
+    }
+   ]
+  },
+  {
+   "id": "K21",
+   "status": "certain",
+   "candidates": [
+    21
+   ],
+   "emne": "Nedadgående bevægelse i squat",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Et forslag til de tekniske regler om nedadgående bevægelse blev forkastet uden afstemning, da ingen ville vedkende sig forslaget.",
+   "citat": "Forslaget omkring nedadgået bevægelse ville ingen vedkende sig, og dette blev forkastet uden afstemning.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 791,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslaget omkring nedadgået bevægelse ville ingen vedkende sig, og dette blev forkastet uden afstemning.",
+     "citat_pos": 791
+    },
+    {
+     "citat": "Forslaget omkring nedadgået bevægelse ville ingen vedkende sig, og dette blev forkastet uden afstemning.",
+     "citat_pos": 791
+    }
+   ]
+  },
+  {
+   "id": "K22",
+   "status": "certain",
+   "candidates": [
+    22
+   ],
+   "emne": "Liggestilling i bænkpres",
+   "kategori": "internationalt",
+   "udfald": "trukket",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Sveriges og EC's forslag om at løfteren skal ligge så fladt som muligt på bænken blev trukket tilbage.",
+   "citat": "Løfteren skal ligge så fladt som muligt på bænken. Forslaget blev trukket tilbage.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 810,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Løfteren skal ligge så fladt som muligt på bænken. Forslaget blev trukket tilbage.",
+     "citat_pos": 810
+    },
+    {
+     "citat": "Løfteren skal ligge så fladt som muligt på bænken. Forslaget blev trukket tilbage.",
+     "citat_pos": 810
+    }
+   ]
+  },
+  {
+   "id": "K23",
+   "status": "certain",
+   "candidates": [
+    23
+   ],
+   "emne": "Fødder på bænken i bænkpres",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Forslaget om at løfteren ikke må placere fødderne på bænken for at øge sit opspænd blev nedstemt.",
+   "citat": "Løfteren må ikke placere fødderne på bænken for at øge sit opspænd. Forslaget blev nedstemt.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 823,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Løfteren må ikke placere fødderne på bænken for at øge sit opspænd. Forslaget blev nedstemt.",
+     "citat_pos": 823
+    },
+    {
+     "citat": "Løfteren må ikke placere fødderne på bænken for at øge sit opspænd. Forslaget blev nedstemt.",
+     "citat_pos": 823
+    }
+   ]
+  },
+  {
+   "id": "K24",
+   "status": "certain",
+   "candidates": [
+    24
+   ],
+   "emne": "Fødderne under bænken i bænkpres",
+   "kategori": "internationalt",
+   "udfald": "trukket",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Forslaget om at løfteren ikke må lade sine fødder røre hinanden under bænken blev trukket tilbage.",
+   "citat": "Løfteren må ikke lade sine fødder berører hinanden under bænken. Forslaget blev trukket tilbage.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 838,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Løfteren må ikke lade sine fødder berører hinanden under bænken. Forslaget blev trukket tilbage.",
+     "citat_pos": 838
+    },
+    {
+     "citat": "Løfteren må ikke lade sine fødder berører hinanden under bænken. Forslaget blev trukket tilbage.",
+     "citat_pos": 838
+    }
+   ]
+  },
+  {
+   "id": "K26",
+   "status": "certain",
+   "candidates": [
+    26,
+    25
+   ],
+   "emne": "Nedadgående bevægelse i dødløft",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Sveriges forslag om at et dødløft ikke skal underkendes, hvis løfteren har en lille nedadgående bevægelse i slutningen på grund af et balanceproblem, men opnår udstrakt position, faldt uden afstemning, da der ikke var nogen sekundant.",
+   "citat": "Forslaget faldt uden afstemning, da der ikke var nogen sekundant.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 879,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "men opnår udstrakt position skal løftet ikke underkendes. Forslaget faldt uden afstemning, da der ikke var nogen sekundant.",
+     "citat_pos": 871
+    },
+    {
+     "citat": "Hvis en løfter har en lille nedadgående bevægelse i slutningen af et dødløft grundet et balanceproblem, men opnår udstrakt position skal løftet ikke underkendes. Forslaget faldt uden afstemning, da der ikke var nogen sekundant.",
+     "citat_pos": 855
+    }
+   ]
+  },
+  {
+   "id": "K27",
+   "status": "certain",
+   "candidates": [
+    27
+   ],
+   "emne": "Størrelse på A-gruppen",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "A-gruppen ændres, så den sammensættes af 8-14 løftere i stedet for 8-12 løftere.",
+   "citat": "Ændring af sammensætningen for A gruppen fra 8-12 løftere til 8-14 løftere. Forslaget blev godkendt.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 892,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ændring af sammensætningen for A gruppen fra 8-12 løftere til 8-14 løftere. Forslaget blev godkendt.",
+     "citat_pos": 892
+    },
+    {
+     "citat": "Ændring af sammensætningen for A gruppen fra 8-12 løftere til 8-14 løftere. Forslaget blev godkendt.",
+     "citat_pos": 892
+    }
+   ]
+  },
+  {
+   "id": "K28",
+   "status": "certain",
+   "candidates": [
+    28
+   ],
+   "emne": "Pause mellem discipliner ved én løftegruppe",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Norges forslag om at ændre pausen mellem disciplinerne fra 20 til 30 minutter, når der kun er én løftegruppe, blev nedstemt.",
+   "citat": "Ændring af pause mellem disciplinerne fra 20 til 30 minutter ved kun en løftegruppe. Forslaget blev nedstemt.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 912,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ændring af pause mellem disciplinerne fra 20 til 30 minutter ved kun en løftegruppe. Forslaget blev nedstemt.",
+     "citat_pos": 912
+    },
+    {
+     "citat": "Ændring af pause mellem disciplinerne fra 20 til 30 minutter ved kun en løftegruppe. Forslaget blev nedstemt.",
+     "citat_pos": 912
+    }
+   ]
+  },
+  {
+   "id": "K29",
+   "status": "certain",
+   "candidates": [
+    29
+   ],
+   "emne": "Pause mellem discipliner ved flere løftegrupper",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved mere end én løftegruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter.",
+   "citat": "Ved mere end en gruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter. Forslaget blev enstemmigt vedtaget.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 935,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ved mere end en gruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter. Forslaget blev enstemmigt vedtaget.",
+     "citat_pos": 935
+    },
+    {
+     "citat": "Ved mere end en gruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter. Forslaget blev enstemmigt vedtaget.",
+     "citat_pos": 935
+    }
+   ]
+  },
+  {
+   "id": "K30",
+   "status": "certain",
+   "candidates": [
+    30
+   ],
+   "emne": "Vægtøgning på 0,5 kg",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Frankrigs forslag om at tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, også når det ikke er et rekordforsøg, blev nedstemt.",
+   "citat": "Tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv om dette ikke ville være en rekord. Forslaget blev nedstemt.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 956,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv om dette ikke ville være en rekord. Forslaget blev nedstemt.",
+     "citat_pos": 956
+    },
+    {
+     "citat": "Tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv om dette ikke ville være en rekord. Forslaget blev nedstemt.",
+     "citat_pos": 956
+    }
+   ]
+  },
+  {
+   "id": "K31",
+   "status": "certain",
+   "candidates": [
+    31
+   ],
+   "emne": "Dommernes markering af underkendt løft",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "TC's forslag om at dommerne kun skal markere et underkendt løft med ét fejlkort blev nedstemt.",
+   "citat": "Dommerne skal kun markere et underkendt løft med et fejlkort. Forslaget blev nedstemt.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 979,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Dommerne skal kun markere et underkendt løft med et fejlkort. Forslaget blev nedstemt.",
+     "citat_pos": 979
+    },
+    {
+     "citat": "Dommerne skal kun markere et underkendt løft med et fejlkort. Forslaget blev nedstemt.",
+     "citat_pos": 979
+    }
+   ]
+  },
+  {
+   "id": "K32",
+   "status": "certain",
+   "candidates": [
+    32
+   ],
+   "emne": "Henvendelse om rengøring af stang eller platform",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "En henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør, og når denne er fraværende, til overdommeren.",
+   "citat": "En henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør og i denne fravær overdommeren. Forslaget blev godkendt.",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 995,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "En henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør og i denne fravær overdommeren. Forslaget blev godkendt.",
+     "citat_pos": 995
+    },
+    {
+     "citat": "En henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør og i denne fravær overdommeren. Forslaget blev godkendt.",
+     "citat_pos": 995
+    }
+   ]
+  },
+  {
+   "id": "K33",
+   "status": "certain",
+   "candidates": [
+    33
+   ],
+   "emne": "Dommerpåklædning",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Reglerne for dommerpåklædning præciseres, så det tydeligt fremgår, at grå jeans ikke er tilladt.",
+   "citat": "Dommerpåklædning, hvor det tydeligt fremgår at grå jeans ikke, er tilladt. Forslaget blev godkendt",
+   "side": 4,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1020,
+   "citat_side": 4,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Dommerpåklædning, hvor det tydeligt fremgår at grå jeans ikke, er tilladt. Forslaget blev godkendt",
+     "citat_pos": 1020
+    },
+    {
+     "citat": "Dommerpåklædning, hvor det tydeligt fremgår at grå jeans ikke, er tilladt. Forslaget blev godkendt",
+     "citat_pos": 1020
+    }
+   ]
+  },
+  {
+   "id": "K34",
+   "status": "certain",
+   "candidates": [
+    34
+   ],
+   "emne": "Internationale dommereksamener ved åbent VM",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "USAPL's forslag om at det ikke skal være muligt at tage en international kategori-dommereksamen ved et åbent verdensmesterskab blev nedstemt.",
+   "citat": "Det skal ikke være muligt at tage en international kategori eksamen ved et åbent verdensmesterskab. Forslaget blev nedstemt.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1037,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det skal ikke være muligt at tage en international kategori eksamen ved et åbent verdensmesterskab. Forslaget blev nedstemt.",
+     "citat_pos": 1037
+    },
+    {
+     "citat": "Det skal ikke være muligt at tage en international kategori eksamen ved et åbent verdensmesterskab. Forslaget blev nedstemt.",
+     "citat_pos": 1037
+    }
+   ]
+  },
+  {
+   "id": "K35",
+   "status": "certain",
+   "candidates": [
+    35
+   ],
+   "emne": "Teoretisk dommereksamen",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "En dommer kan tage en teoretisk eksamen om mod betaling.",
+   "citat": "En dommer kan tage en teoretisk eksamen om mod betaling. Forslaget blev vedtaget.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1058,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "En dommer kan tage en teoretisk eksamen om mod betaling. Forslaget blev vedtaget.",
+     "citat_pos": 1058
+    },
+    {
+     "citat": "En dommer kan tage en teoretisk eksamen om mod betaling. Forslaget blev vedtaget.",
+     "citat_pos": 1058
+    }
+   ]
+  },
+  {
+   "id": "K36",
+   "status": "certain",
+   "candidates": [
+    36
+   ],
+   "emne": "Genregistrering af internationale dommere",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Internationale dommere skal dømme mindst 2 internationale og 2 nationale konkurrencer for at kunne blive genregistreret.",
+   "citat": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregister. Forslaget blev godkendt.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1074,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregister. Forslaget blev godkendt.",
+     "citat_pos": 1074
+    },
+    {
+     "citat": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregister. Forslaget blev godkendt.",
+     "citat_pos": 1074
+    }
+   ]
+  },
+  {
+   "id": "K37",
+   "status": "certain",
+   "candidates": [
+    37
+   ],
+   "emne": "Dommerkategori ved åbent VM",
+   "kategori": "internationalt",
+   "udfald": "trukket",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Norges forslag om at kun internationale kategori 1-dommere kan dømme åbne verdensmesterskaber blev trukket tilbage.",
+   "citat": "Kun internationale kategori 1 dommere kan dømme åbne verdensmesterskaber. Forslaget blev trukket tilbage.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1095,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Kun internationale kategori 1 dommere kan dømme åbne verdensmesterskaber. Forslaget blev trukket tilbage.",
+     "citat_pos": 1095
+    },
+    {
+     "citat": "Kun internationale kategori 1 dommere kan dømme åbne verdensmesterskaber. Forslaget blev trukket tilbage.",
+     "citat_pos": 1095
+    }
+   ]
+  },
+  {
+   "id": "K38",
+   "status": "certain",
+   "candidates": [
+    38
+   ],
+   "emne": "Juryens adgang til at omstøde dommerafgørelser",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Frankrigs forslag om at en jury kan omstøde en afgørelse truffet af 3 enige dommere blev nedstemt.",
+   "citat": "En jury kan omstøde 3 enige dommere. Forslaget blev nedstemt.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1111,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "En jury kan omstøde 3 enige dommere. Forslaget blev nedstemt.",
+     "citat_pos": 1111
+    },
+    {
+     "citat": "En jury kan omstøde 3 enige dommere. Forslaget blev nedstemt.",
+     "citat_pos": 1111
+    }
+   ]
+  },
+  {
+   "id": "K39",
+   "status": "certain",
+   "candidates": [
+    39
+   ],
+   "emne": "Masterrekorder noteret i yngre kategorier",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "En master 3-rekord, der er højere end rekorderne i master 2, master 1 og åben klasse, skal noteres som rekord i alle disse kategorier.",
+   "citat": "En master 3 rekord som er højere end en master 2 og 1 og åben klasse skal noteres i alle kategorier. Forslaget blev godkendt.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1124,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "En master 3 rekord som er højere end en master 2 og 1 og åben klasse skal noteres i alle kategorier. Forslaget blev godkendt.",
+     "citat_pos": 1124
+    },
+    {
+     "citat": "En master 3 rekord som er højere end en master 2 og 1 og åben klasse skal noteres i alle kategorier. Forslaget blev godkendt.",
+     "citat_pos": 1124
+    }
+   ]
+  },
+  {
+   "id": "K40",
+   "status": "certain",
+   "candidates": [
+    40
+   ],
+   "emne": "Bænkpresrekorder sat i styrkeløft",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "EPF's og TC's forslag om at rekorder i enkeltdisciplinen bænkpres ikke kan sættes ved styrkeløftstævner blev nedstemt.",
+   "citat": "Bænkpres rekorder i enkeltdisciplinen bænkpres kan ikke sættes i styrkeløft. Forslaget blev nedstemt.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1153,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Bænkpres rekorder i enkeltdisciplinen bænkpres kan ikke sættes i styrkeløft. Forslaget blev nedstemt.",
+     "citat_pos": 1153
+    },
+    {
+     "citat": "Bænkpres rekorder i enkeltdisciplinen bænkpres kan ikke sættes i styrkeløft. Forslaget blev nedstemt.",
+     "citat_pos": 1153
+    }
+   ]
+  },
+  {
+   "id": "K41",
+   "status": "certain",
+   "candidates": [
+    41
+   ],
+   "emne": "Bona fide-forsøg",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "handling": "ophaevelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Sveriges forslag om at afskaffe bona fide-forsøg blev forkastet, da der ikke var nogen sekundant til forslaget.",
+   "citat": "Afskaffelse af bona fide forsøg. Da der ikke var nogen sekundant til forslaget, blev dette forkastet.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1169,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Afskaffelse af bona fide forsøg. Da der ikke var nogen sekundant til forslaget, blev dette forkastet.",
+     "citat_pos": 1169
+    },
+    {
+     "citat": "Afskaffelse af bona fide forsøg. Da der ikke var nogen sekundant til forslaget, blev dette forkastet.",
+     "citat_pos": 1169
+    }
+   ]
+  },
+  {
+   "id": "K42",
+   "status": "certain",
+   "candidates": [
+    42
+   ],
+   "emne": "Løfterækkefølge ved tildelt nyt forsøg",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Hvis en løfter får tildelt et nyt forsøg i 3. runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren tage forsøget lige efter sit eget foregående forsøg.",
+   "citat": "Hvis en løfter bliver tildelt et ny forsøg i 3 runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv. Forslaget blev vedtaget.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1190,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Hvis en løfter bliver tildelt et ny forsøg i 3 runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv. Forslaget blev vedtaget.",
+     "citat_pos": 1190
+    },
+    {
+     "citat": "Hvis en løfter bliver tildelt et ny forsøg i 3 runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv. Forslaget blev vedtaget.",
+     "citat_pos": 1190
+    }
+   ]
+  },
+  {
+   "id": "K43",
+   "status": "certain",
+   "candidates": [
+    43
+   ],
+   "emne": "Antal trænere og deres adgang til stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Antallet af trænere, der tilmeldes et stævne, skal overholde retningslinjerne for Head Coach, og de tilmeldte trænere skal have fri adgang til stævnet.",
+   "citat": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse skal have fri adgang til stævnet. Forslaget blev godkendt.",
+   "side": 5,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 1218,
+   "citat_side": 5,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse skal have fri adgang til stævnet. Forslaget blev godkendt.",
+     "citat_pos": 1218
+    },
+    {
+     "citat": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse skal have fri adgang til stævnet. Forslaget blev godkendt.",
+     "citat_pos": 1218
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Deltagelse i flere kategorier ved kombinationsstævner",
+     "tekst": "Ved IPF-kombinationsstævner kan en løfter deltage i flere kategorier, f.eks. både junior og senior, mod at der betales startgebyr og doping fee i hver kategori.",
+     "udfald": "vedtaget",
+     "span": [
+      227,
+      252
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Deltagelse i flere kategorier ved kombinationsstævner",
+     "tekst": "Ved kombinationsstævner kan løftere deltage i flere kategorier, mod at der betales startgebyr og doping fee i alle kategorierne. En juniorløfter kan fx deltage både som junior og senior ved samme mesterskab.",
+     "udfald": "vedtaget",
+     "span": [
+      227,
+      252
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Deltagelse i flere kategorier ved kombinationsstævner",
+     "tekst": "Ved kombinationsstævner kan en løfter deltage i flere kategorier, fx både junior og senior, mod at der betales startgebyr og doping fee i hver kategori.",
+     "udfald": "vedtaget",
+     "span": [
+      227,
+      252
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Flere kategorier ved kombinationsstævner",
+     "tekst": "Ved kombinationsstævner må en løfter deltage i flere kategorier, fx både junior og senior ved samme mesterskab. Det er dog på betingelse af, at der betales startgebyr og doping fee i alle de kategorier, der deltages i.",
+     "udfald": "vedtaget",
+     "span": [
+      227,
+      252
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Deltagelse i flere kategorier ved kombinationsstævner",
+     "tekst": "Ved kombinationsstævner (IPF) kan en løfter deltage i flere kategorier, fx både som junior og senior ved samme mesterskab, mod at der betales startgebyr og doping fee i alle kategorierne.",
+     "udfald": "vedtaget",
+     "span": [
+      227,
+      252
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget omkring at man ved kombinationsstævner kan deltage i flere kategorier blev vedtaget, dog mod at der betales startgebyr samt doping Fee i alle kategorierne."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget omkring at man ved kombinationsstævner kan deltage i flere kategorier blev vedtaget, dog mod at der betales startgebyr samt doping Fee i alle kategorierne."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget omkring at man ved kombinationsstævner kan deltage i flere kategorier blev vedtaget, dog mod at der betales startgebyr samt doping Fee i alle kategorierne."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Kvalifikationskrav til VM",
+     "tekst": "Norges forslag om kvalifikationskrav til VM blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      273,
+      280
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Kvalifikationskrav VM",
+     "tekst": "Norge foreslog kvalifikationskrav til VM. Forslaget blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      273,
+      280
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Kvalifikationskrav til VM",
+     "tekst": "Norge foreslog kvalifikationskrav til VM. Forslaget blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      273,
+      280
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Kvalifikationskrav til VM",
+     "tekst": "Norges forslag om ændrede kvalifikationskrav til VM blev trukket tilbage, og der blev derfor ikke indført nye kvalifikationskrav.",
+     "udfald": "trukket",
+     "span": [
+      273,
+      280
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Kvalifikationskrav til VM (IPF)",
+     "tekst": "Forslag om at indføre kvalifikationskrav til VM i IPF. Forslaget blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      273,
+      280
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Kvalifikationskrav til VM. Forslaget blev trukket tilbage"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Kvalifikationskrav til VM. Forslaget blev trukket tilbage"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Kvalifikationskrav til VM. Forslaget blev trukket tilbage"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "World Games klassisk styrkeløft",
+     "tekst": "Forslag om at World Games skal være klassisk fra 2021 blev trukket, da programmet ikke kan ændres; World Games bliver klassisk fra 2025, hvis nationerne får bedre styr på antidopingarbejdet.",
+     "udfald": "trukket",
+     "span": [
+      283,
+      298
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Klassisk World Games",
+     "tekst": "Forslag om at World Games skal være klassisk fra 2021 blev trukket, da programmet ikke kan ændres mod 2021. World Games bliver klassisk fra 2025, hvis nationerne får bedre styr på antidoping.",
+     "udfald": "trukket",
+     "span": [
+      307,
+      325
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Klassisk styrkeløft ved World Games",
+     "tekst": "Forslag om at World Games skal være klassisk fra 2021 blev trukket, da programmet ikke kan ændres mod 2021. Det bliver klassisk fra 2025, hvis nationerne får bedre styr på antidopingarbejdet.",
+     "udfald": "trukket",
+     "span": [
+      283,
+      307
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "World Games klassisk styrkeløft",
+     "tekst": "Forslaget om at World Games skal være klassisk fra 2021 blev trukket tilbage, da programmet ikke kunne ændres inden 2021. World Games bliver dog klassisk fra 2025, hvis nationerne får bedre styr på antidopingarbejdet.",
+     "udfald": "trukket",
+     "span": [
+      283,
+      307
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Klassisk styrkeløft ved World Games",
+     "tekst": "Forslag om at World Games skal være klassisk styrkeløft fra 2021. Forslaget blev trukket, da programmet for 2021 ikke kan ændres; World Games forventes klassisk fra 2025, hvis nationerne får bedre styr på antidopingarbejdet.",
+     "udfald": "trukket",
+     "span": [
+      283,
+      307
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "World Games skal være klassisk fra 2021. Forslaget blev efter en hed debat trukket tilbage, idet der ikke kan ændres i programmet mod 2021."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "World Games skal være klassisk fra 2021. Forslaget blev efter en hed debat trukket tilbage, idet der ikke kan ændres i programmet mod 2021."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "World Games skal være klassisk fra 2021. Forslaget blev efter en hed debat trukket tilbage, idet der ikke kan ændres i programmet mod 2021."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Startalder sub-junior",
+     "tekst": "Forslag om at sub-junior-status starter i hele det kalenderår, hvor man fylder 14, i stedet for at man skal være fyldt 14, blev nedstemt. Nationer må dog afholde mesterskaber for løftere under 14 år.",
+     "udfald": "forkastet",
+     "span": [
+      332,
+      361
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Startalder sub-junior",
+     "tekst": "Forslag om at sub-junior-deltagelse starter i det kalenderår man fylder 14 i stedet for ved fyldt 14 år blev nedstemt. Nationer må dog afholde mesterskaber for løftere under 14 år.",
+     "udfald": "forkastet",
+     "span": [
+      359,
+      376
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Startalder sub-junior",
+     "tekst": "Forslag om at sub-junior-status starter i det kalenderår, man fylder 14, frem for når man er fyldt 14, blev nedstemt. Nationer må afholde mesterskaber for løftere under 14 år.",
+     "udfald": "forkastet",
+     "span": [
+      359,
+      376
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Aldersgrænse for Sub-junior",
+     "tekst": "Forslaget om, at man kan deltage som Sub-junior i hele det kalenderår, hvor man fylder 14 år, blev nedstemt, så den eksisterende regel om at være fyldt 14 år fortsat gælder. Nationer må dog stadig afholde mesterskaber for løftere under 14 år.",
+     "udfald": "forkastet",
+     "span": [
+      332,
+      361
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Aldersgrænse for sub-junior",
+     "tekst": "Forslag om at man kan deltage som sub-junior i hele det kalenderår, hvor man fylder 14, i stedet for først når man er fyldt 14, blev nedstemt. Nationerne må dog gerne afholde mesterskaber for løftere under 14 år.",
+     "udfald": "forkastet",
+     "span": [
+      332,
+      361
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af starttidspunktet for deltagelse som Sub-junior til hele det kalenderår, hvor man fylder 14, frem for de eksisterede regler, hvor man skal være fyldt 14 blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af starttidspunktet for deltagelse som Sub-junior til hele det kalenderår, hvor man fylder 14, frem for de eksisterede regler, hvor man skal være fyldt 14 blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af starttidspunktet for deltagelse som Sub-junior til hele det kalenderår, hvor man fylder 14, frem for de eksisterede regler, hvor man skal være fyldt 14 blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Medaljer master 4 herrer og master 3 damer",
+     "tekst": "Forslag om at afskaffe vægtklassemedaljer til master 4 herrer og master 3 damer og kun konkurrere på IPF-formel på tværs af vægtklasser blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      379,
+      394
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Medaljer master vægtklasser",
+     "tekst": "Forslag om at afskaffe vægtklassemedaljer til master 4 herrer og master 3 damer og kun konkurrere på IPF-formel blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      410,
+      414
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Medaljer til master 3 og 4 i vægtklasser",
+     "tekst": "Forslag om at afskaffe vægtklassemedaljer til master 4 herrer og master 3 damer og kun konkurrere på IPF-formel blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      410,
+      414
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Medaljer til master 4 herre og master 3 damer",
+     "tekst": "Forslaget om at afskaffe medaljer til master 4 herrer og master 3 damer i vægtklasserne og i stedet kun lade dem konkurrere om IPF-formel (tidligere Wilks point) på tværs af vægtklasserne blev snævert nedstemt. Medaljer til disse masterkategorier består derfor.",
+     "udfald": "forkastet",
+     "span": [
+      379,
+      387
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Medaljer i vægtklasser for master 3 kvinder og master 4 mænd",
+     "tekst": "Forslag om at afskaffe medaljer i vægtklasserne for master 4 herrer og master 3 damer, så de kun konkurrerer på IPF-formel på tværs af vægtklasser, blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      379,
+      394
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "forkastet",
+     "handling": "ophaevelse",
+     "niveau": "eksternt_krav",
+     "citat": "I stedet skulle løfterne kun konkurrer på IPF formular (tidligere Wilks point) på tværs af vægtklasserne. Forslaget blev snævert nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "forkastet",
+     "handling": "ophaevelse",
+     "niveau": "eksternt_krav",
+     "citat": "I stedet skulle løfterne kun konkurrer på IPF formular (tidligere Wilks point) på tværs af vægtklasserne. Forslaget blev snævert nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "forkastet",
+     "handling": "ophaevelse",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget blev snævert nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 6,
+     "emne": "Vægtklasser for kvinder på nationsholdene",
+     "tekst": "Forslaget om at tilføje en vægtklasse for kvinder, eller at gå tilbage til de gamle vægtklasser, så der er lige mange herre- og dameløftere på nationsholdene, blev trukket tilbage til en senere kongres.",
+     "udfald": "trukket",
+     "span": [
+      441,
+      449
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 5,
+     "emne": "Vægtklasser for kvinder (IPF)",
+     "tekst": "Forslag om at tilføje en vægtklasse for kvinder eller vende tilbage til de gamle vægtklasser blev trukket tilbage til en senere kongres.",
+     "udfald": "trukket",
+     "span": [
+      417,
+      449
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tilføjelse af en vægtklasse for kvinder eller ændring af vægtklasserne til de gamle således, at der var lige mange herre- og dameløftere på nationsholdene. Forslaget blev trukket tilbage til en senere kongres"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tilføjelse af en vægtklasse for kvinder eller ændring af vægtklasserne til de gamle således, at der var lige mange herre- og dameløftere på nationsholdene. Forslaget blev trukket tilbage til en senere kongres"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget blev trukket tilbage til en senere kongres"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 5,
+     "emne": "Antal kvinder på nationshold ved VM",
+     "tekst": "Der må tilmeldes en ekstra kvinde pr. nation, så der i open er 8 kvinder og i subjunior/junior 9 kvinder. Vægtklassen er valgfri, men max 2 deltagere pr. vægtklasse pr. nation. Forslag om ny vægtklasse eller gamle vægtklasser blev trukket.",
+     "udfald": "vedtaget",
+     "span": [
+      450,
+      477
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 5,
+     "emne": "Antal kvinder på nationshold VM",
+     "tekst": "Der må tilmeldes en ekstra kvinde på holdene, så der i open er 8 kvinder og i subjunior/junior 9 kvinder. Vægtklassen er valgfri, men max 2 deltagere pr. vægtklasse pr. nation.",
+     "udfald": "vedtaget",
+     "span": [
+      454,
+      477
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 5,
+     "emne": "Antal kvinder på nationsholdene ved VM",
+     "tekst": "Der må tilmeldes en ekstra kvinde pr. nation: 8 kvinder i open og 9 i subjunior/junior. Vægtklassen er valgfri, men der kan stadig kun være 2 deltagere pr. vægtklasse pr. nation.",
+     "udfald": "vedtaget",
+     "span": [
+      454,
+      477
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Antal kvinder på nationsholdene",
+     "tekst": "Nationsholdene må tilmelde en ekstra kvinde, så der i open må være 8 kvinder og i subjunior/junior 9 kvinder. Valget af vægtklasse er frit, men der må fortsat kun være 2 deltagere i samme vægtklasse pr. nation.",
+     "udfald": "vedtaget",
+     "span": [
+      449,
+      462
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 6,
+     "emne": "Antal kvinder på nationshold ved IPF-mesterskaber",
+     "tekst": "Der må tilmeldes en ekstra kvinde på nationsholdene, så der i open kan være 8 kvinder og i subjunior/junior 9 kvinder. Vægtklassen er valgfri, men der kan stadig kun være 2 deltagere pr. vægtklasse pr. nation.",
+     "udfald": "vedtaget",
+     "span": [
+      450,
+      477
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "det blev vedtaget, at der må tilmeldes en ekstra kvinde på holdene fra således, at der i open nu er 8 kvinder og subjunior/junior 9 kvinder."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "det blev vedtaget, at der må tilmeldes en ekstra kvinde på holdene fra således, at der i open nu er 8 kvinder og subjunior/junior 9 kvinder."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "men det blev vedtaget, at der må tilmeldes en ekstra kvinde på holdene fra således, at der i open nu er 8 kvinder og subjunior/junior 9 kvinder."
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 6,
+     "emne": "Holdpokaler",
+     "tekst": "Holdpokaler ved IPF-mesterskaber erstattes med certifikater.",
+     "udfald": "vedtaget",
+     "span": [
+      501,
+      509
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 6,
+     "emne": "Holdpokaler",
+     "tekst": "Holdpokaler erstattes med certifikater.",
+     "udfald": "vedtaget",
+     "span": [
+      501,
+      509
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 6,
+     "emne": "Holdpokaler ved VM",
+     "tekst": "Holdpokaler erstattes med certifikater.",
+     "udfald": "vedtaget",
+     "span": [
+      501,
+      509
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 7,
+     "emne": "Holdpokaler",
+     "tekst": "Holdpokalerne ved mesterskaber erstattes af certifikater.",
+     "udfald": "vedtaget",
+     "span": [
+      501,
+      509
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 7,
+     "emne": "Holdpokaler ved IPF-mesterskaber",
+     "tekst": "Holdpokalerne ved IPF-mesterskaber erstattes med certifikater.",
+     "udfald": "vedtaget",
+     "span": [
+      501,
+      509
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Holdpokalerne skal erstattes med certifikater. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Holdpokalerne skal erstattes med certifikater. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Holdpokalerne skal erstattes med certifikater. Forslaget blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "status": "certain",
+   "role": "decision",
+   "key": "K9",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 7,
+     "emne": "Bedste løfter-pokal",
+     "tekst": "Forslag om at erstatte bedste løfter-pokalen med certifikater blev trukket, men det blev præciseret at løfterne skal deltage i banketterne, ellers afskaffes pokalerne.",
+     "udfald": "trukket",
+     "span": [
+      526,
+      541
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 7,
+     "emne": "Bedste løfter-pokal og deltagelse i banket",
+     "tekst": "Forslag om at erstatte bedste løfter-pokalen med certifikater blev trukket. Det blev præciseret, at løfterne skal deltage i banketterne, ellers afskaffes pokalerne.",
+     "udfald": "trukket",
+     "span": [
+      526,
+      541
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 8,
+     "emne": "Bedste løfter-pokal",
+     "tekst": "Forslaget om at erstatte bedste løfter-pokalen med certifikater blev trukket tilbage. Det blev samtidig tydeliggjort, at løfterne fremover skal deltage i banketterne, ellers afskaffes pokalerne.",
+     "udfald": "trukket",
+     "span": [
+      526,
+      541
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 8,
+     "emne": "Bedste løfter-pokal ved IPF-mesterskaber",
+     "tekst": "Forslag om at erstatte bedste løfter-pokalen med certifikater blev trukket tilbage. Det blev tydeliggjort, at løfterne fremover skal deltage i banketterne, ellers afskaffes pokalerne.",
+     "udfald": "trukket",
+     "span": [
+      512,
+      526
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Bedste løfter pokalen erstattes med certifikater. Efter en heftig debat blev forslaget trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Bedste løfter pokalen erstattes med certifikater. Efter en heftig debat blev forslaget trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Bedste løfter pokalen erstattes med certifikater. Efter en heftig debat blev forslaget trukket tilbage."
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "status": "certain",
+   "role": "decision",
+   "key": "K10",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 8,
+     "emne": "Fortsættelse efter bomb-out",
+     "tekst": "Forslag om at løfter ikke længere må fortsætte efter bomb-out, og at der ikke uddeles disciplinmedaljer til løftere der ikke gennemfører, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      544,
+      573
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 8,
+     "emne": "Fortsættelse efter bomb-out og disciplinmedaljer",
+     "tekst": "Forslag om at løftere ikke længere må fortsætte efter at have bombet ud, og at der ikke uddeles disciplinmedaljer til løftere, der ikke gennemfører, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      570,
+      573
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 9,
+     "emne": "Fortsættelse efter at have bommet et løft",
+     "tekst": "Forslaget om, at en løfter ikke længere må fortsætte i konkurrencen efter at have bommet ud, og at disciplinmedaljer ikke må uddeles til løftere, der ikke gennemfører konkurrencen, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      544,
+      570
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 9,
+     "emne": "Fortsættelse i konkurrencen efter bomb-out",
+     "tekst": "Forslag om at løftere, der bommer ud, ikke længere kan fortsætte i konkurrencen og ikke kan få disciplinmedaljer, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      544,
+      573
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Det skal ikke længere være muligt at forsætte i konkurrencen, hvis man bummede ud, og der kan ikke uddeles disciplinmedaljer til løftere, der ikke gennemføre konkurrencen. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Det skal ikke længere være muligt at forsætte i konkurrencen, hvis man bummede ud, og der kan ikke uddeles disciplinmedaljer til løftere, der ikke gennemføre konkurrencen. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Det skal ikke længere være muligt at forsætte i konkurrencen, hvis man bummede ud, og der kan ikke uddeles disciplinmedaljer til løftere, der ikke gennemføre konkurrencen. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "status": "certain",
+   "role": "decision",
+   "key": "K11",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 9,
+     "emne": "Skiver til rekordsætning",
+     "tekst": "Der tilføjes nye vægte til rekordsætning: 1 kg, 1,5 kg og 2 kg skiver.",
+     "udfald": "vedtaget",
+     "span": [
+      576,
+      590
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 9,
+     "emne": "Skiver til rekordsætning",
+     "tekst": "Der tilføjes 1 kg, 1,5 kg og 2 kg skiver til rekordsætning.",
+     "udfald": "vedtaget",
+     "span": [
+      576,
+      590
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 10,
+     "emne": "Vægte til rekordsætning",
+     "tekst": "Der må anvendes 1 kg, 1,5 kg og 2 kg skiver til rekordsætning.",
+     "udfald": "vedtaget",
+     "span": [
+      576,
+      590
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 10,
+     "emne": "Vægtskiver til rekordforsøg",
+     "tekst": "Der tilføjes skiver på 1 kg, 1,5 kg og 2 kg til brug ved rekordsætning.",
+     "udfald": "vedtaget",
+     "span": [
+      576,
+      590
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tilføjelse af nye vægte til rekordsætning. 1kg, 1,5kg,2kg skiver. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tilføjelse af nye vægte til rekordsætning. 1kg, 1,5kg,2kg skiver. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tilføjelse af nye vægte til rekordsætning. 1kg, 1,5kg,2kg skiver. Forslaget blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "status": "certain",
+   "role": "decision",
+   "key": "K12",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 10,
+     "emne": "Diskvalifikationsgrunde i dommerregler",
+     "tekst": "Diskvalifikationsgrunde præciseres, så der står \"Uncompleted lift\" under den gule markering.",
+     "udfald": "vedtaget",
+     "span": [
+      593,
+      610
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 10,
+     "emne": "Diskvalifikationsgrunde i dommerreglerne",
+     "tekst": "Diskvalifikationsgrunde præciseres, så der under den gule markering står \"Uncompleted lift\".",
+     "udfald": "vedtaget",
+     "span": [
+      593,
+      607
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 11,
+     "emne": "Diskvalifikation for uafsluttet løft",
+     "tekst": "Dommerreglerne præciseres, så 'Uncompleted lift' står som diskvalifikationsgrund under den gule markering.",
+     "udfald": "vedtaget",
+     "span": [
+      593,
+      607
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 11,
+     "emne": "Diskvalifikationsgrunde i dommerreglerne",
+     "tekst": "Diskvalifikationsgrundene i dommerreglerne præciseres, så der står \"Uncompleted lift\" under den gule markering.",
+     "udfald": "vedtaget",
+     "span": [
+      593,
+      610
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Præcisering af diskvalifikationsgrunde i dommerreglerne, så der står ”Uncompleatet lift” under den gule markering. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Præcisering af diskvalifikationsgrunde i dommerreglerne, så der står ”Uncompleatet lift” under den gule markering. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Præcisering af diskvalifikationsgrunde i dommerreglerne, så der står ”Uncompleatet lift” under den gule markering. Forslaget blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "status": "certain",
+   "role": "decision",
+   "key": "K13",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 11,
+     "emne": "Snoning af stropper på dragter",
+     "tekst": "Det er forbudt at sno stropperne på dragter og trikoter.",
+     "udfald": "vedtaget",
+     "span": [
+      613,
+      625
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 10,
+     "emne": "Udstyr: snoning af stropper",
+     "tekst": "Forbud mod at sno stropperne på dragter og trikoter.",
+     "udfald": "vedtaget",
+     "span": [
+      613,
+      625
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 11,
+     "emne": "Snoning af stropper på dragter",
+     "tekst": "Det er forbudt at sno stropperne på dragter og trikoter.",
+     "udfald": "vedtaget",
+     "span": [
+      613,
+      625
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 12,
+     "emne": "Snoede stropper på dragter og trikoter",
+     "tekst": "Det er forbudt at sno stropperne på dragter samt trikoter.",
+     "udfald": "vedtaget",
+     "span": [
+      613,
+      625
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 12,
+     "emne": "Snoning af stropper på dragter og trikoter",
+     "tekst": "Det er forbudt at sno stropperne på dragter og trikoter.",
+     "udfald": "vedtaget",
+     "span": [
+      613,
+      625
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forbud mod at sno stropperne på dragter samt trikoter. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forbud mod at sno stropperne på dragter samt trikoter. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forbud mod at sno stropperne på dragter samt trikoter. Forslaget blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "status": "certain",
+   "role": "decision",
+   "key": "K14",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 12,
+     "emne": "T-shirt under løft",
+     "tekst": "T-shirt skal bruges under udførelse af alle løft, undtagen ved brug af bænkpresstrøje.",
+     "udfald": "vedtaget",
+     "span": [
+      628,
+      645
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 9,
+     "emne": "Udstyr: T-shirt",
+     "tekst": "T-shirts skal bruges under alle løft, undtagen ved brug af bænkprestrøje.",
+     "udfald": "vedtaget",
+     "span": [
+      628,
+      645
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 12,
+     "emne": "T-shirt under løft",
+     "tekst": "T-shirt skal bruges under udførsel af alle løft, undtagen ved brug af bænkpresstrøje.",
+     "udfald": "vedtaget",
+     "span": [
+      628,
+      645
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 13,
+     "emne": "T-shirts under løft",
+     "tekst": "Brug af T-shirts under udførelsen af alle løft blev godkendt, undtagen ved bænkpres, hvor bænkprestrøje bruges.",
+     "udfald": "vedtaget",
+     "span": [
+      628,
+      645
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 13,
+     "emne": "T-shirt under løft",
+     "tekst": "Der skal bæres T-shirt under udførelsen af alle løft, undtagen ved brug af bænkprestrøje.",
+     "udfald": "vedtaget",
+     "span": [
+      628,
+      645
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Brug af T-shirts under udførsels af alle løft, undtagen ved brug af bænkprestrøje. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Brug af T-shirts under udførsels af alle løft, undtagen ved brug af bænkprestrøje. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Brug af T-shirts under udførsels af alle løft, undtagen ved brug af bænkprestrøje. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "status": "certain",
+   "role": "decision",
+   "key": "K15",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 13,
+     "emne": "Fodtøj under konkurrence",
+     "tekst": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      648,
+      660
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 8,
+     "emne": "Udstyr: sko",
+     "tekst": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      648,
+      660
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 13,
+     "emne": "Fodtøj under konkurrence",
+     "tekst": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      648,
+      660
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 14,
+     "emne": "Fodtøj under konkurrence",
+     "tekst": "Under konkurrence må der kun bruges indendørssportssko eller dødløftslippers.",
+     "udfald": "vedtaget",
+     "span": [
+      648,
+      657
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 14,
+     "emne": "Fodtøj under konkurrence",
+     "tekst": "Under konkurrence må der kun bruges indendørssportssko eller dødløftslippers.",
+     "udfald": "vedtaget",
+     "span": [
+      648,
+      660
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Der må kun bruges indendørssportssko eller dødløftslippers under konkurrence. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "status": "certain",
+   "role": "decision",
+   "key": "K16",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 14,
+     "emne": "Sokker med gummi",
+     "tekst": "Sokker med udvendig gummi er ikke tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      663,
+      673
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 7,
+     "emne": "Udstyr: sokker med gummi",
+     "tekst": "Sokker med udvendig gummi er ikke tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      663,
+      673
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 14,
+     "emne": "Sokker med gummi",
+     "tekst": "Sokker med udvendig gummi er ikke tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      663,
+      673
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 15,
+     "emne": "Sokker med udvendig gummi",
+     "tekst": "Sokker med udvendig gummi er ikke tilladt under konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      663,
+      670
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 15,
+     "emne": "Sokker med gummi",
+     "tekst": "Sokker med udvendig gummi er ikke tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      663,
+      673
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Sokker med udvendig gummi er ikke tilladt. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Sokker med udvendig gummi er ikke tilladt. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Sokker med udvendig gummi er ikke tilladt. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "status": "certain",
+   "role": "decision",
+   "key": "K17",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 15,
+     "emne": "Nedtrækning af knæbind før plateau",
+     "tekst": "Forslag om at teknisk kontrollør beder løfteren trække knæbind ned inden plateauet blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      679,
+      699
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 15,
+     "emne": "Nedtrækning af knæbind før plateau",
+     "tekst": "Forslag om at den tekniske kontrollør beder løfteren trække knæbind ned, inden løfteren går på plateauet, blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      695,
+      699
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 16,
+     "emne": "Knæbind trækkes ned før plateau",
+     "tekst": "Forslaget om, at den tekniske kontrollør skal bede løfteren om at trække knæbindene ned, inden løfteren går på plateauet, blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      679,
+      695
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 16,
+     "emne": "Kontrol af knæbind/knæsleeves før plateauet",
+     "tekst": "Forslag om at den tekniske kontrollør skal bede løfteren trække knæbeskytterne ned, inden løfteren går på plateauet, blev snævert nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      679,
+      699
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Den teknisk kontrollør vil bede løfteren om at trække knækogerne ned, inden denne går på plateauet. Forslaget blev snævert nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Den teknisk kontrollør vil bede løfteren om at trække knækogerne ned, inden denne går på plateauet. Forslaget blev snævert nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Den teknisk kontrollør vil bede løfteren om at trække knækogerne ned, inden denne går på plateauet. Forslaget blev snævert nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "status": "certain",
+   "role": "decision",
+   "key": "K18",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 16,
+     "emne": "Fremmøde ved indvejning",
+     "tekst": "Løftere skal møde op ved 1. runde af indvejningen for at kunne deltage (ændret fra forslag om melding til overdommer 30 min før indvejning).",
+     "udfald": "vedtaget",
+     "span": [
+      724,
+      748
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 11,
+     "emne": "Mødepligt ved første indvejningsrunde",
+     "tekst": "Løftere skal møde op ved 1. runde af indvejningen for at få lov at deltage (ændret fra forslag om melding til overdommer 30 min før).",
+     "udfald": "vedtaget",
+     "span": [
+      724,
+      745
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 16,
+     "emne": "Fremmøde til indvejning",
+     "tekst": "Løftere skal møde op ved 1. runde af indvejningen for at kunne få lov at deltage (ændret fra forslag om melding til overdommer 30 min. før indvejning).",
+     "udfald": "vedtaget",
+     "span": [
+      724,
+      745
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 17,
+     "emne": "Deltagelse ved indvejning",
+     "tekst": "For at få lov at deltage skal løfteren møde op ved 1. runde af indvejningen. Det oprindelige forslag om tilmelding til overdommeren 30 minutter før indvejningen blev ændret til dette krav.",
+     "udfald": "vedtaget",
+     "span": [
+      729,
+      745
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 17,
+     "emne": "Fremmøde ved indvejning",
+     "tekst": "Løftere skal møde op ved 1. runde af indvejningen for at få lov at deltage. (Det oprindelige forslag om at melde deltagelse til overdommeren ved udstyrskontrollen 30 min. før indvejningen blev ændret hertil.)",
+     "udfald": "vedtaget",
+     "span": [
+      724,
+      748
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget blev ændret til, at løftere skal møde op ved 1.runde af indvejningen for at kunne få lov at deltage. Ændringsforslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget blev ændret til, at løftere skal møde op ved 1.runde af indvejningen for at kunne få lov at deltage. Ændringsforslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget blev ændret til, at løftere skal møde op ved 1.runde af indvejningen for at kunne få lov at deltage. Ændringsforslaget blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 19,
+   "status": "certain",
+   "role": "decision",
+   "key": "K19",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 17,
+     "emne": "Logostørrelse på udstyr",
+     "tekst": "Logostørrelse for logoer, der ikke er på den godkendte liste, ændres til 5x2 cm.",
+     "udfald": "vedtaget",
+     "span": [
+      751,
+      766
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 12,
+     "emne": "Størrelse på logo uden for godkendt liste",
+     "tekst": "Logo, som ikke er på den godkendte liste, ændres til størrelse 5x2 cm.",
+     "udfald": "vedtaget",
+     "span": [
+      751,
+      766
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 17,
+     "emne": "Logostørrelse på udstyr",
+     "tekst": "Logo, der ikke er på den godkendte liste, ændres til størrelse 5x2 cm.",
+     "udfald": "vedtaget",
+     "span": [
+      751,
+      766
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 18,
+     "emne": "Logostørrelse",
+     "tekst": "Logoer, som ikke er på den godkendte liste, må maksimalt være 5 x 2 cm.",
+     "udfald": "vedtaget",
+     "span": [
+      751,
+      763
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 18,
+     "emne": "Logostørrelse på udstyr",
+     "tekst": "Logoer, som ikke er på den godkendte liste, må have en størrelse på 5x2 cm.",
+     "udfald": "vedtaget",
+     "span": [
+      751,
+      766
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Logo størrelse, som ikke er på den godkendte liste, ændres til 5x2cm. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Logo størrelse, som ikke er på den godkendte liste, ændres til 5x2cm. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Logo størrelse, som ikke er på den godkendte liste, ændres til 5x2cm. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 20,
+   "status": "certain",
+   "role": "decision",
+   "key": "K20",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 18,
+     "emne": "Teknisk regel: udretning i knæ",
+     "tekst": "Teksten \"The lifter must recover at will, under full control, to an upright position with the knees locked\" blev godkendt i squatreglerne.",
+     "udfald": "vedtaget",
+     "span": [
+      769,
+      791
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 19,
+     "emne": "Kriterier for at rejse sig i squat",
+     "tekst": "Løfteren skal kunne rejse sig op til oprejst position med låste knæ, under fuld kontrol og efter eget ønske.",
+     "udfald": "vedtaget",
+     "span": [
+      769,
+      786
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 19,
+     "emne": "Afslutning af squat",
+     "tekst": "I squat skal løfteren efter eget valg og under fuld kontrol rejse sig til oprejst position med låste knæ.",
+     "udfald": "vedtaget",
+     "span": [
+      769,
+      791
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "The lifter must recover at will, under full control, to an upright position with the knees locked. Den markerede tekst blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "The lifter must recover at will, under full control, to an upright position with the knees locked. Den markerede tekst blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "The lifter must recover at will, under full control, to an upright position with the knees locked. Den markerede tekst blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 21,
+   "status": "certain",
+   "role": "decision",
+   "key": "K21",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 20,
+     "emne": "Nedadgående bevægelse i løft",
+     "tekst": "Et forslag om nedadgående bevægelse i løft blev forkastet uden afstemning, da ingen ville støtte forslaget.",
+     "udfald": "forkastet",
+     "span": [
+      791,
+      805
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 20,
+     "emne": "Nedadgående bevægelse i squat",
+     "tekst": "Den del af det svenske squat-forslag, der vedrørte nedadgående bevægelse, blev forkastet uden afstemning.",
+     "udfald": "forkastet",
+     "span": [
+      791,
+      805
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget omkring nedadgået bevægelse ville ingen vedkende sig, og dette blev forkastet uden afstemning."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget omkring nedadgået bevægelse ville ingen vedkende sig, og dette blev forkastet uden afstemning."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget omkring nedadgået bevægelse ville ingen vedkende sig, og dette blev forkastet uden afstemning."
+    }
+   ]
+  },
+  {
+   "number": 22,
+   "status": "certain",
+   "role": "decision",
+   "key": "K22",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 21,
+     "emne": "Liggestilling på bænkpres",
+     "tekst": "Forslaget om, at løfteren skal ligge så fladt som muligt på bænken, blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      810,
+      823
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 21,
+     "emne": "Liggestilling på bænken",
+     "tekst": "Forslag om at løfteren skal ligge så fladt som muligt på bænken blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      810,
+      823
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren skal ligge så fladt som muligt på bænken. Forslaget blev trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren skal ligge så fladt som muligt på bænken. Forslaget blev trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren skal ligge så fladt som muligt på bænken. Forslaget blev trukket tilbage."
+    }
+   ]
+  },
+  {
+   "number": 23,
+   "status": "certain",
+   "role": "decision",
+   "key": "K23",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 19,
+     "emne": "Fødder på bænk ved bænkpres",
+     "tekst": "Forslag om at løfteren ikke må placere fødderne på bænken for at øge opspænd blev nedstemt. Forslag om at ligge så fladt som muligt og om at fødderne ikke må røre hinanden blev trukket.",
+     "udfald": "forkastet",
+     "span": [
+      823,
+      838
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 22,
+     "emne": "Fødder på bænken i bænkpres",
+     "tekst": "Løfteren må ikke placere fødderne på bænken for at øge sit opspænd. Forslaget blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      823,
+      838
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 22,
+     "emne": "Fødder på bænken i bænkpres",
+     "tekst": "Forslag om at løfteren ikke må placere fødderne på bænken for at øge opspændet blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      823,
+      838
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren må ikke placere fødderne på bænken for at øge sit opspænd. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren må ikke placere fødderne på bænken for at øge sit opspænd. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren må ikke placere fødderne på bænken for at øge sit opspænd. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 24,
+   "status": "certain",
+   "role": "decision",
+   "key": "K24",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 23,
+     "emne": "Fødder under bænken i bænkpres",
+     "tekst": "Forslaget om, at løfterens fødder ikke må berøre hinanden under bænken, blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      838,
+      852
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 23,
+     "emne": "Fødder der rører hinanden under bænken",
+     "tekst": "Forslag om at løfteren ikke må lade fødderne røre hinanden under bænken blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      838,
+      852
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren må ikke lade sine fødder berører hinanden under bænken. Forslaget blev trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren må ikke lade sine fødder berører hinanden under bænken. Forslaget blev trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Løfteren må ikke lade sine fødder berører hinanden under bænken. Forslaget blev trukket tilbage."
+    }
+   ]
+  },
+  {
+   "number": 25,
+   "status": "certain",
+   "role": "decision",
+   "key": "K26",
+   "verdict": "duplicate",
+   "reason": "Samme svenske forslag om nedadgående bevægelse i dødløft som kandidat 26, hvis citat viser udfaldet.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 24,
+     "emne": "Nedadgående bevægelse i slutningen af dødløft",
+     "tekst": "Forslaget om, at et dødløft ikke skal underkendes, hvis løfteren har en lille nedadgående bevægelse i slutningen grundet et balanceproblem, men opnår udstrakt position, faldt uden afstemning, da der ikke var nogen sekundant.",
+     "udfald": "forkastet",
+     "span": [
+      855,
+      879
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 26,
+     "reason": "Samme svenske forslag om nedadgående bevægelse i dødløft som kandidat 26, hvis citat viser udfaldet."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 26,
+     "reason": "Samme forslag om nedadgående bevægelse i dødløft som kandidat 26, hvis citat viser udfaldet."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 26,
+     "reason": "Samme forslag om nedadgående bevægelse i dødløft som kandidat 26, hvis citat viser udfaldet."
+    }
+   ]
+  },
+  {
+   "number": 26,
+   "status": "certain",
+   "role": "decision",
+   "key": "K26",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 20,
+     "emne": "Nedadgående bevægelse i dødløft",
+     "tekst": "Forslag om at et dødløft ikke underkendes ved lille nedadgående bevægelse pga. balanceproblem, hvis udstrakt position nås, faldt, da ingen var sekundant.",
+     "udfald": "forkastet",
+     "span": [
+      879,
+      889
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 24,
+     "emne": "Nedadgående bevægelse i dødløft",
+     "tekst": "Forslag om at et dødløft ikke skal underkendes ved en lille nedadgående bevægelse i slutningen grundet balanceproblem, når udstrakt position opnås, faldt uden afstemning, da der ikke var nogen sekundant.",
+     "udfald": "forkastet",
+     "span": [
+      879,
+      889
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslaget faldt uden afstemning, da der ikke var nogen sekundant."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "men opnår udstrakt position skal løftet ikke underkendes. Forslaget faldt uden afstemning, da der ikke var nogen sekundant."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Hvis en løfter har en lille nedadgående bevægelse i slutningen af et dødløft grundet et balanceproblem, men opnår udstrakt position skal løftet ikke underkendes. Forslaget faldt uden afstemning, da der ikke var nogen sekundant."
+    }
+   ]
+  },
+  {
+   "number": 27,
+   "status": "certain",
+   "role": "decision",
+   "key": "K27",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 21,
+     "emne": "Størrelse på A-gruppe",
+     "tekst": "A-gruppens sammensætning ændres fra 8-12 til 8-14 løftere.",
+     "udfald": "vedtaget",
+     "span": [
+      892,
+      909
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 13,
+     "emne": "Størrelse på A-gruppe",
+     "tekst": "A-gruppen ændres fra 8-12 løftere til 8-14 løftere.",
+     "udfald": "vedtaget",
+     "span": [
+      892,
+      909
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 18,
+     "emne": "Sammensætning af A-gruppe",
+     "tekst": "A-gruppen ændres fra 8-12 til 8-14 løftere.",
+     "udfald": "vedtaget",
+     "span": [
+      892,
+      909
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 25,
+     "emne": "Sammensætning af A-gruppe",
+     "tekst": "A-gruppen må sammensættes af 8-14 løftere, mod tidligere 8-12 løftere.",
+     "udfald": "vedtaget",
+     "span": [
+      892,
+      906
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 25,
+     "emne": "Størrelse på A-gruppen",
+     "tekst": "A-gruppen sammensættes af 8-14 løftere i stedet for 8-12 løftere.",
+     "udfald": "vedtaget",
+     "span": [
+      892,
+      909
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af sammensætningen for A gruppen fra 8-12 løftere til 8-14 løftere. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af sammensætningen for A gruppen fra 8-12 løftere til 8-14 løftere. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af sammensætningen for A gruppen fra 8-12 løftere til 8-14 løftere. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 28,
+   "status": "certain",
+   "role": "decision",
+   "key": "K28",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 22,
+     "emne": "Pause mellem discipliner ved én løftegruppe",
+     "tekst": "Forslag om at pausen mellem disciplinerne ved kun én løftegruppe ændres fra 20 til 30 minutter blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      912,
+      929
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 15,
+     "emne": "Pause mellem discipliner ved én gruppe",
+     "tekst": "Forslag om at ændre pausen mellem disciplinerne fra 20 til 30 minutter ved kun én løftegruppe blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      912,
+      929
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 20,
+     "emne": "Pause mellem discipliner ved én gruppe",
+     "tekst": "Forslag om at ændre pausen mellem disciplinerne fra 20 til 30 minutter ved kun én løftegruppe blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      912,
+      929
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 26,
+     "emne": "Pause mellem discipliner ved én løftegruppe",
+     "tekst": "Forslaget om at ændre pausen mellem disciplinerne fra 20 til 30 minutter ved kun én løftegruppe blev nedstemt, så pausen forbliver 20 minutter.",
+     "udfald": "forkastet",
+     "span": [
+      912,
+      929
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 26,
+     "emne": "Pause mellem discipliner ved én løftegruppe",
+     "tekst": "Forslag om at ændre pausen mellem disciplinerne fra 20 til 30 minutter, når der kun er én løftegruppe, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      912,
+      929
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af pause mellem disciplinerne fra 20 til 30 minutter ved kun en løftegruppe. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af pause mellem disciplinerne fra 20 til 30 minutter ved kun en løftegruppe. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ændring af pause mellem disciplinerne fra 20 til 30 minutter ved kun en løftegruppe. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 29,
+   "status": "certain",
+   "role": "decision",
+   "key": "K29",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 23,
+     "emne": "Pause mellem discipliner ved flere grupper",
+     "tekst": "Ved mere end én gruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter.",
+     "udfald": "vedtaget",
+     "span": [
+      935,
+      953
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 14,
+     "emne": "Pause mellem discipliner ved flere grupper",
+     "tekst": "Ved mere end én løftegruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter.",
+     "udfald": "vedtaget",
+     "span": [
+      935,
+      953
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 19,
+     "emne": "Pause mellem discipliner ved flere grupper",
+     "tekst": "Ved mere end én løftegruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter.",
+     "udfald": "vedtaget",
+     "span": [
+      935,
+      953
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 27,
+     "emne": "Pause mellem discipliner ved flere løftegrupper",
+     "tekst": "Når der er mere end én løftegruppe, er pausen mellem disciplinerne 10 minutter i stedet for 5 minutter.",
+     "udfald": "vedtaget",
+     "span": [
+      935,
+      953
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 27,
+     "emne": "Pause mellem discipliner ved flere løftegrupper",
+     "tekst": "Ved mere end én løftegruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter.",
+     "udfald": "vedtaget",
+     "span": [
+      935,
+      953
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ved mere end en gruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter. Forslaget blev enstemmigt vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ved mere end en gruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter. Forslaget blev enstemmigt vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Ved mere end en gruppe ændres pausen mellem disciplinerne fra 5 til 10 minutter. Forslaget blev enstemmigt vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 30,
+   "status": "certain",
+   "role": "decision",
+   "key": "K30",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 24,
+     "emne": "Vægtøgning på 0,5 kg i klassisk",
+     "tekst": "Forslag om at tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, også selvom det ikke ville være rekord, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      956,
+      976
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 28,
+     "emne": "Vægtøgning på 0,5 kg i klassisk styrkeløft",
+     "tekst": "Forslaget om at tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv når øgningen ikke vil give en rekord, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      956,
+      976
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 28,
+     "emne": "Vægtøgninger på 0,5 kg i klassisk styrkeløft",
+     "tekst": "Forslag om at tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv om det ikke er en rekord, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      956,
+      976
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv om dette ikke ville være en rekord. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv om dette ikke ville være en rekord. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Tillade vægtøgninger på 0,5 kg i klassisk styrkeløft, selv om dette ikke ville være en rekord. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 31,
+   "status": "certain",
+   "role": "decision",
+   "key": "K31",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 25,
+     "emne": "Markering af underkendt løft",
+     "tekst": "Forslag om at dommerne kun markerer et underkendt løft med et fejlkort blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      979,
+      992
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 29,
+     "emne": "Markering af underkendt løft",
+     "tekst": "Forslaget om, at dommerne kun skal markere et underkendt løft med et fejlkort, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      979,
+      992
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 29,
+     "emne": "Dommernes brug af fejlkort",
+     "tekst": "Forslag om at dommerne kun skal markere et underkendt løft med ét fejlkort blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      979,
+      992
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Dommerne skal kun markere et underkendt løft med et fejlkort. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Dommerne skal kun markere et underkendt løft med et fejlkort. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Dommerne skal kun markere et underkendt løft med et fejlkort. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 32,
+   "status": "certain",
+   "role": "decision",
+   "key": "K32",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 26,
+     "emne": "Henvendelse om rengøring af stang eller platform",
+     "tekst": "Henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør, og i dennes fravær til overdommeren.",
+     "udfald": "vedtaget",
+     "span": [
+      995,
+      1017
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 21,
+     "emne": "Rengøring af stang eller platform",
+     "tekst": "Henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør, og i dennes fravær til overdommeren.",
+     "udfald": "vedtaget",
+     "span": [
+      995,
+      1017
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 30,
+     "emne": "Henvendelse om rengøring af stang og platform",
+     "tekst": "En henvendelse om rengøring af stang eller platform skal rettes til den tekniske kontrollør, og i dennes fravær til overdommeren.",
+     "udfald": "vedtaget",
+     "span": [
+      995,
+      1014
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 30,
+     "emne": "Anmodning om rengøring af stang eller platform",
+     "tekst": "En anmodning om rengøring af stang eller platform skal gives til den tekniske kontrollør og i dennes fravær til overdommeren.",
+     "udfald": "vedtaget",
+     "span": [
+      995,
+      1017
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør og i denne fravær overdommeren. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør og i denne fravær overdommeren. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En henvendelse om rengøring af stang eller platform skal gives til den tekniske kontrollør og i denne fravær overdommeren. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 33,
+   "status": "certain",
+   "role": "decision",
+   "key": "K33",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 27,
+     "emne": "Dommerpåklædning",
+     "tekst": "Dommerpåklædning præciseres, så det tydeligt fremgår at grå jeans ikke er tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      1020,
+      1034
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 16,
+     "emne": "Dommerpåklædning",
+     "tekst": "Dommerpåklædning præciseres, så grå jeans ikke er tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      1020,
+      1034
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 22,
+     "emne": "Dommerpåklædning",
+     "tekst": "Dommerpåklædning præciseres, så det fremgår, at grå jeans ikke er tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      1020,
+      1034
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 31,
+     "emne": "Dommerpåklædning",
+     "tekst": "Dommerpåklædningen skal tydeligt præcisere, at grå jeans ikke er tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      1020,
+      1031
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 31,
+     "emne": "Dommerpåklædning",
+     "tekst": "Reglerne for dommerpåklædning præciseres, så det tydeligt fremgår, at grå jeans ikke er tilladt.",
+     "udfald": "vedtaget",
+     "span": [
+      1020,
+      1034
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Dommerpåklædning, hvor det tydeligt fremgår at grå jeans ikke, er tilladt. Forslaget blev godkendt"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Dommerpåklædning, hvor det tydeligt fremgår at grå jeans ikke, er tilladt. Forslaget blev godkendt"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Dommerpåklædning, hvor det tydeligt fremgår at grå jeans ikke, er tilladt. Forslaget blev godkendt"
+    }
+   ]
+  },
+  {
+   "number": 34,
+   "status": "certain",
+   "role": "decision",
+   "key": "K34",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 28,
+     "emne": "Dommereksamen ved åbent VM",
+     "tekst": "Forslag om at international kategori-eksamen ikke skal kunne tages ved et åbent verdensmesterskab blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1037,
+      1055
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 32,
+     "emne": "Internationale kategori-eksaminer ved åbne VM",
+     "tekst": "Det skal ikke være muligt at tage en international kategori-eksamen ved et åbent verdensmesterskab. Forslaget blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1037,
+      1052
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 32,
+     "emne": "International dommereksamen ved åbent VM",
+     "tekst": "Forslag om at det ikke skal være muligt at tage en international kategori-dommereksamen ved et åbent verdensmesterskab blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1037,
+      1055
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Det skal ikke være muligt at tage en international kategori eksamen ved et åbent verdensmesterskab. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Det skal ikke være muligt at tage en international kategori eksamen ved et åbent verdensmesterskab. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Det skal ikke være muligt at tage en international kategori eksamen ved et åbent verdensmesterskab. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 35,
+   "status": "certain",
+   "role": "decision",
+   "key": "K35",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 29,
+     "emne": "Teoretisk dommereksamen",
+     "tekst": "En dommer kan tage en teoretisk eksamen mod betaling.",
+     "udfald": "vedtaget",
+     "span": [
+      1058,
+      1071
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 23,
+     "emne": "Teoretisk dommereksamen mod betaling",
+     "tekst": "En dommer kan tage en teoretisk eksamen mod betaling.",
+     "udfald": "vedtaget",
+     "span": [
+      1058,
+      1071
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 33,
+     "emne": "Betalt teoretisk dommereksamen",
+     "tekst": "En dommer kan tage en teoretisk eksamen mod betaling.",
+     "udfald": "vedtaget",
+     "span": [
+      1058,
+      1068
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 33,
+     "emne": "Teoretisk dommereksamen mod betaling",
+     "tekst": "En dommer kan tage en teoretisk eksamen mod betaling.",
+     "udfald": "vedtaget",
+     "span": [
+      1058,
+      1071
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En dommer kan tage en teoretisk eksamen om mod betaling. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En dommer kan tage en teoretisk eksamen om mod betaling. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En dommer kan tage en teoretisk eksamen om mod betaling. Forslaget blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 36,
+   "status": "certain",
+   "role": "decision",
+   "key": "K36",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 30,
+     "emne": "Genregistrering af internationale dommere",
+     "tekst": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregistreres.",
+     "udfald": "vedtaget",
+     "span": [
+      1074,
+      1092
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 17,
+     "emne": "Genregistrering af internationale dommere",
+     "tekst": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregistreres.",
+     "udfald": "vedtaget",
+     "span": [
+      1074,
+      1092
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 24,
+     "emne": "Genregistrering af internationale dommere",
+     "tekst": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregistreres.",
+     "udfald": "vedtaget",
+     "span": [
+      1074,
+      1092
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 34,
+     "emne": "Krav om dommeraktivitet for genregistrering",
+     "tekst": "Internationale dommere skal dømme mindst 2 internationale og 2 nationale konkurrencer for at kunne genregistreres.",
+     "udfald": "vedtaget",
+     "span": [
+      1074,
+      1089
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 34,
+     "emne": "Genregistrering af internationale dommere",
+     "tekst": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregistreres.",
+     "udfald": "vedtaget",
+     "span": [
+      1074,
+      1092
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregister. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregister. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Internationale dommere skal dømme minimum 2 internationale og 2 nationale konkurrencer for at kunne genregister. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 37,
+   "status": "certain",
+   "role": "decision",
+   "key": "K37",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 31,
+     "emne": "Dommerkrav ved åbent VM",
+     "tekst": "Forslag om at kun internationale kategori 1-dommere kan dømme åbne verdensmesterskaber blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      1095,
+      1108
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 35,
+     "emne": "Dommere ved åbne verdensmesterskaber",
+     "tekst": "Forslaget om, at kun internationale kategori 1-dommere må dømme åbne verdensmesterskaber, blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      1095,
+      1108
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 35,
+     "emne": "Dommerkategori ved åbne verdensmesterskaber",
+     "tekst": "Forslag om at kun internationale kategori 1-dommere kan dømme åbne verdensmesterskaber blev trukket tilbage.",
+     "udfald": "trukket",
+     "span": [
+      1095,
+      1108
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Kun internationale kategori 1 dommere kan dømme åbne verdensmesterskaber. Forslaget blev trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Kun internationale kategori 1 dommere kan dømme åbne verdensmesterskaber. Forslaget blev trukket tilbage."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "trukket",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Kun internationale kategori 1 dommere kan dømme åbne verdensmesterskaber. Forslaget blev trukket tilbage."
+    }
+   ]
+  },
+  {
+   "number": 38,
+   "status": "certain",
+   "role": "decision",
+   "key": "K38",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 32,
+     "emne": "Jury kan omstøde dommere",
+     "tekst": "Forslag om at en jury kan omstøde 3 enige dommere blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1111,
+      1121
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 36,
+     "emne": "Jurys mulighed for at omstøde dommerafgørelser",
+     "tekst": "Forslaget om, at en jury kan omstøde en afgørelse truffet af 3 enige dommere, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1111,
+      1118
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 36,
+     "emne": "Juryens mulighed for at omstøde dommerafgørelser",
+     "tekst": "Forslag om at en jury kan omstøde en afgørelse truffet af 3 enige dommere blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1111,
+      1121
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "En jury kan omstøde 3 enige dommere. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "En jury kan omstøde 3 enige dommere. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "En jury kan omstøde 3 enige dommere. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 39,
+   "status": "certain",
+   "role": "decision",
+   "key": "K39",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 33,
+     "emne": "Master 3 rekorder noteret i alle kategorier",
+     "tekst": "En master 3-rekord, der er højere end master 2, master 1 og åben klasse, skal noteres i alle kategorier.",
+     "udfald": "vedtaget",
+     "span": [
+      1124,
+      1148
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 18,
+     "emne": "Master 3 rekorder",
+     "tekst": "En master 3-rekord, der er højere end master 2, master 1 og åben klasse, skal noteres i alle kategorier.",
+     "udfald": "vedtaget",
+     "span": [
+      1124,
+      1148
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 25,
+     "emne": "Master 3-rekorder i alle kategorier",
+     "tekst": "En master 3-rekord, der er højere end master 2, master 1 og åben klasse, skal noteres i alle kategorier.",
+     "udfald": "vedtaget",
+     "span": [
+      1124,
+      1148
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 37,
+     "emne": "Noteringen af master 3-rekorder",
+     "tekst": "En master 3-rekord, der er højere end master 2-, master 1- og open-rekorden, skal noteres i alle kategorier.",
+     "udfald": "vedtaget",
+     "span": [
+      1124,
+      1145
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 37,
+     "emne": "Masterrekorder i flere kategorier",
+     "tekst": "En master 3-rekord, som er højere end rekorderne i master 2, master 1 og åben klasse, skal noteres som rekord i alle disse kategorier.",
+     "udfald": "vedtaget",
+     "span": [
+      1124,
+      1148
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En master 3 rekord som er højere end en master 2 og 1 og åben klasse skal noteres i alle kategorier. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "En master 3 rekord som er højere end en master 2 og 1 og åben klasse skal noteres i alle kategorier. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "En master 3 rekord som er højere end en master 2 og 1 og åben klasse skal noteres i alle kategorier. Forslaget blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 40,
+   "status": "certain",
+   "role": "decision",
+   "key": "K40",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 34,
+     "emne": "Bænkpresrekord i styrkeløft",
+     "tekst": "Forslag om at bænkpresrekorder i enkeltdisciplinen ikke kan sættes i styrkeløft blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1153,
+      1166
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 26,
+     "emne": "Bænkpresrekorder fra enkeltdisciplin i styrkeløft",
+     "tekst": "Forslag om at bænkpresrekorder i enkeltdisciplinen ikke kan sættes i styrkeløft blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1153,
+      1166
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 38,
+     "emne": "Bænkpres-rekorder i styrkeløft",
+     "tekst": "Forslaget om, at rekorder i enkeltdisciplinen bænkpres ikke må sættes i styrkeløft, blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1153,
+      1166
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 38,
+     "emne": "Bænkpresrekorder sat i styrkeløft",
+     "tekst": "Forslag om at rekorder i enkeltdisciplinen bænkpres ikke kan sættes ved styrkeløftstævner blev nedstemt.",
+     "udfald": "forkastet",
+     "span": [
+      1153,
+      1166
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Bænkpres rekorder i enkeltdisciplinen bænkpres kan ikke sættes i styrkeløft. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Bænkpres rekorder i enkeltdisciplinen bænkpres kan ikke sættes i styrkeløft. Forslaget blev nedstemt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Bænkpres rekorder i enkeltdisciplinen bænkpres kan ikke sættes i styrkeløft. Forslaget blev nedstemt."
+    }
+   ]
+  },
+  {
+   "number": 41,
+   "status": "certain",
+   "role": "decision",
+   "key": "K41",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 35,
+     "emne": "Bona fide forsøg",
+     "tekst": "Forslag om afskaffelse af bona fide forsøg blev forkastet, da ingen var sekundant.",
+     "udfald": "forkastet",
+     "span": [
+      1169,
+      1185
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 39,
+     "emne": "Bona fide-forsøg",
+     "tekst": "Forslaget om at afskaffe bona fide-forsøg blev forkastet, da der ikke var nogen sekundant til forslaget.",
+     "udfald": "forkastet",
+     "span": [
+      1169,
+      1174
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 39,
+     "emne": "Bona fide-forsøg",
+     "tekst": "Forslag om afskaffelse af bona fide-forsøg blev forkastet, da der ikke var nogen sekundant.",
+     "udfald": "forkastet",
+     "span": [
+      1169,
+      1185
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ophaevelse",
+     "niveau": "eksternt_krav",
+     "citat": "Afskaffelse af bona fide forsøg. Da der ikke var nogen sekundant til forslaget, blev dette forkastet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ophaevelse",
+     "niveau": "eksternt_krav",
+     "citat": "Afskaffelse af bona fide forsøg. Da der ikke var nogen sekundant til forslaget, blev dette forkastet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "forkastet",
+     "handling": "ophaevelse",
+     "niveau": "eksternt_krav",
+     "citat": "Afskaffelse af bona fide forsøg. Da der ikke var nogen sekundant til forslaget, blev dette forkastet."
+    }
+   ]
+  },
+  {
+   "number": 42,
+   "status": "certain",
+   "role": "decision",
+   "key": "K42",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 36,
+     "emne": "Rækkefølge ved nyt forsøg i 3. runde",
+     "tekst": "Hvis en løfter tildeles nyt forsøg i 3. runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv.",
+     "udfald": "vedtaget",
+     "span": [
+      1190,
+      1215
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 19,
+     "emne": "Forsøgsrækkefølge ved nyt forsøg i 3. runde",
+     "tekst": "Hvis en løfter tildeles nyt forsøg i 3. runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv.",
+     "udfald": "vedtaget",
+     "span": [
+      1207,
+      1215
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 27,
+     "emne": "Rækkefølge ved nyt forsøg i 3. runde",
+     "tekst": "Hvis en løfter tildeles et nyt forsøg i 3. runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv.",
+     "udfald": "vedtaget",
+     "span": [
+      1190,
+      1215
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 40,
+     "emne": "Rækkefølge ved nyt forsøg i dødløft og enkeltdisciplin bænkpres",
+     "tekst": "Hvis en løfter tildeles et nyt forsøg i 3. runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv.",
+     "udfald": "vedtaget",
+     "span": [
+      1190,
+      1212
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 40,
+     "emne": "Rækkefølge ved tildelt nyt forsøg",
+     "tekst": "Hvis en løfter tildeles et nyt forsøg i 3. runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren følge efter sig selv.",
+     "udfald": "vedtaget",
+     "span": [
+      1190,
+      1215
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Hvis en løfter bliver tildelt et ny forsøg i 3 runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Hvis en løfter bliver tildelt et ny forsøg i 3 runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv. Forslaget blev vedtaget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Hvis en løfter bliver tildelt et ny forsøg i 3 runde af dødløft eller i enkeltdisciplinen bænkpres, skal løfteren efterfølge sig selv. Forslaget blev vedtaget."
+    }
+   ]
+  },
+  {
+   "number": 43,
+   "status": "certain",
+   "role": "decision",
+   "key": "K43",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 37,
+     "emne": "Antal trænere tilmeldt stævne",
+     "tekst": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og de skal have fri adgang til stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      1218,
+      1241
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 20,
+     "emne": "Trænere ved stævner",
+     "tekst": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og de skal have fri adgang til stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      1218,
+      1241
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 28,
+     "emne": "Trænere tilmeldt stævne",
+     "tekst": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og trænerne skal have fri adgang til stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      1218,
+      1241
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 41,
+     "emne": "Antal trænere og adgang ved stævner",
+     "tekst": "Antallet af trænere, der tilmeldes et stævne, skal overholde retningslinjerne for Head Coach, og trænerne skal have fri adgang til stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      1218,
+      1238
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 41,
+     "emne": "Antal trænere og adgang ved stævner",
+     "tekst": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse trænere skal have fri adgang til stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      1218,
+      1241
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse skal have fri adgang til stævnet. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse skal have fri adgang til stævnet. Forslaget blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse skal have fri adgang til stævnet. Forslaget blev godkendt."
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 0,
+    "cache_write": 31136,
+    "output": 12743,
+    "cost_usd": 0.504,
+    "seconds": 92,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 0,
+    "cache_write": 31109,
+    "output": 12708,
+    "cost_usd": 0.503,
+    "seconds": 91,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 26783,
+    "output": 11730,
+    "cost_usd": 0.4497,
+    "seconds": 84,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

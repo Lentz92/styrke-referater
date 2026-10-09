@@ -256,7 +256,13 @@ Every command that calls Claude takes `--max-cost` and `--pilot N` or `--docs`/`
 plans, and adds a line to `eval/runs.jsonl`; the scores go to `eval/reports/`. Every answer is kept, so a cut-off
 build or a pilot is never paid twice, and the rules judges are told the selection's date, not today's. An answer
 kept for other input (changed data, prompt, model or effort) stops the command until `--rejudge` (or `--force` for
-extractions) says to pay for a new one.
+extractions) says to pay for a new one. `--rederive` rebuilds the keys from the kept answers alone (the rules
+keys on the passages they were judged on), never calling Claude, e.g. after a change to how answers are agreed.
+
+Errors a check against the minutes finds in the judges' answers go to `eval/key/corrections.json`, each with its
+reason and evidence (document and quote). They are applied on top of the judges whenever a key is written or
+scored, and listed in the reports. A rule marked `soft` in `eval/selection.json` (loosely scoped, so which
+decisions are its events is arbitrary) is reported but left out of the overall rules figures.
 
 `DSF_Generelt_Regelsaet.docx` and `DSF_Verificeringsrapport.docx` are the earlier manual analysis
 (March 2026), kept for reference.

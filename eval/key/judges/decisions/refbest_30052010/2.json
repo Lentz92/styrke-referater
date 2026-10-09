@@ -1,0 +1,122 @@
+{
+ "fingerprint": "69e54a9fbd718705",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 4960,
+  "output": 2488,
+  "cost_usd": 0.0903,
+  "seconds": 21,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Klubbers dommerforpligtelse i divisionsturneringen",
+    "kategori": "dommere",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der gives kun dispensation til klubber, der endnu ikke har en dommer, og disse opfordres til at tilmelde folk til førstkommende dommerkursus.",
+    "citat": "Klubberne skal tilmelde minimum én dommer pr. runde. Der er kun givet dispensation til de klubber, der endnu ikke har en dommer.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Masterudvalgets kompetence og udtagelseskriterier",
+    "kategori": "master",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Masterklubben er kun et udvalg på lige fod med forbundets øvrige udvalg og ikke en selvstændig forening. Den kan derfor ikke fastsætte udtagelseskriterier for internationale masterstævner (stævner, krav til løftede kg m.v.); udtagelseskriterier hører under eliteudvalget.",
+    "citat": "Masterklubben kan dermed ikke eksempelvis fastsætte udtagelseskriterier (hvilke stævner man skal stille op til for at komme ud at løfte internationalt til masterstævner, hvilke kg man skal løfte etc.). Udtagelseskriterier skal køre under eliteudvalget",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Betalingsfrist for udlæg og bilag",
+    "kategori": "okonomi",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Kassereren skal overholde betalingsfristen på 14 dage for udbetaling af penge for modtagne bilag/indsendte kvitteringer.",
+    "citat": "Klaus opfordres til at overholde betalingsfristen på 14 dage for modtaget bilag.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Mødepligten nævnes kun som begrundelse for en enkeltstående datoændring af TSK Cup og er ikke en beslutning på mødet.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 5,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Stævneansvarlig ved forbundsstævner",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Ved alle forbundsstævner (DM, SM og JM, men ikke Thy Cup, Nordland Cup og TSK Cup) udpeges en stævneansvarlig fra stævneudvalget, når startlisten udsendes. Vedkommende skal besigtige stævnestedet på forhånd og sikre, at alle tilmeldte har betalt (løftere/klubber medbringer kvittering for betalt startgebyr), at stævnepapirer, stempler til udstyrsgodkendelse, podie, opvarmningslokale samt lokaler til indvejning og dopingkontrol er i orden, og at stævnepapirerne afleveres til kontoret med kopi til webmaster.",
+    "citat": "En fra stævneudvalget udpeges i forbindelse med udsendelsen af startlisten",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 6,
+    "verdict": "duplicate",
+    "duplicate_of": 5,
+    "reason": "Kravet om kvittering for startgebyr er en del af den stævneansvarliges opgaveliste.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

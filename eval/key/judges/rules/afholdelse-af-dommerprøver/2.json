@@ -1,0 +1,59 @@
+{
+ "fingerprint": "b5f1c8a10ff0c037",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 61051,
+  "output": 2659,
+  "cost_usd": 0.542,
+  "seconds": 25,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P62",
+    "quote": "Afholder prøver (normalt med forudgående uddannelse/træning)",
+    "value_after": "Dommerudvalget afholder A- og B-dommerprøver, normalt med forudgående uddannelse",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P73",
+    "quote": "Mindst en gang om året vil der blive afholdt dommerprøver i Jylland og Sjælland? Yderligere dommerprøver sker efter behov.",
+    "value_after": "Mindst årligt dommerprøver i Jylland og på Sjælland, flere efter behov",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 2
+   }
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "fingerprint": "ae58b83f277db085",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 81622,
+  "output": 3334,
+  "cost_usd": 0.7201,
+  "seconds": 31,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P88",
+    "quote": "The IPF Executive Committee voted, unanimously, starting on January 01, 2025, all Head Coaches, nominated for an International, International Regional, or World Championship, will be required to upload their Coach License into the Goodlift System.",
+    "value_after": "Head Coaches ved internationale mesterskaber skal uploade coachlicens i Goodlift",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P89",
+    "quote": "Dette primært fordi IPF-uddannelsen bliver et krav fra 1.1.2026 for alle Head Coaches.",
+    "value_after": "IPF-træneruddannelse er krav for alle Head Coaches",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P102",
+    "quote": "imødekomme kravet om at internationale trænere og deres assistenter skal have en IPF- \ntræneruddannelse. Kravet træder i kraft fra 2027.",
+    "value_after": "Internationale trænere og assistenter skal have IPF-træneruddannelse",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P104",
+    "quote": "Der er brug for stor opbakning fra \nmedieudvalget til at udbrede vigtigheden af, at Head Coach i 2026 skal have IPF's træneruddannelse for at \nfå lov til at være Head Coach ved internationale stævner.",
+    "value_after": "Head Coach ved internationale stævner skal have IPF-træneruddannelse",
+    "effect": "bekraeftet"
+   }
+  ],
+  "years": [
+   {
+    "year": 2023,
+    "state": "none",
+    "event": null
+   },
+   {
+    "year": 2024,
+    "state": "none",
+    "event": null
+   },
+   {
+    "year": 2025,
+    "state": "none",
+    "event": null
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 4
+   }
+  ]
+ }
+}

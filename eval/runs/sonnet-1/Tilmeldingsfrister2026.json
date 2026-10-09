@@ -1,0 +1,112 @@
+{
+ "doc_id": "Tilmeldingsfrister2026",
+ "sha256": "b8c5568ccc1942bac92550e8b6f7224fa5180ee162dae43f877979eeb707d471",
+ "run": "sonnet-1",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 0,
+  "cache_write": 5189,
+  "output": 1523,
+  "cost_usd": 0.036,
+  "seconds": 10,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": null,
+ "beslutninger": [
+  {
+   "emne": "Consent Form til internationale stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Alle løftere, der deltager i EPF/IPF-konkurrencer, skal udfylde en Consent Form i PDF-format og sende den til masterudvalget@styrke.dk inden tilmeldingsfristens udløb. Dokumentet uploades derefter i GOODLIFT-systemet; det underskrives helst elektronisk, ellers printes, underskrives og sendes som PDF.",
+   "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true,
+   "citat_pos": 103,
+   "citat_side": 1
+  },
+  {
+   "emne": "ADEL antidoping-uddannelse ved internationale stævner",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Løftere skal gennemføre IPF's antidopinguddannelse ADEL og sende kursusbeviset til masterudvalget sammen med tilmeldingsskemaet. Uden kursusbevis kan løftere ikke tilmeldes internationale stævner. ADEL skal fornyes hvert 2. år. Trænere skal gennemføre ADEL-træneruddannelsen for at kunne akkrediteres.",
+   "citat": "Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at uploade kursusbeviset. Det samme gælder for trænerne, de skal ligeledes gennemføre Adel træneruddannelsen for at kunne akkrediteres.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 269,
+   "citat_side": 2
+  },
+  {
+   "emne": "Bindende tilmelding og startgebyr ved internationale stævner",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Man er bundet af forhåndstilmeldingen og startgebyret til internationale stævner. Fortryder man senere sin deltagelse, hæfter man for startgebyret.",
+   "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 323,
+   "citat_side": 2
+  },
+  {
+   "emne": "Ophold på stævnehotel ved internationale stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Det er et EPF-IPF-krav, at deltagere bor på stævnehotellet i hele stævneperioden. Løfter man fx mandag og skal hjælpe en anden løfter torsdag, skal man bestille 4 overnatninger.",
+   "citat": "Det er ligeledes et EPF-IPF-krav at man skal bo på stævnehotellet i stævneperioden.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 340,
+   "citat_side": 2
+  },
+  {
+   "emne": "Trænerakkreditering ved EM/VM",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF/EPF har ændret deres vedtægter, så der kommer loft over antallet af trænere. Alle, der ønsker akkreditering som trænere ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 Euro.",
+   "citat": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 406,
+   "citat_side": 2
+  }
+ ]
+}

@@ -1,0 +1,3482 @@
+{
+ "doc_id": "1071kongres",
+ "sha256": "23e9393544c38bc484685cc85758e019b745922f945d7631a791d33fee9134c7",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1,
+    3
+   ],
+   "emne": "Medlemslandenes stemmeret over IPF's By-Laws",
+   "kategori": "internationalt",
+   "udfald": "ikke_afgjort",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "EC foreslog en ændring af IPF's constitution, så EC fik fuld autoritet til at skabe og ændre By-Laws uden at medlemslandene stemmer om dem. Forslaget bortfaldt uden afstemning, fordi kun 71 af de krævede 81 lande (2/3) var repræsenteret.",
+   "citat": "Da kun 71 ud af de krævede 81 lande (2/3) var repræsenteret, bortfaldt forslaget om forfatningsændring uden afstemning.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 45,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Da kun 71 ud af de krævede 81 lande (2/3) var repræsenteret, bortfaldt forslaget om forfatningsændring uden afstemning.",
+     "citat_pos": 45
+    },
+    {
+     "citat": "Da kun 71 ud af de krævede 81 lande (2/3) var repræsenteret, bortfaldt forslaget om forfatningsændring uden afstemning.",
+     "citat_pos": 45
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7
+   ],
+   "emne": "IPF Athlete's Commission og registreringskrav",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF's By-Law 4.3 om Athlete's Commission Goals and objectives omskrives fra 17 linjer til 4 siders præcisering med krav om flere registreringer fra medlemslandene samt IPF's opbevaring og behandling af disse data.",
+   "citat": "Forslag 8: Godkendt 14 for 7 imod og 31 undlod at stemme.",
+   "side": 11,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 3645,
+   "citat_side": 11,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslag 8: Godkendt 14 for 7 imod og 31 undlod at stemme.",
+     "citat_pos": 3645
+    },
+    {
+     "citat": "Forslag 8: Godkendt 14 for 7 imod og 31 undlod at stemme.",
+     "citat_pos": 3645
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "Forslag til IPF's tekniske regler via Rules Group",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Der indsættes tekst i IPF's By-Laws om Rules Group, så forslag til de tekniske regler kan indsendes via IPF Technical Rulebook Amendment form. Alle indsendte forslag skal vurderes og bedømmes af Rules Group.",
+   "citat": "IPF Technical Rulebook Amendment form er kerneproduktet i forslaget, der giver mulighed for at indsende forslag til de tekniske regler. Alle indsendte forslag skal vurderes og bedømmes af Rules Group.",
+   "side": 11,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 3668,
+   "citat_side": 11,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Alle indsendte forslag skal vurderes og bedømmes af Rules Group.",
+     "citat_pos": 3688
+    },
+    {
+     "citat": "IPF Technical Rulebook Amendment form er kerneproduktet i forslaget, der giver mulighed for at indsende forslag til de tekniske regler. Alle indsendte forslag skal vurderes og bedømmes af Rules Group.",
+     "citat_pos": 3668
+    }
+   ]
+  },
+  {
+   "id": "K10",
+   "status": "certain",
+   "candidates": [
+    10
+   ],
+   "emne": "Kønsbalance i ledelsesorganer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Ny IPF By-Law fastsætter en standard på 40% af hvert køn i ledelsesorganer, og medlemslandene skal demonstrere god kønsbalance før valg. IPF's generalsekretær skal rapportere om overholdelsen, og manglende overholdelse kan føre til afvisning, suspendering eller krav om korrekt dokumentation fra medlemslandene.",
+   "citat": "Forslag 11: Tilføjelse af ny By Law i forhold til ligestilling. Der ønskes en standard på 40% af hvert køn i ledelsesorganer.",
+   "side": 11,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 3810,
+   "citat_side": 11,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Der ønskes en standard på 40% af hvert køn i ledelsesorganer.",
+     "citat_pos": 3821
+    },
+    {
+     "citat": "Forslag 11 blev godkendt 27 for 9 imod og 16 undlod at stemme.",
+     "citat_pos": 3944
+    }
+   ]
+  },
+  {
+   "id": "K11",
+   "status": "certain",
+   "candidates": [
+    11
+   ],
+   "emne": "IPF gebyr for klager til Court of Justice",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "De første 3 klager til IPF's Court of Justice inden for et år er gratis. Derefter er gebyret 500 euro pr. klage (tidligere 1000 euro).",
+   "citat": "De første 3 indsendte klager er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro. \nForslag 12 blev godkendt 33 for 6 imod og 13 undlod at stemme.",
+   "side": 12,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4033,
+   "citat_side": 12,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "De første 3 indsendte klager er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro.",
+     "citat_pos": 4033
+    },
+    {
+     "citat": "De første 3 indsendte klager er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro. \nForslag 12 blev godkendt 33 for 6 imod og 13 undlod at stemme.",
+     "citat_pos": 4033
+    }
+   ]
+  },
+  {
+   "id": "K13",
+   "status": "certain",
+   "candidates": [
+    13
+   ],
+   "emne": "Registrering af medlemslande i IPF",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Medlemslandene skal give IPF yderligere oplysninger om sig selv ved registrering.",
+   "citat": "Forslag 14: Registrering af medlemslandene. Et forslag om yderligere oplysninger om medlemslandene.",
+   "side": 12,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4329,
+   "citat_side": 12,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Registrering af medlemslandene. Et forslag om yderligere oplysninger om medlemslandene.",
+     "citat_pos": 4331
+    },
+    {
+     "citat": "Forslag 14: Registrering af medlemslandene. Et forslag om yderligere oplysninger om medlemslandene.",
+     "citat_pos": 4329
+    }
+   ]
+  },
+  {
+   "id": "K14",
+   "status": "certain",
+   "candidates": [
+    14
+   ],
+   "emne": "Tilknytning til IPF for nationer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Nye By-Laws fastsætter, hvordan nye nationer og medlemsnationer skal indberette oplysninger for at opnå eller fastholde deres tilknytning til IPF.",
+   "citat": "EC har nedfældet ti sider med nye By \nLaw i forhold til hvordan nye nationer og medlemsnationer skal indberette oplysninger for at opnå eller fastholder deres tilknytning til IPF.",
+   "side": 13,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4363,
+   "citat_side": 13,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ansøgning for nationer om tilknytning til IPF.",
+     "citat_pos": 4356
+    },
+    {
+     "citat": "EC har nedfældet ti sider med nye By \nLaw i forhold til hvordan nye nationer og medlemsnationer skal indberette oplysninger for at opnå eller fastholder deres tilknytning til IPF.",
+     "citat_pos": 4363
+    }
+   ]
+  },
+  {
+   "id": "K16",
+   "status": "certain",
+   "candidates": [
+    16
+   ],
+   "emne": "IPF medlemsgebyr for medlemslande",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Medlemslandenes årlige medlemsgebyr til IPF hæves fra 400 til 500 euro.",
+   "citat": "Medlemslandenes gebyr går fra 400 til 500 Euro godkendt.",
+   "side": 13,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4466,
+   "citat_side": 13,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Medlemslandenes gebyr går fra 400 til 500 Euro godkendt.",
+     "citat_pos": 4466
+    },
+    {
+     "citat": "Medlemslandenes gebyr går fra 400 til 500 Euro godkendt.",
+     "citat_pos": 4466
+    }
+   ]
+  },
+  {
+   "id": "K17",
+   "status": "certain",
+   "candidates": [
+    17
+   ],
+   "emne": "IPF deltagergebyr for atleter",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF's deltagergebyr for atleter hæves fra 60 til 100 euro.",
+   "citat": "Deltagergebyr for atleter går fra 60 til 100 Euro godkendt.",
+   "side": 13,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4475,
+   "citat_side": 13,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Deltagergebyr for atleter går fra 60 til 100 Euro godkendt.",
+     "citat_pos": 4475
+    },
+    {
+     "citat": "Deltagergebyr for atleter går fra 60 til 100 Euro godkendt.",
+     "citat_pos": 4475
+    }
+   ]
+  },
+  {
+   "id": "K18",
+   "status": "certain",
+   "candidates": [
+    18
+   ],
+   "emne": "IPF ansøgningsgebyr for VM og kombinationsstævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Gebyret for at søge om at afholde VM og kombinationsstævner under IPF hæves fra 1000 til 1500 euro.",
+   "citat": "Gebyr for at søge om VM og kombinationsstævner går fra 1000 til 1500 Euro godkendt.",
+   "side": 13,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4485,
+   "citat_side": 13,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Gebyr for at søge om VM og kombinationsstævner går fra 1000 til 1500 Euro godkendt.",
+     "citat_pos": 4485
+    },
+    {
+     "citat": "Gebyr for at søge om VM og kombinationsstævner går fra 1000 til 1500 Euro godkendt.",
+     "citat_pos": 4485
+    }
+   ]
+  },
+  {
+   "id": "K19",
+   "status": "certain",
+   "candidates": [
+    19
+   ],
+   "emne": "IPF gebyr pr. atlet og andel til arrangør",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Medlemslandene skal betale 100 euro til IPF for hver atlet, og ved hver international konkurrence skal 40 euro af deltagergebyret betales til stævnearrangøren.",
+   "citat": "Medlemslandene skal betale 100 Euro for hver atlet og ved hver international konkurrence skal 40 Euro af deltagergebyr betales til stævnearrangøren.",
+   "side": 13,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4584,
+   "citat_side": 13,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Medlemslandene skal betale 100 Euro for hver atlet og ved hver international konkurrence skal 40 Euro af deltagergebyr betales til stævnearrangøren.",
+     "citat_pos": 4584
+    },
+    {
+     "citat": "Medlemslandene skal betale 100 Euro for hver atlet og ved hver international konkurrence skal 40 Euro af deltagergebyr betales til stævnearrangøren. \nForslag 18 blev godkendt 13 for 6 imod og 15 undlod at stemme.",
+     "citat_pos": 4584
+    }
+   ]
+  },
+  {
+   "id": "K20",
+   "status": "certain",
+   "candidates": [
+    20
+   ],
+   "emne": "IPF gebyr for anke til Court of Appeals",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "De første 3 anker til IPF's Court of Appeals inden for et år er gratis. Derefter er gebyret 500 euro pr. anke.",
+   "citat": "De første 3 indsendte anker er gratis inden for et år. De næste indsendte klager har et gebyr på \n500 Euro. \nForslag 19 blev godkendt 27 for 7 imod og 18 undlod at stemme.",
+   "side": 13,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4643,
+   "citat_side": 13,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "De første 3 indsendte anker er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro. Forslag 19 blev godkendt 27 for 7 imod og 18 undlod at stemme.",
+     "citat_pos": 4643
+    },
+    {
+     "citat": "De første 3 indsendte anker er gratis inden for et år. De næste indsendte klager har et gebyr på \n500 Euro. \nForslag 19 blev godkendt 27 for 7 imod og 18 undlod at stemme.",
+     "citat_pos": 4643
+    }
+   ]
+  },
+  {
+   "id": "K22",
+   "status": "certain",
+   "candidates": [
+    22
+   ],
+   "emne": "Betaling af indkvartering ved internationale konkurrencer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved internationale IPF-konkurrencer kan indkvartering betales via bankoverførsel, kort og med kontanter.",
+   "citat": "Det er muligt at betale for indkvartering ved internationale konkurrencer via bankoverførsler, kort og med kontanter.",
+   "side": 13,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4711,
+   "citat_side": 13,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det er muligt at betale for indkvartering ved internationale konkurrencer via bankoverførsler, kort og med kontanter.",
+     "citat_pos": 4711
+    },
+    {
+     "citat": "Det er muligt at betale for indkvartering ved internationale konkurrencer via bankoverførsler, kort og med kontanter.",
+     "citat_pos": 4711
+    }
+   ]
+  },
+  {
+   "id": "K23",
+   "status": "certain",
+   "candidates": [
+    23
+   ],
+   "emne": "Nomineringsfrist til IPF-konkurrencer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Nominering af atleter og coaches til IPF-konkurrencer skal ske 30 dage før konkurrencen i stedet for 21 dage før.",
+   "citat": "Forslag 22 Nominering af atleter og coaches 30 dage før i stedet for 21 dage før.",
+   "side": 14,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4740,
+   "citat_side": 14,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Nominering af atleter og coaches 30 dage før i stedet for 21 dage før.",
+     "citat_pos": 4742
+    },
+    {
+     "citat": "Forslag 22 Nominering af atleter og coaches 30 dage før i stedet for 21 dage før.",
+     "citat_pos": 4740
+    }
+   ]
+  },
+  {
+   "id": "K24",
+   "status": "certain",
+   "candidates": [
+    24
+   ],
+   "emne": "Antal officielle repræsentanter ved IPF-konkurrencer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved åbne IPF-konkurrencer må et medlemsland højst nominere 4 officielle repræsentanter og ved kombinerede konkurrencer højst 6.",
+   "citat": "Nominering af atleter og coaches ved åbne konkurrence må der højst nomineres 4 \nofficielle repræsentanter. Ved kombineret konkurrencer højst 6.",
+   "side": 14,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4771,
+   "citat_side": 14,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Nominering af atleter og coaches ved åbne konkurrence må der højst nomineres 4 officielle repræsentanter. Ved kombineret konkurrencer højst 6.",
+     "citat_pos": 4771
+    },
+    {
+     "citat": "Nominering af atleter og coaches ved åbne konkurrence må der højst nomineres 4 \nofficielle repræsentanter. Ved kombineret konkurrencer højst 6.",
+     "citat_pos": 4771
+    }
+   ]
+  },
+  {
+   "id": "K25",
+   "status": "certain",
+   "candidates": [
+    25
+   ],
+   "emne": "Uddannelseskrav til coaches ved IPF-nominering",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029, og alle medlemslande skal deltage i førstkommende IPF Coach Level 2 i deres region. Alle headcoaches skal bestå High-performance Coaches Education Program via WADA ADEL for at blive nomineret til verdensmesterskaber, internationale og regionale mesterskaber og cups.",
+   "citat": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029.",
+   "side": 14,
+   "gaelder_fra": "2029-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4845,
+   "citat_side": 14,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029.",
+     "citat_pos": 4845
+    },
+    {
+     "citat": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029.",
+     "citat_pos": 4845
+    }
+   ]
+  },
+  {
+   "id": "K26",
+   "status": "certain",
+   "candidates": [
+    26
+   ],
+   "emne": "Officielle repræsentanters adgang til konkurrenceområder",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Officielle repræsentanter må kun opholde sig i forberedelsesområdet, på plateauet eller i opvarmningslokalet ved IPF-konkurrencer, hvis de har relevante opgaver der.",
+   "citat": "Forslag 25 Nominering af atleter og coaches omhandlende officielle repræsentanter skal have \nrelevante opgaver, hvis de skal opholde sig forberedelsesområdet, på plateauet eller \nopvarmningslokalet.",
+   "side": 14,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4910,
+   "citat_side": 14,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "officielle repræsentanter skal have relevante opgaver, hvis de skal opholde sig forberedelsesområdet, på plateauet eller opvarmningslokalet.",
+     "citat_pos": 4918
+    },
+    {
+     "citat": "officielle repræsentanter skal have \nrelevante opgaver, hvis de skal opholde sig forberedelsesområdet, på plateauet eller \nopvarmningslokalet.",
+     "citat_pos": 4918
+    }
+   ]
+  },
+  {
+   "id": "K27",
+   "status": "certain",
+   "candidates": [
+    27
+   ],
+   "emne": "Coaching af løftere fra andre nationer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Reglen om coaches' berettigelse til at coache løftere fra andre nationer end deres egen præciseres uden ændring af det eksisterende indhold.",
+   "citat": "Coaches berettigelse til at coache løftere fra andre nation end sin egen er i dette forslag en præcisering af et allerede eksisterende forslag.",
+   "side": 14,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4953,
+   "citat_side": 14,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Coaches berettigelse til at coache løftere fra andre nation end sin egen er i dette forslag en præcisering af et allerede eksisterende forslag.",
+     "citat_pos": 4953
+    },
+    {
+     "citat": "Coaches berettigelse til at coache løftere fra andre nation end sin egen er i dette forslag en præcisering af et allerede eksisterende forslag.",
+     "citat_pos": 4953
+    }
+   ]
+  },
+  {
+   "id": "K28",
+   "status": "certain",
+   "candidates": [
+    28
+   ],
+   "emne": "Antal coaches ved kombinerede bænkpreskonkurrencer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved kombinerede bænkpreskonkurrencer i både klassisk styrkeløft og styrkeløft må der tilmeldes 24 coaches i stedet for 20 for alle aldersgrupper. Reglen træder i kraft 1. januar 2027.",
+   "citat": "der må tilmeldes 24 coaches i stedet for 20 coaches. Dette gælder alle aldersgrupper kombineret bænkpreskonkurrencer både i klassisk styrkeløft og styrkeløft. Hvis forslaget godkendes, træder det i kraft 1. 1.2027.",
+   "side": 14,
+   "gaelder_fra": "2027-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 4998,
+   "citat_side": 14,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "der må tilmeldes 24 coaches i stedet for 20 coaches. Dette gælder alle aldersgrupper kombineret bænkpreskonkurrencer både i klassisk styrkeløft og styrkeløft.",
+     "citat_pos": 4998
+    },
+    {
+     "citat": "der må tilmeldes 24 coaches i \nstedet for 20 coaches. Dette gælder alle aldersgrupper kombineret bænkpreskonkurrencer \nbåde i klassisk styrkeløft og styrkeløft. Hvis forslaget godkendes, træder det i kraft 1. 1.2027.",
+     "citat_pos": 4998
+    }
+   ]
+  },
+  {
+   "id": "K29",
+   "status": "certain",
+   "candidates": [
+    29
+   ],
+   "emne": "Indsendelse af nationale mesterskabsresultater til IPF",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Hvert medlemsland skal indsende de officielle resultater fra deres årlige nationale mesterskaber på engelsk til IPF's nomineringssystem, eller til IPF's konkurrencesekretær hvis det ikke er teknisk muligt. Manglende indsendelse kan medføre afvisning af nomineringer. Reglen træder i kraft 1. januar 2027.",
+   "citat": "Hvert medlemsland skal indsende de officielle resultater fra deres årlige nationale \nmesterskaber til IPF nomineringssystemet på engelsk.",
+   "side": 14,
+   "gaelder_fra": "2027-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5055,
+   "citat_side": 14,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Hvert medlemsland skal indsende de officielle resultater fra deres årlige nationale mesterskaber til IPF nomineringssystemet på engelsk.",
+     "citat_pos": 5055
+    },
+    {
+     "citat": "Hvert medlemsland skal indsende de officielle resultater fra deres årlige nationale \nmesterskaber til IPF nomineringssystemet på engelsk.",
+     "citat_pos": 5055
+    }
+   ]
+  },
+  {
+   "id": "K30",
+   "status": "certain",
+   "candidates": [
+    30
+   ],
+   "emne": "Nationale kvalificerings- og nomineringsprocesser",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Medlemslandene skal have en klar og transparent kvalificerings- og nomineringsproces, der opfylder IPF's opstillede standarder. Modtager IPF troværdige oplysninger om manglende overholdelse, kan IPF kræve dokumentation og undersøgelse af ledelsen.",
+   "citat": "medlemslandene skal have en klar og \ntransparant kvalificerings proces samt nominering, der opfylder opstillede standarder.",
+   "side": 15,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5222,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "medlemslandene skal have en klar og transparant kvalificerings proces samt nominering, der opfylder opstillede standarder.",
+     "citat_pos": 5222
+    },
+    {
+     "citat": "medlemslandene skal have en klar og transparant kvalificerings proces samt nominering, der opfylder opstillede standarder.",
+     "citat_pos": 5222
+    }
+   ]
+  },
+  {
+   "id": "K31",
+   "status": "certain",
+   "candidates": [
+    31
+   ],
+   "emne": "Beskyttelse af atleters nomineringsberettigelse",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Forhold og procedurer for nominering af løftere til IPF-konkurrencer præciseres for at beskytte atleternes berettigelse til nominering.",
+   "citat": "Forslag 30: Nominering af atleter og coaches – beskyttelse af atleter i forhold til deres \nberettigelse til nominering.",
+   "side": 15,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5272,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "beskyttelse af atleter i forhold til deres berettigelse til nominering",
+     "citat_pos": 5279
+    },
+    {
+     "citat": "Nominering af atleter og coaches – beskyttelse af atleter i forhold til deres \nberettigelse til nominering. Præcisering af forhold og procedurer i forhold til nominering af \nløftere.",
+     "citat_pos": 5274
+    }
+   ]
+  },
+  {
+   "id": "K32",
+   "status": "certain",
+   "candidates": [
+    32
+   ],
+   "emne": "Egenbetaling for deltagelse i internationale konkurrencer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Har medlemslandet begrænsede økonomiske midler, kan en atlet selv betale for sin deltagelse i en international IPF-konkurrence.",
+   "citat": "Ved begrænset økonomiske midler, kan en atlet selv betale for deltagelse ved \ninternational konkurrence.",
+   "side": 15,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5315,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ved begrænset økonomiske midler, kan en atlet selv betale for deltagelse ved international konkurrence.",
+     "citat_pos": 5315
+    },
+    {
+     "citat": "Ved begrænset økonomiske midler, kan en atlet selv betale for deltagelse ved \ninternational konkurrence.",
+     "citat_pos": 5315
+    }
+   ]
+  },
+  {
+   "id": "K33",
+   "status": "certain",
+   "candidates": [
+    33
+   ],
+   "emne": "Berettigelse til at repræsentere et medlemsland",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Processen for atleter, der vælger at repræsentere et andet IPF-medlemsland, præciseres.",
+   "citat": "Forslag 32 Berettigelse til at repræsentere et medlemsland forholder sig til atleter, der vælger \nat repræsentere et andet medlemsland.",
+   "side": 15,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5357,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Berettigelse til at repræsentere et medlemsland forholder sig til atleter, der vælger at repræsentere et andet medlemsland.",
+     "citat_pos": 5359
+    },
+    {
+     "citat": "Berettigelse til at repræsentere et medlemsland forholder sig til atleter, der vælger \nat repræsentere et andet medlemsland. Der er en præcisering af processen i dette forslag.",
+     "citat_pos": 5359
+    }
+   ]
+  },
+  {
+   "id": "K34",
+   "status": "certain",
+   "candidates": [
+    34
+   ],
+   "emne": "Dommerkrav for landshold ved IPF-konkurrencer",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved IPF-konkurrencer og kombinationskonkurrencer skal medlemslande tilmelde tre dommere ved 15 nominerede løftere. Bøden for ikke at sende det korrekte antal dommere sættes ned fra 2000 til 1000 euro.",
+   "citat": "Der er et krav om tilmelding af tre dommere ved \n15 nominerede løftere. Bøde ved ikke at sende det korrekte antal dommere afsted er sat ned \nfra 2000 til 1000 Euro.",
+   "side": 15,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5413,
+   "citat_side": 15,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Der er et krav om tilmelding af tre dommere ved 15 nominerede løftere. Bøde ved ikke at sende det korrekte antal dommere afsted er sat ned fra 2000 til 1000 Euro.",
+     "citat_pos": 5413
+    },
+    {
+     "citat": "Der er et krav om tilmelding af tre dommere ved \n15 nominerede løftere. Bøde ved ikke at sende det korrekte antal dommere afsted er sat ned \nfra 2000 til 1000 Euro.",
+     "citat_pos": 5413
+    }
+   ]
+  },
+  {
+   "id": "K35",
+   "status": "certain",
+   "candidates": [
+    35
+   ],
+   "emne": "Deltagelse i konkurrencer uden antidopingregler",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF vedtog en præcisering af reglen om deltagelse i konkurrencer, der ikke overholder antidopingregler, fordi mange løftere var i tvivl om, hvad reglen dækker. Den præcise ordlyd gengives ikke i referatet.",
+   "citat": "Forslag 34 blev godkendt.",
+   "side": 16,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5487,
+   "citat_side": 16,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslag 34 blev godkendt.",
+     "citat_pos": 5487
+    },
+    {
+     "citat": "Forslag 34 blev godkendt.",
+     "citat_pos": 5487
+    }
+   ]
+  },
+  {
+   "id": "K37",
+   "status": "certain",
+   "candidates": [
+    37
+   ],
+   "emne": "Beskyttelse og indkvartering af sub-junior atleter",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Alle sub-junior atleter skal udfylde og indsende en IPF Safeguard Acknowledgement Form for at kunne deltage. Ved hver international IPF-konkurrence udpeges en event safeguarding officer, og der gælder obligatoriske krav til, hvem sub-juniorer må indkvartere sig med (IPF Minor Protection Accommodation Policy).",
+   "citat": "Derudover er det et krav for deltagelse, at alle sub. junior \natleter færdiggør og indsender en IPF Safeguarde Ackledgement Form.",
+   "side": 18,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5774,
+   "citat_side": 18,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Derudover er det et krav for deltagelse, at alle sub. junior atleter færdiggør og indsender en IPF Safeguarde Ackledgement Form.",
+     "citat_pos": 5774
+    },
+    {
+     "citat": "Derudover er det et krav for deltagelse, at alle sub. junior \natleter færdiggør og indsender en IPF Safeguarde Ackledgement Form.",
+     "citat_pos": 5774
+    }
+   ]
+  },
+  {
+   "id": "K38",
+   "status": "certain",
+   "candidates": [
+    38
+   ],
+   "emne": "Hotelkrav for coaches, officials og dommere",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Coaches, officials og dommere skal kun bo mindst to på hinanden følgende nætter på det officielle mesterskabshotel, og deres akkreditering gælder hele mesterskabet. Kravene til atleters indkvartering ændres ikke, og ikrafttrædelsesdatoen er ubestemt.",
+   "citat": "Coaches, officials and referees are required to stay a minimum of two consecutive nights in \nthe designated champion hotel, while their accreditation valid for the duration of the \nchampionship.",
+   "side": 18,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 5844,
+   "citat_side": 18,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Coaches, officials and referees are required to stay a minimum of two consecutive nights in the designated champion hotel, while their accreditation valid for the duration of the championship.",
+     "citat_pos": 5844
+    },
+    {
+     "citat": "Coaches, officials and referees are required to stay a minimum of two consecutive nights in \nthe designated champion hotel, while their accreditation valid for the duration of the \nchampionship.",
+     "citat_pos": 5844
+    }
+   ]
+  },
+  {
+   "id": "K39",
+   "status": "certain",
+   "candidates": [
+    39
+   ],
+   "emne": "Procedure for ændring af IPF's tekniske regler",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår, og ændringer skal følge en fast procedure: indsendelse af forslag, vurdering og publicering, høringsperiode, overvejelse af feedback, publicering af de ændrede regler og ikrafttrædelsesdato.",
+   "citat": "De tekniske regler kan ændres en gang i et kalenderår og \nændringer skal følge klare procedurer.",
+   "side": 19,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 6034,
+   "citat_side": 19,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "De tekniske regler kan ændres en gang i et kalenderår og ændringer skal følge klare procedurer.",
+     "citat_pos": 6034
+    },
+    {
+     "citat": "De tekniske regler kan ændres en gang i et kalenderår og \nændringer skal følge klare procedurer.",
+     "citat_pos": 6034
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 19,
+     "emne": "Ændring af IPF's forfatning om By-Laws",
+     "tekst": "EC foreslog, at EC får fuld autoritet over By-Laws uden medlemslandenes stemmeret. Forslaget bortfaldt uden afstemning, da kun 71 af de krævede 81 lande var repræsenteret.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      45,
+      64
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 15,
+     "emne": "Forfatningsændring om By-Laws",
+     "tekst": "EC's forslag om at give EC magt til at skabe og ændre By-Laws uden medlemslandenes stemmeret kunne ikke behandles, da kun 71 af de krævede 81 lande var repræsenteret.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      45,
+      64
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "ikke_afgjort",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Da kun 71 ud af de krævede 81 lande (2/3) var repræsenteret, bortfaldt forslaget om forfatningsændring uden afstemning."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "ikke_afgjort",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Da kun 71 ud af de krævede 81 lande (2/3) var repræsenteret, bortfaldt forslaget om forfatningsændring uden afstemning."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "ikke_afgjort",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Da kun 71 ud af de krævede 81 lande (2/3) var repræsenteret, bortfaldt forslaget om forfatningsændring uden afstemning."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Godtgørelse til IPF's EC er et internt IPF-forhold, der ikke binder DSF.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 5,
+     "emne": "Godtgørelse til IPF EC-medlemmer",
+     "tekst": "Månedlig godtgørelse til præsident, vicepræsident, generalsekretær og kasserer hæves fra 1200 til 2000 euro. DSF stemte imod.",
+     "udfald": "vedtaget",
+     "span": [
+      265,
+      276
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Godtgørelse til EC-officers",
+     "tekst": "IPF's månedlige godtgørelse til præsident, vicepræsident, generalsekretær og kasserer hæves fra 1.200 til 2.000 euro, og EC kan udpege en assistent til konkurrencesekretæren med kompensation bestemt af EC. DSF stemte imod.",
+     "udfald": "vedtaget",
+     "span": [
+      261,
+      276
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Godtgørelse til IPF's topembedsmænd",
+     "tekst": "Månedlig godtgørelse til IPF's præsident, vicepræsident, generalsekretær og kasserer hæves fra 1.200 til 2.000 Euro. Forslag 1-5 indebar tillige, at EC fastsætter kompensationen for en assistent til konkurrencesekretær.",
+     "udfald": "vedtaget",
+     "span": [
+      261,
+      271
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Godtgørelse til IPF's EC er et internt IPF-forhold, der ikke binder DSF."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Godtgørelse til IPF's EC er et internt IPF-forhold, der ikke binder DSF."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Godtgørelse til IPF's egne embedsmænd er et internt IPF-forhold, der ikke binder DSF."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "duplicate",
+   "reason": "Samme bortfaldne forfatningsforslag som kandidat 1.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Forfatningsændring om medlemslandenes stemmeret ved By-Laws",
+     "tekst": "EC foreslog en ændring af IPF's constitution, så medlemslandene ikke skulle kunne stemme om By-Laws. Forslaget bortfaldt uden afstemning, da kun 71 af de krævede 81 lande (2/3) var repræsenteret.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      1582,
+      1600
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 21,
+     "emne": "Medlemslandenes stemmeret om IPF By-Laws",
+     "tekst": "Forslag om ændring af IPF's constitution, så EC får magt til at vedtage og ændre By-Laws uden medlemslandenes afstemning. Forslaget kunne ikke behandles, da kun 71 af de krævede 81 medlemslande (2/3) var repræsenteret.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      1582,
+      1615
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Samme bortfaldne forfatningsforslag som kandidat 1."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Samme forfatningsforslag som kandidat 1."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Samme bortfaldne forslag om forfatningsændring som kandidat 1."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Orientering om en ansøgning i præsidentens beretning, ikke en regel der binder DSF.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 37,
+     "emne": "Para powerlifting som underafdeling af IPF",
+     "tekst": "Ansøgning om at inddrage para powerlifting som underafdeling af IPF blev ikke godkendt på grund af IPF's finansielle situation og organisatoriske forhold.",
+     "udfald": "forkastet",
+     "span": [
+      2331,
+      2345
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Orientering om en ansøgning i præsidentens beretning, ikke en regel der binder DSF."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Orientering i præsidentens beretning om et internt IPF-organisationsforhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Afvisning af en enkelt ansøgning om para powerlifting er ikke en regel for DSF."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Valg af medlemmer til IPF's kommissioner er et internt IPF-forhold.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Valg af medlemmer til IPF-kommissioner",
+     "tekst": "By-Laws præciseres med hensyn til, hvordan medlemmer til IPF's kommissioner vælges.",
+     "udfald": "vedtaget",
+     "span": [
+      3441,
+      3450
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Valg af medlemmer til IPF's kommissioner er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Valg til IPF-kommissioner er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Valg af medlemmer til IPF's kommissioner er et internt IPF-forhold."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Stipendium til IPF's tekniske formand er et internt IPF-forhold.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Honorar til formand for teknisk kommission",
+     "tekst": "IPF må tildele formanden for den tekniske kommission, som også er EC-medlem, op til 2.000 Euro om måneden i stedet for 500 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      3483,
+      3502
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Stipendium til IPF's tekniske formand er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Honorar til IPF's formand for teknisk kommission er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Honorar til IPF's tekniske formand er et internt IPF-forhold."
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Athlete's Commission, mål og dataregistrering",
+     "tekst": "By Law 4.3 om Athlete's Commission Goals and objectives omskrives med præciseringer og krav om flere registreringer fra medlemslandene samt IPF's opbevaring og behandling af disse data.",
+     "udfald": "vedtaget",
+     "span": [
+      3645,
+      3657
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 8: Godkendt 14 for 7 imod og 31 undlod at stemme."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 8: Godkendt 14 for 7 imod og 31 undlod at stemme."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 8: Godkendt 14 for 7 imod og 31 undlod at stemme."
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 18,
+     "emne": "Forslag til IPF's tekniske regler via Rules Group",
+     "tekst": "Der indføres en formular, IPF Technical Rulebook Amendment form, til at indsende forslag til tekniske regler. Alle forslag vurderes af Rules Group.",
+     "udfald": "vedtaget",
+     "span": [
+      3668,
+      3677
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Rules Group og forslag til tekniske regler",
+     "tekst": "By-Laws udvides med en bestemmelse om Rules Group, som skal vurdere og bedømme alle indsendte forslag til de tekniske regler via IPF Technical Rulebook Amendment form.",
+     "udfald": "vedtaget",
+     "span": [
+      3688,
+      3698
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 20,
+     "emne": "IPF forslag til tekniske regler (Rules Group)",
+     "tekst": "Medlemslande kan indsende forslag til IPF's tekniske regler via en IPF Technical Rulebook Amendment Form; alle indsendte forslag vurderes af IPF's Rules Group.",
+     "udfald": "vedtaget",
+     "span": [
+      3668,
+      3698
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "IPF Technical Rulebook Amendment form er kerneproduktet i forslaget, der giver mulighed for at indsende forslag til de tekniske regler. Alle indsendte forslag skal vurderes og bedømmes af Rules Group."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Alle indsendte forslag skal vurderes og bedømmes af Rules Group."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "IPF Technical Rulebook Amendment form er kerneproduktet i forslaget, der giver mulighed for at indsende forslag til de tekniske regler. Alle indsendte forslag skal vurderes og bedømmes af Rules Group."
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Oprettelse af en IPF-kommission er et internt IPF-organisationsforhold.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 6,
+     "emne": "IPF Masterkommission",
+     "tekst": "Der oprettes en Master-kommission under IPF på grund af den store tilgang af masterløftere.",
+     "udfald": "vedtaget",
+     "span": [
+      3749,
+      3763
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 5,
+     "emne": "IPF Masterkommission",
+     "tekst": "IPF opretter en Master-kommission på grund af den store tilgang af masterløftere.",
+     "udfald": "vedtaget",
+     "span": [
+      3749,
+      3763
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 13,
+     "emne": "IPF Masterkommission",
+     "tekst": "IPF opretter en Master-kommission på grund af den store tilgang af masterløftere.",
+     "udfald": "vedtaget",
+     "span": [
+      3749,
+      3763
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 6,
+     "emne": "Master-kommission",
+     "tekst": "IPF opretter en Master-kommission på grund af den store tilgang af masterløftere.",
+     "udfald": "vedtaget",
+     "span": [
+      3749,
+      3763
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Oprettelse af en IPF-kommission er et internt IPF-organisationsforhold."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag om oprettelse af en Master kommission, grundet den store tilgang af masters løftere."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Oprettelse af en IPF-kommission er et internt IPF-organisatorisk forhold."
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "status": "certain",
+   "role": "decision",
+   "key": "K10",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Kønsbalance i IPF-ledelsesorganer",
+     "tekst": "Standard om 40% af hvert køn i ledelsesorganer. Medlemslande skal dokumentere kønsbalance før valg, og IPF kan afvise, suspendere eller kræve dokumentation ved manglende overholdelse.",
+     "udfald": "vedtaget",
+     "span": [
+      3821,
+      3832
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "IPF ligestilling i ledelsesorganer",
+     "tekst": "Standard om mindst 40% af hvert køn i ledelsesorganer. Medlemslande skal dokumentere kønsbalance før valg, og IPF kan afvise, suspendere eller kræve dokumentation ved manglende overholdelse.",
+     "udfald": "vedtaget",
+     "span": [
+      3821,
+      3832
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Ligestilling i ledelsesorganer",
+     "tekst": "IPF indfører en standard om mindst 40% af hvert køn i ledelsesorganer. Medlemslande skal dokumentere kønsbalance ved valg, og IPF's generalsekretær kan afvise, suspendere eller kræve dokumentation ved manglende overholdelse.",
+     "udfald": "vedtaget",
+     "span": [
+      3821,
+      3832
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 7,
+     "emne": "Kønsbalance i ledelsesorganer",
+     "tekst": "Medlemslandene skal sikre en standard på 40 % af hvert køn i ledelsesorganer. IPF's generalsekretær registrerer overholdelsen, og IPF kan afvise, suspendere eller kræve dokumentation fra lande, der ikke overholder kravet.",
+     "udfald": "vedtaget",
+     "span": [
+      3821,
+      3832
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 6,
+     "emne": "IPF krav om kønsbalance i ledelse",
+     "tekst": "IPF indfører en standard på mindst 40 % af hvert køn i ledelsesorganer, og medlemslandene skal demonstrere kønsbalance før valg. Manglende overholdelse kan medføre afvisning, suspendering eller krav om dokumentation.",
+     "udfald": "vedtaget",
+     "span": [
+      3821,
+      3832
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 11: Tilføjelse af ny By Law i forhold til ligestilling. Der ønskes en standard på 40% af hvert køn i ledelsesorganer."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Der ønskes en standard på 40% af hvert køn i ledelsesorganer."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 11 blev godkendt 27 for 9 imod og 16 undlod at stemme."
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "status": "certain",
+   "role": "decision",
+   "key": "K11",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "IPF gebyr for klager og anker",
+     "tekst": "De første 3 klager til Court of Justice og de første 3 anker til Court of Appeals pr. år er gratis. Derefter er gebyret 500 euro pr. sag, nedsat fra 1000 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4033,
+      4054
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "IPF klage- og ankegebyr",
+     "tekst": "De første 3 klager til Court of Justice og anker til Court of Appeals pr. år er gratis; derefter er gebyret 500 euro pr. sag (tidligere 1000 euro).",
+     "udfald": "vedtaget",
+     "span": [
+      4033,
+      4054
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Gebyr for klager og anker til IPF's Court",
+     "tekst": "De første 3 klager til Court of Justice og de første 3 anker til Court of Appeals pr. år er gratis. Derefter er gebyret 500 euro pr. sag, nedsat fra 1000 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4033,
+      4054
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 8,
+     "emne": "Gebyr for klage til Court of Justice",
+     "tekst": "De første 3 indsendte klager pr. år er gratis. Derefter koster hver klage 500 Euro, ned fra 1.000 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4033,
+      4044
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "IPF klagegebyr (Court of Justice)",
+     "tekst": "Ved klager til IPF's Court of Justice er de første 3 klager inden for et år gratis; derefter er gebyret 500 euro pr. klage (tidligere 1000 euro).",
+     "udfald": "vedtaget",
+     "span": [
+      4033,
+      4054
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "De første 3 indsendte klager er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro. \nForslag 12 blev godkendt 33 for 6 imod og 13 undlod at stemme."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "De første 3 indsendte klager er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "De første 3 indsendte klager er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro. \nForslag 12 blev godkendt 33 for 6 imod og 13 undlod at stemme."
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Sammensætningen af IPF's antidopingkommission er et internt IPF-forhold.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 10,
+     "emne": "Sammensætning af Anti-Doping-kommissionen",
+     "tekst": "Anti-Doping-kommissionen skal have en formand og mindst 4 og højst 6 medlemmer, alle med relevant viden og erfaring inden for antidoping.",
+     "udfald": "vedtaget",
+     "span": [
+      4086,
+      4103
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Sammensætningen af IPF's antidopingkommission er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Sammensætning af IPF's Anti-Doping-kommission er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Sammensætning af IPF's Anti-Doping-kommission er et internt IPF-forhold."
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "status": "certain",
+   "role": "decision",
+   "key": "K13",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 11,
+     "emne": "Registrering af medlemslande",
+     "tekst": "Medlemslandene skal afgive yderligere oplysninger om sig selv til IPF.",
+     "udfald": "vedtaget",
+     "span": [
+      4331,
+      4341
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 14: Registrering af medlemslandene. Et forslag om yderligere oplysninger om medlemslandene."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Registrering af medlemslandene. Et forslag om yderligere oplysninger om medlemslandene."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 14: Registrering af medlemslandene. Et forslag om yderligere oplysninger om medlemslandene."
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "status": "certain",
+   "role": "decision",
+   "key": "K14",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 12,
+     "emne": "Ansøgning om tilknytning til IPF for nationer",
+     "tekst": "Nye nationer og medlemslande skal indberette oplysninger efter nye By-Law-regler for at opnå eller fastholde tilknytning til IPF.",
+     "udfald": "vedtaget",
+     "span": [
+      4356,
+      4363
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "EC har nedfældet ti sider med nye By \nLaw i forhold til hvordan nye nationer og medlemsnationer skal indberette oplysninger for at opnå eller fastholder deres tilknytning til IPF."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Ansøgning for nationer om tilknytning til IPF."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "EC har nedfældet ti sider med nye By \nLaw i forhold til hvordan nye nationer og medlemsnationer skal indberette oplysninger for at opnå eller fastholder deres tilknytning til IPF."
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Udgifter til IPF's officers er et internt IPF-forhold.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 13,
+     "emne": "Godtgørelser til EC-officers",
+     "tekst": "Officers i EC kan modtage månedlige godtgørelser fastsat af EC inden for det godkendte budget. Den tidligere ordning med 50 Euro om dagen til mad ændres dermed.",
+     "udfald": "vedtaget",
+     "span": [
+      4426,
+      4436
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Udgifter til IPF's officers er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Godtgørelser til IPF's officers er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Godtgørelser til IPF's officers er et internt IPF-forhold."
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "status": "certain",
+   "role": "decision",
+   "key": "K16",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Medlemsgebyr til IPF",
+     "tekst": "IPF's medlemsgebyr for medlemslande hæves fra 400 til 500 euro. Gebyr for at søge om VM og kombinationsstævner hæves fra 1000 til 1500 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4466,
+      4475
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 14,
+     "emne": "Medlemsgebyr for medlemslande",
+     "tekst": "Medlemslandenes gebyr til IPF hæves fra 400 til 500 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4466,
+      4475
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "IPF medlemsgebyr for medlemslande",
+     "tekst": "Medlemslandenes årlige medlemsgebyr til IPF hæves fra 400 til 500 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4466,
+      4475
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Medlemslandenes gebyr går fra 400 til 500 Euro godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Medlemslandenes gebyr går fra 400 til 500 Euro godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Medlemslandenes gebyr går fra 400 til 500 Euro godkendt."
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "status": "certain",
+   "role": "decision",
+   "key": "K17",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "IPF deltagergebyr for atleter",
+     "tekst": "IPF's deltagergebyr for atleter hæves fra 60 til 100 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4475,
+      4485
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "IPF deltagergebyr for atleter",
+     "tekst": "IPF's deltagergebyr for atleter hæves fra 60 til 100 euro, og medlemslandenes gebyr hæves fra 400 til 500 euro. Gebyr for at søge om VM og kombinationsstævner hæves fra 1000 til 1500 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4475,
+      4485
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Deltagergebyr for atleter ved IPF-stævner",
+     "tekst": "IPF's deltagergebyr for atleter hæves fra 60 til 100 euro. Medlemslandenes gebyr hæves fra 400 til 500 euro, og gebyret for at søge om VM og kombinationsstævner hæves fra 1000 til 1500 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4466,
+      4485
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 15,
+     "emne": "Deltagergebyr for atleter",
+     "tekst": "Deltagergebyret for atleter ved IPF-konkurrencer hæves fra 60 til 100 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4475,
+      4485
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "IPF deltagergebyr for atleter",
+     "tekst": "IPF's deltagergebyr for atleter ved internationale konkurrencer hæves fra 60 til 100 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4475,
+      4485
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Deltagergebyr for atleter går fra 60 til 100 Euro godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Deltagergebyr for atleter går fra 60 til 100 Euro godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Deltagergebyr for atleter går fra 60 til 100 Euro godkendt."
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "status": "certain",
+   "role": "decision",
+   "key": "K18",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 16,
+     "emne": "Ansøgningsgebyr for VM og kombinationsstævner",
+     "tekst": "Gebyret for at søge om at afholde VM og kombinationsstævner hæves fra 1.000 til 1.500 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4485,
+      4500
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "IPF gebyr for ansøgning om VM",
+     "tekst": "Gebyret for at ansøge om at afholde VM og kombinationsstævner under IPF hæves fra 1000 til 1500 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      4485,
+      4500
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Gebyr for at søge om VM og kombinationsstævner går fra 1000 til 1500 Euro godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Gebyr for at søge om VM og kombinationsstævner går fra 1000 til 1500 Euro godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Gebyr for at søge om VM og kombinationsstævner går fra 1000 til 1500 Euro godkendt."
+    }
+   ]
+  },
+  {
+   "number": 19,
+   "status": "certain",
+   "role": "decision",
+   "key": "K19",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "IPF gebyr pr. atlet og andel til arrangør",
+     "tekst": "Medlemslandene skal betale 100 euro for hver atlet, og ved hver international konkurrence skal 40 euro af deltagergebyret betales til stævnearrangøren.",
+     "udfald": "vedtaget",
+     "span": [
+      4584,
+      4605
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "IPF gebyr til stævnearrangør",
+     "tekst": "Medlemslande skal betale 100 euro for hver atlet, og ved hver international konkurrence skal 40 euro af deltagergebyret betales til stævnearrangøren.",
+     "udfald": "vedtaget",
+     "span": [
+      4584,
+      4605
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 17,
+     "emne": "Gebyr pr. atlet for medlemslande",
+     "tekst": "Medlemslandene skal betale 100 Euro for hver atlet. Ved hver international konkurrence skal 40 Euro af deltagergebyret betales til stævnearrangøren.",
+     "udfald": "vedtaget",
+     "span": [
+      4584,
+      4592
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "IPF atletgebyr og andel til stævnearrangør",
+     "tekst": "Medlemslandene skal betale 100 euro for hver atlet, og ved hver international konkurrence skal 40 euro af deltagergebyret betales til stævnearrangøren.",
+     "udfald": "vedtaget",
+     "span": [
+      4584,
+      4605
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Medlemslandene skal betale 100 Euro for hver atlet og ved hver international konkurrence skal 40 Euro af deltagergebyr betales til stævnearrangøren."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Medlemslandene skal betale 100 Euro for hver atlet og ved hver international konkurrence skal 40 Euro af deltagergebyr betales til stævnearrangøren."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Medlemslandene skal betale 100 Euro for hver atlet og ved hver international konkurrence skal 40 Euro af deltagergebyr betales til stævnearrangøren. \nForslag 18 blev godkendt 13 for 6 imod og 15 undlod at stemme."
+    }
+   ]
+  },
+  {
+   "number": 20,
+   "status": "certain",
+   "role": "decision",
+   "key": "K20",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 9,
+     "emne": "Gebyr for anke til Court",
+     "tekst": "De første 3 indsendte anker inden for et år er gratis. De næste anker koster 500 Euro pr. sag.",
+     "udfald": "vedtaget",
+     "span": [
+      4643,
+      4654
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 5,
+     "emne": "IPF ankegebyr (Court of Appeals)",
+     "tekst": "Ved anker til IPF's Court of Appeals er de første 3 anker inden for et år gratis; derefter er gebyret 500 euro pr. sag.",
+     "udfald": "vedtaget",
+     "span": [
+      4643,
+      4677
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "De første 3 indsendte anker er gratis inden for et år. De næste indsendte klager har et gebyr på \n500 Euro. \nForslag 19 blev godkendt 27 for 7 imod og 18 undlod at stemme."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "De første 3 indsendte anker er gratis inden for et år. De næste indsendte klager har et gebyr på 500 Euro. Forslag 19 blev godkendt 27 for 7 imod og 18 undlod at stemme."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "De første 3 indsendte anker er gratis inden for et år. De næste indsendte klager har et gebyr på \n500 Euro. \nForslag 19 blev godkendt 27 for 7 imod og 18 undlod at stemme."
+    }
+   ]
+  },
+  {
+   "number": 21,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Optagelse i IPF's Hall of Fame er et internt IPF-forhold.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 18,
+     "emne": "Hall of Fame-indstilling",
+     "tekst": "Partnere og organisationer kan indstilles til og optages i IPF's Hall of Fame.",
+     "udfald": "vedtaget",
+     "span": [
+      4682,
+      4693
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Optagelse i IPF's Hall of Fame er et internt IPF-forhold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "IPF's Hall of Fame er et internt IPF-forhold, der ikke binder DSF."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Optagelseskriterier til IPF's Hall of Fame er et internt IPF-forhold."
+    }
+   ]
+  },
+  {
+   "number": 22,
+   "status": "certain",
+   "role": "decision",
+   "key": "K22",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 19,
+     "emne": "Betaling af indkvartering ved internationale konkurrencer",
+     "tekst": "Det er muligt at betale for indkvartering ved internationale konkurrencer via bankoverførsler, kort og med kontanter.",
+     "udfald": "vedtaget",
+     "span": [
+      4711,
+      4727
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 18,
+     "emne": "IPF betalingsformer for indkvartering",
+     "tekst": "Indkvartering ved internationale IPF-konkurrencer skal kunne betales via bankoverførsel, kort og kontant.",
+     "udfald": "vedtaget",
+     "span": [
+      4711,
+      4727
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Det er muligt at betale for indkvartering ved internationale konkurrencer via bankoverførsler, kort og med kontanter."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Det er muligt at betale for indkvartering ved internationale konkurrencer via bankoverførsler, kort og med kontanter."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Det er muligt at betale for indkvartering ved internationale konkurrencer via bankoverførsler, kort og med kontanter."
+    }
+   ]
+  },
+  {
+   "number": 23,
+   "status": "certain",
+   "role": "decision",
+   "key": "K23",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 7,
+     "emne": "Nomineringsfrist til IPF-konkurrencer",
+     "tekst": "Nominering af atleter og coaches skal ske 30 dage før konkurrencen i stedet for 21 dage.",
+     "udfald": "vedtaget",
+     "span": [
+      4742,
+      4756
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 6,
+     "emne": "Nominering af atleter og coaches, frist",
+     "tekst": "Nominering af atleter og coaches skal ske 30 dage før konkurrencen i stedet for 21 dage.",
+     "udfald": "vedtaget",
+     "span": [
+      4742,
+      4756
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 7,
+     "emne": "Frist for nominering af atleter og coaches",
+     "tekst": "Nominering af atleter og coaches skal ske 30 dage før stævnet i stedet for 21 dage.",
+     "udfald": "vedtaget",
+     "span": [
+      4740,
+      4756
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 20,
+     "emne": "Nomineringsfrist for atleter og coaches",
+     "tekst": "Nominering af atleter og coaches skal ske 30 dage før konkurrencen i stedet for 21 dage før.",
+     "udfald": "vedtaget",
+     "span": [
+      4742,
+      4756
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 7,
+     "emne": "IPF frist for nominering af atleter og coaches",
+     "tekst": "Atleter og coaches skal nomineres til IPF-konkurrencer senest 30 dage før i stedet for 21 dage før.",
+     "udfald": "vedtaget",
+     "span": [
+      4740,
+      4756
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 22 Nominering af atleter og coaches 30 dage før i stedet for 21 dage før."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Nominering af atleter og coaches 30 dage før i stedet for 21 dage før."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 22 Nominering af atleter og coaches 30 dage før i stedet for 21 dage før."
+    }
+   ]
+  },
+  {
+   "number": 24,
+   "status": "certain",
+   "role": "decision",
+   "key": "K24",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 8,
+     "emne": "Antal officielle repræsentanter ved IPF-konkurrencer",
+     "tekst": "Ved åbne konkurrencer må der højst nomineres 4 officielle repræsentanter, og ved kombinerede konkurrencer højst 6. Officielle repræsentanter skal have relevante opgaver for at opholde sig i forberedelsesområde, på plateau eller i opvarmningslokale.",
+     "udfald": "vedtaget",
+     "span": [
+      4776,
+      4791
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 7,
+     "emne": "Antal officielle repræsentanter ved IPF-konkurrencer",
+     "tekst": "Ved åbne konkurrencer må der højst nomineres 4 officielle repræsentanter og ved kombinerede konkurrencer højst 6. Antallet af coaches ved kombinerede bænkpres-konkurrencer hæves fra 20 til 24 fra 1.1.2027.",
+     "udfald": "vedtaget",
+     "span": [
+      4786,
+      4791
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 8,
+     "emne": "Antal officielle repræsentanter og coaches ved IPF-stævner",
+     "tekst": "Ved åbne konkurrencer må der højst nomineres 4 officielle repræsentanter og ved kombinerede konkurrencer højst 6. Fra 1.1.2027 må der tilmeldes 24 coaches i stedet for 20 ved alle aldersgrupper i kombinerede bænkpres-konkurrencer.",
+     "udfald": "vedtaget",
+     "span": [
+      4776,
+      4791
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 21,
+     "emne": "Maksimalt antal officielle repræsentanter ved nominering",
+     "tekst": "Ved åbne konkurrencer må der højst nomineres 4 officielle repræsentanter pr. hold, og ved kombinerede konkurrencer højst 6.",
+     "udfald": "vedtaget",
+     "span": [
+      4776,
+      4786
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 8,
+     "emne": "IPF antal officielle repræsentanter",
+     "tekst": "Ved åbne IPF-konkurrencer må der højst nomineres 4 officielle repræsentanter pr. land, ved kombinerede konkurrencer højst 6.",
+     "udfald": "vedtaget",
+     "span": [
+      4771,
+      4791
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Nominering af atleter og coaches ved åbne konkurrence må der højst nomineres 4 \nofficielle repræsentanter. Ved kombineret konkurrencer højst 6."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Nominering af atleter og coaches ved åbne konkurrence må der højst nomineres 4 officielle repræsentanter. Ved kombineret konkurrencer højst 6."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Nominering af atleter og coaches ved åbne konkurrence må der højst nomineres 4 \nofficielle repræsentanter. Ved kombineret konkurrencer højst 6."
+    }
+   ]
+  },
+  {
+   "number": 25,
+   "status": "certain",
+   "role": "decision",
+   "key": "K25",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 9,
+     "emne": "Krav til coaches ved IPF-nominering",
+     "tekst": "Alle coaches skal have IPF-basis course certificate fra 1. januar 2029. Alle medlemslande skal deltage i førstkommende IPF Coach Level 2 i deres region. Headcoaches skal bestå High-performance Coaches Education Program via WADA ADEL for at blive nomineret.",
+     "udfald": "vedtaget",
+     "span": [
+      4845,
+      4858
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 8,
+     "emne": "Krav til coaches ved IPF-nominering",
+     "tekst": "Alle coaches skal have IPF-basiscertifikat fra 1. januar 2029. Medlemslande skal deltage i førstkommende IPF Coach Level 2 i deres region, og headcoaches skal bestå WADA ADEL High-performance Coaches Education Program for at kunne nomineres.",
+     "udfald": "vedtaget",
+     "span": [
+      4845,
+      4858
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Trænerkrav ved IPF-nominering",
+     "tekst": "Alle coaches skal have IPF-basis course certificate fra 1. januar 2029. Medlemslande skal deltage i førstkommende IPF Coach Level 2 i regionen. Headcoaches skal bestå High-performance Coaches Education Program gennem WADA ADEL for at blive nomineret til VM, internationale og regionale mesterskaber og cups.",
+     "udfald": "vedtaget",
+     "span": [
+      4845,
+      4858
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 22,
+     "emne": "Coach-uddannelseskrav for nominering",
+     "tekst": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029. Medlemslandene skal deltage i førstkommende IPF coach Level 2 i deres region, og headcoaches skal bestå WADA ADEL's High-performance Coaches Education Program for at blive nomineret til VM, internationale og regionale mesterskaber og cups.",
+     "udfald": "vedtaget",
+     "span": [
+      4845,
+      4858
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 9,
+     "emne": "IPF uddannelseskrav til coaches",
+     "tekst": "Fra 1. januar 2029 skal alle coaches have et IPF-basis course certificate. Alle medlemslande skal deltage i førstkommende IPF Coach Level 2 i deres region, og alle headcoaches skal bestå WADA ADEL High-Performance Coaches Education Program for at kunne nomineres til VM, internationale og regionale mesterskaber og cups.",
+     "udfald": "vedtaget",
+     "span": [
+      4845,
+      4871
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029."
+    }
+   ]
+  },
+  {
+   "number": 26,
+   "status": "certain",
+   "role": "decision",
+   "key": "K26",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 23,
+     "emne": "Officielle repræsentanters adgang til forberedelsesområdet",
+     "tekst": "Officielle repræsentanter må kun opholde sig i forberedelsesområdet, på platformen eller i opvarmningslokalet, hvis de har relevante opgaver ddér.",
+     "udfald": "vedtaget",
+     "span": [
+      4920,
+      4930
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 10,
+     "emne": "IPF officielle repræsentanters opgaver",
+     "tekst": "Officielle repræsentanter skal have relevante opgaver for at måtte opholde sig i forberedelsesområdet, på plateauet eller i opvarmningslokalet ved IPF-konkurrencer.",
+     "udfald": "vedtaget",
+     "span": [
+      4918,
+      4934
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 25 Nominering af atleter og coaches omhandlende officielle repræsentanter skal have \nrelevante opgaver, hvis de skal opholde sig forberedelsesområdet, på plateauet eller \nopvarmningslokalet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "officielle repræsentanter skal have relevante opgaver, hvis de skal opholde sig forberedelsesområdet, på plateauet eller opvarmningslokalet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "officielle repræsentanter skal have \nrelevante opgaver, hvis de skal opholde sig forberedelsesområdet, på plateauet eller \nopvarmningslokalet."
+    }
+   ]
+  },
+  {
+   "number": 27,
+   "status": "certain",
+   "role": "decision",
+   "key": "K27",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 24,
+     "emne": "Coaching af løftere fra andre nationer",
+     "tekst": "Coaches må coache løftere fra andre nationer end deres egen. Forslaget præciserer et allerede eksisterende princip.",
+     "udfald": "vedtaget",
+     "span": [
+      4953,
+      4965
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Coaches berettigelse til at coache løftere fra andre nation end sin egen er i dette forslag en præcisering af et allerede eksisterende forslag."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Coaches berettigelse til at coache løftere fra andre nation end sin egen er i dette forslag en præcisering af et allerede eksisterende forslag."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Coaches berettigelse til at coache løftere fra andre nation end sin egen er i dette forslag en præcisering af et allerede eksisterende forslag."
+    }
+   ]
+  },
+  {
+   "number": 28,
+   "status": "certain",
+   "role": "decision",
+   "key": "K28",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 10,
+     "emne": "Antal coaches ved bænkpresstævner",
+     "tekst": "Der må tilmeldes 24 coaches i stedet for 20 for alle aldersgrupper ved kombinerede bænkpresskonkurrencer, både i klassisk styrkeløft og styrkeløft.",
+     "udfald": "vedtaget",
+     "span": [
+      4998,
+      5008
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 25,
+     "emne": "Antal coaches ved bænkpresskonkurrencer",
+     "tekst": "Der må tilmeldes 24 coaches i stedet for 20 coaches ved bænkpreskonkurrencer i alle aldersgrupper, både i klassisk styrkeløft og styrkeløft.",
+     "udfald": "vedtaget",
+     "span": [
+      4998,
+      5008
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 11,
+     "emne": "IPF antal coaches ved kombinerede bænkpreskonkurrencer",
+     "tekst": "Der må tilmeldes 24 coaches i stedet for 20 ved kombinerede bænkpreskonkurrencer i alle aldersgrupper, både klassisk og udstyr. Gælder fra 1. januar 2027.",
+     "udfald": "vedtaget",
+     "span": [
+      4998,
+      5030
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "der må tilmeldes 24 coaches i stedet for 20 coaches. Dette gælder alle aldersgrupper kombineret bænkpreskonkurrencer både i klassisk styrkeløft og styrkeløft. Hvis forslaget godkendes, træder det i kraft 1. 1.2027."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "der må tilmeldes 24 coaches i stedet for 20 coaches. Dette gælder alle aldersgrupper kombineret bænkpreskonkurrencer både i klassisk styrkeløft og styrkeløft."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "der må tilmeldes 24 coaches i \nstedet for 20 coaches. Dette gælder alle aldersgrupper kombineret bænkpreskonkurrencer \nbåde i klassisk styrkeløft og styrkeløft. Hvis forslaget godkendes, træder det i kraft 1. 1.2027."
+    }
+   ]
+  },
+  {
+   "number": 29,
+   "status": "certain",
+   "role": "decision",
+   "key": "K29",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 11,
+     "emne": "Indsendelse af nationale mesterskabsresultater til IPF",
+     "tekst": "Hvert medlemsland skal indsende officielle resultater fra deres årlige nationale mesterskaber på engelsk til IPF's nomineringssystem eller konkurrencesekretær. Manglende indsendelse kan medføre afvisning af nomineringer.",
+     "udfald": "vedtaget",
+     "span": [
+      5055,
+      5072
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 9,
+     "emne": "Indsendelse af nationale mesterskabsresultater til IPF",
+     "tekst": "Hvert medlemsland skal indsende officielle resultater fra årlige nationale mesterskaber på engelsk til IPF's nomineringssystem eller konkurrencesekretær. Manglende indsendelse kan medføre afvisning af nomineringer.",
+     "udfald": "vedtaget",
+     "span": [
+      5055,
+      5072
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Indsendelse af nationale mesterskabsresultater til IPF",
+     "tekst": "Medlemslande skal indsende officielle resultater fra deres årlige nationale mesterskaber på engelsk til IPF's nomineringssystem eller til konkurrencesekretæren. Manglende indsendelse kan medføre afvisning af nomineringer. Reglen træder i kraft 1.1.2027.",
+     "udfald": "vedtaget",
+     "span": [
+      5055,
+      5072
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 26,
+     "emne": "Indberetning af nationale mesterskabsresultater",
+     "tekst": "Medlemslandene skal indsende officielle resultater fra deres årlige nationale mesterskaber til IPF's nomineringssystem på engelsk, eller til IPF's konkurrencesekretær ved tekniske begrænsninger. Manglende indsendelse kan medføre afvisning af nomineringer.",
+     "udfald": "vedtaget",
+     "span": [
+      5055,
+      5067
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 12,
+     "emne": "IPF indsendelse af nationale mesterskabsresultater",
+     "tekst": "Hvert medlemsland skal indsende officielle resultater fra sine årlige nationale mesterskaber på engelsk til IPF's nomineringssystem (eller til IPF's konkurrencesekretær ved tekniske begrænsninger). Manglende indsendelse kan medføre afvisning af nomineringer. Gælder fra 1. januar 2027.",
+     "udfald": "vedtaget",
+     "span": [
+      5055,
+      5072
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Hvert medlemsland skal indsende de officielle resultater fra deres årlige nationale \nmesterskaber til IPF nomineringssystemet på engelsk."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Hvert medlemsland skal indsende de officielle resultater fra deres årlige nationale mesterskaber til IPF nomineringssystemet på engelsk."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Hvert medlemsland skal indsende de officielle resultater fra deres årlige nationale \nmesterskaber til IPF nomineringssystemet på engelsk."
+    }
+   ]
+  },
+  {
+   "number": 30,
+   "status": "certain",
+   "role": "decision",
+   "key": "K30",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 12,
+     "emne": "Kvalificerings- og nomineringsproces for atleter",
+     "tekst": "Medlemslande skal have en klar og transparent kvalificerings- og nomineringsproces. Ved troværdige oplysninger om manglende overholdelse kan IPF kræve dokumentation og undersøgelse.",
+     "udfald": "vedtaget",
+     "span": [
+      5222,
+      5233
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 12,
+     "emne": "Gennemsigtig kvalificerings- og nomineringsproces",
+     "tekst": "Medlemslande skal have en klar og transparent kvalificerings- og nomineringsproces. Ved troværdige oplysninger om manglende overholdelse kan IPF kræve dokumentation og undersøgelse.",
+     "udfald": "vedtaget",
+     "span": [
+      5222,
+      5233
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 27,
+     "emne": "Transparent kvalificering og nominering af atleter",
+     "tekst": "Medlemslandene skal have en klar og transparent kvalificeringsproces og nominering, der opfylder fastsatte standarder. Ved troværdige oplysninger om manglende overholdelse kan IPF kræve dokumentation og undersøgelse af ledelsen.",
+     "udfald": "vedtaget",
+     "span": [
+      5223,
+      5231
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 13,
+     "emne": "IPF krav til nationale kvalifikations- og nomineringsprocesser",
+     "tekst": "Medlemslandene skal have en klar og transparent kvalifikations- og nomineringsproces, der opfylder IPF's standarder. Ved troværdige oplysninger om manglende overholdelse kan IPF kræve dokumentation og undersøgelse.",
+     "udfald": "vedtaget",
+     "span": [
+      5222,
+      5237
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "medlemslandene skal have en klar og \ntransparant kvalificerings proces samt nominering, der opfylder opstillede standarder."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "medlemslandene skal have en klar og transparant kvalificerings proces samt nominering, der opfylder opstillede standarder."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "medlemslandene skal have en klar og transparant kvalificerings proces samt nominering, der opfylder opstillede standarder."
+    }
+   ]
+  },
+  {
+   "number": 31,
+   "status": "certain",
+   "role": "decision",
+   "key": "K31",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 28,
+     "emne": "Beskyttelse af atleters nomineringsberettigelse",
+     "tekst": "Forhold og procedurer for nominering af løftere præciseres for at beskytte atleters berettigelse til nominering.",
+     "udfald": "vedtaget",
+     "span": [
+      5279,
+      5289
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 30: Nominering af atleter og coaches – beskyttelse af atleter i forhold til deres \nberettigelse til nominering."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "beskyttelse af atleter i forhold til deres berettigelse til nominering"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Nominering af atleter og coaches – beskyttelse af atleter i forhold til deres \nberettigelse til nominering. Præcisering af forhold og procedurer i forhold til nominering af \nløftere."
+    }
+   ]
+  },
+  {
+   "number": 32,
+   "status": "certain",
+   "role": "decision",
+   "key": "K32",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 13,
+     "emne": "Atlet selvbetaling ved international konkurrence",
+     "tekst": "Ved begrænsede økonomiske midler kan en atlet selv betale for deltagelse ved international konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      5315,
+      5329
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 14,
+     "emne": "Atletter med begrænset økonomi kan selvbetale deltagelse",
+     "tekst": "Ved begrænsede økonomiske midler kan en atlet selv betale for deltagelse ved international konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      5315,
+      5329
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 10,
+     "emne": "Egenbetaling af atlet ved IPF-stævner",
+     "tekst": "Ved begrænsede økonomiske midler kan en atlet selv betale for deltagelse i en international konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      5315,
+      5329
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 29,
+     "emne": "Atlet betaler selv for international deltagelse",
+     "tekst": "Ved begrænsede økonomiske midler kan en atlet selv betale for deltagelse i en international konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      5319,
+      5329
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 14,
+     "emne": "IPF atleters egenbetaling for deltagelse",
+     "tekst": "Ved begrænsede økonomiske midler i forbundet kan en atlet selv betale for deltagelse i en international IPF-konkurrence.",
+     "udfald": "vedtaget",
+     "span": [
+      5315,
+      5329
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Ved begrænset økonomiske midler, kan en atlet selv betale for deltagelse ved \ninternational konkurrence."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Ved begrænset økonomiske midler, kan en atlet selv betale for deltagelse ved international konkurrence."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Ved begrænset økonomiske midler, kan en atlet selv betale for deltagelse ved \ninternational konkurrence."
+    }
+   ]
+  },
+  {
+   "number": 33,
+   "status": "certain",
+   "role": "decision",
+   "key": "K33",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 30,
+     "emne": "Repræsentation af medlemsland ved skift af nation",
+     "tekst": "En atlet, der vælger at repræsentere et andet medlemsland, skal opfylde den præciserede proces for berettigelse til at repræsentere et medlemsland.",
+     "udfald": "vedtaget",
+     "span": [
+      5359,
+      5376
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 32 Berettigelse til at repræsentere et medlemsland forholder sig til atleter, der vælger \nat repræsentere et andet medlemsland."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Berettigelse til at repræsentere et medlemsland forholder sig til atleter, der vælger at repræsentere et andet medlemsland."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Berettigelse til at repræsentere et medlemsland forholder sig til atleter, der vælger \nat repræsentere et andet medlemsland. Der er en præcisering af processen i dette forslag."
+    }
+   ]
+  },
+  {
+   "number": 34,
+   "status": "certain",
+   "role": "decision",
+   "key": "K34",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 14,
+     "emne": "Dommere ved IPF-landshold",
+     "tekst": "Der kræves tilmelding af tre dommere ved 15 nominerede løftere. Bøden for ikke at sende det korrekte antal dommere sænkes fra 2000 til 1000 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      5413,
+      5444
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 10,
+     "emne": "Dommere ved IPF-landshold",
+     "tekst": "Der kræves tilmelding af tre dommere ved 15 nominerede løftere. Bøden for ikke at sende korrekt antal dommere sættes ned fra 2000 til 1000 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      5426,
+      5444
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 9,
+     "emne": "Dommere ved landshold til IPF-stævner",
+     "tekst": "Der kræves tilmelding af tre dommere ved 15 nominerede løftere. Bøden for ikke at sende det korrekte antal dommere nedsættes fra 2000 til 1000 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      5426,
+      5444
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 31,
+     "emne": "Dommere tilknyttet landshold",
+     "tekst": "Der skal tilmeldes tre dommere ved 15 nominerede løftere ved kombinations- og andre konkurrencer. Bøden for ikke at sende det korrekte antal dommere er sat ned fra 2.000 til 1.000 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      5426,
+      5444
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 15,
+     "emne": "IPF dommerforpligtelse for landshold",
+     "tekst": "Medlemslande skal tilmelde tre dommere ved 15 nominerede løftere ved konkurrencer og kombinationskonkurrencer. Bøden for ikke at sende det korrekte antal dommere nedsættes fra 2000 til 1000 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      5413,
+      5444
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Der er et krav om tilmelding af tre dommere ved \n15 nominerede løftere. Bøde ved ikke at sende det korrekte antal dommere afsted er sat ned \nfra 2000 til 1000 Euro."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Der er et krav om tilmelding af tre dommere ved 15 nominerede løftere. Bøde ved ikke at sende det korrekte antal dommere afsted er sat ned fra 2000 til 1000 Euro."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Der er et krav om tilmelding af tre dommere ved \n15 nominerede løftere. Bøde ved ikke at sende det korrekte antal dommere afsted er sat ned \nfra 2000 til 1000 Euro."
+    }
+   ]
+  },
+  {
+   "number": 35,
+   "status": "certain",
+   "role": "decision",
+   "key": "K35",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 32,
+     "emne": "Deltagelse i konkurrence uden overholdelse af anti-doping-regler",
+     "tekst": "IPF vedtog et forslag om deltagelse ved en konkurrence, der ikke overholder anti-doping-regler, for at præcisere, hvad dette dækker. Den præcise ordlyd fremgår ikke af referatet.",
+     "udfald": "vedtaget",
+     "span": [
+      5487,
+      5491
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 34 blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 34 blev godkendt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Forslag 34 blev godkendt."
+    }
+   ]
+  },
+  {
+   "number": 36,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Forslag om IPF's etiske kommission er et internt IPF-forhold og blev ikke behandlet.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 33,
+     "emne": "Etisk kommission, struktur i By-Laws",
+     "tekst": "Forslag om at omstrukturere By-Law-teksten om Etisk kommission, fjerne unødig procedure og operationelle detaljer og samtidig bevare kommissionens autoritet og uafhængighed. Forslaget blev ikke bragt op på GA, og der blev ikke stemt om det.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      5667,
+      5681
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Forslag om IPF's etiske kommission er et internt IPF-forhold og blev ikke behandlet."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Forslag om IPF's etiske kommission er et internt IPF-forhold, og det blev ikke behandlet."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Forslaget om IPF's etiske kommission blev aldrig behandlet og vedrører IPF's interne organisation."
+    }
+   ]
+  },
+  {
+   "number": 37,
+   "status": "certain",
+   "role": "decision",
+   "key": "K37",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 15,
+     "emne": "Beskyttelse af sub-junior atleter",
+     "tekst": "Alle sub-junior atleter skal indsende en IPF Safeguard Acknowledgement Form for at deltage. Der udpeges en event safeguarding officer ved hver international konkurrence, og der er obligatoriske krav til, hvem sub-juniorer må indkvartere sig med.",
+     "udfald": "vedtaget",
+     "span": [
+      5775,
+      5794
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 11,
+     "emne": "Beskyttelse af sub-juniorer ved IPF-konkurrencer",
+     "tekst": "Alle sub-junior atleter skal indsende en IPF Safeguard Acknowledgement Form, og der udpeges en safeguarding officer ved hver international konkurrence. Der er obligatoriske krav til, hvem sub-juniorer må indkvartere sig med.",
+     "udfald": "vedtaget",
+     "span": [
+      5774,
+      5794
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 5,
+     "emne": "Beskyttelse af sub-juniorer ved internationale stævner",
+     "tekst": "Alle sub-junior atleter skal udfylde og indsende en IPF Safeguard Acknowledgement Form for at deltage. Der skal udpeges en safeguarding officer ved hvert internationalt stævne, og der gælder obligatoriske krav til hvem sub-juniorer må dele indkvartering med.",
+     "udfald": "vedtaget",
+     "span": [
+      5774,
+      5794
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 34,
+     "emne": "Sikring og indkvartering af sub-junior-atleter",
+     "tekst": "Sub-junior-atleter skal færdiggøre og indsende en IPF Safeguarding Acknowledgement Form for at deltage. Ved hver international IPF-konkurrence skal der udpeges en event safeguarding officer, og der er fastsat obligatoriske krav til, hvilke personer sub-junior-atleter må indkvarteres med.",
+     "udfald": "vedtaget",
+     "span": [
+      5774,
+      5794
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 16,
+     "emne": "IPF beskyttelse og indkvartering af sub-juniorer",
+     "tekst": "Alle sub-junior-atleter skal udfylde og indsende en IPF Safeguarding Acknowledgement Form for at deltage, der skal udpeges en event safeguarding officer ved hver international IPF-konkurrence, og der gælder obligatoriske krav til, hvem sub-juniorer må indkvarteres med.",
+     "udfald": "vedtaget",
+     "span": [
+      5774,
+      5794
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Derudover er det et krav for deltagelse, at alle sub. junior \natleter færdiggør og indsender en IPF Safeguarde Ackledgement Form."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Derudover er det et krav for deltagelse, at alle sub. junior atleter færdiggør og indsender en IPF Safeguarde Ackledgement Form."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Derudover er det et krav for deltagelse, at alle sub. junior \natleter færdiggør og indsender en IPF Safeguarde Ackledgement Form."
+    }
+   ]
+  },
+  {
+   "number": 38,
+   "status": "certain",
+   "role": "decision",
+   "key": "K38",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 16,
+     "emne": "Hotelkrav for coaches og dommere ved IPF-mesterskaber",
+     "tekst": "Coaches, officials og dommere skal minimum bo to på hinanden følgende nætter på det officielle mesterskabshotel, mens akkrediteringen gælder hele mesterskabet. Ikke ændret for atleter; effektueringsdato er ubestemt.",
+     "udfald": "vedtaget",
+     "span": [
+      5844,
+      5863
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 12,
+     "emne": "Hotelkrav for coaches og dommere ved IPF-mesterskaber",
+     "tekst": "Coaches, officials og dommere skal minimum overnatte to sammenhængende nætter på det officielle mesterskabshotel. Ikrafttrædelsesdato er ubestemt.",
+     "udfald": "vedtaget",
+     "span": [
+      5844,
+      5863
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 6,
+     "emne": "Hotelkrav for coaches og dommere ved IPF-mesterskaber",
+     "tekst": "Coaches, officials og dommere skal minimum bo to sammenhængende nætter på mesterskabshotellet. Reglen gælder ikke atleter og har en ubestemt ikrafttrædelsesdato.",
+     "udfald": "vedtaget",
+     "span": [
+      5844,
+      5863
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 35,
+     "emne": "Indkvartering af trænere og dommere ved mesterskaber",
+     "tekst": "Trænere, officials og dommere skal opholde sig mindst to sammenhængende nætter på det udpegede mesterskabshotel, mens deres akkreditering er gyldig. Forslaget ændrer ikke atleters indkvartering, og ikrafttrædelsesdatoen er ubestemt.",
+     "udfald": "vedtaget",
+     "span": [
+      5844,
+      5863
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 17,
+     "emne": "IPF hotelkrav for coaches, officials og dommere",
+     "tekst": "Coaches, officials og dommere skal kun bo mindst to sammenhængende nætter på det officielle mesterskabshotel. Kravene til atleters indkvartering ændres ikke. Ikrafttrædelsesdato er ikke fastsat.",
+     "udfald": "vedtaget",
+     "span": [
+      5844,
+      5873
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Coaches, officials and referees are required to stay a minimum of two consecutive nights in \nthe designated champion hotel, while their accreditation valid for the duration of the \nchampionship."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Coaches, officials and referees are required to stay a minimum of two consecutive nights in the designated champion hotel, while their accreditation valid for the duration of the championship."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "eksternt_krav",
+     "citat": "Coaches, officials and referees are required to stay a minimum of two consecutive nights in \nthe designated champion hotel, while their accreditation valid for the duration of the \nchampionship."
+    }
+   ]
+  },
+  {
+   "number": 39,
+   "status": "certain",
+   "role": "decision",
+   "key": "K39",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 17,
+     "emne": "Ændring af IPF's tekniske regler",
+     "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår efter en fast procedure med indsendelse, vurdering og publicering, høring, feedbackovervejelse, publicering og effektueringsdato.",
+     "udfald": "vedtaget",
+     "span": [
+      6034,
+      6050
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 13,
+     "emne": "Ændring af IPF's tekniske regler",
+     "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår efter en fast procedure: indsendelse, vurdering og publicering, høring, overvejelse af feedback, publicering og ikrafttrædelsesdato.",
+     "udfald": "vedtaget",
+     "span": [
+      6034,
+      6050
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 11,
+     "emne": "Procedure for ændring af IPF's tekniske regler",
+     "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår efter en fast procedure: indsendelse, vurdering og publicering, høring, overvejelse af feedback, publicering og ikrafttrædelsesdato.",
+     "udfald": "vedtaget",
+     "span": [
+      6034,
+      6050
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 36,
+     "emne": "Procedure for ændring af tekniske regler",
+     "tekst": "De tekniske regler kan kun ændres én gang i et kalenderår, og ændringer skal følge en fast procedure: indsendelse, vurdering og offentliggørelse, høringsperiode, behandling af feedback, offentliggørelse af de ændrede regler og en ikrafttrædelsesdato.",
+     "udfald": "vedtaget",
+     "span": [
+      6034,
+      6050
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 19,
+     "emne": "IPF procedure for ændring af tekniske regler",
+     "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår efter en fast procedure: indsendelse af forslag, vurdering og publicering, høringsperiode, behandling af feedback, publicering af ændrede regler og fastsat ikrafttrædelsesdato.",
+     "udfald": "vedtaget",
+     "span": [
+      6034,
+      6050
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "De tekniske regler kan ændres en gang i et kalenderår og \nændringer skal følge klare procedurer."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "De tekniske regler kan ændres en gang i et kalenderår og ændringer skal følge klare procedurer."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "De tekniske regler kan ændres en gang i et kalenderår og \nændringer skal følge klare procedurer."
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 0,
+    "cache_write": 35463,
+    "output": 11281,
+    "cost_usd": 0.5093,
+    "seconds": 85,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 0,
+    "cache_write": 35499,
+    "output": 11332,
+    "cost_usd": 0.5106,
+    "seconds": 84,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 31305,
+    "output": 11332,
+    "cost_usd": 0.478,
+    "seconds": 84,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

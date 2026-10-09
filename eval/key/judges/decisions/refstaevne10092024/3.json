@@ -1,0 +1,138 @@
+{
+ "fingerprint": "28ad70d34a872d17",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 5887,
+  "output": 2910,
+  "cost_usd": 0.1062,
+  "seconds": 25,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 5,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Registrering i dommerbog",
+    "tekst": "Det er besluttet efter en afstemning blandt dommerne, at hver indvejning registreres i dommerbogen. Det sker altså ikke pr. stævne.",
+    "kategori": "dommere",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "citat": "Efter en god debat og en afstemning blandt dommerne er det blevet besluttet, at det er hver indvejning, der registreres i dommerbogen.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Placering af DM-hold finale",
+    "tekst": "Stævneudvalget foreslår, at DM-hold finalen flyttes til DM-ugen, så den afholdes i DM-ugen i 2026. Forslaget skal først godkendes på et bestyrelsesmøde og derefter vedtages af Repræsentantskabsmødet.",
+    "kategori": "staevner",
+    "udfald": "ikke_afgjort",
+    "handling": "aendring",
+    "niveau": "staevneregel",
+    "citat": "Vi vil foreslå, at DM-hold finale kommer til at ligge i DM-ugen.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 6,
+    "verdict": "duplicate",
+    "duplicate_of": 1,
+    "reason": "Samme forslag om at flytte DM-hold finalen til DM-ugen, som står to steder i referatet.",
+    "emne": null,
+    "tekst": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 7,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Det er en orientering om Færøernes status og ikke en beslutning truffet på mødet.",
+    "emne": null,
+    "tekst": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Opbevaring af liste over ansvarspersoner",
+    "tekst": "Listen over stævneudvalgets ansvarspersoner må kun ligge i Dropbox, fordi den ellers kan virke forvirrende for andre.",
+    "kategori": "organisation",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "citat": "Listen med ansvarspersoner skal kun ligge i Dropbox, da det ellers kan virke forvirrende for andre.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Uddeling af medaljer og pokaler",
+    "tekst": "Medaljer og pokaler skal uddeles lige efter afslutningen af hver kategori og ikke først i slutningen af hele stævnet. Den stævneansvarlige skal gøre den arrangerende klub opmærksom på dette.",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "udvalgsbeslutning",
+    "citat": "Det er vigtigt, at medaljer og pokaler uddeles lige efter afslutningen af hver kategori og ikke i slutningen af hele stævnet.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Holdpræmier DM, SM og JM",
+    "tekst": "Ved DM, SM og JM afgøres holdkonkurrencer med IPF-points. Holdpræmier går til den eller de foreninger, hvis bedste 5 løftere opnår flest IPF-points. Ved pointlighed går placeringspræmien til den forening, der har opnået flest førstepladser.",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "staevneregel",
+    "citat": "DM, SM og JM afgøres holdkonkurrencer ved anvendelse af IPF-points. Holdpræmier tildeles den eller de foreninger, hvis bedste 5 løftere opnår flest IPF-points.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

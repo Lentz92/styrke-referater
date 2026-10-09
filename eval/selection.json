@@ -124,7 +124,9 @@
    "titel": "Lån af DSF's stævneudstyr",
    "versions": 5,
    "years": 3,
-   "reason": "5 versions over 3 years; no. 2 of 2 recurring rules in udstyr"
+   "reason": "5 versions over 3 years; no. 2 of 2 recurring rules in udstyr",
+   "soft": true,
+   "soft_reason": "loosely scoped, mostly board action items, so its missing events are arbitrary"
   },
   {
    "slug": "coachlicens-og-ipf-træneruddannelse",

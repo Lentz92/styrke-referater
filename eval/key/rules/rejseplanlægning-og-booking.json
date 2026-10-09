@@ -1,0 +1,1395 @@
+{
+ "slug": "rejseplanlægning-og-booking",
+ "kategori": "landshold",
+ "titel": "Rejseplanlægning og booking",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "rejseplaner",
+  "billetter",
+  "booking",
+  "flybilletter",
+  "fly",
+  "overnatning",
+  "rejser",
+  "arrangement",
+  "rejse"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "rep2011",
+   "date": "2011",
+   "page": 1,
+   "start": 0,
+   "end": 131,
+   "source": "keyword"
+  },
+  {
+   "id": "P2",
+   "doc": "rep2011",
+   "date": "2011",
+   "page": 1,
+   "start": 142,
+   "end": 303,
+   "source": "keyword"
+  },
+  {
+   "id": "P3",
+   "doc": "refbest_15052011",
+   "date": "2011-05-15",
+   "page": 3,
+   "start": 631,
+   "end": 792,
+   "source": "keyword"
+  },
+  {
+   "id": "P4",
+   "doc": "elite29062011",
+   "date": "2011-07-29",
+   "page": 1,
+   "start": 0,
+   "end": 300,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "elite10122011",
+   "date": "2011-12-10",
+   "page": 1,
+   "start": 229,
+   "end": 401,
+   "source": "rule"
+  },
+  {
+   "id": "P6",
+   "doc": "elite10122011",
+   "date": "2011-12-10",
+   "page": 2,
+   "start": 401,
+   "end": 419,
+   "source": "keyword"
+  },
+  {
+   "id": "P7",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 4,
+   "start": 888,
+   "end": 1049,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "refbest_14012012",
+   "date": "2012-01-14",
+   "page": 3,
+   "start": 595,
+   "end": 851,
+   "source": "keyword"
+  },
+  {
+   "id": "P9",
+   "doc": "elite03082012",
+   "date": "2012-08-03",
+   "page": 1,
+   "start": 148,
+   "end": 332,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "refbest_10032013",
+   "date": "2013-03-10",
+   "page": 1,
+   "start": 89,
+   "end": 291,
+   "source": "keyword"
+  },
+  {
+   "id": "P11",
+   "doc": "refbest_01062013",
+   "date": "2013-06-01",
+   "page": 1,
+   "start": 136,
+   "end": 297,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "refbest_24082013",
+   "date": "2013-08-24",
+   "page": 2,
+   "start": 653,
+   "end": 857,
+   "source": "keyword"
+  },
+  {
+   "id": "P13",
+   "doc": "refbest_16112013",
+   "date": "2013-11-16",
+   "page": 1,
+   "start": 256,
+   "end": 417,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "elite15122013",
+   "date": "2013-12-15",
+   "page": 2,
+   "start": 620,
+   "end": 781,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 2,
+   "start": 592,
+   "end": 770,
+   "source": "keyword"
+  },
+  {
+   "id": "P16",
+   "doc": "refbest_03052014",
+   "date": "2014-05-03",
+   "page": 3,
+   "start": 614,
+   "end": 775,
+   "source": "keyword"
+  },
+  {
+   "id": "P17",
+   "doc": "elite31052014",
+   "date": "2014-05-31",
+   "page": 1,
+   "start": 24,
+   "end": 185,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "elite31052014",
+   "date": "2014-05-31",
+   "page": 3,
+   "start": 802,
+   "end": 963,
+   "source": "keyword"
+  },
+  {
+   "id": "P19",
+   "doc": "refbest_09082014",
+   "date": "2014-08-09",
+   "page": 3,
+   "start": 576,
+   "end": 737,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "refbest_19042015",
+   "date": "2015-04-19",
+   "page": 5,
+   "start": 1186,
+   "end": 1347,
+   "source": "keyword"
+  },
+  {
+   "id": "P21",
+   "doc": "elite25042015",
+   "date": "2015-04-25",
+   "page": 1,
+   "start": 331,
+   "end": 492,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "Adfaerdskodeks",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 71,
+   "end": 232,
+   "source": "keyword"
+  },
+  {
+   "id": "P23",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 2,
+   "start": 481,
+   "end": 681,
+   "source": "keyword"
+  },
+  {
+   "id": "P24",
+   "doc": "refbest_28022016",
+   "date": "2016-02-28",
+   "page": 3,
+   "start": 535,
+   "end": 691,
+   "source": "keyword"
+  },
+  {
+   "id": "P25",
+   "doc": "refbest_12062016",
+   "date": "2016-06-12",
+   "page": 3,
+   "start": 646,
+   "end": 823,
+   "source": "keyword"
+  },
+  {
+   "id": "P26",
+   "doc": "elite04122016",
+   "date": "2016-12-04",
+   "page": 1,
+   "start": 225,
+   "end": 386,
+   "source": "keyword"
+  },
+  {
+   "id": "P27",
+   "doc": "elite20052017",
+   "date": "2017-05-20",
+   "page": 2,
+   "start": 506,
+   "end": 617,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "refbest_26082017",
+   "date": "2017-08-26",
+   "page": 2,
+   "start": 466,
+   "end": 627,
+   "source": "keyword"
+  },
+  {
+   "id": "P29",
+   "doc": "elite09092017",
+   "date": "2017-09-09",
+   "page": 1,
+   "start": 0,
+   "end": 131,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "elite09092017",
+   "date": "2017-09-09",
+   "page": 1,
+   "start": 155,
+   "end": 318,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "elite09092017",
+   "date": "2017-09-09",
+   "page": 2,
+   "start": 425,
+   "end": 586,
+   "source": "keyword"
+  },
+  {
+   "id": "P32",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 1,
+   "start": 147,
+   "end": 308,
+   "source": "keyword"
+  },
+  {
+   "id": "P33",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 3,
+   "start": 529,
+   "end": 690,
+   "source": "keyword"
+  },
+  {
+   "id": "P34",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 2,
+   "start": 216,
+   "end": 377,
+   "source": "keyword"
+  },
+  {
+   "id": "P35",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 4,
+   "start": 818,
+   "end": 1011,
+   "source": "keyword"
+  },
+  {
+   "id": "P36",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 8,
+   "start": 2054,
+   "end": 2215,
+   "source": "keyword"
+  },
+  {
+   "id": "P37",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 10,
+   "start": 2564,
+   "end": 2725,
+   "source": "keyword"
+  },
+  {
+   "id": "P38",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 11,
+   "start": 3047,
+   "end": 3208,
+   "source": "keyword"
+  },
+  {
+   "id": "P39",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 13,
+   "start": 3509,
+   "end": 3656,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 1,
+   "start": 125,
+   "end": 286,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 4,
+   "start": 1319,
+   "end": 1480,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 5,
+   "start": 1401,
+   "end": 1562,
+   "source": "keyword"
+  },
+  {
+   "id": "P43",
+   "doc": "elite15122018",
+   "date": "2018-12-15",
+   "page": 2,
+   "start": 565,
+   "end": 736,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 9,
+   "start": 4715,
+   "end": 4876,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 1,
+   "start": 195,
+   "end": 356,
+   "source": "keyword"
+  },
+  {
+   "id": "P46",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 3,
+   "start": 910,
+   "end": 1071,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 12,
+   "start": 6667,
+   "end": 6828,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "refbest_171020",
+   "date": "2020-10-17",
+   "page": 1,
+   "start": 175,
+   "end": 447,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "elite19122020_bud_reg_2021",
+   "date": "2020-12-19",
+   "page": 1,
+   "start": 0,
+   "end": 98,
+   "source": "keyword"
+  },
+  {
+   "id": "P50",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 12,
+   "start": 3773,
+   "end": 3934,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "refbest_060221",
+   "date": "2021-02-06",
+   "page": 2,
+   "start": 441,
+   "end": 602,
+   "source": "keyword"
+  },
+  {
+   "id": "P52",
+   "doc": "elite29032021",
+   "date": "2021-03-29",
+   "page": 2,
+   "start": 563,
+   "end": 686,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "elite18052021",
+   "date": "2021-05-18",
+   "page": 2,
+   "start": 200,
+   "end": 378,
+   "source": "rule"
+  },
+  {
+   "id": "P54",
+   "doc": "elite29062021",
+   "date": "2021-06-29",
+   "page": 1,
+   "start": 48,
+   "end": 218,
+   "source": "keyword"
+  },
+  {
+   "id": "P55",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 13,
+   "start": 6211,
+   "end": 6372,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "elite08032022",
+   "date": "2022-03-08",
+   "page": 2,
+   "start": 236,
+   "end": 397,
+   "source": "keyword"
+  },
+  {
+   "id": "P57",
+   "doc": "elite29062022",
+   "date": "2022-06-29",
+   "page": 1,
+   "start": 183,
+   "end": 303,
+   "source": "keyword"
+  },
+  {
+   "id": "P58",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 2,
+   "start": 525,
+   "end": 686,
+   "source": "keyword"
+  },
+  {
+   "id": "P59",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 4,
+   "start": 1654,
+   "end": 1815,
+   "source": "keyword"
+  },
+  {
+   "id": "P60",
+   "doc": "elite24082022",
+   "date": "2022-08-24",
+   "page": 1,
+   "start": 145,
+   "end": 339,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "elite14122022",
+   "date": "2022-12-14",
+   "page": 1,
+   "start": 49,
+   "end": 210,
+   "source": "keyword"
+  },
+  {
+   "id": "P62",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 4,
+   "start": 1227,
+   "end": 1388,
+   "source": "keyword"
+  },
+  {
+   "id": "P63",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 12,
+   "start": 5466,
+   "end": 5627,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 16,
+   "start": 6624,
+   "end": 6785,
+   "source": "keyword"
+  },
+  {
+   "id": "P65",
+   "doc": "elite08032023",
+   "date": "2023-03-08",
+   "page": 1,
+   "start": 5,
+   "end": 200,
+   "source": "rule"
+  },
+  {
+   "id": "P66",
+   "doc": "refbest_230423",
+   "date": "2023-04-23",
+   "page": 2,
+   "start": 178,
+   "end": 407,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "elite27062023",
+   "date": "2023-06-27",
+   "page": 1,
+   "start": 0,
+   "end": 146,
+   "source": "keyword"
+  },
+  {
+   "id": "P68",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 2,
+   "start": 714,
+   "end": 875,
+   "source": "keyword"
+  },
+  {
+   "id": "P69",
+   "doc": "elite12122023",
+   "date": "2023-12-12",
+   "page": 1,
+   "start": 0,
+   "end": 127,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 4,
+   "start": 1245,
+   "end": 1406,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 12,
+   "start": 5094,
+   "end": 5255,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 12,
+   "start": 5385,
+   "end": 5639,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 13,
+   "start": 5668,
+   "end": 5829,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 4,
+   "start": 1083,
+   "end": 1188,
+   "source": "keyword"
+  },
+  {
+   "id": "P75",
+   "doc": "refdom05032024",
+   "date": "2024-03-05",
+   "page": 1,
+   "start": 66,
+   "end": 227,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "refdom28032024",
+   "date": "2024-03-28",
+   "page": 1,
+   "start": 218,
+   "end": 379,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "refstaevne04042024",
+   "date": "2024-04-04",
+   "page": 1,
+   "start": 114,
+   "end": 275,
+   "source": "keyword"
+  },
+  {
+   "id": "P78",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "start": 225,
+   "end": 458,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "start": 458,
+   "end": 632,
+   "source": "rule"
+  },
+  {
+   "id": "P80",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 3,
+   "start": 652,
+   "end": 934,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "refbest_270724",
+   "date": "2024-07-27",
+   "page": 1,
+   "start": 19,
+   "end": 228,
+   "source": "keyword"
+  },
+  {
+   "id": "P82",
+   "doc": "refbest_270724",
+   "date": "2024-07-27",
+   "page": 2,
+   "start": 261,
+   "end": 438,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "refbest_201024",
+   "date": "2024-10-20",
+   "page": 1,
+   "start": 102,
+   "end": 263,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "elite23102024",
+   "date": "2024-10-23",
+   "page": 1,
+   "start": 271,
+   "end": 474,
+   "source": "keyword"
+  },
+  {
+   "id": "P85",
+   "doc": "elite10122024",
+   "date": "2024-12-10",
+   "page": 1,
+   "start": 209,
+   "end": 396,
+   "source": "rule"
+  },
+  {
+   "id": "P86",
+   "doc": "elite10122024",
+   "date": "2024-12-10",
+   "page": 2,
+   "start": 396,
+   "end": 483,
+   "source": "keyword"
+  },
+  {
+   "id": "P87",
+   "doc": "refbest_151224",
+   "date": "2024-12-15",
+   "page": 2,
+   "start": 313,
+   "end": 512,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "dif_aarsmøde_2025",
+   "date": "2025",
+   "page": 7,
+   "start": 892,
+   "end": 1053,
+   "source": "keyword"
+  },
+  {
+   "id": "P89",
+   "doc": "dif_aarsmøde_2025",
+   "date": "2025",
+   "page": 9,
+   "start": 1194,
+   "end": 1355,
+   "source": "keyword"
+  },
+  {
+   "id": "P90",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 6,
+   "start": 1383,
+   "end": 1544,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "ipf_kongres_2025",
+   "date": "2025",
+   "page": 1,
+   "start": 360,
+   "end": 521,
+   "source": "keyword"
+  },
+  {
+   "id": "P92",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 9,
+   "start": 4298,
+   "end": 4459,
+   "source": "keyword"
+  },
+  {
+   "id": "P93",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 14,
+   "start": 6971,
+   "end": 7132,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 18,
+   "start": 9440,
+   "end": 9601,
+   "source": "keyword"
+  },
+  {
+   "id": "P95",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 19,
+   "start": 9728,
+   "end": 10128,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 19,
+   "start": 10128,
+   "end": 10145,
+   "source": "keyword"
+  },
+  {
+   "id": "P97",
+   "doc": "refdom07012025",
+   "date": "2025-01-07",
+   "page": 1,
+   "start": 6,
+   "end": 167,
+   "source": "keyword"
+  },
+  {
+   "id": "P98",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 4,
+   "start": 1153,
+   "end": 1363,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "refudstyr30012025",
+   "date": "2025-01-30",
+   "page": 2,
+   "start": 514,
+   "end": 741,
+   "source": "keyword"
+  },
+  {
+   "id": "P100",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 2,
+   "start": 766,
+   "end": 976,
+   "source": "keyword"
+  },
+  {
+   "id": "P101",
+   "doc": "elite12032025",
+   "date": "2025-03-12",
+   "page": 1,
+   "start": 0,
+   "end": 137,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "refbest_230825",
+   "date": "2025-08-23",
+   "page": 1,
+   "start": 10,
+   "end": 171,
+   "source": "keyword"
+  },
+  {
+   "id": "P103",
+   "doc": "elite16092025.2",
+   "date": "2025-09-16",
+   "page": 1,
+   "start": 0,
+   "end": 161,
+   "source": "keyword"
+  },
+  {
+   "id": "P104",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 20,
+   "start": 6345,
+   "end": 6506,
+   "source": "keyword"
+  },
+  {
+   "id": "P105",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 2,
+   "start": 292,
+   "end": 421,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 18,
+   "start": 8746,
+   "end": 8907,
+   "source": "keyword"
+  },
+  {
+   "id": "P107",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 22,
+   "start": 10813,
+   "end": 10974,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 23,
+   "start": 11272,
+   "end": 11433,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 23,
+   "start": 11669,
+   "end": 11855,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "elite30042026",
+   "date": "2026-04-30",
+   "page": 1,
+   "start": 271,
+   "end": 419,
+   "source": "keyword"
+  },
+  {
+   "id": "P111",
+   "doc": "refudstyr29092026",
+   "date": "2026-09-29",
+   "page": 3,
+   "start": 711,
+   "end": 872,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 0,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P5",
+   "doc": "elite10122011",
+   "date": "2011-12-10",
+   "page": 1,
+   "effect": "indfoert",
+   "quote": "Der accepteres ikke afvigelser fra rejseplanerne i forb. med rejser med landsholdene. Eliteudvalget bestemmer suverænt hvordan rejsen foretages og hvornår udrejse og hjemrejse foregår. Som udgangspunkt vægtes at man rejser som ”hold”",
+   "value_after": "Eliteudvalget bestemmer rejseplan; ingen afvigelser; rejser som hold",
+   "span": [
+    309,
+    341
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P10",
+   "doc": "refbest_10032013",
+   "date": "2013-03-10",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Bestyrelsen har samtidig besluttet, at Jan Lyhne på Elliteudvalgets vegne har ansvaret for at bestille rejser til alle internationale stævner. Undtagelsesvis kan Helge Laursen bestille rejser i dialog med Jan Lyhne. Jan Lyhne bestiller kun rejser, som ligger inden for det enkelte stævnes budgetramme.",
+   "value_after": "Eliteudvalget bestiller rejser inden for budget; ankomst to dage før, hjem dagen efter",
+   "span": [
+    154,
+    198
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P14",
+   "doc": "elite15122013",
+   "date": "2013-12-15",
+   "page": 2,
+   "effect": "aendret",
+   "quote": "Beslutningen blev, at det stadig som hovedregel er 3 dages reglen, som gælder, men DSF’s kasserer vil påtage sig opgaven at administrere de beløb, som enkeltpersoner skal betale for at kunne blive sammen med holdet under hele stævnet.",
+   "value_after": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer",
+   "span": [
+    715,
+    754
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P53",
+   "doc": "elite18052021",
+   "date": "2021-05-18",
+   "page": 2,
+   "effect": "bekraeftet",
+   "quote": "Som udgangspunkt er det DSF der arrangerer og planlægger rejser i forbindelse med deltagelse ved mesterskaber i udlandet.",
+   "value_after": "DSF arrangerer og planlægger rejser til mesterskaber i udlandet",
+   "span": [
+    280,
+    298
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P61",
+   "doc": "elite14122022",
+   "date": "2022-12-14",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Alternativt kan atleter vælge selv, at købe flybilletter, hvorved egenbetalingen bortfalder. Nærmere retningslinjer for dette følger.",
+   "value_after": "DSF booker; atlet kan selv købe flybilletter, så bortfalder egenbetaling",
+   "span": [
+    122,
+    138
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E6",
+   "status": "certain",
+   "passage": "P65",
+   "doc": "elite08032023",
+   "date": "2023-03-08",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Hvis man selv ønsker, at booke flybilleter er det muligt men omfatter i så fald også eget ansvar for transport til- og fra lufthavn. En sådan beslutning gælder hele kalenderåret og ikke kun enkelte stævner.",
+   "value_after": "Egen flybooking mulig for hele kalenderåret; eget ansvar for lufthavnstransport og ændringer",
+   "span": [
+    85,
+    120
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E7",
+   "status": "certain",
+   "passage": "P79",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "effect": "aendret",
+   "quote": "atleten vælge selv at bestille/booke flybilletter og informere DSF (Peter Andersen/Bjarte Vik Larsen) om rejseplan eller lade DSF bestille/booke og herefter blive",
+   "value_after": "Egen booking eller DSF-booking mod faktura; standard to dage før til dagen efter",
+   "span": [
+    458,
+    483
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E8",
+   "status": "certain",
+   "passage": "P85",
+   "doc": "elite10122024",
+   "date": "2024-12-10",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau. Det vil fortsat være muligt at booke gennem forbundet. Vælger man dette, vil den ekstra udgift i form af bookingfee (5-600,- kr)",
+   "value_after": "Selv booke fly; forbundsbooking mod bookingfee og prisforskel i egenbetaling",
+   "span": [
+    289,
+    339
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E9",
+   "status": "uncertain",
+   "passage": "P87",
+   "doc": "refbest_151224",
+   "date": "2024-12-15",
+   "page": 2,
+   "effect": "bekraeftet",
+   "quote": "På landsholdene er det allerede kutyme, at løfterne har den mulighed. Vi opfordrer til at dommere og trænere bruger samme mulighed for at mindske de samlede rejseomkostninger.",
+   "value_after": "Selv booke fly; forbundsbooking mod bookingfee og prisforskel i egenbetaling",
+   "span": [
+    398,
+    425
+   ],
+   "judges": [
+    1
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2011,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Eliteudvalget bestemmer rejseplan; ingen afvigelser; rejser som hold"
+  },
+  {
+   "year": 2012,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Eliteudvalget bestemmer rejseplan; ingen afvigelser; rejser som hold"
+  },
+  {
+   "year": 2013,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2014,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2015,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2016,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2017,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2018,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2019,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2020,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2021,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E4",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2022,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E4",
+   "value": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer"
+  },
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Egen flybooking mulig for hele kalenderåret; eget ansvar for lufthavnstransport og ændringer"
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Egen flybooking mulig for hele kalenderåret; eget ansvar for lufthavnstransport og ændringer"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E9",
+   "value": "Selv booke fly; forbundsbooking mod bookingfee og prisforskel i egenbetaling"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E9",
+   "value": "Selv booke fly; forbundsbooking mod bookingfee og prisforskel i egenbetaling"
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 63404,
+    "output": 3491,
+    "cost_usd": 0.5775,
+    "seconds": 31,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 63406,
+    "output": 5448,
+    "cost_usd": 0.6166,
+    "seconds": 49,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 63404,
+    "output": 4351,
+    "cost_usd": 0.5947,
+    "seconds": 38,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}
