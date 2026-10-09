@@ -27,7 +27,6 @@ from test_incremental import World, _decision
 from test_route_update import Repo
 
 ROOT = Path(audit.__file__).parent
-OPS = ("merge", "split", "rename", "move")
 
 
 def _rules(world: World, category: str, *rules: tuple) -> None:
@@ -412,8 +411,6 @@ def test_a_rejected_rewrite_writes_nothing_and_the_rest_is_not_paid_again(world,
     # The cost counts the rejected answers too: four calls in the first apply, one in the second.
     assert "propose 1.75 USD, apply 1.25 USD." in audit.REPORT.read_text()
     assert world.rule("medlemskab", "klubskifte")["versioner"][1]["tekst"] == "Samlet rep2020#2"
-
-
 
 
 @pytest.mark.parametrize("failing", [(audit, "score_section"), (render, "build_pages"), (website, "page_html")])
