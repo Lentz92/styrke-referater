@@ -1118,7 +1118,7 @@
  "events": [
   {
    "id": "E1",
-   "status": "certain",
+   "status": "uncertain",
    "passage": "P4",
    "doc": "rep2010",
    "date": "2010",
@@ -1154,7 +1154,8 @@
     1,
     2,
     3
-   ]
+   ],
+   "effect_status": "uncertain"
   },
   {
    "id": "E3",
@@ -1359,7 +1360,7 @@
  "years": [
   {
    "year": 2010,
-   "status": "certain",
+   "status": "uncertain",
    "state": "event",
    "adopted": "E1",
    "event": "E1",
@@ -1367,7 +1368,7 @@
   },
   {
    "year": 2011,
-   "status": "certain",
+   "status": "uncertain",
    "state": "unknown",
    "adopted": null,
    "event": null,
@@ -1375,7 +1376,7 @@
   },
   {
    "year": 2012,
-   "status": "certain",
+   "status": "uncertain",
    "state": "unknown",
    "adopted": null,
    "event": null,
@@ -1492,6 +1493,92 @@
    "adopted": "E9",
    "event": "E12",
    "value": "300 kr. pr. løfter pr. år"
+  }
+ ],
+ "corrections": [
+  {
+   "kind": "rule-event",
+   "target": {
+    "rule": "licensgebyr",
+    "doc": "rep2010",
+    "quote": "licensgebyret hævet til 150,- jf., hvad der blev vedtaget på repræsentantskabsmødet 2009"
+   },
+   "change": {
+    "status": "uncertain"
+   },
+   "reason": "The 2010 budget says the licence fee was raised to 150 kr. as decided in 2009, but the only fee decision of the 2009 meeting raised the start fee from 100 to 150 kr., no document shows a licence fee of 150 kr., and in 2024 the board writes that the licence fee had been the same for over 20 years.",
+   "evidence": [
+    {
+     "doc": "rep2010",
+     "quote": "Dog er licensgebyret hævet til 150,- jf., hvad der blev vedtaget på repræsentantskabsmødet 2009."
+    },
+    {
+     "doc": "rep2009",
+     "quote": "Punkt 1: Startgebyr ved stævner hæves fra 100 kr. til 150 kr."
+    },
+    {
+     "doc": "rep2024",
+     "quote": "Licensgebyret har været de samme i over 20 år"
+    }
+   ],
+   "matched": [
+    "E1"
+   ]
+  },
+  {
+   "kind": "rule-year",
+   "target": {
+    "rule": "licensgebyr",
+    "years": [
+     2010,
+     2011,
+     2012
+    ]
+   },
+   "change": {
+    "status": "uncertain"
+   },
+   "reason": "What the licence fee was before the 2013 budget is not shown: the 150 kr. of 2010 is doubtful (see the rep2010 correction), and nothing states the fee in 2011 or 2012.",
+   "evidence": [
+    {
+     "doc": "rep2010",
+     "quote": "Dog er licensgebyret hævet til 150,- jf., hvad der blev vedtaget på repræsentantskabsmødet 2009."
+    },
+    {
+     "doc": "rep2024",
+     "quote": "Licensgebyret har været de samme i over 20 år"
+    }
+   ],
+   "matched": [
+    2010,
+    2011,
+    2012
+   ]
+  },
+  {
+   "kind": "rule-event",
+   "target": {
+    "rule": "licensgebyr",
+    "doc": "rep2013",
+    "quote": "Licens: kr. 200,- (Uændret)"
+   },
+   "change": {
+    "effect_status": "uncertain"
+   },
+   "reason": "The judges call the 2013 budget line a change from 150 to 200 kr. because of the doubtful 2010 value; the line itself says unchanged, so whether 2013 changed or confirmed the fee is not known.",
+   "evidence": [
+    {
+     "doc": "rep2013",
+     "quote": "Årsafgift: kr. 1.000,- (Uændret)- Licens: kr. 200,- (Uændret)."
+    },
+    {
+     "doc": "rep2024",
+     "quote": "Licensgebyret har været de samme i over 20 år"
+    }
+   ],
+   "matched": [
+    "E2"
+   ]
   }
  ],
  "judges": [

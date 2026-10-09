@@ -1,5 +1,5 @@
 {
- "fingerprint": "e51a9dbb71f394c6",
+ "fingerprint": "c288c0148c9ae908",
  "provenance": {
   "model": "claude-opus-5-5",
   "cli": "2.1.294",
@@ -9,10 +9,10 @@
  "usage": {
   "input": 2,
   "cache_read": 2141,
-  "cache_write": 82183,
-  "output": 6069,
-  "cost_usd": 0.7793,
-  "seconds": 52,
+  "cache_write": 87479,
+  "output": 8494,
+  "cost_usd": 0.8701,
+  "seconds": 71,
   "attempts": 1,
   "models": [
    "claude-opus-5-5"
@@ -21,80 +21,80 @@
  "output": {
   "events": [
    {
-    "passage": "P24",
-    "quote": "Bestilling af medaljer vil udelukkende ske gennem Forma, da vi derved kan spare penge",
+    "passage": "P20",
+    "quote": "Bestilling af medaljer vil udelukkende ske gennem Forma, da vi derved kan spare",
     "value_after": "Medaljer bestilles udelukkende gennem Forma",
     "effect": "indfoert"
    },
    {
-    "passage": "P32",
-    "quote": "”Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne hos forbundets officielle forhandler af medaljer. Pokaler betales af forbundet. Der udleveres disciplinmedaljer i alle kategorier til alle stævner.",
+    "passage": "P25",
+    "quote": "Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne hos forbundets officielle forhandler af medaljer. Pokaler betales af forbundet.",
     "value_after": "Arrangørklub bestiller og betaler medaljer hos officiel forhandler; forbundet betaler pokaler",
     "effect": "aendret"
    },
    {
-    "passage": "P36",
+    "passage": "P29",
     "quote": "Klubberne betaler for medaljer og bestyrelsen betaler for pokaler. Efter klubben har udfyldt medaljelisten, overfører klubben det krævet beløbet på DSF’s konto, hvorefter DSF sender pengene videre til Forma.",
-    "value_after": "Klubber bestiller og betaler medaljer via DSF; forbundet betaler pokaler",
-    "effect": "bekraeftet"
+    "value_after": "Klub bestiller via skema, betaler DSF som betaler Forma; DSF betaler pokaler",
+    "effect": "aendret"
    },
    {
-    "passage": "P46",
+    "passage": "P38",
     "quote": "Pr. 1. januar 2017 henviser bestyrelsen til beslutningen ved sidste repræsentantskabsmøde, om at klubberne selv skal tage sig at medaljebestilling samt at få manglende medaljer genbestilt og leveret til rette modtager.",
-    "value_after": "Klubber bestiller og betaler selv medaljer; forbundet betaler pokaler",
+    "value_after": "Klubberne bestiller selv medaljer og genbestiller manglende; DSF betaler pokaler",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P51",
+    "passage": "P41",
     "quote": "Kenneth. K varetager bestilling af medaljer fra firmaet Formo, for klubberne. Klubberne opkræves et fast beløb pr. medalje som betales efterfølgende.",
     "value_after": null,
     "effect": "foreslaaet"
    },
    {
-    "passage": "P49",
-    "quote": "Bestyrelsen foreslår, at der indføres en fast pris på alle medaljesæt, således at den pris som klubberne skal betale for medaljer, er ens. Forslaget lyder på kr. 100,-,",
-    "value_after": "Klubber betaler fast 100 kr. pr. medaljesæt; forbundet betaler pokaler",
+    "passage": "P39",
+    "quote": "Bestyrelsen foreslår, at der indføres en fast pris på alle medaljesæt, således at den pris som klubberne skal betale for medaljer, er ens. Forslaget lyder på kr. 100,-, hvor omkostningerne til Bronze, sølv og guld samt disciplinmedaljer dækker.",
+    "value_after": "Klubber betaler fast pris 100 kr. pr. medaljesæt; DSF betaler pokaler",
     "effect": "aendret"
    },
    {
-    "passage": "P50",
-    "quote": "Medaljebetaling: Vi ønsker at få en faktura direkte fra FORMO til betaling, således den IKKE skal ind over DSF og derved først bliver opkrævet flere mdr. senere.",
+    "passage": "P40",
+    "quote": "Medaljebetaling: Vi ønsker at få en faktura direkte fra FORMO til betaling, således den IKKE skal ind over DSF",
     "value_after": null,
     "effect": "trukket"
    },
    {
-    "passage": "P60",
+    "passage": "P50",
     "quote": "Et medaljesæt består af en hovedmedalje samt 3 disciplinmedaljer. Sættet koster 100 kr.",
-    "value_after": "100 kr. pr. medaljesæt (hovedmedalje plus 3 disciplinmedaljer)",
+    "value_after": "100 kr. pr. medaljesæt (hovedmedalje plus tre disciplinmedaljer)",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P76",
-    "quote": "Medaljer og pokaler skal være formanden for den arrangerende klub i hænde senest en uge før stævnestart. Medaljer og pokaler bestilles af stævneudvalget 3 uger før stævnestart",
-    "value_after": "Stævneudvalget bestiller 3 uger før; levering senest uge før; 100 kr./sæt",
+    "passage": "P64",
+    "quote": "Medaljer og pokaler skal være formanden for den arrangerende klub i hænde senest en uge før stævnestart. Medaljer og pokaler bestilles af stævneudvalget 3 uger før stævnestart, umildbart efter tilmeldingen er lukket.",
+    "value_after": "Stævneudvalget bestiller tre uger før; levering senest en uge før; 100 kr./sæt",
     "effect": "aendret"
    },
    {
-    "passage": "P77",
+    "passage": "P65",
     "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Arrangørerne opkræves derefter kr. 100,00 pr medaljesæt.",
     "value_after": null,
     "effect": "foreslaaet"
    },
    {
-    "passage": "P79",
-    "quote": "Pokaler og \nmedaljer betales af forbundet.",
+    "passage": "P67",
+    "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Arrangørerne opkræves derefter kr. 100,00 pr medaljesæt. Et medaljesæt består af en placeringsmedalje (guld, sølv eller bronze) plus eventuelt tilhørende disciplinmedaljer. Pokaler og medaljer betales af forbundet.",
     "value_after": "Forbundet bestiller og betaler medaljer og pokaler hos officiel forhandler",
     "effect": "aendret"
    },
    {
-    "passage": "P83",
+    "passage": "P71",
     "quote": "Det skal sikres, at pokaler og medaljer er den arrangerende klub i hænde senest en uge før stævnestart.",
-    "value_after": "Forbundet bestiller og betaler; levering senest en uge før stævnestart",
+    "value_after": "Forbundet bestiller og betaler; levering til klub senest en uge før",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P112",
-    "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Et medaljesæt består \naf en placeringsmedalje (guld, sølv eller bronze) plus eventuelt tilhørende disciplinmedaljer. Pokaler og \nmedaljer betales af forbundet.",
+    "passage": "P98",
+    "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Et medaljesæt består af en placeringsmedalje (guld, sølv eller bronze) plus eventuelt tilhørende disciplinmedaljer. Pokaler og medaljer betales af forbundet.",
     "value_after": "Forbundet bestiller og betaler medaljer og pokaler hos officiel forhandler",
     "effect": "bekraeftet"
    }

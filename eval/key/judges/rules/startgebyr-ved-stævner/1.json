@@ -1,5 +1,5 @@
 {
- "fingerprint": "33f8544a4776aba3",
+ "fingerprint": "6d0fbd6ab3729c8a",
  "provenance": {
   "model": "claude-opus-5-5",
   "cli": "2.1.294",
@@ -9,10 +9,10 @@
  "usage": {
   "input": 2,
   "cache_read": 2141,
-  "cache_write": 83861,
-  "output": 4643,
-  "cost_usd": 0.7642,
-  "seconds": 42,
+  "cache_write": 90139,
+  "output": 6093,
+  "cost_usd": 0.8434,
+  "seconds": 53,
   "attempts": 1,
   "models": [
    "claude-opus-5-5"
@@ -23,92 +23,92 @@
    {
     "passage": "P1",
     "quote": "Punkt 1: Startgebyr ved stævner hæves fra 100 kr. til 150 kr.",
-    "value_after": "150 kr. pr. deltager",
+    "value_after": "150 kr. pr. løfter pr. stævne",
     "effect": "indfoert"
    },
    {
     "passage": "P14",
-    "quote": "Startgebyrer: kr. 200,- (Ændret). ... Startgebyret foreslås fordelt med kr. 150 til klubberne og kr. 50 til forbundet.",
-    "value_after": "200 kr. pr. deltager; 150 kr. til klubben, 50 kr. til forbundet",
+    "quote": "Startgebyret foreslås fordelt med kr. 150 til klubberne og kr. 50 til forbundet.",
+    "value_after": "200 kr.; 150 kr. til arrangørklubben, 50 kr. til forbundet",
     "effect": "aendret"
    },
    {
-    "passage": "P22",
-    "quote": "Startgebyret fastholdes på kr. 200, men udbetales for hele beløbets vedkommende til  \narrangørklubben. Nu går de kr. 50 til forbundet.",
-    "value_after": "200 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "passage": "P20",
+    "quote": "Startgebyret fastholdes på kr. 200, men udbetales for hele beløbets vedkommende til",
+    "value_after": "200 kr.; hele beløbet til arrangørklubben",
     "effect": "aendret"
    },
    {
-    "passage": "P29",
-    "quote": "Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne hos \nforbundets officielle forhandler af medaljer.",
-    "value_after": "300 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "passage": "P25",
+    "quote": "Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne hos",
+    "value_after": "300 kr.; hele beløbet til arrangørklubben, som betaler medaljer",
     "effect": "aendret"
    },
    {
-    "passage": "P52",
+    "passage": "P47",
     "quote": "Startgebyrer: kr. 300 (Uændret)",
-    "value_after": "300 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "value_after": "300 kr.; hele beløbet til arrangørklubben",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P56",
+    "passage": "P51",
     "quote": "Startgebyrer: kr. 300 (Uændret)",
-    "value_after": "300 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "value_after": "300 kr.; hele beløbet til arrangørklubben",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P65",
+    "passage": "P59",
     "quote": "Startgebyrer: kr. 300 (Uændret)",
-    "value_after": "300 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "value_after": "300 kr.; hele beløbet til arrangørklubben",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P69",
+    "passage": "P63",
     "quote": "Startgebyrer: kr. 300 (Uændret)",
-    "value_after": "300 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "value_after": "300 kr.; hele beløbet til arrangørklubben",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P72",
+    "passage": "P66",
     "quote": "Startgebyrer: kr. 300 (Uændret)",
-    "value_after": "300 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "value_after": "300 kr.; hele beløbet til arrangørklubben",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P72",
+    "passage": "P66",
     "quote": "Efter forslaget fra HaSK blev nedstemt, blev der stillet ændringsforslag til bestyrelsens forslag.",
     "value_after": null,
     "effect": "forkastet"
    },
    {
-    "passage": "P80",
+    "passage": "P73",
     "quote": "Startgebyrer: kr. 300 (Uændret)",
-    "value_after": "300 kr. pr. deltager, hele beløbet til arrangørklubben",
+    "value_after": "300 kr.; hele beløbet til arrangørklubben",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P91",
-    "quote": "Startgebyrer trekamp: kr. 350 Startgebyr \nbænkpres 300 (Jævnfør forslag)",
-    "value_after": "Trekamp 350 kr., bænkpres 300 kr.; 50 kr. pr. deltager til DSF",
+    "passage": "P83",
+    "quote": "foreslås en moderat forhøjelse af startgebyret til 350 kr. Bænkpres",
+    "value_after": "trekamp 350 kr., bænkpres 300 kr.; 50 kr. pr. deltager til DSF",
     "effect": "aendret"
    },
    {
-    "passage": "P94",
-    "quote": "Forslaget blev trukket tilbage.",
+    "passage": "P84",
+    "quote": "Startgebyret for stævner i trekamp hæves til 350 kr., mens startgebyret for stævner i bænkpres sænkes til",
     "value_after": null,
     "effect": "trukket"
    },
    {
-    "passage": "P110",
-    "quote": "Startgebyrer trekamp: kr. 350, -(uændret),- \nStartgebyr bænkpres 300,- (Uændret)",
-    "value_after": "Trekamp 350 kr., bænkpres 300 kr.; 50 kr. pr. deltager til DSF",
+    "passage": "P96",
+    "quote": "Startgebyrer trekamp: kr. 350, -(uændret),-",
+    "value_after": "trekamp 350 kr., bænkpres 300 kr.; 50 kr. pr. deltager til DSF",
     "effect": "bekraeftet"
    },
    {
-    "passage": "P111",
-    "quote": "Forslag 5 fra bestyrelsen \nPræcisering af regler omkring betaling af startgebyr",
-    "value_after": null,
-    "effect": "foreslaaet"
+    "passage": "P97",
+    "quote": "Pr 1-6-2025 er startgebyret 350 kr. for trekamp og startgebyret for",
+    "value_after": "trekamp 350 kr., bænkpres 300 kr.; 50 kr. pr. deltager til DSF",
+    "effect": "bekraeftet"
    }
   ],
   "years": [
@@ -200,7 +200,7 @@
    {
     "year": 2026,
     "state": "event",
-    "event": 14
+    "event": 15
    }
   ]
  }

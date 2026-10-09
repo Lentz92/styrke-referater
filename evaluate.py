@@ -45,7 +45,7 @@ import statistics
 from bisect import bisect_left
 from collections import Counter, defaultdict
 from collections.abc import Callable, Collection, Iterable, Mapping, Sequence
-from dataclasses import dataclass, field, fields
+from dataclasses import dataclass, field, fields, replace
 from datetime import date, datetime, timezone
 from itertools import combinations
 from pathlib import Path
@@ -69,6 +69,10 @@ MAX_RULES_PER_CATEGORY = 3
 MIN_VERSIONS = 4
 MIN_YEARS = 3
 REQUIRED_RULES = ("licensgebyr",)
+# Selected rules whose scope is loose, so which decisions are "its" events is arbitrary: scored and reported, but left
+# out of the overall rules metrics (selection.json marks them "soft").
+SOFT_RULES = {"lån-af-dsf-s-stævneudstyr": "loosely scoped, mostly board action items, so its missing events are "
+                                           "arbitrary"}
 TARGET_DOCUMENTS = 25
 # rep2013 sets the yearly fees in a budget ("Licens: kr. 200,- (Uændret)"), which the extraction must split.
 REQUIRED_DOCUMENTS = ("490", "1071kongres", "rep2013")
@@ -98,6 +102,15 @@ PASSAGE_BUDGET = 25_000
 MAX_PASSAGE_WORDS = 400
 MIN_PASSAGE_WORDS = 15  # a piece of a keyword window, trimmed around decision passages, shorter than this is left out
 MERGE_GAP = PASSAGE_CONTEXT // 2  # decision windows closer than this join into one passage
+# A passage with a proposal but no outcome after it is extended forward to the outcome within this many words, and
+# one with a proposal or an outcome back to the heading of its agenda item within this many.
+EXTEND_FORWARD = 150
+EXTEND_BACK = 100
+OUTCOME_WORDS = frozenset({"vedtaget", "vedtages", "vedtoges", "godkendt", "godkendes", "forkastet", "forkastes",
+                           "nedstemt", "trukket", "enstemmigt", "enstemmig", "afvist", "afvises"})
+# The first words of a line that starts an agenda item or a proposal: "Forslag 5 fra bestyrelsen", "6. Indkomne
+# forslag", "c) …", "Ad 3:".
+HEADING = re.compile(r"(?:(?:Ændrings)?[Ff]orslag|FORSLAG|Punkt|Pkt|Ad|Indkomne)\b|\d{1,2}[.):]\s|[a-zA-Z][.)]\s")
 MAX_KEYWORD_SHARE = 0.25
 # A synonym's hits count this much of the rule's own words': "kontingent" is weaker evidence for licensgebyr.
 SYNONYM_WEIGHT = 0.5
@@ -114,6 +127,9 @@ CHARS_PER_TOKEN = 3.2
 JUDGED_FIELDS = ("emne", "kategori", "udfald", "handling", "niveau", "tekst", "citat", "side", "gaelder_fra",
                  "gaelder_til")
 CODED_FIELDS = ("kategori", "udfald", "handling", "niveau")
+# The coded fields one document decides: handling (new, change, confirmation) often needs the rule's history, so
+# field accuracy is also given without it.
+FIRM_FIELDS = ("kategori", "udfald", "niveau")
 # The outcome a decision with this effect has, so a key event can be compared with extracted decisions.
 EFFECT_OUTCOME = {"foreslaaet": "ikke_afgjort", "forkastet": "forkastet", "trukket": "trukket"}
 JUDGES = (1, 2, 3)
@@ -462,7 +478,9 @@ def build_selection(docs: list[Doc], decisions: list[Decision], raw_rules: list[
         "seed": seed,
         "size_cuts": list(cuts),
         "rules": [{"slug": r.slug, "kategori": r.kategori, "titel": r.titel, "versions": r.versions,
-                   "years": r.years, "reason": reason} for r, reason in rules],
+                   "years": r.years, "reason": reason,
+                   **({"soft": True, "soft_reason": SOFT_RULES[r.slug]} if r.slug in SOFT_RULES else {})}
+                  for r, reason in rules],
         "documents": [{"id": d.id, "organ": d.organ, "date": d.date, "era": d.era, "words": d.words, "size": d.size,
                        "decisions": d.decisions, "rules": list(d.rules), "reason": reason} for d, reason in documents],
         # Pooled scores lean on the documents with most decisions; the report gives per-document averages too.
@@ -937,6 +955,7 @@ class Judging:
     budget: RunBudget
     workers: int
     rejudge: bool = False
+    offline: bool = False  # --rederive: only stored answers; a missing one is an error, never a call
 
 
 def stored_answer(call: JudgeCall, judging: Judging) -> dict | None:
@@ -989,6 +1008,10 @@ def run_judges(label: str, calls: list[JudgeCall], judging: Judging, note: str =
                          f"effort): {', '.join(changed)}. Pass --rejudge to ask them again (paid), or restore the "
                          f"input.")
     todo = [call for call in calls if stored_answer(call, judging) is None]
+    if todo and judging.offline:
+        missing = ", ".join(f"{c.item} judge {c.number}" for c in todo)
+        raise SystemExit(f"Rederiving needs answers that are not stored: {missing}; run without --rederive to ask "
+                         f"for them (paid)")
     reused = len(calls) - len(todo)
     tokens_in = sum(estimate_tokens(c.system, c.prompt, c.schema) for c in todo)
     print_plan(label, len(todo), tokens_in, judging.model, judging.effort,
@@ -1479,12 +1502,72 @@ def gather_passages(own: list[Decision], related: list[Decision], keywords: Mapp
         if used + p.words <= PASSAGE_BUDGET:
             chosen.append(p)
             used += p.words
+    # Passages that touch are one stretch of text: joined first, so a proposal split between two is extended whole.
+    chosen = _join_passages([_extended(p, texts) for p in _join_passages(chosen, texts)], texts)
     chosen.sort(key=lambda p: (p.doc.date or "", p.doc.id, p.start))
     numbered = [Passage(f"P{n}", p.doc, p.page, p.start, p.end, p.source, p.weight)
                 for n, p in enumerate(chosen, start=1)]
     return Gathering(numbered, [hit for doc_id, found in sorted(amounts.items()) for hit in found
                                 if not any(p.doc.id == doc_id and p.start <= hit["pos"] and hit["end"] <= p.end
                                            for p in numbered)])
+
+
+def _is_proposal(word: str) -> bool:
+    return "forslag" in word or word.startswith(("foresl", "indstill"))
+
+
+def _is_outcome(words: Sequence[str], k: int) -> bool:
+    """An outcome word, or "imod" in a vote count ("31 for, 7 imod")."""
+    return words[k] in OUTCOME_WORDS or (words[k] == "imod" and any(w.isdigit() for w in words[max(k - 4, 0):k]))
+
+
+def _extended(p: Passage, texts: Texts) -> Passage:
+    """The passage with the whole proposal it holds: forward to the outcome when it has a proposal and no outcome
+    after it (within EXTEND_FORWARD words, to the end of the outcome's line), and back to the heading of the agenda
+    item when it has a proposal or an outcome but no heading before it (within EXTEND_BACK words). A window around a
+    quote often stops before "Forslag 5 … blev vedtaget enstemmigt", or starts in the middle of the proposal."""
+    words, spans, text = texts.words(p.doc).words, texts.spans(p.doc), texts.text(p.doc)
+
+    def line_start(k: int) -> bool:
+        return k == 0 or "\n" in text[spans[k - 1][1]:spans[k][0]]
+
+    def heading(k: int) -> bool:
+        """A line that opens an agenda item; "Forslag 5 … blev vedtaget" closes one."""
+        if not line_start(k) or HEADING.match(text, spans[k][0]) is None:
+            return False
+        line_end = next((j for j in range(k + 1, min(k + 30, len(words))) if line_start(j)), min(k + 30, len(words)))
+        return not any(_is_outcome(words, j) for j in range(k, line_end))
+
+    start, end = p.start, p.end
+    proposals = [k for k in range(start, end) if _is_proposal(words[k])]
+    outcomes = [k for k in range(start, end) if _is_outcome(words, k)]
+    if proposals and not any(k > proposals[-1] for k in outcomes):
+        found = next((k for k in range(end, min(end + EXTEND_FORWARD, len(words))) if _is_outcome(words, k)), None)
+        if found is not None:
+            end = next((k for k in range(found + 1, min(found + 20, len(words))) if line_start(k)),
+                       min(found + 20, len(words)))
+    markers = proposals + outcomes
+    if markers and not any(heading(k) for k in range(start, min(markers) + 1)):
+        start = next((k for k in range(start - 1, max(start - EXTEND_BACK, 0) - 1, -1) if heading(k)), start)
+    if (start, end) == (p.start, p.end):
+        return p
+    return replace(p, start=start, end=end, page=texts.words(p.doc).pages[start])
+
+
+_SOURCE_ORDER = ("rule", "related", "keyword")
+
+
+def _join_passages(passages: list[Passage], texts: Texts) -> list[Passage]:
+    """Passages of one document that overlap or touch, as one; it keeps the strongest source."""
+    joined: list[Passage] = []
+    for p in sorted(passages, key=lambda p: (p.doc.id, p.start)):
+        last = joined[-1] if joined else None
+        if last is not None and last.doc.id == p.doc.id and p.start <= last.end:
+            source = min(last.source, p.source, key=_SOURCE_ORDER.index)
+            joined[-1] = replace(last, end=max(last.end, p.end), source=source, weight=max(last.weight, p.weight))
+        else:
+            joined.append(p)
+    return joined
 
 
 def _spread(passages: list[Passage]) -> list[Passage]:
@@ -1529,37 +1612,72 @@ class RuleTask:
     kategori: str
     titel: str
     emner: tuple[str, ...]
-    keywords: dict[tuple[str, ...], float]
-    gathering: Gathering
+    keywords: tuple[str, ...]
+    passages: list[Passage]
+    unread: int  # amounts no passage holds (Gathering.unread_amounts)
     as_of: date
     prompt: str  # the rule and its passages
     texts: Texts = field(repr=False, compare=False)  # to check the judges' quotes against the passages
-
-    @property
-    def passages(self) -> list[Passage]:
-        return self.gathering.passages
+    # Document id -> the quote spans of the extracted decisions (data/beslutninger), to tell judges' events apart
+    extracted: Mapping[str, Sequence[tuple[int, int]]] = field(default_factory=dict, repr=False, compare=False)
+    unread_amounts: tuple[dict, ...] = ()  # the unread amounts themselves, when the passages were gathered now
 
     def call(self, judge: int) -> JudgeCall:
         return JudgeCall("rules", self.slug, judge, RULES_JUDGE_SYSTEM, self.prompt, RULES_JUDGE_SCHEMA)
 
 
+def rule_prompt(titel: str, emner: Sequence[str], passages: Sequence[Passage], as_of: date, texts: Texts) -> str:
+    blocks = "\n\n".join(f"[{p.id}] {p.doc.id} · {p.doc.date or 'ukendt dato'} · {p.doc.organ_label} · "
+                         f"side {p.page or '?'}\n{texts.excerpt(p.doc, p.start, p.end)}" for p in passages)
+    return (f"Rule: {titel}\nFiled as: {'; '.join(emner)}\nToday: {as_of.isoformat()}\n\n"
+            f"<passages>\n{blocks}\n</passages>")
+
+
+def _emner(raw: dict, decisions: Sequence[Decision]) -> tuple[str, ...]:
+    by_ref = {d.ref: d for d in decisions}
+    return tuple(dict.fromkeys(by_ref[v["ref"]].emne for v in raw["versioner"] if v["ref"] in by_ref))
+
+
 def rule_task(choice: dict, raw: dict, decisions: list[Decision], docs: Mapping[str, Doc], index: KeywordIndex,
-              groups: list[list[tuple[str, ...]]], as_of: date) -> RuleTask:
+              groups: list[list[tuple[str, ...]]], as_of: date,
+              extracted: Mapping[str, Sequence[tuple[int, int]]] | None = None) -> RuleTask:
+    """The rule with passages gathered from the documents now."""
     by_ref = {d.ref: d for d in decisions}
     own = [by_ref[v["ref"]] for v in raw["versioner"] if v["ref"] in by_ref]
-    emner = tuple(dict.fromkeys(d.emne for d in own))
+    emner = _emner(raw, decisions)
     vocabulary = decision_vocabulary(decisions)
     keywords = rule_keywords(raw["titel"], emner, groups, index, vocabulary)
     title = title_words(raw["titel"], index, vocabulary)
     related = related_decisions(decisions, title, {d.ref for d in own})
     gathering = gather_passages(own, related, keywords, title, index, docs)
-    blocks = "\n\n".join(f"[{p.id}] {p.doc.id} · {p.doc.date or 'ukendt dato'} · {p.doc.organ_label} · "
-                         f"side {p.page or '?'}\n{index.texts.excerpt(p.doc, p.start, p.end)}"
-                         for p in gathering.passages)
-    prompt = (f"Rule: {raw['titel']}\nFiled as: {'; '.join(emner)}\nToday: {as_of.isoformat()}\n\n"
-              f"<passages>\n{blocks}\n</passages>")
-    return RuleTask(choice["slug"], raw["kategori"], raw["titel"], emner, keywords, gathering, as_of, prompt,
-                    index.texts)
+    prompt = rule_prompt(raw["titel"], emner, gathering.passages, as_of, index.texts)
+    return RuleTask(choice["slug"], raw["kategori"], raw["titel"], emner, tuple(" ".join(k) for k in keywords),
+                    gathering.passages, len(gathering.unread_amounts), as_of, prompt, index.texts, extracted or {},
+                    tuple(gathering.unread_amounts))
+
+
+def stored_rule_task(key: dict, raw: dict, decisions: list[Decision], docs: Mapping[str, Doc], texts: Texts,
+                     as_of: date, extracted: Mapping[str, Sequence[tuple[int, int]]] | None = None) -> RuleTask:
+    """The rule with the passages its key was judged on (key["passages"]): the same prompt, so the stored answers
+    still fit (key-rules --rederive), however the gathering has changed since."""
+    passages = [Passage(e["id"], docs[e["doc"]], e["page"], e["start"], e["end"], e["source"], 0.0)
+                for e in key["passages"]]
+    emner = _emner(raw, decisions)
+    return RuleTask(key["slug"], raw["kategori"], raw["titel"], emner, tuple(key["keywords"]), passages,
+                    key["unread_amounts"], as_of, rule_prompt(raw["titel"], emner, passages, as_of, texts), texts,
+                    extracted or {})
+
+
+def extracted_spans(decisions: Iterable[Decision], docs: Mapping[str, Doc],
+                    texts: Texts) -> dict[str, list[tuple[int, int]]]:
+    """Document id -> where the quotes of its extracted decisions stand."""
+    found: dict[str, list[tuple[int, int]]] = defaultdict(list)
+    for d in decisions:
+        if d.doc_id in docs:
+            pos = analyze.locate_quote(d.citat, texts.words(docs[d.doc_id]), d.side)
+            if pos is not None:
+                found[d.doc_id].append(matching.quote_span(pos, d.citat))
+    return found
 
 
 # --------------------------------------------------------------------------- the rules key (Part A)
@@ -1650,7 +1768,7 @@ class RuleTimeline:
     def of(cls, task: RuleTask, answers: Sequence[dict]) -> RuleTimeline:
         passages = {p.id: p for p in task.passages}
         runs = [events_of(answer, passages, task.texts) for answer in answers]
-        clusters = event_clusters(runs, task.titel)
+        clusters = event_clusters(runs, task.titel, task.extracted)
         events = [resolve_event(c, runs) for c in clusters]
         cluster_of = {(g, i): k for k, c in enumerate(clusters) for g, i in c.items()}
         answered = [year_answers(answer, run, g, cluster_of) for g, (answer, run) in enumerate(zip(answers, runs))]
@@ -1671,14 +1789,33 @@ class RuleTimeline:
         return any(r.status == "open" for r in [*self.events, *self.years.values()])
 
 
-def event_clusters(runs: Sequence[list[Event | None]], titel: str) -> list[dict[int, int]]:
-    """Events of several judges clustered per document (cluster()), in chronological order."""
+def same_decision(a: Event, b: Event, extracted: Sequence[tuple[int, int]]) -> bool:
+    """Two judges' events in one document are one decision, even when cited from different passages: their quotes
+    overlap in the document, both stand inside one extracted decision's quote, or they give the rule the same
+    amounts with the same effect (a meeting does not set one rule to the same amounts twice; a budget line and the
+    proposal it refers to are one decision)."""
+    if matching.quote_overlap(a.span, b.span) > 0:
+        return True
+    if any(_inside(a.span, span) and _inside(b.span, span) for span in extracted):
+        return True
+    return bool(a.content[1]) and a.content == b.content
+
+
+def _inside(span: tuple[int, int] | None, outer: tuple[int, int]) -> bool:
+    return span is not None and outer[0] <= span[0] and span[1] <= outer[1]
+
+
+def event_clusters(runs: Sequence[list[Event | None]], titel: str,
+                   extracted: Mapping[str, Sequence[tuple[int, int]]] | None = None) -> list[dict[int, int]]:
+    """Events of several judges clustered per document (cluster()), in chronological order. Clusters of one
+    document whose events are the same decision (same_decision) are then joined, never two events of one judge."""
     doc_ids = sorted({e.passage.doc.id for run in runs for e in run if e is not None})
     found = []
     for doc_id in doc_ids:
         index = [[i for i, e in enumerate(run) if e is not None and e.passage.doc.id == doc_id] for run in runs]
-        for members in cluster([[run[i].candidate(titel) for i in idx] for run, idx in zip(runs, index)]):
-            found.append({g: index[g][k] for g, k in members.items()})
+        clusters = [{g: index[g][k] for g, k in members.items()}
+                    for members in cluster([[run[i].candidate(titel) for i in idx] for run, idx in zip(runs, index)])]
+        found += _join_events(clusters, runs, (extracted or {}).get(doc_id, ()))
 
     def order(members: dict[int, int]) -> tuple:
         g, i = min(members.items())
@@ -1686,6 +1823,18 @@ def event_clusters(runs: Sequence[list[Event | None]], titel: str) -> list[dict[
         return e.passage.doc.date or "", e.passage.doc.id, e.pos, g, i
 
     return sorted(found, key=order)
+
+
+def _join_events(clusters: list[dict[int, int]], runs: Sequence[list[Event | None]],
+                 extracted: Sequence[tuple[int, int]]) -> list[dict[int, int]]:
+    joined = [dict(c) for c in clusters]
+    while pair := next(((x, y) for x, y in combinations(range(len(joined)), 2)
+                        if not joined[x].keys() & joined[y].keys()
+                        and any(same_decision(runs[g][i], runs[h][j], extracted)
+                                for g, i in joined[x].items() for h, j in joined[y].items())), None):
+        x, y = pair
+        joined[x].update(joined.pop(y))
+    return joined
 
 
 def resolve_event(members: dict[int, int], runs: Sequence[list[Event | None]]) -> Resolution:
@@ -1735,8 +1884,100 @@ def rules_key(task: RuleTask, answers: Sequence[dict]) -> dict:
                       "adopted": adopted_id, "event": ids.get(in_force) if state == "event" else None,
                       "value": by_id[adopted_id]["value_after"] if adopted_id else None})
     return {"slug": task.slug, "kategori": task.kategori, "titel": task.titel, "as_of": task.as_of.isoformat(),
-            "keywords": [" ".join(p) for p in task.keywords], "passages": [p.entry() for p in task.passages],
-            "unread_amounts": len(task.gathering.unread_amounts), "events": events, "years": years}
+            "keywords": list(task.keywords), "passages": [p.entry() for p in task.passages],
+            "unread_amounts": task.unread, "events": events, "years": years}
+
+
+# --------------------------------------------------------------------------- corrections
+
+# What a correction may change, per kind. Corrections are kept in eval/key/corrections.json, each with its reason and
+# evidence from the documents, and applied on top of the judges whenever a key is written or scored.
+CORRECTABLE = {
+    "rule-event": frozenset({"status", "effect_status", "effect", "value_after"}),
+    "rule-year": frozenset({"status", "state", "adopted", "event", "value"}),
+    "decision": frozenset({"status", "uncertain_fields", *CODED_FIELDS}),
+}
+
+
+def corrections_path() -> Path:
+    return EVAL_DIR / "key" / "corrections.json"
+
+
+def load_corrections() -> list[dict]:
+    """eval/key/corrections.json: [{"kind", "target", "change", "reason", "evidence": [{"doc", "quote"}]}]. A rule
+    event is targeted by {"rule", "doc", "quote"}, rule years by {"rule", "years"}, a key decision by {"doc", "id"}
+    or {"doc", "quote"}: quotes, not event numbers, which change when a key is judged again. Checked, so a
+    correction the code cannot apply fails instead of being ignored."""
+    path = corrections_path()
+    if not path.exists():
+        return []
+    corrections = read_json(path)
+    for n, c in enumerate(corrections, start=1):
+        allowed = CORRECTABLE.get(c.get("kind"))
+        if allowed is None or not c.get("reason") or not c.get("change") or set(c["change"]) - allowed:
+            raise SystemExit(f"{path}: correction {n} needs a kind ({', '.join(CORRECTABLE)}), a reason and a change "
+                             f"of {', '.join(sorted(allowed or ()))}")
+    return corrections
+
+
+def _quoted(quote: str | None, target: str) -> bool:
+    """The target names this quote: one holds the other, ignoring case, punctuation and spacing."""
+    a, b = " ".join(tokens(quote or "")), " ".join(tokens(target))
+    return bool(a and b) and (b in a or a in b)
+
+
+def correct_rule_key(key: dict, corrections: Sequence[dict]) -> dict:
+    """The rule key with the corrections of its rule applied, each listed under "corrections" with what it matched
+    (nothing: the key has changed since, and the reports say so). Applying them again changes nothing."""
+    key = json.loads(json.dumps(key))
+    applied = []
+    for c in corrections:
+        target = c["target"]
+        if c["kind"] not in ("rule-event", "rule-year") or target.get("rule") != key["slug"]:
+            continue
+        if c["kind"] == "rule-event":
+            items = [e for e in key["events"] if e["doc"] == target["doc"] and _quoted(e["quote"], target["quote"])]
+            matched = [e["id"] for e in items]
+        else:
+            items = [y for y in key["years"] if y["year"] in target["years"]]
+            matched = [y["year"] for y in items]
+        for item in items:
+            item.update(c["change"])
+        applied.append({**c, "matched": matched})
+    key["corrections"] = applied
+    return key
+
+
+def correct_decisions_key(key: dict, corrections: Sequence[dict]) -> dict:
+    """The decisions key with the corrections of its document applied (see correct_rule_key)."""
+    key = json.loads(json.dumps(key))
+    applied = []
+    for c in corrections:
+        target = c["target"]
+        if c["kind"] != "decision" or target.get("doc") != key["doc_id"]:
+            continue
+        items = [d for d in key["decisions"]
+                 if d["id"] == target.get("id") or ("quote" in target and _quoted(d["citat"], target["quote"]))]
+        for item in items:
+            item.update(c["change"])
+        applied.append({**c, "matched": [d["id"] for d in items]})
+    key["corrections"] = applied
+    return key
+
+
+def corrections_section(applied: Iterable[dict]) -> list[str]:
+    """Markdown listing the corrections a report's keys carry, and those that matched nothing."""
+    lines = ["## Corrections applied", "",
+             "Changes on top of the judges' answers (eval/key/corrections.json), each checked against the minutes.", ""]
+    for c in applied:
+        target = ", ".join(f"{k} {v}" for k, v in c["target"].items() if k != "quote")
+        if "quote" in c["target"]:
+            target += f' "{c["target"]["quote"]}"'
+        matched = ", ".join(map(str, c["matched"])) or "NOTHING: the key has changed, check the correction"
+        evidence = "; ".join(f'{e["doc"]}: "{e["quote"]}"' for e in c.get("evidence", []))
+        lines.append(f"- {c['kind']} {target} ({matched}): {json.dumps(c['change'], ensure_ascii=False)}. "
+                     f"{c['reason']}" + (f" Evidence: {evidence}." if evidence else ""))
+    return lines + ([] if lines[-1] else ["None."])
 
 
 # --------------------------------------------------------------------------- scoring decisions (Part B)
@@ -1824,6 +2065,9 @@ def score_document(key: dict, decisions: list[dict]) -> DocScore:
             if len(certain) == len(CODED_FIELDS):
                 judged["all"] += 1
                 correct["all"] += all(best[f] == item.decision[f] for f in CODED_FIELDS)
+            if set(FIRM_FIELDS) <= set(certain):
+                judged["three"] += 1
+                correct["three"] += all(best[f] == item.decision[f] for f in FIRM_FIELDS)
         elif item.role == "reject":
             false += len(matched)
         else:
@@ -1841,7 +2085,8 @@ METRICS: dict[str, Callable[[DocScore], float | None]] = {
     "recall": lambda s: _ratio(s.found, s.key_decisions),
     "precision": lambda s: _ratio(s.found, s.found + s.false),
     "over_split": lambda s: _ratio(s.extra, s.found),
-    **{f"field_{f}": (lambda s, f=f: _ratio(s.correct.get(f, 0), s.judged.get(f, 0))) for f in (*CODED_FIELDS, "all")},
+    **{f"field_{f}": (lambda s, f=f: _ratio(s.correct.get(f, 0), s.judged.get(f, 0)))
+       for f in (*CODED_FIELDS, "all", "three")},
 }
 
 
@@ -1895,14 +2140,15 @@ def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], k
              "Recall: key decisions found. Precision: found / (found + run decisions the key rejects); it counts "
              "only run decisions in the key's pool, and the others are Unjudged. Over-split: extra run decisions on "
              "a key decision already found, per found decision. Fields: share of found decisions with the key's "
-             "value, among those whose value the judges agreed on. Doc avg: averaged over documents.", ""]
+             "value, among those whose value the judges agreed on; handling often needs the rule's history, so the "
+             "three fields without it are given too. Doc avg: averaged over documents.", ""]
     if outside:
         lines += [f"Not candidate runs: {', '.join(outside)}. The judges never saw their decisions, so those no "
                   f"candidate run had are unjudged, and their precision covers only the rest.", ""]
     lines += [f"Warning: {w}" for w in warnings] + ([""] if warnings else [])
     lines += ["| Run | Recall | Recall (doc avg) | Precision | Precision (doc avg) | Over-split | Kategori | Udfald | "
-              "Handling | Niveau | All four | Found | False | Extra | Ignored | Unjudged |",
-              "|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|"]
+              "Handling | Niveau | All four | Three (no handling) | Found | False | Extra | Ignored | Unjudged |",
+              "|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|"]
     totals = {run: total(found) for run, found in scores.items()}
     for run, s in totals.items():
         values = [_pct(METRICS["recall"](s)), _pct(per_document(scores[run], METRICS["recall"])),
@@ -1925,7 +2171,7 @@ def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], k
                   f"{BOOTSTRAP_SAMPLES} resamples of the documents, seed {seed}.", "",
                   "| Run | Metric | Difference | 95% interval | Resamples ahead |", "|---|---|--:|--:|--:|"]
         for run in others:
-            for m in ("recall", "precision", "over_split", "field_all"):
+            for m in ("recall", "precision", "over_split", "field_all", "field_three"):
                 b = bootstrap(scores[run], scores[base], METRICS[m], seed=seed)
                 if b:
                     lines.append(f"| {run} | {m} | {100 * b['difference']:+.1f} | {100 * b['low']:+.1f} to "
@@ -1939,6 +2185,7 @@ def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], k
     for k, doc_id in enumerate(doc_ids):
         cells = [f"{s[k].found}/{s[k].key_decisions} found, {s[k].false} false" for s in scores.values()]
         lines.append(f"| {doc_id} | {' | '.join(cells)} |")
+    lines += ["", *corrections_section(c for key in keys.values() for c in key.get("corrections", []))]
     return "\n".join(lines) + "\n"
 
 
@@ -1953,7 +2200,8 @@ class RuleScore:
     elsewhere: int  # in another pipeline rule
     missing: int  # not extracted, or in no rule
     extra: int  # versions of the home rule that are no key event
-    effects: int  # found events whose version has the key's effect
+    effects: int  # found events whose version has the key's effect, among those whose effect is certain
+    effect_events: int  # found events whose effect is certain (not corrected to uncertain)
     rules: int  # pipeline rules holding certain key events: more than one is fragmentation
     years: int  # certain years with a known state
     same_event: int  # years the pipeline shows the key's event in force
@@ -2024,13 +2272,18 @@ def score_rule(key: dict, decisions: list[Decision], raw_rules: list[dict], docs
         if not content:
             said = f"{y['adopted']} ({y['value'] or 'no value'})" if y["adopted"] else "none (not in force)"
             disagreements.append(f"{y['year']}: key {said}, pipeline {shown.decision.ref if shown else 'none'}")
+    effect_known = [e for e in found if e.get("effect_status", "certain") == "certain"]
     return RuleScore(key["slug"], home.slug if home else None, len(certain), len(found), len(elsewhere),
                      len(certain) - len(found) - len(elsewhere), sum(1 for ref in effects if ref not in key_refs),
-                     sum(effects.get(mapped[e["id"]]) == e["effect"] for e in found), len(holders), len(years),
-                     same_event, same_content, tuple(disagreements))
+                     sum(effects.get(mapped[e["id"]]) == e["effect"] for e in effect_known), len(effect_known),
+                     len(holders), len(years), same_event, same_content, tuple(disagreements))
 
 
-def rules_report(scores: list[RuleScore], rules_dir: Path) -> str:
+def rules_report(scores: list[RuleScore], rules_dir: Path, soft: Mapping[str, str] | None = None,
+                 corrections: Iterable[dict] = ()) -> str:
+    """Markdown: per rule the events, fragmentation and years; the totals and the summary leave out the soft rules
+    (`soft`: slug -> why), whose events depend on how the rule is scoped."""
+    soft = soft or {}
     lines = ["# Rules against the answer key", "", f"Pipeline rules from {rules_dir}.", "",
              "Found: certain key events in the pipeline rule holding most of them (Home); Elsewhere: in another "
              "rule; Missing: not extracted or in no rule; Extra: versions of the home rule that are no key event; "
@@ -2040,23 +2293,31 @@ def rules_report(scores: list[RuleScore], rules_dir: Path) -> str:
              "| Rule | Home | Events | Found | Elsewhere | Missing | Extra | Effects agree | Rules | Years | "
              "Same event | Same content |", "|---|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|"]
     for s in scores:
-        lines.append(f"| {s.slug} | {s.home or '–'} | {s.events} | {s.found} | {s.elsewhere} | {s.missing} | "
+        name = f"{s.slug} (soft)" if s.slug in soft else s.slug
+        lines.append(f"| {name} | {s.home or '–'} | {s.events} | {s.found} | {s.elsewhere} | {s.missing} | "
                      f"{s.extra} | {s.effects} | {s.rules} | {s.years} | {s.same_event} | {s.same_content} |")
-    t = rules_summary(scores)
+    gated = [s for s in scores if s.slug not in soft]
+    t = rules_summary(gated)
     lines += [f"| **all** | | {t['events']} | {t['found']} | {t['elsewhere']} | {t['missing']} | {t['extra']} | "
               f"{t['effects']} | | {t['years']} | {t['same_event']} | {t['same_content']} |", "",
               f"Events found: {_pct(t['found_share'])}; effects agree: {_pct(t['effect_share'])}; fragmented rules: "
-              f"{t['fragmented']} of {len(scores)}; years with the same event in force: {_pct(t['event_share'])}, "
-              f"with the same content: {_pct(t['content_share'])}.", "", "## Years where the content differs", ""]
+              f"{t['fragmented']} of {len(gated)}; years with the same content in force: {_pct(t['content_share'])} "
+              f"(the main measure), with the same event: {_pct(t['event_share'])}.", ""]
+    if soft:
+        lines += ["Soft rules are reported but left out of the totals and the summary: "
+                  + "; ".join(f"{slug}: {why}" for slug, why in soft.items()) + ".", ""]
+    lines += ["## Years where the content differs", ""]
     lines += [f"- {s.slug} {d}" for s in scores for d in s.disagreements] or ["None."]
+    lines += ["", *corrections_section(corrections)]
     return "\n".join(lines) + "\n"
 
 
 def rules_summary(scores: list[RuleScore]) -> dict:
     t = {name: sum(getattr(s, name) for s in scores)
-         for name in ("events", "found", "elsewhere", "missing", "extra", "effects", "years", "same_event",
-                      "same_content")}
-    return t | {"found_share": _ratio(t["found"], t["events"]), "effect_share": _ratio(t["effects"], t["found"]),
+         for name in ("events", "found", "elsewhere", "missing", "extra", "effects", "effect_events", "years",
+                      "same_event", "same_content")}
+    return t | {"found_share": _ratio(t["found"], t["events"]),
+                "effect_share": _ratio(t["effects"], t["effect_events"]),
                 "fragmented": sum(s.rules > 1 for s in scores), "event_share": _ratio(t["same_event"], t["years"]),
                 "content_share": _ratio(t["same_content"], t["years"])}
 
@@ -2126,8 +2387,10 @@ def cmd_extract(args: argparse.Namespace) -> None:
 
 
 def _judging(args: argparse.Namespace) -> Judging:
+    if args.rederive and args.rejudge:
+        raise SystemExit("--rederive uses stored answers only; it cannot be combined with --rejudge")
     return Judging(args.judge_model, args.judge_effort, RunBudget(max_cost_usd=args.max_cost), workers_for(args),
-                   args.rejudge)
+                   args.rejudge, args.rederive)
 
 
 def cmd_key_decisions(args: argparse.Namespace) -> None:
@@ -2136,13 +2399,14 @@ def cmd_key_decisions(args: argparse.Namespace) -> None:
     texts = Texts()
     tasks = [decisions_task(doc, runs, texts) for doc in docs]
     judging = _judging(args)
+    corrections = load_corrections()
     steps = _judge_in_rounds("decisions", tasks, judging, lambda task, answers: task.needs_tiebreak(answers))
     written = 0
     for task in tasks:
         answers = _answers(task, judging, lambda t, a: t.needs_tiebreak(a))
         if answers is None:
             continue
-        key = decisions_key(task, answers)
+        key = correct_decisions_key(decisions_key(task, answers), corrections)
         key["judges"] = stored_judges(task.call(n) for n in JUDGES[:len(answers)])
         write_json(key_dir("decisions") / f"{task.doc.id}.json", key)
         written += 1
@@ -2164,18 +2428,26 @@ def cmd_key_rules(args: argparse.Namespace) -> None:
     raw_rules = {raw["slug"]: raw for raw in analyze.load_rules()}
     targets = analyze.load_slugs().targets()
     texts = Texts()
-    index = KeywordIndex(docs, texts)
+    extracted = extracted_spans(decisions, by_id, texts)
+    index = None if args.rederive else KeywordIndex(docs, texts)
     groups = load_synonyms()
+    corrections = load_corrections()
     tasks = []
     for slug in slugs:
         current = targets.get(slug, slug)
         if current not in raw_rules:
             raise SystemExit(f"Selected rule {slug} is in no rule file and leads to no rule")
-        task = rule_task({"slug": slug}, raw_rules[current], decisions, by_id, index, groups, as_of)
-        unread = task.gathering.unread_amounts
+        if args.rederive:
+            path = key_dir("rules") / f"{slug}.json"
+            if not path.exists():
+                raise SystemExit(f"--rederive: {slug} has no key yet")
+            tasks.append(stored_rule_task(read_json(path), raw_rules[current], decisions, by_id, texts, as_of,
+                                          extracted))
+            continue
+        task = rule_task({"slug": slug}, raw_rules[current], decisions, by_id, index, groups, as_of, extracted)
         print(f"{slug}: {len(task.passages)} passages, {sum(p.words for p in task.passages):,} words; "
-              f"{len(unread)} keyword hits next to a number left unread", flush=True)
-        for hit in unread[:5]:
+              f"{task.unread} keyword hits next to a number left unread", flush=True)
+        for hit in task.unread_amounts[:5]:
             print(f"    {hit['doc']}: {hit['text'][:110]}")
         tasks.append(task)
     judging = _judging(args)
@@ -2189,7 +2461,7 @@ def cmd_key_rules(args: argparse.Namespace) -> None:
         answers = _answers(task, judging, needs)
         if answers is None:
             continue
-        key = rules_key(task, answers)
+        key = correct_rule_key(rules_key(task, answers), corrections)
         key["judges"] = stored_judges(task.call(n) for n in JUDGES[:len(answers)])
         write_json(key_dir("rules") / f"{task.slug}.json", key)
         written += 1
@@ -2231,7 +2503,9 @@ def _answers(task, judging: Judging, needs_tiebreak: Callable) -> list[dict] | N
 
 def cmd_score(args: argparse.Namespace) -> None:
     runs = [check_run_name(run) for run in args.run]
-    keys = {path.stem: read_json(path) for path in sorted(key_dir("decisions").glob("*.json"))}
+    corrections = load_corrections()
+    keys = {path.stem: correct_decisions_key(read_json(path), corrections)
+            for path in sorted(key_dir("decisions").glob("*.json"))}
     if not keys:
         raise SystemExit(f"No decisions key in {key_dir('decisions')}; run `evaluate.py key-decisions` first")
     doc_ids = [doc_id for doc_id in keys if all(run_path(run, doc_id).exists() for run in runs)]
@@ -2258,21 +2532,26 @@ def cmd_score(args: argparse.Namespace) -> None:
 
 
 def cmd_score_rules(args: argparse.Namespace) -> None:
-    keys = [read_json(path) for path in sorted(key_dir("rules").glob("*.json"))]
+    corrections = load_corrections()
+    keys = [correct_rule_key(read_json(path), corrections) for path in sorted(key_dir("rules").glob("*.json"))]
     if not keys:
         raise SystemExit(f"No rules key in {key_dir('rules')}; run `evaluate.py key-rules` first")
+    selection = load_selection() if selection_path().exists() else {"rules": []}
+    soft = {r["slug"]: r.get("soft_reason", "soft") for r in selection["rules"] if r.get("soft")}
     docs = scrape.load_manifest()
     decisions = analyze.load_decisions(docs, args.decisions_dir)
     raw_rules = analyze.load_rules(args.rules_dir)
     texts = Texts()
     by_id = {doc.id: doc for doc in docs}
     scores = [score_rule(key, decisions, raw_rules, by_id, texts) for key in keys]
-    report = rules_report(scores, args.rules_dir or analyze.RULES_DIR)
+    report = rules_report(scores, args.rules_dir or analyze.RULES_DIR, soft,
+                          [c for key in keys for c in key["corrections"]])
     name = args.report or f"rules-{(args.rules_dir or analyze.RULES_DIR).name}"
     write_text(report_path(name), report)
     print(report)
-    summary = rules_summary(scores)
+    summary = rules_summary([s for s in scores if s.slug not in soft])
     log_run("score-rules", {"rules_dir": str(args.rules_dir or analyze.RULES_DIR), "rules": len(scores),
+                            "soft": sorted(soft),
                             "report": f"reports/{name}.md",
                             "metrics": {k: _round(v) if isinstance(v, float) else v for k, v in summary.items()}})
 
@@ -2324,6 +2603,10 @@ def parser() -> argparse.ArgumentParser:
                              help=f"default: {JUDGE_EFFORT}")
         command.add_argument("--rejudge", action="store_true",
                              help="ask again where a stored answer was given for other input (paid)")
+        command.add_argument("--rederive", action="store_true",
+                             help="rebuild the keys from stored answers only, never calling Claude (key-rules: on "
+                                  "the passages each key was judged on), e.g. after a change to the agreement rules "
+                                  "or the corrections")
         if name == "key-decisions":
             command.add_argument("--runs", nargs="+", default=list(CANDIDATE_RUNS),
                                  help=f"extraction runs whose decisions are the candidates (default: "

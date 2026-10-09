@@ -1119,6 +1119,25 @@
   {
    "id": "E6",
    "status": "certain",
+   "passage": "P103",
+   "doc": "epf_kongres_2026",
+   "date": "2026",
+   "page": 4,
+   "effect": "bekraeftet",
+   "quote": "Økonomisk har vedtagelse af forslag 16.7 den konsekvens, at fra 2027 kræves der følgende ændret gebyr:",
+   "value_after": "Coach Capitation Fee 50 euro",
+   "span": [
+    850,
+    867
+   ],
+   "judges": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E7",
+   "status": "certain",
    "passage": "P110",
    "doc": "Tilmeldingsfrister2027",
    "date": "2027",
@@ -1163,6 +1182,7 @@
    "value": "50 € coach fee; deltagende løftere og dommere fritaget"
   }
  ],
+ "corrections": [],
  "judges": [
   {
    "judge": 1,

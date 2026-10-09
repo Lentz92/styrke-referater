@@ -51,29 +51,20 @@
    "date": "2010-05-30",
    "page": 1,
    "start": 268,
-   "end": 658,
+   "end": 689,
    "source": "related"
   },
   {
    "id": "P4",
-   "doc": "refbest_30052010",
-   "date": "2010-05-30",
-   "page": 2,
-   "start": 658,
-   "end": 689,
-   "source": "keyword"
-  },
-  {
-   "id": "P5",
    "doc": "elite12092010",
    "date": "2010-09-12",
    "page": 1,
    "start": 10,
-   "end": 263,
+   "end": 272,
    "source": "keyword"
   },
   {
-   "id": "P6",
+   "id": "P5",
    "doc": "elite12092010",
    "date": "2010-09-12",
    "page": 2,
@@ -82,7 +73,7 @@
    "source": "related"
   },
   {
-   "id": "P7",
+   "id": "P6",
    "doc": "elite29062011",
    "date": "2011-07-29",
    "page": 1,
@@ -91,34 +82,25 @@
    "source": "related"
   },
   {
-   "id": "P8",
+   "id": "P7",
    "doc": "rep2012",
    "date": "2012",
    "page": 1,
    "start": 57,
-   "end": 241,
+   "end": 357,
    "source": "related"
   },
   {
-   "id": "P9",
-   "doc": "rep2012",
-   "date": "2012",
-   "page": 2,
-   "start": 241,
-   "end": 350,
-   "source": "keyword"
-  },
-  {
-   "id": "P10",
+   "id": "P8",
    "doc": "refbest_04082012",
    "date": "2012-08-04",
    "page": 3,
-   "start": 714,
+   "start": 707,
    "end": 869,
    "source": "keyword"
   },
   {
-   "id": "P11",
+   "id": "P9",
    "doc": "elite10112012",
    "date": "2012-11-10",
    "page": 1,
@@ -127,70 +109,52 @@
    "source": "related"
   },
   {
-   "id": "P12",
+   "id": "P10",
    "doc": "rep2013",
    "date": "2013",
    "page": 1,
    "start": 97,
-   "end": 308,
+   "end": 342,
    "source": "keyword"
   },
   {
-   "id": "P13",
+   "id": "P11",
    "doc": "rep2013",
    "date": "2013",
    "page": 3,
-   "start": 957,
+   "start": 910,
    "end": 1232,
    "source": "keyword"
   },
   {
-   "id": "P14",
+   "id": "P12",
    "doc": "refbest_10032013",
    "date": "2013-03-10",
    "page": 1,
-   "start": 105,
-   "end": 295,
+   "start": 61,
+   "end": 637,
    "source": "related"
   },
   {
-   "id": "P15",
-   "doc": "refbest_10032013",
-   "date": "2013-03-10",
-   "page": 1,
-   "start": 295,
-   "end": 637,
-   "source": "keyword"
-  },
-  {
-   "id": "P16",
+   "id": "P13",
    "doc": "refbest_01062013",
    "date": "2013-06-01",
    "page": 1,
-   "start": 25,
+   "start": 24,
    "end": 262,
    "source": "keyword"
   },
   {
-   "id": "P17",
+   "id": "P14",
    "doc": "refbest_24082013",
    "date": "2013-08-24",
    "page": 2,
    "start": 496,
-   "end": 729,
-   "source": "keyword"
-  },
-  {
-   "id": "P18",
-   "doc": "refbest_24082013",
-   "date": "2013-08-24",
-   "page": 2,
-   "start": 729,
    "end": 908,
    "source": "related"
   },
   {
-   "id": "P19",
+   "id": "P15",
    "doc": "refbest_16112013",
    "date": "2013-11-16",
    "page": 1,
@@ -199,7 +163,7 @@
    "source": "related"
   },
   {
-   "id": "P20",
+   "id": "P16",
    "doc": "elite15122013",
    "date": "2013-12-15",
    "page": 2,
@@ -208,7 +172,7 @@
    "source": "related"
   },
   {
-   "id": "P21",
+   "id": "P17",
    "doc": "em2014kongres",
    "date": "2014",
    "page": 1,
@@ -217,16 +181,16 @@
    "source": "related"
   },
   {
-   "id": "P22",
+   "id": "P18",
    "doc": "rep2014",
    "date": "2014",
    "page": 2,
    "start": 507,
-   "end": 907,
+   "end": 918,
    "source": "keyword"
   },
   {
-   "id": "P23",
+   "id": "P19",
    "doc": "refbest_03052014",
    "date": "2014-05-03",
    "page": 2,
@@ -235,7 +199,7 @@
    "source": "keyword"
   },
   {
-   "id": "P24",
+   "id": "P20",
    "doc": "refbest_03052014",
    "date": "2014-05-03",
    "page": 3,
@@ -244,7 +208,7 @@
    "source": "related"
   },
   {
-   "id": "P25",
+   "id": "P21",
    "doc": "elite31052014",
    "date": "2014-05-31",
    "page": 1,
@@ -253,70 +217,43 @@
    "source": "keyword"
   },
   {
-   "id": "P26",
+   "id": "P22",
    "doc": "refbest_07122014",
    "date": "2014-12-07",
    "page": 2,
    "start": 499,
-   "end": 677,
+   "end": 970,
    "source": "related"
   },
   {
-   "id": "P27",
-   "doc": "refbest_07122014",
-   "date": "2014-12-07",
-   "page": 3,
-   "start": 677,
-   "end": 757,
-   "source": "keyword"
-  },
-  {
-   "id": "P28",
-   "doc": "refbest_07122014",
-   "date": "2014-12-07",
-   "page": 3,
-   "start": 757,
-   "end": 932,
-   "source": "related"
-  },
-  {
-   "id": "P29",
+   "id": "P23",
    "doc": "241kongres",
    "date": "2015",
    "page": 1,
    "start": 64,
-   "end": 253,
+   "end": 275,
    "source": "related"
   },
   {
-   "id": "P30",
+   "id": "P24",
    "doc": "rep2015",
    "date": "2015",
    "page": 3,
-   "start": 1035,
-   "end": 1218,
+   "start": 937,
+   "end": 1321,
    "source": "related"
   },
   {
-   "id": "P31",
+   "id": "P25",
    "doc": "rep2015",
    "date": "2015",
    "page": 5,
    "start": 1560,
-   "end": 1730,
-   "source": "keyword"
-  },
-  {
-   "id": "P32",
-   "doc": "rep2015",
-   "date": "2015",
-   "page": 6,
-   "start": 1730,
-   "end": 2119,
+   "end": 2153,
    "source": "related"
   },
   {
-   "id": "P33",
+   "id": "P26",
    "doc": "refbest_08022015",
    "date": "2015-02-08",
    "page": 1,
@@ -325,16 +262,16 @@
    "source": "keyword"
   },
   {
-   "id": "P34",
+   "id": "P27",
    "doc": "refbest_08022015",
    "date": "2015-02-08",
    "page": 5,
-   "start": 1628,
-   "end": 1971,
+   "start": 1582,
+   "end": 2079,
    "source": "keyword"
   },
   {
-   "id": "P35",
+   "id": "P28",
    "doc": "elite25042015",
    "date": "2015-04-25",
    "page": 1,
@@ -343,7 +280,7 @@
    "source": "related"
   },
   {
-   "id": "P36",
+   "id": "P29",
    "doc": "refbest_26072015",
    "date": "2015-07-26",
    "page": 3,
@@ -352,16 +289,16 @@
    "source": "rule"
   },
   {
-   "id": "P37",
+   "id": "P30",
    "doc": "ReglerForMasterudvalget",
    "date": "2015-09-20",
-   "page": 3,
-   "start": 711,
+   "page": 2,
+   "start": 626,
    "end": 885,
    "source": "related"
   },
   {
-   "id": "P38",
+   "id": "P31",
    "doc": "refbest_11102015",
    "date": "2015-10-11",
    "page": 2,
@@ -370,16 +307,16 @@
    "source": "keyword"
   },
   {
-   "id": "P39",
+   "id": "P32",
    "doc": "refbest_11102015",
    "date": "2015-10-11",
    "page": 5,
-   "start": 895,
-   "end": 1074,
+   "start": 872,
+   "end": 1107,
    "source": "related"
   },
   {
-   "id": "P40",
+   "id": "P33",
    "doc": "refbest_13122015",
    "date": "2015-12-13",
    "page": 3,
@@ -388,7 +325,7 @@
    "source": "keyword"
   },
   {
-   "id": "P41",
+   "id": "P34",
    "doc": "rep2016",
    "date": "2016",
    "page": 2,
@@ -397,7 +334,7 @@
    "source": "related"
   },
   {
-   "id": "P42",
+   "id": "P35",
    "doc": "refbest_28022016",
    "date": "2016-02-28",
    "page": 3,
@@ -406,25 +343,16 @@
    "source": "related"
   },
   {
-   "id": "P43",
+   "id": "P36",
    "doc": "refbest_08052016",
    "date": "2016-05-05",
    "page": 1,
    "start": 66,
-   "end": 207,
-   "source": "keyword"
-  },
-  {
-   "id": "P44",
-   "doc": "refbest_08052016",
-   "date": "2016-05-05",
-   "page": 1,
-   "start": 207,
    "end": 388,
    "source": "related"
   },
   {
-   "id": "P45",
+   "id": "P37",
    "doc": "refbest_17092016",
    "date": "2016-09-17",
    "page": 3,
@@ -433,7 +361,7 @@
    "source": "related"
   },
   {
-   "id": "P46",
+   "id": "P38",
    "doc": "refbest_10122016",
    "date": "2016-12-10",
    "page": 3,
@@ -442,52 +370,34 @@
    "source": "rule"
   },
   {
-   "id": "P47",
+   "id": "P39",
    "doc": "rep2017",
    "date": "2017",
    "page": 2,
-   "start": 287,
-   "end": 451,
-   "source": "keyword"
-  },
-  {
-   "id": "P48",
-   "doc": "rep2017",
-   "date": "2017",
-   "page": 3,
-   "start": 451,
-   "end": 780,
+   "start": 267,
+   "end": 1049,
    "source": "related"
   },
   {
-   "id": "P49",
-   "doc": "rep2017",
-   "date": "2017",
-   "page": 4,
-   "start": 780,
-   "end": 1049,
-   "source": "keyword"
-  },
-  {
-   "id": "P50",
+   "id": "P40",
    "doc": "rep2017",
    "date": "2017",
    "page": 13,
-   "start": 3731,
-   "end": 3894,
+   "start": 3710,
+   "end": 3986,
    "source": "related"
   },
   {
-   "id": "P51",
+   "id": "P41",
    "doc": "refbest_14012017",
    "date": "2017-01-14",
    "page": 2,
    "start": 486,
-   "end": 667,
+   "end": 728,
    "source": "rule"
   },
   {
-   "id": "P52",
+   "id": "P42",
    "doc": "refbest_22042017",
    "date": "2017-04-22",
    "page": 1,
@@ -496,7 +406,7 @@
    "source": "keyword"
   },
   {
-   "id": "P53",
+   "id": "P43",
    "doc": "refbest_29102017",
    "date": "2017-10-29",
    "page": 3,
@@ -505,43 +415,43 @@
    "source": "related"
   },
   {
-   "id": "P54",
+   "id": "P44",
    "doc": "490",
    "date": "2018",
    "page": 2,
-   "start": 446,
-   "end": 621,
+   "start": 414,
+   "end": 625,
    "source": "related"
   },
   {
-   "id": "P55",
+   "id": "P45",
    "doc": "490",
    "date": "2018",
    "page": 4,
-   "start": 978,
-   "end": 1151,
+   "start": 976,
+   "end": 1166,
    "source": "related"
   },
   {
-   "id": "P56",
+   "id": "P46",
    "doc": "rep2018",
    "date": "2018",
    "page": 5,
    "start": 990,
-   "end": 1239,
+   "end": 1263,
    "source": "related"
   },
   {
-   "id": "P57",
+   "id": "P47",
    "doc": "rep2018",
    "date": "2018",
    "page": 9,
    "start": 2295,
-   "end": 2695,
+   "end": 2764,
    "source": "keyword"
   },
   {
-   "id": "P58",
+   "id": "P48",
    "doc": "refbest_03022018",
    "date": "2018-02-03",
    "page": 4,
@@ -550,7 +460,7 @@
    "source": "related"
   },
   {
-   "id": "P59",
+   "id": "P49",
    "doc": "refbest_09062018",
    "date": "2018-06-06",
    "page": 3,
@@ -559,16 +469,16 @@
    "source": "related"
   },
   {
-   "id": "P60",
+   "id": "P50",
    "doc": "refbest_09062018",
    "date": "2018-06-06",
    "page": 5,
    "start": 1453,
-   "end": 1626,
+   "end": 1665,
    "source": "rule"
   },
   {
-   "id": "P61",
+   "id": "P51",
    "doc": "refbest_07102018",
    "date": "2018-10-07",
    "page": 3,
@@ -577,25 +487,16 @@
    "source": "keyword"
   },
   {
-   "id": "P62",
+   "id": "P52",
    "doc": "rep2019",
    "date": "2019",
    "page": 17,
    "start": 7486,
-   "end": 7731,
+   "end": 7915,
    "source": "related"
   },
   {
-   "id": "P63",
-   "doc": "rep2019",
-   "date": "2019",
-   "page": 18,
-   "start": 7731,
-   "end": 7915,
-   "source": "keyword"
-  },
-  {
-   "id": "P64",
+   "id": "P53",
    "doc": "refbest_19012019.2",
    "date": "2019-01-19",
    "page": 1,
@@ -604,7 +505,7 @@
    "source": "keyword"
   },
   {
-   "id": "P65",
+   "id": "P54",
    "doc": "refbest_010619",
    "date": "2019-06-01",
    "page": 1,
@@ -613,7 +514,7 @@
    "source": "related"
   },
   {
-   "id": "P66",
+   "id": "P55",
    "doc": "elite07122019",
    "date": "2019-12-07",
    "page": 1,
@@ -622,43 +523,34 @@
    "source": "keyword"
   },
   {
-   "id": "P67",
+   "id": "P56",
    "doc": "rep2020",
    "date": "2020",
    "page": 18,
-   "start": 8799,
+   "start": 8708,
    "end": 8965,
    "source": "related"
   },
   {
-   "id": "P68",
+   "id": "P57",
    "doc": "refbest_140320",
    "date": "2020-03-14",
    "page": 2,
-   "start": 315,
-   "end": 447,
-   "source": "keyword"
-  },
-  {
-   "id": "P69",
-   "doc": "refbest_140320",
-   "date": "2020-03-14",
-   "page": 2,
-   "start": 447,
+   "start": 287,
    "end": 627,
    "source": "related"
   },
   {
-   "id": "P70",
+   "id": "P58",
    "doc": "refbest_240520",
    "date": "2020-05-24",
    "page": 1,
-   "start": 220,
+   "start": 219,
    "end": 460,
    "source": "keyword"
   },
   {
-   "id": "P71",
+   "id": "P59",
    "doc": "refbest_240520",
    "date": "2020-05-24",
    "page": 2,
@@ -667,7 +559,7 @@
    "source": "related"
   },
   {
-   "id": "P72",
+   "id": "P60",
    "doc": "elite19122020_bud_reg_2021",
    "date": "2020-12-19",
    "page": 1,
@@ -676,7 +568,7 @@
    "source": "keyword"
   },
   {
-   "id": "P73",
+   "id": "P61",
    "doc": "rep2021",
    "date": "2021",
    "page": 8,
@@ -685,16 +577,16 @@
    "source": "keyword"
   },
   {
-   "id": "P74",
+   "id": "P62",
    "doc": "rep2021",
    "date": "2021",
    "page": 11,
-   "start": 3560,
+   "start": 3529,
    "end": 3721,
    "source": "keyword"
   },
   {
-   "id": "P75",
+   "id": "P63",
    "doc": "elite14092021",
    "date": "2021-09-14",
    "page": 2,
@@ -703,7 +595,7 @@
    "source": "related"
   },
   {
-   "id": "P76",
+   "id": "P64",
    "doc": "refbest_021021",
    "date": "2021-10-02",
    "page": 1,
@@ -712,7 +604,7 @@
    "source": "rule"
   },
   {
-   "id": "P77",
+   "id": "P65",
    "doc": "refbest_021021",
    "date": "2021-10-02",
    "page": 2,
@@ -721,7 +613,7 @@
    "source": "related"
   },
   {
-   "id": "P78",
+   "id": "P66",
    "doc": "refmedie23112021",
    "date": "2021-11-23",
    "page": 1,
@@ -730,16 +622,16 @@
    "source": "keyword"
   },
   {
-   "id": "P79",
+   "id": "P67",
    "doc": "rep2022",
    "date": "2022",
    "page": 15,
-   "start": 6660,
-   "end": 6842,
+   "start": 6648,
+   "end": 7003,
    "source": "rule"
   },
   {
-   "id": "P80",
+   "id": "P68",
    "doc": "rep2022",
    "date": "2022",
    "page": 16,
@@ -748,7 +640,7 @@
    "source": "related"
   },
   {
-   "id": "P81",
+   "id": "P69",
    "doc": "elite08032022",
    "date": "2022-03-08",
    "page": 2,
@@ -757,7 +649,7 @@
    "source": "related"
   },
   {
-   "id": "P82",
+   "id": "P70",
    "doc": "refbest_080123",
    "date": "2023-01-08",
    "page": 1,
@@ -766,7 +658,7 @@
    "source": "keyword"
   },
   {
-   "id": "P83",
+   "id": "P71",
    "doc": "refbest_150723",
    "date": "2023-07-15",
    "page": 1,
@@ -775,7 +667,7 @@
    "source": "rule"
   },
   {
-   "id": "P84",
+   "id": "P72",
    "doc": "refstaevne05102023",
    "date": "2023-10-05",
    "page": 1,
@@ -784,7 +676,7 @@
    "source": "keyword"
   },
   {
-   "id": "P85",
+   "id": "P73",
    "doc": "refstaevne07112023",
    "date": "2023-11-07",
    "page": 1,
@@ -793,7 +685,7 @@
    "source": "rule"
   },
   {
-   "id": "P86",
+   "id": "P74",
    "doc": "KravForInternationalDeltagelse2024",
    "date": "2024",
    "page": 1,
@@ -802,34 +694,25 @@
    "source": "related"
   },
   {
-   "id": "P87",
+   "id": "P75",
    "doc": "rep2024",
    "date": "2024",
    "page": 13,
-   "start": 5882,
-   "end": 6048,
+   "start": 5844,
+   "end": 6140,
    "source": "related"
   },
   {
-   "id": "P88",
-   "doc": "rep2024",
-   "date": "2024",
-   "page": 14,
-   "start": 6048,
-   "end": 6140,
-   "source": "keyword"
-  },
-  {
-   "id": "P89",
+   "id": "P76",
    "doc": "refbest_130124",
    "date": "2024-01-13",
    "page": 1,
-   "start": 71,
+   "start": 60,
    "end": 282,
    "source": "keyword"
   },
   {
-   "id": "P90",
+   "id": "P77",
    "doc": "refbest_130124",
    "date": "2024-01-13",
    "page": 3,
@@ -838,7 +721,7 @@
    "source": "related"
   },
   {
-   "id": "P91",
+   "id": "P78",
    "doc": "refdom05032024",
    "date": "2024-03-05",
    "page": 1,
@@ -847,7 +730,7 @@
    "source": "keyword"
   },
   {
-   "id": "P92",
+   "id": "P79",
    "doc": "refstaevne04042024",
    "date": "2024-04-04",
    "page": 1,
@@ -856,7 +739,7 @@
    "source": "related"
   },
   {
-   "id": "P93",
+   "id": "P80",
    "doc": "refbest_140424",
    "date": "2024-04-14",
    "page": 2,
@@ -865,7 +748,7 @@
    "source": "keyword"
   },
   {
-   "id": "P94",
+   "id": "P81",
    "doc": "refstaevne10092024",
    "date": "2024-09-10",
    "page": 1,
@@ -874,7 +757,7 @@
    "source": "related"
   },
   {
-   "id": "P95",
+   "id": "P82",
    "doc": "refstaevne03122024",
    "date": "2024-12-03",
    "page": 1,
@@ -883,7 +766,7 @@
    "source": "related"
   },
   {
-   "id": "P96",
+   "id": "P83",
    "doc": "elite10122024",
    "date": "2024-12-10",
    "page": 1,
@@ -892,7 +775,7 @@
    "source": "keyword"
   },
   {
-   "id": "P97",
+   "id": "P84",
    "doc": "epf_kongres_2025",
    "date": "2025",
    "page": 2,
@@ -901,16 +784,16 @@
    "source": "keyword"
   },
   {
-   "id": "P98",
+   "id": "P85",
    "doc": "rep2025",
    "date": "2025",
    "page": 21,
    "start": 11186,
-   "end": 11561,
+   "end": 11595,
    "source": "keyword"
   },
   {
-   "id": "P99",
+   "id": "P86",
    "doc": "refdom28012025",
    "date": "2025-01-28",
    "page": 4,
@@ -919,7 +802,7 @@
    "source": "related"
   },
   {
-   "id": "P100",
+   "id": "P87",
    "doc": "refstaevne18022025",
    "date": "2025-02-18",
    "page": 1,
@@ -928,16 +811,16 @@
    "source": "related"
   },
   {
-   "id": "P101",
+   "id": "P88",
    "doc": "refbest_080325",
    "date": "2025-03-08",
    "page": 2,
    "start": 753,
-   "end": 936,
+   "end": 968,
    "source": "related"
   },
   {
-   "id": "P102",
+   "id": "P89",
    "doc": "refdom08042025",
    "date": "2025-04-08",
    "page": 2,
@@ -946,7 +829,7 @@
    "source": "related"
   },
   {
-   "id": "P103",
+   "id": "P90",
    "doc": "refstaevne24042025",
    "date": "2025-04-24",
    "page": 2,
@@ -955,7 +838,7 @@
    "source": "related"
   },
   {
-   "id": "P104",
+   "id": "P91",
    "doc": "refbest_230825",
    "date": "2025-08-23",
    "page": 1,
@@ -964,7 +847,7 @@
    "source": "keyword"
   },
   {
-   "id": "P105",
+   "id": "P92",
    "doc": "refstaevne16122025",
    "date": "2025-12-12",
    "page": 3,
@@ -973,7 +856,7 @@
    "source": "related"
   },
   {
-   "id": "P106",
+   "id": "P93",
    "doc": "refstaevne16122025",
    "date": "2025-12-12",
    "page": 4,
@@ -982,16 +865,16 @@
    "source": "related"
   },
   {
-   "id": "P107",
+   "id": "P94",
    "doc": "1071kongres",
    "date": "2026",
    "page": 13,
-   "start": 4387,
-   "end": 4741,
+   "start": 4354,
+   "end": 4769,
    "source": "keyword"
   },
   {
-   "id": "P108",
+   "id": "P95",
    "doc": "Tilmeldingsfrister2026",
    "date": "2026",
    "page": 1,
@@ -1000,7 +883,7 @@
    "source": "keyword"
   },
   {
-   "id": "P109",
+   "id": "P96",
    "doc": "dif_budgetmoede_2026",
    "date": "2026",
    "page": 4,
@@ -1009,7 +892,7 @@
    "source": "keyword"
   },
   {
-   "id": "P110",
+   "id": "P97",
    "doc": "rep2026",
    "date": "2026",
    "page": 23,
@@ -1018,61 +901,34 @@
    "source": "keyword"
   },
   {
-   "id": "P111",
+   "id": "P98",
    "doc": "rep2026",
    "date": "2026",
    "page": 28,
    "start": 13431,
-   "end": 13609,
-   "source": "keyword"
-  },
-  {
-   "id": "P112",
-   "doc": "rep2026",
-   "date": "2026",
-   "page": 29,
-   "start": 13609,
-   "end": 13781,
-   "source": "related"
-  },
-  {
-   "id": "P113",
-   "doc": "rep2026",
-   "date": "2026",
-   "page": 29,
-   "start": 13781,
    "end": 13928,
-   "source": "keyword"
-  },
-  {
-   "id": "P114",
-   "doc": "rep2026",
-   "date": "2026",
-   "page": 32,
-   "start": 14725,
-   "end": 14896,
-   "source": "keyword"
-  },
-  {
-   "id": "P115",
-   "doc": "rep2026",
-   "date": "2026",
-   "page": 32,
-   "start": 14896,
-   "end": 15071,
    "source": "related"
   },
   {
-   "id": "P116",
+   "id": "P99",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 32,
+   "start": 14675,
+   "end": 15146,
+   "source": "related"
+  },
+  {
+   "id": "P100",
    "doc": "rep2026",
    "date": "2026",
    "page": 34,
-   "start": 15785,
-   "end": 16081,
+   "start": 15706,
+   "end": 16110,
    "source": "keyword"
   },
   {
-   "id": "P117",
+   "id": "P101",
    "doc": "rep2026",
    "date": "2026",
    "page": 36,
@@ -1081,7 +937,7 @@
    "source": "keyword"
   },
   {
-   "id": "P118",
+   "id": "P102",
    "doc": "refstaevne12032026",
    "date": "2026-03-12",
    "page": 1,
@@ -1090,16 +946,16 @@
    "source": "related"
   },
   {
-   "id": "P119",
+   "id": "P103",
    "doc": "refstaevne0406026",
    "date": "2026-06-04",
    "page": 3,
-   "start": 391,
+   "start": 356,
    "end": 586,
    "source": "keyword"
   },
   {
-   "id": "P120",
+   "id": "P104",
    "doc": "refstaevne20082026",
    "date": "2026-08-20",
    "page": 1,
@@ -1108,7 +964,7 @@
    "source": "related"
   },
   {
-   "id": "P121",
+   "id": "P105",
    "doc": "refbest_290826.2",
    "date": "2026-08-29",
    "page": 2,
@@ -1117,7 +973,7 @@
    "source": "related"
   },
   {
-   "id": "P122",
+   "id": "P106",
    "doc": "elite15092026",
    "date": "2026-09-15",
    "page": 1,
@@ -1126,7 +982,7 @@
    "source": "keyword"
   },
   {
-   "id": "P123",
+   "id": "P107",
    "doc": "Tilmeldingsfrister2027",
    "date": "2027",
    "page": 1,
@@ -1140,13 +996,13 @@
   {
    "id": "E1",
    "status": "certain",
-   "passage": "P24",
+   "passage": "P20",
    "doc": "refbest_03052014",
    "date": "2014-05-03",
    "page": 3,
    "effect": "indfoert",
-   "quote": "Bestilling af medaljer vil udelukkende ske gennem Forma, da vi derved kan spare penge",
-   "value_after": "Medaljer bestilles udelukkende gennem Forma",
+   "quote": "Bestilling af medaljer vil udelukkende ske gennem Forma, da vi derved kan spare \npenge",
+   "value_after": "medaljer bestilles udelukkende gennem Forma",
    "span": [
     941,
     955
@@ -1160,13 +1016,13 @@
   {
    "id": "E2",
    "status": "certain",
-   "passage": "P32",
+   "passage": "P25",
    "doc": "rep2015",
    "date": "2015",
-   "page": 6,
+   "page": 5,
    "effect": "aendret",
-   "quote": "Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne hos forbundets officielle forhandler af medaljer. Pokaler betales af forbundet.",
-   "value_after": "Arrangørklub bestiller og betaler medaljer hos officiel forhandler; forbund betaler pokaler",
+   "quote": "\"Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne hos \nforbundets officielle forhandler af medaljer. Pokaler betales af forbundet.",
+   "value_after": "arrangerende klub bestiller og betaler medaljer hos officiel forhandler; forbund betaler pokaler",
    "span": [
     2020,
     2043
@@ -1180,13 +1036,13 @@
   {
    "id": "E3",
    "status": "certain",
-   "passage": "P36",
+   "passage": "P29",
    "doc": "refbest_26072015",
    "date": "2015-07-26",
    "page": 3,
    "effect": "aendret",
-   "quote": "Klubberne betaler for medaljer og bestyrelsen betaler for pokaler. Efter klubben har udfyldt medaljelisten, overfører klubben det krævet beløbet på DSF’s konto, hvorefter DSF sender pengene videre til Forma.",
-   "value_after": "Klubber bestiller via skema, betaler medaljer via DSF; forbund betaler pokaler",
+   "quote": "Klubberne betaler for medaljer og bestyrelsen betaler for pokaler. Efter klubben har \nudfyldt medaljelisten, overfører klubben det krævet beløbet på DSF's konto, hvorefter \nDSF sender pengene videre til Forma.",
+   "value_after": "klub bestiller medaljer via skema, betaler via DSF til Forma; DSF betaler pokaler",
    "span": [
     736,
     766
@@ -1200,13 +1056,13 @@
   {
    "id": "E4",
    "status": "certain",
-   "passage": "P46",
+   "passage": "P38",
    "doc": "refbest_10122016",
    "date": "2016-12-10",
    "page": 3,
    "effect": "bekraeftet",
-   "quote": "Pr. 1. januar 2017 henviser bestyrelsen til beslutningen ved sidste repræsentantskabsmøde, om at klubberne selv skal tage sig at medaljebestilling samt at få manglende medaljer genbestilt og leveret til rette modtager.",
-   "value_after": "Klubber bestiller selv medaljer og genbestiller manglende; forbund betaler pokaler",
+   "quote": "Pr. 1. januar 2017 henviser bestyrelsen til beslutningen \nved sidste repræsentantskabsmøde, om at klubberne selv skal tage sig at medaljebestilling samt at \nfå manglende medaljer genbestilt og leveret til rette modtager.",
+   "value_after": "klubberne bestiller selv medaljer og genbestiller manglende; DSF betaler pokaler",
    "span": [
     824,
     855
@@ -1220,16 +1076,16 @@
   {
    "id": "E5",
    "status": "certain",
-   "passage": "P49",
+   "passage": "P39",
    "doc": "rep2017",
    "date": "2017",
-   "page": 4,
+   "page": 2,
    "effect": "aendret",
-   "quote": "Bestyrelsen foreslår, at der indføres en fast pris på alle medaljesæt, således at den pris som klubberne skal betale for medaljer, er ens. Forslaget lyder på kr. 100,-, hvor omkostningerne til Bronze, sølv og guld samt disciplinmedaljer dækker.",
-   "value_after": "Klubber betaler fast 100 kr. pr. medaljesæt; forbund betaler pokaler",
+   "quote": "Bestyrelsen foreslår, at der indføres en fast pris på alle medaljesæt, således at den pris som klubberne skal \nbetale for medaljer, er ens. Forslaget lyder på kr. 100,-",
+   "value_after": "fast pris 100 kr. pr. medaljesæt betalt af arrangerende klub",
    "span": [
     872,
-    910
+    900
    ],
    "judges": [
     1,
@@ -1240,12 +1096,12 @@
   {
    "id": "E6",
    "status": "certain",
-   "passage": "P50",
+   "passage": "P40",
    "doc": "rep2017",
    "date": "2017",
    "page": 13,
    "effect": "trukket",
-   "quote": "Medaljebetaling: Vi ønsker at få en faktura direkte fra FORMO til betaling, således den IKKE skal ind over DSF og derved først bliver opkrævet flere mdr. senere.",
+   "quote": "Medaljebetaling: Vi ønsker at få en faktura direkte fra FORMO til betaling, således den IKKE skal ind over \nDSF og derved først bliver opkrævet flere mdr. senere.",
    "value_after": null,
    "span": [
     3770,
@@ -1260,12 +1116,12 @@
   {
    "id": "E7",
    "status": "certain",
-   "passage": "P51",
+   "passage": "P41",
    "doc": "refbest_14012017",
    "date": "2017-01-14",
    "page": 2,
    "effect": "foreslaaet",
-   "quote": "Kenneth. K varetager bestilling af medaljer fra firmaet Formo, for klubberne. Klubberne opkræves et fast beløb pr. medalje som betales efterfølgende.",
+   "quote": "Kenneth. K varetager bestilling af medaljer fra firmaet Formo, for klubberne. Klubberne opkræves et fast \nbeløb pr. medalje som betales efterfølgende.",
    "value_after": null,
    "span": [
     566,
@@ -1280,13 +1136,13 @@
   {
    "id": "E8",
    "status": "certain",
-   "passage": "P60",
+   "passage": "P50",
    "doc": "refbest_09062018",
    "date": "2018-06-06",
    "page": 5,
    "effect": "bekraeftet",
    "quote": "Et medaljesæt består af en hovedmedalje samt 3 disciplinmedaljer. Sættet koster 100 kr.",
-   "value_after": "100 kr. pr. medaljesæt (hovedmedalje plus 3 disciplinmedaljer); forbund betaler pokaler",
+   "value_after": "Klubber betaler 100 kr. pr. medaljesæt; forbund betaler pokaler",
    "span": [
     1533,
     1546
@@ -1300,16 +1156,16 @@
   {
    "id": "E9",
    "status": "certain",
-   "passage": "P76",
+   "passage": "P64",
    "doc": "refbest_021021",
    "date": "2021-10-02",
    "page": 1,
    "effect": "aendret",
-   "quote": "Medaljer og pokaler skal være formanden for den arrangerende klub i hænde senest en uge før stævnestart. Medaljer og pokaler bestilles af stævneudvalget 3 uger før stævnestart, umildbart efter tilmeldingen er lukket.",
-   "value_after": "Stævneudvalget bestiller tre uger før; levering senest en uge før",
+   "quote": "Medaljer og pokaler skal være formanden for \nden arrangerende klub i hænde senest en uge før stævnestart. Medaljer og pokaler bestilles af \nstævneudvalget 3 uger før stævnestart",
+   "value_after": "stævneudvalget bestiller tre uger før; levering senest en uge før",
    "span": [
     173,
-    205
+    200
    ],
    "judges": [
     1,
@@ -1320,12 +1176,12 @@
   {
    "id": "E10",
    "status": "certain",
-   "passage": "P77",
+   "passage": "P65",
    "doc": "refbest_021021",
    "date": "2021-10-02",
    "page": 2,
    "effect": "foreslaaet",
-   "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Arrangørerne opkræves derefter kr. 100,00 pr medaljesæt.",
+   "quote": "Forbundet bestiller medaljerne hos forbundets officielle \nforhandler af medaljer. Arrangørerne opkræves derefter kr. 100,00 pr medaljesæt.",
    "value_after": null,
    "span": [
     727,
@@ -1340,15 +1196,15 @@
   {
    "id": "E11",
    "status": "certain",
-   "passage": "P79",
+   "passage": "P67",
    "doc": "rep2022",
    "date": "2022",
    "page": 15,
    "effect": "aendret",
-   "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Arrangørerne opkræves derefter kr. 100,00 pr medaljesæt. Et medaljesæt består af en placeringsmedalje (guld, sølv eller bronze) plus eventuelt tilhørende disciplinmedaljer. Pokaler og medaljer betales af forbundet.",
-   "value_after": "Forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler",
+   "quote": "Pokaler og \nmedaljer betales af forbundet.",
+   "value_after": "forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler",
    "span": [
-    6684,
+    6715,
     6721
    ],
    "judges": [
@@ -1360,16 +1216,16 @@
   {
    "id": "E12",
    "status": "certain",
-   "passage": "P83",
+   "passage": "P71",
    "doc": "refbest_150723",
    "date": "2023-07-15",
    "page": 1,
    "effect": "bekraeftet",
-   "quote": "Det skal sikres, at pokaler og medaljer er den arrangerende klub i hænde senest en uge før stævnestart.",
-   "value_after": "Forbundet bestiller og betaler; levering til arrangør senest en uge før",
+   "quote": "I forhold til medaljer og pokaler står Finn Nielsen for bestillingen. Finn \nfølger op på, at modtagerne får de rigtige pokaler og medaljer på det rigtige tidspunkt.",
+   "value_after": "forbundet bestiller og betaler; levering senest en uge før stævnestart",
    "span": [
-    187,
-    205
+    149,
+    176
    ],
    "judges": [
     1,
@@ -1380,13 +1236,13 @@
   {
    "id": "E13",
    "status": "certain",
-   "passage": "P112",
+   "passage": "P98",
    "doc": "rep2026",
    "date": "2026",
-   "page": 29,
+   "page": 28,
    "effect": "bekraeftet",
-   "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Et medaljesæt består af en placeringsmedalje (guld, sølv eller bronze) plus eventuelt tilhørende disciplinmedaljer. Pokaler og medaljer betales af forbundet.",
-   "value_after": "Forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler",
+   "quote": "Forbundet bestiller medaljerne hos forbundets officielle forhandler af medaljer. Et medaljesæt består \naf en placeringsmedalje (guld, sølv eller bronze) plus eventuelt tilhørende disciplinmedaljer. Pokaler og \nmedaljer betales af forbundet.",
+   "value_after": "forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler",
    "span": [
     13640,
     13669
@@ -1405,7 +1261,7 @@
    "state": "event",
    "adopted": "E1",
    "event": "E1",
-   "value": "Medaljer bestilles udelukkende gennem Forma"
+   "value": "medaljer bestilles udelukkende gennem Forma"
   },
   {
    "year": 2015,
@@ -1413,7 +1269,7 @@
    "state": "event",
    "adopted": "E3",
    "event": "E3",
-   "value": "Klubber bestiller via skema, betaler medaljer via DSF; forbund betaler pokaler"
+   "value": "klub bestiller medaljer via skema, betaler via DSF til Forma; DSF betaler pokaler"
   },
   {
    "year": 2016,
@@ -1421,7 +1277,7 @@
    "state": "event",
    "adopted": "E3",
    "event": "E4",
-   "value": "Klubber bestiller via skema, betaler medaljer via DSF; forbund betaler pokaler"
+   "value": "klub bestiller medaljer via skema, betaler via DSF til Forma; DSF betaler pokaler"
   },
   {
    "year": 2017,
@@ -1429,7 +1285,7 @@
    "state": "event",
    "adopted": "E5",
    "event": "E5",
-   "value": "Klubber betaler fast 100 kr. pr. medaljesæt; forbund betaler pokaler"
+   "value": "fast pris 100 kr. pr. medaljesæt betalt af arrangerende klub"
   },
   {
    "year": 2018,
@@ -1437,7 +1293,7 @@
    "state": "event",
    "adopted": "E5",
    "event": "E8",
-   "value": "Klubber betaler fast 100 kr. pr. medaljesæt; forbund betaler pokaler"
+   "value": "fast pris 100 kr. pr. medaljesæt betalt af arrangerende klub"
   },
   {
    "year": 2019,
@@ -1445,7 +1301,7 @@
    "state": "event",
    "adopted": "E5",
    "event": "E8",
-   "value": "Klubber betaler fast 100 kr. pr. medaljesæt; forbund betaler pokaler"
+   "value": "fast pris 100 kr. pr. medaljesæt betalt af arrangerende klub"
   },
   {
    "year": 2020,
@@ -1453,7 +1309,7 @@
    "state": "event",
    "adopted": "E5",
    "event": "E8",
-   "value": "Klubber betaler fast 100 kr. pr. medaljesæt; forbund betaler pokaler"
+   "value": "fast pris 100 kr. pr. medaljesæt betalt af arrangerende klub"
   },
   {
    "year": 2021,
@@ -1461,7 +1317,7 @@
    "state": "event",
    "adopted": "E9",
    "event": "E9",
-   "value": "Stævneudvalget bestiller tre uger før; levering senest en uge før"
+   "value": "stævneudvalget bestiller tre uger før; levering senest en uge før"
   },
   {
    "year": 2022,
@@ -1469,7 +1325,7 @@
    "state": "event",
    "adopted": "E11",
    "event": "E11",
-   "value": "Forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
+   "value": "forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
   },
   {
    "year": 2023,
@@ -1477,7 +1333,7 @@
    "state": "event",
    "adopted": "E11",
    "event": "E12",
-   "value": "Forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
+   "value": "forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
   },
   {
    "year": 2024,
@@ -1485,7 +1341,7 @@
    "state": "event",
    "adopted": "E11",
    "event": "E12",
-   "value": "Forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
+   "value": "forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
   },
   {
    "year": 2025,
@@ -1493,7 +1349,7 @@
    "state": "event",
    "adopted": "E11",
    "event": "E12",
-   "value": "Forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
+   "value": "forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
   },
   {
    "year": 2026,
@@ -1501,9 +1357,10 @@
    "state": "event",
    "adopted": "E11",
    "event": "E13",
-   "value": "Forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
+   "value": "forbundet bestiller hos officiel forhandler og betaler medaljer og pokaler"
   }
  ],
+ "corrections": [],
  "judges": [
   {
    "judge": 1,
@@ -1515,11 +1372,11 @@
    },
    "usage": {
     "input": 2,
-    "cache_read": 0,
-    "cache_write": 84324,
-    "output": 7023,
-    "cost_usd": 0.8151,
-    "seconds": 58,
+    "cache_read": 2141,
+    "cache_write": 87480,
+    "output": 5832,
+    "cost_usd": 0.8169,
+    "seconds": 52,
     "attempts": 1,
     "models": [
      "claude-opus-5-5"
@@ -1536,11 +1393,11 @@
    },
    "usage": {
     "input": 2,
-    "cache_read": 0,
-    "cache_write": 84323,
-    "output": 7352,
-    "cost_usd": 0.8216,
-    "seconds": 60,
+    "cache_read": 2141,
+    "cache_write": 87477,
+    "output": 6457,
+    "cost_usd": 0.8294,
+    "seconds": 53,
     "attempts": 1,
     "models": [
      "claude-opus-5-5"
@@ -1558,10 +1415,10 @@
    "usage": {
     "input": 2,
     "cache_read": 2141,
-    "cache_write": 82183,
-    "output": 6069,
-    "cost_usd": 0.7793,
-    "seconds": 52,
+    "cache_write": 87479,
+    "output": 8494,
+    "cost_usd": 0.8701,
+    "seconds": 71,
     "attempts": 1,
     "models": [
      "claude-opus-5-5"
