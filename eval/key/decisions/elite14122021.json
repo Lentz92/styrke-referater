@@ -1,0 +1,324 @@
+{
+ "doc_id": "elite14122021",
+ "sha256": "74a888277aba354fd304c424db9110a52ccd491f455b3db64e775857abc3aa45",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Evaluering af landsholdstrupper",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdstrupperne (udstyr, klassisk og bænkpres) evalueres og justeres halvårligt. Første evaluering sker pr. 1. juli 2022.",
+   "citat": "Landsholdstruppene vil blive evalueret og justeret halvårlig. Første gang pr. 1. juli 2022",
+   "side": 1,
+   "gaelder_fra": "2022-07-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 64,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Landsholdstruppene vil blive evalueret og justeret halvårlig. Første gang pr. 1. juli 2022",
+     "citat_pos": 64
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2,
+    3
+   ],
+   "emne": "Udtagelsesprocedure VM",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM i Viborg. Atleter, der har klaret VM-krav, udtages i rækkefølge efter A- og B-krav; er der under 8 med krav, udtages de sidste efter IPF GL points, og er der flere end 8, udtages de 8 med VM-krav og højest IPF GL points. Mangler der kvalificerede herrer, kan holdet suppleres med atleter også uden for landsholdet med højest IPF GL points, men det er et ultimativt krav, at man deltager i DM i marts 2022. Hver nation kan maksimalt stille med 2 atleter i én vægtklasse.",
+   "citat": "De \natleter som har klaret VM krav udtages i rækkefølge A og B krav. Hvis der ikke er 8 som \nhar klaret krav vil de sidste udtages efter IPF GL points.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": "2022-12-31",
+   "citat_fundet": true,
+   "citat_pos": 147,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "De \natleter som har klaret VM krav udtages i rækkefølge A og B krav. Hvis der ikke er 8 som \nhar klaret krav vil de sidste udtages efter IPF GL points.",
+     "citat_pos": 147
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Evaluering af landsholdstrupper",
+     "tekst": "Landsholdstruppene evalueres og justeres halvårligt. Første gang sker pr. 1. juli 2022.",
+     "udfald": "vedtaget",
+     "span": [
+      64,
+      77
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Evaluering af landsholdstruppe",
+     "tekst": "Landsholdstruppene evalueres og justeres halvårligt, første gang pr. 1. juli 2022.",
+     "udfald": "vedtaget",
+     "span": [
+      64,
+      77
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Evaluering af landsholdstrupper",
+     "tekst": "Landsholdstruppene evalueres og justeres halvårligt, første gang pr. 1. juli 2022.",
+     "udfald": "vedtaget",
+     "span": [
+      64,
+      77
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Evaluering af landsholdstropper",
+     "tekst": "Landsholdstropperne skal evalueres og justeres halvårligt, første gang pr. 1. juli 2022.",
+     "udfald": "vedtaget",
+     "span": [
+      64,
+      77
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Evaluering af landsholdstrupper",
+     "tekst": "Landsholdstrupperne (udstyr, klassisk og bænkpres) evalueres og justeres halvårligt. Første evaluering sker pr. 1. juli 2022.",
+     "udfald": "vedtaget",
+     "span": [
+      64,
+      77
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Landsholdstruppene vil blive evalueret og justeret halvårlig. Første gang pr. 1. juli 2022"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Landsholdstruppene vil blive evalueret og justeret halvårlig. Første gang pr. 1. juli 2022"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Udtagelsesprocedure VM",
+     "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM i Viborg. Atleter, der har klaret VM-krav, udtages i rækkefølge efter A- og B-krav. Er der under 8, udfyldes resten efter IPF GL points; er der flere end 8, udtages de 8 med VM-krav og højest IPF GL points. Maksimalt 2 atleter pr. nation i én vægtklasse.",
+     "udfald": "vedtaget",
+     "span": [
+      147,
+      178
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Udtagelsesprocedure VM",
+     "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM i Viborg. Atleter med VM-krav udtages i rækkefølge efter A- og B-krav; mangler der atleter, udtages de sidste efter IPF GL points, og hvis flere end 8 har kravet, udtages de 8 med højest IPF GL points. Kan herrerholdet ikke fyldes, kan atleter uden for landsholdet med højest IPF GL points supplere, men deltagelse i DM i marts 2022 er et ultimativt krav. Hver nation kan maksimalt stille med 2 atleter i én vægtklasse.",
+     "udfald": "vedtaget",
+     "span": [
+      161,
+      198
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Udtagelsesprocedure VM",
+     "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM i Viborg. Atleter med VM-krav udtages i rækkefølge efter A- og B-krav; mangler der atleter, udtages de sidste efter IPF GL points, og hvis flere end 8 har VM-krav, udtages de 8 med højest IPF GL points. Kan herrer ikke fylde holdet, kan atleter uden for landsholdet med højest IPF GL points supplere, men deltagelse i DM i marts 2022 er et ultimativt krav. Forbehold: maks. 2 atleter pr. nation i én vægtklasse.",
+     "udfald": "vedtaget",
+     "span": [
+      178,
+      198
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Udtagelsesprocedure til VM på hjemmebane",
+     "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM på hjemmebane. Atleter med VM-krav udtages i rækkefølge efter A- og B-krav, og er der ikke 8 med krav, udtages de resterende efter IPF GL-points; hvis flere end 8 har VM-krav, udtages de 8 med højest IPF GL-points. DSF kan supplere med atleter uden for landsholdet med højest IPF GL-points, under forudsætning af deltagelse i DM i marts 2022, og hver nation må højst deltage med 2 atleter i én vægtklasse.",
+     "udfald": "vedtaget",
+     "span": [
+      148,
+      161
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Udtagelsesprocedure VM på hjemmebane",
+     "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM i Viborg 2022. Atleter med VM-krav udtages i rækkefølge efter A- og B-krav; er der færre end 8 med krav, udtages de resterende efter IPF GL-points, og har flere end 8 klaret krav, udtages de 8 med VM-krav og højest IPF GL-points. Der gælder forbehold for, at hver nation højst kan deltage med 2 atleter i én vægtklasse.",
+     "udfald": "vedtaget",
+     "span": [
+      147,
+      198
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "De \natleter som har klaret VM krav udtages i rækkefølge A og B krav. Hvis der ikke er 8 som \nhar klaret krav vil de sidste udtages efter IPF GL points."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "De \natleter som har klaret VM krav udtages i rækkefølge A og B krav. Hvis der ikke er 8 som \nhar klaret krav vil de sidste udtages efter IPF GL points."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "duplicate",
+   "reason": "Suppleringen og DM-kravet er en del af samme udtagelsesprocedure til VM i Viborg.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Supplering af VM-hold med atleter uden for landsholdet",
+     "tekst": "Da der ikke er kvalificerede herrer til et fuldt VM-hold, kan DSF supplere med atleter uden for landsholdet med de højeste IPF GL points. Det er et ultimativt krav, at atleten deltager i DM i marts 2022.",
+     "udfald": "vedtaget",
+     "span": [
+      226,
+      240
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Supplering af VM-hold med atleter uden for landsholdet",
+     "tekst": "Da der ikke er nok kvalificerede herrer til et fuldt hold til VM i Viborg 2022, kan DSF supplere med atleter uden for landsholdet, der scorer højest i IPF GL-points. Det er et ultimativt krav, at atleten deltager i DM i marts 2022.",
+     "udfald": "vedtaget",
+     "span": [
+      198,
+      240
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 2,
+     "reason": "Suppleringen og DM-kravet er en del af samme udtagelsesprocedure til VM i Viborg."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 2,
+     "reason": "Suppleringen er en del af samme udtagelsesprocedure til VM i Viborg."
+    }
+   ]
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 2895,
+    "output": 1558,
+    "cost_usd": 0.0552,
+    "seconds": 14,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 2973,
+    "output": 1348,
+    "cost_usd": 0.0516,
+    "seconds": 13,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

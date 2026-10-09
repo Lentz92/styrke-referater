@@ -1,0 +1,675 @@
+{
+ "doc_id": "refbest_150723",
+ "sha256": "7091c0b3903c81ae1aa6da4182ac4c67d63189de61317b7f051f8655c8a105db",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Procedure for internationale betalinger",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Internationale betalinger skal foretages hurtigt. Kvitteringerne for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+   "citat": "Det blev besluttet, at de internationale betalinger skal falde hurtigt. Kvitteringerne for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 83,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det blev besluttet, at de internationale betalinger skal falde hurtigt. Kvitteringerne for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+     "citat_pos": 83
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2
+   ],
+   "emne": "Levering af pokaler og medaljer til stævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart.",
+   "citat": "Det skal sikres, at pokaler og medaljer er den arrangerende klub i hænde senest en uge før stævnestart.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 187,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det skal sikres, at pokaler og medaljer er den arrangerende klub i hænde senest en uge før stævnestart.",
+     "citat_pos": 187
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "Opsætning af stævneprogram",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævneprogrammet skal være sat op senest en uge før stævnet, så den ansvarlige i Stævneudvalget kan kontrollere, at det er sat korrekt op.",
+   "citat": "Det skal ligeledes sikres, at stævneprogrammet er sat op en uge før, således at den ansvarlige i stævneudvalget kan tjekke op på, at det er sat korrekt op.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 205,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det skal ligeledes sikres, at stævneprogrammet er sat op en uge før, således at den ansvarlige i stævneudvalget kan tjekke op på, at det er sat korrekt op.",
+     "citat_pos": 205
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Strategiplan",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der udarbejdes ikke en ny strategiplan, da den udløbne strategiplan er erstattet af de strategiske spor. Vision og mission opdateres i de strategiske spor.",
+   "citat": "Det blev besluttet, at der ikke udarbejdes en ny strategiplan, men i de strategiske spor vil vision og mission blive opdateret.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 473,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det blev besluttet, at der ikke udarbejdes en ny strategiplan, men i de strategiske spor vil vision og mission blive opdateret.",
+     "citat_pos": 473
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Coachlicens for head coaches ved internationale mesterskaber",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF har besluttet, at fra 1. januar 2025 skal alle head coaches, der er nomineret til internationale, internationale regionale eller verdensmesterskaber, uploade deres coachlicens i Goodlift-systemet.",
+   "citat": "The IPF Executive Committee voted, unanimously, starting on January 01, 2025, all Head Coaches, nominated for an International, International Regional, or World Championship, will be required to upload their Coach License into the Goodlift System.",
+   "side": 3,
+   "gaelder_fra": "2025-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 696,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "The IPF Executive Committee voted, unanimously, starting on January 01, 2025, all Head Coaches, nominated for an International, International Regional, or World Championship, will be required to upload their Coach License into the Goodlift System.",
+     "citat_pos": 696
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Dokumentkrav for nominerede løftere til EPF-mesterskaber",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Ifølge EPF skal alle løftere nomineret til EPF-mesterskaber have gennemført ADEL-kurset for International Level Athlete, have en korrekt udfyldt Consent Form med fulde navn, der er underskrevet i hånden eller digitalt, samt et foto af god kvalitet i Goodlift.",
+   "citat": "According to the requirements, all nominated lifters must complete the educational course ADEL for INTERNATIONAL LEVEL ATHLETE. The Concent Form must be completely filled in with the FULL name and surname of the athlete and signed either in hadwriting or with the digital signature.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 797,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "According to the requirements, all nominated lifters must complete the educational course ADEL for INTERNATIONAL LEVEL ATHLETE. The Concent Form must be completely filled in with the FULL name and surname of the athlete and signed either in hadwriting or with the digital signature.",
+     "citat_pos": 797
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Procedure for internationale betalinger",
+     "tekst": "Internationale betalinger skal foretages hurtigt. Kvitteringer for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+     "udfald": "vedtaget",
+     "span": [
+      83,
+      104
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Internationale betalinger",
+     "tekst": "Internationale betalinger skal foretages hurtigt. Kvitteringer for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+     "udfald": "vedtaget",
+     "span": [
+      83,
+      104
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Internationale betalinger",
+     "tekst": "Internationale betalinger skal foretages hurtigt. Kvitteringer for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+     "udfald": "vedtaget",
+     "span": [
+      83,
+      104
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Procedure for internationale betalinger",
+     "tekst": "Kvitteringer for internationale betalinger skal sendes til den ansvarlige teammanager inden afrejse. Det blev besluttet, at de internationale betalinger skal falde hurtigt.",
+     "udfald": "vedtaget",
+     "span": [
+      93,
+      104
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Procedure for internationale betalinger",
+     "tekst": "Internationale betalinger skal foretages hurtigt. Kvitteringerne for betalingerne skal sendes til den ansvarlige teammanager inden afrejse.",
+     "udfald": "vedtaget",
+     "span": [
+      83,
+      104
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "bestyrelsesbeslutning",
+     "citat": "Det blev besluttet, at de internationale betalinger skal falde hurtigt. Kvitteringerne for betalingerne skal sendes til den ansvarlige teammanager inden afrejse."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "okonomi",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "bestyrelsesbeslutning",
+     "citat": "Det blev besluttet, at de internationale betalinger skal falde hurtigt. Kvitteringerne for betalingerne skal sendes til den ansvarlige teammanager inden afrejse."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Levering af pokaler og medaljer samt opsætning af stævneprogram",
+     "tekst": "Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Stævneprogrammet skal være sat op en uge før stævnet, så den ansvarlige i stævneudvalget kan kontrollere opsætningen.",
+     "udfald": "vedtaget",
+     "span": [
+      187,
+      217
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Levering af pokaler og medaljer samt opsætning af stævneprogram",
+     "tekst": "Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Stævneprogrammet skal være sat op en uge før stævnet, så den ansvarlige i stævneudvalget kan kontrollere, at det er sat korrekt op.",
+     "udfald": "vedtaget",
+     "span": [
+      187,
+      205
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Levering af pokaler og medaljer og opsætning af stævneprogram",
+     "tekst": "Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Stævneprogrammet skal være sat op en uge før stævnet, så den ansvarlige i stævneudvalget kan kontrollere det.",
+     "udfald": "vedtaget",
+     "span": [
+      187,
+      205
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Aflevering af pokaler og medaljer til arrangerende klub",
+     "tekst": "Pokaler og medaljer skal være i den arrangerende klubs hænder senest en uge før stævnestart.",
+     "udfald": "vedtaget",
+     "span": [
+      187,
+      205
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Frist for pokaler, medaljer og stævneprogram",
+     "tekst": "Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Stævneprogrammet skal være sat op en uge før stævnet, så den ansvarlige i stævneudvalget kan kontrollere, at det er sat korrekt op.",
+     "udfald": "vedtaget",
+     "span": [
+      187,
+      217
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det skal sikres, at pokaler og medaljer er den arrangerende klub i hænde senest en uge før stævnestart."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det skal sikres, at pokaler og medaljer er den arrangerende klub i hænde senest en uge før stævnestart."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Stævneprogram opsætning",
+     "tekst": "Stævneprogrammet skal være sat op senest en uge før stævnet, så den ansvarlige i Stævneudvalget kan kontrollere, at det er opsat korrekt.",
+     "udfald": "vedtaget",
+     "span": [
+      205,
+      233
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det skal ligeledes sikres, at stævneprogrammet er sat op en uge før, således at den ansvarlige i stævneudvalget kan tjekke op på, at det er sat korrekt op."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det skal ligeledes sikres, at stævneprogrammet er sat op en uge før, således at den ansvarlige i stævneudvalget kan tjekke op på, at det er sat korrekt op."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Strategiplan",
+     "tekst": "Der udarbejdes ikke en ny strategiplan, da den gamle er udløbet og erstattet af de strategiske spor. Vision og mission opdateres i de strategiske spor.",
+     "udfald": "vedtaget",
+     "span": [
+      473,
+      494
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Strategiplan",
+     "tekst": "Den udløbne strategiplan erstattes af de strategiske spor. Der udarbejdes ikke en ny strategiplan, men vision og mission opdateres i de strategiske spor.",
+     "udfald": "vedtaget",
+     "span": [
+      473,
+      494
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Strategiplan",
+     "tekst": "Der udarbejdes ikke en ny strategiplan, da den er erstattet af de strategiske spor. Vision og mission opdateres i de strategiske spor.",
+     "udfald": "vedtaget",
+     "span": [
+      473,
+      494
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Strategiplan",
+     "tekst": "Den gamle strategiplan er udløbet og erstattet af de strategiske spor. Det blev besluttet, at der ikke udarbejdes en ny strategiplan; vision og mission opdateres i stedet i de strategiske spor.",
+     "udfald": "vedtaget",
+     "span": [
+      473,
+      494
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Strategiplan",
+     "tekst": "Der udarbejdes ikke en ny strategiplan til afløsning af den udløbne; i stedet erstattes den af de strategiske spor, hvor vision og mission opdateres.",
+     "udfald": "vedtaget",
+     "span": [
+      473,
+      494
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "bestyrelsesbeslutning",
+     "citat": "Det blev besluttet, at der ikke udarbejdes en ny strategiplan, men i de strategiske spor vil vision og mission blive opdateret."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "bestyrelsesbeslutning",
+     "citat": "Det blev besluttet, at der ikke udarbejdes en ny strategiplan, men i de strategiske spor vil vision og mission blive opdateret."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Coach licens for head coaches ved internationale mesterskaber",
+     "tekst": "Fra 1. januar 2025 skal alle head coaches nomineret til internationale, internationale regionale eller verdensmesterskaber uploade deres coach licens i Goodlift-systemet.",
+     "udfald": "vedtaget",
+     "span": [
+      702,
+      731
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Coach-licens for head coaches ved internationale mesterskaber",
+     "tekst": "Fra 1. januar 2025 skal alle head coaches nomineret til internationale, internationale regionale eller verdensmesterskaber uploade deres coach-licens i Goodlift-systemet.",
+     "udfald": "vedtaget",
+     "span": [
+      702,
+      731
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Coach-licens for head coaches ved internationale mesterskaber",
+     "tekst": "Fra 1. januar 2025 skal alle head coaches nomineret til internationale, internationale regionale eller verdensmesterskaber uploade deres coach-licens i Goodlift-systemet.",
+     "udfald": "vedtaget",
+     "span": [
+      702,
+      731
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Krav om coach-licens for Head Coaches (IPF)",
+     "tekst": "Fra 1. januar 2025 skal alle Head Coaches, der er nomineret til et internationalt, internationalt regionalt eller verdensmesterskab, uploade deres coach-licens i Goodlift-systemet. IPF's Executive Committee vedtog kravet enstemmigt.",
+     "udfald": "vedtaget",
+     "span": [
+      707,
+      731
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Coachlicens for head coaches ved internationale mesterskaber",
+     "tekst": "Fra 1. januar 2025 skal alle head coaches, der er nomineret til internationale, regionale internationale eller verdensmesterskaber, uploade deres coachlicens i Goodlift-systemet.",
+     "udfald": "vedtaget",
+     "span": [
+      696,
+      731
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "The IPF Executive Committee voted, unanimously, starting on January 01, 2025, all Head Coaches, nominated for an International, International Regional, or World Championship, will be required to upload their Coach License into the Goodlift System."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "The IPF Executive Committee voted, unanimously, starting on January 01, 2025, all Head Coaches, nominated for an International, International Regional, or World Championship, will be required to upload their Coach License into the Goodlift System."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Dokumentkrav for nominerede løftere til EM",
+     "tekst": "Alle nominerede løftere til EM skal have ADEL-kursus for international level athlete, en korrekt udfyldt og underskrevet Consent Form med fuldt navn samt et foto af god kvalitet på ensfarvet lys baggrund.",
+     "udfald": "vedtaget",
+     "span": [
+      801,
+      814
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Dokumentkrav for nominerede løftere til EPF-mesterskaber",
+     "tekst": "Alle nominerede løftere skal have ADEL-kursus for internationalt niveau, en korrekt udfyldt og underskrevet Consent Form med fuldt navn samt et foto i god kvalitet i Goodlift. Løftere uden korrekte samtykkeerklæringer kan udelukkes fra stævnet.",
+     "udfald": "vedtaget",
+     "span": [
+      801,
+      814
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Dokumentkrav for nominerede løftere til EPF-mesterskaber",
+     "tekst": "Nominerede løftere skal have ADEL-certifikat for internationalt niveau, korrekt udfyldt og underskrevet samtykkeerklæring med fulde navn samt et foto i god kvalitet i Goodlift. Afviste løftere skal medbringe korrekt samtykkeerklæring til indvejning, ellers udelukkes de.",
+     "udfald": "vedtaget",
+     "span": [
+      801,
+      814
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Krav til nominerede løftere ved EPF-mesterskaber (ADEL, samtykkeformular, foto)",
+     "tekst": "Ved nominering til EPF-mesterskaber skal alle nominerede løftere have gennemført ADEL-kurset for International Level Athlete, have en fuldt udfyldt og underskrevet samtykkeformular med fuldt navn, og have et billede af god kvalitet. Løftere uden korrekte dokumenter udelukkes fra konkurrencen.",
+     "udfald": "vedtaget",
+     "span": [
+      801,
+      814
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Dokumentkrav i Goodlift ved EPF-mesterskaber",
+     "tekst": "Løftere nomineret til EPF-mesterskaber skal i Goodlift have: ADEL-certifikat for INTERNATIONAL LEVEL ATHLETE, en korrekt udfyldt Consent Form (seneste version, med fuldt navn og underskrevet i hånden eller digitalt) samt et foto af god kvalitet på lys, ensfarvet baggrund. Løftere uden korrekt underskrevet Consent Form udelukkes fra konkurrencen, medmindre de medbringer den ved indvejningen.",
+     "udfald": "vedtaget",
+     "span": [
+      797,
+      841
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "According to the requirements, all nominated lifters must complete the educational course ADEL for INTERNATIONAL LEVEL ATHLETE. The Concent Form must be completely filled in with the FULL name and surname of the athlete and signed either in hadwriting or with the digital signature."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "According to the requirements, all nominated lifters must complete the educational course ADEL for INTERNATIONAL LEVEL ATHLETE. The Concent Form must be completely filled in with the FULL name and surname of the athlete and signed either in hadwriting or with the digital signature."
+    }
+   ]
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5925,
+    "output": 2982,
+    "cost_usd": 0.1079,
+    "seconds": 25,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5966,
+    "output": 2365,
+    "cost_usd": 0.0959,
+    "seconds": 19,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

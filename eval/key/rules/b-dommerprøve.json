@@ -1,0 +1,1336 @@
+{
+ "slug": "b-dommerprøve",
+ "kategori": "dommere",
+ "titel": "B-dommerprøve",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "dommerkandidater",
+  "melding",
+  "opgivelse",
+  "dom",
+  "dommerprøver",
+  "kandidater",
+  "prøver",
+  "dommerprøve",
+  "dommeruddannelse",
+  "kursus",
+  "tilmelding",
+  "prøve"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "repref2008",
+   "date": "2008",
+   "page": 1,
+   "start": 0,
+   "end": 334,
+   "source": "keyword"
+  },
+  {
+   "id": "P2",
+   "doc": "refbest_11012008",
+   "date": "2008-01-11",
+   "page": 1,
+   "start": 261,
+   "end": 403,
+   "source": "keyword"
+  },
+  {
+   "id": "P3",
+   "doc": "rep2009",
+   "date": "2009",
+   "page": null,
+   "start": 0,
+   "end": 276,
+   "source": "keyword"
+  },
+  {
+   "id": "P4",
+   "doc": "refbest_05122009",
+   "date": "2009-12-05",
+   "page": 1,
+   "start": 235,
+   "end": 462,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 1,
+   "start": 0,
+   "end": 119,
+   "source": "keyword"
+  },
+  {
+   "id": "P6",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 3,
+   "start": 539,
+   "end": 892,
+   "source": "keyword"
+  },
+  {
+   "id": "P7",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 8,
+   "start": 1548,
+   "end": 1702,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "rep2011",
+   "date": "2011",
+   "page": 1,
+   "start": 0,
+   "end": 105,
+   "source": "keyword"
+  },
+  {
+   "id": "P9",
+   "doc": "rep2011",
+   "date": "2011",
+   "page": 1,
+   "start": 124,
+   "end": 296,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "refbest_15052011",
+   "date": "2011-05-15",
+   "page": 3,
+   "start": 815,
+   "end": 976,
+   "source": "keyword"
+  },
+  {
+   "id": "P11",
+   "doc": "elite29062011",
+   "date": "2011-07-29",
+   "page": 1,
+   "start": 0,
+   "end": 298,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 1,
+   "start": 52,
+   "end": 392,
+   "source": "keyword"
+  },
+  {
+   "id": "P13",
+   "doc": "vm2012kongres",
+   "date": "2012",
+   "page": 1,
+   "start": 200,
+   "end": 361,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "refbest_23092012",
+   "date": "2012-09-23",
+   "page": 2,
+   "start": 401,
+   "end": 562,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "refbest_10032013",
+   "date": "2013-03-10",
+   "page": 3,
+   "start": 886,
+   "end": 1033,
+   "source": "keyword"
+  },
+  {
+   "id": "P16",
+   "doc": "refbest_24082013",
+   "date": "2013-08-24",
+   "page": 1,
+   "start": 24,
+   "end": 295,
+   "source": "keyword"
+  },
+  {
+   "id": "P17",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 6,
+   "start": 1441,
+   "end": 1579,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "refbest_09082014",
+   "date": "2014-08-09",
+   "page": 2,
+   "start": 414,
+   "end": 744,
+   "source": "keyword"
+  },
+  {
+   "id": "P19",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 1,
+   "start": 75,
+   "end": 236,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "257kongres",
+   "date": "2015",
+   "page": 1,
+   "start": 271,
+   "end": 395,
+   "source": "keyword"
+  },
+  {
+   "id": "P21",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 1,
+   "start": 0,
+   "end": 110,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 7,
+   "start": 2261,
+   "end": 2455,
+   "source": "keyword"
+  },
+  {
+   "id": "P23",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 3,
+   "start": 756,
+   "end": 942,
+   "source": "keyword"
+  },
+  {
+   "id": "P24",
+   "doc": "refbest_19042015",
+   "date": "2015-04-19",
+   "page": 2,
+   "start": 238,
+   "end": 439,
+   "source": "keyword"
+  },
+  {
+   "id": "P25",
+   "doc": "refbest_26072015",
+   "date": "2015-07-26",
+   "page": 1,
+   "start": 44,
+   "end": 444,
+   "source": "keyword"
+  },
+  {
+   "id": "P26",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 1,
+   "start": 278,
+   "end": 473,
+   "source": "keyword"
+  },
+  {
+   "id": "P27",
+   "doc": "refbest_11102015",
+   "date": "2015-10-11",
+   "page": 2,
+   "start": 345,
+   "end": 619,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 1,
+   "start": 0,
+   "end": 129,
+   "source": "keyword"
+  },
+  {
+   "id": "P29",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 3,
+   "start": 633,
+   "end": 804,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 3,
+   "start": 815,
+   "end": 948,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 3,
+   "start": 948,
+   "end": 1295,
+   "source": "related"
+  },
+  {
+   "id": "P32",
+   "doc": "refbest_28022016",
+   "date": "2016-02-28",
+   "page": 1,
+   "start": 41,
+   "end": 202,
+   "source": "keyword"
+  },
+  {
+   "id": "P33",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 1,
+   "start": 40,
+   "end": 201,
+   "source": "keyword"
+  },
+  {
+   "id": "P34",
+   "doc": "refbest_12062016",
+   "date": "2016-06-12",
+   "page": 2,
+   "start": 342,
+   "end": 525,
+   "source": "related"
+  },
+  {
+   "id": "P35",
+   "doc": "refbest_10122016",
+   "date": "2016-12-10",
+   "page": 1,
+   "start": 135,
+   "end": 312,
+   "source": "keyword"
+  },
+  {
+   "id": "P36",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 1,
+   "start": 0,
+   "end": 134,
+   "source": "keyword"
+  },
+  {
+   "id": "P37",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 3,
+   "start": 475,
+   "end": 784,
+   "source": "keyword"
+  },
+  {
+   "id": "P38",
+   "doc": "refbest_22042017",
+   "date": "2017-04-22",
+   "page": 1,
+   "start": 201,
+   "end": 422,
+   "source": "keyword"
+  },
+  {
+   "id": "P39",
+   "doc": "elite20052017",
+   "date": "2017-05-20",
+   "page": 1,
+   "start": 301,
+   "end": 467,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "refbest_26082017",
+   "date": "2017-08-26",
+   "page": 3,
+   "start": 625,
+   "end": 846,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "490",
+   "date": "2018",
+   "page": 8,
+   "start": 1638,
+   "end": 1799,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 1,
+   "start": 0,
+   "end": 132,
+   "source": "keyword"
+  },
+  {
+   "id": "P43",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 8,
+   "start": 1874,
+   "end": 2058,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 3,
+   "start": 643,
+   "end": 804,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "refbest_29032018",
+   "date": "2018-03-29",
+   "page": 1,
+   "start": 49,
+   "end": 364,
+   "source": "keyword"
+  },
+  {
+   "id": "P46",
+   "doc": "refbest_29032018",
+   "date": "2018-03-29",
+   "page": 2,
+   "start": 373,
+   "end": 534,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 2,
+   "start": 280,
+   "end": 677,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 3,
+   "start": 977,
+   "end": 1336,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 4,
+   "start": 1015,
+   "end": 1216,
+   "source": "keyword"
+  },
+  {
+   "id": "P50",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 5,
+   "start": 1339,
+   "end": 1537,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 1,
+   "start": 0,
+   "end": 116,
+   "source": "keyword"
+  },
+  {
+   "id": "P52",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 3,
+   "start": 1029,
+   "end": 1415,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 10,
+   "start": 5351,
+   "end": 5512,
+   "source": "keyword"
+  },
+  {
+   "id": "P54",
+   "doc": "refbest_19012019.2",
+   "date": "2019-01-19",
+   "page": 2,
+   "start": 428,
+   "end": 589,
+   "source": "keyword"
+  },
+  {
+   "id": "P55",
+   "doc": "refbest_310819",
+   "date": "2019-08-31",
+   "page": 2,
+   "start": 298,
+   "end": 460,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "refbest_310819",
+   "date": "2019-08-31",
+   "page": 2,
+   "start": 460,
+   "end": 623,
+   "source": "related"
+  },
+  {
+   "id": "P57",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 4,
+   "start": 1113,
+   "end": 1253,
+   "source": "keyword"
+  },
+  {
+   "id": "P58",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 5,
+   "start": 1253,
+   "end": 1525,
+   "source": "rule"
+  },
+  {
+   "id": "P59",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 1,
+   "start": 0,
+   "end": 116,
+   "source": "keyword"
+  },
+  {
+   "id": "P60",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 3,
+   "start": 1171,
+   "end": 1361,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "refbest_140320",
+   "date": "2020-03-14",
+   "page": 3,
+   "start": 677,
+   "end": 842,
+   "source": "keyword"
+  },
+  {
+   "id": "P62",
+   "doc": "refbest_061220",
+   "date": "2020-12-06",
+   "page": 2,
+   "start": 234,
+   "end": 395,
+   "source": "keyword"
+  },
+  {
+   "id": "P63",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 1,
+   "start": 0,
+   "end": 123,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 6,
+   "start": 2108,
+   "end": 2468,
+   "source": "keyword"
+  },
+  {
+   "id": "P65",
+   "doc": "refbest_060621",
+   "date": "2021-06-06",
+   "page": 1,
+   "start": 72,
+   "end": 233,
+   "source": "keyword"
+  },
+  {
+   "id": "P66",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 3,
+   "start": 704,
+   "end": 878,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 1,
+   "start": 0,
+   "end": 119,
+   "source": "keyword"
+  },
+  {
+   "id": "P68",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 11,
+   "start": 5129,
+   "end": 5318,
+   "source": "keyword"
+  },
+  {
+   "id": "P69",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 15,
+   "start": 6663,
+   "end": 6847,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 3,
+   "start": 1147,
+   "end": 1446,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "refbest_121122",
+   "date": "2022-11-12",
+   "page": 2,
+   "start": 321,
+   "end": 487,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "806kongres",
+   "date": "2023",
+   "page": 1,
+   "start": 87,
+   "end": 248,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 1,
+   "start": 0,
+   "end": 121,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 8,
+   "start": 3784,
+   "end": 3945,
+   "source": "keyword"
+  },
+  {
+   "id": "P75",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 9,
+   "start": 4171,
+   "end": 4363,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "rep2023ekstra",
+   "date": "2023",
+   "page": 1,
+   "start": 0,
+   "end": 125,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "refbest_090323",
+   "date": "2023-03-09",
+   "page": 1,
+   "start": 111,
+   "end": 237,
+   "source": "related"
+  },
+  {
+   "id": "P78",
+   "doc": "refdom12092023",
+   "date": "2023-09-12",
+   "page": 1,
+   "start": 32,
+   "end": 432,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "refdom12092023",
+   "date": "2023-09-12",
+   "page": 2,
+   "start": 432,
+   "end": 624,
+   "source": "keyword"
+  },
+  {
+   "id": "P80",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 1,
+   "start": 223,
+   "end": 574,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 2,
+   "start": 574,
+   "end": 897,
+   "source": "rule"
+  },
+  {
+   "id": "P82",
+   "doc": "refdom14112023",
+   "date": "2023-11-14",
+   "page": 1,
+   "start": 0,
+   "end": 151,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "KravForInternationalDeltagelse2024",
+   "date": "2024",
+   "page": 1,
+   "start": 67,
+   "end": 360,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 1,
+   "start": 0,
+   "end": 120,
+   "source": "keyword"
+  },
+  {
+   "id": "P85",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 4,
+   "start": 1176,
+   "end": 1337,
+   "source": "keyword"
+  },
+  {
+   "id": "P86",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 10,
+   "start": 4442,
+   "end": 4645,
+   "source": "keyword"
+  },
+  {
+   "id": "P87",
+   "doc": "refdom05032024",
+   "date": "2024-03-05",
+   "page": 1,
+   "start": 42,
+   "end": 404,
+   "source": "rule"
+  },
+  {
+   "id": "P88",
+   "doc": "refdom05032024",
+   "date": "2024-03-05",
+   "page": 3,
+   "start": 895,
+   "end": 1056,
+   "source": "keyword"
+  },
+  {
+   "id": "P89",
+   "doc": "refdom28032024",
+   "date": "2024-03-28",
+   "page": 1,
+   "start": 0,
+   "end": 108,
+   "source": "keyword"
+  },
+  {
+   "id": "P90",
+   "doc": "refbest_140424",
+   "date": "2024-04-14",
+   "page": 1,
+   "start": 145,
+   "end": 364,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "refdom02072024_2",
+   "date": "2024-07-02",
+   "page": 1,
+   "start": 185,
+   "end": 360,
+   "source": "keyword"
+  },
+  {
+   "id": "P92",
+   "doc": "refbest_270724",
+   "date": "2024-07-27",
+   "page": 6,
+   "start": 2105,
+   "end": 2315,
+   "source": "keyword"
+  },
+  {
+   "id": "P93",
+   "doc": "refdom01102024",
+   "date": "2024-10-01",
+   "page": 1,
+   "start": 124,
+   "end": 481,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "refbest_201024",
+   "date": "2024-10-20",
+   "page": 2,
+   "start": 502,
+   "end": 663,
+   "source": "keyword"
+  },
+  {
+   "id": "P95",
+   "doc": "ipf_kongres_2025",
+   "date": "2025",
+   "page": 1,
+   "start": 248,
+   "end": 409,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 1,
+   "start": 0,
+   "end": 121,
+   "source": "keyword"
+  },
+  {
+   "id": "P97",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 6,
+   "start": 2569,
+   "end": 2773,
+   "source": "keyword"
+  },
+  {
+   "id": "P98",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 15,
+   "start": 7931,
+   "end": 8142,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "refdom07012025",
+   "date": "2025-01-07",
+   "page": 1,
+   "start": 57,
+   "end": 257,
+   "source": "related"
+  },
+  {
+   "id": "P100",
+   "doc": "refdom07012025",
+   "date": "2025-01-07",
+   "page": 2,
+   "start": 366,
+   "end": 550,
+   "source": "rule"
+  },
+  {
+   "id": "P101",
+   "doc": "refdom07012025",
+   "date": "2025-01-07",
+   "page": 3,
+   "start": 550,
+   "end": 691,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 1,
+   "start": 0,
+   "end": 394,
+   "source": "keyword"
+  },
+  {
+   "id": "P103",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 4,
+   "start": 1056,
+   "end": 1240,
+   "source": "related"
+  },
+  {
+   "id": "P104",
+   "doc": "refudstyr06032025",
+   "date": "2025-03-06",
+   "page": 1,
+   "start": 0,
+   "end": 150,
+   "source": "related"
+  },
+  {
+   "id": "P105",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 2,
+   "start": 566,
+   "end": 708,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 2,
+   "start": 708,
+   "end": 898,
+   "source": "related"
+  },
+  {
+   "id": "P107",
+   "doc": "refdom08042025",
+   "date": "2025-04-08",
+   "page": 1,
+   "start": 21,
+   "end": 230,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "refdom08042025",
+   "date": "2025-04-08",
+   "page": 2,
+   "start": 230,
+   "end": 410,
+   "source": "related"
+  },
+  {
+   "id": "P109",
+   "doc": "refstaevne24042025",
+   "date": "2025-04-24",
+   "page": 1,
+   "start": 47,
+   "end": 357,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "elite02072025.2",
+   "date": "2025-07-02",
+   "page": 1,
+   "start": 64,
+   "end": 212,
+   "source": "keyword"
+  },
+  {
+   "id": "P111",
+   "doc": "refdom03072025",
+   "date": "2025-07-03",
+   "page": 1,
+   "start": 84,
+   "end": 264,
+   "source": "keyword"
+  },
+  {
+   "id": "P112",
+   "doc": "refudstyr16092025",
+   "date": "2025-09-16",
+   "page": 1,
+   "start": 0,
+   "end": 130,
+   "source": "keyword"
+  },
+  {
+   "id": "P113",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 2,
+   "start": 448,
+   "end": 609,
+   "source": "keyword"
+  },
+  {
+   "id": "P114",
+   "doc": "refdom16122025",
+   "date": "2025-12-12",
+   "page": 2,
+   "start": 434,
+   "end": 619,
+   "source": "related"
+  },
+  {
+   "id": "P115",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 20,
+   "start": 6392,
+   "end": 6553,
+   "source": "keyword"
+  },
+  {
+   "id": "P116",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 1,
+   "start": 0,
+   "end": 88,
+   "source": "keyword"
+  },
+  {
+   "id": "P117",
+   "doc": "dif_aarsmøde_2026",
+   "date": "2026",
+   "page": 4,
+   "start": 826,
+   "end": 987,
+   "source": "keyword"
+  },
+  {
+   "id": "P118",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 1,
+   "start": 0,
+   "end": 120,
+   "source": "keyword"
+  },
+  {
+   "id": "P119",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 6,
+   "start": 2719,
+   "end": 2894,
+   "source": "keyword"
+  },
+  {
+   "id": "P120",
+   "doc": "refdom12032026",
+   "date": "2026-03-12",
+   "page": 1,
+   "start": 57,
+   "end": 234,
+   "source": "related"
+  },
+  {
+   "id": "P121",
+   "doc": "refdom12032026",
+   "date": "2026-03-12",
+   "page": 2,
+   "start": 415,
+   "end": 576,
+   "source": "keyword"
+  },
+  {
+   "id": "P122",
+   "doc": "refdom04062026",
+   "date": "2026-06-04",
+   "page": 2,
+   "start": 193,
+   "end": 363,
+   "source": "keyword"
+  },
+  {
+   "id": "P123",
+   "doc": "refdom20082026",
+   "date": "2026-08-20",
+   "page": 1,
+   "start": 34,
+   "end": 279,
+   "source": "keyword"
+  },
+  {
+   "id": "P124",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 3,
+   "start": 730,
+   "end": 952,
+   "source": "keyword"
+  },
+  {
+   "id": "P125",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "start": 0,
+   "end": 217,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 0,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P58",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 5,
+   "effect": "indfoert",
+   "quote": "Klubberne kan indstille et eller flere af deres medlemmer til en B-dommerprøve. Forudsætningen er, at dommerkandidaten i et stykke tid har haft kendskab til styrkeløft, vil sætte sig ind i de tekniske regler inden kurset, og efter bestået dommerprøve vil stille sig til rådighed som dommer for DSF. Prøven er en teoretisk prøve, hvor mindst 90 % af spørgsmålene skal besvares korrekt",
+   "value_after": "Klubindstilling; teoretisk prøve, min. 90 af 100 point",
+   "span": [
+    1284,
+    1346
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P80",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Prøven er en teoretisk prøve, hvor mindst 85 % af spørgsmålene skal besvares korrekt, dvs. der skal opnås min. 85 af 100 points. Der arbejdes med den praktiske del under kurset.",
+   "value_after": "Klubindstilling; teoretisk prøve, min. 85 af 100 point",
+   "span": [
+    496,
+    526
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P87",
+   "doc": "refdom05032024",
+   "date": "2024-03-05",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Kandidater til dommeruddannelse skal opgive to stævner, de vil dømme til efter bestået kursus. Kandidater til dommeruddannelsen vil kun blive tilmeldt, når to stævner er blevet opgivet og fremsend til dommerudvalget.",
+   "value_after": "Min. 85 af 100 point; tilmelding kræver to opgivne stævner",
+   "span": [
+    178,
+    209
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P100",
+   "doc": "refdom07012025",
+   "date": "2025-01-07",
+   "page": 2,
+   "effect": "bekraeftet",
+   "quote": "En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven.",
+   "value_after": "Min. 85 af 100 point; tilmelding kræver to opgivne stævner",
+   "span": [
+    446,
+    470
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2019,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Klubindstilling; teoretisk prøve, min. 90 af 100 point"
+  },
+  {
+   "year": 2020,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Klubindstilling; teoretisk prøve, min. 90 af 100 point"
+  },
+  {
+   "year": 2021,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Klubindstilling; teoretisk prøve, min. 90 af 100 point"
+  },
+  {
+   "year": 2022,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Klubindstilling; teoretisk prøve, min. 90 af 100 point"
+  },
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Klubindstilling; teoretisk prøve, min. 85 af 100 point"
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Min. 85 af 100 point; tilmelding kræver to opgivne stævner"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E4",
+   "value": "Min. 85 af 100 point; tilmelding kræver to opgivne stævner"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E4",
+   "value": "Min. 85 af 100 point; tilmelding kræver to opgivne stævner"
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 83642,
+    "output": 2134,
+    "cost_usd": 0.7123,
+    "seconds": 20,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 83639,
+    "output": 1844,
+    "cost_usd": 0.7064,
+    "seconds": 17,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

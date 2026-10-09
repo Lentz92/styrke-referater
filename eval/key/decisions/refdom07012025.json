@@ -1,0 +1,473 @@
+{
+ "doc_id": "refdom07012025",
+ "sha256": "b4b6a5fd2cc321825f35b03d246e79f97d1b70ce63c1f3e89903ef7227f3f690",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1,
+    2,
+    3
+   ],
+   "emne": "Indstilling til A-dommerprøve",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Tidligere kunne både klub og den enkelte dommer indstille sig selv til A-dommerprøve. Fremover kan kun klubløse dommere indstille sig selv. En B-dommer, der ønsker at blive indstillet til A-dommerprøve, skal indstilles via klubformanden til dommerudvalget.",
+   "citat": "Reglerne foreskriver at både klub og den enkelte dommer kan indstille sig selv til A-dommerprøve. Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 121,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Reglerne foreskriver at både klub og den enkelte dommer kan indstille sig selv til A-dommerprøve. Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv.",
+     "citat_pos": 121
+    },
+    {
+     "citat": "Reglerne foreskriver at både klub og den enkelte dommer kan indstille sig selv til A-dommerprøve. Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv.",
+     "citat_pos": 121
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Tilmelding til B-dommerprøve med valg af stævner",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "En person kan ikke tilmelde sig en dommerprøve uden at have valgt to stævner, vedkommende vil dømme ved efter bestået prøve. Efter bestået dommeruddannelse sætter underviserne dommeren på de valgte stævner.",
+   "citat": "En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 446,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven.",
+     "citat_pos": 446
+    },
+    {
+     "citat": "Efter bestået dommeruddannelse bliver dommerne sat på til de stævner de har tilmeldt sig af underviserne. En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven.",
+     "citat_pos": 430
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Indstilling til A-dommerprøve",
+     "tekst": "Tidligere kunne både klub og den enkelte dommer indstille sig selv til A-dommerprøve. Fremover kan kun klubløse dommere indstille sig selv. En B-dommer, der ønsker at blive indstillet, skal indstilles via klubformanden til dommerudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      137,
+      151
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Indstilling til A-dommerprøve",
+     "tekst": "Tidligere kunne både klub og den enkelte dommer indstille sig selv til A-dommerprøve. Nu er det kun klubløse dommere, der selv kan indstille sig. En B-dommer, der ønsker at indstilles, skal ske via klubformand til dommerudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      137,
+      165
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Indstilling til A-dommerprøve",
+     "tekst": "Tidligere kunne både klub og den enkelte dommer indstille sig selv til A-dommerprøve. Fremover kan kun klubløse dommere indstille sig selv. En B-dommer, der ønsker at blive indstillet, skal indstilles via klubformanden til dommerudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      137,
+      165
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Indstilling til A-dommerprøve",
+     "tekst": "Reglen om indstilling til A-dommerprøve ændres, så kun klubløse dommere kan indstille sig selv. Tidligere kunne både klub og den enkelte dommer indstille sig selv.",
+     "udfald": "vedtaget",
+     "span": [
+      121,
+      151
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Indstilling til A-dommerprøve",
+     "tekst": "Reglen om, at både klub og den enkelte dommer kan indstille til A-dommerprøve, ændres, så kun klubløse dommere kan indstille sig selv. En B-dommer, der ønsker at blive indstillet, skal indstilles via sin klubformand til Dommerudvalget. Indstillingerne gøres til et fast punkt på Dommerudvalgets dagsorden.",
+     "udfald": "vedtaget",
+     "span": [
+      121,
+      165
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Reglerne foreskriver at både klub og den enkelte dommer kan indstille sig selv til A-dommerprøve. Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Reglerne foreskriver at både klub og den enkelte dommer kan indstille sig selv til A-dommerprøve. Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Reglerne foreskriver at både klub og den enkelte dommer kan indstille sig selv til A-dommerprøve. Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "duplicate",
+   "reason": "Indstilling af B-dommere via klubformand er en del af samme ændring af reglerne for indstilling til A-dommerprøve.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Indstilling til B-dommerprøve",
+     "tekst": "En dommer, der ønsker indstilling til B-dommerprøve, skal indstilles via klubformanden til dommerudvalget. Indstillinger til dommerprøver er et fast punkt på dommerudvalgets dagsorden og drøftes der.",
+     "udfald": "vedtaget",
+     "span": [
+      151,
+      165
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Indstilling af B-dommere via klubformand er en del af samme ændring af reglerne for indstilling til A-dommerprøve."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Samme ændring af indstillingsreglerne til A-dommerprøve; det handler om B-dommere, der indstilles til A-prøven, ikke om B-dommerprøven."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Indstilling af B-dommere via klubformand er en del af den samme ændring af reglerne for indstilling til A-dommerprøve."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "duplicate",
+   "reason": "Det faste dagsordenspunkt er en del af samme beslutning om indstilling til A-dommerprøve.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Indstillinger til A-dommerprøve som fast dagsordenspunkt",
+     "tekst": "Indstillinger til A-dommerprøve gøres til et fast punkt på dommerudvalgets dagsorden og drøftes på hvert møde. Der laves et skriv om reglerne til Facebook-siden, klubformænd og Styrke.dk.",
+     "udfald": "vedtaget",
+     "span": [
+      165,
+      177
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Indstillinger til A-dommer som fast dagsordenspunkt",
+     "tekst": "Indstillinger til A-dommer gøres til et fast punkt på dommerudvalgets dagsorden og drøftes løbende. Der skal laves et skriv om reglerne til Facebook-siden, klubformænd og Styrke.dk.",
+     "udfald": "vedtaget",
+     "span": [
+      165,
+      189
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Indstillinger til A-dommer som fast dagsordenspunkt",
+     "tekst": "Indstillinger til A-dommerprøve gøres til et fast punkt på dommerudvalgets dagsorden og drøftes på hvert møde. Der laves et skriv om reglerne til Facebook-siden, klubformænd og Styrke.dk.",
+     "udfald": "vedtaget",
+     "span": [
+      165,
+      189
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Dette gøres også til et fast punkt på dagsordenen og indstillingerne drøftes"
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Det faste dagsordenspunkt er en del af samme beslutning om indstilling til A-dommerprøve."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 1,
+     "reason": "Det faste dagsordenspunkt for indstillinger hører til samme beslutning om indstilling til A-dommerprøve."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Tilmelding til B-dommerprøve med to stævner",
+     "tekst": "En person kan ikke tilmelde sig B-dommerprøven uden at have valgt to stævner, vedkommende vil dømme efter bestået prøve. Efter bestået uddannelse sættes dommeren på de valgte stævner.",
+     "udfald": "vedtaget",
+     "span": [
+      446,
+      470
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Tilmelding til B-dommerprøve med valg af to stævner",
+     "tekst": "Man kan ikke tilmelde sig en B-dommerprøve uden at have valgt to stævner, man vil dømme ved efter bestået prøve. Efter bestået uddannelse sættes dommerne på de stævner, de har tilmeldt sig.",
+     "udfald": "vedtaget",
+     "span": [
+      446,
+      470
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Tilmelding til B-dommerprøve og påsætning",
+     "tekst": "Man kan ikke tilmelde sig en B-dommerprøve uden at have valgt to stævner, man vil dømme ved efter bestået prøve. Efter bestået dommeruddannelse bliver nye dommere sat på de stævner, de har tilmeldt sig.",
+     "udfald": "vedtaget",
+     "span": [
+      446,
+      470
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Stævnevalg ved tilmelding til dommerprøve",
+     "tekst": "En person kan ikke tilmelde sig en dommerprøve uden samtidig at have udvalgt to stævner, som vedkommende vil dømme ved, når dommerprøven er bestået. Efter bestået dommeruddannelse sættes dommerne på de stævner, de har tilmeldt sig, af underviserne.",
+     "udfald": "vedtaget",
+     "span": [
+      446,
+      470
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Dømmeforpligtelse ved B-dommerprøve",
+     "tekst": "En person kan ikke tilmelde sig B-dommerprøven uden at have valgt to stævner, som vedkommende vil dømme ved efter bestået prøve. Efter bestået dommeruddannelse sætter underviserne dommeren på de stævner, vedkommende har tilmeldt sig.",
+     "udfald": "vedtaget",
+     "span": [
+      430,
+      470
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Efter bestået dommeruddannelse bliver dommerne sat på til de stævner de har tilmeldt sig af underviserne. En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Udvikling af en funktion i dommerdatabasen er en arbejdsopgave og ikke en stående regel.",
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Dommerpåsætning direkte via dommerdatabasen",
+     "tekst": "Der udvikles en udvidet funktion i dommerdatabasen, så dommere kan tilmeldes direkte uden om klubberne. Prisen skal godkendes af udvalget inden endelig godkendelse.",
+     "udfald": "vedtaget",
+     "span": [
+      750,
+      782
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Dommerpåsætning via dommerdatabasen",
+     "tekst": "Der udvikles en udvidet funktion i dommerdatabasen, så dommere direkte kan tilmeldes stævner uden om klubben. Prisen skal godkendes af udvalget, inden den endelige godkendelse træder i kraft.",
+     "udfald": "vedtaget",
+     "span": [
+      750,
+      782
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Udvikling af en funktion i dommerdatabasen er en arbejdsopgave og ikke en stående regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Godkendelse af at udvikle en funktion i dommerdatabasen er en engangsopgave og ikke en stående regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Beslutning om at udvikle en funktion i dommerdatabasen er en arbejdsopgave og ikke en stående regel."
+    }
+   ]
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5157,
+    "output": 1802,
+    "cost_usd": 0.0782,
+    "seconds": 16,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5166,
+    "output": 1739,
+    "cost_usd": 0.077,
+    "seconds": 16,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5166,
+    "output": 1511,
+    "cost_usd": 0.0724,
+    "seconds": 13,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

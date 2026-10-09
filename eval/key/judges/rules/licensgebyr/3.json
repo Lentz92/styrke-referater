@@ -1,0 +1,184 @@
+{
+ "fingerprint": "da6bf4649ee11abe",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 81740,
+  "output": 3083,
+  "cost_usd": 0.716,
+  "seconds": 26,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P4",
+    "quote": "Dog er licensgebyret hævet til 150,- jf., \nhvad der blev vedtaget på repræsentantskabsmødet 2009.",
+    "value_after": "150 kr. pr. løfter pr. år",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P13",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret)- Licens: kr. 200,- (Uændret).",
+    "value_after": "200 kr. pr. løfter pr. år",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P67",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "200 kr. pr. løfter pr. år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P73",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "200 kr. pr. løfter pr. år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P78",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "200 kr. pr. løfter pr. år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P82",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "200 kr. pr. løfter pr. år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P85",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "200 kr. pr. løfter pr. år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P85",
+    "quote": "Efter forslaget fra HaSK blev nedstemt, blev der stillet ændringsforslag til bestyrelsens forslag.",
+    "value_after": null,
+    "effect": "forkastet"
+   },
+   {
+    "passage": "P95",
+    "quote": "Forslag til repræsentantskabsmøde 2024 \n \nLicensopkrævning hæves til 300 kr.",
+    "value_after": null,
+    "effect": "foreslaaet"
+   },
+   {
+    "passage": "P93",
+    "quote": "Licens: kr. 300,- (Jævnfør forslag)).",
+    "value_after": "300 kr. pr. løfter pr. år",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P101",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 300,- (uændret).",
+    "value_after": "300 kr. pr. løfter pr. år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P115",
+    "quote": "Årsafgift: kr. 1.000,- (uændret) - Licens: kr. 300,- (uændret).",
+    "value_after": "300 kr. pr. løfter pr. år",
+    "effect": "bekraeftet"
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2011,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2012,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 7
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 10
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 11
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 12
+   }
+  ]
+ }
+}

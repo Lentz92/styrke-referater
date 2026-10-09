@@ -1,0 +1,1327 @@
+{
+ "slug": "dækning-af-udgifter-ved-internationale-masterstævner",
+ "kategori": "master",
+ "titel": "Dækning af udgifter ved internationale masterstævner",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "betaler selv",
+  "mastersstævner",
+  "godtgørelse",
+  "refusion",
+  "afgift",
+  "koster",
+  "masterstævner",
+  "veteran",
+  "dækning",
+  "kontingent",
+  "ledere",
+  "gebyr",
+  "årsafgift",
+  "startgebyr",
+  "tilskud",
+  "egenbetaling",
+  "betaling",
+  "udgifter",
+  "pris"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "refbest_25102009",
+   "date": "2009-11-25",
+   "page": 1,
+   "start": 0,
+   "end": 80,
+   "source": "keyword"
+  },
+  {
+   "id": "P2",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 2,
+   "start": 378,
+   "end": 539,
+   "source": "keyword"
+  },
+  {
+   "id": "P3",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 3,
+   "start": 567,
+   "end": 755,
+   "source": "keyword"
+  },
+  {
+   "id": "P4",
+   "doc": "refbest_28022010",
+   "date": "2010-02-28",
+   "page": 1,
+   "start": 0,
+   "end": 173,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 1,
+   "start": 175,
+   "end": 342,
+   "source": "related"
+  },
+  {
+   "id": "P6",
+   "doc": "refbest_25072010",
+   "date": "2010-07-25",
+   "page": 1,
+   "start": 72,
+   "end": 250,
+   "source": "keyword"
+  },
+  {
+   "id": "P7",
+   "doc": "refbest_23012011",
+   "date": "2011-01-23",
+   "page": 1,
+   "start": 168,
+   "end": 387,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "elite30012011",
+   "date": "2011-01-30",
+   "page": 1,
+   "start": 0,
+   "end": 197,
+   "source": "keyword"
+  },
+  {
+   "id": "P9",
+   "doc": "ReferatMastermoede_okt2011",
+   "date": "2011-10-08",
+   "page": 1,
+   "start": 0,
+   "end": 240,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "ReferatMastermoede_okt2011",
+   "date": "2011-10-08",
+   "page": 1,
+   "start": 240,
+   "end": 432,
+   "source": "related"
+  },
+  {
+   "id": "P11",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 1,
+   "start": 41,
+   "end": 441,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "refbest_04082012",
+   "date": "2012-08-04",
+   "page": 1,
+   "start": 117,
+   "end": 282,
+   "source": "keyword"
+  },
+  {
+   "id": "P13",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 1,
+   "start": 97,
+   "end": 308,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "vm2013",
+   "date": "2013",
+   "page": 1,
+   "start": 0,
+   "end": 151,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "refbest_24082013",
+   "date": "2013-08-24",
+   "page": 2,
+   "start": 892,
+   "end": 1047,
+   "source": "rule"
+  },
+  {
+   "id": "P16",
+   "doc": "refbest_16112013",
+   "date": "2013-11-16",
+   "page": 1,
+   "start": 148,
+   "end": 414,
+   "source": "keyword"
+  },
+  {
+   "id": "P17",
+   "doc": "elite15122013",
+   "date": "2013-12-15",
+   "page": 1,
+   "start": 9,
+   "end": 193,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 1,
+   "start": 148,
+   "end": 548,
+   "source": "keyword"
+  },
+  {
+   "id": "P19",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 4,
+   "start": 948,
+   "end": 955,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 1,
+   "start": 145,
+   "end": 449,
+   "source": "keyword"
+  },
+  {
+   "id": "P21",
+   "doc": "refbest_03052014",
+   "date": "2014-05-03",
+   "page": 1,
+   "start": 224,
+   "end": 409,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "refbest_03052014",
+   "date": "2014-05-03",
+   "page": 2,
+   "start": 515,
+   "end": 859,
+   "source": "keyword"
+  },
+  {
+   "id": "P23",
+   "doc": "elite31052014",
+   "date": "2014-05-31",
+   "page": 1,
+   "start": 58,
+   "end": 234,
+   "source": "related"
+  },
+  {
+   "id": "P24",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 3,
+   "start": 673,
+   "end": 849,
+   "source": "keyword"
+  },
+  {
+   "id": "P25",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 5,
+   "start": 1560,
+   "end": 1960,
+   "source": "keyword"
+  },
+  {
+   "id": "P26",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 1,
+   "start": 90,
+   "end": 283,
+   "source": "related"
+  },
+  {
+   "id": "P27",
+   "doc": "Adfaerdskodeks",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 0,
+   "end": 122,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 2,
+   "start": 443,
+   "end": 629,
+   "source": "rule"
+  },
+  {
+   "id": "P29",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 2,
+   "start": 629,
+   "end": 673,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "refbest_11102015",
+   "date": "2015-10-11",
+   "page": 2,
+   "start": 272,
+   "end": 519,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "elite05122015",
+   "date": "2015-12-05",
+   "page": 1,
+   "start": 209,
+   "end": 609,
+   "source": "keyword"
+  },
+  {
+   "id": "P32",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 2,
+   "start": 287,
+   "end": 687,
+   "source": "keyword"
+  },
+  {
+   "id": "P33",
+   "doc": "refbest_22042017",
+   "date": "2017-04-22",
+   "page": 2,
+   "start": 309,
+   "end": 548,
+   "source": "keyword"
+  },
+  {
+   "id": "P34",
+   "doc": "refbest_26082017",
+   "date": "2017-08-26",
+   "page": 2,
+   "start": 524,
+   "end": 701,
+   "source": "related"
+  },
+  {
+   "id": "P35",
+   "doc": "elite09092017",
+   "date": "2017-09-09",
+   "page": 3,
+   "start": 520,
+   "end": 627,
+   "source": "related"
+  },
+  {
+   "id": "P36",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 3,
+   "start": 548,
+   "end": 726,
+   "source": "keyword"
+  },
+  {
+   "id": "P37",
+   "doc": "elite10122017",
+   "date": "2017-12-10",
+   "page": 1,
+   "start": 209,
+   "end": 609,
+   "source": "keyword"
+  },
+  {
+   "id": "P38",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 4,
+   "start": 816,
+   "end": 1183,
+   "source": "keyword"
+  },
+  {
+   "id": "P39",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 1,
+   "start": 99,
+   "end": 298,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 1,
+   "start": 116,
+   "end": 311,
+   "source": "related"
+  },
+  {
+   "id": "P41",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 2,
+   "start": 583,
+   "end": 795,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 3,
+   "start": 924,
+   "end": 1108,
+   "source": "related"
+  },
+  {
+   "id": "P43",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 3,
+   "start": 681,
+   "end": 1180,
+   "source": "related"
+  },
+  {
+   "id": "P44",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 4,
+   "start": 1180,
+   "end": 1580,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "elite08092018",
+   "date": "2018-09-08",
+   "page": 2,
+   "start": 561,
+   "end": 961,
+   "source": "keyword"
+  },
+  {
+   "id": "P46",
+   "doc": "elite08092018",
+   "date": "2018-09-08",
+   "page": 3,
+   "start": 961,
+   "end": 971,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 3,
+   "start": 658,
+   "end": 916,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "elite15122018",
+   "date": "2018-12-15",
+   "page": 2,
+   "start": 566,
+   "end": 742,
+   "source": "related"
+  },
+  {
+   "id": "P49",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 17,
+   "start": 7553,
+   "end": 7915,
+   "source": "keyword"
+  },
+  {
+   "id": "P50",
+   "doc": "refbest_19012019.2",
+   "date": "2019-01-19",
+   "page": 1,
+   "start": 143,
+   "end": 411,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "refmaster09032019",
+   "date": "2019-03-09",
+   "page": 1,
+   "start": 0,
+   "end": 159,
+   "source": "related"
+  },
+  {
+   "id": "P52",
+   "doc": "elite15062019",
+   "date": "2019-06-15",
+   "page": 1,
+   "start": 335,
+   "end": 586,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "elite14092019",
+   "date": "2019-09-14",
+   "page": 1,
+   "start": 0,
+   "end": 137,
+   "source": "keyword"
+  },
+  {
+   "id": "P54",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 18,
+   "start": 8633,
+   "end": 9033,
+   "source": "keyword"
+  },
+  {
+   "id": "P55",
+   "doc": "refbest_140320",
+   "date": "2020-03-14",
+   "page": 2,
+   "start": 317,
+   "end": 645,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "elite16082020",
+   "date": "2020-08-16",
+   "page": 2,
+   "start": 649,
+   "end": 815,
+   "source": "related"
+  },
+  {
+   "id": "P57",
+   "doc": "refbest_220820",
+   "date": "2020-08-22",
+   "page": 1,
+   "start": 0,
+   "end": 379,
+   "source": "related"
+  },
+  {
+   "id": "P58",
+   "doc": "refbest_171020",
+   "date": "2020-10-17",
+   "page": 1,
+   "start": 47,
+   "end": 237,
+   "source": "related"
+  },
+  {
+   "id": "P59",
+   "doc": "refbest_171020",
+   "date": "2020-10-17",
+   "page": 2,
+   "start": 424,
+   "end": 598,
+   "source": "related"
+  },
+  {
+   "id": "P60",
+   "doc": "elite19122020_bud_reg_2021",
+   "date": "2020-12-19",
+   "page": 1,
+   "start": 0,
+   "end": 92,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "elite19122020_bud_reg_2021",
+   "date": "2020-12-19",
+   "page": 1,
+   "start": 96,
+   "end": 186,
+   "source": "keyword"
+  },
+  {
+   "id": "P62",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 4,
+   "start": 1146,
+   "end": 1326,
+   "source": "rule"
+  },
+  {
+   "id": "P63",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 8,
+   "start": 2828,
+   "end": 3019,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "elite14092021",
+   "date": "2021-09-14",
+   "page": 1,
+   "start": 102,
+   "end": 313,
+   "source": "keyword"
+  },
+  {
+   "id": "P65",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 2,
+   "start": 629,
+   "end": 875,
+   "source": "keyword"
+  },
+  {
+   "id": "P66",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 14,
+   "start": 6586,
+   "end": 6834,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "refmedie08022022",
+   "date": "2022-02-08",
+   "page": 1,
+   "start": 0,
+   "end": 87,
+   "source": "keyword"
+  },
+  {
+   "id": "P68",
+   "doc": "elite08032022",
+   "date": "2022-03-08",
+   "page": 2,
+   "start": 188,
+   "end": 502,
+   "source": "keyword"
+  },
+  {
+   "id": "P69",
+   "doc": "elite25042022",
+   "date": "2022-05-25",
+   "page": 1,
+   "start": 41,
+   "end": 219,
+   "source": "related"
+  },
+  {
+   "id": "P70",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 2,
+   "start": 652,
+   "end": 813,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 3,
+   "start": 876,
+   "end": 1052,
+   "source": "related"
+  },
+  {
+   "id": "P72",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 3,
+   "start": 1052,
+   "end": 1203,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "refbest_121122",
+   "date": "2022-11-12",
+   "page": 1,
+   "start": 6,
+   "end": 351,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "elite14122022",
+   "date": "2022-12-14",
+   "page": 1,
+   "start": 26,
+   "end": 212,
+   "source": "keyword"
+  },
+  {
+   "id": "P75",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 5,
+   "start": 2165,
+   "end": 2326,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 12,
+   "start": 5459,
+   "end": 5729,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "elite08032023",
+   "date": "2023-03-08",
+   "page": 1,
+   "start": 0,
+   "end": 158,
+   "source": "keyword"
+  },
+  {
+   "id": "P78",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 1,
+   "start": 2,
+   "end": 176,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "elite12122023",
+   "date": "2023-12-12",
+   "page": 1,
+   "start": 0,
+   "end": 144,
+   "source": "keyword"
+  },
+  {
+   "id": "P80",
+   "doc": "KravForInternationalDeltagelse2024",
+   "date": "2024",
+   "page": 1,
+   "start": 79,
+   "end": 380,
+   "source": "rule"
+  },
+  {
+   "id": "P81",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 7,
+   "start": 2327,
+   "end": 2488,
+   "source": "keyword"
+  },
+  {
+   "id": "P82",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 13,
+   "start": 5466,
+   "end": 5629,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 14,
+   "start": 5966,
+   "end": 6138,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 1,
+   "start": 108,
+   "end": 280,
+   "source": "keyword"
+  },
+  {
+   "id": "P85",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "start": 221,
+   "end": 411,
+   "source": "related"
+  },
+  {
+   "id": "P86",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "start": 411,
+   "end": 537,
+   "source": "keyword"
+  },
+  {
+   "id": "P87",
+   "doc": "elite23102024",
+   "date": "2024-10-23",
+   "page": 1,
+   "start": 253,
+   "end": 464,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "refstaevne03122024",
+   "date": "2024-12-03",
+   "page": 2,
+   "start": 830,
+   "end": 1013,
+   "source": "related"
+  },
+  {
+   "id": "P89",
+   "doc": "elite10122024",
+   "date": "2024-12-10",
+   "page": 1,
+   "start": 228,
+   "end": 530,
+   "source": "keyword"
+  },
+  {
+   "id": "P90",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 2,
+   "start": 476,
+   "end": 762,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "ipf_kongres_2025",
+   "date": "2025",
+   "page": 2,
+   "start": 865,
+   "end": 1115,
+   "source": "keyword"
+  },
+  {
+   "id": "P92",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 9,
+   "start": 4336,
+   "end": 4497,
+   "source": "keyword"
+  },
+  {
+   "id": "P93",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 21,
+   "start": 11186,
+   "end": 11586,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 22,
+   "start": 11586,
+   "end": 11588,
+   "source": "keyword"
+  },
+  {
+   "id": "P95",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 4,
+   "start": 1127,
+   "end": 1356,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 2,
+   "start": 749,
+   "end": 969,
+   "source": "keyword"
+  },
+  {
+   "id": "P97",
+   "doc": "refdom08042025",
+   "date": "2025-04-08",
+   "page": 2,
+   "start": 211,
+   "end": 544,
+   "source": "keyword"
+  },
+  {
+   "id": "P98",
+   "doc": "refbest_230825",
+   "date": "2025-08-23",
+   "page": 1,
+   "start": 8,
+   "end": 212,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 4,
+   "start": 1790,
+   "end": 1966,
+   "source": "keyword"
+  },
+  {
+   "id": "P100",
+   "doc": "elite09122025",
+   "date": "2025-12-09",
+   "page": 3,
+   "start": 550,
+   "end": 697,
+   "source": "keyword"
+  },
+  {
+   "id": "P101",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 11,
+   "start": 3879,
+   "end": 4131,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 12,
+   "start": 4328,
+   "end": 4728,
+   "source": "keyword"
+  },
+  {
+   "id": "P103",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 2,
+   "start": 242,
+   "end": 421,
+   "source": "keyword"
+  },
+  {
+   "id": "P104",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 12,
+   "start": 5517,
+   "end": 5678,
+   "source": "keyword"
+  },
+  {
+   "id": "P105",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 22,
+   "start": 11093,
+   "end": 11493,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 29,
+   "start": 13493,
+   "end": 13893,
+   "source": "keyword"
+  },
+  {
+   "id": "P107",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 34,
+   "start": 15785,
+   "end": 16081,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "elite30042026",
+   "date": "2026-04-30",
+   "page": 2,
+   "start": 307,
+   "end": 419,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "refdom04062026",
+   "date": "2026-06-04",
+   "page": 1,
+   "start": 0,
+   "end": 115,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "refstaevne0406026",
+   "date": "2026-06-04",
+   "page": 1,
+   "start": 0,
+   "end": 115,
+   "source": "keyword"
+  },
+  {
+   "id": "P111",
+   "doc": "refmedie09062026",
+   "date": "2026-06-09",
+   "page": 1,
+   "start": 24,
+   "end": 199,
+   "source": "related"
+  },
+  {
+   "id": "P112",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 1,
+   "start": 1,
+   "end": 327,
+   "source": "keyword"
+  },
+  {
+   "id": "P113",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "start": 193,
+   "end": 381,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 0,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P15",
+   "doc": "refbest_24082013",
+   "date": "2013-08-24",
+   "page": 2,
+   "effect": "indfoert",
+   "quote": "Tilskud til ledere ved mastersstævner; Der er tale om et tilskud til hoteludgifter, og der udbetales MAX 1.500,00. Og kun hvis man sender bilag på hotelregningen.",
+   "value_after": "Ledere: hoteltilskud max 1.500 kr. mod bilag",
+   "span": [
+    967,
+    995
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P28",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 2,
+   "effect": "aendret",
+   "quote": "De løftere som udtages til deltagelse i internationale stævner kan indenfor rammerne af udvalgets budget få betalt startgebyr for deres deltagelse. Øvrige udgifter afholdes af løfteren. Pågældende der er udpeget som head coach ved internationalt stævne får betalt rejse samt ophold på udpeget stævnehotel.",
+   "value_after": "Startgebyr betalt inden for budget; øvrigt egenbetaling; head coach rejse/hotel",
+   "span": [
+    523,
+    567
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P41",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 2,
+   "effect": "aendret",
+   "quote": "Udvalget besluttede derfor, at de klubber der tilmelder løftere til et masterstævne, uden at løfterne deltager, hæfter for startgebyret, som pt er 140 Euro.",
+   "value_after": "Startgebyr betalt inden for budget; klub hæfter ved udeblivelse (140 euro)",
+   "span": [
+    696,
+    720
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P80",
+   "doc": "KravForInternationalDeltagelse2024",
+   "date": "2024",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Masterudvalget betaler startgebyr for deltagelse ved internationale stævner til et antal løftere ud fra udvalgtes økonomi (fastlægges ud fra budget godkendt på repræsentantskabsmøde). Løftere, som har klaret kvalifikationskravene jf. ovenstående, kan mod selv at betale startgebyr deltage",
+   "value_after": "Startgebyr betalt for antal løftere efter budget; andre selvbetaling; udeblivelse 150 euro",
+   "span": [
+    159,
+    196
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P103",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 2,
+   "effect": "bekraeftet",
+   "quote": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret.",
+   "value_after": "Startgebyr betalt for antal løftere efter budget; andre selvbetaling; afbud hæfter",
+   "span": [
+    323,
+    340
+   ],
+   "judges": [
+    1,
+    3
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2013,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Ledere: hoteltilskud max 1.500 kr. mod bilag"
+  },
+  {
+   "year": 2014,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Ledere: hoteltilskud max 1.500 kr. mod bilag"
+  },
+  {
+   "year": 2015,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Startgebyr betalt inden for budget; øvrigt egenbetaling; head coach rejse/hotel"
+  },
+  {
+   "year": 2016,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Startgebyr betalt inden for budget; øvrigt egenbetaling; head coach rejse/hotel"
+  },
+  {
+   "year": 2017,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Startgebyr betalt inden for budget; øvrigt egenbetaling; head coach rejse/hotel"
+  },
+  {
+   "year": 2018,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Startgebyr betalt inden for budget; klub hæfter ved udeblivelse (140 euro)"
+  },
+  {
+   "year": 2019,
+   "status": "certain",
+   "state": "unknown",
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2020,
+   "status": "certain",
+   "state": "unknown",
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2021,
+   "status": "certain",
+   "state": "unknown",
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2022,
+   "status": "certain",
+   "state": "unknown",
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "unknown",
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E4",
+   "event": "E4",
+   "value": "Startgebyr betalt for antal løftere efter budget; andre selvbetaling; udeblivelse 150 euro"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E4",
+   "event": "E4",
+   "value": "Startgebyr betalt for antal løftere efter budget; andre selvbetaling; udeblivelse 150 euro"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E4",
+   "event": "E5",
+   "value": "Startgebyr betalt for antal løftere efter budget; andre selvbetaling; udeblivelse 150 euro"
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 83643,
+    "output": 4384,
+    "cost_usd": 0.7573,
+    "seconds": 42,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 83645,
+    "output": 2381,
+    "cost_usd": 0.7172,
+    "seconds": 23,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 83644,
+    "output": 3886,
+    "cost_usd": 0.7473,
+    "seconds": 35,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

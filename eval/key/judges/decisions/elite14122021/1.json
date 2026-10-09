@@ -1,0 +1,74 @@
+{
+ "fingerprint": "cae337ba302a703a",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 2895,
+  "output": 1558,
+  "cost_usd": 0.0552,
+  "seconds": 14,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Evaluering af landsholdstrupper",
+    "kategori": "landshold",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Landsholdstrupperne (udstyr, klassisk og bænkpres) evalueres og justeres halvårligt. Første evaluering sker pr. 1. juli 2022.",
+    "citat": "Landsholdstruppene vil blive evalueret og justeret halvårlig. Første gang pr. 1. juli 2022",
+    "side": 1,
+    "gaelder_fra": "2022-07-01",
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Udtagelsesprocedure VM",
+    "kategori": "landshold",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM i Viborg. Atleter, der har klaret VM-krav, udtages i rækkefølge efter A- og B-krav; er der under 8 med krav, udtages de sidste efter IPF GL points, og er der flere end 8, udtages de 8 med VM-krav og højest IPF GL points. Mangler der kvalificerede herrer, kan holdet suppleres med atleter også uden for landsholdet med højest IPF GL points, men det er et ultimativt krav, at man deltager i DM i marts 2022. Hver nation kan maksimalt stille med 2 atleter i én vægtklasse.",
+    "citat": "De \natleter som har klaret VM krav udtages i rækkefølge A og B krav. Hvis der ikke er 8 som \nhar klaret krav vil de sidste udtages efter IPF GL points.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": "2022-12-31"
+   },
+   {
+    "candidate": 3,
+    "verdict": "duplicate",
+    "duplicate_of": 2,
+    "reason": "Suppleringen og DM-kravet er en del af samme udtagelsesprocedure til VM i Viborg.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

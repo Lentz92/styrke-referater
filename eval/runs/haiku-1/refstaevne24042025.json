@@ -1,0 +1,112 @@
+{
+ "doc_id": "refstaevne24042025",
+ "sha256": "509e11dccb4720ab18ca0e1393305a336374c5f053d900d3e180c44b3b00ae92",
+ "run": "haiku-1",
+ "model": "claude-haiku-5-5",
+ "provenance": {
+  "model": "claude-haiku-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 2620,
+  "output": 3899,
+  "cost_usd": 0.0025,
+  "seconds": 17,
+  "attempts": 1,
+  "models": [
+   "claude-haiku-5-5"
+  ]
+ },
+ "moededato": "2025-04-24",
+ "beslutninger": [
+  {
+   "emne": "Streaming og konkurrencestyringssystem ved DM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Eva Buxbom",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "I 'Krav til afvikling af Danske Mesterskaber' slettes teksten om streaming under arrangørens ansvar (udstyr kan lånes af forbundet, klubben klargør systemet og sørger for internetforbindelsen) og teksten om streamingudstyr og konkurrencestyringssystem under DSF's ansvar, så der blot står streaming og konkurrencestyringssystem.",
+   "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 430,
+   "citat_side": 2
+  },
+  {
+   "emne": "Bagtæppe ved danske mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Eva Buxbom",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DSF har ansvar for bagtæppet ved danske mesterskaber. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 414,
+   "citat_side": 2
+  },
+  {
+   "emne": "Uddeling af medaljer og pokaler ved mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Medaljer ved mesterskaber uddeles af to personer, så der er to sæt øjne på, og stævnelederen skal kende de pokaler, der skal uddeles til de enkelte stævner.",
+   "citat": "det er to personer, der deler medaljer ud, således at der er to sæt øjne på",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 514,
+   "citat_side": 2
+  },
+  {
+   "emne": "Tilmelding af DM-hold",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Alle hold, som klubberne ønsker at tilmelde til DM, skal tilmeldes ved første runde i januar.",
+   "citat": "skal tilmeldes ved første runde i januar",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 120,
+   "citat_side": 1
+  },
+  {
+   "emne": "Indvejning af DM-hold ved runder og finaler",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved DM-hold runder og finaler skal løfterne indvejes som hold, og dommerne skal være opmærksomme på dette.",
+   "citat": "løfterne skal indvejes som hold",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 558,
+   "citat_side": 2
+  }
+ ]
+}

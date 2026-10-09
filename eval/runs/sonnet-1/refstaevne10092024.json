@@ -1,0 +1,112 @@
+{
+ "doc_id": "refstaevne10092024",
+ "sha256": "dd31694e2c7a0b10639de6b72ae8d8f4eaee3057b217d12f88144e69d4d27100",
+ "run": "sonnet-1",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 3351,
+  "output": 1358,
+  "cost_usd": 0.0276,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2024-09-10",
+ "beslutninger": [
+  {
+   "emne": "Registrering i dommerbog",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Efter afstemning blandt dommerne er det besluttet, at hver indvejning registreres i dommerbogen, frem for kun én registrering pr. stævne.",
+   "citat": "Efter en god debat og en afstemning blandt dommerne er det blevet besluttet, at det er hver indvejning, der registreres i dommerbogen.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 517,
+   "citat_side": 2
+  },
+  {
+   "emne": "Uddeling af medaljer og pokaler",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Medaljer og pokaler skal uddeles lige efter afslutningen af hver kategori og ikke først til slut i stævnet. Den stævneansvarlige gør den arrangerende klub opmærksom herpå.",
+   "citat": "Det er vigtigt, at medaljer og pokaler uddeles lige efter afslutningen af hver kategori og ikke i slutningen af hele stævnet.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 406,
+   "citat_side": 2
+  },
+  {
+   "emne": "Holdpræmie ved DM, SM og JM",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "staevneregel",
+   "tekst": "Holdkonkurrencer ved DM, SM og JM afgøres med IPF-points. Holdpræmien tildeles den eller de foreninger, hvis bedste 5 løftere opnår flest IPF-points; ved pointlighed tildeles den til foreningen med flest førstepladser.",
+   "citat": "Holdpræmier tildeles den eller de foreninger, hvis bedste 5 løftere opnår flest IPF-points. I tilfælde af pointlighed tildeles placeringspræmien til den forening, der har opnået flest førstepladser.”",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 454,
+   "citat_side": 2
+  },
+  {
+   "emne": "DM-hold finale i DM-ugen",
+   "kategori": "staevner",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": "Stævneudvalget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævneudvalget foreslår, at DM-hold finale placeres i DM-ugen i 2026. Forslaget skal godkendes af bestyrelsen og derefter af Repræsentantskabsmødet.",
+   "citat": "Vi vil stille til forslag til næstkommende bestyrelsesmøde, at der arbejdes for, at DM-hold finale bliver afholdt til DM-ugen i 2026.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2026-01-01",
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true,
+   "citat_pos": 546,
+   "citat_side": 2
+  },
+  {
+   "emne": "Færøerne under DSF indtil IPF-optagelse",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Indtil Det Færøske Forbund er optaget i IPF, er det under DSF og følger DSFs regler.",
+   "citat": "Indtil Det Færøske Forbund er blevet optaget i IPF, er det under DSF og følger DSFs regler.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 844,
+   "citat_side": 3
+  }
+ ]
+}

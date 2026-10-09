@@ -1,0 +1,26 @@
+{
+ "doc_id": "refudstyr16092025",
+ "sha256": "bf7ab383dc3d6341652c0e6bdce93be52b47fc375b25303d48a8ec12f8f7c696",
+ "run": "opus-1",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 1948,
+  "output": 157,
+  "cost_usd": 0.0193,
+  "seconds": 3,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "moededato": "2025-09-16",
+ "beslutninger": []
+}

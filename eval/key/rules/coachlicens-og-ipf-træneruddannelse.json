@@ -1,0 +1,1317 @@
+{
+ "slug": "coachlicens-og-ipf-træneruddannelse",
+ "kategori": "internationalt",
+ "titel": "Coachlicens og IPF-træneruddannelse",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "holdleder",
+  "coaches",
+  "træneruddannelse",
+  "head",
+  "kursus",
+  "coach",
+  "licens",
+  "trænere"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "rep2009",
+   "date": "2009",
+   "page": null,
+   "start": 742,
+   "end": 912,
+   "source": "related"
+  },
+  {
+   "id": "P2",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 3,
+   "start": 520,
+   "end": 694,
+   "source": "related"
+  },
+  {
+   "id": "P3",
+   "doc": "refbest_25072010",
+   "date": "2010-07-25",
+   "page": 1,
+   "start": 112,
+   "end": 257,
+   "source": "related"
+  },
+  {
+   "id": "P4",
+   "doc": "rep2011",
+   "date": "2011",
+   "page": 1,
+   "start": 0,
+   "end": 125,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "rep2011",
+   "date": "2011",
+   "page": 3,
+   "start": 692,
+   "end": 853,
+   "source": "keyword"
+  },
+  {
+   "id": "P6",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 1,
+   "start": 57,
+   "end": 241,
+   "source": "related"
+  },
+  {
+   "id": "P7",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 2,
+   "start": 241,
+   "end": 353,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 1,
+   "start": 102,
+   "end": 266,
+   "source": "related"
+  },
+  {
+   "id": "P9",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 3,
+   "start": 963,
+   "end": 1157,
+   "source": "related"
+  },
+  {
+   "id": "P10",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 5,
+   "start": 1653,
+   "end": 1814,
+   "source": "keyword"
+  },
+  {
+   "id": "P11",
+   "doc": "refbest_10032013",
+   "date": "2013-03-10",
+   "page": 1,
+   "start": 196,
+   "end": 562,
+   "source": "related"
+  },
+  {
+   "id": "P12",
+   "doc": "elite15122013",
+   "date": "2013-12-15",
+   "page": 1,
+   "start": 0,
+   "end": 183,
+   "source": "related"
+  },
+  {
+   "id": "P13",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 2,
+   "start": 551,
+   "end": 635,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 3,
+   "start": 635,
+   "end": 803,
+   "source": "related"
+  },
+  {
+   "id": "P15",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 4,
+   "start": 904,
+   "end": 1088,
+   "source": "related"
+  },
+  {
+   "id": "P16",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 5,
+   "start": 1155,
+   "end": 1345,
+   "source": "related"
+  },
+  {
+   "id": "P17",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 1,
+   "start": 252,
+   "end": 431,
+   "source": "related"
+  },
+  {
+   "id": "P18",
+   "doc": "refbest_09082014",
+   "date": "2014-08-09",
+   "page": 3,
+   "start": 659,
+   "end": 833,
+   "source": "related"
+  },
+  {
+   "id": "P19",
+   "doc": "refbest_09082014",
+   "date": "2014-08-09",
+   "page": 3,
+   "start": 903,
+   "end": 1076,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 3,
+   "start": 757,
+   "end": 932,
+   "source": "related"
+  },
+  {
+   "id": "P21",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 2,
+   "start": 522,
+   "end": 694,
+   "source": "related"
+  },
+  {
+   "id": "P22",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 3,
+   "start": 1035,
+   "end": 1218,
+   "source": "related"
+  },
+  {
+   "id": "P23",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 6,
+   "start": 1730,
+   "end": 1920,
+   "source": "related"
+  },
+  {
+   "id": "P24",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 6,
+   "start": 2212,
+   "end": 2386,
+   "source": "related"
+  },
+  {
+   "id": "P25",
+   "doc": "refbest_26072015",
+   "date": "2015-07-26",
+   "page": 5,
+   "start": 1162,
+   "end": 1332,
+   "source": "related"
+  },
+  {
+   "id": "P26",
+   "doc": "CoachResponsibility",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 18,
+   "end": 552,
+   "source": "related"
+  },
+  {
+   "id": "P27",
+   "doc": "CoachResponsibility",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 552,
+   "end": 570,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 1,
+   "start": 104,
+   "end": 146,
+   "source": "keyword"
+  },
+  {
+   "id": "P29",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 1,
+   "start": 146,
+   "end": 629,
+   "source": "related"
+  },
+  {
+   "id": "P30",
+   "doc": "refbest_11102015",
+   "date": "2015-10-11",
+   "page": 2,
+   "start": 182,
+   "end": 343,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "refbest_11102015",
+   "date": "2015-10-11",
+   "page": 4,
+   "start": 804,
+   "end": 989,
+   "source": "related"
+  },
+  {
+   "id": "P32",
+   "doc": "elite05122015",
+   "date": "2015-12-05",
+   "page": 1,
+   "start": 48,
+   "end": 235,
+   "source": "related"
+  },
+  {
+   "id": "P33",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 2,
+   "start": 201,
+   "end": 507,
+   "source": "related"
+  },
+  {
+   "id": "P34",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 3,
+   "start": 507,
+   "end": 907,
+   "source": "keyword"
+  },
+  {
+   "id": "P35",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 3,
+   "start": 948,
+   "end": 1295,
+   "source": "related"
+  },
+  {
+   "id": "P36",
+   "doc": "refbest_28022016",
+   "date": "2016-02-28",
+   "page": 1,
+   "start": 148,
+   "end": 318,
+   "source": "related"
+  },
+  {
+   "id": "P37",
+   "doc": "refbest_28022016",
+   "date": "2016-02-28",
+   "page": 3,
+   "start": 459,
+   "end": 646,
+   "source": "related"
+  },
+  {
+   "id": "P38",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 1,
+   "start": 123,
+   "end": 298,
+   "source": "related"
+  },
+  {
+   "id": "P39",
+   "doc": "refbest_12062016",
+   "date": "2016-06-12",
+   "page": 2,
+   "start": 421,
+   "end": 603,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "elite02072016",
+   "date": "2016-07-02",
+   "page": 1,
+   "start": 64,
+   "end": 225,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "refbest_17092016",
+   "date": "2016-09-17",
+   "page": 1,
+   "start": 179,
+   "end": 367,
+   "source": "related"
+  },
+  {
+   "id": "P42",
+   "doc": "elite04122016",
+   "date": "2016-12-04",
+   "page": 1,
+   "start": 185,
+   "end": 372,
+   "source": "related"
+  },
+  {
+   "id": "P43",
+   "doc": "elite04122016",
+   "date": "2016-12-04",
+   "page": 2,
+   "start": 430,
+   "end": 617,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 8,
+   "start": 1880,
+   "end": 2255,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 9,
+   "start": 2255,
+   "end": 2437,
+   "source": "related"
+  },
+  {
+   "id": "P46",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 9,
+   "start": 2437,
+   "end": 2772,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 10,
+   "start": 2772,
+   "end": 2946,
+   "source": "related"
+  },
+  {
+   "id": "P48",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 10,
+   "start": 2946,
+   "end": 3067,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 11,
+   "start": 3067,
+   "end": 3241,
+   "source": "related"
+  },
+  {
+   "id": "P50",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 13,
+   "start": 3675,
+   "end": 3849,
+   "source": "related"
+  },
+  {
+   "id": "P51",
+   "doc": "elite20052017",
+   "date": "2017-05-20",
+   "page": 1,
+   "start": 295,
+   "end": 456,
+   "source": "keyword"
+  },
+  {
+   "id": "P52",
+   "doc": "490",
+   "date": "2018",
+   "page": 1,
+   "start": 0,
+   "end": 148,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "490",
+   "date": "2018",
+   "page": 5,
+   "start": 1138,
+   "end": 1321,
+   "source": "related"
+  },
+  {
+   "id": "P54",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 9,
+   "start": 2254,
+   "end": 2654,
+   "source": "keyword"
+  },
+  {
+   "id": "P55",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 10,
+   "start": 2654,
+   "end": 2917,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 11,
+   "start": 3027,
+   "end": 3256,
+   "source": "keyword"
+  },
+  {
+   "id": "P57",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 12,
+   "start": 3285,
+   "end": 3459,
+   "source": "related"
+  },
+  {
+   "id": "P58",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 4,
+   "start": 1176,
+   "end": 1437,
+   "source": "related"
+  },
+  {
+   "id": "P59",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 1,
+   "start": 50,
+   "end": 311,
+   "source": "related"
+  },
+  {
+   "id": "P60",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 2,
+   "start": 311,
+   "end": 658,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 3,
+   "start": 681,
+   "end": 855,
+   "source": "related"
+  },
+  {
+   "id": "P62",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 3,
+   "start": 855,
+   "end": 947,
+   "source": "keyword"
+  },
+  {
+   "id": "P63",
+   "doc": "elite08092018",
+   "date": "2018-09-08",
+   "page": 1,
+   "start": 286,
+   "end": 449,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 2,
+   "start": 360,
+   "end": 539,
+   "source": "related"
+  },
+  {
+   "id": "P65",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 2,
+   "start": 539,
+   "end": 748,
+   "source": "keyword"
+  },
+  {
+   "id": "P66",
+   "doc": "elite15122018",
+   "date": "2018-12-15",
+   "page": 1,
+   "start": 343,
+   "end": 506,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 13,
+   "start": 6510,
+   "end": 6683,
+   "source": "related"
+  },
+  {
+   "id": "P68",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 17,
+   "start": 7560,
+   "end": 7731,
+   "source": "related"
+  },
+  {
+   "id": "P69",
+   "doc": "refmaster09032019",
+   "date": "2019-03-09",
+   "page": 1,
+   "start": 41,
+   "end": 370,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "elite15062019",
+   "date": "2019-06-15",
+   "page": 1,
+   "start": 294,
+   "end": 457,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "refbest_310819",
+   "date": "2019-08-31",
+   "page": 2,
+   "start": 309,
+   "end": 470,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "elite14092019",
+   "date": "2019-09-14",
+   "page": 1,
+   "start": 0,
+   "end": 140,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "elite07122019",
+   "date": "2019-12-07",
+   "page": 2,
+   "start": 316,
+   "end": 507,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 15,
+   "start": 8257,
+   "end": 8430,
+   "source": "related"
+  },
+  {
+   "id": "P75",
+   "doc": "elite16082020",
+   "date": "2020-08-16",
+   "page": 1,
+   "start": 301,
+   "end": 464,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "elite16082020",
+   "date": "2020-08-16",
+   "page": 1,
+   "start": 504,
+   "end": 728,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "elite19122020",
+   "date": "2020-12-19",
+   "page": 1,
+   "start": 357,
+   "end": 451,
+   "source": "related"
+  },
+  {
+   "id": "P78",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 8,
+   "start": 2838,
+   "end": 3143,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 9,
+   "start": 3371,
+   "end": 3544,
+   "source": "related"
+  },
+  {
+   "id": "P80",
+   "doc": "elite18052021",
+   "date": "2021-05-18",
+   "page": 1,
+   "start": 54,
+   "end": 439,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "725kongres",
+   "date": "2022",
+   "page": 1,
+   "start": 0,
+   "end": 176,
+   "source": "keyword"
+  },
+  {
+   "id": "P82",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 13,
+   "start": 5783,
+   "end": 5944,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 14,
+   "start": 6303,
+   "end": 6476,
+   "source": "related"
+  },
+  {
+   "id": "P84",
+   "doc": "elite08032022",
+   "date": "2022-03-08",
+   "page": 2,
+   "start": 303,
+   "end": 526,
+   "source": "keyword"
+  },
+  {
+   "id": "P85",
+   "doc": "elite25042022",
+   "date": "2022-05-25",
+   "page": 1,
+   "start": 72,
+   "end": 373,
+   "source": "keyword"
+  },
+  {
+   "id": "P86",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 12,
+   "start": 5559,
+   "end": 5732,
+   "source": "related"
+  },
+  {
+   "id": "P87",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 1,
+   "start": 312,
+   "end": 473,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 2,
+   "start": 622,
+   "end": 811,
+   "source": "rule"
+  },
+  {
+   "id": "P89",
+   "doc": "921kongres",
+   "date": "2024",
+   "page": 1,
+   "start": 137,
+   "end": 310,
+   "source": "rule"
+  },
+  {
+   "id": "P90",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 3,
+   "start": 290,
+   "end": 532,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 10,
+   "start": 4279,
+   "end": 4464,
+   "source": "keyword"
+  },
+  {
+   "id": "P92",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 13,
+   "start": 5774,
+   "end": 6048,
+   "source": "related"
+  },
+  {
+   "id": "P93",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 18,
+   "start": 7912,
+   "end": 8073,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 1,
+   "start": 25,
+   "end": 190,
+   "source": "related"
+  },
+  {
+   "id": "P95",
+   "doc": "elite20032024",
+   "date": "2024-03-20",
+   "page": 1,
+   "start": 46,
+   "end": 231,
+   "source": "related"
+  },
+  {
+   "id": "P96",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 2,
+   "start": 221,
+   "end": 411,
+   "source": "related"
+  },
+  {
+   "id": "P97",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 4,
+   "start": 970,
+   "end": 1062,
+   "source": "keyword"
+  },
+  {
+   "id": "P98",
+   "doc": "epf_kongres_2025",
+   "date": "2025",
+   "page": 4,
+   "start": 1062,
+   "end": 1237,
+   "source": "related"
+  },
+  {
+   "id": "P99",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 3,
+   "start": 411,
+   "end": 788,
+   "source": "keyword"
+  },
+  {
+   "id": "P100",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 21,
+   "start": 10939,
+   "end": 11115,
+   "source": "related"
+  },
+  {
+   "id": "P101",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 23,
+   "start": 12042,
+   "end": 12203,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "refbest_230825",
+   "date": "2025-08-23",
+   "page": 4,
+   "start": 506,
+   "end": 685,
+   "source": "rule"
+  },
+  {
+   "id": "P103",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 2,
+   "start": 682,
+   "end": 769,
+   "source": "keyword"
+  },
+  {
+   "id": "P104",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 2,
+   "start": 769,
+   "end": 950,
+   "source": "rule"
+  },
+  {
+   "id": "P105",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 3,
+   "start": 1054,
+   "end": 1296,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 1,
+   "start": 225,
+   "end": 513,
+   "source": "keyword"
+  },
+  {
+   "id": "P107",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 13,
+   "start": 4662,
+   "end": 5088,
+   "source": "related"
+  },
+  {
+   "id": "P108",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 16,
+   "start": 5504,
+   "end": 5665,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 18,
+   "start": 5678,
+   "end": 5764,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 18,
+   "start": 5764,
+   "end": 5943,
+   "source": "related"
+  },
+  {
+   "id": "P111",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 1,
+   "start": 189,
+   "end": 364,
+   "source": "related"
+  },
+  {
+   "id": "P112",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 2,
+   "start": 364,
+   "end": 421,
+   "source": "keyword"
+  },
+  {
+   "id": "P113",
+   "doc": "epf_kongres_2026",
+   "date": "2026",
+   "page": 4,
+   "start": 815,
+   "end": 976,
+   "source": "keyword"
+  },
+  {
+   "id": "P114",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 3,
+   "start": 439,
+   "end": 839,
+   "source": "keyword"
+  },
+  {
+   "id": "P115",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 18,
+   "start": 9054,
+   "end": 9215,
+   "source": "keyword"
+  },
+  {
+   "id": "P116",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 21,
+   "start": 10226,
+   "end": 10387,
+   "source": "keyword"
+  },
+  {
+   "id": "P117",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 25,
+   "start": 12640,
+   "end": 13089,
+   "source": "related"
+  },
+  {
+   "id": "P118",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 32,
+   "start": 15019,
+   "end": 15339,
+   "source": "keyword"
+  },
+  {
+   "id": "P119",
+   "doc": "refbest_100126",
+   "date": "2026-01-10",
+   "page": 2,
+   "start": 419,
+   "end": 730,
+   "source": "related"
+  },
+  {
+   "id": "P120",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 2,
+   "start": 520,
+   "end": 681,
+   "source": "keyword"
+  },
+  {
+   "id": "P121",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 3,
+   "start": 917,
+   "end": 1172,
+   "source": "keyword"
+  },
+  {
+   "id": "P122",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "start": 178,
+   "end": 375,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 2,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P88",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 2,
+   "effect": "indfoert",
+   "quote": "The IPF Executive Committee voted, unanimously, starting on January 01, 2025, all Head Coaches, nominated for an International, International Regional, or World Championship, will be required to upload their Coach License into the Goodlift System.",
+   "value_after": "Head coaches ved internationale mesterskaber skal uploade coach licens i Goodlift",
+   "span": [
+    696,
+    731
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P89",
+   "doc": "921kongres",
+   "date": "2024",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "IPF-uddannelsen bliver et krav fra 1.1.2026 for alle Head Coaches.",
+   "value_after": "IPF-træneruddannelse krævet for alle head coaches",
+   "span": [
+    217,
+    230
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P102",
+   "doc": "refbest_230825",
+   "date": "2025-08-23",
+   "page": 4,
+   "effect": "aendret",
+   "quote": "Derved kan vi \n\n[Side 5]\nSide | 5  \n \nimødekomme kravet om at internationale trænere og deres assistenter skal have en IPF- \ntræneruddannelse. Kravet træder i kraft fra 2027.",
+   "value_after": "Internationale trænere og assistenter skal have IPF-træneruddannelse",
+   "span": [
+    580,
+    607
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P104",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 2,
+   "effect": "bekraeftet",
+   "quote": "Der er brug for stor opbakning fra \nmedieudvalget til at udbrede vigtigheden af, at Head Coach i 2026 skal have IPF's træneruddannelse for at \nfå lov til at være Head Coach ved internationale stævner.",
+   "value_after": "Head Coach ved internationale stævner skal have IPF-træneruddannelse",
+   "span": [
+    835,
+    870
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P114",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 3,
+   "effect": "aendret",
+   "quote": "Et krav fra IPF, som har været længe undervejs, træder nu i kraft. Alle Headcoaches skal fremadrettet have \nen IPF- level 2 træneruddannelse.",
+   "value_after": "Alle head coaches skal have IPF level 2 træneruddannelse",
+   "span": [
+    803,
+    826
+   ],
+   "judges": [
+    1,
+    3
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "none",
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "none",
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2025,
+   "status": "uncertain",
+   "state": null,
+   "adopted": null,
+   "event": null,
+   "value": null
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E5",
+   "event": "E5",
+   "value": "Alle head coaches skal have IPF level 2 træneruddannelse"
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 81623,
+    "output": 3227,
+    "cost_usd": 0.718,
+    "seconds": 31,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 81622,
+    "output": 3334,
+    "cost_usd": 0.7201,
+    "seconds": 31,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 81620,
+    "output": 3241,
+    "cost_usd": 0.7182,
+    "seconds": 33,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

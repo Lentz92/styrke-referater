@@ -1,0 +1,26 @@
+{
+ "doc_id": "refbest_130321",
+ "sha256": "7c493a2a04ada958ceac39027161f45175e48ffe546b8bb59aa43fcf6c763b5a",
+ "run": "haiku-1",
+ "model": "claude-haiku-5-5",
+ "provenance": {
+  "model": "claude-haiku-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 1252,
+  "output": 205,
+  "cost_usd": 0.0004,
+  "seconds": 4,
+  "attempts": 1,
+  "models": [
+   "claude-haiku-5-5"
+  ]
+ },
+ "moededato": "2021-03-13",
+ "beslutninger": []
+}

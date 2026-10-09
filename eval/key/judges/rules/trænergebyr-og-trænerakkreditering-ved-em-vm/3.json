@@ -1,0 +1,84 @@
+{
+ "fingerprint": "fdb7dfe0d5cef93f",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 79998,
+  "output": 4692,
+  "cost_usd": 0.7343,
+  "seconds": 43,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P77",
+    "quote": "der på baggrund af en ihærdig indsats af Bjarte ikke skal betales coach fee for atleter som agerer assistenter ved samme stævne/mesterskab som de selv deltager, forudsat at de bor på det officielle hotel.",
+    "value_after": "Ingen coach fee for løftere-assistenter ved eget stævne, bor officielt hotel",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P81",
+    "quote": "hvis man deltager ved EM/VM som dommer skal man ikke betale de obligatoriske 50€ i fee for også at agere som træner ved samme mesterskab.",
+    "value_after": "50 € coach fee; løftere-assistenter og dommere fritaget",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P84",
+    "quote": "Et flertal valgte at godkende budgettet, hvor Danmark som eneste land ikke stemte for. Derved skal der betales gebyr for trænere, der ikke selv løfter eller er dommere.",
+    "value_after": "50 € coach fee; løftere-assistenter og dommere fritaget",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P86",
+    "quote": "with “Coaches participating in the same event as athletes or referees are exempt from paying the coach capitation fee.”",
+    "value_after": "50 € coach fee; løftere-assistenter og dommere fritaget",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P100",
+    "quote": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr",
+    "value_after": "50 euro gebyr for trænerakkreditering ved EM/VM",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P103",
+    "quote": "Coach Capitation Fee Euro 50",
+    "value_after": "50 euro gebyr for trænerakkreditering ved EM/VM",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P110",
+    "quote": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr.  Trænere skal også have gennemgået ADEL for at kunne akkrediteres.",
+    "value_after": "50 euro gebyr for trænerakkreditering ved EM/VM; ADEL påkrævet",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 5
+   }
+  ]
+ }
+}

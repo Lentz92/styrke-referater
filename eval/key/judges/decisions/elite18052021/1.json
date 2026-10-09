@@ -1,0 +1,90 @@
+{
+ "fingerprint": "868ec29d13392b94",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 3545,
+  "output": 2384,
+  "cost_usd": 0.0769,
+  "seconds": 22,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Egenbetaling landshold EM",
+    "kategori": "landshold",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Egenbetalingen for atleter udtaget til EM Equipped 2021 i Pilsen (3.-8. august) er 1000 kr. for atleter med A-krav og 1500 kr. for atleter med B-krav.",
+    "citat": "Egenbetaling A- krav:\nKr. 1000,00\n                        B-krav:\nKr. 1500,00",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": "2021-08-08"
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Udtagelse til EM og VM ved A- og B-krav",
+    "kategori": "landshold",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Alle kvalificerede atleter med A-krav udtages som udgangspunkt til EM og VM. Der ses velvilligt på at finde finansiering til atleter, som har klaret B-krav.",
+    "citat": "Alle kvalificerede atleter med A-krav vil som udgangspunkt blive udtaget til EM og VM og der \nses velvilligt på, at finde finansiering til atleter som har klaret B-krav",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Rejsearrangement ved internationale mesterskaber",
+    "kategori": "landshold",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Som udgangspunkt er det DSF, der arrangerer og planlægger rejser i forbindelse med deltagelse ved mesterskaber i udlandet.",
+    "citat": "Som udgangspunkt er det DSF der arrangerer og planlægger rejser i forbindelse med \ndeltagelse ved mesterskaber i udlandet.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Obligatorisk antidoping-onlinemodul (ADEL)",
+    "kategori": "internationalt",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "eksternt_krav",
+    "tekst": "IPFs nye retningslinjer for antidopingarbejdet medfører obligatorisk gennemførelse af WADAs online-modul ADEL. Nærmere information offentliggøres, når DSF modtager den fra IPF.",
+    "citat": "medfører obligatorisk gennemførelse at et online WADA modul, ADEL",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

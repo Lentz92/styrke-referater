@@ -1,0 +1,78 @@
+{
+ "doc_id": "elite14122021",
+ "sha256": "74a888277aba354fd304c424db9110a52ccd491f455b3db64e775857abc3aa45",
+ "run": "opus-1",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 1680,
+  "output": 1388,
+  "cost_usd": 0.0418,
+  "seconds": 12,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "moededato": "2021-12-14",
+ "beslutninger": [
+  {
+   "emne": "Evaluering af landsholdstrupper",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdstrupperne (udstyr, klassisk og bænkpres) evalueres og justeres halvårligt. Første evaluering sker pr. 1. juli 2022.",
+   "citat": "Landsholdstruppene vil blive evalueret og justeret halvårlig. Første gang pr. 1. juli 2022",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2022-07-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 64,
+   "citat_side": 1
+  },
+  {
+   "emne": "Udtagelsesprocedure VM på hjemmebane",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM i Viborg 2022. Atleter med VM-krav udtages i rækkefølge efter A- og B-krav; er der færre end 8 med krav, udtages de resterende efter IPF GL-points, og har flere end 8 klaret krav, udtages de 8 med VM-krav og højest IPF GL-points. Der gælder forbehold for, at hver nation højst kan deltage med 2 atleter i én vægtklasse.",
+   "citat": "De atleter som har klaret VM krav udtages i rækkefølge A og B krav. Hvis der ikke er 8 som har klaret krav vil de sidste udtages efter IPF GL points. Hvis flere end 8 har lavet VM-krav vil de 8 med VM-krav og højest IPF GL-points udtages.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2022-12-31",
+   "citat_fundet": true,
+   "citat_pos": 147,
+   "citat_side": 1
+  },
+  {
+   "emne": "Supplering af VM-hold med atleter uden for landsholdet",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Da der ikke er nok kvalificerede herrer til et fuldt hold til VM i Viborg 2022, kan DSF supplere med atleter uden for landsholdet, der scorer højest i IPF GL-points. Det er et ultimativt krav, at atleten deltager i DM i marts 2022.",
+   "citat": "Da der ikke er kvalificerede herrer til et fuldt hold til VM vil DSF kunne supplere med de atleter også udenfor landsholdet som scorer højest IPF GL-points. Dog er det et ultimativt krav, at man deltager i DM i marts 2022.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2022-12-31",
+   "citat_fundet": true,
+   "citat_pos": 198,
+   "citat_side": 1
+  }
+ ]
+}

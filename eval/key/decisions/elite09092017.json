@@ -1,0 +1,1231 @@
+{
+ "doc_id": "elite09092017",
+ "sha256": "395c58afbe7b8bc9773d680b9a8d59a00bf7d4a6f3b1ad5756551b06a56af1f8",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Ansvar for nomineringer til internationale stævner",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Nomineringer m.m. til internationale stævner varetages af den ansvarlige for det enkelte landshold.",
+   "citat": "Nomineringer mm. sørger den ansvarlige for det enkelte landshold for.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 238,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Nomineringer mm. sørger den ansvarlige for det enkelte landshold for.",
+     "citat_pos": 238
+    },
+    {
+     "citat": "Nomineringer mm. sørger den ansvarlige for det enkelte landshold for.",
+     "citat_pos": 238
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2
+   ],
+   "emne": "Præstationskrav på landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Efter kritik af reglen om at løfte 90 % på landsholdssamlinger fastslår Eliteudvalget, at løfteren forventes at præstere som aftalt med træneren, og at der skal være løbende dialog med træneren om styrker, svagheder og træningsfremgang.",
+   "citat": "Det forventes at løfteren præsterer som aftalt med træneren og at der er",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 277,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det forventes at løfteren præsterer som aftalt med træneren og at der er",
+     "citat_pos": 277
+    },
+    {
+     "citat": "Det forventes at løfteren præsterer som aftalt med træneren og at der er",
+     "citat_pos": 277
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "Registrering af påtaler og afbud til landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Advarsler (påtaler) til løftere i forbindelse med landsholdssamlinger registreres af den ansvarlige for det enkelte landshold, og registreringerne samles sammen én gang om året.",
+   "citat": "Hver ansvarlig for det enkelte landshold registrerer disse og der samles sammen årligt.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 322,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Hver ansvarlig for det enkelte landshold registrerer disse og der samles sammen årligt.",
+     "citat_pos": 322
+    },
+    {
+     "citat": "Hver ansvarlig for det enkelte landshold registrerer disse og der samles \nsammen årligt.",
+     "citat_pos": 322
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Besvarelse af henvendelser til Eliteudvalget",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Simple henvendelser besvares af den ansvarlige for det pågældende landshold med Eliteudvalget som cc. Større sager debatteres i Eliteudvalget og besvares derefter af udvalgets formand.",
+   "citat": "På simple ting svarer den ansvarlige for landsholdet med Eliteudvalget som cc. Større ting debatteres i eliteudvalget og svares efterfølgende af formanden for udvalget.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 338,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "På simple ting svarer den ansvarlige for landsholdet med Eliteudvalget som cc. Større ting debatteres i eliteudvalget og svares efterfølgende af formanden for udvalget.",
+     "citat_pos": 338
+    },
+    {
+     "citat": "På simple ting svarer den ansvarlige for landsholdet med Eliteudvalget \nsom cc. Større ting debatteres i eliteudvalget og svares efterfølgende af \nformanden for udvalget.",
+     "citat_pos": 338
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Optagelse af løftere i subjuniorprojektet",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Som udgangspunkt kontaktes løftere om optagelse i subjuniorprojektet, når de har præsteret flere gange. Eventuelle henvendelser fra klubber og løftere behandles i Eliteudvalget.",
+   "citat": "Udgangspunktet er at løfterne kontaktes, når de har præsteret af flere gange. Evt. henvendelser fra klubber og løftere bliver vendt i eliteudvalget",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 398,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Udgangspunktet er at løfterne kontaktes, når de har præsteret af flere gange. Evt. henvendelser fra klubber og løftere bliver vendt i eliteudvalget",
+     "citat_pos": 398
+    },
+    {
+     "citat": "Udgangspunktet er at løfterne kontaktes, når de har præsteret af flere \ngange. Evt. henvendelser fra klubber og løftere bliver vendt i eliteudvalget",
+     "citat_pos": 398
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Krav om tid i bruttotruppen før international deltagelse",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kravet om at have været i bruttotruppen i et år før international deltagelse gælder kun for seniorer.",
+   "citat": "Dette gælder kun for senior.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 441,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Dette gælder kun for senior.",
+     "citat_pos": 441
+    },
+    {
+     "citat": "Dette gælder kun for senior.",
+     "citat_pos": 441
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7
+   ],
+   "emne": "Egenbetaling ved udtagelse på B-krav",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Løftere udtaget til VM-trekamp på B-krav betaler egenbetaling, forventeligt 1.500 kr.",
+   "citat": "B-krav: Egenbetaling: forventeligt 1500,-",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": "2017-12-31",
+   "citat_fundet": true,
+   "citat_pos": 485,
+   "citat_side": 2,
+   "uncertain_fields": [
+    "handling"
+   ],
+   "quotes": [
+    {
+     "citat": "B-krav: Egenbetaling: forventeligt 1500,-",
+     "citat_pos": 485
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "Placering af DM i forhold til VM og EM",
+   "kategori": "staevner",
+   "udfald": "ikke_afgjort",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget foreslår stævneudvalget, at DM bør ligge mindst 70 dage før VM klassisk og EM udstyr, så DM bedre kan bruges til kvalificering fra 2019.",
+   "citat": "Forslag sendes til stævneudvalget om muligheden for bedre at kunne bruge dette til kvalificering fra 2019.",
+   "side": 3,
+   "gaelder_fra": "2019-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 523,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Forslag sendes til stævneudvalget om muligheden for bedre at kunne bruge dette til kvalificering fra 2019.",
+     "citat_pos": 523
+    },
+    {
+     "citat": "DM’er bør ligge minimum 70 dage før VM klassisk og EM Udstyr? \nForslag sendes til stævneudvalget om muligheden for bedre at kunne \nbruge dette til kvalificering fra 2019.",
+     "citat_pos": 510
+    }
+   ]
+  },
+  {
+   "id": "K9",
+   "status": "certain",
+   "candidates": [
+    9
+   ],
+   "emne": "Bonus for medaljer",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Bonusser for medaljer vundet i 2017 udbetales. Bonussen kan bruges hos ER eller SPD, og fakturaen sendes til forbundets kasserer.",
+   "citat": "Bonusser for medaljer i 2017 udbetales. \n \nBonus kan bruges hos ER eller SPD. Faktura sendes til kasseren i forbundet",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": "2017-12-31",
+   "citat_fundet": true,
+   "citat_pos": 559,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Bonusser for medaljer i 2017 udbetales.",
+     "citat_pos": 559
+    },
+    {
+     "citat": "Bonusser for medaljer i 2017 udbetales. \n \nBonus kan bruges hos ER eller SPD. Faktura sendes til kasseren i \nforbundet",
+     "citat_pos": 559
+    }
+   ]
+  },
+  {
+   "id": "K11",
+   "status": "certain",
+   "candidates": [
+    11
+   ],
+   "emne": "Afbud til internationalt stævne efter nominering",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "En løfter, der melder afbud til et internationalt stævne (NM) efter nomineringen, skal betale de udgifter, forbundet har haft i forbindelse med den forventede deltagelse. Afbuddet medfører desuden en karantæne svarende til reglerne for at holde pause fra landsholdet.",
+   "citat": "Vedkommende skal \nbetale udgifter forbundet har haft i forbindelse med den forventede \ndeltagelse. Dette medfører ydermere en karantæne svarende til reglerne \nfor at holde pause fra landsholdet.",
+   "side": 3,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 600,
+   "citat_side": 3,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Vedkommende skal betale udgifter forbundet har haft i forbindelse med den forventede deltagelse. Dette medfører ydermere en karantæne svarende til reglerne for at holde pause fra landsholdet.",
+     "citat_pos": 600
+    },
+    {
+     "citat": "Vedkommende skal \nbetale udgifter forbundet har haft i forbindelse med den forventede \ndeltagelse. Dette medfører ydermere en karantæne svarende til reglerne \nfor at holde pause fra landsholdet.",
+     "citat_pos": 600
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Nomineringer til landsholdsturneringer",
+     "tekst": "Nomineringer m.m. varetages af den ansvarlige for det enkelte landshold. Jørgen vil ikke længere stå for flybookinger.",
+     "udfald": "vedtaget",
+     "span": [
+      238,
+      248
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Nomineringer til internationale stævner",
+     "tekst": "Nomineringer m.m. varetages af den ansvarlige for det enkelte landshold, og Jørgen varetager ikke flybestillinger og bookinger.",
+     "udfald": "vedtaget",
+     "span": [
+      238,
+      248
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Nomineringer mm. sørger den ansvarlige for det enkelte landshold for."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Nomineringer mm. sørger den ansvarlige for det enkelte landshold for."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Nomineringer mm. sørger den ansvarlige for det enkelte landshold for."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Forventning om præstation på landsholdssamlinger (90 %-reglen)",
+     "tekst": "Efter kritik af 90 %-reglen fastholdes det, at løfteren forventes at præstere som aftalt med træneren, og at der er løbende dialog med træneren om styrker, svagheder og træningsfremgang.",
+     "udfald": "vedtaget",
+     "span": [
+      277,
+      290
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Forventning om præstation på landsholdssamlinger (90 %-reglen)",
+     "tekst": "Der forventes, at løfteren på samlinger præsterer som aftalt med træneren, med løbende dialog om styrker, svagheder og træningsfremgang, frem for en fast regel om at løfte 90 %.",
+     "udfald": "vedtaget",
+     "span": [
+      277,
+      299
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Forventning om løft på samlinger (90 %-reglen)",
+     "tekst": "Det forventes, at løfteren præsterer som aftalt med træneren, med løbende dialog om styrker, svagheder og træningsfremgang, som svar på kritik af 90 %-reglen.",
+     "udfald": "vedtaget",
+     "span": [
+      277,
+      290
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 7,
+     "emne": "Løfteres præstation og dialog med træner",
+     "tekst": "Det forventes, at løfteren præsterer som aftalt med træneren, og at der løbende føres dialog med træneren om styrker, svagheder og træningsfremgang.",
+     "udfald": "vedtaget",
+     "span": [
+      277,
+      290
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Præstationskrav på landsholdssamlinger",
+     "tekst": "Som svar på kritik af reglen om at løfte 90 % på samlinger fastslår Eliteudvalget, at løfteren forventes at præstere som aftalt med træneren, og at der skal være løbende dialog med træneren om styrker, svagheder og træningsfremgang.",
+     "udfald": "vedtaget",
+     "span": [
+      277,
+      299
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det forventes at løfteren præsterer som aftalt med træneren og at der er"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det forventes at løfteren præsterer som aftalt med træneren og at der er"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det forventes at løfteren præsterer som aftalt med træneren og at der er"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Registrering af advarsler til landsholdssamlinger",
+     "tekst": "Den ansvarlige for det enkelte landshold registrerer advarsler og afbud til landsholdssamlinger. Registreringerne samles sammen årligt.",
+     "udfald": "vedtaget",
+     "span": [
+      322,
+      335
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Registrering af advarsler på landshold",
+     "tekst": "Den ansvarlige for det enkelte landshold registrerer advarsler og påtaler, og de samles sammen årligt.",
+     "udfald": "vedtaget",
+     "span": [
+      322,
+      335
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Registrering af advarsler på landsholdet",
+     "tekst": "Den ansvarlige for det enkelte landshold registrerer advarsler og påtaler, og de samles sammen årligt.",
+     "udfald": "vedtaget",
+     "span": [
+      322,
+      335
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Registrering af advarsler på landsholdssamlinger",
+     "tekst": "Den ansvarlige for hvert landshold registrerer advarsler (påtaler) til landsholdssamlinger, og registreringerne samles årligt.",
+     "udfald": "vedtaget",
+     "span": [
+      322,
+      335
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Registrering af advarsler på landsholdet",
+     "tekst": "Den ansvarlige for hvert enkelt landshold registrerer advarsler (påtaler og afbud til landsholdssamlinger), og registreringerne samles årligt.",
+     "udfald": "vedtaget",
+     "span": [
+      322,
+      335
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Hver ansvarlig for det enkelte landshold registrerer disse og der samles sammen årligt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Hver ansvarlig for det enkelte landshold registrerer disse og der samles sammen årligt."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Hver ansvarlig for det enkelte landshold registrerer disse og der samles \nsammen årligt."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Besvarelse af henvendelser til Eliteudvalget",
+     "tekst": "Simple henvendelser besvares af den ansvarlige for landsholdet med Eliteudvalget i cc. Større sager debatteres i Eliteudvalget og besvares efterfølgende af udvalgets formand.",
+     "udfald": "vedtaget",
+     "span": [
+      338,
+      362
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Besvarelse af mails i Eliteudvalget",
+     "tekst": "Ved simple henvendelser svarer den ansvarlige for landsholdet med Eliteudvalget i cc. Større sager debatteres i eliteudvalget og besvares efterfølgende af udvalgets formand.",
+     "udfald": "vedtaget",
+     "span": [
+      338,
+      362
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Besvarelse af mails i Eliteudvalget",
+     "tekst": "Simple henvendelser besvares af den landsholdsansvarlige med Eliteudvalget i cc. Større sager debatteres i Eliteudvalget og besvares efterfølgende af udvalgets formand.",
+     "udfald": "vedtaget",
+     "span": [
+      338,
+      362
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Besvarelse af mails i Eliteudvalget",
+     "tekst": "Simple henvendelser besvares af den ansvarlige for landsholdet med Eliteudvalget i cc. Større sager debatteres i Eliteudvalget og besvares efterfølgende af udvalgets formand.",
+     "udfald": "vedtaget",
+     "span": [
+      338,
+      362
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Besvarelse af henvendelser til Eliteudvalget",
+     "tekst": "Simple henvendelser besvares af den ansvarlige for det pågældende landshold med Eliteudvalget som cc. Større sager debatteres i Eliteudvalget og besvares derefter af udvalgets formand.",
+     "udfald": "vedtaget",
+     "span": [
+      338,
+      362
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "På simple ting svarer den ansvarlige for landsholdet med Eliteudvalget som cc. Større ting debatteres i eliteudvalget og svares efterfølgende af formanden for udvalget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "På simple ting svarer den ansvarlige for landsholdet med Eliteudvalget som cc. Større ting debatteres i eliteudvalget og svares efterfølgende af formanden for udvalget."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "organisation",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "På simple ting svarer den ansvarlige for landsholdet med Eliteudvalget \nsom cc. Større ting debatteres i eliteudvalget og svares efterfølgende af \nformanden for udvalget."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 6,
+     "emne": "Optagelse af løftere i subjuniorprojektet",
+     "tekst": "Løftere kontaktes om optagelse i subjuniorprojektet, når de har præsteret godt flere gange. Henvendelser fra klubber og løftere behandles i Eliteudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      398,
+      420
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Optagelse i subjuniorprojektet",
+     "tekst": "Udgangspunktet for at tilføje nye løftere til subjuniorprojektet er, at løfterne kontaktes, når de har præsteret flere gange. Eventuelle henvendelser fra klubber og løftere behandles i Eliteudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      398,
+      420
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Udgangspunktet er at løfterne kontaktes, når de har præsteret af flere gange. Evt. henvendelser fra klubber og løftere bliver vendt i eliteudvalget"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Udgangspunktet er at løfterne kontaktes, når de har præsteret af flere gange. Evt. henvendelser fra klubber og løftere bliver vendt i eliteudvalget"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Udgangspunktet er at løfterne kontaktes, når de har præsteret af flere \ngange. Evt. henvendelser fra klubber og løftere bliver vendt i eliteudvalget"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Krav om bruttotruppen før international deltagelse",
+     "tekst": "Kravet om at have været i bruttotruppen i et år før international deltagelse gælder kun for seniorer.",
+     "udfald": "vedtaget",
+     "span": [
+      441,
+      446
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Krav om bruttotruppen før international deltagelse",
+     "tekst": "Kravet om at have været i bruttotruppen i et år før international deltagelse gælder kun for seniorløftere.",
+     "udfald": "vedtaget",
+     "span": [
+      441,
+      446
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Krav om bruttotruppen før international deltagelse",
+     "tekst": "Kravet om at have været i bruttotruppen i et år før international deltagelse gælder kun for seniorer.",
+     "udfald": "vedtaget",
+     "span": [
+      441,
+      446
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Bruttotruppekrav før international deltagelse",
+     "tekst": "Kravet om at have været i bruttotruppen i et år før international deltagelse gælder kun for seniorløftere.",
+     "udfald": "vedtaget",
+     "span": [
+      441,
+      446
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Krav om tid i bruttotruppen før international deltagelse",
+     "tekst": "Kravet om at have været i bruttotruppen i et år før international deltagelse gælder kun for seniorløftere.",
+     "udfald": "vedtaget",
+     "span": [
+      420,
+      446
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Dette gælder kun for senior."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Dette gælder kun for senior."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Dette gælder kun for senior."
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 5,
+     "emne": "Egenbetaling VM-trekamp, B-krav",
+     "tekst": "Løftere udtaget på B-krav til VM-trekamp skal betale egenbetaling, forventeligt 1500 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      485,
+      490
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 8,
+     "emne": "Egenbetaling VM-trekamp, B-krav",
+     "tekst": "Løftere udtaget på B-krav til VM-trekamp betaler egenbetaling, forventeligt 1500 kr.",
+     "udfald": "vedtaget",
+     "span": [
+      485,
+      490
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Forventet egenbetaling knyttet til udtagelse af navngivne løftere til ét bestemt VM."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "B-krav: Egenbetaling: forventeligt 1500,-"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "B-krav: Egenbetaling: forventeligt 1500,-"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 6,
+     "emne": "Placering af DM i forhold til VM og EM",
+     "tekst": "Eliteudvalget sender forslag til stævneudvalget om, at DM'er bør ligge minimum 70 dage før VM klassisk og EM, så de bedre kan bruges til kvalificering fra 2019.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      510,
+      539
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Placering af DM i forhold til VM klassisk og EM",
+     "tekst": "Der sendes forslag til stævneudvalget om, at DM'er bør ligge minimum 70 dage før VM klassisk og EM, så de bedre kan bruges til kvalificering fra 2019.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      510,
+      539
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 5,
+     "emne": "Placering af DM i forhold til VM og EM",
+     "tekst": "Forslag sendes til stævneudvalget om, at DM'er bør ligge minimum 70 dage før VM klassisk og EM, så de bedre kan bruges til kvalificering fra 2019.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      510,
+      539
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 8,
+     "emne": "Placering af DM i forhold til VM og EM",
+     "tekst": "Det er foreslået, at DM bør afholdes mindst 70 dage før VM klassisk og EM udstyr. Forslaget sendes til Stævneudvalget til overvejelse med henblik på at bruge DM til kvalificering fra 2019.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      510,
+      539
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 5,
+     "emne": "Placering af DM i forhold til VM og EM",
+     "tekst": "Eliteudvalget sender forslag til Stævneudvalget om, at DM bør ligge mindst 70 dage før VM klassisk og EM udstyr, så DM bedre kan bruges til kvalificering fra 2019.",
+     "udfald": "ikke_afgjort",
+     "span": [
+      510,
+      539
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "ikke_afgjort",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Forslag sendes til stævneudvalget om muligheden for bedre at kunne bruge dette til kvalificering fra 2019."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "ikke_afgjort",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Forslag sendes til stævneudvalget om muligheden for bedre at kunne bruge dette til kvalificering fra 2019."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "ikke_afgjort",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "DM’er bør ligge minimum 70 dage før VM klassisk og EM Udstyr? \nForslag sendes til stævneudvalget om muligheden for bedre at kunne \nbruge dette til kvalificering fra 2019."
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "status": "certain",
+   "role": "decision",
+   "key": "K9",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Bonus for medaljer",
+     "tekst": "Bonusser for medaljer opnået i 2017 udbetales. Bonussen kan anvendes hos ER eller SPD, og faktura sendes til forbundets kasserer.",
+     "udfald": "vedtaget",
+     "span": [
+      559,
+      578
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 6,
+     "emne": "Bonussystem for medaljer",
+     "tekst": "Bonusser for medaljer vundet i 2017 udbetales. Bonus kan bruges hos ER eller SPD, og fakturaen sendes til forbundets kasserer. Belønningssystemet revideres pr. 1. januar 2018 og skrives ind i reglerne for Eliteudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      559,
+      584
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Bonusser for medaljer i 2017 udbetales. \n \nBonus kan bruges hos ER eller SPD. Faktura sendes til kasseren i forbundet"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Bonusser for medaljer i 2017 udbetales."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Bonusser for medaljer i 2017 udbetales. \n \nBonus kan bruges hos ER eller SPD. Faktura sendes til kasseren i \nforbundet"
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Kun en hensigt om at revidere belønningssystemet uden fastlagt indhold.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 7,
+     "emne": "Bonussystem for medaljer",
+     "tekst": "Bonusser for medaljer i 2017 udbetales, og bonus kan bruges hos ER eller SPD med faktura til forbundets kasserer. Belønningssystemet revideres pr. 1. januar 2018 og skrives ind i reglerne for eliteudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      578,
+      591
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 5,
+     "emne": "Bonus for medaljer",
+     "tekst": "Bonusser for medaljer i 2017 udbetales og kan bruges hos ER eller SPD mod faktura til forbundets kasserer. Belønningssystemet revideres pr. 1. januar 2018 og skrives ind i reglerne for eliteudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      578,
+      591
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 6,
+     "emne": "Bonussystem for medaljer",
+     "tekst": "Bonusser for medaljer i 2017 udbetales, og bonus kan bruges hos ER eller SPD med faktura til forbundets kasserer. Belønningssystemet revideres pr. 1. januar 2018 og skrives ind i reglerne for eliteudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      578,
+      591
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Belønningssystem for landsholdsløftere",
+     "tekst": "Belønningssystemet revideres med virkning fra 1. januar 2018, og den reviderede ordning skal indskrives i reglerne for Eliteudvalget.",
+     "udfald": "vedtaget",
+     "span": [
+      578,
+      591
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Kun en hensigt om at revidere belønningssystemet uden fastlagt indhold."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 9,
+     "reason": "Samme beslutning om bonussystemet for medaljer som kandidat 9."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Der er kun besluttet en kommende revision uden indhold, så det er en opgave og ikke en regel."
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "status": "certain",
+   "role": "decision",
+   "key": "K11",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 8,
+     "emne": "Afbud til NM efter nominering",
+     "tekst": "En løfter, der melder fra til NM efter nominering, skal betale forbundets udgifter til den forventede deltagelse og får en karantæne svarende til reglerne for pause fra landsholdet.",
+     "udfald": "vedtaget",
+     "span": [
+      600,
+      613
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 6,
+     "emne": "Afbud til landsholdsstævne efter nominering",
+     "tekst": "En løfter, der melder fra til et mesterskab efter nomineringen, skal betale de udgifter forbundet har haft i forbindelse med den forventede deltagelse. Det medfører desuden karantæne svarende til reglerne for pause fra landsholdet.",
+     "udfald": "vedtaget",
+     "span": [
+      600,
+      627
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 7,
+     "emne": "Afbud til mesterskab efter nominering",
+     "tekst": "En løfter, der melder fra efter nominering, skal betale forbundets udgifter til den forventede deltagelse og får karantæne svarende til reglerne for pause fra landsholdet.",
+     "udfald": "vedtaget",
+     "span": [
+      600,
+      613
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Afmelding til landsholdsstævne efter nominering",
+     "tekst": "En løfter, der melder afbud til et mesterskab (NM) efter nomineringen, skal betale de udgifter, forbundet har haft i forbindelse med den forventede deltagelse. Afbuddet medfører desuden karantæne svarende til reglerne for at holde pause fra landsholdet.",
+     "udfald": "vedtaget",
+     "span": [
+      591,
+      618
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 7,
+     "emne": "Afbud efter nominering",
+     "tekst": "En løfter, der melder afbud til et internationalt stævne efter nomineringen, skal betale de udgifter, forbundet har haft i forbindelse med den forventede deltagelse. Afbuddet medfører desuden en karantæne svarende til reglerne for at holde pause fra landsholdet.",
+     "udfald": "vedtaget",
+     "span": [
+      600,
+      627
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Vedkommende skal \nbetale udgifter forbundet har haft i forbindelse med den forventede \ndeltagelse. Dette medfører ydermere en karantæne svarende til reglerne \nfor at holde pause fra landsholdet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Vedkommende skal betale udgifter forbundet har haft i forbindelse med den forventede deltagelse. Dette medfører ydermere en karantæne svarende til reglerne for at holde pause fra landsholdet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Vedkommende skal \nbetale udgifter forbundet har haft i forbindelse med den forventede \ndeltagelse. Dette medfører ydermere en karantæne svarende til reglerne \nfor at holde pause fra landsholdet."
+    }
+   ]
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 6144,
+    "output": 4772,
+    "cost_usd": 0.1455,
+    "seconds": 41,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 6205,
+    "output": 4263,
+    "cost_usd": 0.1358,
+    "seconds": 35,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 6098,
+    "output": 3876,
+    "cost_usd": 0.1272,
+    "seconds": 32,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

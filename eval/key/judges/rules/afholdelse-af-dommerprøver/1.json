@@ -1,0 +1,59 @@
+{
+ "fingerprint": "b5f1c8a10ff0c037",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 61050,
+  "output": 1777,
+  "cost_usd": 0.5244,
+  "seconds": 17,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P62",
+    "quote": "• Inviterer til A- B-dommerprøver og udarbejder dommerprøver  \n• Afholder prøver (normalt med forudgående uddannelse/træning)",
+    "value_after": "Dommerudvalget inviterer til og afholder A- og B-prøver, normalt med uddannelse",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P73",
+    "quote": "Planlæg A og B dommerprøver samt udarbejder invitation. Mindst en gang om året vil der blive afholdt dommerprøver i Jylland og Sjælland? Yderligere dommerprøver sker efter behov.",
+    "value_after": "Mindst én gang årligt i Jylland og Sjælland; yderligere efter behov",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 2
+   }
+  ]
+ }
+}

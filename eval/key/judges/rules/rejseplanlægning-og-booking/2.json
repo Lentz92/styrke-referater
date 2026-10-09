@@ -1,0 +1,155 @@
+{
+ "fingerprint": "c92714115b13e7f3",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 63406,
+  "output": 5448,
+  "cost_usd": 0.6166,
+  "seconds": 49,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P5",
+    "quote": "Der accepteres ikke afvigelser fra rejseplanerne i forb. med rejser med landsholdene.",
+    "value_after": "Ingen afvigelser fra rejseplan; eliteudvalget bestemmer rejsen; rejser som hold",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P10",
+    "quote": "Jan Lyhne bestiller kun rejser, som ligger inden for det enkelte stævnes budgetramme. Som en tommelfingerregel skal en atlet ankomme to dage før stævnet og rejse hjem dagen efter stævnet.",
+    "value_after": "Forbundet bestiller rejser inden for budget; ankomst to dage før, hjem dagen efter",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P14",
+    "quote": "Beslutningen blev, at det stadig som hovedregel er 3 dages reglen, som gælder, men DSF’s kasserer vil påtage sig opgaven at administrere de beløb, som enkeltpersoner skal betale for at kunne blive sammen med holdet under hele stævnet.",
+    "value_after": "3-dages regel; længere ophold med holdet mod egenbetaling via kasserer",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P53",
+    "quote": "Som udgangspunkt er det DSF der arrangerer og planlægger rejser i forbindelse med deltagelse ved mesterskaber i udlandet.",
+    "value_after": "DSF arrangerer og planlægger rejser til mesterskaber i udlandet",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P61",
+    "quote": "Alternativt kan atleter vælge selv, at købe flybilletter, hvorved egenbetalingen bortfalder.",
+    "value_after": "DSF booker; atlet kan selv købe flybilletter, så bortfalder egenbetaling",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P65",
+    "quote": "Hvis man selv ønsker, at booke flybilleter er det muligt men omfatter i så fald også eget ansvar for transport til- og fra lufthavn. En sådan beslutning gælder hele kalenderåret og ikke",
+    "value_after": "Egen booking mulig for hele kalenderåret; eget ansvar for lufthavnstransport og ændringer",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P79",
+    "quote": "atleten vælge selv at bestille/booke flybilletter og informere DSF (Peter Andersen/Bjarte Vik Larsen) om rejseplan eller lade DSF bestille/booke og herefter blive",
+    "value_after": "Egen booking eller DSF-booking mod faktura; standard to dage før til dagen efter",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P85",
+    "quote": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau.",
+    "value_after": "Atleter og trænere booker selv fly; DSF-booking mod bookingfee oveni egenbetaling",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2012,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 8
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 8
+   }
+  ]
+ }
+}

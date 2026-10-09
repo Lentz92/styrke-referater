@@ -1,0 +1,138 @@
+{
+ "fingerprint": "f4e4cba848cc3b79",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 4747,
+  "output": 2856,
+  "cost_usd": 0.096,
+  "seconds": 24,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 5,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Krav til afvikling af Danske Mesterskaber, streaming",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "aendring",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten under 'Arrangøren har ansvar for' om, at streamingudstyr kan lånes af forbundet, at klubben selv skal klargøre systemet og sørge for internetforbindelsen. Under 'DSF har ansvar for' slettes den uddybende tekst om streaming (herunder at udstyr stilles til rådighed efter aftale og fristen på 60 dage for at meddele, at arrangøren selv vil stå for streamingen), så der blot står streaming.",
+    "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "duplicate",
+    "duplicate_of": 5,
+    "reason": "Samme ændring af streamingteksten som kandidat 5.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Krav til afvikling af Danske Mesterskaber, konkurrencestyringssystem",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "aendring",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten under 'DSF har ansvaret for' om, at konkurrencestyringssystem stilles til rådighed for arrangøren efter aftale. Der skal blot stå konkurrencestyringssystem.",
+    "citat": "Under ’DSF har ansvaret for’ slettes teksten under konkurrencestyringssystem:",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Krav til afvikling af Danske Mesterskaber, bagtæppe",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "aendring",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "I Krav til afvikling af Danske Mesterskaber fastsættes, at DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+    "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 6,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Uddeling af medaljer og pokaler ved mesterskaber",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Stævneudvalget opfordrer til, at medaljer ved mesterskaber uddeles af to personer, så der er to sæt øjne på, og at stævnelederen er klar over, hvilke pokaler der skal uddeles.",
+    "citat": "Derfor vil vi opfordre til, at det er to personer, der deler medaljer ud, således at der er to sæt øjne på, samt at stævnelederen er klar over, hvilke pokaler, der skal deles ud.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 7,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Kun en påmindelse til dommerne om en eksisterende regel, ingen beslutning.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "DM-hold, tilmelding",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "DM-hold afvikles ikke under DM-ugen. Alle hold, som klubberne ønsker at tilmelde til DM-hold, skal tilmeldes ved første runde i januar.",
+    "citat": "samt at alle de hold, klubberne gerne vil tilmelde, skal tilmeldes ved første runde i januar.",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

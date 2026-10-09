@@ -1,0 +1,58 @@
+{
+ "fingerprint": "fb89df3e7143cc54",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 2836,
+  "output": 1069,
+  "cost_usd": 0.0449,
+  "seconds": 12,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Praktiske opgaver for medieudvalgets kontaktpersoner ved konkrete kommende stævner, ikke en stående regel.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Opgavefordeling og praktiske aftaler med navngivne personer, ikke en regelbeslutning.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

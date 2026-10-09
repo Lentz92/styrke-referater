@@ -1,0 +1,58 @@
+{
+ "fingerprint": "9ddf9d37d98a31d7",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 4,
+  "cache_read": 11524,
+  "cache_write": 3464,
+  "output": 961,
+  "cost_usd": 0.0493,
+  "seconds": 11,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Fordeling af navngivne kontaktpersoner og deres praktiske opgaver ved konkrete stævner er en intern arbejdsfordeling, ikke en stående regel.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Opgaver og aftaler med navngivne personer om opslag og billeder er handlingspunkter, ikke en regel.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

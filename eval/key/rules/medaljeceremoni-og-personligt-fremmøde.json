@@ -1,0 +1,1528 @@
+{
+ "slug": "medaljeceremoni-og-personligt-fremmøde",
+ "kategori": "staevner",
+ "titel": "Medaljeceremoni og personligt fremmøde",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "overrækkelse",
+  "pokalmodtagelse",
+  "pligt",
+  "udlevering",
+  "danmarksmesterskab",
+  "medaljeceremoni",
+  "medaljeoverrækkelse",
+  "påklædning",
+  "modtagelse",
+  "præmieoverrækkelse",
+  "fremmøde",
+  "personligt",
+  "uddeling",
+  "indvejning",
+  "pokaler",
+  "pokal"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 3,
+   "start": 474,
+   "end": 635,
+   "source": "keyword"
+  },
+  {
+   "id": "P2",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 2,
+   "start": 575,
+   "end": 731,
+   "source": "keyword"
+  },
+  {
+   "id": "P3",
+   "doc": "refbest_15052011",
+   "date": "2011-05-15",
+   "page": 2,
+   "start": 400,
+   "end": 561,
+   "source": "keyword"
+  },
+  {
+   "id": "P4",
+   "doc": "refbest_03092011",
+   "date": "2011-09-03",
+   "page": 1,
+   "start": 189,
+   "end": 350,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "elite21102011",
+   "date": "2011-10-21",
+   "page": 1,
+   "start": 0,
+   "end": 134,
+   "source": "keyword"
+  },
+  {
+   "id": "P6",
+   "doc": "elite10122011",
+   "date": "2011-12-10",
+   "page": 1,
+   "start": 95,
+   "end": 256,
+   "source": "keyword"
+  },
+  {
+   "id": "P7",
+   "doc": "vm2012kongres",
+   "date": "2012",
+   "page": 1,
+   "start": 70,
+   "end": 231,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "refbest_14012012",
+   "date": "2012-01-14",
+   "page": 2,
+   "start": 512,
+   "end": 675,
+   "source": "keyword"
+  },
+  {
+   "id": "P9",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 3,
+   "start": 798,
+   "end": 959,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "refbest_10032013",
+   "date": "2013-03-10",
+   "page": 2,
+   "start": 325,
+   "end": 486,
+   "source": "keyword"
+  },
+  {
+   "id": "P11",
+   "doc": "refbest_01062013",
+   "date": "2013-06-01",
+   "page": 1,
+   "start": 308,
+   "end": 469,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 1,
+   "start": 0,
+   "end": 154,
+   "source": "keyword"
+  },
+  {
+   "id": "P13",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 2,
+   "start": 692,
+   "end": 853,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "refbest_03052014",
+   "date": "2014-05-03",
+   "page": 2,
+   "start": 367,
+   "end": 650,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 1,
+   "start": 187,
+   "end": 350,
+   "source": "keyword"
+  },
+  {
+   "id": "P16",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 2,
+   "start": 624,
+   "end": 785,
+   "source": "keyword"
+  },
+  {
+   "id": "P17",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 6,
+   "start": 1856,
+   "end": 2120,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 2,
+   "start": 425,
+   "end": 586,
+   "source": "keyword"
+  },
+  {
+   "id": "P19",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 5,
+   "start": 1398,
+   "end": 1559,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "refbest_26072015",
+   "date": "2015-07-26",
+   "page": 3,
+   "start": 664,
+   "end": 867,
+   "source": "keyword"
+  },
+  {
+   "id": "P21",
+   "doc": "Adfaerdskodeks",
+   "date": "2015-08-24",
+   "page": 1,
+   "start": 69,
+   "end": 233,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "refbest_11102015",
+   "date": "2015-10-11",
+   "page": 5,
+   "start": 888,
+   "end": 1078,
+   "source": "keyword"
+  },
+  {
+   "id": "P23",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 2,
+   "start": 141,
+   "end": 302,
+   "source": "keyword"
+  },
+  {
+   "id": "P24",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 1,
+   "start": 91,
+   "end": 207,
+   "source": "keyword"
+  },
+  {
+   "id": "P25",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 1,
+   "start": 207,
+   "end": 388,
+   "source": "rule"
+  },
+  {
+   "id": "P26",
+   "doc": "refbest_12062016",
+   "date": "2016-06-12",
+   "page": 1,
+   "start": 191,
+   "end": 352,
+   "source": "keyword"
+  },
+  {
+   "id": "P27",
+   "doc": "refbest_17092016",
+   "date": "2016-09-17",
+   "page": 1,
+   "start": 49,
+   "end": 210,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "refbest_17092016",
+   "date": "2016-09-17",
+   "page": 2,
+   "start": 331,
+   "end": 642,
+   "source": "keyword"
+  },
+  {
+   "id": "P29",
+   "doc": "refbest_10122016",
+   "date": "2016-12-10",
+   "page": 3,
+   "start": 689,
+   "end": 850,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "refbest_14012017",
+   "date": "2017-01-14",
+   "page": 3,
+   "start": 575,
+   "end": 736,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "refbest_22042017",
+   "date": "2017-04-22",
+   "page": 2,
+   "start": 533,
+   "end": 694,
+   "source": "keyword"
+  },
+  {
+   "id": "P32",
+   "doc": "490",
+   "date": "2018",
+   "page": 2,
+   "start": 434,
+   "end": 620,
+   "source": "keyword"
+  },
+  {
+   "id": "P33",
+   "doc": "490",
+   "date": "2018",
+   "page": 3,
+   "start": 644,
+   "end": 828,
+   "source": "related"
+  },
+  {
+   "id": "P34",
+   "doc": "490",
+   "date": "2018",
+   "page": 8,
+   "start": 1835,
+   "end": 2045,
+   "source": "keyword"
+  },
+  {
+   "id": "P35",
+   "doc": "490",
+   "date": "2018",
+   "page": 23,
+   "start": 3991,
+   "end": 4152,
+   "source": "keyword"
+  },
+  {
+   "id": "P36",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 6,
+   "start": 1060,
+   "end": 1316,
+   "source": "keyword"
+  },
+  {
+   "id": "P37",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 7,
+   "start": 1525,
+   "end": 1686,
+   "source": "keyword"
+  },
+  {
+   "id": "P38",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 1,
+   "start": 127,
+   "end": 199,
+   "source": "keyword"
+  },
+  {
+   "id": "P39",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 1,
+   "start": 199,
+   "end": 382,
+   "source": "rule"
+  },
+  {
+   "id": "P40",
+   "doc": "467kongres",
+   "date": "2019",
+   "page": 3,
+   "start": 806,
+   "end": 961,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 15,
+   "start": 6878,
+   "end": 7039,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 16,
+   "start": 7103,
+   "end": 7264,
+   "source": "keyword"
+  },
+  {
+   "id": "P43",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 17,
+   "start": 7445,
+   "end": 7669,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 19,
+   "start": 8246,
+   "end": 8266,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 19,
+   "start": 8266,
+   "end": 8444,
+   "source": "rule"
+  },
+  {
+   "id": "P46",
+   "doc": "refmedie05012019",
+   "date": "2019-01-05",
+   "page": 1,
+   "start": 353,
+   "end": 514,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "refbest_19012019.2",
+   "date": "2019-01-19",
+   "page": 2,
+   "start": 315,
+   "end": 486,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "elite16022019.2",
+   "date": "2019-02-16",
+   "page": 1,
+   "start": 3,
+   "end": 164,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "refbest_160319",
+   "date": "2019-03-16",
+   "page": 1,
+   "start": 69,
+   "end": 184,
+   "source": "keyword"
+  },
+  {
+   "id": "P50",
+   "doc": "refbest_010619",
+   "date": "2019-06-01",
+   "page": 1,
+   "start": 94,
+   "end": 333,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "refbest_310819",
+   "date": "2019-08-31",
+   "page": 1,
+   "start": 103,
+   "end": 264,
+   "source": "keyword"
+  },
+  {
+   "id": "P52",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 2,
+   "start": 256,
+   "end": 546,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 2,
+   "start": 285,
+   "end": 446,
+   "source": "keyword"
+  },
+  {
+   "id": "P54",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 2,
+   "start": 682,
+   "end": 874,
+   "source": "keyword"
+  },
+  {
+   "id": "P55",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 10,
+   "start": 5798,
+   "end": 5959,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 12,
+   "start": 6901,
+   "end": 7062,
+   "source": "keyword"
+  },
+  {
+   "id": "P57",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 1,
+   "start": 105,
+   "end": 419,
+   "source": "keyword"
+  },
+  {
+   "id": "P58",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 2,
+   "start": 530,
+   "end": 691,
+   "source": "keyword"
+  },
+  {
+   "id": "P59",
+   "doc": "refbest_171020",
+   "date": "2020-10-17",
+   "page": 1,
+   "start": 185,
+   "end": 346,
+   "source": "keyword"
+  },
+  {
+   "id": "P60",
+   "doc": "refbest_061220",
+   "date": "2020-12-06",
+   "page": 1,
+   "start": 103,
+   "end": 264,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 2,
+   "start": 622,
+   "end": 783,
+   "source": "keyword"
+  },
+  {
+   "id": "P62",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 7,
+   "start": 2627,
+   "end": 2788,
+   "source": "keyword"
+  },
+  {
+   "id": "P63",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 12,
+   "start": 3876,
+   "end": 3960,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "refbest_060221",
+   "date": "2021-02-06",
+   "page": 1,
+   "start": 60,
+   "end": 221,
+   "source": "keyword"
+  },
+  {
+   "id": "P65",
+   "doc": "elite14092021",
+   "date": "2021-09-14",
+   "page": 2,
+   "start": 230,
+   "end": 362,
+   "source": "keyword"
+  },
+  {
+   "id": "P66",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 1,
+   "start": 95,
+   "end": 273,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 2,
+   "start": 678,
+   "end": 839,
+   "source": "keyword"
+  },
+  {
+   "id": "P68",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 3,
+   "start": 771,
+   "end": 932,
+   "source": "keyword"
+  },
+  {
+   "id": "P69",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 6,
+   "start": 2929,
+   "end": 3123,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 14,
+   "start": 6635,
+   "end": 6796,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "elite25042022",
+   "date": "2022-05-25",
+   "page": 1,
+   "start": 219,
+   "end": 373,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 1,
+   "start": 23,
+   "end": 184,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 14,
+   "start": 5717,
+   "end": 5878,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 14,
+   "start": 6024,
+   "end": 6389,
+   "source": "keyword"
+  },
+  {
+   "id": "P75",
+   "doc": "refbest_080123",
+   "date": "2023-01-08",
+   "page": 1,
+   "start": 27,
+   "end": 223,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "refbest_080123",
+   "date": "2023-01-08",
+   "page": 1,
+   "start": 264,
+   "end": 425,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "refbest_230423",
+   "date": "2023-04-23",
+   "page": 2,
+   "start": 177,
+   "end": 478,
+   "source": "keyword"
+  },
+  {
+   "id": "P78",
+   "doc": "refbest_110523",
+   "date": "2023-05-11",
+   "page": 1,
+   "start": 35,
+   "end": 196,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 1,
+   "start": 74,
+   "end": 321,
+   "source": "keyword"
+  },
+  {
+   "id": "P80",
+   "doc": "refdom12092023",
+   "date": "2023-09-12",
+   "page": 2,
+   "start": 375,
+   "end": 702,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "elite19092023",
+   "date": "2023-09-19",
+   "page": 1,
+   "start": 310,
+   "end": 438,
+   "source": "keyword"
+  },
+  {
+   "id": "P82",
+   "doc": "refstaevne05102023",
+   "date": "2023-10-05",
+   "page": 1,
+   "start": 202,
+   "end": 396,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "refstaevne07112023",
+   "date": "2023-11-07",
+   "page": 1,
+   "start": 88,
+   "end": 283,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "921kongres",
+   "date": "2024",
+   "page": 1,
+   "start": 181,
+   "end": 345,
+   "source": "keyword"
+  },
+  {
+   "id": "P85",
+   "doc": "921kongres",
+   "date": "2024",
+   "page": 3,
+   "start": 664,
+   "end": 825,
+   "source": "keyword"
+  },
+  {
+   "id": "P86",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 14,
+   "start": 5929,
+   "end": 6140,
+   "source": "keyword"
+  },
+  {
+   "id": "P87",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 17,
+   "start": 7034,
+   "end": 7203,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 18,
+   "start": 7868,
+   "end": 8029,
+   "source": "keyword"
+  },
+  {
+   "id": "P89",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 1,
+   "start": 71,
+   "end": 282,
+   "source": "keyword"
+  },
+  {
+   "id": "P90",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 2,
+   "start": 345,
+   "end": 506,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "refstaevne08022024",
+   "date": "2024-02-08",
+   "page": 1,
+   "start": 99,
+   "end": 374,
+   "source": "keyword"
+  },
+  {
+   "id": "P92",
+   "doc": "refdom05032024",
+   "date": "2024-03-05",
+   "page": 3,
+   "start": 798,
+   "end": 959,
+   "source": "keyword"
+  },
+  {
+   "id": "P93",
+   "doc": "refdom28032024",
+   "date": "2024-03-28",
+   "page": 1,
+   "start": 244,
+   "end": 466,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "refstaevne04042024",
+   "date": "2024-04-04",
+   "page": 1,
+   "start": 34,
+   "end": 195,
+   "source": "keyword"
+  },
+  {
+   "id": "P95",
+   "doc": "refstaevne04042024",
+   "date": "2024-04-04",
+   "page": 1,
+   "start": 219,
+   "end": 390,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "refbest_140424",
+   "date": "2024-04-14",
+   "page": 1,
+   "start": 67,
+   "end": 228,
+   "source": "keyword"
+  },
+  {
+   "id": "P97",
+   "doc": "refstaevne04062024",
+   "date": "2024-06-04",
+   "page": 2,
+   "start": 505,
+   "end": 633,
+   "source": "keyword"
+  },
+  {
+   "id": "P98",
+   "doc": "refdom02072024_2",
+   "date": "2024-07-02",
+   "page": 1,
+   "start": 41,
+   "end": 147,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "refdom02072024_2",
+   "date": "2024-07-02",
+   "page": 1,
+   "start": 147,
+   "end": 326,
+   "source": "related"
+  },
+  {
+   "id": "P100",
+   "doc": "refstaevne10092024",
+   "date": "2024-09-10",
+   "page": 1,
+   "start": 326,
+   "end": 507,
+   "source": "rule"
+  },
+  {
+   "id": "P101",
+   "doc": "refstaevne10092024",
+   "date": "2024-09-10",
+   "page": 2,
+   "start": 507,
+   "end": 615,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "elite23102024",
+   "date": "2024-10-23",
+   "page": 2,
+   "start": 439,
+   "end": 600,
+   "source": "keyword"
+  },
+  {
+   "id": "P103",
+   "doc": "refstaevne03122024",
+   "date": "2024-12-03",
+   "page": 1,
+   "start": 0,
+   "end": 159,
+   "source": "keyword"
+  },
+  {
+   "id": "P104",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 17,
+   "start": 8819,
+   "end": 9017,
+   "source": "keyword"
+  },
+  {
+   "id": "P105",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 22,
+   "start": 11400,
+   "end": 11650,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 24,
+   "start": 12238,
+   "end": 12638,
+   "source": "keyword"
+  },
+  {
+   "id": "P107",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 25,
+   "start": 12638,
+   "end": 12668,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "refdom07012025",
+   "date": "2025-01-07",
+   "page": 1,
+   "start": 166,
+   "end": 484,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 1,
+   "start": 22,
+   "end": 183,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 2,
+   "start": 448,
+   "end": 848,
+   "source": "keyword"
+  },
+  {
+   "id": "P111",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 3,
+   "start": 848,
+   "end": 962,
+   "source": "keyword"
+  },
+  {
+   "id": "P112",
+   "doc": "refstaevne18022025",
+   "date": "2025-02-18",
+   "page": 1,
+   "start": 0,
+   "end": 183,
+   "source": "keyword"
+  },
+  {
+   "id": "P113",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 1,
+   "start": 139,
+   "end": 539,
+   "source": "keyword"
+  },
+  {
+   "id": "P114",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 2,
+   "start": 539,
+   "end": 655,
+   "source": "keyword"
+  },
+  {
+   "id": "P115",
+   "doc": "refstaevne24042025",
+   "date": "2025-04-24",
+   "page": 2,
+   "start": 382,
+   "end": 618,
+   "source": "keyword"
+  },
+  {
+   "id": "P116",
+   "doc": "refudstyr10072025",
+   "date": "2025-07-10",
+   "page": 1,
+   "start": 0,
+   "end": 98,
+   "source": "keyword"
+  },
+  {
+   "id": "P117",
+   "doc": "refstaevne18092025",
+   "date": "2025-09-18",
+   "page": 1,
+   "start": 65,
+   "end": 226,
+   "source": "keyword"
+  },
+  {
+   "id": "P118",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 2,
+   "start": 657,
+   "end": 818,
+   "source": "keyword"
+  },
+  {
+   "id": "P119",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 5,
+   "start": 1861,
+   "end": 1994,
+   "source": "keyword"
+  },
+  {
+   "id": "P120",
+   "doc": "refudstyr27112025",
+   "date": "2025-11-27",
+   "page": 1,
+   "start": 232,
+   "end": 393,
+   "source": "keyword"
+  },
+  {
+   "id": "P121",
+   "doc": "refstaevne16122025",
+   "date": "2025-12-12",
+   "page": 2,
+   "start": 467,
+   "end": 608,
+   "source": "keyword"
+  },
+  {
+   "id": "P122",
+   "doc": "refstaevne16122025",
+   "date": "2025-12-12",
+   "page": 3,
+   "start": 608,
+   "end": 786,
+   "source": "rule"
+  },
+  {
+   "id": "P123",
+   "doc": "refstaevne16122025",
+   "date": "2025-12-12",
+   "page": 3,
+   "start": 786,
+   "end": 1104,
+   "source": "keyword"
+  },
+  {
+   "id": "P124",
+   "doc": "dif_aarsmøde_2026",
+   "date": "2026",
+   "page": 5,
+   "start": 1086,
+   "end": 1234,
+   "source": "keyword"
+  },
+  {
+   "id": "P125",
+   "doc": "dif_budgetmoede_2026",
+   "date": "2026",
+   "page": 4,
+   "start": 919,
+   "end": 1034,
+   "source": "keyword"
+  },
+  {
+   "id": "P126",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 21,
+   "start": 10334,
+   "end": 10511,
+   "source": "keyword"
+  },
+  {
+   "id": "P127",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 27,
+   "start": 12961,
+   "end": 13122,
+   "source": "keyword"
+  },
+  {
+   "id": "P128",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 28,
+   "start": 13408,
+   "end": 13582,
+   "source": "rule"
+  },
+  {
+   "id": "P129",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 29,
+   "start": 13767,
+   "end": 13962,
+   "source": "keyword"
+  },
+  {
+   "id": "P130",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 30,
+   "start": 14201,
+   "end": 14379,
+   "source": "rule"
+  },
+  {
+   "id": "P131",
+   "doc": "refbest_100126",
+   "date": "2026-01-10",
+   "page": 3,
+   "start": 602,
+   "end": 738,
+   "source": "keyword"
+  },
+  {
+   "id": "P132",
+   "doc": "refdom12032026",
+   "date": "2026-03-12",
+   "page": 1,
+   "start": 140,
+   "end": 301,
+   "source": "keyword"
+  },
+  {
+   "id": "P133",
+   "doc": "refstaevne12032026",
+   "date": "2026-03-12",
+   "page": 1,
+   "start": 157,
+   "end": 328,
+   "source": "keyword"
+  },
+  {
+   "id": "P134",
+   "doc": "refbest_140526",
+   "date": "2026-05-14",
+   "page": 1,
+   "start": 106,
+   "end": 267,
+   "source": "keyword"
+  },
+  {
+   "id": "P135",
+   "doc": "refstaevne0406026",
+   "date": "2026-06-04",
+   "page": 3,
+   "start": 391,
+   "end": 593,
+   "source": "keyword"
+  },
+  {
+   "id": "P136",
+   "doc": "elite01072026.2",
+   "date": "2026-07-01",
+   "page": 1,
+   "start": 0,
+   "end": 125,
+   "source": "keyword"
+  },
+  {
+   "id": "P137",
+   "doc": "refstaevne20082026",
+   "date": "2026-08-20",
+   "page": 1,
+   "start": 175,
+   "end": 382,
+   "source": "keyword"
+  },
+  {
+   "id": "P138",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 1,
+   "start": 21,
+   "end": 182,
+   "source": "keyword"
+  },
+  {
+   "id": "P139",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 2,
+   "start": 609,
+   "end": 787,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 0,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P25",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 1,
+   "effect": "indfoert",
+   "quote": "Løftere som ikke modtager deres medaljer og pokaler på stævnedagen, kan frem over aftale med den arrangerende klub hvordan præmierne afleveres.",
+   "value_after": "Fraværende løftere aftaler aflevering af præmier med arrangerende klub",
+   "span": [
+    287,
+    308
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P39",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 1,
+   "effect": "foreslaaet",
+   "quote": "Der udarbejdes et forslag til stævnereglerne. Hvor der står: ”der er pligt til at deltage i medaljeceremonien. Ved udeblivelse vil den pågældendes klub blive orienteret og der vil ikke blive eftersendt medaljer.”",
+   "value_after": null,
+   "span": [
+    270,
+    302
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P45",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 19,
+   "effect": "aendret",
+   "quote": "Hvis atleter er fraværende til medaljeceremonien, vil de bevare deres placering i konkurrencen, men ikke modtage medalje/pokal. Der kan ikke indsættes stand in, og pladsen på præmiepodiet vil i så fald stå tom.",
+   "value_after": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in",
+   "span": [
+    8346,
+    8380
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P122",
+   "doc": "refstaevne16122025",
+   "date": "2025-12-12",
+   "page": 3,
+   "effect": "bekraeftet",
+   "quote": "reglen om, at man skal tage personligt imod sin medalje og/eller pokal ved præmieoverrækkelsen. Andre må ikke modtage præmierne på vegne af fraværende løftere, og de kan heller ikke længere blive eftersendt.",
+   "value_after": "Personligt fremmøde påkrævet; ingen stand in eller eftersendelse",
+   "span": [
+    673,
+    706
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P128",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 28,
+   "effect": "trukket",
+   "quote": "Løftere forventes at være iklædt træningstøj og sportssko ved præmieoverrækkelser ved stævner under DSF.",
+   "value_after": null,
+   "span": [
+    13488,
+    13502
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "E6",
+   "status": "certain",
+   "passage": "P130",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 30,
+   "effect": "aendret",
+   "quote": "Tilføjes: Såfremt en løfter er forhindret pga. deltagelse i ny indvejning, udleveres medaljen til en repræsentant fra løfterens klub.",
+   "value_after": "Personligt fremmøde; klubrepræsentant modtager ved kollision med ny indvejning",
+   "span": [
+    14280,
+    14299
+   ],
+   "judges": [
+    1,
+    2
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2016,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Fraværende løftere aftaler aflevering af præmier med arrangerende klub"
+  },
+  {
+   "year": 2017,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Fraværende løftere aftaler aflevering af præmier med arrangerende klub"
+  },
+  {
+   "year": 2018,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Fraværende løftere aftaler aflevering af præmier med arrangerende klub"
+  },
+  {
+   "year": 2019,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in"
+  },
+  {
+   "year": 2020,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in"
+  },
+  {
+   "year": 2021,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in"
+  },
+  {
+   "year": 2022,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in"
+  },
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in"
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E4",
+   "value": "Fælles indmarch; fraværende får ingen medalje/pokal, ingen stand in"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Personligt fremmøde; klubrepræsentant modtager ved kollision med ny indvejning"
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 83617,
+    "output": 3683,
+    "cost_usd": 0.743,
+    "seconds": 33,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 83619,
+    "output": 4135,
+    "cost_usd": 0.7521,
+    "seconds": 38,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

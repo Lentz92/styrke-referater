@@ -1,0 +1,95 @@
+{
+ "doc_id": "refdom07012025",
+ "sha256": "b4b6a5fd2cc321825f35b03d246e79f97d1b70ce63c1f3e89903ef7227f3f690",
+ "run": "sonnet-1",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 3288,
+  "output": 1204,
+  "cost_usd": 0.0258,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2025-01-07",
+ "beslutninger": [
+  {
+   "emne": "Indstilling til A-dommerprøve",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Tidligere kunne både klub og den enkelte dommer indstille sig selv til A-dommerprøve. Nu er det kun klubløse dommere, der selv kan indstille sig. En B-dommer, der ønsker at indstilles, skal ske via klubformand til dommerudvalget.",
+   "citat": "Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv.  Hvis en B-dommer ønsker at indstilles, skal dette ske via klubformand til dommerudvalget.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 137,
+   "citat_side": 1
+  },
+  {
+   "emne": "Indstillinger til A-dommer som fast dagsordenspunkt",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Indstillinger til A-dommer gøres til et fast punkt på dommerudvalgets dagsorden og drøftes løbende. Der skal laves et skriv om reglerne til Facebook-siden, klubformænd og Styrke.dk.",
+   "citat": "Dette gøres også til et fast punkt på dagsordenen og indstillingerne drøftes, der skal laves et skriv til Facebook siden, klubformænd og Styrke.dk",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 165,
+   "citat_side": 1
+  },
+  {
+   "emne": "Tilmelding til B-dommerprøve med valg af to stævner",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Man kan ikke tilmelde sig en B-dommerprøve uden at have valgt to stævner, man vil dømme ved efter bestået prøve. Efter bestået uddannelse sættes dommerne på de stævner, de har tilmeldt sig.",
+   "citat": "En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 446,
+   "citat_side": 2
+  },
+  {
+   "emne": "Dommerpåsætning direkte via dommerdatabasen",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der udvikles en udvidet funktion i dommerdatabasen, så dommere kan tilmeldes direkte uden om klubberne. Prisen skal godkendes af udvalget inden endelig godkendelse.",
+   "citat": "Det blev godkendt at gå videre med at udvikle en sådan funktion. Eva vil tage sig af denne opgave, dog skal prisen godkendes af udvalget inden den endelige godkendelse træder i kraft.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 750,
+   "citat_side": 3
+  }
+ ]
+}

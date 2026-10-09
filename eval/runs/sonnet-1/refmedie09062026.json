@@ -1,0 +1,61 @@
+{
+ "doc_id": "refmedie09062026",
+ "sha256": "e9ad2b874fba4f1637e56073e6b6a2a9095dd9139e1e0a45f1cf071705f52702",
+ "run": "sonnet-1",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 2141,
+  "output": 721,
+  "cost_usd": 0.0164,
+  "seconds": 6,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2026-06-09",
+ "beslutninger": [
+  {
+   "emne": "Mediedækning af stævner",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Medieudvalgets kontaktperson ved hvert stævne sørger for, at arrangerende klub får login til Instagram for at poste før og under stævnet, at klubben laver en kort præsentation af venuet op til stævnet, og at der løbende kommer opslag med link til invitation, plan og livestream.",
+   "citat": "Arrangerende klubber modtager login til instagram med henblik på at poste indhold op til og fra stævnerne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 59,
+   "citat_side": 1
+  },
+  {
+   "emne": "Mediedækning af internationale stævner",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Daniel laver opslag til internationale stævner med løftere, deres løftetider og link til livestream. Jens sørger for billeder af masterløftere i forbindelse med internationale stævner.",
+   "citat": "Daniel laver opslag til de internationale stævner med løftere, deres løftetider og link til livestream.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 104,
+   "citat_side": 1
+  }
+ ]
+}

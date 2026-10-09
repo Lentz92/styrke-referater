@@ -1,0 +1,1588 @@
+{
+ "slug": "udtagelse-til-internationale-masterstævner",
+ "kategori": "master",
+ "titel": "Udtagelse til internationale masterstævner",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "nomineret",
+  "ansøgere",
+  "kravtal",
+  "masterlandshold",
+  "udtagelseskriterier",
+  "danmarksmesterskab",
+  "udvælgelse",
+  "måneders",
+  "masterudvalgets",
+  "kriterier",
+  "overskydende",
+  "masterstævner",
+  "veteran",
+  "frist",
+  "verdensmesterskab",
+  "kompetence",
+  "nominering",
+  "udvalgets",
+  "udtaget",
+  "kvalifikationskrav",
+  "kvalifikation"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "repref2008",
+   "date": "2008",
+   "page": 2,
+   "start": 307,
+   "end": 468,
+   "source": "keyword"
+  },
+  {
+   "id": "P2",
+   "doc": "elite13022009",
+   "date": "2009-02-13",
+   "page": 1,
+   "start": 33,
+   "end": 151,
+   "source": "keyword"
+  },
+  {
+   "id": "P3",
+   "doc": "refbest_13092009",
+   "date": "2009-09-13",
+   "page": 1,
+   "start": 77,
+   "end": 116,
+   "source": "keyword"
+  },
+  {
+   "id": "P4",
+   "doc": "refbest_13092009",
+   "date": "2009-09-13",
+   "page": 1,
+   "start": 116,
+   "end": 300,
+   "source": "rule"
+  },
+  {
+   "id": "P5",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 1,
+   "start": 144,
+   "end": 357,
+   "source": "keyword"
+  },
+  {
+   "id": "P6",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 1,
+   "start": 175,
+   "end": 342,
+   "source": "rule"
+  },
+  {
+   "id": "P7",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 1,
+   "start": 342,
+   "end": 365,
+   "source": "keyword"
+  },
+  {
+   "id": "P8",
+   "doc": "elite12092010",
+   "date": "2010-09-12",
+   "page": 2,
+   "start": 304,
+   "end": 582,
+   "source": "keyword"
+  },
+  {
+   "id": "P9",
+   "doc": "elite30012011",
+   "date": "2011-01-30",
+   "page": 1,
+   "start": 102,
+   "end": 304,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "elite29062011",
+   "date": "2011-07-29",
+   "page": 1,
+   "start": 168,
+   "end": 329,
+   "source": "keyword"
+  },
+  {
+   "id": "P11",
+   "doc": "ReferatMastermoede_okt2011",
+   "date": "2011-10-08",
+   "page": 1,
+   "start": 0,
+   "end": 240,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "ReferatMastermoede_okt2011",
+   "date": "2011-10-08",
+   "page": 1,
+   "start": 240,
+   "end": 432,
+   "source": "related"
+  },
+  {
+   "id": "P13",
+   "doc": "elite21102011",
+   "date": "2011-10-21",
+   "page": 1,
+   "start": 3,
+   "end": 207,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "elite10122011",
+   "date": "2011-12-10",
+   "page": 1,
+   "start": 0,
+   "end": 145,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "vm2012kongres",
+   "date": "2012",
+   "page": 1,
+   "start": 47,
+   "end": 208,
+   "source": "keyword"
+  },
+  {
+   "id": "P16",
+   "doc": "elite01062012",
+   "date": "2012-06-01",
+   "page": 2,
+   "start": 516,
+   "end": 703,
+   "source": "keyword"
+  },
+  {
+   "id": "P17",
+   "doc": "elite03082012",
+   "date": "2012-08-03",
+   "page": 1,
+   "start": 203,
+   "end": 398,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "refbest_23092012",
+   "date": "2012-09-23",
+   "page": 1,
+   "start": 160,
+   "end": 456,
+   "source": "keyword"
+  },
+  {
+   "id": "P19",
+   "doc": "elite10112012",
+   "date": "2012-11-10",
+   "page": 2,
+   "start": 354,
+   "end": 515,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "vm2013",
+   "date": "2013",
+   "page": 1,
+   "start": 177,
+   "end": 375,
+   "source": "keyword"
+  },
+  {
+   "id": "P21",
+   "doc": "refbest_01062013",
+   "date": "2013-06-01",
+   "page": 1,
+   "start": 283,
+   "end": 444,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "refbest_24082013",
+   "date": "2013-08-24",
+   "page": 2,
+   "start": 858,
+   "end": 1019,
+   "source": "keyword"
+  },
+  {
+   "id": "P23",
+   "doc": "elite15122013",
+   "date": "2013-12-15",
+   "page": 1,
+   "start": 94,
+   "end": 255,
+   "source": "keyword"
+  },
+  {
+   "id": "P24",
+   "doc": "199kongres",
+   "date": "2014",
+   "page": 1,
+   "start": 294,
+   "end": 455,
+   "source": "keyword"
+  },
+  {
+   "id": "P25",
+   "doc": "em2014kongres",
+   "date": "2014",
+   "page": 1,
+   "start": 105,
+   "end": 258,
+   "source": "keyword"
+  },
+  {
+   "id": "P26",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 5,
+   "start": 1072,
+   "end": 1233,
+   "source": "keyword"
+  },
+  {
+   "id": "P27",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 1,
+   "start": 326,
+   "end": 487,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "refbest_03052014",
+   "date": "2014-05-03",
+   "page": 1,
+   "start": 224,
+   "end": 385,
+   "source": "keyword"
+  },
+  {
+   "id": "P29",
+   "doc": "refbest_03052014",
+   "date": "2014-05-03",
+   "page": 3,
+   "start": 683,
+   "end": 844,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "elite31052014",
+   "date": "2014-05-31",
+   "page": 1,
+   "start": 0,
+   "end": 169,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 3,
+   "start": 589,
+   "end": 881,
+   "source": "keyword"
+  },
+  {
+   "id": "P32",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 4,
+   "start": 1057,
+   "end": 1221,
+   "source": "keyword"
+  },
+  {
+   "id": "P33",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 3,
+   "start": 883,
+   "end": 1160,
+   "source": "keyword"
+  },
+  {
+   "id": "P34",
+   "doc": "elite25042015",
+   "date": "2015-04-25",
+   "page": 2,
+   "start": 468,
+   "end": 564,
+   "source": "keyword"
+  },
+  {
+   "id": "P35",
+   "doc": "refbest_26072015",
+   "date": "2015-07-26",
+   "page": 2,
+   "start": 374,
+   "end": 535,
+   "source": "keyword"
+  },
+  {
+   "id": "P36",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 1,
+   "start": 0,
+   "end": 122,
+   "source": "keyword"
+  },
+  {
+   "id": "P37",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 2,
+   "start": 346,
+   "end": 711,
+   "source": "keyword"
+  },
+  {
+   "id": "P38",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 3,
+   "start": 711,
+   "end": 885,
+   "source": "rule"
+  },
+  {
+   "id": "P39",
+   "doc": "refbest_13122015",
+   "date": "2015-12-13",
+   "page": 3,
+   "start": 627,
+   "end": 720,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 2,
+   "start": 145,
+   "end": 306,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 1,
+   "start": 125,
+   "end": 287,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "elite02072016",
+   "date": "2016-07-02",
+   "page": 2,
+   "start": 367,
+   "end": 687,
+   "source": "keyword"
+  },
+  {
+   "id": "P43",
+   "doc": "elite04122016",
+   "date": "2016-12-04",
+   "page": 1,
+   "start": 147,
+   "end": 472,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 7,
+   "start": 1488,
+   "end": 1713,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "refbest_14012017",
+   "date": "2017-01-14",
+   "page": 4,
+   "start": 689,
+   "end": 837,
+   "source": "keyword"
+  },
+  {
+   "id": "P46",
+   "doc": "elite20052017",
+   "date": "2017-05-20",
+   "page": 1,
+   "start": 39,
+   "end": 200,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "refbest_26082017",
+   "date": "2017-08-26",
+   "page": 3,
+   "start": 620,
+   "end": 781,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "elite09092017",
+   "date": "2017-09-09",
+   "page": 2,
+   "start": 423,
+   "end": 627,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 2,
+   "start": 454,
+   "end": 630,
+   "source": "keyword"
+  },
+  {
+   "id": "P50",
+   "doc": "490",
+   "date": "2018",
+   "page": 1,
+   "start": 193,
+   "end": 354,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 12,
+   "start": 3199,
+   "end": 3360,
+   "source": "keyword"
+  },
+  {
+   "id": "P52",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 3,
+   "start": 687,
+   "end": 848,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "refbest_29032018",
+   "date": "2018-03-29",
+   "page": 2,
+   "start": 275,
+   "end": 438,
+   "source": "keyword"
+  },
+  {
+   "id": "P54",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 1,
+   "start": 116,
+   "end": 311,
+   "source": "related"
+  },
+  {
+   "id": "P55",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 3,
+   "start": 685,
+   "end": 924,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 3,
+   "start": 924,
+   "end": 1108,
+   "source": "rule"
+  },
+  {
+   "id": "P57",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 3,
+   "start": 681,
+   "end": 1180,
+   "source": "related"
+  },
+  {
+   "id": "P58",
+   "doc": "elite08092018",
+   "date": "2018-09-08",
+   "page": 2,
+   "start": 687,
+   "end": 985,
+   "source": "keyword"
+  },
+  {
+   "id": "P59",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 5,
+   "start": 1214,
+   "end": 1375,
+   "source": "keyword"
+  },
+  {
+   "id": "P60",
+   "doc": "elite15122018",
+   "date": "2018-12-15",
+   "page": 3,
+   "start": 812,
+   "end": 982,
+   "source": "keyword"
+  },
+  {
+   "id": "P61",
+   "doc": "555.kongress",
+   "date": "2019",
+   "page": 1,
+   "start": 287,
+   "end": 448,
+   "source": "keyword"
+  },
+  {
+   "id": "P62",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 3,
+   "start": 875,
+   "end": 1036,
+   "source": "keyword"
+  },
+  {
+   "id": "P63",
+   "doc": "refmedie05012019",
+   "date": "2019-01-05",
+   "page": 1,
+   "start": 230,
+   "end": 391,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "refbest_19012019.2",
+   "date": "2019-01-19",
+   "page": 3,
+   "start": 484,
+   "end": 691,
+   "source": "keyword"
+  },
+  {
+   "id": "P65",
+   "doc": "refmaster09032019",
+   "date": "2019-03-09",
+   "page": 1,
+   "start": 0,
+   "end": 159,
+   "source": "related"
+  },
+  {
+   "id": "P66",
+   "doc": "elite15062019",
+   "date": "2019-06-15",
+   "page": 2,
+   "start": 594,
+   "end": 755,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 3,
+   "start": 804,
+   "end": 1086,
+   "source": "keyword"
+  },
+  {
+   "id": "P68",
+   "doc": "elite07122019",
+   "date": "2019-12-07",
+   "page": 2,
+   "start": 336,
+   "end": 507,
+   "source": "keyword"
+  },
+  {
+   "id": "P69",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 4,
+   "start": 1750,
+   "end": 1911,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 1,
+   "start": 105,
+   "end": 266,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "elite16082020",
+   "date": "2020-08-16",
+   "page": 1,
+   "start": 328,
+   "end": 710,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "refbest_171020",
+   "date": "2020-10-17",
+   "page": 2,
+   "start": 419,
+   "end": 580,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "elite19122020",
+   "date": "2020-12-19",
+   "page": 1,
+   "start": 38,
+   "end": 210,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 7,
+   "start": 2418,
+   "end": 2734,
+   "source": "keyword"
+  },
+  {
+   "id": "P75",
+   "doc": "refbest_060221",
+   "date": "2021-02-06",
+   "page": 2,
+   "start": 652,
+   "end": 927,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "elite17032021",
+   "date": "2021-03-17",
+   "page": 1,
+   "start": 72,
+   "end": 233,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "elite29032021",
+   "date": "2021-03-29",
+   "page": 1,
+   "start": 115,
+   "end": 289,
+   "source": "keyword"
+  },
+  {
+   "id": "P78",
+   "doc": "elite18052021",
+   "date": "2021-05-18",
+   "page": 1,
+   "start": 0,
+   "end": 146,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "elite14092021",
+   "date": "2021-09-14",
+   "page": 1,
+   "start": 0,
+   "end": 107,
+   "source": "keyword"
+  },
+  {
+   "id": "P80",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 3,
+   "start": 702,
+   "end": 863,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "elite14122021",
+   "date": "2021-12-14",
+   "page": 1,
+   "start": 0,
+   "end": 118,
+   "source": "keyword"
+  },
+  {
+   "id": "P82",
+   "doc": "KvalifikationskravKlassisk2022",
+   "date": "2022",
+   "page": 1,
+   "start": 0,
+   "end": 82,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "KvalifikationskravUdstyr2022",
+   "date": "2022",
+   "page": 1,
+   "start": 0,
+   "end": 82,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 15,
+   "start": 6661,
+   "end": 6822,
+   "source": "keyword"
+  },
+  {
+   "id": "P85",
+   "doc": "refbest_220122",
+   "date": "2022-01-22",
+   "page": 2,
+   "start": 389,
+   "end": 527,
+   "source": "keyword"
+  },
+  {
+   "id": "P86",
+   "doc": "refmedie08022022",
+   "date": "2022-02-08",
+   "page": 1,
+   "start": 104,
+   "end": 265,
+   "source": "keyword"
+  },
+  {
+   "id": "P87",
+   "doc": "refmaster13052022",
+   "date": "2022-05-13",
+   "page": 1,
+   "start": 0,
+   "end": 156,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "refmaster13052022",
+   "date": "2022-05-13",
+   "page": 3,
+   "start": 475,
+   "end": 570,
+   "source": "keyword"
+  },
+  {
+   "id": "P89",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 2,
+   "start": 605,
+   "end": 931,
+   "source": "keyword"
+  },
+  {
+   "id": "P90",
+   "doc": "806kongres",
+   "date": "2023",
+   "page": 1,
+   "start": 303,
+   "end": 464,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 5,
+   "start": 2165,
+   "end": 2326,
+   "source": "keyword"
+  },
+  {
+   "id": "P92",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 11,
+   "start": 4788,
+   "end": 4949,
+   "source": "keyword"
+  },
+  {
+   "id": "P93",
+   "doc": "elite27062023",
+   "date": "2023-06-27",
+   "page": 1,
+   "start": 0,
+   "end": 400,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "elite19092023",
+   "date": "2023-09-19",
+   "page": 1,
+   "start": 318,
+   "end": 438,
+   "source": "keyword"
+  },
+  {
+   "id": "P95",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 1,
+   "start": 244,
+   "end": 405,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "elite12122023",
+   "date": "2023-12-12",
+   "page": 3,
+   "start": 743,
+   "end": 904,
+   "source": "keyword"
+  },
+  {
+   "id": "P97",
+   "doc": "KravForInternationalDeltagelse2024",
+   "date": "2024",
+   "page": 1,
+   "start": 0,
+   "end": 380,
+   "source": "rule"
+  },
+  {
+   "id": "P98",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 7,
+   "start": 2327,
+   "end": 2488,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 11,
+   "start": 4988,
+   "end": 5149,
+   "source": "keyword"
+  },
+  {
+   "id": "P100",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 3,
+   "start": 682,
+   "end": 843,
+   "source": "keyword"
+  },
+  {
+   "id": "P101",
+   "doc": "refdom05032024",
+   "date": "2024-03-05",
+   "page": 1,
+   "start": 14,
+   "end": 175,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "elite20032024",
+   "date": "2024-03-20",
+   "page": 2,
+   "start": 399,
+   "end": 560,
+   "source": "keyword"
+  },
+  {
+   "id": "P103",
+   "doc": "refstaevne04062024",
+   "date": "2024-06-04",
+   "page": 1,
+   "start": 341,
+   "end": 502,
+   "source": "keyword"
+  },
+  {
+   "id": "P104",
+   "doc": "elite25062024_2",
+   "date": "2024-06-25",
+   "page": 1,
+   "start": 110,
+   "end": 346,
+   "source": "keyword"
+  },
+  {
+   "id": "P105",
+   "doc": "refdom02072024_2",
+   "date": "2024-07-02",
+   "page": 1,
+   "start": 2,
+   "end": 163,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "refbest_270724",
+   "date": "2024-07-27",
+   "page": 7,
+   "start": 2221,
+   "end": 2327,
+   "source": "keyword"
+  },
+  {
+   "id": "P107",
+   "doc": "refstaevne10092024",
+   "date": "2024-09-10",
+   "page": 2,
+   "start": 684,
+   "end": 845,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "refbest_201024",
+   "date": "2024-10-20",
+   "page": 1,
+   "start": 234,
+   "end": 474,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "refstaevne03122024",
+   "date": "2024-12-03",
+   "page": 1,
+   "start": 0,
+   "end": 158,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "elite10122024",
+   "date": "2024-12-10",
+   "page": 2,
+   "start": 354,
+   "end": 528,
+   "source": "keyword"
+  },
+  {
+   "id": "P111",
+   "doc": "refbest_151224",
+   "date": "2024-12-15",
+   "page": 4,
+   "start": 933,
+   "end": 1174,
+   "source": "keyword"
+  },
+  {
+   "id": "P112",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 9,
+   "start": 4336,
+   "end": 4497,
+   "source": "keyword"
+  },
+  {
+   "id": "P113",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 17,
+   "start": 9107,
+   "end": 9356,
+   "source": "keyword"
+  },
+  {
+   "id": "P114",
+   "doc": "refstaevne18022025",
+   "date": "2025-02-18",
+   "page": 1,
+   "start": 0,
+   "end": 118,
+   "source": "keyword"
+  },
+  {
+   "id": "P115",
+   "doc": "elite12032025",
+   "date": "2025-03-12",
+   "page": 1,
+   "start": 143,
+   "end": 246,
+   "source": "keyword"
+  },
+  {
+   "id": "P116",
+   "doc": "refdom08042025",
+   "date": "2025-04-08",
+   "page": 2,
+   "start": 349,
+   "end": 510,
+   "source": "keyword"
+  },
+  {
+   "id": "P117",
+   "doc": "refstaevne24042025",
+   "date": "2025-04-24",
+   "page": 1,
+   "start": 0,
+   "end": 136,
+   "source": "keyword"
+  },
+  {
+   "id": "P118",
+   "doc": "elite02072025.2",
+   "date": "2025-07-02",
+   "page": 1,
+   "start": 93,
+   "end": 212,
+   "source": "keyword"
+  },
+  {
+   "id": "P119",
+   "doc": "refudstyr10072025",
+   "date": "2025-07-10",
+   "page": 1,
+   "start": 0,
+   "end": 100,
+   "source": "keyword"
+  },
+  {
+   "id": "P120",
+   "doc": "refbest_230825",
+   "date": "2025-08-23",
+   "page": 4,
+   "start": 581,
+   "end": 742,
+   "source": "keyword"
+  },
+  {
+   "id": "P121",
+   "doc": "elite16092025.2",
+   "date": "2025-09-16",
+   "page": 2,
+   "start": 475,
+   "end": 586,
+   "source": "keyword"
+  },
+  {
+   "id": "P122",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 4,
+   "start": 1767,
+   "end": 1928,
+   "source": "keyword"
+  },
+  {
+   "id": "P123",
+   "doc": "elite09122025",
+   "date": "2025-12-09",
+   "page": 1,
+   "start": 0,
+   "end": 136,
+   "source": "keyword"
+  },
+  {
+   "id": "P124",
+   "doc": "1071kongres",
+   "date": "2026",
+   "page": 14,
+   "start": 5062,
+   "end": 5378,
+   "source": "keyword"
+  },
+  {
+   "id": "P125",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 1,
+   "start": 0,
+   "end": 87,
+   "source": "keyword"
+  },
+  {
+   "id": "P126",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 12,
+   "start": 5517,
+   "end": 5678,
+   "source": "keyword"
+  },
+  {
+   "id": "P127",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 29,
+   "start": 13610,
+   "end": 14010,
+   "source": "keyword"
+  },
+  {
+   "id": "P128",
+   "doc": "elite11032026",
+   "date": "2026-03-11",
+   "page": 1,
+   "start": 0,
+   "end": 136,
+   "source": "keyword"
+  },
+  {
+   "id": "P129",
+   "doc": "refstaevne12032026",
+   "date": "2026-03-12",
+   "page": 1,
+   "start": 0,
+   "end": 248,
+   "source": "keyword"
+  },
+  {
+   "id": "P130",
+   "doc": "refbest_140526",
+   "date": "2026-05-14",
+   "page": 3,
+   "start": 869,
+   "end": 1030,
+   "source": "keyword"
+  },
+  {
+   "id": "P131",
+   "doc": "refdom04062026",
+   "date": "2026-06-04",
+   "page": 2,
+   "start": 226,
+   "end": 387,
+   "source": "keyword"
+  },
+  {
+   "id": "P132",
+   "doc": "elite01072026.2",
+   "date": "2026-07-01",
+   "page": 1,
+   "start": 0,
+   "end": 261,
+   "source": "keyword"
+  },
+  {
+   "id": "P133",
+   "doc": "refdom20082026",
+   "date": "2026-08-20",
+   "page": 1,
+   "start": 0,
+   "end": 132,
+   "source": "keyword"
+  },
+  {
+   "id": "P134",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 1,
+   "start": 254,
+   "end": 436,
+   "source": "keyword"
+  },
+  {
+   "id": "P135",
+   "doc": "elite15092026",
+   "date": "2026-09-15",
+   "page": 1,
+   "start": 156,
+   "end": 367,
+   "source": "keyword"
+  },
+  {
+   "id": "P136",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "start": 187,
+   "end": 381,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 0,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P4",
+   "doc": "refbest_13092009",
+   "date": "2009-09-13",
+   "page": 1,
+   "effect": "indfoert",
+   "quote": "I forbindelse med udtagelse af løftere til VM 2011, så vil de mastersløftere som de sidste år har repræsenteret Dk i udlandet havde fortrinsret til udtagelse. Kriterier til udtagelse af løfterne laves af mastersklubben, ligesom en indstilling om udtagelse laves af mastersklubben.",
+   "value_after": "Masterklubben fastsætter kriterier og indstiller; bestyrelsen udtager; tidligere deltagere fortrinsret",
+   "span": [
+    170,
+    212
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P6",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Masterklubben kan dermed ikke eksempelvis fastsætte udtagelseskriterier (hvilke stævner man skal stille op til for at komme ud at løfte internationalt til masterstævner, hvilke kg man skal løfte etc.). Udtagelseskriterier skal køre under eliteudvalget",
+   "value_after": "Udtagelseskriterier fastsættes under eliteudvalget, ikke af Masterklubben",
+   "span": [
+    255,
+    289
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P37",
+   "doc": "ReglerForMasterudvalget",
+   "date": "2015-09-20",
+   "page": 2,
+   "effect": "aendret",
+   "quote": "vil der som udgangspunkt blive stillet krav om, at løfteren ved officielt stævne i Danmark eller udlandet har fået godkendt de vedtagne kvalifikationskrav inden for de sidste 14 måneder før afholdelsen af stævnet, som der ønskes deltagelse i.",
+   "value_after": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret",
+   "span": [
+    643,
+    681
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P45",
+   "doc": "refbest_14012017",
+   "date": "2017-01-14",
+   "page": 4,
+   "effect": "foreslaaet",
+   "quote": "Beslutningen om at der kan dispenseres fra kvalifikationskrav til internationale stævner skal i fremtiden træffes af bestyrelsen og ikke af udvalgene selv.",
+   "value_after": null,
+   "span": [
+    762,
+    784
+   ],
+   "judges": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P56",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 3,
+   "effect": "forkastet",
+   "quote": "Efter en god og konstruktiv debat blev der vedtaget ikke at ændre på retningslinjerne. De nuværende retningslinjer er således stadigvæk gældende for international deltagelse.",
+   "value_after": null,
+   "span": [
+    1004,
+    1028
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E6",
+   "status": "certain",
+   "passage": "P97",
+   "doc": "KravForInternationalDeltagelse2024",
+   "date": "2024",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Der stilles endvidere krav om, at løfteren senest 14 måneder forud for det stævne, som der søges om deltagelse, skal have klaret de kvalifikationskrav, som på tidspunktet for tilmelding til pågældende stævne er fastsat af masterudvalget",
+   "value_after": "Deltagelse i seneste DM, kvalkrav inden 14 måneder; bedste point fortrinsret",
+   "span": [
+    119,
+    155
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2009,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E1",
+   "event": "E1",
+   "value": "Masterklubben fastsætter kriterier og indstiller; bestyrelsen udtager; tidligere deltagere fortrinsret"
+  },
+  {
+   "year": 2010,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Udtagelseskriterier fastsættes under eliteudvalget, ikke af Masterklubben"
+  },
+  {
+   "year": 2011,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Udtagelseskriterier fastsættes under eliteudvalget, ikke af Masterklubben"
+  },
+  {
+   "year": 2012,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Udtagelseskriterier fastsættes under eliteudvalget, ikke af Masterklubben"
+  },
+  {
+   "year": 2013,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Udtagelseskriterier fastsættes under eliteudvalget, ikke af Masterklubben"
+  },
+  {
+   "year": 2014,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E2",
+   "event": "E2",
+   "value": "Udtagelseskriterier fastsættes under eliteudvalget, ikke af Masterklubben"
+  },
+  {
+   "year": 2015,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2016,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2017,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2018,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2019,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2020,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2021,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2022,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Kvalkrav inden 14 måneder, deltagelse i seneste DM; bedste wilks fortrinsret"
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Deltagelse i seneste DM, kvalkrav inden 14 måneder; bedste point fortrinsret"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Deltagelse i seneste DM, kvalkrav inden 14 måneder; bedste point fortrinsret"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Deltagelse i seneste DM, kvalkrav inden 14 måneder; bedste point fortrinsret"
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 84265,
+    "output": 4109,
+    "cost_usd": 0.7567,
+    "seconds": 37,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 84264,
+    "output": 2735,
+    "cost_usd": 0.7292,
+    "seconds": 26,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 84265,
+    "output": 2878,
+    "cost_usd": 0.7321,
+    "seconds": 25,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,699 @@
+{
+ "doc_id": "elite10122024",
+ "sha256": "067c83b2b0748d7c69123aa778dbb33d0dd7a44e01e3cf837fa3705b140563c0",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Landsholdskrav styrkeløft med udstyr",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Eliteudvalget har justeret og vedtaget opdaterede landsholdskrav (EM- og VM-krav, A og B) for styrkeløft med udstyr. De opdaterede krav gælder fra 1. juli 2025 og offentliggøres på landsholdssiden på styrke.dk.",
+   "citat": "Opdaterede landsholdskrav for styrkeløft med udstyr, gældende fra 1. juli 2025.\nBjarte har udarbejdet justerede EM og VM krav, A og B. Kravene (forskellige modeller) blev \ndiskuteret og justeret.",
+   "side": 1,
+   "gaelder_fra": "2025-07-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 239,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Opdaterede landsholdskrav for styrkeløft med udstyr, gældende fra 1. juli 2025.\nBjarte har udarbejdet justerede EM og VM krav, A og B. Kravene (forskellige modeller) blev \ndiskuteret og justeret.",
+     "citat_pos": 239
+    },
+    {
+     "citat": "Opdaterede landsholdskrav for styrkeløft med udstyr, gældende fra 1. juli 2025.",
+     "citat_pos": 239
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2,
+    3
+   ],
+   "emne": "Booking af rejser for landshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Fremover booker atleter, trænere m.fl. på seniorlandsholdet som udgangspunkt selv fly. Det er fortsat muligt at booke gennem forbundet, men så lægges bookingfee (500-600 kr.) og eventuel prisforskel på billetter oveni egenbetalingen. Rejsedage aftales mindst 10 dage før preliminary, og rejsetider og flynumre indsendes senest 10 dage før Final.",
+   "citat": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 289,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed \nfor en billigere pris og alle slipper for bookingfee fra rejsebureau.",
+     "citat_pos": 289
+    },
+    {
+     "citat": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau.",
+     "citat_pos": 289
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Stævner hvor kvalifikationskrav kan opnås",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller DM. I særlige tilfælde og i dialog med sportschefen kan eliteudvalget ansøges om dispensation.",
+   "citat": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med \nsportschefen, kan eliteudvalget ansøges om dispensation",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 447,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med \nsportschefen, kan eliteudvalget ansøges om dispensation",
+     "citat_pos": 447
+    },
+    {
+     "citat": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med \nsportschefen, kan eliteudvalget ansøges om dispensation",
+     "citat_pos": 447
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Egenbetaling landshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdsatleter skal betale den fastsatte egenbetaling til alle stævner, også når mesterskabet afholdes på en billig lokation.",
+   "citat": "Ja, der skal betales den fastsatte egenbetaling til alle stævner.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 479,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ja, der skal betales den fastsatte egenbetaling til alle stævner.",
+     "citat_pos": 479
+    },
+    {
+     "citat": "Ja, der skal betales den fastsatte egenbetaling til alle stævner.",
+     "citat_pos": 479
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Loft over egenbetaling for atleter med A-krav",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Hvis egenbetalingen for en atlet med A-krav bliver højere end den fulde egenbetaling for B-krav, kan atleten ikke opkræves mere end den fulde egenbetaling, som pålægges B-krav.",
+   "citat": "Hvis egenbetalingen for et A-krav bliver højere end fuld egenbetaling (B-Krav) kan atleter \nmed A-krav ikke opkræves mere end den fulde egenbetaling som pålægges B-Krav.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 489,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Hvis egenbetalingen for et A-krav bliver højere end fuld egenbetaling (B-Krav) kan atleter \nmed A-krav ikke opkræves mere end den fulde egenbetaling som pålægges B-Krav.",
+     "citat_pos": 489
+    },
+    {
+     "citat": "Hvis egenbetalingen for et A-krav bliver højere end fuld egenbetaling (B-Krav) kan atleter \nmed A-krav ikke opkræves mere end den fulde egenbetaling som pålægges B-Krav.",
+     "citat_pos": 489
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Landsholdskrav styrkeløft med udstyr",
+     "tekst": "Landsholdskravene (EM og VM, A- og B-krav) for styrkeløft med udstyr er opdateret og justeret. De nye krav gælder fra 1. juli 2025 og lægges på landsholdssiden inden årets udgang.",
+     "udfald": "vedtaget",
+     "span": [
+      239,
+      250
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Landsholdskrav styrkeløft med udstyr",
+     "tekst": "Eliteudvalget har justeret EM- og VM-kravene (A og B) for styrkeløft med udstyr. De opdaterede landsholdskrav gælder fra 1. juli 2025 og lægges på landsholdssiden inden årets udgang.",
+     "udfald": "vedtaget",
+     "span": [
+      239,
+      250
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Landsholdskrav styrkeløft med udstyr",
+     "tekst": "Eliteudvalget har justeret EM- og VM-kravene (A og B) for styrkeløft med udstyr. De opdaterede krav gælder fra 1. juli 2025 og lægges på landsholdssiden.",
+     "udfald": "vedtaget",
+     "span": [
+      239,
+      250
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Landsholdskrav styrkeløft med udstyr",
+     "tekst": "Eliteudvalget har opdateret EM- og VM-kravene (A- og B-krav) for styrkeløft med udstyr, som gælder fra 1. juli 2025. De opdaterede krav lægges op på landsholdssiden på styrke.dk inden årets udgang.",
+     "udfald": "vedtaget",
+     "span": [
+      239,
+      250
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Kvalifikationskrav EM/VM, styrkeløft med udstyr",
+     "tekst": "Eliteudvalget vedtog justerede A- og B-krav til EM og VM i styrkeløft med udstyr, udarbejdet af sportschefen. De nye krav gælder fra 1. juli 2025 og offentliggøres på landsholdssiden på styrke.dk.",
+     "udfald": "vedtaget",
+     "span": [
+      239,
+      268
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Opdaterede landsholdskrav for styrkeløft med udstyr, gældende fra 1. juli 2025.\nBjarte har udarbejdet justerede EM og VM krav, A og B. Kravene (forskellige modeller) blev \ndiskuteret og justeret."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Opdaterede landsholdskrav for styrkeløft med udstyr, gældende fra 1. juli 2025.\nBjarte har udarbejdet justerede EM og VM krav, A og B. Kravene (forskellige modeller) blev \ndiskuteret og justeret."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Opdaterede landsholdskrav for styrkeløft med udstyr, gældende fra 1. juli 2025."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Booking af rejser for landshold",
+     "tekst": "Atleter og trænere booker som udgangspunkt selv fly. Booker man via forbundet, lægges bookingfee (500-600 kr) og eventuel prisforskel oveni egenbetalingen. Rejsedage aftales mindst 10 dage før preliminary, og rejsetider og flynumre indsendes senest 10 dage før Final.",
+     "udfald": "vedtaget",
+     "span": [
+      289,
+      316
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Booking af landsholdsrejser",
+     "tekst": "Atleter, trænere m.fl. kan selv booke fly til seniorlandsholdets rejser. Vælger man at booke selv, sker det billigere, men hvis man booker gennem forbundet, lægges en bookingfee på 500-600 kr. og eventuel prisforskel på billetter oveni egenbetalingen.",
+     "udfald": "vedtaget",
+     "span": [
+      289,
+      309
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed \nfor en billigere pris og alle slipper for bookingfee fra rejsebureau."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "duplicate",
+   "reason": "Samme beslutning om booking af rejser som kandidat 2.",
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Booking af rejser for seniorlandshold",
+     "tekst": "Atleter og trænere booker fremadrettet selv fly. Det er fortsat muligt at booke gennem forbundet, men så lægges bookingfee (500-600 kr) og eventuel prisforskel oveni egenbetalingen. Rejsedage aftales mindst 10 dage før preliminary, og rejsetider og flynumre indsendes senest 10 dage før Final.",
+     "udfald": "vedtaget",
+     "span": [
+      348,
+      364
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Booking af rejser seniorlandshold",
+     "tekst": "Atleter og trænere booker fremover selv fly. Booker man via forbundet, lægges bookingfee (500-600 kr) og eventuel prisforskel oven i egenbetalingen. Rejsedage aftales minimum 10 dage før preliminary, og rejsetider og flynumre indsendes senest 10 dage før Final.",
+     "udfald": "vedtaget",
+     "span": [
+      325,
+      348
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Frister for landsholdsrejser",
+     "tekst": "Rejsedage for seniorlandsholdet aftales minimum 10 dage før preliminary. Rejsetider og flynumre skal indsendes senest 10 dage før Final. Man opfordres til at koordinere flytider, når flere rejser samme dag.",
+     "udfald": "vedtaget",
+     "span": [
+      348,
+      364
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Rejsebestilling, seniorlandshold",
+     "tekst": "Atleter og trænere på seniorlandsholdet booker som udgangspunkt selv fly. Det er fortsat muligt at booke gennem forbundet, men så lægges bookingfee (ca. 500-600 kr.) og eventuel prisforskel på billetter oven i egenbetalingen. Rejsedage aftales senest 10 dage før preliminary entry, og rejsetider og flynumre indsendes senest 10 dage før final entry.",
+     "udfald": "vedtaget",
+     "span": [
+      316,
+      355
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 2,
+     "reason": "Samme beslutning om booking af rejser som kandidat 2."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 2,
+     "reason": "Samme beslutning om booking af landsholdsrejser som kandidat 2."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Rejsedage aftales minimum 10 dage før preliminary. \nRejsetider og flynumre indsendes senest 10 dage før Final."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Stævner hvor kvalifikationskrav kan opnås",
+     "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller DM. I særlige tilfælde og i dialog med sportschefen kan eliteudvalget ansøges om dispensation.",
+     "udfald": "vedtaget",
+     "span": [
+      447,
+      467
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Kvalifikation til internationale mesterskaber ved andre stævner",
+     "tekst": "Kvalifikationskrav skal opnås ved JM/SM/DM. I særlige tilfælde og i dialog med sportschefen kan eliteudvalget ansøges om dispensation.",
+     "udfald": "vedtaget",
+     "span": [
+      447,
+      467
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Kvalifikation til internationale mesterskaber ved andre stævner",
+     "tekst": "Kvalifikationskrav skal opnås ved JM, SM eller DM. I særlige tilfælde kan eliteudvalget ansøges om dispensation i dialog med sportschefen.",
+     "udfald": "vedtaget",
+     "span": [
+      447,
+      467
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Kvalifikationskrav til internationale mesterskaber",
+     "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller DM. I særlige tilfælde kan eliteudvalget i dialog med sportschefen ansøges om dispensation.",
+     "udfald": "vedtaget",
+     "span": [
+      447,
+      467
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Kvalifikationsstævner for internationale mesterskaber",
+     "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller DM. I særlige tilfælde og i dialog med sportschefen kan man søge eliteudvalget om dispensation.",
+     "udfald": "vedtaget",
+     "span": [
+      447,
+      467
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med \nsportschefen, kan eliteudvalget ansøges om dispensation"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med \nsportschefen, kan eliteudvalget ansøges om dispensation"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med \nsportschefen, kan eliteudvalget ansøges om dispensation"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Egenbetaling landshold",
+     "tekst": "Der skal betales den fastsatte egenbetaling til alle stævner, også ved billig lokation. Atleter med A-krav kan ikke opkræves mere end den fulde egenbetaling, som pålægges B-krav.",
+     "udfald": "vedtaget",
+     "span": [
+      479,
+      489
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Egenbetaling landshold",
+     "tekst": "Der betales den fastsatte egenbetaling til alle stævner, også ved billig lokation. Atleter med A-krav kan ikke opkræves mere end den fulde egenbetaling, som pålægges B-krav.",
+     "udfald": "vedtaget",
+     "span": [
+      479,
+      489
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Egenbetaling landshold",
+     "tekst": "Den fastsatte egenbetaling skal betales til alle stævner, også ved billig lokation. Atleter med A-krav kan ikke opkræves mere end den fulde egenbetaling for B-krav.",
+     "udfald": "vedtaget",
+     "span": [
+      479,
+      489
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Egenbetaling ved stævner for landsholdsatleter",
+     "tekst": "Der skal betales den fastsatte egenbetaling til alle stævner, også når stævnets lokation er billig.",
+     "udfald": "vedtaget",
+     "span": [
+      479,
+      489
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Egenbetaling, landshold",
+     "tekst": "Den fastsatte egenbetaling skal betales til alle internationale stævner, også selvom stævnet foregår på en billig lokation.",
+     "udfald": "vedtaget",
+     "span": [
+      479,
+      489
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ja, der skal betales den fastsatte egenbetaling til alle stævner."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ja, der skal betales den fastsatte egenbetaling til alle stævner."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ja, der skal betales den fastsatte egenbetaling til alle stævner."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Egenbetaling for atleter med A-krav",
+     "tekst": "Atleter med A-krav kan ikke opkræves mere i egenbetaling end den fulde egenbetaling, som pålægges B-krav, også hvis egenbetalingen for et A-krav bliver højere.",
+     "udfald": "vedtaget",
+     "span": [
+      502,
+      518
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Loft over egenbetaling ved A-krav",
+     "tekst": "Atleter med A-krav kan aldrig opkræves mere end den fulde egenbetaling, som pålægges atleter med B-krav, heller ikke hvis den beregnede egenbetaling for A-kravet ville blive højere.",
+     "udfald": "vedtaget",
+     "span": [
+      489,
+      518
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Hvis egenbetalingen for et A-krav bliver højere end fuld egenbetaling (B-Krav) kan atleter \nmed A-krav ikke opkræves mere end den fulde egenbetaling som pålægges B-Krav."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Hvis egenbetalingen for et A-krav bliver højere end fuld egenbetaling (B-Krav) kan atleter \nmed A-krav ikke opkræves mere end den fulde egenbetaling som pålægges B-Krav."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "landshold",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Hvis egenbetalingen for et A-krav bliver højere end fuld egenbetaling (B-Krav) kan atleter \nmed A-krav ikke opkræves mere end den fulde egenbetaling som pålægges B-Krav."
+    }
+   ]
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4791,
+    "output": 2178,
+    "cost_usd": 0.0828,
+    "seconds": 19,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4767,
+    "output": 2183,
+    "cost_usd": 0.0827,
+    "seconds": 19,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4722,
+    "output": 2192,
+    "cost_usd": 0.0825,
+    "seconds": 18,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

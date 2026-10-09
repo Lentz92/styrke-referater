@@ -1,0 +1,1663 @@
+{
+ "slug": "lån-af-dsf-s-stævneudstyr",
+ "kategori": "udstyr",
+ "titel": "Lån af DSF's stævneudstyr",
+ "as_of": "2026-10-09",
+ "keywords": [
+  "følgeseddel",
+  "udstyrsliste",
+  "seddel",
+  "streamingudstyr",
+  "lån",
+  "anskaffelse",
+  "stævneudstyr",
+  "equipped",
+  "sæt",
+  "streaming",
+  "liste"
+ ],
+ "passages": [
+  {
+   "id": "P1",
+   "doc": "rep2010",
+   "date": "2010",
+   "page": 5,
+   "start": 1163,
+   "end": 1344,
+   "source": "related"
+  },
+  {
+   "id": "P2",
+   "doc": "refbest_28022010",
+   "date": "2010-02-28",
+   "page": 2,
+   "start": 459,
+   "end": 646,
+   "source": "related"
+  },
+  {
+   "id": "P3",
+   "doc": "refbest_30052010",
+   "date": "2010-05-30",
+   "page": 2,
+   "start": 547,
+   "end": 708,
+   "source": "keyword"
+  },
+  {
+   "id": "P4",
+   "doc": "refbest_23012011",
+   "date": "2011-01-23",
+   "page": 1,
+   "start": 0,
+   "end": 161,
+   "source": "keyword"
+  },
+  {
+   "id": "P5",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 2,
+   "start": 206,
+   "end": 367,
+   "source": "keyword"
+  },
+  {
+   "id": "P6",
+   "doc": "vm2012kongres",
+   "date": "2012",
+   "page": 1,
+   "start": 321,
+   "end": 521,
+   "source": "keyword"
+  },
+  {
+   "id": "P7",
+   "doc": "refbest_14042012",
+   "date": "2012-04-14",
+   "page": 1,
+   "start": 0,
+   "end": 177,
+   "source": "rule"
+  },
+  {
+   "id": "P8",
+   "doc": "elite01062012",
+   "date": "2012-06-01",
+   "page": 3,
+   "start": 686,
+   "end": 770,
+   "source": "keyword"
+  },
+  {
+   "id": "P9",
+   "doc": "refbest_04082012",
+   "date": "2012-08-04",
+   "page": 1,
+   "start": 0,
+   "end": 127,
+   "source": "keyword"
+  },
+  {
+   "id": "P10",
+   "doc": "refbest_04082012",
+   "date": "2012-08-04",
+   "page": 1,
+   "start": 226,
+   "end": 398,
+   "source": "rule"
+  },
+  {
+   "id": "P11",
+   "doc": "refbest_04082012",
+   "date": "2012-08-04",
+   "page": 3,
+   "start": 613,
+   "end": 774,
+   "source": "keyword"
+  },
+  {
+   "id": "P12",
+   "doc": "refbest_23092012",
+   "date": "2012-09-23",
+   "page": 1,
+   "start": 57,
+   "end": 218,
+   "source": "keyword"
+  },
+  {
+   "id": "P13",
+   "doc": "rep2013",
+   "date": "2013",
+   "page": 4,
+   "start": 1344,
+   "end": 1505,
+   "source": "keyword"
+  },
+  {
+   "id": "P14",
+   "doc": "refbest_10032013",
+   "date": "2013-03-10",
+   "page": 3,
+   "start": 754,
+   "end": 915,
+   "source": "keyword"
+  },
+  {
+   "id": "P15",
+   "doc": "refbest_24082013",
+   "date": "2013-08-24",
+   "page": 2,
+   "start": 583,
+   "end": 744,
+   "source": "keyword"
+  },
+  {
+   "id": "P16",
+   "doc": "refbest_24082013",
+   "date": "2013-08-24",
+   "page": 2,
+   "start": 935,
+   "end": 1047,
+   "source": "keyword"
+  },
+  {
+   "id": "P17",
+   "doc": "refbest_16112013",
+   "date": "2013-11-16",
+   "page": 2,
+   "start": 327,
+   "end": 423,
+   "source": "keyword"
+  },
+  {
+   "id": "P18",
+   "doc": "rep2014",
+   "date": "2014",
+   "page": 5,
+   "start": 1137,
+   "end": 1298,
+   "source": "keyword"
+  },
+  {
+   "id": "P19",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 1,
+   "start": 342,
+   "end": 503,
+   "source": "keyword"
+  },
+  {
+   "id": "P20",
+   "doc": "refbest_09022014",
+   "date": "2014-02-09",
+   "page": 2,
+   "start": 673,
+   "end": 834,
+   "source": "keyword"
+  },
+  {
+   "id": "P21",
+   "doc": "refbest_03052014",
+   "date": "2014-05-03",
+   "page": 2,
+   "start": 452,
+   "end": 638,
+   "source": "keyword"
+  },
+  {
+   "id": "P22",
+   "doc": "refbest_09082014",
+   "date": "2014-08-09",
+   "page": 1,
+   "start": 0,
+   "end": 146,
+   "source": "rule"
+  },
+  {
+   "id": "P23",
+   "doc": "refbest_09082014",
+   "date": "2014-08-09",
+   "page": 1,
+   "start": 146,
+   "end": 186,
+   "source": "keyword"
+  },
+  {
+   "id": "P24",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 3,
+   "start": 841,
+   "end": 1042,
+   "source": "keyword"
+  },
+  {
+   "id": "P25",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 4,
+   "start": 1135,
+   "end": 1212,
+   "source": "keyword"
+  },
+  {
+   "id": "P26",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 4,
+   "start": 1212,
+   "end": 1396,
+   "source": "rule"
+  },
+  {
+   "id": "P27",
+   "doc": "241kongres",
+   "date": "2015",
+   "page": 1,
+   "start": 0,
+   "end": 172,
+   "source": "keyword"
+  },
+  {
+   "id": "P28",
+   "doc": "rep2015",
+   "date": "2015",
+   "page": 2,
+   "start": 228,
+   "end": 435,
+   "source": "keyword"
+  },
+  {
+   "id": "P29",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 1,
+   "start": 0,
+   "end": 132,
+   "source": "keyword"
+  },
+  {
+   "id": "P30",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 2,
+   "start": 501,
+   "end": 580,
+   "source": "keyword"
+  },
+  {
+   "id": "P31",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 2,
+   "start": 580,
+   "end": 755,
+   "source": "related"
+  },
+  {
+   "id": "P32",
+   "doc": "refbest_08022015",
+   "date": "2015-02-08",
+   "page": 4,
+   "start": 1003,
+   "end": 1180,
+   "source": "related"
+  },
+  {
+   "id": "P33",
+   "doc": "refbest_19042015",
+   "date": "2015-04-19",
+   "page": 2,
+   "start": 308,
+   "end": 567,
+   "source": "keyword"
+  },
+  {
+   "id": "P34",
+   "doc": "elite25042015",
+   "date": "2015-04-25",
+   "page": 2,
+   "start": 345,
+   "end": 506,
+   "source": "keyword"
+  },
+  {
+   "id": "P35",
+   "doc": "refbest_26072015",
+   "date": "2015-07-26",
+   "page": 2,
+   "start": 422,
+   "end": 683,
+   "source": "keyword"
+  },
+  {
+   "id": "P36",
+   "doc": "refbest_11102015",
+   "date": "2015-10-11",
+   "page": 2,
+   "start": 225,
+   "end": 386,
+   "source": "keyword"
+  },
+  {
+   "id": "P37",
+   "doc": "refbest_13122015",
+   "date": "2015-12-13",
+   "page": 1,
+   "start": 74,
+   "end": 235,
+   "source": "keyword"
+  },
+  {
+   "id": "P38",
+   "doc": "rep2016",
+   "date": "2016",
+   "page": 2,
+   "start": 359,
+   "end": 520,
+   "source": "keyword"
+  },
+  {
+   "id": "P39",
+   "doc": "refbest_08052016",
+   "date": "2016-05-05",
+   "page": 3,
+   "start": 607,
+   "end": 821,
+   "source": "keyword"
+  },
+  {
+   "id": "P40",
+   "doc": "refbest_12062016",
+   "date": "2016-06-12",
+   "page": 4,
+   "start": 781,
+   "end": 954,
+   "source": "keyword"
+  },
+  {
+   "id": "P41",
+   "doc": "elite04122016",
+   "date": "2016-12-04",
+   "page": 1,
+   "start": 0,
+   "end": 131,
+   "source": "keyword"
+  },
+  {
+   "id": "P42",
+   "doc": "elite04122016",
+   "date": "2016-12-04",
+   "page": 1,
+   "start": 178,
+   "end": 339,
+   "source": "keyword"
+  },
+  {
+   "id": "P43",
+   "doc": "elite04122016",
+   "date": "2016-12-04",
+   "page": 2,
+   "start": 540,
+   "end": 627,
+   "source": "keyword"
+  },
+  {
+   "id": "P44",
+   "doc": "refbest_10122016",
+   "date": "2016-12-10",
+   "page": 5,
+   "start": 1249,
+   "end": 1410,
+   "source": "keyword"
+  },
+  {
+   "id": "P45",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 4,
+   "start": 883,
+   "end": 1056,
+   "source": "keyword"
+  },
+  {
+   "id": "P46",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 9,
+   "start": 2345,
+   "end": 2566,
+   "source": "keyword"
+  },
+  {
+   "id": "P47",
+   "doc": "rep2017",
+   "date": "2017",
+   "page": 11,
+   "start": 3176,
+   "end": 3337,
+   "source": "keyword"
+  },
+  {
+   "id": "P48",
+   "doc": "refbest_14012017",
+   "date": "2017-01-14",
+   "page": 1,
+   "start": 220,
+   "end": 381,
+   "source": "keyword"
+  },
+  {
+   "id": "P49",
+   "doc": "refbest_26082017",
+   "date": "2017-08-26",
+   "page": 3,
+   "start": 713,
+   "end": 874,
+   "source": "keyword"
+  },
+  {
+   "id": "P50",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 1,
+   "start": 254,
+   "end": 415,
+   "source": "keyword"
+  },
+  {
+   "id": "P51",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 3,
+   "start": 556,
+   "end": 726,
+   "source": "rule"
+  },
+  {
+   "id": "P52",
+   "doc": "490",
+   "date": "2018",
+   "page": 3,
+   "start": 679,
+   "end": 840,
+   "source": "keyword"
+  },
+  {
+   "id": "P53",
+   "doc": "490",
+   "date": "2018",
+   "page": 20,
+   "start": 3213,
+   "end": 3374,
+   "source": "keyword"
+  },
+  {
+   "id": "P54",
+   "doc": "490",
+   "date": "2018",
+   "page": 22,
+   "start": 3670,
+   "end": 3831,
+   "source": "keyword"
+  },
+  {
+   "id": "P55",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 4,
+   "start": 885,
+   "end": 1071,
+   "source": "keyword"
+  },
+  {
+   "id": "P56",
+   "doc": "rep2018",
+   "date": "2018",
+   "page": 9,
+   "start": 2283,
+   "end": 2444,
+   "source": "keyword"
+  },
+  {
+   "id": "P57",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 1,
+   "start": 203,
+   "end": 385,
+   "source": "keyword"
+  },
+  {
+   "id": "P58",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 2,
+   "start": 405,
+   "end": 593,
+   "source": "keyword"
+  },
+  {
+   "id": "P59",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 3,
+   "start": 838,
+   "end": 862,
+   "source": "keyword"
+  },
+  {
+   "id": "P60",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 3,
+   "start": 862,
+   "end": 1044,
+   "source": "related"
+  },
+  {
+   "id": "P61",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 4,
+   "start": 1044,
+   "end": 1103,
+   "source": "keyword"
+  },
+  {
+   "id": "P62",
+   "doc": "refmaster29042018",
+   "date": "2018-04-29",
+   "page": 2,
+   "start": 615,
+   "end": 776,
+   "source": "keyword"
+  },
+  {
+   "id": "P63",
+   "doc": "refbest_09062018",
+   "date": "2018-06-06",
+   "page": 3,
+   "start": 892,
+   "end": 1053,
+   "source": "keyword"
+  },
+  {
+   "id": "P64",
+   "doc": "elite08092018",
+   "date": "2018-09-08",
+   "page": 2,
+   "start": 519,
+   "end": 680,
+   "source": "keyword"
+  },
+  {
+   "id": "P65",
+   "doc": "refbest_07102018",
+   "date": "2018-10-07",
+   "page": 1,
+   "start": 81,
+   "end": 242,
+   "source": "keyword"
+  },
+  {
+   "id": "P66",
+   "doc": "elite15122018",
+   "date": "2018-12-15",
+   "page": 3,
+   "start": 883,
+   "end": 982,
+   "source": "keyword"
+  },
+  {
+   "id": "P67",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 3,
+   "start": 860,
+   "end": 1021,
+   "source": "keyword"
+  },
+  {
+   "id": "P68",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 9,
+   "start": 5040,
+   "end": 5201,
+   "source": "keyword"
+  },
+  {
+   "id": "P69",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 18,
+   "start": 7732,
+   "end": 7893,
+   "source": "keyword"
+  },
+  {
+   "id": "P70",
+   "doc": "rep2019",
+   "date": "2019",
+   "page": 19,
+   "start": 8222,
+   "end": 8383,
+   "source": "keyword"
+  },
+  {
+   "id": "P71",
+   "doc": "refmedie05012019",
+   "date": "2019-01-05",
+   "page": 1,
+   "start": 398,
+   "end": 533,
+   "source": "keyword"
+  },
+  {
+   "id": "P72",
+   "doc": "refbest_19012019.2",
+   "date": "2019-01-19",
+   "page": 2,
+   "start": 277,
+   "end": 451,
+   "source": "keyword"
+  },
+  {
+   "id": "P73",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 2,
+   "start": 260,
+   "end": 539,
+   "source": "keyword"
+  },
+  {
+   "id": "P74",
+   "doc": "refbest_091119",
+   "date": "2019-11-09",
+   "page": 3,
+   "start": 777,
+   "end": 938,
+   "source": "keyword"
+  },
+  {
+   "id": "P75",
+   "doc": "elite07122019",
+   "date": "2019-12-07",
+   "page": 1,
+   "start": 16,
+   "end": 177,
+   "source": "keyword"
+  },
+  {
+   "id": "P76",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 10,
+   "start": 5910,
+   "end": 6071,
+   "source": "keyword"
+  },
+  {
+   "id": "P77",
+   "doc": "rep2020",
+   "date": "2020",
+   "page": 15,
+   "start": 7955,
+   "end": 8116,
+   "source": "keyword"
+  },
+  {
+   "id": "P78",
+   "doc": "refbest_140320",
+   "date": "2020-03-14",
+   "page": 3,
+   "start": 825,
+   "end": 930,
+   "source": "keyword"
+  },
+  {
+   "id": "P79",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 1,
+   "start": 140,
+   "end": 315,
+   "source": "keyword"
+  },
+  {
+   "id": "P80",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 3,
+   "start": 843,
+   "end": 1004,
+   "source": "keyword"
+  },
+  {
+   "id": "P81",
+   "doc": "refbest_240520",
+   "date": "2020-05-24",
+   "page": 4,
+   "start": 1236,
+   "end": 1397,
+   "source": "keyword"
+  },
+  {
+   "id": "P82",
+   "doc": "elite16082020",
+   "date": "2020-08-16",
+   "page": 2,
+   "start": 622,
+   "end": 790,
+   "source": "keyword"
+  },
+  {
+   "id": "P83",
+   "doc": "refbest_171020",
+   "date": "2020-10-17",
+   "page": 3,
+   "start": 621,
+   "end": 764,
+   "source": "keyword"
+  },
+  {
+   "id": "P84",
+   "doc": "rep2021",
+   "date": "2021",
+   "page": 12,
+   "start": 3762,
+   "end": 3923,
+   "source": "keyword"
+  },
+  {
+   "id": "P85",
+   "doc": "elite18052021",
+   "date": "2021-05-18",
+   "page": 1,
+   "start": 0,
+   "end": 276,
+   "source": "keyword"
+  },
+  {
+   "id": "P86",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 1,
+   "start": 21,
+   "end": 354,
+   "source": "keyword"
+  },
+  {
+   "id": "P87",
+   "doc": "refmedie23112021",
+   "date": "2021-11-23",
+   "page": 1,
+   "start": 0,
+   "end": 105,
+   "source": "keyword"
+  },
+  {
+   "id": "P88",
+   "doc": "elite14122021",
+   "date": "2021-12-14",
+   "page": 1,
+   "start": 198,
+   "end": 334,
+   "source": "keyword"
+  },
+  {
+   "id": "P89",
+   "doc": "rep2022",
+   "date": "2022",
+   "page": 9,
+   "start": 4487,
+   "end": 4648,
+   "source": "keyword"
+  },
+  {
+   "id": "P90",
+   "doc": "elite08032022",
+   "date": "2022-03-08",
+   "page": 1,
+   "start": 159,
+   "end": 320,
+   "source": "keyword"
+  },
+  {
+   "id": "P91",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 1,
+   "start": 155,
+   "end": 327,
+   "source": "keyword"
+  },
+  {
+   "id": "P92",
+   "doc": "refbest_310722",
+   "date": "2022-07-31",
+   "page": 3,
+   "start": 1046,
+   "end": 1207,
+   "source": "keyword"
+  },
+  {
+   "id": "P93",
+   "doc": "refbest_121122",
+   "date": "2022-11-12",
+   "page": 1,
+   "start": 171,
+   "end": 332,
+   "source": "keyword"
+  },
+  {
+   "id": "P94",
+   "doc": "elite14122022",
+   "date": "2022-12-14",
+   "page": 1,
+   "start": 101,
+   "end": 297,
+   "source": "keyword"
+  },
+  {
+   "id": "P95",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 8,
+   "start": 3578,
+   "end": 3739,
+   "source": "keyword"
+  },
+  {
+   "id": "P96",
+   "doc": "rep2023",
+   "date": "2023",
+   "page": 12,
+   "start": 5258,
+   "end": 5419,
+   "source": "keyword"
+  },
+  {
+   "id": "P97",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 1,
+   "start": 264,
+   "end": 425,
+   "source": "keyword"
+  },
+  {
+   "id": "P98",
+   "doc": "refbest_150723",
+   "date": "2023-07-15",
+   "page": 3,
+   "start": 713,
+   "end": 874,
+   "source": "keyword"
+  },
+  {
+   "id": "P99",
+   "doc": "refbest_221023",
+   "date": "2023-10-22",
+   "page": 2,
+   "start": 289,
+   "end": 450,
+   "source": "keyword"
+  },
+  {
+   "id": "P100",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 6,
+   "start": 2236,
+   "end": 2397,
+   "source": "keyword"
+  },
+  {
+   "id": "P101",
+   "doc": "rep2024",
+   "date": "2024",
+   "page": 12,
+   "start": 5416,
+   "end": 5577,
+   "source": "keyword"
+  },
+  {
+   "id": "P102",
+   "doc": "refbest_130124",
+   "date": "2024-01-13",
+   "page": 3,
+   "start": 590,
+   "end": 751,
+   "source": "keyword"
+  },
+  {
+   "id": "P103",
+   "doc": "refdom05032024",
+   "date": "2024-03-05",
+   "page": 3,
+   "start": 839,
+   "end": 1000,
+   "source": "keyword"
+  },
+  {
+   "id": "P104",
+   "doc": "elite20032024",
+   "date": "2024-03-20",
+   "page": 1,
+   "start": 118,
+   "end": 279,
+   "source": "keyword"
+  },
+  {
+   "id": "P105",
+   "doc": "refstaevne04042024",
+   "date": "2024-04-04",
+   "page": 1,
+   "start": 45,
+   "end": 315,
+   "source": "keyword"
+  },
+  {
+   "id": "P106",
+   "doc": "refbest_270724",
+   "date": "2024-07-27",
+   "page": 2,
+   "start": 230,
+   "end": 421,
+   "source": "keyword"
+  },
+  {
+   "id": "P107",
+   "doc": "refstaevne10092024",
+   "date": "2024-09-10",
+   "page": 1,
+   "start": 281,
+   "end": 442,
+   "source": "keyword"
+  },
+  {
+   "id": "P108",
+   "doc": "refbest_201024",
+   "date": "2024-10-20",
+   "page": 2,
+   "start": 571,
+   "end": 702,
+   "source": "keyword"
+  },
+  {
+   "id": "P109",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 19,
+   "start": 9916,
+   "end": 10077,
+   "source": "keyword"
+  },
+  {
+   "id": "P110",
+   "doc": "rep2025",
+   "date": "2025",
+   "page": 22,
+   "start": 11420,
+   "end": 11581,
+   "source": "keyword"
+  },
+  {
+   "id": "P111",
+   "doc": "refdom07012025",
+   "date": "2025-01-07",
+   "page": 2,
+   "start": 300,
+   "end": 481,
+   "source": "keyword"
+  },
+  {
+   "id": "P112",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 2,
+   "start": 449,
+   "end": 610,
+   "source": "keyword"
+  },
+  {
+   "id": "P113",
+   "doc": "refdom28012025",
+   "date": "2025-01-28",
+   "page": 3,
+   "start": 874,
+   "end": 1165,
+   "source": "keyword"
+  },
+  {
+   "id": "P114",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 1,
+   "start": 140,
+   "end": 301,
+   "source": "keyword"
+  },
+  {
+   "id": "P115",
+   "doc": "refbest_080325",
+   "date": "2025-03-08",
+   "page": 2,
+   "start": 567,
+   "end": 728,
+   "source": "keyword"
+  },
+  {
+   "id": "P116",
+   "doc": "refdom08042025",
+   "date": "2025-04-08",
+   "page": 1,
+   "start": 148,
+   "end": 309,
+   "source": "keyword"
+  },
+  {
+   "id": "P117",
+   "doc": "refbest_130425",
+   "date": "2025-04-13",
+   "page": 1,
+   "start": 85,
+   "end": 246,
+   "source": "keyword"
+  },
+  {
+   "id": "P118",
+   "doc": "refstaevne24042025",
+   "date": "2025-04-24",
+   "page": 1,
+   "start": 231,
+   "end": 608,
+   "source": "keyword"
+  },
+  {
+   "id": "P119",
+   "doc": "refudstyr10072025",
+   "date": "2025-07-10",
+   "page": 2,
+   "start": 594,
+   "end": 755,
+   "source": "keyword"
+  },
+  {
+   "id": "P120",
+   "doc": "refstaevne18092025",
+   "date": "2025-09-18",
+   "page": 1,
+   "start": 174,
+   "end": 315,
+   "source": "keyword"
+  },
+  {
+   "id": "P121",
+   "doc": "refbest_231125",
+   "date": "2025-11-23",
+   "page": 1,
+   "start": 129,
+   "end": 290,
+   "source": "keyword"
+  },
+  {
+   "id": "P122",
+   "doc": "refudstyr27112025",
+   "date": "2025-11-27",
+   "page": 1,
+   "start": 309,
+   "end": 440,
+   "source": "keyword"
+  },
+  {
+   "id": "P123",
+   "doc": "Tilmeldingsfrister2026",
+   "date": "2026",
+   "page": 1,
+   "start": 0,
+   "end": 173,
+   "source": "keyword"
+  },
+  {
+   "id": "P124",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 4,
+   "start": 1366,
+   "end": 1527,
+   "source": "keyword"
+  },
+  {
+   "id": "P125",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 17,
+   "start": 8486,
+   "end": 8684,
+   "source": "keyword"
+  },
+  {
+   "id": "P126",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 18,
+   "start": 8752,
+   "end": 8913,
+   "source": "keyword"
+  },
+  {
+   "id": "P127",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 23,
+   "start": 11327,
+   "end": 11488,
+   "source": "keyword"
+  },
+  {
+   "id": "P128",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 25,
+   "start": 12446,
+   "end": 12607,
+   "source": "keyword"
+  },
+  {
+   "id": "P129",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 25,
+   "start": 12677,
+   "end": 12845,
+   "source": "keyword"
+  },
+  {
+   "id": "P130",
+   "doc": "rep2026",
+   "date": "2026",
+   "page": 28,
+   "start": 13442,
+   "end": 13603,
+   "source": "keyword"
+  },
+  {
+   "id": "P131",
+   "doc": "refbest_100126",
+   "date": "2026-01-10",
+   "page": 1,
+   "start": 320,
+   "end": 487,
+   "source": "keyword"
+  },
+  {
+   "id": "P132",
+   "doc": "refmedie16042026",
+   "date": "2026-04-16",
+   "page": 1,
+   "start": 70,
+   "end": 330,
+   "source": "keyword"
+  },
+  {
+   "id": "P133",
+   "doc": "refstaevne0406026",
+   "date": "2026-06-04",
+   "page": 1,
+   "start": 17,
+   "end": 200,
+   "source": "keyword"
+  },
+  {
+   "id": "P134",
+   "doc": "refstaevne20082026",
+   "date": "2026-08-20",
+   "page": 1,
+   "start": 77,
+   "end": 313,
+   "source": "keyword"
+  },
+  {
+   "id": "P135",
+   "doc": "refbest_290826.2",
+   "date": "2026-08-29",
+   "page": 2,
+   "start": 554,
+   "end": 739,
+   "source": "keyword"
+  },
+  {
+   "id": "P136",
+   "doc": "elite15092026",
+   "date": "2026-09-15",
+   "page": 1,
+   "start": 158,
+   "end": 319,
+   "source": "keyword"
+  },
+  {
+   "id": "P137",
+   "doc": "Tilmeldingsfrister2027",
+   "date": "2027",
+   "page": 1,
+   "start": 0,
+   "end": 148,
+   "source": "keyword"
+  }
+ ],
+ "unread_amounts": 0,
+ "events": [
+  {
+   "id": "E1",
+   "status": "certain",
+   "passage": "P5",
+   "doc": "rep2012",
+   "date": "2012",
+   "page": 2,
+   "effect": "indfoert",
+   "quote": "Et sådan kan afhentes ved henvendelse til Horsens Styrkeløftklub",
+   "value_after": "Stævnekit afhentes ved henvendelse til Horsens Styrkeløftklub",
+   "span": [
+    320,
+    329
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E2",
+   "status": "certain",
+   "passage": "P7",
+   "doc": "refbest_14042012",
+   "date": "2012-04-14",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Den opdaterede liste over udstyr lægges på forbundets hjemmeside, så klubberne kan se, hvad det er muligt at låne ved stævneafholdelse.",
+   "value_after": "Udstyrsliste på hjemmesiden; klubber kan låne udstyr ved stævneafholdelse",
+   "span": [
+    76,
+    97
+   ],
+   "judges": [
+    1,
+    3
+   ]
+  },
+  {
+   "id": "E3",
+   "status": "certain",
+   "passage": "P10",
+   "doc": "refbest_04082012",
+   "date": "2012-08-04",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Udstyr vil kunne lånes, ved kontakt vis kontoret og afhentning i Horsens.",
+   "value_after": "Lån ved kontakt til kontoret; afhentning i Horsens; liste på hjemmesiden",
+   "span": [
+    306,
+    318
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E4",
+   "status": "certain",
+   "passage": "P22",
+   "doc": "refbest_09082014",
+   "date": "2014-08-09",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "også sendes en mail til forbundet i forbindelse med lån af udstyr, mailen skal sendes til på",
+   "value_after": "Lån meldes via mail til jacob@styrke.dk; afhentning i Horsens",
+   "span": [
+    96,
+    113
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E5",
+   "status": "certain",
+   "passage": "P26",
+   "doc": "refbest_07122014",
+   "date": "2014-12-07",
+   "page": 4,
+   "effect": "aendret",
+   "quote": "Følgesedlen blev godkendt, men i stedet for smser, er Peter Andersen nu ansvarlig. Det blev besluttet, at der skulle være to sæt udstyr",
+   "value_after": "Følgeseddel; to sæt udstyr; modtager tjekker dele, rapporterer mangler til Peter Andersen",
+   "span": [
+    1247,
+    1270
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E6",
+   "status": "certain",
+   "passage": "P36",
+   "doc": "refbest_11102015",
+   "date": "2015-10-11",
+   "page": 2,
+   "effect": "aendret",
+   "quote": "Der var enighed om, at et sæt udstyr er nok.",
+   "value_after": "Ét sæt stævneudstyr i flyttekasse; Peter Andersen ansvarlig; følgeseddel",
+   "span": [
+    299,
+    309
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E7",
+   "status": "certain",
+   "passage": "P51",
+   "doc": "refbest_29102017",
+   "date": "2017-10-29",
+   "page": 3,
+   "effect": "aendret",
+   "quote": "Klubberne skal melde ud tre uger før et stævne, hvilket udstyr de ønsker at låne af DSF. Ved bestilling i god tid, er det muligt at udstyret kan blive afleveret i klubben.",
+   "value_after": "Lån meldes tre uger før stævnet; evt. levering til klubben",
+   "span": [
+    636,
+    668
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E8",
+   "status": "certain",
+   "passage": "P60",
+   "doc": "refbest_03022018",
+   "date": "2018-02-03",
+   "page": 3,
+   "effect": "aendret",
+   "quote": "Der skal laves en liste i kufferterne hvorpå klubberne skal kvittere med navn på repræsentant og dato for lån af udstyrs-”kuffert”.",
+   "value_after": "Klubber kvitterer med navn og dato ved lån og tilbagelevering",
+   "span": [
+    942,
+    964
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E9",
+   "status": "certain",
+   "passage": "P86",
+   "doc": "refbest_021021",
+   "date": "2021-10-02",
+   "page": 1,
+   "effect": "bekraeftet",
+   "quote": "Forbundets stævnekasser som indeholdes blandt andet dommerlys, os streaming varetages og opdateres af Peter Andersen.",
+   "value_after": "Stævnekasser med dommerlys og streaming varetages af Peter Andersen",
+   "span": [
+    265,
+    280
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E10",
+   "status": "certain",
+   "passage": "P105",
+   "doc": "refstaevne04042024",
+   "date": "2024-04-04",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Herunder udlånes tablet, bagtæppe (to dele), roll ups, indvejningsvægt og evt. projektor. Udviklingskonsulent er ansvarsperson for dette og kontaktes.",
+   "value_after": "Tablet, bagtæppe, roll-ups, vægt, projektor, streamingudstyr udlånes efter aftale",
+   "span": [
+    106,
+    125
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "E11",
+   "status": "certain",
+   "passage": "P118",
+   "doc": "refstaevne24042025",
+   "date": "2025-04-24",
+   "page": 1,
+   "effect": "aendret",
+   "quote": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat.",
+   "value_after": "DSF står for streaming, konkurrencestyringssystem og bagtæppe; udlån efter aftale udgår",
+   "span": [
+    430,
+    453
+   ],
+   "judges": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2012,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Lån ved kontakt til kontoret; afhentning i Horsens; liste på hjemmesiden"
+  },
+  {
+   "year": 2013,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E3",
+   "event": "E3",
+   "value": "Lån ved kontakt til kontoret; afhentning i Horsens; liste på hjemmesiden"
+  },
+  {
+   "year": 2014,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E5",
+   "event": "E5",
+   "value": "Følgeseddel; to sæt udstyr; modtager tjekker dele, rapporterer mangler til Peter Andersen"
+  },
+  {
+   "year": 2015,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Ét sæt stævneudstyr i flyttekasse; Peter Andersen ansvarlig; følgeseddel"
+  },
+  {
+   "year": 2016,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E6",
+   "event": "E6",
+   "value": "Ét sæt stævneudstyr i flyttekasse; Peter Andersen ansvarlig; følgeseddel"
+  },
+  {
+   "year": 2017,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E7",
+   "event": "E7",
+   "value": "Lån meldes tre uger før stævnet; evt. levering til klubben"
+  },
+  {
+   "year": 2018,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E8",
+   "value": "Klubber kvitterer med navn og dato ved lån og tilbagelevering"
+  },
+  {
+   "year": 2019,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E8",
+   "value": "Klubber kvitterer med navn og dato ved lån og tilbagelevering"
+  },
+  {
+   "year": 2020,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E8",
+   "value": "Klubber kvitterer med navn og dato ved lån og tilbagelevering"
+  },
+  {
+   "year": 2021,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E9",
+   "value": "Klubber kvitterer med navn og dato ved lån og tilbagelevering"
+  },
+  {
+   "year": 2022,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E9",
+   "value": "Klubber kvitterer med navn og dato ved lån og tilbagelevering"
+  },
+  {
+   "year": 2023,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E8",
+   "event": "E9",
+   "value": "Klubber kvitterer med navn og dato ved lån og tilbagelevering"
+  },
+  {
+   "year": 2024,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E10",
+   "event": "E10",
+   "value": "Tablet, bagtæppe, roll-ups, vægt, projektor, streamingudstyr udlånes efter aftale"
+  },
+  {
+   "year": 2025,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E11",
+   "event": "E11",
+   "value": "DSF står for streaming, konkurrencestyringssystem og bagtæppe; udlån efter aftale udgår"
+  },
+  {
+   "year": 2026,
+   "status": "certain",
+   "state": "event",
+   "adopted": "E11",
+   "event": "E11",
+   "value": "DSF står for streaming, konkurrencestyringssystem og bagtæppe; udlån efter aftale udgår"
+  }
+ ],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 75542,
+    "output": 5612,
+    "cost_usd": 0.717,
+    "seconds": 49,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 75540,
+    "output": 5081,
+    "cost_usd": 0.7064,
+    "seconds": 44,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "ddfbb64bd0e5",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 2141,
+    "cache_write": 75540,
+    "output": 5136,
+    "cost_usd": 0.7075,
+    "seconds": 45,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

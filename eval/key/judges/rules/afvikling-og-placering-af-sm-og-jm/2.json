@@ -1,0 +1,135 @@
+{
+ "fingerprint": "a55e535048aac0be",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 82744,
+  "output": 5164,
+  "cost_usd": 0.7657,
+  "seconds": 49,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P26",
+    "quote": "Ovennævnte blev godkendt med den tilføjelse, at JM 3-kamp og JM Bænkpres skal afvikles over to dage med 3-kamp den ene dag og bænkpres den anden. Det samme gælder for SM. Forslaget blev godkendt med 34 stemmer for og 2 imod.",
+    "value_after": "JM/SM 3-kamp og bænkpres samlet; to dage, én disciplin pr. dag",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P28",
+    "quote": "ER Equipment Powerlifting Team foreslår, at der i fremtiden arrangeres SM / JM i klassisk Bænk og klassisk 3-kamp i styrkeløft.",
+    "value_after": "JM/SM afholdes også i klassisk bænkpres og klassisk 3-kamp",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P35",
+    "quote": "Forslaget trækkes tilbage på baggrund af tidligere på mødet vedtagne regler, om at JM/SM kan bruges til at lave krav til DM.",
+    "value_after": null,
+    "effect": "trukket"
+   },
+   {
+    "passage": "P54",
+    "quote": "Ændringsforslag: teksten ændres til ”SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021” Forslaget blev vedtaget med 32 stemmer for.",
+    "value_after": "SM/JM udstyr og klassisk samlet, 1. eller 2. weekend september",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P79",
+    "quote": "JM opdeles således at, Open herrer klassisk 3 kamp køres i en weekend for sig. Damer, JM bænkpres, JM klassisk bænkpres og JM i styrkeløft i en weekend for sig. Der er ikke behov for at opdele SM stævnerne i øjeblikket.",
+    "value_after": "JM over to weekender: herrer klassisk 3-kamp separat; SM samlet",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P91",
+    "quote": "Efter en kort debat, hvor det blev anbefalet at kontakte stævneudvalget og bruge mulighederne i vedtægternes §13, blev forslag 2 trukket tilbage.",
+    "value_after": null,
+    "effect": "trukket"
+   },
+   {
+    "passage": "P112",
+    "quote": "Fra 2026 at opdele regionmesterskaberne således at sidste weekend i august vil være JM/SM Open og den efterfølgende weekend vil være JM sub-junior, junior og masters",
+    "value_after": null,
+    "effect": "forkastet"
+   },
+   {
+    "passage": "P127",
+    "quote": "Forslag 12 fra TVF blev vedtaget med 42 stemmer for, 2 stemmer imod og 4 undlod at stemme.  \n \nSM vil som udgangspunkt stadigvæk blive afviklet over en weekend.",
+    "value_after": "JFM/SM Open sidste weekend august; ungdom/masters weekenden efter",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 5
+   }
+  ]
+ }
+}
