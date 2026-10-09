@@ -42,18 +42,19 @@ off. If that work is intended, run `uv run update.py --allow-rebuild`. A new pro
 `uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost 40 --time-budget 150`, which
 consolidates the changed categories anew, offline so no new minutes arrive meanwhile (the next run adds them), with
 limits a re-extraction of every document fits in; the incremental default cannot migrate rules made with another
-`CONSOLIDATE_VERSION`, or more than 10% of the documents extracted with another prompt, and stops until that is done,
-naming this command.
+`CONSOLIDATE_VERSION`, or more than 10% of the documents extracted with another prompt or model, and stops until that
+is done, naming this command.
 The approval is saved in `data/rebuild.json` before any Claude call: the documents to extract, the categories to
 consolidate (plus those the documents' decisions are in, since re-extracting them changes those categories), the
-prompt versions, the extraction prompt and model, and the consolidation mode, model and effort. When the time or cost
-limit or failed calls cut the work off, run `uv run update.py` again, without the flags, until it ends without
+prompt versions, the extraction prompt, model and effort, and the consolidation mode, model and effort. When the time
+or cost limit or failed calls cut the work off, run `uv run update.py` again, without the flags, until it ends without
 failures; the monthly run does the same. An approval holds for the extraction prompt it was given for only, so one
 given with `--extract-prompt` for another prompt than the default is continued with that option, not by plain runs.
 A run with its prompt and without `--consolidate-mode` continues an unfinished approval in the mode it was given for
-(one saved before modes were recorded counts as full), and always with the extraction model and the consolidation
-model and effort it was approved with: a run asking for others is refused and told what to run (the extraction cache
-does not record the model, so a migration finished with another would mix two silently). A cut-off full migration is
+(one saved before modes were recorded counts as full), and always with the extraction model and effort and the
+consolidation model and effort it was approved with: a run asking for others is refused and told what to run,
+including the command that approves the work anew with its settings (with another extraction model it would extract
+again what the work extracted already). A cut-off full migration is
 continued in full only for what it approved (the categories still on the old version, the approved ones and those of
 approved documents); new minutes in other categories are filed incrementally in the same run once the migration is
 finished, and wait until then, listed in the run report. Ticking "Allow a rebuild" while such a migration is open
@@ -164,9 +165,13 @@ changed against the minutes (the diff of `regelsaet/` shows them as text). When 
 merge to accept the result: the push to `main` rebuilds the website (history is checked only by `update.py`, so
 merging accepts what changed there). Other errors must be fixed first, since the website workflow runs
 `uv run checks.py` and publishes nothing while it finds one: push the fix to the branch after running
-`uv run update.py --render-only` and `uv run checks.py` there, before the next monthly run replaces it. Close
-the pull request to discard the result, its line in `data/runs.jsonl` included; the next monthly run tries
-again. GitHub does not run the tests on a pull request a workflow opened; close and reopen it to run them.
+`uv run update.py --render-only` and `uv run checks.py` there, before the next monthly run replaces it. The
+exception is approved work left unfinished in `data/rebuild.json` (the run report says so): a migration or rebuild
+that is cut off leaves rules out (stale) until a later run finishes it, so merge the pull request, and the following
+runs continue it from `main`; the website stays as it was until the checks pass, and closing would throw away what the
+work has cost so far. Close the pull request to discard the result, its line in `data/runs.jsonl` included; the next
+monthly run tries again. GitHub does not run the tests on a pull request a workflow opened; close and reopen it to
+run them.
 
 Opening the pull request needs "Allow GitHub Actions to create and approve pull requests" under Settings >
 Actions > General > Workflow permissions. The routing is `.github/scripts/route-update.sh`.
@@ -188,7 +193,10 @@ an extraction records the n of the prompt it was made with as its version, so `-
 makes it the pipeline's. After editing the consolidation prompt, bump `CONSOLIDATE_VERSION`. Either way cached
 results are recomputed (a rebuild, see Update).
 Each result records its `provenance`: the model that answered, the CLI version, a fingerprint of the prompt
-and schema, and the effort. It is not part of the cache key, so changing the model alone reruns nothing.
+and schema, and the effort. Only the model is part of a cache key, the extraction's: an extraction is current only when
+the model in its provenance is the extraction model asked for by full id (an alias counts for whichever model answers),
+so a document extracted by another model, say in a test run with `--only` and `--extract-model`, is extracted again by
+the next run.
 
 By default (incremental consolidation), step 3 does not rewrite whole categories. It takes the decisions the rule
 files do not reflect yet (new, changed or retired ids, or a decision whose date or organ changed), one document at a

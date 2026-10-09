@@ -54,7 +54,8 @@ def _extracted(docs: list[Doc]) -> None:
         decision = {"id": f"{doc.id}#1", **_raw(CATEGORIES[i % len(CATEGORIES)], f"Regel {doc.id}"),
                     "citat_fundet": False, "citat_pos": None, "citat_side": None}
         (analyze.DECISIONS_DIR / f"{doc.id}.json").write_text(json.dumps(
-            {"doc_id": doc.id, "sha256": doc.sha256, "version": analyze.EXTRACT_VERSION, "model": "sonnet",
+            {"doc_id": doc.id, "sha256": doc.sha256, "version": analyze.EXTRACT_VERSION, "model": update.EXTRACT_MODEL,
+             "provenance": {"model": update.EXTRACT_MODEL, "cli": "2.1.294", "prompt": "x", "effort": "default"},
              "moededato": None, "next_number": 2, "retired": [], "beslutninger": [decision]}))
 
 
@@ -168,6 +169,15 @@ def test_an_approval_of_one_category_does_not_cover_a_changed_consolidation_inpu
         update.check_rebuild(analysed, allowed=False, plan=FULL)
 
 
+def test_the_workflow_job_outlasts_a_run_on_the_default_limits():
+    workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
+    job = workflow[workflow.index("\n  update:\n"):]
+    timeout = int(re.search(r"timeout-minutes: (\d+)", job).group(1))
+    assert "--time-budget" not in job and "--max-cost" not in job  # every run on GitHub keeps to the defaults
+    # No call starts after the time budget, but one started just before it may take its whole timeout.
+    assert timeout > update.DEFAULT_TIME_BUDGET + analyze.CONSOLIDATE_TIMEOUT / 60
+
+
 def test_the_refusal_names_the_reason_and_the_github_checkbox(analysed):
     (analyze.RULES_DIR / "master.json").unlink()
     with pytest.raises(SystemExit) as refusal:
@@ -202,13 +212,14 @@ def test_a_rebuild_is_priced_from_measured_extractions_and_the_last_full_consoli
           "steps": {"consolidate": _logged_step(30, 3.0, opus)}})
     work = update.pending_work(analysed, prompt=OTHER_PROMPT)  # all 20 documents, and their 4 categories
 
-    estimate = update.estimate_cost(work, update.Plan(OTHER_PROMPT, opus, "full", opus))
+    estimate = update.estimate_cost(work, update.Plan(OTHER_PROMPT, opus, mode="full", consolidate_model=opus))
     assert estimate.extract_usd == pytest.approx(20 * 0.15)  # the runs with this prompt only
     assert estimate.consolidate_usd == pytest.approx(4 * 0.5)  # the full consolidation of November
     assert estimate.total_usd == pytest.approx(5.0)
     assert "more than --max-cost 4" in estimate.describe(4.0) and "--max-cost" not in estimate.describe(15.0)
 
-    sonnet = update.estimate_cost(work, update.Plan(OTHER_PROMPT, "claude-sonnet-5-5", "full", "claude-sonnet-5-5"))
+    sonnet = update.estimate_cost(work, update.Plan(OTHER_PROMPT, "claude-sonnet-5-5", mode="full",
+                                                    consolidate_model="claude-sonnet-5-5"))
     assert sonnet.extract_usd is None and sonnet.total_usd is None  # no Sonnet extraction measured
     assert sonnet.consolidate_usd == pytest.approx(update.FULL_CONSOLIDATION_USD)  # none logged: the README's
     assert "unknown" in sonnet.describe(15.0)
@@ -279,6 +290,42 @@ def test_a_migration_to_another_prompt_is_approved_continued_with_its_settings_a
         {"extract_prompt": OTHER_PROMPT, "consolidate_mode": "full"}
 
 
+def test_an_approval_binds_the_extraction_effort_and_approving_anew_keeps_its_other_settings(run, data, fake_claude):
+    docs = _docs(data, 20)  # none extracted yet
+    approved = update.Plan(OTHER_PROMPT, OTHER_MODEL, extract_effort="high", mode="full", consolidate_effort="high")
+    update.check_rebuild(docs, allowed=True, plan=approved)
+    resume = f"uv run update.py --extract-prompt {OTHER_PROMPT} --extract-model {OTHER_MODEL}"
+    anew = (f"uv run update.py --offline --consolidate-mode full --extract-prompt {OTHER_PROMPT} --extract-model "
+            f"{OTHER_MODEL} --extract-effort low --consolidate-effort high --allow-rebuild --max-cost "
+            f"{update.MIGRATION_MAX_COST} --time-budget {update.MIGRATION_TIME_BUDGET}")
+    with pytest.raises(SystemExit) as refused:
+        run(docs, "--extract-prompt", OTHER_PROMPT, "--extract-effort", "low", mode=None)
+    assert (f"extracted with --extract-prompt {OTHER_PROMPT} --extract-model {OTHER_MODEL} --extract-effort high and "
+            f"consolidated with --consolidate-model {update.CONSOLIDATE_MODEL} --consolidate-effort high, not "
+            f"--extract-effort low. Run `{resume}` without them to continue it, or approve the work anew with yours: "
+            f"`{anew}`.") in str(refused.value)
+    assert fake_claude.invocations("call") == 0
+
+    # That command approves the work anew with the new effort and every other setting as approved; cut off after one
+    # document, it is continued with them.
+    fake_claude.answer({"moededato": None, "beslutninger": []})
+    fake_claude.plan("ok", "error")
+    with pytest.raises(SystemExit, match="Claude calls failed"):
+        run(docs, *anew.split()[3:], "--workers", "1", mode=None)
+    marker = json.loads(update.REBUILD_MARKER.read_text())
+    assert {k: marker[k] for k in ("extract_prompt", "extract_model", "extract_effort", "mode", "consolidate_model",
+                                   "consolidate_effort")} == {
+        "extract_prompt": OTHER_PROMPT, "extract_model": OTHER_MODEL, "extract_effort": "low", "mode": "full",
+        "consolidate_model": update.CONSOLIDATE_MODEL, "consolidate_effort": "high"}
+    fake_claude.plan("ok")
+    calls = fake_claude.invocations("call")
+    run(docs, "--extract-prompt", OTHER_PROMPT, mode=None)
+    extractions = fake_claude.calls()[calls:]
+    assert len(extractions) == 19 and not update.REBUILD_MARKER.exists()
+    assert {(argv[argv.index("--model") + 1], argv[argv.index("--effort") + 1]) for argv in extractions} == \
+        {(OTHER_MODEL, "low")}
+
+
 def _extracted_with_v2(docs: list[Doc]) -> None:
     """The cached extractions as prompt v2 made them, before v3 became the pipeline's."""
     for doc in docs:
@@ -288,13 +335,20 @@ def _extracted_with_v2(docs: list[Doc]) -> None:
 def test_the_monthly_run_on_data_extracted_with_v2_refuses_before_any_call_and_names_the_migration(
         run, analysed, fake_claude, caplog):
     _extracted_with_v2(analysed)
+    model = update.EXTRACT_MODEL
+    _log(update.EVAL_RUNS_LOG, {"command": "extract", "model": model, "prompt": analyze.extract_prompt().name,
+                                "steps": {"extract": _logged_step(1, 1.0, model)}})  # 20 documents: 20 USD, and 5
     for options in ((), ("--allow-rebuild",)):  # incremental consolidation does not migrate, approved or not
         with pytest.raises(SystemExit) as refused:
             run(analysed, *options, mode=None)
         message = str(refused.value)
-        assert (f"20 of 20 documents were extracted with another prompt than {analyze.extract_prompt().name}, which "
-                f"only a full consolidation takes in. Migrate with `{update.MIGRATE}`") in message
-        assert f"'{update.REBUILD_INPUT_LABEL}' and '{update.MODE_INPUT_LABEL}' ticked" in message
+        assert (f"20 of 20 documents were extracted with another prompt or model than {analyze.extract_prompt().name} "
+                f"and {model}, which only a full consolidation takes in. Migrate with `{update.MIGRATE}` (estimated "
+                f"25.00 USD at list price, within its --max-cost {update.MIGRATION_MAX_COST})") in message
+        # On GitHub every run keeps to the default limits, so it takes several.
+        assert (f"'{update.REBUILD_INPUT_LABEL}' and '{update.MODE_INPUT_LABEL}' ticked, where each run keeps to the "
+                f"default limits ({update.DEFAULT_MAX_COST} USD, {update.DEFAULT_TIME_BUDGET} minutes): at an "
+                f"estimated 25.00 USD it takes several runs there") in message
     assert fake_claude.invocations("call") == 0 and not update.REBUILD_MARKER.exists()
     assert "Estimated cost at list price" in caplog.text
 
@@ -315,6 +369,10 @@ def test_a_migration_of_v2_data_cut_off_on_github_is_finished_by_plain_runs_whic
     assert {k: marker[k] for k in ("extract_prompt", "extract_model", "mode", "consolidate_model")} == {
         "extract_prompt": analyze.extract_prompt().name, "extract_model": update.EXTRACT_MODEL, "mode": "full",
         "consolidate_model": update.CONSOLIDATE_MODEL}
+    # Its rules are stale until the migration is finished: the review says to merge, so the next runs continue it.
+    report = update.RUN_REPORT.read_text()
+    assert "- **stale**" in report and "Merge the pull request, so the following runs continue it" in report
+    assert "close the pull request" not in report
 
     run(docs, "--workers", "1", mode=None)  # the next monthly run finishes it in full, with the approved settings
     calls = fake_claude.calls()
@@ -333,11 +391,11 @@ def test_a_migration_of_v2_data_cut_off_on_github_is_finished_by_plain_runs_whic
 
 
 def test_a_few_approved_documents_left_keep_the_approval_and_its_settings(analysed):
-    plan = update.Plan(OTHER_PROMPT, OTHER_MODEL, "full")
+    plan = update.Plan(OTHER_PROMPT, OTHER_MODEL, mode="full")
     update.check_rebuild(analysed, allowed=True, plan=plan)  # all 20 documents
     _extracted(analysed)  # 19 of them done with the other prompt: one left is ordinary, but keeps the approval
     for doc in analysed[1:]:
-        _edit_version(doc, analyze.extract_prompt(OTHER_PROMPT).version)
+        _edit_version(doc, analyze.extract_prompt(OTHER_PROMPT).version, OTHER_MODEL)
     update.update_rebuild_marker(analysed, plan)
     marker = json.loads(update.REBUILD_MARKER.read_text())
     assert (marker["documents"], marker["extract_prompt"], marker["extract_model"]) == \
@@ -345,10 +403,12 @@ def test_a_few_approved_documents_left_keep_the_approval_and_its_settings(analys
     update.check_rebuild(analysed, allowed=False, plan=plan)
 
 
-def _edit_version(doc: Doc, version: int) -> None:
+def _edit_version(doc: Doc, version: int, model: str | None = None) -> None:
+    """The cached extraction as made with the prompt of `version`, and by `model` when one is given."""
     path = analyze.DECISIONS_DIR / f"{doc.id}.json"
     cached = json.loads(path.read_text())
-    path.write_text(json.dumps({**cached, "version": version}))
+    provenance = {**cached["provenance"], "model": model} if model else cached["provenance"]
+    path.write_text(json.dumps({**cached, "version": version, "provenance": provenance}))
 
 
 def test_the_website_waits_for_queued_builds_and_skips_an_update_that_changed_nothing():
@@ -471,12 +531,13 @@ def test_an_interrupted_approved_rebuild_is_finished_by_plain_runs(run, data, fa
     # The approval holds for the prompt versions it was given for only.
     monkeypatch.setattr(analyze, "EXTRACT_VERSION", analyze.EXTRACT_VERSION + 1)
     with pytest.raises(SystemExit, match="Stopped before any Claude call"):
-        run(docs)
+        run(docs, mode=None)
     monkeypatch.setattr(analyze, "EXTRACT_VERSION", analyze.EXTRACT_VERSION - 1)
 
     fake_claude.plan("ok")
-    run(docs)
+    run(docs, mode=None)
     assert not update.REBUILD_MARKER.exists() and len(_run_log()) == 2
+    assert _run_log()[-1]["consolidate_mode"] == "full"  # continued in the mode it was approved for
 
 
 def test_an_ordinary_run_cut_off_with_most_categories_left_is_continued(run, data, fake_claude, monkeypatch):
@@ -492,8 +553,8 @@ def test_an_ordinary_run_cut_off_with_most_categories_left_is_continued(run, dat
     assert "3 of 4 categories" in _reasons(docs) and update.REBUILD_MARKER.exists()
 
     fake_claude.plan("ok")
-    run(docs)
-    assert not update.REBUILD_MARKER.exists()
+    run(docs, mode=None)
+    assert not update.REBUILD_MARKER.exists() and _run_log()[-1]["consolidate_mode"] == "full"
 
 
 # ---------------------------------------------------------------- outcome: exit code and run report
@@ -579,7 +640,7 @@ def test_history_that_cannot_be_checked_is_not_published(run, analysed, monkeypa
 
 
 def test_the_outcome_is_reported_when_the_report_cannot_be_built(run, analysed, monkeypatch):
-    def crash(*args):
+    def crash(*args, **kwargs):
         raise RuntimeError("report broke")
 
     monkeypatch.setattr(update, "run_report", crash)

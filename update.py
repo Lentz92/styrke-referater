@@ -85,6 +85,9 @@ EVAL_RUNS_LOG = scrape.ROOT / "eval" / "runs.jsonl"
 FULL_CONSOLIDATION_USD = 5.0
 # The label GitHub shows for the workflow input that passes --allow-rebuild (its description in update.yml).
 REBUILD_INPUT_LABEL = "Allow a rebuild (--allow-rebuild)"
+# A run's limits unless it sets others; the workflow sets none, so every run on GitHub keeps to these.
+DEFAULT_MAX_COST = 15
+DEFAULT_TIME_BUDGET = 75
 # What the run found, for the pull request that reviews it (its body) and the GitHub step summary; not committed.
 RUN_REPORT = scrape.ROOT / "run-report.md"
 EXIT_FAILED = 1
@@ -116,15 +119,18 @@ def main() -> None:
                              "full: consolidate each category with changed decisions anew, to migrate a new prompt or "
                              f"CONSOLIDATE_VERSION (with --allow-rebuild) (default: {DEFAULT_CONSOLIDATE_MODE}, or "
                              "full while a full consolidation approved in data/rebuild.json is unfinished)")
-    parser.add_argument("--extract-effort", choices=EFFORTS, help="effort for extraction (default: Claude Code's own)")
+    parser.add_argument("--extract-effort", choices=EFFORTS,
+                        help="effort for extraction (default: Claude Code's own, or the one the work approved in "
+                             "data/rebuild.json was approved with)")
     parser.add_argument("--consolidate-effort", choices=EFFORTS,
                         help="effort for consolidation (default: Claude Code's own, or the one the work approved in "
                              "data/rebuild.json was approved with)")
     parser.add_argument("--workers", type=int, default=4, help="parallel Claude calls (default: 4)")
-    parser.add_argument("--time-budget", type=float, default=75, metavar="MIN",
-                        help="start no new Claude calls after this many minutes (default: 75)")
-    parser.add_argument("--max-cost", type=float, default=15, metavar="USD",
-                        help="start no new Claude calls once the run has used this much at list price (default: 15)")
+    parser.add_argument("--time-budget", type=float, default=DEFAULT_TIME_BUDGET, metavar="MIN",
+                        help=f"start no new Claude calls after this many minutes (default: {DEFAULT_TIME_BUDGET})")
+    parser.add_argument("--max-cost", type=float, default=DEFAULT_MAX_COST, metavar="USD",
+                        help=f"start no new Claude calls once the run has used this much at list price (default: "
+                             f"{DEFAULT_MAX_COST})")
     parser.add_argument("--allow-rebuild", action="store_true",
                         help="allow work the rebuild guard stops: many documents to extract, lost rule files, many "
                              "rules to update; with --consolidate-mode full, the migration after a new prompt or "
@@ -181,8 +187,10 @@ def main() -> None:
 
     if data is not None:
         try:
+            prompt, model = (plan.prompt, plan.extract_model) if plan else (args.extract_prompt,
+                                                                             args.extract_model or EXTRACT_MODEL)
             pages = render.render(docs, data.decisions, data.raw_rules,
-                                  analyze.missing_extractions(docs, plan.prompt if plan else args.extract_prompt),
+                                  analyze.missing_extractions(docs, prompt, model=model),
                                   Counter(problem.kind for problem in problems), today)
             logging.info("Wrote %d pages to %s", len(pages), render.OUT_DIR.relative_to(scrape.ROOT))
             site = website.build(docs, data.decisions, data.raw_rules, data.slugs.targets(), today)
@@ -196,7 +204,7 @@ def main() -> None:
     review = not args.render_only and bool(checks.errors(problems))
     if not args.render_only:
         code = EXIT_REVIEW if review else EXIT_FAILED if failures else 0
-        write_report(code, steps, problems, history, failures, today)
+        write_report(code, steps, problems, history, failures, today, unfinished=REBUILD_MARKER.exists())
     if review:
         if stop is not None and not isinstance(stop, SystemExit):
             logging.error("The run failed", exc_info=stop)
@@ -219,7 +227,7 @@ def analyse(args: argparse.Namespace, plan: Plan, docs: list[Doc], budget: analy
         # What the rule files reflect before the extraction, so a decision it only re-dates still reaches its rule.
         known = (incremental.known_inputs(analyze.load_decisions(docs), incremental.RuleBook.load(), docs)
                  if plan.mode == "incremental" or plan.continued else None)
-        steps["extract"] = analyze.extract(targets, model=plan.extract_model, effort=args.extract_effort,
+        steps["extract"] = analyze.extract(targets, model=plan.extract_model, effort=plan.extract_effort,
                                            workers=args.workers, budget=budget, prompt=plan.prompt)
         if plan.continued is not None:
             continue_migration(plan, docs, settings, budget, steps, known)
@@ -255,13 +263,13 @@ def continue_migration(plan: Plan, docs: list[Doc], settings: incremental.Settin
     incrementally in the same run, which keeps what the full consolidation wrote; until then it waits, listed in the
     run report."""
     assert plan.continued is not None
-    scope = migration_scope(docs, plan.continued, plan.prompt)
+    scope = migration_scope(docs, plan)
     decisions = analyze.load_decisions(docs)
     steps["consolidate"] = analyze.consolidate(decisions, {d.id: d.organ_label for d in docs},
                                                model=plan.consolidate_model, effort=plan.consolidate_effort,
                                                workers=settings.workers, budget=budget, categories=set(scope))
     book = incremental.RuleBook.load()
-    categories, documents = migration_left(docs, plan.continued, plan.prompt)
+    categories, documents = migration_left(docs, plan)
     if categories or documents:
         queue = incremental.work_queue(decisions, book, docs, known)
         waiting = sorted(incremental.queue_categories(queue, decisions, book) - scope)
@@ -281,21 +289,21 @@ def continue_migration(plan: Plan, docs: list[Doc], settings: incremental.Settin
     steps["consolidate-incremental"] = incremental.consolidate(docs, decisions, settings, budget, known=known)
 
 
-def migration_scope(docs: list[Doc], approval: Approval, prompt: str | None = None) -> frozenset[str]:
-    """The categories a continued full approval may consolidate: those still on another CONSOLIDATE_VERSION, those
-    approved, and those holding decisions of approved documents (the coverage Work.outside judges by)."""
-    work = pending_work(docs, "full", prompt)
+def migration_scope(docs: list[Doc], plan: Plan) -> frozenset[str]:
+    """The categories the full approval a plan continues may consolidate: those still on another CONSOLIDATE_VERSION,
+    those approved, and those holding decisions of approved documents (the coverage Work.outside judges by)."""
+    assert plan.continued is not None
+    approval = plan.continued
+    work = pending_work(docs, "full", plan.prompt, plan.extract_model)
     return work.outdated | approval.categories | {c for c, ids in work.sources.items() if ids & approval.documents}
 
 
-def migration_left(docs: list[Doc], approval: Approval, prompt: str | None = None) \
-        -> tuple[frozenset[str], frozenset[str]]:
-    """What is left of a continued full approval: its categories still to consolidate in full, and its documents
-    still to extract with the extraction prompt named `prompt` (None: the pipeline's); both empty when the migration
-    is finished."""
-    work = pending_work(docs, "full", prompt)
-    return (work.outdated | (work.categories & migration_scope(docs, approval, prompt)),
-            work.documents & approval.documents)
+def migration_left(docs: list[Doc], plan: Plan) -> tuple[frozenset[str], frozenset[str]]:
+    """What is left of the full approval a plan continues: its categories still to consolidate in full, and its
+    documents still to extract with the plan's extraction settings; both empty when the migration is finished."""
+    assert plan.continued is not None
+    work = pending_work(docs, "full", plan.prompt, plan.extract_model)
+    return work.outdated | (work.categories & migration_scope(docs, plan)), work.documents & plan.continued.documents
 
 
 def _categories_of(docs: list[Doc]) -> set[str]:
@@ -316,9 +324,10 @@ class Work:
     total_documents: int
     total_categories: int
     extract_version: int  # the version of the extraction prompt the documents are to be extracted with
-    # Documents among those to extract whose cached extraction was made with another prompt: all their decisions may
-    # change, which only a full consolidation should take in.
-    reprompted: frozenset[str] = frozenset()
+    extract_model: str  # the model they are to be extracted by
+    # Documents among those to extract whose cached extraction was made with another prompt or model: all their
+    # decisions may change, which only a full consolidation should take in.
+    superseded: frozenset[str] = frozenset()
     mode: str = DEFAULT_CONSOLIDATE_MODE  # the consolidation mode the work is judged for
 
     def reasons(self) -> list[str]:
@@ -347,12 +356,13 @@ class Work:
     def migration(self) -> list[str]:
         """Why this work is a migration, which only a full consolidation does; empty when it is none: categories
         consolidated with another CONSOLIDATE_VERSION, or more than REBUILD_SHARE of the documents extracted with
-        another prompt (a new extraction prompt changes decisions throughout, which a full consolidation takes in more
-        cheaply and cleanly than updating rule by rule)."""
+        another prompt or model (a new extraction changes decisions throughout, which a full consolidation takes in
+        more cheaply and cleanly than updating rule by rule)."""
         found = []
-        if len(self.reprompted) > REBUILD_SHARE * self.total_documents:
-            found.append(f"{len(self.reprompted)} of {self.total_documents} documents were extracted with another "
-                         f"prompt than v{self.extract_version}, which only a full consolidation takes in")
+        if len(self.superseded) > REBUILD_SHARE * self.total_documents:
+            found.append(f"{len(self.superseded)} of {self.total_documents} documents were extracted with another "
+                         f"prompt or model than v{self.extract_version} and {self.extract_model}, which only a full "
+                         f"consolidation takes in")
         if self.outdated:
             found.append(f"categories consolidated with another CONSOLIDATE_VERSION, which only a full "
                          f"consolidation migrates: {', '.join(sorted(self.outdated))}")
@@ -374,41 +384,45 @@ class Work:
         extracting those documents is approved, and their new decisions may land in any category."""
         covered = approval.categories | {c for c, ids in self.sources.items() if ids & approval.documents}
         return replace(self, documents=self.documents - approval.documents, categories=self.categories - covered,
-                       lost=self.lost - covered, reprompted=self.reprompted - approval.documents)
+                       lost=self.lost - covered, superseded=self.superseded - approval.documents)
 
 
 @dataclass(frozen=True)
 class Approval:
     """Work approved with --allow-rebuild (or left by a run that was allowed to start it), for the prompt versions in
-    force then, and the settings it is to be done with: the extraction prompt and model, and the consolidation mode,
-    model and effort. Saved in data/rebuild.json so the runs with its extraction prompt (plain ones, the monthly one
-    included, when it is the pipeline's) finish it with those settings."""
+    force then, and the settings it is to be done with: the extraction prompt, model and effort, and the consolidation
+    mode, model and effort. Saved in data/rebuild.json so the runs with its extraction prompt (plain ones, the monthly
+    one included, when it is the pipeline's) finish it with those settings."""
     documents: frozenset[str]
     categories: frozenset[str]
     extract_prompt: str  # the extraction prompt's name, e.g. "v3"
     mode: str = "full"  # a marker from before modes were recorded was written by a full consolidation
-    extract_model: str | None = None  # None: not recorded (an approval from before it was)
+    extraction: tuple[str, str | None] | None = None  # (extraction model, effort) approved; None: not recorded
     consolidation: tuple[str, str | None] | None = None  # (consolidation model, effort) approved; None: not recorded
 
     def options(self) -> dict[str, str | None]:
         """The options a run continuing this work is bound to besides its extraction prompt, with their approved values
-        (None: left out, which for the effort means Claude Code's own); an option the approval did not record is
+        (None: left out, which for an effort means Claude Code's own); an option the approval did not record is
         free."""
         bound: dict[str, str | None] = {}
-        if self.extract_model is not None:
-            bound["--extract-model"] = self.extract_model
+        if self.extraction is not None:
+            bound["--extract-model"], bound["--extract-effort"] = self.extraction
         if self.consolidation is not None:
             bound["--consolidate-model"], bound["--consolidate-effort"] = self.consolidation
         return bound
 
     def settings(self) -> str:
         """The approved settings, for a refusal."""
-        text = f"extracted with --extract-prompt {self.extract_prompt}" + (
-            f" --extract-model {self.extract_model}" if self.extract_model else "")
+        def effort(option: str, value: str | None) -> str:
+            return f" {option} {value}" if value else " and Claude Code's own effort"
+
+        text = f"extracted with --extract-prompt {self.extract_prompt}"
+        if self.extraction is not None:
+            model, chosen = self.extraction
+            text += f" --extract-model {model}" + effort("--extract-effort", chosen)
         if self.consolidation is not None:
-            model, effort = self.consolidation
-            text += f" and consolidated with --consolidate-model {model}" + (
-                f" --consolidate-effort {effort}" if effort else " and Claude Code's own effort")
+            model, chosen = self.consolidation
+            text += f" and consolidated with --consolidate-model {model}" + effort("--consolidate-effort", chosen)
         return text
 
     def continuation(self) -> str:
@@ -416,18 +430,19 @@ class Approval:
         continue it, and they take the rest of its settings from data/rebuild.json (its extraction model is named
         too, so the command says what it does)."""
         prompt = None if self.extract_prompt == analyze.extract_prompt().name else self.extract_prompt
-        return Plan(prompt, self.extract_model or EXTRACT_MODEL).command()
+        return Plan(prompt, self.extraction[0] if self.extraction else EXTRACT_MODEL).command()
 
 
 @dataclass(frozen=True)
 class Plan:
-    """How a run does its Claude work: the extraction prompt (None: the pipeline's) and model; the consolidation mode,
-    model and effort; its cost limit (--max-cost); and the unfinished full approval it continues because no mode was
-    asked for (it consolidates in full only within that approval's scope, see continue_migration). The rebuild guard
-    prices the work with it, and an approval records it, so the runs that finish the work keep to it: the extraction
-    cache key leaves the model out, so a migration resumed on another model would mix two silently."""
+    """How a run does its Claude work: the extraction prompt (None: the pipeline's), model and effort; the
+    consolidation mode, model and effort; its cost limit (--max-cost); and the unfinished full approval it continues
+    because no mode was asked for (it consolidates in full only within that approval's scope, see continue_migration).
+    The rebuild guard prices the work with it, and an approval records it, so the runs that finish the work keep to
+    it: one with another extraction model would extract again what the work extracted already."""
     prompt: str | None = None
     extract_model: str = EXTRACT_MODEL
+    extract_effort: str | None = None
     mode: str = DEFAULT_CONSOLIDATE_MODE
     consolidate_model: str = CONSOLIDATE_MODEL
     consolidate_effort: str | None = None
@@ -438,15 +453,17 @@ class Plan:
     def prompt_name(self) -> str:
         return analyze.extract_prompt(self.prompt).name
 
-    def command(self, *, allow_rebuild: bool = False) -> str:
-        """The update.py command that does the work with these settings; options at their default are left out. With
+    def command(self, *, allow_rebuild: bool = False, mode_option: bool = False) -> str:
+        """The update.py command that does the work with these settings; options at their default are left out, but
+        the mode is named with `mode_option` (a run approving anew must ask for one, see resolve_plan). With
         --allow-rebuild in full mode it is a migration: offline, with the migration's limits (MIGRATE)."""
         migration = allow_rebuild and self.mode == "full"
         options = ["--offline"] if migration else []
-        options += ["--consolidate-mode full"] if self.mode == "full" else []
+        options += [f"--consolidate-mode {self.mode}"] if self.mode == "full" or mode_option else []
         options += [f"--extract-prompt {self.prompt_name}"] if self.prompt_name != analyze.extract_prompt().name \
             else []
         options += [f"--extract-model {self.extract_model}"] if self.extract_model != EXTRACT_MODEL else []
+        options += [f"--extract-effort {self.extract_effort}"] if self.extract_effort else []
         options += [f"--consolidate-model {self.consolidate_model}"] if self.consolidate_model != CONSOLIDATE_MODEL \
             else []
         options += [f"--consolidate-effort {self.consolidate_effort}"] if self.consolidate_effort else []
@@ -460,59 +477,52 @@ class Plan:
         return replace(self, mode=DEFAULT_CONSOLIDATE_MODE).command() == "uv run update.py"
 
 
-def consolidation_mode(asked: str | None) -> str:
-    """The mode a run consolidates in: the one asked for with --consolidate-mode; else full while an approval given
-    for a full consolidation is unfinished (a migration the time or cost limit cut off: plain runs, the monthly one
-    included, finish it as approved); else the default."""
-    if asked is not None:
-        return asked
-    approval = _load_approval()
-    return "full" if approval is not None and approval.mode == "full" else DEFAULT_CONSOLIDATE_MODE
-
-
 def resolve_plan(args: argparse.Namespace) -> Plan:
     """How this run does its Claude work. A run that asks for a mode with --allow-rebuild approves its work anew,
     through check_rebuild's scope check; a test run on a few documents (--only) ignores any approval, as it skips the
     rebuild guard and leaves data/rebuild.json alone. Any other run with the extraction prompt of an unfinished
     approval continues it: in full, within its scope, when it was given for full and no mode is asked for; and always
-    with the extraction model and the consolidation model and effort it was approved with, so a migration is never
-    finished with other settings than it was started with. A run asking for other ones is refused (SystemExit),
-    naming what to run instead; one with another extraction prompt does other work, which the rebuild guard judges."""
+    with the extraction model and effort and the consolidation model and effort it was approved with, so a migration
+    is never finished with other settings than it was started with. A run asking for other ones is refused
+    (SystemExit), naming what to run instead; one with another extraction prompt does other work, which the rebuild
+    guard judges."""
     asked = args.consolidate_mode
     prompt = None if args.extract_prompt in (None, analyze.extract_prompt().name) else args.extract_prompt
     approval = None if args.only or args.allow_rebuild and asked is not None else _load_approval(prompt)
-    chosen: dict[str, str | None] = {"--extract-model": args.extract_model,
+    chosen: dict[str, str | None] = {"--extract-model": args.extract_model, "--extract-effort": args.extract_effort,
                                      "--consolidate-model": args.consolidate_model,
                                      "--consolidate-effort": args.consolidate_effort}
-    continued = None
-    if approval is not None:
-        bound = approval.options()
-        other = " ".join(f"{option} {chosen[option]}" for option, value in bound.items()
-                         if chosen[option] not in (None, value))
-        if other:
-            prompt_option = f" --extract-prompt {prompt}" if prompt else ""
-            raise SystemExit(
-                f"Stopped before any Claude call: the work approved in {REBUILD_MARKER.name} is "
-                f"{approval.settings()}, not {other}. Run `{approval.continuation()}` without them to continue it, or "
-                f"approve the work anew with yours: `uv run update.py --consolidate-mode {approval.mode}{prompt_option} "
-                f"--allow-rebuild {other}`.")
-        chosen |= bound
-        if approval.mode == "full" and asked is None:
-            continued = approval
-            logging.warning("Continuing the full consolidation approved in %s, within its scope%s",
-                            REBUILD_MARKER.name,
-                            "; --allow-rebuild approves nothing more until it is finished" if args.allow_rebuild else "")
-    return Plan(prompt=prompt, extract_model=chosen["--extract-model"] or EXTRACT_MODEL,
-                mode=asked or ("full" if continued else DEFAULT_CONSOLIDATE_MODE),
-                consolidate_model=chosen["--consolidate-model"] or CONSOLIDATE_MODEL,
-                consolidate_effort=chosen["--consolidate-effort"], max_cost=args.max_cost, continued=continued)
+
+    def plan(options: dict[str, str | None], mode: str, continued: Approval | None = None) -> Plan:
+        return Plan(prompt=prompt, extract_model=options["--extract-model"] or EXTRACT_MODEL,
+                    extract_effort=options["--extract-effort"], mode=mode,
+                    consolidate_model=options["--consolidate-model"] or CONSOLIDATE_MODEL,
+                    consolidate_effort=options["--consolidate-effort"], max_cost=args.max_cost, continued=continued)
+
+    if approval is None:
+        return plan(chosen, asked or DEFAULT_CONSOLIDATE_MODE)
+    bound = approval.options()
+    other = {option: chosen[option] for option, value in bound.items() if chosen[option] not in (None, value)}
+    if other:
+        asked_for = " ".join(f"{option} {value}" for option, value in other.items())
+        anew = plan({**chosen, **{o: v for o, v in bound.items() if o not in other}}, approval.mode)
+        raise SystemExit(
+            f"Stopped before any Claude call: the work approved in {REBUILD_MARKER.name} is {approval.settings()}, "
+            f"not {asked_for}. Run `{approval.continuation()}` without them to continue it, or approve the work anew "
+            f"with yours: `{anew.command(allow_rebuild=True, mode_option=True)}`.")
+    continued = approval if approval.mode == "full" and asked is None else None
+    if continued is not None:
+        logging.warning("Continuing the full consolidation approved in %s, within its scope%s", REBUILD_MARKER.name,
+                        "; --allow-rebuild approves nothing more until it is finished" if args.allow_rebuild else "")
+    return plan({**chosen, **bound}, asked or ("full" if continued else DEFAULT_CONSOLIDATE_MODE), continued)
 
 
-def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE, prompt: str | None = None) -> Work:
-    """The work before extraction with the extraction prompt named `prompt` (None: the pipeline's), from data/ alone:
-    no Claude call. The categories to consolidate are those whose input changed (full), or those the incremental work
-    queue changes (incremental.queue_categories); in incremental mode, those consolidated with another
-    CONSOLIDATE_VERSION, and documents extracted with another prompt, are a migration: only `full` does it."""
+def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE, prompt: str | None = None,
+                 model: str = EXTRACT_MODEL) -> Work:
+    """The work before extraction with the extraction prompt named `prompt` (None: the pipeline's) and `model`, from
+    data/ alone: no Claude call. The categories to consolidate are those whose input changed (full), or those the
+    incremental work queue changes (incremental.queue_categories); in incremental mode, those consolidated with another
+    CONSOLIDATE_VERSION, and documents extracted with another prompt or model, are a migration: only `full` does it."""
     decisions = analyze.load_decisions(docs)
     book = incremental.RuleBook.load()
     outdated = frozenset(category for category, stored in book.files.items()
@@ -529,7 +539,7 @@ def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE, prompt: 
     for d in decisions:
         sources.setdefault(home[d.ref], set()).add(d.doc_id)
     return Work(
-        documents=frozenset(analyze.missing_extractions(docs, prompt)),
+        documents=frozenset(analyze.missing_extractions(docs, prompt, model=model)),
         categories=categories,
         lost=lost,
         outdated=outdated,
@@ -537,7 +547,8 @@ def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE, prompt: 
         total_documents=len(docs),
         total_categories=len(sources),
         extract_version=analyze.extract_prompt(prompt).version,
-        reprompted=frozenset(analyze.reprompted_extractions(docs, prompt)),
+        extract_model=model,
+        superseded=frozenset(analyze.superseded_extractions(docs, prompt, model=model)),
         mode=mode,
     )
 
@@ -553,24 +564,29 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, plan: Plan = Plan()) -> Non
     logged first, so it is known before it is approved: for a migration refused in incremental mode, the cost of the
     full one.
     """
-    work = pending_work(docs, plan.mode, plan.prompt)
+    work = pending_work(docs, plan.mode, plan.prompt, plan.extract_model)
     reasons = work.reasons()
     if not reasons:
         return
     approval = _load_approval(plan.prompt)
     if plan.mode == "incremental" and work.migration():  # incremental mode cannot do this work, approved or not
         migrate = replace(plan, mode="full", max_cost=MIGRATION_MAX_COST, continued=None)
-        log_estimate(pending_work(docs, "full", plan.prompt), migrate)
+        estimate = log_estimate(pending_work(docs, "full", plan.prompt, plan.extract_model), migrate)
+        total = None if estimate is None else estimate.total_usd
+        within = "" if total is None else (
+            f" (estimated {total:.2f} USD at list price, " + (f"within its --max-cost {MIGRATION_MAX_COST})"
+                                                              if total <= MIGRATION_MAX_COST else
+                                                              f"more than its --max-cost {MIGRATION_MAX_COST}: "
+                                                              f"running it again continues the rest)"))
         unfinished = (f" (or run `{approval.continuation()}` without --consolidate-mode: it continues the full "
                       f"consolidation approved in {REBUILD_MARKER.name})"
                       if approval is not None and approval.mode == "full" else "")
-        github = (f", or on GitHub: Actions > Update rule overview > Run workflow with '{REBUILD_INPUT_LABEL}' and "
-                  f"'{MODE_INPUT_LABEL}' ticked" if migrate.on_github() else "")
+        github = _github(full=True, total=total) if migrate.on_github() else ""
         raise SystemExit(
             f"Stopped before any Claude call: {'; '.join(reasons)}. Migrate with "
-            f"`{migrate.command(allow_rebuild=True)}`{unfinished}{github}; {_continued_by(plan.prompt)} finish a "
-            f"migration that is cut off, and then go on incrementally.{_other_rebuild(plan)}")
-    log_estimate(work, plan)
+            f"`{migrate.command(allow_rebuild=True)}`{within}{unfinished}{github}; {_continued_by(plan.prompt)} finish "
+            f"a migration that is cut off, and then go on incrementally.{_other_rebuild(plan)}")
+    estimate = log_estimate(work, plan)
     if allowed:
         _save_approval(work, plan)
         logging.warning("Approved, saved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
@@ -581,16 +597,14 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, plan: Plan = Plan()) -> Non
             logging.warning("Continuing the work approved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
             return
         reasons = [f"beyond the work approved in {REBUILD_MARKER.name}, {reason}" for reason in outside]
-    raise SystemExit(_refusal(reasons, plan))
+    raise SystemExit(_refusal(reasons, plan, None if estimate is None else estimate.total_usd))
 
 
-def _refusal(reasons: list[str], plan: Plan) -> str:
+def _refusal(reasons: list[str], plan: Plan, total: float | None = None) -> str:
     """Why the guard stopped the run, with which extraction settings, and the exact command that approves the work
-    (and the workflow's checkboxes that do the same, when they can)."""
+    (and the workflow's checkboxes that do the same, when they can); `total` is the work's estimated cost."""
     full = plan.mode == "full"
-    boxes = f"'{REBUILD_INPUT_LABEL}'" + (f" and '{MODE_INPUT_LABEL}'" if full else "")
-    github = f", or on GitHub: Actions > Update rule overview > Run workflow with {boxes} ticked" \
-        if plan.on_github() else ""
+    github = _github(full, total) if plan.on_github() else ""
     migrate = "" if full else (f" A new prompt or EXTRACT_VERSION/CONSOLIDATE_VERSION is migrated with `{MIGRATE}` "
                                f"(on GitHub, also tick '{MODE_INPUT_LABEL}').")
     monthly = ", the monthly one included," if plan.prompt is None else ""
@@ -599,6 +613,17 @@ def _refusal(reasons: list[str], plan: Plan) -> str:
             f"approval is saved in data/rebuild.json with these settings, and {_continued_by(plan.prompt)}{monthly} "
             f"continue the work with them if it is cut off{', in full mode' if full else ''}.{migrate}"
             f"{_other_rebuild(plan)}")
+
+
+def _github(full: bool, total: float | None) -> str:
+    """How to start the work on GitHub instead, where every run keeps to the default limits (the workflow passes
+    none): work that costs more takes several runs."""
+    boxes = f"'{REBUILD_INPUT_LABEL}'" + (f" and '{MODE_INPUT_LABEL}'" if full else "")
+    more = (f": at an estimated {total:.2f} USD it takes several runs there, each continuing what the last left (merge "
+            f"each review pull request, so the next run continues from it)" if total is not None and
+            total > DEFAULT_MAX_COST else ", and the following runs continue what one leaves")
+    return (f", or on GitHub: Actions > Update rule overview > Run workflow with {boxes} ticked, where each run keeps "
+            f"to the default limits ({DEFAULT_MAX_COST} USD, {DEFAULT_TIME_BUDGET} minutes){more}")
 
 
 def _continued_by(prompt: str | None) -> str:
@@ -625,18 +650,19 @@ def update_rebuild_marker(docs: list[Doc], plan: Plan) -> None:
     the run was allowed to start that work, so the following runs may finish it. The new approval covers
     only what is left, in the mode and with the settings this run worked with; for a continued migration, only
     what is left of its scope (a finished one went on incrementally). It is kept until the approved documents are
-    extracted, however few are left, so the runs that finish them keep to its extraction prompt and model.
+    extracted, however few are left, so the runs that finish them keep to its extraction settings.
     """
     if plan.continued is not None:
-        categories, documents = migration_left(docs, plan.continued, plan.prompt)
+        categories, documents = migration_left(docs, plan)
         if categories or documents:
-            _save_approval(pending_work(docs, "full", plan.prompt), plan, documents=documents, categories=categories)
+            _save_approval(pending_work(docs, "full", plan.prompt, plan.extract_model), plan, documents=documents,
+                           categories=categories)
             logging.warning("Unfinished: the full migration of %s; %s continue it (approval in %s)",
                             ", ".join([*sorted(categories), *sorted(documents)]), _continued_by(plan.prompt),
                             REBUILD_MARKER.name)
             return
     mode = DEFAULT_CONSOLIDATE_MODE if plan.continued is not None else plan.mode
-    work = pending_work(docs, mode, plan.prompt)
+    work = pending_work(docs, mode, plan.prompt, plan.extract_model)
     approval = _load_approval(plan.prompt)
     left = approval.documents & work.documents if approval is not None else frozenset()
     if work.unfinished() or left:
@@ -653,12 +679,13 @@ def update_rebuild_marker(docs: list[Doc], plan: Plan) -> None:
 def _save_approval(work: Work, plan: Plan, documents: Collection[str] | None = None,
                    categories: Collection[str] | None = None) -> None:
     """data/rebuild.json: the work (by default all of it, else `documents` and `categories`), the prompt versions, and
-    the settings it is to be done with: the extraction prompt and model, and the consolidation mode, model and
+    the settings it is to be done with: the extraction prompt, model and effort, and the consolidation mode, model and
     effort."""
     marker = {
         "extract_version": work.extract_version,
         "extract_prompt": plan.prompt_name,
         "extract_model": plan.extract_model,
+        "extract_effort": plan.extract_effort,
         "consolidate_version": analyze.CONSOLIDATE_VERSION,
         "documents": sorted(work.documents if documents is None else documents),
         "categories": sorted(work.approved_categories() if categories is None else categories),
@@ -694,11 +721,11 @@ def _saved_approval() -> Approval | None:
     prompt = marker.get("extract_prompt") or f"v{marker.get('extract_version')}"
     if prompt != analyze.extract_prompt().name and prompt not in analyze.EXTRACT_PROMPTS:
         return None
+    extraction = (marker["extract_model"], marker.get("extract_effort")) if marker.get("extract_model") else None
     consolidation = (marker["consolidate_model"], marker.get("consolidate_effort")) \
         if marker.get("consolidate_model") else None
     return Approval(frozenset(marker.get("documents") or ()), frozenset(marker.get("categories") or ()), prompt,
-                    mode=marker.get("mode") or "full", extract_model=marker.get("extract_model"),
-                    consolidation=consolidation)
+                    mode=marker.get("mode") or "full", extraction=extraction, consolidation=consolidation)
 
 
 # --------------------------------------------------------------------------- rebuild cost
@@ -763,14 +790,16 @@ def estimate_cost(work: Work, plan: Plan) -> CostEstimate:
     return CostEstimate(*extract, *consolidate)
 
 
-def log_estimate(work: Work, plan: Plan) -> None:
-    """Log the work's estimated cost. An unreadable run log only warns: the estimate informs, it never stops a run."""
+def log_estimate(work: Work, plan: Plan) -> CostEstimate | None:
+    """Log the work's estimated cost, and return it. An unreadable run log only warns (and gives None): the estimate
+    informs, it never stops a run."""
     try:
-        text = estimate_cost(work, plan).describe(plan.max_cost)
+        estimate = estimate_cost(work, plan)
     except (OSError, ValueError, KeyError, TypeError) as exc:
         logging.warning("Could not estimate the cost of this work: %s: %s", type(exc).__name__, exc)
-        return
-    logging.warning("%s", text)
+        return None
+    logging.warning("%s", estimate.describe(plan.max_cost))
+    return estimate
 
 
 def _log_lines(path: Path) -> list[dict]:
@@ -868,15 +897,17 @@ CHECKS_FAILED = "<!-- checks: errors -->"
 
 
 def write_report(code: int, steps: dict[str, StepSummary], problems: list[checks.Problem],
-                 history: checks.HistoryCheck | None, failures: list[str], today: date) -> None:
-    """Write run-report.md and, when running on GitHub, show it on the run page; a write error only warns."""
+                 history: checks.HistoryCheck | None, failures: list[str], today: date, *,
+                 unfinished: bool = False) -> None:
+    """Write run-report.md and, when running on GitHub, show it on the run page; a write error only warns.
+    `unfinished`: approved work is left in data/rebuild.json for the following runs."""
     try:
-        report = run_report(code, steps, problems, history, failures, today)
+        report = run_report(code, steps, problems, history, failures, today, unfinished=unfinished)
     except Exception:  # the outcome must still reach the routing and the pull request
         logging.exception("Could not build the run report")
         report = "\n".join([_marker(code), f"# Rule overview update {today.isoformat()}", "",
-                            _outcome(code, problems, failures), "", "The full report could not be built; the "
-                            "run's log has every finding.", ""])
+                            _outcome(code, problems, failures, unfinished), "",
+                            "The full report could not be built; the run's log has every finding.", ""])
     try:
         RUN_REPORT.write_text(report)
     except OSError as exc:
@@ -892,12 +923,13 @@ def write_report(code: int, steps: dict[str, StepSummary], problems: list[checks
 
 
 def run_report(code: int, steps: dict[str, StepSummary], problems: list[checks.Problem],
-               history: checks.HistoryCheck | None, failures: list[str], today: date) -> str:
+               history: checks.HistoryCheck | None, failures: list[str], today: date, *,
+               unfinished: bool = False) -> str:
     """Markdown for the pull request that reviews a run, and for its run page: the outcome, the Claude calls,
     every error and warning, what a step asks to have looked at (its notes), and what the run would change in earlier
     years."""
-    lines = [_marker(code), f"# Rule overview update {today.isoformat()}", "", _outcome(code, problems, failures),
-             ""]
+    lines = [_marker(code), f"# Rule overview update {today.isoformat()}", "",
+             _outcome(code, problems, failures, unfinished), ""]
     if steps:
         lines.append(step_summary(steps, Counter(problem.kind for problem in problems)))
     for severity, heading in (("error", "Errors"), ("warning", "Warnings")):
@@ -917,9 +949,11 @@ def _marker(code: int) -> str:
     return CHECKS_FAILED if code == EXIT_REVIEW else CHECKS_PASSED
 
 
-def _outcome(code: int, problems: list[checks.Problem], failures: list[str]) -> str:
+def _outcome(code: int, problems: list[checks.Problem], failures: list[str], unfinished: bool = False) -> str:
     """What the run's result is and what to do with it. Merging a pull request publishes it only when the website
-    workflow's checks pass: they see every error but history, which only a run can compare."""
+    workflow's checks pass: they see every error but history, which only a run can compare. While approved work is
+    unfinished (`unfinished`: a migration or rebuild cut off), merging is how its results so far reach the following
+    runs; closing would throw away what it has cost."""
     failed = "; ".join(failures)
     if code == 0:
         return "**Ready to publish**: the checks found no errors."
@@ -927,13 +961,21 @@ def _outcome(code: int, problems: list[checks.Problem], failures: list[str]) -> 
         return (f"**The run failed**: {failed}. The checks found no errors, so the results so far are kept; the "
                 f"next run retries the rest.")
     blocking = sorted({problem.kind for problem in checks.errors(problems)} - {"history"})
-    if blocking:
+    if blocking and unfinished:
+        outcome = (f"**Needs review**: the checks found errors in the data ({', '.join(blocking)}), while the work "
+                   f"approved in data/{REBUILD_MARKER.name} is unfinished: a migration or rebuild that is cut off "
+                   f"leaves rules out until a later run finishes it. Merge the pull request, so the following runs "
+                   f"continue it from the merged data; the website workflow publishes nothing while the checks find "
+                   f"errors, so the site stays as it was until then. Closing it discards the work done so far.")
+    elif blocking:
         outcome = (f"**Needs review**: the checks found errors in the data ({', '.join(blocking)}), which must be "
                    f"fixed before it can be published: the website workflow refuses data with these errors, so "
                    f"merging alone publishes nothing. Fix data/ on this branch, or close the pull request.")
     else:
         outcome = ("**Needs review**: this update changes what applied in earlier years, or that could not be "
-                   "checked (see History and Errors). Merge the pull request to publish it, or close it to discard it.")
+                   "checked (see History and Errors). Merge the pull request to publish it, or close it to discard it"
+                   + (f" (and the work done so far on what data/{REBUILD_MARKER.name} approves, which the following "
+                      f"runs continue once it is merged)." if unfinished else "."))
     return outcome + (f"\n\nThe run also failed: {failed}." if failures else "")
 
 

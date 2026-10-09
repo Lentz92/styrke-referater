@@ -54,7 +54,9 @@ class World:
             Doc(doc_id, "repraesentantskab", "Referat", dato, f"{doc_id}.pdf", None, f"sha-{doc_id}")]
         numbered = [{"id": d.pop("id", f"{doc_id}#{n}"), **d} for n, d in enumerate(decisions, start=1)]
         (analyze.DECISIONS_DIR / f"{doc_id}.json").write_text(json.dumps({
-            "doc_id": doc_id, "sha256": f"sha-{doc_id}", "version": analyze.EXTRACT_VERSION, "model": SONNET,
+            "doc_id": doc_id, "sha256": f"sha-{doc_id}", "version": analyze.EXTRACT_VERSION,
+            "model": update.EXTRACT_MODEL,
+            "provenance": {"model": update.EXTRACT_MODEL, "cli": "2.1.294", "prompt": "x", "effort": "default"},
             "moededato": dato, "next_number": 20,
             "retired": [{"id": ref, "emne": "x", "reason": "no match in a re-extraction", "date": "2026-10-01"}
                         for ref in retired],
@@ -502,7 +504,7 @@ def test_a_cut_off_migration_is_finished_in_full_by_plain_runs_then_they_go_on_i
     assert fake_claude.invocations("call") == calls + 1 and world.stored("medlemskab")["version"] == new
     assert not update.REBUILD_MARKER.exists()
     run()  # and the next plain run is incremental, with nothing to do
-    assert fake_claude.invocations("call") == calls + 1 and update.consolidation_mode(None) == "incremental"
+    assert fake_claude.invocations("call") == calls + 1 and not update.REBUILD_MARKER.exists()
     assert update.pending_work(world.docs).reasons() == [] and update.pending_work(world.docs).outdated == set()
 
 
@@ -595,19 +597,28 @@ def test_a_test_run_on_one_document_ignores_an_open_migration(migrating, fake_cl
     assert update.REBUILD_MARKER.read_bytes() == saved
 
 
-def test_an_unfinished_approval_without_a_mode_was_given_for_full(run, world):
-    def marker(**extra) -> None:
+def test_an_unfinished_approval_without_a_mode_was_given_for_full(run, world, monkeypatch):
+    called = []
+    for module, mode in ((analyze, "full"), (incremental, "incremental")):
+        monkeypatch.setattr(module, "consolidate", lambda *args, mode=mode, **kwargs: called.append(mode) or
+                            analyze.StepSummary("Consolidate", 0, 0, 0, analyze.Usage(), 0))
+
+    def consolidations(*args: str, **marker) -> list[str]:
+        """How a run with `args` consolidates while okonomi's approval is saved with the fields in `marker`."""
         update.REBUILD_MARKER.write_text(json.dumps({
             "extract_version": analyze.EXTRACT_VERSION, "consolidate_version": analyze.CONSOLIDATE_VERSION,
-            "documents": [], "categories": ["okonomi"], **extra}))
+            "documents": [], "categories": ["okonomi"], **marker}))
+        called.clear()
+        run(*args)
+        return list(called)
 
-    assert update.consolidation_mode(None) == "incremental"  # no approval: the default
-    marker()  # written before modes were recorded: every earlier approval was full
-    assert update.consolidation_mode(None) == "full" and update.consolidation_mode("incremental") == "incremental"
-    marker(mode="incremental")
-    assert update.consolidation_mode(None) == "incremental"
-    marker(mode="full", consolidate_version=analyze.CONSOLIDATE_VERSION - 1)  # given for other versions: void
-    assert update.consolidation_mode(None) == "incremental"
+    # Written before modes and settings were recorded, when every approval was full: a plain run continues it in full
+    # within its scope, then files the rest incrementally; one asking for incremental gets that.
+    assert consolidations() == ["full", "incremental"] and not update.REBUILD_MARKER.exists()
+    assert consolidations("--consolidate-mode", "incremental") == ["incremental"]
+    assert consolidations(mode="incremental") == ["incremental"]
+    # Given for another CONSOLIDATE_VERSION: void, so the default.
+    assert consolidations(mode="full", consolidate_version=analyze.CONSOLIDATE_VERSION - 1) == ["incremental"]
 
 
 def test_the_workflow_runs_the_default_mode_unless_full_is_ticked():

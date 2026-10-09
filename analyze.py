@@ -288,13 +288,13 @@ def extract_prompt(name: str | None = None) -> ExtractPrompt:
 def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int,
             budget: RunBudget | None = None, prompt: str | None = None) -> StepSummary:
     """Extract decisions from every document whose cached result is missing or outdated, with the extraction
-    prompt named `prompt` (None: the pipeline's).
+    prompt named `prompt` (None: the pipeline's) and `model`.
 
     Documents that fail or are skipped are retried on the next run.
     """
     DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
     version = extract_prompt(prompt).version
-    todo = [doc for doc in docs if not _extraction_is_current(doc, version)]
+    todo = [doc for doc in docs if not _extraction_is_current(doc, version, model)]
     log.info("Extract: %d of %d documents need extracting with prompt v%d", len(todo), len(docs), version)
     cli = cli_version() if todo else ""
     return run_parallel(
@@ -302,19 +302,20 @@ def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int,
         workers, "Extract", budget)
 
 
-def missing_extractions(docs: list[Doc], prompt: str | None = None) -> list[str]:
-    """Ids of documents without a current extraction (new, changed, made with another prompt, or a failed Claude
-    call); `prompt` names the extraction prompt (None: the pipeline's)."""
+def missing_extractions(docs: list[Doc], prompt: str | None = None, *, model: str) -> list[str]:
+    """Ids of documents without a current extraction (new, changed, made with another prompt or model, or a failed
+    Claude call); `prompt` names the extraction prompt (None: the pipeline's), `model` the extraction model."""
     version = extract_prompt(prompt).version
-    return sorted(doc.id for doc in docs if not _extraction_is_current(doc, version))
+    return sorted(doc.id for doc in docs if not _extraction_is_current(doc, version, model))
 
 
-def reprompted_extractions(docs: list[Doc], prompt: str | None = None) -> list[str]:
+def superseded_extractions(docs: list[Doc], prompt: str | None = None, *, model: str) -> list[str]:
     """Ids of documents whose cached extraction was made with another extraction prompt than the one named `prompt`
-    (None: the pipeline's): extracting them again may change any of their decisions."""
+    (None: the pipeline's), or by another model than `model`: extracting them again may change any of their
+    decisions."""
     version = extract_prompt(prompt).version
     return sorted(doc.id for doc in docs if (cached := _cached_extraction(doc)) is not None
-                  and cached.get("version") != version)
+                  and (cached.get("version") != version or not _made_by(cached, model)))
 
 
 def _cached_extraction(doc: Doc) -> dict | None:
@@ -322,9 +323,19 @@ def _cached_extraction(doc: Doc) -> dict | None:
     return json.loads(path.read_text()) if path.exists() else None
 
 
-def _extraction_is_current(doc: Doc, version: int) -> bool:
+def _extraction_is_current(doc: Doc, version: int, model: str) -> bool:
     cached = _cached_extraction(doc)
-    return cached is not None and cached.get("sha256") == doc.sha256 and cached.get("version") == version
+    return cached is not None and cached.get("sha256") == doc.sha256 and cached.get("version") == version \
+        and _made_by(cached, model)
+
+
+def _made_by(cached: dict, model: str) -> bool:
+    """Whether a cached result was made by `model`. A full id ("claude-…") must be the canonical model its provenance
+    records, as ask_claude checks an answer (a result from before provenance was kept is not); an alias stands for
+    whichever model the CLI maps it to, so any result counts for it."""
+    if not model.startswith("claude-"):
+        return True
+    return (cached.get("provenance") or {}).get("model") == model
 
 
 def document_prompt(doc: Doc, text: str) -> str:
@@ -1168,8 +1179,9 @@ def usage_kept(usage: Usage) -> Iterator[None]:
 def provenance(usage: Usage, cli: str, system: str, schema: dict, effort: str | None) -> dict:
     """What produced a cached result, to tell results apart when the model, CLI, prompt or effort changes.
 
-    Not part of any cache key: switching from an alias to the id it stands for must not re-run anything.
-    Claude Code does not report its default effort, so an unset one is recorded as "default".
+    Only the model is part of a cache key, the extraction's (_made_by): switching from an alias to the id it stands
+    for must not re-run anything. Claude Code does not report its default effort, so an unset one is recorded as
+    "default".
     """
     return {"model": usage.answered_by, "cli": cli, "prompt": prompt_hash(system, schema),
             "effort": effort or "default"}

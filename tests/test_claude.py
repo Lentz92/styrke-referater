@@ -215,12 +215,13 @@ def test_v3_is_v2_plus_the_rule_to_split_fees_and_nothing_else():
 def test_the_pipeline_prompt_keeps_its_cache_and_another_prompt_extracts_again(fake_claude, data):
     fake_claude.answer(NOTHING_FOUND)
     pipeline = analyze.extract_prompt()
-    other = next(name for name in analyze.EXTRACT_PROMPTS if name != pipeline.name)  # v3 until it is the default
+    other = next(name for name in analyze.EXTRACT_PROMPTS if name != pipeline.name)  # one the pipeline does not use
     docs = _docs(data, "a", "b")
     analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
     analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1, prompt=pipeline.name)
     assert fake_claude.invocations("call") == 2  # the pipeline's prompt by name is the same prompt: cached
-    assert analyze.missing_extractions(docs) == [] and analyze.missing_extractions(docs, other) == ["a", "b"]
+    assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == []
+    assert analyze.missing_extractions(docs, other, model="claude-sonnet-5-5") == ["a", "b"]
 
     analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1, prompt=other)
     systems = [argv[argv.index("--system-prompt") + 1] for argv in fake_claude.calls()]
@@ -232,4 +233,22 @@ def test_the_pipeline_prompt_keeps_its_cache_and_another_prompt_extracts_again(f
         saved = _saved(data, doc)
         assert saved["version"] == analyze.extract_prompt(other).version
         assert saved["provenance"]["prompt"] == hashes[other]
-    assert analyze.missing_extractions(docs, other) == [] and analyze.missing_extractions(docs) == ["a", "b"]
+    assert analyze.missing_extractions(docs, other, model="claude-sonnet-5-5") == []
+    assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
+
+
+def test_an_extraction_by_another_model_than_the_one_asked_for_is_extracted_again(fake_claude, data):
+    fake_claude.answer(NOTHING_FOUND)
+    docs = _docs(data, "a")
+    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
+    assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == []
+    assert analyze.missing_extractions(docs, model="claude-opus-5-5") == ["a"]
+    assert analyze.missing_extractions(docs, model="opus") == []  # an alias stands for whichever model answers
+    for _ in range(2):
+        analyze.extract(docs, model="claude-opus-5-5", effort=None, workers=1)
+    assert fake_claude.invocations("call") == 2  # once with Sonnet, once with Opus: then it is current
+    assert _saved(data, docs[0])["provenance"]["model"] == "claude-opus-5-5"
+
+    without = {k: v for k, v in _saved(data, docs[0]).items() if k != "provenance"}  # from before it was kept
+    (analyze.DECISIONS_DIR / "a.json").write_text(json.dumps(without))
+    assert analyze.missing_extractions(docs, model="claude-opus-5-5") == ["a"]

@@ -788,6 +788,12 @@ def _configured_run(run: str, decisions: list[dict], model: str | None = None, p
                         {"sha256": "sha-rep2024", "provenance": provenance, "beslutninger": decisions})
 
 
+def test_todays_pipeline_is_opus_with_prompt_v3():
+    assert evaluate.pipeline_configuration() == evaluate.Configuration(
+        "claude-opus-5-5", analyze.prompt_hash(analyze.EXTRACT_PROMPTS["v3"], analyze.EXTRACT_SCHEMA), "default")
+    assert evaluate.pipeline_configuration().label() == "claude-opus-5-5, prompt v3, effort default"
+
+
 def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpus, monkeypatch):
     # The gate as it ran to choose v3: today's pipeline was then Sonnet with prompt v2.
     monkeypatch.setattr(evaluate.update, "EXTRACT_MODEL", "claude-sonnet-5-5")
