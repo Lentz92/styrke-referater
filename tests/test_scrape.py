@@ -132,7 +132,9 @@ def _htm_text(tmp_path, monkeypatch, data: bytes) -> str:
 
 def test_undeclared_utf8_minute_is_read_as_utf8_whatever_detector_is_installed(tmp_path, monkeypatch):
     # chardet (installed on GitHub's runner) guesses windows-1252 for short Danish UTF-8: "Uændret" -> "UÃ¦ndret".
-    monkeypatch.setattr(bs4.dammit, "_chardet_dammit", lambda _: "windows-1252")
+    # bs4 calls its detector chardet_dammit before 4.13 and _chardet_dammit since.
+    for name in ("chardet_dammit", "_chardet_dammit"):
+        monkeypatch.setattr(bs4.dammit, name, lambda _: "windows-1252", raising=False)
     text = _htm_text(tmp_path, monkeypatch, "<p>Licens: kr. 200,- (Uændret). Kørsel på stævner.</p>".encode())
     assert text == "Licens: kr. 200,- (Uændret). Kørsel på stævner."
 
@@ -145,3 +147,14 @@ def test_declared_charset_is_used(tmp_path, monkeypatch):
 def test_undeclared_minute_that_is_not_utf8_is_read_as_windows_1252(tmp_path, monkeypatch):
     text = "<p>\u201cUændret\u201d \u2013 200 \u20ac</p>"
     assert _htm_text(tmp_path, monkeypatch, text.encode("windows-1252")) == "\u201cUændret\u201d \u2013 200 \u20ac"
+
+
+def test_a_charset_the_bytes_do_not_fit_is_ignored(tmp_path, monkeypatch):
+    html = '<meta charset="utf-8"><p>Kørsel på stævner</p>'
+    assert _htm_text(tmp_path, monkeypatch, html.encode("windows-1252")) == "Kørsel på stævner"
+
+
+@pytest.mark.parametrize("meta", ["", '<meta charset="iso-8859-1">'])
+def test_a_utf8_byte_order_mark_wins_and_is_dropped(tmp_path, monkeypatch, meta):
+    data = b"\xef\xbb\xbf" + f"{meta}<p>Kørsel på stævner</p>".encode()
+    assert _htm_text(tmp_path, monkeypatch, data) == "Kørsel på stævner"
