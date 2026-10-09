@@ -73,8 +73,9 @@ def analysed(data, monkeypatch):
 
 # ---------------------------------------------------------------- rebuild guard
 
-def _reasons(docs: list[Doc]) -> str:
-    return "; ".join(update.pending_work(docs).reasons())
+def _reasons(docs: list[Doc], mode: str = "full") -> str:
+    """Why the rebuild guard stops a run; these tests are about full consolidation unless they say otherwise."""
+    return "; ".join(update.pending_work(docs, mode).reasons())
 
 
 def test_a_few_new_documents_pass_the_rebuild_guard(data, monkeypatch):
@@ -119,51 +120,51 @@ def _edit_decision(doc: Doc, **changes) -> None:
 
 def test_the_approval_is_saved_before_any_claude_call(data):
     docs = _docs(data, 3)
-    update.check_rebuild(docs, allowed=True)
+    update.check_rebuild(docs, allowed=True, mode="full")
     marker = json.loads(update.REBUILD_MARKER.read_text())
     assert marker["documents"] == ["doc0", "doc1", "doc2"]
 
 
 def test_new_minutes_may_arrive_while_an_approved_rebuild_is_unfinished(analysed, data, monkeypatch):
     monkeypatch.setattr(analyze, "EXTRACT_VERSION", analyze.EXTRACT_VERSION + 1)
-    update.check_rebuild(analysed, allowed=True)  # all 20 documents to extract again
-    update.check_rebuild(_docs(data, 22), allowed=False)  # plus 2 new ones: ordinary on their own
+    update.check_rebuild(analysed, allowed=True, mode="full")  # all 20 documents to extract again
+    update.check_rebuild(_docs(data, 22), allowed=False, mode="full")  # plus 2 new ones: ordinary on their own
 
 
 def test_the_approval_covers_categories_that_approved_documents_move_into(analysed, monkeypatch):
     monkeypatch.setattr(analyze, "EXTRACT_VERSION", analyze.EXTRACT_VERSION + 1)
-    update.check_rebuild(analysed, allowed=True)  # all 20 documents to extract again
+    update.check_rebuild(analysed, allowed=True, mode="full")  # all 20 documents to extract again
     _extracted(analysed)  # the new prompt puts every decision in a category nobody approved
     for doc in analysed:
         _edit_decision(doc, kategori="andet")
     assert "no rule file in data/regler/: andet" in _reasons(analysed)
-    update.check_rebuild(analysed, allowed=False)
+    update.check_rebuild(analysed, allowed=False, mode="full")
 
 
 def test_an_approval_does_not_cover_lost_extractions(analysed, monkeypatch):
     monkeypatch.setattr(analyze, "CONSOLIDATE_VERSION", analyze.CONSOLIDATE_VERSION + 1)
-    update.check_rebuild(analysed, allowed=True)  # all 4 categories to consolidate again
+    update.check_rebuild(analysed, allowed=True, mode="full")  # all 4 categories to consolidate again
     for path in analyze.DECISIONS_DIR.glob("*.json"):
         path.unlink()
     with pytest.raises(SystemExit, match="beyond the work approved in rebuild.json, 20 of 20 documents"):
-        update.check_rebuild(analysed, allowed=False)
+        update.check_rebuild(analysed, allowed=False, mode="full")
 
 
 def test_an_approval_of_one_category_does_not_cover_a_changed_consolidation_input(analysed, monkeypatch):
     (analyze.RULES_DIR / "master.json").unlink()
-    update.check_rebuild(analysed, allowed=True)
+    update.check_rebuild(analysed, allowed=True, mode="full")
     assert json.loads(update.REBUILD_MARKER.read_text())["categories"] == ["master"]
 
     original = analyze._consolidation_input
     monkeypatch.setattr(analyze, "_consolidation_input", lambda d, organ: {**original(d, organ), "ny": 1})
     with pytest.raises(SystemExit, match="beyond the work approved in rebuild.json, 3 of 4 categories"):
-        update.check_rebuild(analysed, allowed=False)
+        update.check_rebuild(analysed, allowed=False, mode="full")
 
 
 def test_the_refusal_names_the_reason_and_the_github_checkbox(analysed):
     (analyze.RULES_DIR / "master.json").unlink()
     with pytest.raises(SystemExit) as refusal:
-        update.check_rebuild(analysed, allowed=False)
+        update.check_rebuild(analysed, allowed=False, mode="full")
     assert "no rule file in data/regler/: master" in str(refusal.value)
     assert update.REBUILD_INPUT_LABEL in str(refusal.value)
     workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
@@ -187,8 +188,10 @@ def run(data, fake_claude, monkeypatch):
     monkeypatch.delenv("GITHUB_STEP_SUMMARY", raising=False)
 
     def main(docs: list[Doc], *args: str) -> None:
+        """A run with full consolidation, which the fake answers here are for; incremental runs (the default) are
+        tested in test_incremental.py."""
         monkeypatch.setattr(update.scrape, "load_manifest", lambda: docs)
-        monkeypatch.setattr(sys, "argv", ["update.py", "--offline", *args])
+        monkeypatch.setattr(sys, "argv", ["update.py", "--offline", "--consolidate-mode", "full", *args])
         update.main()
 
     return main

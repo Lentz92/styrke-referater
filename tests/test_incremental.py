@@ -7,6 +7,7 @@ import json
 import sys
 from dataclasses import replace
 from datetime import datetime, timezone
+from pathlib import Path
 
 import pytest
 
@@ -416,7 +417,7 @@ def test_an_incremental_month_passes_the_history_check_and_renders(world, fake_c
                         _votes({"rep2024#1": "licensgebyr", "rep2024#2": "startgebyr"}),
                         _votes({"rep2024#1": "licensgebyr", "rep2024#2": ONE_OFF}),
                         _update("rep2024#1"), _update("rep2024#2"))
-    run("--consolidate-mode", "incremental")  # exits normally: the checks found no errors
+    run()  # incremental is the default; exits normally: the checks found no errors
 
     report = (world.root / "run-report.md").read_text()
     assert "**Ready to publish**" in report and "No rule in force there changed." in report
@@ -430,7 +431,7 @@ def test_a_category_left_for_a_full_consolidation_is_listed_in_the_run_report(wo
     # styrke.dk dated rep2015 anew before this run: nothing reflects the old date, so okonomi cannot be settled.
     world.document("rep2015", "2016-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
                    _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
-    run("--consolidate-mode", "incremental")
+    run()
     report = (world.root / "run-report.md").read_text()
     assert f"## {incremental.UNSEEN}: 1\n\n- okonomi may reflect decisions that changed unseen" in report
     assert "run `update.py --consolidate-mode full` for it" in report
@@ -445,12 +446,40 @@ def test_the_run_report_lists_what_a_step_asks_to_have_looked_at():
             f"(`emne`)\n") in report
 
 
-def test_full_remains_the_default_mode(run, world, fake_claude, monkeypatch):
+def test_incremental_is_the_default_mode_and_full_is_asked_for(run, world, fake_claude, monkeypatch):
     called = []
     monkeypatch.setattr(analyze, "consolidate", lambda *args, **kwargs: called.append("full") or
                         analyze.StepSummary("Consolidate", 0, 0, 0, analyze.Usage(), 0))
+    monkeypatch.setattr(incremental, "consolidate", lambda *args, **kwargs: called.append("incremental") or
+                        analyze.StepSummary("Consolidate", 0, 0, 0, analyze.Usage(), 0))
     run()
-    assert called == ["full"]
+    run("--consolidate-mode", "full")
+    assert called == ["incremental", "full"]
+
+
+def test_a_new_consolidation_version_is_migrated_in_full_only(run, world, fake_claude, monkeypatch):
+    monkeypatch.setattr(analyze, "CONSOLIDATE_VERSION", analyze.CONSOLIDATE_VERSION + 1)
+    for args in ((), ("--allow-rebuild",)):  # incremental cannot migrate it, approved or not
+        with pytest.raises(SystemExit, match="only a full consolidation migrates: medlemskab, okonomi"):
+            run(*args)
+        assert update.MIGRATE in (world.root / "run-report.md").read_text()
+    assert fake_claude.calls() == [] and update.MIGRATE == "uv run update.py --consolidate-mode full --allow-rebuild"
+    with pytest.raises(SystemExit, match="Stopped before any Claude call.*" + update.MIGRATE.replace(" ", ".")):
+        run("--consolidate-mode", "full")  # the refusal of a full run names the migration too
+    rules = [{k: rule[k] for k in ("titel", "vigtig", "note")} | {"versioner": [
+        {k: v[k] for k in ("ref", "effekt", "tekst", "kort", "kort_regel")} for v in rule["versioner"]]}
+        for category in ("okonomi", "medlemskab") for rule in world.stored(category)["regler"]]
+    fake_claude.answer({"regler": rules, "udeladt": []})  # the same rules again: the past does not change
+    run("--consolidate-mode", "full", "--allow-rebuild")
+    assert fake_claude.invocations("call") == 2  # both categories consolidated anew under the new version
+    assert update.pending_work(world.docs).reasons() == []  # the following monthly runs go on incrementally
+
+
+def test_the_workflow_runs_the_default_mode_unless_full_is_ticked():
+    workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
+    assert f'description: "{update.MODE_INPUT_LABEL}"' in workflow
+    assert 'if [ "$FULL" = "true" ]; then args+=(--consolidate-mode full); fi' in workflow
+    assert 'uv run update.py "${args[@]}"' in workflow and "--consolidate-mode incremental" not in workflow
 
 
 # ---------------------------------------------------------------- review fixes

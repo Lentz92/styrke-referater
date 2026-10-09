@@ -50,9 +50,14 @@ from analyze import StepSummary
 from scrape import Doc
 
 EFFORTS = ["low", "medium", "high", "xhigh", "max"]
-# How rule files are brought up to date: "full" consolidates each changed category anew (analyze.consolidate);
-# "incremental" files each new decision into its rule and leaves the others as they are (incremental.py).
-CONSOLIDATE_MODES = ("full", "incremental")
+# How rule files are brought up to date: "incremental" (the default) files each new decision into its rule and leaves
+# the others as they are (incremental.py); "full" consolidates each changed category anew (analyze.consolidate), which
+# migrates the rules after a new consolidation prompt or CONSOLIDATE_VERSION.
+CONSOLIDATE_MODES = ("incremental", "full")
+DEFAULT_CONSOLIDATE_MODE = "incremental"
+# The workflow input (update.yml) that runs the consolidation in full, as GitHub shows it.
+MODE_INPUT_LABEL = "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)"
+MIGRATE = "uv run update.py --consolidate-mode full --allow-rebuild"
 RUNS_LOG = scrape.DATA_DIR / "runs.jsonl"
 # An approved rebuild that is not finished yet; plain runs continue it while it matches the prompt versions.
 REBUILD_MARKER = scrape.DATA_DIR / "rebuild.json"
@@ -82,9 +87,10 @@ def main() -> None:
     parser.add_argument("--assign-model", default="claude-sonnet-5-5",
                         help="model for the votes on which rule a new decision belongs to, in incremental mode "
                              "(default: claude-sonnet-5-5); --consolidate-model breaks ties and updates the rules")
-    parser.add_argument("--consolidate-mode", choices=CONSOLIDATE_MODES, default="full",
-                        help="full: consolidate each category with changed decisions anew; incremental: file each "
-                             "new decision into its rule and leave every other rule as it is (default: full)")
+    parser.add_argument("--consolidate-mode", choices=CONSOLIDATE_MODES, default=DEFAULT_CONSOLIDATE_MODE,
+                        help="incremental: file each new decision into its rule and leave every other rule as it is; "
+                             "full: consolidate each category with changed decisions anew, to migrate a new prompt or "
+                             f"CONSOLIDATE_VERSION (with --allow-rebuild) (default: {DEFAULT_CONSOLIDATE_MODE})")
     parser.add_argument("--extract-effort", choices=EFFORTS, help="effort for extraction (default: Claude Code's own)")
     parser.add_argument("--consolidate-effort", choices=EFFORTS,
                         help="effort for consolidation (default: Claude Code's own)")
@@ -222,6 +228,7 @@ class Work:
     documents: frozenset[str]  # ids of the documents to extract
     categories: frozenset[str]  # categories to consolidate
     lost: frozenset[str]  # categories among them with decisions but no rule file
+    outdated: frozenset[str]  # incremental mode: categories consolidated with another CONSOLIDATE_VERSION
     sources: dict[str, frozenset[str]]  # category -> ids of the documents its cached decisions come from
     total_documents: int
     total_categories: int
@@ -244,6 +251,9 @@ class Work:
             reasons.append(f"categories with decisions but no rule file in data/regler/: {lost}")
         if len(self.categories) > REBUILD_CATEGORY_SHARE * self.total_categories:
             reasons.append(f"{len(self.categories)} of {self.total_categories} categories need consolidating again")
+        if self.outdated:
+            reasons.append(f"categories consolidated with another CONSOLIDATE_VERSION, which only a full "
+                           f"consolidation migrates: {', '.join(sorted(self.outdated))}")
         return reasons
 
     def approved_categories(self) -> frozenset[str]:
@@ -268,14 +278,18 @@ class Approval:
     categories: frozenset[str]
 
 
-def pending_work(docs: list[Doc], mode: str = "full") -> Work:
+def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> Work:
     """The work before extraction, from data/ alone: no Claude call. The categories to consolidate are those whose
-    input changed (full), or those the incremental work queue changes (incremental.queue_categories)."""
+    input changed (full), or those the incremental work queue changes (incremental.queue_categories); in incremental
+    mode, those consolidated with another CONSOLIDATE_VERSION are outdated: only `full` migrates them."""
     decisions = analyze.load_decisions(docs)
+    outdated: frozenset[str] = frozenset()
     if mode == "incremental":
         book = incremental.RuleBook.load()
         categories = incremental.queue_categories(incremental.work_queue(decisions, book, docs), decisions, book)
         lost = frozenset(category for category in categories if category not in book.files)
+        outdated = frozenset(category for category, stored in book.files.items()
+                             if stored.get("version") != analyze.CONSOLIDATE_VERSION)
     else:
         todo = analyze.consolidation_todo(decisions, {d.id: d.organ_label for d in docs})
         categories = frozenset(job.category for job in todo)
@@ -288,13 +302,14 @@ def pending_work(docs: list[Doc], mode: str = "full") -> Work:
         documents=frozenset(analyze.missing_extractions(docs)),
         categories=categories,
         lost=lost,
+        outdated=outdated,
         sources={category: frozenset(ids) for category, ids in sources.items()},
         total_documents=len(docs),
         total_categories=len(sources),
     )
 
 
-def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = "full") -> None:
+def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = DEFAULT_CONSOLIDATE_MODE) -> None:
     """Stop before any Claude call when the run would do more than an ordinary month's work unapproved.
 
     --allow-rebuild approves the work and saves it in data/rebuild.json before anything starts. A later run
@@ -305,6 +320,11 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = "full") -> None
     reasons = work.reasons()
     if not reasons:
         return
+    if work.outdated:  # incremental mode cannot do this work, approved or not
+        raise SystemExit(
+            f"Stopped before any Claude call: {'; '.join(reasons)}. Migrate them with `{MIGRATE}`, or on GitHub: "
+            f"Actions > Update rule overview > Run workflow with '{REBUILD_INPUT_LABEL}' and '{MODE_INPUT_LABEL}' "
+            f"ticked; the monthly runs then go on incrementally.")
     if allowed:
         _save_approval(work)
         logging.warning("Approved, saved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
@@ -320,11 +340,12 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = "full") -> None
         f"Stopped before any Claude call: {'; '.join(reasons)}. If this work is intended, run "
         f"`uv run update.py --allow-rebuild`, or on GitHub: Actions > Update rule overview > Run workflow with "
         f"'{REBUILD_INPUT_LABEL}' ticked. The approval is saved in data/rebuild.json, and plain runs, the "
-        f"monthly one included, continue the work if it is cut off."
+        f"monthly one included, continue the work if it is cut off. A new prompt or EXTRACT_VERSION/"
+        f"CONSOLIDATE_VERSION is migrated with `{MIGRATE}` (on GitHub, also tick '{MODE_INPUT_LABEL}')."
     )
 
 
-def update_rebuild_marker(docs: list[Doc], mode: str = "full") -> None:
+def update_rebuild_marker(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> None:
     """After the analysis: approve what is left while it is more than ordinary, else remove the approval.
 
     Leftovers of an ordinary run count too (consolidation failing for most categories after a big meeting):

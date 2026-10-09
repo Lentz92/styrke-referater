@@ -9,6 +9,10 @@ on:
         description: "Allow a rebuild (--allow-rebuild)"
         type: boolean
         default: false
+      full:
+        description: "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -72,15 +76,17 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           REBUILD: ${{ inputs.rebuild }}
+          FULL: ${{ inputs.full }}
         run: |
           # Exit code 0: publish; 3: the checks found errors, so the result goes to a pull request; else the run
-          # failed. Record it instead of stopping here, so the next step can route the result.
+          # failed. Record it instead of stopping here, so the next step can route the result. The monthly run
+          # passes no option: it consolidates incrementally (update.py's default); a full one migrates a prompt or
+          # version change, with the rebuild allowed.
+          args=()
+          if [ "$REBUILD" = "true" ]; then args+=(--allow-rebuild); fi
+          if [ "$FULL" = "true" ]; then args+=(--consolidate-mode full); fi
           set +e
-          if [ "$REBUILD" = "true" ]; then
-            uv run update.py --allow-rebuild
-          else
-            uv run update.py
-          fi
+          uv run update.py "${args[@]}"
           code=$?
           set -e
           echo "code=$code" >> "$GITHUB_OUTPUT"
