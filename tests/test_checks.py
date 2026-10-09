@@ -1,18 +1,39 @@
+from collections import Counter
 from dataclasses import replace
 from datetime import date
 
+from conftest import decision, rule
+
+import render
 from analyze import decision_hash
-from checks import date_traps, effect_mismatches, stale_versions
-from conftest import decision
+from checks import (
+    DATA_KINDS,
+    SEVERITY,
+    Data,
+    Problem,
+    changed_decisions,
+    check_history,
+    date_traps,
+    effect_mismatches,
+    errors,
+    identity_problems,
+    snapshot,
+    stale_versions,
+    unassigned_decisions,
+    unreflected,
+)
+from matching import FormerSlug, SlugRegistry
 from render import build_rules
 
 
-def _rules(*pairs):
-    """One rule from (decision, effekt) pairs."""
-    raw = {"titel": "Regel", "slug": "regel", "kategori": "okonomi", "vigtig": True, "note": None,
-           "versioner": [{"ref": d.ref, "effekt": e, "tekst": None, "kort": None, "kort_regel": None,
-                          "dhash": decision_hash(d)} for d, e in pairs]}
-    return build_rules([raw], {d.ref: d for d, _ in pairs})
+def _rule(slug, *versions):
+    """A rule of okonomi titled after its slug; its versions as conftest.rule takes them."""
+    return rule(slug.capitalize(), slug, *versions, kategori="okonomi")
+
+
+def _rules(*versions):
+    """One rule from (decision, effekt) versions, as render builds it."""
+    return build_rules([_rule("regel", *versions)], {d.ref: d for d, _ in versions})
 
 
 def test_adopted_decision_shown_as_proposal_is_flagged():
@@ -63,31 +84,16 @@ def test_stale_rule_is_reported_once_with_each_reason():
 
 
 def test_every_problem_kind_of_the_data_is_counted_on_the_index_page():
-    from collections import Counter
-    from datetime import date
-
-    import render
-    from checks import DATA_KINDS
-
     counts = Counter({kind: 101 + i for i, kind in enumerate(DATA_KINDS)})
-    page = render._index_page([2026], [], [], [], {}, [], counts, date(2026, 10, 8))
+    page = render.build_pages({}, [], [], [], counts, date(2026, 10, 8))["README.md"]
     assert all(f"{n}" in page for n in counts.values())
 
 
-def _identity_rule(titel, slug, *refs, kategori="okonomi"):
-    return {"titel": titel, "kategori": kategori, "versioner": [{"ref": ref} for ref in refs],
-            **({"slug": slug} if slug is not None else {})}
-
-
 def test_each_identity_problem_is_reported():
-    from checks import identity_problems
-    from matching import FormerSlug, SlugRegistry
-
     decisions = [decision(ref=ref) for ref in ("a#1", "a#1", "b#1", "c#1", "m#1", "u#1")]
-    raw = [_identity_rule("Licensgebyr", "licensgebyr", "a#1", "x#9"), _identity_rule("Licens", "licensgebyr", "b#1"),
-           _identity_rule("Uden slug", None, "c#1"), _identity_rule("Uden slug 2", "", "c#1"),
-           _identity_rule("Klubskifte", "klubskifte", "r#1"),
-           _identity_rule("Masterlicens", "masterlicens", "m#1", kategori="master")]
+    raw = [_rule("licensgebyr", "a#1", "x#9"), rule("Licens", "licensgebyr", "b#1", kategori="okonomi"),
+           rule("Uden slug", None, "c#1", kategori="okonomi"), rule("Uden slug 2", "", "c#1", kategori="okonomi"),
+           _rule("klubskifte", "r#1"), rule("Masterlicens", "masterlicens", "m#1", kategori="master")]
     slugs = SlugRegistry(
         aliases={"gebyr": FormerSlug("okonomi", "Gebyr", frozenset({"a#1"}), "licensgebyr"),
                  "startgebyr": FormerSlug("okonomi", "Startgebyr", frozenset(), "findes-ikke"),
@@ -115,12 +121,9 @@ def test_each_identity_problem_is_reported():
 
 
 def test_an_alias_to_a_namesake_needs_it_to_be_the_only_one_in_its_category():
-    from checks import identity_problems
-    from matching import FormerSlug, SlugRegistry
-
     report = "Rapportering fra internationale mesterskaber"
-    raw = [_identity_rule(report, "rapportering", "l#1", kategori="landshold"),
-           _identity_rule(report, "rapportering-3", "o#9", kategori="organisation")]
+    raw = [rule(report, "rapportering", "l#1", kategori="landshold"),
+           rule(report, "rapportering-3", "o#9", kategori="organisation")]
     decisions = [decision(ref=ref) for ref in ("l#1", "o#9", "o#1")]  # o#1: a one-off now, in no rule
 
     def problems(to: str) -> list[str]:
@@ -134,12 +137,9 @@ def test_an_alias_to_a_namesake_needs_it_to_be_the_only_one_in_its_category():
 
 
 def test_consistent_ids_and_slugs_report_nothing():
-    from checks import identity_problems
-    from matching import FormerSlug, SlugRegistry
-
     # A retired ref is a stale rule, not an identity problem; an alias whose decisions no longer exist keeps the
     # target it had; a former slug whose decisions are gone and that has no target leads nowhere.
-    raw = [_identity_rule("Licensgebyr", "licensgebyr", "a#1", "r#1")]
+    raw = [_rule("licensgebyr", "a#1", "r#1")]
     slugs = SlugRegistry(aliases={"gebyr": FormerSlug("okonomi", "Gebyr", frozenset({"a#1"}), "licensgebyr"),
                                   "licens": FormerSlug("okonomi", "Licens", frozenset({"b#8"}), "licensgebyr")},
                          retired={"x": FormerSlug("okonomi", "X", frozenset({"q#1"}))})
@@ -149,8 +149,6 @@ def test_consistent_ids_and_slugs_report_nothing():
 # ---------------------------------------------------------------- severity and unassigned decisions
 
 def test_errors_block_publishing_and_warnings_are_reported_only():
-    from checks import SEVERITY, Problem, errors
-
     assert {kind for kind, severity in SEVERITY.items() if severity == "error"} == {"stale", "identity", "unassigned",
                                                                                    "history"}
     assert {kind for kind, severity in SEVERITY.items() if severity == "warning"} == {"effect", "date",
@@ -159,8 +157,6 @@ def test_errors_block_publishing_and_warnings_are_reported_only():
 
 
 def test_a_decision_in_no_rule_and_not_left_out_as_a_one_off_is_unassigned():
-    from checks import unassigned_decisions
-
     in_rule, one_off, dropped = decision(ref="a#1"), decision(ref="b#1"), decision(ref="c#1")
     elsewhere = decision(ref="d#1")  # left out by another category's consolidation, which no longer has it
     waiting = decision(ref="e#1", kategori="master")  # master is to be consolidated again: not wrong, just missing
@@ -178,24 +174,11 @@ OLD = decision(ref="old#1", dato="2015-03-01")
 NEW = decision(ref="new#1", dato="2024-03-01", emne="Ny", tekst="Licensgebyret er 300 kr.")
 
 
-def _rule(slug, *versions):
-    """A rule from (decision, effekt) or (decision, effekt, version fields) versions."""
-    return {"titel": slug.capitalize(), "slug": slug, "kategori": "okonomi", "vigtig": True, "note": None,
-            "versioner": [{"ref": d.ref, "effekt": effekt, "tekst": None, "kort": None, "kort_regel": None,
-                           "dhash": decision_hash(d), **(fields[0] if fields else {})}
-                          for d, effekt, *fields in versions]}
-
-
 def _data(decisions, rules, one_offs=None, pending=()):
-    from checks import Data
-    from matching import SlugRegistry
-
     return Data(list(decisions), rules, one_offs or {}, frozenset(pending), set(), SlugRegistry())
 
 
 def _history(before_rules, after_rules, aliases=None, before=(OLD,), after=(OLD, NEW), **before_data):
-    from checks import check_history, snapshot
-
     return check_history(snapshot(_data(before, before_rules, **before_data), TODAY),
                          snapshot(_data(after, after_rules), TODAY), aliases or {})
 
@@ -279,8 +262,6 @@ def test_a_decision_the_rules_did_not_reflect_yet_counts_as_new():
 
 
 def test_unreflected_decisions():
-    from checks import unreflected
-
     built, changed, one_off, waiting, dropped = (decision(ref=f"{name}#1") for name in ("built", "changed",
                                                                                          "oneoff", "waiting", "drop"))
     rules = [_rule("gebyr", (built, "indfoert"), (replace(changed, tekst="Før"), "aendret"))]
@@ -300,8 +281,6 @@ def test_a_run_that_changes_no_decision_must_not_change_any_year():
 
 
 def test_changed_decisions_include_removed_and_undated_ones():
-    from checks import changed_decisions, snapshot
-
     def of(*decisions):  # every decision left out as a one-off: reflected, so only differences count
         return snapshot(_data(decisions, [], {"okonomi": {d.ref for d in decisions}}), TODAY)
 

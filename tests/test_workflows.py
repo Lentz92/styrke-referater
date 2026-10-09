@@ -11,6 +11,7 @@ from pathlib import Path
 import pytest
 import yaml
 
+import analyze
 import audit
 import update
 
@@ -299,6 +300,53 @@ def test_both_workflows_can_run_the_cli_action():
         assert _in_order(job, checkout, CLI_ACTION), name
 
 
+def _run_step(tmp_path, step: dict, uv_code: int, **env: str) -> list[str]:
+    """Run a step's script as GitHub does, with a fake uv that exits with `uv_code` (or $PROPOSE_CODE for `audit.py
+    propose`); return the uv commands it ran."""
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+    (bin_dir / "uv").write_text(f'#!/bin/sh\necho "$*" >> {tmp_path}/uv.log\n'
+                                f'[ "$3" = propose ] && exit "$PROPOSE_CODE"\nexit {uv_code}\n')
+    (bin_dir / "uv").chmod(0o755)
+    script = tmp_path / "step.sh"
+    script.write_text(step["run"])
+    env = {"PATH": f"{bin_dir}{os.pathsep}/usr/bin{os.pathsep}/bin", "GITHUB_OUTPUT": str(tmp_path / "output"), **env}
+    subprocess.run(["bash", "--noprofile", "--norc", "-eo", "pipefail", str(script)], env=env, check=True)
+    return (tmp_path / "uv.log").read_text().splitlines()
+
+
+@pytest.mark.parametrize(("rebuild", "full", "options"), [
+    ("", "", ""), ("false", "false", ""), ("true", "false", " --allow-rebuild"),
+    ("true", "true", " --allow-rebuild --consolidate-mode full")])
+def test_the_monthly_run_passes_the_ticked_boxes_and_no_limits(tmp_path, rebuild, full, options):
+    """A scheduled run has no inputs; a manual one passes its boxes, and its exit code is recorded for the routing."""
+    step = _step(_job(_workflow("update.yml")), "update")
+    assert _run_step(tmp_path, step, 3, REBUILD=rebuild, FULL=full) == [f"run update.py{options}"]
+    assert (tmp_path / "output").read_text() == "code=3\n"
+
+
+def test_the_refusal_names_the_boxes_of_the_monthly_workflow():
+    update_yml = _workflow("update.yml")
+    inputs = update_yml.get("on", update_yml.get(True))["workflow_dispatch"]["inputs"]  # PyYAML reads `on` as True
+    assert set(inputs) == {"rebuild", "full"}
+    for box in inputs.values():
+        assert (box["type"], box["default"]) == ("boolean", False)
+        assert f"'{box['description']}'" in update.HOW_TO_PROCEED
+
+
+def test_the_update_job_outlasts_a_run_on_the_default_limits():
+    # No call starts after the time budget, but one started just before it may take its whole timeout.
+    timeout = _job(_workflow("update.yml"))["timeout-minutes"]
+    assert timeout > update.DEFAULT_TIME_BUDGET + analyze.CONSOLIDATE_TIMEOUT / 60
+
+
+def test_the_website_waits_for_queued_builds_and_skips_an_update_that_changed_nothing():
+    pages = _workflow("pages.yml")
+    assert pages["concurrency"]["cancel-in-progress"] is False
+    build = pages["jobs"]["build"]
+    assert build["needs"] == "gate" and build["if"] == "needs.gate.outputs.changed == 'true'"
+
+
 # ---------------------------------------------------------------- the audit (audit.yml, route-audit.sh)
 
 TODAY = "2026-10-09"
@@ -349,17 +397,8 @@ def test_the_audit_workflow_is_manual_reviewed_and_pinned_like_the_monthly_run()
     (0, "75", True, 0), (1, "75", False, 1), (0, "0", False, 1)])
 def test_the_workflow_applies_a_complete_proposal_within_the_time_left(tmp_path, propose_code, budget, applied, code):
     step = _step(_job(_workflow("audit.yml")), "audit")
-    bin_dir = tmp_path / "bin"
-    bin_dir.mkdir()
-    (bin_dir / "uv").write_text(f'#!/bin/sh\necho "$*" >> {tmp_path}/uv.log\n'
-                                f'[ "$3" = propose ] && exit "$PROPOSE_CODE"\nexit 0\n')
-    (bin_dir / "uv").chmod(0o755)
-    script = tmp_path / "step.sh"
-    script.write_text(step["run"])
-    env = {"PATH": f"{bin_dir}{os.pathsep}/usr/bin{os.pathsep}/bin", "MAX_COST": "25", "CATEGORIES": "okonomi,dommere",
-           "TIME_BUDGET": budget, "GITHUB_OUTPUT": str(tmp_path / "output"), "PROPOSE_CODE": str(propose_code)}
-    subprocess.run(["bash", "--noprofile", "--norc", "-eo", "pipefail", str(script)], env=env, check=True)  # as GitHub
-    calls = (tmp_path / "uv.log").read_text().splitlines()
+    calls = _run_step(tmp_path, step, 0, MAX_COST="25", CATEGORIES="okonomi,dommere", TIME_BUDGET=budget,
+                      PROPOSE_CODE=str(propose_code))
     assert calls[0] == f"run audit.py propose --max-cost 25 --time-budget {budget} --categories okonomi,dommere"
     assert calls[1:] == (["run audit.py apply --max-cost 25 --time-budget 75"] if applied else [])
     assert (tmp_path / "output").read_text() == f"code={code}\n"

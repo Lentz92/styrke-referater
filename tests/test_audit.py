@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 import pytest
+from conftest import extracted, rule, section
 
 import analyze
 import audit
@@ -17,52 +18,34 @@ import render
 import scrape
 import update
 import website
-from analyze import RunBudget, decision_hash
 from incremental import UpdateRejected
 from matching import FormerSlug, SlugRegistry
-from test_incremental import World, _decision
-
-
-def _rules(world: World, category: str, *rules: tuple) -> None:
-    """Rules as (titel, slug, [(ref, effekt), ...]), worded as a consolidation words them: the text of a version that
-    introduces a rule is the decision's own."""
-    by_ref = {d.ref: d for d in world.decisions()}
-    regler = [{"titel": titel, "slug": slug, "vigtig": True, "note": None,
-               "versioner": [{"ref": ref, "effekt": effekt,
-                              "tekst": None if effekt == "indfoert" else by_ref[ref].tekst,
-                              "kort": by_ref[ref].emne.lower(), "kort_regel": None, "dhash": decision_hash(by_ref[ref])}
-                             for ref, effekt in versions]}
-              for titel, slug, versions in rules]
-    analyze._write_json(analyze.RULES_DIR / f"{category}.json", {
-        "kategori": category, "version": analyze.CONSOLIDATE_VERSION, "input_hash": "x", "model": "opus",
-        "regler": regler, "udeladt": [], "ikke_tildelt": []})
 
 
 @pytest.fixture
-def world(tmp_path, monkeypatch):
+def world(world, tmp_path, monkeypatch):
     """A licence fee spread over okonomi and medlemskab, a rule on club transfers holding a referee requirement, an
     anti-doping rule among the competitions and a fee whose title is too short; consolidated."""
-    w = World(tmp_path, monkeypatch)
-    w.document("rep2010", "2010-03-01", _decision("Licensgebyr", "Licensgebyret er 200 kr. pr. løfter."))
-    w.document("rep2015", "2015-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
-               _decision("Startgebyr", "Startgebyret er 150 kr. pr. start ved stævner."))
-    w.document("rep2016", "2016-03-01",
-               _decision("Klubskifte", "Et klubskifte kræver tre måneders karantæne.", "medlemskab"))
-    w.document("rep2018", "2018-03-01",
-               _decision("Dommerkrav", "Hver klub skal stille med en dommer ved danske mesterskaber.", "medlemskab"),
-               _decision("Antidopingkursus", "Alle landsholdsløftere skal gennemføre et antidopingkursus.",
-                         "staevner"))
-    w.document("rep2020", "2020-03-01",
-               _decision("Licensgebyr", "Licensgebyret hæves til 300 kr. pr. løfter.", "medlemskab"),
-               _decision("Klubskifte", "Karantænen ved klubskifte forkortes til en måned.", "medlemskab"))
-    _rules(w, "okonomi", ("Licensgebyr", "licensgebyr", [("rep2010#1", "indfoert"), ("rep2015#1", "aendret")]),
-           ("Startgebyr", "startgebyr", [("rep2015#2", "indfoert")]))
-    _rules(w, "medlemskab", ("Licens for løftere", "licens-for-løftere", [("rep2020#1", "aendret")]),
-           ("Klubskifte", "klubskifte", [("rep2016#1", "indfoert"), ("rep2018#1", "aendret"),
-                                         ("rep2020#2", "aendret")]))
-    _rules(w, "staevner", ("Antidopingkursus", "antidopingkursus", [("rep2018#2", "indfoert")]))
-    w.consolidated()
-    monkeypatch.setattr(scrape, "load_manifest", lambda: w.docs)
+    world.document("rep2010", "2010-03-01", extracted("Licensgebyr", "Licensgebyret er 200 kr. pr. løfter."))
+    world.document("rep2015", "2015-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 150 kr. pr. start ved stævner."))
+    world.document("rep2016", "2016-03-01",
+                   extracted("Klubskifte", "Et klubskifte kræver tre måneders karantæne.", "medlemskab"))
+    world.document("rep2018", "2018-03-01",
+                   extracted("Dommerkrav", "Hver klub skal stille med en dommer ved danske mesterskaber.",
+                             "medlemskab"),
+                   extracted("Antidopingkursus", "Alle landsholdsløftere skal gennemføre et antidopingkursus.",
+                             "staevner"))
+    world.document("rep2020", "2020-03-01",
+                   extracted("Licensgebyr", "Licensgebyret hæves til 300 kr. pr. løfter.", "medlemskab"),
+                   extracted("Klubskifte", "Karantænen ved klubskifte forkortes til en måned.", "medlemskab"))
+    world.rules("okonomi", rule("Licensgebyr", "licensgebyr", "rep2010#1", ("rep2015#1", "aendret")),
+                rule("Startgebyr", "startgebyr", "rep2015#2"))
+    world.rules("medlemskab", rule("Licens for løftere", "licens-for-løftere", ("rep2020#1", "aendret")),
+                rule("Klubskifte", "klubskifte", "rep2016#1", ("rep2018#1", "aendret"), ("rep2020#2", "aendret")))
+    world.rules("staevner", rule("Antidopingkursus", "antidopingkursus", "rep2018#2"))
+    world.consolidated()
+    monkeypatch.setattr(scrape, "load_manifest", lambda: world.docs)
     monkeypatch.setattr(audit, "OPS_PATH", tmp_path / "regler_ops.json")
     monkeypatch.setattr(audit, "CACHE_DIR", tmp_path / "audit")
     monkeypatch.setattr(audit, "REPORT", tmp_path / "audit-report.md")
@@ -71,7 +54,7 @@ def world(tmp_path, monkeypatch):
     monkeypatch.setattr(website, "OUT_DIR", tmp_path / "site")
     monkeypatch.setattr(update, "RUNS_LOG", tmp_path / "runs.jsonl")
     assert audit.unsettled(audit.Data.load()) == []
-    return w
+    return world
 
 
 def _op(op: str, rules: list[str], refs: list[str], title: str | None = None, category: str | None = None,
@@ -115,7 +98,7 @@ def _text(*refs: str) -> dict:
 TEXTS = (_text("rep2010#1", "rep2015#1", "rep2020#1"), _text("rep2016#1", "rep2020#2"), _text("rep2018#1"))
 
 
-def _stored(world: World) -> dict:
+def _stored(world) -> dict:
     return {path.name: path.read_bytes() for path in [*sorted(analyze.RULES_DIR.glob("*.json")), analyze.SLUGS_PATH]
             if path.exists()}
 
@@ -137,7 +120,7 @@ def test_fragments_of_one_rule_are_found_across_categories(world):
     assert "antidopingkursus" not in dict(similar["licensgebyr"])
     view = _view("okonomi")
     assert "licens-for-løftere" in view.brief and "klubskifte" not in view.brief  # another category, in brief
-    rules = json.loads(view.prompt.split("<regler>\n", 1)[1].split("\n</regler>", 1)[0])
+    rules = section(view.prompt, "regler")
     assert rules[0]["slug"] == "licensgebyr" and rules[0]["ligner"][0] == "licens-for-løftere"
     assert [v["ref"] for v in rules[0]["versioner"]] == ["rep2010#1", "rep2015#1"]
     assert _view("okonomi", 2).full == ("startgebyr", "licensgebyr")  # the second run reads them rotated
@@ -198,10 +181,8 @@ def test_two_runs_must_propose_the_same_op(world, fake_claude):
     fake_claude.answers(*PROPOSALS, TITLES)
     assert audit.propose(CATEGORIES, 10, 1) == 0
 
-    args = fake_claude.calls()
-    models = [a[a.index("--model") + 1] for a in args]
-    assert models == [audit.MODEL] * 7 and all(a[a.index("--effort") + 1] == "high" for a in args)
-    assert [a[a.index("--system-prompt") + 1] for a in args] == [audit.PROPOSE_SYSTEM] * 6 + [audit.TITLE_SYSTEM]
+    assert fake_claude.option("--model") == [audit.MODEL] * 7 and set(fake_claude.option("--effort")) == {"high"}
+    assert fake_claude.option("--system-prompt") == [audit.PROPOSE_SYSTEM] * 6 + [audit.TITLE_SYSTEM]
     ops = _ops()
     assert ops["complete"] and ops["data"] == audit.data_fingerprint()
     assert [(e["id"], e["op"], e["rules"], e["agreed"]) for e in ops["ops"]] == [
@@ -219,7 +200,7 @@ def test_two_runs_must_propose_the_same_op(world, fake_claude):
     (rejected,) = ops["rejected"]
     assert (rejected["run"], rejected["call"], rejected["why"]) == (2, "okonomi", "unknown slug licensgebyr-gammel")
     # The third call chooses only where the runs differ, and a rename always, between their titles and the old one.
-    asked = json.loads(fake_claude.prompts()[-1].split("<regler>\n", 1)[1].split("\n</regler>", 1)[0])
+    asked = section(fake_claude.prompts()[-1], "regler")
     assert [(item["id"], item["titel"], item["muligheder"]) for item in asked] == [
         ("2.2", None, ["Dommerkrav for klubber", "Klubbers dommerkrav"]),
         ("3", "Startgebyr", ["Startgebyr ved stævner", "Startgebyr for stævner", "Startgebyr"])]
@@ -312,7 +293,7 @@ def test_apply_merges_splits_moves_and_renames_and_keeps_every_link(proposed, fa
     world = proposed
     old_slugs = {rule["slug"] for rule in analyze.load_rules()}
     assert audit.apply(10, 1) == 0
-    assert [a[a.index("--system-prompt") + 1] for a in fake_claude.calls()[7:]] == [audit.AUDIT_UPDATE_SYSTEM] * 3
+    assert fake_claude.option("--system-prompt")[7:] == [audit.AUDIT_UPDATE_SYSTEM] * 3
 
     licens = world.rule("okonomi", "licensgebyr")  # most versions: it keeps its slug
     assert [v["ref"] for v in licens["versioner"]] == ["rep2010#1", "rep2015#1", "rep2020#1"]
@@ -341,10 +322,7 @@ def test_apply_merges_splits_moves_and_renames_and_keeps_every_link(proposed, fa
     assert checks.errors(checks.find_problems(checks.Data.load(world.docs))) == []
     live, targets = {rule["slug"] for rule in analyze.load_rules()}, registry.targets()
     assert all(slug in live or targets.get(slug) in live for slug in old_slugs)
-    step = incremental.consolidate(world.docs, world.decisions(), incremental.Settings(workers=1), RunBudget(),
-                                   known=incremental.known_inputs(world.decisions(), incremental.RuleBook.load(),
-                                                                  world.docs))
-    assert step.calls == 0 and fake_claude.invocations("call") == 10
+    assert world.consolidate(world.known()).calls == 0 and fake_claude.invocations("call") == 10
 
     ops = _ops()
     assert ops["applied"]["data"] == audit.data_fingerprint()
@@ -476,7 +454,7 @@ def test_ops_proposed_for_other_rules_are_not_applied(proposed):
 
 
 def test_an_audit_waits_for_decisions_update_py_has_not_filed(world, fake_claude):
-    world.document("rep2024", "2024-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."))
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."))
     with pytest.raises(SystemExit, match="decisions to file in okonomi"):
         audit.propose(["okonomi"], 10, 1)
     assert fake_claude.calls() == []

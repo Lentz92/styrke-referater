@@ -1,39 +1,20 @@
-"""ask_claude and the Claude steps against the fake `claude` from conftest.py; no real Claude calls."""
+"""ask_claude, run_parallel and the Claude steps against the fake `claude` from conftest.py; no real Claude calls."""
 
 import json
 import re
+from dataclasses import replace
 
 import pytest
+from conftest import decision
 
 import analyze
-from analyze import ClaudeError, ModelMismatch, RunBudget, ask_claude, run_parallel
-from conftest import decision
-from scrape import Doc
+from analyze import ClaudeError, ModelMismatch, RunBudget, Usage, ask_claude, run_parallel
 
 NOTHING_FOUND = {"moededato": None, "beslutninger": [], "regler": [], "udeladt": []}  # fits both steps
 
 
 def _ask(model="claude-sonnet-5-5", **kwargs):
     return ask_claude("system", "prompt", {"type": "object"}, model=model, effort=None, timeout=30, **kwargs)
-
-
-@pytest.fixture
-def data(tmp_path, monkeypatch):
-    monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path / "beslutninger")
-    monkeypatch.setattr(analyze, "RULES_DIR", tmp_path / "regler")
-    return tmp_path
-
-
-def _docs(tmp_path, *names: str, sha: str = "sha") -> list[Doc]:
-    docs = [Doc(name, "bestyrelse", "Referat", "2024", str(tmp_path / f"{name}.htm"), None, f"{sha}-{name}")
-            for name in names]
-    for doc in docs:
-        (tmp_path / f"{doc.id}.htm").write_text("<p>Intet nyt.</p>")
-    return docs
-
-
-def _saved(data, doc: Doc) -> dict:
-    return json.loads((data / "beslutninger" / f"{doc.id}.json").read_text())
 
 
 # ---------------------------------------------------------------- usage and models
@@ -120,13 +101,13 @@ def test_failed_call_not_retried_after_the_deadline_reports_its_error(fake_claud
     assert step.failed == 1 and "failed: API Error: overloaded" in caplog.text
 
 
-def test_an_error_after_a_successful_call_keeps_its_cost(fake_claude, data, monkeypatch):
+def test_an_error_after_a_successful_call_keeps_its_cost(fake_claude, world, monkeypatch):
     def full_disk(path, value):
         raise OSError("No space left on device")
 
     monkeypatch.setattr(analyze, "_write_json", full_disk)
     fake_claude.answer(NOTHING_FOUND)
-    step = analyze.extract(_docs(data, "a"), model="claude-sonnet-5-5", effort=None, workers=1)
+    step = analyze.extract([world.downloaded("a")], model="claude-sonnet-5-5", effort=None, workers=1)
     assert (step.calls, step.failed, step.usage.cost_usd) == (1, 1, 0.25)
 
 
@@ -152,8 +133,8 @@ def test_no_cli_on_path_gives_an_unknown_version(tmp_path, monkeypatch):
         analyze.cli_version.cache_clear()
 
 
-def test_steps_without_work_never_run_the_cli(fake_claude, data):
-    (doc,) = _docs(data, "a")
+def test_steps_without_work_never_run_the_cli(fake_claude, world):
+    doc = world.downloaded("a")
     fake_claude.answer(NOTHING_FOUND)
     analyze.extract([doc], model="claude-sonnet-5-5", effort=None, workers=1)
     analyze.cli_version.cache_clear()
@@ -164,35 +145,35 @@ def test_steps_without_work_never_run_the_cli(fake_claude, data):
     assert fake_claude.invocations("version") == before
 
 
-def test_the_cli_version_is_read_once_for_two_steps_with_work(fake_claude, data):
+def test_the_cli_version_is_read_once_for_two_steps_with_work(fake_claude, world):
     fake_claude.answer(NOTHING_FOUND)
-    extracted = analyze.extract(_docs(data, "a", "b"), model="claude-sonnet-5-5", effort=None, workers=2)
+    docs = [world.downloaded("a"), world.downloaded("b")]
+    extracted = analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=2)
     consolidated = analyze.consolidate([decision()], {"doc": "Bestyrelsen"}, model="claude-opus-5-5",
                                        effort=None, workers=1)
     assert (extracted.calls, consolidated.calls) == (2, 1)
     assert fake_claude.invocations("version") == 1
-    rules = json.loads((data / "regler" / "okonomi.json").read_text())
+    rules = world.stored("okonomi")
     assert rules["provenance"]["model"] == "claude-opus-5-5" and rules["provenance"]["cli"] == "2.1.294"
 
 
-def test_an_alias_extraction_records_the_canonical_model(fake_claude, data):
-    (doc,) = _docs(data, "a")
+def test_an_alias_extraction_records_the_canonical_model(fake_claude, world):
     fake_claude.answer(NOTHING_FOUND)
-    analyze.extract([doc], model="sonnet", effort="high", workers=1)
-    saved = _saved(data, doc)
+    analyze.extract([world.downloaded("a")], model="sonnet", effort="high", workers=1)
+    saved = world.extraction("a")
     assert saved["model"] == "sonnet"
     assert {k: saved["provenance"][k] for k in ("model", "cli", "effort")} == \
         {"model": "claude-sonnet-5-5", "cli": "2.1.294", "effort": "high"}
 
 
-def test_the_prompt_fingerprint_follows_the_prompt(fake_claude, data, monkeypatch):
+def test_the_prompt_fingerprint_follows_the_prompt(fake_claude, world, monkeypatch):
     fake_claude.answer(NOTHING_FOUND)
     original = analyze.EXTRACT_SYSTEM
 
     def fingerprints(sha: str) -> set[str]:
-        docs = _docs(data, "a", "b", sha=sha)  # a new sha makes both documents need extraction again
+        docs = [replace(world.downloaded(name), sha256=sha) for name in "ab"]  # a new sha: extracted again
         analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=2)
-        return {_saved(data, doc)["provenance"]["prompt"] for doc in docs}
+        return {world.extraction(doc.id)["provenance"]["prompt"] for doc in docs}
 
     (first,) = fingerprints("v1")
     monkeypatch.setattr(analyze, "EXTRACT_SYSTEM", original + "\nNew rule.")
@@ -212,11 +193,11 @@ def test_v3_is_v2_plus_the_rule_to_split_fees_and_nothing_else():
         analyze.extract_prompt("v9")
 
 
-def test_the_pipeline_prompt_keeps_its_cache_and_a_new_one_extracts_again(fake_claude, data, monkeypatch):
+def test_the_pipeline_prompt_keeps_its_cache_and_a_new_one_extracts_again(fake_claude, world, monkeypatch):
     fake_claude.answer(NOTHING_FOUND)
     pipeline = analyze.extract_prompt()
     other = analyze.extract_prompt(next(name for name in analyze.EXTRACT_PROMPTS if name != pipeline.name))
-    docs = _docs(data, "a", "b")
+    docs = [world.downloaded("a"), world.downloaded("b")]
     for _ in range(2):
         analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
     assert fake_claude.invocations("call") == 2  # the second run finds both current
@@ -229,12 +210,11 @@ def test_the_pipeline_prompt_keeps_its_cache_and_a_new_one_extracts_again(fake_c
     assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
     assert analyze.superseded_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
     analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
-    systems = [argv[argv.index("--system-prompt") + 1] for argv in fake_claude.calls()]
-    assert systems == [pipeline.system] * 2 + [other.system] * 2
+    assert fake_claude.option("--system-prompt") == [pipeline.system] * 2 + [other.system] * 2
     hashes = {prompt.name: analyze.prompt_hash(prompt.system, analyze.EXTRACT_SCHEMA) for prompt in (pipeline, other)}
     assert hashes[pipeline.name] != hashes[other.name]
     for doc in docs:
-        saved = _saved(data, doc)
+        saved = world.extraction(doc.id)
         assert saved["version"] == other.version
         assert saved["provenance"]["prompt"] == hashes[other.name]
     assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == []
@@ -245,9 +225,9 @@ def test_the_pipeline_prompt_keeps_its_cache_and_a_new_one_extracts_again(fake_c
     assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
 
 
-def test_an_extraction_by_another_model_than_the_one_asked_for_is_extracted_again(fake_claude, data):
+def test_an_extraction_by_another_model_than_the_one_asked_for_is_extracted_again(fake_claude, world):
     fake_claude.answer(NOTHING_FOUND)
-    docs = _docs(data, "a")
+    docs = [world.downloaded("a")]
     analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
     assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == []
     assert analyze.missing_extractions(docs, model="claude-opus-5-5") == ["a"]
@@ -255,8 +235,70 @@ def test_an_extraction_by_another_model_than_the_one_asked_for_is_extracted_agai
     for _ in range(2):
         analyze.extract(docs, model="claude-opus-5-5", effort=None, workers=1)
     assert fake_claude.invocations("call") == 2  # once with Sonnet, once with Opus: then it is current
-    assert _saved(data, docs[0])["provenance"]["model"] == "claude-opus-5-5"
+    assert world.extraction("a")["provenance"]["model"] == "claude-opus-5-5"
 
-    without = {k: v for k, v in _saved(data, docs[0]).items() if k != "provenance"}  # from before it was kept
+    without = {k: v for k, v in world.extraction("a").items() if k != "provenance"}  # from before it was kept
     (analyze.DECISIONS_DIR / "a.json").write_text(json.dumps(without))
     assert analyze.missing_extractions(docs, model="claude-opus-5-5") == ["a"]
+
+
+# ---------------------------------------------------------------- run_parallel and the run budget
+
+def test_jobs_after_the_deadline_are_skipped_and_counted():
+    ran = []
+
+    def job(n):
+        ran.append(n)
+        return f"job {n}", Usage(cost_usd=0.5)
+
+    step = run_parallel([1, 2, 3], job, workers=2, label="Test", budget=RunBudget(minutes=-1))
+    assert (ran, step.calls, step.skipped, step.usage.cost_usd) == ([], 0, 3, 0.0)
+
+
+def test_jobs_after_the_cost_limit_are_skipped_and_the_limit_is_named(caplog):
+    budget = RunBudget(max_cost_usd=1.0)
+
+    def job(n):
+        budget.add(0.5)  # ask_claude adds the cost of each attempt as it completes
+        return f"job {n}", Usage(cost_usd=0.5)
+
+    step = run_parallel([1, 2, 3, 4], job, workers=1, label="Test", budget=budget)
+    assert (step.calls, step.skipped, step.usage.cost_usd) == (2, 2, 1.0)
+    assert "skipped 2 because the cost limit of 1.00 USD is reached" in caplog.text
+
+
+def test_failures_are_counted_with_their_usage_and_the_rest_still_runs():
+    def job(n):
+        if n == 2:
+            raise ClaudeError("boom", Usage(cost_usd=0.25, attempts=3))
+        return f"job {n}", Usage(model="sonnet", output_by_model={"claude-sonnet-5-5": 10}, cost_usd=0.5, attempts=1)
+
+    step = run_parallel([1, 2, 3], job, workers=2, label="Test")
+    assert (step.calls, step.failed, step.skipped) == (3, 1, 0)
+    assert (step.usage.cost_usd, step.usage.attempts, step.usage.output_tokens) == (1.25, 5, 20)
+    assert step.usage.models == ("claude-sonnet-5-5",)
+
+
+def test_budget_without_limits_is_never_exhausted():
+    budget = RunBudget()
+    budget.add(1000)
+    assert budget.exhausted() is None
+
+
+def test_budget_names_the_limit_that_was_hit():
+    assert RunBudget(minutes=60).exhausted() is None
+    assert "time budget" in RunBudget(minutes=-1).exhausted()
+
+    budget = RunBudget(max_cost_usd=1.0)
+    budget.add(0.6)
+    assert budget.exhausted() is None
+    budget.add(0.4)
+    assert budget.exhausted() == "the cost limit of 1.00 USD is reached"
+    assert budget.spent_usd == pytest.approx(1.0)
+
+
+def test_a_stopped_budget_reports_the_first_reason():
+    budget = RunBudget(max_cost_usd=100)
+    budget.stop("wrong model")
+    budget.stop("something else")
+    assert budget.exhausted() == "wrong model"

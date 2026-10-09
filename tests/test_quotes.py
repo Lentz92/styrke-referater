@@ -1,10 +1,8 @@
-import json
-
 import pytest
+from conftest import extracted
 
 import analyze
-from analyze import DocWords, Usage, load_decisions, locate_quote, quote_fields
-from scrape import Doc
+from analyze import DocWords, locate_quote, quote_fields
 
 TEXT = (
     "[Side 1]\nReferat af repræsentantskabsmødet.\nPunkt 4: Forslag fra bestyrelsen om at "
@@ -85,66 +83,46 @@ def test_html_without_page_markers_has_no_page():
 
 
 @pytest.fixture
-def load(tmp_path, monkeypatch):
-    """Write one document's cached decisions and load them back."""
-    monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path)
-
-    def run(raw: list[dict]):
-        stored = [{"id": f"doc#{n}", **d} for n, d in enumerate(raw, start=1)]
-        (tmp_path / "doc.json").write_text(json.dumps({"moededato": "2024-03-24", "next_number": len(raw) + 1,
-                                                       "retired": [], "beslutninger": stored}))
-        return load_decisions([Doc("doc", "repraesentantskab", "Referat", "2024", "doc.pdf", None, "sha")])
+def load(world):
+    """Store one document's decisions as an extraction does, and load them back."""
+    def run(*decisions: dict):
+        world.document("doc", "2024-03-24", *decisions)
+        return world.decisions()
 
     return run
 
 
 def test_decisions_load_in_reading_order(load):
     # Twelve decisions listed in reverse page order; string order would put doc#10 before doc#2.
-    raw = [_raw(f"emne {n}", pos=100 - n) for n in range(1, 13)]
+    raw = [extracted(f"emne {n}", citat_pos=100 - n) for n in range(1, 13)]
     raw[4]["citat_pos"] = None  # not located: stays right after the decision listed before it
-    order = [d.emne for d in load(raw)]
+    order = [d.emne for d in load(*raw)]
     assert order == [f"emne {n}" for n in [12, 11, 10, 9, 8, 7, 6, 4, 5, 3, 2, 1]]
 
 
 def test_page_found_by_code_overrides_claudes(load):
-    (d,) = load([_raw("x", pos=10, side=4, located_page=3)])
+    (d,) = load(extracted("x", side=4, citat_pos=10, citat_side=3))
     assert d.side == 3 and d.side_rettet
 
 
 def test_claudes_page_is_kept_when_the_quote_was_not_located(load):
-    (d,) = load([_raw("x", pos=None, side=4, located_page=None)])
+    (d,) = load(extracted("x", side=4, citat_pos=None, citat_side=None))
     assert d.side == 4 and not d.side_rettet
 
 
 def test_filling_in_a_page_claude_left_out_is_not_a_correction(load):
-    (d,) = load([_raw("x", pos=10, side=None, located_page=3)])
+    (d,) = load(extracted("x", side=None, citat_pos=10, citat_side=3))
     assert d.side == 3 and not d.side_rettet
 
 
-def _raw(emne: str, pos: int | None, side: int | None = 1, located_page: int | None = 1) -> dict:
-    return {
-        "emne": emne, "kategori": "okonomi", "udfald": "vedtaget", "forslagsstiller": None, "handling": "ny",
-        "niveau": "staevneregel", "tekst": emne, "citat": emne, "side": side, "stemmer": None,
-        "gaelder_fra": None, "gaelder_til": None, "citat_fundet": True, "citat_pos": pos, "citat_side": located_page,
-    }
+def test_extraction_stores_where_each_quote_is(world, fake_claude):
+    world.texts["doc"] = TEXT
+    fake_claude.answer({"moededato": "2024-03-24", "beslutninger": [
+        extracted("Licensgebyr", citat=QUOTE), extracted("Navn", citat="Divisionsturneringen får nyt navn", side=2)]})
 
+    analyze.extract([world.downloaded("doc")], model="claude-sonnet-5-5", effort=None, workers=1)
 
-def test_extraction_stores_where_each_quote_is(tmp_path, monkeypatch):
-    claude_output = {"moededato": "2024-03-24", "beslutninger": [
-        {**_raw("Licensgebyr", pos=None, side=1), "citat": QUOTE},
-        {**_raw("Navn", pos=None, side=2), "citat": "Divisionsturneringen får nyt navn"},
-    ]}
-    for d in claude_output["beslutninger"]:
-        for key in ("citat_fundet", "citat_pos", "citat_side"):
-            del d[key]
-    monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path)
-    monkeypatch.setattr(analyze, "document_text", lambda doc: TEXT)
-    monkeypatch.setattr(analyze, "ask_claude", lambda *args, **kwargs: (claude_output, Usage()))
-
-    analyze._extract_one(Doc("doc", "repraesentantskab", "Referat", "2024", "doc.pdf", None, "sha"),
-                         model="sonnet", effort=None, cli="2.1.294")
-
-    saved = json.loads((tmp_path / "doc.json").read_text())["beslutninger"]
+    saved = world.extraction("doc")["beslutninger"]
     assert [(d["citat_fundet"], d["citat_side"]) for d in saved] == [(True, 1), (True, 2)]
 
 

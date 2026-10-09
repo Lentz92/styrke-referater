@@ -4,119 +4,39 @@ Calls run with one worker, so the fake answers them in order: three votes, a tie
 one update per touched rule (existing rules by category and slug, then new rules)."""
 
 import json
-import re
-import sys
 from dataclasses import replace
-from datetime import datetime, timezone
-from pathlib import Path
+from datetime import datetime
 
 import pytest
+from conftest import extracted, rule, section
 
 import analyze
 import candidates
 import checks
 import incremental
-import render
 import update
-from analyze import RunBudget, decision_hash
+from analyze import decision_hash
 from candidates import CandidateIndex, Query, RuleProfile
-from incremental import NEW, ONE_OFF, Choice, Settings
+from incremental import NEW, ONE_OFF, Choice
 from matching import FormerSlug, SlugRegistry
-from scrape import Doc
 
 SONNET, OPUS = "claude-sonnet-5-5", "claude-opus-5-5"
-NOW = datetime(2026, 10, 9, tzinfo=timezone.utc)
-TEXT = ("[Side 1]\nDagsorden og godkendelse af referat. " + "Mødet drøftede andre sager. " * 40 +
-        "Licensgebyret hæves til 350 kr. pr. løfter fra næste år. Vedtaget med 30 stemmer. " +
-        "Startgebyret er 200 kr. pr. stævne. " + "Eventuelt intet. " * 80)
-
-
-def _decision(emne: str, tekst: str, kategori: str = "okonomi", **fields) -> dict:
-    return {"emne": emne, "kategori": kategori, "udfald": "vedtaget", "forslagsstiller": None, "handling": "ny",
-            "niveau": "staevneregel", "tekst": tekst, "citat": tekst, "side": 1, "stemmer": None,
-            "gaelder_fra": None, "gaelder_til": None, "citat_fundet": True, "citat_pos": None, "citat_side": 1,
-            **fields}
-
-
-class World:
-    """data/ in tmp_path: documents, their decisions and rule files, written as the pipeline writes them."""
-
-    def __init__(self, tmp_path, monkeypatch):
-        self.root = tmp_path
-        monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path / "beslutninger")
-        monkeypatch.setattr(analyze, "RULES_DIR", tmp_path / "regler")
-        monkeypatch.setattr(analyze, "document_text", lambda doc: TEXT)
-        analyze.DECISIONS_DIR.mkdir()
-        analyze.RULES_DIR.mkdir()
-        self.docs: list[Doc] = []
-
-    def document(self, doc_id: str, dato: str, *decisions: dict, retired: tuple[str, ...] = ()) -> None:
-        self.docs = [d for d in self.docs if d.id != doc_id] + [
-            Doc(doc_id, "repraesentantskab", "Referat", dato, f"{doc_id}.pdf", None, f"sha-{doc_id}")]
-        numbered = [{"id": d.pop("id", f"{doc_id}#{n}"), **d} for n, d in enumerate(decisions, start=1)]
-        (analyze.DECISIONS_DIR / f"{doc_id}.json").write_text(json.dumps({
-            "doc_id": doc_id, "sha256": f"sha-{doc_id}", "version": analyze.EXTRACT_VERSION,
-            "model": update.EXTRACT_MODEL,
-            "provenance": {"model": update.EXTRACT_MODEL, "cli": "2.1.294", "prompt": "x", "effort": "default"},
-            "moededato": dato, "next_number": 20,
-            "retired": [{"id": ref, "emne": "x", "reason": "no match in a re-extraction", "date": "2026-10-01"}
-                        for ref in retired],
-            "beslutninger": numbered}))
-
-    def decisions(self):
-        return analyze.load_decisions(self.docs)
-
-    def rules(self, category: str, *rules: tuple, udeladt: tuple[str, ...] = ()) -> None:
-        """Rules as (titel, slug, [(ref, effekt), ...]), each version built from its decision as it is now."""
-        by_ref = {d.ref: d for d in self.decisions()}
-        regler = [{"titel": titel, "slug": slug, "vigtig": True, "note": None,
-                   "versioner": [{"ref": ref, "effekt": effekt, "tekst": f"Tekst {ref}", "kort": f"kort {ref}",
-                                  "kort_regel": f"regel {ref}", "dhash": decision_hash(by_ref[ref])}
-                                 for ref, effekt in versions]}
-                  for titel, slug, versions in rules]
-        analyze._write_json(analyze.RULES_DIR / f"{category}.json", {
-            "kategori": category, "version": analyze.CONSOLIDATE_VERSION, "input_hash": "x", "model": "opus",
-            "regler": regler, "udeladt": list(udeladt), "ikke_tildelt": []})
-
-    def consolidated(self) -> None:
-        """Every rule file's input_hash as a full consolidation of today's decisions leaves it."""
-        for job in analyze.consolidation_todo(self.decisions(), {d.id: d.organ_label for d in self.docs}):
-            stored = self.stored(job.category)
-            analyze._write_json(analyze.RULES_DIR / f"{job.category}.json", {**stored, "input_hash": job.input_hash})
-
-    def stored(self, category: str) -> dict:
-        return json.loads((analyze.RULES_DIR / f"{category}.json").read_text())
-
-    def rule(self, category: str, slug: str) -> dict:
-        return next(r for r in self.stored(category)["regler"] if r["slug"] == slug)
-
-    def files(self) -> dict[str, bytes]:
-        return {p.name: p.read_bytes() for p in sorted(analyze.RULES_DIR.glob("*.json"))}
-
-    def consolidate(self, known: incremental.Known | None = None, **settings) -> analyze.StepSummary:
-        return incremental.consolidate(self.docs, self.decisions(), Settings(workers=1, **settings), RunBudget(),
-                                       now=NOW, known=known)
-
-    def known(self) -> incremental.Known:
-        """What the rule files reflect now, as update.py takes it before the extraction."""
-        return incremental.known_inputs(self.decisions(), incremental.RuleBook.load(), self.docs)
 
 
 @pytest.fixture
-def world(tmp_path, monkeypatch):
+def world(world):
     """Licensgebyr 2010 -> 2015 -> 2020, Startgebyr 2015 (okonomi) and Klubskifte 2020 (medlemskab), consolidated."""
-    w = World(tmp_path, monkeypatch)
-    w.document("rep2010", "2010-03-01", _decision("Licensgebyr", "Licensgebyret er 200 kr. pr. løfter."))
-    w.document("rep2015", "2015-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
-               _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
-    w.document("rep2020", "2020-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 300 kr. pr. løfter."),
-               _decision("Klubskifte", "Et klubskifte kræver tre måneders karantæne.", "medlemskab"))
-    w.rules("okonomi", ("Licensgebyr", "licensgebyr", [("rep2010#1", "indfoert"), ("rep2015#1", "aendret"),
-                                                        ("rep2020#1", "aendret")]),
-            ("Startgebyr", "startgebyr", [("rep2015#2", "indfoert")]))
-    w.rules("medlemskab", ("Klubskifte", "klubskifte", [("rep2020#2", "indfoert")]))
-    w.consolidated()
-    return w
+    world.document("rep2010", "2010-03-01", extracted("Licensgebyr", "Licensgebyret er 200 kr. pr. løfter."))
+    world.document("rep2015", "2015-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
+    world.document("rep2020", "2020-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 300 kr. pr. løfter."),
+                   extracted("Klubskifte", "Et klubskifte kræver tre måneders karantæne.", "medlemskab"))
+    world.rules("okonomi", rule("Licensgebyr", "licensgebyr", "rep2010#1", ("rep2015#1", "aendret"),
+                                ("rep2020#1", "aendret")),
+                rule("Startgebyr", "startgebyr", "rep2015#2"))
+    world.rules("medlemskab", rule("Klubskifte", "klubskifte", "rep2020#2"))
+    world.consolidated()
+    return world
 
 
 def _votes(*choices: dict) -> dict:
@@ -135,10 +55,6 @@ def _update(*refs: str, vigtig: bool = True, note: str | None = None, misfiled: 
                            "kort_regel": f"ny regel {ref}"} for ref in refs], "vigtig": vigtig, "note": note,
             "misfiled": [{"ref": m, "title": None} if isinstance(m, str) else {"ref": m[0], "title": m[1]}
                          for m in misfiled]}
-
-
-def _models(fake_claude) -> list[str]:
-    return [args[args.index("--model") + 1] for args in fake_claude.calls()]
 
 
 # ---------------------------------------------------------------- candidates
@@ -212,10 +128,10 @@ def test_todays_data_has_no_work(world):
 
 
 def test_the_queue_has_new_changed_and_retired_decisions_per_document_in_date_order(world):
-    world.document("rep2015", "2015-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 260 kr. pr. løfter."),
+    world.document("rep2015", "2015-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 260 kr. pr. løfter."),
                    retired=("rep2015#2",))  # #1 re-read with another amount, #2 gone
-    world.document("udateret", None, _decision("Dopingregel", "Doping straffes.", "antidoping"))
-    world.document("rep2024", "2024-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 350 kr."))
+    world.document("udateret", None, extracted("Dopingregel", "Doping straffes.", "antidoping"))
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 350 kr."))
     queue = incremental.work_queue(world.decisions(), incremental.RuleBook.load(), world.docs)
     assert [(w.doc_id, w.new, w.changed, w.retired) for w in queue] == [
         ("rep2015", (), ("rep2015#1",), ("rep2015#2",)), ("rep2024", ("rep2024#1",), (), ()),
@@ -227,8 +143,8 @@ def test_the_queue_has_new_changed_and_retired_decisions_per_document_in_date_or
 # ---------------------------------------------------------------- assign and update
 
 def test_votes_file_new_decisions_and_only_the_touched_rule_changes(world, fake_claude):
-    world.document("rep2024", "2024-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
-                   _decision("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
     before = world.files()
     startgebyr = json.dumps(world.rule("okonomi", "startgebyr"), ensure_ascii=False)
     fake_claude.answers(
@@ -239,7 +155,7 @@ def test_votes_file_new_decisions_and_only_the_touched_rule_changes(world, fake_
         _update("rep2024#1"))
     step = world.consolidate()
 
-    assert _models(fake_claude) == [SONNET, SONNET, SONNET, OPUS, OPUS]
+    assert fake_claude.option("--model") == [SONNET, SONNET, SONNET, OPUS, OPUS]
     assert (step.calls, step.failed, step.skipped) == (5, 0, 0)  # Claude calls, not documents
     licens = world.rule("okonomi", "licensgebyr")
     assert [v["ref"] for v in licens["versioner"]] == ["rep2010#1", "rep2015#1", "rep2020#1", "rep2024#1"]
@@ -262,23 +178,19 @@ def test_votes_file_new_decisions_and_only_the_touched_rule_changes(world, fake_
                                                       "rep2024#1", "rep2024#2"}
 
 
-def _section(prompt: str, tag: str):
-    return json.loads(prompt.split(f"<{tag}>\n", 1)[1].split(f"\n</{tag}>", 1)[0])
-
-
 def test_the_votes_see_the_ranked_candidates_and_the_update_the_minutes(world, fake_claude):
-    world.document("rep2024", "2024-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter"))
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter"))
     fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update("rep2024#1"))
     world.consolidate(k=3)
     votes, rule_update = fake_claude.prompts()[0], fake_claude.prompts()[-1]
-    (asked,) = _section(votes, "beslutninger")
+    (asked,) = section(votes, "beslutninger")
     a, b, c = asked["kandidater"]
-    assert a == "licensgebyr" and [r["slug"] for r in _section(votes, "regler")] == [a, b, c]
+    assert a == "licensgebyr" and [r["slug"] for r in section(votes, "regler")] == [a, b, c]
     # Each vote reads the candidates starting a third further on.
-    assert [_section(p, "beslutninger")[0]["kandidater"] for p in fake_claude.prompts()[1:3]] == [[b, c, a], [c, a, b]]
-    statuses = [(v["ref"], v["status"]) for v in _section(rule_update, "regel")["versioner"]]
+    assert [section(p, "beslutninger")[0]["kandidater"] for p in fake_claude.prompts()[1:3]] == [[b, c, a], [c, a, b]]
+    statuses = [(v["ref"], v["status"]) for v in section(rule_update, "regel")["versioner"]]
     assert statuses == [("rep2010#1", "keep"), ("rep2015#1", "keep"), ("rep2020#1", "keep"), ("rep2024#1", "new")]
-    (source,) = _section(rule_update, "kilder")
+    (source,) = section(rule_update, "kilder")
     # 100 words before the quote, as written in the document (the agenda before them is left out), and on to the end.
     quote = "Licensgebyret hæves til 350 kr. pr. løfter"
     before, _, after = source["passage"].partition(quote)
@@ -287,8 +199,8 @@ def test_the_votes_see_the_ranked_candidates_and_the_update_the_minutes(world, f
 
 def test_a_new_rule_gets_a_title_slug_that_no_live_or_former_rule_has(world, fake_claude):
     analyze._save_slugs(SlugRegistry.of({"juniorlicens": FormerSlug("okonomi", "Juniorlicens", frozenset({"z#1"}))}))
-    world.document("rep2024", "2024-03-01", _decision("Licensgebyr for juniorer", "Juniorer betaler 100 kr."),
-                   _decision("Licensgebyr for juniorer", "Juniorlicensen gælder fra 1. januar."))
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr for juniorer", "Juniorer betaler 100 kr."),
+                   extracted("Licensgebyr for juniorer", "Juniorlicensen gælder fra 1. januar."))
     title = (NEW, "Juniorlicens")
     fake_claude.answers(_votes({"rep2024#1": title, "rep2024#2": title}), _votes({"rep2024#1": title,
                                                                                   "rep2024#2": title}),
@@ -305,7 +217,7 @@ def test_a_new_rule_gets_a_title_slug_that_no_live_or_former_rule_has(world, fak
 # ---------------------------------------------------------------- late, changed and retired decisions
 
 def test_a_late_decision_rewrites_from_where_it_belongs_on(world, fake_claude):
-    world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
+    world.document("rep2017", "2017-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     before = world.rule("okonomi", "licensgebyr")["versioner"]
     plan = incremental.plan_update(before, {d.ref: d for d in world.decisions()}, set(), set(), ["rep2017#1"])
     assert (list(plan.keep), plan.point) == (before[:2], 2)
@@ -321,18 +233,18 @@ def test_a_late_decision_rewrites_from_where_it_belongs_on(world, fake_claude):
 
 
 def test_an_answer_that_rewrites_earlier_versions_is_asked_again_then_left_for_the_next_run(world, fake_claude):
-    world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
+    world.document("rep2017", "2017-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     before = world.files()
     fake_claude.answers(*[_votes({"rep2017#1": "licensgebyr"})] * 3,
                         _update("rep2010#1", "rep2017#1", "rep2020#1"))  # rewrites 2010: rejected, twice
     step = world.consolidate()
-    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] * 2
+    assert fake_claude.option("--model") == [SONNET] * 3 + [OPUS] * 2
     assert (step.calls, step.failed) == (5, 1)
     assert world.files() == before
 
 
 def test_an_update_answer_must_return_exactly_the_versions_from_the_insertion_point_on(world):
-    world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
+    world.document("rep2017", "2017-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     by_ref = {d.ref: d for d in world.decisions()}
     versions = world.rule("okonomi", "licensgebyr")["versioner"]
     plan = incremental.plan_update(versions, by_ref, set(), set(), ["rep2017#1"])
@@ -349,11 +261,11 @@ def test_an_update_answer_must_return_exactly_the_versions_from_the_insertion_po
 
 
 def test_a_changed_decision_stays_in_its_rule_without_a_vote(world, fake_claude):
-    world.document("rep2015", "2015-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 260 kr. pr. løfter."),
-                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
+    world.document("rep2015", "2015-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 260 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
     fake_claude.answers(_update("rep2015#1", "rep2020#1"))
     world.consolidate()
-    assert _models(fake_claude) == [OPUS]
+    assert fake_claude.option("--model") == [OPUS]
     versions = world.rule("okonomi", "licensgebyr")["versioner"]
     assert [v["ref"] for v in versions] == ["rep2010#1", "rep2015#1", "rep2020#1"]
     assert all(analyze.version_matches(v, d) for v, d in zip(versions, world.decisions()) if v["ref"] == d.ref)
@@ -362,13 +274,13 @@ def test_a_changed_decision_stays_in_its_rule_without_a_vote(world, fake_claude)
 def test_retired_decisions_leave_their_rules_and_an_empty_rule_is_retired(world, fake_claude):
     # rep2015#1 stood in the middle of Licensgebyr: the versions after it are rewritten. rep2015#2 was Startgebyr's
     # only decision: the rule goes, and its slug waits in the history for a successor.
-    world.document("rep2015", "2015-03-01", _decision("Klubskifte", "Klubskifte kræver to måneders karantæne.",
+    world.document("rep2015", "2015-03-01", extracted("Klubskifte", "Klubskifte kræver to måneders karantæne.",
                                                       "medlemskab", id="rep2015#3"),
                    retired=("rep2015#1", "rep2015#2"))
     fake_claude.answers(*[_votes({"rep2015#3": "klubskifte"})] * 3, _update("rep2015#3", "rep2020#2"),
                         _update("rep2020#1"))
     world.consolidate()
-    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] * 2
+    assert fake_claude.option("--model") == [SONNET] * 3 + [OPUS] * 2
     assert [v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]] == ["rep2010#1", "rep2020#1"]
     assert [r["slug"] for r in world.stored("okonomi")["regler"]] == ["licensgebyr"]
     assert analyze.load_slugs().retired == {"startgebyr": FormerSlug("okonomi", "Startgebyr",
@@ -376,11 +288,11 @@ def test_retired_decisions_leave_their_rules_and_an_empty_rule_is_retired(world,
     assert [v["ref"] for v in world.rule("medlemskab", "klubskifte")["versioner"]] == ["rep2015#3", "rep2020#2"]
 
 
-def test_a_rule_touched_by_one_document_also_drops_another_documents_retired_decision(world, fake_claude):
+def test_a_rule_touched_by_one_document_also_drops_another_documents_retiredextracted(world, fake_claude):
     # rep2020 was read again and lost rep2020#1; rep2017, filed first, lands in the same rule and brings it up to date.
-    world.document("rep2020", "2020-03-01", _decision("Klubskifte", "Et klubskifte kræver tre måneders karantæne.",
+    world.document("rep2020", "2020-03-01", extracted("Klubskifte", "Et klubskifte kræver tre måneders karantæne.",
                                                       "medlemskab", id="rep2020#2"), retired=("rep2020#1",))
-    world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
+    world.document("rep2017", "2017-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     fake_claude.answers(*[_votes({"rep2017#1": "licensgebyr"})] * 3, _update("rep2017#1"))
     step = world.consolidate()
     assert (step.calls, step.failed, fake_claude.invocations("call")) == (4, 0, 4)  # rep2020 had nothing left
@@ -390,7 +302,7 @@ def test_a_rule_touched_by_one_document_also_drops_another_documents_retired_dec
 
 
 def test_a_retired_last_version_needs_no_call(world, fake_claude):
-    world.document("rep2020", "2020-03-01", _decision("Klubskifte", "Et klubskifte kræver tre måneders karantæne.",
+    world.document("rep2020", "2020-03-01", extracted("Klubskifte", "Et klubskifte kræver tre måneders karantæne.",
                                                       "medlemskab", id="rep2020#2"), retired=("rep2020#1",))
     world.consolidate()
     assert fake_claude.calls() == []
@@ -399,26 +311,9 @@ def test_a_retired_last_version_needs_no_call(world, fake_claude):
 
 # ---------------------------------------------------------------- a monthly run
 
-@pytest.fixture
-def run(world, fake_claude, monkeypatch):
-    monkeypatch.setattr(update, "RUNS_LOG", world.root / "runs.jsonl")
-    monkeypatch.setattr(update, "RUN_REPORT", world.root / "run-report.md")
-    monkeypatch.setattr(update.website, "build", lambda *args: world.root / "index.html")
-    monkeypatch.setattr(render, "OUT_DIR", world.root / "regelsaet")
-    monkeypatch.setattr(update.scrape, "ROOT", world.root)
-    monkeypatch.delenv("GITHUB_STEP_SUMMARY", raising=False)
-
-    def main(*args: str) -> None:
-        monkeypatch.setattr(update.scrape, "load_manifest", lambda: world.docs)
-        monkeypatch.setattr(sys, "argv", ["update.py", "--offline", "--workers", "1", *args])
-        update.main()
-
-    return main
-
-
 def test_an_incremental_month_passes_the_history_check_and_renders(world, fake_claude, run):
-    world.document("rep2024", "2024-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
-                   _decision("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
     fake_claude.answers(_votes({"rep2024#1": "licensgebyr", "rep2024#2": "startgebyr"}),
                         _votes({"rep2024#1": "licensgebyr", "rep2024#2": "startgebyr"}),
                         _votes({"rep2024#1": "licensgebyr", "rep2024#2": ONE_OFF}),
@@ -435,8 +330,8 @@ def test_an_incremental_month_passes_the_history_check_and_renders(world, fake_c
 
 def test_a_category_left_for_a_full_consolidation_is_listed_in_the_run_report(world, fake_claude, run):
     # styrke.dk dated rep2015 anew before this run: nothing reflects the old date, so okonomi cannot be settled.
-    world.document("rep2015", "2016-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
-                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
+    world.document("rep2015", "2016-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
     run()
     report = (world.root / "run-report.md").read_text()
     assert f"## {incremental.UNSEEN}: 1\n\n- okonomi may reflect decisions that changed unseen" in report
@@ -514,8 +409,8 @@ def test_a_cut_off_migration_is_finished_by_its_command_which_skips_the_categori
 
 def test_decisions_a_cut_off_month_left_in_most_categories_are_filed_by_the_next_plain_run(world, fake_claude, run):
     # A big meeting with new decisions in every category, extracted by a run whose filing was then cut off.
-    world.document("rep2024", "2024-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
-                   _decision("Klubskifte", "Et klubskifte kræver fire måneders karantæne.", "medlemskab"))
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
+                   extracted("Klubskifte", "Et klubskifte kræver fire måneders karantæne.", "medlemskab"))
     fake_claude.plan("error")
     with pytest.raises(SystemExit, match="Claude calls failed"):
         run()
@@ -532,24 +427,13 @@ def test_decisions_a_cut_off_month_left_in_most_categories_are_filed_by_the_next
 
 def test_changed_decisions_in_most_categories_still_stop_a_plain_run(world, fake_claude, run):
     # rep2020 read again: its decision in each category changed, so every category's rules are to be redone.
-    world.document("rep2020", "2020-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 325 kr. pr. løfter."),
-                   _decision("Klubskifte", "Et klubskifte kræver fire måneders karantæne.", "medlemskab"))
+    world.document("rep2020", "2020-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 325 kr. pr. løfter."),
+                   extracted("Klubskifte", "Et klubskifte kræver fire måneders karantæne.", "medlemskab"))
     with pytest.raises(SystemExit):
         run()
     report = (world.root / "run-report.md").read_text()
     assert "Stopped before any Claude call: 2 of 2 categories need consolidating again" in report
     assert fake_claude.calls() == []
-
-
-def test_the_workflow_runs_the_default_mode_unless_full_is_ticked():
-    workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
-    full = workflow[workflow.index("\n      full:\n"):workflow.index("\npermissions:")]
-    label = re.search(r'description: "(.*)"', full).group(1)
-    assert f"'{label}'" in update.HOW_TO_PROCEED and "type: boolean" in full and "default: false" in full
-    step = workflow[workflow.index("- name: Download new minutes and update the rule overview"):]
-    assert "FULL: ${{ inputs.full }}" in step and "REBUILD: ${{ inputs.rebuild }}" in step
-    assert 'if [ "$FULL" = "true" ]; then args+=(--consolidate-mode full); fi' in step
-    assert 'uv run update.py "${args[@]}"' in step and "--consolidate-mode incremental" not in workflow
 
 
 # ---------------------------------------------------------------- review fixes
@@ -563,13 +447,13 @@ def _full(world, fake_claude, answer: dict) -> None:
 def test_a_decision_filed_under_another_categorys_rule_is_never_consolidated_twice(world, fake_claude):
     # Incremental files a medlemskab decision into okonomi's Licensgebyr; a later full run of medlemskab must not
     # take it again: it is consolidated with the rule that holds it.
-    world.document("rep2024", "2024-03-01", _decision("Licens ved klubskifte", "Licensen følger med ved klubskifte.",
+    world.document("rep2024", "2024-03-01", extracted("Licens ved klubskifte", "Licensen følger med ved klubskifte.",
                                                       "medlemskab"))
     fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update("rep2024#1"))
     world.consolidate()
     assert analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs}) == []
 
-    world.document("rep2025", "2025-03-01", _decision("Klubskifte", "Klubskifte kræver to måneders karantæne.",
+    world.document("rep2025", "2025-03-01", extracted("Klubskifte", "Klubskifte kræver to måneders karantæne.",
                                                       "medlemskab"))
     todo = analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs})
     assert [(job.category, [i["ref"] for i in job.items]) for job in todo] == [("medlemskab", ["rep2020#2",
@@ -585,20 +469,20 @@ def test_a_decision_filed_under_another_categorys_rule_is_never_consolidated_twi
 
 def test_a_redated_document_reaches_its_rules_although_its_decisions_did_not_change(world, fake_claude):
     known = world.known()  # update.py takes it before the extraction
-    world.document("rep2015", "2016-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
-                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))  # re-read: another date only
+    world.document("rep2015", "2016-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))  # re-read: another date only
     fake_claude.answers(_update("rep2015#1", "rep2020#1"), _update("rep2015#2"))
     world.consolidate(known)
-    assert _models(fake_claude) == [OPUS, OPUS]  # no vote: they stay where they are
+    assert fake_claude.option("--model") == [OPUS, OPUS]  # no vote: they stay where they are
     assert [v["tekst"] for v in world.rule("okonomi", "licensgebyr")["versioner"]] == [
-        "Tekst rep2010#1", "Ny tekst rep2015#1", "Ny tekst rep2020#1"]
+        None, "Ny tekst rep2015#1", "Ny tekst rep2020#1"]  # 2010's own words, then the rewritten ones
     assert analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs}) == []
 
 
 def test_a_category_that_may_have_changed_unseen_is_not_settled(world, fake_claude, caplog):
     stale = world.stored("okonomi")["input_hash"]
-    world.document("rep2015", "2016-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
-                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
+    world.document("rep2015", "2016-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
     world.consolidate()  # no baseline from before the change, and the file records no fingerprints
     assert fake_claude.calls() == [] and world.stored("okonomi")["input_hash"] == stale
     assert "okonomi may reflect decisions that changed unseen" in caplog.text
@@ -607,7 +491,7 @@ def test_a_category_that_may_have_changed_unseen_is_not_settled(world, fake_clau
 
 
 def test_a_one_off_counts_only_in_its_own_category(world):
-    world.document("rep2012", "2012-03-01", _decision("Jubilæum", "Forbundet fejrer jubilæum.", "medlemskab"))
+    world.document("rep2012", "2012-03-01", extracted("Jubilæum", "Forbundet fejrer jubilæum.", "medlemskab"))
     path = analyze.RULES_DIR / "okonomi.json"
     path.write_text(json.dumps({**world.stored("okonomi"), "udeladt": ["rep2012#1"]}))  # left out under okonomi
     queue = incremental.work_queue(world.decisions(), incremental.RuleBook.load(), world.docs)
@@ -615,7 +499,7 @@ def test_a_one_off_counts_only_in_its_own_category(world):
 
 
 def test_the_check_before_the_insertion_point_compares_with_the_stored_versions(world):
-    world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
+    world.document("rep2017", "2017-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     by_ref = {d.ref: d for d in world.decisions()}
     versions = world.rule("okonomi", "licensgebyr")["versioner"]
     plan = incremental.plan_update(versions, by_ref, set(), set(), ["rep2017#1"])
@@ -639,8 +523,8 @@ def test_a_removed_version_is_placed_by_its_documents_date_not_its_place_in_the_
 
 def test_a_slug_retired_by_a_document_is_not_given_to_a_new_rule_of_the_same_document(world, fake_claude):
     # Startgebyr's only decision is read again as a new one, which the votes and the tie-break file as a new rule.
-    world.document("rep2015", "2015-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
-                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. start.", id="rep2015#3"),
+    world.document("rep2015", "2015-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 150 kr. pr. start.", id="rep2015#3"),
                    retired=("rep2015#2",))
     new = _votes({"rep2015#3": (NEW, "Startgebyr")})
     fake_claude.answers(new, new, new, new, _update("rep2015#3"))
@@ -650,8 +534,8 @@ def test_a_slug_retired_by_a_document_is_not_given_to_a_new_rule_of_the_same_doc
 
 
 def test_new_decisions_with_the_same_new_title_form_one_rule_whatever_their_category(world, fake_claude):
-    world.document("rep2024", "2024-03-01", _decision("Klubrabat", "Klubber får rabat på licens."),
-                   _decision("Klubrabat", "Rabatten gælder nye klubber.", "medlemskab"))
+    world.document("rep2024", "2024-03-01", extracted("Klubrabat", "Klubber får rabat på licens."),
+                   extracted("Klubrabat", "Rabatten gælder nye klubber.", "medlemskab"))
     fake_claude.answers(*[_votes({"rep2024#1": (NEW, "Klubrabat"), "rep2024#2": (NEW, "klubrabat")})] * 3,
                         _update("rep2024#1", "rep2024#2"))
     world.consolidate()
@@ -660,12 +544,12 @@ def test_new_decisions_with_the_same_new_title_form_one_rule_whatever_their_cate
 
 
 def test_a_new_rule_named_like_a_live_one_goes_to_the_tie_break_with_that_rule_offered(world, fake_claude):
-    world.document("rep2024", "2024-03-01", _decision("Juniorkontingent", "Juniorer betaler halv pris."))
+    world.document("rep2024", "2024-03-01", extracted("Juniorkontingent", "Juniorer betaler halv pris."))
     fake_claude.answers(*[_votes({"rep2024#1": (NEW, "Licensgebyr")})] * 3, _votes({"rep2024#1": "licensgebyr"}),
                         _update("rep2024#1"))
     world.consolidate(k=1)
-    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] * 2
-    assert "licensgebyr" in _section(fake_claude.prompts()[3], "beslutninger")[0]["kandidater"]
+    assert fake_claude.option("--model") == [SONNET] * 3 + [OPUS] * 2
+    assert "licensgebyr" in section(fake_claude.prompts()[3], "beslutninger")[0]["kandidater"]
     assert [r["slug"] for r in world.stored("okonomi")["regler"]] == ["licensgebyr", "startgebyr"]
     assert "rep2024#1" in {v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]}
 
@@ -700,25 +584,25 @@ def test_the_passage_reaches_from_before_the_quote_to_the_vote():
 
 
 def test_a_misfiled_decision_is_voted_on_again_without_that_rule(world, fake_claude):
-    world.document("rep2024", "2024-03-01", _decision("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
+    world.document("rep2024", "2024-03-01", extracted("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
     fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
                         *[_votes({"rep2024#1": "startgebyr"})] * 3, _update("rep2024#1"))
     step = world.consolidate(k=3)
-    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS]
+    assert fake_claude.option("--model") == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS]
     assert (step.calls, step.failed) == (8, 0)
-    assert "licensgebyr" in _section(fake_claude.prompts()[0], "beslutninger")[0]["kandidater"]
-    assert "licensgebyr" not in _section(fake_claude.prompts()[4], "beslutninger")[0]["kandidater"]
+    assert "licensgebyr" in section(fake_claude.prompts()[0], "beslutninger")[0]["kandidater"]
+    assert "licensgebyr" not in section(fake_claude.prompts()[4], "beslutninger")[0]["kandidater"]
     assert [v["ref"] for v in world.rule("okonomi", "startgebyr")["versioner"]] == ["rep2015#2", "rep2024#1"]
     assert "rep2024#1" not in {v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]}
 
 
 def test_a_decision_misfiled_twice_is_filed_as_a_new_rule_and_listed_for_review(world, fake_claude, caplog):
-    world.document("rep2024", "2024-03-01", _decision("Startgebyr", "Juniorer betaler halvt startgebyr."))
+    world.document("rep2024", "2024-03-01", extracted("Startgebyr", "Juniorer betaler halvt startgebyr."))
     fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
                         *[_votes({"rep2024#1": "startgebyr"})] * 3,
                         _update(misfiled=(("rep2024#1", "Startgebyr for juniorer"),)), _update("rep2024#1"))
     step = world.consolidate(k=3)
-    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS, OPUS]
+    assert fake_claude.option("--model") == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS, OPUS]
     assert (step.calls, step.failed, step.skipped) == (9, 0, 0)  # filed, not left pending for every later run
     rule = world.stored("okonomi")["regler"][-1]
     assert (rule["titel"], rule["slug"], [v["ref"] for v in rule["versioner"]]) == (
@@ -732,13 +616,13 @@ def test_a_decision_misfiled_twice_is_filed_as_a_new_rule_and_listed_for_review(
 def test_a_new_rule_after_two_misfilings_is_checked_for_a_namesake_once(world, fake_claude):
     # No title suggested: the emne, "Klubskifte", names a live rule, which the tie-break picks; misfiled there too,
     # the decision gets its own rule.
-    world.document("rep2024", "2024-03-01", _decision("Klubskifte", "Klubskiftegebyret er 100 kr."))
+    world.document("rep2024", "2024-03-01", extracted("Klubskifte", "Klubskiftegebyret er 100 kr."))
     fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
                         *[_votes({"rep2024#1": "startgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
                         _votes({"rep2024#1": "klubskifte"}), _update(misfiled=("rep2024#1",)), _update("rep2024#1"))
     step = world.consolidate(k=3)
-    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS] * 4
-    assert _section(fake_claude.prompts()[8], "beslutninger")[0]["kandidater"] == ["klubskifte"]
+    assert fake_claude.option("--model") == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS] * 4
+    assert section(fake_claude.prompts()[8], "beslutninger")[0]["kandidater"] == ["klubskifte"]
     assert [r["slug"] for r in world.stored("okonomi")["regler"]] == ["licensgebyr", "startgebyr", "klubskifte-2"]
     assert step.notes[incremental.MISFILED_TWICE] == (
         "rep2024#1 (Klubskifte): misfiled in `klubskifte`, `licensgebyr`, `startgebyr`; filed as the new rule "
