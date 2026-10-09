@@ -1,22 +1,28 @@
 {
  "doc_id": "refbest_29032018",
  "sha256": "5d3960c5ef921e3941b491ebbbb7ec6f2470b790914905b02e93303f4ca72a03",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2018-03-29",
- "next_number": 3,
+ "next_number": 4,
  "retired": [],
  "beslutninger": [
   {
    "id": "refbest_29032018#1",
-   "emne": "Udtagelse til EM 2020 i udstyrsstyrkeløft",
+   "emne": "Udtagelse til EM 2020 i udstyrsstyrkeløft på hjemmebane (projekt 2020)",
    "kategori": "landshold",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Der er krav om deltagelse ved DM i styrkeløft 2019, hvorefter der udtages en bruttotrup, som mødes løbende frem mod EM 2020. Udtagelsen sker ikke efter kvalifikationskrav, men på udviklingspotentiale og engagement. Den endelige udtagelse til EM sker efter DM 2020.",
-   "citat": "Det er dog et krav, at der deltages ved DM i styrkeløft 2019, hvorefter der udtages en bruttotrup, der løbende mødes frem mod 2020. Der vil ikke blive udtaget efter kvalifikationskrav, men på udviklingspotentiale og engagement.",
+   "tekst": "For at blive udtaget til projekt 2020 (EM i styrkeløft med udstyr på hjemmebane) skal man deltage ved DM i styrkeløft 2019. Derefter udtages en bruttotrup, der mødes løbende frem mod 2020. Bruttotruppen udtages ikke efter kvalifikationskrav, men efter udviklingspotentiale og engagement. Den endelige udtagelse til EM sker efter DM 2020.",
+   "citat": "Det er dog et krav, at der deltages ved DM i styrkeløft 2019, hvorefter der udtages en bruttotrup, der løbende mødes frem mod 2020. Der vil ikke blive udtaget efter kvalifikationskrav, men på udviklingspotentiale og engagement.  Den endelige udtagelse til EM vil forgå efter DM 2020.",
    "side": 2,
    "stemmer": null,
    "gaelder_fra": null,
@@ -27,13 +33,13 @@
   },
   {
    "id": "refbest_29032018#2",
-   "emne": "Tilmelding til klassisk stævne i stævnesystemet",
+   "emne": "Tilmelding til klassisk i udstyrsstævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
    "forslagsstiller": null,
-   "handling": "aendring",
+   "handling": "bekraeftelse",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Stævnesystemet opdateres efter repræsentantskabsmødet, så det ikke er muligt at tilmelde sig klassisk til et udstyrsstævne.",
+   "tekst": "Som opfølgning på repræsentantskabsmødet opdateres stævnesystemet, så det ikke er muligt at tilmelde sig i klassisk styrkeløft til et udstyrsstævne.",
    "citat": "Stævnesystemet skal opdateret efter repræsentantskabsmødet, således at det ikke er muligt at tilmelde sig klassisk til et udstyrsstævne.",
    "side": 2,
    "stemmer": null,
@@ -42,6 +48,24 @@
    "citat_fundet": true,
    "citat_pos": 403,
    "citat_side": 2
+  },
+  {
+   "id": "refbest_29032018#3",
+   "emne": "Udvalgsformænds ansvar for opdatering af regler på hjemmesiden",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Udvalgenes formænd har ansvaret for at opdatere de ændringer, der hører under deres udvalg, og for at sikre, at ændringerne bliver opdateret på forbundets hjemmeside.",
+   "citat": "Udvalgenes formænd står for opdateringer af de ændringer, der hører under udvalgene og tilser at disse bliver opdateret på forbundets hjemmeside.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 68,
+   "citat_side": 1
   }
  ]
 }

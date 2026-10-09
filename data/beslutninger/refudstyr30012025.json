@@ -1,8 +1,14 @@
 {
  "doc_id": "refudstyr30012025",
  "sha256": "1c8703c7b8418fdf6963b673b2239e804b6f117af792c8c67cd5d21d8cab3a13",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2025-01-30",
  "next_number": 1,
  "retired": [],

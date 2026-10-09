@@ -1,39 +1,52 @@
 {
  "doc_id": "elite30012011",
  "sha256": "c7ed08c412060375be869bc74b6e8be1613b333d0345984e2951fd13634a1420",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2011-01-30",
- "next_number": 3,
- "retired": [],
- "beslutninger": [
+ "next_number": 4,
+ "retired": [
   {
    "id": "elite30012011#1",
    "emne": "Udtagelse til EM, 3-kamp",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
+ "beslutninger": [
+  {
+   "id": "elite30012011#3",
+   "emne": "Udtagelseskriterier EM, 3-kamp",
    "kategori": "landshold",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Da DM afholdes for sent i forhold til EM, er Sune Bak og Annette Pedersen forhåndsudtaget til EM i 3-kamp. Lise Ejlertsen skal lave EM-kravet (447,5 kg) ved DMA for at vise stabilitet. Resten af truppen (undtagen Danni Iversen og Thomas Bay) skal lave EM-kravet ved DM for at blive udtaget.",
-   "citat": "Lise Ejlertsen skal lave EM krav (447,5kg) ved DMA for at vise stabilitet. Sune Bak og Annette Pedersen er forhåndsudtaget til EM.",
+   "tekst": "DM afholdes for sent i forhold til EM 3-kamp 2011. Derfor skal løfterne i bruttotruppen, bortset fra dem der allerede er forhåndsudtaget, lave EM-kravet ved DM for at blive udtaget til EM.",
+   "citat": "Resten af truppen, minus Danni Iversen og Thomas Bay som er for langt fra pt., skal alle lave EM kravet til DM for at blive udtaget til EM.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2011-12-31",
    "citat_fundet": true,
-   "citat_pos": 134,
+   "citat_pos": 157,
    "citat_side": 1
   },
   {
    "id": "elite30012011#2",
-   "emne": "Kvalifikationskrav til internationale stævner",
+   "emne": "Kvalifikationskrav for udtagelse til internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
    "forslagsstiller": null,
-   "handling": "bekraeftelse",
+   "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Som udgangspunkt skal atleterne lave kvalifikationskravet til de internationale stævner for at blive udtaget.",
+   "tekst": "I stævneplanen for 2011 er udgangspunktet, at atleterne skal have lavet kvalifikationskravet til et internationalt stævne for at blive udtaget til det.",
    "citat": "Som udgangspunkt skal atleterne lave kvalkravet til de internationale stævner for at blive udtaget.",
    "side": 2,
    "stemmer": null,

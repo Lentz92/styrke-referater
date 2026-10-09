@@ -1,57 +1,40 @@
 {
  "doc_id": "refstaevne12032026",
  "sha256": "f7a5c7f2cf54fba3ccc4fa85589fcc16cdc485f504edbb73b56f1ed5a949ffdd",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2026-03-12",
  "next_number": 4,
- "retired": [],
- "beslutninger": [
+ "retired": [
   {
    "id": "refstaevne12032026#1",
    "emne": "Vejledning til klubber ved DM-hold runder",
-   "kategori": "staevner",
-   "udfald": "vedtaget",
-   "forslagsstiller": "Stævneudvalget",
-   "handling": "ny",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Stævneudvalget vil fremover give klubber, der afholder DM-hold runder, en grundigere vejledning om hvilke dokumenter der skal printes, hvordan indvejningen foregår, hvordan stævnet afvikles, og hvilke medaljer og pokaler der skal uddeles.",
-   "citat": "Derfor vil vi fremover give en grundigere vejledning i hvilke dokumenter, der skal printes ud, hvordan indvejningen foregår og hvordan stævnets afvikles samt hvilke medaljer og pokaler, der skal uddeles.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 221,
-   "citat_side": 1
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
   },
   {
    "id": "refstaevne12032026#2",
    "emne": "Kvalifikationskrav DM klassisk styrkeløft",
-   "kategori": "staevner",
-   "udfald": "ikke_afgjort",
-   "forslagsstiller": "Stævneudvalget",
-   "handling": "aendring",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Da deltagerantallet ved DM klassisk styrkeløft er blevet for højt, vil udvalget på næste møde fastsætte nye krav til deltagelse samt begrundelse, så løfterne får tid til at træne efter dem. Der er endnu ikke truffet beslutning om kravene.",
-   "citat": "Derfor vil vi ved næste stævneudvalgsmøde fastsætte nye krav samt motivation for disse.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 312,
-   "citat_side": 1
-  },
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
+ "beslutninger": [
   {
    "id": "refstaevne12032026#3",
-   "emne": "Master løfter logo på T-shirt i konkurrence",
+   "emne": "T-shirt med Master Løfter-logo under konkurrence",
    "kategori": "udstyr",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "En T-shirt med Master Løfter logo må bruges under konkurrence, hvis logoet er godkendt af DSF og registreret på hjemmesiden, da det ikke er en klub-T-shirt.",
+   "tekst": "En T-shirt med Master Løfter-logo er ikke en klub-T-shirt. Den må derfor kun bruges under konkurrence, hvis logoet er godkendt af DSF og registreret på hjemmesiden.",
    "citat": "Da det ikke er en klub T-shirt, skal logoet godkendes af DSF og registreres på hjemmesiden.",
    "side": 2,
    "stemmer": null,

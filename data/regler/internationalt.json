@@ -1,123 +1,17 @@
 {
  "kategori": "internationalt",
  "version": 7,
- "input_hash": "f20b5f24bd41789d321cadacf93124b5bc419f0fc81937ff54647feea914953e",
- "model": "opus",
+ "input_hash": "78d6e0fc1c652b02c2032bc5a3ee1e80a1c812d7e27835315c50df83bcfced7e",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fb1d4e4f83bc",
+  "effort": "default"
+ },
  "regler": [
   {
-   "titel": "Implementering af IPF's regler i DSF",
-   "slug": "implementering-af-ipf-s-regler-i-dsf",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "rep2011#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "IPF's regler implementeres; deltagelse trods nul i en disciplin",
-     "kort_regel": "IPF's regler gælder; nul i disciplin udelukker ikke resten",
-     "dhash": "27c2966a9f1f"
-    },
-    {
-     "ref": "refbest_19012019.2#2",
-     "effekt": "bekraeftet",
-     "tekst": "IPF's regler implementeres i DSF. Regelændringerne vedtaget på IPF-kongressen i november 2018 gælder fra 1. januar 2019, dog undtaget IPF-formularen. En atlet, der ikke opnår et resultat i en trekampdisciplin, kan deltage i de resterende discipliner i henhold til IPF's regler.",
-     "kort": "IPF-regelændringer fra nov. 2018 gælder fra 1.1.2019",
-     "kort_regel": "IPF's regler gælder, 2018-ændringer fra 1.1.2019",
-     "dhash": "f3d1334081c3"
-    }
-   ]
-  },
-  {
-   "titel": "Bøde for manglende dommer ved IPF-masterstævner",
-   "slug": "bøde-for-manglende-dommer-ved-ipf-masterstævner",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "ReferatMastermoede_okt2011#3",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "IPF-forslag: 1.000 euro ved 3+ deltagere uden dommer",
-     "kort_regel": null,
-     "dhash": "e8b0fcd0d683"
-    }
-   ]
-  },
-  {
-   "titel": "Dommerkrav for nationer ved EPF-stævner",
-   "slug": "dommerkrav-for-nationer-ved-epf-stævner",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "em2014kongres#3",
-     "effekt": "indfoert",
-     "tekst": "En nation, der deltager med flere end 3 løftere ved EPF-stævner, skal tilmelde en dommer.",
-     "kort": "dommerkrav ved flere end 3 løftere (før 4)",
-     "kort_regel": "dommer påkrævet ved flere end 3 løftere",
-     "dhash": "d76271be5eca"
-    },
-    {
-     "ref": "725kongres#4",
-     "effekt": "aendret",
-     "tekst": "En nation, der har været IPF-medlem i mere end 5 år og deltager med mere end 3 løftere i EPF-mesterskaber eller -cups, skal have international(e) dommer(e) blandt sine officials til rådighed som dommer eller jurymedlem mindst to hele konkurrencedage. En ekstra dommer kan stilles til rådighed i kortere tid, så længe én dommer er til rådighed som krævet.",
-     "kort": "international dommer til rådighed mindst to hele konkurrencedage",
-     "kort_regel": "over 3 løftere: international dommer mindst to dage",
-     "dhash": "8cf7baa4b470"
-    }
-   ]
-  },
-  {
-   "titel": "Bøde for dommeres sene ændring af opgaver",
-   "slug": "bøde-for-dommeres-sene-ændring-af-opgaver",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "467kongres#6",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "100 euro bøde ved ændring senere end 14 dage før",
-     "kort_regel": "100 euro ved ændring under 14 dage før stævnet",
-     "dhash": "25db65eb6262"
-    }
-   ]
-  },
-  {
-   "titel": "RAW som officielt verdensmesterskab",
-   "slug": "raw-som-officielt-verdensmesterskab",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "vm2012kongres#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "DSF-forslag om RAW-VM vedtaget, evaluering efter to år",
-     "kort_regel": "officielt RAW-VM i alle kategorier",
-     "dhash": "2634951a32ee"
-    }
-   ]
-  },
-  {
-   "titel": "Klassisk EM for subjuniorer, juniorer og åben klasse",
-   "slug": "klassisk-em-for-subjuniorer-juniorer-og-åben-klasse",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "em2014kongres#4",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "klassisk EM i ét stævne fra 2015, uden masters",
-     "kort_regel": "fælles klassisk EM for subjunior, junior og åben",
-     "dhash": "d66648794902"
-    }
-   ]
-  },
-  {
-   "titel": "Certifikat ved problemer med at strække armene",
+   "titel": "Certifikat for løftere der ikke kan strække armene",
    "slug": "certifikat-ved-problemer-med-at-strække-armene",
    "vigtig": true,
    "note": null,
@@ -126,214 +20,30 @@
      "ref": "vm2012kongres#4",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "Canadas forslag om armcertifikat afvist",
+     "kort": "Canadas forslag om armstræknings-certifikat ikke godkendt",
      "kort_regel": null,
-     "dhash": "2e7d9a33d831"
+     "dhash": "7a103c1a4b77"
     }
    ]
   },
   {
-   "titel": "Indberetning af dopingkontrol til IPF",
-   "slug": "indberetning-af-dopingkontrol-til-ipf",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "vm2013#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "indberetning senest 31. marts; ellers 500 euro og suspension",
-     "kort_regel": "dopingresultater senest 31. marts, ellers 500 euro bøde",
-     "dhash": "806d3af5e0aa"
-    }
-   ]
-  },
-  {
-   "titel": "Atletrepræsentant i IPF's bestyrelse",
-   "slug": "atletrepræsentant-i-ipf-s-bestyrelse",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "vm2013#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "Athletes' Commission indstiller atlet til IPF's bestyrelse",
-     "kort_regel": "atlet fra Athletes' Commission i IPF's bestyrelse",
-     "dhash": "513b28a6ba08"
-    }
-   ]
-  },
-  {
-   "titel": "Godtgørelse til IPF's ledelse",
-   "slug": "godtgørelse-til-ipf-s-ledelse",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "vm2013#3",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "ydelse indført; 900 euro/md. til formand og generalsekretær",
-     "kort_regel": "900 euro pr. måned til formand og generalsekretær",
-     "dhash": "11bf37f99353"
-    },
-    {
-     "ref": "1071kongres#6",
-     "effekt": "aendret",
-     "tekst": "Månedlig godtgørelse til IPF's præsident, vicepræsident, generalsekretær og kasserer er 2000 euro.",
-     "kort": "hævet fra 1200 til 2000 euro; DSF imod",
-     "kort_regel": "2000 euro pr. måned til fire EC-medlemmer",
-     "dhash": "ea58b10ed457"
-    }
-   ]
-  },
-  {
-   "titel": "Ansvarsdokument for cheftrænere",
-   "slug": "ansvarsdokument-for-cheftrænere",
+   "titel": "Officielt VM i klassisk styrkeløft",
+   "slug": "raw-som-officielt-verdensmesterskab",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "vm2013#4",
+     "ref": "vm2012kongres#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "EPF's ansvarsdokument for cheftrænere gælder også i IPF",
-     "kort_regel": "EPF's cheftræneransvarsdokument gælder i IPF",
-     "dhash": "66eab544f5d3"
+     "kort": "RAW indført som officielt VM, evaluering efter to år",
+     "kort_regel": "klassisk VM ved siden af VM med udstyr",
+     "dhash": "43c8cab06d57"
     }
    ]
   },
   {
-   "titel": "Antal coaches i opvarmningsområdet",
-   "slug": "antal-coaches-i-opvarmningsområdet",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "1 atlet 3, 2-3 atleter 5, max 6 coaches",
-     "kort_regel": "max 6 coaches pr. løftegruppe i opvarmning",
-     "dhash": "a80a54c27a89"
-    }
-   ]
-  },
-  {
-   "titel": "Antal coaches i wrapping-området",
-   "slug": "antal-coaches-i-wrapping-området",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "1 atlet 2, 2-3 atleter 3, max 4 coaches",
-     "kort_regel": "max 4 coaches pr. løftegruppe i wrapping",
-     "dhash": "cb383c7a7dd9"
-    }
-   ]
-  },
-  {
-   "titel": "Observationszone for coaches",
-   "slug": "observationszone-for-coaches",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#3",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "arrangør indretter observationszone med TV-monitor",
-     "kort_regel": "observationszone med monitor, ellers bag speakerbord",
-     "dhash": "ed9a0fb0dcf1"
-    }
-   ]
-  },
-  {
-   "titel": "Head coachs ansvar for adfærd og coachingzone",
-   "slug": "head-coachs-ansvar-for-adfærd-og-coachingzone",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#4",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "kun én korrekt klædt coach i coachingzonen",
-     "kort_regel": "én coach i zonen; head coach ansvarlig for adfærd",
-     "dhash": "e594f0e1f074"
-    }
-   ]
-  },
-  {
-   "titel": "Akkreditering af assistentcoaches og træningstid",
-   "slug": "akkreditering-af-assistentcoaches-og-træningstid",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#5",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "fotobadge til assistentcoaches; fast træningstid aftales",
-     "kort_regel": "assistentcoaches skal have fotobadge",
-     "dhash": "0174d146d4ad"
-    }
-   ]
-  },
-  {
-   "titel": "Oprydning af udstyr og træningsområde",
-   "slug": "oprydning-af-udstyr-og-træningsområde",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#6",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "head coach sikrer oprydning efter træning og stævne",
-     "kort_regel": "udstyr på plads, områder efterlades ryddelige",
-     "dhash": "d1b11f59784f"
-    }
-   ]
-  },
-  {
-   "titel": "Dokumentation og udstyrskontrol ved vejning",
-   "slug": "dokumentation-og-udstyrskontrol-ved-vejning",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#7",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "Appendix 2, løfterprofil og pas afleveres ved vejning",
-     "kort_regel": "papirer ved vejning; udstyr efter IPF's regler",
-     "dhash": "0dd10b62f6a3"
-    }
-   ]
-  },
-  {
-   "titel": "Alkoholforbud i opvarmnings- og wrapping-område",
-   "slug": "alkoholforbud-i-opvarmnings-og-wrapping-område",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "CoachResponsibility#9",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "alkohol forbudt for coaches og løftere i områderne",
-     "kort_regel": "ingen alkohol eller påvirkede personer i opvarmning",
-     "dhash": "f5896225afcf"
-    }
-   ]
-  },
-  {
-   "titel": "Nomineringsfrist til IPF-konkurrencer",
+   "titel": "Nomineringsfrist til IPF-mesterskaber",
    "slug": "nomineringsfrist-til-ipf-konkurrencer",
    "vigtig": true,
    "note": null,
@@ -342,17 +52,17 @@
      "ref": "vm2013#5",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om 28 dage før teknisk møde afvist",
+     "kort": "forslag om frist 28 dage før teknisk møde forkastet",
      "kort_regel": null,
-     "dhash": "9346d3b00b61"
+     "dhash": "ad44db8d111f"
     },
     {
      "ref": "1071kongres#8",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "nominering 30 dage før i stedet for 21",
+     "kort": "frist ændret fra 21 til 30 dage før",
      "kort_regel": "nominering af atleter og coaches 30 dage før",
-     "dhash": "e89b0a80f162"
+     "dhash": "9cf87d000b5f"
     }
    ]
   },
@@ -366,46 +76,14 @@
      "ref": "em2014kongres#6",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om 28 dage afvist; fortsat 21 dage",
+     "kort": "forslag om 28 dage forkastet, fortsat 21 dage",
      "kort_regel": null,
-     "dhash": "4f998aee219d"
+     "dhash": "0bb582e8267f"
     }
    ]
   },
   {
-   "titel": "Frist for afmelding fra EPF-nomineringsliste",
-   "slug": "frist-for-afmelding-fra-epf-nomineringsliste",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "em2014kongres#7",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "afmelding uden gebyrer senest 14 dage før teknisk møde",
-     "kort_regel": "gebyrfri afmelding senest 14 dage før teknisk møde",
-     "dhash": "7290d1007daa"
-    }
-   ]
-  },
-  {
-   "titel": "Frist for afmelding fra IPF-nomineringsliste",
-   "slug": "frist-for-afmelding-fra-ipf-nomineringsliste",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "199kongres#4",
-     "effekt": "indfoert",
-     "tekst": "Sidste frist for at trække sig fra nomineringslisten uden at betale afgifter er 14 dage.",
-     "kort": "frist ændret fra 7 til 14 dage",
-     "kort_regel": "gebyrfri afmelding senest 14 dage før",
-     "dhash": "240b09e4941c"
-    }
-   ]
-  },
-  {
-   "titel": "EPF's sanktionsgebyr for stævner",
+   "titel": "EPF sanktionsgebyr for stævner",
    "slug": "epf-s-sanktionsgebyr-for-stævner",
    "vigtig": false,
    "note": null,
@@ -413,15 +91,23 @@
     {
      "ref": "em2014kongres#1",
      "effekt": "indfoert",
-     "tekst": "EPF's sanktionsgebyr for afholdelse af stævner er 1000 euro.",
+     "tekst": null,
      "kort": "hævet fra 750 til 1000 euro",
-     "kort_regel": "1000 euro i sanktionsgebyr",
-     "dhash": "242a5ed4930c"
+     "kort_regel": "1000 euro i sanktionsgebyr pr. stævne",
+     "dhash": "2f5ccbf57bea"
+    },
+    {
+     "ref": "epf_kongres_2026#1",
+     "effekt": "aendret",
+     "tekst": "EPF's sanktionsgebyr (Event Sanction Fee) for europamesterskaber er 1500 euro fra 2027.",
+     "kort": "1500 euro for europamesterskaber fra 2027",
+     "kort_regel": "1500 euro for europamesterskaber",
+     "dhash": "13e839765c1e"
     }
    ]
   },
   {
-   "titel": "EPF's medlemsafgift for nationer",
+   "titel": "EPF medlemsafgift for nationer",
    "slug": "epf-s-medlemsafgift-for-nationer",
    "vigtig": false,
    "note": null,
@@ -430,14 +116,62 @@
      "ref": "em2014kongres#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "medlemsafgift steget til 300 euro",
-     "kort_regel": "300 euro pr. nation",
-     "dhash": "1341d8be4134"
+     "kort": "årlig medlemsafgift steget til 300 euro",
+     "kort_regel": "300 euro om året pr. medlemsnation",
+     "dhash": "2d5e9ad1e45e"
+    },
+    {
+     "ref": "epf_kongres_2026#3",
+     "effekt": "aendret",
+     "tekst": "Det årlige nationale medlemsgebyr til EPF er 500 euro fra 2027. Ifølge EPF's EC stiger gebyret ikke igen de næste 10 år.",
+     "kort": "hævet til 500 euro fra 2027, Danmark imod",
+     "kort_regel": "500 euro om året pr. medlemsnation",
+     "dhash": "386f96b90a87"
     }
    ]
   },
   {
-   "titel": "Betaling af hotelomkostninger ved EPF-stævner",
+   "titel": "Krav om dommer på landshold ved EPF-stævner",
+   "slug": "dommerkrav-for-nationer-ved-epf-stævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "em2014kongres#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "dommerkrav ved over 3 løftere (før over 4)",
+     "kort_regel": "nation med over 3 løftere skal tilmelde dommer",
+     "dhash": "1cf945ced104"
+    },
+    {
+     "ref": "725kongres#4",
+     "effekt": "aendret",
+     "tekst": "Ethvert land, der har været medlem af IPF i mere end 5 år og deltager med mere end 3 løftere i EPF-mesterskaber eller EPF-cups, skal have international(e) dommer(e) blandt holdets officials, som er til rådighed som dommer eller jurymedlem i mindst to hele konkurrencedage, med mulighed for bøde/restriktion. Sender et land flere dommere, kan den ekstra dommer være til rådighed i kortere tid, så længe kravet er opfyldt.",
+     "kort": "international dommer i mindst to hele konkurrencedage",
+     "kort_regel": "over 3 løftere: international dommer to hele dage",
+     "dhash": "460831729789"
+    }
+   ]
+  },
+  {
+   "titel": "Klassisk EM",
+   "slug": "klassisk-em-for-subjuniorer-juniorer-og-åben-klasse",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "em2014kongres#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "klassisk EM fra 2015 for subjunior, junior og åben",
+     "kort_regel": "klassisk EM for subjunior, junior og åben i ét stævne",
+     "dhash": "3dcc07226732"
+    }
+   ]
+  },
+  {
+   "titel": "Betaling af hotel ved EPF-stævner",
    "slug": "betaling-af-hotelomkostninger-ved-epf-stævner",
    "vigtig": true,
    "note": null,
@@ -446,89 +180,201 @@
      "ref": "em2014kongres#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "hotel betales 14 dage før via bank eller kreditkort",
+     "kort": "hotel betales 14 dage før via bank eller kort",
      "kort_regel": "hotel betales senest 14 dage før stævnet",
-     "dhash": "9aff87ff76f3"
+     "dhash": "0a0a4b622907"
     }
    ]
   },
   {
-   "titel": "Bøde for overpriser på stævnehoteller",
-   "slug": "bøde-for-overpriser-på-stævnehoteller",
+   "titel": "Betaling af indkvartering ved IPF-konkurrencer",
+   "slug": "betaling-af-indkvartering-ved-ipf-konkurrencer",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "241kongres#2",
+     "ref": "1071kongres#24",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "bøde op til 5.000 euro ved overpriser",
-     "kort_regel": "arrangør kan få op til 5.000 euro i bøde",
-     "dhash": "597cbd893216"
-    },
-    {
-     "ref": "467kongres#2",
-     "effekt": "trukket",
-     "tekst": null,
-     "kort": "Great Britain trak forslag om overpriser og sanktioner",
-     "kort_regel": null,
-     "dhash": "15a6c6a86761"
+     "kort": "betaling via bankoverførsel, kort og kontanter",
+     "kort_regel": "indkvartering betales via bank, kort eller kontant",
+     "dhash": "815e6467d383"
     }
    ]
   },
   {
-   "titel": "Ophold på stævnehotel og bindende tilmelding",
-   "slug": "ophold-på-stævnehotel-og-bindende-tilmelding",
+   "titel": "Afmelding fra nomineringsliste ved EPF-stævner",
+   "slug": "frist-for-afmelding-fra-epf-nomineringsliste",
    "vigtig": true,
-   "note": "Minimumskravet på 2 nætter ved EM og kravet om ophold i hele stævneperioden stemmer ikke helt overens.",
+   "note": null,
    "versioner": [
     {
-     "ref": "467kongres#3",
+     "ref": "em2014kongres#7",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "gebyrfri afmelding senest 14 dage før teknisk møde",
+     "kort_regel": "afmelding uden gebyr senest 14 dage før teknisk møde",
+     "dhash": "142b658f2436"
+    }
+   ]
+  },
+  {
+   "titel": "EPF-startgebyr ved forhåndstilmelding",
+   "slug": "epf-startgebyr-ved-forhåndstilmelding",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refmaster29042018#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "startgebyr for alle på forhåndslisten 60 dage før",
+     "kort_regel": "startgebyr for alle forhåndstilmeldte 60 dage før",
+     "dhash": "dfaf3131c369"
+    },
+    {
+     "ref": "refbest_09062018#10",
+     "effekt": "bekraeftet",
+     "tekst": "Efter EPF-reglerne skal der betales startgebyr for alle løftere, der står på forhåndstilmeldingen 60 dage før stævnestart, også selv om de senere og rettidigt trækker sig.",
+     "kort": "bestyrelsen gentager EPF-reglen",
+     "kort_regel": "startgebyr for alle forhåndstilmeldte 60 dage før",
+     "dhash": "0c685db539fc"
+    }
+   ]
+  },
+  {
+   "titel": "Reserveløftere ved EPF-stævner",
+   "slug": "reserveløftere-ved-epf-stævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "467kongres#8",
+     "effekt": "ophaevet",
+     "tekst": null,
+     "kort": "krav om at reserve erstatter forhåndstilmeldt løfter annulleret",
+     "kort_regel": null,
+     "dhash": "c452bc75e42e"
+    }
+   ]
+  },
+  {
+   "titel": "Afmelding fra nomineringsliste ved IPF-mesterskaber",
+   "slug": "frist-for-afmelding-fra-ipf-nomineringsliste",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "199kongres#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "gebyrfri afmeldingsfrist ændret fra 7 til 14 dage",
+     "kort_regel": "afmelding uden afgifter senest 14 dage før",
+     "dhash": "8838739c49d5"
+    }
+   ]
+  },
+  {
+   "titel": "IPF's antidopingregler efter WADA-koden",
+   "slug": "wada-regler-indarbejdet-i-ipf-s-regler",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "199kongres#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "WADA's nye dopingregler indarbejdet i IPF's regler",
+     "kort_regel": "IPF's antidopingregler følger WADA-koden",
+     "dhash": "e34f5d63ae00"
+    }
+   ]
+  },
+  {
+   "titel": "Nationstilhørsforhold og nationsskifte",
+   "slug": "skift-af-nationalt-tilhørsforhold",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "199kongres#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "skifte tidligst tre år efter sidste optræden",
+     "kort_regel": "tre års karantæne ved nationsskifte, kan nedsættes",
+     "dhash": "7ac3d74cab68"
+    },
+    {
+     "ref": "921kongres#2",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om 100 euro bøde for andet hotel forkastet knebent",
+     "kort": "Sloveniens forslag om løft for flere lande afvist",
      "kort_regel": null,
-     "dhash": "f4f32b471846"
-    },
-    {
-     "ref": "epf_kongres_2025#6",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "minimum 2 nætter på officielt hotel ved EM",
-     "kort_regel": "mindst 2 sammenhængende nætter på officielt hotel",
-     "dhash": "c57f9501b90a"
-    },
-    {
-     "ref": "Tilmeldingsfrister2026#3",
-     "effekt": "aendret",
-     "tekst": "Deltagere er bundet af forhåndstilmeldingen og hæfter for startgebyret, også hvis de senere fortryder. Det er et EPF/IPF-krav at bo på stævnehotellet i hele stævneperioden, fx 4 overnatninger ved løft mandag og hjælp torsdag; ved europamesterskaber mindst 2 på hinanden følgende nætter.",
-     "kort": "bindende startgebyr; stævnehotel i hele stævneperioden",
-     "kort_regel": "bindende tilmelding; bo på stævnehotel hele perioden",
-     "dhash": "c3f60dbf8e22"
-    },
-    {
-     "ref": "Tilmeldingsfrister2027#4",
-     "effekt": "bekraeftet",
-     "tekst": "Deltagere er bundet af forhåndstilmeldingen og hæfter for startgebyret, også hvis de senere fortryder. For at bevare akkreditering som atlet eller træner kræver EPF/IPF, at man bor på de officielle stævnehoteller i stævneperioden; ved europamesterskaber mindst 2 på hinanden følgende nætter.",
-     "kort": "bekræftet: bindende startgebyr og krav om stævnehotel",
-     "kort_regel": "bindende tilmelding; stævnehotel krav for akkreditering",
-     "dhash": "e1644161ce1d"
+     "dhash": "5472b81e4902"
     }
    ]
   },
   {
-   "titel": "Hotelkrav for coaches og dommere ved IPF-mesterskaber",
-   "slug": "hotelkrav-for-coaches-og-dommere-ved-ipf-mesterskaber",
+   "titel": "Alderskategori for drenge og piger",
+   "slug": "alderskategori-for-drenge-og-piger",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "1071kongres#17",
+     "ref": "199kongres#5",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om dreng/pige-kategori i IPF ikke godkendt",
+     "kort_regel": null,
+     "dhash": "f0e0b333d000"
+    }
+   ]
+  },
+  {
+   "titel": "Aldersgrænse for sub-junior",
+   "slug": "startalder-for-sub-juniorer",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#4",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Sveriges forslag om start fra kalenderåret med 14 år nedstemt",
+     "kort_regel": null,
+     "dhash": "879ad67f5ba9"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerkrav for nationer ved IPF-mesterskaber",
+   "slug": "dommerforpligtelse-ved-internationale-stævner-ipf-epf",
+   "vigtig": true,
+   "note": "Sanktionen er beskrevet forskelligt (bøde på 500, 2000 og 1000 euro samt holdtælling af kun 4 løftere); det er uklart hvordan reglerne forholder sig til hinanden.",
+   "versioner": [
+    {
+     "ref": "199kongres#6",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "mindst to nætter på officielt hotel; ikrafttræden ubestemt",
-     "kort_regel": "coaches/dommere mindst 2 nætter på officielt hotel",
-     "dhash": "2f0f9ce7ccef"
+     "kort": "dommer ved over 4 deltagere, ellers 500 euro bøde",
+     "kort_regel": "over 4 deltagere: dommer eller 500 euro bøde",
+     "dhash": "715fefed0e9c"
+    },
+    {
+     "ref": "rep2025#20",
+     "effekt": "aendret",
+     "tekst": "Nationer med over tre års medlemskab af IPF bør medbringe mindst én international dommer ved VM, som stiller sig til rådighed som dommer eller i juryen; ellers tæller kun de 4 bedste løftere i holdkonkurrencen.",
+     "kort": "uden international dommer tæller kun 4 bedste i holdkonkurrencen",
+     "kort_regel": "international dommer ved VM, ellers kun 4 bedste tæller",
+     "dhash": "da512bda3f5f"
+    },
+    {
+     "ref": "1071kongres#15",
+     "effekt": "aendret",
+     "tekst": "Nationer med over tre års medlemskab af IPF bør medbringe mindst én international dommer ved VM, som stiller sig til rådighed som dommer eller i juryen; ellers tæller kun de 4 bedste løftere i holdkonkurrencen. Ved konkurrencer og kombinationskonkurrencer skal der tilmeldes tre dommere ved 15 nominerede løftere. Bøden for ikke at sende det korrekte antal dommere er 1000 euro.",
+     "kort": "tre dommere ved 15 løftere, bøde sænket fra 2000 til 1000 euro",
+     "kort_regel": "tre dommere ved 15 løftere, ellers 1000 euro bøde",
+     "dhash": "db19185e14ac"
     }
    ]
   },
@@ -539,73 +385,49 @@
    "note": null,
    "versioner": [
     {
-     "ref": "199kongres#2",
+     "ref": "199kongres#7",
      "effekt": "indfoert",
-     "tekst": null,
-     "kort": "regeludvalg nedlagt; kongressen vedtager ændringer",
-     "kort_regel": "kongressen vedtager ændringer af tekniske regler",
-     "dhash": "c1716aaa6c2e"
+     "tekst": "IPF's tekniske regler indefryses, så de ikke kan ændres i de næste 4 år.",
+     "kort": "tekniske regler indefrosset i 4 år",
+     "kort_regel": "tekniske regler kan ikke ændres i 4 år",
+     "dhash": "031a95cf3f6b"
     },
     {
      "ref": "257kongres#6",
      "effekt": "aendret",
-     "tekst": "Forslag om ændringer af de tekniske regler fremlægges på og vedtages af kongressen. Tekniske regler kan kun ændres hvert fjerde år (bestyrelsen undtaget); en evt. ændring skal sættes på dagsordenen ved førstkommende kongres.",
-     "kort": "kun ændring hvert fjerde år, med Danmarks ændringsforslag",
-     "kort_regel": "tekniske regler ændres kun hvert fjerde år",
-     "dhash": "cd589b7396ab"
-    },
-    {
-     "ref": "318.kongres#1",
-     "effekt": "bekraeftet",
-     "tekst": "Forslag om ændringer af de tekniske regler fremlægges på og vedtages af kongressen. 4-årsreglen gælder i princippet fortsat for de tekniske regler (bestyrelsen undtaget), mens vedtægtsforslag kan indsendes hvert år.",
-     "kort": "vedtægtsforslag hvert år; 4-årsregel fastholdt for tekniske regler",
-     "kort_regel": "tekniske regler i princippet kun hvert fjerde år",
-     "dhash": "bd24ab9bc9ca"
+     "tekst": "IPF's tekniske regler må kun ændres hvert fjerde år, dog kan IPF's bestyrelse foretage ændringer, som skal sættes på dagsordenen ved den førstkommende kongres.",
+     "kort": "bestyrelsesændringer skal på næste kongres, Danmarks forslag",
+     "kort_regel": "ændring hvert 4. år, bestyrelsesændringer til næste kongres",
+     "dhash": "c6950798f260"
     },
     {
      "ref": "1071kongres#18",
      "effekt": "aendret",
-     "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår efter en fast procedure med indsendelse, vurdering og publicering, høring, overvejelse af feedback, publicering og effektueringsdato.",
+     "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår, og ændringer skal følge en fast procedure: indsendelse, vurdering og publicering af forslag, høringsperiode, behandling af feedback, publicering af de ændrede regler og en ikrafttrædelsesdato.",
      "kort": "ændring én gang årligt efter fast procedure",
-     "kort_regel": "tekniske regler ændres én gang pr. kalenderår",
-     "dhash": "c0c871ba7d53"
-    },
-    {
-     "ref": "1071kongres#19",
-     "effekt": "aendret",
-     "tekst": "IPF's tekniske regler kan kun ændres én gang pr. kalenderår efter en fast procedure med indsendelse, vurdering og publicering, høring, overvejelse af feedback, publicering og effektueringsdato. Forslag indsendes på IPF Technical Rulebook Amendment form og vurderes af Rules Group.",
-     "kort": "forslag via formular, vurderes af Rules Group",
-     "kort_regel": "årlig ændring; forslag via formular til Rules Group",
-     "dhash": "f445f01d050c"
+     "kort_regel": "ændring én gang pr. kalenderår efter fast høringsprocedure",
+     "dhash": "9900ce869913"
     }
    ]
   },
   {
-   "titel": "Skift af nationalt tilhørsforhold",
-   "slug": "skift-af-nationalt-tilhørsforhold",
-   "vigtig": true,
+   "titel": "Forslag til tekniske regler via Rules Group",
+   "slug": "forslag-til-tekniske-regler-via-rules-group",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "199kongres#3",
+     "ref": "1071kongres#19",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "tre års karantæne ved nationsskift, kan nedsættes",
-     "kort_regel": "ny nation tre år efter sidste optræden",
-     "dhash": "8643972eb6f5"
-    },
-    {
-     "ref": "921kongres#2",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "Sloveniens forslag om løft for flere lande afvist",
-     "kort_regel": null,
-     "dhash": "441c359f67d0"
+     "kort": "forslag indsendes via formular og vurderes af Rules Group",
+     "kort_regel": "forslag via amendment form, vurderes af Rules Group",
+     "dhash": "b39fd896d4e1"
     }
    ]
   },
   {
-   "titel": "Godkendt udstyr ved internationale stævner",
+   "titel": "Godkendt udstyr ved international konkurrence",
    "slug": "godkendt-udstyr-ved-internationale-stævner",
    "vigtig": true,
    "note": null,
@@ -614,30 +436,14 @@
      "ref": "refbest_07122014#6",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "ny IPF-liste over godkendt udstyr fra 1.1.2015",
-     "kort_regel": "IPF's udstyrsliste overholdes internationalt",
-     "dhash": "30a54a03c20d"
-    },
-    {
-     "ref": "refbest_08022015#15",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "DSF foreslår EPF frit udstyrsvalg i RAW",
-     "kort_regel": null,
-     "dhash": "768fc6f2c88e"
-    },
-    {
-     "ref": "refbest_310722#6",
-     "effekt": "aendret",
-     "tekst": "IPF's liste over godkendte produkter skal overholdes internationalt. Fra 31.12.2023 må produkter fra ER-Equipment, IVANKO, TITEX, LEOKO og UESAKA ikke bruges ved internationale stævner, men fortsat nationalt.",
-     "kort": "fem producenter forbudt internationalt fra 31.12.2023",
-     "kort_regel": "godkendt liste; fem mærker forbudt internationalt",
-     "dhash": "beda8dc11aa5"
+     "kort": "IPF's nye liste over godkendt udstyr fra 1.1.2015",
+     "kort_regel": "internationalt kun udstyr på IPF's godkendte liste",
+     "dhash": "120d6fb736f4"
     }
    ]
   },
   {
-   "titel": "EM-arrangørs betaling af ophold for EPF-repræsentanter",
+   "titel": "Arrangørens betaling af ophold for EPF-officials ved EM",
    "slug": "em-arrangørs-betaling-af-ophold-for-epf-repræsentanter",
    "vigtig": false,
    "note": null,
@@ -646,118 +452,366 @@
      "ref": "241kongres#1",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "EPF's forslag om betalt ophold for 4 personer nedstemt",
+     "kort": "EPF's forslag om arrangørbetalt ophold for 4 personer nedstemt",
      "kort_regel": null,
-     "dhash": "4a36d65b0684"
+     "dhash": "04f0fe54a8d9"
     }
    ]
   },
   {
-   "titel": "Godtgørelse til EPF-officials",
-   "slug": "godtgørelse-til-epf-officials",
+   "titel": "Overpriser på hoteller ved EPF-stævner",
+   "slug": "bøde-for-overpriser-på-stævnehoteller",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "241kongres#3",
+     "ref": "241kongres#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "mindre årligt beløb til EPF-officials",
-     "kort_regel": "mindre årligt beløb til EPF-officials",
-     "dhash": "f631c94305a6"
+     "kort": "bøde op til 5.000 euro for overpris",
+     "kort_regel": "arrangør kan få op til 5.000 euro i bøde",
+     "dhash": "7a0ccbb74d50"
+    },
+    {
+     "ref": "467kongres#2",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "Great Britain PF trak forslag om By-law 105.4",
+     "kort_regel": null,
+     "dhash": "4190f371bb5f"
     }
    ]
   },
   {
-   "titel": "Priser til årets løftere i EPF",
-   "slug": "priser-til-årets-løftere-i-epf",
+   "titel": "Spotternes beklædning ved EM",
+   "slug": "spotternes-beklædning-ved-em",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "241kongres#4",
+     "ref": "241kongres#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "årets løfter-priser i klassisk og udstyr",
-     "kort_regel": "årets løfter kåres i klassisk og udstyr",
-     "dhash": "5b3b2c721412"
+     "kort": "EPF leverer spotternes tøj og får sponsorindtægt",
+     "kort_regel": "EPF leverer T-shirts og shorts til spottere",
+     "dhash": "66bd750b9d2e"
     }
    ]
   },
   {
-   "titel": "World Cup for universitetsstuderende",
-   "slug": "world-cup-for-universitetsstuderende",
+   "titel": "IPF-adfærdskoder for trænere og dommere samt medicinsk kode",
+   "slug": "ipf-adfærdskoder-for-trænere-og-dommere-samt-medicinsk-kode",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "257kongres#1",
+     "ref": "257kongres#11",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "IPF afholder World Cup for universitetsstuderende",
-     "kort_regel": "IPF World Cup for universitetsstuderende",
-     "dhash": "1fb2ba05d302"
+     "kort": "adfærdskoder, medicinsk kode og miljøpolitik vedtaget",
+     "kort_regel": "adfærdskoder for trænere og dommere, medicinsk kode",
+     "dhash": "3fac608f4bbf"
     }
    ]
   },
   {
-   "titel": "Formand for teknisk komité i IPF's bestyrelse",
-   "slug": "formand-for-teknisk-komité-i-ipf-s-bestyrelse",
+   "titel": "Klassiske bænkpresmesterskaber i IPF",
+   "slug": "klassiske-bænkpresmesterskaber-i-ipf",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "257kongres#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "klassisk bænkpres-VM for alle aldersklasser indført",
+     "kort_regel": "klassiske bænkpresmesterskaber, kan kombineres med udstyr",
+     "dhash": "726879c0ec34"
+    }
+   ]
+  },
+  {
+   "titel": "Størrelse på logoer",
+   "slug": "logostørrelse-på-udstyr",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "257kongres#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "sponsorlogoer højst 5 x 2 cm (før 10 cm)",
+     "kort_regel": "sponsorlogoer højst 5 x 2 cm",
+     "dhash": "40b10fd17da5"
+    },
+    {
+     "ref": "490#18",
+     "effekt": "aendret",
+     "tekst": "Logoer, som ikke er på den godkendte liste, må højst have en størrelse på 5 x 2 cm.",
+     "kort": "5x2 cm gælder logoer uden for godkendt liste",
+     "kort_regel": "logoer uden for godkendt liste højst 5 x 2 cm",
+     "dhash": "8a7fa35900c8"
+    }
+   ]
+  },
+  {
+   "titel": "Arrangørens kontrol af trænere i opvarmningslokalet",
+   "slug": "arrangørens-kontrol-af-trænere-i-opvarmningslokalet",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "257kongres#3",
+     "ref": "257kongres#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "formand for teknisk komité i IPF's bestyrelse",
-     "kort_regel": "teknisk komités formand sidder i bestyrelsen",
-     "dhash": "6edf201d20b5"
+     "kort": "arrangør skal kontrollere antal trænere pr. nation",
+     "kort_regel": "arrangør kontrollerer trænere i opvarmningslokalet",
+     "dhash": "10124b337955"
     }
    ]
   },
   {
-   "titel": "IPF's medlemsgebyr",
-   "slug": "ipf-s-medlemsgebyr",
-   "vigtig": false,
-   "note": "Vedtaget med meget svagt flertal (19 for, 15 imod, 18 blanke).",
+   "titel": "Antal coaches i opvarmningsområdet",
+   "slug": "antal-coaches-i-opvarmningsområdet",
+   "vigtig": true,
+   "note": null,
    "versioner": [
     {
-     "ref": "257kongres#7",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "forslag om 50 euro højere medlemsafgift nedstemt",
-     "kort_regel": null,
-     "dhash": "60f72deb2963"
-    },
-    {
-     "ref": "1071kongres#1",
+     "ref": "CoachResponsibility#1",
      "effekt": "indfoert",
-     "tekst": "IPF's medlemsgebyr for medlemslande er 500 euro.",
-     "kort": "hævet fra 400 til 500 euro",
-     "kort_regel": "500 euro pr. medlemsland",
-     "dhash": "19189bbd9cb7"
+     "tekst": null,
+     "kort": "1 atlet 3 coaches, højst 6 coaches pr. gruppe",
+     "kort_regel": "1 atlet 3, 2-3 atleter 5, 4 atleter 6 coaches",
+     "dhash": "1d95154146b5"
     }
    ]
   },
   {
-   "titel": "Afgift for afholdelse af IPF-mesterskab",
-   "slug": "afgift-for-afholdelse-af-ipf-mesterskab",
-   "vigtig": false,
-   "note": "Gebyret for at søge VM og kombinationsstævner blev hævet fra 1000 til 1500 euro i 1071kongres#1.",
+   "titel": "Antal coaches i bandageområdet",
+   "slug": "antal-coaches-i-wrapping-området",
+   "vigtig": true,
+   "note": null,
    "versioner": [
     {
-     "ref": "257kongres#8",
-     "effekt": "forkastet",
+     "ref": "CoachResponsibility#2",
+     "effekt": "indfoert",
      "tekst": null,
-     "kort": "forslag om 500 euro højere afgift nedstemt",
-     "kort_regel": null,
-     "dhash": "947e94862e90"
+     "kort": "1 atlet 2 coaches, højst 4 coaches pr. gruppe",
+     "kort_regel": "1 atlet 2, 2-3 atleter 3, 4 atleter 4 coaches",
+     "dhash": "e3b73eaf0a75"
     }
    ]
   },
   {
-   "titel": "Deltagelse i ikke-sanktionerede konkurrencer",
+   "titel": "Observationszone for coaches",
+   "slug": "observationszone-for-coaches",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "observationszone med TV-skærm eller bag speakerbordet",
+     "kort_regel": "arrangør indretter observationszone for coaches",
+     "dhash": "f60122baa724"
+    }
+   ]
+  },
+  {
+   "titel": "Coach i coachingzonen",
+   "slug": "head-coachs-ansvar-for-adfærd-og-coachingzone",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "kun én korrekt påklædt coach i coachingzonen",
+     "kort_regel": "kun én korrekt påklædt coach med atleten",
+     "dhash": "32a6554827e9"
+    }
+   ]
+  },
+  {
+   "titel": "Cheftrænerens ansvar for adfærd",
+   "slug": "cheftrænerens-ansvar-for-adfærd",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#10",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "cheftræner ansvarlig for opførsel i opvarmning og bandage",
+     "kort_regel": "cheftræner ansvarlig for coaches' og løfteres opførsel",
+     "dhash": "5d7dacd447e5"
+    }
+   ]
+  },
+  {
+   "titel": "Adgangskort med foto til coaches",
+   "slug": "akkreditering-af-assistentcoaches-og-træningstid",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "assisterende coaches skal have adgangskort med foto",
+     "kort_regel": "adgangskort med foto til assisterende coaches",
+     "dhash": "3f8f255ac92e"
+    }
+   ]
+  },
+  {
+   "titel": "Træningstid ved internationale stævner",
+   "slug": "træningstid-ved-internationale-stævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#11",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "cheftræner aftaler fast træningstid med arrangøren",
+     "kort_regel": "fast træningstid aftales med arrangøren",
+     "dhash": "641dba7e7671"
+    }
+   ]
+  },
+  {
+   "titel": "Oprydning i trænings- og stævneområde",
+   "slug": "oprydning-af-udstyr-og-træningsområde",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "udstyr tilbage i stativer, rent træningsområde",
+     "kort_regel": "cheftræner sikrer oprydning efter træning og konkurrence",
+     "dhash": "9c1eb2c3f6ff"
+    }
+   ]
+  },
+  {
+   "titel": "Dokumenter ved indvejning",
+   "slug": "dokumentation-og-udstyrskontrol-ved-vejning",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#7",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "Appendix 2, løfterprofil og pas ved indvejning",
+     "kort_regel": "Appendix 2, løfterprofil og pas fremvises",
+     "dhash": "2a8b4be557e9"
+    }
+   ]
+  },
+  {
+   "titel": "Udstyrskontrol ved internationale stævner",
+   "slug": "udstyrskontrol-ved-internationale-stævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#12",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "udstyr skal overholde IPF's tekniske regler",
+     "kort_regel": "cheftræner sikrer udstyr efter IPF's tekniske regler",
+     "dhash": "f6b791280a81"
+    }
+   ]
+  },
+  {
+   "titel": "Coaches' forpligtelse til IPF's antidopingregler",
+   "slug": "coaches-forpligtelse-til-ipf-s-antidopingregler",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#8",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "coaches bundet af IPF's antidopingregler",
+     "kort_regel": "coaches skal overholde IPF's antidopingregler",
+     "dhash": "b1852b40d175"
+    }
+   ]
+  },
+  {
+   "titel": "Løfterens parathed ved opråb",
+   "slug": "løfterens-parathed-ved-opråb",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#13",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "løfter klar ved opråb til løft og præmier",
+     "kort_regel": "løfter klar ved opråb til løft og præmieoverrækkelse",
+     "dhash": "5f50661bf84d"
+    }
+   ]
+  },
+  {
+   "titel": "Alkoholforbud i opvarmnings- og bandageområdet",
+   "slug": "alkoholforbud-i-opvarmnings-og-wrapping-område",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#9",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "alkohol strengt forbudt i opvarmning og bandageområde",
+     "kort_regel": "ingen alkohol eller alkoholpåvirkede i opvarmningsområdet",
+     "dhash": "f13ed6e3ed3b"
+    }
+   ]
+  },
+  {
+   "titel": "Underskrift på coachansvar",
+   "slug": "underskrift-på-coachansvar",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "CoachResponsibility#14",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "underskrift påkrævet, overtrædelse kan give IPF-sanktioner",
+     "kort_regel": "coaches underskriver regler, brud kan sanktioneres",
+     "dhash": "116a6e71b2aa"
+    }
+   ]
+  },
+  {
+   "titel": "Tilskud til atleters rejser",
+   "slug": "tilskud-til-atleters-rejser",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2018#10",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "DIF tillader ikke længere rejsetilskud til atleter",
+     "kort_regel": "DIF-midler må ikke bruges til atleters rejser",
+     "dhash": "9df17d2c085e"
+    }
+   ]
+  },
+  {
+   "titel": "Deltagelse i stævner der ikke er godkendt af IPF",
    "slug": "deltagelse-i-ikke-sanktionerede-konkurrencer",
    "vigtig": true,
    "note": null,
@@ -765,26 +819,26 @@
     {
      "ref": "refbest_07102018#4",
      "effekt": "indfoert",
-     "tekst": "Løftere, trænere, dommere og officials, der deltager i en international styrkeløfts- eller bænkpreskonkurrence, som ikke er arrangeret, sanktioneret eller godkendt af IPF, må ikke deltage i IPF-stævner i 12 måneder.",
-     "kort": "12 måneders udelukkelse ved ikke-sanktioneret stævne",
+     "tekst": null,
+     "kort": "IPF-regel 14.9: 12 måneders udelukkelse, DSF tilpasser regler",
      "kort_regel": "12 måneders udelukkelse fra IPF-stævner",
-     "dhash": "c5793729d7d5"
+     "dhash": "751eb8c6081a"
     },
     {
      "ref": "rep2019#2",
      "effekt": "bekraeftet",
-     "tekst": "Deltager en løfter, træner, dommer eller official i en international konkurrence, der ikke er sanktioneret af IPF, kan vedkommende ikke deltage i IPF international eller regional konkurrence i 12 måneder fra deltagelsen.",
-     "kort": "optaget i vedtægterne, 45 for, 0 imod",
-     "kort_regel": "12 måneders udelukkelse fra IPF-konkurrencer",
-     "dhash": "fc0821b8ce9b"
+     "tekst": "En løfter, træner, dommer eller official, der deltager i en international styrkeløft- eller bænkpreskonkurrence, som ikke er afholdt, sanktioneret eller godkendt af IPF, kan ikke deltage i nogen IPF international eller regional konkurrence i 12 måneder regnet fra datoen for deltagelsen. Internationale multisportslege er undtaget, så længe ingen deltager afsoner dopingkarantæne.",
+     "kort": "indskrevet i vedtægternes § 14.9 (45 for)",
+     "kort_regel": "12 måneders udelukkelse fra IPF-stævner",
+     "dhash": "ca5d018a09d2"
     },
     {
-     "ref": "ipf_ekstraordinaer_generalforsamling_20250922#1",
+     "ref": "ipf_ekstraordinaer_generalforsamling_20250922#2",
      "effekt": "trukket",
      "tekst": null,
-     "kort": "USA trak forslag om udvidelse til nationale events",
+     "kort": "Powerlifting America trak forslag om udelukkelse fra nationale stævner",
      "kort_regel": null,
-     "dhash": "1b42614ce32d"
+     "dhash": "50059442363c"
     }
    ]
   },
@@ -798,9 +852,9 @@
      "ref": "490#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "flere kategorier mod startgebyr og doping fee i hver",
-     "kort_regel": "flere kategorier tilladt mod gebyr i hver",
-     "dhash": "6e355fa34d33"
+     "kort": "flere kategorier mod gebyr i hver kategori",
+     "kort_regel": "flere kategorier mod startgebyr og doping fee i hver",
+     "dhash": "2a53a928d654"
     }
    ]
   },
@@ -816,12 +870,12 @@
      "tekst": null,
      "kort": "Norges forslag om VM-kvalifikationskrav trukket",
      "kort_regel": null,
-     "dhash": "fa0e9dd85ab4"
+     "dhash": "ef6c5052e4e4"
     }
    ]
   },
   {
-   "titel": "World Games format og kvalifikation",
+   "titel": "World Games: format og kvalifikation",
    "slug": "world-games-format-og-kvalifikation",
    "vigtig": true,
    "note": null,
@@ -832,36 +886,52 @@
      "tekst": null,
      "kort": "Frankrigs forslag om klassisk World Games fra 2021 trukket",
      "kort_regel": null,
-     "dhash": "da5606523657"
+     "dhash": "aa0eabbe73bf"
     },
     {
      "ref": "806kongres#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "World Games 2025 kombineret format; top-3 ved VM 2024",
-     "kort_regel": "direkte kvalifikation: top-3 ved VM 2024",
-     "dhash": "d7c6939554d6"
+     "kort": "fra 2025 kombineret, 64 løftere, top-3 ved VM 2024",
+     "kort_regel": "64 løftere, direkte kvalifikation via top-3 ved VM",
+     "dhash": "8088c8025408"
     }
    ]
   },
   {
-   "titel": "Startalder for sub-juniorer",
-   "slug": "startalder-for-sub-juniorer",
+   "titel": "DIF-støtte til World Games-deltagelse",
+   "slug": "dif-støtte-til-world-games-deltagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "490#4",
+     "ref": "dif_aarsmøde_2025#1",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "Sveriges forslag om kalenderårsregel for 14-årige nedstemt",
+     "kort": "forslag om DIF-dækning af World Games-udgifter nedstemt",
      "kort_regel": null,
-     "dhash": "505ee8b557e3"
+     "dhash": "0528c9487585"
     }
    ]
   },
   {
-   "titel": "Antal kvinder på nationshold ved VM",
+   "titel": "Vægtklasser for kvinder",
+   "slug": "vægtklasser-for-kvinder",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#39",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "USAPL's forslag om ekstra kvindevægtklasse trukket",
+     "kort_regel": null,
+     "dhash": "fa4853e0dc81"
+    }
+   ]
+  },
+  {
+   "titel": "Antal kvinder på nationshold",
    "slug": "antal-kvinder-på-nationshold-ved-vm",
    "vigtig": true,
    "note": null,
@@ -869,15 +939,15 @@
     {
      "ref": "490#6",
      "effekt": "indfoert",
-     "tekst": "Der må tilmeldes en ekstra kvinde pr. nation, så der i open er 8 kvinder og i subjunior/junior 9 kvinder. Vægtklassen er valgfri, men max 2 deltagere pr. vægtklasse pr. nation.",
-     "kort": "8 kvinder i open, 9 i subjunior/junior",
-     "kort_regel": "8/9 kvinder, max 2 pr. vægtklasse",
-     "dhash": "3cfa2c2f540c"
+     "tekst": null,
+     "kort": "ekstra kvinde: 8 i open, 9 i sub-junior/junior",
+     "kort_regel": "8 kvinder i open, 9 i ungdom, maks 2 pr. klasse",
+     "dhash": "0956bd461e1b"
     }
    ]
   },
   {
-   "titel": "Holdpokaler ved IPF-mesterskaber",
+   "titel": "Holdpræmier ved IPF-mesterskaber",
    "slug": "holdpokaler-ved-ipf-mesterskaber",
    "vigtig": false,
    "note": null,
@@ -886,78 +956,702 @@
      "ref": "490#7",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "holdpokaler erstattes med certifikater",
+     "kort": "holdpokaler erstattet af certifikater",
      "kort_regel": "certifikater i stedet for holdpokaler",
-     "dhash": "ff9eee74e65f"
+     "dhash": "f6a670a3946c"
     }
    ]
   },
   {
    "titel": "Bedste løfter-pokal ved IPF-mesterskaber",
    "slug": "bedste-løfter-pokal-ved-ipf-mesterskaber",
-   "vigtig": true,
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
      "ref": "490#8",
      "effekt": "trukket",
      "tekst": null,
-     "kort": "forslag om certifikater trukket; løftere skal deltage i banket",
+     "kort": "EC's forslag om certifikater trukket",
      "kort_regel": null,
-     "dhash": "a0629d36fbd3"
+     "dhash": "646c504e0167"
     }
    ]
   },
   {
-   "titel": "Best Team-pris ved EM",
+   "titel": "Holdpræmie og præmieoverrækkelse ved EPF-mesterskaber",
    "slug": "best-team-pris-ved-em",
-   "vigtig": true,
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
      "ref": "725kongres#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "Best Team-pris ved stævnet eller banket med repræsentant",
-     "kort_regel": "Best Team til 1.-3. plads; masterspriser valgfrie",
-     "dhash": "9791ad131941"
+     "kort": "Best Team: 5 medaljer til top-3 hold, overrækkelse på stævnested",
+     "kort_regel": "5 medaljer til top-3 hold, overrækkelse på stævnestedet",
+     "dhash": "2849fb8b6849"
     }
    ]
   },
   {
-   "titel": "Medaljer ved EPF-mesterskaber",
-   "slug": "medaljer-ved-epf-mesterskaber",
+   "titel": "Standardiserede medaljer ved EPF-mesterskaber",
+   "slug": "standardiserede-medaljer-ved-epf-mesterskaber",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "725kongres#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "obligatoriske standardmedaljer, layout godkendes 6 måneder før",
+     "kort_regel": "EPF-standardmedaljer, kun løftere med total får præmie",
+     "dhash": "acaea514cdc2"
+    }
+   ]
+  },
+  {
+   "titel": "Bedste løfter-priser ved EPF-stævner",
+   "slug": "bedste-løfter-priser-ved-epf-stævner",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "epf_kongres_2025#11",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "Best Lifter-priser også obligatoriske for masters, GL-formel",
+     "kort_regel": "top-3 pr. aldersklasse og køn efter GL-formel",
+     "dhash": "10366e92ea15"
+    }
+   ]
+  },
+  {
+   "titel": "Fortsættelse i konkurrencen efter bomb-out",
+   "slug": "fortsættelse-i-konkurrencen-efter-bomb-out",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "725kongres#3",
-     "effekt": "indfoert",
+     "ref": "490#9",
+     "effekt": "forkastet",
      "tekst": null,
-     "kort": "standardmedaljer obligatoriske; total krævet for præmie",
-     "kort_regel": "medaljer 1.-3. plads; kræver total",
-     "dhash": "0d20aa4ea018"
+     "kort": "Sveriges forslag om udelukkelse efter bomb-out nedstemt",
+     "kort_regel": null,
+     "dhash": "a39aaf79ee58"
     }
    ]
   },
   {
-   "titel": "Best Lifter-priser ved EPF-stævner",
-   "slug": "best-lifter-priser-ved-epf-stævner",
+   "titel": "Vægtskiver til rekordforsøg",
+   "slug": "vægtskiver-til-rekordforsøg",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "epf_kongres_2025#5",
+     "ref": "490#10",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "top-3 efter GL-point i alle klasser inkl. masters",
-     "kort_regel": "Best Lifter til top-3 pr. klasse og køn",
-     "dhash": "a76d09148003"
+     "kort": "skiver på 1, 1,5 og 2 kg tilføjet",
+     "kort_regel": "1, 1,5 og 2 kg skiver til rekorder",
+     "dhash": "bf272f2bcac1"
     }
    ]
   },
   {
-   "titel": "Test af rekorder",
+   "titel": "Diskvalifikationsgrunde i dommerreglerne",
+   "slug": "diskvalifikationsgrunde-i-dommerreglerne",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#11",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "\"Uncompleted lift\" under gul markering",
+     "kort_regel": "gul markering omfatter \"Uncompleted lift\"",
+     "dhash": "eaeea68af1c6"
+    }
+   ]
+  },
+  {
+   "titel": "Snoning af stropper på dragter",
+   "slug": "snoning-af-stropper-på-dragter",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#12",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "forbud mod at sno stropper",
+     "kort_regel": "stropper på dragter må ikke snoes",
+     "dhash": "1597c9f12947"
+    }
+   ]
+  },
+  {
+   "titel": "T-shirt under løft",
+   "slug": "t-shirt-under-løft",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#13",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "T-shirt påkrævet undtagen med bænkpresstrøje",
+     "kort_regel": "T-shirt i alle løft undtagen med bænkpresstrøje",
+     "dhash": "e894d53e0342"
+    }
+   ]
+  },
+  {
+   "titel": "Fodtøj under konkurrence",
+   "slug": "fodtøj-under-konkurrence",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#14",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "kun indendørssportssko eller dødløftslippers",
+     "kort_regel": "indendørssportssko eller dødløftslippers",
+     "dhash": "39dcf22f2b04"
+    }
+   ]
+  },
+  {
+   "titel": "Sokker med gummi",
+   "slug": "sokker-med-gummi",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#15",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "sokker med udvendig gummi forbudt",
+     "kort_regel": "ingen sokker med udvendig gummi",
+     "dhash": "89de1069ad43"
+    }
+   ]
+  },
+  {
+   "titel": "Kontrol af knævarmere før plateau",
+   "slug": "nedtrækning-af-knæbind-før-plateau",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#16",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Danmarks forslag snævert nedstemt",
+     "kort_regel": null,
+     "dhash": "95fe5db6133c"
+    }
+   ]
+  },
+  {
+   "titel": "Fremmøde ved indvejning",
+   "slug": "fremmøde-ved-indvejning-2",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#17",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "løftere skal møde ved 1. runde af indvejning",
+     "kort_regel": "fremmøde ved 1. indvejningsrunde for at deltage",
+     "dhash": "8c905ea9e928"
+    }
+   ]
+  },
+  {
+   "titel": "Squat: oprejsning",
+   "slug": "squat-udretning-med-låste-knæ",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#19",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "oprejsning efter eget valg med låste knæ",
+     "kort_regel": "rejse sig under kontrol til oprejst med låste knæ",
+     "dhash": "7478096b5053"
+    }
+   ]
+  },
+  {
+   "titel": "Bænkpres: liggestilling på bænken",
+   "slug": "bænkpres-liggestilling-på-bænken",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#40",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "Sverige og EC trak forslag om flad liggestilling",
+     "kort_regel": null,
+     "dhash": "22a807aca2e9"
+    }
+   ]
+  },
+  {
+   "titel": "Bænkpres: fødder på bænken",
+   "slug": "fødder-på-bænken-ved-bænkpres",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#20",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om forbud mod fødder på bænken nedstemt",
+     "kort_regel": null,
+     "dhash": "a5d9ae4cf034"
+    }
+   ]
+  },
+  {
+   "titel": "Bænkpres: fødder der berører hinanden",
+   "slug": "bænkpres-fødder-der-berører-hinanden",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#41",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "Sverige og EC trak forslag om fødder under bænken",
+     "kort_regel": null,
+     "dhash": "f22bfa96d2a5"
+    }
+   ]
+  },
+  {
+   "titel": "Dødløft: nedadgående bevægelse ved lockout",
+   "slug": "nedadgående-bevægelse-i-dødløft",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#21",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Sveriges forslag faldt uden sekundant",
+     "kort_regel": null,
+     "dhash": "fd6684f43234"
+    }
+   ]
+  },
+  {
+   "titel": "Størrelse af A-gruppen",
+   "slug": "størrelse-af-a-gruppen",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#22",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "A-gruppen ændret fra 8-12 til 8-14 løftere",
+     "kort_regel": "A-gruppen på 8-14 løftere",
+     "dhash": "0f2376493221"
+    }
+   ]
+  },
+  {
+   "titel": "Pause mellem discipliner ved én løftegruppe",
+   "slug": "pause-mellem-discipliner-ved-én-løftegruppe",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#23",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Norges forslag om 30 minutter nedstemt",
+     "kort_regel": null,
+     "dhash": "4d32a6bed549"
+    }
+   ]
+  },
+  {
+   "titel": "Pause mellem discipliner ved flere løftegrupper",
+   "slug": "pause-mellem-discipliner-ved-flere-løftegrupper",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#24",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "pause ændret fra 5 til 10 minutter",
+     "kort_regel": "10 minutters pause ved flere løftegrupper",
+     "dhash": "c035b45c2a10"
+    }
+   ]
+  },
+  {
+   "titel": "Vægtøgning på 0,5 kg i klassisk",
+   "slug": "vægtøgning-på-0-5-kg-i-klassisk-2",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#25",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Frankrigs forslag om 0,5 kg-øgninger nedstemt",
+     "kort_regel": null,
+     "dhash": "596c8060fb46"
+    }
+   ]
+  },
+  {
+   "titel": "Rekordforsøg i dødløft efter protest",
+   "slug": "rekordforsøg-i-dødløft-efter-protest",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "257kongres#10",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "øvrige rekordforsøgere øger 0,5 kg",
+     "kort_regel": "øvrige rekordforsøgere i runden øger 0,5 kg",
+     "dhash": "0c30fed92d52"
+    }
+   ]
+  },
+  {
+   "titel": "Fejlkort ved underkendte løft",
+   "slug": "markering-af-underkendt-løft",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#26",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "TC's forslag om ét fejlkort nedstemt",
+     "kort_regel": null,
+     "dhash": "0de9e316cb4d"
+    }
+   ]
+  },
+  {
+   "titel": "Anmodning om rengøring af stang eller platform",
+   "slug": "anmodning-om-rengøring-af-stang-eller-platform",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#27",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "anmodning til teknisk kontrollør, ellers overdommer",
+     "kort_regel": "rengøring anmodes hos teknisk kontrollør eller overdommer",
+     "dhash": "9bc7ff8eef27"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerpåklædning",
+   "slug": "dommerpåklædning-2",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#28",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "præciseret at grå jeans ikke er tilladt",
+     "kort_regel": "grå jeans ikke tilladt for dommere",
+     "dhash": "db4a2ef29425"
+    }
+   ]
+  },
+  {
+   "titel": "Internationale dommereksamener ved åbne VM",
+   "slug": "internationale-dommereksamener-ved-åbne-vm",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#29",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "USAPL's forslag om forbud nedstemt",
+     "kort_regel": null,
+     "dhash": "bf527b0897af"
+    }
+   ]
+  },
+  {
+   "titel": "Teoretisk dommereksamen mod betaling",
+   "slug": "teoretisk-dommereksamen-mod-betaling",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#30",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "teoretisk eksamen mulig mod betaling",
+     "kort_regel": "dommere kan tage teoretisk eksamen mod betaling",
+     "dhash": "00175b004c77"
+    }
+   ]
+  },
+  {
+   "titel": "Genregistrering af internationale dommere",
+   "slug": "genregistrering-af-internationale-dommere",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#31",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "mindst 2 internationale og 2 nationale stævner",
+     "kort_regel": "2 internationale og 2 nationale stævner for genregistrering",
+     "dhash": "bb66440548e5"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerkategori ved åbne VM",
+   "slug": "dommerkrav-ved-åbent-vm",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#32",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "Norges forslag om kun kategori 1-dommere trukket",
+     "kort_regel": null,
+     "dhash": "2fa13f44f7ee"
+    }
+   ]
+  },
+  {
+   "titel": "Juryens kompetence til at omstøde dommere",
+   "slug": "juryens-overruling-af-dommerbeslutninger",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#33",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Frankrigs forslag om omstødelse af 3 enige dommere nedstemt",
+     "kort_regel": null,
+     "dhash": "4e62793e5f85"
+    },
+    {
+     "ref": "806kongres#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "juryen får knap til at overrule dommerbeslutning",
+     "kort_regel": "juryen har knap til at overrule dommere",
+     "dhash": "187c77d9ffba"
+    }
+   ]
+  },
+  {
+   "titel": "Registrering af rekorder på tværs af aldersklasser",
+   "slug": "master-3-rekorder-i-øvrige-kategorier",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#34",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "højere masterrekord noteres også i yngre klasser og åben",
+     "kort_regel": "rekord noteres i alle klasser den overgår",
+     "dhash": "2525cc8bfd8d"
+    }
+   ]
+  },
+  {
+   "titel": "Bænkpresrekorder sat i styrkeløft",
+   "slug": "bænkpresrekorder-sat-i-styrkeløft",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#35",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "EPF og TC's forslag om forbud nedstemt",
+     "kort_regel": null,
+     "dhash": "1e29021949ad"
+    }
+   ]
+  },
+  {
+   "titel": "Bona fide-forsøg",
+   "slug": "bona-fide-forsøg-2",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#36",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Sveriges afskaffelsesforslag faldt uden sekundant",
+     "kort_regel": null,
+     "dhash": "a1c701c5623b"
+    }
+   ]
+  },
+  {
+   "titel": "Rækkefølge ved tildelt nyt forsøg",
+   "slug": "rækkefølge-ved-tildelt-nyt-forsøg",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#37",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "nyt forsøg i sidste runde: løfter følger sig selv",
+     "kort_regel": "løfter følger efter sig selv ved nyt forsøg",
+     "dhash": "7d1722b0ef75"
+    }
+   ]
+  },
+  {
+   "titel": "Antal trænere tilmeldt stævner",
+   "slug": "antal-coaches-ved-kombinerede-bænkpresstævner",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "490#38",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "antal trænere følger Head Coach-retningslinjer, fri adgang",
+     "kort_regel": "trænerantal efter Head Coach-retningslinjer, fri adgang",
+     "dhash": "7155d9f23ab5"
+    },
+    {
+     "ref": "1071kongres#11",
+     "effekt": "aendret",
+     "tekst": "Antallet af trænere tilmeldt et stævne skal overholde retningslinjerne for Head Coach, og disse trænere skal have fri adgang til stævnet. Ved kombinerede bænkpreskonkurrencer for alle aldersgrupper, klassisk og udstyr, må der fra 1.1.2027 tilmeldes 24 coaches.",
+     "kort": "24 i stedet for 20 coaches ved kombineret bænkpres",
+     "kort_regel": "24 coaches ved kombinerede bænkpreskonkurrencer",
+     "dhash": "2cf1bd14f44f"
+    }
+   ]
+  },
+  {
+   "titel": "Antal officielle repræsentanter ved IPF-konkurrencer",
+   "slug": "antal-officielle-repræsentanter-ved-ipf-konkurrencer",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#9",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "højst 4 ved åbne, 6 ved kombinerede konkurrencer",
+     "kort_regel": "højst 4 (åbne) eller 6 (kombinerede) repræsentanter",
+     "dhash": "1e2c550c97e4"
+    }
+   ]
+  },
+  {
+   "titel": "Officielle repræsentanters opgaver i konkurrenceområdet",
+   "slug": "officielle-repræsentanters-opgaver-i-konkurrenceområdet",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#25",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "adgang til konkurrenceområder kræver relevante opgaver",
+     "kort_regel": "repræsentanter i konkurrenceområdet skal have opgaver",
+     "dhash": "674b0c120ab2"
+    }
+   ]
+  },
+  {
+   "titel": "Trænergebyr ved EPF-stævner",
+   "slug": "trænergebyr-og-trænerakkreditering-ved-em-vm",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite20032024#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "ingen coach fee for atleter der er assistenter",
+     "kort_regel": "atleter som assistenter fritaget, hvis på officielt hotel",
+     "dhash": "cf2d174bcd18"
+    },
+    {
+     "ref": "epf_kongres_2025#9",
+     "effekt": "aendret",
+     "tekst": "Trænere ved EPF-stævner skal betale coach capitation fee, medmindre de selv deltager i samme stævne som atlet eller dommer.",
+     "kort": "også dommere fritaget, Danmark undlod at stemme",
+     "kort_regel": "coach fee undtagen for atleter og dommere i stævnet",
+     "dhash": "60c4c3c5142c"
+    },
+    {
+     "ref": "epf_kongres_2026#5",
+     "effekt": "aendret",
+     "tekst": "Trænere ved EPF-stævner skal betale coach capitation fee på 50 euro fra 2027, medmindre de selv deltager i samme stævne som atlet eller dommer.",
+     "kort": "trænergebyr 50 euro fra 2027",
+     "kort_regel": "50 euro, undtagen atleter og dommere i stævnet",
+     "dhash": "0ed7ec8e3891"
+    },
+    {
+     "ref": "Tilmeldingsfrister2027#3",
+     "effekt": "bekraeftet",
+     "tekst": "Der er loft over antallet af trænere. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro og have gennemført ADEL, medmindre de selv deltager i samme stævne som atlet eller dommer. Trænere skal kontakte masterudvalget.",
+     "kort": "50 euro og ADEL for trænerakkreditering ved EM/VM",
+     "kort_regel": "50 euro og ADEL for trænerakkreditering",
+     "dhash": "3d651c204bd5"
+    }
+   ]
+  },
+  {
+   "titel": "Trænergebyr ved IPF-mesterskaber",
+   "slug": "trænergebyr-ved-ipf-mesterskaber",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite23102024#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "dommere fritaget for 50 euro trænergebyr",
+     "kort_regel": "dommere betaler ikke 50 euro trænergebyr",
+     "dhash": "7274d4fa3697"
+    },
+    {
+     "ref": "ipf_kongres_2025#1",
+     "effekt": "bekraeftet",
+     "tekst": "Assistenttrænere, der hverken er løfter eller dommer, skal betale et gebyr på 50 € for at deltage ved internationale IPF-konkurrencer.",
+     "kort": "50 € fastholdt trods dansk indsigelse",
+     "kort_regel": "50 € for assistenttrænere, ej løftere eller dommere",
+     "dhash": "a193dfe6daa3"
+    }
+   ]
+  },
+  {
+   "titel": "Dopingtest af rekorder ved EPF-stævner",
    "slug": "test-af-rekorder",
    "vigtig": true,
    "note": null,
@@ -966,30 +1660,70 @@
      "ref": "467kongres#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "By law 104.11 præciseret efter IPF's regler",
-     "kort_regel": "krav til rekordtest følger IPF's regler",
-     "dhash": "d4a284e46f31"
+     "kort": "By-law 104.11 præciseret efter IPF's regler",
+     "kort_regel": "fastlægger hvilke rekorder skal og kan dopingtestes",
+     "dhash": "a6008638f559"
     }
    ]
   },
   {
-   "titel": "Registrering af europarekorder ved Nordiske Mesterskaber",
-   "slug": "registrering-af-europarekorder-ved-nordiske-mesterskaber",
+   "titel": "Ophold på officielt hotel ved EPF-stævner",
+   "slug": "ophold-på-stævnehotel-og-bindende-tilmelding",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_130124#5",
-     "effekt": "foreslaaet",
+     "ref": "467kongres#3",
+     "effekt": "forkastet",
      "tekst": null,
-     "kort": "DSF/NPF foreslår EPF registrering af europarekorder ved NM",
+     "kort": "Great Britain PF's forslag om 100 euro bøde faldt snævert",
      "kort_regel": null,
-     "dhash": "b9fc8e2609f4"
+     "dhash": "dfb1190ee108"
+    },
+    {
+     "ref": "epf_kongres_2025#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "minimum 2 nætter på officielt hotel ved EM",
+     "kort_regel": "mindst 2 sammenhængende nætter på officielt hotel",
+     "dhash": "aa2c0a20486d"
+    },
+    {
+     "ref": "Tilmeldingsfrister2027#6",
+     "effekt": "bekraeftet",
+     "tekst": "Atleter og trænere skal bo på det eller de officielle stævnehoteller i stævneperioden for at beholde deres akkreditering; ved europamesterskaber er minimumsopholdet 2 på hinanden følgende nætter.",
+     "kort": "bopæl på officielt hotel krav for akkreditering",
+     "kort_regel": "officielt hotel påkrævet for akkreditering",
+     "dhash": "a7fd286f4071"
     }
    ]
   },
   {
-   "titel": "Suspendering af medlemmer i EPF",
+   "titel": "Hotelkrav for coaches, officials og dommere ved IPF-mesterskaber",
+   "slug": "hotelkrav-for-coaches-og-dommere-ved-ipf-mesterskaber",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#17",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "kun to nætter på officielt hotel for coaches m.fl.",
+     "kort_regel": "coaches, officials og dommere mindst to nætter",
+     "dhash": "02545027036e"
+    },
+    {
+     "ref": "refbest_290826.2#8",
+     "effekt": "bekraeftet",
+     "tekst": "Coaches, officials og dommere ved IPF-stævner skal kun overnatte mindst to sammenhængende nætter på det officielle hotel, mens deres akkreditering gælder hele mesterskabet. Kravene til atleters indkvartering er uændrede.",
+     "kort": "bestyrelsen orienterer om 2-nætters reglen",
+     "kort_regel": "trænere og dommere mindst to nætter",
+     "dhash": "8a7d342be948"
+    }
+   ]
+  },
+  {
+   "titel": "EPF's regler om suspension af medlemmer",
    "slug": "suspendering-af-medlemmer-i-epf",
    "vigtig": false,
    "note": null,
@@ -998,233 +1732,113 @@
      "ref": "467kongres#4",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "Great Britains forslag om suspendering nedstemt",
+     "kort": "Great Britain PF's forslag om stk. 13.10-13.11 nedstemt",
      "kort_regel": null,
-     "dhash": "fe91ab0bbcf8"
+     "dhash": "19bb86b13ea4"
     }
    ]
   },
   {
-   "titel": "Reserveløfter ved forhåndstilmelding",
-   "slug": "reserveløfter-ved-forhåndstilmelding",
+   "titel": "Bøde for dommeres sene ændring af opgaver ved EPF-stævner",
+   "slug": "bøde-for-dommeres-sene-ændring-af-opgaver",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "467kongres#5",
-     "effekt": "ophaevet",
+     "ref": "467kongres#6",
+     "effekt": "indfoert",
      "tekst": null,
-     "kort": "krav om at reserve erstatter tilmeldt løfter annulleret",
-     "kort_regel": null,
-     "dhash": "740499015ca9"
+     "kort": "100 euro bøde ved ændring under 14 dage før",
+     "kort_regel": "100 euro bøde ved ændring senere end 14 dage før",
+     "dhash": "f1729e21e0f4"
     }
    ]
   },
   {
-   "titel": "Bøde for udeblivelse fra teknisk møde",
+   "titel": "Bøde for udeblivelse fra teknisk møde ved EPF-stævner",
    "slug": "bøde-for-udeblivelse-fra-teknisk-møde",
-   "vigtig": false,
+   "vigtig": true,
    "note": null,
    "versioner": [
     {
      "ref": "467kongres#7",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "forslag om 250 euro bøde nedstemt",
+     "kort": "EC's forslag om 250 euro bøde nedstemt",
      "kort_regel": null,
-     "dhash": "b887976ad582"
+     "dhash": "f9e791bb2e03"
     }
    ]
   },
   {
-   "titel": "ADEL og dokumentkrav for internationale løftere",
-   "slug": "adel-og-dokumentkrav-for-internationale-løftere",
+   "titel": "Ikrafttræden af IPF's tekniske regler",
+   "slug": "implementering-af-ipf-s-regler-i-dsf",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "elite18052021#4",
+     "ref": "refbest_19012019.2#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "obligatorisk WADA-modul ADEL",
-     "kort_regel": "ADEL-modul obligatorisk",
-     "dhash": "1c9f8e5d2ccc"
+     "kort": "2018-ændringer gælder fra 1.1.2019, ny formel fra 2020",
+     "kort_regel": "nye regler fra 1.1.2019, IPF-formel fra 2020",
+     "dhash": "c30c80f4aa5b"
     },
     {
-     "ref": "refbest_150723#5",
+     "ref": "refbest_100126#3",
      "effekt": "aendret",
-     "tekst": "Alle nominerede løftere til EM skal have gennemført ADEL-kursus for international level athlete, have en korrekt udfyldt og underskrevet Consent Form med fuldt navn samt et foto af god kvalitet på ensfarvet lys baggrund.",
-     "kort": "EM-løftere: ADEL, Consent Form og foto",
-     "kort_regel": "ADEL, Consent Form og foto til EM",
-     "dhash": "b41a07320a13"
+     "tekst": "IPF's nye tekniske regler for 2026 træder i kraft 1. marts 2026 i stedet for 1. januar 2026.",
+     "kort": "2026-regler udsat til 1. marts 2026",
+     "kort_regel": "2026-regler gælder fra 1. marts 2026",
+     "dhash": "fd820001e81e"
     }
    ]
   },
   {
-   "titel": "Konkurrenceplatform",
-   "slug": "konkurrenceplatform",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_060621#1",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "DSF foreslår IPF platformkrav, ingen gummimåtter",
-     "kort_regel": null,
-     "dhash": "0688968a6d18"
-    }
-   ]
-  },
-  {
-   "titel": "Indberetning af internationale medaljer til DIF",
-   "slug": "indberetning-af-internationale-medaljer-til-dif",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_220122#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "medaljer indberettes til DIF senest 7 dage efter",
-     "kort_regel": "indberetning til DIF inden 7 dage",
-     "dhash": "38a3234a4c2b"
-    }
-   ]
-  },
-  {
-   "titel": "Doping- og deltagergebyr ved EPF-mesterskaber",
-   "slug": "doping-og-deltagergebyr-ved-epf-mesterskaber",
+   "titel": "EPF dopingtestgebyr",
+   "slug": "epf-dopingtestgebyr",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
      "ref": "725kongres#2",
      "effekt": "indfoert",
-     "tekst": null,
-     "kort": "dopinggebyr 60 EUR (før 50), deltagergebyr 90 EUR",
-     "kort_regel": "60 EUR doping og 90 EUR deltagergebyr pr. løfter",
-     "dhash": "c2dd72360378"
+     "tekst": "Nationale forbund, der deltager i EPF-mesterskaber, skal betale et dopingtestgebyr på 60 EUR (før 50 EUR) for hver løfter på den endelige tilmeldingsblanket.",
+     "kort": "dopingtestgebyr hævet fra 50 til 60 EUR pr. løfter",
+     "kort_regel": "60 EUR pr. tilmeldt løfter",
+     "dhash": "5a5b0ff43d6a"
     },
     {
-     "ref": "epf_kongres_2025#1",
+     "ref": "epf_kongres_2025#8",
      "effekt": "aendret",
-     "tekst": "Deltagende nationale forbund betaler et dopingtestgebyr pr. tilmeldt løfter efter IPF's regler samt et deltagergebyr på 90 EUR pr. løfter på den endelige tilmelding.",
-     "kort": "dopinggebyrets beløb fastsættes efter IPF's regler",
-     "kort_regel": "dopinggebyr efter IPF; 90 EUR deltagergebyr",
-     "dhash": "c885eb48a9cb"
-    },
-    {
-     "ref": "epf_kongres_2025#4",
-     "effekt": "aendret",
-     "tekst": "Deltagende nationale forbund betaler et dopingtestgebyr pr. tilmeldt løfter efter IPF's regler samt et deltagergebyr på 90 EUR pr. løfter på den endelige tilmelding. 30 euro af hvert deltagergebyr bruges til at støtte arrangørerne af EPF-stævner.",
-     "kort": "30 euro pr. deltagergebyr til støtte af arrangører",
-     "kort_regel": "90 EUR deltagergebyr, heraf 30 til arrangørstøtte",
-     "dhash": "3fc323806de0"
-    },
-    {
-     "ref": "epf_kongres_2026#1",
-     "effekt": "aendret",
-     "tekst": "Deltagende nationale forbund betaler et dopingtestgebyr pr. tilmeldt løfter efter IPF's regler samt et deltagergebyr pr. løfter på den endelige tilmelding: fra 2027 95 euro for sub-juniorer/juniorer, 110 euro for masters og 125 euro for open. 30 euro af hvert deltagergebyr bruges til at støtte arrangørerne af EPF-stævner.",
-     "kort": "fra 2027: 95/110/125 euro; Danmark imod",
-     "kort_regel": "deltagergebyr 95/110/125 euro fra 2027",
-     "dhash": "37dff6f2c016"
+     "tekst": "Medlemsnationerne betaler antidopinggebyr pr. tilmeldt atlet ved europamesterskaber og EPF-sanktionerede stævner efter IPF's regler.",
+     "kort": "fast beløb erstattet af henvisning til IPF's regler",
+     "kort_regel": "antidopinggebyr fastsættes efter IPF's regler",
+     "dhash": "683cc5a0b89a"
     }
    ]
   },
   {
-   "titel": "IPF's deltagergebyr for atleter",
-   "slug": "ipf-s-deltagergebyr-for-atleter",
-   "vigtig": true,
-   "note": "Andelen til arrangøren blev vedtaget med meget svag opbakning (13 for, 6 imod, 15 blanke).",
-   "versioner": [
-    {
-     "ref": "1071kongres#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "hævet fra 60 til 100 euro",
-     "kort_regel": "100 euro pr. atlet",
-     "dhash": "a8648b3b23be"
-    },
-    {
-     "ref": "1071kongres#3",
-     "effekt": "aendret",
-     "tekst": "IPF's deltagergebyr er 100 euro pr. atlet, og ved hver international konkurrence betales 40 euro af deltagergebyret til stævnearrangøren.",
-     "kort": "40 euro af gebyret til stævnearrangøren",
-     "kort_regel": "100 euro pr. atlet, 40 til arrangør",
-     "dhash": "8ebf7ec45e43"
-    }
-   ]
-  },
-  {
-   "titel": "Trænergebyr og trænerakkreditering ved EM/VM",
-   "slug": "trænergebyr-og-trænerakkreditering-ved-em-vm",
-   "vigtig": true,
-   "note": "Tilmeldingsfristerne siger, at alle trænere betaler 50 euro, hvilket strider mod EPF's fritagelse for trænere, der også løfter eller dømmer.",
-   "versioner": [
-    {
-     "ref": "elite20032024#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "intet coach fee for løftende assistenter på officielt hotel",
-     "kort_regel": "assistenter, der selv løfter, fritaget for coach fee",
-     "dhash": "3228f9f40890"
-    },
-    {
-     "ref": "elite23102024#6",
-     "effekt": "aendret",
-     "tekst": "Der betales ikke coach fee (50 €) for atleter, der fungerer som assistenter ved samme stævne, som de selv deltager i, forudsat at de bor på det officielle hotel, og heller ikke for dommere, der også fungerer som træner ved samme EM/VM.",
-     "kort": "dommere fritaget for 50 € trænergebyr",
-     "kort_regel": "løftere og dommere fritaget for 50 € coach fee",
-     "dhash": "6e9e11dfe4dd"
-    },
-    {
-     "ref": "epf_kongres_2025#2",
-     "effekt": "aendret",
-     "tekst": "Trænere, der deltager i samme stævne som atleter eller dommere, er fritaget for coach capitation fee. Gebyret betales for trænere, der hverken løfter eller dømmer.",
-     "kort": "EPF fritager løftende og dømmende trænere; Danmark undlod",
-     "kort_regel": "gebyr kun for trænere, der hverken løfter eller dømmer",
-     "dhash": "80d45b0e5759"
-    },
-    {
-     "ref": "epf_kongres_2025#3",
-     "effekt": "bekraeftet",
-     "tekst": "Trænere, der deltager i samme stævne som atleter eller dommere, er fritaget for coach capitation fee. Gebyret betales for trænere, der hverken løfter eller dømmer.",
-     "kort": "budget godkendt; gebyret fastholdt, Danmark imod",
-     "kort_regel": "gebyr kun for trænere, der hverken løfter eller dømmer",
-     "dhash": "8ec7b8122854"
-    },
-    {
-     "ref": "Tilmeldingsfrister2026#4",
-     "effekt": "aendret",
-     "tekst": "Der er loft over antallet af trænere. Akkreditering som træner ved Europa- og Verdensmesterskaber koster et gebyr på 50 euro. Trænere, der deltager i samme stævne som atleter eller dommere, er fritaget.",
-     "kort": "loft over antal trænere; 50 euro for akkreditering",
-     "kort_regel": "loft over trænere; akkreditering 50 euro",
-     "dhash": "9d6eabb24701"
-    },
-    {
-     "ref": "Tilmeldingsfrister2027#3",
-     "effekt": "bekraeftet",
-     "tekst": "Der er loft over antallet af trænere. Akkreditering som træner ved Europa- og Verdensmesterskaber koster et gebyr på 50 euro. Trænere, der deltager i samme stævne som atleter eller dommere, er fritaget.",
-     "kort": "bekræftet: loft og 50 euro i trænergebyr",
-     "kort_regel": "loft over trænere; akkreditering 50 euro",
-     "dhash": "346b2ccb13b4"
-    }
-   ]
-  },
-  {
-   "titel": "Antal coaches ved kombinerede bænkpresstævner",
-   "slug": "antal-coaches-ved-kombinerede-bænkpresstævner",
+   "titel": "EPF deltagergebyr for løftere",
+   "slug": "epf-deltagergebyr-for-løftere",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "1071kongres#11",
+     "ref": "epf_kongres_2025#10",
      "effekt": "indfoert",
-     "tekst": null,
-     "kort": "24 coaches i stedet for 20 fra 2027",
-     "kort_regel": "op til 24 coaches",
-     "dhash": "e80b5533b4ad"
+     "tekst": "Nationale forbund betaler et deltagergebyr pr. tilmeldt løfter ved EPF-stævner (90 EUR). 30 euro af hver atlets deltagergebyr betales ikke direkte til arrangøren, men anvendes til generel støtte af arrangører af EPF-stævner.",
+     "kort": "30 euro af gebyret til generel arrangørstøtte",
+     "kort_regel": "90 EUR pr. løfter, 30 euro til arrangørstøtte",
+     "dhash": "87b6cdbec72d"
+    },
+    {
+     "ref": "epf_kongres_2026#4",
+     "effekt": "aendret",
+     "tekst": "Deltagergebyret for løftere ved EPF-konkurrencer er fra 2027: sub-junior/junior 95 euro, master 110 euro og open 125 euro. 30 euro af hver atlets deltagergebyr anvendes til generel støtte af arrangører af EPF-stævner.",
+     "kort": "fra 2027: 95/110/125 euro, Danmark imod",
+     "kort_regel": "95 euro ungdom, 110 master, 125 open",
+     "dhash": "42a0dd40f89d"
     }
    ]
   },
@@ -1239,13 +1853,13 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "klage over anden nations løfter ikke længere muligt",
-     "kort_regel": "kun klage over egen nations løftere",
-     "dhash": "f1a054afa1fd"
+     "kort_regel": "kun klage over egne løftere",
+     "dhash": "6c8da0af3354"
     }
    ]
   },
   {
-   "titel": "Coachlicens og IPF-træneruddannelse",
+   "titel": "Uddannelseskrav for head coaches",
    "slug": "coachlicens-og-ipf-træneruddannelse",
    "vigtig": true,
    "note": null,
@@ -1254,54 +1868,134 @@
      "ref": "refbest_150723#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "head coaches uploader coachlicens i Goodlift fra 2025",
-     "kort_regel": "coachlicens i Goodlift for head coaches",
-     "dhash": "ed9ab72aa32e"
+     "kort": "coachlicens skal uploades i Goodlift fra 1.1.2025",
+     "kort_regel": "head coaches uploader coachlicens i Goodlift",
+     "dhash": "a554926dce3a"
     },
     {
      "ref": "921kongres#1",
      "effekt": "aendret",
-     "tekst": "Head coaches nomineret til internationale, internationale regionale eller verdensmesterskaber skal uploade deres coachlicens i Goodlift-systemet og fra 1. januar 2026 have IPF's træneruddannelse.",
-     "kort": "IPF-træneruddannelse krav for head coaches fra 2026",
-     "kort_regel": "head coach: licens og IPF-uddannelse fra 2026",
-     "dhash": "ac62a562627b"
+     "tekst": "Head coaches nomineret til internationale, regionale og VM-mesterskaber skal uploade deres coachlicens i Goodlift. Fra 1. januar 2026 er IPF's træneruddannelse et krav for alle Head Coaches ved IPF-mesterskaber.",
+     "kort": "IPF-træneruddannelse krav fra 1.1.2026",
+     "kort_regel": "IPF-træneruddannelse krævet fra 2026",
+     "dhash": "44f8356bb5ec"
     },
     {
-     "ref": "refbest_230825#3",
-     "effekt": "aendret",
-     "tekst": "Head coaches nomineret til internationale, internationale regionale eller verdensmesterskaber skal uploade deres coachlicens i Goodlift-systemet og fra 1. januar 2026 have IPF's træneruddannelse. Fra 2027 skal også internationale trænere og deres assistenter have IPF-træneruddannelse.",
-     "kort": "også trænere og assistenter fra 2027",
-     "kort_regel": "IPF-uddannelse: head coach 2026, assistenter 2027",
-     "dhash": "0c2347b22f7e"
+     "ref": "ipf_kongres_2025#2",
+     "effekt": "bekraeftet",
+     "tekst": "Head coaches nomineret til internationale mesterskaber skal uploade deres coachlicens i Goodlift. IPF's træneruddannelse er den eneste godkendte og kræves af alle Head Coaches ved IPF-mesterskaber fra 1. januar 2026.",
+     "kort": "fastholdt trods dansk indsigelse, kun IPF's uddannelse godkendt",
+     "kort_regel": "kun IPF-træneruddannelse godkendt for head coaches",
+     "dhash": "023a9b0eade6"
     },
     {
      "ref": "refbest_231125#3",
      "effekt": "bekraeftet",
-     "tekst": "Head coaches nomineret til internationale, internationale regionale eller verdensmesterskaber skal uploade deres coachlicens i Goodlift-systemet og fra 2026 have IPF's træneruddannelse for at være head coach. Fra 2027 skal også internationale trænere og deres assistenter have IPF-træneruddannelse.",
-     "kort": "bekræftet: head coach kræver IPF-uddannelse fra 2026",
-     "kort_regel": "IPF-uddannelse: head coach 2026, assistenter 2027",
-     "dhash": "2c9115a7c989"
+     "tekst": "Head coaches nomineret til internationale mesterskaber skal uploade deres coachlicens i Goodlift. Fra 2026 skal en Head Coach have IPF's træneruddannelse for at være Head Coach ved internationale stævner.",
+     "kort": "bestyrelsen gentager kravet fra 2026",
+     "kort_regel": "IPF-træneruddannelse krævet fra 2026",
+     "dhash": "19760565a87c"
+    },
+    {
+     "ref": "rep2026#25",
+     "effekt": "aendret",
+     "tekst": "Head coaches nomineret til internationale mesterskaber skal uploade deres coachlicens i Goodlift. Fra 2026 skal alle headcoaches have en IPF level 2-træneruddannelse.",
+     "kort": "præciseret til IPF level 2-uddannelse",
+     "kort_regel": "IPF level 2-træneruddannelse for headcoaches",
+     "dhash": "be53b533f6c1"
     }
    ]
   },
   {
-   "titel": "Færøerne under DSF's regler",
-   "slug": "færøerne-under-dsf-s-regler",
+   "titel": "Uddannelseskrav for alle internationale trænere",
+   "slug": "krav-til-coaches-ved-ipf-nominering",
+   "vigtig": true,
+   "note": "Bestyrelsen angav krav fra 2027, mens IPF-kongressen 2026 fastsatte fristen til 1. januar 2029.",
+   "versioner": [
+    {
+     "ref": "refbest_230825#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "IPF-uddannelse for trænere og assistenter fra 2027",
+     "kort_regel": "trænere og assistenter skal have IPF-uddannelse",
+     "dhash": "349ee184a78e"
+    },
+    {
+     "ref": "1071kongres#10",
+     "effekt": "aendret",
+     "tekst": "Alle coaches skal have et IPF-basis course certificate fra 1. januar 2029. Alle medlemslande skal deltage i førstkommende IPF coach Level 2 i deres region, og alle headcoaches skal bestå WADA ADEL High-Performance Coaches Education Program for at blive nomineret til VM, internationale og regionale mesterskaber og cups.",
+     "kort": "basiscertifikat fra 2029, ADEL High-Performance for headcoaches",
+     "kort_regel": "IPF-basiscertifikat for alle coaches fra 2029",
+     "dhash": "5ceec179ba53"
+    },
+    {
+     "ref": "refbest_290826.2#7",
+     "effekt": "bekraeftet",
+     "tekst": "Alle coaches skal have et IPF-basis course certificate (licens) fra 1. januar 2029. Alle medlemslande skal deltage i førstkommende IPF coach Level 2 i deres region, og alle headcoaches skal bestå WADA ADEL High-Performance Coaches Education Program for at blive nomineret til VM, internationale og regionale mesterskaber og cups.",
+     "kort": "licens- og WADA-krav for trænere inden 2029",
+     "kort_regel": "licens og WADA-certifikat for alle trænere inden 2029",
+     "dhash": "6bcd88c68e71"
+    }
+   ]
+  },
+  {
+   "titel": "ADEL-certifikat for internationale atleter",
+   "slug": "adel-og-dokumentkrav-for-internationale-løftere",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "refstaevne10092024#5",
+     "ref": "refbest_150723#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "Færøerne under DSF indtil optagelse i IPF",
-     "kort_regel": "færøske løftere følger DSF's regler",
-     "dhash": "f040ad047dae"
+     "kort": "kun ADEL International Level Athlete accepteres ved EPF",
+     "kort_regel": "ADEL International Level Athlete-kursus påkrævet",
+     "dhash": "e77ca0eb2ea0"
     }
    ]
   },
   {
-   "titel": "Ændring af EPF's forfatning om By-Laws",
+   "titel": "Consent Form og foto i Goodlift",
+   "slug": "consent-form-og-foto-i-goodlift",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_150723#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "korrekt Consent Form og foto, ellers udelukkelse",
+     "kort_regel": "underskrevet Consent Form og foto i Goodlift",
+     "dhash": "eef84b0b04db"
+    }
+   ]
+  },
+  {
+   "titel": "Europa- og verdensrekorder ved nordiske mesterskaber",
+   "slug": "europa-og-verdensrekorder-ved-nordiske-mesterskaber",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite20032024#3",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "nordisk forslag om at godkende europarekorder igen afvist",
+     "kort_regel": null,
+     "dhash": "68950b85d704"
+    },
+    {
+     "ref": "rep2024#10",
+     "effekt": "ophaevet",
+     "tekst": null,
+     "kort": "ingen europa- og verdensrekorder ved NM (IPF 2023)",
+     "kort_regel": null,
+     "dhash": "1b0b0f97fc03"
+    }
+   ]
+  },
+  {
+   "titel": "Afstemning om By-Laws i EPF's forfatning",
    "slug": "ændring-af-epf-s-forfatning-om-by-laws",
    "vigtig": false,
    "note": null,
@@ -1310,14 +2004,14 @@
      "ref": "epf_kongres_2025#7",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "EPF-forslag udsat, for få nationer til stede",
+     "kort": "EPF-forslag udsat pga. manglende fremmøde",
      "kort_regel": null,
-     "dhash": "3f26f71faef2"
+     "dhash": "05fdbd40deeb"
     }
    ]
   },
   {
-   "titel": "EC's autoritet over IPF's By-Laws",
+   "titel": "IPF's beføjelse over By-Laws",
    "slug": "ec-s-autoritet-over-ipf-s-by-laws",
    "vigtig": false,
    "note": null,
@@ -1326,9 +2020,177 @@
      "ref": "1071kongres#20",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "EC-forslag bortfaldt, kun 71 af 81 lande",
+     "kort": "EC-forslag bortfaldt, kun 71 af 81 lande til stede",
      "kort_regel": null,
-     "dhash": "af0c01b6653e"
+     "dhash": "e9a5895db151"
+    }
+   ]
+  },
+  {
+   "titel": "EPF dommertilmelding og registrering af dommergerninger",
+   "slug": "epf-dommertilmelding-og-registrering",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "epf_kongres_2026#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "mere fleksibel dommertilmelding, forslag fra Danmark og EC",
+     "kort_regel": "ny ordning for dommertilmelding og registrering",
+     "dhash": "d5fa3c71c323"
+    }
+   ]
+  },
+  {
+   "titel": "Ligestilling i ledelsesorganer i IPF",
+   "slug": "kønsbalance-i-ledelsesorganer",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "40% af hvert køn i ledelsesorganer",
+     "kort_regel": "mindst 40% af hvert køn i ledelsesorganer",
+     "dhash": "c871f3ebbd3f"
+    }
+   ]
+  },
+  {
+   "titel": "Klagegebyr ved IPF Court of Justice",
+   "slug": "gebyr-for-klager-og-anker-i-ipf",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#4",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "3 gratis klager årligt, derefter 500 euro (før 1000)",
+     "kort_regel": "3 gratis klager pr. år, derefter 500 euro",
+     "dhash": "db1d5d7c5bf3"
+    }
+   ]
+  },
+  {
+   "titel": "Ankegebyr ved IPF Court of Appeals",
+   "slug": "ankegebyr-ved-ipf-court-of-appeals",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#21",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "3 gratis anker årligt, derefter 500 euro",
+     "kort_regel": "3 gratis anker pr. år, derefter 500 euro",
+     "dhash": "a7b7871cb3c0"
+    }
+   ]
+  },
+  {
+   "titel": "Registrering af medlemslande i IPF",
+   "slug": "registrering-af-medlemslande-i-ipf",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "1071kongres#23",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "nye indberetningskrav for nationer og medlemslande",
+     "kort_regel": "udvidede indberetningskrav for tilknytning til IPF",
+     "dhash": "d71e0121f221"
+    }
+   ]
+  },
+  {
+   "titel": "IPF medlemsgebyr for nationer",
+   "slug": "ipf-s-medlemsgebyr",
+   "vigtig": false,
+   "note": "Vedtaget med svagt flertal (19 for, 15 imod, 18 blanke).",
+   "versioner": [
+    {
+     "ref": "257kongres#7",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om 50 euro forhøjelse stemt ned",
+     "kort_regel": null,
+     "dhash": "a27a964e45c6"
+    },
+    {
+     "ref": "1071kongres#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "hævet fra 400 til 500 euro",
+     "kort_regel": "500 euro om året pr. medlemsland",
+     "dhash": "6855ca73db18"
+    },
+    {
+     "ref": "refbest_290826.2#5",
+     "effekt": "bekraeftet",
+     "tekst": "Medlemslandenes årlige medlemsgebyr til IPF er 500 euro.",
+     "kort": "bestyrelsen orienterer om 500 euro",
+     "kort_regel": "500 euro om året pr. medlemsland",
+     "dhash": "854890a3eff0"
+    }
+   ]
+  },
+  {
+   "titel": "IPF-gebyr for afholdelse af mesterskaber",
+   "slug": "afgift-for-afholdelse-af-ipf-mesterskab",
+   "vigtig": false,
+   "note": "Vedtaget med svagt flertal (19 for, 15 imod, 18 blanke).",
+   "versioner": [
+    {
+     "ref": "257kongres#8",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "forslag om 500 euro forhøjelse stemt ned",
+     "kort_regel": null,
+     "dhash": "dcb85c6e1d6a"
+    },
+    {
+     "ref": "1071kongres#22",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "ansøgningsgebyr hævet fra 1000 til 1500 euro",
+     "kort_regel": "1500 euro for ansøgning om VM/kombinationsstævne",
+     "dhash": "b7bb44721110"
+    }
+   ]
+  },
+  {
+   "titel": "IPF deltagergebyr for atleter",
+   "slug": "ipf-s-deltagergebyr-for-atleter",
+   "vigtig": true,
+   "note": "Vedtaget med svage flertal (19 for, 15 imod, 18 blanke; tillægget om arrangørandel 13 for, 6 imod, 15 blanke).",
+   "versioner": [
+    {
+     "ref": "1071kongres#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "hævet fra 60 til 100 euro",
+     "kort_regel": "100 euro pr. atlet",
+     "dhash": "6798e40a241f"
+    },
+    {
+     "ref": "1071kongres#3",
+     "effekt": "aendret",
+     "tekst": "Medlemslandene betaler et deltagergebyr på 100 euro for hver atlet ved IPF-konkurrencer, og ved hver international konkurrence betales 40 euro af deltagergebyret til stævnearrangøren.",
+     "kort": "40 euro af gebyret går til stævnearrangøren",
+     "kort_regel": "100 euro pr. atlet, 40 euro til arrangør",
+     "dhash": "09a4d63fea29"
+    },
+    {
+     "ref": "refbest_290826.2#4",
+     "effekt": "bekraeftet",
+     "tekst": "Medlemslandene betaler et deltagergebyr på 100 euro for hver atlet ved IPF-konkurrencer, og ved hver international konkurrence betales 40 euro af deltagergebyret til stævnearrangøren.",
+     "kort": "bestyrelsen orienterer om stigning fra 60 til 100 euro",
+     "kort_regel": "100 euro pr. atlet",
+     "dhash": "7840922e4682"
     }
    ]
   },
@@ -1342,14 +2204,22 @@
      "ref": "1071kongres#12",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "resultater på engelsk; ellers risiko for afviste nomineringer",
-     "kort_regel": "DM-resultater sendes til IPF på engelsk",
-     "dhash": "146cd918b2b6"
+     "kort": "resultater på engelsk fra 1.1.2027, ellers afvisning af nomineringer",
+     "kort_regel": "nationale resultater indsendes på engelsk til IPF",
+     "dhash": "2d1ebe715a57"
+    },
+    {
+     "ref": "refbest_290826.2#6",
+     "effekt": "bekraeftet",
+     "tekst": "Hvert medlemsland skal fra 1.1.2027 indsende officielle resultater fra sine årlige nationale mesterskaber på engelsk til IPF's nomineringssystem (eller til IPF's konkurrencesekretær ved tekniske begrænsninger). Manglende indsendelse kan medføre afvisning af nomineringer.",
+     "kort": "bestyrelsen orienterer om obligatorisk indsendelse",
+     "kort_regel": "nationale resultater indsendes på engelsk til IPF",
+     "dhash": "46d6cd5b6f6b"
     }
    ]
   },
   {
-   "titel": "Kvalificerings- og nomineringsproces for atleter",
+   "titel": "Nationale kvalificerings- og nomineringsprocesser",
    "slug": "kvalificerings-og-nomineringsproces-for-atleter",
    "vigtig": true,
    "note": null,
@@ -1359,13 +2229,13 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "krav om klar og transparent nomineringsproces",
-     "kort_regel": "transparent kvalificering; IPF kan undersøge",
-     "dhash": "e69b158fdf8a"
+     "kort_regel": "transparent kvalifikations- og nomineringsproces efter IPF-standard",
+     "dhash": "64375d2881c6"
     }
    ]
   },
   {
-   "titel": "Atleters selvbetaling ved international konkurrence",
+   "titel": "Atleters egenbetaling for international deltagelse",
    "slug": "atleters-selvbetaling-ved-international-konkurrence",
    "vigtig": true,
    "note": null,
@@ -1375,13 +2245,13 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "atlet kan selv betale ved begrænsede midler",
-     "kort_regel": "selvbetaling tilladt ved begrænsede midler",
-     "dhash": "3f4f64ec977b"
+     "kort_regel": "atlet må selv betale international deltagelse",
+     "dhash": "21873ba48a44"
     }
    ]
   },
   {
-   "titel": "Beskyttelse af sub-junior atleter",
+   "titel": "Beskyttelse og indkvartering af sub-juniorer",
    "slug": "beskyttelse-af-sub-junior-atleter",
    "vigtig": true,
    "note": null,
@@ -1390,81 +2260,63 @@
      "ref": "1071kongres#16",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "Safeguard-formular, safeguarding officer og indkvarteringskrav",
-     "kort_regel": "sub-juniorer skal indsende Safeguard Acknowledgement Form",
-     "dhash": "3906628de5c7"
+     "kort": "Safeguarding-formular og indkvarteringskrav for sub-juniorer",
+     "kort_regel": "Safeguarding-formular krav, safeguarding officer ved stævner",
+     "dhash": "cb20b7d4a272"
     }
    ]
   },
   {
-   "titel": "Gebyr for klager og anker i IPF",
-   "slug": "gebyr-for-klager-og-anker-i-ipf",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "1071kongres#4",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "3 gratis årligt, derefter 500 euro (før 1000)",
-     "kort_regel": "3 gratis, derefter 500 euro pr. sag",
-     "dhash": "f36eba20cd0f"
-    }
-   ]
-  },
-  {
-   "titel": "Kønsbalance i ledelsesorganer",
-   "slug": "kønsbalance-i-ledelsesorganer",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "1071kongres#5",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "40 % af hvert køn; dokumentation før valg",
-     "kort_regel": "mindst 40 % af hvert køn",
-     "dhash": "6edf1de39d2a"
-    }
-   ]
-  },
-  {
-   "titel": "Antal officielle repræsentanter ved IPF-konkurrencer",
-   "slug": "antal-officielle-repræsentanter-ved-ipf-konkurrencer",
+   "titel": "Påklædning af religiøse grunde",
+   "slug": "dragt-for-muslimske-kvinder",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "1071kongres#9",
+     "ref": "257kongres#9",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "max 4 ved åbne, 6 ved kombinerede konkurrencer",
-     "kort_regel": "max 4/6 officials med relevante opgaver",
-     "dhash": "4d9f52080e8f"
+     "kort": "heldragt og hijab tilladt",
+     "kort_regel": "tætsiddende heldragt og hijab tilladt",
+     "dhash": "6763068e758b"
     }
    ]
   },
   {
-   "titel": "Dopingsager i DIF's love",
-   "slug": "dopingsager-i-dif-s-love",
+   "titel": "Nordisk mesterskab for masters",
+   "slug": "nordisk-mesterskab-for-masters",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "dif_budgetmoede_2026#1",
+     "ref": "rep2026#27",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Danmarks forslag om nordisk masters-mesterskab forkastet",
+     "kort_regel": null,
+     "dhash": "4486209c813b"
+    }
+   ]
+  },
+  {
+   "titel": "Dopinggebyr ved NM",
+   "slug": "dopinggebyr-ved-nm",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2026#26",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "Dopingnævnene udgår af DIF jf. 2027 WADA Code",
-     "kort_regel": "dopingsager ikke længere i DIF-nævn",
-     "dhash": "b2069b47fcd6"
+     "kort": "dopinggebyr kun ved faktisk dopingtest",
+     "kort_regel": "dopinggebyr betales kun når der testes",
+     "dhash": "042071a06cc6"
     }
    ]
   }
  ],
  "udeladt": [
-  "refbest_03052014#4",
-  "refbest_240520#5",
-  "refbest_220820#4"
+  "refbest_08022015#15"
  ],
  "ikke_tildelt": []
 }

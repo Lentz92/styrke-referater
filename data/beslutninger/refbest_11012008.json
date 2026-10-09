@@ -1,10 +1,16 @@
 {
  "doc_id": "refbest_11012008",
  "sha256": "0d7b2db002dd60f8e9338f23765e34169dca5401343ab61ea5d632507621bf12",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2008-01-11",
- "next_number": 3,
+ "next_number": 4,
  "retired": [],
  "beslutninger": [
   {
@@ -15,8 +21,8 @@
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Al kontakt til TV-medier skal forud godkendes af formanden for medieudvalget, og indholdet af indslaget godkendes ligeledes. Reglen gælder samtlige medlemmer af DSF og samtlige løftere.",
-   "citat": "I fremtiden skal alt kontakt til TV medier, godkendes forud af formanden for medieudvalget, Tommy Knudsen, ligeledes godkendes indholdet af indslaget.",
+   "tekst": "Formanden for medieudvalget skal godkende al kontakt til TV-medier på forhånd. Han skal også godkende indholdet af indslaget. Reglen gælder for alle medlemmer af DSF og alle løftere.",
+   "citat": "I fremtiden skal alt kontakt til TV medier, godkendes forud af formanden for medieudvalget, Tommy Knudsen, ligeledes godkendes indholdet af indslaget. Det skal præciseres at dette gælder for samtlige medlemmer af DSF og samtlige løftere.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
@@ -27,20 +33,38 @@
   },
   {
    "id": "refbest_11012008#2",
-   "emne": "Attestering af afregningsbilag",
+   "emne": "Attestation af afregningsbilag for kørsel mm.",
    "kategori": "okonomi",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "aendring",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Fra 2008 skal dommerens afregningsbilag attesteres af stævnelederen på stævnestedet. Afregningsbilag i forbindelse med træningssamlinger og stævner attesteres af den ansvarlige leder på stedet. Bilag skal indsendes senest 14 dage efter stævnet/samlingen.",
-   "citat": "Fra 2008 skal dommerens afregningsbilag attesteres af stævnelederen på stævnestedet.",
+   "tekst": "Fra 2008 skal stævnelederen attestere dommerens afregningsbilag på stævnestedet. Den ansvarlige leder på stedet skal attestere afregningsbilag fra træningssamlinger og stævner.",
+   "citat": "Fra 2008 skal dommerens afregningsbilag attesteres af stævnelederen på stævnestedet. Afregningsbilag i forbindelse med træningssamlinger og stævner attesteres af den ansvarlige leder på stedet.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": "2008-01-01",
    "gaelder_til": null,
    "citat_fundet": true,
    "citat_pos": 268,
+   "citat_side": 1
+  },
+  {
+   "id": "refbest_11012008#3",
+   "emne": "Frist for indsendelse af afregningsbilag",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Afregningsbilag skal indsendes senest 14 dage efter stævnet, samlingen eller lignende.",
+   "citat": "DET INDSKÆRPES IGEN AT BILAG INDSENDES SENESTE 14 DAGES EFTER STÆVNET/SAMLING eller lign.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 292,
    "citat_side": 1
   }
  ]

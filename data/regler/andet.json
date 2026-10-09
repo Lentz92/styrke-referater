@@ -1,28 +1,72 @@
 {
  "kategori": "andet",
  "version": 7,
- "input_hash": "1a34cf1b7095f88ea4143bf590cc8e1ca838a31a2c0347d45ce3ed01ba068bb2",
- "model": "opus",
+ "input_hash": "cd33b00a6d2767fe8ba4bb95465946f210de27d1779a26083edfd28e56d4acb5",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fb1d4e4f83bc",
+  "effort": "default"
+ },
  "regler": [
   {
-   "titel": "Deltagelse i universitetsmesterskaber",
-   "slug": "deltagelse-i-universitetsmesterskaber",
+   "titel": "Udlån af forbundets udstyr",
+   "slug": "udlån-af-forbundets-udstyr",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_220122#3",
+     "ref": "refbest_04082012#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "DSF åben for universitetsmesterskaber, universiteter finansierer selv",
-     "kort_regel": "DSF åben for deltagelse; universiteterne skaffer selv finansiering",
-     "dhash": "bf309426ba88"
+     "kort": "udstyrsliste på hjemmesiden, lån via kontoret, afhentning i Horsens",
+     "kort_regel": "udstyr lånes via kontoret og hentes i Horsens",
+     "dhash": "739ae5cab9c4"
+    },
+    {
+     "ref": "refbest_09082014#7",
+     "effekt": "aendret",
+     "tekst": "Der laves en liste over DSF's udstyr, som lægges ud på forbundets hjemmeside. Klubber og andre, der vil låne forbundets udstyr (f.eks. streamingudstyr), skal sende en mail til forbundet på jacob@styrke.dk og underskrive en låneseddel ved lån af udstyret. Udstyret hentes i Horsens.",
+     "kort": "lån via mail til jacob@styrke.dk, låneseddel skal underskrives",
+     "kort_regel": "lån via mail til jacob@styrke.dk mod underskrevet låneseddel",
+     "dhash": "ec23abd075fc"
+    }
+   ]
+  },
+  {
+   "titel": "Leverandør af medaljer",
+   "slug": "leverandør-af-medaljer",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_03052014#3",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "medaljer bestilles udelukkende gennem Forma",
+     "kort_regel": "medaljer bestilles kun gennem Forma",
+     "dhash": "c669776f8558"
+    }
+   ]
+  },
+  {
+   "titel": "Samarbejdsaftale med behandlerklinik",
+   "slug": "samarbejdsaftale-med-behandlerklinik",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite12122023#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "Peter A: aftale om rabat hos behandlerklinik i København og Aarhus",
+     "kort_regel": "rabatter hos behandlerklinik i København og Aarhus",
+     "dhash": "bc63c7433ff2"
     }
    ]
   }
  ],
- "udeladt": [
-  "refbest_010619#2"
- ],
+ "udeladt": [],
  "ikke_tildelt": []
 }

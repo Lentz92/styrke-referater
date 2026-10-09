@@ -1,115 +1,41 @@
 {
  "kategori": "udstyr",
  "version": 7,
- "input_hash": "ed9fa7ba9507d862a212656e33c08a855fdc1fdb829ee0d9985ecf1bf2f26686",
- "model": "opus",
+ "input_hash": "17637e0945db5f0a20896eb38c8c6a18b1258d3a2474a5116589d2c2530aee6d",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fb1d4e4f83bc",
+  "effort": "default"
+ },
  "regler": [
   {
-   "titel": "Lån af DSF's stævneudstyr",
-   "slug": "lån-af-dsf-s-stævneudstyr",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_14042012#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "udstyrsliste lægges på hjemmesiden til klubbernes lån",
-     "kort_regel": "udstyrsliste på hjemmesiden; klubber kan låne ved stævner",
-     "dhash": "41b83aa8d253"
-    },
-    {
-     "ref": "refbest_04082012#2",
-     "effekt": "aendret",
-     "tekst": "DSF's udstyr kan lånes af klubberne ved stævneafholdelse ved henvendelse til kontoret og afhentning i Horsens. En liste over udstyret lægges på forbundets hjemmeside.",
-     "kort": "lån via kontoret, afhentning i Horsens",
-     "kort_regel": "lån via kontoret, afhentning i Horsens, liste på hjemmesiden",
-     "dhash": "9bf16e9b00e1"
-    },
-    {
-     "ref": "refbest_09082014#1",
-     "effekt": "aendret",
-     "tekst": "DSF's udstyr, herunder streamingudstyr, kan lånes af klubberne ved henvendelse til kontoret og afhentning i Horsens. En liste over udstyret lægges på forbundets hjemmeside. Alt udstyr er mærket, ved lån skal der underskrives en låneseddel, og der sendes en mail til forbundet ved udlån.",
-     "kort": "webkamera købt; låneseddel og mail ved udlån",
-     "kort_regel": "lån kræver underskrevet låneseddel og mail til forbundet",
-     "dhash": "77042773641e"
-    },
-    {
-     "ref": "refbest_07122014#7",
-     "effekt": "aendret",
-     "tekst": "DSF's udstyr, herunder streamingudstyr, kan lånes af klubberne ved henvendelse til kontoret. En liste over udstyret lægges på forbundets hjemmeside. Alt udstyr er mærket, og der findes to sæt udstyr i to kufferter. Ved udlån bruges en godkendt følgeseddel, og Peter Andersen er ansvarlig for registreringen. Ved overdragelse skal modtageren tjekke, at alle dele er der, og rapportere mangler til Peter Andersen.",
-     "kort": "følgeseddel, to sæt i kufferter, mangler rapporteres",
-     "kort_regel": "følgeseddel, to kufferter, modtager tjekker og rapporterer mangler",
-     "dhash": "255fcab25116"
-    },
-    {
-     "ref": "refbest_29102017#3",
-     "effekt": "aendret",
-     "tekst": "DSF's udstyr, herunder streamingudstyr, kan lånes af klubberne til stævner. Klubber skal tre uger før et stævne melde ud, hvilket udstyr de ønsker at låne; ved bestilling i god tid kan udstyret afleveres i klubben. En liste over udstyret lægges på forbundets hjemmeside. Alt udstyr er mærket, og der findes to sæt udstyr i to kufferter. Ved udlån bruges en godkendt følgeseddel, og Peter Andersen er ansvarlig for registreringen. Ved overdragelse skal modtageren tjekke, at alle dele er der, og rapportere mangler til Peter Andersen.",
-     "kort": "bestilling senest tre uger før stævnet",
-     "kort_regel": "bestilling tre uger før stævne; levering i klubben muligt",
-     "dhash": "1d1495650cf5"
-    }
-   ]
-  },
-  {
-   "titel": "Udlån af udstyr til nye udstyrsløftere",
-   "slug": "udlån-af-udstyr-til-nye-udstyrsløftere",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refudstyr06032025#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "fælles låneliste; løftere kontakter Adam for lån",
-     "kort_regel": "løftere uden klubudstyr kan låne via Adam",
-     "dhash": "a9f3e62ccd0f"
-    },
-    {
-     "ref": "refudstyr10072025#1",
-     "effekt": "aendret",
-     "tekst": "Udstyrsgruppen fører et fælles Excel-ark over låneudstyr. Løftere, der vil prøve at træne i udstyr, men hvis klub ikke har det rette udstyr, kan kontakte Adam for at låne udstyr. Ved udlån skal låneren udfylde en låneseddel med vægt, højde og erfaring (og antal deltagere ved samlinger); samme låneseddel bruges ved tilsendelse via udviklingskonsulenten. Lånesedlerne gemmes i Dropbox og fysisk i mapper.",
-     "kort": "låneseddel med vægt, højde og erfaring kræves",
-     "kort_regel": "lån kræver låneseddel med vægt, højde og erfaring",
-     "dhash": "823491cde506"
-    }
-   ]
-  },
-  {
-   "titel": "Forbud mod Superkatana-bænkpresdragt",
+   "titel": "Godkendelse af understøttende bænkpresstrøjer",
    "slug": "forbud-mod-superkatana-bænkpresdragt",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "vm2012kongres#2",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "DSF's forbudsforslag forkastet på IPF-kongressen",
-     "kort_regel": null,
-     "dhash": "e55666991d5f"
-    }
-   ]
-  },
-  {
-   "titel": "Understøttende bænkprestrøje",
-   "slug": "understøttende-bænkprestrøje",
-   "vigtig": false,
+   "vigtig": true,
    "note": null,
    "versioner": [
     {
      "ref": "vm2012kongres#3",
      "effekt": "trukket",
      "tekst": null,
-     "kort": "IPF's EC trak forslaget tilbage",
+     "kort": "IPF EC trak forslag om regler for understøttende trøjer",
      "kort_regel": null,
-     "dhash": "008598ca79cb"
+     "dhash": "30c96e30084e"
+    },
+    {
+     "ref": "vm2012kongres#2",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "DSF's forslag om forbud mod Superkatana forkastet",
+     "kort_regel": null,
+     "dhash": "3ed79ca2c740"
     }
    ]
   },
   {
-   "titel": "Overskydende materiale i skulderstropper",
+   "titel": "Skulderstropper på løftedragt",
    "slug": "overskydende-materiale-i-skulderstropper",
    "vigtig": true,
    "note": null,
@@ -118,78 +44,46 @@
      "ref": "vm2013#7",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "overskud over 3 cm på indersiden, ikke syet fast",
-     "kort_regel": "overskud over 3 cm inderst i stroppen, ikke fastsyet",
-     "dhash": "f4412df98fb0"
+     "kort": "overskydende stropmateriale over 3 cm skal på indersiden",
+     "kort_regel": "overskud over 3 cm på inderside, ikke syet fast",
+     "dhash": "1cadf0b9613d"
     }
    ]
   },
   {
-   "titel": "Snoning af stropper på dragter",
-   "slug": "snoning-af-stropper-på-dragter",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "490#12",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "forbud mod at sno stropper, forslag fra Sverige",
-     "kort_regel": "stropper på dragter og trikoter må ikke snos",
-     "dhash": "0a1f1835036c"
-    }
-   ]
-  },
-  {
-   "titel": "Knævarmere",
+   "titel": "Knævarmere og knæbind – mærker og påføring",
    "slug": "knævarmere",
    "vigtig": true,
-   "note": "Dommerudvalgets fortolkning fra 2024, at løfteren må få hjælp til at tage knævarmere af, strider mod IPF-beslutningen fra 2013 om, at de skal kunne tages af og på uden assistance.",
+   "note": "Dommerudvalgets fortolkning fra 2024 om hjælp til aftagning strider mod IPF-kravet fra 2013 om at kunne tage dem af uden hjælp.",
    "versioner": [
     {
      "ref": "vm2013#8",
      "effekt": "indfoert",
-     "tekst": null,
-     "kort": "kun IPF-godkendte mærker; af og på uden hjælp",
-     "kort_regel": "IPF-godkendte mærker; tages af og på uden assistance",
-     "dhash": "5c7b81fd9b8f"
+     "tekst": "Også udstyrsløftere må kun bruge knævarmere af IPF-godkendte mærker. Bruges de i konkurrence, skal atleten kunne tage dem af og på uden hjælp.",
+     "kort": "kun IPF-godkendte knævarmere, af og på uden hjælp",
+     "kort_regel": "IPF-godkendte knævarmere, af og på uden hjælp",
+     "dhash": "8307c5cbfdcc"
     },
     {
      "ref": "rep2017#19",
      "effekt": "aendret",
-     "tekst": "Knævarmere må også for udstyrsløftere kun være af IPF-godkendte mærker. Hvis de bruges i konkurrence, skal atleten kunne tage dem af og på uden assistance. Ved DSF-stævner må løftere bruge egne sokker til at trække knævarmerne op.",
-     "kort": "egne sokker må bruges til at trække op",
-     "kort_regel": "IPF-godkendte mærker, uden hjælp; egne sokker tilladt",
-     "dhash": "5dce19d738bc"
+     "tekst": "Også udstyrsløftere må kun bruge knævarmere af IPF-godkendte mærker. Bruges de i konkurrence, skal atleten kunne tage dem af og på uden hjælp. Ved DSF-stævner må en løfter gerne bruge egne sokker til at trække sine knæbind/knækogere op.",
+     "kort": "egne sokker tilladt til at trække knæbind op",
+     "kort_regel": "uden hjælp, men egne sokker må bruges til påføring",
+     "dhash": "c3ceca61caed"
     },
     {
      "ref": "refdom01102024#2",
-     "effekt": "bekraeftet",
-     "tekst": "Knævarmere må kun være af IPF-godkendte mærker. Dommerne skal afvise knævarmere, som løfteren har iført sig med hjælp fra en anden person eller ved hjælp af plastik glidemateriale, olie o.l. Strømper til at tage dem på er tilladt. Reglerne nævner intet om aftagning, så løfteren må gerne få hjælp til at tage knævarmere af.",
-     "kort": "dommere afviser påtagning med hjælp eller glidemiddel",
-     "kort_regel": "påtages uden hjælp/glidemiddel; strømper tilladt; hjælp til aftagning",
-     "dhash": "9ede5006da63"
+     "effekt": "aendret",
+     "tekst": "Kun knævarmere af IPF-godkendte mærker må bruges. Dommerne skal afvise knævarmere, som løfteren har fået på med hjælp fra en anden person eller med plastik-glidemateriale, olie o.l. Løfteren må gerne få hjælp til at tage knævarmerne af. Det er tilladt at bruge strømper/sokker til at få dem på.",
+     "kort": "hjælp til aftagning tilladt; glidemiddel og hjælp ved påføring afvises",
+     "kort_regel": "påføring uden hjælp/glidemiddel, strømper ok, hjælp til aftagning ok",
+     "dhash": "ad3f9896f831"
     }
    ]
   },
   {
-   "titel": "Indefrysning af tekniske regler og udstyrsproducenter",
-   "slug": "indefrysning-af-tekniske-regler-og-udstyrsproducenter",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "199kongres#7",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "tekniske regler og nye producenter indefrosset i 4 år",
-     "kort_regel": "ingen nye producenter/udstyr 2014-2018",
-     "dhash": "aa2fd562e5d6"
-    }
-   ]
-  },
-  {
-   "titel": "IPF's udstyrsregler ved nationale stævner",
+   "titel": "Krav om IPF-godkendt udstyr ved nationale stævner",
    "slug": "ipf-s-udstyrsregler-ved-nationale-stævner",
    "vigtig": true,
    "note": null,
@@ -198,126 +92,86 @@
      "ref": "refbest_07122014#5",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "bestyrelsen foreslår danske stævner fritaget for IPF-udstyrslister",
+     "kort": "bestyrelsen foreslår dansk særregel uden IPF-udstyrslister nationalt",
      "kort_regel": null,
-     "dhash": "24f07b5c315f"
+     "dhash": "6939a1901ef5"
+    },
+    {
+     "ref": "refbest_08022015#16",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "bestyrelsen foreslår udstyr efter tekniske regler i stævnereglerne",
+     "kort_regel": null,
+     "dhash": "dca1fd5cbf97"
     },
     {
      "ref": "refbest_13122015#3",
      "effekt": "indfoert",
-     "tekst": null,
-     "kort": "IPF-regler gælder; særregel for trikot og bælter 2016",
-     "kort_regel": "IPF-udstyrsregler; trikot og bælter skal kun overholde mål",
-     "dhash": "c6b36a62f647"
+     "tekst": "I 2016 gælder IPF's tekniske regler (inklusive listen over godkendt udstyr) i Danmark, med undtagelse af trikot og bælter, som blot skal overholde de tekniske reglers mål og specifikationer (dansk særregel). Løftere anbefales kun at købe nyt udstyr hos IPF-godkendte forhandlere.",
+     "kort": "IPF-liste gælder 2016, undtagen trikot og bælter",
+     "kort_regel": "IPF-godkendt udstyr, trikot og bælter kun efter mål",
+     "dhash": "ab1f43cd3027"
     },
     {
      "ref": "rep2016#8",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "Horsens SK: alt teknisk godkendt udstyr tilladt, nedstemt 8-16",
+     "kort": "Horsens SK: alt udstyr efter tekniske regler, forkastet 8-16",
      "kort_regel": null,
-     "dhash": "604af4660174"
+     "dhash": "b124db8fabb3"
     },
     {
-     "ref": "rep2016#9",
+     "ref": "rep2016#12",
      "effekt": "aendret",
-     "tekst": "Fra 1. januar 2017 skal alle kategorier, både klassisk og udstyr, overholde IPF's samlede udstyrsregelsæt, og løftere må kun løfte i udstyr fra IPF-sanktionerede forhandlere.",
-     "kort": "fuldt IPF-udstyrsregelsæt for alle fra 2017",
-     "kort_regel": "alle kategorier følger IPF's udstyrsregler, kun sanktionerede forhandlere",
-     "dhash": "802a1fd2b2c0"
+     "tekst": "Alle kategorier, både klassisk og udstyr, skal overholde IPF's samlede udstyrsregelsæt, så løftere kun må løfte i udstyr fra IPF-sanktionerede forhandlere. Den danske særregel for trikot og bælter er ophørt. Gælder fra 1. januar 2017.",
+     "kort": "særregel ophører; fuldt IPF-krav fra 1.1.2017",
+     "kort_regel": "alt udstyr fra IPF-sanktionerede forhandlere, alle kategorier",
+     "dhash": "c4276ba9182e"
     },
     {
      "ref": "rep2017#11",
      "effekt": "trukket",
      "tekst": null,
-     "kort": "Aarhus Atlet Klub ville fravige krav for ikke-støttende udstyr",
+     "kort": "Aarhus AK: fravige krav til ikke-støttende udstyr, trukket",
      "kort_regel": null,
-     "dhash": "d172a59f691b"
+     "dhash": "98a706ddbfc7"
     }
    ]
   },
   {
-   "titel": "Logostørrelse på udstyr",
-   "slug": "logostørrelse-på-udstyr",
+   "titel": "Udfasede udstyrsproducenter ved internationale stævner",
+   "slug": "udfasede-udstyrsproducenter-ved-internationale-stævner",
+   "vigtig": true,
+   "note": "At produkterne fortsat må bruges nationalt kan stride mod Repræsentantskabets krav om udstyr fra IPF-sanktionerede forhandlere.",
+   "versioner": [
+    {
+     "ref": "refbest_310722#6",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "fem producenter forbudt internationalt fra 31.12.2023",
+     "kort_regel": "ER, Ivanko, Titex, Leoko, Uesaka kun nationalt",
+     "dhash": "f7d51209c1c5"
+    }
+   ]
+  },
+  {
+   "titel": "Safety-bars på stativer",
+   "slug": "safety-barer-i-stativer",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "257kongres#4",
+     "ref": "refbest_12062016#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "sponsorlogo ændret fra op til 10 cm til 5x2 cm",
-     "kort_regel": "sponsorlogo højst 5x2 cm",
-     "dhash": "a5e715c504ca"
-    },
-    {
-     "ref": "490#18",
-     "effekt": "aendret",
-     "tekst": "Logoer, der ikke er på den godkendte liste, må højst være 5x2 cm.",
-     "kort": "5x2 cm gælder logoer uden for godkendt liste",
-     "kort_regel": "logoer uden for godkendt liste højst 5x2 cm",
-     "dhash": "d080bf25504e"
+     "kort": "ingen dispensation fra safety-bars",
+     "kort_regel": "safety-bars skal bruges, ingen dispensation",
+     "dhash": "cc9d039e44d6"
     }
    ]
   },
   {
-   "titel": "Godkendelse af logoer på løftertøj",
-   "slug": "godkendelse-af-logoer-på-løftertøj",
-   "vigtig": true,
-   "note": "Repræsentantskabet afskaffede i 2019 afgiften på 500 kr., og bestyrelsens forslag om logoafgifter blev trukket; det er uklart, om afgifterne på 1.000 og 2.500 kr. stadig gælder.",
-   "versioner": [
-    {
-     "ref": "refbest_22042017#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "stødende logoer forbudt; logoer godkendes af bestyrelsen",
-     "kort_regel": "logoer godkendes af bestyrelsen; stødende forbudt",
-     "dhash": "709dfd1d86a3"
-    },
-    {
-     "ref": "refbest_19012019.2#4",
-     "effekt": "aendret",
-     "tekst": "Afgift for logo: 500 kr. for én person, 1.000 kr. for alle medlemmer af en klub eller et spotterhold ved ét mesterskab (ikke hvis klubben har betalt for et klublogo), 2.500 kr. hvis logoet kan bruges af enhver under DSF. Andre tilfælde forespørges hos bestyrelsen. Stødende logoer er forbudt, og alle logoer skal godkendes af bestyrelsen; listen over godkendte logoer lægges på hjemmesiden under regler for godkendt udstyr.",
-     "kort": "afgifter 500/1.000/2.500 kr. og liste på hjemmesiden",
-     "kort_regel": "godkendelse af bestyrelsen; afgift 500, 1.000 eller 2.500 kr.",
-     "dhash": "454d9085d281"
-    },
-    {
-     "ref": "rep2019#9",
-     "effekt": "trukket",
-     "tekst": null,
-     "kort": "bestyrelsens forslag om logoafgifter trukket",
-     "kort_regel": null,
-     "dhash": "a097d60247e4"
-    },
-    {
-     "ref": "rep2019#11",
-     "effekt": "aendret",
-     "tekst": "Stødende logoer er forbudt, og logoer skal godkendes af DSF. Afgiften på 500 kr. for sponsorreklame er afskaffet. Dokumenterede sponsorlogoer ud over klublogoet, der overskrider 5x2 cm, skal indsendes til DSF og påføres en godkendt liste på hjemmesiden.",
-     "kort": "500 kr.-afgift afskaffet; store sponsorlogoer på godkendt liste",
-     "kort_regel": "sponsorlogoer over 5x2 cm indsendes og listes; ingen 500 kr.-afgift",
-     "dhash": "62dfdd39bd63"
-    },
-    {
-     "ref": "refbest_240520#4",
-     "effekt": "bekraeftet",
-     "tekst": "Stødende logoer er forbudt, og logoer skal godkendes af DSF. Der opkræves ikke afgift på 500 kr. for sponsorreklame. Dokumenterede sponsorlogoer ud over klublogoet, der overskrider 5x2 cm, skal indsendes til DSF og påføres listen over godkendte logoer på forbundets hjemmeside.",
-     "kort": "liste over godkendte sponsorlogoer oprettes på hjemmesiden",
-     "kort_regel": "godkendte sponsorlogoer listes på hjemmesiden",
-     "dhash": "86ed79cd778d"
-    },
-    {
-     "ref": "refstaevne12032026#3",
-     "effekt": "bekraeftet",
-     "tekst": "Stødende logoer er forbudt, og logoer skal godkendes af DSF. Der opkræves ikke afgift på 500 kr. for sponsorreklame. Dokumenterede sponsorlogoer ud over klublogoet, der overskrider 5x2 cm, skal indsendes til DSF og påføres listen over godkendte logoer på forbundets hjemmeside. En T-shirt med et logo, der ikke er klublogo (fx Master Løfter), må bruges i konkurrence, hvis logoet er godkendt af DSF og registreret på hjemmesiden.",
-     "kort": "Master Løfter-T-shirt tilladt, hvis logo godkendt og registreret",
-     "kort_regel": "logoer skal være DSF-godkendte og registreret på hjemmesiden",
-     "dhash": "78f6466b5bfb"
-    }
-   ]
-  },
-  {
-   "titel": "Stødende slogans på løftertøj",
+   "titel": "Stødende slogans på konkurrencetøj",
    "slug": "stødende-slogans-på-løftertøj",
    "vigtig": true,
    "note": null,
@@ -326,105 +180,97 @@
      "ref": "refbest_22042017#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "stødende slogans afvises; stævneleder kan omstøde godkendelse",
-     "kort_regel": "stødende slogans ikke tilladt; stævneleder kan omstøde",
-     "dhash": "3b036f328b4e"
+     "kort": "stødende slogans godkendes ikke; stævneleder kan omstøde",
+     "kort_regel": "stødende slogans afvises, stævneleder kan omstøde godkendelse",
+     "dhash": "2072026c86d8"
     }
    ]
   },
   {
-   "titel": "Dragt for muslimske kvinder",
-   "slug": "dragt-for-muslimske-kvinder",
+   "titel": "Godkendelse af logoer og sponsorreklame",
+   "slug": "godkendelse-af-logoer-på-løftertøj",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "257kongres#9",
+     "ref": "refbest_22042017#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "stramtsiddende dragt over arme og ben samt hijab tilladt",
-     "kort_regel": "tætsiddende heldækkende dragt og hijab tilladt",
-     "dhash": "b86d8dbc5bcb"
-    }
-   ]
-  },
-  {
-   "titel": "T-shirt under løft",
-   "slug": "t-shirt-under-løft",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
+     "kort": "stødende logoer forbudt; alle logoer godkendes af bestyrelsen",
+     "kort_regel": "alle logoer godkendes af bestyrelsen",
+     "dhash": "762de8091ded"
+    },
     {
-     "ref": "490#13",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "T-shirt påkrævet undtagen med bænkpresstrøje",
-     "kort_regel": "T-shirt i alle løft undtagen med bænkpresstrøje",
-     "dhash": "c49f9aed7d61"
-    }
-   ]
-  },
-  {
-   "titel": "Fodtøj under konkurrence",
-   "slug": "fodtøj-under-konkurrence",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
+     "ref": "refbest_19012019.2#5",
+     "effekt": "aendret",
+     "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. Derfor skal alle logoer forelægges bestyrelsen til godkendelse. Listen over godkendte logoer lægges på hjemmesiden under reglerne for godkendt udstyr.",
+     "kort": "liste over godkendte logoer lægges på hjemmesiden",
+     "kort_regel": "logoer godkendes af bestyrelsen, liste på hjemmesiden",
+     "dhash": "85f06e90ac46"
+    },
     {
-     "ref": "490#14",
-     "effekt": "indfoert",
+     "ref": "rep2019#23",
+     "effekt": "trukket",
      "tekst": null,
-     "kort": "kun indendørssportssko eller dødløftslippers",
-     "kort_regel": "kun indendørssportssko eller dødløftslippers",
-     "dhash": "67994f1900fb"
-    }
-   ]
-  },
-  {
-   "titel": "Sokker med gummi",
-   "slug": "sokker-med-gummi",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "490#15",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "sokker med udvendig gummi forbudt",
-     "kort_regel": "sokker med udvendig gummi ikke tilladt",
-     "dhash": "770e9cb6eea0"
-    }
-   ]
-  },
-  {
-   "titel": "Nedtrækning af knæbind før plateau",
-   "slug": "nedtrækning-af-knæbind-før-plateau",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "490#16",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "Danmarks og Coaching Commissions forslag snævert nedstemt",
+     "kort": "bestyrelsens forslag om logoafgifter 500-2.500 kr. trukket",
      "kort_regel": null,
-     "dhash": "2339c955a831"
+     "dhash": "57171488eb48"
+    },
+    {
+     "ref": "rep2019#11",
+     "effekt": "aendret",
+     "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt; afgiften på 500 kr. pr. sponsorreklame pr. år er afskaffet. Sponsorlogoer (dokumenteret sponsor) ud over klublogoet, der er større end 5x2 cm, skal indsendes til DSF til godkendelse og opføres på en godkendt liste på hjemmesiden.",
+     "kort": "sponsorafgift 500 kr. afskaffet; logoer over 5x2 cm godkendes",
+     "kort_regel": "sponsorlogoer over 5x2 cm godkendes, ingen afgift",
+     "dhash": "ea79013cbdc4"
+    },
+    {
+     "ref": "refstaevne12032026#3",
+     "effekt": "bekraeftet",
+     "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden afgift. Sponsorlogoer ud over klublogoet, der er større end 5x2 cm, skal godkendes af DSF og opføres på listen på hjemmesiden. En T-shirt med Master Løfter-logo er ikke en klub-T-shirt og må kun bruges i konkurrence, hvis logoet er godkendt og registreret.",
+     "kort": "Master Løfter-T-shirt kræver godkendt, registreret logo",
+     "kort_regel": "ikke-klublogoer kræver DSF-godkendelse og registrering",
+     "dhash": "a7ddc9c66a0b"
     }
    ]
   },
   {
-   "titel": "Safety-barer i stativer",
-   "slug": "safety-barer-i-stativer",
-   "vigtig": true,
+   "titel": "Udlån af indvejningsvægte",
+   "slug": "udlån-af-indvejningsvægte-2",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_12062016#5",
-     "effekt": "forkastet",
+     "ref": "refbest_230423#1",
+     "effekt": "indfoert",
      "tekst": null,
-     "kort": "Alex T.'s ønske om dispensation fra safety-barer afvist",
-     "kort_regel": null,
-     "dhash": "587ae43652d1"
+     "kort": "to vægte hos Peter Andersen og HSK, tro og love-erklæring",
+     "kort_regel": "lån mod tro og love-erklæring, returneres straks",
+     "dhash": "044ddd6ed672"
+    }
+   ]
+  },
+  {
+   "titel": "Udlån af udstyr til løftere",
+   "slug": "udlån-af-udstyr-til-nye-udstyrsløftere",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refudstyr06032025#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "fælles låneregister; kontakt Adam Engsig Karø",
+     "kort_regel": "lån via Adam Engsig Karø, fælles register",
+     "dhash": "533db3cebebe"
+    },
+    {
+     "ref": "refudstyr10072025#2",
+     "effekt": "aendret",
+     "tekst": "Løftere kan låne udstyr fra forbundet ved at udfylde en låneseddel, enten ved udstyrssamlinger eller ved at kontakte udviklingskonsulenten og få udstyret tilsendt. Samme låneseddel bruges i begge tilfælde. Lånesedlerne gemmes i Dropbox og fysisk i mapper.",
+     "kort": "lån via låneseddel ved samlinger eller udviklingskonsulent",
+     "kort_regel": "låneseddel; lån ved samling eller tilsendt af konsulent",
+     "dhash": "85aaabd2ca77"
     }
    ]
   },
@@ -436,57 +282,15 @@
    "versioner": [
     {
      "ref": "refbest_130425#3",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "dispensation for løfter med manglende fingre afvist",
-     "kort_regel": null,
-     "dhash": "45f5df1a938c"
-    }
-   ]
-  },
-  {
-   "titel": "Landsholdsudstyr fra sponsor",
-   "slug": "landsholdsudstyr-fra-sponsor",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "elite23102024#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "seniorlandsholdet i A7 trikot og strømper i 2025",
-     "kort_regel": "seniorlandshold løfter i A7 trikot og strømper",
-     "dhash": "87a42ded0603"
-    },
-    {
-     "ref": "refbest_231125#1",
-     "effekt": "aendret",
-     "tekst": "Alle, der løfter internationalt for DSF's landshold (sub-junior til master), skal bruge det af A7 sponsorerede udstyr (trikot, t-shirt, strømper). Klassiske landsholdsløftere, der har takket ja til knævarmere og håndledsbind, skal også løfte i dette udstyr til internationale stævner.",
-     "kort": "udvidet til alle landshold fra sub-junior til master",
-     "kort_regel": "alle landsholdsløftere bruger A7-udstyr internationalt",
-     "dhash": "13b717afa6f8"
-    }
-   ]
-  },
-  {
-   "titel": "Budgetmidler til udstyrspuljen",
-   "slug": "budgetmidler-til-udstyrspuljen",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_230825#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "midler fra 2026 til nyt udstyr, 25.000 kr. foreslået",
-     "kort_regel": "årlige budgetmidler til udstyrspuljen fra 2026",
-     "dhash": "92e0f2aa862b"
+     "kort": "ingen dispensation for straps, heller ikke ved manglende fingre",
+     "kort_regel": "straps i dødløft forbudt, ingen dispensation",
+     "dhash": "74798b1c335c"
     }
    ]
   }
  ],
- "udeladt": [
-  "refudstyr27112025#1"
- ],
+ "udeladt": [],
  "ikke_tildelt": []
 }

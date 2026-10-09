@@ -1,8 +1,14 @@
 {
  "doc_id": "dif_budgetmoede_2025",
  "sha256": "2902c0a37ee3f44a2117a83d5aece027290b45c1ffd938aa9b477c29c75c7a78",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2025-10-04",
  "next_number": 1,
  "retired": [],

@@ -1,28 +1,41 @@
 {
  "doc_id": "refbest_26082017",
  "sha256": "4f994ed12d7aa2059a3ab20e95d5832c83bcfc11662c216e71a02caf44ce5104",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2017-08-26",
  "next_number": 4,
- "retired": [],
+ "retired": [
+  {
+   "id": "refbest_26082017#3",
+   "emne": "Ingen E.R. Open",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "refbest_26082017#1",
    "emne": "Stævneafgift ved internationale stævner i Danmark",
    "kategori": "okonomi",
    "udfald": "vedtaget",
-   "forslagsstiller": "Bestyrelsen",
+   "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Klubber, der arrangerer internationale stævner i Danmark, betaler fremover en stævneafgift til DSF på 10.000 kr., så DSF ikke har udgifter til officials. Arrangerende klub står fortsat for overnatning og forplejning til DSF's officials samt stævne-fee.",
-   "citat": "beslutter bestyrelsen, at klubberne fremover betaler en stævneafgift på 10.000 kr. så DSF ikke har udgifter.",
+   "tekst": "Klubber, der arrangerer internationale stævner i Danmark, betaler fremover en stævneafgift på 10.000 kr. til DSF, så DSF ikke har udgifter til officials (sekretær, teknisk sekretær, repræsentant ved teknisk møde og 3 dommere). Arrangerende klub står desuden for overnatning og forplejning til DSF's officials samt stævne-fee.",
+   "citat": "DSF’s udgifter til officials, og derfor beslutter bestyrelsen, at klubberne fremover betaler en stævneafgift på 10.000 kr. så DSF ikke har udgifter.",
    "side": 3,
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
    "citat_fundet": true,
-   "citat_pos": 604,
+   "citat_pos": 597,
    "citat_side": 3
   },
   {
@@ -33,8 +46,8 @@
    "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel, klubben er placeret i. Tilmeldingsprogrammet tillader tilmelding begge steder, men programmet ændres ikke.",
-   "citat": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel klubben er placeret.",
+   "tekst": "Ved tilmelding til Jyske Mesterskaber (JM) og Sjællandske Mesterskaber (SM) skal løftere tilmeldes i den landsdel, hvor klubben er placeret. Tilmeldingsprogrammet ændres ikke, selvom det giver mulighed for tilmelding begge steder.",
+   "citat": "Ved tilmelding til JM/SM skal der tilmeldes i den landsdel klubben er placeret. Tilmeldingspro-\ngrammet giver mulighed for tilmelding begge steder, men tilmeldingsprogrammet ændres ikke.",
    "side": 3,
    "stemmer": null,
    "gaelder_fra": null,
@@ -42,24 +55,6 @@
    "citat_fundet": true,
    "citat_pos": 713,
    "citat_side": 3
-  },
-  {
-   "id": "refbest_26082017#3",
-   "emne": "Ingen E.R. Open",
-   "kategori": "staevner",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Der afholdes ikke E.R. Open i 2018.",
-   "citat": "Der afholdes ikke E.R. Open i 2018.",
-   "side": 4,
-   "stemmer": null,
-   "gaelder_fra": "2018-01-01",
-   "gaelder_til": "2018-12-31",
-   "citat_fundet": true,
-   "citat_pos": 818,
-   "citat_side": 4
   }
  ]
 }

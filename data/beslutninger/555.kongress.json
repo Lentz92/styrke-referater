@@ -1,8 +1,14 @@
 {
  "doc_id": "555.kongress",
  "sha256": "7718a28047460a0dcae9e6203c498e99869e084ef9f673cd8d6f9de61aa66a91",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2019-11-17",
  "next_number": 1,
  "retired": [],

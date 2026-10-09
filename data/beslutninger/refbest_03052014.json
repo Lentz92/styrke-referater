@@ -1,11 +1,24 @@
 {
  "doc_id": "refbest_03052014",
  "sha256": "a985c71de21c8a6470c7157a41be0b00605892ab25deafb893f1e0ad39b84ed2",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2014-05-03",
  "next_number": 5,
- "retired": [],
+ "retired": [
+  {
+   "id": "refbest_03052014#4",
+   "emne": "EM Classic afholdelse i Danmark",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "refbest_03052014#1",
@@ -15,7 +28,7 @@
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Der gives disciplinmedaljer ved alle typer DM, også med tilbagevirkende kraft for 2014.",
+   "tekst": "Der gives disciplinmedaljer ved alle typer DM. Beslutningen gælder med tilbagevirkende kraft for 2014.",
    "citat": "Der blev taget beslutning om, at der gives disciplinmedaljer ved alle typer DM også med tilbagevirkende kraft for 2014.",
    "side": 2,
    "stemmer": null,
@@ -27,14 +40,14 @@
   },
   {
    "id": "refbest_03052014#2",
-   "emne": "Tilskud til skoleprojekter",
+   "emne": "Tilskud til klubbers skolesamarbejde",
    "kategori": "okonomi",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Ved skolearrangementer/projekter, der involverer samarbejde mellem DSF og en klub, gives et økonomisk tilskud til klubben på 2500 kr., hvis krav til samarbejdsaftale og fordelingsnøgle er opfyldt. Klubber skal først kontakte udviklingskonsulenten.",
-   "citat": "Ved skole arrangementer/projekter, der involverer et samarbejde mellem DSF og en klub, gives et økonomisk tilskud til klubben på 2500 kr.",
+   "tekst": "Ved skolearrangementer/-projekter i samarbejde mellem DSF og en klub gives klubben et økonomisk tilskud på 2500 kr. Det er en betingelse, at kravene i samarbejdsaftalen og fordelingsnøglen er opfyldt, og klubben skal først kontakte DSF's udviklingskonsulent.",
+   "citat": "Ved skole arrangementer/projekter, der involverer et samarbejde mellem DSF og en klub, gives et økonomisk tilskud til klubben på 2500 kr. Dog skal krav i forhold til samarbejdsaftale samt fordelingsnøglen være opfyldte.Klubber skal først kontakte udviklingskonsulent Peter Andersen.",
    "side": 3,
    "stemmer": null,
    "gaelder_fra": null,
@@ -45,13 +58,13 @@
   },
   {
    "id": "refbest_03052014#3",
-   "emne": "Bestilling af medaljer",
-   "kategori": "okonomi",
+   "emne": "Leverandør af medaljer",
+   "kategori": "andet",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Bestilling af medaljer sker udelukkende gennem Forma for at spare penge.",
+   "tekst": "DSF bestiller udelukkende medaljer gennem Forma for at spare penge.",
    "citat": "Bestilling af medaljer vil udelukkende ske gennem Forma, da vi derved kan spare penge.",
    "side": 3,
    "stemmer": null,
@@ -59,24 +72,6 @@
    "gaelder_til": null,
    "citat_fundet": true,
    "citat_pos": 941,
-   "citat_side": 3
-  },
-  {
-   "id": "refbest_03052014#4",
-   "emne": "EM Classic afholdelse i Danmark",
-   "kategori": "internationalt",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Det blev vedtaget at forsøge at henlægge EM Classic til Danmark, hvis EPF-kongressen beslutter at det afholdes i 2015. Arrangør vil da være TVF.",
-   "citat": "Det blev vedtaget at EM Classic, forsøges henlagt til DK, såfremt det vedtages på EPF kongressen at det bliver afholdt i 2015, arrangør vil da blive TVF.",
-   "side": 3,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": "2015-12-31",
-   "citat_fundet": true,
-   "citat_pos": 894,
    "citat_side": 3
   }
  ]

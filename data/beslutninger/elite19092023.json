@@ -1,22 +1,35 @@
 {
  "doc_id": "elite19092023",
  "sha256": "e64e24150a586cf2fbafe85900578d60e526b9b42fc62dbf0519e9949e5162eb",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2023-09-19",
  "next_number": 5,
- "retired": [],
+ "retired": [
+  {
+   "id": "elite19092023#4",
+   "emne": "Fællestræning og sparring på tværs af landshold",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "elite19092023#1",
-   "emne": "Lægeerklæring ved afbud",
+   "emne": "Lægeerklæring ved afbud til samlinger og mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Ved afbud til samlinger og internationale mesterskaber efter final nominations på grund af sygdom kan Eliteudvalget kræve lægeerklæring. Udgiften til lægeerklæringen refunderes af Eliteudvalget.",
-   "citat": "Ved afbud til samlinger og internatioale mesterskaber efter final nominations, grundet sygdom kan eliteudvalget fordre  lægeerklæring. Udgiften til lægeerklæringen refunderes af eliteudvalget.",
+   "tekst": "Hvis en landsholdsatlet melder afbud på grund af sygdom til samlinger eller internationale mesterskaber efter final nominations, kan Eliteudvalget kræve en lægeerklæring. Eliteudvalget refunderer udgiften til lægeerklæringen.",
+   "citat": "Ved afbud til samlinger og internatioale mesterskaber efter final nominations, grundet sygdom kan \neliteudvalget fordre  lægeerklæring. Udgiften til lægeerklæringen refunderes af eliteudvalget.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
@@ -27,14 +40,14 @@
   },
   {
    "id": "elite19092023#2",
-   "emne": "Assistenttræner ved mesterskaber",
+   "emne": "Landsholdsløftere som assistenttrænere",
    "kategori": "landshold",
    "udfald": "vedtaget",
    "forslagsstiller": "Landsholdet",
-   "handling": "bekraeftelse",
+   "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Landsholdsmedlemmer kan af Eliteudvalget udtages som assistenttræner til specifikke mesterskaber, hvis det skønnes hensigtsmæssigt.",
-   "citat": "Hvis man er en del af landsholdet kan man af eliteudvalget udtages som assistenttræner til specifikke mesterskaber, hvis det skønnes hensigtsmæssigt.",
+   "tekst": "Eliteudvalget kan udtage en løfter, der er en del af landsholdet, som assistenttræner til specifikke mesterskaber, hvis udvalget skønner det hensigtsmæssigt.",
+   "citat": "Hvis man er en del af landsholdet kan man af eliteudvalget udtages som assistenttræner til specifikke \nmesterskaber, hvis det skønnes hensigtsmæssigt.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
@@ -45,13 +58,13 @@
   },
   {
    "id": "elite19092023#3",
-   "emne": "Offentliggørelse af bruttolandshold og orlov",
+   "emne": "Offentliggørelse af bruttolandsholdet",
    "kategori": "landshold",
    "udfald": "vedtaget",
    "forslagsstiller": "Landsholdet",
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Bruttolandsholdet, der viser hvem der er på landsholdet og hvem der er bevilget orlov, er tilgængeligt på landsholdssiden og opdateres fremover jævnligt.",
+   "tekst": "Bruttolandsholdet offentliggøres på landsholdssiden. Det viser bl.a., hvem der er en del af landsholdet, og hvem der eventuelt har fået bevilget orlov, og det opdateres fremover jævnligt.",
    "citat": "Bruttolandsholdet, hvor det bl.a. fremgår, hvem der er en del af landsholdet og hvem der evt. er bevilget \norlov, er tilgængelig på landsholdssiden og vil fremover opdateres jævnligt.",
    "side": 1,
    "stemmer": null,
@@ -59,24 +72,6 @@
    "gaelder_til": null,
    "citat_fundet": true,
    "citat_pos": 327,
-   "citat_side": 1
-  },
-  {
-   "id": "elite19092023#4",
-   "emne": "Fællestræning og sparring på tværs af landshold",
-   "kategori": "landshold",
-   "udfald": "vedtaget",
-   "forslagsstiller": "Landsholdet",
-   "handling": "ny",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Eliteudvalget vil fra 2024 forsøge at imødekomme landsholdets ønske om mere sparring og fællestræning på tværs af landsholdene i videst mulige omfang.",
-   "citat": "Eliteudvalget vil fra 2024 forsøge på bedst mulig vis, at imødekomme ønskerne i videst mulige omfang.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": "2024-01-01",
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 205,
    "citat_side": 1
   }
  ]
