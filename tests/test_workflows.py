@@ -263,10 +263,7 @@ def test_a_long_report_is_cut_to_fit_a_pull_request(repo):
     assert len(body.encode()) < 65_536 and body.endswith("the run page has all of it.\n")
 
 
-# ---------------------------------------------------------------- the audit (audit.yml, route-audit.sh)
-
-TODAY = "2026-10-09"
-
+# ---------------------------------------------------------------- the workflows' steps and the CLI action
 
 def _workflow(name: str) -> dict:
     return yaml.safe_load((ROOT / ".github" / "workflows" / name).read_text())
@@ -285,6 +282,26 @@ def _step(job: dict, found: str) -> dict:
 def _in_order(job: dict, *found: str) -> bool:
     positions = [job["steps"].index(_step(job, name)) for name in found]
     return positions == sorted(positions)
+
+
+def test_both_workflows_can_run_the_cli_action():
+    """What GitHub checks only when a workflow runs: a monthly run would fail before it starts."""
+    action = yaml.safe_load((ROOT / CLI_ACTION / "action.yml").read_text())
+    assert action["runs"]["using"] == "composite"
+    assert all("shell" in step for step in action["runs"]["steps"] if "run" in step)  # required in a composite
+    required = {name for name, spec in action["inputs"].items() if spec.get("required")}
+    for name in ("update.yml", "audit.yml"):
+        job = _job(_workflow(name))
+        passed = set(_step(job, CLI_ACTION).get("with", {}))
+        assert required <= passed <= set(action["inputs"]), name
+        # A local action is read from the checked-out repository.
+        checkout = next(step["uses"] for step in job["steps"] if step.get("uses", "").startswith("actions/checkout@"))
+        assert _in_order(job, checkout, CLI_ACTION), name
+
+
+# ---------------------------------------------------------------- the audit (audit.yml, route-audit.sh)
+
+TODAY = "2026-10-09"
 
 
 def _route_audit(repo: Repo, mode: str, branch: str = "main", today: str = TODAY, data: str | None = None,
@@ -410,3 +427,24 @@ def test_an_unfinished_audit_commits_what_it_paid_for_and_no_rule(repo):
     assert {"data/audit/propose-okonomi-1.json", "regelsaet/2026.md"} <= committed
     assert not {"data/regler/antidoping.json", "data/regler_ops.json"} & committed  # its ops file claims applied
     assert repo.file(branch, "data/regler/okonomi.json") == "{}" and repo.file(branch, "data/slugs.json") == "{}"
+
+
+@needs_jq
+@pytest.mark.parametrize(("report", "ending"), [
+    (None, "audit.py wrote no report; the run's log has what it did.\n"),
+    ("".join(f"- op {i}\n" for i in range(10_000)), "The report is cut short here; data/regler_ops.json has every op.\n")])
+def test_an_audit_pull_request_says_where_a_missing_or_long_report_is(repo, report, ending):
+    result = _route_audit(repo, "route", data='{"audited": 1}', report=report)
+    assert result.returncode == 0, result.stderr
+    body = repo.prs()[-1]["body"]
+    assert len(body.encode()) < 65_536 and body.endswith(ending)
+
+
+def test_a_result_is_on_its_review_branch_before_its_pull_request_is_made(repo):
+    # The body fails to build (set -u: a run link without its server URL), so no pull request is made; what the run
+    # paid for is on origin all the same.
+    repo.env["GITHUB_RUN_ID"] = "1"
+    repo.env.pop("GITHUB_SERVER_URL", None)
+    assert repo.route(3).returncode != 0 and repo.file("auto/update") == '{"new": 1}'
+    assert _route_audit(repo, "route", data='{"audited": 1}').returncode != 0
+    assert repo.file(f"auto/audit-{TODAY}") == '{"audited": 1}' and repo.gh_calls() == []

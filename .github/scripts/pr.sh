@@ -1,5 +1,6 @@
-# What route-update.sh and route-audit.sh share: committing as github-actions[bot] and sending a result to a review
-# branch and its pull request. Sourced, so it runs with the caller's `set -euo pipefail`, from the repository root.
+# shellcheck shell=bash
+# What route-update.sh and route-audit.sh share: committing as github-actions[bot] and opening or updating the review
+# branch's pull request. Sourced, so it runs with the caller's `set -euo pipefail`, from the repository root.
 
 # Stage everything the run changed, for a commit by github-actions[bot].
 stage_result() {
@@ -35,11 +36,10 @@ pr_body() {
   fi
 }
 
-# Force-push HEAD to BRANCH, then open its pull request into BASE with TITLE and the body in BODY_FILE, or update the
-# open one. Forced: the branch holds this run's result only, so a repeated run replaces it.
-send_to_review() {
+# Open BRANCH's pull request into BASE with TITLE and the body in BODY_FILE, or update the open one. The caller has
+# pushed BRANCH already, right after its commit, so the result is on origin even if this step fails.
+open_or_update_pr() {
   local branch=$1 base=$2 title=$3 body=$4 number
-  git push -q --force origin "HEAD:refs/heads/$branch"
   number=$(open_pr "$branch")
   if [ -n "$number" ]; then
     gh pr edit "$number" --base "$base" --title "$title" --body-file "$body"

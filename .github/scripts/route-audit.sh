@@ -15,6 +15,7 @@
 # branch) commits there and updates its pull request into main. GH_TOKEN must be set for gh; AUDIT_TODAY (YYYY-MM-DD)
 # replaces today's date in tests.
 set -euo pipefail
+# shellcheck source=SCRIPTDIR/pr.sh
 source "$(dirname "${BASH_SOURCE[0]}")/pr.sh"
 
 mode=${1:?usage: route-audit.sh check|route}
@@ -76,8 +77,9 @@ if git diff --cached --quiet; then
   exit 0
 fi
 git commit -q -m "$title"
+git push -q --force origin "HEAD:refs/heads/$review_branch"
 
 body=$(mktemp)
 pr_body "$report" "data/regler_ops.json has every op." "audit.py wrote no report; the run's log has what it did." \
   > "$body"
-send_to_review "$review_branch" "$base" "$title" "$body"
+open_or_update_pr "$review_branch" "$base" "$title" "$body"

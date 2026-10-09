@@ -9,6 +9,7 @@
 # repository root after update.py, with GH_TOKEN set for gh. Safe to repeat: the review branch is force-pushed
 # from this run's working tree, so there is one branch and at most one open pull request per base branch.
 set -euo pipefail
+# shellcheck source=SCRIPTDIR/pr.sh
 source "$(dirname "${BASH_SOURCE[0]}")/pr.sh"
 
 code=${1:?usage: route-update.sh EXIT_CODE_OF_UPDATE_PY}
@@ -64,6 +65,7 @@ if [ "$route" = publish ]; then
 else
   git commit -q -m "Monthly rule overview update $today (needs review)"
 fi
+git push -q --force origin "HEAD:refs/heads/$review_branch"
 
 body=$(mktemp)
 if [ -n "$note" ]; then
@@ -71,4 +73,4 @@ if [ -n "$note" ]; then
 fi
 pr_body "$report" "the run page has all of it." "update.py wrote no run report; the run's log has what it found." \
   >> "$body"
-send_to_review "$review_branch" "$base" "$title" "$body"
+open_or_update_pr "$review_branch" "$base" "$title" "$body"
