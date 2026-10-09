@@ -7,6 +7,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 import pytest
+from conftest import extracted, rule
 
 import analyze
 import evaluate
@@ -33,29 +34,23 @@ ORGANS = {"best2015": "bestyrelse"}
 YEARS = {"best2015": "2015-05-01"}
 
 
-def _decision(emne, kategori, udfald, handling, citat, niveau="staevneregel", tekst=None):
-    return {"emne": emne, "kategori": kategori, "udfald": udfald, "forslagsstiller": None, "handling": handling,
-            "niveau": niveau, "tekst": tekst or emne, "citat": citat, "side": None, "stemmer": None,
-            "gaelder_fra": None, "gaelder_til": None}
-
-
 STORED = {
-    "rep2010": [_decision("Licensgebyr", "okonomi", "vedtaget", "ny", "Licensgebyret er hævet til 150 kr. pr. løfter",
-                          tekst="Licensgebyret er 150 kr. pr. løfter."),
-                _decision("Startgebyr", "okonomi", "vedtaget", "ny", "Startgebyret er 150 kr. pr. start")],
-    "rep2013": [_decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Licens: kr. 200 (uændret)",
-                          tekst="Licensgebyret er 200 kr."),
-                _decision("Startgebyr", "okonomi", "vedtaget", "aendring", "Startgebyret hæves til 200 kr. pr. start"),
-                _decision("Betaling af licens", "okonomi", "vedtaget", "bekraeftelse",
-                          "Licensen betales ved første stævne i året")],
+    "rep2010": [extracted("Licensgebyr", "Licensgebyret er 150 kr. pr. løfter.",
+                          citat="Licensgebyret er hævet til 150 kr. pr. løfter"),
+                extracted("Startgebyr", citat="Startgebyret er 150 kr. pr. start")],
+    "rep2013": [extracted("Licensgebyr", "Licensgebyret er 200 kr.", handling="bekraeftelse",
+                          citat="Licens: kr. 200 (uændret)"),
+                extracted("Startgebyr", handling="aendring", citat="Startgebyret hæves til 200 kr. pr. start"),
+                extracted("Betaling af licens", handling="bekraeftelse",
+                          citat="Licensen betales ved første stævne i året")],
     "best2015": [],
-    "rep2016": [_decision("Gebyrer 2016", "okonomi", "vedtaget", "aendring", "Licensgebyret er hævet til 250 kr",
-                          tekst="Licensgebyret er 250 kr.")],
-    "rep2019": [_decision("Takster 2019", "okonomi", "vedtaget", "bekraeftelse", "Licens: kr. 200 og startgebyr",
-                          tekst="Gebyr: licens 200 kr. og start 300 kr.")],
-    "rep2024": [_decision("Licensgebyr", "okonomi", "vedtaget", "aendring",
-                          "Licensgebyret hæves fra 200 kr. til 300 kr", tekst="Licensgebyret er 300 kr."),
-                _decision("Klubskifte", "medlemskab", "vedtaget", "ny", "Klubskifte kræver tre måneders karantæne")],
+    "rep2016": [extracted("Gebyrer 2016", "Licensgebyret er 250 kr.", handling="aendring",
+                          citat="Licensgebyret er hævet til 250 kr")],
+    "rep2019": [extracted("Takster 2019", "Gebyr: licens 200 kr. og start 300 kr.", handling="bekraeftelse",
+                          citat="Licens: kr. 200 og startgebyr")],
+    "rep2024": [extracted("Licensgebyr", "Licensgebyret er 300 kr.", handling="aendring",
+                          citat="Licensgebyret hæves fra 200 kr. til 300 kr"),
+                extracted("Klubskifte", kategori="medlemskab", citat="Klubskifte kræver tre måneders karantæne")],
 }
 RULES = {"okonomi": [("Licensgebyr", "licensgebyr", [("rep2010#1", "indfoert"), ("rep2013#3", "bekraeftet"),
                                                      ("rep2013#1", "bekraeftet")]),
@@ -106,9 +101,7 @@ class Corpus:
     def rules(self, categories: dict, directory=None) -> None:
         by_ref = {d.ref: d for d in analyze.load_decisions(self.docs)}
         for kategori, rules in categories.items():
-            regler = [{"titel": titel, "slug": slug, "vigtig": True, "note": None,
-                       "versioner": [{"ref": ref, "effekt": effekt, "tekst": None, "kort": None, "kort_regel": None,
-                                      "dhash": analyze.decision_hash(by_ref[ref])} for ref, effekt in versions]}
+            regler = [rule(titel, slug, *((by_ref[ref], effekt) for ref, effekt in versions))
                       for titel, slug, versions in rules]
             ((directory or analyze.RULES_DIR) / f"{kategori}.json").write_text(json.dumps(
                 {"kategori": kategori, "version": analyze.CONSOLIDATE_VERSION, "input_hash": "x", "model": "opus",
@@ -164,9 +157,8 @@ def test_extraction_runs_use_the_pipeline_prompt_and_write_only_under_eval(corpu
     fake_claude.answer({"moededato": None, "beslutninger": [STORED["rep2024"][0]]})
     evaluate.main(["extract", "--name", "sonnet-1", "--model", "claude-sonnet-5-5", "--max-cost", "5",
                    "--docs", "rep2024"])
-    argv = fake_claude.calls()[0]
-    assert argv[argv.index("--system-prompt") + 1] == analyze.EXTRACT_SYSTEM
-    assert argv[argv.index("--json-schema") + 1] == json.dumps(analyze.EXTRACT_SCHEMA)
+    assert fake_claude.option("--system-prompt") == [analyze.EXTRACT_SYSTEM]
+    assert fake_claude.option("--json-schema") == [json.dumps(analyze.EXTRACT_SCHEMA)]
     run = json.loads(evaluate.run_path("sonnet-1", "rep2024").read_text())
     assert run["beslutninger"][0]["citat_fundet"] and run["beslutninger"][0]["citat_pos"] is not None
     assert run["provenance"]["prompt"] == analyze.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA)
@@ -235,8 +227,7 @@ def test_an_extraction_run_can_use_another_prompt_and_its_provenance_tells_them_
     fake_claude.answer({"moededato": None, "beslutninger": []})
     command = ["extract", "--name", "sonnet-v3-1", "--model", "claude-sonnet-5-5", "--max-cost", "5"]
     evaluate.main([*command, "--prompt", "v3"])
-    argv = fake_claude.calls()[0]
-    assert argv[argv.index("--system-prompt") + 1] == analyze.EXTRACT_PROMPTS["v3"]
+    assert fake_claude.option("--system-prompt") == [analyze.EXTRACT_PROMPTS["v3"]]
     run = json.loads(evaluate.run_path("sonnet-v3-1", "rep2024").read_text())
     assert run["prompt"] == "v3"
     assert run["provenance"]["prompt"] == analyze.prompt_hash(analyze.EXTRACT_PROMPTS["v3"], analyze.EXTRACT_SCHEMA)
@@ -265,12 +256,12 @@ def _probe(emne, udfald, start, length=4):
 
 def _keyed(key_id, status, emne, pos, candidates=(), **changes):
     return {"id": key_id, "status": status, "candidates": list(candidates),
-            **_decision(emne, "okonomi", "vedtaget", "ny", "a b c d"), "citat_pos": pos, "uncertain_fields": [],
+            **extracted(emne, citat="a b c d"), "citat_pos": pos, "uncertain_fields": [],
             "quotes": [], **changes}
 
 
 def _run(emne, pos, **changes):
-    return {**_decision(emne, "okonomi", "vedtaget", "ny", "a b c d"), "citat_pos": pos, **changes}
+    return {**extracted(emne, citat="a b c d"), "citat_pos": pos, **changes}
 
 
 KEY = {
@@ -459,10 +450,9 @@ def _rule_key(corpus, events=EVENTS) -> dict:
 
 
 def _score(corpus, rules) -> evaluate.RuleScore:
-    raw = [{"titel": slug, "slug": slug, "kategori": "okonomi", "vigtig": True, "note": None,
-            "versioner": [{"ref": ref, "effekt": effekt, "tekst": None, "kort": None, "kort_regel": None,
-                           "dhash": analyze.decision_hash(by_ref[ref])} for ref, effekt in versions]}
-           for by_ref in [{d.ref: d for d in analyze.load_decisions(corpus.docs)}] for slug, versions in rules]
+    by_ref = {d.ref: d for d in analyze.load_decisions(corpus.docs)}
+    raw = [rule(slug, slug, *((by_ref[ref], effekt) for ref, effekt in versions), kategori="okonomi")
+           for slug, versions in rules]
     return evaluate.score_rule(_rule_key(corpus), analyze.load_decisions(corpus.docs), raw,
                                {d.id: d for d in corpus.docs}, evaluate.Texts())
 
@@ -509,12 +499,12 @@ def _map(corpus, by_doc: dict, titel: str, keywords: list[str], events: list[dic
 
 BUDGET_LINE = "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret). Startgebyrer: kr. 200,- (Ændret)."
 FEES = [  # the line as prompt v3 extracts it: one decision per fee, in the line's order
-    _decision("Årsafgift", "okonomi", "vedtaget", "bekraeftelse", "Årsafgift: kr. 1.000,- (Uændret)",
-              tekst="Klubbernes årsafgift til DSF fastholdes uændret på 1.000 kr."),
-    _decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Licens: kr. 200,- (Uændret)",
-              tekst="Licensgebyret fastholdes uændret på 200 kr."),
-    _decision("Startgebyr", "okonomi", "vedtaget", "aendring", "Startgebyrer: kr. 200,- (Ændret)",
-              tekst="Startgebyret ændres til 200 kr.")]
+    extracted("Årsafgift", "Klubbernes årsafgift til DSF fastholdes uændret på 1.000 kr.", handling="bekraeftelse",
+              citat="Årsafgift: kr. 1.000,- (Uændret)"),
+    extracted("Licensgebyr", "Licensgebyret fastholdes uændret på 200 kr.", handling="bekraeftelse",
+              citat="Licens: kr. 200,- (Uændret)"),
+    extracted("Startgebyr", "Startgebyret ændres til 200 kr.", handling="aendring",
+              citat="Startgebyrer: kr. 200,- (Ændret)")]
 # The real keys' keywords, which name the other fees too.
 FEE_KEYS = {
     "licence": ("Licensgebyr", ["licensgebyr", "afgift", "koster", "kontingent", "gebyr", "årsafgift", "betaling",
@@ -555,13 +545,13 @@ def test_containment_decides_which_decisions_compete_not_which_wins(corpus, monk
     # As in rep2015: the start fee's quote runs a sentence too long and lies wholly inside the key's quote, the
     # medals' runs a sentence past it (12 of its 17 words inside). The medals are what the rule is about.
     by_doc = _one_document(corpus, monkeypatch, "rep2016", f"{MEDALS} Der udleveres medaljer til alle.", [
-        _decision("Startgebyr", "okonomi", "vedtaget", "aendring",
-                  "Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne.",
-                  tekst="Startgebyret hæves til 300 kr."),
-        _decision("Medaljer og pokaler", "staevner", "vedtaget", "aendring",
-                  "Den arrangerende klub bestiller og betaler selv medaljerne. Pokaler betales af forbundet. Der "
-                  "udleveres medaljer til alle.",
-                  tekst="Den arrangerende klub bestiller og betaler selv medaljerne, mens forbundet betaler pokaler.")])
+        extracted("Startgebyr", "Startgebyret hæves til 300 kr.", handling="aendring",
+                  citat="Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne."),
+        extracted("Medaljer og pokaler",
+                  "Den arrangerende klub bestiller og betaler selv medaljerne, mens forbundet betaler pokaler.",
+                  "staevner", handling="aendring",
+                  citat="Den arrangerende klub bestiller og betaler selv medaljerne. Pokaler betales af forbundet. Der "
+                        "udleveres medaljer til alle.")])
     medal_event = _event("E1", "rep2016", "aendret", "medaljer købes af arrangøren; forbundet betaler pokaler",
                          MEDALS)
     assert _map(corpus, by_doc, "Bestilling og betaling af medaljer og pokaler",
@@ -572,10 +562,10 @@ def test_of_decisions_as_much_about_the_rule_the_one_most_inside_the_quote_wins(
     # A licence decision extracted twice, once quoted from one word earlier: the one wholly inside the key's quote
     # wins over the first.
     by_doc = _one_document(corpus, monkeypatch, "rep2019", "Takster: Licens: kr. 200,- (Uændret). Slut.", [
-        _decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Takster: Licens: kr. 200,-",
-                  tekst="Licensgebyret er uændret 200 kr."),
-        _decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Licens: kr. 200,- (Uændret)",
-                  tekst="Licensgebyret er uændret 200 kr.")])
+        extracted("Licensgebyr", "Licensgebyret er uændret 200 kr.", handling="bekraeftelse",
+                  citat="Takster: Licens: kr. 200,-"),
+        extracted("Licensgebyr", "Licensgebyret er uændret 200 kr.", handling="bekraeftelse",
+                  citat="Licens: kr. 200,- (Uændret)")])
     titel, keywords, value = FEE_KEYS["licence"]
     licence_event = _event("E1", "rep2019", "bekraeftet", value, "Licens: kr. 200,- (Uændret).")
     assert _map(corpus, by_doc, titel, keywords, [licence_event]) == {"E1": "rep2019#2"}

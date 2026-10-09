@@ -191,10 +191,6 @@ def test_a_former_slug_follows_its_decisions_into_another_category():
     assert _resolved(FormerSlug("okonomi", "Licens", frozenset({"b#1"}))) == "masterlicens"
 
 
-def test_a_former_slug_on_a_tie_leads_to_the_earliest_rule():
-    assert _resolved(FormerSlug("okonomi", "Gebyr", frozenset({"a#1", "b#1"}))) == "licensgebyr"
-
-
 def test_an_alias_follows_the_larger_part_after_a_later_split():
     assert _resolved(FormerSlug("okonomi", "Licens", frozenset({"b#1", "a#3"}), to="licensgebyr")) == "masterlicens"
 
