@@ -1,6 +1,6 @@
-"""The matcher and the slug history in matching.py, on hand-made and real decisions and rules."""
+"""The matcher and the slug history in styrke/matching.py, on hand-made and real decisions and rules."""
 
-from matching import (
+from styrke.matching import (
     Candidate,
     FormerSlug,
     LiveRule,

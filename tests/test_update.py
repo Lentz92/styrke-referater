@@ -6,9 +6,8 @@ from datetime import datetime, timezone
 import pytest
 from conftest import extracted, rule
 
-import analyze
-import update
-from analyze import StepSummary, Usage
+from styrke import analyze, update
+from styrke.analyze import StepSummary, Usage
 
 CATEGORIES = ["okonomi", "master", "dommere", "staevner"]
 # The fake answers here are for full consolidation; incremental runs (the default) are tested in test_incremental.py.
@@ -110,7 +109,7 @@ def test_a_cut_off_migration_is_finished_by_running_its_command_again_and_plain_
     world.consolidated()
     _extracted_with_v2(world)
     fake_claude.answers(*_reworded(world))
-    migrate = update.MIGRATE.split()[3:]  # the options of the command the refusals name
+    migrate = update.MIGRATE.split("styrke.update ")[1].split()  # the options of the command the refusals name
 
     # The migration, cut off by its cost cap after 10 of 20 extractions (0.25 USD each): its rules are stale, so it
     # goes to review, and its report says to merge, then run the same command again.
@@ -331,7 +330,7 @@ def test_a_run_that_fails_with_errors_still_goes_to_review(run, world, analysed,
 
 
 def test_the_checks_command_fails_on_errors_only(world, analysed, monkeypatch, capsys):
-    import checks
+    from styrke import checks
 
     monkeypatch.setattr(checks.scrape, "load_manifest", lambda: world.docs)
     checks.main()

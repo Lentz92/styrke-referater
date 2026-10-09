@@ -55,7 +55,7 @@ Regler ophæves sjældent formelt, så en regel gælder her, indtil et senere re
 
 ## Datakvalitet
 
-- Dokumenter der mangler analyse (kør `uv run update.py` igen): 0
+- Dokumenter der mangler analyse (kør `uv run -m styrke.update` igen): 0
 - Dokumenter uden regelbeslutninger (fx budgetmøder): 34
 - Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 4
 - Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): 3

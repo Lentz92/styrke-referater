@@ -7,13 +7,10 @@ from datetime import date
 import pytest
 from conftest import decision, extracted, rule
 
-import analyze
-import checks
-import render
-import website
-from analyze import decision_hash
-from matching import FormerSlug, SlugRegistry
-from scrape import Doc
+from styrke import analyze, checks, render, website
+from styrke.analyze import decision_hash
+from styrke.matching import FormerSlug, SlugRegistry
+from styrke.scrape import Doc
 
 TEXT = (
     "[Side 1]\nPunkt 1: Licensgebyret hæves til 300 kr. pr. løfter. Vedtaget.\n"

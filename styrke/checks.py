@@ -1,16 +1,8 @@
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#   "httpx>=0.27",
-#   "beautifulsoup4>=4.12",
-#   "pymupdf>=1.24",
-# ]
-# ///
 """Consistency checks on decisions and rule histories. Problems are reported, never fixed here.
 
-    uv run checks.py    # check data/, list errors and warnings; exit 1 when there is an error
+    uv run -m styrke.checks    # check data/, list errors and warnings; exit 1 when there is an error
 
-Errors block publishing: update.py exits 3 so the monthly run sends its result to a pull request, and the
+Errors block publishing: styrke/update.py exits 3 so the monthly run sends its result to a pull request, and the
 website workflow does not build from data/ with errors. Warnings are things to look at.
 """
 
@@ -24,12 +16,10 @@ from datetime import date
 from itertools import groupby
 from typing import Literal, get_args
 
-import analyze
-import render
-import scrape
-from analyze import PROPOSAL_EFFECT, Decision, decision_hash, has_slug, live_rules
-from matching import FormerSlug, LiveRule, SlugRegistry, holder, same_title
-from scrape import Doc
+from styrke import analyze, render, scrape
+from styrke.analyze import PROPOSAL_EFFECT, Decision, decision_hash, has_slug, live_rules
+from styrke.matching import FormerSlug, LiveRule, SlugRegistry, holder, same_title
+from styrke.scrape import Doc
 
 # Problems data/ shows on its own, each counted on the index page. "stale": a rule left out because a decision
 # behind it changed; "identity": a decision id or rule slug that is missing, used twice or leads nowhere;
@@ -38,7 +28,7 @@ from scrape import Doc
 DataKind = Literal["stale", "identity", "unassigned", "effect", "date"]
 # Problems in what a run did to the past: what a year page showed changed although no decision before that year
 # did ("history"), or only its wording changed ("history-text"). They compare the data before and after a run,
-# so only update.py finds them; `uv run checks.py` and render-only runs cannot.
+# so only styrke/update.py finds them; `uv run -m styrke.checks` and render-only runs cannot.
 HistoryKind = Literal["history", "history-text"]
 ProblemKind = Literal[DataKind, HistoryKind]
 DATA_KINDS: tuple[DataKind, ...] = get_args(DataKind)

@@ -2,8 +2,8 @@
 
 Two extraction runs agree on only ~90% of decisions, so comparing runs cannot tell better from different. Every
 choice of the pipeline (model, prompt, consolidation mode) is therefore scored against an answer key that Opus judged
-once. `evaluate.py` scores against it and runs the incremental consolidation's candidate gate; everything it writes
-is under `eval/`, and it never touches `data/` or `regelsaet/`. The loop is drawn in
+once. `styrke/evaluate.py` scores against it and runs the incremental consolidation's candidate gate; everything it
+writes is under `eval/`, and it never touches `data/` or `regelsaet/`. The loop is drawn in
 [docs/architecture.md, section 1.4](../docs/architecture.md#14-side-lane-the-measurement-loop).
 
 | Path | What |
@@ -19,7 +19,7 @@ is under `eval/`, and it never touches `data/` or `regelsaet/`. The loop is draw
 
 ## How the key was built
 
-The key was built in October 2026 with commands that are no longer in `evaluate.py` (`select`, `key-decisions`,
+The key was built in October 2026 with commands that are no longer in `styrke/evaluate.py` (`select`, `key-decisions`,
 `key-rules`, with `--rejudge` and `--rederive`); `git worktree add ../key-build 9f39874` checks them out with their
 tests.
 
@@ -43,11 +43,11 @@ reported but left out of the overall rules figures.
 ## What is scored
 
 ```bash
-uv run evaluate.py extract --name migrated --from-data   # data/beslutninger copied as a run (no Claude)
-uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
-uv run evaluate.py score --run migrated --run opus-v3-1 --run opus-v3-2   # the gate against --baseline (migrated)
-uv run evaluate.py score-rules               # data/regler, or --rules-dir/--decisions-dir
-uv run evaluate.py candidate-recall          # hide each decision from its rule: is the rule among the top K?
+uv run -m styrke.evaluate extract --name migrated --from-data   # data/beslutninger copied as a run (no Claude)
+uv run -m styrke.evaluate extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
+uv run -m styrke.evaluate score --run migrated --run opus-v3-1 --run opus-v3-2  # the gate against --baseline (migrated)
+uv run -m styrke.evaluate score-rules          # data/regler, or --rules-dir/--decisions-dir
+uv run -m styrke.evaluate candidate-recall     # hide each decision from its rule: is the rule among the top K?
 ```
 
 - `score` matches each run's decisions to the decisions key (the matcher that carries decision ids over) and reports
@@ -106,9 +106,9 @@ said this, so the key stays as it is. Each candidate configuration was run twice
 with Sonnet and 2.35 with Opus):
 
 ```bash
-uv run evaluate.py extract --name sonnet-v3-1 --model claude-sonnet-5-5 --prompt v3 --max-cost 3
-uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5   # and -2 of each
-uv run evaluate.py score --run stored --run sonnet-1 --run sonnet-2 --run sonnet-v3-1 --run sonnet-v3-2 \
+uv run -m styrke.evaluate extract --name sonnet-v3-1 --model claude-sonnet-5-5 --prompt v3 --max-cost 3
+uv run -m styrke.evaluate extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5   # and -2 of each
+uv run -m styrke.evaluate score --run stored --run sonnet-1 --run sonnet-2 --run sonnet-v3-1 --run sonnet-v3-2 \
     --run opus-v3-1 --run opus-v3-2
 ```
 
@@ -140,8 +140,8 @@ pipeline was not run twice, the figures have the slack alone and stability has n
 passes. On all ten runs:
 
 ```bash
-uv run evaluate.py score --run stored --run sonnet-1 --run sonnet-2 --run haiku-1 --run opus-1 --run sonnet-v3-1 \
-    --run sonnet-v3-2 --run opus-v3-1 --run opus-v3-2 --run migrated --report decisions-gate
+uv run -m styrke.evaluate score --run stored --run sonnet-1 --run sonnet-2 --run haiku-1 --run opus-1 \
+    --run sonnet-v3-1 --run sonnet-v3-2 --run opus-v3-1 --run opus-v3-2 --run migrated --report decisions-gate
 ```
 
 The result (`reports/decisions-gate.md`), each configuration by its worse run:
@@ -158,10 +158,10 @@ over-split bounds are `migrated`'s moved by its slack.
 
 ## Migration to v3 with Opus
 
-The move was one migration (`uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost 40
+The move was one migration (`uv run -m styrke.update --offline --consolidate-mode full --allow-rebuild --max-cost 40
 --time-budget 150`, with v3 and Opus as the defaults), which extracted every document again, carried the decision
-ids over and consolidated every category in full. It logged its estimate first (`update.py` makes none since): about
-27 USD at list price, 236 documents at 0.093 USD (the mean of the Opus v3 runs in `runs.jsonl`) and 5 for the
+ids over and consolidated every category in full. It logged its estimate first (`styrke/update.py` makes none since):
+about 27 USD at list price, 236 documents at 0.093 USD (the mean of the Opus v3 runs in `runs.jsonl`) and 5 for the
 consolidation.
 
 It ran on 9 October 2026 for 25.32 USD at list price (extraction 16.74, consolidation 8.58). The full consolidation
@@ -214,7 +214,7 @@ candidates`, retired since; its code is in commit 9f39874).
 The first audit (commit 9f39874) applied the 16 ops both Opus runs proposed: 8 merges, 4 splits and 4 category moves;
 the 18 that only one run proposed are listed in `data/regler_ops.json` and were left out. It cost 14.11 USD at list
 price (propose 13.21, rewrites 0.91). Against the answer key, without soft rules (measured with `audit.py score
---before 9f39874~1`, retired since, whose code is in commit 9f39874; `evaluate.py score-rules` on the rules of
+--before 9f39874~1`, retired since, whose code is in commit 9f39874; `styrke/evaluate.py score-rules` on the rules of
 `9f39874~1` and of `9f39874` gives the same figures, see What is scored):
 
 | | Before | After |

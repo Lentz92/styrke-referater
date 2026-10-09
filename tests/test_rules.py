@@ -3,9 +3,9 @@ from dataclasses import replace
 import pytest
 from conftest import decision, rule
 
-import analyze
-from analyze import decision_hash
-from render import build_rules
+from styrke import analyze
+from styrke.analyze import decision_hash
+from styrke.render import build_rules
 
 
 def _rule(*versions, titel="Licensgebyr"):

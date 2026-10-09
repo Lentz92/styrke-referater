@@ -8,8 +8,8 @@ from dataclasses import dataclass
 from datetime import date
 from urllib.parse import quote
 
-from analyze import CATEGORIES, Decision, has_slug, version_matches
-from scrape import MONTHS, ROOT, Doc
+from styrke.analyze import CATEGORIES, Decision, has_slug, version_matches
+from styrke.scrape import MONTHS, ROOT, Doc
 
 OUT_DIR = ROOT / "regelsaet"
 AREA_DIR = "regler"  # subfolder of OUT_DIR with one full page per area
@@ -141,7 +141,7 @@ def render(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], mi
            problems: Counter[str], today: date) -> list[str]:
     """Write all pages to regelsaet/ and return their paths.
 
-    `missing` = docs not yet analysed; `problems` = number of problems per kind found by checks.py. The index
+    `missing` = docs not yet analysed; `problems` = number of problems per kind found by styrke/checks.py. The index
     page counts the kinds data/ shows on its own (checks.DATA_KINDS): a render-only run must write the same
     pages as the run before it, and only an analysing run can compare the history before and after.
     """
@@ -200,9 +200,9 @@ def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule
     """Rules with their versions in effective order.
 
     A rule with a stale version (see stale_refs) is left out whole until its category is
-    consolidated again, and checks.py reports it. Dropping just that version could bring back a
+    consolidated again, and styrke/checks.py reports it. Dropping just that version could bring back a
     repealed rule or show an older text as current, since each version builds on the ones before.
-    A rule without a slug has no address to link to; it is left out too, and checks.py reports it.
+    A rule without a slug has no address to link to; it is left out too, and styrke/checks.py reports it.
     """
     rules = []
     for raw in raw_rules:
@@ -471,7 +471,7 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         "",
         "## Datakvalitet",
         "",
-        f"- Dokumenter der mangler analyse (kør `uv run update.py` igen): {len(missing)}"
+        f"- Dokumenter der mangler analyse (kør `uv run -m styrke.update` igen): {len(missing)}"
         + (f" ({', '.join(missing)})" if missing else ""),
         f"- Dokumenter uden regelbeslutninger (fx budgetmøder): {without_decisions}",
         f"- Beslutninger hvor citatet ikke kunne genfindes ordret ({WARNING}): "

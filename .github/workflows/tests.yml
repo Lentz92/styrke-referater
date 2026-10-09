@@ -20,8 +20,9 @@ jobs:
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
+      # --locked: run with the versions in uv.lock, and fail if it is out of date.
       - name: Run tests
-        run: uv run --with-requirements tests/requirements.txt pytest -q
+        run: uv run --locked pytest -q
 
       - name: Build pages and site from data/
-        run: uv run update.py --render-only
+        run: uv run --locked -m styrke.update --render-only

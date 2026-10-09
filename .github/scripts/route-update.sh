@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Send the result of `uv run update.py` where it belongs, by its exit code:
+# Send the result of `uv run -m styrke.update` where it belongs, by its exit code:
 #   0      the checks passed: commit to the branch the run started from (main for the monthly run), and close
 #          the review pull request a previous run left open there;
 #   3      the checks found errors: commit to the review branch and open or update its pull request;
 #   other  the run failed: keep its partial results like 0 when its run-report.md says the checks passed (a
 #          report from a run that got that far), else like 3.
 # A result that cannot be pushed to its branch (it moved during the run) goes to review too. Run from the
-# repository root after update.py, with GH_TOKEN set for gh. Safe to repeat: the review branch is force-pushed
+# repository root after styrke/update.py, with GH_TOKEN set for gh. Safe to repeat: the review branch is force-pushed
 # from this run's working tree, so there is one branch and at most one open pull request per base branch.
 set -euo pipefail
 # shellcheck source=SCRIPTDIR/pr.sh
@@ -14,7 +14,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/pr.sh"
 
 code=${1:?usage: route-update.sh EXIT_CODE_OF_UPDATE_PY}
 report=${RUN_REPORT:-run-report.md}
-checks_passed="<!-- checks: passed -->"  # update.py's CHECKS_PASSED
+checks_passed="<!-- checks: passed -->"  # update.CHECKS_PASSED
 title="Monthly update needs review"
 
 base=$(git rev-parse --abbrev-ref HEAD)
@@ -71,6 +71,6 @@ body=$(mktemp)
 if [ -n "$note" ]; then
   printf '%s\n\n' "$note" > "$body"
 fi
-pr_body "$report" "the run page has all of it." "update.py wrote no run report; the run's log has what it found." \
+pr_body "$report" "the run page has all of it." "styrke/update.py wrote no run report; the run's log has what it found." \
   >> "$body"
 open_or_update_pr "$review_branch" "$base" "$title" "$body"

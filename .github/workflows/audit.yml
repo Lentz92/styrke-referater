@@ -1,8 +1,8 @@
 name: Audit rules
 
 # Opus proposes merges, splits, renames and moves of rules, and the ops both of its runs agree on are applied
-# (audit.py). An audit changes what earlier years show by design, so its result always goes to a pull request on
-# auto/audit-<date> (.github/scripts/route-audit.sh), never to main or the website: merging it publishes it.
+# (styrke/audit.py). An audit changes what earlier years show by design, so its result always goes to a pull request
+# on auto/audit-<date> (.github/scripts/route-audit.sh), never to main or the website: merging it publishes it.
 on:
   workflow_dispatch:
     inputs:
@@ -32,8 +32,9 @@ jobs:
     timeout-minutes: 120
     env:
       DISABLE_AUTOUPDATER: "1"  # keeps the CLI at the version .github/actions/claude-cli pins
-      # Minutes after which audit.py starts no new Claude call, propose and apply together (audit.DEFAULT_TIME_BUDGET):
-      # a call running then may take 30 more, and the result must still be routed before the job's 120 are up.
+      # Minutes after which styrke/audit.py starts no new Claude call, propose and apply together
+      # (audit.DEFAULT_TIME_BUDGET): a call running then may take 30 more, and the result must still be routed before
+      # the job's 120 are up.
       TIME_BUDGET: "75"
     steps:
       - uses: actions/checkout@v5
@@ -65,15 +66,16 @@ jobs:
         run: |
           # Record the exit code instead of stopping here: what the audit paid for so far goes to the pull request
           # either way, and a run on its branch continues it without paying again. apply gets the time propose left.
+          # --locked: run with the versions in uv.lock, and fail if it is out of date.
           started=$(date +%s)
           propose=(--max-cost "$MAX_COST" --time-budget "$TIME_BUDGET")
           if [ -n "$CATEGORIES" ]; then propose+=(--categories "$CATEGORIES"); fi
           set +e
-          uv run audit.py propose "${propose[@]}"
+          uv run --locked -m styrke.audit propose "${propose[@]}"
           code=$?
           left=$(( TIME_BUDGET - ($(date +%s) - started) / 60 ))
           if [ "$code" = 0 ] && [ "$left" -gt 0 ]; then
-            uv run audit.py apply --max-cost "$MAX_COST" --time-budget "$left"
+            uv run --locked -m styrke.audit apply --max-cost "$MAX_COST" --time-budget "$left"
             code=$?
           elif [ "$code" = 0 ]; then
             echo "::warning::No time left to apply the ops; run the workflow on the audit's branch to apply them."
@@ -89,10 +91,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: bash .github/scripts/route-audit.sh route
 
-      - name: Fail when audit.py failed
+      - name: Fail when styrke/audit.py failed
         if: ${{ !cancelled() && steps.audit.outcome != 'skipped' && steps.audit.outputs.code != '0' }}
         env:
           CODE: ${{ steps.audit.outputs.code }}
         run: |
-          echo "::error::audit.py failed or was cut off (exit code ${CODE:-none}); see its log and the pull request's report."
+          echo "::error::styrke/audit.py failed or was cut off (exit code ${CODE:-none}); see its log and the pull request's report."
           exit 1

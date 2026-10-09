@@ -1,5 +1,5 @@
-"""evaluate.py: extraction runs, scoring against the answer key and the incremental consolidation's candidate gate,
-on a tiny corpus in tmp_path; Claude calls go to the fake `claude` from conftest.py."""
+"""styrke/evaluate.py: extraction runs, scoring against the answer key and the incremental consolidation's candidate
+gate, on a tiny corpus in tmp_path; Claude calls go to the fake `claude` from conftest.py."""
 
 import hashlib
 import json
@@ -9,13 +9,11 @@ from pathlib import Path
 import pytest
 from conftest import extracted, rule
 
-import analyze
-import evaluate
-import scrape
-from analyze import DocWords, quote_fields
-from evaluate import DocScore
-from matching import quote_span
-from scrape import Doc
+from styrke import analyze, evaluate, scrape
+from styrke.analyze import DocWords, quote_fields
+from styrke.evaluate import DocScore
+from styrke.matching import quote_span
+from styrke.scrape import Doc
 
 FILLER = " ".join(["mødet drøftede andre sager"] * 35)  # 140 words
 TEXTS = {

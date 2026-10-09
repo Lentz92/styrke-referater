@@ -29,8 +29,8 @@ flowchart LR
 - Each box: **name**, `[type]`, one line on what it does. Dashed frames are boundaries (a workflow, a command, a
   repository). Arrows are labelled with what flows along them.
 - Orange boxes are Claude calls; the blue box after one is the code that checks its answer.
-- "Effort not set" means the code passes no `--effort`, so Claude Code's own default applies. `update.py` never
-  passes one; the audit does (high), and `evaluate.py extract` with `--effort`.
+- "Effort not set" means the code passes no `--effort`, so Claude Code's own default applies. `styrke/update.py` never
+  passes one; the audit does (high), and `styrke/evaluate.py extract` with `--effort`.
 - Every pipeline Claude call goes through `analyze.ask_claude`: `claude -p` with no tools, a system prompt and a JSON
   schema, on the subscription. "USD" means the CLI's list-price estimate, which the caps count.
 
@@ -43,19 +43,20 @@ flowchart LR
 ```mermaid
 flowchart TB
   %% Sources. CLI pin and smoke test: .github/actions/claude-cli, its version input's default 2.1.294, used by
-  %% update.yml and audit.yml. Rebuild guard: update.py REBUILD_SHARE 0.10 and REBUILD_CATEGORY_SHARE 0.5,
+  %% update.yml and audit.yml. Rebuild guard: styrke/update.py REBUILD_SHARE 0.10 and REBUILD_CATEGORY_SHARE 0.5,
   %% Work.reasons and Work.migration; its refusal ends with update.HOW_TO_PROCEED and RERUN.
-  %% Caps: update.py DEFAULT_MAX_COST 15 and DEFAULT_TIME_BUDGET 75, update.yml timeout-minutes 120.
-  %% Models: update.EXTRACT_MODEL, CONSOLIDATE_MODEL and ASSIGN_MODEL, no options. update.py --workers default 4,
+  %% Caps: styrke/update.py DEFAULT_MAX_COST 15 and DEFAULT_TIME_BUDGET 75, update.yml timeout-minutes 120.
+  %% Models: update.EXTRACT_MODEL, CONSOLIDATE_MODEL and ASSIGN_MODEL, no options. styrke/update.py --workers default 4,
   %% analyze.EXTRACT_VERSION 3, analyze.EXTRACT_TIMEOUT 600, analyze.ask_claude attempts 3 with a 15 s times attempt
   %% pause.
   %% Quote check: analyze.QUOTE_THRESHOLD 0.8. Id carry-over: matching.MATCH_THRESHOLD 0.25.
   %% Meeting date: analyze._meeting_date uses styrke.dk's date when the two years differ by 2 or more.
   %% Migration: update.MIGRATE with MIGRATION_MAX_COST 40 and MIGRATION_TIME_BUDGET 150.
   %% Full consolidation: analyze.CONSOLIDATE_TIMEOUT 1800, 12 categories in analyze.CATEGORIES.
-  %% Exit codes: update.py EXIT_REVIEW 3, EXIT_FAILED 1. Routing: .github/scripts/route-update.sh.
-  %% pages.yml triggers: workflow_run after update.yml, push to main on data/**, website/**, *.py or the
-  %% workflow file itself, and workflow_dispatch. evaluate.py: only extract calls Claude, and not with --from-data.
+  %% Exit codes: styrke/update.py EXIT_REVIEW 3, EXIT_FAILED 1. Routing: .github/scripts/route-update.sh.
+  %% pages.yml triggers: workflow_run after update.yml, push to main on data/**, website/**, styrke/**, pyproject.toml,
+  %% uv.lock or the workflow file itself, and workflow_dispatch. styrke/evaluate.py: only extract calls Claude, and not
+  %% with --from-data.
   %% Document text: scrape.document_text. An .htm file goes through scrape._decode_html: the byte-order mark,
   %% else the declared charset if the bytes fit it, else UTF-8, else windows-1252. No charset detector is asked.
 
@@ -63,16 +64,16 @@ flowchart TB
 
   subgraph WF["update.yml [GitHub Actions workflow], 06:00 UTC on the 1st"]
     gcli{{"<b>CLI pin and smoke test</b><br/>[.github/actions/claude-cli, plain code]<br/>Claude Code must be 2.1.294, no ANTHROPIC_API_KEY,<br/>one call to claude-haiku-5-5 must be answered by that model"}}:::guard
-    subgraph UPD["uv run update.py [Python CLI], no options on the monthly cron"]
-      scrape["<b>1 Scrape</b><br/>[scrape.py, plain code]<br/>downloads new or replaced PDF and HTM files,<br/>writes data/manifest.json. Reads their text for step 2:<br/>PDF with page markers, HTM decoded by fixed rules"]:::code
+    subgraph UPD["uv run -m styrke.update [Python CLI], no options on the monthly cron"]
+      scrape["<b>1 Scrape</b><br/>[styrke/scrape.py, plain code]<br/>downloads new or replaced PDF and HTM files,<br/>writes data/manifest.json. Reads their text for step 2:<br/>PDF with page markers, HTM decoded by fixed rules"]:::code
       guard{{"<b>Rebuild guard</b><br/>[update.check_rebuild, plain code, before any Claude call]<br/>stops when over 10 % of the documents need extracting, a category<br/>has decisions but no rule file, over half the categories must be redone,<br/>or a migration is due. The refusal says how to proceed."}}:::guard
       extract["<b>2 Extract</b><br/>[Claude Opus 5.5: claude-opus-5-5, prompt v3]<br/>1 call per new or changed document, effort not set,<br/>up to 4 in parallel, 600 s timeout, up to 3 attempts"]:::claude
-      excheck["<b>Code checks on each extraction</b><br/>[analyze.py, matching.py]<br/>JSON schema, quote located in the text (80 % of its word triplets),<br/>page corrected, meeting date checked against styrke.dk,<br/>ids carried over by quote position and wording"]:::code
+      excheck["<b>Code checks on each extraction</b><br/>[styrke/analyze.py, styrke/matching.py]<br/>JSON schema, quote located in the text (80 % of its word triplets),<br/>page corrected, meeting date checked against styrke.dk,<br/>ids carried over by quote position and wording"]:::code
       cons["<b>3 Consolidate, incremental</b><br/>[Claude Sonnet 5.5 votes, Claude Opus 5.5 tie-break and updates]<br/>one document at a time, oldest first: 3 votes per document,<br/>1 update per touched rule (detail in 1.2)"]:::claude
-      ccheck["<b>Code checks on each answer</b><br/>[incremental.py]<br/>a vote counts only for an offered rule, 2 of 3 decide,<br/>earlier versions stay byte-identical, a document is<br/>written only when all its calls pass"]:::code
-      checks["<b>4 Checks</b><br/>[checks.py, plain code]<br/>errors: stale, unassigned, identity<br/>warnings: effect, date"]:::code
+      ccheck["<b>Code checks on each answer</b><br/>[styrke/incremental.py]<br/>a vote counts only for an offered rule, 2 of 3 decide,<br/>earlier versions stay byte-identical, a document is<br/>written only when all its calls pass"]:::code
+      checks["<b>4 Checks</b><br/>[styrke/checks.py, plain code]<br/>errors: stale, unassigned, identity<br/>warnings: effect, date"]:::code
       hist{{"<b>History check</b><br/>[checks.check_history, plain code]<br/>year pages before the run against after it: a rule may change<br/>only from the date of its earliest new, changed or removed decision"}}:::guard
-      render["<b>5 Render</b><br/>[render.py, website.py, plain code]<br/>regelsaet/ and _site/, also when errors were found"]:::code
+      render["<b>5 Render</b><br/>[styrke/render.py, styrke/website.py, plain code]<br/>regelsaet/ and _site/, also when errors were found"]:::code
       report["<b>Run report and exit code</b><br/>[update.write_report, record_run]<br/>run-report.md, usage to data/runs.jsonl<br/>exit 0 no errors, 3 errors, 1 run failed"]:::code
     end
     route{"<b>route-update.sh</b><br/>[Bash]"}:::code
@@ -83,19 +84,19 @@ flowchart TB
 
   main["<b>main</b><br/>[GitHub repository branch]<br/>commit, an open review PR is closed"]:::ext
   pr["<b>Review pull request</b><br/>[GitHub, branch auto/update]<br/>Monthly update needs review, the run report as body"]:::ext
-  pages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>also on a push to main touching data/, website/,<br/>*.py or pages.yml, and on Run workflow.<br/>Runs checks.py again (an error publishes nothing),<br/>then website.py, then deploys"]:::code
+  pages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>also on a push to main touching data/, website/,<br/>styrke/, pyproject.toml, uv.lock or pages.yml,<br/>and on Run workflow.<br/>Runs styrke/checks.py again (an error publishes nothing),<br/>then styrke/website.py, then deploys"]:::code
   ghp["<b>GitHub Pages</b><br/>[External hosting]"]:::ext
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
 
   subgraph MIG["Side lane: migration, started by hand"]
-    mig["<b>Migration run</b><br/>[update.py --offline --consolidate-mode full --allow-rebuild<br/>--max-cost 40 --time-budget 150]<br/>after a new prompt, model or CONSOLIDATE_VERSION:<br/>extracts every document again, then consolidates in full"]:::code
+    mig["<b>Migration run</b><br/>[styrke/update.py --offline --consolidate-mode full --allow-rebuild<br/>--max-cost 40 --time-budget 150]<br/>after a new prompt, model or CONSOLIDATE_VERSION:<br/>extracts every document again, then consolidates in full"]:::code
     full["<b>Full consolidation</b><br/>[Claude Opus 5.5]<br/>1 call per changed category (12 at most), up to 4 in parallel,<br/>effort not set, 1800 s. Code drops unknown refs, lists<br/>refs in no rule as unassigned, carries slugs over."]:::claude
   end
   subgraph AUD["Side lane: audit, started by hand (detail in 1.3)"]
-    audit["<b>audit.py propose, apply</b><br/>[Claude Opus 5.5, effort high]<br/>2 independent runs per category,<br/>only the ops both propose are applied"]:::claude
+    audit["<b>styrke/audit.py propose, apply</b><br/>[Claude Opus 5.5, effort high]<br/>2 independent runs per category,<br/>only the ops both propose are applied"]:::claude
   end
   subgraph MEAS["Side lane: measurement loop (detail in 1.4)"]
-    evalu["<b>evaluate.py</b><br/>[Python CLI: scoring is plain code,<br/>extract calls Claude]<br/>extraction gate, rule scores, candidate recall"]:::code
+    evalu["<b>styrke/evaluate.py</b><br/>[Python CLI: scoring is plain code,<br/>extract calls Claude]<br/>extraction gate, rule scores, candidate recall"]:::code
   end
 
   styrke -->|"index page, PDF and HTM files"| scrape
@@ -144,10 +145,10 @@ flowchart TB
 
 Read it top to bottom: Claude does only steps 2 and 3, and code checks every answer before anything is written. The
 guard rails decide whether the run may call Claude at all (CLI pin, rebuild guard), how far it may go (caps, model
-check), and whether its result may be published (checks, history check, then `checks.py` once more in `pages.yml`).
-Exit code 3 never reaches the website: it goes to a review pull request, and only your merge publishes it. A run with
-exit code 1 keeps its partial results on `main` when the checks passed, but the job is marked failed, so `pages.yml`
-does not publish it.
+check), and whether its result may be published (checks, history check, then `styrke/checks.py` once more in
+`pages.yml`). Exit code 3 never reaches the website: it goes to a review pull request, and only your merge publishes it.
+A run with exit code 1 keeps its partial results on `main` when the checks passed, but the job is marked failed, so
+`pages.yml` does not publish it.
 
 The Claude calls at a glance (all from the code; `workers` defaults to 4):
 
@@ -170,18 +171,18 @@ rewrite calls.
 
 ```mermaid
 flowchart TB
-  %% Sources. incremental.py: VOTES 3, ASSIGN_TIMEOUT 600, UPDATE_TIMEOUT 1200, PASSAGE_BEFORE 100, PASSAGE_AFTER 400,
-  %% HISTORY_SHOWN 6, Settings assign_model and update_model: update.ASSIGN_MODEL claude-sonnet-5-5 and
-  %% CONSOLIDATE_MODEL claude-opus-5-5. Votes and tie-break pass effort None, the update Settings.update_effort,
-  %% which update.py leaves None.
-  %% candidates.py: CANDIDATE_K 15, CATEGORY_BOOST 0.3. Misfiled loop: incremental.process_document.
+  %% Sources. styrke/incremental.py: VOTES 3, ASSIGN_TIMEOUT 600, UPDATE_TIMEOUT 1200, PASSAGE_BEFORE 100,
+  %% PASSAGE_AFTER 400, HISTORY_SHOWN 6, Settings assign_model and update_model: update.ASSIGN_MODEL
+  %% claude-sonnet-5-5 and CONSOLIDATE_MODEL claude-opus-5-5. Votes and tie-break pass effort None, the update
+  %% Settings.update_effort, which styrke/update.py leaves None.
+  %% styrke/candidates.py: CANDIDATE_K 15, CATEGORY_BOOST 0.3. Misfiled loop: incremental.process_document.
   %% Full mode: analyze.consolidate and analyze._rules_from, analyze.CONSOLIDATE_TIMEOUT 1800.
 
   besl[("<b>data/beslutninger/</b><br/>[JSON, one file per document]<br/>the extracted decisions")]:::store
   queue["<b>Work queue</b><br/>[incremental.work_queue, plain code]<br/>decisions the rule files do not reflect yet (new, changed, retired),<br/>known by fingerprint, documents oldest first,<br/>no new document once a cap is reached"]:::code
 
   subgraph DOC["Per document, one at a time"]
-    cand["<b>Candidates</b><br/>[candidates.py, plain code]<br/>TF-IDF over Danish stems and compound parts:<br/>the 15 closest live rules per new decision,<br/>its own category boosted by a factor 1.3"]:::code
+    cand["<b>Candidates</b><br/>[styrke/candidates.py, plain code]<br/>TF-IDF over Danish stems and compound parts:<br/>the 15 closest live rules per new decision,<br/>its own category boosted by a factor 1.3"]:::code
     vote["<b>Assign: 3 votes</b><br/>[Claude Sonnet 5.5: claude-sonnet-5-5]<br/>3 calls in parallel, effort not set, 600 s,<br/>each vote reads the candidates in another order"]:::claude
     tally["<b>Tally</b><br/>[incremental.read_vote, tally]<br/>a choice outside the decision's own candidates is no vote,<br/>2 of 3 decide, a new rule named like a live rule goes to the tie-break"]:::code
     tie["<b>Tie-break</b><br/>[Claude Opus 5.5: claude-opus-5-5]<br/>1 call with the same prompt, blind to the votes,<br/>effort not set"]:::claude
@@ -240,9 +241,9 @@ used for a migration, hands Opus a whole category at once and regroups it from s
 
 ```mermaid
 flowchart TB
-  %% Sources. audit.py: MODEL claude-opus-5-5, EFFORT high, RUNS 2, SIMILARITY 0.1, PROPOSE_TIMEOUT 1800,
+  %% Sources. styrke/audit.py: MODEL claude-opus-5-5, EFFORT high, RUNS 2, SIMILARITY 0.1, PROPOSE_TIMEOUT 1800,
   %% TITLE_TIMEOUT 600, TEXT_TIMEOUT from incremental.UPDATE_TIMEOUT 1200, DEFAULT_TIME_BUDGET 75, --workers default 4.
-  %% 24 calls: 12 categories times 2 runs, measured in data/runs.jsonl. --max-cost is required by audit.py.
+  %% 24 calls: 12 categories times 2 runs, measured in data/runs.jsonl. --max-cost is required by styrke/audit.py.
   %% audit.yml: max_cost default 25, TIME_BUDGET 75, step timeout 110, job timeout 120.
   %% route-audit.sh check: month end within 2 days, other auto/audit-* branches.
 
@@ -251,9 +252,9 @@ flowchart TB
   caps{{"<b>Caps</b><br/>[analyze.RunBudget, audit.plan_calls]<br/>cost estimate printed first, --max-cost per command (workflow: 25 USD),<br/>75 min for propose and apply together, step 110 min, job 120 min"}}:::guard
   regler[("<b>data/regler/, data/slugs.json</b><br/>[JSON]<br/>the rules as the monthly runs left them")]:::store
 
-  subgraph PROP["uv run audit.py propose"]
-    unset{{"<b>Settled?</b><br/>[audit.unsettled]<br/>nothing for update.py to file, no category to consolidate,<br/>no check error, else it stops"}}:::guard
-    sim["<b>Similar rules</b><br/>[candidates.py via incremental, plain code]<br/>rule against rule, in any category:<br/>cosine similarity of at least 0.1"]:::code
+  subgraph PROP["uv run -m styrke.audit propose"]
+    unset{{"<b>Settled?</b><br/>[audit.unsettled]<br/>nothing for styrke/update.py to file, no category to consolidate,<br/>no check error, else it stops"}}:::guard
+    sim["<b>Similar rules</b><br/>[styrke/candidates.py via incremental, plain code]<br/>rule against rule, in any category:<br/>cosine similarity of at least 0.1"]:::code
     prop["<b>Propose ops</b><br/>[Claude Opus 5.5: claude-opus-5-5, effort high]<br/>2 independent runs × 12 categories = 24 calls, the rules<br/>in another order per run, up to 4 in parallel, 1800 s"]:::claude
     val["<b>Validate</b><br/>[audit.validate, conflicts]<br/>rejects unknown slugs, refs or categories, ops citing no decision,<br/>splits whose parts do not divide the rule exactly,<br/>two ops of one run on one rule (a rename with a move excepted)"]:::code
     agree["<b>Agree</b><br/>[audit.agree, plain code]<br/>an op stands only when both runs propose it:<br/>the same rules, partition or category"]:::code
@@ -264,12 +265,12 @@ flowchart TB
   cache[("<b>data/audit/</b><br/>[JSON, one file per call]<br/>every answer with a fingerprint of the question,<br/>so a repeated command never pays twice")]:::store
   regops[("<b>data/regler_ops.json</b><br/>[JSON]<br/>every op, its proposals and reasons,<br/>agreed or not, rejected answers")]:::store
 
-  subgraph APP["uv run audit.py apply"]
+  subgraph APP["uv run -m styrke.audit apply"]
     same{{"<b>Same data?</b><br/>[audit.data_fingerprint, check_ops]<br/>stops when the rules or slugs changed since propose"}}:::guard
     rest["<b>Restructure</b><br/>[audit.restructure, plain code]<br/>merge: the rule with most versions keeps its slug, the others become aliases<br/>split: the largest part keeps the slug, then move and rename"]:::code
     rew["<b>Rewrite texts</b><br/>[Claude Opus 5.5, effort high]<br/>1 call per merged rule and per split part,<br/>up to 4 in parallel, 1200 s"]:::claude
     rcheck["<b>Rewrite check</b><br/>[audit.rewritten]<br/>the same decisions in the same order, only effekt, tekst,<br/>kort and kort_regel may change, a rejected answer is asked once more"]:::code
-    ver{{"<b>Verify in a copy</b><br/>[audit.checked, verify]<br/>no check error, nothing left for update.py,<br/>every old slug still leads to a rule, else nothing is written"}}:::guard
+    ver{{"<b>Verify in a copy</b><br/>[audit.checked, verify]<br/>no check error, nothing left for styrke/update.py,<br/>every old slug still leads to a rule, else nothing is written"}}:::guard
     score["<b>Answer-key score</b><br/>[evaluate.score_section, plain code]<br/>before and after, with a gate line in the report<br/>(reported, not enforced)"]:::code
   end
 
@@ -320,25 +321,25 @@ first audit applied 16 agreed ops (8 merges, 4 splits, 4 moves) for 14.11 USD.
 flowchart TB
   %% Sources. eval/README.md: 25 documents and 20 rules, 2 judges with a blind 3rd, commands since removed.
   %% Judges' model and effort: provenance in eval/key/judges, claude-opus-5-5 at effort high.
-  %% evaluate.py: BASELINE_RUN migrated, GATE_SLACK precision 0.02 and over_split 0.02, gate_needs, RECALL_KS 3 to 15,
-  %% RECALL_TARGET 0.98, SMALL_BUDGET_USD 10. audit.SIMILARITY 0.1, chosen with audit.py candidates.
+  %% styrke/evaluate.py: BASELINE_RUN migrated, GATE_SLACK precision 0.02 and over_split 0.02, gate_needs, RECALL_KS 3
+  %% to 15, RECALL_TARGET 0.98, SMALL_BUDGET_USD 10. audit.SIMILARITY 0.1, chosen with audit.py candidates.
   %% Retired since, with replay and compare-rules; their code is in commit 9f39874, their reports in eval/reports/.
 
   sel[("<b>eval/selection.json</b><br/>[JSON]<br/>25 documents and 20 recurring rules")]:::store
   judges["<b>Answer key, built once in October 2026</b><br/>[Claude Opus 5.5 judges, effort high]<br/>2 judges per document and rule, a 3rd answers blind where<br/>they disagree, 2 of 3 decide, what stays split is left out"]:::claude
   key[("<b>eval/key/</b><br/>[JSON]<br/>decisions/, rules/, judges/, and corrections.json:<br/>judge errors found against the minutes")]:::store
   data[("<b>data/</b><br/>[JSON]<br/>beslutninger/, regler/")]:::store
-  fromdata["<b>extract --name migrated --from-data</b><br/>[evaluate.py, plain code]<br/>copies data/beslutninger as a run, the baseline.<br/>A different copy is replaced only with --force"]:::code
-  extract["<b>extract --model M --prompt vN</b><br/>[evaluate.py, Claude model M]<br/>1 call per selected document through the pipeline's own code,<br/>1 worker under 10 USD, else 4, --max-cost required"]:::claude
+  fromdata["<b>extract --name migrated --from-data</b><br/>[styrke/evaluate.py, plain code]<br/>copies data/beslutninger as a run, the baseline.<br/>A different copy is replaced only with --force"]:::code
+  extract["<b>extract --model M --prompt vN</b><br/>[styrke/evaluate.py, Claude model M]<br/>1 call per selected document through the pipeline's own code,<br/>1 worker under 10 USD, else 4, --max-cost required"]:::claude
   runs[("<b>eval/runs/RUN/, eval/runs.jsonl</b><br/>[JSON]<br/>each run's decisions, and a line per paid extract:<br/>its settings and usage")]:::store
-  score["<b>score</b><br/>[evaluate.py, plain code]<br/>matches each run to the key: recall, precision, over-split,<br/>coded fields, stability of two runs, paired bootstrap"]:::code
+  score["<b>score</b><br/>[styrke/evaluate.py, plain code]<br/>matches each run to the key: recall, precision, over-split,<br/>coded fields, stability of two runs, paired bootstrap"]:::code
   egate{{"<b>Extraction gate</b><br/>[evaluate.gate_needs, gate]<br/>worse of two runs no worse than the --baseline run (default migrated)<br/>moved by its slack (precision 2 points down, over-split 2 up) or than<br/>today's pipeline's worst run, whichever is looser.<br/>Stability at least that of today's pipeline's runs"}}:::guard
-  recall["<b>candidate-recall</b><br/>[evaluate.py, plain code]<br/>hides each decision from its rule: is the rule in the top K?<br/>the smallest K reaching 98 % is 15"]:::code
-  srules["<b>score-rules</b><br/>[evaluate.py, plain code]<br/>per key rule: events in its home rule, fragmentation,<br/>what is in force each year, --rules-dir for another copy"]:::code
+  recall["<b>candidate-recall</b><br/>[styrke/evaluate.py, plain code]<br/>hides each decision from its rule: is the rule in the top K?<br/>the smallest K reaching 98 % is 15"]:::code
+  srules["<b>score-rules</b><br/>[styrke/evaluate.py, plain code]<br/>per key rule: events in its home rule, fragmentation,<br/>what is in force each year, --rules-dir for another copy"]:::code
   reports[("<b>eval/reports/</b><br/>[Markdown]<br/>scores and verdicts")]:::store
   nicki(["<b>Nicki</b><br/>[Person]<br/>decides"]):::person
   consts["<b>Pipeline settings</b><br/>[constants in code]<br/>update.EXTRACT_MODEL, analyze.EXTRACT_VERSION,<br/>candidates.CANDIDATE_K, audit.SIMILARITY, the default mode"]:::code
-  mig["<b>Migration</b><br/>[update.py, see 1.1]"]:::code
+  mig["<b>Migration</b><br/>[styrke/update.py, see 1.1]"]:::code
 
   sel -->|"which documents and rules"| judges
   judges -->|"decisions and timelines"| key
@@ -401,7 +402,7 @@ flowchart TB
   styrke -->|"index page, PDF and HTM files over HTTPS"| sr
   sr -->|"system prompt, document or rules, JSON schema"| claude
   claude -->|"structured JSON, tokens, list-price cost, model"| sr
-  gha -->|"runs update.py, audit.py, checks.py, website.py"| sr
+  gha -->|"runs styrke/update.py, styrke/audit.py, styrke/checks.py, styrke/website.py"| sr
   sr -->|"commits to main or a review branch"| repo
   repo -->|"schedule, pushes, pull requests"| gha
   gha -->|"deploys _site/"| pages
@@ -443,14 +444,14 @@ flowchart LR
     wfup["<b>update.yml</b><br/>[GitHub Actions workflow]<br/>06:00 UTC on the 1st, or Run workflow<br/>with the rebuild and full boxes"]:::code
     cliup["<b>claude-cli</b><br/>[composite action]<br/>installs the pinned CLI, smoke test"]:::code
     rtup["<b>route-update.sh</b><br/>[Bash, sources pr.sh]<br/>by exit code: commit to main, or force-push<br/>auto/update and open or update the PR"]:::code
-    wfpages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>after an update that changed main, a push to main<br/>touching data/, website/, *.py or pages.yml,<br/>or Run workflow"]:::code
+    wfpages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>after an update that changed main, a push to main<br/>touching data/, website/, styrke/, pyproject.toml,<br/>uv.lock or pages.yml, or Run workflow"]:::code
     wftests["<b>tests.yml</b><br/>[GitHub Actions workflow]<br/>pytest and a render-only build<br/>on pull requests and pushes to main"]:::code
   end
 
   subgraph SYS["styrke-referater repository"]
-    update["<b>update.py</b><br/>[Python CLI]<br/>scrape, extract, consolidate, check, render"]:::code
-    checks["<b>checks.py</b><br/>[Python CLI]<br/>what data/ shows on its own, exit 1 on an error"]:::code
-    website["<b>website.py</b><br/>[Python CLI]<br/>the website from data/ alone"]:::code
+    update["<b>styrke/update.py</b><br/>[Python CLI]<br/>scrape, extract, consolidate, check, render"]:::code
+    checks["<b>styrke/checks.py</b><br/>[Python CLI]<br/>what data/ shows on its own, exit 1 on an error"]:::code
+    website["<b>styrke/website.py</b><br/>[Python CLI]<br/>the website from data/ alone"]:::code
     subgraph DATA["Committed data"]
       ref[("<b>referater/, data/manifest.json</b><br/>[PDF and HTM files, JSON]<br/>the documents with id, organ, date, sha256")]:::store
       besl[("<b>data/beslutninger/</b><br/>[JSON, one per document]<br/>decisions with quote, page, provenance")]:::store
@@ -463,7 +464,7 @@ flowchart LR
     report[("<b>run-report.md</b><br/>[Markdown, not committed]<br/>outcome, errors, history table")]:::store
   end
 
-  wfup -->|"before update.py"| cliup
+  wfup -->|"before styrke/update.py"| cliup
   cliup -->|"installs 2.1.294, one smoke-test call"| claude
   wfup -->|"runs it, with at most --allow-rebuild and --consolidate-mode full"| update
   styrke -->|"new and replaced files"| update
@@ -479,9 +480,9 @@ flowchart LR
   nicki -->|"reviews and merges"| repo
   repo -->|"triggers"| wfpages
   repo -->|"triggers"| wftests
-  wftests -->|"update.py --render-only"| update
-  wfpages -->|"uv run checks.py"| checks
-  wfpages -->|"uv run website.py"| website
+  wftests -->|"styrke/update.py --render-only"| update
+  wfpages -->|"uv run -m styrke.checks"| checks
+  wfpages -->|"uv run -m styrke.website"| website
   DATA -->|"reads"| checks
   DATA -->|"reads"| website
   website -->|"writes"| site
@@ -499,16 +500,16 @@ flowchart LR
   classDef guard fill:#8e244d,stroke:#5f1833,color:#ffffff
 ```
 
-`update.py` is the only container that asks Claude for answers in the monthly path (the action's smoke test only
+`styrke/update.py` is the only container that asks Claude for answers in the monthly path (the action's smoke test only
 checks the CLI), and it writes every data store. The website is never published from the update job itself:
-`pages.yml` rebuilds `_site/` from committed `data/` with `website.py`, and only after `checks.py` passes.
+`pages.yml` rebuilds `_site/` from committed `data/` with `styrke/website.py`, and only after `styrke/checks.py` passes.
 `regelsaet/` is committed, so its diff in a pull request shows the changed rules as text.
 
 ### 2.3 Level 2: Containers, audit and measurement
 
 ```mermaid
 flowchart LR
-  %% Sources. audit.py OPS_PATH, CACHE_DIR, REPORT. evaluate.py EVAL_DIR and its docstring.
+  %% Sources. styrke/audit.py OPS_PATH, CACHE_DIR, REPORT. styrke/evaluate.py EVAL_DIR and its docstring.
   %% audit.yml max_cost default 25; it uses .github/actions/claude-cli after its check.
 
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
@@ -522,8 +523,8 @@ flowchart LR
   end
 
   subgraph SYS["styrke-referater repository"]
-    audit["<b>audit.py</b><br/>[Python CLI]<br/>propose, apply"]:::code
-    evaluate["<b>evaluate.py</b><br/>[Python CLI, run by hand]<br/>extract, score, score-rules, candidate-recall"]:::code
+    audit["<b>styrke/audit.py</b><br/>[Python CLI]<br/>propose, apply"]:::code
+    evaluate["<b>styrke/evaluate.py</b><br/>[Python CLI, run by hand]<br/>extract, score, score-rules, candidate-recall"]:::code
     subgraph DATA["data/"]
       rules[("<b>data/beslutninger/, data/regler/, data/slugs.json</b><br/>[JSON]<br/>decisions and rules")]:::store
       regops[("<b>data/regler_ops.json</b><br/>[JSON]<br/>every op, its proposals, agreed or not,<br/>rejected answers, what apply did")]:::store
@@ -540,7 +541,7 @@ flowchart LR
   end
 
   nicki -->|"Run workflow"| wfaudit
-  nicki -->|"uv run evaluate.py"| evaluate
+  nicki -->|"uv run -m styrke.evaluate"| evaluate
   wfaudit -->|"check before any call"| rtaudit
   wfaudit -->|"after the check"| cliaudit
   cliaudit -->|"installs 2.1.294, one smoke-test call"| claude
@@ -575,32 +576,33 @@ flowchart LR
   classDef guard fill:#8e244d,stroke:#5f1833,color:#ffffff
 ```
 
-`audit.py` writes into `data/` like a monthly run, but only through a pull request; `evaluate.py` writes only under
-`eval/` and never touches `data/` or `regelsaet/`. The answer key in `eval/key/` has no writer today: the commands
-that built it were removed. `data/runs.jsonl` is appended by both the update and audit workflows, and git merges it
-by keeping both sides' lines (`.gitattributes`).
+`styrke/audit.py` writes into `data/` like a monthly run, but only through a pull request; `styrke/evaluate.py` writes
+only under `eval/` and never touches `data/` or `regelsaet/`. The answer key in `eval/key/` has no writer today: the
+commands that built it were removed. `data/runs.jsonl` is appended by both the update and audit workflows, and git
+merges it by keeping both sides' lines (`.gitattributes`).
 
 ### 2.4 Level 3: Components of the monthly run
 
 ```mermaid
 flowchart TB
-  %% Sources. The import lines and calls in update.py, analyze.py, incremental.py, checks.py and render.py.
+  %% Sources. The import lines and calls in styrke/update.py, styrke/analyze.py, styrke/incremental.py, styrke/checks.py
+  %% and styrke/render.py.
   %% analyze.ask_claude is the only place that runs the claude binary for answers. The smoke test in
   %% .github/actions/claude-cli calls the binary directly.
   %% scrape.document_text decodes .htm itself (scrape._decode_html), so BeautifulSoup consults no charset detector.
 
   subgraph ENTRY["Entry point"]
-    update["<b>update.py</b><br/>[Python CLI]<br/>runs the steps in order, rebuild guard, run log, run report"]:::code
+    update["<b>styrke/update.py</b><br/>[Python CLI]<br/>runs the steps in order, rebuild guard, run log, run report"]:::code
   end
   subgraph COMP["Pipeline components"]
-    scrape["<b>scrape.py</b><br/>[module]<br/>styrke.dk sync, manifest, document text:<br/>PDF with page markers, HTM decoded by fixed rules"]:::code
-    analyze["<b>analyze.py</b><br/>[module]<br/>extraction, full consolidation, slug history,<br/>ask_claude: the one caller of the CLI"]:::code
-    incremental["<b>incremental.py</b><br/>[module]<br/>work queue, votes, tie-break, rule updates"]:::code
-    candidates["<b>candidates.py</b><br/>[module, pure]<br/>TF-IDF ranking over Danish stems"]:::code
-    matching["<b>matching.py</b><br/>[module, pure]<br/>decision ids across re-extractions, slug carry-over"]:::code
-    checks["<b>checks.py</b><br/>[module and CLI]<br/>data problems, snapshots, history check"]:::code
-    render["<b>render.py</b><br/>[module]<br/>which version is in force each year, Markdown pages"]:::code
-    website["<b>website.py</b><br/>[module and CLI]<br/>one static page with the data embedded"]:::code
+    scrape["<b>styrke/scrape.py</b><br/>[module]<br/>styrke.dk sync, manifest, document text:<br/>PDF with page markers, HTM decoded by fixed rules"]:::code
+    analyze["<b>styrke/analyze.py</b><br/>[module]<br/>extraction, full consolidation, slug history,<br/>ask_claude: the one caller of the CLI"]:::code
+    incremental["<b>styrke/incremental.py</b><br/>[module]<br/>work queue, votes, tie-break, rule updates"]:::code
+    candidates["<b>styrke/candidates.py</b><br/>[module, pure]<br/>TF-IDF ranking over Danish stems"]:::code
+    matching["<b>styrke/matching.py</b><br/>[module, pure]<br/>decision ids across re-extractions, slug carry-over"]:::code
+    checks["<b>styrke/checks.py</b><br/>[module and CLI]<br/>data problems, snapshots, history check"]:::code
+    render["<b>styrke/render.py</b><br/>[module]<br/>which version is in force each year, Markdown pages"]:::code
+    website["<b>styrke/website.py</b><br/>[module and CLI]<br/>one static page with the data embedded"]:::code
   end
   styrke["<b>styrke.dk</b><br/>[External website]"]:::ext
   claude["<b>Claude Code CLI</b><br/>[External]"]:::ext
@@ -635,32 +637,32 @@ flowchart TB
   classDef guard fill:#8e244d,stroke:#5f1833,color:#ffffff
 ```
 
-`analyze.py` is the hub: it alone runs `claude -p`, and the other modules reach Claude only through its
-`ask_claude`. `candidates.py` and `matching.py` are pure functions, which keeps the ranking and the id rules testable
-without Claude. `checks.py` and `website.py` work out what is in force through `render.py`, so the checks, the
-Markdown pages and the website always agree. Imports of shared constants (for example `analyze.CATEGORIES` in
-`render.py`) are left out, and so is what the `checks.py` and `website.py` CLIs load on their own
-(`scrape.load_manifest`, and in `website.py` the `analyze` loaders).
+`styrke/analyze.py` is the hub: it alone runs `claude -p`, and the other modules reach Claude only through its
+`ask_claude`. `styrke/candidates.py` and `styrke/matching.py` are pure functions, which keeps the ranking and the id
+rules testable without Claude. `styrke/checks.py` and `styrke/website.py` work out what is in force through
+`styrke/render.py`, so the checks, the Markdown pages and the website always agree. Imports of shared constants (for
+example `analyze.CATEGORIES` in `styrke/render.py`) are left out, and so is what the `styrke/checks.py` and
+`styrke/website.py` CLIs load on their own (`scrape.load_manifest`, and in `styrke/website.py` the `analyze` loaders).
 
-### 2.5 Level 3: How audit.py and evaluate.py reuse the components
+### 2.5 Level 3: How styrke/audit.py and styrke/evaluate.py reuse the components
 
 ```mermaid
 flowchart TB
-  %% Sources. The import lines of audit.py and evaluate.py and the calls named on the arrows.
+  %% Sources. The import lines of styrke/audit.py and styrke/evaluate.py and the calls named on the arrows.
 
   subgraph ENTRY["Entry points"]
-    audit["<b>audit.py</b><br/>[Python CLI]<br/>propose, apply"]:::code
-    evaluate["<b>evaluate.py</b><br/>[Python CLI]<br/>extract, score, score-rules, candidate-recall"]:::code
+    audit["<b>styrke/audit.py</b><br/>[Python CLI]<br/>propose, apply"]:::code
+    evaluate["<b>styrke/evaluate.py</b><br/>[Python CLI]<br/>extract, score, score-rules, candidate-recall"]:::code
   end
   subgraph COMP["Reused components"]
-    update["<b>update.py</b><br/>[Python CLI, used as a module]<br/>pending work, run log, extraction model"]:::code
-    analyze["<b>analyze.py</b><br/>[module]<br/>ask_claude, extraction, slug history"]:::code
-    incremental["<b>incremental.py</b><br/>[module]<br/>candidate index, update prompt and merge"]:::code
-    candidates["<b>candidates.py</b><br/>[module, pure]"]:::code
-    matching["<b>matching.py</b><br/>[module, pure]"]:::code
-    checks["<b>checks.py</b><br/>[module]"]:::code
-    render["<b>render.py</b><br/>[module]"]:::code
-    website["<b>website.py</b><br/>[module]"]:::code
+    update["<b>styrke/update.py</b><br/>[Python CLI, used as a module]<br/>pending work, run log, extraction model"]:::code
+    analyze["<b>styrke/analyze.py</b><br/>[module]<br/>ask_claude, extraction, slug history"]:::code
+    incremental["<b>styrke/incremental.py</b><br/>[module]<br/>candidate index, update prompt and merge"]:::code
+    candidates["<b>styrke/candidates.py</b><br/>[module, pure]"]:::code
+    matching["<b>styrke/matching.py</b><br/>[module, pure]"]:::code
+    checks["<b>styrke/checks.py</b><br/>[module]"]:::code
+    render["<b>styrke/render.py</b><br/>[module]"]:::code
+    website["<b>styrke/website.py</b><br/>[module]"]:::code
   end
   claude["<b>Claude Code CLI</b><br/>[External]"]:::ext
 
@@ -692,8 +694,8 @@ flowchart TB
 
 Neither tool has its own Claude or matching logic: the audit reuses incremental consolidation's prompt and merge
 check for its rewrites, and the evaluation runs the pipeline's own extraction code and candidate ranking, so what it
-measures is what the pipeline does. `audit.py` also depends on `evaluate.py` for its answer-key score and on
-`update.py` to refuse an audit while a monthly run has work left.
+measures is what the pipeline does. `styrke/audit.py` also depends on `styrke/evaluate.py` for its answer-key score and
+on `styrke/update.py` to refuse an audit while a monthly run has work left.
 
 ### 2.6 Level 3: Which module owns which file
 
@@ -706,14 +708,14 @@ flowchart LR
   %% scrape._write_atomic.
 
   subgraph MOD["Modules"]
-    scrape["<b>scrape.py</b><br/>[module]"]:::code
-    analyze["<b>analyze.py</b><br/>[module]"]:::code
-    incremental["<b>incremental.py</b><br/>[module]"]:::code
-    update["<b>update.py</b><br/>[Python CLI]"]:::code
-    render["<b>render.py</b><br/>[module]"]:::code
-    website["<b>website.py</b><br/>[module and CLI]"]:::code
-    audit["<b>audit.py</b><br/>[Python CLI]"]:::code
-    evaluate["<b>evaluate.py</b><br/>[Python CLI]"]:::code
+    scrape["<b>styrke/scrape.py</b><br/>[module]"]:::code
+    analyze["<b>styrke/analyze.py</b><br/>[module]"]:::code
+    incremental["<b>styrke/incremental.py</b><br/>[module]"]:::code
+    update["<b>styrke/update.py</b><br/>[Python CLI]"]:::code
+    render["<b>styrke/render.py</b><br/>[module]"]:::code
+    website["<b>styrke/website.py</b><br/>[module and CLI]"]:::code
+    audit["<b>styrke/audit.py</b><br/>[Python CLI]"]:::code
+    evaluate["<b>styrke/evaluate.py</b><br/>[Python CLI]"]:::code
   end
   subgraph FILES["Files"]
     referater[("<b>referater/</b><br/>[PDF and HTM]")]:::store
@@ -763,10 +765,11 @@ flowchart LR
   classDef guard fill:#8e244d,stroke:#5f1833,color:#ffffff
 ```
 
-`data/regler/` has three writers: a full consolidation (`analyze.py`), an incremental one (`incremental.py`) and an
-audit's apply (`audit.py`). All three write the slug history first, so a slug is never lost if a later write fails.
-`render.py` and `website.py` write only derived output, which any run can rebuild from `data/`
-(`uv run update.py --render-only`). `candidates.py`, `matching.py` and `checks.py` write no files.
+`data/regler/` has three writers: a full consolidation (`styrke/analyze.py`), an incremental one
+(`styrke/incremental.py`) and an audit's apply (`styrke/audit.py`). All three write the slug history first, so a slug is
+never lost if a later write fails. `styrke/render.py` and `styrke/website.py` write only derived output, which any run
+can rebuild from `data/` (`uv run -m styrke.update --render-only`). `styrke/candidates.py`, `styrke/matching.py` and
+`styrke/checks.py` write no files.
 
 ---
 
@@ -774,5 +777,5 @@ audit's apply (`audit.py`). All three write the slug history first, so a slug is
 
 - The gates in 1.4 and the audit's answer-key gate only report a verdict. A person acts on it; no code reads it.
 - Effort: only the audit (`audit.EFFORT = "high"`), the answer-key judges (effort `high` in their recorded
-  provenance) and `evaluate.py extract --effort` set one. The monthly run and the migration use Claude Code's
+  provenance) and `styrke/evaluate.py extract --effort` set one. The monthly run and the migration use Claude Code's
   default, which the code does not record beyond `"default"`.

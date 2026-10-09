@@ -4,7 +4,8 @@ Full consolidation (analyze.consolidate) rewrites a whole category for one new d
 rewrites past history at random. Here the work is only what the rule files do not reflect yet (work_queue), done one
 document at a time in date order, so later documents see the rules earlier ones created:
 
-1. Candidates (candidates.py, no Claude): the CANDIDATE_K live rules whose words are closest to each new decision.
+1. Candidates (styrke/candidates.py, no Claude): the CANDIDATE_K live rules whose words are closest to each new
+   decision.
 2. Assign (Sonnet, three independent votes per document): each new decision goes to one of its candidates, to a new
    rule or to its category's one-offs (udeladt); two votes of three decide, else one Opus call does, blind to them.
    Code rejects any answer outside the candidates offered. A changed decision (same id, other content) stays in its
@@ -31,14 +32,12 @@ from collections.abc import Callable, Iterator, Mapping, Sequence
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
-import analyze
-import matching
-import render
-from analyze import (CATEGORIES, PROPOSAL_EFFECT, ClaudeError, Decision, RunBudget, StepSummary, Usage,
-                     decision_hash)
-from candidates import CANDIDATE_K, CandidateIndex, Query, RuleProfile
-from matching import FormerSlug, RuleRefs
-from scrape import Doc
+from styrke import analyze, matching, render
+from styrke.analyze import (CATEGORIES, PROPOSAL_EFFECT, ClaudeError, Decision, RunBudget, StepSummary, Usage,
+                            decision_hash)
+from styrke.candidates import CANDIDATE_K, CandidateIndex, Query, RuleProfile
+from styrke.matching import FormerSlug, RuleRefs
+from styrke.scrape import Doc
 
 log = logging.getLogger(__name__)
 
@@ -300,8 +299,8 @@ class Known:
 def known_inputs(decisions: Sequence[Decision], book: RuleBook, docs: Sequence[Doc]) -> Known:
     """The fingerprint of every decision a category's file holds, as the files reflect it: all of them when the
     category's input_hash matches its current input, with or without the decisions no file holds yet (the file
-    reflects exactly the others), else those the file stores (`inputs`, which incremental runs write). update.py takes
-    this before the extraction, so a decision whose date or organ changes in the extraction differs from it."""
+    reflects exactly the others), else those the file stores (`inputs`, which incremental runs write). styrke/update.py
+    takes this before the extraction, so a decision whose date or organ changes in the extraction differs from it."""
     organ = organs(docs)
     by_ref = {d.ref: d for d in decisions}
     items = category_items(decisions, analyze.home_categories(decisions, book.raw_rules()), organ)
@@ -370,7 +369,7 @@ def work_queue(decisions: Sequence[Decision], book: RuleBook, docs: Sequence[Doc
 
 def queue_categories(queue: Sequence[DocumentWork], decisions: Sequence[Decision], book: RuleBook) -> frozenset[str]:
     """The categories the queued work changes: those of new and changed decisions, and the files holding changed or
-    retired ids. update.py's rebuild guard counts them like the categories a full consolidation would redo."""
+    retired ids. styrke/update.py's rebuild guard counts them like the categories a full consolidation would redo."""
     by_ref = {d.ref: d for d in decisions}
     holders = book.holders()
     found: set[str] = set()
@@ -1100,8 +1099,8 @@ def consolidate(docs: list[Doc], decisions: list[Decision], settings: Settings, 
                 documents: set[str] | None = None, now: datetime | None = None,
                 known: Known | None = None) -> StepSummary:
     """Bring the rule files up to date with the decisions, one document at a time; `documents` limits the work to
-    those documents (update.py --only). `known`: what the rule files reflected when the run started (known_inputs,
-    before the extraction); taken now when not given.
+    those documents (styrke/update.py --only). `known`: what the rule files reflected when the run started
+    (known_inputs, before the extraction); taken now when not given.
 
     A document whose call fails or is skipped is left whole for the next run, and later documents go on. Categories
     whose decisions are then all reflected get the input_hash of their current input (settle), so the checks and
@@ -1186,7 +1185,7 @@ def settle(book: RuleBook, decisions: Sequence[Decision], docs: Sequence[Doc], c
             why = (f"no recorded input for {', '.join(unseen[:5])}{' …' if len(unseen) > 5 else ''}" if unseen else
                    "its input changed before this run, and nothing was queued for it")
             ctx.note(UNSEEN, f"{category} may reflect decisions that changed unseen ({why}); it stays to be "
-                             f"consolidated: run `update.py --consolidate-mode full` for it")
+                             f"consolidated: run `uv run -m styrke.update --consolidate-mode full` for it")
             continue
         stored["input_hash"], stored["inputs"] = input_hash, ctx.inputs(book, category)
         changed.add(category)

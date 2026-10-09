@@ -1,24 +1,15 @@
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#   "httpx>=0.27",
-#   "beautifulsoup4>=4.12",
-#   "pymupdf>=1.24",
-#   "snowballstemmer>=2.2",
-# ]
-# ///
 """Audit the rules' structure: merge, split, rename and move rules through a reviewed ops file.
 
-    uv run audit.py propose --max-cost 25      # Opus proposes ops per category, twice: data/regler_ops.json
-    uv run audit.py apply --max-cost 10        # the agreed ops applied to data/; merged and split rules rewritten
+    uv run -m styrke.audit propose --max-cost 25  # Opus proposes ops per category, twice: data/regler_ops.json
+    uv run -m styrke.audit apply --max-cost 10    # the agreed ops applied to data/; merged and split rules rewritten
 
 Incremental consolidation files each new decision into a rule and never merges, splits or renames rules, so a rule
-spread over several stays spread. The audit fixes the structure: code finds rules whose words are close (candidates.py,
-rule against rule), Opus proposes ops per category in two independent runs, and only the ops both runs propose are
-applied, by code: decision ids and slugs are kept, a merged-away slug becomes an alias in data/slugs.json, a split-off
-part gets a new slug. Each merged or split rule then gets one Opus call that rewrites its history's texts. An audit
-changes earlier years by design, so it always goes to a pull request (.github/workflows/audit.yml), never directly to
-the website.
+spread over several stays spread. The audit fixes the structure: code finds rules whose words are close
+(styrke/candidates.py, rule against rule), Opus proposes ops per category in two independent runs, and only the ops both
+runs propose are applied, by code: decision ids and slugs are kept, a merged-away slug becomes an alias in
+data/slugs.json, a split-off part gets a new slug. Each merged or split rule then gets one Opus call that rewrites its
+history's texts. An audit changes earlier years by design, so it always goes to a pull request
+(.github/workflows/audit.yml), never directly to the website.
 
 Every Claude answer is kept under data/audit/ with a fingerprint of what it was asked, so a cut-off or repeated command
 never pays twice for the same question; each command that calls Claude adds a line to data/runs.jsonl, from which the
@@ -42,19 +33,11 @@ from datetime import date, datetime, timezone
 from itertools import groupby
 from pathlib import Path
 
-import analyze
-import checks
-import evaluate
-import incremental
-import matching
-import render
-import scrape
-import update
-import website
-from analyze import CATEGORIES, ClaudeError, Decision, RunBudget, StepSummary, Usage
-from incremental import REWRITE, Entry, RuleBook, RuleUpdate, UpdateRejected
-from matching import FormerSlug, RuleRefs, SlugRegistry
-from scrape import Doc
+from styrke import analyze, checks, evaluate, incremental, matching, render, scrape, update, website
+from styrke.analyze import CATEGORIES, ClaudeError, Decision, RunBudget, StepSummary, Usage
+from styrke.incremental import REWRITE, Entry, RuleBook, RuleUpdate, UpdateRejected
+from styrke.matching import FormerSlug, RuleRefs, SlugRegistry
+from styrke.scrape import Doc
 
 log = logging.getLogger(__name__)
 
@@ -66,9 +49,9 @@ MODEL = "claude-opus-5-5"
 EFFORT = "high"
 RUNS = 2
 OP_KINDS = ("merge", "split", "rename", "move")
-# Rules whose TF-IDF vectors (candidates.py's profiles: title, latest text, kort_regel and the emne of each decision)
-# have at least this cosine similarity may be one rule. A propose call gets its category's rules and every rule of
-# another category this similar to one of them. Chosen on the answer key with the retired `audit.py candidates`
+# Rules whose TF-IDF vectors (styrke/candidates.py's profiles: title, latest text, kort_regel and the emne of each
+# decision) have at least this cosine similarity may be one rule. A propose call gets its category's rules and every
+# rule of another category this similar to one of them. Chosen on the answer key with the retired `audit.py candidates`
 # (commit 9f39874): at least 95% of the pairs of rules a key rule is spread over must land in one call. Before the v3
 # migration 0.1 was the highest threshold that did (97%; 0.12: 94%); on the migrated data it puts 100% into one call,
 # and 0.15 only 96.7%, one pair above the target, so 0.1 keeps a margin for about 2 USD more per audit
@@ -252,12 +235,12 @@ class Data:
 
 def unsettled(data: Data) -> list[str]:
     """Why data/ is not ready for an audit, empty when it is: the rule files must reflect every decision as it is
-    (nothing for update.py to file, no category to consolidate again) and pass the checks, or the audit would build
-    on rules that are about to change, and its own checks could not tell its errors from those already there."""
+    (nothing for styrke/update.py to file, no category to consolidate again) and pass the checks, or the audit would
+    build on rules that are about to change, and its own checks could not tell its errors from those already there."""
     reasons = []
     work = update.pending_work(data.docs)
     if work.categories:
-        reasons.append(f"decisions to file in {', '.join(sorted(work.categories))} (run `uv run update.py`)")
+        reasons.append(f"decisions to file in {', '.join(sorted(work.categories))} (run `uv run -m styrke.update`)")
     if work.outdated:
         reasons.append(f"categories consolidated with another CONSOLIDATE_VERSION, which a full consolidation "
                        f"regroups anew: {', '.join(sorted(work.outdated))} (migrate first: `{update.MIGRATE}`)")
@@ -267,9 +250,9 @@ def unsettled(data: Data) -> list[str]:
                        f"{', '.join(sorted(job.category for job in todo))}")
     errors = checks.errors(checks.find_problems(checks.Data.load(data.docs)))
     if errors:
-        reasons.append(f"{len(errors)} check errors (`uv run checks.py` lists them)")
+        reasons.append(f"{len(errors)} check errors (`uv run -m styrke.checks` lists them)")
     if work.documents:
-        log.warning("%d documents are not extracted yet (%s …); the audit goes ahead, and update.py files their "
+        log.warning("%d documents are not extracted yet (%s …); the audit goes ahead, and styrke/update.py files their "
                     "decisions into the audited rules later", len(work.documents),
                     ", ".join(sorted(work.documents)[:3]))
     return reasons
@@ -1052,12 +1035,12 @@ def settle_inputs(files: dict[str, dict], categories: Collection[str], data: Dat
 
 def verify(after: checks.Data, docs: list[Doc], old_slugs: Collection[str]) -> list[str]:
     """What must hold after an audit, read where analyze points: no check errors (history is compared by the report),
-    no work for update.py (no decision is filed again because the audit moved it), and every slug that led to a rule
-    still does (itself, or as an alias)."""
+    no work for styrke/update.py (no decision is filed again because the audit moved it), and every slug that led to a
+    rule still does (itself, or as an alias)."""
     failures = [f"check error ({p.kind}): {p.message}" for p in checks.errors(checks.find_problems(after))]
     work = update.pending_work(docs)  # incremental: its lost categories are among those to consolidate
     if work.categories or work.outdated:
-        failures.append(f"update.py would have work: {', '.join(sorted(work.categories | work.outdated))}")
+        failures.append(f"styrke/update.py would have work: {', '.join(sorted(work.categories | work.outdated))}")
     if after.pending:
         failures.append(f"categories to consolidate again: {', '.join(sorted(after.pending))}")
     live = {rule["slug"] for rule in after.raw_rules}
@@ -1113,17 +1096,17 @@ def checked(out: Restructured, data: Data, today: date) -> Checked:
 
 def apply(max_cost: float, workers: int, minutes: float = DEFAULT_TIME_BUDGET) -> int:
     if not OPS_PATH.exists():
-        raise SystemExit(f"No {OPS_PATH.name}: run `uv run audit.py propose` first")
+        raise SystemExit(f"No {OPS_PATH.name}: run `uv run -m styrke.audit propose` first")
     document = json.loads(OPS_PATH.read_text())
     if document["applied"]:
         raise SystemExit(f"{OPS_PATH.name} was applied already ({document['applied']['time']}); propose again for "
                          f"another audit")
     if not document["complete"]:
         raise SystemExit(f"{OPS_PATH.name} is incomplete (missing: {', '.join(document['missing'])}); run "
-                         f"`uv run audit.py propose` again to finish it (kept answers are not paid again)")
+                         f"`uv run -m styrke.audit propose` again to finish it (kept answers are not paid again)")
     if document["data"] != data_fingerprint():
-        raise SystemExit("data/regler/ or data/slugs.json changed since the ops were proposed; run `uv run audit.py "
-                         "propose` again (answers to unchanged questions are not paid again)")
+        raise SystemExit("data/regler/ or data/slugs.json changed since the ops were proposed; run "
+                         "`uv run -m styrke.audit propose` again (answers to unchanged questions are not paid again)")
     data = Data.load()
     if reasons := unsettled(data):
         raise SystemExit(f"Stopped before any Claude call: data/ is not ready for an audit: {'; '.join(reasons)}.")
@@ -1175,8 +1158,9 @@ def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minu
         log.exception("Applying the ops failed")
         return _not_applied(document, steps, [f"{type(exc).__name__}: {exc}"])
     # As a consolidation writes (analyze._consolidate_one): the slug history first, with every slug in it a rule
-    # takes up again, so whichever write fails every slug stays taken (a merged-away slug that is still live then is
-    # reported by checks.py and dropped by resolve_slugs); then the rule files, the final history and the ops file.
+    # takes up again, so whichever write fails every slug stays taken (a merged-away slug that is still live then
+    # is reported by styrke/checks.py and dropped by resolve_slugs); then the rule files, the final history and the
+    # ops file.
     scrape._write_atomic(analyze.SLUGS_PATH, result.taken)
     for name, content in result.files.items():
         path = analyze.RULES_DIR / name
@@ -1222,7 +1206,7 @@ def ledger(audit_id: str, command: str, steps: Mapping[str, StepSummary]) -> dic
 
 
 def log_command(command: str, audit_id: str, steps: Mapping[str, StepSummary]) -> None:
-    """One line in data/runs.jsonl for a command that called Claude, as update.py logs its runs."""
+    """One line in data/runs.jsonl for a command that called Claude, as styrke/update.py logs its runs."""
     update.record_run(dict(steps), {"command": f"audit {command}", "audit": audit_id})
 
 
@@ -1235,8 +1219,9 @@ def write_report(text: str) -> None:
 # The report's first line, which .github/scripts/route-audit.sh reads to title the pull request.
 APPLIED = "<!-- audit: applied -->"
 UNFINISHED = "<!-- audit: unfinished -->"
-CONTINUE = ("To continue, run the workflow “Audit rules” on this pull request's branch, or `uv run audit.py propose` "
-            "and then `uv run audit.py apply` on it: the answers kept in data/audit/ are not paid again.")
+CONTINUE = ("To continue, run the workflow “Audit rules” on this pull request's branch, or "
+            "`uv run -m styrke.audit propose` and then `uv run -m styrke.audit apply` on it: the answers kept in "
+            "data/audit/ are not paid again.")
 
 
 def audit_report(document: dict, steps: Mapping[str, StepSummary], command: str, *, failures: Sequence[str] = (),

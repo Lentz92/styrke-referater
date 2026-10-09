@@ -5,36 +5,36 @@ levels 1 to 3.
 
 | Step | File | Output |
 |---|---|---|
-| 1. Download new documents, read sections and dates from the index page | `scrape.py` | `referater/<organ>/`, `data/manifest.json` |
-| 2. Extract decisions per document, each with a verbatim quote and page | `analyze.py` | `data/beslutninger/<id>.json` |
-| 3. File decisions into rule histories | `incremental.py` (`analyze.py` in full mode) | `data/regler/<kategori>.json` |
-| 4. Work out which version applied in each year and write Markdown | `render.py` | `regelsaet/` |
-| 5. Embed the same rules and per-year state in one static page with search | `website.py`, `website/` | `_site/` |
+| 1. Download new documents, read sections and dates from the index page | `styrke/scrape.py` | `referater/<organ>/`, `data/manifest.json` |
+| 2. Extract decisions per document, each with a verbatim quote and page | `styrke/analyze.py` | `data/beslutninger/<id>.json` |
+| 3. File decisions into rule histories | `styrke/incremental.py` (`styrke/analyze.py` in full mode) | `data/regler/<kategori>.json` |
+| 4. Work out which version applied in each year and write Markdown | `styrke/render.py` | `regelsaet/` |
+| 5. Embed the same rules and per-year state in one static page with search | `styrke/website.py`, `website/` | `_site/` |
 
-`update.py` runs the steps in order. Step 2 reruns for a document when its file changes, or when it was extracted
-with another prompt or model; step 3 takes the decisions the rule files do not reflect yet. A new extraction prompt
-goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, where `evaluate.py extract --prompt v<n>` can measure it against the
-answer key; an extraction records the n of the prompt it was made with, so setting `EXTRACT_VERSION` to n makes it
-the pipeline's and every document due for extraction with it. After editing the consolidation prompt, bump
+`styrke/update.py` runs the steps in order. Step 2 reruns for a document when its file changes, or when it was
+extracted with another prompt or model; step 3 takes the decisions the rule files do not reflect yet. A new extraction
+prompt goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, where `styrke/evaluate.py extract --prompt v<n>` can measure it
+against the answer key; an extraction records the n of the prompt it was made with, so setting `EXTRACT_VERSION` to n
+makes it the pipeline's and every document due for extraction with it. After editing the consolidation prompt, bump
 `CONSOLIDATE_VERSION`. Either way a migration follows (see [Rebuilds and migrations](operations.md#rebuilds-and-migrations)). Each result records its
 `provenance`: the model that answered, the CLI version, a fingerprint of the prompt and schema, and the effort. Only
 the extraction's model is part of a cache key: an extraction is current only when the model in its provenance is the
 extraction model asked for by full id (an alias counts for whichever model answers).
 
-Incremental consolidation (`incremental.py`) takes the decisions the rule files do not reflect yet (new, changed or
-retired, or re-dated), one document at a time in date order. Code ranks the 15 rules whose words are closest to each
-new decision (`candidates.py`: TF-IDF over Danish stems and compound parts, as the website's search). Three Sonnet
-votes put each decision in one of those rules, in a new rule or among its category's one-offs; two of three decide,
-else Opus does. Then one Opus call per touched rule, with the minutes around each new quote, rewrites its versions
-from the new decision on: earlier versions, and every other rule, stay byte-identical (checked). A decision the call
-finds misfiled is voted on again without that rule, and misfiled twice gets a rule of its own, listed in the run
+Incremental consolidation (`styrke/incremental.py`) takes the decisions the rule files do not reflect yet (new, changed
+or retired, or re-dated), one document at a time in date order. Code ranks the 15 rules whose words are closest to each
+new decision (`styrke/candidates.py`: TF-IDF over Danish stems and compound parts, as the website's search). Three
+Sonnet votes put each decision in one of those rules, in a new rule or among its category's one-offs; two of three
+decide, else Opus does. Then one Opus call per touched rule, with the minutes around each new quote, rewrites its
+versions from the new decision on: earlier versions, and every other rule, stay byte-identical (checked). A decision the
+call finds misfiled is voted on again without that rule, and misfiled twice gets a rule of its own, listed in the run
 report. A document is written only when all its calls succeed; otherwise the next run tries it again. Known limit: a
 document dated anew only on styrke.dk can leave a category for a full consolidation (the run report says so).
 
 Decisions and rules keep their identity when Claude redoes them, so links never break. When a document is extracted
-again, a new decision that matches a previous one by where its quote stands and by its wording (`matching.py`) keeps
-its id (`<document>#<n>`); previous decisions without a match are listed under `retired`, and a number is never used
-twice. A rule's slug is its address on the website (`#regel/<slug>`) and in `regelsaet/`
+again, a new decision that matches a previous one by where its quote stands and by its wording (`styrke/matching.py`)
+keeps its id (`<document>#<n>`); previous decisions without a match are listed under `retired`, and a number is never
+used twice. A rule's slug is its address on the website (`#regel/<slug>`) and in `regelsaet/`
 (`regler/<område>.md#regel/<slug>`) and stays whatever its title (a full consolidation gives each rule the slug of
 the previous rule it shares most decisions with). `data/slugs.json` keeps every slug no rule holds any more, with the
 title and decisions it last stood for, and leads it to the rule now holding most of those decisions (or else one with
@@ -55,9 +55,9 @@ Code checks Claude's work where it can:
   decision changes, the whole rule is left out until its category is consolidated again (leaving out only that
   version could bring back a repealed rule).
 - The effect of an undecided, rejected or withdrawn proposal follows from its outcome, whatever Claude says.
-- `uv run checks.py` lists the errors and warnings `data/` shows on its own (see [Review](operations.md#review)) and exits 1 on an error;
-  `regelsaet/README.md` ends with their counts. The extraction is automatic: the minutes are always the authoritative
-  source.
+- `uv run -m styrke.checks` lists the errors and warnings `data/` shows on its own (see [Review](operations.md#review))
+  and exits 1 on an error; `regelsaet/README.md` ends with their counts. The extraction is automatic: the minutes are
+  always the authoritative source.
 
 ## The Markdown pages
 

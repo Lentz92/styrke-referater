@@ -11,9 +11,9 @@ __pycache__/
 # Built website (published by .github/workflows/pages.yml)
 _site/
 
-# The outcome of the last update.py run (the body of the review pull request)
+# The outcome of the last styrke/update.py run (the body of the review pull request)
 run-report.md
-# The outcome of the last audit.py command (the body of the audit's pull request)
+# The outcome of the last styrke/audit.py command (the body of the audit's pull request)
 audit-report.md
 
 # Replay copies of data/, written by the retired evaluate.py replay, whose code is in commit 9f39874; summaries are in

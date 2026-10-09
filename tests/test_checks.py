@@ -4,9 +4,9 @@ from datetime import date
 
 from conftest import decision, rule
 
-import render
-from analyze import decision_hash
-from checks import (
+from styrke import render
+from styrke.analyze import decision_hash
+from styrke.checks import (
     DATA_KINDS,
     SEVERITY,
     Data,
@@ -22,8 +22,8 @@ from checks import (
     unassigned_decisions,
     unreflected,
 )
-from matching import FormerSlug, SlugRegistry
-from render import build_rules
+from styrke.matching import FormerSlug, SlugRegistry
+from styrke.render import build_rules
 
 
 def _rule(slug, *versions):

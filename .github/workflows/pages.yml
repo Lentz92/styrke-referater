@@ -1,7 +1,7 @@
 name: Website
 
-# Rebuilds the site from data/ and publishes it on GitHub Pages, only from main and only when checks.py finds no
-# errors. Pushes made by the monthly update workflow use GITHUB_TOKEN and do not trigger `push`, so it is chained
+# Rebuilds the site from data/ and publishes it on GitHub Pages, only from main and only when styrke/checks.py finds
+# no errors. Pushes made by the monthly update workflow use GITHUB_TOKEN and do not trigger `push`, so it is chained
 # via workflow_run: after a successful update that pushed to main. A failed update, or one whose result went to a
 # pull request for review, leaves the site as it is.
 on:
@@ -14,7 +14,9 @@ on:
     paths:
       - "data/**"
       - "website/**"
-      - "*.py"
+      - "styrke/**"
+      - "pyproject.toml"
+      - "uv.lock"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -67,11 +69,12 @@ jobs:
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
+      # --locked: run with the versions in uv.lock, and fail if it is out of date.
       - name: Check the data
-        run: uv run checks.py  # errors fail the build, so the site stays as it was
+        run: uv run --locked -m styrke.checks  # errors fail the build, so the site stays as it was
 
       - name: Build the site
-        run: uv run website.py
+        run: uv run --locked -m styrke.website
 
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5

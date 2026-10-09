@@ -18,7 +18,7 @@ import pymupdf
 from bs4 import BeautifulSoup
 from bs4.dammit import EncodingDetector
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent  # the repository root, which holds the data folders next to this package
 PDF_ROOT = ROOT / "referater"
 DATA_DIR = ROOT / "data"
 MANIFEST = DATA_DIR / "manifest.json"

@@ -7,8 +7,8 @@ from dataclasses import replace
 import pytest
 from conftest import decision
 
-import analyze
-from analyze import ClaudeError, ModelMismatch, RunBudget, Usage, ask_claude, run_parallel
+from styrke import analyze
+from styrke.analyze import ClaudeError, ModelMismatch, RunBudget, Usage, ask_claude, run_parallel
 
 NOTHING_FOUND = {"moededato": None, "beslutninger": [], "regler": [], "udeladt": []}  # fits both steps
 

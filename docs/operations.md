@@ -8,7 +8,7 @@ Requires [uv](https://docs.astral.sh/uv/) and a logged-in Claude Code CLI (`clau
 pinned for the monthly run (see [Monthly run](#monthly-run)). No API key needed.
 
 ```bash
-uv run update.py
+uv run -m styrke.update
 ```
 
 A run downloads what is new on styrke.dk, has Claude extract the decisions of new or changed documents (Opus with
@@ -22,7 +22,7 @@ again about 25 (the migration in October 2026: 16.74 for extraction, 8.58 for co
 | Option | Use |
 |---|---|
 | `--offline` | skip styrke.dk and use the files already in `referater/` |
-| `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
+| `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `styrke/render.py`) |
 | `--only REGEX` | only extract documents whose id matches, and only consolidate the categories their decisions are in (testing); skips the rebuild guard |
 | `--consolidate-mode` | `incremental` (default): file each new decision into its rule; `full`: consolidate each category with changed decisions anew, to migrate a prompt or version change |
 | `--workers N` | parallel Claude calls (default 4) |
@@ -34,7 +34,7 @@ The models, the prompt and the effort are not options: Opus extracts and consoli
 (`update.EXTRACT_MODEL`, `CONSOLIDATE_MODEL`, `ASSIGN_MODEL`, full ids, so a call answered by another model fails),
 with extraction prompt v3 (`analyze.EXTRACT_VERSION`), at Claude Code's default effort.
 
-To preview the website, open `_site/index.html` after a run, or build only the site with `uv run website.py`. To
+To preview the website, open `_site/index.html` after a run, or build only the site with `uv run -m styrke.website`. To
 share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
 
 ### Rebuilds and migrations
@@ -49,7 +49,7 @@ the boxes to tick on GitHub and how to finish a run that is cut off.
 A new extraction prompt or model, or a new `CONSOLIDATE_VERSION`, is migrated with
 
 ```bash
-uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost 40 --time-budget 150
+uv run -m styrke.update --offline --consolidate-mode full --allow-rebuild --max-cost 40 --time-budget 150
 ```
 
 It extracts again every document extracted with another prompt or model (decision ids are carried over) and
@@ -70,11 +70,11 @@ and the cut-off run's report say exactly what to run.
 
 ### Monthly run
 
-`.github/workflows/update.yml` runs `update.py` at 06:00 UTC on the 1st of every month (or via "Run workflow" in the
-Actions tab) and commits any changes to `main`, or to a pull request when the checks find errors (see [Review](#review)). Claude
-runs on the subscription through the repository secret `CLAUDE_CODE_OAUTH_TOKEN`; the workflow refuses to run if an
-`ANTHROPIC_API_KEY` is present, since that would be billed as API usage. The token is valid for one year. To create
-or renew it:
+`.github/workflows/update.yml` runs `styrke/update.py` at 06:00 UTC on the 1st of every month (or via "Run workflow" in
+the Actions tab) and commits any changes to `main`, or to a pull request when the checks find errors (see
+[Review](#review)). Claude runs on the subscription through the repository secret `CLAUDE_CODE_OAUTH_TOKEN`; the
+workflow refuses to run if an `ANTHROPIC_API_KEY` is present, since that would be billed as API usage. The token is
+valid for one year. To create or renew it:
 
 ```bash
 claude setup-token
@@ -89,9 +89,9 @@ default. To upgrade, change the version there and run the workflow by hand; it f
 installed or answers with another model.
 
 The workflow passes no limit, so every run has the defaults: 15 USD and 75 minutes, and incremental consolidation
-unless asked otherwise (`update.py` has no model or prompt options). "Run workflow" has two boxes: "Allow a rebuild
-(--allow-rebuild)" approves the work the rebuild guard stops, and with "Consolidate in full, to migrate a prompt or
-version change (--consolidate-mode full)" ticked too it runs the migration. Within the default limits a
+unless asked otherwise (`styrke/update.py` has no model or prompt options). "Run workflow" has two boxes: "Allow a
+rebuild (--allow-rebuild)" approves the work the rebuild guard stops, and with "Consolidate in full, to migrate a prompt
+or version change (--consolidate-mode full)" ticked too it runs the migration. Within the default limits a
 re-extraction of every document (16.74 USD in the October 2026 migration) takes two runs: after the first, merge its
 review pull request if it opened one, so what it paid for reaches `main`, and run the workflow again with the same
 boxes ticked.
@@ -102,28 +102,32 @@ tokens at the next run that analyses documents. The Actions run page shows the r
 error and warning from the checks, and what changed in earlier years.
 
 `.github/workflows/pages.yml` rebuilds the website from `main` and publishes it on GitHub Pages: after a successful
-monthly update that changed `main`, on pushes that change `data/`, `website/` or the scripts, and via "Run workflow".
-It runs `uv run checks.py` first and publishes nothing when it finds an error, so the site stays as it was. It does
-not call Claude. `.github/workflows/tests.yml` runs the tests and a render-only build on every pull request and push
-to `main`.
+monthly update that changed `main`, on pushes that change `data/`, `website/`, the code in `styrke/` or its
+dependencies (`pyproject.toml`, `uv.lock`), and via "Run workflow". It runs `uv run -m styrke.checks` first and
+publishes nothing when it finds an error, so the site stays as it was. It does not call Claude.
+`.github/workflows/tests.yml` runs the tests and a render-only build on every pull request and push to `main`.
+
+The workflows run every command with `uv run --locked`: the dependency versions pinned in `uv.lock`, and a lock out of
+date with `pyproject.toml` fails the run instead of resolving anew. To upgrade them, run `uv lock --upgrade` and the
+tests, and commit `uv.lock`.
 
 ### Review
 
-`update.py` ends with the checks and writes their outcome to `run-report.md` (not committed). Errors are results the
-pipeline does not trust: a rule left out because a decision behind it changed (stale), a decision the consolidation
+`styrke/update.py` ends with the checks and writes their outcome to `run-report.md` (not committed). Errors are results
+the pipeline does not trust: a rule left out because a decision behind it changed (stale), a decision the consolidation
 neither put in a rule nor left out as a one-off (unassigned), decision ids or slugs that are missing, used twice or
 lead nowhere (identity), and a run that changes what applied in earlier years (history). The effect and date
 findings are warnings.
 
 A run updates only the rules its new or changed decisions touch, but a late decision rewrites a rule from where it
 belongs, and a full consolidation rewrites whole categories. So for every year page and every rule (rules merged into
-one, through `data/slugs.json`, count together), `update.py` compares the decision in force, the one that adopted its
-content, and its wording before and after the analysis. A rule may change from the earliest date of its own decisions
-that the run added, changed or removed, or that its last consolidation had not seen (a call that failed); a
+one, through `data/slugs.json`, count together), `styrke/update.py` compares the decision in force, the one that adopted
+its content, and its wording before and after the analysis. A rule may change from the earliest date of its own
+decisions that the run added, changed or removed, or that its last consolidation had not seen (a call that failed); a
 difference in an earlier year is an error, or a warning when only the wording changed. A history check that fails is
 an error too.
 
-| `update.py` exits | The workflow |
+| `styrke/update.py` exits | The workflow |
 |---|---|
 | 0: no errors | commits to `main` and closes a review pull request left open; the website is rebuilt |
 | 3: errors | force-pushes the result to the branch `auto/update` and opens the pull request "Monthly update needs review" with the run report as its body, or updates the open one; `main` and the website stay as they are |
@@ -135,14 +139,14 @@ review branch or pull request: every run starts from `main`, and a later one rep
 
 To review, read the errors and the history table, and check the rules that changed against the minutes (the diff of
 `regelsaet/` shows them as text). When the only errors are history, merge to accept the result: the push to `main`
-rebuilds the website (only `update.py` checks history, so merging accepts what changed there). Other errors must be
-fixed first, since the website workflow publishes nothing while `uv run checks.py` finds one: push the fix to the
-branch after running `uv run update.py --render-only` and `uv run checks.py` there, before the next monthly run
-replaces it. A rebuild or migration that was cut off is the exception: it leaves rules out (stale) until it is
-finished, so merge its pull request, which keeps what it paid for while the website stays as it was, and finish it as
-the report says (see [Rebuilds and migrations](#rebuilds-and-migrations)). Close a pull request to discard its result, its line in
-`data/runs.jsonl` included; the next monthly run tries again. GitHub does not run the tests on a pull request a
-workflow opened; close and reopen it to run them.
+rebuilds the website (only `styrke/update.py` checks history, so merging accepts what changed there). Other errors must
+be fixed first, since the website workflow publishes nothing while `uv run -m styrke.checks` finds one: push the fix to
+the branch after running `uv run -m styrke.update --render-only` and `uv run -m styrke.checks` there, before the next
+monthly run replaces it. A rebuild or migration that was cut off is the exception: it leaves rules out (stale) until it
+is finished, so merge its pull request, which keeps what it paid for while the website stays as it was, and finish it as
+the report says (see [Rebuilds and migrations](#rebuilds-and-migrations)). Close a pull request to discard its result,
+its line in `data/runs.jsonl` included; the next monthly run tries again. GitHub does not run the tests on a pull
+request a workflow opened; close and reopen it to run them.
 
 Opening the pull request needs "Allow GitHub Actions to create and approve pull requests" under Settings > Actions >
 General > Workflow permissions. The routing is `.github/scripts/route-update.sh`; the pull request plumbing it shares
@@ -152,16 +156,17 @@ with the audit's routing is in `.github/scripts/pr.sh`.
 
 Incremental consolidation files each new decision into a rule and never merges, splits or renames rules, so its
 mistakes stay: one rule spread over several (a fee's yearly confirmations filed under another fee), one rule holding
-decisions about different things, a title that no longer fits, a rule in the wrong category. The audit (`audit.py`)
-fixes the structure:
+decisions about different things, a title that no longer fits, a rule in the wrong category. The audit
+(`styrke/audit.py`) fixes the structure:
 
 ```bash
-uv run audit.py propose --max-cost 25     # Opus proposes ops, in two runs: data/regler_ops.json
-uv run audit.py apply --max-cost 10       # the agreed ops applied to data/, the pages rebuilt
+uv run -m styrke.audit propose --max-cost 25     # Opus proposes ops, in two runs: data/regler_ops.json
+uv run -m styrke.audit apply --max-cost 10       # the agreed ops applied to data/, the pages rebuilt
 ```
 
 1. Code finds rules that may be one rule, in any category: rule against rule, with the TF-IDF profiles incremental
-   consolidation ranks its candidates by (`candidates.py`), at a cosine similarity of at least `audit.SIMILARITY`.
+   consolidation ranks its candidates by (`styrke/candidates.py`), at a cosine similarity of at least
+   `audit.SIMILARITY`.
 2. Opus (`claude-opus-5-5`, effort high) reviews one category per call: its rules with every version, and in brief
    the similar rules of other categories. It answers with ops (merge, split, rename, move), each with its reason and
    the decisions it rests on. Two independent runs read the rules in different orders. Code rejects ops naming slugs
@@ -177,12 +182,12 @@ uv run audit.py apply --max-cost 10       # the agreed ops applied to data/, the
    others new slugs; a move changes the rule's file, a rename only its title. Each merged or split rule then gets one
    Opus call that rewrites its history's texts (incremental's update call, told why: `audit.AUDIT_UPDATE_SYSTEM`);
    code checks that only the texts changed. `apply` builds and checks the whole result in a copy first, and writes
-   `data/` only when it has no check errors, leaves `update.py` nothing to do and every old slug still leads to a
+   `data/` only when it has no check errors, leaves `styrke/update.py` nothing to do and every old slug still leads to a
    rule. It then replaces `data/slugs.json`, the rule files and the ops file in the order a consolidation writes
    them, each whole (a temporary file renamed over it).
 
-Run it on settled data, e.g. quarterly or after a migration: it stops while `update.py` has decisions to file or a
-category to consolidate, and a later full consolidation (a migration) regroups categories anew, undoing it. On
+Run it on settled data, e.g. quarterly or after a migration: it stops while `styrke/update.py` has decisions to file or
+a category to consolidate, and a later full consolidation (a migration) regroups categories anew, undoing it. On
 GitHub: Actions > "Audit rules" > Run workflow, optionally naming categories and the cost limit (for `propose` and
 `apply` each, default 25 USD). It never publishes: an audit changes what earlier years show by design, so its result
 always goes to a pull request on `auto/audit-<date>` (`.github/scripts/route-audit.sh`), whose body
@@ -190,10 +195,10 @@ always goes to a pull request on `auto/audit-<date>` (`.github/scripts/route-aud
 answers code rejected, what each year shows before and after for every rule that changed, the answer key's scores
 before and after, and the cost. To review, read the applied ops and check the merged and split rules against the
 minutes (the diff of `regelsaet/` shows them); merge to publish, or close to discard. Locally, the same commands leave
-the changes in the working tree. To score the rules against the answer key before and after, run `uv run evaluate.py
-score-rules` on `data/` and on a copy of an earlier revision's (`git archive REV data/regler data/beslutninger | tar
--x -C DIR`, then `--rules-dir DIR/data/regler --decisions-dir DIR/data/beslutninger`), each with its own `--report`
-name; across an audit, which leaves the decisions as they are, `--rules-dir` alone does.
+the changes in the working tree. To score the rules against the answer key before and after, run `uv run -m
+styrke.evaluate score-rules` on `data/` and on a copy of an earlier revision's (`git archive REV data/regler
+data/beslutninger | tar -x -C DIR`, then `--rules-dir DIR/data/regler --decisions-dir DIR/data/beslutninger`), each with
+its own `--report` name; across an audit, which leaves the decisions as they are, `--rules-dir` alone does.
 
 An audit can be cut off: by its cost limit, by failed calls, or by its time budget (`--time-budget`, 75 minutes by
 default; in the workflow `propose` and `apply` share it, so the result reaches its pull request within the job's 120

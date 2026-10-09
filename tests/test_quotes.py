@@ -1,8 +1,8 @@
 import pytest
 from conftest import extracted
 
-import analyze
-from analyze import DocWords, locate_quote, quote_fields
+from styrke import analyze
+from styrke.analyze import DocWords, locate_quote, quote_fields
 
 TEXT = (
     "[Side 1]\nReferat af repræsentantskabsmødet.\nPunkt 4: Forslag fra bestyrelsen om at "

@@ -7,7 +7,8 @@ A rule is described by its title, its latest text and kort_regel, and the emne o
 and tekst. The decision's category boosts the rules of that category but filters nothing: extraction categories are
 noisy, and a rule's decisions may come from more than one.
 
-Pure functions only: incremental.py builds the profiles from the rule files, evaluate.py measures the recall.
+Pure functions only: styrke/incremental.py builds the profiles from the rule files, styrke/evaluate.py measures the
+recall.
 """
 
 from __future__ import annotations
@@ -22,7 +23,7 @@ from functools import lru_cache
 import snowballstemmer
 
 # How many ranked rules the assignment offers per decision: the smallest K whose recall reaches 98 % when each
-# decision of today's rules is hidden from its rule (`evaluate.py candidate-recall`: 98.2 % at 15, 96.8 % at 10).
+# decision of today's rules is hidden from its rule (`styrke/evaluate.py candidate-recall`: 98.2 % at 15, 96.8 % at 10).
 CANDIDATE_K = 15
 # The score of a rule in the decision's own category is multiplied by 1 + CATEGORY_BOOST. Today's rules never mix
 # categories (each was consolidated per category), so the recall gate rewards any boost; this one is kept moderate so
@@ -118,7 +119,7 @@ class Query:
 class CandidateIndex:
     """TF-IDF vectors of the rules: sublinear term frequency (1 + log tf) times smoothed idf, normalised to length 1.
 
-    Built from term counts, so evaluate.py can swap one rule's counts per hidden decision without re-reading the
+    Built from term counts, so styrke/evaluate.py can swap one rule's counts per hidden decision without re-reading the
     others; the vocabulary for compound parts is the profiles' own words."""
 
     def __init__(self, counts: Mapping[str, Counter[str]], categories: Mapping[str, str], vocab: Collection[str]):
@@ -152,7 +153,7 @@ class CandidateIndex:
 
     def similar(self, slug: str) -> list[tuple[str, float]]:
         """Every other rule with the cosine similarity of its vector to this rule's, best first; no category boost
-        (audit.py looks for one rule spread over several, in any category)."""
+        (styrke/audit.py looks for one rule spread over several, in any category)."""
         own = self.vectors[slug]
         scored = [(other, sum(w * vector.get(t, 0.0) for t, w in own.items()))
                   for other, vector in self.vectors.items() if other != slug]

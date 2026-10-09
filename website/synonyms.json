@@ -1,5 +1,5 @@
 {
-  "note": "Thesaurus for the website search. Each group lists words that should find each other; a search for one also finds rules using the others (ranked a bit lower). Word forms are handled by stemming, so list base forms. Rebuild with: uv run website.py",
+  "note": "Thesaurus for the website search. Each group lists words that should find each other; a search for one also finds rules using the others (ranked a bit lower). Word forms are handled by stemming, so list base forms. Rebuild with: uv run -m styrke.website",
   "groups": [
     ["vm", "verdensmesterskab"],
     ["em", "europamesterskab"],

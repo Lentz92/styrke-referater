@@ -1,20 +1,11 @@
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#   "httpx>=0.27",
-#   "beautifulsoup4>=4.12",
-#   "pymupdf>=1.24",
-#   "snowballstemmer>=2.2",
-# ]
-# ///
 """Scores extractions and consolidations against the answer key in eval/key/, and runs the incremental
 consolidation's candidate gate.
 
-    uv run evaluate.py extract --name migrated --from-data   # data/beslutninger copied as a run (no Claude)
-    uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
-    uv run evaluate.py score --run migrated --run opus-v3-1 --run opus-v3-2   # decision scores, stability, the gate
-    uv run evaluate.py score-rules                  # rule scores of data/regler (no Claude)
-    uv run evaluate.py candidate-recall             # incremental consolidation: candidate ranking recall (no Claude)
+    uv run -m styrke.evaluate extract --name migrated --from-data   # data/beslutninger copied as a run (no Claude)
+    uv run -m styrke.evaluate extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
+    uv run -m styrke.evaluate score --run migrated --run opus-v3-1 --run opus-v3-2  # decision scores, stability, gate
+    uv run -m styrke.evaluate score-rules           # rule scores of data/regler (no Claude)
+    uv run -m styrke.evaluate candidate-recall      # incremental consolidation: candidate ranking recall (no Claude)
 
 Two extraction runs agree on only ~90% of decisions, so comparing runs cannot tell better from different: every
 change (models, prompts, consolidation) is scored against the key instead. Opus judges built it once, for the
@@ -43,16 +34,10 @@ from datetime import date, datetime, timezone
 from itertools import combinations
 from pathlib import Path
 
-import analyze
-import candidates
-import incremental
-import matching
-import render
-import scrape
-import update
-from analyze import Decision, DocWords, RunBudget, StepSummary, Usage
-from matching import Candidate
-from scrape import Doc
+from styrke import analyze, candidates, incremental, matching, render, scrape, update
+from styrke.analyze import Decision, DocWords, RunBudget, StepSummary, Usage
+from styrke.matching import Candidate
+from styrke.scrape import Doc
 
 EVAL_DIR = scrape.ROOT / "eval"
 
@@ -101,7 +86,7 @@ log = logging.getLogger("evaluate")
 def write_text(path: Path, text: str) -> None:
     """Write under eval/ only: the evaluation must never touch data/ or regelsaet/."""
     if not path.resolve().is_relative_to(EVAL_DIR.resolve()):
-        raise ValueError(f"{path} is outside {EVAL_DIR}; evaluate.py writes nowhere else")
+        raise ValueError(f"{path} is outside {EVAL_DIR}; styrke/evaluate.py writes nowhere else")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text)
 
@@ -236,7 +221,7 @@ def data_record(doc: Doc, run: str) -> dict:
     """A document's extraction in data/beslutninger, as it is, as the record of run `run`."""
     source = analyze.DECISIONS_DIR / f"{doc.id}.json"
     if not source.exists():
-        raise SystemExit(f"{doc.id} has no extraction in {analyze.DECISIONS_DIR}; run update.py first")
+        raise SystemExit(f"{doc.id} has no extraction in {analyze.DECISIONS_DIR}; run `uv run -m styrke.update` first")
     cached = read_json(source)
     if cached["sha256"] != doc.sha256:
         raise SystemExit(f"{doc.id}: the extraction in {analyze.DECISIONS_DIR} is of another version of the file")
@@ -675,7 +660,7 @@ def configuration(records: Iterable[dict]) -> Configuration | None:
 
 
 def pipeline_configuration() -> Configuration:
-    """Today's pipeline: update.py's extraction model and prompt, at Claude Code's default effort."""
+    """Today's pipeline: styrke/update.py's extraction model and prompt, at Claude Code's default effort."""
     return Configuration(update.EXTRACT_MODEL, analyze.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA),
                          "default")
 
@@ -973,7 +958,7 @@ def rules_summary(scores: list[RuleScore]) -> dict:
 
 
 def score_section(before: list[dict], after: list[dict], docs: list[Doc], decisions: list[Decision]) -> list[str]:
-    """Markdown lines for audit.py's report: the rule scores (score_rule) of two sets of rule files over today's
+    """Markdown lines for styrke/audit.py's report: the rule scores (score_rule) of two sets of rule files over today's
     decisions, and the audit's gate; empty without a key."""
     keys, soft = rule_keys(), soft_rules()
     if not keys:
@@ -984,8 +969,8 @@ def score_section(before: list[dict], after: list[dict], docs: list[Doc], decisi
     a = rules_summary([s for s in old if s.slug not in soft])
     b = rules_summary([s for s in new if s.slug not in soft])
     lines = ["## Answer key: before → after", "",
-             "evaluate.py's rules scores (score-rules) over today's decisions. Rules: pipeline rules holding the key "
-             "rule's certain events (more than one: fragmented); Found: in the rule holding most of them; Same "
+             "styrke/evaluate.py's rules scores (score-rules) over today's decisions. Rules: pipeline rules holding the "
+             "key rule's certain events (more than one: fragmented); Found: in the rule holding most of them; Same "
              "content: years whose version in force was adopted by the key's adopting event.", "",
              "| Rule | Rules | Found | Elsewhere | Missing | Same content |", "|---|--:|--:|--:|--:|--:|"]
     for o, n in zip(old, new):

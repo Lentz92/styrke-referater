@@ -7,14 +7,9 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
-import analyze  # noqa: E402
-import incremental  # noqa: E402
-import render  # noqa: E402
-import update  # noqa: E402
-from analyze import Decision, RunBudget, decision_hash  # noqa: E402
-from scrape import Doc  # noqa: E402
+from styrke import analyze, incremental, render, update
+from styrke.analyze import Decision, RunBudget, decision_hash
+from styrke.scrape import Doc
 
 _BASE = Decision(
     ref="doc#1", doc_id="doc", dato="2020-03-01", emne="Licensgebyr", kategori="okonomi", udfald="vedtaget",
@@ -146,7 +141,7 @@ class World:
                                        RunBudget(), now=NOW, known=known)
 
     def known(self) -> incremental.Known:
-        """What the rule files reflect now, as update.py takes it before the extraction."""
+        """What the rule files reflect now, as styrke/update.py takes it before the extraction."""
         return incremental.known_inputs(self.decisions(), incremental.RuleBook.load(), self.docs)
 
 
@@ -169,7 +164,7 @@ def run(world, fake_claude, monkeypatch):
     monkeypatch.delenv("GITHUB_STEP_SUMMARY", raising=False)
 
     def main(*args: str) -> None:
-        monkeypatch.setattr(sys, "argv", ["update.py", "--offline", "--workers", "1", *args])
+        monkeypatch.setattr(sys, "argv", ["styrke/update.py", "--offline", "--workers", "1", *args])
         update.main()
 
     return main

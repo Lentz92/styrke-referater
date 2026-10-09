@@ -1,14 +1,6 @@
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#   "httpx>=0.27",
-#   "beautifulsoup4>=4.12",
-#   "pymupdf>=1.24",
-# ]
-# ///
 """Build the website (published on GitHub Pages) from the data in data/.
 
-    uv run website.py     # writes _site/index.html; open it in a browser
+    uv run -m styrke.website     # writes _site/index.html; open it in a browser
 
 The page is static: website/template.html with all rules embedded as JSON. In-force state per year
 is computed here with the same logic as the Markdown pages, so both always agree.
@@ -23,11 +15,9 @@ from collections.abc import Mapping
 from datetime import date
 from pathlib import Path
 
-import analyze
-import render
-import scrape
-from analyze import Decision
-from scrape import ROOT, Doc
+from styrke import analyze, render, scrape
+from styrke.analyze import Decision
+from styrke.scrape import ROOT, Doc
 
 SRC_DIR = ROOT / "website"
 OUT_DIR = ROOT / "_site"

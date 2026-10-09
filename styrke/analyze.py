@@ -26,9 +26,9 @@ from dataclasses import dataclass, field, fields
 from datetime import date
 from pathlib import Path
 
-import matching
-from matching import Candidate, FormerSlug, LiveRule, RuleRefs, SlugRegistry
-from scrape import DATA_DIR, Doc, document_text
+from styrke import matching
+from styrke.matching import Candidate, FormerSlug, LiveRule, RuleRefs, SlugRegistry
+from styrke.scrape import DATA_DIR, Doc, document_text
 
 # Bump when a prompt or schema changes so cached results are recomputed. The pipeline extracts with
 # EXTRACT_PROMPTS[f"v{EXTRACT_VERSION}"]; bumping it to another prompt's number switches the default to that prompt.
@@ -227,7 +227,7 @@ EXTRACT_SYSTEM_V3 = _inserted_after(EXTRACT_SYSTEM_V2, "Field rules:\n- Write ev
                                     EXTRACT_SPLIT_RULE)
 
 # The extraction prompts by name, "v<n>": a result made with one records n as its version (extract_prompt). Kept
-# after the pipeline moves on, so evaluate.py can still run and score an earlier prompt.
+# after the pipeline moves on, so styrke/evaluate.py can still run and score an earlier prompt.
 EXTRACT_PROMPTS = {"v2": EXTRACT_SYSTEM_V2, "v3": EXTRACT_SYSTEM_V3}
 # The pipeline's prompt; the incremental votes quote its list of what is no decision (the answer key's judges quoted
 # v2's).
@@ -356,7 +356,7 @@ def run_extraction(doc: Doc, *, model: str, effort: str | None, budget: RunBudge
     quote; writes nothing.
 
     The one place the extraction prompt runs, so the pipeline (_extract_one, which adds ids and caches the result
-    in data/) and the evaluation (evaluate.py extract) measure the same thing. An error after the call carries
+    in data/) and the evaluation (styrke/evaluate.py extract) measure the same thing. An error after the call carries
     the call's usage (ClaudeError).
     """
     text = document_text(doc)
@@ -476,7 +476,7 @@ def _with_ids(cached: dict, path: Path) -> dict:
 
 def load_decisions(docs: list[Doc], directory: Path | None = None) -> list[Decision]:
     """All cached decisions for the given documents, in chronological and then reading order; from `directory`
-    instead of data/beslutninger when given (evaluate.py scores other extractions)."""
+    instead of data/beslutninger when given (styrke/evaluate.py scores other extractions)."""
     decisions: list[Decision] = []
     for doc in docs:
         path = (directory or DECISIONS_DIR) / f"{doc.id}.json"
@@ -775,7 +775,7 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
                 workers: int, budget: RunBudget | None = None, categories: set[str] | None = None) -> StepSummary:
     """Group decisions into rule histories, one Claude call per category whose input changed.
 
-    `categories` limits the calls to those categories (update.py --only); None means all. Categories that
+    `categories` limits the calls to those categories (styrke/update.py --only); None means all. Categories that
     fail or are skipped are retried on the next run.
     """
     RULES_DIR.mkdir(parents=True, exist_ok=True)
@@ -838,11 +838,11 @@ def home_categories(decisions: Iterable[Decision], raw_rules: Iterable[dict]) ->
     """Ref -> the category a decision is consolidated in: that of the rule holding it while that rule's version still
     matches the decision (version_matches), else its own kategori.
 
-    Incremental consolidation (incremental.py) may file a decision under a rule of another category; a full
+    Incremental consolidation (styrke/incremental.py) may file a decision under a rule of another category; a full
     consolidation then takes it with that rule's category, so it is never consolidated in two categories and held by
     two rules. A decision that changed since (a re-extraction may give it another kategori, which the fingerprint
-    covers) goes to its own category, as it always has. A decision two rules hold (an error checks.py reports) counts
-    with the first in category order."""
+    covers) goes to its own category, as it always has. A decision two rules hold (an error styrke/checks.py reports)
+    counts with the first in category order."""
     by_ref = {d.ref: d for d in decisions}
     holder: dict[str, str] = {}
     for raw in sorted(raw_rules, key=lambda r: category_order(r["kategori"])):

@@ -1,4 +1,4 @@
-"""The audit (audit.py) against the fake `claude` from conftest.py.
+"""The audit (styrke/audit.py) against the fake `claude` from conftest.py.
 
 Calls run with one worker, so the fake answers them in order: two propose runs per category with rules (in category
 order), the title choice, then one text rewrite per merged or split rule (merges first)."""
@@ -9,17 +9,9 @@ from pathlib import Path
 import pytest
 from conftest import extracted, rule, section
 
-import analyze
-import audit
-import checks
-import evaluate
-import incremental
-import render
-import scrape
-import update
-import website
-from incremental import UpdateRejected
-from matching import FormerSlug, SlugRegistry
+from styrke import analyze, audit, checks, evaluate, incremental, render, scrape, update, website
+from styrke.incremental import UpdateRejected
+from styrke.matching import FormerSlug, SlugRegistry
 
 
 @pytest.fixture
@@ -316,7 +308,7 @@ def test_apply_merges_splits_moves_and_renames_and_keeps_every_link(proposed, fa
     assert world.rule("okonomi", "startgebyr")["titel"] == "Startgebyr ved stævner"
     assert world.rule("okonomi", "startgebyr")["versioner"][0].get("updated") is None  # renamed, not rewritten
 
-    # No work for update.py, no check error, and every old slug leads to a rule.
+    # No work for styrke/update.py, no check error, and every old slug leads to a rule.
     assert update.pending_work(world.docs).categories == frozenset()
     assert analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs}) == []
     assert checks.errors(checks.find_problems(checks.Data.load(world.docs))) == []

@@ -4,7 +4,7 @@ import bs4.dammit
 import httpx
 import pytest
 
-import scrape
+from styrke import scrape
 
 URL = "https://filer.styrke.dk/referater/rep2024.pdf"
 UPPER = URL[:-4] + ".PDF"

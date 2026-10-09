@@ -5,10 +5,11 @@
 #                          holds answers already paid for, which a new audit's branch of the same day would overwrite)
 #                          or when the month ends within two days (the monthly update runs on the 1st, and an open
 #                          audit pull request conflicts with it in data/regler/).
-#   route-audit.sh route   after `uv run audit.py propose` and `apply`, finished or cut off: commit everything they
-#                          changed (the ops file, the answers kept in data/audit/, data/runs.jsonl, and once applied
-#                          data/regler/, data/slugs.json and regelsaet/) to auto/audit-<date> and open its pull request
-#                          into the branch the audit ran on, or update the open one, with audit-report.md as the body.
+#   route-audit.sh route   after `uv run -m styrke.audit propose` and `apply`, finished or cut off: commit everything
+#                          they changed (the ops file, the answers kept in data/audit/, data/runs.jsonl, and once
+#                          applied data/regler/, data/slugs.json and regelsaet/) to auto/audit-<date> and open its pull
+#                          request into the branch the audit ran on, or update the open one, with audit-report.md as
+#                          the body.
 #
 # An audit changes earlier years by design, so it is never pushed to the branch it ran on: merging the pull request
 # publishes it. A run on an auto/audit-* branch itself (finishing a cut-off audit, whose kept answers are on that
@@ -19,8 +20,8 @@ set -euo pipefail
 source "$(dirname "${BASH_SOURCE[0]}")/pr.sh"
 
 mode=${1:?usage: route-audit.sh check|route}
-report=audit-report.md  # audit.py's REPORT
-applied_marker="<!-- audit: applied -->"  # audit.py's APPLIED
+report=audit-report.md  # audit.REPORT
+applied_marker="<!-- audit: applied -->"  # audit.APPLIED
 today=${AUDIT_TODAY:-$(date -u +%Y-%m-%d)}
 
 current=$(git rev-parse --abbrev-ref HEAD)
@@ -80,6 +81,6 @@ git commit -q -m "$title"
 git push -q --force origin "HEAD:refs/heads/$review_branch"
 
 body=$(mktemp)
-pr_body "$report" "data/regler_ops.json has every op." "audit.py wrote no report; the run's log has what it did." \
+pr_body "$report" "data/regler_ops.json has every op." "styrke/audit.py wrote no report; the run's log has what it did." \
   > "$body"
 open_or_update_pr "$review_branch" "$base" "$title" "$body"

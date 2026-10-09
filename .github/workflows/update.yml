@@ -25,7 +25,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 120  # update.py starts no new Claude calls after 75 minutes
+    timeout-minutes: 120  # styrke/update.py starts no new Claude calls after 75 minutes
     env:
       DISABLE_AUTOUPDATER: "1"  # keeps the CLI at the version .github/actions/claude-cli pins
     steps:
@@ -45,13 +45,14 @@ jobs:
         run: |
           # Exit code 0: publish; 3: the checks found errors, so the result goes to a pull request; else the run
           # failed. Record it instead of stopping here, so the next step can route the result. The monthly run
-          # passes no option: it consolidates incrementally (update.py's default); a full one migrates a prompt or
-          # version change, with the rebuild allowed.
+          # passes no option: it consolidates incrementally (styrke/update.py's default); a full one migrates a prompt
+          # or version change, with the rebuild allowed.
+          # --locked: run with the versions in uv.lock, and fail if it is out of date.
           args=()
           if [ "$REBUILD" = "true" ]; then args+=(--allow-rebuild); fi
           if [ "$FULL" = "true" ]; then args+=(--consolidate-mode full); fi
           set +e
-          uv run update.py "${args[@]}"
+          uv run --locked -m styrke.update "${args[@]}"
           code=$?
           set -e
           echo "code=$code" >> "$GITHUB_OUTPUT"
@@ -63,11 +64,11 @@ jobs:
           CODE: ${{ steps.update.outputs.code }}
         run: bash .github/scripts/route-update.sh "$CODE"
 
-      - name: Fail when update.py failed
+      - name: Fail when styrke/update.py failed
         # After the routing: partial results are valid cache, kept for the next run when the checks pass.
         if: steps.update.outputs.code != '0' && steps.update.outputs.code != '3'
         env:
           CODE: ${{ steps.update.outputs.code }}
         run: |
-          echo "::error::update.py failed (exit code $CODE); see its log above."
+          echo "::error::styrke/update.py failed (exit code $CODE); see its log above."
           exit 1

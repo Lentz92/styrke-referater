@@ -1,4 +1,4 @@
-"""Incremental consolidation (incremental.py, candidates.py) against the fake `claude` from conftest.py.
+"""Incremental consolidation (styrke/incremental.py, styrke/candidates.py) against the fake `claude` from conftest.py.
 
 Calls run with one worker, so the fake answers them in order: three votes, a tie-break when the votes split, then
 one update per touched rule (existing rules by category and slug, then new rules)."""
@@ -10,15 +10,11 @@ from datetime import datetime
 import pytest
 from conftest import extracted, rule, section
 
-import analyze
-import candidates
-import checks
-import incremental
-import update
-from analyze import decision_hash
-from candidates import CandidateIndex, Query, RuleProfile
-from incremental import NEW, ONE_OFF, Choice
-from matching import FormerSlug, SlugRegistry
+from styrke import analyze, candidates, checks, incremental, update
+from styrke.analyze import decision_hash
+from styrke.candidates import CandidateIndex, Query, RuleProfile
+from styrke.incremental import NEW, ONE_OFF, Choice
+from styrke.matching import FormerSlug, SlugRegistry
 
 SONNET, OPUS = "claude-sonnet-5-5", "claude-opus-5-5"
 
@@ -341,7 +337,7 @@ def test_a_category_left_for_a_full_consolidation_is_listed_in_the_run_report(wo
     run()
     report = (world.root / "run-report.md").read_text()
     assert f"## {incremental.UNSEEN}: 1\n\n- okonomi may reflect decisions that changed unseen" in report
-    assert "run `update.py --consolidate-mode full` for it" in report
+    assert "run `uv run -m styrke.update --consolidate-mode full` for it" in report
 
 
 def test_the_run_report_lists_what_a_step_asks_to_have_looked_at():
@@ -474,7 +470,7 @@ def test_a_decision_filed_under_another_categorys_rule_is_never_consolidated_twi
 
 
 def test_a_redated_document_reaches_its_rules_although_its_decisions_did_not_change(world, fake_claude):
-    known = world.known()  # update.py takes it before the extraction
+    known = world.known()  # styrke/update.py takes it before the extraction
     world.document("rep2015", "2016-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
                    extracted("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))  # re-read: another date only
     fake_claude.answers(_update("rep2015#1", "rep2020#1"), _update("rep2015#2"))

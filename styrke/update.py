@@ -1,26 +1,17 @@
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#   "httpx>=0.27",
-#   "beautifulsoup4>=4.12",
-#   "pymupdf>=1.24",
-#   "snowballstemmer>=2.2",
-# ]
-# ///
 """Bring the DSF rule overview up to date.
 
-    uv run update.py                  # download new minutes, analyse what changed, render regelsaet/
-    uv run update.py --offline        # skip styrke.dk, use the files already in referater/
-    uv run update.py --render-only    # only rebuild the Markdown and the website from data/
+    uv run -m styrke.update                  # download new minutes, analyse what changed, render regelsaet/
+    uv run -m styrke.update --offline        # skip styrke.dk, use the files already in referater/
+    uv run -m styrke.update --render-only    # only rebuild the Markdown and the website from data/
 
-Steps: 1) scrape.py downloads new documents and writes data/manifest.json.
-2) analyze.py asks Claude (via the `claude` CLI) to extract decisions from new or changed
+Steps: 1) styrke/scrape.py downloads new documents and writes data/manifest.json.
+2) styrke/analyze.py asks Claude (via the `claude` CLI) to extract decisions from new or changed
 documents and to consolidate them per category into rule histories; both are cached in data/.
 A run that calls Claude adds a line with its tokens, cost and models to data/runs.jsonl.
-3) checks.py checks the result, including what the analysis changed in the past; the outcome goes to
+3) styrke/checks.py checks the result, including what the analysis changed in the past; the outcome goes to
 run-report.md and the GitHub step summary.
-4) render.py writes regelsaet/<year>.md, regelsaet/regler/<area>.md and regelsaet/README.md.
-5) website.py writes the website to _site/ (published on GitHub Pages by .github/workflows/pages.yml).
+4) styrke/render.py writes regelsaet/<year>.md, regelsaet/regler/<area>.md and regelsaet/README.md.
+5) styrke/website.py writes the website to _site/ (published on GitHub Pages by .github/workflows/pages.yml).
 
 Exit codes, which the monthly workflow routes on: 0 the checks passed, publish; 3 the checks found errors, the
 data is written but must be reviewed in a pull request; 1 the run failed (the checks passed, so its partial
@@ -40,14 +31,9 @@ from datetime import date, datetime, timezone
 from itertools import groupby
 from pathlib import Path
 
-import analyze
-import checks
-import incremental
-import render
-import scrape
-import website
-from analyze import StepSummary
-from scrape import Doc
+from styrke import analyze, checks, incremental, render, scrape, website
+from styrke.analyze import StepSummary
+from styrke.scrape import Doc
 
 # The models the pipeline calls, each at Claude Code's default effort (effort None); it extracts with the prompt of
 # analyze.EXTRACT_VERSION.
@@ -55,8 +41,8 @@ EXTRACT_MODEL = "claude-opus-5-5"
 CONSOLIDATE_MODEL = "claude-opus-5-5"  # a full consolidation; in incremental mode, tie-breaks and rule updates
 ASSIGN_MODEL = "claude-sonnet-5-5"  # incremental mode: the votes on which rule a new decision belongs to
 # How rule files are brought up to date: "incremental" (the default) files each new decision into its rule and leaves
-# the others as they are (incremental.py); "full" consolidates each changed category anew (analyze.consolidate), which
-# migrates the rules after a new extraction or consolidation prompt, or a new CONSOLIDATE_VERSION.
+# the others as they are (styrke/incremental.py); "full" consolidates each changed category anew (analyze.consolidate),
+# which migrates the rules after a new extraction or consolidation prompt, or a new CONSOLIDATE_VERSION.
 CONSOLIDATE_MODES = ("incremental", "full")
 DEFAULT_CONSOLIDATE_MODE = "incremental"
 # A migration (a full consolidation with --allow-rebuild) extracts every document again after a new extraction
@@ -65,7 +51,7 @@ DEFAULT_CONSOLIDATE_MODE = "incremental"
 MIGRATION_MAX_COST = 40
 MIGRATION_TIME_BUDGET = 150
 # The command that migrates: a full consolidation with --allow-rebuild, offline, with the migration's limits.
-MIGRATE = (f"uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost {MIGRATION_MAX_COST} "
+MIGRATE = (f"uv run -m styrke.update --offline --consolidate-mode full --allow-rebuild --max-cost {MIGRATION_MAX_COST} "
            f"--time-budget {MIGRATION_TIME_BUDGET}")
 RUNS_LOG = scrape.DATA_DIR / "runs.jsonl"
 # More documents than this to extract means a new EXTRACT_VERSION or lost data, not new minutes.
@@ -381,7 +367,7 @@ def append_run_log(path: Path, steps: dict[str, StepSummary], cli: str, now: dat
 
 
 def step_json(step: StepSummary) -> dict:
-    """One step's Claude usage as a line of a run log stores it (also evaluate.py's eval/runs.jsonl)."""
+    """One step's Claude usage as a line of a run log stores it (also styrke/evaluate.py's eval/runs.jsonl)."""
     usage = step.usage
     return {
         "calls": step.calls,
@@ -396,7 +382,7 @@ def step_json(step: StepSummary) -> dict:
 
 
 def step_summary(steps: dict[str, StepSummary], problem_counts: Counter[str]) -> str:
-    """Markdown with the same numbers as data/runs.jsonl, plus the counts from checks.py."""
+    """Markdown with the same numbers as data/runs.jsonl, plus the counts from styrke/checks.py."""
     rows = [
         "| Step | Calls | Failed | Skipped | Tokens in | of which cached | Tokens out | USD (list price) | Models |",
         "|---|--:|--:|--:|--:|--:|--:|--:|---|",

@@ -12,7 +12,7 @@ Markdown starts at [regelsaet/README.md](regelsaet/README.md).
 Requires [uv](https://docs.astral.sh/uv/) and a logged-in Claude Code CLI (`claude`); no API key needed.
 
 ```bash
-uv run update.py
+uv run -m styrke.update
 ```
 
 downloads what is new on styrke.dk, has Claude extract and file its decisions, runs the checks and writes
@@ -20,8 +20,11 @@ downloads what is new on styrke.dk, has Claude extract and file its decisions, r
 pull request when the checks find errors.
 
 ```bash
-uv run --with-requirements tests/requirements.txt pytest
+uv run pytest
 ```
+
+runs the tests. The code is the package `styrke/`; its dependencies are declared in `pyproject.toml` and pinned in
+`uv.lock`, which `uv run` installs into `.venv/`.
 
 ## Documentation
 
@@ -33,5 +36,5 @@ uv run --with-requirements tests/requirements.txt pytest
 - [Answer key and measurements](eval/README.md): how the pipeline's choices were measured, against an answer key
   judged once by Opus.
 
-`DSF_Generelt_Regelsaet.docx` and `DSF_Verificeringsrapport.docx` are the earlier manual analysis (March 2026), kept
-for reference.
+`docs/DSF_Generelt_Regelsaet.docx` and `docs/DSF_Verificeringsrapport.docx` are the earlier manual analysis (March
+2026), kept for reference.

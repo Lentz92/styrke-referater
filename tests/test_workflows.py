@@ -11,9 +11,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-import analyze
-import audit
-import update
+from styrke import analyze, audit, update
 
 ROOT = Path(__file__).resolve().parent.parent
 UPDATE_SCRIPT = ROOT / ".github" / "scripts" / "route-update.sh"
@@ -112,7 +110,7 @@ class Repo:
 
     def route(self, code: int, data: str | None = '{"new": 1}', report: str | None = "# Report\n",
               branch: str = "main", race: bool = False) -> subprocess.CompletedProcess:
-        """A run like the workflow's: a fresh checkout of the branch, update.py's changes, then the script."""
+        """A run like the workflow's: a fresh checkout of the branch, styrke/update.py's changes, then the script."""
         work = self.clone(branch)
         if data is not None:
             (work / "data.json").write_text(data + "\n")
@@ -300,13 +298,21 @@ def test_both_workflows_can_run_the_cli_action():
         assert _in_order(job, checkout, CLI_ACTION), name
 
 
+def test_every_workflow_runs_the_locked_dependencies():
+    """uv.lock as committed, so a lock out of date with pyproject.toml fails a run instead of resolving anew."""
+    for path in (ROOT / ".github" / "workflows").glob("*.yml"):
+        for job in yaml.safe_load(path.read_text())["jobs"].values():
+            for line in (line for step in job["steps"] for line in step.get("run", "").splitlines()):
+                assert "uv run" not in line or "uv run --locked " in line, (path.name, line)
+
+
 def _run_step(tmp_path, step: dict, uv_code: int, **env: str) -> list[str]:
-    """Run a step's script as GitHub does, with a fake uv that exits with `uv_code` (or $PROPOSE_CODE for `audit.py
-    propose`); return the uv commands it ran."""
+    """Run a step's script as GitHub does, with a fake uv that exits with `uv_code` (or $PROPOSE_CODE for the audit's
+    propose); return the uv commands it ran."""
     bin_dir = tmp_path / "bin"
     bin_dir.mkdir()
     (bin_dir / "uv").write_text(f'#!/bin/sh\necho "$*" >> {tmp_path}/uv.log\n'
-                                f'[ "$3" = propose ] && exit "$PROPOSE_CODE"\nexit {uv_code}\n')
+                                f'case " $* " in *" propose "*) exit "$PROPOSE_CODE" ;; esac\nexit {uv_code}\n')
     (bin_dir / "uv").chmod(0o755)
     script = tmp_path / "step.sh"
     script.write_text(step["run"])
@@ -322,7 +328,7 @@ def test_the_monthly_run_passes_the_ticked_boxes_and_no_limits(tmp_path, rebuild
     """A scheduled run has no inputs; a manual one passes its boxes, and its exit code is recorded for the routing."""
     step = _step(_job(_workflow("update.yml")), "update")
     assert (step["env"]["REBUILD"], step["env"]["FULL"]) == ("${{ inputs.rebuild }}", "${{ inputs.full }}")
-    assert _run_step(tmp_path, step, 3, REBUILD=rebuild, FULL=full) == [f"run update.py{options}"]
+    assert _run_step(tmp_path, step, 3, REBUILD=rebuild, FULL=full) == [f"run --locked -m styrke.update{options}"]
     assert (tmp_path / "output").read_text() == "code=3\n"
 
 
@@ -355,7 +361,7 @@ TODAY = "2026-10-09"
 
 def _route_audit(repo: Repo, mode: str, branch: str = "main", today: str = TODAY, data: str | None = None,
                  report: str | None = None, files: dict[str, str | None] | None = None) -> subprocess.CompletedProcess:
-    """route-audit.sh in a fresh checkout of `branch`, after audit.py wrote `data`, `report` and `files` (None:
+    """route-audit.sh in a fresh checkout of `branch`, after styrke/audit.py wrote `data`, `report` and `files` (None:
     removed)."""
     work = repo.clone(branch)
     if data is not None:
@@ -400,8 +406,9 @@ def test_the_workflow_applies_a_complete_proposal_within_the_time_left(tmp_path,
     step = _step(_job(_workflow("audit.yml")), "audit")
     calls = _run_step(tmp_path, step, 0, MAX_COST="25", CATEGORIES="okonomi,dommere", TIME_BUDGET=budget,
                       PROPOSE_CODE=str(propose_code))
-    assert calls[0] == f"run audit.py propose --max-cost 25 --time-budget {budget} --categories okonomi,dommere"
-    assert calls[1:] == (["run audit.py apply --max-cost 25 --time-budget 75"] if applied else [])
+    assert calls[0] == (f"run --locked -m styrke.audit propose --max-cost 25 --time-budget {budget} "
+                        f"--categories okonomi,dommere")
+    assert calls[1:] == (["run --locked -m styrke.audit apply --max-cost 25 --time-budget 75"] if applied else [])
     assert (tmp_path / "output").read_text() == f"code={code}\n"
 
 
@@ -471,7 +478,7 @@ def test_an_unfinished_audit_commits_what_it_paid_for_and_no_rule(repo):
 
 @needs_jq
 @pytest.mark.parametrize(("report", "ending"), [
-    (None, "audit.py wrote no report; the run's log has what it did.\n"),
+    (None, "styrke/audit.py wrote no report; the run's log has what it did.\n"),
     ("".join(f"- op {i}\n" for i in range(10_000)), "The report is cut short here; data/regler_ops.json has every op.\n")])
 def test_an_audit_pull_request_says_where_a_missing_or_long_report_is(repo, report, ending):
     result = _route_audit(repo, "route", data='{"audited": 1}', report=report)

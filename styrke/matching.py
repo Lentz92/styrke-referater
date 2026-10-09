@@ -1,7 +1,7 @@
 """Identity across Claude runs: which decision of a re-extraction is which earlier one, and which rule of a
 re-consolidation keeps which earlier rule's slug.
 
-Pure functions only: analyze.py reads the files and stores the result.
+Pure functions only: styrke/analyze.py reads the files and stores the result.
 """
 
 from __future__ import annotations
@@ -294,7 +294,7 @@ def successor(former: FormerSlug, live: Sequence[LiveRule], live_ids: Collection
     4. none: retired, and tried again after every consolidation.
 
     Step 2 does not keep a target that holds none of the decisions while some of them still exist: they went to
-    no rule (one-offs now), so nothing supports the pointer, and checks.py would report it.
+    no rule (one-offs now), so nothing supports the pointer, and styrke/checks.py would report it.
     """
     rule = holder(former.refs, live)
     if rule is not None:
