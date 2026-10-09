@@ -1,11 +1,24 @@
 {
  "doc_id": "elite08032022",
  "sha256": "e2511d6c38fbb31e78ba6c2b5085fc47e706a6418da931afd630876374981870",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2022-03-08",
  "next_number": 4,
- "retired": [],
+ "retired": [
+  {
+   "id": "elite08032022#3",
+   "emne": "Afmelding fra VM bænkpres ved usikkerhed om sikkerhed",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "elite08032022#1",
@@ -15,8 +28,8 @@
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Egenbetaling for landsholdsatleter i 2022: europæiske destinationer A-krav 1500 kr. og B-krav 2000 kr.; oversøiske destinationer A-krav 2000 kr. og B-krav 2500 kr. Ingen egenbetaling til World Games og VM i Viborg.",
-   "citat": "Europæiske destinationer:  A-krav kr. 1500,00 - B-krav kr. 2000,00\nOversøiske destinationer:  A-krav kr. 2000,00 - B-krav kr. 2500,00",
+   "tekst": "Landsholdsatleters egenbetaling til internationale stævner i 2022 er 1.500 kr. ved A-krav og 2.000 kr. ved B-krav til europæiske destinationer og 2.000 kr. ved A-krav og 2.500 kr. ved B-krav til oversøiske destinationer. Der er ingen egenbetaling til World Games og VM i Viborg.",
+   "citat": "Europæiske destinationer:  A-krav kr. 1500,00 - B-krav kr. 2000,00\nOversøiske destinationer:  A-krav kr. 2000,00 - B-krav kr. 2500,00\nWorld Games: Ingen egenbetaling\nVM i Viborg: Ingen egenbetaling",
    "side": 2,
    "stemmer": null,
    "gaelder_fra": "2022-01-01",
@@ -27,13 +40,13 @@
   },
   {
    "id": "elite08032022#2",
-   "emne": "Frist for betaling af egenbetaling",
+   "emne": "Betalingsfrist for egenbetaling til internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Egenbetalinger, herunder ekstraomkostninger ved forlængelse af den af DSF planlagte rejse, skal være DSF i hænde senest 10 dage før final nomination.",
+   "tekst": "Egenbetaling til internationale stævner skal være DSF i hænde senest 10 dage før final nomination. Det gælder også ekstraomkostninger ved forlængelse af den rejse, DSF har planlagt.",
    "citat": "Egenbetalinger, herunder ekstraomkostninger ved forlængelse af den af DSF planlagte rejse SKAL \nvære DSF i hænde SENEST 10 dage før final nomination.",
    "side": 2,
    "stemmer": null,
@@ -41,24 +54,6 @@
    "gaelder_til": "2022-12-31",
    "citat_fundet": true,
    "citat_pos": 306,
-   "citat_side": 2
-  },
-  {
-   "id": "elite08032022#3",
-   "emne": "Afmelding fra VM bænkpres ved usikkerhed om sikkerhed",
-   "kategori": "landshold",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Atleter, der ikke er trygge ved at deltage i VM bænkpres i Kazakhstan og vælger at melde fra, bliver ikke sanktioneret.",
-   "citat": "atleter som ikke er trygge ved, at deltage og vælger, at melde fra vil ikke blive sanktioneret.",
-   "side": 2,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": "2022-12-31",
-   "citat_fundet": true,
-   "citat_pos": 250,
    "citat_side": 2
   }
  ]

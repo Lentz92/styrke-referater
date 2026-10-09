@@ -1,8 +1,14 @@
 {
  "kategori": "organisation",
  "version": 7,
- "input_hash": "b074f76db0a3167bc2f6ea9222e3568203f82962f4f038d40ee6a591dafd2262",
- "model": "opus",
+ "input_hash": "f77373d18a5528001e7d7e3e119a65595e3220f1ff0d22b106e9bce31515b6db",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fb1d4e4f83bc",
+  "effort": "default"
+ },
  "regler": [
   {
    "titel": "Godkendelse af kontakt til TV-medier",
@@ -14,9 +20,25 @@
      "ref": "refbest_11012008#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "TV-kontakt og indslag kræver forudgående godkendelse",
-     "kort_regel": "medieudvalgsformand godkender al TV-kontakt for medlemmer og løftere",
-     "dhash": "b3095525677e"
+     "kort": "medieudvalgsformand skal forhåndsgodkende al TV-kontakt",
+     "kort_regel": "medieudvalgsformand godkender TV-kontakt og indhold for alle medlemmer",
+     "dhash": "f5aa633d9588"
+    }
+   ]
+  },
+  {
+   "titel": "Honorering af bestyrelsen",
+   "slug": "honorering-af-bestyrelsen",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_05122009#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "frivillig bestyrelse fastholdt, kun udgiftsdækning",
+     "kort_regel": "bestyrelsen ulønnet, får dækket udgifter",
+     "dhash": "7ed10a6788c7"
     }
    ]
   },
@@ -24,60 +46,44 @@
    "titel": "Vedtægternes § 5",
    "slug": "vedtægternes-5",
    "vigtig": true,
-   "note": "Indholdet af forslaget fremgår ikke, og der er ingen kendt afgørelse.",
+   "note": null,
    "versioner": [
-    {
-     "ref": "refbest_21012010#2",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "bestyrelsen udarbejder ændringsforslag til § 5",
-     "kort_regel": null,
-     "dhash": "1531023cee82"
-    },
     {
      "ref": "refbest_28022010#7",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "bestyrelsen fremsætter forslag til § 5; resten til ad hoc-udvalg",
+     "kort": "bestyrelsen foreslår ændring af § 5 til repræsentantskabet",
      "kort_regel": null,
-     "dhash": "86c6066101f4"
+     "dhash": "b1b9187ac948"
     }
    ]
   },
   {
-   "titel": "Tidspunkt for repræsentantskabsmøde",
+   "titel": "Tidspunkt og indkaldelse til repræsentantskabsmødet",
    "slug": "tidspunkt-for-repræsentantskabsmøde",
    "vigtig": true,
    "note": null,
    "versioner": [
-    {
-     "ref": "refbest_21012010#4",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "bestyrelsen varsler forslag om ny mødedato",
-     "kort_regel": null,
-     "dhash": "096347ed6bb1"
-    },
     {
      "ref": "refbest_28022010#4",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår møde inden udgangen af april",
      "kort_regel": null,
-     "dhash": "e65848e6d486"
+     "dhash": "f3545b07e71c"
     },
     {
      "ref": "rep2010#1",
      "effekt": "aendret",
-     "tekst": "Repræsentantskabsmødet i DSF afholdes inden udgangen af marts i stedet for på en fast dag (tidligere anden søndag i marts).",
-     "kort": "fra anden søndag i marts til inden udgangen af marts",
-     "kort_regel": "afholdes inden udgangen af marts",
-     "dhash": "59e4b38013e4"
+     "tekst": "Repræsentantskabsmødet har ikke en fast dato, men skal være afholdt inden udgangen af marts. Indkaldelsen skal ske senest 6 uger før mødet.",
+     "kort": "fast dato erstattet af inden udgangen af marts",
+     "kort_regel": "møde inden udgangen af marts, indkaldelse 6 uger før",
+     "dhash": "7111cb7f074c"
     }
    ]
   },
   {
-   "titel": "Eliteudvalgets mødefrekvens",
+   "titel": "Eliteudvalgets mødeform og mødefrekvens",
    "slug": "eliteudvalgets-mødefrekvens",
    "vigtig": false,
    "note": null,
@@ -87,45 +93,29 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "4 møder om året",
-     "kort_regel": "4 eliteudvalgsmøder om året",
-     "dhash": "63889cedda3e"
+     "kort_regel": "4 møder om året",
+     "dhash": "460de343bb32"
     },
     {
      "ref": "elite29062011#5",
      "effekt": "aendret",
-     "tekst": "Eliteudvalget afholder møder hver 3.-4. måned.",
-     "kort": "møder hver 3-4 måned",
-     "kort_regel": "møde hver 3-4 måned",
-     "dhash": "6e3d844f4c5c"
+     "tekst": "Eliteudvalget holder møde hver 3.-4. måned.",
+     "kort": "ændret til møde hver 3.-4. måned",
+     "kort_regel": "møde hver 3.-4. måned",
+     "dhash": "95b7552fa176"
     },
     {
      "ref": "elite16082020#4",
      "effekt": "aendret",
-     "tekst": "Eliteudvalget holder to fysiske møder årligt, især i december og august, suppleret med onlinemøder efter behov. Møderne holdes som udgangspunkt i Nordjylland i december og i Sydjylland i august for at spare udgifter.",
-     "kort": "to fysiske møder årligt plus onlinemøder",
-     "kort_regel": "to fysiske møder (december, august) plus onlinemøder efter behov",
-     "dhash": "776e73f4bff2"
+     "tekst": "Eliteudvalget holder to fysiske møder årligt, i december (som udgangspunkt i Nordjylland) og i august (som udgangspunkt i Sydjylland), suppleret med online møder efter behov.",
+     "kort": "to fysiske møder årligt plus online møder",
+     "kort_regel": "fysiske møder december og august, online efter behov",
+     "dhash": "6c0bbc942caa"
     }
    ]
   },
   {
-   "titel": "Årets klub",
-   "slug": "årets-klub",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_23012011#2",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "forslag om at kåre årets klub",
-     "kort_regel": null,
-     "dhash": "039d858261ed"
-    }
-   ]
-  },
-  {
-   "titel": "Amatørparagraf",
+   "titel": "Amatørparagraf i vedtægterne",
    "slug": "amatørparagraf",
    "vigtig": true,
    "note": null,
@@ -134,14 +124,14 @@
      "ref": "rep2011#3",
      "effekt": "ophaevet",
      "tekst": null,
-     "kort": "§ 14 om amatører fjernet efter forslag fra AAK",
+     "kort": "§ 14 om amatører fjernet på forslag fra AAK",
      "kort_regel": null,
-     "dhash": "7d8e919e718f"
+     "dhash": "4263cfd27f29"
     }
    ]
   },
   {
-   "titel": "Årets løfter i bænkpres",
+   "titel": "Kåring af Årets løfter i bænkpres",
    "slug": "årets-løfter-i-bænkpres",
    "vigtig": true,
    "note": null,
@@ -150,65 +140,137 @@
      "ref": "rep2011#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "årets løfter i bænkpres i alle kategorier",
-     "kort_regel": "årets løfter kåres i bænkpres i alle kategorier",
-     "dhash": "839097a2ec1d"
+     "kort": "Årets løfter i bænkpres i alle kategorier",
+     "kort_regel": "Årets løfter i bænkpres kåres i alle kategorier",
+     "dhash": "11483d526c9b"
     }
    ]
   },
   {
-   "titel": "Overrækkelse af pokal til årets løfter",
-   "slug": "overrækkelse-af-pokal-til-årets-løfter",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_14012012#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "pokal overrækkes ved efterfølgende DM i kategorien",
-     "kort_regel": "senior DM-A, øvrige DM-diverse, bænkpres ved DM bænkpres",
-     "dhash": "03f41f6ee5da"
-    }
-   ]
-  },
-  {
-   "titel": "Udvalg i vedtægterne",
+   "titel": "Forbundets udvalg (vedtægternes § 10)",
    "slug": "udvalg-i-vedtægterne",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
      "ref": "rep2011#7",
-     "effekt": "bekraeftet",
-     "tekst": "Den hidtidige ordlyd af vedtægternes § 10 om udvalg gælder uændret.",
-     "kort": "nuværende ordlyd af § 10 fastholdt",
-     "kort_regel": "§ 10 om udvalg uændret",
-     "dhash": "b3ff557e81a9"
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Videbæk Styrkesports forslag om ændring af § 10 forkastet",
+     "kort_regel": null,
+     "dhash": "82fefcd5c62d"
+    },
+    {
+     "ref": "refbest_07122014#12",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "forslag om større beslutningskompetence til udvalgene",
+     "kort_regel": null,
+     "dhash": "3f010ca6207f"
     },
     {
      "ref": "rep2025#1",
      "effekt": "aendret",
-     "tekst": "Vedtægternes § 10: Masterudvalg, medieudvalg og ungdomsudvalg indgår blandt DSF's udvalg. Der skal være mindst ét bestyrelsesmedlem i hvert udvalg, og bestyrelsen vælger formændene.",
-     "kort": "master-, medie- og ungdomsudvalg tilføjet",
-     "kort_regel": "mindst ét bestyrelsesmedlem i hvert udvalg; bestyrelsen vælger formænd",
-     "dhash": "d1e2d7d23b1e"
+     "tekst": "Forbundets udvalg er: eliteudvalg, stævneudvalg, dommerudvalg, breddeudvalg, masterudvalg, medieudvalg, ungdomsudvalg, uddannelsesudvalg og antidopingudvalg. Der skal være mindst ét bestyrelsesmedlem i hvert udvalg. Bestyrelsen vælger udvalgsformændene og godkender udvalgsmedlemmer efter indstilling fra udvalgene. Bestyrelsen kan nedsætte ad hoc-udvalg og fastlægger sammen med udvalgene deres arbejdsområder, kompetence og budget.",
+     "kort": "ni faste udvalg, bestyrelsen vælger formænd",
+     "kort_regel": "ni udvalg, mindst ét bestyrelsesmedlem i hvert",
+     "dhash": "131f40d462ed"
     }
    ]
   },
   {
-   "titel": "Standarddagsorden for bestyrelsesmøder",
-   "slug": "standarddagsorden-for-bestyrelsesmøder",
+   "titel": "Dommerudvalgets formål og opgaver",
+   "slug": "dommerudvalgets-formål-og-opgaver",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_15052011#3",
+     "ref": "refbest_15052011#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "standarddagsorden udarbejdes til bestyrelsens godkendelse",
-     "kort_regel": "bestyrelsesmøder følger standarddagsorden",
-     "dhash": "671d82ea8e78"
+     "kort": "regler og arbejdsbeskrivelse for Dommerudvalget vedtaget",
+     "kort_regel": "kommissorium for Dommerudvalget",
+     "dhash": "9df52c5f738e"
+    },
+    {
+     "ref": "refbest_221023#6",
+     "effekt": "aendret",
+     "tekst": "Dommerudvalget skal sikre en god dommerstand, der dækker DSF's behov på flere niveauer, og udbrede kendskabet til de tekniske regler. Udvalget inviterer til og afholder A- og B-dommerprøver og supplerende uddannelse (herunder til international dommer), sikrer opdatering af IPF's tekniske regler på dansk og udsendelse til dommere og klubber og lægger nyheder fra IPF på hjemmesiden.",
+     "kort": "formål og opgaver beskrevet",
+     "kort_regel": "dommerstand, dommerprøver, danske IPF-regler og nyheder",
+     "dhash": "e29d4c6abe74"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerudvalgets sammensætning",
+   "slug": "dommerudvalgets-størrelse",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_221023#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "3-4 medlemmer, ét fra bestyrelsen",
+     "kort_regel": "3-4 medlemmer med valgt formand, ét bestyrelsesmedlem",
+     "dhash": "013f46bd584d"
+    },
+    {
+     "ref": "refdom05032024#6",
+     "effekt": "aendret",
+     "tekst": "Dommerudvalget består af 3-5 medlemmer med en valgt formand og fordeler selv opgaverne. Et medlem skal være medlem af DSF's bestyrelse og informere om udvalgets arbejde på bestyrelsesmøderne.",
+     "kort": "udvidet fra 3-4 til 3-5 medlemmer",
+     "kort_regel": "3-5 medlemmer med valgt formand, ét bestyrelsesmedlem",
+     "dhash": "fa7276b76daa"
+    }
+   ]
+  },
+  {
+   "titel": "Afgørelser ved uenighed i dommerudvalget",
+   "slug": "afgørelser-ved-uenighed-i-dommerudvalget",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_221023#15",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "afstemning, formanden afgør ved stemmelighed",
+     "kort_regel": "afstemning med formandens udslagsgivende stemme, eller bestyrelsen",
+     "dhash": "fd28bf524987"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerudvalgets årlige beretning",
+   "slug": "dommerudvalgets-årlige-beretning",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_221023#16",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "årlig beretning til repræsentantskabsmødet",
+     "kort_regel": "årlig beretning til repræsentantskabsmødet",
+     "dhash": "bbce64aca93f"
+    }
+   ]
+  },
+  {
+   "titel": "Dommerudvalgets økonomi",
+   "slug": "dommerudvalgets-økonomi",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_221023#17",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "bestyrelsesmedlemmet ansvarligt for budgetrammer",
+     "kort_regel": "budgetramme overholdes, mere kræver bestyrelsens accept",
+     "dhash": "6f3501c94a9a"
     }
    ]
   },
@@ -222,62 +284,38 @@
      "ref": "refbest_15052011#4",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "Klaus Nielsens forslag om møder via pc afvist",
+     "kort": "Klaus Nielsens forslag om møder via pc forkastet",
      "kort_regel": null,
-     "dhash": "92f8b087101b"
+     "dhash": "ca85acf8b5d1"
     }
    ]
   },
   {
-   "titel": "Adfærdskodeks for landshold",
-   "slug": "adfærdskodeks-for-landshold",
+   "titel": "Overrækkelse af pokal til årets løftere",
+   "slug": "overrækkelse-af-pokal-til-årets-løfter",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "elite10122011#2",
+     "ref": "refbest_14012012#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "adfærdskodeks for alle landshold vedtaget",
-     "kort_regel": "adfærdskodeks gælder alle DSF's landshold",
-     "dhash": "c9d2236f6d27"
-    }
-   ]
-  },
-  {
-   "titel": "Foreningsbesøg",
-   "slug": "foreningsbesøg",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
+     "kort": "pokal overrækkes ved efterfølgende DM i kategorien",
+     "kort_regel": "senior ved DM-A, øvrige DM-diverse, bænkpres ved DM-bænk",
+     "dhash": "2817bb2f84cf"
+    },
     {
-     "ref": "refbest_14012012#4",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "klubbesøg fordeles til alle klubber; evaluering på hjemmesiden",
-     "kort_regel": "alle klubber besøges; samlet evaluering offentliggøres",
-     "dhash": "448b69a94782"
+     "ref": "refbest_07122014#10",
+     "effekt": "bekraeftet",
+     "tekst": "Pokalen til årets løftere overrækkes ved det efterfølgende DM i løfterens alderskategori. Årets løfter senior i 3-kamp (herre og dame) kåres ved DM-A. Årets løfter junior og øvrige kategorier i 3-kamp kåres ved DM-diverse. Årets løftere i bænkpres kåres ved DM i bænkpres.",
+     "kort": "nuværende ordning fastholdt",
+     "kort_regel": "senior ved DM-A, øvrige DM-diverse, bænkpres ved DM-bænk",
+     "dhash": "84c8b6e40cb9"
     }
    ]
   },
   {
-   "titel": "Offentliggørelse af breddeudvalgets arrangementer",
-   "slug": "offentliggørelse-af-breddeudvalgets-arrangementer",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_14012012#5",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "breddeudvalgets arrangementer offentliggøres på hjemmesiden",
-     "kort_regel": "alle breddearrangementer på forbundets hjemmeside",
-     "dhash": "600023cb45ac"
-    }
-   ]
-  },
-  {
-   "titel": "Respekt for eliteudvalgets vedtagelser",
+   "titel": "Loyalitet over for eliteudvalgets beslutninger",
    "slug": "respekt-for-eliteudvalgets-vedtagelser",
    "vigtig": false,
    "note": null,
@@ -286,14 +324,14 @@
      "ref": "elite01062012#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "vedtagelser respekteres udadtil af alle medlemmer",
-     "kort_regel": "udvalgets vedtagelser respekteres udadtil trods uenighed",
-     "dhash": "e8f24234fa24"
+     "kort": "beslutninger respekteres udadtil af alle medlemmer",
+     "kort_regel": "udvalgets beslutninger respekteres udadtil",
+     "dhash": "a6be4d8f3444"
     }
    ]
   },
   {
-   "titel": "Intern post via mail",
+   "titel": "Intern post i bestyrelsen",
    "slug": "intern-post-via-mail",
    "vigtig": false,
    "note": null,
@@ -303,29 +341,13 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "intern post sendes elektronisk og kun én gang",
-     "kort_regel": "intern post pr. mail, kun én gang",
-     "dhash": "529e540b344f"
+     "kort_regel": "intern post via mail, kun én gang",
+     "dhash": "ecf6b2bd4bba"
     }
    ]
   },
   {
-   "titel": "Bestilling af rejser til internationale stævner",
-   "slug": "bestilling-af-rejser-til-internationale-stævner",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_10032013#2",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "Jan Lyhne bestiller rejser inden for budget",
-     "kort_regel": "ankomst to dage før, hjemrejse dagen efter, inden for budget",
-     "dhash": "6b8c7ebce8a4"
-    }
-   ]
-  },
-  {
-   "titel": "Tegningsret",
+   "titel": "Tegningsret ved økonomiske dispositioner",
    "slug": "tegningsret",
    "vigtig": false,
    "note": null,
@@ -334,33 +356,17 @@
      "ref": "refbest_10032013#7",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "bestyrelsen foreslår retningslinjer for disponering jf. § 11",
+     "kort": "bestyrelsen foreslår retningslinjer for disponering efter § 11",
      "kort_regel": null,
-     "dhash": "f456832fa01b"
+     "dhash": "09f4f8b459ee"
     },
     {
      "ref": "rep2013#7",
      "effekt": "aendret",
-     "tekst": "Ved økonomiske dispositioner tegnes forbundet af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer.",
-     "kort": "kasserer og formand i forening i stedet for hver for sig",
-     "kort_regel": "kasserer og formand tegner i forening inden for rammer",
-     "dhash": "fb418174085a"
-    }
-   ]
-  },
-  {
-   "titel": "Krav til foreningers vedtægter ved optagelse",
-   "slug": "krav-til-foreningers-vedtægter-ved-optagelse",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "rep2013#5",
-     "effekt": "aendret",
-     "tekst": null,
-     "kort": "§ 4: krav til foreningsvedtægter efter DIF-krav",
-     "kort_regel": "navn, hjemsted, styrkeløftformål og pligt til at følge DSF-regler",
-     "dhash": "47ac44178d6a"
+     "tekst": "Ved økonomiske dispositioner tegnes DSF af kasserer og formand i forening inden for de af bestyrelsen fastlagte rammer.",
+     "kort": "kasserer og formand skal nu underskrive i forening",
+     "kort_regel": "kasserer og formand i forening inden for bestyrelsens rammer",
+     "dhash": "886738093ac8"
     }
    ]
   },
@@ -373,42 +379,42 @@
     {
      "ref": "rep2013#6",
      "effekt": "aendret",
-     "tekst": "Forslag til repræsentantskabsmødet skal være forbundet i hænde senest 21 dage før mødet.",
-     "kort": "frist hævet fra 14 til 21 dage",
+     "tekst": "Forslag, som ønskes behandlet på repræsentantskabsmødet, skal være forbundet i hænde senest 21 dage før mødet.",
+     "kort": "frist forlænget fra 14 til 21 dage",
      "kort_regel": "forslag senest 21 dage før mødet",
-     "dhash": "dd16d8fbf2c4"
-    }
-   ]
-  },
-  {
-   "titel": "Medieplan",
-   "slug": "medieplan",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
+     "dhash": "71eb6469bd44"
+    },
     {
-     "ref": "refbest_24082013#3",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "medieplan for et halvt år ad gangen",
-     "kort_regel": "medieplan laves halvårligt",
-     "dhash": "ec1a6ed77eb9"
+     "ref": "refbest_09022014#6",
+     "effekt": "bekraeftet",
+     "tekst": "Forslag, som ønskes behandlet på repræsentantskabsmødet, skal være forbundet i hænde senest 3 uger (21 dage) før mødet.",
+     "kort": "frist på 3 uger bekræftet",
+     "kort_regel": "forslag senest 3 uger før mødet",
+     "dhash": "efa8bb94788b"
+    },
+    {
+     "ref": "refbest_28022016#5",
+     "effekt": "bekraeftet",
+     "tekst": "Forslag, som ønskes behandlet på repræsentantskabsmødet, skal være forbundet i hænde senest 3 uger (21 dage) før mødet.",
+     "kort": "klubbernes frist på 3 uger bekræftet",
+     "kort_regel": "forslag senest 3 uger før mødet",
+     "dhash": "a196306f8a72"
     }
    ]
   },
   {
-   "titel": "Udsendelse af repræsentantskabsmødets dagsorden",
+   "titel": "Udsendelse af dagsorden til repræsentantskabsmødet",
    "slug": "udsendelse-af-repræsentantskabsmødets-dagsorden",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
      "ref": "refbest_09022014#5",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "fra 2015 pr. mail i stedet for post",
-     "kort_regel": "dagsorden mailes til klubbernes postansvarlige",
-     "dhash": "0310309fc423"
+     "effekt": "aendret",
+     "tekst": "Den endelige dagsorden til repræsentantskabsmødet samles og sendes ud af KUF. Fra 2015 sendes den på mail til klubbernes postansvarlige i stedet for med posten.",
+     "kort": "fra 2015 på mail i stedet for post",
+     "kort_regel": "KUF sender dagsorden på mail til postansvarlige",
+     "dhash": "9a0ec2533a82"
     }
    ]
   },
@@ -421,31 +427,63 @@
     {
      "ref": "rep2014#4",
      "effekt": "aendret",
-     "tekst": "Bestyrelsen består af 7 medlemmer: formand, næstformand, kasserer, sekretær og 3 øvrige medlemmer. Menigt medlem 3 vælges på lige årstal.",
-     "kort": "udvidet fra 6 til 7 medlemmer",
-     "kort_regel": "7 medlemmer inkl. formand, næstformand, kasserer, sekretær",
-     "dhash": "c5e90d473411"
+     "tekst": "Bestyrelsen består af 7 medlemmer: formand, næstformand, kasserer, sekretær og 3 øvrige bestyrelsesmedlemmer. Det menige medlem nr. 3 vælges i lige år (§ 9 stk. 1).",
+     "kort": "udvidet med menigt medlem nr. 3 til 7",
+     "kort_regel": "7 medlemmer, heraf 3 menige",
+     "dhash": "08a281958cc9"
     }
    ]
   },
   {
-   "titel": "Rapportering fra internationale mesterskaber",
-   "slug": "rapportering-fra-internationale-mesterskaber-2",
-   "vigtig": true,
+   "titel": "Valgturnus for bestyrelsen",
+   "slug": "valgturnus-for-bestyrelsen",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "elite31052014#4",
+     "ref": "rep2021#13",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "holdledere/trænere sender rapporter og billeder til webmaster",
-     "kort_regel": "holdleder/træner ansvarlig for rapporter, kan uddelegeres",
-     "dhash": "5d8d5d154a0e"
+     "kort": "næstformand, kasserer, medlem 2 vælges i ulige år",
+     "kort_regel": "næstformand, kasserer og bestyrelsesmedlem 2 i ulige år",
+     "dhash": "058646e8b231"
     }
    ]
   },
   {
-   "titel": "Kettlebell som aktivitet",
+   "titel": "Valgturnus for revisorer",
+   "slug": "valgturnus-for-revisorer",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2021#14",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "intern og ekstern revisor vælges i ulige år",
+     "kort_regel": "revisorer vælges i ulige år",
+     "dhash": "dc735e6f5818"
+    }
+   ]
+  },
+  {
+   "titel": "Crossfitstævner i forbundsregi",
+   "slug": "crossfitstævner-i-forbundsregi-2",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_09082014#4",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "forslag om Crossfitstævner med licens, undersøges",
+     "kort_regel": null,
+     "dhash": "0973046d0530"
+    }
+   ]
+  },
+  {
+   "titel": "Kettlebell som aktivitet i forbundet",
    "slug": "kettlebell-som-aktivitet",
    "vigtig": false,
    "note": null,
@@ -454,14 +492,78 @@
      "ref": "refbest_09082014#5",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "forslag om kettlebell; udviklingskonsulent laver oplæg",
+     "kort": "forslag om Kettlebell, udviklingskonsulent laver oplæg",
      "kort_regel": null,
-     "dhash": "fd3b4a9643f9"
+     "dhash": "bbc582bd4684"
     }
    ]
   },
   {
-   "titel": "Reklamer og sponsorer i nyhedsbreve og på hjemmeside",
+   "titel": "Reklamer i nyhedsbreve og nyhedsrulle",
+   "slug": "reklamer-i-nyhedsbreve-og-nyhedsrulle",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_07122014#14",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "forbud mod reklamer og sponsorer i nyhedsbreve",
+     "kort_regel": "ingen reklamer eller sponsorer i nyhedsbreve og nyhedsrulle",
+     "dhash": "1d3610dfe015"
+    }
+   ]
+  },
+  {
+   "titel": "Krav til reklamers indhold",
+   "slug": "krav-til-reklamers-indhold",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_07122014#15",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "IPF's retningslinjer: reklamer må ikke være stødende",
+     "kort_regel": "reklamer må ikke være stødende",
+     "dhash": "c2df98565368"
+    }
+   ]
+  },
+  {
+   "titel": "Reklamer på hjemmesiden",
+   "slug": "reklamer-på-hjemmesiden",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_08022015#20",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "reklamer tilladt på hjemmesiden efter IPF's retningslinjer",
+     "kort_regel": "reklamer tilladt på hjemmesiden, ikke stødende",
+     "dhash": "3ebef07c73d8"
+    }
+   ]
+  },
+  {
+   "titel": "Minimumsbeløb for sponsor- og reklameaftaler",
+   "slug": "minimumsbeløb-for-sponsor-og-reklameaftaler",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_07122014#16",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "minimumsbeløb for aftaler fastsat",
+     "kort_regel": "minimumsbeløb for sponsor- og reklameaftaler",
+     "dhash": "4a923a3c0f9d"
+    }
+   ]
+  },
+  {
+   "titel": "Inhabilitet ved sponsor- og reklameaftaler",
    "slug": "reklamer-og-sponsorer-i-nyhedsbreve-og-på-hjemmeside",
    "vigtig": false,
    "note": null,
@@ -470,9 +572,9 @@
      "ref": "refbest_07122014#8",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "ingen reklamer i nyhedsbreve; inhabilitet ved sponsoraftaler",
-     "kort_regel": "ingen reklamer i nyhedsbreve, ikke-stødende reklamer, minimumsbeløb",
-     "dhash": "21cc86c0a791"
+     "kort": "inhabile deltager ikke i endelige beslutninger",
+     "kort_regel": "ejere og familie deltager ikke i beslutning om aftaler",
+     "dhash": "347ab33a37fb"
     }
    ]
   },
@@ -486,41 +588,25 @@
      "ref": "refbest_080325#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "retningslinjer godkendt; medieudvalget håndhæver",
-     "kort_regel": "sponsorretningslinjer på hjemmesiden, håndhæves af medieudvalget",
-     "dhash": "e338b41fee47"
+     "kort": "retningslinjer vedtaget, medieudvalget håndhæver",
+     "kort_regel": "retningslinjer på hjemmesiden, medieudvalget håndhæver",
+     "dhash": "4dcb6b09fc90"
     }
    ]
   },
   {
-   "titel": "Provision ved sponsorfund",
-   "slug": "provision-ved-sponsorfund",
+   "titel": "Kongresforslag på bestyrelsesmødernes dagsorden",
+   "slug": "kongresforslag-på-bestyrelsesmødernes-dagsorden",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_140526#1",
+     "ref": "refbest_08022015#17",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "ingen provisionsmodel for sponsorfund",
-     "kort_regel": "ingen provision for at skaffe sponsorer",
-     "dhash": "aa9206ff8882"
-    }
-   ]
-  },
-  {
-   "titel": "DSF kraftcenter",
-   "slug": "dsf-kraftcenter",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_08022015#13",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "forslag om kraftcenter og højere klubafgift udskudt",
-     "kort_regel": null,
-     "dhash": "aaf61990806c"
+     "kort": "internationale kongresforslag fast dagsordenspunkt",
+     "kort_regel": "kongresdagsordener og danske forslag fast punkt",
+     "dhash": "9817ca495f73"
     }
    ]
   },
@@ -534,9 +620,9 @@
      "ref": "refbest_08022015#7",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "frivillighedspris oprettet; klubber indstiller",
-     "kort_regel": "uddeles ved repræsentantskabsmødet; klubber indstiller, bestyrelsen vælger",
-     "dhash": "6d7d22d65896"
+     "kort": "frivillighedspris oprettet, klubber indstiller",
+     "kort_regel": "klubber indstiller, bestyrelsen vælger, uddeles ved repræsentantskabsmødet",
+     "dhash": "a81af71de6a1"
     }
    ]
   },
@@ -550,9 +636,9 @@
      "ref": "refbest_19042015#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "intet meldes ud før intern drøftelse; god tone",
-     "kort_regel": "intern drøftelse før ekstern udmelding",
-     "dhash": "b2207f932d5c"
+     "kort": "intern drøftelse før ekstern udmelding",
+     "kort_regel": "intet meldes ud før intern drøftelse",
+     "dhash": "cffef6b7e312"
     }
    ]
   },
@@ -566,14 +652,14 @@
      "ref": "refbest_11102015#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "nyhedsfolder to gange årligt i A5",
-     "kort_regel": "to gange årligt til klubbernes postansvarlige",
-     "dhash": "977f831e2bf2"
+     "kort": "nyhedsfolder to gange årligt til postansvarlige",
+     "kort_regel": "A5-nyhedsfolder to gange årligt",
+     "dhash": "c3261a93f218"
     }
    ]
   },
   {
-   "titel": "Information til landsdækkende medier ved store mesterskaber",
+   "titel": "Mediedækning af store mesterskaber",
    "slug": "information-til-landsdækkende-medier-ved-store-mesterskaber",
    "vigtig": false,
    "note": null,
@@ -582,30 +668,30 @@
      "ref": "refbest_22042017#4",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "landsdækkende medier informeres med notits",
-     "kort_regel": "notits til landsdækkende medier ved store mesterskaber",
-     "dhash": "7bbb9066b81e"
+     "kort": "landsdækkende medier informeres med kort notits",
+     "kort_regel": "kort notits til landsdækkende medier",
+     "dhash": "4e8d2d783ef3"
     }
    ]
   },
   {
-   "titel": "Samlet regelsæt for Eliteudvalget",
+   "titel": "Samlet regeldokument for Eliteudvalget",
    "slug": "samlet-regelsæt-for-eliteudvalget",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
      "ref": "elite20052017#2",
-     "effekt": "foreslaaet",
+     "effekt": "indfoert",
      "tekst": null,
-     "kort": "KB udarbejder samlet regelsæt for udvalget",
-     "kort_regel": null,
-     "dhash": "2bce058f997a"
+     "kort": "udvalgets regler samles i ét dokument",
+     "kort_regel": "samlet dokument erstatter tidligere beslutninger",
+     "dhash": "904ba2d97890"
     }
    ]
   },
   {
-   "titel": "Besvarelse af henvendelser til Eliteudvalget",
+   "titel": "Eliteudvalgets eksterne kommunikation",
    "slug": "besvarelse-af-henvendelser-til-eliteudvalget",
    "vigtig": false,
    "note": null,
@@ -614,46 +700,86 @@
      "ref": "elite09092017#2",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "simple sager besvares af landsholdsansvarlig, større af formand",
-     "kort_regel": "simple: landsholdsansvarlig; større: udvalgsformand efter debat",
-     "dhash": "5e0e2aff7ec8"
+     "kort": "landsholdsansvarlig svarer simple mails, formand større sager",
+     "kort_regel": "landsholdsansvarlig svarer simple mails, formand større sager",
+     "dhash": "e98d7eee3036"
+    },
+    {
+     "ref": "elite14092019#3",
+     "effekt": "aendret",
+     "tekst": "Eliteudvalgets daglige eksterne kommunikation varetages af de kategoriansvarlige for hhv. udstyr, klassisk, bænkpres og træningssamlinger. I særtilfælde kommunikerer formanden på vegne af udvalget.",
+     "kort": "kategoriansvarlige overtager daglig kommunikation",
+     "kort_regel": "kategoriansvarlige kommunikerer, formand i særtilfælde",
+     "dhash": "78acbd36518a"
     }
    ]
   },
   {
-   "titel": "Eliteudvalgets eksterne kommunikation",
-   "slug": "eliteudvalgets-eksterne-kommunikation",
+   "titel": "Opdatering af regler på hjemmesiden",
+   "slug": "opdatering-af-regler-på-hjemmesiden",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "elite14092019#3",
+     "ref": "refbest_29032018#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kategoriansvarlige kommunikerer eksternt i eget område",
-     "kort_regel": "kategoriansvarlige står for daglig ekstern kommunikation",
-     "dhash": "44a47e88b4c3"
+     "kort": "udvalgsformænd ansvarlige for opdatering på hjemmesiden",
+     "kort_regel": "udvalgsformænd opdaterer udvalgets regler på hjemmesiden",
+     "dhash": "63a001beaa93"
     }
    ]
   },
   {
-   "titel": "Stævner på sociale medier",
-   "slug": "stævner-på-sociale-medier",
+   "titel": "Implementering af nye IPF-regler",
+   "slug": "implementering-af-nye-ipf-regler",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_221023#18",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "nye IPF-regler oversættes og deles med medlemmer",
+     "kort_regel": "IPF-regler oversættes, lægges på hjemmeside, deles",
+     "dhash": "8e4472df10fa"
+    }
+   ]
+  },
+  {
+   "titel": "Breddeudvalgets aktiviteter og sammensætning",
+   "slug": "breddeudvalgets-aktiviteter-og-sammensætning",
    "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_09062018#12",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "lejre forbeholdt medlemmer, udefrakommende mod vederlag",
+     "kort_regel": "lejre for DSF-medlemmer, andre ved plads mod vederlag",
+     "dhash": "891c40c686e3"
+    }
+   ]
+  },
+  {
+   "titel": "Stævnebegivenheder på sociale medier",
+   "slug": "stævner-på-sociale-medier",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
      "ref": "refmedie05012019#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "DSF opretter alle stævnebegivenheder på Facebook i januar",
-     "kort_regel": "DSF opretter alle stævner offentligt på Facebook i januar",
-     "dhash": "9dc550f3b0d6"
+     "kort": "DSF opretter alle stævner på Facebook i januar",
+     "kort_regel": "DSF opretter stævnebegivenheder på Facebook i januar",
+     "dhash": "fc67d967ae45"
     }
    ]
   },
   {
-   "titel": "Kontakt til nyhedsmedier om udlandsløftere",
+   "titel": "Kontakt til nyhedsmedier ved internationale stævner",
    "slug": "kontakt-til-nyhedsmedier-om-udlandsløftere",
    "vigtig": false,
    "note": null,
@@ -662,14 +788,14 @@
      "ref": "refmedie05012019#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "procedure for mediekontakt om løftere til udlandet",
-     "kort_regel": "navne til Janni Weinke, Peter Andersen kontakter medier",
-     "dhash": "6618075f8486"
+     "kort": "løfternavne sendes til medieudvalget før mediekontakt",
+     "kort_regel": "medieudvalget vurderer medaljechancer før mediekontakt",
+     "dhash": "e7318a11cdd1"
     }
    ]
   },
   {
-   "titel": "Etiske retningslinjer for Facebookgrupper",
+   "titel": "Etiske retningslinjer for DSF's Facebookgrupper",
    "slug": "etiske-retningslinjer-for-facebookgrupper",
    "vigtig": true,
    "note": null,
@@ -678,25 +804,65 @@
      "ref": "refbest_091119#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "etiske retningslinjer for DSF's Facebookgrupper",
-     "kort_regel": "etiske retningslinjer med udgangspunkt i DIF's sanktioner",
-     "dhash": "aed47663f571"
+     "kort": "etiske retningslinjer skal udarbejdes og offentliggøres",
+     "kort_regel": "etiske retningslinjer for Facebookgrupper udarbejdes",
+     "dhash": "02933ab2e5e9"
+    },
+    {
+     "ref": "rep2020#14",
+     "effekt": "bekraeftet",
+     "tekst": "Der er etiske retningslinjer for brugen af DSF's Facebook-gruppe, baseret på DIF's sanktioner på området. Retningslinjerne er offentliggjort på siden.",
+     "kort": "retningslinjer udarbejdet og offentliggjort",
+     "kort_regel": "etiske retningslinjer offentliggjort i Facebook-gruppen",
+     "dhash": "31ad98a92eaa"
     }
    ]
   },
   {
-   "titel": "Etisk regelsæt og adfærd",
-   "slug": "etisk-regelsæt-og-adfærd",
-   "vigtig": true,
+   "titel": "Ungdomsudvalgets sammensætning",
+   "slug": "ungdomsudvalgets-sammensætning",
+   "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_090323#1",
+     "ref": "refbest_060221#7",
+     "effekt": "aendret",
+     "tekst": null,
+     "kort": "mindst ét bestyrelsesmedlem og 3-5 unge",
+     "kort_regel": "mindst ét bestyrelsesmedlem og 3-5 unge",
+     "dhash": "f3f01634482d"
+    }
+   ]
+  },
+  {
+   "titel": "Indberetning af internationale medaljer til DIF",
+   "slug": "indberetning-af-internationale-medaljer-til-dif-2",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_220122#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "upassende adfærd og dopingbeskyldninger tolereres ikke",
-     "kort_regel": "ingen hadske beskeder, dopingbeskyldninger eller skæv dømning",
-     "dhash": "4875518846b6"
+     "kort": "medaljer indberettes til DIF senest 7 dage efter",
+     "kort_regel": "indberetning til DIF senest 7 dage efter",
+     "dhash": "19a48d942509"
+    }
+   ]
+  },
+  {
+   "titel": "Bestyrelsens dokumentarkiv",
+   "slug": "bestyrelsens-dokumentarkiv",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_121122#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "fælles Dropbox til originale dokumenter",
+     "kort_regel": "originale dokumenter i fælles Dropbox",
+     "dhash": "d39202de8d36"
     }
    ]
   },
@@ -710,25 +876,9 @@
      "ref": "elite14122022#5",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "særskilt afsnit fra sportschefen i årsberetningen",
-     "kort_regel": "sportschefen har eget afsnit i beretningen",
-     "dhash": "d3eefad99dab"
-    }
-   ]
-  },
-  {
-   "titel": "Stævneudvalgets beføjelse til at ændre stævner",
-   "slug": "stævneudvalgets-beføjelse-til-at-ændre-stævner",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_110523#1",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "bestyrelsen foreslår tilføjelse til § 13",
-     "kort_regel": null,
-     "dhash": "ae25768fd85d"
+     "kort": "særskilt afsnit fra sportschefen i årsberetning",
+     "kort_regel": "sportschefen skriver særskilt afsnit i beretningen",
+     "dhash": "663e1c72ed8b"
     }
    ]
   },
@@ -740,43 +890,83 @@
    "versioner": [
     {
      "ref": "refbest_150723#3",
-     "effekt": "indfoert",
+     "effekt": "ophaevet",
      "tekst": null,
-     "kort": "ingen ny strategiplan; strategiske spor erstatter",
-     "kort_regel": "strategiske spor erstatter strategiplan",
-     "dhash": "f871ba8bb616"
+     "kort": "strategiplan erstattet af strategiske spor",
+     "kort_regel": null,
+     "dhash": "0cba264eb3b9"
     }
    ]
   },
   {
-   "titel": "Dommerudvalgets størrelse",
-   "slug": "dommerudvalgets-størrelse",
+   "titel": "Stævneudvalgets kommissorium",
+   "slug": "stævneudvalgets-kommissorium",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "refdom05032024#6",
+     "ref": "refbest_130124#2",
      "effekt": "aendret",
-     "tekst": "Dommerudvalget består af 3-5 medlemmer.",
-     "kort": "fra 3-4 til 3-5 medlemmer",
-     "kort_regel": "3-5 medlemmer",
-     "dhash": "d46b28d57acd"
+     "tekst": null,
+     "kort": "nyt kommissorium med opgaver og 2-4 møder årligt",
+     "kort_regel": "vejleder arrangører, stævneplaner, kurser, 2-4 møder årligt",
+     "dhash": "31985fcade0d"
+    },
+    {
+     "ref": "refstaevne08022024#5",
+     "effekt": "bekraeftet",
+     "tekst": "Stævneudvalget skal sikre, at DSF-stævner afholdes under gode forhold. Det vejleder og støtter arrangørklubber, udarbejder og godkender stævneplaner, bestiller medaljer og pokaler, afholder kurser for stævnefunktionærer, låner stævnevægt og dommerlys ud og stiller konkurrencestyringssystem til rådighed. Udvalget mødes 2-4 gange om året efter behov og gennemgår hvert år i starten af januar stævnereglerne, så de er tidssvarende.",
+     "kort": "årligt gennemsyn af stævneregler i januar bekræftet",
+     "kort_regel": "stævneregler gennemgås hvert år i starten af januar",
+     "dhash": "1205466a7264"
     }
    ]
   },
   {
-   "titel": "Klubbers materiale til medieudvalget",
-   "slug": "klubbers-materiale-til-medieudvalget",
+   "titel": "Venskabsklubber ved stævneafvikling",
+   "slug": "venskabsklubber-ved-stævneafvikling",
    "vigtig": true,
    "note": null,
    "versioner": [
     {
-     "ref": "refmedie25092024#1",
+     "ref": "refstaevne08022024#7",
+     "effekt": "aendret",
+     "tekst": null,
+     "kort": "opgaven flyttet fra stævneudvalget til breddeudvalget",
+     "kort_regel": "breddeudvalget står for venskabsklubber",
+     "dhash": "7ac952a5673c"
+    }
+   ]
+  },
+  {
+   "titel": "Stævneudvalgets adgang til dommerdatabasen",
+   "slug": "stævneudvalgets-adgang-til-dommerdatabasen",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refstaevne04062024#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "nice to/need to-oversigt til klubber fra 2025",
-     "kort_regel": "oversigt over materiale klubber skal sende",
-     "dhash": "9cc3c848282c"
+     "kort": "stævneudvalget får adgang til dommerdatabasen",
+     "kort_regel": "stævneudvalget har adgang til dommerdatabasen",
+     "dhash": "ade93cd4b119"
+    }
+   ]
+  },
+  {
+   "titel": "Færøernes tilknytning til DSF",
+   "slug": "færøernes-tilknytning-til-dsf",
+   "vigtig": true,
+   "note": "Besluttet af Stævneudvalget, selvom spørgsmålet om et andet forbunds tilknytning normalt hører under bestyrelsen.",
+   "versioner": [
+    {
+     "ref": "refstaevne10092024#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "Færøerne under DSF indtil IPF-optagelse, betaler selv",
+     "kort_regel": "Færøerne følger DSF's regler indtil IPF-optagelse",
+     "dhash": "58aaff2b0841"
     }
    ]
   },
@@ -791,45 +981,29 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "kommunikationsplan for nødsituationer vedtaget",
-     "kort_regel": "nødkommunikationsplan på hjemmesiden",
-     "dhash": "292b13e6b6a0"
+     "kort_regel": "kommunikationsplan for nødsituationer på hjemmesiden",
+     "dhash": "7e91535c9ab0"
     }
    ]
   },
   {
-   "titel": "Klage uden om forening",
-   "slug": "klage-uden-om-forening",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "rep2025#2",
-     "effekt": "aendret",
-     "tekst": null,
-     "kort": "§ 15 stk. 3: medlem kan klage mod mindst 5000 kr.",
-     "kort_regel": "gebyr mindst 5000 kr., frist 4 uger, mægling først",
-     "dhash": "8975750c8a35"
-    }
-   ]
-  },
-  {
-   "titel": "Egenkapitalens størrelse",
-   "slug": "egenkapitalens-størrelse",
+   "titel": "Henvendelser om medieindhold",
+   "slug": "henvendelser-om-medieindhold",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "refbest_130425#2",
+     "ref": "refmedie27112024#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "grundformue til mindst 6 måneders drift",
-     "kort_regel": "formue til 6 måneders drift, lavrisiko-obligationer",
-     "dhash": "577aa5e64991"
+     "kort": "ønsker sendes til Medieudvalget, videresendes til tovholder",
+     "kort_regel": "ønsker til Medieudvalget, tovholder på hvert stævne",
+     "dhash": "83230afb866a"
     }
    ]
   },
   {
-   "titel": "Medieudvalgets kontaktpersoner ved stævner",
+   "titel": "Medieudvalgets kontaktperson og arrangørklubbens opslag ved stævner",
    "slug": "medieudvalgets-kontaktpersoner-ved-stævner",
    "vigtig": true,
    "note": null,
@@ -838,42 +1012,133 @@
      "ref": "refmedie16042026#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "kontaktperson til hvert stævne; Instagram-login til klubben",
-     "kort_regel": "kontaktperson pr. stævne; klub poster på Instagram",
-     "dhash": "5bab90da3232"
+     "kort": "kontaktperson giver arrangørklub Instagram-login",
+     "kort_regel": "arrangørklub poster på Instagram og præsenterer stedet",
+     "dhash": "ad444445fa33"
     },
     {
      "ref": "refmedie09062026#1",
      "effekt": "bekraeftet",
-     "tekst": "Hvert kommende stævne har en kontaktperson i medieudvalget. Kontaktpersonen sørger for, at arrangerende klub får login til Instagram for at poste før og under stævnet, at klubben laver en kort præsentation af venuet, og at der løbende kommer opslag med link til invitation, plan og livestream.",
-     "kort": "ordning gentaget uændret",
-     "kort_regel": "kontaktperson pr. stævne; klub poster på Instagram",
-     "dhash": "7ab67aac297d"
+     "tekst": "Ved hvert stævne udpeger Medieudvalget en kontaktperson, som sørger for, at den arrangerende klub får login til forbundets Instagram, så klubben kan poste indhold op til og fra stævnet. Den arrangerende klub laver en kort præsentation af stedet op til stævnet, og der lægges løbende opslag op med link til invitation, plan og livestream.",
+     "kort": "ordningen gentaget uændret",
+     "kort_regel": "arrangørklub poster på Instagram og præsenterer stedet",
+     "dhash": "faae44de827a"
     }
    ]
   },
   {
-   "titel": "Medieudvalgets dækning af internationale stævner",
-   "slug": "medieudvalgets-dækning-af-internationale-stævner",
+   "titel": "Medlemmers indbringelse af sager for Ordens- og amatørudvalget",
+   "slug": "klage-uden-om-forening",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2025#2",
+     "effekt": "aendret",
+     "tekst": null,
+     "kort": "medlem kan indbringe sag mod gebyr på mindst 5.000 kr.",
+     "kort_regel": "min. 5.000 kr., inden 4 uger, først mægling",
+     "dhash": "c104ef382c59"
+    }
+   ]
+  },
+  {
+   "titel": "Medieplan",
+   "slug": "medieplan",
    "vigtig": false,
    "note": null,
    "versioner": [
     {
-     "ref": "refmedie09062026#2",
+     "ref": "refbest_24082013#3",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "opgavefordeling for opslag og billeder ved internationale stævner",
-     "kort_regel": "Daniel opslag, Jens masterbilleder, Peter mailadresser",
-     "dhash": "720504ecd4d0"
+     "kort": "medieplan udarbejdes fremover for et halvt år ad gangen",
+     "kort_regel": "medieplan udarbejdes for et halvt år ad gangen",
+     "dhash": "5d7c8d9ada7b",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "0324fe12d2df",
+      "time": "2026-10-09T09:46:13+00:00"
+     }
     }
    ]
   }
  ],
- "udeladt": [
-  "refbest_13092009#2",
-  "refbest_04082012#1",
-  "rep2019#13",
-  "refbest_010619#1"
- ],
- "ikke_tildelt": []
+ "udeladt": [],
+ "ikke_tildelt": [],
+ "inputs": {
+  "elite01062012#1": "7449fd0079db",
+  "elite09092017#2": "9c0801e30d4c",
+  "elite12092010#2": "09bf1c360c79",
+  "elite14092019#3": "a1057a3e85da",
+  "elite14122022#5": "25c312f210c9",
+  "elite16082020#4": "c9b718528977",
+  "elite20052017#2": "38a2ee60e65f",
+  "elite29062011#5": "ca0ca266631a",
+  "refbest_05122009#5": "2abb33e7a266",
+  "refbest_060221#7": "ff921e00cb02",
+  "refbest_07122014#10": "bf8f813eb86b",
+  "refbest_07122014#12": "149e0f51ca05",
+  "refbest_07122014#14": "0f5900d649f0",
+  "refbest_07122014#15": "77c2602ee36f",
+  "refbest_07122014#16": "9c2be9b65bea",
+  "refbest_07122014#8": "7482a6c628d9",
+  "refbest_08022015#17": "1442391200ce",
+  "refbest_08022015#20": "4e174cd8fe89",
+  "refbest_08022015#7": "4cb0b183187c",
+  "refbest_080325#4": "a1d9acb8f4b0",
+  "refbest_09022014#5": "4347369a9b20",
+  "refbest_09022014#6": "fcd4e2c2630c",
+  "refbest_09062018#12": "4c7dc783017a",
+  "refbest_09082014#4": "9d0b2c848bdc",
+  "refbest_09082014#5": "aaeba6460a0d",
+  "refbest_091119#1": "feb26323f8fb",
+  "refbest_10032013#7": "0931e027129c",
+  "refbest_11012008#1": "e57bafb9f18f",
+  "refbest_11102015#1": "c6c3685c0225",
+  "refbest_12012013#1": "2517aa8882f7",
+  "refbest_121122#1": "da02ff92e2e1",
+  "refbest_130124#2": "5957df2af8da",
+  "refbest_14012012#1": "5cc02df0ec7b",
+  "refbest_15052011#1": "ecf80f47fe83",
+  "refbest_15052011#4": "83173d191c80",
+  "refbest_150723#3": "d2692f1a2aed",
+  "refbest_19042015#1": "9bb8ad49fda1",
+  "refbest_201024#3": "a3042c7222a8",
+  "refbest_220122#1": "59b7489ef418",
+  "refbest_22042017#4": "aa30fe7b82ed",
+  "refbest_221023#1": "0edb1b078fa9",
+  "refbest_221023#15": "85357a774dca",
+  "refbest_221023#16": "de9a1ffa878d",
+  "refbest_221023#17": "939b0663e316",
+  "refbest_221023#18": "219f45d651e3",
+  "refbest_221023#6": "c092d2c6b5a4",
+  "refbest_24082013#3": "2cca04bcb4c3",
+  "refbest_28022010#4": "0f309b7066a1",
+  "refbest_28022010#7": "02490336ce16",
+  "refbest_28022016#5": "de1ccd280e8e",
+  "refbest_29032018#3": "6326943543b9",
+  "refdom05032024#6": "d5fca2cf1aec",
+  "refmedie05012019#1": "2084f997ff59",
+  "refmedie05012019#3": "961d5796b2b7",
+  "refmedie09062026#1": "14211ea0809f",
+  "refmedie16042026#1": "23d4dc5a764a",
+  "refmedie27112024#1": "6b59ac2c3d1b",
+  "refstaevne04062024#3": "7c0a9761b972",
+  "refstaevne08022024#5": "3315c6a4c575",
+  "refstaevne08022024#7": "7f778f4496c6",
+  "refstaevne10092024#5": "93c9fdc9306b",
+  "rep2010#1": "55247b662167",
+  "rep2011#3": "dcd0caf51ab7",
+  "rep2011#4": "705cdc05336c",
+  "rep2011#7": "6e373ac1d88f",
+  "rep2013#6": "096f4fc52404",
+  "rep2013#7": "372ca4f67150",
+  "rep2014#4": "9b83ae3703c4",
+  "rep2020#14": "698b46417542",
+  "rep2021#13": "50708ae7a251",
+  "rep2021#14": "11fe5d23900d",
+  "rep2025#1": "717f8cd8b4b2",
+  "rep2025#2": "4667c843cb1c"
+ }
 }

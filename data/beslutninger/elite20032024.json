@@ -1,47 +1,60 @@
 {
  "doc_id": "elite20032024",
  "sha256": "a897591ad4d975bab99b3850981440f6d61db8cb8ed55fa9e4ac25d0ca8748c7",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2024-03-20",
- "next_number": 3,
- "retired": [],
+ "next_number": 4,
+ "retired": [
+  {
+   "id": "elite20032024#2",
+   "emne": "Kvalifikationskrav bænkpres og udstyr",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "elite20032024#1",
-   "emne": "Coach fee for assistenter",
+   "emne": "Coach fee for atleter der agerer assistenter",
    "kategori": "internationalt",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "eksternt_krav",
-   "tekst": "Der skal ikke betales coach fee for atleter, som fungerer som assistenter ved samme stævne/mesterskab, som de selv deltager i, forudsat at de bor på det officielle hotel.",
-   "citat": "skal betales coach fee for atleter som agerer assistenter ved samme stævne/mesterskab som de selv deltager, forudsat at de bor på det officielle hotel.",
+   "tekst": "Ved EPF-mesterskaber skal der ikke betales coach fee for atleter, der agerer assistenter ved samme stævne/mesterskab, som de selv deltager i. Det forudsætter, at de bor på det officielle hotel.",
+   "citat": "ikke skal betales coach fee for atleter som agerer assistenter ved samme stævne/mesterskab som de selv deltager, forudsat at de bor på det officielle hotel.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
    "citat_fundet": true,
-   "citat_pos": 126,
+   "citat_pos": 125,
    "citat_side": 1
   },
   {
-   "id": "elite20032024#2",
-   "emne": "Kvalifikationskrav bænkpres og udstyr",
-   "kategori": "landshold",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
+   "id": "elite20032024#3",
+   "emne": "Godkendelse af europarekorder sat ved nordiske mesterskaber",
+   "kategori": "internationalt",
+   "udfald": "forkastet",
+   "forslagsstiller": "De nordiske lande",
    "handling": "aendring",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Kravene i bænkpres (klassisk og med udstyr) og styrkeløft med udstyr opdateres efter henholdsvis VM bænkpres og VM styrkeløft med udstyr og gælder fra 1/1-2025. Bjarte udarbejder forslag til nye kravtal efter model som for klassisk styrkeløft, med justering for lavere deltagelse.",
-   "citat": "Opdaterede krav: i bænkpres (både klassisk og med udstyr) og styrkeløft med udstyr efter henholdsvis VM bænkpres og VM styrkeløft med udstyr og vil gælde fra 1/1-\n2025",
-   "side": 2,
+   "niveau": "eksternt_krav",
+   "tekst": "De nordiske lande foreslog på EPF-kongressen, at EPF igen skulle godkende europarekorder sat ved nordiske mesterskaber. Det blev ikke vedtaget, så rekorder sat ved nordiske mesterskaber godkendes fortsat ikke som europarekorder. Reglen har gældt siden 2023 på baggrund af en IPF-beslutning.",
+   "citat": "Til gengæld lykkedes det ikke de nordiske lande at få EPF til igen at godkende europarekorder sat ved nordiske mesterskaber, hvilket grundet en lettere kontroversiel IPF beslutning trådte i kraft i 2023.",
+   "side": 1,
    "stemmer": null,
-   "gaelder_fra": "2025-01-01",
+   "gaelder_fra": null,
    "gaelder_til": null,
    "citat_fundet": true,
-   "citat_pos": 429,
-   "citat_side": 2
+   "citat_pos": 79,
+   "citat_side": 1
   }
  ]
 }

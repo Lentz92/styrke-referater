@@ -4,52 +4,49 @@ Rules that may be one rule: pairs whose TF-IDF vectors (candidates.py's profiles
 
 | Threshold | Flagged | In one call | Similar rules per rule | Other-category rules per call (mean, max) |
 |--:|--:|--:|--:|--:|
-| 0.05 | 97.0% | 97.0% | 75.3 | 326, 408 |
-| 0.08 | 97.0% | 97.0% | 36.8 | 237, 338 |
-| 0.1 | 90.9% | 97.0% | 24.2 | 185, 301 |
-| 0.12 | 78.8% | 93.9% | 16.6 | 144, 258 |
-| 0.15 | 69.7% | 90.9% | 9.5 | 92, 188 |
-| 0.2 | 60.6% | 87.9% | 4.2 | 46, 105 |
-| 0.25 | 51.5% | 84.8% | 2.0 | 23, 52 |
+| 0.05 | 96.7% | 100.0% | 96.9 | 386, 480 |
+| 0.08 | 93.3% | 100.0% | 46.6 | 288, 420 |
+| 0.1 | 90.0% | 100.0% | 30.7 | 229, 365 |
+| 0.12 | 90.0% | 100.0% | 20.5 | 176, 311 |
+| 0.15 | 83.3% | 96.7% | 11.7 | 116, 249 |
+| 0.2 | 63.3% | 83.3% | 5.5 | 62, 148 |
+| 0.25 | 56.7% | 83.3% | 2.8 | 35, 99 |
 
-Chosen threshold: 0.1, the highest with at least 95% of the fragment pairs in one call.
+audit.SIMILARITY is 0.1: 100.0% of the fragment pairs in one call, at least the target of 95%. The highest threshold reaching the target is 0.15.
 
-## Fragment pairs: 33
+## Fragment pairs: 30
 
 | Key rule | Rule | Rule | Same category | Similarity |
 |---|---|---|---|--:|
-| bestilling-betaling-og-levering-af-medaljer-og-pokaler | medaljer-til-stævner | bestilling-betaling-og-levering-af-medaljer-og-pokaler | no | 0.480 |
-| bestilling-betaling-og-levering-af-medaljer-og-pokaler | startgebyr-ved-stævner | invitation-tilmeldings-og-betalingsfrist-til-stævner | no | 0.297 |
-| bestilling-betaling-og-levering-af-medaljer-og-pokaler | bestilling-betaling-og-levering-af-medaljer-og-pokaler | invitation-tilmeldings-og-betalingsfrist-til-stævner | yes | 0.253 |
-| bestilling-betaling-og-levering-af-medaljer-og-pokaler | startgebyr-ved-stævner | bestilling-betaling-og-levering-af-medaljer-og-pokaler | no | 0.245 |
-| bestilling-betaling-og-levering-af-medaljer-og-pokaler | medaljer-til-stævner | startgebyr-ved-stævner | yes | 0.173 |
-| bestilling-betaling-og-levering-af-medaljer-og-pokaler | medaljer-til-stævner | invitation-tilmeldings-og-betalingsfrist-til-stævner | no | 0.109 |
-| dommeres-aktivitetskrav | dommeres-aktivitetskrav | nye-b-dommere-skal-dømme-inden-for-første-år | yes | 0.268 |
-| dækning-af-udgifter-ved-internationale-masterstævner | dækning-af-udgifter-ved-internationale-masterstævner | klubbers-hæftelse-for-startgebyr-ved-udeblivelse | yes | 0.350 |
-| dækning-af-udgifter-ved-internationale-masterstævner | ophold-på-stævnehotel-og-bindende-tilmelding | klubbers-hæftelse-for-startgebyr-ved-udeblivelse | no | 0.285 |
-| dækning-af-udgifter-ved-internationale-masterstævner | ophold-på-stævnehotel-og-bindende-tilmelding | dækning-af-udgifter-ved-internationale-masterstævner | no | 0.265 |
-| godkendelse-af-logoer-på-løftertøj | afgift-for-brug-af-logo | godkendelse-af-logoer-på-løftertøj | no | 0.383 |
-| licensgebyr | licensgebyr | årsafgift | yes | 0.308 |
-| licensgebyr | kontorhold-og-telefonpenge | årsafgift | yes | 0.307 |
-| licensgebyr | kontorhold-og-telefonpenge | licensgebyr | yes | 0.106 |
-| rejseplanlægning-og-booking | opholdslængde-ved-internationale-stævner | bestilling-af-rejser-til-internationale-stævner | no | 0.400 |
-| rejseplanlægning-og-booking | opholdslængde-ved-internationale-stævner | rejseplanlægning-og-booking | yes | 0.205 |
-| rejseplanlægning-og-booking | rejseplanlægning-og-booking | bestilling-af-rejser-til-internationale-stævner | no | 0.188 |
-| rejseplanlægning-og-booking | egenbetaling-ved-internationale-mesterskaber | rejseplanlægning-og-booking | yes | 0.177 |
-| rejseplanlægning-og-booking | egenbetaling-ved-internationale-mesterskaber | opholdslængde-ved-internationale-stævner | yes | 0.094 |
-| rejseplanlægning-og-booking | egenbetaling-ved-internationale-mesterskaber | bestilling-af-rejser-til-internationale-stævner | no | 0.048 |
-| startgebyr-ved-stævner | startgebyr-ved-stævner | årsafgift | yes | 0.364 |
-| startgebyr-ved-stævner | kontorhold-og-telefonpenge | årsafgift | yes | 0.307 |
-| startgebyr-ved-stævner | kontorhold-og-telefonpenge | startgebyr-ved-stævner | yes | 0.139 |
-| udtagelse-til-internationale-masterstævner | dispensation-fra-landsholdskrav | udtagelse-til-internationale-masterstævner | no | 0.139 |
-| ventetid-fra-licens-til-stævnedeltagelse | seksmånedersreglen-for-stævnedeltagelse | ventetid-fra-licens-til-stævnedeltagelse | yes | 0.247 |
-| ventetid-fra-licens-til-stævnedeltagelse | karantæne-ved-klubløshed-udmeldelse-og-genindmeldelse | ventetid-fra-licens-til-stævnedeltagelse | yes | 0.110 |
-| ventetid-fra-licens-til-stævnedeltagelse | karantæne-ved-klubløshed-udmeldelse-og-genindmeldelse | seksmånedersreglen-for-stævnedeltagelse | yes | 0.093 |
-| årsafgift | årsafgift | årsafgift-for-nye-klubber | yes | 0.540 |
-| årsafgift | betalingsdato-for-årsafgift | årsafgift-for-nye-klubber | yes | 0.480 |
-| årsafgift | betalingsdato-for-årsafgift | årsafgift | yes | 0.469 |
-| årsafgift | kontorhold-og-telefonpenge | årsafgift | yes | 0.307 |
-| årsafgift | kontorhold-og-telefonpenge | årsafgift-for-nye-klubber | yes | 0.146 |
-| årsafgift | betalingsdato-for-årsafgift | kontorhold-og-telefonpenge | yes | 0.117 |
+| b-dommerprøve | b-dommerprøve | b-dommerprøve-2 | yes | 0.355 |
+| bestilling-betaling-og-levering-af-medaljer-og-pokaler | medaljer-til-stævner | bestilling-betaling-og-levering-af-medaljer-og-pokaler | no | 0.424 |
+| bestilling-betaling-og-levering-af-medaljer-og-pokaler | leverandør-af-medaljer | medaljer-til-stævner | no | 0.173 |
+| bestilling-betaling-og-levering-af-medaljer-og-pokaler | leverandør-af-medaljer | bestilling-betaling-og-levering-af-medaljer-og-pokaler | no | 0.169 |
+| bruttolandshold-udtagelsesrunder-og-karenstid | bruttolandshold-udtagelsesrunder-og-karenstid | tid-i-bruttotruppen-før-international-deltagelse | yes | 0.000 |
+| coachlicens-og-ipf-træneruddannelse | coachlicens-og-ipf-træneruddannelse | krav-til-coaches-ved-ipf-nominering | yes | 0.566 |
+| dommeres-aktivitetskrav | dommeres-aktivitetskrav | nye-b-dommere-skal-dømme-inden-for-første-år | yes | 0.157 |
+| dækning-af-udgifter-ved-internationale-masterstævner | dækning-af-udgifter-ved-internationale-masterstævner | klubbers-hæftelse-for-startgebyr-ved-udeblivelse | yes | 0.377 |
+| dækning-af-udgifter-ved-internationale-masterstævner | hoteltilskud-til-ledere-ved-masterstævner | klubbers-hæftelse-for-startgebyr-ved-udeblivelse | yes | 0.133 |
+| dækning-af-udgifter-ved-internationale-masterstævner | dækning-af-udgifter-ved-internationale-masterstævner | hoteltilskud-til-ledere-ved-masterstævner | yes | 0.087 |
+| godkendelse-af-logoer-på-løftertøj | afgift-for-brug-af-logo | godkendelse-af-logoer-på-løftertøj | no | 0.325 |
+| rejseplanlægning-og-booking | opholdslængde-ved-internationale-stævner | rejseplanlægning-og-booking | yes | 0.256 |
+| startgebyr-ved-stævner | fordeling-af-startgebyr | startgebyr-ved-stævner | yes | 0.644 |
+| stævner-hvor-kvalifikationskrav-kan-opnås | stævner-hvor-kvalifikationskrav-kan-opnås | udtagelse-til-em-vm-2021 | yes | 0.290 |
+| trænergebyr-og-trænerakkreditering-ved-em-vm | trænergebyr-og-trænerakkreditering-ved-em-vm | trænergebyr-ved-ipf-mesterskaber | yes | 0.490 |
+| trænergebyr-og-trænerakkreditering-ved-em-vm | trænergebyr-og-trænerakkreditering-ved-em-vm | trænerakkreditering-ved-em-og-vm | no | 0.468 |
+| trænergebyr-og-trænerakkreditering-ved-em-vm | trænergebyr-ved-ipf-mesterskaber | trænerakkreditering-ved-em-og-vm | no | 0.324 |
+| trænergebyr-og-trænerakkreditering-ved-em-vm | epf-s-medlemsafgift-for-nationer | trænergebyr-og-trænerakkreditering-ved-em-vm | yes | 0.191 |
+| trænergebyr-og-trænerakkreditering-ved-em-vm | epf-s-medlemsafgift-for-nationer | trænerakkreditering-ved-em-og-vm | no | 0.125 |
+| trænergebyr-og-trænerakkreditering-ved-em-vm | epf-s-medlemsafgift-for-nationer | trænergebyr-ved-ipf-mesterskaber | yes | 0.072 |
+| udtagelse-til-internationale-masterstævner | kvalifikationsperiode-for-masterlandshold | udtagelse-til-internationale-masterstævner | yes | 0.260 |
+| udtagelse-til-internationale-masterstævner | dispensation-fra-landsholdskrav | udtagelse-til-internationale-masterstævner | no | 0.191 |
+| udtagelse-til-internationale-masterstævner | dispensation-fra-landsholdskrav | kvalifikationsperiode-for-masterlandshold | no | 0.152 |
+| ventetid-fra-licens-til-stævnedeltagelse | ventetid-fra-licens-til-stævnedeltagelse | seksmånedersreglen-for-stævnedeltagelse | no | 0.299 |
+| årsafgift | årsafgift | årsafgift-for-nye-klubber | yes | 0.692 |
+| årsafgift | betalingsdato-for-årsafgift | årsafgift | yes | 0.612 |
+| årsafgift | betalingsdato-for-årsafgift | årsafgift-for-nye-klubber | yes | 0.532 |
+| årsafgift | opkrævning-af-licens | årsafgift-for-nye-klubber | yes | 0.259 |
+| årsafgift | opkrævning-af-licens | årsafgift | yes | 0.211 |
+| årsafgift | betalingsdato-for-årsafgift | opkrævning-af-licens | yes | 0.204 |
 
-Left out (soft): streaming-ved-danske-mesterskaber ~ stævneudstyrskufferter (0.045); streaming-ved-danske-mesterskaber ~ lån-af-dsf-s-stævneudstyr (0.223); stævneudstyrskufferter ~ lån-af-dsf-s-stævneudstyr (0.350).
+Left out (soft): udlån-af-forbundets-udstyr ~ ansvarsfordeling-mellem-dsf-og-arrangør-ved-dm (0.058); udlån-af-forbundets-udstyr ~ udlån-af-dommerlys (0.283); ansvarsfordeling-mellem-dsf-og-arrangør-ved-dm ~ udlån-af-dommerlys (0.175).

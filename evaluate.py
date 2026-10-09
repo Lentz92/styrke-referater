@@ -2335,7 +2335,20 @@ class RuleScore:
 
 def map_events(key: dict, decisions_by_doc: Mapping[str, list[Decision]], docs: Mapping[str, Doc],
                texts: Texts) -> dict[str, str]:
-    """Key event id -> the pipeline decision it is, matched (match_decisions) among the decisions of its document."""
+    """Key event id -> the pipeline decision it is, matched (match_decisions) among the decisions of its document.
+
+    The key quotes a budget line whole ("Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).") for each
+    fee's rule, while extraction prompt v3 makes it one decision per fee. Every fee's decision then lies inside the
+    event's quote, so the quote overlap ties, and the matcher's text part (word trigrams of the key's value against
+    the decision's sentence) mostly shares nothing: the line's first decision won for every fee. So when an event's
+    quote covers several decisions (more than half of each one's quoted words inside it) and the matcher picked one
+    of them, the event gets the free one most about the key's rule (key_similarity), then the one most inside the
+    quote, then the first. Containment decides which decisions compete, not which wins: in rep2015 the medal
+    decision's quote runs a sentence past the key's, while the start fee's, quoted a sentence too long, lies wholly
+    inside it. Each decision still goes to one event at most, and an event covering one decision or none keeps the
+    matcher's pick."""
+    vocabulary = candidates.vocabulary([key["titel"], *key.get("keywords", ()), *(
+        t for decisions in decisions_by_doc.values() for d in decisions for t in (d.emne, d.tekst))])
     mapped: dict[str, str] = {}
     by_doc: dict[str, list[dict]] = defaultdict(list)
     for e in key["events"]:
@@ -2349,9 +2362,42 @@ def map_events(key: dict, decisions_by_doc: Mapping[str, list[Decision]], docs: 
                                                                           d.citat)) for d in pipeline]
         wanted = [Candidate(key["titel"], e["value_after"] or e["quote"], EFFECT_OUTCOME.get(e["effect"], "vedtaget"),
                             tuple(e["span"]) if e["span"] else None) for e in events]
-        for m in matching.match_decisions(wanted, found):
-            mapped[events[m.old]["id"]] = pipeline[m.new].ref
+        matches = matching.match_decisions(wanted, found)
+        chosen = {m.old: m.new for m in matches}
+        for m in sorted(matches, key=lambda m: (-m.score, m.old)):  # the matcher's own order
+            inside = {j: share_inside(c.span, wanted[m.old].span) for j, c in enumerate(found)}
+            covered = [j for j, share in inside.items() if share > 0.5]
+            if len(covered) < 2 or chosen[m.old] not in covered:
+                continue
+            held = set(chosen.values()) - {chosen[m.old]}
+            terms = key_terms(key, events[m.old], vocabulary)
+            chosen[m.old] = max((j for j in covered if j not in held),
+                                key=lambda j: (key_similarity(terms, pipeline[j], vocabulary), inside[j], -j))
+        mapped |= {events[i]["id"]: pipeline[j].ref for i, j in chosen.items()}
     return mapped
+
+
+def share_inside(span: tuple[int, int] | None, outer: tuple[int, int] | None) -> float:
+    """The share of a decision's quoted words inside a key event's quote; 0 when either was not located."""
+    if span is None or outer is None:
+        return 0.0
+    return max(min(span[1], outer[1]) - max(span[0], outer[0]), 0) / (span[1] - span[0])
+
+
+def key_terms(key: dict, event: dict, vocabulary: Collection[str]) -> Counter[str]:
+    """What a key event is about, as candidates.terms (Danish stems and compound parts): the rule's title, which
+    names it and counts candidates.TITLE_WEIGHT times, its keywords and the event's value."""
+    terms = Counter(candidates.terms(key["titel"], vocabulary) * candidates.TITLE_WEIGHT)
+    for text in (*key.get("keywords", ()), event["value_after"]):
+        terms.update(candidates.terms(text, vocabulary))
+    return terms
+
+
+def key_similarity(terms: Counter[str], decision: Decision, vocabulary: Collection[str]) -> float:
+    """The weighted share of a key event's terms (key_terms) that the decision's emne and tekst use."""
+    used = set(candidates.terms(f"{decision.emne} {decision.tekst}", vocabulary))
+    total = sum(terms.values())
+    return sum(n for term, n in terms.items() if term in used) / total if total else 0.0
 
 
 def score_rule(key: dict, decisions: list[Decision], raw_rules: list[dict], docs: Mapping[str, Doc],

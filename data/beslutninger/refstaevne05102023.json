@@ -1,21 +1,27 @@
 {
  "doc_id": "refstaevne05102023",
  "sha256": "7d1ab05d11419c00674aff45201b07727066f28904b298fbd8911e342502780b",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2023-10-05",
  "next_number": 2,
  "retired": [],
  "beslutninger": [
   {
    "id": "refstaevne05102023#1",
-   "emne": "Stævnepapirer efter stævner",
+   "emne": "Indsendelse af stævnepapirer efter stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Stævneudvalget blev enige om, at det er tilstrækkeligt at have stævneprotokollerne som stævnepapirer efter stævner. Der kan desuden tages billeder af stævneprotokollerne, som kan lægges i Dropbox. Det blev ikke afgjort, hvem der kontrollerer, at dette overholdes.",
+   "tekst": "Efter stævner er det nok at indsende stævneprotokollerne som stævnepapirer. Stævneprotokollerne kan fotograferes, og billederne kan lægges i Dropbox. Der blev ikke besluttet, hvem der skal kontrollere, at det bliver overholdt.",
    "citat": "Vi kom frem til at det var nok at have stævneprotokollerne. Derudover var vi enige om at der kunne tages billeder af stævneprotokollerne, som kunne ligge i Dropbox.",
    "side": 2,
    "stemmer": null,

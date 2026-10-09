@@ -74,9 +74,11 @@ RUNS = 2
 OP_KINDS = ("merge", "split", "rename", "move")
 # Rules whose TF-IDF vectors (candidates.py's profiles: title, latest text, kort_regel and the emne of each decision)
 # have at least this cosine similarity may be one rule. A propose call gets its category's rules and every rule of
-# another category this similar to one of them. Chosen with `audit.py candidates` on the answer key (today's data,
-# October 2026, before the v3 migration): the highest threshold that puts at least RECALL_TARGET of the pairs of rules
-# a key rule is fragmented over into one call (97% at 0.1, 94% at 0.12; eval/reports/audit-candidates.md).
+# another category this similar to one of them. Chosen with `audit.py candidates` on the answer key: at least
+# RECALL_TARGET of the pairs of rules a key rule is spread over must land in one call. Before the v3 migration 0.1 was
+# the highest threshold that did (97%; 0.12: 94%); on the migrated data it puts 100% into one call, and 0.15 only
+# 96.7%, one pair above the target, so 0.1 keeps a margin for about 2 USD more per audit
+# (eval/reports/audit-candidates.md).
 SIMILARITY = 0.1
 THRESHOLDS = (0.05, 0.08, 0.1, 0.12, 0.15, 0.2, 0.25)
 RECALL_TARGET = 0.95
@@ -388,10 +390,14 @@ def candidates_report(pairs: Sequence[FragmentPair], rows: Sequence[Recall]) -> 
     for row in rows:
         lines.append(f"| {row.threshold} | {_pct(row.flagged)} | {_pct(row.in_call)} | {row.per_rule:.1f} | "
                      f"{row.per_call[0]:.0f}, {row.per_call[1]} |")
-    verdict = (f"Chosen threshold: {chosen}, the highest with at least {RECALL_TARGET:.0%} of the fragment pairs in "
-               f"one call." if chosen is not None else f"No threshold reaches {RECALL_TARGET:.0%}.")
-    if chosen is not None and chosen != SIMILARITY:
-        verdict += f" audit.SIMILARITY is {SIMILARITY}: set it to {chosen}."
+    current = next((row for row in rows if row.threshold == SIMILARITY), None)
+    reached = current is not None and (current.in_call or 0) >= RECALL_TARGET
+    verdict = (f"audit.SIMILARITY is {SIMILARITY}: {_pct(current.in_call) if current else 'not measured'} of the "
+               f"fragment pairs in one call, {'at least' if reached else 'below'} the target of {RECALL_TARGET:.0%}. "
+               + (f"The highest threshold reaching the target is {chosen}." if chosen is not None
+                  else "No threshold reaches it."))
+    if not reached and chosen is not None:
+        verdict += f" Set audit.SIMILARITY to {chosen}."
     gated = [p for p in pairs if not p.soft]
     lines += ["", verdict, "", f"## Fragment pairs: {len(gated)}", "",
               "| Key rule | Rule | Rule | Same category | Similarity |", "|---|---|---|---|--:|"]

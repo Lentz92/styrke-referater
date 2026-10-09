@@ -1,21 +1,34 @@
 {
  "doc_id": "refstaevne03122024",
  "sha256": "0e101bef772e491d51b3cc90e374de035c723b41d7dc2c42404dbffb6ecbecd7",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2024-12-03",
  "next_number": 3,
- "retired": [],
+ "retired": [
+  {
+   "id": "refstaevne03122024#2",
+   "emne": "Placering af DM-hold finale på terminslisten",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "refstaevne03122024#1",
-   "emne": "Aflevering af overskydende medaljer og pokaler",
+   "emne": "Overskydende medaljer og pokaler",
    "kategori": "staevner",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Den stævneansvarlige minder den arrangerende klub om at gemme overskydende pokaler og medaljer og give dem videre til et medlem af stævneudvalget eller bestyrelsen, så de kan afleveres til Pokalbutikken og genbruges. Klubberne orienteres via opslag på DSF's Facebook.",
+   "tekst": "Den stævneansvarlige skal minde den arrangerende klub om at gemme overskydende pokaler og medaljer og give dem videre til et medlem af stævneudvalget eller bestyrelsen. Derefter afleveres de til Pokalbutikken, så de kan genbruges og udgifterne reduceres.",
    "citat": "Det blev ligeledes, besluttet at den stævneansvarlige minder den arrangerende klub om at gemme overskydende pokaler og medaljer og give dem videre til et medlem af stævneudvalget eller bestyrelsen.",
    "side": 1,
    "stemmer": null,
@@ -24,24 +37,6 @@
    "citat_fundet": true,
    "citat_pos": 63,
    "citat_side": 1
-  },
-  {
-   "id": "refstaevne03122024#2",
-   "emne": "Placering af DM-hold finale på terminslisten",
-   "kategori": "staevner",
-   "udfald": "ikke_afgjort",
-   "forslagsstiller": "Bestyrelsen",
-   "handling": "aendring",
-   "niveau": "staevneregel",
-   "tekst": "Der vil fra DSF's bestyrelse blive stillet forslag til Repræsentantskabsmødet 2025 om at flytte DM-hold finalen til DM-ugen i juni, for at give større TV-dækning af udstyrsstævner. Det kræver, at forslaget besluttes og stemmes igennem på R-mødet.",
-   "citat": "Første skridt er at få udarbejdet en omrokering på terminslisten, så DM-hold finale til at ligge i DM ugen i juni måned.",
-   "side": 2,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 910,
-   "citat_side": 2
   }
  ]
 }

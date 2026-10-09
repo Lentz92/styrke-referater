@@ -1,22 +1,28 @@
 {
  "doc_id": "refudstyr06032025",
  "sha256": "ad9729544eb542d0166317a39a6d7a839674a85fade05b958f4471b095624e13",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2025-03-06",
  "next_number": 2,
  "retired": [],
  "beslutninger": [
   {
    "id": "refudstyr06032025#1",
-   "emne": "Udlån af udstyr til nye udstyrsløftere",
+   "emne": "Udlån af udstyr",
    "kategori": "udstyr",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Udstyrsgruppen har oprettet et fælles Excel-ark over låneudstyr fra hele gruppen. Løftere, der vil prøve at træne i udstyr, men hvis klub ikke har det rette udstyr, kan kontakte Adam for at låne udstyr.",
-   "citat": "Der er nu blevet oprettet et Excel-ark med registrering af låneudstyr fra hele udstyrsgruppen. Det betyder, at der kan tages kontakt til Adam, hvis der en løfter, der gerne vil prøve at træne i udstyr",
+   "tekst": "Udstyrsgruppen har oprettet et fælles register (Excel-ark) over låneudstyr i hele udstyrsgruppen. Løftere, der gerne vil prøve at træne i udstyr, men hvis klub ikke har det rette udstyr, kan kontakte Adam (Adam Engsig Karø) om at låne udstyr.",
+   "citat": "Der er nu blevet oprettet et Excel-ark med registrering af låneudstyr fra hele udstyrsgruppen. Det betyder, at der kan tages kontakt til Adam, hvis der en løfter, der gerne vil prøve at træne i udstyr, men klubben ikke har det rette udstyr liggende.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
