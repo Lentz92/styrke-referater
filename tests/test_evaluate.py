@@ -359,7 +359,7 @@ def test_todays_pipeline_is_opus_with_prompt_v3():
     assert evaluate.pipeline_configuration().label() == "claude-opus-5-5, prompt v3, effort default"
 
 
-def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpus, monkeypatch):
+def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpus, monkeypatch, caplog):
     # The gate as it ran to choose v3: today's pipeline was then Sonnet with prompt v2.
     monkeypatch.setattr(evaluate.update, "EXTRACT_MODEL", "claude-sonnet-5-5")
     monkeypatch.setattr(analyze, "EXTRACT_VERSION", 2)
@@ -383,15 +383,15 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
                    "gate"])
 
     report = (evaluate.EVAL_DIR / "reports" / "gate.md").read_text()
-    assert "worse run is at least the run stored, less a margin, on recall" in report
+    assert "than the run stored less its slack or than the worst run of today's pipeline" in report
     assert "| 1 | 0 | 0 | 0 | 0 | – |" in report  # the stored run is no other run's repeat
     assert report.count("| 2 | 0 | 0 | 0 | 0 | 100.0% |") == 2  # the opus runs found the same decisions
-    # Today's pipeline found one and two of the key's two decisions: its recall spreads 50 points, so the floor drops
-    # by that much below the stored run's 50%.
-    assert "| needs | | ≥ 0.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
-    assert "| spread of today's pipeline (points) | sonnet-1, sonnet-2 | 50.0 | 0.0 | 0.0 | 0.0 | | |" in report
+    assert "| needs | | ≥ 50.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
+    assert ("| today's pipeline, worst run per figure | sonnet-1, sonnet-2 | 50.0% | 100.0% | 100.0% | 0.0% | | |"
+            in report)
     pipeline = "claude-sonnet-5-5, prompt v2, effort default (today's pipeline)"
-    assert f"| {pipeline} | sonnet-1, sonnet-2 | 50.0% | 100.0% | 100.0% | 0.0% | 66.7% | yes |" in report
+    assert (f"| {pipeline} | sonnet-1, sonnet-2 | 50.0% | 100.0% | 100.0% | 0.0% | 66.7% | yes (today's pipeline: the "
+            f"reference) |") in report
     assert ("| claude-opus-5-5, prompt v3, effort default | opus-v3-1, opus-v3-2 | 100.0% | 100.0% | 100.0% | 0.0% | "
             "100.0% | yes |") in report
     assert ("| claude-haiku-5-5, prompt v3, effort default | haiku-v3-1, haiku-v3-2 | 50.0% | 66.7% | 100.0% | 0.0% | "
@@ -405,30 +405,43 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
     _configured_run("migrated", [_run("Licensgebyr", 0), _run("Startgebyr", 20)])  # recall 100%
     evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "unpaired"])
     report = (evaluate.EVAL_DIR / "reports" / "unpaired.md").read_text()
-    assert "at least the run migrated, less a margin" in report and "| needs | | ≥ 100.0% |" in report
-    assert "today's pipeline was not run twice here, so it is the slack alone" in report
+    assert "than the run migrated less its slack" in report and "| needs | | ≥ 100.0% |" in report
+    assert "it was not run twice here, so only the slack counts" in report
     assert "were not scored, so no configuration passes" in report and "| no: stability |" in report
-    # A baseline named on purpose that is not scored, or mistyped, stops the command instead of dropping the gate.
-    for name, why in (("migrate", "--baseline migrate: also pass --run migrate"), ("Migrated", "Run name 'Migrated'")):
+    # A baseline named on purpose that is not scored, or mistyped, stops the command instead of dropping the gate; one
+    # that is scored with no configuration run twice says that no gate was computed.
+    for name, why in (("migrate", "--baseline migrate: also pass --run migrate"),
+                      ("Migrated", "--baseline 'Migrated'")):
         with pytest.raises(SystemExit, match=why):
             evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--baseline", name])
+    evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--baseline", "migrated", "--report", "single"])
+    assert "no gate was computed against migrated" in caplog.text
 
 
-def test_a_worse_run_within_the_spread_of_todays_pipeline_passes_and_one_outside_it_fails():
-    def run(found: int) -> DocScore:  # found of 100 key decisions, nothing false or split, every field right
-        return DocScore(100, found, 0, 0, 0, 0, 0, {"three": found}, {"three": found})
+def test_a_candidate_passes_when_no_worse_than_the_baseline_less_its_slack_or_todays_worst_run():
+    def run(found: int, false: int = 0, extra: int = 0) -> DocScore:  # of 100 key decisions, every field right
+        return DocScore(100, found, false, extra, 0, 0, 0, {"three": found}, {"three": found})
 
-    totals = {"today-1": run(90), "today-2": run(94), "within-1": run(87), "within-2": run(95), "outside-1": run(85),
-              "outside-2": run(95)}
-    within, outside = (evaluate.Configuration("claude-haiku-5-5", prompt, "default") for prompt in ("a", "b"))
-    groups = {within: ["within-1", "within-2"], outside: ["outside-1", "outside-2"]}
-    stable = {within: 0.95, outside: 0.95}
-    # Today's pipeline ran at 90% and 94% recall: 4 points of noise below the baseline's 90% are allowed.
-    needs = evaluate.gate_needs(totals["today-1"], 0.9, evaluate.spread([totals["today-1"], totals["today-2"]]))
-    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [(), ("recall",)]
-    # Run once, today's pipeline shows no noise, and the slack alone (none on recall) fails both.
-    needs = evaluate.gate_needs(totals["today-1"], 0.9, evaluate.spread([totals["today-1"]]))
-    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [("recall",)] * 2
+    baseline = run(50, extra=6)  # recall 50%, precision 100%, over-split 12%
+    # Today's pipeline, run twice: recall 99% and 48%, precision 99% and 100%, no over-split.
+    today = evaluate.worst([run(99, false=1), run(48)])
+    good = run(52)
+    candidates = {"at the bounds": [run(50, extra=7), run(48)],  # over-split 14% = 12% + slack; today's worst recall
+                  "below today's worst": [run(47), good],
+                  "less precise": [run(78, false=2), good]}  # precision 97.5%: within slack plus today's spread (97%)
+    totals = {f"{name}-{i}": s for name, runs in candidates.items() for i, s in enumerate(runs)}
+    groups = {evaluate.Configuration("claude-haiku-5-5", name, "default"): [f"{name}-{i}" for i in range(2)]
+              for name in candidates}
+    stable = {config: 0.95 for config in groups}
+
+    needs = evaluate.gate_needs(baseline, 0.9, today)
+    # Recall: today's worst (48%) is looser than the baseline (50%); precision: the baseline less its slack (98%) is
+    # looser than today's worst (99%); over-split: the baseline plus its slack, met exactly.
+    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [(), ("recall",), ("precision",)]
+    # Without repeated runs of today's pipeline only the slack counts: recall must reach the baseline's 50%.
+    needs = evaluate.gate_needs(baseline, 0.9, {})
+    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [("recall",), ("recall",),
+                                                                                ("precision",)]
 
 
 # ---------------------------------------------------------------- scoring rules

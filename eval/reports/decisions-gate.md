@@ -22,16 +22,16 @@ Not candidate runs: sonnet-v3-1, sonnet-v3-2, opus-v3-1, opus-v3-2, migrated. Th
 
 ## Gate
 
-A configuration passes when its worse run is at least the run migrated, less a margin, on recall, precision and the three fields and at most it, plus a margin, on over-split, and its runs are at least as stable as two runs of today's pipeline (claude-opus-5-5, prompt v3, effort default). Each figure's margin is the larger of its slack and its spread between the runs of today's pipeline scored here, which differ that much on noise alone.
+A configuration passes when its worse run is no worse, on recall, precision, the three fields and over-split, than the run migrated less its slack or than the worst run of today's pipeline (claude-opus-5-5, prompt v3, effort default), whichever is looser, and its runs are at least as stable as the runs of today's pipeline. Runs of today's pipeline differ from migrated on noise alone, so a candidate as good as its worst run passes.
 
 | Configuration | Runs | Recall (worse) | Precision (worse) | Three (worse) | Over-split (worse) | Stability | Passes |
 |---|---|--:|--:|--:|--:|--:|---|
-| needs | | ≥ 88.1% | ≥ 96.3% | ≥ 87.5% | ≤ 4.3% | ≥ 94.8% | |
+| needs | | ≥ 90.2% | ≥ 96.3% | ≥ 88.7% | ≤ 4.3% | ≥ 94.8% | |
 | slack (points) | | 0.0 | 2.0 | 0.0 | 2.0 | | |
-| spread of today's pipeline (points) | opus-v3-1, opus-v3-2, migrated | 2.1 | 1.1 | 6.8 | 0.6 | | |
+| today's pipeline, worst run per figure | opus-v3-1, opus-v3-2, migrated | 90.2% | 97.3% | 88.7% | 2.3% | | |
 | claude-sonnet-5-5, prompt v2, effort default | sonnet-1, sonnet-2 | 67.4% | 92.2% | 81.5% | 0.8% | 91.7% | no: recall, precision, field_three, stability |
 | claude-sonnet-5-5, prompt v3, effort default | sonnet-v3-1, sonnet-v3-2 | 79.8% | 93.3% | 75.3% | 0.6% | 93.4% | no: recall, precision, field_three, stability |
-| claude-opus-5-5, prompt v3, effort default (today's pipeline) | opus-v3-1, opus-v3-2, migrated | 90.2% | 97.3% | 88.7% | 2.3% | 94.8% | yes |
+| claude-opus-5-5, prompt v3, effort default (today's pipeline) | opus-v3-1, opus-v3-2, migrated | 90.2% | 97.3% | 88.7% | 2.3% | 94.8% | yes (today's pipeline: the reference) |
 
 ## Paired bootstrap against stored
 
