@@ -179,7 +179,7 @@ The audit's propose calls see a category's rules and every rule of another categ
 call on the migrated data, 97% before the migration (`reports/audit-candidates.md`, `uv run audit.py candidates`).
 
 The first audit (commit 9f39874) applied the 16 ops both Opus runs proposed: 8 merges, 4 splits and 4 category moves;
-the 18 that only one run proposed are listed in `data/regler_ops.json` and were left out. It cost 14.12 USD at list
+the 18 that only one run proposed are listed in `data/regler_ops.json` and were left out. It cost 14.11 USD at list
 price (propose 13.21, rewrites 0.91). Against the answer key, without soft rules
 (`uv run audit.py score --before 9f39874~1`):
 

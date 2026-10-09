@@ -31,8 +31,8 @@ extraction prompt v3), files each new decision into the rule it belongs to and l
 (incremental consolidation, see How it works), runs the checks (see Review) and writes `regelsaet/` and `_site/`. A
 run with nothing new finishes in seconds. Claude runs on the subscription; at list price an extraction costs about
 0.09 USD per document (the large congress documents cost more), so a month with a few new minutes costs well under
-2 USD, and extracting and consolidating all ~240 documents again about 27 (about 22 for extraction, 5 for
-consolidation).
+2 USD, and extracting and consolidating all ~240 documents again about 25 (the migration in October 2026: 16.74
+for extraction, 8.58 for consolidation).
 
 | Option | Use |
 |---|---|
@@ -221,8 +221,8 @@ An open audit pull request conflicts with the monthly update in `data/regler/`, 
 the workflow refuses to start an audit in the last two days of a month, and while an update runs or is queued. A
 monthly run that did not happen (or ran into a conflict) is started by hand with "Run workflow" in `update.yml`.
 
-Cost at list price: on the migrated data (555 rules) `propose` is 24 calls of up to 66K tokens, about 11 USD,
-printed before the first call; each merged or split rule's rewrite about 0.1 USD; the title choice a few cents. Each
+Cost at list price: on the migrated data (555 rules) `propose` is 24 calls of up to 66K tokens, estimated at
+about 11 USD before the first call (the first audit's cost 13.21); each merged or split rule's rewrite about 0.1 USD; the title choice a few cents. Each
 `propose` and `apply` that calls Claude adds a line to `data/runs.jsonl` (with the audit's id), and the pull request
 shows the audit's whole cost from those lines, failed attempts and rejected answers included. Both workflows append
 to that file, so git merges it by keeping both sides' lines (`.gitattributes`); what reads it orders the lines by
