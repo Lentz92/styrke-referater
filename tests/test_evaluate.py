@@ -902,29 +902,91 @@ def test_the_home_rule_holds_most_events_and_years_compare_event_and_content(cor
             score.same_content) == expected
 
 
-def test_a_key_quote_spanning_one_decision_per_fee_maps_to_the_fee_of_its_rule(corpus, monkeypatch):
-    # A budget line extracted as one decision per fee (prompt v3); the key quotes the whole line for each fee's rule.
-    # Both decisions lie inside the quote, and the licence's value shares no word trigram with its decision.
-    line = "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret)."
-    monkeypatch.setitem(TEXTS, "rep2013", f"Repræsentantskabsmøde 2013. Takster: {line} Mødet sluttede.")
-    Path(corpus.doc("rep2013").path).write_text(f"<p>{TEXTS['rep2013']}</p>")
-    corpus.extract(corpus.doc("rep2013"), [
-        _decision("Årsafgift", "okonomi", "vedtaget", "bekraeftelse", "Årsafgift: kr. 1.000,- (Uændret)",
-                  tekst="Klubbernes årsafgift til DSF fastholdes uændret på 1.000 kr."),
+def _one_document(corpus, monkeypatch, doc_id: str, text: str, decisions: list[dict]) -> dict:
+    """The document's text and stored decisions replaced; its decisions as map_events takes them."""
+    monkeypatch.setitem(TEXTS, doc_id, text)
+    Path(corpus.doc(doc_id).path).write_text(f"<p>{text}</p>")
+    corpus.extract(corpus.doc(doc_id), decisions, analyze.DECISIONS_DIR / f"{doc_id}.json", ids=True)
+    return {doc_id: [d for d in analyze.load_decisions(corpus.docs) if d.doc_id == doc_id]}
+
+
+def _map(corpus, by_doc: dict, titel: str, keywords: list[str], events: list[dict]) -> dict[str, str]:
+    key = {**_rule_key(corpus, events), "titel": titel, "keywords": keywords}
+    return evaluate.map_events(key, by_doc, {d.id: d for d in corpus.docs}, evaluate.Texts())
+
+
+BUDGET_LINE = "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret). Startgebyrer: kr. 200,- (Ændret)."
+FEES = [  # the line as prompt v3 extracts it: one decision per fee, in the line's order
+    _decision("Årsafgift", "okonomi", "vedtaget", "bekraeftelse", "Årsafgift: kr. 1.000,- (Uændret)",
+              tekst="Klubbernes årsafgift til DSF fastholdes uændret på 1.000 kr."),
+    _decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Licens: kr. 200,- (Uændret)",
+              tekst="Licensgebyret fastholdes uændret på 200 kr."),
+    _decision("Startgebyr", "okonomi", "vedtaget", "aendring", "Startgebyrer: kr. 200,- (Ændret)",
+              tekst="Startgebyret ændres til 200 kr.")]
+# The real keys' keywords, which name the other fees too.
+FEE_KEYS = {
+    "licence": ("Licensgebyr", ["licensgebyr", "afgift", "koster", "kontingent", "gebyr", "årsafgift", "betaling",
+                                "licens", "pris"], "200 kr. pr. løfter pr. år"),
+    "club": ("Årsafgift", ["gebyrer", "afgift", "koster", "kontingent", "startgebyrer", "gebyr", "årsafgift",
+                           "startgebyr", "års", "betaling", "licens", "pris"], "1.000 kr. pr. klub pr. år"),
+    "start": ("Startgebyr ved stævner", ["andel", "arrangørklub", "afgift", "koster", "kontingent", "klubbernes",
+                                         "gebyr", "årsafgift", "trekamp", "startgebyr", "fordeling", "betaling", "tre",
+                                         "pris", "arrangør"], "200 kr. pr. start"),
+}
+
+
+@pytest.mark.parametrize("fee, expected", [("licence", "rep2013#2"), ("club", "rep2013#1"), ("start", "rep2013#3")])
+def test_a_key_quote_spanning_one_decision_per_fee_maps_to_the_fee_of_its_rule(corpus, monkeypatch, fee, expected):
+    # The key quotes the whole line for each fee's rule. Every fee's decision lies inside the quote, and the licence's
+    # and start fee's values share no word trigram with their decisions: the matcher alone gives the line's first.
+    by_doc = _one_document(corpus, monkeypatch, "rep2013", f"Repræsentantskabsmøde 2013. {BUDGET_LINE} Slut.", FEES)
+    titel, keywords, value = FEE_KEYS[fee]
+    assert _map(corpus, by_doc, titel, keywords, [_event("E1", "rep2013", "bekraeftet", value, BUDGET_LINE)]) == \
+        {"E1": expected}
+
+
+def test_a_decision_another_event_holds_is_not_taken(corpus, monkeypatch):
+    # Two licence events, each covering the licence decision and one other: the matcher gives the first the
+    # årsafgift (the first decision) and the second the licence, which the first may not take from it.
+    by_doc = _one_document(corpus, monkeypatch, "rep2013", f"Repræsentantskabsmøde 2013. {BUDGET_LINE} Slut.", FEES)
+    titel, keywords, value = FEE_KEYS["licence"]
+    events = [_event("E1", "rep2013", "bekraeftet", value, "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,-"),
+              _event("E2", "rep2013", "bekraeftet", value, "Licens: kr. 200,- (Uændret). Startgebyrer: kr. 200,-")]
+    assert _map(corpus, by_doc, titel, keywords, events) == {"E1": "rep2013#1", "E2": "rep2013#2"}
+
+
+MEDALS = ("Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne. "
+          "Pokaler betales af forbundet.")
+
+
+def test_containment_decides_which_decisions_compete_not_which_wins(corpus, monkeypatch):
+    # As in rep2015: the start fee's quote runs a sentence too long and lies wholly inside the key's quote, the
+    # medals' runs a sentence past it (12 of its 17 words inside). The medals are what the rule is about.
+    by_doc = _one_document(corpus, monkeypatch, "rep2016", f"{MEDALS} Der udleveres medaljer til alle.", [
+        _decision("Startgebyr", "okonomi", "vedtaget", "aendring",
+                  "Startgebyret hæves til kr. 300. Den arrangerende klub bestiller og betaler selv medaljerne.",
+                  tekst="Startgebyret hæves til 300 kr."),
+        _decision("Medaljer og pokaler", "staevner", "vedtaget", "aendring",
+                  "Den arrangerende klub bestiller og betaler selv medaljerne. Pokaler betales af forbundet. Der "
+                  "udleveres medaljer til alle.",
+                  tekst="Den arrangerende klub bestiller og betaler selv medaljerne, mens forbundet betaler pokaler.")])
+    medal_event = _event("E1", "rep2016", "aendret", "medaljer købes af arrangøren; forbundet betaler pokaler",
+                         MEDALS)
+    assert _map(corpus, by_doc, "Bestilling og betaling af medaljer og pokaler",
+                ["medaljer", "pokaler", "startgebyr", "gebyr", "betaling"], [medal_event]) == {"E1": "rep2016#2"}
+
+
+def test_of_decisions_as_much_about_the_rule_the_one_most_inside_the_quote_wins(corpus, monkeypatch):
+    # A licence decision extracted twice, once quoted from one word earlier: the one wholly inside the key's quote
+    # wins over the first.
+    by_doc = _one_document(corpus, monkeypatch, "rep2019", "Takster: Licens: kr. 200,- (Uændret). Slut.", [
+        _decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Takster: Licens: kr. 200,-",
+                  tekst="Licensgebyret er uændret 200 kr."),
         _decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Licens: kr. 200,- (Uændret)",
-                  tekst="Licensgebyret fastholdes uændret på 200 kr.")],
-        analyze.DECISIONS_DIR / "rep2013.json", ids=True)
-    by_doc = {"rep2013": [d for d in analyze.load_decisions(corpus.docs) if d.doc_id == "rep2013"]}
-    docs = {d.id: d for d in corpus.docs}
-    licence = _rule_key(corpus, [_event("E1", "rep2013", "bekraeftet", "200 kr. pr. løfter pr. år", line)])
-    fee = {**_rule_key(corpus, [_event("E1", "rep2013", "bekraeftet", "1.000 kr. pr. klub pr. år", line)]),
-           "slug": "årsafgift", "titel": "Årsafgift"}
-    assert evaluate.map_events(licence, by_doc, docs, evaluate.Texts()) == {"E1": "rep2013#2"}
-    assert evaluate.map_events(fee, by_doc, docs, evaluate.Texts()) == {"E1": "rep2013#1"}
-    # Two events quoting the line still get one decision each.
-    twice = _rule_key(corpus, [_event("E1", "rep2013", "bekraeftet", "200 kr. pr. løfter pr. år", line),
-                               _event("E2", "rep2013", "bekraeftet", "200 kr. pr. løfter pr. år", line)])
-    assert sorted(evaluate.map_events(twice, by_doc, docs, evaluate.Texts()).values()) == ["rep2013#1", "rep2013#2"]
+                  tekst="Licensgebyret er uændret 200 kr.")])
+    titel, keywords, value = FEE_KEYS["licence"]
+    licence_event = _event("E1", "rep2019", "bekraeftet", value, "Licens: kr. 200,- (Uændret).")
+    assert _map(corpus, by_doc, titel, keywords, [licence_event]) == {"E1": "rep2019#2"}
 
 
 CORRECTIONS = [
