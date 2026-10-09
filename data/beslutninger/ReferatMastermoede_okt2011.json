@@ -1,21 +1,58 @@
 {
  "doc_id": "ReferatMastermoede_okt2011",
  "sha256": "bce735cf0df881059c8c837c91dab8169ad1cca138a8db075b9c0720300a243c",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2011-10-08",
- "next_number": 4,
- "retired": [],
+ "next_number": 5,
+ "retired": [
+  {
+   "id": "ReferatMastermoede_okt2011#2",
+   "emne": "Veteranudvalgets støtte og budget",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  },
+  {
+   "id": "ReferatMastermoede_okt2011#3",
+   "emne": "Gebyr for manglende dommer ved internationale masterstævner",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
+   "id": "ReferatMastermoede_okt2011#4",
+   "emne": "Masterudvalgets status som udvalg under DSF",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ifølge reglerne skal Masterklubben indgå som et udvalg under DSF med navnet masterudvalget eller veteranudvalget. Udvalget får støtte efter det budget, som repræsentantskabsmødet har vedtaget.",
+   "citat": "Masterklubben i henhold til reglerne skal indgå som et udvalg under DSF og derpå kommer til at hedde enten masterudvalget eller veteranudvalget.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 42,
+   "citat_side": 1
+  },
+  {
    "id": "ReferatMastermoede_okt2011#1",
-   "emne": "Veteranudvalgets/masterudvalgets sammensætning",
+   "emne": "Masterudvalgets sammensætning",
    "kategori": "master",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Det nye veteranudvalg (masterudvalg) skal bestå af 3-5 personer, hvoraf én skal være medlem af DSF's bestyrelse. Udvalget bliver formentlig et udvalg under Breddeudvalget.",
+   "tekst": "Masterudvalget (veteranudvalget) skal bestå af 3-5 personer. Et af medlemmerne skal sidde i DSF's bestyrelse.",
    "citat": "Udvalget bør bestå af 3-5 personer, hvoraf den ene skal være medlem af DSF’s bestyrelse.",
    "side": 1,
    "stemmer": null,
@@ -23,42 +60,6 @@
    "gaelder_til": null,
    "citat_fundet": true,
    "citat_pos": 277,
-   "citat_side": 1
-  },
-  {
-   "id": "ReferatMastermoede_okt2011#2",
-   "emne": "Veteranudvalgets støtte og budget",
-   "kategori": "master",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "bekraeftelse",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Som udvalg under DSF får veteranudvalget støtte i henhold til det budget, der er vedtaget på repræsentantskabsmødet.",
-   "citat": "Som et udvalg under DSF får veteranudvalget naturligvis støtte i henhold til det på repræsentantskabsmødet vedtagne budget.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 208,
-   "citat_side": 1
-  },
-  {
-   "id": "ReferatMastermoede_okt2011#3",
-   "emne": "Gebyr for manglende dommer ved internationale masterstævner",
-   "kategori": "internationalt",
-   "udfald": "ikke_afgjort",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "eksternt_krav",
-   "tekst": "Der er forslag på næste IPF-kongres om, at en nation med 3 eller flere deltagere, der ikke stiller med en dommer, skal betale 1.000 euro. Dommerudvalget skal løse problemet med at stille dommere til internationale masterstævner fra næste år.",
-   "citat": "Hvis der deltager 3 eller flere deltagere, skal vi fra næste år forvente en udgift på 1.000 euro, hvis en nation ikke stiller med en dommer (forslag på næste IPF-kongres).",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 320,
    "citat_side": 1
   }
  ]

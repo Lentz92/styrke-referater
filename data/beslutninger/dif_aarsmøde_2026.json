@@ -1,8 +1,14 @@
 {
  "doc_id": "dif_aarsmøde_2026",
  "sha256": "3822cd7a8216ce386522dbdab0e6aa3be03e651658d8101e4655e94316aedad0",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2026-05-09",
  "next_number": 1,
  "retired": [],

@@ -1,64 +1,53 @@
 {
  "doc_id": "refdom03072025",
  "sha256": "1de5ab8970a42515ea2aedbed37603fe3cb7bcf32e3db527e6df8737364b469c",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2025-07-03",
- "next_number": 4,
- "retired": [],
- "beslutninger": [
+ "next_number": 5,
+ "retired": [
   {
    "id": "refdom03072025#1",
    "emne": "Dommerkursus",
-   "kategori": "dommere",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Der afholdes ikke dommerkursus i 2025, da det vurderes, at der er de dommere, der er brug for. Behovet for et dommerkursus i 2026 vurderes senere.",
-   "citat": "Derfor vil der ikke blive afholdt et dommerkursus i 2025.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": "2025-12-31",
-   "citat_fundet": true,
-   "citat_pos": 133,
-   "citat_side": 1
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
   },
   {
    "id": "refdom03072025#2",
    "emne": "Brush up-kursus for B-dommere",
-   "kategori": "dommere",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Der afholdes tre online brush up-kurser for B-dommere, hvor de vigtigste og mest relevante dommerregler gennemgås. Kurset er obligatorisk for B-dommere og tilbydes på tre forskellige datoer, så alle kan deltage.",
-   "citat": "Kursuset er obligatorisk og tilbydes på tre forskellige datoer, så alle har mulighed for at deltage.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 214,
-   "citat_side": 1
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
   },
   {
    "id": "refdom03072025#3",
    "emne": "Påmindelse om lånedommere",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
+ "beslutninger": [
+  {
+   "id": "refdom03072025#4",
+   "emne": "Obligatorisk brush up-kursus for B-dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Alle klubber får hvert halve år en mail, der minder dem om muligheden for at låne dommere.",
-   "citat": "Eva vil bede Peter om hvert halve år at sende en mail ud til alle klubber, der påminder dem om muligheden for at bruge lånedommere.",
+   "tekst": "B-dommere skal deltage i et obligatorisk brush up-onlinekursus, hvor de vigtigste og mest relevante dommerregler gennemgås, og hvor der er mulighed for at stille spørgsmål om svære dommersituationer. Kurset udbydes på tre forskellige datoer, så alle kan deltage.",
+   "citat": "Trine og Eva holder tre brush up online-kursuser for B -dommere. Her vil der blive gennemgået de vigtigste og mest relevante dommerregler.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
    "citat_fundet": true,
-   "citat_pos": 82,
+   "citat_pos": 168,
    "citat_side": 1
   }
  ]

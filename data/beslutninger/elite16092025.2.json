@@ -1,29 +1,23 @@
 {
  "doc_id": "elite16092025.2",
  "sha256": "60891c5324e0fee53cdff844db99153a1fb3e10756e69f136aa69d8e96855da3",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2025-09-16",
  "next_number": 2,
- "retired": [],
- "beslutninger": [
+ "retired": [
   {
    "id": "elite16092025.2#1",
    "emne": "Landsholdskontrakt",
-   "kategori": "landshold",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "aendring",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Landsholdskontrakten opdateres for 2026, og den opdaterede kontrakt udsendes til alle landsholdsløftere inden udgangen af 2025.",
-   "citat": "En opdateret landsholdskontrakt vil blive udsendt til samlige landsholdsløftere inden \nudgangen af 2025.",
-   "side": 2,
-   "stemmer": null,
-   "gaelder_fra": "2026-01-01",
-   "gaelder_til": "2026-12-31",
-   "citat_fundet": true,
-   "citat_pos": 458,
-   "citat_side": 2
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
   }
- ]
+ ],
+ "beslutninger": []
 }

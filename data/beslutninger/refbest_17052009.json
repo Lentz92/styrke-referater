@@ -1,8 +1,14 @@
 {
  "doc_id": "refbest_17052009",
  "sha256": "42ae13c8fc33b1f71147059d289a4a305cd89c151721d72d862444607d81b88b",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2009-05-17",
  "next_number": 1,
  "retired": [],

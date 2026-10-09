@@ -1,0 +1,96 @@
+{
+ "doc_id": "elite10122024",
+ "sha256": "067c83b2b0748d7c69123aa778dbb33d0dd7a44e01e3cf837fa3705b140563c0",
+ "run": "sonnet-v3-2",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 2451,
+  "output": 1151,
+  "cost_usd": 0.022,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2024-12-10",
+ "beslutninger": [
+  {
+   "emne": "Landsholdskrav styrkeløft med udstyr",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdskravene (EM og VM, A og B) for styrkeløft med udstyr er justeret og gælder fra 1. juli 2025. De opdaterede krav lægges på landsholdssiden inden årets udgang.",
+   "citat": "Opdaterede landsholdskrav for styrkeløft med udstyr, gældende fra 1. juli 2025.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2025-07-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 239,
+   "citat_side": 1
+  },
+  {
+   "emne": "Booking af rejser for seniorlandshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Atleter og trænere booker fremover selv fly. Bookes der gennem forbundet, lægges bookingfee (ca. 500-600 kr) og eventuel prisforskel oveni egenbetalingen. Rejsedage aftales minimum 10 dage før preliminary, og rejsetider og flynumre indsendes senest 10 dage før Final.",
+   "citat": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2025-01-01",
+   "gaelder_til": "2025-12-31",
+   "citat_fundet": true,
+   "citat_pos": 289,
+   "citat_side": 2
+  },
+  {
+   "emne": "Kvalifikationskrav opnået ved bestemte stævner",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Atleterne",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kvalifikationskrav til internationale mesterskaber skal opnås ved JM/SM/DM. I særlige tilfælde kan eliteudvalget ansøges om dispensation i dialog med sportschefen.",
+   "citat": "Kvalifikationskrav skal opnåes ved de nævnte stævner. I særlige tilfælde og i dialog med sportschefen, kan eliteudvalget ansøges om dispensation",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 447,
+   "citat_side": 2
+  },
+  {
+   "emne": "Egenbetaling landshold",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Atleterne",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Den fastsatte egenbetaling skal betales til alle stævner, også ved billig lokation. Atleter med A-krav kan ikke opkræves mere end den fulde egenbetaling for B-krav.",
+   "citat": "Ja, der skal betales den fastsatte egenbetaling til alle stævner.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 479,
+   "citat_side": 2
+  }
+ ]
+}

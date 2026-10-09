@@ -12,9 +12,10 @@
     uv run evaluate.py select                       # choose the rules and documents (no Claude)
     uv run evaluate.py extract --name stored        # today's extractions from data/ as a run (no Claude)
     uv run evaluate.py extract --name sonnet-1 --model claude-sonnet-5-5 --max-cost 5
+    uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
     uv run evaluate.py key-decisions --max-cost 40  # Part B key: Opus judges the candidates per document
     uv run evaluate.py key-rules --max-cost 30      # Part A key: Opus writes each rule's timeline
-    uv run evaluate.py score --run stored --run sonnet-1    # Part B scores (no Claude)
+    uv run evaluate.py score --run stored --run sonnet-1    # Part B scores, stability and the gate (no Claude)
     uv run evaluate.py score-rules                  # Part A scores of data/regler (no Claude)
     uv run evaluate.py candidate-recall             # incremental consolidation: candidate ranking recall (no Claude)
     uv run evaluate.py replay --holdout newest:20,random:10 --seed 1 --name inc-1 --max-cost 20
@@ -94,6 +95,9 @@ RULE_EFFECTS = ("indfoert", "aendret", "bekraeftet", "ophaevet")
 
 # The extraction runs whose decisions are the candidates of the decisions key; "stored" is data/beslutninger.
 STORED_RUN = "stored"
+# The extraction prompt whose rules the decisions key was judged by. Pinned, so a new pipeline prompt leaves the
+# judges' input, and with it every kept answer, as it is; v3's rule (one decision per fee) is in GRANULARITY anyway.
+KEY_PROMPT = "v2"
 CANDIDATE_RUNS = (STORED_RUN, "sonnet-1", "sonnet-2", "haiku-1", "opus-1")
 JUDGE_MODEL = "claude-opus-5-5"
 JUDGE_EFFORT = "max"
@@ -131,6 +135,10 @@ PREFIX_LENGTH = 4
 AMOUNT_WINDOW = (12, 4)
 
 BOOTSTRAP_SAMPLES = 2000
+# The extraction gate: how far a configuration's worse run may fall behind the stored run, per figure (higher is better
+# for all but over-split). Over-split is in it so a prompt that splits more than the key asks for cannot pass on recall.
+GATE_SLACK = {"recall": 0.0, "precision": 0.02, "field_three": 0.0, "over_split": 0.02}
+GATE_LOWER_IS_BETTER = frozenset({"over_split"})
 # The candidate-recall gate: recall@K for these K, and the recall the chosen K must reach.
 RECALL_KS = (3, 5, 8, 10, 15)
 RECALL_TARGET = 0.98
@@ -615,9 +623,10 @@ def copy_stored(docs: list[Doc], force: bool) -> list[str]:
     return copied
 
 
-def run_state(run: str, doc: Doc, model: str, effort: str | None) -> str:
-    """"missing", "current" (this file version, today's prompt and this effort) or "stale". One made with another
-    model would mix two configurations under one name, so it stops the command."""
+def run_state(run: str, doc: Doc, model: str, effort: str | None, prompt: str | None = None) -> str:
+    """"missing", "current" (this file version, the extraction prompt named `prompt` (None: the pipeline's) and this
+    effort) or "stale". One made with another model would mix two configurations under one name, so it stops the
+    command."""
     path = run_path(run, doc.id)
     if not path.exists():
         return "missing"
@@ -625,20 +634,23 @@ def run_state(run: str, doc: Doc, model: str, effort: str | None) -> str:
     if stored["model"] != model:
         raise SystemExit(f"Run {run} was extracted with {stored['model']}, not {model}; use another --name")
     provenance = stored.get("provenance") or {}
+    system = analyze.extract_prompt(prompt).system
     current = (stored["sha256"] == doc.sha256
-               and provenance.get("prompt") == analyze.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA)
+               and provenance.get("prompt") == analyze.prompt_hash(system, analyze.EXTRACT_SCHEMA)
                and provenance.get("effort") == (effort or "default"))
     return "current" if current else "stale"
 
 
-def extract_into_run(doc: Doc, run: str, *, model: str, effort: str | None, cli: str,
-                     budget: RunBudget) -> tuple[str, Usage]:
-    """One extraction with the pipeline's prompt (analyze.run_extraction), written to eval/runs/<run>/."""
-    extraction, usage = analyze.run_extraction(doc, model=model, effort=effort, budget=budget)
+def extract_into_run(doc: Doc, run: str, *, model: str, effort: str | None, cli: str, budget: RunBudget,
+                     prompt: str | None = None) -> tuple[str, Usage]:
+    """One extraction with the pipeline's code (analyze.run_extraction) and the extraction prompt named `prompt`
+    (None: the pipeline's), written to eval/runs/<run>/."""
+    chosen = analyze.extract_prompt(prompt)
+    extraction, usage = analyze.run_extraction(doc, model=model, effort=effort, budget=budget, prompt=prompt)
     with analyze.usage_kept(usage):
         write_json(run_path(run, doc.id), {
-            "doc_id": doc.id, "sha256": doc.sha256, "run": run, "model": model,
-            "provenance": analyze.provenance(usage, cli, analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA, effort),
+            "doc_id": doc.id, "sha256": doc.sha256, "run": run, "model": model, "prompt": chosen.name,
+            "provenance": analyze.provenance(usage, cli, chosen.system, analyze.EXTRACT_SCHEMA, effort),
             "usage": usage_json(usage), "moededato": extraction.moededato, "beslutninger": extraction.decisions,
         })
     missing = sum(not d["citat_fundet"] for d in extraction.decisions)
@@ -733,12 +745,13 @@ def rotated(items: Sequence, judge: int) -> list:
 # --------------------------------------------------------------------------- judge prompts
 
 def _extraction_rules() -> tuple[str, str]:
-    """EXTRACT_SYSTEM's criteria for what counts as a decision, and its field rules, verbatim: the key judges
-    decisions by the rules the extraction is given. The first paragraph (the extractor's role) is left out."""
-    body = analyze.EXTRACT_SYSTEM.split("\n\n", 1)[1]
+    """The criteria of the extraction prompt KEY_PROMPT for what counts as a decision, and its field rules, verbatim:
+    the key judges decisions by the rules the extraction is given. The first paragraph (the extractor's role) is
+    left out."""
+    body = analyze.EXTRACT_PROMPTS[KEY_PROMPT].split("\n\n", 1)[1]
     criteria, heading, field_rules = body.partition("Field rules:")
     if not criteria.startswith("Extract every decision") or not heading:
-        raise ValueError("EXTRACT_SYSTEM no longer has the sections the judge prompts quote")
+        raise ValueError("The extraction prompt no longer has the sections the judge prompts quote")
     return criteria.strip(), (heading + field_rules).strip()
 
 
@@ -2111,9 +2124,12 @@ def _pct(value: float | None) -> str:
 
 
 def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], keys: Mapping[str, dict],
-                     seed: int, warnings: Sequence[str] = ()) -> str:
-    """Markdown: per run the metrics pooled and averaged per document, median and spread over runs, a paired
-    bootstrap of each run against the first, and how often the judges kept decisions only one run found."""
+                     seed: int, warnings: Sequence[str] = (), stabilities: Mapping[str, float | None] | None = None,
+                     gate: Sequence[str] = ()) -> str:
+    """Markdown: per run the metrics pooled and averaged per document and the stability of its configuration
+    (`stabilities`), median and spread over runs, the gate's lines, a paired bootstrap of each run against the
+    first, and how often the judges kept decisions only one run found."""
+    stabilities = stabilities or {}
     certain = sum(d["status"] == "certain" for k in keys.values() for d in k["decisions"])
     uncertain = sum(d["status"] != "certain" for k in keys.values() for d in k["decisions"])
     rejects = sum(c["role"] == "reject" for k in keys.values() for c in k["candidates"])
@@ -2126,21 +2142,24 @@ def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], k
              "only run decisions in the key's pool, and the others are Unjudged. Over-split: extra run decisions on "
              "a key decision already found, per found decision. Fields: share of found decisions with the key's "
              "value, among those whose value the judges agreed on; handling often needs the rule's history, so the "
-             "three fields without it are given too. Doc avg: averaged over documents.", ""]
+             "three fields without it are given too. Doc avg: averaged over documents. Stability: for runs of the "
+             "same configuration (model, prompt and effort), the share of their decisions matched one to one "
+             "between them, per document and pooled.", ""]
     if outside:
         lines += [f"Not candidate runs: {', '.join(outside)}. The judges never saw their decisions, so those no "
                   f"candidate run had are unjudged, and their precision covers only the rest.", ""]
     lines += [f"Warning: {w}" for w in warnings] + ([""] if warnings else [])
     lines += ["| Run | Recall | Recall (doc avg) | Precision | Precision (doc avg) | Over-split | Kategori | Udfald | "
-              "Handling | Niveau | All four | Three (no handling) | Found | False | Extra | Ignored | Unjudged |",
-              "|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|"]
+              "Handling | Niveau | All four | Three (no handling) | Found | False | Extra | Ignored | Unjudged | "
+              "Stability |",
+              "|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|"]
     totals = {run: total(found) for run, found in scores.items()}
     for run, s in totals.items():
         values = [_pct(METRICS["recall"](s)), _pct(per_document(scores[run], METRICS["recall"])),
                   _pct(METRICS["precision"](s)), _pct(per_document(scores[run], METRICS["precision"]))]
         values += [_pct(METRICS[m](s)) for m in METRICS if m not in ("recall", "precision")]
         lines.append(f"| {run} | {' | '.join(values)} | {s.found} | {s.false} | {s.extra} | {s.ignored} | "
-                     f"{s.unjudged} |")
+                     f"{s.unjudged} | {_pct(stabilities.get(run))} |")
     if len(totals) > 1:
         cells = []
         for m in ("recall", "recall_doc", "precision", "precision_doc", *list(METRICS)[2:]):
@@ -2150,7 +2169,9 @@ def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], k
                 values = [v for s in totals.values() if (v := METRICS[m](s)) is not None]
             cells.append(f"{_pct(statistics.median(values))} ({_pct(min(values))}–{_pct(max(values))})"
                          if values else "–")
-        lines.append(f"| median (min–max) | {' | '.join(cells)} | | | | | |")
+        lines.append(f"| median (min–max) | {' | '.join(cells)} | | | | | | |")
+    lines += ["", *gate] if gate else []
+    if len(totals) > 1:
         base, *others = scores
         lines += ["", f"## Paired bootstrap against {base}", "",
                   f"{BOOTSTRAP_SAMPLES} resamples of the documents, seed {seed}.", "",
@@ -2172,6 +2193,124 @@ def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], k
         lines.append(f"| {doc_id} | {' | '.join(cells)} |")
     lines += ["", *corrections_section(c for key in keys.values() for c in key.get("corrections", []))]
     return "\n".join(lines) + "\n"
+
+
+# --------------------------------------------------------------------------- stability and the gate
+
+@dataclass(frozen=True)
+class Configuration:
+    """What produced an extraction run: the model that answered, the prompt's fingerprint and the effort."""
+    model: str
+    prompt: str  # analyze.prompt_hash of the system prompt and the schema
+    effort: str
+
+    def label(self) -> str:
+        names = {analyze.prompt_hash(text, analyze.EXTRACT_SCHEMA): name
+                 for name, text in analyze.EXTRACT_PROMPTS.items()}
+        return f"{self.model}, prompt {names.get(self.prompt, self.prompt)}, effort {self.effort}"
+
+
+def configuration(records: Iterable[dict]) -> Configuration | None:
+    """A run's configuration from its documents' provenance; None when a document has none (the stored run was
+    extracted before provenance was kept) or they differ: then the run is no other run's repeat."""
+    found = set()
+    for record in records:
+        p = record.get("provenance")
+        if not p:
+            return None
+        found.add(Configuration(p["model"], p["prompt"], p["effort"]))
+    return found.pop() if len(found) == 1 else None
+
+
+def pipeline_configuration() -> Configuration:
+    """Today's pipeline: update.py's extraction model and prompt, at Claude Code's default effort."""
+    return Configuration(update.EXTRACT_MODEL, analyze.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA),
+                         "default")
+
+
+def stability(pairs: Iterable[tuple[list[dict], list[dict]]]) -> float | None:
+    """How alike two runs are: the share of their decisions matched one to one between them (matching.match_decisions,
+    which also carries decision ids over), per document and pooled: 2 × matched / (decisions of both runs). The key
+    cannot show this: two runs may score alike on it and still find different decisions."""
+    matched = decisions = 0
+    for a, b in pairs:
+        matched += len(matching.match_decisions([decision_candidate(d) for d in a], [decision_candidate(d) for d in b]))
+        decisions += len(a) + len(b)
+    return _ratio(2 * matched, decisions)
+
+
+def repeated_configurations(configurations: Mapping[str, Configuration | None]) -> dict[Configuration, list[str]]:
+    """The configurations scored with two or more runs, each with its runs in the order given."""
+    groups: dict[Configuration, list[str]] = defaultdict(list)
+    for run, config in configurations.items():
+        if config is not None:
+            groups[config].append(run)
+    return {config: runs for config, runs in groups.items() if len(runs) > 1}
+
+
+@dataclass(frozen=True)
+class GateResult:
+    """One configuration against the gate: its worse run's figures, its stability and the criteria it misses."""
+    configuration: Configuration
+    runs: tuple[str, ...]
+    worse: Mapping[str, float | None]  # each GATE_SLACK figure of its worse run on it
+    stability: float | None
+    failed: tuple[str, ...]
+
+
+def gate_needs(baseline: DocScore, reference: float | None) -> dict[str, float | None]:
+    """The bound on each gate figure: the stored baseline's, moved by its GATE_SLACK (down, or up where lower is
+    better), and for stability that of two runs of today's pipeline (None: not scored)."""
+    needs: dict[str, float | None] = {}
+    for m, slack in GATE_SLACK.items():
+        value = METRICS[m](baseline)
+        needs[m] = None if value is None else value + slack if m in GATE_LOWER_IS_BETTER else value - slack
+    return {**needs, "stability": reference}
+
+
+def _within(metric: str, value: float | None, bound: float | None) -> bool:
+    if value is None or bound is None:
+        return False
+    return value <= bound if metric in GATE_LOWER_IS_BETTER else value >= bound
+
+
+def gate(totals: Mapping[str, DocScore], groups: Mapping[Configuration, list[str]],
+         stabilities: Mapping[Configuration, float | None], needs: Mapping[str, float | None]) -> list[GateResult]:
+    """Each repeated configuration against `needs` (gate_needs): its worse run on each figure must be within its
+    bound, and its runs' stability reach that of today's pipeline. A figure missing on either side fails."""
+    results = []
+    for config, runs in groups.items():
+        worse = {}
+        for m in GATE_SLACK:
+            values = [METRICS[m](totals[run]) for run in runs]
+            worse[m] = None if None in values else max(values) if m in GATE_LOWER_IS_BETTER else min(values)
+        figures = {**worse, "stability": stabilities[config]}
+        failed = tuple(m for m, value in figures.items() if not _within(m, value, needs[m]))
+        results.append(GateResult(config, tuple(runs), worse, stabilities[config], failed))
+    return results
+
+
+def gate_section(results: Sequence[GateResult], needs: Mapping[str, float | None], baseline: str) -> list[str]:
+    """Markdown lines: the gate, what it needs and each repeated configuration against it."""
+    pipeline = pipeline_configuration()
+    reference = pipeline.label()
+    unscored = "" if needs["stability"] is not None else "; they were not scored, so no configuration passes"
+    lines = ["## Gate", "",
+             f"A configuration passes when its worse run is at least the run {baseline} on recall and on the three "
+             f"fields, at most {100 * GATE_SLACK['precision']:.0f} points below it on precision and at most "
+             f"{100 * GATE_SLACK['over_split']:.0f} points above it on over-split, and its runs are at least as stable "
+             f"as two runs of today's pipeline ({reference}){unscored}.", "",
+             "| Configuration | Runs | Recall (worse) | Precision (worse) | Three (worse) | Over-split (worse) | "
+             "Stability | Passes |",
+             "|---|---|--:|--:|--:|--:|--:|---|",
+             "| needs | | " + " | ".join(f"{'≤' if m in GATE_LOWER_IS_BETTER else '≥'} {_pct(needs[m])}"
+                                       for m in (*GATE_SLACK, "stability")) + " | |"]
+    for r in results:
+        passes = "yes" if not r.failed else f"no: {', '.join(r.failed)}"
+        label = r.configuration.label() + (" (today's pipeline)" if r.configuration == pipeline else "")
+        figures = " | ".join(_pct(r.worse[m]) for m in GATE_SLACK)
+        lines.append(f"| {label} | {', '.join(r.runs)} | {figures} | {_pct(r.stability)} | {passes} |")
+    return lines
 
 
 # --------------------------------------------------------------------------- scoring rules (Part A)
@@ -2196,7 +2335,20 @@ class RuleScore:
 
 def map_events(key: dict, decisions_by_doc: Mapping[str, list[Decision]], docs: Mapping[str, Doc],
                texts: Texts) -> dict[str, str]:
-    """Key event id -> the pipeline decision it is, matched (match_decisions) among the decisions of its document."""
+    """Key event id -> the pipeline decision it is, matched (match_decisions) among the decisions of its document.
+
+    The key quotes a budget line whole ("Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).") for each
+    fee's rule, while extraction prompt v3 makes it one decision per fee. Every fee's decision then lies inside the
+    event's quote, so the quote overlap ties, and the matcher's text part (word trigrams of the key's value against
+    the decision's sentence) mostly shares nothing: the line's first decision won for every fee. So when an event's
+    quote covers several decisions (more than half of each one's quoted words inside it) and the matcher picked one
+    of them, the event gets the free one most about the key's rule (key_similarity), then the one most inside the
+    quote, then the first. Containment decides which decisions compete, not which wins: in rep2015 the medal
+    decision's quote runs a sentence past the key's, while the start fee's, quoted a sentence too long, lies wholly
+    inside it. Each decision still goes to one event at most, and an event covering one decision or none keeps the
+    matcher's pick."""
+    vocabulary = candidates.vocabulary([key["titel"], *key.get("keywords", ()), *(
+        t for decisions in decisions_by_doc.values() for d in decisions for t in (d.emne, d.tekst))])
     mapped: dict[str, str] = {}
     by_doc: dict[str, list[dict]] = defaultdict(list)
     for e in key["events"]:
@@ -2210,9 +2362,42 @@ def map_events(key: dict, decisions_by_doc: Mapping[str, list[Decision]], docs: 
                                                                           d.citat)) for d in pipeline]
         wanted = [Candidate(key["titel"], e["value_after"] or e["quote"], EFFECT_OUTCOME.get(e["effect"], "vedtaget"),
                             tuple(e["span"]) if e["span"] else None) for e in events]
-        for m in matching.match_decisions(wanted, found):
-            mapped[events[m.old]["id"]] = pipeline[m.new].ref
+        matches = matching.match_decisions(wanted, found)
+        chosen = {m.old: m.new for m in matches}
+        for m in sorted(matches, key=lambda m: (-m.score, m.old)):  # the matcher's own order
+            inside = {j: share_inside(c.span, wanted[m.old].span) for j, c in enumerate(found)}
+            covered = [j for j, share in inside.items() if share > 0.5]
+            if len(covered) < 2 or chosen[m.old] not in covered:
+                continue
+            held = set(chosen.values()) - {chosen[m.old]}
+            terms = key_terms(key, events[m.old], vocabulary)
+            chosen[m.old] = max((j for j in covered if j not in held),
+                                key=lambda j: (key_similarity(terms, pipeline[j], vocabulary), inside[j], -j))
+        mapped |= {events[i]["id"]: pipeline[j].ref for i, j in chosen.items()}
     return mapped
+
+
+def share_inside(span: tuple[int, int] | None, outer: tuple[int, int] | None) -> float:
+    """The share of a decision's quoted words inside a key event's quote; 0 when either was not located."""
+    if span is None or outer is None:
+        return 0.0
+    return max(min(span[1], outer[1]) - max(span[0], outer[0]), 0) / (span[1] - span[0])
+
+
+def key_terms(key: dict, event: dict, vocabulary: Collection[str]) -> Counter[str]:
+    """What a key event is about, as candidates.terms (Danish stems and compound parts): the rule's title, which
+    names it and counts candidates.TITLE_WEIGHT times, its keywords and the event's value."""
+    terms = Counter(candidates.terms(key["titel"], vocabulary) * candidates.TITLE_WEIGHT)
+    for text in (*key.get("keywords", ()), event["value_after"]):
+        terms.update(candidates.terms(text, vocabulary))
+    return terms
+
+
+def key_similarity(terms: Counter[str], decision: Decision, vocabulary: Collection[str]) -> float:
+    """The weighted share of a key event's terms (key_terms) that the decision's emne and tekst use."""
+    used = set(candidates.terms(f"{decision.emne} {decision.tekst}", vocabulary))
+    total = sum(terms.values())
+    return sum(n for term, n in terms.items() if term in used) / total if total else 0.0
 
 
 def score_rule(key: dict, decisions: list[Decision], raw_rules: list[dict], docs: Mapping[str, Doc],
@@ -2702,27 +2887,29 @@ def cmd_extract(args: argparse.Namespace) -> None:
         return
     if not args.model or args.max_cost is None:
         raise SystemExit("extract calls Claude: give --model and --max-cost")
-    states = {doc.id: run_state(run, doc, args.model, args.effort) for doc in docs}
+    prompt = analyze.extract_prompt(args.prompt)
+    states = {doc.id: run_state(run, doc, args.model, args.effort, args.prompt) for doc in docs}
     stale = [doc_id for doc_id, state in states.items() if state == "stale"]
     if stale and not args.force:
         raise SystemExit(f"Run {run} has extractions of {', '.join(stale)} from another file version, prompt or "
                          f"effort; pass --force to extract them again (paid), or use another --name")
     todo = [doc for doc in docs if states[doc.id] != "current"]
     texts = Texts()
-    tokens_in = sum(estimate_tokens(analyze.EXTRACT_SYSTEM, analyze.document_prompt(doc, texts.text(doc)),
+    tokens_in = sum(estimate_tokens(prompt.system, analyze.document_prompt(doc, texts.text(doc)),
                                     analyze.EXTRACT_SCHEMA) for doc in todo)
     print_plan(f"Extract {run}", len(todo), tokens_in, args.model, args.effort,
-               f"; {len(docs) - len(todo)} of {len(docs)} documents extracted already")
+               f", prompt {prompt.name}; {len(docs) - len(todo)} of {len(docs)} documents extracted already")
     if not todo:
         return
     budget = RunBudget(max_cost_usd=args.max_cost)
     cli = analyze.cli_version()
     step = analyze.run_parallel(
-        todo, lambda doc: extract_into_run(doc, run, model=args.model, effort=args.effort, cli=cli, budget=budget),
+        todo, lambda doc: extract_into_run(doc, run, model=args.model, effort=args.effort, cli=cli, budget=budget,
+                                           prompt=args.prompt),
         workers_for(args), f"Extract {run}", budget)
-    done = [doc.id for doc in todo if run_state(run, doc, args.model, args.effort) == "current"]
-    log_run("extract", {"run": run, "model": args.model, "effort": args.effort, "documents": done},
-            {"extract": step})
+    done = [doc.id for doc in todo if run_state(run, doc, args.model, args.effort, args.prompt) == "current"]
+    log_run("extract", {"run": run, "model": args.model, "prompt": prompt.name, "effort": args.effort,
+                        "documents": done}, {"extract": step})
     finish({"extract": step})
 
 
@@ -2859,7 +3046,19 @@ def cmd_score(args: argparse.Namespace) -> None:
         log.warning("%s", warning)
     scores = {run: [score_document(keys[doc_id], stored[run, doc_id]["beslutninger"]) for doc_id in doc_ids]
               for run in runs}
-    report = decisions_report(scores, doc_ids, {doc_id: keys[doc_id] for doc_id in doc_ids}, args.seed, warnings)
+    groups = repeated_configurations({run: configuration(stored[run, doc_id] for doc_id in doc_ids) for run in runs})
+    by_config = {config: stability((stored[a, doc_id]["beslutninger"], stored[b, doc_id]["beslutninger"])
+                                   for a, b in combinations(members, 2) for doc_id in doc_ids)
+                 for config, members in groups.items()}
+    by_run = {run: by_config[config] for config, members in groups.items() for run in members}
+    results: list[GateResult] = []
+    gate_lines: list[str] = []
+    if STORED_RUN in runs and groups:
+        needs = gate_needs(total(scores[STORED_RUN]), by_config.get(pipeline_configuration()))
+        results = gate({run: total(s) for run, s in scores.items()}, groups, by_config, needs)
+        gate_lines = gate_section(results, needs, STORED_RUN)
+    report = decisions_report(scores, doc_ids, {doc_id: keys[doc_id] for doc_id in doc_ids}, args.seed, warnings,
+                              by_run, gate_lines)
     if left_out:
         report += f"\nLeft out, not extracted by every run: {', '.join(left_out)}\n"
     name = args.report or f"decisions-{'+'.join(runs)}"
@@ -2867,8 +3066,11 @@ def cmd_score(args: argparse.Namespace) -> None:
     print(report)
     metrics = {run: {m: _round(METRICS[m](total(s))) for m in METRICS}
                | {"recall_doc_avg": _round(per_document(s, METRICS["recall"])),
-                  "precision_doc_avg": _round(per_document(s, METRICS["precision"]))} for run, s in scores.items()}
-    log_run("score", {"runs": runs, "documents": len(doc_ids), "report": f"reports/{name}.md", "metrics": metrics})
+                  "precision_doc_avg": _round(per_document(s, METRICS["precision"])),
+                  "stability": _round(by_run.get(run))} for run, s in scores.items()}
+    log_run("score", {"runs": runs, "documents": len(doc_ids), "report": f"reports/{name}.md", "metrics": metrics,
+                      "gate": {r.configuration.label(): {"runs": list(r.runs), "failed": list(r.failed)}
+                               for r in results}})
 
 
 def cmd_score_rules(args: argparse.Namespace) -> None:
@@ -3022,6 +3224,8 @@ def parser() -> argparse.ArgumentParser:
     extract.add_argument("--name", required=True, help=f"run name; '{STORED_RUN}' copies data/beslutninger")
     extract.add_argument("--model", help="model id, e.g. claude-sonnet-5-5")
     extract.add_argument("--effort", choices=update.EFFORTS, help="effort (default: Claude Code's own)")
+    extract.add_argument("--prompt", choices=list(analyze.EXTRACT_PROMPTS),
+                         help=f"extraction prompt (default: the pipeline's, v{analyze.EXTRACT_VERSION})")
     extract.add_argument("--force", action="store_true",
                          help="replace extractions of another file version, prompt or effort (paid; for 'stored': "
                               "other copies)")

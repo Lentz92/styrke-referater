@@ -1,58 +1,41 @@
 {
  "doc_id": "Adfaerdskodeks",
  "sha256": "288e05e4140da47f69e793205d7b3fecc4c6696a7aaf2ea433a33c2ba26cbee1",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": null,
  "next_number": 4,
- "retired": [],
- "beslutninger": [
+ "retired": [
   {
    "id": "Adfaerdskodeks#1",
    "emne": "Adfærdskodeks, generel adfærd",
-   "kategori": "master",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "bekraeftelse",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Personer der repræsenterer DSF i masterudvalget (konkurrencedeltagere, holdledere, ledere, dommere og trænere) skal tale pænt og behandle hinanden ordentligt og respektfuldt, acceptere at vi er forskellige og alle bidrage til et godt miljø.",
-   "citat": "At vi taler pænt til hinanden og behandler hinanden ordentligt og respektfuldt.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 45,
-   "citat_side": 1
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
   },
   {
    "id": "Adfaerdskodeks#2",
    "emne": "Adfærdskodeks, adfærd under konkurrencer",
-   "kategori": "master",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "bekraeftelse",
-   "niveau": "udvalgsbeslutning",
-   "tekst": "Under konkurrencer skal man deltage i de aktiviteter DSF eller arrangøren forventer, udvise respekt og etik over for konkurrenter og arrangører, blive til og deltage i præmieoverrækkelsen og rejse sig til nationalmelodierne, overholde påklædningsreglerne og så vidt muligt bakke op om hinanden, med en dansk dommer til stede om muligt.",
-   "citat": "At vi, hvis vi har været involveret i en konkurrence som deltager, træner, leder, dommer m.v., bliver og tager del i den efterfølgende præmieoverrækkelse og rejser os til nationalmelodierne.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 125,
-   "citat_side": 1
-  },
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
+ "beslutninger": [
   {
    "id": "Adfaerdskodeks#3",
-   "emne": "Adfærdskodeks, alkohol",
+   "emne": "Adfærdskodeks for masterudvalget",
    "kategori": "master",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "bekraeftelse",
    "niveau": "udvalgsbeslutning",
-   "tekst": "Alkohol indtages kun i henhold til aftale, f.eks. ved den afsluttende banket. I tvivlstilfælde afgør holdlederen, om der må nydes alkohol.",
-   "citat": "At vi kun indtager alkohol i henhold til aftale, f.eks. ved den afsluttende banket. I tvivlstilfælde tager holdlederen stilling til, om der må nydes alkohol.",
+   "tekst": "Personer, der repræsenterer DSF i masterregi (konkurrencedeltagere, holdledere, ledere, dommere og trænere), skal tale pænt til og respektere hinanden og bidrage til et godt miljø. Under konkurrencer skal de deltage i forventede aktiviteter, vise respekt over for konkurrenter og arrangører, blive til præmieoverrækkelsen og rejse sig til nationalmelodierne, overholde påklædningsreglerne og så vidt muligt bakke op om danske deltagere, gerne med en dansk dommer til stede ved behov for protest. Alkohol må kun indtages efter aftale, f.eks. ved den afsluttende banket, og i tvivlstilfælde afgør holdlederen det.",
+   "citat": "At vi kun indtager alkohol i henhold til aftale, f.eks. ved den afsluttende banket. I \ntvivlstilfælde tager holdlederen stilling til, om der må nydes alkohol.",
    "side": 1,
    "stemmer": null,
    "gaelder_fra": null,

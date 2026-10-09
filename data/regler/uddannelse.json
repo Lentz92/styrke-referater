@@ -1,13 +1,19 @@
 {
  "kategori": "uddannelse",
  "version": 7,
- "input_hash": "83420f99c358918d3c9d1b23e6dc60e37afb21e760803daaf5c8208d37c39e15",
- "model": "opus",
+ "input_hash": "7e74024936aabb46054a324fa54383eaa0c321d197321b324271272e0045351f",
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fb1d4e4f83bc",
+  "effort": "default"
+ },
  "regler": [
   {
-   "titel": "Træneruddannelsens udformning",
+   "titel": "Træneruddannelsens opbygning",
    "slug": "træneruddannelsens-udformning",
-   "vigtig": false,
+   "vigtig": true,
    "note": null,
    "versioner": [
     {
@@ -15,8 +21,56 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "Breddeudvalgets udkast til træneruddannelse godkendt",
-     "kort_regel": "Breddeudvalget udvikler træneruddannelsen ud fra godkendt udkast",
-     "dhash": "780277c54ec8"
+     "kort_regel": "træneruddannelse bygger på Breddeudvalgets godkendte udkast",
+     "dhash": "df1c340a21d3"
+    }
+   ]
+  },
+  {
+   "titel": "Moduler i kurset i fysisk træning",
+   "slug": "moduler-i-kurset-i-fysisk-træning",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_09082014#8",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "kursus i fysisk træning suppleres med moduler",
+     "kort_regel": "moduler kan tages enkeltvis uden forudgående kurser",
+     "dhash": "5d8db9fb4b26"
+    }
+   ]
+  },
+  {
+   "titel": "International træneruddannelse for landsholdstrænere",
+   "slug": "international-træneruddannelse-for-landsholdstrænere",
+   "vigtig": false,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "elite04122016#5",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "landsholdstrænere sendes på international træneruddannelse i Spanien",
+     "kort_regel": "landsholdstrænere på international uddannelse, hvis økonomien tillader",
+     "dhash": "f9d5c7f03ea2"
+    }
+   ]
+  },
+  {
+   "titel": "Adgang til DSF's kurser og uddannelser",
+   "slug": "adgang-til-dsf-s-kurser-og-uddannelser",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "refbest_09062018#11",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "kurser forbeholdt medlemmer, udefrakommende mod vederlag",
+     "kort_regel": "kun medlemmer; udefrakommende ved ledig plads mod vederlag",
+     "dhash": "c93df7444523"
     }
    ]
   },
@@ -31,56 +85,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "uddannelsesdage for landsholds- og klubtrænere fra 2022",
-     "kort_regel": "årlige uddannelsesdage for trænere, sportschefen står for oplægget",
-     "dhash": "f51736966ede"
-    }
-   ]
-  },
-  {
-   "titel": "Kursus i stævnestyringsprogram",
-   "slug": "kursus-i-stævnestyringsprogram",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refstaevne04042024#3",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "krav om praksis ved to stævner, max ti pladser",
-     "kort_regel": "deltagere øver ved to stævner, 6 af 10 pladser åbne",
-     "dhash": "3c6ea028e46d"
-    }
-   ]
-  },
-  {
-   "titel": "Certificering af hjælpere til udstyrsløftere",
-   "slug": "certificering-af-hjælpere-til-udstyrsløftere",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refudstyr15052025#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "workshops med certificering af hjælpere til udstyrsløftere",
-     "kort_regel": "hjælpere til udstyrsløftere certificeres via workshop fra Udstyrsgruppen",
-     "dhash": "2b2499fc6166"
-    }
-   ]
-  },
-  {
-   "titel": "Krav til coaches ved IPF-nominering",
-   "slug": "krav-til-coaches-ved-ipf-nominering",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "1071kongres#10",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "IPF-krav om coach-certifikat fra 1. januar 2029",
-     "kort_regel": "coaches skal have IPF-basiscertifikat, headcoaches skal bestå WADA ADEL-program",
-     "dhash": "e699562b6c8d"
+     "kort_regel": "uddannelsesdage for trænere ledet af sportschefen",
+     "dhash": "cd5a3be45c47"
     }
    ]
   }

@@ -1,0 +1,113 @@
+{
+ "doc_id": "Tilmeldingsfrister2026",
+ "sha256": "b8c5568ccc1942bac92550e8b6f7224fa5180ee162dae43f877979eeb707d471",
+ "run": "sonnet-v3-2",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 2189,
+  "output": 1478,
+  "cost_usd": 0.0242,
+  "seconds": 10,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": null,
+ "beslutninger": [
+  {
+   "emne": "Tilmeldingsfrister master-stævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Sidste tilmeldingsfrister for 2026: EM Classic Masters Oulu 6. december 2025, EM Equipped Masters Pilsen 20. februar 2026, VM Masters Bench Press Warszawa 13. marts 2026, EM Masters Bench Press Druskininkai 25. maj 2026, VM Masters Classic & Equipped Reno 5. august 2026.",
+   "citat": "6.december 2025",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": "2025-12-06",
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true,
+   "citat_pos": 30,
+   "citat_side": 1
+  },
+  {
+   "emne": "Consent Form ved internationale stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Alle løftere ved EPF/IPF-konkurrencer skal udfylde en IPF Consent Form i PDF og sende den til masterudvalget@styrke.dk inden tilmeldingsfristen. Den uploades derefter i GOODLIFT. Helst underskrives den elektronisk.",
+   "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 103,
+   "citat_side": 1
+  },
+  {
+   "emne": "ADEL antidoping-uddannelse ved internationale stævner",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Løftere skal gennemføre IPF antidopinguddannelsen ADEL og sende kursusbeviset sammen med tilmeldingsskemaet; uden kursusbevis kan man ikke tilmelde sig internationale stævner. ADEL skal fornyes hvert 2. år. Trænere skal gennemføre ADEL træneruddannelsen for at blive akkrediteret.",
+   "citat": "Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at uploade kursusbeviset.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 269,
+   "citat_side": 2
+  },
+  {
+   "emne": "Stævnehotel og startgebyr ved internationale stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Forhåndstilmelding og startgebyr er bindende; fortryder man, hæfter man for startgebyret. Deltagere skal bo på stævnehotellet i hele stævneperioden, og overnatninger skal dække også perioden hvor man hjælper andre løftere.",
+   "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 323,
+   "citat_side": 2
+  },
+  {
+   "emne": "Trænerakkreditering ved EM/VM",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Efter IPF/EPF's vedtægtsændring indføres et loft over antallet af trænere. Alle der ønsker akkreditering som trænere ved Europa- og Verdensmesterskaber skal betale et gebyr på 50 Euro.",
+   "citat": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 406,
+   "citat_side": 2
+  }
+ ]
+}

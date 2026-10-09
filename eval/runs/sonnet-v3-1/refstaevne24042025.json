@@ -1,0 +1,96 @@
+{
+ "doc_id": "refstaevne24042025",
+ "sha256": "509e11dccb4720ab18ca0e1393305a336374c5f053d900d3e180c44b3b00ae92",
+ "run": "sonnet-v3-1",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 2623,
+  "output": 1126,
+  "cost_usd": 0.0224,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2025-04-24",
+ "beslutninger": [
+  {
+   "emne": "Streaming ved Danske Mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Eva Buxbom",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten om streaming under arrangørens og DSF's ansvar (udstyr kan lånes, klubben sørger for internetforbindelse, og meddelelse til stævneudvalget senest 60 dage før hvis arrangøren selv vil stå for streaming). Der skal blot stå streaming (arrangøren sørger for internetforbindelse).",
+   "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 430,
+   "citat_side": 2
+  },
+  {
+   "emne": "Konkurrencestyringssystem ved Danske Mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Eva Buxbom",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Under DSF's ansvar slettes den uddybende tekst om konkurrencestyringssystem (stilles til rådighed efter aftale). Der skal blot stå konkurrencestyringssystem.",
+   "citat": "Under ’DSF har ansvaret for’ slettes teksten under konkurrencestyringssystem:",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 391,
+   "citat_side": 2
+  },
+  {
+   "emne": "Bagtæppe ved Danske Mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Eva Buxbom",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DSF har ansvar for bagtæppe ved Danske Mesterskaber. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 414,
+   "citat_side": 2
+  },
+  {
+   "emne": "Tilmelding til DM-hold",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Alle hold, klubberne ønsker at tilmelde til DM-hold, skal tilmeldes ved første runde i januar. DM-hold passer ikke ind under DM-ugen.",
+   "citat": "samt at alle de hold, klubberne gerne vil tilmelde, skal tilmeldes ved første runde i januar.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 111,
+   "citat_side": 1
+  }
+ ]
+}

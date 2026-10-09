@@ -1,8 +1,14 @@
 {
  "doc_id": "refbest_19042015",
  "sha256": "c765bbfac9e58db1d8a424cbe607ff53e068d3dc9b3075576105f5d9e820d81c",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2015-04-19",
  "next_number": 2,
  "retired": [],
@@ -15,8 +21,8 @@
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Bestyrelsen og udvalgsmedlemmer melder ikke noget ud eksternt, før det er drøftet internt i udvalgene eller bestyrelsen. Der lægges et link på Facebook, der opfordrer til god tone og sober debat, og ved for hård tone kontakter Jacob de involverede og evt. formanden for deres klub.",
-   "citat": "Bestyrelsen og udvalgsmedlemmer melder ikke noget ud ekstern, før det er blevet vendt intern i udvalgene eller i bestyrelsen.",
+   "tekst": "Medlemmer af bestyrelsen og udvalgene melder ikke noget ud eksternt, før det er drøftet internt i udvalgene eller i bestyrelsen. Udvalgene reagerer kun på situationer, der er problematiske for en større gruppe i styrkeløftverdenen eller er et gennemgående problem. Bliver tonen i debatten på Facebook for hård og ukonstruktiv, kontakter forbundet de involverede personer og eventuelt formanden for deres klub for at opfordre til en mere konstruktiv debat.",
+   "citat": "Bestyrelsen og udvalgsmedlemmer melder ikke noget ud ekstern, før det er blevet vendt intern i udvalgene eller i bestyrelsen. Udvalg reagerer på situationer, der i styrkeløftverden er problematiske for en større gruppe eller har et gennemgående problem.",
    "side": 5,
    "stemmer": null,
    "gaelder_fra": null,

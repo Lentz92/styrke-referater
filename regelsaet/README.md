@@ -1,6 +1,6 @@
 # DSF-regelsæt – oversigt
 
-Opdateret 8. oktober 2026 ud fra 236 referater og regeldokumenter fra styrke.dk.
+Opdateret 9. oktober 2026 ud fra 236 referater og regeldokumenter fra styrke.dk.
 
 ## År
 
@@ -8,38 +8,38 @@ Hver årsside starter med, hvad der er nyt det år, og viser derefter de regler,
 
 | År | Ændringer i året | Centrale regler i kraft | Interne procedurer og detaljer i kraft |
 |---|---|---|---|
-| [2027](2027.md) (kommende) | 1 | 296 | 95 |
-| [2026](2026.md) (indeværende) | 59 | 296 | 95 |
-| [2025](2025.md) | 61 | 281 | 86 |
-| [2024](2024.md) | 63 | 262 | 79 |
-| [2023](2023.md) | 33 | 242 | 66 |
-| [2022](2022.md) | 38 | 232 | 62 |
-| [2021](2021.md) | 24 | 213 | 60 |
-| [2020](2020.md) | 18 | 205 | 57 |
-| [2019](2019.md) | 40 | 202 | 56 |
-| [2018](2018.md) | 49 | 187 | 52 |
-| [2017](2017.md) | 37 | 161 | 49 |
-| [2016](2016.md) | 24 | 152 | 46 |
-| [2015](2015.md) | 65 | 139 | 46 |
-| [2014](2014.md) | 42 | 101 | 33 |
-| [2013](2013.md) | 34 | 80 | 27 |
-| [2012](2012.md) | 37 | 62 | 18 |
-| [2011](2011.md) | 25 | 39 | 10 |
-| [2010](2010.md) | 15 | 27 | 2 |
-| [2009](2009.md) | 12 | 15 | 0 |
-| [2008](2008.md) | 6 | 6 | 0 |
+| [2027](2027.md) (kommende) | 2 | 346 | 121 |
+| [2026](2026.md) (indeværende) | 73 | 347 | 121 |
+| [2025](2025.md) | 58 | 319 | 113 |
+| [2024](2024.md) | 79 | 303 | 105 |
+| [2023](2023.md) | 43 | 278 | 90 |
+| [2022](2022.md) | 35 | 265 | 79 |
+| [2021](2021.md) | 23 | 253 | 75 |
+| [2020](2020.md) | 25 | 246 | 70 |
+| [2019](2019.md) | 44 | 239 | 70 |
+| [2018](2018.md) | 61 | 222 | 65 |
+| [2017](2017.md) | 33 | 181 | 61 |
+| [2016](2016.md) | 31 | 172 | 58 |
+| [2015](2015.md) | 85 | 154 | 57 |
+| [2014](2014.md) | 45 | 108 | 39 |
+| [2013](2013.md) | 34 | 88 | 26 |
+| [2012](2012.md) | 41 | 70 | 19 |
+| [2011](2011.md) | 27 | 46 | 12 |
+| [2010](2010.md) | 16 | 32 | 5 |
+| [2009](2009.md) | 15 | 20 | 3 |
+| [2008](2008.md) | 11 | 9 | 1 |
 
 ## Områder
 
 Fuld tekst og historik for hver regel:
 
-- [Medlemskab, licens og gebyrer](regler/medlemskab.md) – 36 regler i kraft, 42 i alt
-- [Stævner og konkurrenceregler](regler/staevner.md) – 93 regler i kraft, 118 i alt
-- [Dommere](regler/dommere.md) – 47 regler i kraft, 52 i alt
-- [Elite og landshold](regler/elite.md) – 126 regler i kraft, 156 i alt
-- [Master](regler/master.md) – 30 regler i kraft, 33 i alt
-- [Antidoping](regler/antidoping.md) – 16 regler i kraft, 18 i alt
-- [Forbund og organisation](regler/organisation.md) – 43 regler i kraft, 51 i alt
+- [Medlemskab, licens og gebyrer](regler/medlemskab.md) – 43 regler i kraft, 50 i alt
+- [Stævner og konkurrenceregler](regler/staevner.md) – 81 regler i kraft, 97 i alt
+- [Dommere](regler/dommere.md) – 44 regler i kraft, 45 i alt
+- [Elite og landshold](regler/elite.md) – 185 regler i kraft, 238 i alt
+- [Master](regler/master.md) – 45 regler i kraft, 48 i alt
+- [Antidoping](regler/antidoping.md) – 15 regler i kraft, 16 i alt
+- [Forbund og organisation](regler/organisation.md) – 55 regler i kraft, 61 i alt
 
 ## Sådan læses reglerne
 
@@ -56,14 +56,14 @@ Regler ophæves sjældent formelt, så en regel gælder her, indtil et senere re
 ## Datakvalitet
 
 - Dokumenter der mangler analyse (kør `uv run update.py` igen): 0
-- Dokumenter uden regelbeslutninger (fx budgetmøder): 28
-- Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 0
-- Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): 6
-- Engangsbeslutninger uden for reglerne (kun i data/beslutninger): 55
+- Dokumenter uden regelbeslutninger (fx budgetmøder): 34
+- Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 4
+- Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): 3
+- Engangsbeslutninger uden for reglerne (kun i data/beslutninger): 22
 - Beslutninger som konsolideringen hverken har lagt i en regel eller udeladt som engangsbeslutning (vises ikke): 0
 - Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: 0
-- Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): 4
-- Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, eller en senere beslutning der gælder fra før en tidligere): 20
+- Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): 0
+- Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, eller en senere beslutning der gælder fra før en tidligere): 23
 - Fejl i beslutningers id'er eller reglers adresser (slugs), som skal rettes i data/: 0
 
 Udtrækket er lavet automatisk af Claude og kan indeholde fejl. Referatet er altid den gældende kilde.

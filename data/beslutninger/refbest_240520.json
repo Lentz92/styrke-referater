@@ -1,22 +1,41 @@
 {
  "doc_id": "refbest_240520",
  "sha256": "91fcb1c653f6835bcc77fff90cc6434f114a498d199ff6d6376f3c43335828de",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2020-05-24",
  "next_number": 6,
- "retired": [],
+ "retired": [
+  {
+   "id": "refbest_240520#4",
+   "emne": "Liste med godkendte logoer",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  },
+  {
+   "id": "refbest_240520#5",
+   "emne": "Deltagelse ved internationale mesterskaber",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "refbest_240520#1",
-   "emne": "Pointsystem",
+   "emne": "Pointsystem til ranglister, stævner og divisionsturnering",
    "kategori": "staevner",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "aendring",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Efter at IPF har skrottet den nye pointskala, overgår DSF til de nye Goodlift-point med virkning fra 1. januar 2020. De gamle IPF-point opnået ved DM 2020 bevares separat, og kåring af bedste løfter ved DM ændres ikke, selv hvis de nye point flytter placeringerne.",
-   "citat": "Det blev besluttet at vi overgår til de nye point med virkning fra 1.januar 2020. De ”gamle” IPF-point opnået ved DM 2020 vil blive bevaret særskilt",
+   "tekst": "Da IPF har skrottet den pointskala, der blev indført fra 1. januar 2020, overgår DSF til IPF's nye Goodlift-point med virkning fra 1. januar 2020. De gamle IPF-point opnået ved DM 2020 bevares særskilt, og kåringen af bedste løfter ved DM 2020 ændres ikke, selvom de nye point ville flytte placeringerne.",
+   "citat": "Det blev besluttet at vi overgår til de nye point med virkning fra 1.januar 2020. De ”gamle” IPF-point opnået ved DM 2020 vil blive bevaret særskilt og kåring af bedste løfter ved DM vil ikke blive ændret såfremt de nye point vil flytte placeringerne.",
    "side": 2,
    "stemmer": null,
    "gaelder_fra": "2020-01-01",
@@ -26,32 +45,14 @@
    "citat_side": 2
   },
   {
-   "id": "refbest_240520#2",
-   "emne": "Divisionsturnering",
-   "kategori": "staevner",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Divisionsturneringen aflyses for resten af 2020. Klubber, der skulle have afviklet runderne, kompenseres for den manglende indtægt. Der kåres ingen vinder i 2020, og der uddeles ingen pokaler.",
-   "citat": "Bestyrelsen besluttede af aflyse divisionsturneringen for resten af 2020. De klubber som skulle have afviklet runderne vil blive kompenseret for den manglende indtægt.",
-   "side": 2,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": "2020-12-31",
-   "citat_fundet": true,
-   "citat_pos": 577,
-   "citat_side": 2
-  },
-  {
    "id": "refbest_240520#3",
-   "emne": "Indsamling af stævneprotokoller",
+   "emne": "Indsamling af stævneprotokoller til rekordregistrering",
    "kategori": "staevner",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Fremtidige stævneprotokoller indsamles af stævnelederen og videregives til Henning Thorsen, så danske rekorder kan opdateres.",
+   "tekst": "For at sikre opdatering af danske rekorder skal stævnelederen fremover indsamle stævneprotokollerne og videregive dem til den rekordansvarlige (Henning Thorsen).",
    "citat": "Fremtidige stævneprotokoller indsamles af stævneleder og videregives til Henning Thorsen.",
    "side": 2,
    "stemmer": null,
@@ -62,40 +63,22 @@
    "citat_side": 2
   },
   {
-   "id": "refbest_240520#4",
-   "emne": "Liste med godkendte logoer",
-   "kategori": "udstyr",
+   "id": "refbest_240520#2",
+   "emne": "Divisionsturnering, afvikling",
+   "kategori": "staevner",
    "udfald": "vedtaget",
    "forslagsstiller": null,
-   "handling": "ny",
+   "handling": "aendring",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Der oprettes en liste med godkendte logoer med dokumenteret sponsor, som placeres på forbundets hjemmeside.",
-   "citat": "vil oprette en liste med godkendte logoer, dokumenteret sponsor, som placeres på forbundets hjemmeside.",
-   "side": 1,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 231,
-   "citat_side": 1
-  },
-  {
-   "id": "refbest_240520#5",
-   "emne": "Deltagelse ved internationale mesterskaber",
-   "kategori": "internationalt",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Det anses ikke for forsvarligt at deltage ved VM klassisk i Minsk, EM/VM bænkpres i Ekaterinburg og VM masters i Sydafrika i 2020.",
-   "citat": "Det anses ikke forsvarligt at deltage ved dette mesterskab.",
-   "side": 3,
+   "tekst": "Divisionsturneringen aflyses for resten af 2020 pga. corona. Klubber, der skulle have afviklet runderne, kompenseres for den manglende indtægt, og der kåres ingen vinder og uddeles ingen pokaler i 2020.",
+   "citat": "Bestyrelsen besluttede af aflyse divisionsturneringen for resten af 2020. De klubber som skulle have afviklet runderne vil blive kompenseret for den manglende indtægt. Der kåres ingen vinder i 2020 og uddeles derfor ingen pokaler.",
+   "side": 2,
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2020-12-31",
    "citat_fundet": true,
-   "citat_pos": 763,
-   "citat_side": 3
+   "citat_pos": 577,
+   "citat_side": 2
   }
  ]
 }

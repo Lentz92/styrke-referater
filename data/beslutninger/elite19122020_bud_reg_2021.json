@@ -1,9 +1,15 @@
 {
  "doc_id": "elite19122020_bud_reg_2021",
  "sha256": "4249e1d6497c5d0540c121828e6638796d5a6716721fab7012db9801431b4eb7",
- "version": 2,
- "model": "sonnet",
- "moededato": "2020-12-19",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "moededato": null,
  "next_number": 1,
  "retired": [],
  "beslutninger": []

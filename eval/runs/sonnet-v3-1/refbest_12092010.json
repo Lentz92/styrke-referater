@@ -1,0 +1,62 @@
+{
+ "doc_id": "refbest_12092010",
+ "sha256": "176cacec9eb92a99ea4a611c61051913436addd720bb6fc017f3054b6353b463",
+ "run": "sonnet-v3-1",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 1204,
+  "output": 808,
+  "cost_usd": 0.0135,
+  "seconds": 7,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2010-09-12",
+ "beslutninger": [
+  {
+   "emne": "DSF's bemanding af VM Master Bænk",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF stiller med en teknisk sekretær (forsøgssedler m.m.) og en dommer til VM Master Bænk 2011, begge for alle fire stævnedage. Bestyrelsen kan ikke underskrive den fremsendte kontrakt og beder arrangøren udfærdige en revideret udgave.",
+   "citat": "DSF indvilliger i at stille med en teknisk sekretær (til at sørge for forsøgssedler etc.) samt en dommer. Begge dele for alle fire stævnedage.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2011-12-31",
+   "citat_fundet": true,
+   "citat_pos": 42,
+   "citat_side": 1
+  },
+  {
+   "emne": "Tilskud til lyd og lys ved VM Master Bænk",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF yder ikke tilskud til lyd og lys ved VM Master Bænk 2011.",
+   "citat": "DSF ser sig ikke i stand til at yde tilskud til lyd og lys.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2011-12-31",
+   "citat_fundet": true,
+   "citat_pos": 66,
+   "citat_side": 1
+  }
+ ]
+}

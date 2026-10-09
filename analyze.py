@@ -30,8 +30,9 @@ import matching
 from matching import Candidate, FormerSlug, LiveRule, RuleRefs, SlugRegistry
 from scrape import DATA_DIR, Doc, document_text
 
-# Bump when a prompt or schema changes so cached results are recomputed.
-EXTRACT_VERSION = 2
+# Bump when a prompt or schema changes so cached results are recomputed. The pipeline extracts with
+# EXTRACT_PROMPTS[f"v{EXTRACT_VERSION}"]; bumping it to another prompt's number switches the default to that prompt.
+EXTRACT_VERSION = 3
 CONSOLIDATE_VERSION = 7
 
 DECISIONS_DIR = DATA_DIR / "beslutninger"
@@ -120,7 +121,7 @@ def version_matches(version: dict, d: Decision) -> bool:
 
 # --------------------------------------------------------------------------- extraction
 
-EXTRACT_SYSTEM = """\
+EXTRACT_SYSTEM_V2 = """\
 You extract standing rules and agreements from minutes ("referater") and rule documents of \
 Dansk Styrkeløft Forbund (DSF), the Danish powerlifting federation. The output is used to \
 build an overview of which rules applied in each year, when each rule was agreed, and in \
@@ -201,6 +202,37 @@ Never invent decisions. When unsure whether something was actually decided, leav
 Return an empty list if there are no such decisions.
 """
 
+# v3 adds one field rule. Under v2 a budget line setting several fees was one decision, which only one rule can hold,
+# so one fee's yearly confirmations ended up in another fee's rule (the licence fee's in "Årsafgift"). It splits only
+# what belongs to different rules, as the answer key's granularity does (evaluate.GRANULARITY): the tiers of one fee
+# or one list of deadlines stay one decision. Everything else is v2 verbatim.
+EXTRACT_SPLIT_RULE = """\
+- One decision per rule a decision sets, changes or confirms: a budget line that sets or \
+confirms different fees or rates, each its own rule (e.g. licens, årsafgift and startgebyr), \
+gives one decision per fee, each with its own emne, tekst and citat. The amounts or tiers of \
+one fee, and a list or table adopted as a whole for one rule (e.g. a season's entry \
+deadlines), stay one decision. A fee restated unchanged with the budget (e.g. "uændret") \
+has handling bekraeftelse.
+"""
+
+
+def _inserted_after(text: str, anchor: str, addition: str) -> str:
+    """`text` with `addition` right after `anchor`, which must occur exactly once."""
+    if text.count(anchor) != 1:
+        raise ValueError(f"the prompt has {text.count(anchor)} occurrences of {anchor!r}, not one")
+    return text.replace(anchor, anchor + addition)
+
+
+EXTRACT_SYSTEM_V3 = _inserted_after(EXTRACT_SYSTEM_V2, "Field rules:\n- Write every text field in Danish.\n",
+                                    EXTRACT_SPLIT_RULE)
+
+# The extraction prompts by name, "v<n>": a result made with one records n as its version (extract_prompt). Kept
+# after the pipeline moves on, so evaluate.py can still run and score an earlier prompt.
+EXTRACT_PROMPTS = {"v2": EXTRACT_SYSTEM_V2, "v3": EXTRACT_SYSTEM_V3}
+# The pipeline's prompt; the incremental votes quote its list of what is no decision (the answer key's judges quote
+# the prompt the key was judged by, evaluate.KEY_PROMPT).
+EXTRACT_SYSTEM = EXTRACT_PROMPTS[f"v{EXTRACT_VERSION}"]
+
 EXTRACT_SCHEMA = {
     "type": "object",
     "properties": {
@@ -234,31 +266,76 @@ EXTRACT_SCHEMA = {
 }
 
 
+@dataclass(frozen=True)
+class ExtractPrompt:
+    """An extraction prompt. A result records its version, which with the file's sha256 is the extraction's cache
+    key: a document extracted with another prompt is extracted again."""
+    name: str  # "v2"
+    version: int
+    system: str = field(repr=False)
+
+
+def extract_prompt(name: str | None = None) -> ExtractPrompt:
+    """The extraction prompt named `name` (a key of EXTRACT_PROMPTS), or for None the pipeline's: EXTRACT_SYSTEM at
+    EXTRACT_VERSION, so today's cache stays current until the default changes."""
+    if name is None:
+        return ExtractPrompt(f"v{EXTRACT_VERSION}", EXTRACT_VERSION, EXTRACT_SYSTEM)
+    if name not in EXTRACT_PROMPTS:
+        raise ValueError(f"no extraction prompt {name!r}; the prompts are {', '.join(EXTRACT_PROMPTS)}")
+    return ExtractPrompt(name, int(name.removeprefix("v")), EXTRACT_PROMPTS[name])
+
+
 def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int,
-            budget: RunBudget | None = None) -> StepSummary:
-    """Extract decisions from every document whose cached result is missing or outdated.
+            budget: RunBudget | None = None, prompt: str | None = None) -> StepSummary:
+    """Extract decisions from every document whose cached result is missing or outdated, with the extraction
+    prompt named `prompt` (None: the pipeline's) and `model`.
 
     Documents that fail or are skipped are retried on the next run.
     """
     DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
-    todo = [doc for doc in docs if not _extraction_is_current(doc)]
-    log.info("Extract: %d of %d documents need extracting", len(todo), len(docs))
+    version = extract_prompt(prompt).version
+    todo = [doc for doc in docs if not _extraction_is_current(doc, version, model)]
+    log.info("Extract: %d of %d documents need extracting with prompt v%d", len(todo), len(docs), version)
     cli = cli_version() if todo else ""
-    return run_parallel(todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget),
-                         workers, "Extract", budget)
+    return run_parallel(
+        todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget, prompt=prompt),
+        workers, "Extract", budget)
 
 
-def missing_extractions(docs: list[Doc]) -> list[str]:
-    """Ids of documents without a current extraction (new, changed, or a failed Claude call)."""
-    return sorted(doc.id for doc in docs if not _extraction_is_current(doc))
+def missing_extractions(docs: list[Doc], prompt: str | None = None, *, model: str) -> list[str]:
+    """Ids of documents without a current extraction (new, changed, made with another prompt or model, or a failed
+    Claude call); `prompt` names the extraction prompt (None: the pipeline's), `model` the extraction model."""
+    version = extract_prompt(prompt).version
+    return sorted(doc.id for doc in docs if not _extraction_is_current(doc, version, model))
 
 
-def _extraction_is_current(doc: Doc) -> bool:
+def superseded_extractions(docs: list[Doc], prompt: str | None = None, *, model: str) -> list[str]:
+    """Ids of documents whose cached extraction was made with another extraction prompt than the one named `prompt`
+    (None: the pipeline's), or by another model than `model`: extracting them again may change any of their
+    decisions."""
+    version = extract_prompt(prompt).version
+    return sorted(doc.id for doc in docs if (cached := _cached_extraction(doc)) is not None
+                  and (cached.get("version") != version or not _made_by(cached, model)))
+
+
+def _cached_extraction(doc: Doc) -> dict | None:
     path = DECISIONS_DIR / f"{doc.id}.json"
-    if not path.exists():
-        return False
-    cached = json.loads(path.read_text())
-    return cached.get("sha256") == doc.sha256 and cached.get("version") == EXTRACT_VERSION
+    return json.loads(path.read_text()) if path.exists() else None
+
+
+def _extraction_is_current(doc: Doc, version: int, model: str) -> bool:
+    cached = _cached_extraction(doc)
+    return cached is not None and cached.get("sha256") == doc.sha256 and cached.get("version") == version \
+        and _made_by(cached, model)
+
+
+def _made_by(cached: dict, model: str) -> bool:
+    """Whether a cached result was made by `model`. A full id ("claude-…") must be the canonical model its provenance
+    records, as ask_claude checks an answer (a result from before provenance was kept is not); an alias stands for
+    whichever model the CLI maps it to, so any result counts for it."""
+    if not model.startswith("claude-"):
+        return True
+    return (cached.get("provenance") or {}).get("model") == model
 
 
 def document_prompt(doc: Doc, text: str) -> str:
@@ -278,17 +355,18 @@ class Extraction:
     words: DocWords  # the document's words, to locate other quotes in the same text
 
 
-def run_extraction(doc: Doc, *, model: str, effort: str | None,
-                   budget: RunBudget | None = None) -> tuple[Extraction, Usage]:
-    """Run the extraction prompt on one document and locate each decision's quote; writes nothing.
+def run_extraction(doc: Doc, *, model: str, effort: str | None, budget: RunBudget | None = None,
+                   prompt: str | None = None) -> tuple[Extraction, Usage]:
+    """Run the extraction prompt named `prompt` (None: the pipeline's) on one document and locate each decision's
+    quote; writes nothing.
 
     The one place the extraction prompt runs, so the pipeline (_extract_one, which adds ids and caches the result
     in data/) and the evaluation (evaluate.py extract) measure the same thing. An error after the call carries
     the call's usage (ClaudeError).
     """
     text = document_text(doc)
-    output, usage = ask_claude(EXTRACT_SYSTEM, document_prompt(doc, text), EXTRACT_SCHEMA, model=model,
-                               effort=effort, timeout=EXTRACT_TIMEOUT, budget=budget)
+    output, usage = ask_claude(extract_prompt(prompt).system, document_prompt(doc, text), EXTRACT_SCHEMA,
+                               model=model, effort=effort, timeout=EXTRACT_TIMEOUT, budget=budget)
     with usage_kept(usage):
         words = DocWords.of(text)
         decisions = [{**d, **quote_fields(d["citat"], words, d["side"])} for d in output["beslutninger"]]
@@ -296,22 +374,23 @@ def run_extraction(doc: Doc, *, model: str, effort: str | None,
     return extraction, usage
 
 
-def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str,
-                 budget: RunBudget | None = None) -> tuple[str, Usage]:
+def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str, budget: RunBudget | None = None,
+                 prompt: str | None = None) -> tuple[str, Usage]:
     path = DECISIONS_DIR / f"{doc.id}.json"
     # Read before the call, so a previous result without ids fails before it costs anything.
     previous = _with_ids(json.loads(path.read_text()), path) if path.exists() else None
     referenced = _referenced_ids()
-    extraction, usage = run_extraction(doc, model=model, effort=effort, budget=budget)
+    chosen = extract_prompt(prompt)
+    extraction, usage = run_extraction(doc, model=model, effort=effort, budget=budget, prompt=prompt)
     with usage_kept(usage):
         decisions = extraction.decisions
         ids = assign_ids(doc.id, previous, decisions, extraction.words, date.today(), referenced)
         result = {
             "doc_id": doc.id,
             "sha256": doc.sha256,
-            "version": EXTRACT_VERSION,
+            "version": chosen.version,
             "model": model,
-            "provenance": provenance(usage, cli, EXTRACT_SYSTEM, EXTRACT_SCHEMA, effort),
+            "provenance": provenance(usage, cli, chosen.system, EXTRACT_SCHEMA, effort),
             "moededato": extraction.moededato,
             "next_number": ids.next_number,
             "retired": ids.retired,
@@ -1100,8 +1179,9 @@ def usage_kept(usage: Usage) -> Iterator[None]:
 def provenance(usage: Usage, cli: str, system: str, schema: dict, effort: str | None) -> dict:
     """What produced a cached result, to tell results apart when the model, CLI, prompt or effort changes.
 
-    Not part of any cache key: switching from an alias to the id it stands for must not re-run anything.
-    Claude Code does not report its default effort, so an unset one is recorded as "default".
+    Only the model is part of a cache key, the extraction's (_made_by): switching from an alias to the id it stands
+    for must not re-run anything. Claude Code does not report its default effort, so an unset one is recorded as
+    "default".
     """
     return {"model": usage.answered_by, "cli": cli, "prompt": prompt_hash(system, schema),
             "effort": effort or "default"}

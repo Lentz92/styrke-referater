@@ -1,8 +1,14 @@
 {
  "doc_id": "refdom14112023",
  "sha256": "0b7138f4ec88797ec6f9e4272f0b43b9518a7014a031a258a8ef104c95eb5a6c",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2023-11-14",
  "next_number": 1,
  "retired": [],

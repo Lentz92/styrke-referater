@@ -1,21 +1,40 @@
 {
  "doc_id": "refbest_15052011",
  "sha256": "69b7fea1fcefba533826ab9933a3a00c748ac92064b92e2ce78873549bf7d729",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2011-05-15",
  "next_number": 5,
- "retired": [],
+ "retired": [
+  {
+   "id": "refbest_15052011#2",
+   "emne": "Antal IPF-dommere",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  },
+  {
+   "id": "refbest_15052011#3",
+   "emne": "Standarddagsorden for bestyrelsesmøder",
+   "reason": "no match in a re-extraction",
+   "date": "2026-10-09"
+  }
+ ],
  "beslutninger": [
   {
    "id": "refbest_15052011#1",
    "emne": "Kommissorium for Dommerudvalget",
-   "kategori": "dommere",
+   "kategori": "organisation",
    "udfald": "vedtaget",
    "forslagsstiller": null,
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Det indsendte forslag til beskrivelse af arbejdet i Dommerudvalget blev vedtaget af bestyrelsen.",
+   "tekst": "Bestyrelsen vedtog det indsendte forslag til regler for og beskrivelse af arbejdet i Dommerudvalget.",
    "citat": "Det indsendte forslag til beskrivelse af arbejdet i Dommer udvalget blev vedtaget.",
    "side": 4,
    "stemmer": null,
@@ -26,42 +45,6 @@
    "citat_side": 4
   },
   {
-   "id": "refbest_15052011#2",
-   "emne": "Antal IPF-dommere",
-   "kategori": "dommere",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Bestyrelsen besluttede at søge at udvide antallet af IPF-dommere under DSF.",
-   "citat": "det blev her besluttet, at vi prøver at få udvidet antallet af IPF dommer under DSF.",
-   "side": 4,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 889,
-   "citat_side": 4
-  },
-  {
-   "id": "refbest_15052011#3",
-   "emne": "Standarddagsorden for bestyrelsesmøder",
-   "kategori": "organisation",
-   "udfald": "vedtaget",
-   "forslagsstiller": null,
-   "handling": "ny",
-   "niveau": "bestyrelsesbeslutning",
-   "tekst": "Der udarbejdes et forslag til en standarddagsorden for bestyrelsesmøder, som rundsendes til bestyrelsen til endelig accept.",
-   "citat": "Det blev besluttet, at der udarbejdes et forslag til en standard dagsorden som rundsendes til BS medlemmerne for endelig accept.",
-   "side": 3,
-   "stemmer": null,
-   "gaelder_fra": null,
-   "gaelder_til": null,
-   "citat_fundet": true,
-   "citat_pos": 543,
-   "citat_side": 3
-  },
-  {
    "id": "refbest_15052011#4",
    "emne": "Bestyrelsesmøder via pc",
    "kategori": "organisation",
@@ -69,14 +52,14 @@
    "forslagsstiller": "Klaus Nielsen",
    "handling": "ny",
    "niveau": "bestyrelsesbeslutning",
-   "tekst": "Forslag om at afholde dele af bestyrelsesmøderne via pc blev ikke fulgt, da den fastlagte møderække vurderes at sikre planlægningen.",
-   "citat": "Bestyrelsen mener dog, at vi med planlægningen af de kommende BS møde (se pkt 7) har sikret dette.",
+   "tekst": "Forslag om at afholde nogle af bestyrelsesmøderne via pc for at løse problemer med at finde mødedatoer. Bestyrelsen fandt det ikke nødvendigt, da den fastlagte møderække sikrer planlægningen.",
+   "citat": "Klaus Nielsen havde indsendt et forslag om afholdes/gennemgang af nogle af BS møderne på/via pc. Begrundelse var de problemer der kan være med at få planlægningen af datoer for møderne til at gå op.  \nBestyrelsen mener dog, at vi med planlægningen af de kommende BS møde (se pkt 7) har sikret dette.",
    "side": 4,
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
    "citat_fundet": true,
-   "citat_pos": 956,
+   "citat_pos": 920,
    "citat_side": 4
   }
  ]

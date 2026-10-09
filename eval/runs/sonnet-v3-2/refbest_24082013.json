@@ -1,0 +1,96 @@
+{
+ "doc_id": "refbest_24082013",
+ "sha256": "702d195e4c57b9fc490df2c85edc6ff7b98429375497d8fc7051f7e0d3ee8c54",
+ "run": "sonnet-v3-2",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 3757,
+  "output": 1021,
+  "cost_usd": 0.0259,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2013-08-24",
+ "beslutninger": [
+  {
+   "emne": "Medieplan",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Medieplanen laves fremover for et halvt år ad gangen. Første halvår af 2014 udarbejdes af Peder.",
+   "citat": "Der er lavet en medieplan af Peter og Klaus, og fremover laves denne for et 1/2 år ad gangen.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 703,
+   "citat_side": 2
+  },
+  {
+   "emne": "Betaling af rejseudgifter hjemmefra",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved rejser til stævner skal så meget som muligt fremover betales hjemmefra, så der ikke medbringes store a conto-beløb.",
+   "citat": "Men fremover SKAL så meget som muligt betales hjemmefra, så der ikke skal så mange penge med a conto.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 809,
+   "citat_side": 2
+  },
+  {
+   "emne": "Tilskud til ledere ved mastersstævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ledere ved mastersstævner kan få tilskud til hoteludgifter på maksimalt 1.500 kr. Tilskuddet udbetales kun mod indsendelse af bilag på hotelregningen.",
+   "citat": "Der er tale om et tilskud til hoteludgifter, og der udbetales MAX 1.500,00. Og kun hvis man sender bilag på hotelregningen.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 972,
+   "citat_side": 3
+  },
+  {
+   "emne": "Krav til deltagelse i DM A og DM senior bænk",
+   "kategori": "staevner",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "vedtaegt",
+   "tekst": "Der er forslag om at fjerne kvalifikationskravene til DM A og DM senior bænk for at få flere deltagere. Bestyrelsen udarbejder forslaget til repræsentantskabsmødet.",
+   "citat": "Der var forslag om at fjerne krav til DM A og DM senior bænk for at få et højere deltagerantal. Bestyrelsen vil udarbejde forslaget til repmødet.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 905,
+   "citat_side": 2
+  }
+ ]
+}

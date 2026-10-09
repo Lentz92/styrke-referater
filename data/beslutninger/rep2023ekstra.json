@@ -1,22 +1,28 @@
 {
  "doc_id": "rep2023ekstra",
  "sha256": "43fd0e73a72161809e54956969f7a36cffa5c185c3da8d7b5dcebb58b7d86c68",
- "version": 2,
- "model": "sonnet",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
  "moededato": "2023-06-06",
  "next_number": 2,
  "retired": [],
  "beslutninger": [
   {
    "id": "rep2023ekstra#1",
-   "emne": "Stævneudvalgets ret til at ændre stævners størrelse, placering og sammensætning",
+   "emne": "Stævneudvalgets kompetence til at ændre stævners størrelse, placering og sammensætning",
    "kategori": "staevner",
    "udfald": "vedtaget",
    "forslagsstiller": "Bestyrelsen",
    "handling": "aendring",
    "niveau": "vedtaegt",
-   "tekst": "Vedtægtens §13 udvides, så Stævneudvalget med godkendelse fra DSF's bestyrelse kan ændre stævners størrelse, placering og sammensætning, når det skønnes nødvendigt. Enhver ændring skal offentliggøres senest 8 uger før afholdelsen af det pågældende mesterskab.",
-   "citat": "Stævneudvalget kan med godkendelse fra bestyrelsen i DSF ændre på stævnernes størrelse, placering og sammensætning i de tilfælde, det skønnes nødvendigt.",
+   "tekst": "Vedtægternes §13 er udvidet: Stævneudvalget kan med godkendelse fra DSF's bestyrelse ændre stævnernes størrelse, placering og sammensætning, når det skønnes nødvendigt, f.eks. ved at dele eller slå stævner sammen. Enhver ændring skal offentliggøres senest 8 uger før det pågældende mesterskab afholdes. Klubber, der vil afholde et stævne (ikke de ordinære forbundsstævner), skal stadig indsende forslag til det ordinære repræsentantskabsmøde, og stævnet kan tidligst afvikles 4 måneder efter mødet.",
+   "citat": "Stævneudvalget kan med godkendelse fra bestyrelsen i DSF ændre på stævnernes størrelse, placering og sammensætning i de tilfælde, det skønnes nødvendigt. Tilføjelse til forslaget efter debat: En hver ændring skal offentliggøres senest 8 uger før afholdelse af det pågældende mesterskab.",
    "side": 2,
    "stemmer": "37 for, 0 imod, 0 blanke",
    "gaelder_fra": null,

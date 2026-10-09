@@ -1,4 +1,764 @@
 {
- "aliases": {},
- "retired": {}
+ "aliases": {
+  "adel-antidopinguddannelse": {
+   "to": "antidopinguddannelse-for-masterløftere",
+   "category": "antidoping",
+   "title": "ADEL-antidopinguddannelse",
+   "refs": [
+    "Tilmeldingsfrister2026#2",
+    "Tilmeldingsfrister2027#2",
+    "refmaster13052022#3"
+   ]
+  },
+  "afregningsbilag-og-tilgodehavender": {
+   "to": "kørselsgodtgørelse",
+   "category": "okonomi",
+   "title": "Afregningsbilag og tilgodehavender",
+   "refs": [
+    "refbest_11012008#2",
+    "refbest_30052010#3",
+    "rep2017#1"
+   ]
+  },
+  "alderskategori-dreng-pige-i-ipf": {
+   "to": "alderskategori-for-drenge-og-piger",
+   "category": "staevner",
+   "title": "Alderskategori dreng/pige i IPF",
+   "refs": [
+    "199kongres#5"
+   ]
+  },
+  "bestilling-af-rejser-til-internationale-stævner": {
+   "to": "opholdslængde-ved-internationale-stævner",
+   "category": "organisation",
+   "title": "Bestilling af rejser til internationale stævner",
+   "refs": [
+    "refbest_10032013#2"
+   ]
+  },
+  "bona-fide-forsøg": {
+   "to": "bona-fide-forsøg-2",
+   "category": "staevner",
+   "title": "Bona fide forsøg",
+   "refs": [
+    "490#36"
+   ]
+  },
+  "budgetmidler-til-udstyrspuljen": {
+   "to": "initiativpuljens-udstyrsmidler",
+   "category": "udstyr",
+   "title": "Budgetmidler til udstyrspuljen",
+   "refs": [
+    "refbest_230825#2"
+   ]
+  },
+  "crossfitstævner-i-forbundsregi": {
+   "to": "crossfitstævner-i-forbundsregi-2",
+   "category": "staevner",
+   "title": "Crossfitstævner i forbundsregi",
+   "refs": [
+    "refbest_09082014#4"
+   ]
+  },
+  "disciplinmedaljer": {
+   "to": "bestilling-betaling-og-levering-af-medaljer-og-pokaler",
+   "category": "staevner",
+   "title": "Disciplinmedaljer",
+   "refs": [
+    "refbest_03052014#1",
+    "rep2019#10"
+   ]
+  },
+  "doping-og-deltagergebyr-ved-epf-mesterskaber": {
+   "to": "epf-s-sanktionsgebyr-for-stævner",
+   "category": "internationalt",
+   "title": "Doping- og deltagergebyr ved EPF-mesterskaber",
+   "refs": [
+    "725kongres#2",
+    "epf_kongres_2025#1",
+    "epf_kongres_2025#4",
+    "epf_kongres_2026#1"
+   ]
+  },
+  "dopingsager-i-dif-s-love": {
+   "to": "behandling-af-dopingsager-i-dif",
+   "category": "internationalt",
+   "title": "Dopingsager i DIF's love",
+   "refs": [
+    "dif_budgetmoede_2026#1"
+   ]
+  },
+  "dsf-kraftcenter": {
+   "to": "årsafgift",
+   "category": "organisation",
+   "title": "DSF kraftcenter",
+   "refs": [
+    "refbest_08022015#13"
+   ]
+  },
+  "eliteudvalgets-eksterne-kommunikation": {
+   "to": "besvarelse-af-henvendelser-til-eliteudvalget",
+   "category": "organisation",
+   "title": "Eliteudvalgets eksterne kommunikation",
+   "refs": [
+    "elite14092019#3"
+   ]
+  },
+  "fortsættelse-efter-bomb-out": {
+   "to": "fortsættelse-i-konkurrencen-efter-bomb-out",
+   "category": "staevner",
+   "title": "Fortsættelse efter bomb-out",
+   "refs": [
+    "490#9"
+   ]
+  },
+  "fremmøde-ved-indvejning": {
+   "to": "fremmøde-ved-indvejning-2",
+   "category": "staevner",
+   "title": "Fremmøde ved indvejning",
+   "refs": [
+    "490#17"
+   ]
+  },
+  "færøerne-under-dsf-s-regler": {
+   "to": "færøernes-tilknytning-til-dsf",
+   "category": "internationalt",
+   "title": "Færøerne under DSF's regler",
+   "refs": [
+    "refstaevne10092024#5"
+   ]
+  },
+  "indberetning-af-dopingkontrol-til-ipf": {
+   "to": "indberetning-af-dopingkontrolresultater-til-ipf",
+   "category": "internationalt",
+   "title": "Indberetning af dopingkontrol til IPF",
+   "refs": [
+    "vm2013#1"
+   ]
+  },
+  "indberetning-af-internationale-medaljer-til-dif": {
+   "to": "indberetning-af-internationale-medaljer-til-dif-2",
+   "category": "internationalt",
+   "title": "Indberetning af internationale medaljer til DIF",
+   "refs": [
+    "refbest_220122#1"
+   ]
+  },
+  "indefrysning-af-tekniske-regler-og-udstyrsproducenter": {
+   "to": "procedure-for-ændring-af-ipf-s-tekniske-regler",
+   "category": "udstyr",
+   "title": "Indefrysning af tekniske regler og udstyrsproducenter",
+   "refs": [
+    "199kongres#7"
+   ]
+  },
+  "international-dommereksamen-ipf": {
+   "to": "internationale-dommereksamener-ved-åbne-vm",
+   "category": "dommere",
+   "title": "International dommereksamen (IPF)",
+   "refs": [
+    "490#29",
+    "490#30"
+   ]
+  },
+  "ipf-klassiske-bænkpresmesterskaber": {
+   "to": "klassiske-bænkpresmesterskaber-i-ipf",
+   "category": "staevner",
+   "title": "IPF klassiske bænkpresmesterskaber",
+   "refs": [
+    "257kongres#2"
+   ]
+  },
+  "jury-og-meet-director-ved-officielle-stævner": {
+   "to": "jury-og-dommere-ved-officielle-stævner",
+   "category": "staevner",
+   "title": "Jury og meet director ved officielle stævner",
+   "refs": [
+    "refbest_221023#3"
+   ]
+  },
+  "kompensation-for-manglende-kontingentindtægter-covid-19": {
+   "to": "kompensation-for-stævneindtægter-og-merudgifter-covid-19",
+   "category": "okonomi",
+   "title": "Kompensation for manglende kontingentindtægter (Covid-19)",
+   "refs": [
+    "refbest_220820#1"
+   ]
+  },
+  "kørselsgodtgørelse-til-dommere": {
+   "to": "dommere-ved-private-stævner",
+   "category": "dommere",
+   "title": "Kørselsgodtgørelse til dommere",
+   "refs": [
+    "refdom12092023#3",
+    "refdom28032024#1"
+   ]
+  },
+  "lån-af-dsf-s-stævneudstyr": {
+   "to": "udlån-af-dommerlys",
+   "category": "udstyr",
+   "title": "Lån af DSF's stævneudstyr",
+   "refs": [
+    "refbest_04082012#2",
+    "refbest_07122014#7",
+    "refbest_09082014#1",
+    "refbest_14042012#2",
+    "refbest_29102017#3"
+   ]
+  },
+  "masterskategori-ved-dm-hold": {
+   "to": "divisionsturnering-struktur-og-afvikling",
+   "category": "master",
+   "title": "Masterskategori ved DM Hold",
+   "refs": [
+    "rep2026#10"
+   ]
+  },
+  "navne-på-stævneprotokol": {
+   "to": "håndtering-af-stævneprotokoller-efter-stævner",
+   "category": "staevner",
+   "title": "Navne på stævneprotokol",
+   "refs": [
+    "refstaevne16122025#1"
+   ]
+  },
+  "offentliggørelse-af-stævne-og-dommerplan": {
+   "to": "offentliggørelse-af-stævne-og-dommerplan-2",
+   "category": "staevner",
+   "title": "Offentliggørelse af stævne- og dommerplan",
+   "refs": [
+    "rep2018#6"
+   ]
+  },
+  "opbevaring-af-dsf-s-konkurrenceudstyr": {
+   "to": "udlån-af-dommerlys",
+   "category": "staevner",
+   "title": "Opbevaring af DSF's konkurrenceudstyr",
+   "refs": [
+    "refstaevne04062024#1"
+   ]
+  },
+  "overførsel-af-sanktioner-fra-u-landshold": {
+   "to": "deltagelse-i-landsholdssamlinger-og-advarsler",
+   "category": "landshold",
+   "title": "Overførsel af sanktioner fra U-landshold",
+   "refs": [
+    "elite12032025#1"
+   ]
+  },
+  "pause-mellem-discipliner-ipf": {
+   "to": "pause-mellem-discipliner-ved-én-løftegruppe",
+   "category": "staevner",
+   "title": "Pause mellem discipliner (IPF)",
+   "refs": [
+    "490#23",
+    "490#24"
+   ]
+  },
+  "placering-af-regler-for-divisionsturneringen": {
+   "to": "divisionsturnering-struktur-og-afvikling",
+   "category": "staevner",
+   "title": "Placering af regler for divisionsturneringen",
+   "refs": [
+    "rep2021#1"
+   ]
+  },
+  "pligt-til-dm-deltagelse": {
+   "to": "dispensation-fra-dm-ved-kollision-med-vm",
+   "category": "landshold",
+   "title": "Pligt til DM-deltagelse",
+   "refs": [
+    "elite12032025#4",
+    "elite30042026#1",
+    "elite30042026#2",
+    "refbest_310722#5"
+   ]
+  },
+  "poster-efter-dopingkarantæne": {
+   "to": "dopingdømtes-deltagelse-på-landshold-og-internationalt",
+   "category": "antidoping",
+   "title": "Poster efter dopingkarantæne",
+   "refs": [
+    "rep2011#6"
+   ]
+  },
+  "provision-ved-sponsorfund": {
+   "to": "honorar-for-sponsorindhentning",
+   "category": "organisation",
+   "title": "Provision ved sponsorfund",
+   "refs": [
+    "refbest_140526#1"
+   ]
+  },
+  "rapportering-fra-internationale-mesterskaber-2": {
+   "to": "rapportering-fra-internationale-mesterskaber",
+   "category": "organisation",
+   "title": "Rapportering fra internationale mesterskaber",
+   "refs": [
+    "elite31052014#4"
+   ]
+  },
+  "regler-for-dommerudvalget": {
+   "to": "dommerudvalgets-formål-og-opgaver",
+   "category": "dommere",
+   "title": "Regler for Dommerudvalget",
+   "refs": [
+    "refbest_15052011#1",
+    "refbest_221023#1"
+   ]
+  },
+  "rengøring-af-stang-eller-platform": {
+   "to": "anmodning-om-rengøring-af-stang-eller-platform",
+   "category": "staevner",
+   "title": "Rengøring af stang eller platform",
+   "refs": [
+    "490#27"
+   ]
+  },
+  "rækkefølge-ved-nyt-forsøg-i-3-runde": {
+   "to": "rækkefølge-ved-tildelt-nyt-forsøg",
+   "category": "staevner",
+   "title": "Rækkefølge ved nyt forsøg i 3. runde",
+   "refs": [
+    "490#37"
+   ]
+  },
+  "skiver-til-rekordsætning": {
+   "to": "vægtskiver-til-rekordforsøg",
+   "category": "staevner",
+   "title": "Skiver til rekordsætning",
+   "refs": [
+    "490#10"
+   ]
+  },
+  "struktur-på-landsholdssamlinger": {
+   "to": "regionale-trænere",
+   "category": "landshold",
+   "title": "Struktur på landsholdssamlinger",
+   "refs": [
+    "elite10112012#9",
+    "elite17032021#3",
+    "elite19092023#4"
+   ]
+  },
+  "stævneudstyrskufferter": {
+   "to": "udlån-af-dommerlys",
+   "category": "staevner",
+   "title": "Stævneudstyrskufferter",
+   "refs": [
+    "refbest_03022018#7",
+    "refbest_08022015#4"
+   ]
+  },
+  "stævneudvalgets-beføjelse-til-at-ændre-stævner": {
+   "to": "stævneudvalgets-ret-til-at-ændre-stævner",
+   "category": "organisation",
+   "title": "Stævneudvalgets beføjelse til at ændre stævner",
+   "refs": [
+    "refbest_110523#1"
+   ]
+  },
+  "stævneudvalgets-opgaver-og-årlige-regelgennemgang": {
+   "to": "stævneudvalgets-kommissorium",
+   "category": "staevner",
+   "title": "Stævneudvalgets opgaver og årlige regelgennemgang",
+   "refs": [
+    "refbest_130124#2",
+    "refstaevne08022024#5"
+   ]
+  },
+  "størrelse-på-a-gruppe": {
+   "to": "størrelse-af-a-gruppen",
+   "category": "staevner",
+   "title": "Størrelse på A-gruppe",
+   "refs": [
+    "490#22"
+   ]
+  },
+  "sub-junior-og-juniorlandshold": {
+   "to": "bænkpreslandshold",
+   "category": "landshold",
+   "title": "Sub-junior- og juniorlandshold",
+   "refs": [
+    "elite03082012#3",
+    "elite10122017#1"
+   ]
+  },
+  "trænere-ved-internationale-stævner": {
+   "to": "arrangørens-kontrol-af-trænere-i-opvarmningslokalet",
+   "category": "staevner",
+   "title": "Trænere ved internationale stævner",
+   "refs": [
+    "257kongres#5",
+    "490#38"
+   ]
+  },
+  "udlån-af-indvejningsvægte": {
+   "to": "udlån-af-indvejningsvægte-2",
+   "category": "staevner",
+   "title": "Udlån af indvejningsvægte",
+   "refs": [
+    "refbest_230423#1"
+   ]
+  },
+  "ugentlig-klubtræning-for-landsholdsudøvere": {
+   "to": "træning-i-hjemklub-for-bruttolandsholdsatleter",
+   "category": "antidoping",
+   "title": "Ugentlig klubtræning for landsholdsudøvere",
+   "refs": [
+    "elite25042022#2"
+   ]
+  },
+  "understøttende-bænkprestrøje": {
+   "to": "forbud-mod-superkatana-bænkpresdragt",
+   "category": "udstyr",
+   "title": "Understøttende bænkprestrøje",
+   "refs": [
+    "vm2012kongres#3"
+   ]
+  },
+  "verdensrekord-i-dødløft-efter-protest": {
+   "to": "rekordforsøg-i-dødløft-efter-protest",
+   "category": "staevner",
+   "title": "Verdensrekord i dødløft efter protest",
+   "refs": [
+    "257kongres#10"
+   ]
+  },
+  "vægtøgning-på-0-5-kg-i-klassisk": {
+   "to": "vægtøgning-på-0-5-kg-i-klassisk-2",
+   "category": "staevner",
+   "title": "Vægtøgning på 0,5 kg i klassisk",
+   "refs": [
+    "490#25"
+   ]
+  }
+ },
+ "retired": {
+  "a-dommerindstillinger-som-fast-dagsordenspunkt": {
+   "category": "dommere",
+   "title": "A-dommerindstillinger som fast dagsordenspunkt",
+   "refs": [
+    "refdom07012025#2"
+   ]
+  },
+  "adfærdskodeks-adfærd-under-konkurrencer": {
+   "category": "master",
+   "title": "Adfærdskodeks, adfærd under konkurrencer",
+   "refs": [
+    "Adfaerdskodeks#2"
+   ]
+  },
+  "adfærdskodeks-generel-adfærd": {
+   "category": "master",
+   "title": "Adfærdskodeks, generel adfærd",
+   "refs": [
+    "Adfaerdskodeks#1"
+   ]
+  },
+  "ansvar-for-licensregistrering": {
+   "category": "medlemskab",
+   "title": "Ansvar for licensregistrering",
+   "refs": [
+    "refbest_26072015#4"
+   ]
+  },
+  "appbrugeres-samtykke-til-dopingtest": {
+   "category": "antidoping",
+   "title": "Appbrugeres samtykke til dopingtest",
+   "refs": [
+    "refbest_221023#5"
+   ]
+  },
+  "atletrepræsentant-i-ipf-s-bestyrelse": {
+   "category": "internationalt",
+   "title": "Atletrepræsentant i IPF's bestyrelse",
+   "refs": [
+    "vm2013#2"
+   ]
+  },
+  "begynder-og-introstævner": {
+   "category": "staevner",
+   "title": "Begynder- og introstævner",
+   "refs": [
+    "refbest_03022018#4"
+   ]
+  },
+  "best-lifter-priser-ved-epf-stævner": {
+   "category": "internationalt",
+   "title": "Best Lifter-priser ved EPF-stævner",
+   "refs": [
+    "epf_kongres_2025#5"
+   ]
+  },
+  "bogføring-af-internationale-stævner": {
+   "category": "okonomi",
+   "title": "Bogføring af internationale stævner",
+   "refs": [
+    "refbest_021021#1"
+   ]
+  },
+  "bøde-for-manglende-dommer-ved-ipf-masterstævner": {
+   "category": "internationalt",
+   "title": "Bøde for manglende dommer ved IPF-masterstævner",
+   "refs": [
+    "ReferatMastermoede_okt2011#3"
+   ]
+  },
+  "certificering-af-hjælpere-til-udstyrsløftere": {
+   "category": "uddannelse",
+   "title": "Certificering af hjælpere til udstyrsløftere",
+   "refs": [
+    "refudstyr15052025#1"
+   ]
+  },
+  "deltagelse-i-universitetsmesterskaber": {
+   "category": "andet",
+   "title": "Deltagelse i universitetsmesterskaber",
+   "refs": [
+    "refbest_220122#3"
+   ]
+  },
+  "elitestrategi": {
+   "category": "landshold",
+   "title": "Elitestrategi",
+   "refs": [
+    "elite16022019.2#5"
+   ]
+  },
+  "etisk-regelsæt-og-adfærd": {
+   "category": "organisation",
+   "title": "Etisk regelsæt og adfærd",
+   "refs": [
+    "refbest_090323#1"
+   ]
+  },
+  "forbundsejet-stævneudstyr": {
+   "category": "staevner",
+   "title": "Forbundsejet stævneudstyr",
+   "refs": [
+    "refbest_28022010#6",
+    "rep2010#7"
+   ]
+  },
+  "foreningsbesøg": {
+   "category": "organisation",
+   "title": "Foreningsbesøg",
+   "refs": [
+    "refbest_14012012#4"
+   ]
+  },
+  "formand-for-teknisk-komité-i-ipf-s-bestyrelse": {
+   "category": "internationalt",
+   "title": "Formand for teknisk komité i IPF's bestyrelse",
+   "refs": [
+    "257kongres#3"
+   ]
+  },
+  "godkendelse-af-rekorder-i-stævneudvalget": {
+   "category": "staevner",
+   "title": "Godkendelse af rekorder i stævneudvalget",
+   "refs": [
+    "refstaevne08022024#6"
+   ]
+  },
+  "godtgørelse-til-epf-officials": {
+   "category": "internationalt",
+   "title": "Godtgørelse til EPF-officials",
+   "refs": [
+    "241kongres#3"
+   ]
+  },
+  "godtgørelse-til-ipf-s-ledelse": {
+   "category": "internationalt",
+   "title": "Godtgørelse til IPF's ledelse",
+   "refs": [
+    "1071kongres#6",
+    "vm2013#3"
+   ]
+  },
+  "grebskrav-i-dansk-oversættelse": {
+   "category": "dommere",
+   "title": "Grebskrav i dansk oversættelse",
+   "refs": [
+    "refdom04062026#4"
+   ]
+  },
+  "headcoach-for-klubber-ved-nationale-stævner": {
+   "category": "staevner",
+   "title": "Headcoach for klubber ved nationale stævner",
+   "refs": [
+    "refbest_10122016#2",
+    "refbest_17092016#5"
+   ]
+  },
+  "indvejning-ved-dommer-af-samme-køn": {
+   "category": "dommere",
+   "title": "Indvejning ved dommer af samme køn",
+   "refs": [
+    "rep2017#18"
+   ]
+  },
+  "ipf-masterkommission": {
+   "category": "master",
+   "title": "IPF Masterkommission",
+   "refs": [
+    "1071kongres#7"
+   ]
+  },
+  "klubbers-materiale-til-medieudvalget": {
+   "category": "organisation",
+   "title": "Klubbers materiale til medieudvalget",
+   "refs": [
+    "refmedie25092024#1"
+   ]
+  },
+  "konkurrenceplatform": {
+   "category": "internationalt",
+   "title": "Konkurrenceplatform",
+   "refs": [
+    "refbest_060621#1"
+   ]
+  },
+  "ksk-s-udstyrsfrie-bænkpresstævne": {
+   "category": "staevner",
+   "title": "KSK's udstyrsfrie bænkpresstævne",
+   "refs": [
+    "rep2011#8"
+   ]
+  },
+  "ligestilling-af-grene-i-elitearbejdet": {
+   "category": "landshold",
+   "title": "Ligestilling af grene i elitearbejdet",
+   "refs": [
+    "elite10112012#1"
+   ]
+  },
+  "medaljebudget": {
+   "category": "staevner",
+   "title": "Medaljebudget",
+   "refs": [
+    "refbest_08022015#3"
+   ]
+  },
+  "medaljer-ved-epf-mesterskaber": {
+   "category": "internationalt",
+   "title": "Medaljer ved EPF-mesterskaber",
+   "refs": [
+    "725kongres#3"
+   ]
+  },
+  "medieudvalgets-dækning-af-internationale-stævner": {
+   "category": "organisation",
+   "title": "Medieudvalgets dækning af internationale stævner",
+   "refs": [
+    "refmedie09062026#2"
+   ]
+  },
+  "nationale-forbunds-pligt-til-dopingtest-ipf-forslag": {
+   "category": "antidoping",
+   "title": "Nationale forbunds pligt til dopingtest (IPF-forslag)",
+   "refs": [
+    "refbest_060621#2"
+   ]
+  },
+  "netværksmøder-i-landsholdssamlinger": {
+   "category": "landshold",
+   "title": "Netværksmøder i landsholdssamlinger",
+   "refs": [
+    "elite16022019.2#6"
+   ]
+  },
+  "nye-dommere-ved-første-stævne": {
+   "category": "dommere",
+   "title": "Nye dommere ved første stævne",
+   "refs": [
+    "refdom12032026#2"
+   ]
+  },
+  "obligatorisk-spørgeskema-for-landsholdsatleter": {
+   "category": "landshold",
+   "title": "Obligatorisk spørgeskema for landsholdsatleter",
+   "refs": [
+    "elite29032021#4"
+   ]
+  },
+  "offentliggørelse-af-breddeudvalgets-arrangementer": {
+   "category": "organisation",
+   "title": "Offentliggørelse af breddeudvalgets arrangementer",
+   "refs": [
+    "refbest_14012012#5"
+   ]
+  },
+  "priser-til-årets-løftere-i-epf": {
+   "category": "internationalt",
+   "title": "Priser til årets løftere i EPF",
+   "refs": [
+    "241kongres#4"
+   ]
+  },
+  "præsentation-af-landsholdsløftere-på-sociale-medier": {
+   "category": "landshold",
+   "title": "Præsentation af landsholdsløftere på sociale medier",
+   "refs": [
+    "elite29032021#6"
+   ]
+  },
+  "påmindelse-om-lånedommere": {
+   "category": "dommere",
+   "title": "Påmindelse om lånedommere",
+   "refs": [
+    "refdom03072025#3"
+   ]
+  },
+  "registrering-af-europarekorder-ved-nordiske-mesterskaber": {
+   "category": "internationalt",
+   "title": "Registrering af europarekorder ved Nordiske Mesterskaber",
+   "refs": [
+    "refbest_130124#5"
+   ]
+  },
+  "reserveløfter-ved-forhåndstilmelding": {
+   "category": "internationalt",
+   "title": "Reserveløfter ved forhåndstilmelding",
+   "refs": [
+    "467kongres#5"
+   ]
+  },
+  "standarddagsorden-for-bestyrelsesmøder": {
+   "category": "organisation",
+   "title": "Standarddagsorden for bestyrelsesmøder",
+   "refs": [
+    "refbest_15052011#3"
+   ]
+  },
+  "vejledning-til-arrangører-af-dm-hold-runder": {
+   "category": "staevner",
+   "title": "Vejledning til arrangører af DM-hold runder",
+   "refs": [
+    "refstaevne12032026#1"
+   ]
+  },
+  "world-cup-for-universitetsstuderende": {
+   "category": "internationalt",
+   "title": "World Cup for universitetsstuderende",
+   "refs": [
+    "257kongres#1"
+   ]
+  },
+  "åben-klasse-ved-nm": {
+   "category": "staevner",
+   "title": "Åben klasse ved NM",
+   "refs": [
+    "refbest_12062016#2"
+   ]
+  },
+  "årets-klub": {
+   "category": "organisation",
+   "title": "Årets klub",
+   "refs": [
+    "refbest_23012011#2"
+   ]
+  }
+ }
 }
