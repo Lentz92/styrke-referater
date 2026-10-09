@@ -1082,6 +1082,12 @@ def cmd_extract(args: argparse.Namespace) -> None:
     run = check_run_name(args.name)
     docs = selected_docs(load_selection(), args.pilot, args.docs)
     if args.from_data:
+        calling = [flag for flag, value in (("--model", args.model), ("--max-cost", args.max_cost),
+                                            ("--prompt", args.prompt), ("--effort", args.effort),
+                                            ("--workers", args.workers)) if value is not None]
+        if calling:
+            raise SystemExit(f"--from-data copies data/beslutninger without calling Claude, so it takes no "
+                             f"{', '.join(calling)}")
         copied = copy_from_data(run, docs, args.force)
         print(f"Copied {len(copied)} of {len(docs)} extractions from {analyze.DECISIONS_DIR} to {run_dir(run)}")
         return
@@ -1115,6 +1121,10 @@ def cmd_extract(args: argparse.Namespace) -> None:
 
 def cmd_score(args: argparse.Namespace) -> None:
     runs = [check_run_name(run) for run in args.run]
+    # A baseline named on purpose must be scored; the default's gate is left out when it is not.
+    if args.baseline is not None and check_run_name(args.baseline) not in runs:
+        raise SystemExit(f"--baseline {args.baseline}: also pass --run {args.baseline}")
+    baseline = args.baseline or BASELINE_RUN
     corrections = load_corrections()
     keys = {path.stem: correct_decisions_key(read_json(path), corrections)
             for path in sorted(key_dir("decisions").glob("*.json"))}
@@ -1137,12 +1147,12 @@ def cmd_score(args: argparse.Namespace) -> None:
                  for config, members in groups.items()}
     by_run = {run: by_config[config] for config, members in groups.items() for run in members}
     gate_lines: list[str] = []
-    if args.baseline in runs and groups:
+    if baseline in runs and groups:
         totals = {run: total(s) for run, s in scores.items()}
         today = groups.get(pipeline_configuration(), [])  # the baseline among them when it has today's configuration
         noise = spread([totals[run] for run in today])
-        needs = gate_needs(totals[args.baseline], by_config.get(pipeline_configuration()), noise)
-        gate_lines = gate_section(gate(totals, groups, by_config, needs), needs, args.baseline, today, noise)
+        needs = gate_needs(totals[baseline], by_config.get(pipeline_configuration()), noise)
+        gate_lines = gate_section(gate(totals, groups, by_config, needs), needs, baseline, today, noise)
     report = decisions_report(scores, doc_ids, {doc_id: keys[doc_id] for doc_id in doc_ids}, args.seed, warnings,
                               by_run, gate_lines)
     if left_out:
@@ -1215,9 +1225,10 @@ def parser() -> argparse.ArgumentParser:
 
     score = sub.add_parser("score", help="score extraction runs against the decisions key (no Claude)")
     score.add_argument("--run", action="append", required=True, help="a run to score; repeat to compare runs")
-    score.add_argument("--baseline", default=BASELINE_RUN, metavar="RUN",
-                       help=f"the run the gate measures against; the gate runs when it is scored (default: "
-                            f"{BASELINE_RUN}, today's data/ after the v3 migration)")
+    score.add_argument("--baseline", metavar="RUN",
+                       help=f"the run the gate measures against, which must be among the --run (default: "
+                            f"{BASELINE_RUN}, today's data/ after the v3 migration; the gate is left out when it is "
+                            f"not scored)")
     score.add_argument("--seed", type=int, default=SEED, help="bootstrap seed")
     score.add_argument("--report", help="report name under eval/reports/")
     score.set_defaults(func=cmd_score)

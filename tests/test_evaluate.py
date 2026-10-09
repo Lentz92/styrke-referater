@@ -157,6 +157,9 @@ def test_extraction_runs_use_the_pipeline_prompt_and_write_only_under_eval(corpu
     assert fake_claude.invocations("call") == 0
     with pytest.raises(SystemExit, match="--model and --max-cost"):  # without --from-data, every name calls Claude
         evaluate.main(["extract", "--name", "stored"])
+    with pytest.raises(SystemExit, match="without calling Claude, so it takes no --model, --max-cost"):
+        evaluate.main(["extract", "--name", "x", "--from-data", "--model", "claude-sonnet-5-5", "--max-cost", "5"])
+    assert not evaluate.run_dir("x").exists()
 
     fake_claude.answer({"moededato": None, "beslutninger": [STORED["rep2024"][0]]})
     evaluate.main(["extract", "--name", "sonnet-1", "--model", "claude-sonnet-5-5", "--max-cost", "5",
@@ -405,6 +408,10 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
     assert "at least the run migrated, less a margin" in report and "| needs | | ≥ 100.0% |" in report
     assert "today's pipeline was not run twice here, so it is the slack alone" in report
     assert "were not scored, so no configuration passes" in report and "| no: stability |" in report
+    # A baseline named on purpose that is not scored, or mistyped, stops the command instead of dropping the gate.
+    for name, why in (("migrate", "--baseline migrate: also pass --run migrate"), ("Migrated", "Run name 'Migrated'")):
+        with pytest.raises(SystemExit, match=why):
+            evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--baseline", name])
 
 
 def test_a_worse_run_within_the_spread_of_todays_pipeline_passes_and_one_outside_it_fails():
