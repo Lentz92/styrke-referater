@@ -2,8 +2,8 @@
 
 Two extraction runs agree on only ~90% of decisions, so comparing runs cannot tell better from different. Every
 choice of the pipeline (model, prompt, consolidation mode) is therefore scored against an answer key that Opus judged
-once. `evaluate.py` scores against it and runs the incremental consolidation's gates; everything it writes is under
-`eval/`, and it never touches `data/` or `regelsaet/`. The loop is drawn in
+once. `evaluate.py` scores against it and runs the incremental consolidation's candidate gate; everything it writes
+is under `eval/`, and it never touches `data/` or `regelsaet/`. The loop is drawn in
 [docs/architecture.md, section 1.4](../docs/architecture.md#14-side-lane-the-measurement-loop).
 
 | Path | What |
@@ -13,9 +13,9 @@ once. `evaluate.py` scores against it and runs the incremental consolidation's g
 | `key/rules/<slug>.json` | each rule's timeline and what was in force each year |
 | `key/judges/` | every judge's answer |
 | `key/corrections.json` | errors a check against the minutes found in the judges' answers |
-| `runs/<run>/<doc>.json` | extraction runs scored against the key (`stored` is `data/beslutninger` as it was) |
+| `runs/<run>/<doc>.json` | extraction runs scored against the key (`stored` and `migrated` are copies of `data/beslutninger` before and after the migration to Opus with v3) |
 | `reports/<name>.md` | the scores |
-| `runs.jsonl` | one line per command: its settings, the Claude usage of each step, the scores |
+| `runs.jsonl` | a line per `extract` that calls Claude: its settings and the Claude usage of each step (earlier lines also log the key's judges, the scoring commands and the retired commands) |
 
 ## How the key was built
 
@@ -43,13 +43,11 @@ reported but left out of the overall rules figures.
 ## What is scored
 
 ```bash
-uv run evaluate.py extract --name stored     # today's extractions as a run; other names call Claude
+uv run evaluate.py extract --name migrated --from-data   # data/beslutninger copied as a run (no Claude)
 uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
-uv run evaluate.py score --run stored --run opus-v3-1 --run opus-v3-2
+uv run evaluate.py score --run migrated --run opus-v3-1 --run opus-v3-2   # the gate against --baseline (migrated)
 uv run evaluate.py score-rules               # data/regler, or --rules-dir/--decisions-dir
 uv run evaluate.py candidate-recall          # hide each decision from its rule: is the rule among the top K?
-uv run evaluate.py replay --holdout newest:20,random:10 --seed 1 --name inc-1 --max-cost 20
-uv run evaluate.py compare-rules eval/replays/inc-1/data/regler data/regler
 ```
 
 - `score` matches each run's decisions to the decisions key (the matcher that carries decision ids over) and reports
@@ -58,25 +56,30 @@ uv run evaluate.py compare-rules eval/replays/inc-1/data/regler data/regler
   handling, which often needs the rule's history), a paired bootstrap against the first run, and for a configuration
   run twice its stability: the share of the two runs' decisions matched one to one, per document and pooled. The key
   cannot show stability, and an unstable extraction rewrites rules every time a document is extracted again. With
-  the `stored` run among them it also applies the extraction gate (below).
+  the baseline run among them (`--baseline RUN`, default `migrated`) and a configuration run twice, it also applies
+  the extraction gate (below).
 - `score-rules` takes, per key rule, the pipeline rule holding most of its certain events, and counts the events
   found there, elsewhere or missing, whether their effects agree, how many pipeline rules hold the events (more than
   one: fragmented), and for each year whether the version in force was adopted by the key's adopting decision (same
   content, the main measure) or is the key's event itself (same event). A key event quoting a whole budget line is
-  mapped to its own fee's decision, which prompt v3 extracts apart.
+  mapped to its own fee's decision, which prompt v3 extracts apart. To score another revision, copy its rules and
+  decisions with `git archive REV data/regler data/beslutninger | tar -x -C DIR` and pass `--rules-dir
+  DIR/data/regler`, `--decisions-dir DIR/data/beslutninger` and a `--report` name; the decisions may be left out only
+  when they are today's too, as across an audit (without them the pre-migration rules score 1.0% same content, not
+  46.6%).
 - `candidate-recall` hides each decision of today's rules from its rule and ranks the candidates for it from the
   rest, as incremental consolidation does; it also ranks each as if its category were another one.
-- `replay` copies `data/` to `eval/replays/<name>/data`, removes the held-out documents' decisions from the rules
-  there (rules left empty go with their slugs), and consolidates them again on the copy (`--mode incremental`, or
-  `full`, which redoes their categories); a cut-off replay continues where it stopped. `compare-rules` reports how two
-  rule directories group the decisions (B-cubed), what each shows in force every year and with which effect, the
-  same over each holdout part of a replay (`random:` mostly tests decisions filed before a rule's newest version),
-  and how each scores against the rules key (it stops without the key unless `--no-key`).
 
-`extract` and `replay` call Claude: they take `--max-cost`, print how many calls they plan, add a line to
-`runs.jsonl`, and exit 1 when a call failed or was skipped; run them again to continue. `extract` keeps each
-document's answer, so a cut-off run or a pilot (`--pilot N`, `--docs`) is never paid twice; an extraction kept from
-another file version, prompt or effort stops it until `--force`.
+`extract` calls Claude unless given `--from-data`: it takes `--model` and `--max-cost`, prints how many calls it
+plans, adds a line to `runs.jsonl`, and exits 1 when a call failed or was skipped; run it again to continue. It keeps
+each document's answer, so a cut-off run or a pilot (`--pilot N`, `--docs`) is never paid twice; an extraction kept
+from another file version, prompt or effort stops it until `--force`. `--from-data` copies `data/beslutninger` as it
+is, takes none of Claude's options, and replaces a different copy only with `--force`, since such a run is a
+baseline. The other commands write only their reports.
+
+`replay` and `compare-rules`, which measured incremental against full consolidation on copies of `data/`, were
+retired once incremental consolidation was chosen (see below); `git worktree add ../measure 9f39874` checks them out
+with their tests, and their reports stay in `reports/`.
 
 ## Extraction model and prompt
 
@@ -109,10 +112,10 @@ uv run evaluate.py score --run stored --run sonnet-1 --run sonnet-2 --run sonnet
     --run opus-v3-1 --run opus-v3-2
 ```
 
-The gate: a configuration passes when its worse run is at least the stored run on recall and on the three fields, at
-most 2 points below it on precision and at most 2 points above it on over-split (a prompt that splits more than the
-key asks for would otherwise pass on recall), and its two runs are at least as stable as two runs of the pipeline's
-configuration (`evaluate.pipeline_configuration`: Sonnet with v2 when v3 was chosen, Opus with v3 since). The result
+The gate then: a configuration passed when its worse run was at least the stored run on recall and on the three
+fields, at most 2 points below it on precision and at most 2 points above it on over-split (a prompt that splits more
+than the key asks for would otherwise pass on recall), and its two runs were at least as stable as two runs of the
+pipeline's configuration then (Sonnet with v2). The result
 (`reports/decisions-stored+sonnet-1+sonnet-2+sonnet-v3-1+sonnet-v3-2+opus-1+opus-v3-1+opus-v3-2.md`), each
 configuration by its worse run:
 
@@ -127,12 +130,39 @@ Opus with v3 passes clearly: its worse run finds 91.7% of the key's decisions (t
 Sonnet with v3 only matches the stored run on recall and the three fields, so the pipeline moved to Opus, which costs
 about 0.09 USD per document with v3 against Sonnet's 0.04.
 
+Since the migration the gate measures against today's data: `score --baseline RUN`, by default `migrated`
+(`data/beslutninger` after the migration, copied with `extract --name migrated --from-data`). That run is one of
+today's pipeline's, whose runs differ on noise alone (the two Opus v3 runs: 88.7% and 95.5% on the three fields). So
+each figure's bound is the looser of the baseline moved by its slack (`evaluate.GATE_SLACK`: 2 points on precision
+and over-split, none on recall and the three fields) and the worst run of today's pipeline on that figure
+(`evaluate.gate_needs`), and a configuration's runs must be at least as stable as today's pipeline's. When today's
+pipeline was not run twice, the figures have the slack alone and stability has no bound, so no configuration
+passes. On all ten runs:
+
+```bash
+uv run evaluate.py score --run stored --run sonnet-1 --run sonnet-2 --run haiku-1 --run opus-1 --run sonnet-v3-1 \
+    --run sonnet-v3-2 --run opus-v3-1 --run opus-v3-2 --run migrated --report decisions-gate
+```
+
+The result (`reports/decisions-gate.md`), each configuration by its worse run:
+
+| Configuration | Recall | Precision | Three fields | Over-split | Stability | Passes |
+|---|--:|--:|--:|--:|--:|---|
+| needs | ≥ 90.2% | ≥ 96.3% | ≥ 88.7% | ≤ 4.3% | ≥ 94.8% | |
+| Sonnet, v2 | 67.4% | 92.2% | 81.5% | 0.8% | 91.7% | no: recall, precision, three fields, stability |
+| Sonnet, v3 | 79.8% | 93.3% | 75.3% | 0.6% | 93.4% | no: recall, precision, three fields, stability |
+| Opus, v3 (today's pipeline: opus-v3-1, opus-v3-2, migrated) | 90.2% | 97.3% | 88.7% | 2.3% | 94.8% | yes, as the reference |
+
+The three-field bound is today's worst run (opus-v3-1: 88.7%, where `migrated` has 94.3%); the precision and
+over-split bounds are `migrated`'s moved by its slack.
+
 ## Migration to v3 with Opus
 
 The move was one migration (`uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost 40
 --time-budget 150`, with v3 and Opus as the defaults), which extracted every document again, carried the decision
-ids over and consolidated every category in full. It logged its estimate first: about 27 USD at list price, 236
-documents at 0.093 USD (the mean of the Opus v3 runs in `runs.jsonl`) and 5 for the consolidation.
+ids over and consolidated every category in full. It logged its estimate first (`update.py` makes none since): about
+27 USD at list price, 236 documents at 0.093 USD (the mean of the Opus v3 runs in `runs.jsonl`) and 5 for the
+consolidation.
 
 It ran on 9 October 2026 for 25.32 USD at list price (extraction 16.74, consolidation 8.58). The full consolidation
 left one decision in no rule, and the next plain run filed it for 0.11 USD; the run after that made no Claude call.
@@ -162,7 +192,8 @@ Incremental consolidation offers each new decision the 15 rules whose words are 
 from its rule, 98.2% at 15 and 96.8% at 10 (`reports/candidate-recall.md`, run before the migration).
 
 Replays on the data of then, holding out the 20 newest and 10 random documents, chose incremental consolidation as
-the default (`reports/compare-*.md`, where `data-regler` is the full consolidation then in `data/regler`):
+the default (`replay` and `compare-rules`, retired since; their code is in commit 9f39874. `reports/compare-*.md`,
+where `data-regler` is the full consolidation then in `data/regler`):
 
 | Comparison | Grouping, B-cubed F1 | Same adopting decision in force | Years with the same content as the key |
 |---|--:|--:|--:|
@@ -177,12 +208,14 @@ of then), while two incremental runs agree on what was in force in 99.1% of year
 
 The audit's propose calls see a category's rules and every rule of another category at least `audit.SIMILARITY`
 (0.1) similar to one of them. On the answer key that puts all the pairs of rules a key rule is spread over into one
-call on the migrated data, 97% before the migration (`reports/audit-candidates.md`, `uv run audit.py candidates`).
+call on the migrated data, 97% before the migration (`reports/audit-candidates.md`, measured with `audit.py
+candidates`, retired since; its code is in commit 9f39874).
 
 The first audit (commit 9f39874) applied the 16 ops both Opus runs proposed: 8 merges, 4 splits and 4 category moves;
 the 18 that only one run proposed are listed in `data/regler_ops.json` and were left out. It cost 14.11 USD at list
-price (propose 13.21, rewrites 0.91). Against the answer key, without soft rules
-(`uv run audit.py score --before 9f39874~1`):
+price (propose 13.21, rewrites 0.91). Against the answer key, without soft rules (measured with `audit.py score
+--before 9f39874~1`, retired since, whose code is in commit 9f39874; `evaluate.py score-rules` on the rules of
+`9f39874~1` and of `9f39874` gives the same figures, see What is scored):
 
 | | Before | After |
 |---|--:|--:|

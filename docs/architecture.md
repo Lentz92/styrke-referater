@@ -29,8 +29,8 @@ flowchart LR
 - Each box: **name**, `[type]`, one line on what it does. Dashed frames are boundaries (a workflow, a command, a
   repository). Arrows are labelled with what flows along them.
 - Orange boxes are Claude calls; the blue box after one is the code that checks its answer.
-- "Effort not set" means the code passes no `--effort`, so Claude Code's own default applies. `update.py` passes one
-  only with `--extract-effort` or `--consolidate-effort`, and the workflow passes neither.
+- "Effort not set" means the code passes no `--effort`, so Claude Code's own default applies. `update.py` never
+  passes one; the audit does (high), and `evaluate.py extract` with `--effort`.
 - Every pipeline Claude call goes through `analyze.ask_claude`: `claude -p` with no tools, a system prompt and a JSON
   schema, on the subscription. "USD" means the CLI's list-price estimate, which the caps count.
 
@@ -42,28 +42,30 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-  %% Sources. CLI pin and smoke test: .github/workflows/update.yml, CLAUDE_CODE_VERSION 2.1.294.
-  %% Rebuild guard: update.py REBUILD_SHARE 0.10 and REBUILD_CATEGORY_SHARE 0.5, Work.reasons and Work.migration.
+  %% Sources. CLI pin and smoke test: .github/actions/claude-cli, its version input's default 2.1.294, used by
+  %% update.yml and audit.yml. Rebuild guard: update.py REBUILD_SHARE 0.10 and REBUILD_CATEGORY_SHARE 0.5,
+  %% Work.reasons and Work.migration; its refusal ends with update.HOW_TO_PROCEED and RERUN.
   %% Caps: update.py DEFAULT_MAX_COST 15 and DEFAULT_TIME_BUDGET 75, update.yml timeout-minutes 120.
-  %% Extraction: update.EXTRACT_MODEL, update.py --workers default 4, analyze.EXTRACT_VERSION 3,
-  %% analyze.EXTRACT_TIMEOUT 600, analyze.ask_claude attempts 3 with a 15 s times attempt pause.
+  %% Models: update.EXTRACT_MODEL, CONSOLIDATE_MODEL and ASSIGN_MODEL, no options. update.py --workers default 4,
+  %% analyze.EXTRACT_VERSION 3, analyze.EXTRACT_TIMEOUT 600, analyze.ask_claude attempts 3 with a 15 s times attempt
+  %% pause.
   %% Quote check: analyze.QUOTE_THRESHOLD 0.8. Id carry-over: matching.MATCH_THRESHOLD 0.25.
   %% Meeting date: analyze._meeting_date uses styrke.dk's date when the two years differ by 2 or more.
   %% Migration: update.MIGRATE with MIGRATION_MAX_COST 40 and MIGRATION_TIME_BUDGET 150.
   %% Full consolidation: analyze.CONSOLIDATE_TIMEOUT 1800, 12 categories in analyze.CATEGORIES.
   %% Exit codes: update.py EXIT_REVIEW 3, EXIT_FAILED 1. Routing: .github/scripts/route-update.sh.
   %% pages.yml triggers: workflow_run after update.yml, push to main on data/**, website/**, *.py or the
-  %% workflow file itself, and workflow_dispatch. evaluate.py: extract and replay call Claude, the rest does not.
+  %% workflow file itself, and workflow_dispatch. evaluate.py: only extract calls Claude, and not with --from-data.
   %% Document text: scrape.document_text. An .htm file goes through scrape._decode_html: the byte-order mark,
   %% else the declared charset if the bytes fit it, else UTF-8, else windows-1252. No charset detector is asked.
 
   styrke["<b>styrke.dk</b><br/>[External website]<br/>index page ?page=referater"]:::ext
 
   subgraph WF["update.yml [GitHub Actions workflow], 06:00 UTC on the 1st"]
-    gcli{{"<b>CLI pin and smoke test</b><br/>[workflow step, plain code]<br/>Claude Code must be 2.1.294, no ANTHROPIC_API_KEY,<br/>one call to claude-haiku-5-5 must be answered by that model"}}:::guard
+    gcli{{"<b>CLI pin and smoke test</b><br/>[.github/actions/claude-cli, plain code]<br/>Claude Code must be 2.1.294, no ANTHROPIC_API_KEY,<br/>one call to claude-haiku-5-5 must be answered by that model"}}:::guard
     subgraph UPD["uv run update.py [Python CLI], no options on the monthly cron"]
       scrape["<b>1 Scrape</b><br/>[scrape.py, plain code]<br/>downloads new or replaced PDF and HTM files,<br/>writes data/manifest.json. Reads their text for step 2:<br/>PDF with page markers, HTM decoded by fixed rules"]:::code
-      guard{{"<b>Rebuild guard</b><br/>[update.check_rebuild, plain code, before any Claude call]<br/>stops when over 10 % of the documents need extracting, a category<br/>has decisions but no rule file, over half the categories must be redone,<br/>or a migration is due. Logs the estimated cost first."}}:::guard
+      guard{{"<b>Rebuild guard</b><br/>[update.check_rebuild, plain code, before any Claude call]<br/>stops when over 10 % of the documents need extracting, a category<br/>has decisions but no rule file, over half the categories must be redone,<br/>or a migration is due. The refusal says how to proceed."}}:::guard
       extract["<b>2 Extract</b><br/>[Claude Opus 5.5: claude-opus-5-5, prompt v3]<br/>1 call per new or changed document, effort not set,<br/>up to 4 in parallel, 600 s timeout, up to 3 attempts"]:::claude
       excheck["<b>Code checks on each extraction</b><br/>[analyze.py, matching.py]<br/>JSON schema, quote located in the text (80 % of its word triplets),<br/>page corrected, meeting date checked against styrke.dk,<br/>ids carried over by quote position and wording"]:::code
       cons["<b>3 Consolidate, incremental</b><br/>[Claude Sonnet 5.5 votes, Claude Opus 5.5 tie-break and updates]<br/>one document at a time, oldest first: 3 votes per document,<br/>1 update per touched rule (detail in 1.2)"]:::claude
@@ -93,7 +95,7 @@ flowchart TB
     audit["<b>audit.py propose, apply</b><br/>[Claude Opus 5.5, effort high]<br/>2 independent runs per category,<br/>only the ops both propose are applied"]:::claude
   end
   subgraph MEAS["Side lane: measurement loop (detail in 1.4)"]
-    evalu["<b>evaluate.py</b><br/>[Python CLI: scoring is plain code,<br/>extract and replay call Claude]<br/>extraction gate, candidate recall, replays"]:::code
+    evalu["<b>evaluate.py</b><br/>[Python CLI: scoring is plain code,<br/>extract calls Claude]<br/>extraction gate, rule scores, candidate recall"]:::code
   end
 
   styrke -->|"index page, PDF and HTM files"| scrape
@@ -169,8 +171,9 @@ rewrite calls.
 ```mermaid
 flowchart TB
   %% Sources. incremental.py: VOTES 3, ASSIGN_TIMEOUT 600, UPDATE_TIMEOUT 1200, PASSAGE_BEFORE 100, PASSAGE_AFTER 400,
-  %% HISTORY_SHOWN 6, Settings assign_model claude-sonnet-5-5 and update_model claude-opus-5-5.
-  %% Votes and tie-break pass effort None. The update passes Settings.update_effort, which is --consolidate-effort.
+  %% HISTORY_SHOWN 6, Settings assign_model and update_model: update.ASSIGN_MODEL claude-sonnet-5-5 and
+  %% CONSOLIDATE_MODEL claude-opus-5-5. Votes and tie-break pass effort None, the update Settings.update_effort,
+  %% which update.py leaves None.
   %% candidates.py: CANDIDATE_K 15, CATEGORY_BOOST 0.3. Misfiled loop: incremental.process_document.
   %% Full mode: analyze.consolidate and analyze._rules_from, analyze.CONSOLIDATE_TIMEOUT 1800.
 
@@ -183,7 +186,7 @@ flowchart TB
     tally["<b>Tally</b><br/>[incremental.read_vote, tally]<br/>a choice outside the decision's own candidates is no vote,<br/>2 of 3 decide, a new rule named like a live rule goes to the tie-break"]:::code
     tie["<b>Tie-break</b><br/>[Claude Opus 5.5: claude-opus-5-5]<br/>1 call with the same prompt, blind to the votes,<br/>effort not set"]:::claude
     plan["<b>Plan the updates</b><br/>[incremental.plan_update, passages]<br/>the insertion point of each touched rule, and the minutes from<br/>100 words before each new quote to 400 after it or its vote count"]:::code
-    upd["<b>Update rules</b><br/>[Claude Opus 5.5]<br/>1 call per touched or new rule, up to 4 in parallel,<br/>effort from --consolidate-effort, not set by default, 1200 s"]:::claude
+    upd["<b>Update rules</b><br/>[Claude Opus 5.5]<br/>1 call per touched or new rule, up to 4 in parallel,<br/>effort not set, 1200 s"]:::claude
     merge["<b>Merge check</b><br/>[incremental.merge]<br/>exactly the versions asked for, the versions before the insertion<br/>point byte-identical, a proposal's effect follows its outcome,<br/>a rejected answer is asked once more"]:::code
     misf{"<b>Misfiled?</b><br/>[the update call says a new decision<br/>is not about its rule]"}:::code
     write["<b>Write the document</b><br/>[incremental._apply]<br/>only when every call of the document passed: slugs.json first,<br/>then the rule files. Otherwise nothing, and the next run tries again."]:::code
@@ -244,7 +247,7 @@ flowchart TB
   %% route-audit.sh check: month end within 2 days, other auto/audit-* branches.
 
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
-  pre{{"<b>Before any call</b><br/>[audit.yml, route-audit.sh check]<br/>no update.yml run active or queued, no other auto/audit-* branch,<br/>not in a month's last 2 days, CLI pin and smoke test"}}:::guard
+  pre{{"<b>Before any call</b><br/>[audit.yml, route-audit.sh check, .github/actions/claude-cli]<br/>no update.yml run active or queued, no other auto/audit-* branch,<br/>not in a month's last 2 days, CLI pin and smoke test"}}:::guard
   caps{{"<b>Caps</b><br/>[analyze.RunBudget, audit.plan_calls]<br/>cost estimate printed first, --max-cost per command (workflow: 25 USD),<br/>75 min for propose and apply together, step 110 min, job 120 min"}}:::guard
   regler[("<b>data/regler/, data/slugs.json</b><br/>[JSON]<br/>the rules as the monthly runs left them")]:::store
 
@@ -267,7 +270,7 @@ flowchart TB
     rew["<b>Rewrite texts</b><br/>[Claude Opus 5.5, effort high]<br/>1 call per merged rule and per split part,<br/>up to 4 in parallel, 1200 s"]:::claude
     rcheck["<b>Rewrite check</b><br/>[audit.rewritten]<br/>the same decisions in the same order, only effekt, tekst,<br/>kort and kort_regel may change, a rejected answer is asked once more"]:::code
     ver{{"<b>Verify in a copy</b><br/>[audit.checked, verify]<br/>no check error, nothing left for update.py,<br/>every old slug still leads to a rule, else nothing is written"}}:::guard
-    score["<b>Answer-key score</b><br/>[evaluate.score_rule, plain code]<br/>before and after, with a gate line in the report<br/>(reported, not enforced)"]:::code
+    score["<b>Answer-key score</b><br/>[evaluate.score_section, plain code]<br/>before and after, with a gate line in the report<br/>(reported, not enforced)"]:::code
   end
 
   route["<b>route-audit.sh route</b><br/>[Bash]<br/>always a PR on auto/audit-DATE. When cut off it is titled unfinished:<br/>rules and pages are reset, the paid answers kept."]:::code
@@ -317,51 +320,44 @@ first audit applied 16 agreed ops (8 merges, 4 splits, 4 moves) for 14.11 USD.
 flowchart TB
   %% Sources. eval/README.md: 25 documents and 20 rules, 2 judges with a blind 3rd, commands since removed.
   %% Judges' model and effort: provenance in eval/key/judges, claude-opus-5-5 at effort high.
-  %% evaluate.py: GATE_SLACK precision 0.02 and over_split 0.02, RECALL_KS 3 to 15, RECALL_TARGET 0.98,
-  %% SMALL_BUDGET_USD 10. audit.py: RECALL_TARGET 0.95, THRESHOLDS, SIMILARITY 0.1.
-  %% update.py estimate_cost reads eval/runs.jsonl through EVAL_RUNS_LOG.
+  %% evaluate.py: BASELINE_RUN migrated, GATE_SLACK precision 0.02 and over_split 0.02, gate_needs, RECALL_KS 3 to 15,
+  %% RECALL_TARGET 0.98, SMALL_BUDGET_USD 10. audit.SIMILARITY 0.1, chosen with audit.py candidates.
+  %% Retired since, with replay and compare-rules; their code is in commit 9f39874, their reports in eval/reports/.
 
   sel[("<b>eval/selection.json</b><br/>[JSON]<br/>25 documents and 20 recurring rules")]:::store
   judges["<b>Answer key, built once in October 2026</b><br/>[Claude Opus 5.5 judges, effort high]<br/>2 judges per document and rule, a 3rd answers blind where<br/>they disagree, 2 of 3 decide, what stays split is left out"]:::claude
   key[("<b>eval/key/</b><br/>[JSON]<br/>decisions/, rules/, judges/, and corrections.json:<br/>judge errors found against the minutes")]:::store
   data[("<b>data/</b><br/>[JSON]<br/>beslutninger/, regler/")]:::store
-  stored["<b>extract --name stored</b><br/>[evaluate.py, plain code]<br/>copies today's extractions as the baseline"]:::code
+  fromdata["<b>extract --name migrated --from-data</b><br/>[evaluate.py, plain code]<br/>copies data/beslutninger as a run, the baseline.<br/>A different copy is replaced only with --force"]:::code
   extract["<b>extract --model M --prompt vN</b><br/>[evaluate.py, Claude model M]<br/>1 call per selected document through the pipeline's own code,<br/>1 worker under 10 USD, else 4, --max-cost required"]:::claude
-  runs[("<b>eval/runs/RUN/, eval/runs.jsonl</b><br/>[JSON]<br/>each run's decisions, its settings, usage and scores")]:::store
+  runs[("<b>eval/runs/RUN/, eval/runs.jsonl</b><br/>[JSON]<br/>each run's decisions, and a line per paid extract:<br/>its settings and usage")]:::store
   score["<b>score</b><br/>[evaluate.py, plain code]<br/>matches each run to the key: recall, precision, over-split,<br/>coded fields, stability of two runs, paired bootstrap"]:::code
-  egate{{"<b>Extraction gate</b><br/>[evaluate.gate]<br/>worse of two runs: recall and three fields at least the stored run's,<br/>precision at most 2 points below, over-split at most 2 above,<br/>stability at least that of two runs of today's pipeline"}}:::guard
+  egate{{"<b>Extraction gate</b><br/>[evaluate.gate_needs, gate]<br/>worse of two runs no worse than the --baseline run (default migrated)<br/>moved by its slack (precision 2 points down, over-split 2 up) or than<br/>today's pipeline's worst run, whichever is looser.<br/>Stability at least that of today's pipeline's runs"}}:::guard
   recall["<b>candidate-recall</b><br/>[evaluate.py, plain code]<br/>hides each decision from its rule: is the rule in the top K?<br/>the smallest K reaching 98 % is 15"]:::code
-  replay["<b>replay</b><br/>[evaluate.py: Sonnet 5.5 votes, Opus 5.5 updates]<br/>withholds documents in a copy (eval/replays/)<br/>and consolidates them again"]:::claude
-  compare["<b>compare-rules, score-rules</b><br/>[evaluate.py, plain code]<br/>grouping (B-cubed), what is in force each year,<br/>scores against the rules key"]:::code
-  acand["<b>audit.py candidates, score</b><br/>[plain code]<br/>per similarity threshold, the share of a key rule's scattered<br/>pairs one propose call sees (target 95 %, 0.1 chosen),<br/>and the audit's before and after"]:::code
+  srules["<b>score-rules</b><br/>[evaluate.py, plain code]<br/>per key rule: events in its home rule, fragmentation,<br/>what is in force each year, --rules-dir for another copy"]:::code
   reports[("<b>eval/reports/</b><br/>[Markdown]<br/>scores and verdicts")]:::store
   nicki(["<b>Nicki</b><br/>[Person]<br/>decides"]):::person
   consts["<b>Pipeline settings</b><br/>[constants in code]<br/>update.EXTRACT_MODEL, analyze.EXTRACT_VERSION,<br/>candidates.CANDIDATE_K, audit.SIMILARITY, the default mode"]:::code
   mig["<b>Migration</b><br/>[update.py, see 1.1]"]:::code
-  est["<b>Rebuild cost estimate</b><br/>[update.estimate_cost]<br/>mean measured cost of one extraction by the model"]:::code
 
   sel -->|"which documents and rules"| judges
   judges -->|"decisions and timelines"| key
   sel -->|"selected documents"| extract
-  data -->|"data/beslutninger/"| stored
-  stored -->|"baseline run"| runs
+  data -->|"data/beslutninger/"| fromdata
+  fromdata -->|"baseline run"| runs
   extract -->|"candidate runs, twice per configuration"| runs
   runs -->|"decisions per run"| score
   key -->|"decisions key"| score
   score -->|"figures per run"| egate
   egate -->|"passes or not"| reports
   data -->|"today's rules"| recall
-  data -->|"a copy without the held-out documents"| replay
-  replay -->|"replayed rules"| compare
-  key -->|"rules key"| compare
-  key -->|"rules key"| acand
+  data -->|"data/regler/, or another copy"| srules
+  key -->|"rules key"| srules
   recall -->|"recall at K"| reports
-  compare -->|"agreement, key scores"| reports
-  acand -->|"recall per threshold"| reports
+  srules -->|"rule scores"| reports
   reports -->|"verdicts"| nicki
   nicki -->|"changes"| consts
   consts -->|"a new model or prompt"| mig
-  runs -->|"cost per extraction"| est
 
   classDef person fill:#0b3d6e,stroke:#072a4d,color:#ffffff
   classDef code fill:#1f6fb2,stroke:#154f80,color:#ffffff
@@ -374,8 +370,10 @@ flowchart TB
 Two extraction runs agree on only about 90 % of decisions, so the pipeline's choices are measured against an answer
 key that Opus judged once, not against each other. The gates only report: a person changes a constant, and a new
 model or prompt then reaches `data/` through a migration. This loop chose Opus with prompt v3 (recall 91.7 % against
-the stored Sonnet run's 79.8 %), 15 candidates, incremental mode as the default, and the audit's threshold of 0.1. Its
-`eval/runs.jsonl` also prices the rebuild guard's estimate.
+the stored Sonnet run's 79.8 %), 15 candidates, incremental mode as the default, and the audit's threshold of 0.1;
+the replays and the threshold calibration behind the last two were retired once decided; their code is in commit
+9f39874. Since the migration the gate measures against today's data, `migrated`: Opus with v3 passes as the
+reference, Sonnet with v2 or v3 fails (`eval/reports/decisions-gate.md`).
 
 ---
 
@@ -431,7 +429,8 @@ touch the system through pull requests and "Run workflow", or by running the CLI
 ```mermaid
 flowchart LR
   %% Sources. Workflows in .github/workflows/. _site/, run-report.md and audit-report.md are in .gitignore.
-  %% update.yml passes only --allow-rebuild and --consolidate-mode full, from its two checkboxes.
+  %% update.yml passes only --allow-rebuild and --consolidate-mode full, from its two checkboxes. It installs and
+  %% smoke-tests the pinned CLI with .github/actions/claude-cli. Both route scripts source .github/scripts/pr.sh.
 
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
   visitors(["<b>Site visitors</b><br/>[Person]"]):::person
@@ -442,7 +441,8 @@ flowchart LR
 
   subgraph CI["Workflows: GitHub Actions"]
     wfup["<b>update.yml</b><br/>[GitHub Actions workflow]<br/>06:00 UTC on the 1st, or Run workflow<br/>with the rebuild and full boxes"]:::code
-    rtup["<b>route-update.sh</b><br/>[Bash]<br/>by exit code: commit to main, or force-push<br/>auto/update and open or update the PR"]:::code
+    cliup["<b>claude-cli</b><br/>[composite action]<br/>installs the pinned CLI, smoke test"]:::code
+    rtup["<b>route-update.sh</b><br/>[Bash, sources pr.sh]<br/>by exit code: commit to main, or force-push<br/>auto/update and open or update the PR"]:::code
     wfpages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>after an update that changed main, a push to main<br/>touching data/, website/, *.py or pages.yml,<br/>or Run workflow"]:::code
     wftests["<b>tests.yml</b><br/>[GitHub Actions workflow]<br/>pytest and a render-only build<br/>on pull requests and pushes to main"]:::code
   end
@@ -463,6 +463,8 @@ flowchart LR
     report[("<b>run-report.md</b><br/>[Markdown, not committed]<br/>outcome, errors, history table")]:::store
   end
 
+  wfup -->|"before update.py"| cliup
+  cliup -->|"installs 2.1.294, one smoke-test call"| claude
   wfup -->|"runs it, with at most --allow-rebuild and --consolidate-mode full"| update
   styrke -->|"new and replaced files"| update
   update -->|"prompts and JSON schemas"| claude
@@ -497,17 +499,17 @@ flowchart LR
   classDef guard fill:#8e244d,stroke:#5f1833,color:#ffffff
 ```
 
-`update.py` is the only container that calls Claude in the monthly path, and it writes every data store. The website
-is never published from the update job itself: `pages.yml` rebuilds `_site/` from committed `data/` with
-`website.py`, and only after `checks.py` passes. `regelsaet/` is committed, so its diff in a pull request shows the
-changed rules as text.
+`update.py` is the only container that asks Claude for answers in the monthly path (the action's smoke test only
+checks the CLI), and it writes every data store. The website is never published from the update job itself:
+`pages.yml` rebuilds `_site/` from committed `data/` with `website.py`, and only after `checks.py` passes.
+`regelsaet/` is committed, so its diff in a pull request shows the changed rules as text.
 
 ### 2.3 Level 2: Containers, audit and measurement
 
 ```mermaid
 flowchart LR
   %% Sources. audit.py OPS_PATH, CACHE_DIR, REPORT. evaluate.py EVAL_DIR and its docstring.
-  %% eval/replays/ is in .gitignore. audit.yml max_cost default 25.
+  %% audit.yml max_cost default 25; it uses .github/actions/claude-cli after its check.
 
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
   claude["<b>Claude Code CLI</b><br/>[External]"]:::ext
@@ -515,13 +517,13 @@ flowchart LR
 
   subgraph CI["Workflows: GitHub Actions"]
     wfaudit["<b>audit.yml</b><br/>[GitHub Actions workflow]<br/>Run workflow only: categories,<br/>max cost (25 USD each by default)"]:::code
-    rtaudit["<b>route-audit.sh</b><br/>[Bash]<br/>check: no other audit branch, not the month's last 2 days<br/>route: commit to auto/audit-DATE and open the PR"]:::code
+    cliaudit["<b>claude-cli</b><br/>[composite action]<br/>installs the pinned CLI, smoke test"]:::code
+    rtaudit["<b>route-audit.sh</b><br/>[Bash, sources pr.sh]<br/>check: no other audit branch, not the month's last 2 days<br/>route: commit to auto/audit-DATE and open the PR"]:::code
   end
 
   subgraph SYS["styrke-referater repository"]
-    audit["<b>audit.py</b><br/>[Python CLI]<br/>candidates, propose, apply, score"]:::code
-    evaluate["<b>evaluate.py</b><br/>[Python CLI, run by hand]<br/>extract, score, score-rules, candidate-recall,<br/>replay, compare-rules"]:::code
-    update["<b>update.py</b><br/>[Python CLI]<br/>prices a rebuild from measured extraction costs"]:::code
+    audit["<b>audit.py</b><br/>[Python CLI]<br/>propose, apply"]:::code
+    evaluate["<b>evaluate.py</b><br/>[Python CLI, run by hand]<br/>extract, score, score-rules, candidate-recall"]:::code
     subgraph DATA["data/"]
       rules[("<b>data/beslutninger/, data/regler/, data/slugs.json</b><br/>[JSON]<br/>decisions and rules")]:::store
       regops[("<b>data/regler_ops.json</b><br/>[JSON]<br/>every op, its proposals, agreed or not,<br/>rejected answers, what apply did")]:::store
@@ -530,9 +532,8 @@ flowchart LR
     end
     subgraph EVAL["eval/"]
       key[("<b>eval/key/, eval/selection.json</b><br/>[JSON]<br/>the answer key: 25 documents, 20 rules")]:::store
-      evruns[("<b>eval/runs/, eval/runs.jsonl</b><br/>[JSON]<br/>extraction runs, settings, usage, scores")]:::store
+      evruns[("<b>eval/runs/, eval/runs.jsonl</b><br/>[JSON]<br/>extraction runs, a line per paid extract")]:::store
       reports[("<b>eval/reports/</b><br/>[Markdown]<br/>scores and gate verdicts")]:::store
-      replays[("<b>eval/replays/</b><br/>[copies of data/, not committed]")]:::store
     end
     md[("<b>regelsaet/</b><br/>[Markdown]")]:::store
     areport[("<b>audit-report.md</b><br/>[Markdown, not committed]<br/>the audit PR's body")]:::store
@@ -541,9 +542,11 @@ flowchart LR
   nicki -->|"Run workflow"| wfaudit
   nicki -->|"uv run evaluate.py"| evaluate
   wfaudit -->|"check before any call"| rtaudit
+  wfaudit -->|"after the check"| cliaudit
+  cliaudit -->|"installs 2.1.294, one smoke-test call"| claude
   wfaudit -->|"propose, then apply with the time left"| audit
   audit -->|"Opus 5.5 calls at effort high"| claude
-  evaluate -->|"extract and replay calls"| claude
+  evaluate -->|"extract calls"| claude
   rules -->|"reads"| audit
   audit -->|"apply rewrites rules and slugs"| rules
   audit -->|"writes"| regops
@@ -552,13 +555,10 @@ flowchart LR
   audit -->|"rebuilt pages"| md
   audit -->|"writes"| areport
   key -->|"rules key for the score"| audit
-  audit -->|"audit-candidates.md"| reports
   rules -->|"reads"| evaluate
   key -->|"reads"| evaluate
   evaluate -->|"writes"| evruns
   evaluate -->|"writes"| reports
-  evaluate -->|"writes"| replays
-  evruns -->|"eval/runs.jsonl"| update
   areport -->|"PR body"| rtaudit
   rtaudit -->|"auto/audit-DATE pull request"| repo
   repo -->|"review against the minutes, merge to publish"| nicki
@@ -585,7 +585,8 @@ by keeping both sides' lines (`.gitattributes`).
 ```mermaid
 flowchart TB
   %% Sources. The import lines and calls in update.py, analyze.py, incremental.py, checks.py and render.py.
-  %% analyze.ask_claude is the only place that runs the claude binary for answers. update.yml's smoke test calls it directly.
+  %% analyze.ask_claude is the only place that runs the claude binary for answers. The smoke test in
+  %% .github/actions/claude-cli calls the binary directly.
   %% scrape.document_text decodes .htm itself (scrape._decode_html), so BeautifulSoup consults no charset detector.
 
   subgraph ENTRY["Entry point"]
@@ -648,8 +649,8 @@ flowchart TB
   %% Sources. The import lines of audit.py and evaluate.py and the calls named on the arrows.
 
   subgraph ENTRY["Entry points"]
-    audit["<b>audit.py</b><br/>[Python CLI]<br/>candidates, propose, apply, score"]:::code
-    evaluate["<b>evaluate.py</b><br/>[Python CLI]<br/>extract, score, score-rules, candidate-recall,<br/>replay, compare-rules"]:::code
+    audit["<b>audit.py</b><br/>[Python CLI]<br/>propose, apply"]:::code
+    evaluate["<b>evaluate.py</b><br/>[Python CLI]<br/>extract, score, score-rules, candidate-recall"]:::code
   end
   subgraph COMP["Reused components"]
     update["<b>update.py</b><br/>[Python CLI, used as a module]<br/>pending work, run log, extraction model"]:::code
@@ -667,12 +668,12 @@ flowchart TB
   audit -->|"ask_claude, slug history"| analyze
   audit -->|"candidate_index, update prompt, merge"| incremental
   audit -->|"find_problems, snapshot, check_history"| checks
-  audit -->|"score_rule, map_events"| evaluate
+  audit -->|"score_section for the report,<br/>estimate_tokens, usage_json, describe_usage"| evaluate
   audit -->|"carry_slugs for split parts"| matching
   audit -->|"pages from the checked copy"| render
   audit -->|"page_html"| website
-  evaluate -->|"run_extraction, the pipeline's own code,<br/>and consolidate for a full-mode replay"| analyze
-  evaluate -->|"consolidate on a copy, for a replay"| incremental
+  evaluate -->|"run_extraction, the pipeline's own code"| analyze
+  evaluate -->|"rule_profile and query, for recall"| incremental
   evaluate -->|"terms and index, for recall"| candidates
   evaluate -->|"match_decisions against the key"| matching
   evaluate -->|"in force per year"| render
@@ -690,7 +691,7 @@ flowchart TB
 ```
 
 Neither tool has its own Claude or matching logic: the audit reuses incremental consolidation's prompt and merge
-check for its rewrites, and the evaluation runs the pipeline's own extraction and consolidation code, so what it
+check for its rewrites, and the evaluation runs the pipeline's own extraction code and candidate ranking, so what it
 measures is what the pipeline does. `audit.py` also depends on `evaluate.py` for its answer-key score and on
 `update.py` to refuse an audit while a monthly run has work left.
 
@@ -729,7 +730,6 @@ flowchart LR
     areport[("<b>audit-report.md</b><br/>[not committed]")]:::store
     evruns[("<b>eval/runs/, eval/runs.jsonl</b><br/>[JSON]")]:::store
     reports[("<b>eval/reports/</b><br/>[Markdown]")]:::store
-    replays[("<b>eval/replays/</b><br/>[not committed]")]:::store
     key[("<b>eval/key/, eval/selection.json</b><br/>[JSON]")]:::store
   end
 
@@ -749,10 +749,8 @@ flowchart LR
   audit -->|"apply: whole files, atomically"| regler
   audit -->|"apply"| slugs
   audit -->|"a line per paid command, via update.record_run"| runs
-  audit -->|"audit-candidates.md"| reports
   evaluate -->|"owns"| evruns
   evaluate -->|"owns"| reports
-  evaluate -->|"owns"| replays
   key -->|"read only, no writer today"| evaluate
 
   style MOD fill:none,stroke:#8a8a8a,stroke-dasharray:6 4
@@ -775,6 +773,6 @@ audit's apply (`audit.py`). All three write the slug history first, so a slug is
 ## Notes
 
 - The gates in 1.4 and the audit's answer-key gate only report a verdict. A person acts on it; no code reads it.
-- Effort: only the audit (`audit.EFFORT = "high"`) and the answer-key judges (effort `high` in their recorded
-  provenance) set one. The monthly run and the migration use Claude Code's default, which the code does not record
-  beyond `"default"`.
+- Effort: only the audit (`audit.EFFORT = "high"`), the answer-key judges (effort `high` in their recorded
+  provenance) and `evaluate.py extract --effort` set one. The monthly run and the migration use Claude Code's
+  default, which the code does not record beyond `"default"`.

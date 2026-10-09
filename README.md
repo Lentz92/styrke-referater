@@ -30,24 +30,24 @@ A run downloads what is new on styrke.dk, has Claude extract the decisions of ne
 extraction prompt v3), files each new decision into the rule it belongs to and leaves every other rule as it is
 (incremental consolidation, see How it works), runs the checks (see Review) and writes `regelsaet/` and `_site/`. A
 run with nothing new finishes in seconds. Claude runs on the subscription; at list price an extraction costs about
-0.09 USD per document (the large congress documents cost more), so a month with a few new minutes costs well under
-2 USD, and extracting and consolidating all ~240 documents again about 25 (the migration in October 2026: 16.74
-for extraction, 8.58 for consolidation).
+0.07 USD per document (the migration in `data/runs.jsonl`: 16.74 USD for 236; the large congress documents cost
+more), so a month with a few new minutes costs well under 2 USD, and extracting and consolidating all ~240 documents
+again about 25 (the migration in October 2026: 16.74 for extraction, 8.58 for consolidation).
 
 | Option | Use |
 |---|---|
 | `--offline` | skip styrke.dk and use the files already in `referater/` |
 | `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
 | `--only REGEX` | only extract documents whose id matches, and only consolidate the categories their decisions are in (testing); skips the rebuild guard |
-| `--extract-model`, `--consolidate-model` | both default to `claude-opus-5-5`; a full id fails the call if Claude Code answers with another model |
-| `--extract-prompt` | `v3` (default) or `v2` (`analyze.EXTRACT_PROMPTS`, kept for evaluation); another than the default extracts every document again, a migration |
 | `--consolidate-mode` | `incremental` (default): file each new decision into its rule; `full`: consolidate each category with changed decisions anew, to migrate a prompt or version change |
-| `--assign-model` | incremental mode: the model that votes on which rule a new decision belongs to (default `claude-sonnet-5-5`) |
-| `--extract-effort`, `--consolidate-effort` | `low` … `max`; default is Claude Code's own |
 | `--workers N` | parallel Claude calls (default 4) |
 | `--time-budget MIN` | start no new Claude calls after this many minutes (default 75); the rest runs next time |
 | `--max-cost USD` | start no new Claude calls once the run has used this much at list price (default 15) |
 | `--allow-rebuild` | let this run do the work the rebuild guard stops |
+
+The models, the prompt and the effort are not options: Opus extracts and consolidates and Sonnet votes
+(`update.EXTRACT_MODEL`, `CONSOLIDATE_MODEL`, `ASSIGN_MODEL`, full ids, so a call answered by another model fails),
+with extraction prompt v3 (`analyze.EXTRACT_VERSION`), at Claude Code's default effort.
 
 To preview the website, open `_site/index.html` after a run, or build only the site with `uv run website.py`. To
 share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
@@ -56,13 +56,12 @@ share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
 
 A run with more than an ordinary month's work stops before calling Claude and says why: more than 10% of the
 documents to extract, a category with decisions but no file in `data/regler/`, or more than half the categories
-whose rules must be redone (new decisions waiting to be filed do not count). It first logs the work's estimated cost
-at list price, with whether `--max-cost` will cut the run off: each document at the mean measured cost of one
-extraction by the chosen model in `eval/runs.jsonl`, and in full mode each category at its share of the last full
-consolidation in `data/runs.jsonl` (the 5 USD above until one is logged). If the work is intended, run the command
-it names, which adds `--allow-rebuild`.
+whose rules must be redone (new decisions waiting to be filed do not count). The refusal then says how to proceed: if
+the work is intended, run with `--allow-rebuild`, which stops at `--max-cost` (15 USD by default), or, where a reason
+says only a full consolidation takes the work in, the migration command below, which stops at 40 USD. It also names
+the boxes to tick on GitHub and how to finish a run that is cut off.
 
-A new extraction prompt or model, or a new `EXTRACT_VERSION` or `CONSOLIDATE_VERSION`, is migrated with
+A new extraction prompt or model, or a new `CONSOLIDATE_VERSION`, is migrated with
 
 ```bash
 uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost 40 --time-budget 150
@@ -72,10 +71,9 @@ It extracts again every document extracted with another prompt or model (decisio
 consolidates each changed category anew, offline so no new minutes arrive meanwhile (the next run adds them), with
 limits a re-extraction of every document fits in. Incremental mode cannot migrate rules made with another
 `CONSOLIDATE_VERSION`, or more than 10% of the documents extracted with another prompt or model: until the migration
-is done, a plain run stops before any Claude call and names this command. To migrate to another prompt or model than
-the default, add `--extract-prompt v<n>` and `--extract-model <model>`, then commit the data with
-`analyze.EXTRACT_VERSION` (and `update.EXTRACT_MODEL`) changed; or change those first and run the command as it
-stands, as was done for v3.
+is done, a plain run stops before any Claude call and names this command. To migrate to another prompt or model,
+change `analyze.EXTRACT_VERSION` or `update.EXTRACT_MODEL` (or, for the consolidation, `CONSOLIDATE_VERSION`) first
+and run the command as it stands, as was done for v3.
 
 `--allow-rebuild` applies only to the run it is given to. A rebuild or migration cut off by its time or cost limit,
 or by failed calls, is finished by running the same command again: extractions made with its prompt and model are
@@ -98,18 +96,20 @@ claude setup-token
 GH_TOKEN=$(gh auth token --user Lentz92) gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo Lentz92/styrke-referater
 ```
 
-The workflow installs a pinned Claude Code version (`CLAUDE_CODE_VERSION` in `update.yml`, with auto-update off) and
-stops if another one is installed: the version decides which model an alias means and what list price it reports
-(2.1.289 got Haiku's price wrong by about 100×). Its smoke test also checks that a full model id is answered by that
-model. To upgrade, change the version there and run the workflow by hand; it fails if the new version is not
+The workflow installs a pinned Claude Code version, with auto-update off, and stops if another one is installed: the
+version decides which model an alias means and what list price it reports (2.1.289 got Haiku's price wrong by about
+100×). Its smoke test also checks that a full model id is answered by that model. Install and smoke test are the
+composite action `.github/actions/claude-cli`, which the audit workflow uses too; the pin is its `version` input's
+default. To upgrade, change the version there and run the workflow by hand; it fails if the new version is not
 installed or answers with another model.
 
-The workflow passes no model, prompt or limit, so every run has the defaults: Opus with prompt v3, 15 USD and 75
-minutes, and incremental consolidation unless asked otherwise. "Run workflow" has two boxes: "Allow a rebuild
+The workflow passes no limit, so every run has the defaults: 15 USD and 75 minutes, and incremental consolidation
+unless asked otherwise (`update.py` has no model or prompt options). "Run workflow" has two boxes: "Allow a rebuild
 (--allow-rebuild)" approves the work the rebuild guard stops, and with "Consolidate in full, to migrate a prompt or
 version change (--consolidate-mode full)" ticked too it runs the migration. Within the default limits a
-re-extraction of every document (about 27 USD) takes several runs: after each, merge its review pull request if it
-opened one, so what it paid for reaches `main`, and run the workflow again with the same boxes ticked.
+re-extraction of every document (16.74 USD in the October 2026 migration) takes two runs: after the first, merge its
+review pull request if it opened one, so what it paid for reaches `main`, and run the workflow again with the same
+boxes ticked.
 
 Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls, failures,
 skipped calls, tokens, list-price cost, models and seconds. A run with nothing new adds none, so compare cost and
@@ -160,7 +160,8 @@ the report says (see Rebuilds and migrations). Close a pull request to discard i
 workflow opened; close and reopen it to run them.
 
 Opening the pull request needs "Allow GitHub Actions to create and approve pull requests" under Settings > Actions >
-General > Workflow permissions. The routing is `.github/scripts/route-update.sh`.
+General > Workflow permissions. The routing is `.github/scripts/route-update.sh`; the pull request plumbing it shares
+with the audit's routing is in `.github/scripts/pr.sh`.
 
 ## Audit
 
@@ -172,8 +173,6 @@ fixes the structure:
 ```bash
 uv run audit.py propose --max-cost 25     # Opus proposes ops, in two runs: data/regler_ops.json
 uv run audit.py apply --max-cost 10       # the agreed ops applied to data/, the pages rebuilt
-uv run audit.py score                     # the answer key's rule scores: git HEAD against data/ (no Claude)
-uv run audit.py candidates                # the similarity threshold's recall on the answer key (no Claude)
 ```
 
 1. Code finds rules that may be one rule, in any category: rule against rule, with the TF-IDF profiles incremental
@@ -206,8 +205,10 @@ always goes to a pull request on `auto/audit-<date>` (`.github/scripts/route-aud
 answers code rejected, what each year shows before and after for every rule that changed, the answer key's scores
 before and after, and the cost. To review, read the applied ops and check the merged and split rules against the
 minutes (the diff of `regelsaet/` shows them); merge to publish, or close to discard. Locally, the same commands leave
-the changes in the working tree; `uv run audit.py score` compares the answer key's scores of git HEAD (`--before REV`,
-or `--before-dir`) with `data/regler/`.
+the changes in the working tree. To score the rules against the answer key before and after, run `uv run evaluate.py
+score-rules` on `data/` and on a copy of an earlier revision's (`git archive REV data/regler data/beslutninger | tar
+-x -C DIR`, then `--rules-dir DIR/data/regler --decisions-dir DIR/data/beslutninger`), each with its own `--report`
+name; across an audit, which leaves the decisions as they are, `--rules-dir` alone does.
 
 An audit can be cut off: by its cost limit, by failed calls, or by its time budget (`--time-budget`, 75 minutes by
 default; in the workflow `propose` and `apply` share it, so the result reaches its pull request within the job's 120
@@ -222,7 +223,8 @@ the workflow refuses to start an audit in the last two days of a month, and whil
 monthly run that did not happen (or ran into a conflict) is started by hand with "Run workflow" in `update.yml`.
 
 Cost at list price: on the migrated data (555 rules) `propose` is 24 calls of up to 66K tokens, estimated at
-about 11 USD before the first call (the first audit's cost 13.21); each merged or split rule's rewrite about 0.1 USD; the title choice a few cents. Each
+about 11 USD before the first call (the first audit's cost 13.21); each merged or split rule's rewrite about 0.05 USD
+(the first audit's 17 rewrites: 0.91 in `data/runs.jsonl`); the title choice a few cents. Each
 `propose` and `apply` that calls Claude adds a line to `data/runs.jsonl` (with the audit's id), and the pull request
 shows the audit's whole cost from those lines, failed attempts and rejected answers included. Both workflows append
 to that file, so git merges it by keeping both sides' lines (`.gitattributes`); what reads it orders the lines by
@@ -243,9 +245,9 @@ levels 1 to 3.
 
 `update.py` runs the steps in order. Step 2 reruns for a document when its file changes, or when it was extracted
 with another prompt or model; step 3 takes the decisions the rule files do not reflect yet. A new extraction prompt
-goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, and an extraction records the n of the prompt it was made with, so
-`--extract-prompt` (and `evaluate.py extract --prompt`) can run it while the cache stays valid for the default;
-setting `EXTRACT_VERSION` to n makes it the pipeline's. After editing the consolidation prompt, bump
+goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, where `evaluate.py extract --prompt v<n>` can measure it against the
+answer key; an extraction records the n of the prompt it was made with, so setting `EXTRACT_VERSION` to n makes it
+the pipeline's and every document due for extraction with it. After editing the consolidation prompt, bump
 `CONSOLIDATE_VERSION`. Either way a migration follows (see Rebuilds and migrations). Each result records its
 `provenance`: the model that answered, the CLI version, a fingerprint of the prompt and schema, and the effort. Only
 the extraction's model is part of a cache key: an extraction is current only when the model in its provenance is the

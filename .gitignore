@@ -16,5 +16,6 @@ run-report.md
 # The outcome of the last audit.py command (the body of the audit's pull request)
 audit-report.md
 
-# Replay copies of data/ (regenerable with evaluate.py replay; summaries are in eval/reports/)
+# Replay copies of data/, written by the retired evaluate.py replay, whose code is in commit 9f39874; summaries are in
+# eval/reports/
 eval/replays/
