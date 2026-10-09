@@ -12,7 +12,7 @@ consolidation's candidate gate.
 
     uv run evaluate.py extract --name migrated --from-data   # data/beslutninger copied as a run (no Claude)
     uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
-    uv run evaluate.py score --run stored --run opus-v3-1 --run opus-v3-2   # decision scores, stability, the gate
+    uv run evaluate.py score --run migrated --run opus-v3-1 --run opus-v3-2   # decision scores, stability, the gate
     uv run evaluate.py score-rules                  # rule scores of data/regler (no Claude)
     uv run evaluate.py candidate-recall             # incremental consolidation: candidate ranking recall (no Claude)
 
@@ -58,18 +58,19 @@ EVAL_DIR = scrape.ROOT / "eval"
 
 # The seed of the bootstrap.
 SEED = 2026
-# The gate's default baseline: data/beslutninger before the migration to Opus with prompt v3 (Sonnet, prompt v2), the
-# copy the key was judged from. The run `migrated` (data/ after it) is a stronger floor, but with no slack on recall and
-# the three fields one run of today's pipeline fails that pipeline on run-to-run noise (kategori 89.3% and 96.6% in
-# two Opus v3 runs), so it is used only when asked for (--baseline migrated).
-BASELINE_RUN = "stored"
+# The gate's default baseline: today's data, data/beslutninger copied after the migration to Opus with prompt v3
+# (extract --name migrated --from-data). It is one run, and runs of one configuration differ on noise alone (two Opus v3
+# runs: 88.7% and 95.5% on the three fields), so the gate allows the spread between runs of today's pipeline below it
+# (gate_needs); without that margin today's own pipeline would fail against its own data.
+BASELINE_RUN = "migrated"
 # Calls already running finish after the cost limit is reached, so a run can overshoot it by one call per worker;
 # below this limit the default is one worker.
 SMALL_BUDGET_USD = 10.0
 
 BOOTSTRAP_SAMPLES = 2000
-# The extraction gate: how far a configuration's worse run may fall behind the baseline run, per figure (higher is
-# better for all but over-split). Over-split is in it so a prompt that splits more than the key asks for cannot pass on
+# The extraction gate's slack: how far a configuration's worse run may always fall behind the baseline run, per figure
+# (higher is better for all but over-split); where runs of today's pipeline spread further apart, that spread is
+# allowed instead (gate_needs). Over-split is in it so a prompt that splits more than the key asks for cannot pass on
 # recall.
 GATE_SLACK = {"recall": 0.0, "precision": 0.02, "field_three": 0.0, "over_split": 0.02}
 GATE_LOWER_IS_BETTER = frozenset({"over_split"})
@@ -704,13 +705,25 @@ class GateResult:
     failed: tuple[str, ...]
 
 
-def gate_needs(baseline: DocScore, reference: float | None) -> dict[str, float | None]:
-    """The bound on each gate figure: the baseline run's, moved by its GATE_SLACK (down, or up where lower is
-    better), and for stability that of two runs of today's pipeline (None: not scored)."""
+def spread(runs: Sequence[DocScore]) -> dict[str, float]:
+    """Each gate figure's spread (max - min) between runs of one configuration: how far noise alone moves it. A figure
+    with fewer than two values is left out."""
+    found = {}
+    for m in GATE_SLACK:
+        values = [v for s in runs if (v := METRICS[m](s)) is not None]
+        if len(values) > 1:
+            found[m] = max(values) - min(values)
+    return found
+
+
+def gate_needs(baseline: DocScore, reference: float | None, noise: Mapping[str, float]) -> dict[str, float | None]:
+    """The bound on each gate figure: the baseline run's, moved (down, or up where lower is better) by the larger of
+    its GATE_SLACK and its spread between runs of today's pipeline (`noise`, spread; empty when it was not run twice),
+    and for stability that of two runs of today's pipeline (None: not scored)."""
     needs: dict[str, float | None] = {}
     for m, slack in GATE_SLACK.items():
-        value = METRICS[m](baseline)
-        needs[m] = None if value is None else value + slack if m in GATE_LOWER_IS_BETTER else value - slack
+        value, margin = METRICS[m](baseline), max(slack, noise.get(m, 0.0))
+        needs[m] = None if value is None else value + margin if m in GATE_LOWER_IS_BETTER else value - margin
     return {**needs, "stability": reference}
 
 
@@ -736,21 +749,29 @@ def gate(totals: Mapping[str, DocScore], groups: Mapping[Configuration, list[str
     return results
 
 
-def gate_section(results: Sequence[GateResult], needs: Mapping[str, float | None], baseline: str) -> list[str]:
-    """Markdown lines: the gate, what it needs and each repeated configuration against it."""
+def gate_section(results: Sequence[GateResult], needs: Mapping[str, float | None], baseline: str,
+                 today: Sequence[str], noise: Mapping[str, float]) -> list[str]:
+    """Markdown lines: the gate, what it needs and why (the slack and the spread between `today`, the runs of today's
+    pipeline), and each repeated configuration against it."""
     pipeline = pipeline_configuration()
     reference = pipeline.label()
     unscored = "" if needs["stability"] is not None else "; they were not scored, so no configuration passes"
+    alone = "" if today else "; today's pipeline was not run twice here, so it is the slack alone"
     lines = ["## Gate", "",
-             f"A configuration passes when its worse run is at least the run {baseline} on recall and on the three "
-             f"fields, at most {100 * GATE_SLACK['precision']:.0f} points below it on precision and at most "
-             f"{100 * GATE_SLACK['over_split']:.0f} points above it on over-split, and its runs are at least as stable "
-             f"as two runs of today's pipeline ({reference}){unscored}.", "",
+             f"A configuration passes when its worse run is at least the run {baseline}, less a margin, on recall, "
+             f"precision and the three fields and at most it, plus a margin, on over-split, and its runs are at least "
+             f"as stable as two runs of today's pipeline ({reference}){unscored}. Each figure's margin is the larger "
+             f"of its slack and its spread between the runs of today's pipeline scored here, which differ that much "
+             f"on noise alone{alone}.", "",
              "| Configuration | Runs | Recall (worse) | Precision (worse) | Three (worse) | Over-split (worse) | "
              "Stability | Passes |",
              "|---|---|--:|--:|--:|--:|--:|---|",
              "| needs | | " + " | ".join(f"{'≤' if m in GATE_LOWER_IS_BETTER else '≥'} {_pct(needs[m])}"
-                                       for m in (*GATE_SLACK, "stability")) + " | |"]
+                                       for m in (*GATE_SLACK, "stability")) + " | |",
+             "| slack (points) | | " + " | ".join(f"{100 * GATE_SLACK[m]:.1f}" for m in GATE_SLACK) + " | | |"]
+    if today:
+        lines.append(f"| spread of today's pipeline (points) | {', '.join(today)} | "
+                     + " | ".join(f"{100 * noise[m]:.1f}" if m in noise else "–" for m in GATE_SLACK) + " | | |")
     for r in results:
         passes = "yes" if not r.failed else f"no: {', '.join(r.failed)}"
         label = r.configuration.label() + (" (today's pipeline)" if r.configuration == pipeline else "")
@@ -1117,9 +1138,11 @@ def cmd_score(args: argparse.Namespace) -> None:
     by_run = {run: by_config[config] for config, members in groups.items() for run in members}
     gate_lines: list[str] = []
     if args.baseline in runs and groups:
-        needs = gate_needs(total(scores[args.baseline]), by_config.get(pipeline_configuration()))
-        results = gate({run: total(s) for run, s in scores.items()}, groups, by_config, needs)
-        gate_lines = gate_section(results, needs, args.baseline)
+        totals = {run: total(s) for run, s in scores.items()}
+        today = groups.get(pipeline_configuration(), [])  # the baseline among them when it has today's configuration
+        noise = spread([totals[run] for run in today])
+        needs = gate_needs(totals[args.baseline], by_config.get(pipeline_configuration()), noise)
+        gate_lines = gate_section(gate(totals, groups, by_config, needs), needs, args.baseline, today, noise)
     report = decisions_report(scores, doc_ids, {doc_id: keys[doc_id] for doc_id in doc_ids}, args.seed, warnings,
                               by_run, gate_lines)
     if left_out:
@@ -1194,7 +1217,7 @@ def parser() -> argparse.ArgumentParser:
     score.add_argument("--run", action="append", required=True, help="a run to score; repeat to compare runs")
     score.add_argument("--baseline", default=BASELINE_RUN, metavar="RUN",
                        help=f"the run the gate measures against; the gate runs when it is scored (default: "
-                            f"{BASELINE_RUN}, data/ before the v3 migration)")
+                            f"{BASELINE_RUN}, today's data/ after the v3 migration)")
     score.add_argument("--seed", type=int, default=SEED, help="bootstrap seed")
     score.add_argument("--report", help="report name under eval/reports/")
     score.set_defaults(func=cmd_score)

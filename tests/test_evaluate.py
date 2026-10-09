@@ -376,13 +376,17 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
     _configured_run("sonnet-v3-2", split, prompt="v3")
     runs = ["stored", "sonnet-1", "sonnet-2", "opus-v3-1", "opus-v3-2", "haiku-v3-1", "haiku-v3-2", "sonnet-v3-1",
             "sonnet-v3-2"]
-    evaluate.main(["score", *(arg for run in runs for arg in ("--run", run)), "--report", "gate"])
+    evaluate.main(["score", *(arg for run in runs for arg in ("--run", run)), "--baseline", "stored", "--report",
+                   "gate"])
 
     report = (evaluate.EVAL_DIR / "reports" / "gate.md").read_text()
-    assert "worse run is at least the run stored on recall" in report
+    assert "worse run is at least the run stored, less a margin, on recall" in report
     assert "| 1 | 0 | 0 | 0 | 0 | – |" in report  # the stored run is no other run's repeat
     assert report.count("| 2 | 0 | 0 | 0 | 0 | 100.0% |") == 2  # the opus runs found the same decisions
-    assert "| needs | | ≥ 50.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
+    # Today's pipeline found one and two of the key's two decisions: its recall spreads 50 points, so the floor drops
+    # by that much below the stored run's 50%.
+    assert "| needs | | ≥ 0.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
+    assert "| spread of today's pipeline (points) | sonnet-1, sonnet-2 | 50.0 | 0.0 | 0.0 | 0.0 | | |" in report
     pipeline = "claude-sonnet-5-5, prompt v2, effort default (today's pipeline)"
     assert f"| {pipeline} | sonnet-1, sonnet-2 | 50.0% | 100.0% | 100.0% | 0.0% | 66.7% | yes |" in report
     assert ("| claude-opus-5-5, prompt v3, effort default | opus-v3-1, opus-v3-2 | 100.0% | 100.0% | 100.0% | 0.0% | "
@@ -392,15 +396,32 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
     assert ("| claude-sonnet-5-5, prompt v3, effort default | sonnet-v3-1, sonnet-v3-2 | 100.0% | 100.0% | 100.0% | "
             "50.0% | 100.0% | no: over_split |") in report
 
-    # The gate runs only when its baseline (by default the run stored) is scored, and can measure against another.
-    evaluate.main(["score", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "no-baseline"])
+    # By default the gate measures against the run migrated, and only when it is scored.
+    evaluate.main(["score", "--run", "stored", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "no-baseline"])
     assert "## Gate" not in (evaluate.EVAL_DIR / "reports" / "no-baseline.md").read_text()
     _configured_run("migrated", [_run("Licensgebyr", 0), _run("Startgebyr", 20)])  # recall 100%
-    evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--run", "opus-v3-2", "--baseline", "migrated",
-                   "--report", "unpaired"])
+    evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "unpaired"])
     report = (evaluate.EVAL_DIR / "reports" / "unpaired.md").read_text()
-    assert "worse run is at least the run migrated on recall" in report and "| needs | | ≥ 100.0% |" in report
+    assert "at least the run migrated, less a margin" in report and "| needs | | ≥ 100.0% |" in report
+    assert "today's pipeline was not run twice here, so it is the slack alone" in report
     assert "were not scored, so no configuration passes" in report and "| no: stability |" in report
+
+
+def test_a_worse_run_within_the_spread_of_todays_pipeline_passes_and_one_outside_it_fails():
+    def run(found: int) -> DocScore:  # found of 100 key decisions, nothing false or split, every field right
+        return DocScore(100, found, 0, 0, 0, 0, 0, {"three": found}, {"three": found})
+
+    totals = {"today-1": run(90), "today-2": run(94), "within-1": run(87), "within-2": run(95), "outside-1": run(85),
+              "outside-2": run(95)}
+    within, outside = (evaluate.Configuration("claude-haiku-5-5", prompt, "default") for prompt in ("a", "b"))
+    groups = {within: ["within-1", "within-2"], outside: ["outside-1", "outside-2"]}
+    stable = {within: 0.95, outside: 0.95}
+    # Today's pipeline ran at 90% and 94% recall: 4 points of noise below the baseline's 90% are allowed.
+    needs = evaluate.gate_needs(totals["today-1"], 0.9, evaluate.spread([totals["today-1"], totals["today-2"]]))
+    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [(), ("recall",)]
+    # Run once, today's pipeline shows no noise, and the slack alone (none on recall) fails both.
+    needs = evaluate.gate_needs(totals["today-1"], 0.9, evaluate.spread([totals["today-1"]]))
+    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [("recall",)] * 2
 
 
 # ---------------------------------------------------------------- scoring rules
