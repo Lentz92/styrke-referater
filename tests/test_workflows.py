@@ -321,6 +321,7 @@ def _run_step(tmp_path, step: dict, uv_code: int, **env: str) -> list[str]:
 def test_the_monthly_run_passes_the_ticked_boxes_and_no_limits(tmp_path, rebuild, full, options):
     """A scheduled run has no inputs; a manual one passes its boxes, and its exit code is recorded for the routing."""
     step = _step(_job(_workflow("update.yml")), "update")
+    assert (step["env"]["REBUILD"], step["env"]["FULL"]) == ("${{ inputs.rebuild }}", "${{ inputs.full }}")
     assert _run_step(tmp_path, step, 3, REBUILD=rebuild, FULL=full) == [f"run update.py{options}"]
     assert (tmp_path / "output").read_text() == "code=3\n"
 

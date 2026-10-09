@@ -23,6 +23,12 @@ from matching import FormerSlug, SlugRegistry
 SONNET, OPUS = "claude-sonnet-5-5", "claude-opus-5-5"
 
 
+def _worded(ref: str, effekt: str = "indfoert") -> tuple:
+    """A version (as conftest.rule takes it) in words of its own, so a test sees whether an update kept or rewrote
+    them."""
+    return ref, effekt, {"tekst": f"Tekst {ref}", "kort": f"kort {ref}", "kort_regel": f"regel {ref}"}
+
+
 @pytest.fixture
 def world(world):
     """Licensgebyr 2010 -> 2015 -> 2020, Startgebyr 2015 (okonomi) and Klubskifte 2020 (medlemskab), consolidated."""
@@ -31,10 +37,10 @@ def world(world):
                    extracted("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
     world.document("rep2020", "2020-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 300 kr. pr. løfter."),
                    extracted("Klubskifte", "Et klubskifte kræver tre måneders karantæne.", "medlemskab"))
-    world.rules("okonomi", rule("Licensgebyr", "licensgebyr", "rep2010#1", ("rep2015#1", "aendret"),
-                                ("rep2020#1", "aendret")),
-                rule("Startgebyr", "startgebyr", "rep2015#2"))
-    world.rules("medlemskab", rule("Klubskifte", "klubskifte", "rep2020#2"))
+    world.rules("okonomi", rule("Licensgebyr", "licensgebyr", _worded("rep2010#1"), _worded("rep2015#1", "aendret"),
+                                _worded("rep2020#1", "aendret")),
+                rule("Startgebyr", "startgebyr", _worded("rep2015#2")))
+    world.rules("medlemskab", rule("Klubskifte", "klubskifte", _worded("rep2020#2")))
     world.consolidated()
     return world
 
@@ -288,7 +294,7 @@ def test_retired_decisions_leave_their_rules_and_an_empty_rule_is_retired(world,
     assert [v["ref"] for v in world.rule("medlemskab", "klubskifte")["versioner"]] == ["rep2015#3", "rep2020#2"]
 
 
-def test_a_rule_touched_by_one_document_also_drops_another_documents_retiredextracted(world, fake_claude):
+def test_a_rule_touched_by_one_document_also_drops_another_documents_retired_decision(world, fake_claude):
     # rep2020 was read again and lost rep2020#1; rep2017, filed first, lands in the same rule and brings it up to date.
     world.document("rep2020", "2020-03-01", extracted("Klubskifte", "Et klubskifte kræver tre måneders karantæne.",
                                                       "medlemskab", id="rep2020#2"), retired=("rep2020#1",))
@@ -475,7 +481,7 @@ def test_a_redated_document_reaches_its_rules_although_its_decisions_did_not_cha
     world.consolidate(known)
     assert fake_claude.option("--model") == [OPUS, OPUS]  # no vote: they stay where they are
     assert [v["tekst"] for v in world.rule("okonomi", "licensgebyr")["versioner"]] == [
-        None, "Ny tekst rep2015#1", "Ny tekst rep2020#1"]  # 2010's own words, then the rewritten ones
+        "Tekst rep2010#1", "Ny tekst rep2015#1", "Ny tekst rep2020#1"]
     assert analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs}) == []
 
 
