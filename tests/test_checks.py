@@ -101,6 +101,7 @@ def test_each_identity_problem_is_reported():
 
     messages = [p.message for p in identity_problems(decisions, {"b#1", "r#1"}, raw, slugs)]
     expected = ["decision id a#1 is used 2 times", "decision id b#1 is both in use and retired",
+                "decision c#1 is in 2 rules",
                 "Licensgebyr: version x#9 refers to no decision", "Uden slug (okonomi) has no slug",
                 "Uden slug 2 (okonomi) has no slug", "slug licensgebyr is held by 2 rules",
                 "alias startgebyr leads to findes-ikke, which no rule holds",

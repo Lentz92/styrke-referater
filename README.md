@@ -23,22 +23,33 @@ pinned for the monthly run (below). No API key needed.
 uv run update.py
 ```
 
-Only new or changed documents are sent to Claude, so a run with nothing new finishes in seconds.
+Only new or changed documents are sent to Claude, so a run with nothing new finishes in seconds. Their
+decisions are then filed into the rules they belong to, and every other rule is left as it is (incremental
+consolidation, the default; see How it works).
 A full rebuild of all ~240 documents costs about 12 USD at list price (about 7 for extraction, 5 for
 consolidation), counted against the Claude subscription; a few new minutes cost well under 2.
 
 A run with more than an ordinary month's work stops before calling Claude and says why: more than 10% of
 the documents to extract, a category with decisions but no file in `data/regler/`, or more than half the
-categories to consolidate again before anything new is extracted (a new `CONSOLIDATE_VERSION`, for example).
-If that work is intended, run `uv run update.py --allow-rebuild`. The approval is saved in
-`data/rebuild.json` before any Claude call: the documents to extract, the categories to consolidate (plus
-those the documents' decisions are in, since re-extracting them changes those categories), and the prompt
-versions. When the time or cost limit or failed calls cut the work off, run `uv run update.py` again,
-without the flag, until it ends without failures; the monthly run does the same. A later run goes ahead
+categories to consolidate again before anything new is extracted. If that work is intended, run
+`uv run update.py --allow-rebuild`. A new prompt or `EXTRACT_VERSION`/`CONSOLIDATE_VERSION` is migrated with
+`uv run update.py --consolidate-mode full --allow-rebuild`, which consolidates the changed categories anew; the
+incremental default cannot migrate rules made with another `CONSOLIDATE_VERSION`, and stops until that is done.
+The approval is saved in `data/rebuild.json` before any Claude call: the documents to extract, the categories to
+consolidate (plus those the documents' decisions are in, since re-extracting them changes those categories), the
+prompt versions and the consolidation mode, model and effort. When the time or cost limit or failed calls cut the
+work off, run `uv run update.py` again, without the flags, until it ends without failures; the monthly run does the
+same. A run without `--consolidate-mode` continues an unfinished approval in the mode it was given for (one saved
+before modes were recorded counts as full), and always with the model and effort it was approved with: a run asking
+for others is refused and told what to run. A cut-off full migration is continued in full only for what it approved
+(the categories still on the old version, the approved ones and those of approved documents); new minutes in other
+categories are filed incrementally in the same run once the migration is finished, and wait until then, listed in the
+run report. Ticking "Allow a rebuild" while such a migration is open approves nothing more. A later run goes ahead
 while everything outside the approval would pass on its own (a few new minutes may arrive meanwhile);
 anything more, or another prompt version, needs a new approval. The file is removed once the remaining work
-is ordinary. A run that is cut off with much left in an ordinary month (consolidation failing for most
-categories after a big meeting) leaves the same kind of approval for what is left.
+is ordinary and no category waits for a full migration; the runs after that consolidate incrementally. A run
+that is cut off with much left in an ordinary month (consolidation failing for most categories after a big meeting)
+leaves the same kind of approval for what is left.
 
 | Option | Use |
 |---|---|
@@ -46,6 +57,8 @@ categories after a big meeting) leaves the same kind of approval for what is lef
 | `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
 | `--only REGEX` | only extract documents whose id matches, and only consolidate the categories their decisions are in, before or after extraction (testing); skips the rebuild check |
 | `--extract-model`, `--consolidate-model` | defaults `claude-sonnet-5-5` and `claude-opus-5-5`; a full id fails the call if Claude Code answers with another model |
+| `--consolidate-mode` | `incremental` (default): file each new decision into its rule and leave every other rule as it is; `full`: consolidate each category with changed decisions anew, to migrate a prompt or version change (with `--allow-rebuild`) |
+| `--assign-model` | incremental mode: the model that votes on which rule a new decision belongs to (default `claude-sonnet-5-5`) |
 | `--extract-effort`, `--consolidate-effort` | `low` … `max`; default is Claude Code's own |
 | `--workers N` | parallel Claude calls (default 4) |
 | `--time-budget MIN` | start no new Claude calls after this many minutes (default 75); the rest runs next time |
@@ -91,9 +104,11 @@ price it reports (2.1.289 got Haiku's price wrong by about 100×). Its smoke tes
 model id is answered by that model. To upgrade, change the version there and run the workflow by hand; it
 fails if the new version is not installed or answers with another model. A run with nothing new writes no
 line to `data/runs.jsonl`, so compare cost and tokens at the next run that analyses documents. To approve
-a rebuild on GitHub, tick "Allow a rebuild (--allow-rebuild)" under "Run workflow"; the following monthly
-runs finish it if it is cut off. A rebuild that rewrites earlier years, or is cut off with rules left out, goes
-to review: merge the pull request so the following runs continue from it.
+a rebuild on GitHub, tick "Allow a rebuild (--allow-rebuild)" under "Run workflow", and to migrate a prompt or
+version change also "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)". If it is
+cut off, the following monthly runs finish it in the mode it was approved for (full), then go on incrementally. A
+rebuild that rewrites earlier years, or is cut off with rules left out, goes to review: merge the pull request so the
+following runs continue from it.
 
 Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls,
 failures, skipped calls, tokens, list-price cost, models and seconds. The Actions run page shows the run
@@ -110,8 +125,9 @@ so the site stays as it was. It does not call Claude.
 results the pipeline does not trust: a rule left out because a decision behind it changed (stale), a decision
 the consolidation neither put in a rule nor left out as a one-off (unassigned), decision ids or slugs that are
 missing, used twice or lead nowhere (identity), and a run that changes what applied in earlier years
-(history). Each month with new minutes consolidates whole categories again, and Claude may rewrite rules that
-no new decision touches. So for every year page and every rule (by slug; rules merged into one, through
+(history). A run updates only the rules its new or changed decisions touch, but a late decision rewrites a rule from
+where it belongs, and a full consolidation (a migration) rewrites whole categories, where Claude may change rules no
+new decision touches. So for every year page and every rule (by slug; rules merged into one, through
 `data/slugs.json`, count together), `update.py` compares the decision in force, the one that adopted its
 content, and its wording before and after the analysis. A rule may change from the earliest date of its own
 decisions that the run added, changed or removed, or that its last consolidation had not seen (a call that
@@ -155,6 +171,34 @@ for a category when its decisions change. After editing a prompt in `analyze.py`
 `EXTRACT_VERSION` or `CONSOLIDATE_VERSION` so cached results are recomputed (a rebuild, see Update).
 Each result records its `provenance`: the model that answered, the CLI version, a fingerprint of the prompt
 and schema, and the effort. It is not part of the cache key, so changing the model alone reruns nothing.
+
+By default (incremental consolidation), step 3 does not rewrite whole categories. It takes the decisions the rule
+files do not reflect yet (new, changed or retired ids, or a decision whose date or organ changed), one document at a
+time in date order (`incremental.py`). Code ranks the 15 rules whose words are closest to each new decision
+(`candidates.py`: TF-IDF over Danish stems and compound parts, as the website's search; the decision's category weighs
+in but filters nothing). Three Sonnet votes put each decision in one of those rules, in a new rule or among its
+category's one-offs (what the extraction prompt lists as no decision); two of three decide, else Opus does, blind to
+the votes, and also when a "new" rule would be named like a live one. Then one Opus call per touched rule gets its
+whole history, the new decisions and the minutes from 100 words before each quote to its vote count (or 400 words
+after), and writes the versions from the new decision on: earlier versions, and every other rule, stay byte-identical
+(checked). A decision that belongs before a rule's newest version is placed where it belongs and the versions after it
+are rewritten; a retired decision leaves its rule (an Opus call rewrites what came after it), and a rule left empty is
+retired with its slug. When the call finds a new decision misfiled, the votes are asked once more without that rule;
+misfiled again, it gets a rule of its own, listed in the run report for review.
+A document is written only when all its calls succeed; otherwise the next run tries it again. Each rule file records a
+fingerprint of every decision it reflects (`inputs`); a category whose decisions are all reflected gets the
+`input_hash` of its input, so `full` and the checks see it as consolidated, and one that may have changed unseen is
+left for `full`. A decision filed under another category's rule is consolidated with that category by `full` too, so
+no decision lands in two rules (`checks.py` reports one that does).
+
+The gate runs on today's data (`eval/reports/compare-*.md`, holding out the 20 newest and 10 random documents) chose
+this default: against the answer key, incremental and full show the same content in force (51.5% vs 51.9% of years),
+while two incremental runs agree on what was in force in 99.1% of years, two full ones in 87.6%.
+
+Known limits: a decision that sets several rules at once (a budget setting several fees) is one decision, and goes to
+one rule, until the v3 migration splits such decisions; a document dated anew only on styrke.dk can leave a category
+for a full consolidation (the run report says so); and a new prompt or `CONSOLIDATE_VERSION` takes a full
+consolidation (see Update).
 
 Decisions and rules keep their identity when Claude redoes them, so links never break. Each decision has a
 stored id (`<document>#<n>`). When a document is extracted again, each new decision is matched to a previous
@@ -222,6 +266,22 @@ accuracy is scored only on the fields the judges agree on. The rules key gives t
 documents (around the rule's decisions, other decisions using its title's words, and its keywords, amounts first)
 and asks for its true timeline and what was in force each year, or that it is unknown. Where two judges disagree, a
 third answers blind, and two of three decide; what is still split is left out of the scores.
+
+The incremental consolidation (above) has three gates of its own, which only read `data/`:
+
+```bash
+uv run evaluate.py candidate-recall          # hide each decision from its rule: is the rule among the top K?
+uv run evaluate.py replay --holdout newest:20,random:10 --seed 1 --name inc-1 --max-cost 20
+uv run evaluate.py compare-rules eval/replays/inc-1/data/regler data/regler
+```
+
+`replay` copies `data/` to `eval/replays/<name>/data`, removes the held-out documents' decisions from the rules there
+(rules left empty go with their slugs), and consolidates them again on the copy (`--mode incremental`, or `full`, which
+redoes their categories); a cut-off replay continues where it stopped. `compare-rules` reports how two rule directories
+group the decisions (B-cubed), what each shows in force every year and with which effect, the same over each holdout
+part of a replay (`random:` mostly tests decisions filed before a rule's newest version), and how each scores against
+the rules key, per rule (it stops without the key unless `--no-key`): two `full` replays give the noise floor.
+`candidate-recall` also ranks each hidden decision as if its category were another one.
 
 Every command that calls Claude takes `--max-cost` and `--pilot N` or `--docs`/`--rules`, prints how many calls it
 plans, and adds a line to `eval/runs.jsonl`; the scores go to `eval/reports/`. Every answer is kept, so a cut-off
