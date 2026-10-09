@@ -79,6 +79,7 @@ RECALL_KS = (3, 5, 8, 10, 15)
 RECALL_TARGET = 0.98
 # For the call estimate printed before a command starts: Danish text runs about this many characters per token.
 CHARS_PER_TOKEN = 3.2
+EFFORTS = ["low", "medium", "high", "xhigh", "max"]  # the efforts Claude Code takes (--effort)
 
 # The coded fields of a decision, whose agreement with the key is scored.
 CODED_FIELDS = ("kategori", "udfald", "handling", "niveau")
@@ -1509,7 +1510,7 @@ def parser() -> argparse.ArgumentParser:
     extract = sub.add_parser("extract", help="run today's extraction on the selected documents")
     extract.add_argument("--name", required=True, help=f"run name; '{STORED_RUN}' copies data/beslutninger")
     extract.add_argument("--model", help="model id, e.g. claude-sonnet-5-5")
-    extract.add_argument("--effort", choices=update.EFFORTS, help="effort (default: Claude Code's own)")
+    extract.add_argument("--effort", choices=EFFORTS, help="effort (default: Claude Code's own)")
     extract.add_argument("--prompt", choices=list(analyze.EXTRACT_PROMPTS),
                          help=f"extraction prompt (default: the pipeline's, v{analyze.EXTRACT_VERSION})")
     extract.add_argument("--force", action="store_true",
@@ -1554,7 +1555,7 @@ def parser() -> argparse.ArgumentParser:
     replay.add_argument("--assign-model", default="claude-sonnet-5-5", help="incremental: the voting model")
     replay.add_argument("--model", default="claude-opus-5-5",
                         help="the consolidation model; in incremental mode it breaks ties and updates the rules")
-    replay.add_argument("--effort", choices=update.EFFORTS, help="consolidation effort (default: Claude Code's own)")
+    replay.add_argument("--effort", choices=EFFORTS, help="consolidation effort (default: Claude Code's own)")
     replay.add_argument("--max-cost", type=float, required=True, metavar="USD",
                         help="start no new Claude calls once this much is used at list price")
     replay.add_argument("--time-budget", type=float, metavar="MIN", help="start no new Claude calls after this long")

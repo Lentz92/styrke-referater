@@ -469,9 +469,9 @@ def test_a_new_consolidation_version_is_migrated_in_full_only(run, world, fake_c
         with pytest.raises(SystemExit, match="only a full consolidation migrates: medlemskab, okonomi"):
             run(*args)
         assert update.MIGRATE in (world.root / "run-report.md").read_text()
-    assert fake_claude.calls() == [] and update.MIGRATE == update.Plan(mode="full").command(allow_rebuild=True)
-    with pytest.raises(SystemExit, match="If this work is intended, run `" + update.MIGRATE.replace(" ", ".")):
-        run("--consolidate-mode", "full")  # a full run that hits the guard is told the full command
+    with pytest.raises(SystemExit, match="2 of 2 categories need consolidating again") as refused:
+        run("--consolidate-mode", "full")  # a full run stops at the guard too, until it is allowed
+    assert update.HOW_TO_PROCEED in str(refused.value) and fake_claude.calls() == []
     fake_claude.answer(_same_rules(world))
     run("--consolidate-mode", "full", "--allow-rebuild")
     assert fake_claude.invocations("call") == 2  # both categories consolidated anew under the new version
@@ -496,12 +496,13 @@ def test_a_cut_off_migration_is_finished_by_its_command_which_skips_the_categori
         run("--consolidate-mode", "full", "--allow-rebuild")
     new, old = analyze.CONSOLIDATE_VERSION, analyze.CONSOLIDATE_VERSION - 1
     assert (world.stored("okonomi")["version"], world.stored("medlemskab")["version"]) == (new, old)
-    assert f"To finish it, run `{update.MIGRATE}` again" in (world.root / "run-report.md").read_text()
+    report = (world.root / "run-report.md").read_text()
+    assert "**Unfinished rebuild**" in report and update.RERUN in report
 
     # A plain run (the monthly one) refuses and says how to go on.
-    with pytest.raises(SystemExit, match="only a full consolidation migrates: medlemskab.*If it is cut off, run "
-                                         f"`{re.escape(update.MIGRATE)}` again"):
+    with pytest.raises(SystemExit, match="only a full consolidation migrates: medlemskab") as refused:
         run()
+    assert update.HOW_TO_PROCEED in str(refused.value)
     calls = fake_claude.invocations("call")
     fake_claude.plan("ok")
     run("--consolidate-mode", "full", "--allow-rebuild")  # the same command again: medlemskab only
@@ -543,7 +544,8 @@ def test_changed_decisions_in_most_categories_still_stop_a_plain_run(world, fake
 def test_the_workflow_runs_the_default_mode_unless_full_is_ticked():
     workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
     full = workflow[workflow.index("\n      full:\n"):workflow.index("\npermissions:")]
-    assert f'description: "{update.MODE_INPUT_LABEL}"' in full and "type: boolean" in full and "default: false" in full
+    label = re.search(r'description: "(.*)"', full).group(1)
+    assert f"'{label}'" in update.HOW_TO_PROCEED and "type: boolean" in full and "default: false" in full
     step = workflow[workflow.index("- name: Download new minutes and update the rule overview"):]
     assert "FULL: ${{ inputs.full }}" in step and "REBUILD: ${{ inputs.rebuild }}" in step
     assert 'if [ "$FULL" = "true" ]; then args+=(--consolidate-mode full); fi' in step
