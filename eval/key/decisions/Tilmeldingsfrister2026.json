@@ -1,0 +1,978 @@
+{
+ "doc_id": "Tilmeldingsfrister2026",
+ "sha256": "b8c5568ccc1942bac92550e8b6f7224fa5180ee162dae43f877979eeb707d471",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K9",
+   "status": "certain",
+   "candidates": [
+    9
+   ],
+   "emne": "Tilmeldingsfrister internationale masterstævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Sidste frist for tilmelding via masterudvalget til internationale masterstævner i 2026: EM Masters Classic (Oulu, 8.-15. februar) 6. december 2025; EM Masters Equipped (Pilsen, 1.-10. maj) 20. februar 2026; VM Masters Classic & Equipped bænkpres (Warszawa, 22.-31. maj) 13. marts 2026; EM Masters Equipped & Classic bænkpres (Druskininkai, 3.-9. august) 25. maj 2026; VM Masters Classic & Equipped (Reno, 14.-28. oktober) 5. august 2026.",
+   "citat": "Tilmeldingsfrister 2026",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true,
+   "citat_pos": 0,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Pilsen, \nTjekkiet \n1-10.maj \n20.februar 2026",
+     "citat_pos": 51
+    }
+   ]
+  },
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Consent Form ved EPF/IPF-stævner",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Alle, der deltager som løftere i EPF/IPF-konkurrencer, skal udfylde IPF's Consent Form i PDF-format og sende den på mail til masterudvalget@styrke.dk inden tilmeldingsfristens udløb, hvorefter den uploades i GOODLIFT-systemet. Formularen bør underskrives elektronisk; er det ikke muligt, skal den printes, underskrives og sendes som PDF-fil.",
+   "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 103,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet.",
+     "citat_pos": 103
+    },
+    {
+     "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet.",
+     "citat_pos": 103
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2
+   ],
+   "emne": "Fornyelse af ADEL-uddannelse",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "ADEL-antidopinguddannelsen skal fornyes hvert 2. år. De, der har gennemført uddannelsen, skal forny den via hjemmesiden.",
+   "citat": "Bemærk at ADel skal fornyes hvert 2. år så i der har gennemgået uddannelsen skal via hjemmesiden forny jeres uddannelse.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 148,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Bemærk at ADel skal fornyes hvert 2. år",
+     "citat_pos": 148
+    },
+    {
+     "citat": "Bemærk at ADel skal fornyes hvert 2. år så i der har gennemgået uddannelsen skal via hjemmesiden forny jeres uddannelse.",
+     "citat_pos": 148
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "ADEL-antidopinguddannelse for løftere ved internationale stævner",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Løftere skal gennemføre IPF's antidopinguddannelse ADEL, og kursusbeviset skal sendes på mail til masterudvalget@styrke.dk sammen med tilmeldingsskemaet. Løftere kan ikke tilmeldes internationale stævner uden at kursusbeviset uploades.",
+   "citat": "Det er et krav at kursusbeviset sendes på mail til: masterudvalget@styrke.dk sammen med \ntilmeldingsskemaet: Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at \nuploade kursusbeviset.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 253,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at uploade kursusbeviset.",
+     "citat_pos": 269
+    },
+    {
+     "citat": "Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at uploade kursusbeviset. Det samme gælder for trænerne, de skal ligeledes gennemføre Adel træneruddannelsen for at kunne akkrediteres.",
+     "citat_pos": 269
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "ADEL-uddannelse for trænere",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Trænere skal gennemføre ADEL-træneruddannelsen (Coaches of High Performance Education Program) for at kunne akkrediteres ved internationale stævner.",
+   "citat": "Det samme gælder for trænerne, de skal ligeledes gennemføre Adel træneruddannelsen for at kunne akkrediteres.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 284,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det samme gælder for trænerne, de skal ligeledes gennemføre Adel træneruddannelsen for at kunne akkrediteres.",
+     "citat_pos": 284
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Hæftelse for startgebyr ved internationale stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved tilmelding til internationale EPF/IPF-stævner er man bundet af forhåndstilmeldingen og startgebyret. Fortryder man senere sin deltagelse, hæfter man for startgebyret.",
+   "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 323,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret.",
+     "citat_pos": 323
+    },
+    {
+     "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret.",
+     "citat_pos": 323
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Ophold på stævnehotel ved internationale stævner",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Det er et EPF/IPF-krav, at deltagere bor på stævnehotellet i hele stævneperioden. Løfter man fx mandag og skal hjælpe en anden løfter torsdag, skal man bestille 4 overnatninger.",
+   "citat": "Det er ligeledes et EPF-\nIPF-krav at man skal bo på stævnehotellet i stævneperioden.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 340,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det er ligeledes et EPF-IPF-krav at man skal bo på stævnehotellet i stævneperioden.",
+     "citat_pos": 340
+    },
+    {
+     "citat": "Det er ligeledes et EPF-\nIPF-krav at man skal bo på stævnehotellet i stævneperioden.",
+     "citat_pos": 340
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7
+   ],
+   "emne": "Trænerakkreditering ved EM og VM",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "Som følge af IPF/EPF's ændrede vedtægter indføres et loft over antallet af trænere. Alle, der ønsker akkreditering som trænere ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro.",
+   "citat": "IPF/EPF har ændret deres vedtægter og det betyder blandt andet at der kommer loft over antallet af trænere.  Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro \ni gebyr.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 387,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr.",
+     "citat_pos": 406
+    },
+    {
+     "citat": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr.",
+     "citat_pos": 406
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "Loft over antal trænere ved EM/VM",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "IPF/EPF har ændret deres vedtægter, så der indføres et loft over antallet af trænere, der kan akkrediteres ved internationale mesterskaber.",
+   "citat": "IPF/EPF har ændret deres vedtægter og det betyder blandt andet at der kommer loft over antallet af trænere.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 387,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "IPF/EPF har ændret deres vedtægter og det betyder blandt andet at der kommer loft over antallet af trænere.",
+     "citat_pos": 387
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Consent Form ved EPF/IPF-stævner",
+     "tekst": "Alle løftere, der deltager i EPF/IPF-konkurrencer, skal udfylde en Consent Form i PDF-format og sende den til masterudvalget@styrke.dk inden tilmeldingsfristens udløb. Dokumentet uploades derefter i GOODLIFT-systemet.",
+     "udfald": "vedtaget",
+     "span": [
+      103,
+      126
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Consent Form til internationale stævner",
+     "tekst": "Alle løftere, der deltager i EPF/IPF-konkurrencer, skal udfylde en Consent Form i PDF-format og sende den til masterudvalget@styrke.dk inden tilmeldingsfristens udløb. Dokumentet uploades derefter i GOODLIFT-systemet; det underskrives helst elektronisk, ellers printes, underskrives og sendes som PDF.",
+     "udfald": "vedtaget",
+     "span": [
+      103,
+      126
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Consent Form ved EPF/IPF-stævner",
+     "tekst": "Alle løftere, der deltager i EPF/IPF-konkurrencer, skal udfylde en Consent Form i PDF-format og sende den til masterudvalget@styrke.dk inden tilmeldingsfristens udløb. Dokumentet uploades derefter i GOODLIFT-systemet. Formularen skal helst underskrives elektronisk.",
+     "udfald": "vedtaget",
+     "span": [
+      103,
+      126
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Consent Form for løftere",
+     "tekst": "Alle, der deltager som løftere til EPF/IPF-konkurrencer, skal udfylde en Consent Form i PDF-format og sende det til masterudvalget@styrke.dk inden tidsfristens udløb. Dokumentet uploades derefter i GOODLIFT-systemet; underskrift bør ske elektronisk.",
+     "udfald": "vedtaget",
+     "span": [
+      103,
+      120
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Consent Form ved EPF/IPF-konkurrencer",
+     "tekst": "Alle løftere, der deltager i EPF/IPF-konkurrencer, skal udfylde IPF's Consent Form (helst underskrevet elektronisk) og sende den som PDF til masterudvalget@styrke.dk inden tilmeldingsfristens udløb, hvorefter den uploades i GOODLIFT-systemet.",
+     "udfald": "vedtaget",
+     "span": [
+      103,
+      142
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Alle der deltager som løftere til EPF/IPF-konkurrencer skal udfylde en Consent Form i PDF-format på samme måde som ADEL certifikatet."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "ADEL-fornyelse",
+     "tekst": "ADEL-uddannelsen skal fornyes hvert 2. år, og løftere skal forny uddannelsen via hjemmesiden, når den er gennemført.",
+     "udfald": "vedtaget",
+     "span": [
+      148,
+      156
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Bemærk at ADel skal fornyes hvert 2. år så i der har gennemgået uddannelsen skal via hjemmesiden forny jeres uddannelse."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Bemærk at ADel skal fornyes hvert 2. år"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Bemærk at ADel skal fornyes hvert 2. år så i der har gennemgået uddannelsen skal via hjemmesiden forny jeres uddannelse."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "ADEL antidopinguddannelse ved internationale stævner",
+     "tekst": "Løftere skal gennemføre IPF's antidopinguddannelse ADEL og sende kursusbeviset til masterudvalget@styrke.dk sammen med tilmeldingsskemaet. Det er ikke muligt at tilmelde løftere til internationale stævner uden kursusbevis. Trænere skal gennemføre ADEL-træneruddannelsen for at blive akkrediteret. ADEL skal fornyes hvert 2. år.",
+     "udfald": "vedtaget",
+     "span": [
+      269,
+      284
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "ADEL antidoping-uddannelse ved internationale stævner",
+     "tekst": "Løftere skal gennemføre IPF's antidopinguddannelse ADEL og sende kursusbeviset til masterudvalget sammen med tilmeldingsskemaet. Uden kursusbevis kan løftere ikke tilmeldes internationale stævner. ADEL skal fornyes hvert 2. år. Trænere skal gennemføre ADEL-træneruddannelsen for at kunne akkrediteres.",
+     "udfald": "vedtaget",
+     "span": [
+      269,
+      299
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "ADEL antidopinguddannelse ved internationale stævner",
+     "tekst": "Løftere skal gennemføre IPF's antidopinguddannelse ADEL og sende kursusbeviset til masterudvalget sammen med tilmeldingsskemaet; uden kursusbevis kan man ikke tilmeldes internationale stævner. Trænere skal ligeledes gennemføre ADEL-træneruddannelsen for at blive akkrediteret. ADEL skal fornyes hvert 2. år.",
+     "udfald": "vedtaget",
+     "span": [
+      269,
+      299
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "ADEL-antidopinguddannelse for løftere",
+     "tekst": "Løftere, der deltager i internationale stævner, skal gennemføre IPF's antidopinguddannelse ADEL, og kursusbeviset skal sendes til masterudvalget@styrke.dk sammen med tilmeldingsskemaet. Tilmelding til internationale stævner er ikke længere mulig uden upload af kursusbeviset.",
+     "udfald": "vedtaget",
+     "span": [
+      253,
+      269
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "ADEL antidopinguddannelse for løftere ved internationale stævner",
+     "tekst": "Løftere skal gennemføre IPF/WADA's antidopinguddannelse ADEL og sende kursusbeviset til masterudvalget sammen med tilmeldingsskemaet; løftere kan ikke tilmeldes internationale stævner uden uploadet kursusbevis. ADEL skal fornyes hvert 2. år.",
+     "udfald": "vedtaget",
+     "span": [
+      253,
+      284
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det er et krav at kursusbeviset sendes på mail til: masterudvalget@styrke.dk sammen med \ntilmeldingsskemaet: Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at \nuploade kursusbeviset."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at uploade kursusbeviset."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det er ikke længere muligt at tilmelde løftere til internationale stævner uden at uploade kursusbeviset. Det samme gælder for trænerne, de skal ligeledes gennemføre Adel træneruddannelsen for at kunne akkrediteres."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "ADEL-uddannelse for trænere",
+     "tekst": "Trænere skal gennemføre ADEL-træneruddannelsen (coaches of high performance education program) for at kunne akkrediteres ved stævnerne.",
+     "udfald": "vedtaget",
+     "span": [
+      289,
+      299
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "ADEL antidopinguddannelse for trænere",
+     "tekst": "Trænere skal gennemføre ADEL-træneruddannelsen for at kunne akkrediteres ved internationale stævner.",
+     "udfald": "vedtaget",
+     "span": [
+      284,
+      299
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det samme gælder for trænerne, de skal ligeledes gennemføre Adel træneruddannelsen for at kunne akkrediteres."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "antidoping",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det samme gælder for trænerne, de skal ligeledes gennemføre Adel træneruddannelsen for at kunne akkrediteres."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 3,
+     "reason": "Kravet om ADEL for trænere er en del af samme ADEL-krav som kandidat 3."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Startgebyr og stævnehotel ved internationale stævner",
+     "tekst": "Deltagere er bundet af forhåndstilmeldingen og startgebyret og hæfter for startgebyret, hvis de senere fortryder. Det er et EPF/IPF-krav at bo på stævnehotellet i hele stævneperioden, fx 4 overnatninger hvis man løfter mandag og hjælper en anden løfter torsdag.",
+     "udfald": "vedtaget",
+     "span": [
+      323,
+      340
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Bindende tilmelding og startgebyr ved internationale stævner",
+     "tekst": "Man er bundet af forhåndstilmeldingen og startgebyret til internationale stævner. Fortryder man senere sin deltagelse, hæfter man for startgebyret.",
+     "udfald": "vedtaget",
+     "span": [
+      323,
+      340
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Bindende tilmelding og startgebyr ved internationale stævner",
+     "tekst": "Man er bundet af forhåndstilmeldingen og startgebyret. Fortryder man senere sin deltagelse, hæfter man for startgebyret.",
+     "udfald": "vedtaget",
+     "span": [
+      323,
+      340
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 5,
+     "emne": "Bindende forhåndstilmelding og startgebyr",
+     "tekst": "Deltagere er bundet af forhåndstilmeldingen og startgebyret. Hvis en deltager senere fortryder sin deltagelse, hæfter vedkommende for startgebyret.",
+     "udfald": "vedtaget",
+     "span": [
+      323,
+      340
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 4,
+     "emne": "Bindende tilmelding og startgebyr ved internationale masterstævner",
+     "tekst": "Forhåndstilmelding til internationale stævner er bindende, og løfteren hæfter for startgebyret, også hvis deltagelsen senere fortrydes.",
+     "udfald": "vedtaget",
+     "span": [
+      323,
+      340
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Man er bundet af forhåndstilmeldingen og startgebyret. Skulle man senere fortryde sin deltagelse hæfter man for startgebyret."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Ophold på stævnehotel ved internationale stævner",
+     "tekst": "Det er et EPF-IPF-krav, at deltagere bor på stævnehotellet i hele stævneperioden. Løfter man fx mandag og skal hjælpe en anden løfter torsdag, skal man bestille 4 overnatninger.",
+     "udfald": "vedtaget",
+     "span": [
+      340,
+      355
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Ophold på stævnehotel ved internationale stævner",
+     "tekst": "Det er et EPF/IPF-krav, at man bor på stævnehotellet i stævneperioden. Hvis man fx løfter mandag og skal hjælpe en anden løfter torsdag, skal man bestille 4 overnatninger.",
+     "udfald": "vedtaget",
+     "span": [
+      340,
+      355
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Overnatning på stævnehotel",
+     "tekst": "Det er et EPF/IPF-krav, at løftere skal bo på stævnehotellet i hele stævneperioden, og de skal bestille overnatninger for hele perioden, også hvis de kun skal hjælpe andre løftere.",
+     "udfald": "vedtaget",
+     "span": [
+      340,
+      355
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 5,
+     "emne": "Krav om ophold på stævnehotel",
+     "tekst": "Det er et EPF/IPF-krav, at deltagere skal bo på stævnehotellet i hele deres stævneperiode; løfter man fx mandag og hjælper en anden løfter torsdag, skal man bestille 4 overnatninger.",
+     "udfald": "vedtaget",
+     "span": [
+      340,
+      373
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det er ligeledes et EPF-\nIPF-krav at man skal bo på stævnehotellet i stævneperioden."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det er ligeledes et EPF-IPF-krav at man skal bo på stævnehotellet i stævneperioden."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "eksternt_krav",
+     "citat": "Det er ligeledes et EPF-\nIPF-krav at man skal bo på stævnehotellet i stævneperioden."
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Trænerakkreditering ved internationale mesterskaber",
+     "tekst": "Som følge af ændrede IPF/EPF-vedtægter indføres et loft over antallet af trænere. Alle, der ønsker akkreditering som trænere ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      387,
+      421
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Trænerakkreditering ved EM/VM",
+     "tekst": "IPF/EPF har ændret deres vedtægter, så der kommer loft over antallet af trænere. Alle, der ønsker akkreditering som trænere ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      406,
+      421
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Trænerakkreditering og loft over antal trænere",
+     "tekst": "IPF/EPF har ændret deres vedtægter, så der kommer loft over antallet af trænere. Alle der ønsker akkreditering som trænere ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      406,
+      421
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 6,
+     "emne": "Akkrediteringsgebyr for trænere",
+     "tekst": "Alle, der ønsker akkreditering som trænere ved Europa- og verdensmesterskaber, skal betale et gebyr på 50 Euro.",
+     "udfald": "vedtaget",
+     "span": [
+      406,
+      421
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 6,
+     "emne": "Akkreditering af trænere ved EM og VM",
+     "tekst": "Efter ændring af IPF/EPF's vedtægter indføres et loft over antallet af trænere, og alle der ønsker akkreditering som træner ved europa- og verdensmesterskaber skal betale et gebyr på 50 euro.",
+     "udfald": "vedtaget",
+     "span": [
+      387,
+      421
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "IPF/EPF har ændret deres vedtægter og det betyder blandt andet at der kommer loft over antallet af trænere.  Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro \ni gebyr."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "Alle der ønsker akkreditering, som trænere ved Europa-Verdensmesterskaber, skal betale 50 Euro i gebyr."
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 7,
+     "emne": "Loft over antal trænere",
+     "tekst": "Efter IPF/EPF's ændrede vedtægter er der indført et loft over antallet af trænere, der kan akkrediteres.",
+     "udfald": "vedtaget",
+     "span": [
+      387,
+      406
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 7,
+     "reason": "Loftet over antal trænere er en del af samme IPF/EPF-ændring som kandidat 7."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "IPF/EPF har ændret deres vedtægter og det betyder blandt andet at der kommer loft over antallet af trænere."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "internationalt",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "eksternt_krav",
+     "citat": "IPF/EPF har ændret deres vedtægter og det betyder blandt andet at der kommer loft over antallet af trænere."
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "status": "certain",
+   "role": "decision",
+   "key": "K9",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Tilmeldingsfrister internationale masterstævner",
+     "tekst": "Sidste frist for tilmelding via masterudvalget til internationale masterstævner i 2026: EM Masters Classic (Oulu, 8.-15. februar) 6. december 2025; EM Masters Equipped (Pilsen, 1.-10. maj) 20. februar 2026; VM Masters Classic & Equipped Bænkpres (Warszawa, 22.-31. maj) 13. marts 2026; EM Masters Equipped & Classic Bænkpres (Druskininkai, 3.-9. august) 25. maj 2026; VM Masters Classic & Equipped (Reno, 14.-28. oktober) 5. august 2026.",
+     "udfald": "vedtaget",
+     "span": null
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Tilmeldingsfrister til enkelte navngivne stævner er enkeltstående begivenheder og ikke en stående regel."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Tilmeldingsfrister 2026"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "master",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Pilsen, \nTjekkiet \n1-10.maj \n20.februar 2026"
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5610,
+    "output": 3910,
+    "cost_usd": 0.124,
+    "seconds": 32,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5556,
+    "output": 3788,
+    "cost_usd": 0.1211,
+    "seconds": 31,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 5538,
+    "output": 3860,
+    "cost_usd": 0.1224,
+    "seconds": 31,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

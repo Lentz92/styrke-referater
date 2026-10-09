@@ -1,0 +1,162 @@
+{
+ "fingerprint": "29a7680cb4c024db",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 75540,
+  "output": 5081,
+  "cost_usd": 0.7064,
+  "seconds": 44,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P5",
+    "quote": "Et sådan kan afhentes ved henvendelse til Horsens Styrkeløftklub",
+    "value_after": "DSF stævnekit afhentes ved henvendelse til Horsens Styrkeløftklub",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P10",
+    "quote": "Udstyr vil kunne lånes, ved kontakt vis kontoret og afhentning i Horsens.",
+    "value_after": "Udstyr lånes ved kontakt til kontoret, afhentes i Horsens",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P22",
+    "quote": "Derudover skal der også sendes en mail til forbundet i forbindelse med lån af udstyr, mailen skal sendes til på jacob@styrke.dk.",
+    "value_after": "Lån af udstyr kræver mail til forbundet (jacob@styrke.dk)",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P26",
+    "quote": "Følgesedlen blev godkendt, men i stedet for smser, er Peter Andersen nu ansvarlig. Det blev besluttet, at der skulle være to sæt udstyr",
+    "value_after": "Følgeseddel, to sæt, modtager tjekker dele; Peter Andersen ansvarlig",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P36",
+    "quote": "Der var enighed om, at et sæt udstyr er nok.",
+    "value_after": "Ét sæt udstyr i flyttekasse, følgeseddel, Peter Andersen ansvarlig",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P51",
+    "quote": "Klubberne skal melde ud tre uger før et stævne, hvilket udstyr de ønsker at låne af DSF. Ved bestilling i god tid, er det muligt at udstyret kan blive afleveret i klubben.",
+    "value_after": "Lån meldes tre uger før stævnet; evt. levering i klubben",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P60",
+    "quote": "Der skal laves en liste i kufferterne hvorpå klubberne skal kvittere med navn på repræsentant og dato for lån af udstyrs-”kuffert”. Ved tilbagelevering skal der ligeledes kvitteres for at alt udstyret er der.",
+    "value_after": "Melding tre uger før; kvittering ved lån og tilbagelevering",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P86",
+    "quote": "Forbundets stævnekasser som indeholdes blandt andet dommerlys, os streaming varetages og opdateres af Peter Andersen.",
+    "value_after": "Stævnekasser (dommerlys, streaming) varetages af Peter Andersen",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P105",
+    "quote": "Konkurrencestyringssystem stilles til rådighed for arrangøren efter aftale. Herunder udlånes tablet, bagtæppe (to dele), roll ups, indvejningsvægt og evt. projektor. Udviklingskonsulent er ansvarsperson for dette og kontaktes.",
+    "value_after": "Udlån efter aftale; udviklingskonsulent ansvarlig og kontaktes",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P118",
+    "quote": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat.",
+    "value_after": "DSF står for streaming, konkurrencestyringssystem og bagtæppe; ikke udlån",
+    "effect": "aendret"
+   }
+  ],
+  "years": [
+   {
+    "year": 2012,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 7
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 7
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 7
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 8
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 8
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 8
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 9
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 10
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 10
+   }
+  ]
+ }
+}

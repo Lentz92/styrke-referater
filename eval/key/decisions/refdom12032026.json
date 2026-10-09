@@ -1,0 +1,705 @@
+{
+ "doc_id": "refdom12032026",
+ "sha256": "38bdc22c99fd984206727b32051ca5d2900ac0cf4469435893f29f80f9b55133",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K2",
+   "status": "certain",
+   "candidates": [
+    2
+   ],
+   "emne": "Nye dommere ved første stævne",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Nye dommere skal ved deres første stævne have en erfaren dommer ved deres side, særligt ved indvejningen.",
+   "citat": "Ved første stævne er det vigtigt, at nye dommere har en erfaren dommer ved deres side, særligt ved indvejningen.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 202,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ved første stævne er det vigtigt, at nye dommere har en erfaren dommer ved deres side, særligt ved indvejningen.",
+     "citat_pos": 202
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "Brush-up kursus for B-dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der afholdes i efteråret 2026 et obligatorisk online brush-up kursus for B-dommere med udgangspunkt i sidste års onlinekursus og aktuelle fokusområder samt plads til spørgsmål.",
+   "citat": "Det vil blive afholdt i efteråret og vil være obligatorisk.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true,
+   "citat_pos": 266,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Det vil blive afholdt i efteråret og vil være obligatorisk.",
+     "citat_pos": 266
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Dommerbriefing ved stævner",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der skal afvikles dommerbriefing ved alle stævner, hvor stævnelederen kan fremhæve særligt vigtige regler og ændringer, med udgangspunkt i dokumentet Dommer briefing på hjemmesiden.",
+   "citat": "Dommer briefing: Det er vigtigt, at vi holder fast i at afvikle den ved alle stævner. Det er også her stævnelederen kan fremhæve de regler samt ændringer, som er særligt vigtige.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 276,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Dommer briefing: Det er vigtigt, at vi holder fast i at afvikle den ved alle stævner.",
+     "citat_pos": 276
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5
+   ],
+   "emne": "Dispensation for dommeres aktivitetskrav (pause)",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommere, der ifølge reglerne ikke har dømt nok, får fremover kun dispensation (kategorien pause) fra dommerudvalget ved helt særlige forhold.",
+   "citat": "Derfor vil der fremover kun blive givet dispensation fra udvalget ved helt særlige forhold.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 451,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Derfor vil der fremover kun blive givet dispensation fra udvalget ved helt særlige forhold.",
+     "citat_pos": 451
+    }
+   ]
+  },
+  {
+   "id": "K7",
+   "status": "certain",
+   "candidates": [
+    7,
+    6
+   ],
+   "emne": "Aktivitetskrav for nye B-dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Nye dommere skal dømme inden for det første år. Hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, tages personen af dommerlisten.",
+   "citat": "har vi indført den regel, at hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, bliver personen taget af dommerlisten.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 501,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "har vi indført den regel, at hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, bliver personen taget af dommerlisten.",
+     "citat_pos": 501
+    }
+   ]
+  },
+  {
+   "id": "K8",
+   "status": "certain",
+   "candidates": [
+    8
+   ],
+   "emne": "Indsendelse af stævneprotokoller",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Når dommerudvalget afsætter stævner og udarbejder stævneplanen med dommerpåsætning, mindes stævnelederne fremover om at indsende stævneprotokollen efter endt stævne.",
+   "citat": "Derfor vil vi fremover, når vi afsætter stævner og udarbejder stævneplanen med dommerpåsætning, huske stævnelederne på denne opgave.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 557,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Derfor vil vi fremover, når vi afsætter stævner og udarbejder stævneplanen med dommerpåsætning, huske stævnelederne på denne opgave.",
+     "citat_pos": 557
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Planlægning af én konkret dommeruddannelse med dato og sted er en enkeltbegivenhed, ikke en stående regel.",
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Dommeruddannelse",
+     "tekst": "I 2026 afholdes kun én dommeruddannelse, den 25. april i Aarhus AK, da behovet for nye dommere ikke er større. De nyeste regelændringer integreres i både den teoretiske og praktiske prøve.",
+     "udfald": "vedtaget",
+     "span": [
+      137,
+      154
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "reject",
+     "reason": "Planlægning af én konkret dommeruddannelse med dato og sted er en enkeltbegivenhed, ikke en stående regel."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Afholdelse af én konkret dommeruddannelse på en bestemt dato og et bestemt sted er en enkeltstående begivenhed."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K2",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Nye dommere ved første stævne",
+     "tekst": "Nye dommere skal ved deres første stævne have en erfaren dommer ved deres side, særligt ved indvejningen.",
+     "udfald": "vedtaget",
+     "span": [
+      202,
+      221
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 4,
+     "emne": "Erfaren dommer ved nye dommeres første stævne",
+     "tekst": "Nye dommere skal ved deres første stævne have en erfaren dommer ved deres side, særligt ved indvejningen.",
+     "udfald": "vedtaget",
+     "span": [
+      202,
+      221
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 4,
+     "emne": "Erfaren dommer ved nye dommeres første stævne",
+     "tekst": "Ved nye dommeres første stævne skal de have en erfaren dommer ved deres side, særligt ved indvejningen.",
+     "udfald": "vedtaget",
+     "span": [
+      202,
+      221
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ved første stævne er det vigtigt, at nye dommere har en erfaren dommer ved deres side, særligt ved indvejningen."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ved første stævne er det vigtigt, at nye dommere har en erfaren dommer ved deres side, særligt ved indvejningen."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Brush-up kursus for B-dommere",
+     "tekst": "Der afholdes et obligatorisk online brush-up kursus for B-dommere i efteråret 2026, baseret på sidste års kursus og aktuelle fokusområder, med plads til spørgsmål.",
+     "udfald": "vedtaget",
+     "span": [
+      266,
+      276
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Obligatorisk brush-up kursus for B-dommere",
+     "tekst": "Der afholdes et online brush-up kursus for B-dommere i efteråret 2026, som er obligatorisk. Det tager udgangspunkt i sidste års kursus og aktuelle fokusområder.",
+     "udfald": "vedtaget",
+     "span": [
+      266,
+      276
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Obligatorisk brush-up for B-dommere",
+     "tekst": "Der afholdes et onlinekursus (brush-up) for B-dommere i efteråret 2026, og deltagelse er obligatorisk.",
+     "udfald": "vedtaget",
+     "span": [
+      266,
+      276
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Obligatorisk brush-up for B-dommere",
+     "tekst": "B-dommere skal deltage i et obligatorisk brush-up onlinekursus, som afholdes i efteråret. Kurset tager udgangspunkt i sidste års onlinekursus og det, der vurderes at være særligt behov for, og giver mulighed for at stille spørgsmål.",
+     "udfald": "vedtaget",
+     "span": [
+      266,
+      276
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Brush-up kursus for B-dommere",
+     "tekst": "Der afholdes et online brush-up kursus for B-dommere i efteråret 2026, som er obligatorisk for B-dommere. Kurset tager udgangspunkt i sidste års onlinekursus og aktuelle fokusområder.",
+     "udfald": "vedtaget",
+     "span": null
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det vil blive afholdt i efteråret og vil være obligatorisk."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det vil blive afholdt i efteråret og vil være obligatorisk."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 3,
+     "emne": "Dommerbriefing ved stævner",
+     "tekst": "Dommerbriefing skal afvikles ved alle stævner, og stævnelederen kan her fremhæve særligt vigtige regler og ændringer, med udgangspunkt i dokumentet Dommer briefing på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      278,
+      292
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Dommerbriefing ved stævner",
+     "tekst": "Dommerbriefing skal afvikles ved alle stævner. Stævnelederen kan her fremhæve særligt vigtige regler og ændringer, med udgangspunkt i dokumentet Dommer briefing på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      278,
+      292
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Dommerbriefing ved stævner",
+     "tekst": "Dommerbriefing skal fortsat afvikles ved alle stævner, hvor stævnelederen kan fremhæve særligt vigtige regler og ændringer.",
+     "udfald": "vedtaget",
+     "span": [
+      278,
+      292
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Dommerbriefing ved stævner",
+     "tekst": "Dommerbriefing skal afvikles ved alle stævner, og stævnelederen skal her fremhæve de regler og ændringer, der er særligt vigtige. Briefingen tager udgangspunkt i dokumentet 'Dommer briefing' på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      278,
+      292
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Dommerbriefing ved stævner",
+     "tekst": "Der afholdes dommerbriefing ved alle stævner, hvor stævnelederen kan fremhæve særligt vigtige regler og ændringer. Briefingen tager udgangspunkt i dokumentet \"Dommer briefing\" på hjemmesiden.",
+     "udfald": "vedtaget",
+     "span": [
+      276,
+      307
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Dommer briefing: Det er vigtigt, at vi holder fast i at afvikle den ved alle stævner. Det er også her stævnelederen kan fremhæve de regler samt ændringer, som er særligt vigtige."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Dommer briefing: Det er vigtigt, at vi holder fast i at afvikle den ved alle stævner."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 4,
+     "emne": "Dispensation for dømmepause",
+     "tekst": "Dommere, der ikke har dømt nok, og som er placeret i kategorien pause, får fremover kun dispensation fra udvalget ved helt særlige forhold.",
+     "udfald": "vedtaget",
+     "span": [
+      451,
+      465
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Dispensation fra dommerkrav om antal dømte stævner",
+     "tekst": "Dommerudvalget giver fremover kun dispensation (pause) for dommere, der ikke har dømt nok, ved helt særlige forhold, for at gøre dommerdatabasen mere anvendelig til stævneplaner.",
+     "udfald": "vedtaget",
+     "span": [
+      451,
+      465
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Dispensation ved dommerpause",
+     "tekst": "Dommere, der ikke har dømt nok, kan kun få dispensation (pause) fra udvalget ved helt særlige forhold.",
+     "udfald": "vedtaget",
+     "span": [
+      451,
+      465
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Dispensation fra dommerpause",
+     "tekst": "Dommere, der er sat i kategorien pause i dommerdatabasen, kan fremover kun få dispensation fra Dommerudvalget ved helt særlige forhold. Begrundelsen er at gøre dommerdatabasen mere anvendelig ved planlægning af dommere på stævneplaner.",
+     "udfald": "vedtaget",
+     "span": [
+      451,
+      465
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Dispensation for dommeraktivitet (pause)",
+     "tekst": "Dommere, der ifølge reglerne ikke har dømt nok, kan fremover kun få dispensation (pause) fra dommerudvalget ved helt særlige forhold.",
+     "udfald": "vedtaget",
+     "span": [
+      451,
+      465
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Derfor vil der fremover kun blive givet dispensation fra udvalget ved helt særlige forhold."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Derfor vil der fremover kun blive givet dispensation fra udvalget ved helt særlige forhold."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "duplicate",
+   "reason": "Samme regel om at nye B-dommere skal dømme inden for det første år.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Dommerudnævnelse for nye B-dommere (aktivitetskrav)",
+     "tekst": "Nye dommere skal dømme inden for det første år efter bestået dommereksamen. Hvis en B-dommer ikke har dømt inden for en fastsat periode efter et år fra bestået dommereksamen, fjernes personen fra dommerlisten.",
+     "udfald": "vedtaget",
+     "span": [
+      478,
+      487
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 7,
+     "reason": "Samme regel om at nye B-dommere skal dømme inden for det første år."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 7,
+     "reason": "Samme regel om at nye B-dommere skal dømme inden for det første år."
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "decision",
+   "key": "K7",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 5,
+     "emne": "Krav om at nye dommere dømmer inden for første år",
+     "tekst": "Hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, tages personen af dommerlisten.",
+     "udfald": "vedtaget",
+     "span": [
+      507,
+      528
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Nye B-dommere skal dømme inden for første år",
+     "tekst": "Hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, tages vedkommende af dommerlisten.",
+     "udfald": "vedtaget",
+     "span": [
+      507,
+      528
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "Nye B-dommere skal dømme inden for første år",
+     "tekst": "En B-dommer, der ikke dømmer inden for en periode efter et år efter bestået dommereksamen, tages af dommerlisten.",
+     "udfald": "vedtaget",
+     "span": [
+      507,
+      528
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Krav om dømning for nye dommere",
+     "tekst": "Nye B-dommere skal dømme inden for det første år efter bestået dommereksamen. Har en B-dommer ikke dømt inden for et år efter bestået eksamen, bliver personen taget af dommerlisten.",
+     "udfald": "vedtaget",
+     "span": [
+      501,
+      528
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "har vi indført den regel, at hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, bliver personen taget af dommerlisten."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "dommere",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "har vi indført den regel, at hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, bliver personen taget af dommerlisten."
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "status": "certain",
+   "role": "decision",
+   "key": "K8",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 6,
+     "emne": "Indsendelse af stævneprotokoller",
+     "tekst": "Dommerudvalget minder fremover stævnelederne om at indsende stævneprotokollen efter stævnet, når stævner afsættes og stævneplanen med dommerpåsætning udarbejdes.",
+     "udfald": "vedtaget",
+     "span": [
+      557,
+      575
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Derfor vil vi fremover, når vi afsætter stævner og udarbejder stævneplanen med dommerpåsætning, huske stævnelederne på denne opgave."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Derfor vil vi fremover, når vi afsætter stævner og udarbejder stævneplanen med dommerpåsætning, huske stævnelederne på denne opgave."
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4691,
+    "output": 3095,
+    "cost_usd": 0.1003,
+    "seconds": 27,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4743,
+    "output": 2610,
+    "cost_usd": 0.091,
+    "seconds": 22,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

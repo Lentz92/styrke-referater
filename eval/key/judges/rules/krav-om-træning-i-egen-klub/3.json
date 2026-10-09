@@ -1,0 +1,121 @@
+{
+ "fingerprint": "877cfcc30313cfae",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 80991,
+  "output": 2943,
+  "cost_usd": 0.7072,
+  "seconds": 28,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P18",
+    "quote": "Det blev her afgjort at atleter skal træne i den klub de stiller op for. Hvis atleten ikke træner flere gange om ugen, skal det aftales at atleten træner i klubben på den samme ugedag.",
+    "value_after": "Træning i egen klub; ellers fast ugedag i klubben",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P21",
+    "quote": "”For at kunne stille op for en klub, skal en atlet træne regelmæssigt i pågældende klub – mindst én gang om ugen. Hvis atleten bor et sted, hvor der langt til en klub, eller der er helt særlige omstændigheder, som gør sig gældende, kan klubben udstede en dispensation",
+    "value_after": "Mindst én ugentlig træning i klubben; klubdispensation, dopingudvalg orienteres",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P66",
+    "quote": "”At Dansk Styrkeløft Forbund stiller krav om, at man for at kunne stille op for en klub skal træne regelmæssigt i pågældende klub – mindst én gang om ugen.",
+    "value_after": "Mindst én ugentlig træning; dispensation godkendes af dopingkontroludvalg",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P125",
+    "quote": "Det indskærpes, at der er krav omkring reglerne for licens i forhold til ADD. \n”At Dansk Styrkeløft Forbund stiller krav om, at man for at kunne stille op for en klub skal træne regelmæssigt i pågældende klub – mindst én gang om ugen.",
+    "value_after": "Mindst én ugentlig træning; dispensation godkendes af Antidoping-udvalg",
+    "effect": "bekraeftet"
+   }
+  ],
+  "years": [
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2015,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2016,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2017,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2018,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 4
+   }
+  ]
+ }
+}

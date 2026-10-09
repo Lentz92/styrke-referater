@@ -1,0 +1,138 @@
+{
+ "fingerprint": "15acbf3529e89429",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 5903,
+  "output": 2833,
+  "cost_usd": 0.1048,
+  "seconds": 24,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Uddeling af medaljer og pokaler",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Ved stævner skal medaljer og pokaler uddeles lige efter afslutningen af hver kategori og ikke i slutningen af hele stævnet. Den stævneansvarlige skal gøre den arrangerende klub opmærksom på dette.",
+    "citat": "Det er vigtigt, at medaljer og pokaler uddeles lige efter afslutningen af hver kategori og ikke i slutningen af hele stævnet.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 4,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Holdpræmie ved DM, SM og JM",
+    "kategori": "staevner",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "staevneregel",
+    "tekst": "Ved DM, SM og JM afgøres holdkonkurrencer med IPF-points. Holdpræmien tildeles den eller de foreninger, hvis bedste 5 løftere opnår flest IPF-points. Ved pointlighed tildeles placeringspræmien til foreningen med flest førstepladser.",
+    "citat": "Holdpræmier tildeles den eller de foreninger, hvis bedste 5 løftere opnår flest IPF-points. I tilfælde af pointlighed tildeles placeringspræmien til den forening, der har opnået flest førstepladser.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 5,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Registrering i dommerbog",
+    "kategori": "dommere",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Efter en afstemning blandt dommerne er det besluttet, at hver indvejning registreres i dommerbogen, i stedet for én registrering pr. stævne.",
+    "citat": "Efter en god debat og en afstemning blandt dommerne er det blevet besluttet, at det er hver indvejning, der registreres i dommerbogen.",
+    "side": 2,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 6,
+    "verdict": "duplicate",
+    "duplicate_of": 1,
+    "reason": "Samme forslag om at placere DM-hold finale i DM-ugen som kandidat 1.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 7,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Færøerne under DSF indtil IPF-optagelse",
+    "kategori": "organisation",
+    "udfald": "vedtaget",
+    "handling": "bekraeftelse",
+    "niveau": "udvalgsbeslutning",
+    "tekst": "Indtil Det Færøske Styrkeløft Forbund er optaget i IPF, hører det under DSF og følger DSF's regler.",
+    "citat": "Indtil Det Færøske Forbund er blevet optaget i IPF, er det under DSF og følger DSFs regler.",
+    "side": 3,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Placering af DM-hold finale",
+    "kategori": "staevner",
+    "udfald": "ikke_afgjort",
+    "handling": "aendring",
+    "niveau": "staevneregel",
+    "tekst": "Stævneudvalget vil foreslå, at DM-hold finalen fra 2026 afholdes i DM-ugen. Forslaget skal først godkendes af bestyrelsen og derefter vedtages på R-mødet.",
+    "citat": "Vi vil foreslå, at DM-hold finale kommer til at ligge i DM-ugen. Dette kræver, at der rykkes rundt på kalenderen, hvilket kræver at forslaget bliver godkendt til et bestyrelsesmøde og derefter indsendes til R-møde",
+    "side": 1,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Intern administrativ praksis for udvalgets egen liste, ikke en regel for forbundets medlemmer.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

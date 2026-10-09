@@ -1,0 +1,112 @@
+{
+ "doc_id": "refbest_24082013",
+ "sha256": "702d195e4c57b9fc490df2c85edc6ff7b98429375497d8fc7051f7e0d3ee8c54",
+ "run": "haiku-1",
+ "model": "claude-haiku-5-5",
+ "provenance": {
+  "model": "claude-haiku-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 3753,
+  "output": 3011,
+  "cost_usd": 0.0023,
+  "seconds": 13,
+  "attempts": 1,
+  "models": [
+   "claude-haiku-5-5"
+  ]
+ },
+ "moededato": "2013-08-24",
+ "beslutninger": [
+  {
+   "emne": "Tilskud til hoteludgifter for ledere ved mastersstævner",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ledere ved mastersstævner kan få et tilskud til hoteludgifter på maksimalt 1.500,00 kr. Tilskud udbetales kun, hvis der sendes bilag på hotelregningen.",
+   "citat": "Der er tale om et tilskud til hoteludgifter, og der udbetales MAX 1.500,00. Og kun hvis man sender bilag på hotelregningen.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 972,
+   "citat_side": 3
+  },
+  {
+   "emne": "Betaling af udgifter ved stævnerejser",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Ved rejser til stævner skal så meget som muligt betales hjemmefra, så der medbringes færrest mulige kontante penge a conto (fx til ophold).",
+   "citat": "Men fremover SKAL så meget som muligt betales hjemmefra, så der ikke skal så mange penge med a conto.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 809,
+   "citat_side": 2
+  },
+  {
+   "emne": "Medieplan",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Bestyrelsen",
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "DSF's medieplan laves fremover for et halvt år ad gangen. Medieplanen for 1. halvår 2014 udarbejdes af Peder.",
+   "citat": "Medieplan; Der er lavet en medieplan af Peter og Klaus, og fremover laves denne for et 1/2 år ad gangen. 1. halvår af 2014 laves den af Peder.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": "2014-01-01",
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 702,
+   "citat_side": 2
+  },
+  {
+   "emne": "Krav til DM bænkpres (A og senior)",
+   "kategori": "staevner",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "staevneregel",
+   "tekst": "Forslag om at fjerne kravet til deltagelse i DM A og DM senior bænkpres for at øge deltagerantallet. Bestyrelsen vil udarbejde forslaget til behandling på repræsentantskabsmødet.",
+   "citat": "Der var forslag om at fjerne krav til DM A og DM senior bænk for at få et højere deltagerantal. Bestyrelsen vil udarbejde forslaget til repmødet.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 905,
+   "citat_side": 2
+  },
+  {
+   "emne": "Dopingprøver på motionister rapporteret til WADA",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "eksternt_krav",
+   "tekst": "Anti Doping Danmark har accepteret, at det er uhensigtsmæssigt at rapportere alle dopingprøver til WADA og internationale instanser, når der er tale om motionister.",
+   "citat": "ADD har accepteret at det er uhensigtsmæssigt at man rapporter alle prøver til WADA og",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 183,
+   "citat_side": 1
+  }
+ ]
+}

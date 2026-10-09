@@ -1,0 +1,678 @@
+{
+ "doc_id": "refstaevne24042025",
+ "sha256": "509e11dccb4720ab18ca0e1393305a336374c5f053d900d3e180c44b3b00ae92",
+ "runs": [
+  "stored",
+  "sonnet-1",
+  "sonnet-2",
+  "haiku-1",
+  "opus-1"
+ ],
+ "decisions": [
+  {
+   "id": "K1",
+   "status": "certain",
+   "candidates": [
+    1
+   ],
+   "emne": "Tilmelding til DM-hold",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DM-hold afvikles ikke under DM-ugen. Alle hold, som klubberne ønsker at tilmelde til DM-hold, skal tilmeldes ved første runde i januar.",
+   "citat": "samt at alle de hold, klubberne gerne vil tilmelde, skal tilmeldes ved første runde i januar.",
+   "side": 1,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 111,
+   "citat_side": 1,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "samt at alle de hold, klubberne gerne vil tilmelde, skal tilmeldes ved første runde i januar.",
+     "citat_pos": 111
+    },
+    {
+     "citat": "samt at alle de hold, klubberne gerne vil \ntilmelde, skal tilmeldes ved første runde i januar.",
+     "citat_pos": 111
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "status": "certain",
+   "candidates": [
+    3
+   ],
+   "emne": "Krav til afvikling af Danske Mesterskaber, konkurrencestyringssystem",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten under 'DSF har ansvaret for' om, at konkurrencestyringssystem stilles til rådighed for arrangøren efter aftale. Der skal blot stå konkurrencestyringssystem.",
+   "citat": "Under ’DSF har ansvaret for’ slettes teksten under konkurrencestyringssystem:",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 391,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Under ’DSF har ansvaret for’ slettes teksten under konkurrencestyringssystem:",
+     "citat_pos": 391
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "status": "certain",
+   "candidates": [
+    4
+   ],
+   "emne": "Krav til afvikling af Danske Mesterskaber, bagtæppe",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "I Krav til afvikling af Danske Mesterskaber fastsættes, at DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 414,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes \naf DSF.",
+     "citat_pos": 414
+    }
+   ]
+  },
+  {
+   "id": "K5",
+   "status": "certain",
+   "candidates": [
+    5,
+    2
+   ],
+   "emne": "Krav til afvikling af Danske Mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten om streaming under arrangørens ansvar, og under DSF's ansvar slettes de uddybende tekster om streamingudstyr (herunder kravet om at melde egen streaming senest 60 dage før) og konkurrencestyringssystem, så der blot står streaming (arrangøren sørger for internetforbindelse) og konkurrencestyringssystem. DSF har ansvar for bagtæppe; vil arrangøren selv lave bagtæppet, skal det godkendes af DSF.",
+   "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 430,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat.",
+     "citat_pos": 430
+    },
+    {
+     "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og \nEva søger for rettelserne bliver indsat.",
+     "citat_pos": 430
+    }
+   ]
+  },
+  {
+   "id": "K6",
+   "status": "certain",
+   "candidates": [
+    6
+   ],
+   "emne": "Uddeling af medaljer og pokaler ved mesterskaber",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Stævneudvalget opfordrer til, at to personer deler medaljer ud ved mesterskaber, så der er to sæt øjne på, og at stævnelederen er klar over, hvilke pokaler der skal uddeles.",
+   "citat": "Derfor vil vi opfordre til, at det er to personer, der deler medaljer ud, således at der er to sæt øjne på, samt at stævnelederen er klar over, hvilke pokaler, der skal deles ud.",
+   "side": 2,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 508,
+   "citat_side": 2,
+   "uncertain_fields": [],
+   "quotes": [
+    {
+     "citat": "Derfor vil vi opfordre til, at det er to personer, der deler medaljer ud, således at der er to sæt øjne på, samt at stævnelederen er klar over, hvilke pokaler, der skal deles ud.",
+     "citat_pos": 508
+    },
+    {
+     "citat": "Derfor vil vi opfordre til, at det \ner to personer, der deler medaljer ud, således at der er to sæt øjne på, samt at stævnelederen er \nklar over, hvilke pokaler, der skal deles ud.",
+     "citat_pos": 508
+    }
+   ]
+  }
+ ],
+ "candidates": [
+  {
+   "number": 1,
+   "status": "certain",
+   "role": "decision",
+   "key": "K1",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 3,
+     "emne": "Tilmelding til DM-hold",
+     "tekst": "DM-hold placeres ikke under DM-ugen. Alle hold, som klubberne vil tilmelde til DM-hold, skal tilmeldes ved første runde i januar.",
+     "udfald": "vedtaget",
+     "span": [
+      111,
+      127
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 3,
+     "emne": "DM-hold, tilmelding",
+     "tekst": "DM-hold passer ikke ind under DM-ugen. Alle hold, klubberne vil tilmelde til DM-hold, skal tilmeldes ved første runde i januar.",
+     "udfald": "vedtaget",
+     "span": [
+      111,
+      127
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 3,
+     "emne": "Tilmelding af DM-hold",
+     "tekst": "Alle hold, som klubberne ønsker at tilmelde til DM, skal tilmeldes ved første runde i januar.",
+     "udfald": "vedtaget",
+     "span": [
+      120,
+      127
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 0,
+     "emne": "Tilmelding til DM-hold",
+     "tekst": "Alle hold, som klubberne ønsker at tilmelde til DM-hold, skal tilmeldes ved første runde i januar. DM-hold afvikles ikke som en del af DM-ugen.",
+     "udfald": "vedtaget",
+     "span": [
+      111,
+      127
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "samt at alle de hold, klubberne gerne vil tilmelde, skal tilmeldes ved første runde i januar."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "samt at alle de hold, klubberne gerne vil tilmelde, skal tilmeldes ved første runde i januar."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "samt at alle de hold, klubberne gerne vil \ntilmelde, skal tilmeldes ved første runde i januar."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "duplicate",
+   "reason": "Del af samme samlet godkendte ændring af Krav til afvikling af Danske Mesterskaber.",
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 0,
+     "emne": "Krav til afvikling af DM, streaming",
+     "tekst": "Teksten om streaming slettes under arrangørens ansvar og under DSF's ansvar i Krav til afvikling af Danske Mesterskaber, herunder reglen om at arrangøren skal meddele stævneudvalget senest 60 dage før, hvis arrangøren selv vil stå for streaming.",
+     "udfald": "vedtaget",
+     "span": [
+      302,
+      312
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 1,
+     "emne": "Krav til afvikling af DM – streaming",
+     "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten om, at streamingudstyr kan lånes af forbundet og at klubben skal klargøre systemet og sørge for internetforbindelse, under arrangørens ansvar. Under DSF's ansvar slettes den uddybende tekst (herunder fristen på 60 dage for at meddele, at arrangøren selv vil streame), så der blot står 'streaming'.",
+     "udfald": "vedtaget",
+     "span": [
+      302,
+      312
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 5,
+     "reason": "Del af samme samlet godkendte ændring af Krav til afvikling af Danske Mesterskaber."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 5,
+     "reason": "Samme ændring af streamingteksten som kandidat 5."
+    },
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 5,
+     "reason": "Samme ændring om streaming som kandidat 5, hvis citat viser vedtagelsen."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "status": "certain",
+   "role": "decision",
+   "key": "K3",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "sonnet-1",
+     "index": 1,
+     "emne": "Krav til afvikling af DM, konkurrencestyringssystem",
+     "tekst": "Teksten om, at konkurrencestyringssystem stilles til rådighed efter aftale, slettes under DSF's ansvar; der skal blot stå konkurrencestyringssystem.",
+     "udfald": "vedtaget",
+     "span": [
+      391,
+      400
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 1,
+     "emne": "Krav til afvikling af Danske Mesterskaber, konkurrencestyringssystem",
+     "tekst": "Teksten om, at konkurrencestyringssystem stilles til rådighed efter aftale, slettes under DSF's ansvar. Der skal blot stå konkurrencestyringssystem.",
+     "udfald": "vedtaget",
+     "span": [
+      391,
+      400
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 2,
+     "emne": "Krav til afvikling af DM – konkurrencestyringssystem",
+     "tekst": "I Krav til afvikling af Danske Mesterskaber slettes teksten om, at konkurrencestyringssystem stilles til rådighed for arrangøren efter aftale; under DSF's ansvar står der blot 'konkurrencestyringssystem'.",
+     "udfald": "vedtaget",
+     "span": [
+      391,
+      400
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 5,
+     "reason": "Del af samme samlet godkendte ændring af Krav til afvikling af Danske Mesterskaber."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Under ’DSF har ansvaret for’ slettes teksten under konkurrencestyringssystem:"
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Under ’DSF har ansvaret for’ slettes teksten under konkurrencestyringssystem:"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "status": "certain",
+   "role": "decision",
+   "key": "K4",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 1,
+     "emne": "Krav til afvikling af DM, bagtæppe",
+     "tekst": "DSF har ansvar for bagtæppe ved Danske Mesterskaber. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+     "udfald": "vedtaget",
+     "span": [
+      414,
+      430
+     ]
+    },
+    {
+     "run": "sonnet-1",
+     "index": 2,
+     "emne": "Krav til afvikling af DM, bagtæppe",
+     "tekst": "DSF har ansvar for bagtæppe ved Danske Mesterskaber. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+     "udfald": "vedtaget",
+     "span": [
+      414,
+      430
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 2,
+     "emne": "Krav til afvikling af Danske Mesterskaber, bagtæppe",
+     "tekst": "DSF har ansvar for bagtæppe ved Danske Mesterskaber. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+     "udfald": "vedtaget",
+     "span": [
+      414,
+      430
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 1,
+     "emne": "Bagtæppe ved danske mesterskaber",
+     "tekst": "DSF har ansvar for bagtæppet ved danske mesterskaber. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+     "udfald": "vedtaget",
+     "span": [
+      414,
+      430
+     ]
+    },
+    {
+     "run": "opus-1",
+     "index": 3,
+     "emne": "Krav til afvikling af DM – bagtæppe",
+     "tekst": "Ved Danske Mesterskaber har DSF ansvaret for bagtæppet. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF.",
+     "udfald": "vedtaget",
+     "span": [
+      414,
+      430
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "duplicate",
+     "duplicate_of": 5,
+     "reason": "Del af samme samlet godkendte ændring af Krav til afvikling af Danske Mesterskaber."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes af DSF."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "DSF har ansvar for bagtæppe. Hvis arrangøren selv vil lave bagtæppet, skal det godkendes \naf DSF."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "status": "certain",
+   "role": "decision",
+   "key": "K5",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 0,
+     "emne": "Krav til afvikling af DM, streaming og konkurrencestyringssystem",
+     "tekst": "I Krav til afvikling af Danske Mesterskaber slettes de tidligere tekster om, at streamingudstyr og konkurrencestyringssystem stilles til rådighed efter aftale, og om at arrangøren skal melde egen streaming til stævneudvalget senest 60 dage før. Der skal blot stå streaming (arrangøren sørger for internetforbindelse) og konkurrencestyringssystem under DSF's ansvar.",
+     "udfald": "vedtaget",
+     "span": [
+      430,
+      453
+     ]
+    },
+    {
+     "run": "sonnet-2",
+     "index": 0,
+     "emne": "Krav til afvikling af Danske Mesterskaber, streaming",
+     "tekst": "Teksten om streaming slettes under arrangørens ansvar og DSF's ansvar i Krav til afvikling af Danske Mesterskaber (herunder at udstyr kan lånes, og at arrangøren skal meddele 60 dage før, hvis denne selv vil stå for streaming). Der skal blot stå streaming (arrangøren sørger for internetforbindelse).",
+     "udfald": "vedtaget",
+     "span": [
+      430,
+      453
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 0,
+     "emne": "Streaming og konkurrencestyringssystem ved DM",
+     "tekst": "I 'Krav til afvikling af Danske Mesterskaber' slettes teksten om streaming under arrangørens ansvar (udstyr kan lånes af forbundet, klubben klargør systemet og sørger for internetforbindelsen) og teksten om streamingudstyr og konkurrencestyringssystem under DSF's ansvar, så der blot står streaming og konkurrencestyringssystem.",
+     "udfald": "vedtaget",
+     "span": [
+      430,
+      447
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og Eva søger for rettelserne bliver indsat."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "aendring",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Ændret af tekst i Krav til afvikling af Danske Mesterskaber blev godkendt af resten af udvalget og \nEva søger for rettelserne bliver indsat."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "status": "certain",
+   "role": "decision",
+   "key": "K6",
+   "verdict": "keep",
+   "reason": null,
+   "members": [
+    {
+     "run": "stored",
+     "index": 2,
+     "emne": "Uddeling af medaljer og pokaler ved mesterskaber",
+     "tekst": "Stævneudvalget opfordrer til, at to personer deler medaljer ud ved mesterskaber, og at stævnelederen er klar over, hvilke pokaler der skal uddeles.",
+     "udfald": "vedtaget",
+     "span": [
+      508,
+      530
+     ]
+    },
+    {
+     "run": "haiku-1",
+     "index": 2,
+     "emne": "Uddeling af medaljer og pokaler ved mesterskaber",
+     "tekst": "Medaljer ved mesterskaber uddeles af to personer, så der er to sæt øjne på, og stævnelederen skal kende de pokaler, der skal uddeles til de enkelte stævner.",
+     "udfald": "vedtaget",
+     "span": [
+      514,
+      530
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Derfor vil vi opfordre til, at det er to personer, der deler medaljer ud, således at der er to sæt øjne på, samt at stævnelederen er klar over, hvilke pokaler, der skal deles ud."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Derfor vil vi opfordre til, at det er to personer, der deler medaljer ud, således at der er to sæt øjne på, samt at stævnelederen er klar over, hvilke pokaler, der skal deles ud."
+    },
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "ny",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Derfor vil vi opfordre til, at det \ner to personer, der deler medaljer ud, således at der er to sæt øjne på, samt at stævnelederen er \nklar over, hvilke pokaler, der skal deles ud."
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "status": "certain",
+   "role": "reject",
+   "key": null,
+   "verdict": "reject",
+   "reason": "Kun en påmindelse til dommerne om en eksisterende regel, ingen beslutning.",
+   "members": [
+    {
+     "run": "haiku-1",
+     "index": 4,
+     "emne": "Indvejning af DM-hold ved runder og finaler",
+     "tekst": "Ved DM-hold runder og finaler skal løfterne indvejes som hold, og dommerne skal være opmærksomme på dette.",
+     "udfald": "vedtaget",
+     "span": [
+      558,
+      563
+     ]
+    }
+   ],
+   "verdicts": [
+    {
+     "verdict": "keep",
+     "kategori": "staevner",
+     "udfald": "vedtaget",
+     "handling": "bekraeftelse",
+     "niveau": "udvalgsbeslutning",
+     "citat": "Det er vigtigt at huske dommerne på, at løfterne skal indvejes som hold."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Kun en påmindelse til dommerne om en eksisterende regel, ingen beslutning."
+    },
+    {
+     "verdict": "reject",
+     "reason": "Kun en påmindelse til dommerne, ikke en beslutning."
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "judges": [
+  {
+   "judge": 1,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4717,
+    "output": 2495,
+    "cost_usd": 0.0885,
+    "seconds": 21,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 2,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4747,
+    "output": 2856,
+    "cost_usd": 0.096,
+    "seconds": 24,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  },
+  {
+   "judge": 3,
+   "provenance": {
+    "model": "claude-opus-5-5",
+    "cli": "2.1.294",
+    "prompt": "8c7f384ca308",
+    "effort": "high"
+   },
+   "usage": {
+    "input": 2,
+    "cache_read": 4351,
+    "cache_write": 4707,
+    "output": 3015,
+    "cost_usd": 0.0988,
+    "seconds": 25,
+    "attempts": 1,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   }
+  }
+ ]
+}

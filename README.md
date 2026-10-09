@@ -200,5 +200,40 @@ uv run --with-requirements tests/requirements.txt pytest
 
 `.github/workflows/tests.yml` runs them, and a render-only build, on every pull request.
 
+### Evaluation
+
+Two extraction runs agree on only ~90% of decisions, so comparing runs cannot tell better from different.
+`evaluate.py` builds an answer key once, judged by Opus, and scores any later change against it. Everything it
+writes is under `eval/`; it never touches `data/` or `regelsaet/`.
+
+```bash
+uv run evaluate.py select                    # ~20 recurring rules and ~25 documents (eval/selection.json)
+uv run evaluate.py extract --name stored     # today's extractions as a run; other names call Claude
+uv run evaluate.py key-decisions --max-cost 10 --docs rep2013,elite18052021
+uv run evaluate.py key-rules --max-cost 10 --rules licensgebyr,årsafgift
+uv run evaluate.py score --run stored --run sonnet-1
+uv run evaluate.py score-rules               # data/regler, or --rules-dir/--decisions-dir
+```
+
+The decisions key clusters the decisions of several runs per document (`--runs`, default `stored sonnet-1
+sonnet-2 haiku-1 opus-1`); two judges keep, reject or merge each candidate and add what every run missed, by the
+extraction prompt's own criteria. That a decision exists and which fields it has are judged apart, and field
+accuracy is scored only on the fields the judges agree on. The rules key gives two judges passages from all
+documents (around the rule's decisions, other decisions using its title's words, and its keywords, amounts first)
+and asks for its true timeline and what was in force each year, or that it is unknown. Where two judges disagree, a
+third answers blind, and two of three decide; what is still split is left out of the scores.
+
+Every command that calls Claude takes `--max-cost` and `--pilot N` or `--docs`/`--rules`, prints how many calls it
+plans, and adds a line to `eval/runs.jsonl`; the scores go to `eval/reports/`. Every answer is kept, so a cut-off
+build or a pilot is never paid twice, and the rules judges are told the selection's date, not today's. An answer
+kept for other input (changed data, prompt, model or effort) stops the command until `--rejudge` (or `--force` for
+extractions) says to pay for a new one. `--rederive` rebuilds the keys from the kept answers alone (the rules
+keys on the passages they were judged on), never calling Claude, e.g. after a change to how answers are agreed.
+
+Errors a check against the minutes finds in the judges' answers go to `eval/key/corrections.json`, each with its
+reason and evidence (document and quote). They are applied on top of the judges whenever a key is written or
+scored, and listed in the reports. A rule marked `soft` in `eval/selection.json` (loosely scoped, so which
+decisions are its events is arbitrary) is reported but left out of the overall rules figures.
+
 `DSF_Generelt_Regelsaet.docx` and `DSF_Verificeringsrapport.docx` are the earlier manual analysis
 (March 2026), kept for reference.

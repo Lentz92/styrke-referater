@@ -1,0 +1,61 @@
+{
+ "doc_id": "elite14122021",
+ "sha256": "74a888277aba354fd304c424db9110a52ccd491f455b3db64e775857abc3aa45",
+ "run": "haiku-1",
+ "model": "claude-haiku-5-5",
+ "provenance": {
+  "model": "claude-haiku-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 1685,
+  "output": 2280,
+  "cost_usd": 0.0015,
+  "seconds": 11,
+  "attempts": 1,
+  "models": [
+   "claude-haiku-5-5"
+  ]
+ },
+ "moededato": "2021-12-14",
+ "beslutninger": [
+  {
+   "emne": "Evaluering af landsholdstropper",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Landsholdstropperne skal evalueres og justeres halvårligt, første gang pr. 1. juli 2022.",
+   "citat": "Landsholdstruppene vil blive evalueret og justeret halvårlig. Første gang pr. 1. juli 2022",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 64,
+   "citat_side": 1
+  },
+  {
+   "emne": "Udtagelsesprocedure til VM på hjemmebane",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "DSF stiller med fulde hold (8 herrer og 8 kvinder) til VM på hjemmebane. Atleter med VM-krav udtages i rækkefølge efter A- og B-krav, og er der ikke 8 med krav, udtages de resterende efter IPF GL-points; hvis flere end 8 har VM-krav, udtages de 8 med højest IPF GL-points. DSF kan supplere med atleter uden for landsholdet med højest IPF GL-points, under forudsætning af deltagelse i DM i marts 2022, og hver nation må højst deltage med 2 atleter i én vægtklasse.",
+   "citat": "atleter som har klaret VM krav udtages i rækkefølge A og B krav.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2022-12-31",
+   "citat_fundet": true,
+   "citat_pos": 148,
+   "citat_side": 1
+  }
+ ]
+}

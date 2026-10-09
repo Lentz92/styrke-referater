@@ -34,7 +34,8 @@ def _slug_registry(tmp_path_factory, monkeypatch):
 # (the last step repeats): "ok"; "error" (exit 1, costs 0.10); "other" (answers with Haiku); "sleep";
 # "helper-before"/"helper-after" (a helper model that writes less, sorting before/after the main one);
 # "keyed" (modelUsage keyed by another name than canonicalModel, plus an entry that is not an object).
-# output.json, if present, is the structured output.
+# output.json, if present, is the structured output; outputs.json, if present, lists one per call (the last
+# repeats). Each call's arguments are appended to argv.jsonl.
 FAKE_CLAUDE = """\
 import json, sys, time
 from pathlib import Path
@@ -42,6 +43,9 @@ from pathlib import Path
 here = Path(__file__).parent
 with (here / "invocations").open("a") as log:
     log.write(("version" if sys.argv[1:] == ["--version"] else "call") + "\\n")
+if sys.argv[1:] != ["--version"]:
+    with (here / "argv.jsonl").open("a") as log:
+        log.write(json.dumps(sys.argv[1:]) + "\\n")
 if sys.argv[1:] == ["--version"]:
     if (here / "version_fails").exists():
         sys.exit(1)
@@ -72,8 +76,11 @@ if step == "error":
     print(json.dumps({**result, "result": "API Error: overloaded"}))
     sys.exit(1)
 output = here / "output.json"
-print(json.dumps({**result, "result": "", "structured_output": json.loads(output.read_text()) if output.exists()
-                  else {"answer": "ok"}}))
+answer = json.loads(output.read_text()) if output.exists() else {"answer": "ok"}
+if (here / "outputs.json").exists():
+    outputs = json.loads((here / "outputs.json").read_text())
+    answer = outputs[min(calls, len(outputs)) - 1]
+print(json.dumps({**result, "result": "", "structured_output": answer}))
 """
 
 
@@ -86,6 +93,15 @@ class FakeClaude:
 
     def answer(self, output: dict) -> None:
         (self.bin_dir / "output.json").write_text(json.dumps(output))
+
+    def answers(self, *outputs: dict) -> None:
+        """One structured output per call, in order; the last repeats."""
+        (self.bin_dir / "outputs.json").write_text(json.dumps(outputs))
+
+    def calls(self) -> list[list[str]]:
+        """The arguments of every Claude call so far, in order."""
+        log = self.bin_dir / "argv.jsonl"
+        return [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
 
     def fail_version(self) -> None:
         (self.bin_dir / "version_fails").touch()

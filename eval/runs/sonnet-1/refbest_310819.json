@@ -1,0 +1,112 @@
+{
+ "doc_id": "refbest_310819",
+ "sha256": "8463a00240e10e35b2770a718cbbd622a16ee1baf49b32328fd04bbd062d2ae3",
+ "run": "sonnet-1",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 2644,
+  "output": 1410,
+  "cost_usd": 0.0253,
+  "seconds": 9,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2019-08-31",
+ "beslutninger": [
+  {
+   "emne": "Rekorder og resultater ved positiv dopingtest",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Rekorder fjernes med tilbagevirkende kraft efter en positiv dopingtest. Resultater registreres som ikke valide fra forseelsen og frem, og løfterens profil fremstår som inaktiv.",
+   "citat": "Rekorder fjerne efter positive test med tilbagevirkende kraft. Resultater bliver registeret som ikke valide fra forseelsen og frem, og løfters profil vil fremstå som inaktiv.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 331,
+   "citat_side": 2
+  },
+  {
+   "emne": "Offentliggørelse af positive dopingtest",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Positive dopingtest meldes officielt ud, så snart der foreligger en endelig dom, og ikke som tidligere kun på repræsentantskabsmøder.",
+   "citat": "Der vil blive meldt officielt ud ved en evt. positive test så snart, at der forlægger en endelig dom, og ikke som tidligere kun til repræsentantskabsmøder.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 360,
+   "citat_side": 2
+  },
+  {
+   "emne": "Krav om regelmæssig træning i klub",
+   "kategori": "medlemskab",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "For at stille op for en klub skal løfteren træne regelmæssigt i klubben, mindst én gang om ugen. Ved lang afstand til klub eller særlige omstændigheder kan klubben udstede en dispensation med vilkår, som dopingkontroludvalget skal orienteres om og godkende.",
+   "citat": "At Dansk Styrkeløft Forbund stiller krav om, at man for at kunne stille op for en klub skal træne regelmæssigt i pågældende klub – mindst én gang om ugen.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 397,
+   "citat_side": 2
+  },
+  {
+   "emne": "Struktur for JM/SM",
+   "kategori": "staevner",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Der bør arbejdes med en ny struktur, hvor JM/SM i klassisk styrkeløft og klassisk bænkpres sammenlægges med JM/SM i styrkeløft og bænkpres, for at spare dommerressourcer og styrke arrangørens økonomi.",
+   "citat": "Der bør arbejdes med en anden struktur, således, at JM/SM-klassik styrkeløft og klassisk bænkpres sammenlægges med JM/SM-styrkeløft og bænkpres.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 485,
+   "citat_side": 2
+  },
+  {
+   "emne": "Nationel computertest før international dommerprøve",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "En national A-dommer, der skal op til international dommerprøve, skal bestå den nationale computertest, inden vedkommende indstilles til den internationale prøve.",
+   "citat": "vil kandidaten skulle bestå den nationale computertest, inden kandidaten indstilles til den internationale prøve.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 540,
+   "citat_side": 3
+  }
+ ]
+}

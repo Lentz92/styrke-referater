@@ -1,0 +1,26 @@
+{
+ "doc_id": "elite13022009",
+ "sha256": "623ed03818b23542cb2d6612d25e73b82f34ff26f72fdb8125e81e619ce78964",
+ "run": "sonnet-1",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 1365,
+  "output": 183,
+  "cost_usd": 0.0079,
+  "seconds": 4,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2009-02-13",
+ "beslutninger": []
+}

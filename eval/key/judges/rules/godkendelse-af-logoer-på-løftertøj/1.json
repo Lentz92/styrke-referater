@@ -1,0 +1,101 @@
+{
+ "fingerprint": "2c334942e48e704e",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 82514,
+  "output": 3048,
+  "cost_usd": 0.7215,
+  "seconds": 30,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P43",
+    "quote": "Hvis et logo kun omfatter én person, er prisen kr. 500,- \nHvis et logo omfatter alle medlemmer af en klub, er prisen kr. 1.000,-",
+    "value_after": null,
+    "effect": "foreslaaet"
+   },
+   {
+    "passage": "P59",
+    "quote": "Tillæg til forslag: alle sponsor logoer (dokumenteret sponsor), foruden klublogoet, der overskrider 5x2 cm der ønskes godkendt skal indsendes til DSF og påføres en godkendt liste på forbundets hjemmesiden.    \nForslaget blev godkendt med 41 for 0 imod 5 blanket",
+    "value_after": "Ingen afgift; sponsorlogoer over 5x2 cm godkendes af DSF, listes på hjemmeside",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P57",
+    "quote": "Det nuværende afsnit 2 erstattes med ovennævnte. \nForslaget blev trukket",
+    "value_after": null,
+    "effect": "trukket"
+   },
+   {
+    "passage": "P127",
+    "quote": "Da det ikke er en klub T-shirt, skal \nlogoet godkendes af DSF og registreres på hjemmesiden.",
+    "value_after": "Ingen afgift; sponsorlogoer over 5x2 cm godkendes af DSF, listes på hjemmeside",
+    "effect": "bekraeftet"
+   }
+  ],
+  "years": [
+   {
+    "year": 2017,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2018,
+    "state": "unknown",
+    "event": null
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 4
+   }
+  ]
+ }
+}

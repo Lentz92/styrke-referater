@@ -1,0 +1,161 @@
+{
+ "fingerprint": "c92714115b13e7f3",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 63404,
+  "output": 3491,
+  "cost_usd": 0.5775,
+  "seconds": 31,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P5",
+    "quote": "Der accepteres ikke afvigelser fra rejseplanerne i forb. med rejser med landsholdene. Eliteudvalget bestemmer suverænt hvordan rejsen foretages og hvornår udrejse og hjemrejse foregår. Som udgangspunkt vægtes at man rejser som ”hold”",
+    "value_after": "Eliteudvalget bestemmer rejseplan; ingen afvigelser; rejser som hold",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P10",
+    "quote": "Bestyrelsen har samtidig besluttet, at Jan Lyhne på Elliteudvalgets vegne har ansvaret for at bestille rejser til alle internationale stævner. Undtagelsesvis kan Helge Laursen bestille rejser i dialog med Jan Lyhne. Jan Lyhne bestiller kun rejser, som ligger inden for det enkelte stævnes budgetramme.",
+    "value_after": "Eliteudvalget bestiller rejser inden for budget; ankomst to dage før, hjem dagen efter",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P14",
+    "quote": "Beslutningen blev, at det stadig som hovedregel er 3 dages reglen, som gælder, men DSF’s kasserer vil påtage sig opgaven at administrere de beløb, som enkeltpersoner skal betale for at kunne blive sammen med holdet under hele stævnet.",
+    "value_after": "3-dagesregel; længere ophold med holdet mod egenbetaling via kasserer",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P53",
+    "quote": "Som udgangspunkt er det DSF der arrangerer og planlægger rejser i forbindelse med deltagelse ved mesterskaber i udlandet.",
+    "value_after": "DSF arrangerer og planlægger rejser til mesterskaber i udlandet",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P61",
+    "quote": "Alternativt kan atleter vælge selv, at købe flybilletter, hvorved egenbetalingen bortfalder. Nærmere retningslinjer for dette følger.",
+    "value_after": "DSF booker; atlet kan selv købe flybilletter, så bortfalder egenbetaling",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P65",
+    "quote": "Hvis man selv ønsker, at booke flybilleter er det muligt men omfatter i så fald også eget ansvar for transport til- og fra lufthavn. En sådan beslutning gælder hele kalenderåret og ikke kun enkelte stævner.",
+    "value_after": "Egen flybooking mulig for hele kalenderåret; eget ansvar for lufthavnstransport og ændringer",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P79",
+    "quote": "atleten vælge selv at bestille/booke flybilletter og informere DSF (Peter Andersen/Bjarte Vik Larsen) om rejseplan eller lade DSF bestille/booke og herefter blive faktureret beløbet. Beslutningen skal tages ved/lige efter preliminary nomination",
+    "value_after": "Fuld egenbetaling: egen booking eller DSF faktureret; rejsedetaljer 10 dage før final",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P85",
+    "quote": "Fremadrettet ligges der op til at atleter, trænere mm. selv booker fly, da dette giver mulighed for en billigere pris og alle slipper for bookingfee fra rejsebureau. Det vil fortsat være muligt at booke gennem forbundet. Vælger man dette, vil den ekstra udgift i form af bookingfee (5-600,- kr)",
+    "value_after": "Selv booke fly; forbundsbooking mod bookingfee og prisforskel i egenbetaling",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P87",
+    "quote": "På landsholdene er det allerede kutyme, at løfterne har den mulighed. Vi opfordrer til at dommere og trænere bruger samme mulighed for at mindske de samlede rejseomkostninger.",
+    "value_after": "Selv booke fly; forbundsbooking mod bookingfee og prisforskel i egenbetaling",
+    "effect": "bekraeftet"
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2012,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 4
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 9
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 9
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 9
+   }
+  ]
+ }
+}

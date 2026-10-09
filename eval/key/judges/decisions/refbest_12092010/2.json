@@ -1,0 +1,42 @@
+{
+ "fingerprint": "5c1987bdd7d92649",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 1567,
+  "output": 357,
+  "cost_usd": 0.0206,
+  "seconds": 6,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "reject",
+    "duplicate_of": null,
+    "reason": "Aftalen om DSF's bidrag gælder kun ét enkelt stævne (VM Master Bænk 2011) og er ikke en stående regel.",
+    "emne": null,
+    "kategori": null,
+    "udfald": null,
+    "handling": null,
+    "niveau": null,
+    "tekst": null,
+    "citat": null,
+    "side": null,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}

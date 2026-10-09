@@ -1,6 +1,6 @@
 import pytest
 
-from analyze import ClaudeError, RunBudget, Usage, _run_parallel
+from analyze import ClaudeError, RunBudget, Usage, run_parallel
 
 
 def test_jobs_after_the_deadline_are_skipped_and_counted():
@@ -10,7 +10,7 @@ def test_jobs_after_the_deadline_are_skipped_and_counted():
         ran.append(n)
         return f"job {n}", Usage(cost_usd=0.5)
 
-    step = _run_parallel([1, 2, 3], job, workers=2, label="Test", budget=RunBudget(minutes=-1))
+    step = run_parallel([1, 2, 3], job, workers=2, label="Test", budget=RunBudget(minutes=-1))
     assert (ran, step.calls, step.skipped, step.usage.cost_usd) == ([], 0, 3, 0.0)
 
 
@@ -21,7 +21,7 @@ def test_jobs_after_the_cost_limit_are_skipped_and_the_limit_is_named(caplog):
         budget.add(0.5)  # ask_claude adds the cost of each attempt as it completes
         return f"job {n}", Usage(cost_usd=0.5)
 
-    step = _run_parallel([1, 2, 3, 4], job, workers=1, label="Test", budget=budget)
+    step = run_parallel([1, 2, 3, 4], job, workers=1, label="Test", budget=budget)
     assert (step.calls, step.skipped, step.usage.cost_usd) == (2, 2, 1.0)
     assert "skipped 2 because the cost limit of 1.00 USD is reached" in caplog.text
 
@@ -32,7 +32,7 @@ def test_failures_are_counted_with_their_usage_and_the_rest_still_runs():
             raise ClaudeError("boom", Usage(cost_usd=0.25, attempts=3))
         return f"job {n}", Usage(model="sonnet", output_by_model={"claude-sonnet-5-5": 10}, cost_usd=0.5, attempts=1)
 
-    step = _run_parallel([1, 2, 3], job, workers=2, label="Test")
+    step = run_parallel([1, 2, 3], job, workers=2, label="Test")
     assert (step.calls, step.failed, step.skipped) == (3, 1, 0)
     assert (step.usage.cost_usd, step.usage.attempts, step.usage.output_tokens) == (1.25, 5, 20)
     assert step.usage.models == ("claude-sonnet-5-5",)

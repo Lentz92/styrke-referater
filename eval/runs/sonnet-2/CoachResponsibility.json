@@ -1,0 +1,112 @@
+{
+ "doc_id": "CoachResponsibility",
+ "sha256": "347e2d57f1fc511dcadc59c4ca8fda21459f8644754f7ecde71e9fb107654c52",
+ "run": "sonnet-2",
+ "model": "claude-sonnet-5-5",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "cec0ea1a5717",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3000,
+  "cache_write": 2008,
+  "output": 1651,
+  "cost_usd": 0.0251,
+  "seconds": 12,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": null,
+ "beslutninger": [
+  {
+   "emne": "Antal coaches i opvarmnings- og wrapping-område",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Ved internationale stævner må der pr. løftergruppe højst være 3 coaches ved 1 atlet, 5 ved 2-3 atleter og 6 ved 4 atleter i opvarmningsområdet. I wrapping-området er grænsen 2 coaches ved 1 atlet, 3 ved 2-3 atleter og 4 ved 4 atleter.",
+   "citat": "1 Athlete = 3 Coaches  \n2- 3 Athletes = 5 Coaches  \n4 Athletes = 6 Coaches which is the maximum number of Coaches allowed.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 98,
+   "citat_side": 1
+  },
+  {
+   "emne": "Head coachs ansvar for adfærd, adgang og orden",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head coach er ansvarlig for coaches' og løfteres adfærd i opvarmnings- og wrapping-området, kun én coach må følge atleterne til coachingzonen og skal være korrekt klædt. Head coach skal sikre, at assistenttrænere har badge med foto, at udstyr og træningsområde efterlades ryddeligt, og at løfterne er klar til at gå på platformen, når de kaldes, også til sejrsceremonien.",
+   "citat": "The behaviour of the coaches and lifters in the warm up and wrapping area is the responsibility    \n     of the Head Coach",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 224,
+   "citat_side": 1
+  },
+  {
+   "emne": "Head coachs ansvar ved vejning og udstyrskontrol",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head coach skal sikre, at løftere ved vejning fremviser Appendix 2, løfterprofil og pas for dommerne, og at løfternes udstyr ved udstyrskontrollen er i overensstemmelse med IPF's tekniske regler.",
+   "citat": "The Head Coach must ensure at the equipment check lifters equipment is in accordance with IPF  \n    Technical rules",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 352,
+   "citat_side": 1
+  },
+  {
+   "emne": "Coaches' overholdelse af IPF antidopingregler",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head coach og assistenttrænere i opvarmnings-, wrapping- og løfteområdet skal anerkende kravet om at overholde alle IPF's antidopingregler. Overtrædelse behandles efter IPF's antidopingregler.",
+   "citat": "The Head Coach and assistant coaches in the warm-up, wrapping and lifting area must acknowledge their  \n       Requirement to adhere to all the IPF Anti-Doping rules.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 371,
+   "citat_side": 1
+  },
+  {
+   "emne": "Alkoholforbud i opvarmnings- og wrapping-område",
+   "kategori": "internationalt",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "eksternt_krav",
+   "tekst": "Head coach, assistenttrænere og løftere må ikke drikke alkohol i opvarmnings- og wrapping-områderne, og ingen påvirket af alkohol må opholde sig i opvarmningsrummet. Head coach skal sikre dette.",
+   "citat": "any drinking of  alcohol by Head Coach, assistant coaches and your  \n        lifters in the mentioned areas above is strictly forbidden",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 452,
+   "citat_side": 1
+  }
+ ]
+}

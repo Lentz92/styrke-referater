@@ -1,0 +1,175 @@
+{
+ "fingerprint": "b5e7ab82b2c448e0",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 82775,
+  "output": 4003,
+  "cost_usd": 0.7427,
+  "seconds": 34,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P14",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret)- Licens: kr. 200,- (Uændret). Startgebyrer: kr. 200,- (Ændret).",
+    "value_after": "1.000 kr. pr. klub pr. år",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P20",
+    "quote": "Tilføjes; En klub, som tilmelder sig DSF for første gang, skal ikke betale årsafgift det år, hvor  \ntilmelding finder sted. Alle andre betaler fuld årsafgift.",
+    "value_after": "1.000 kr. pr. klub; nye klubber fritaget første år",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P39",
+    "quote": "Licens og årsafgiftopkrævning. Vi ønsker vi at få tilsendt en faktura/regning, da vi ellers ikke har nogen \ndokumentation til klubbens regnskaber.",
+    "value_after": null,
+    "effect": "forkastet"
+   },
+   {
+    "passage": "P45",
+    "quote": "Bestyrelsen vil til repræsentantskabsmødet foreslå, at der i vedtægterne for DSF ændres \nbetalingsdato for årsafgiften fra d. 15. december til mellem d. 1. og 15. januar.",
+    "value_after": null,
+    "effect": "foreslaaet"
+   },
+   {
+    "passage": "P42",
+    "quote": "Bestyrelsen foreslår, at der i vedtægterne for DSF ændres betalingsdato for årsafgiften fra d. 15. \ndecember til i stedet mellem d. 1. og 15. januar.",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P57",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P68",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P75",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P83",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P89",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P97",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 300,- (Jævnfør forslag)).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P104",
+    "quote": "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 300,- (uændret).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   },
+   {
+    "passage": "P113",
+    "quote": "Årsafgift: kr. 1.000,- (uændret) - Licens: kr. 300,- (uændret).",
+    "value_after": "1.000 kr. pr. klub; betales 1.-15. januar; nye klubber fritaget første år",
+    "effect": "bekraeftet"
+   }
+  ],
+  "years": [
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 5
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 7
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 8
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 9
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 10
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 11
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 12
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 13
+   }
+  ]
+ }
+}

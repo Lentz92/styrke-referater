@@ -1,0 +1,153 @@
+{
+ "fingerprint": "e29b657f2431551a",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "ddfbb64bd0e5",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2141,
+  "cache_write": 84264,
+  "output": 2735,
+  "cost_usd": 0.7292,
+  "seconds": 26,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "events": [
+   {
+    "passage": "P4",
+    "quote": "I forbindelse med udtagelse af løftere til VM 2011, så vil de mastersløftere som de sidste år har repræsenteret Dk i udlandet havde fortrinsret til udtagelse. Kriterier til udtagelse af løfterne laves af mastersklubben, ligesom en indstilling om udtagelse laves af mastersklubben. Den endelige udtagelse laves af DSF´s bestyrelse.",
+    "value_after": "Mastersklubben laver kriterier og indstilling; bestyrelsen udtager endeligt",
+    "effect": "indfoert"
+   },
+   {
+    "passage": "P6",
+    "quote": "Masterklubben kan dermed ikke eksempelvis fastsætte udtagelseskriterier (hvilke stævner man skal stille op til for at komme ud at løfte internationalt til masterstævner, hvilke kg man skal løfte etc.). Udtagelseskriterier skal køre under eliteudvalget",
+    "value_after": "Udtagelseskriterier fastsættes af eliteudvalget, ikke af Masterklubben",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P37",
+    "quote": "Ved udtagelse af løftere til masterlandshold, som skal repræsentere Danmark ved internationale stævner, vil der som udgangspunkt blive stillet krav om, at løfteren ved officielt stævne i Danmark eller udlandet har fået godkendt de vedtagne kvalifikationskrav inden for de sidste 14 måneder",
+    "value_after": "Kvalkrav inden 14 måneder, deltagelse sidste DM, fortrinsret efter bedste wilks",
+    "effect": "aendret"
+   },
+   {
+    "passage": "P45",
+    "quote": "Beslutningen om at der kan dispenseres fra kvalifikationskrav til internationale stævner skal i fremtiden træffes af bestyrelsen og ikke af udvalgene selv.",
+    "value_after": null,
+    "effect": "foreslaaet"
+   },
+   {
+    "passage": "P56",
+    "quote": "Efter en god og konstruktiv debat blev der vedtaget ikke at ændre på retningslinjerne. De nuværende retningslinjer er således stadigvæk gældende for international deltagelse.",
+    "value_after": null,
+    "effect": "forkastet"
+   },
+   {
+    "passage": "P97",
+    "quote": "Der stilles endvidere krav om, at løfteren senest 14 måneder forud for det stævne, som der søges om deltagelse, skal have klaret de kvalifikationskrav, som på tidspunktet for tilmelding til pågældende stævne er fastsat af masterudvalget",
+    "value_after": "Kvalkrav inden 14 måneder, deltagelse sidste DM, overskud udtages efter point",
+    "effect": "bekraeftet"
+   }
+  ],
+  "years": [
+   {
+    "year": 2009,
+    "state": "event",
+    "event": 1
+   },
+   {
+    "year": 2010,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2011,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2012,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2013,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2014,
+    "state": "event",
+    "event": 2
+   },
+   {
+    "year": 2015,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2016,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2017,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2018,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2019,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2020,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2021,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2022,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2023,
+    "state": "event",
+    "event": 3
+   },
+   {
+    "year": 2024,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2025,
+    "state": "event",
+    "event": 6
+   },
+   {
+    "year": 2026,
+    "state": "event",
+    "event": 6
+   }
+  ]
+ }
+}

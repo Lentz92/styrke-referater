@@ -1,0 +1,74 @@
+{
+ "fingerprint": "3c51a7557d2fee50",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "8c7f384ca308",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 4351,
+  "cache_write": 4953,
+  "output": 1449,
+  "cost_usd": 0.0695,
+  "seconds": 13,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "candidates": [
+   {
+    "candidate": 1,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Udlån af indvejningsvægte",
+    "kategori": "udstyr",
+    "udfald": "vedtaget",
+    "handling": "ny",
+    "niveau": "bestyrelsesbeslutning",
+    "tekst": "Forbundets to indvejningsvægte opbevares hos Peter Andersen og i HSK. De udlånes til stævner mod udfyldelse af en tro og love-erklæring og skal afleveres tilbage samme sted umiddelbart efter stævnet.",
+    "citat": "Disse udlånes til stævner mod udfyldelse af en tro og love-erklæring og afleveres tilbage samme sted \numiddelbart efter begivenheden.",
+    "side": 4,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   },
+   {
+    "candidate": 2,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Opdeling af DM klassisk",
+    "kategori": "staevner",
+    "udfald": "ikke_afgjort",
+    "handling": "aendring",
+    "niveau": "staevneregel",
+    "tekst": "Bestyrelsen foreslår, at DM klassisk opdeles i fire stævner: DM master, DM subjunior, DM junior og DM senior (DM-ugen). I 2024 afvikles DM subjunior og DM master i samme weekend, og fra 2025 afholdes de som hvert sit DM. Forslaget skal behandles på et virtuelt ekstraordinært repræsentantskabsmøde.",
+    "citat": "Bestyrelsen forslår rent praktisk at DM klassisk opdeles i 4 stævner. DM-master – DM \nsubjunior, DM Junior og DM Senior (DM-ugen).",
+    "side": 4,
+    "gaelder_fra": "2024-01-01",
+    "gaelder_til": null
+   },
+   {
+    "candidate": 3,
+    "verdict": "keep",
+    "duplicate_of": null,
+    "reason": null,
+    "emne": "Opdeling af JM",
+    "kategori": "staevner",
+    "udfald": "ikke_afgjort",
+    "handling": "aendring",
+    "niveau": "staevneregel",
+    "tekst": "Bestyrelsen foreslår, at JM opdeles, så open herrer klassisk 3-kamp afvikles i én weekend for sig, mens damer, JM bænkpres, JM klassisk bænkpres og JM i styrkeløft afvikles i en anden weekend. SM-stævnerne opdeles ikke foreløbig. Forslaget skal behandles på et virtuelt ekstraordinært repræsentantskabsmøde.",
+    "citat": "JM opdeles således at, Open herrer klassisk 3 kamp køres i en weekend for sig. Damer, JM bænkpres, JM \nklassisk bænkpres og JM i styrkeløft i en weekend for sig.",
+    "side": 4,
+    "gaelder_fra": null,
+    "gaelder_til": null
+   }
+  ],
+  "missing": []
+ }
+}
