@@ -497,6 +497,7 @@ def test_an_audit_waits_for_decisions_update_py_has_not_filed(world, fake_claude
 # ---------------------------------------------------------------- the workflow
 
 AUDIT_SCRIPT = ROOT / ".github" / "scripts" / "route-audit.sh"
+CLI_ACTION = "./.github/actions/claude-cli"
 TODAY = "2026-10-09"
 
 
@@ -510,7 +511,13 @@ def _job(workflow: dict) -> dict:
 
 
 def _step(job: dict, found: str) -> dict:
-    return next(step for step in job["steps"] if found in (step.get("name", ""), step.get("id", "")))
+    """The step named `found`, or with that id, or using that action."""
+    return next(step for step in job["steps"] if found in (step.get("name"), step.get("id"), step.get("uses")))
+
+
+def _in_order(job: dict, *found: str) -> bool:
+    positions = [job["steps"].index(_step(job, name)) for name in found]
+    return positions == sorted(positions)
 
 
 def _script(repo: Repo, mode: str, branch: str = "main", today: str = TODAY, data: str | None = None,
@@ -543,15 +550,12 @@ def test_the_audit_workflow_is_manual_reviewed_and_pinned_like_the_monthly_run()
     audit_yml, update_yml = _workflow("audit.yml"), _workflow("update.yml")
     assert set(audit_yml.get("on", audit_yml.get(True))) == {"workflow_dispatch"}  # PyYAML reads `on` as True
     job = _job(audit_yml)
-    assert job["env"]["CLAUDE_CODE_VERSION"] == _job(update_yml)["env"]["CLAUDE_CODE_VERSION"]
     # Its own concurrency group: a queued audit never cancels a pending monthly update.
     assert audit_yml["concurrency"]["group"] != update_yml["concurrency"]["group"]
-    names = [step.get("name", step.get("uses")) for step in job["steps"]]
-    check, smoke, run = (names.index(name) for name in ("Check that no update runs and no other audit is open",
-                                                          "Check Claude runs on the subscription", "Propose and apply"))
-    assert check < smoke < run  # nothing is paid before the checks
-    assert "gh run list --workflow update.yml" in job["steps"][check]["run"]
-    assert "route-audit.sh check" in job["steps"][check]["run"]
+    check = _step(job, "Check that no update runs and no other audit is open")
+    assert "gh run list --workflow update.yml" in check["run"] and "route-audit.sh check" in check["run"]
+    # Nothing is paid before the checks, and both workflows get the CLI from the action that pins it.
+    assert _in_order(job, check["name"], CLI_ACTION, "audit") and _in_order(_job(update_yml), CLI_ACTION, "update")
     # The result is routed to review whatever the audit step ended with, timed out included, and never published.
     route = _step(job, "Send the result to a pull request")
     assert route["run"] == "bash .github/scripts/route-audit.sh route"
