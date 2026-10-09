@@ -230,6 +230,9 @@ time. The first audit and its scores are in [eval/README.md](eval/README.md).
 
 ## How it works
 
+[docs/architecture.md](docs/architecture.md) draws all of this: how a run decides what is true, and the code in C4
+levels 1 to 3.
+
 | Step | File | Output |
 |---|---|---|
 | 1. Download new documents, read sections and dates from the index page | `scrape.py` | `referater/<organ>/`, `data/manifest.json` |

@@ -3,7 +3,8 @@
 Two extraction runs agree on only ~90% of decisions, so comparing runs cannot tell better from different. Every
 choice of the pipeline (model, prompt, consolidation mode) is therefore scored against an answer key that Opus judged
 once. `evaluate.py` scores against it and runs the incremental consolidation's gates; everything it writes is under
-`eval/`, and it never touches `data/` or `regelsaet/`.
+`eval/`, and it never touches `data/` or `regelsaet/`. The loop is drawn in
+[docs/architecture.md, section 1.4](../docs/architecture.md#14-side-lane-the-measurement-loop).
 
 | Path | What |
 |---|---|
