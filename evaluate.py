@@ -8,27 +8,24 @@
 # ]
 # ///
 """Scores extractions and consolidations against the answer key in eval/key/, and runs the incremental
-consolidation's gates.
+consolidation's candidate gate.
 
-    uv run evaluate.py extract --name stored        # today's extractions from data/ as a run (no Claude)
+    uv run evaluate.py extract --name migrated --from-data   # data/beslutninger copied as a run (no Claude)
     uv run evaluate.py extract --name opus-v3-1 --model claude-opus-5-5 --prompt v3 --max-cost 5
-    uv run evaluate.py score --run stored --run opus-v3-1 --run opus-v3-2   # decision scores, stability, the gate
+    uv run evaluate.py score --run migrated --run opus-v3-1 --run opus-v3-2   # decision scores, stability, the gate
     uv run evaluate.py score-rules                  # rule scores of data/regler (no Claude)
     uv run evaluate.py candidate-recall             # incremental consolidation: candidate ranking recall (no Claude)
-    uv run evaluate.py replay --holdout newest:20,random:10 --seed 1 --name inc-1 --max-cost 20
-    uv run evaluate.py compare-rules eval/replays/inc-1/data/regler data/regler    # (no Claude)
 
 Two extraction runs agree on only ~90% of decisions, so comparing runs cannot tell better from different: every
 change (models, prompts, consolidation) is scored against the key instead. Opus judges built it once, for the
 documents and recurring rules in eval/selection.json: each document's decisions (key/decisions/<doc>.json) and each
 rule's timeline with what was in force every year (key/rules/<slug>.json). Errors a check against the minutes found
 in it are in key/corrections.json, applied whenever a key is scored. eval/README.md says how the key was built and
-where the commands that built it are.
+where the retired commands are.
 
-Everything is written under eval/: runs/<run>/<doc>.json, reports/<name>.md, replays/<name>/ and runs.jsonl. Nothing
-is written to data/ or regelsaet/: a replay withholds documents from a copy of data/ in eval/replays/<name>/data and
-consolidates them again there. extract and replay call Claude: they take --max-cost, print how many calls they plan,
-log each call's usage and add a line to eval/runs.jsonl, and exit 1 when a call failed or was skipped.
+Everything is written under eval/: runs/<run>/<doc>.json, reports/<name>.md and runs.jsonl; nothing to data/ or
+regelsaet/. extract calls Claude unless --from-data: it takes --max-cost, prints how many calls it plans, logs each
+call's usage and adds a line to eval/runs.jsonl, and exits 1 when a call failed or was skipped.
 """
 
 from __future__ import annotations
@@ -38,11 +35,9 @@ import json
 import logging
 import random
 import re
-import shutil
 import statistics
 from collections import Counter, defaultdict
-from collections.abc import Callable, Collection, Iterable, Iterator, Mapping, Sequence
-from contextlib import contextmanager
+from collections.abc import Callable, Collection, Iterable, Mapping, Sequence
 from dataclasses import dataclass, field, fields, replace
 from datetime import date, datetime, timezone
 from itertools import combinations
@@ -61,17 +56,22 @@ from scrape import Doc
 
 EVAL_DIR = scrape.ROOT / "eval"
 
-# The seed of the bootstrap and of a replay's random holdout.
+# The seed of the bootstrap.
 SEED = 2026
-# The run copied from data/beslutninger as it is (extract --name stored): the gate's baseline.
-STORED_RUN = "stored"
+# The gate's default baseline: today's data, data/beslutninger copied after the migration to Opus with prompt v3
+# (extract --name migrated --from-data). It is one run, and runs of one configuration differ on noise alone (two Opus v3
+# runs: 88.7% and 95.5% on the three fields), so the gate allows the spread between runs of today's pipeline below it
+# (gate_needs); without that margin today's own pipeline would fail against its own data.
+BASELINE_RUN = "migrated"
 # Calls already running finish after the cost limit is reached, so a run can overshoot it by one call per worker;
 # below this limit the default is one worker.
 SMALL_BUDGET_USD = 10.0
 
 BOOTSTRAP_SAMPLES = 2000
-# The extraction gate: how far a configuration's worse run may fall behind the stored run, per figure (higher is better
-# for all but over-split). Over-split is in it so a prompt that splits more than the key asks for cannot pass on recall.
+# The extraction gate's slack: how far a configuration's worse run may always fall behind the baseline run, per figure
+# (higher is better for all but over-split); where runs of today's pipeline spread further apart, that spread is
+# allowed instead (gate_needs). Over-split is in it so a prompt that splits more than the key asks for cannot pass on
+# recall.
 GATE_SLACK = {"recall": 0.0, "precision": 0.02, "field_three": 0.0, "over_split": 0.02}
 GATE_LOWER_IS_BETTER = frozenset({"over_split"})
 # The candidate-recall gate: recall@K for these K, and the recall the chosen K must reach.
@@ -192,13 +192,11 @@ def estimate_tokens(system: str, prompt: str, schema: dict) -> int:
     return round((len(system) + len(prompt) + len(json.dumps(schema))) / CHARS_PER_TOKEN)
 
 
-def log_run(command: str, details: dict, steps: Mapping[str, StepSummary] | None = None) -> None:
-    """Append one line to eval/runs.jsonl: the command, its settings and, per step, what its Claude calls used
-    (as data/runs.jsonl has it) or the scores it computed."""
-    line = {"time": datetime.now(timezone.utc).isoformat(timespec="seconds"), "command": command, **details}
-    if steps:
-        line["cli"] = analyze.cli_version()
-        line["steps"] = {name: update.step_json(step) for name, step in steps.items()}
+def log_run(command: str, details: dict, steps: Mapping[str, StepSummary]) -> None:
+    """Append one line to eval/runs.jsonl: the command, its settings and, per step, what its Claude calls used (as
+    data/runs.jsonl has it). update.py prices a rebuild from these lines."""
+    line = {"time": datetime.now(timezone.utc).isoformat(timespec="seconds"), "command": command, **details,
+            "cli": analyze.cli_version(), "steps": {name: update.step_json(step) for name, step in steps.items()}}
     path = runs_log_path()
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a") as out:  # under eval/, like write_text
@@ -230,33 +228,32 @@ def check_run_name(name: str) -> str:
     return name
 
 
-def stored_record(doc: Doc) -> dict:
-    """The pseudo-run "stored" for a document: today's extraction in data/beslutninger, as it is."""
+def data_record(doc: Doc, run: str) -> dict:
+    """A document's extraction in data/beslutninger, as it is, as the record of run `run`."""
     source = analyze.DECISIONS_DIR / f"{doc.id}.json"
     if not source.exists():
         raise SystemExit(f"{doc.id} has no extraction in {analyze.DECISIONS_DIR}; run update.py first")
     cached = read_json(source)
     if cached["sha256"] != doc.sha256:
         raise SystemExit(f"{doc.id}: the extraction in {analyze.DECISIONS_DIR} is of another version of the file")
-    return {"doc_id": doc.id, "sha256": doc.sha256, "run": STORED_RUN, "model": cached["model"],
+    return {"doc_id": doc.id, "sha256": doc.sha256, "run": run, "model": cached["model"],
             "provenance": cached.get("provenance"), "usage": None, "moededato": cached["moededato"],
             "beslutninger": cached["beslutninger"]}
 
 
-def copy_stored(docs: list[Doc], force: bool) -> list[str]:
-    """Copy the stored extractions; returns the documents copied. A different copy is replaced only with `force`:
-    the key was judged from these copies, and the gate measures against them."""
-    records = {doc.id: stored_record(doc) for doc in docs}
+def copy_from_data(run: str, docs: list[Doc], force: bool) -> list[str]:
+    """Copy the documents' extractions in data/beslutninger into run `run`; returns the documents copied. A different
+    copy is replaced only with `force`: such a run is a baseline (the key was judged from `stored`, the gate measures
+    against BASELINE_RUN), and replacing it moves what is measured against it."""
+    records = {doc.id: data_record(doc, run) for doc in docs}
     differ = [doc_id for doc_id, record in records.items()
-              if run_path(STORED_RUN, doc_id).exists() and read_json(run_path(STORED_RUN, doc_id)) != record]
+              if run_path(run, doc_id).exists() and read_json(run_path(run, doc_id)) != record]
     if differ and not force:
-        raise SystemExit(f"The stored run already has other copies of {', '.join(differ)} (data/ changed since); "
-                         f"pass --force to replace them, which moves the gate's baseline away from the extraction "
-                         f"the key was judged from")
-    copied = [doc_id for doc_id, record in records.items()
-              if not run_path(STORED_RUN, doc_id).exists() or doc_id in differ]
+        raise SystemExit(f"Run {run} already has other extractions of {', '.join(differ)} than data/ has now; pass "
+                         f"--force to replace them, which moves the baseline other runs are measured against")
+    copied = [doc_id for doc_id, record in records.items() if not run_path(run, doc_id).exists() or doc_id in differ]
     for doc_id in copied:
-        write_json(run_path(STORED_RUN, doc_id), records[doc_id])
+        write_json(run_path(run, doc_id), records[doc_id])
     return copied
 
 
@@ -709,13 +706,25 @@ class GateResult:
     failed: tuple[str, ...]
 
 
-def gate_needs(baseline: DocScore, reference: float | None) -> dict[str, float | None]:
-    """The bound on each gate figure: the stored baseline's, moved by its GATE_SLACK (down, or up where lower is
-    better), and for stability that of two runs of today's pipeline (None: not scored)."""
+def spread(runs: Sequence[DocScore]) -> dict[str, float]:
+    """Each gate figure's spread (max - min) between runs of one configuration: how far noise alone moves it. A figure
+    with fewer than two values is left out."""
+    found = {}
+    for m in GATE_SLACK:
+        values = [v for s in runs if (v := METRICS[m](s)) is not None]
+        if len(values) > 1:
+            found[m] = max(values) - min(values)
+    return found
+
+
+def gate_needs(baseline: DocScore, reference: float | None, noise: Mapping[str, float]) -> dict[str, float | None]:
+    """The bound on each gate figure: the baseline run's, moved (down, or up where lower is better) by the larger of
+    its GATE_SLACK and its spread between runs of today's pipeline (`noise`, spread; empty when it was not run twice),
+    and for stability that of two runs of today's pipeline (None: not scored)."""
     needs: dict[str, float | None] = {}
     for m, slack in GATE_SLACK.items():
-        value = METRICS[m](baseline)
-        needs[m] = None if value is None else value + slack if m in GATE_LOWER_IS_BETTER else value - slack
+        value, margin = METRICS[m](baseline), max(slack, noise.get(m, 0.0))
+        needs[m] = None if value is None else value + margin if m in GATE_LOWER_IS_BETTER else value - margin
     return {**needs, "stability": reference}
 
 
@@ -741,21 +750,29 @@ def gate(totals: Mapping[str, DocScore], groups: Mapping[Configuration, list[str
     return results
 
 
-def gate_section(results: Sequence[GateResult], needs: Mapping[str, float | None], baseline: str) -> list[str]:
-    """Markdown lines: the gate, what it needs and each repeated configuration against it."""
+def gate_section(results: Sequence[GateResult], needs: Mapping[str, float | None], baseline: str,
+                 today: Sequence[str], noise: Mapping[str, float]) -> list[str]:
+    """Markdown lines: the gate, what it needs and why (the slack and the spread between `today`, the runs of today's
+    pipeline), and each repeated configuration against it."""
     pipeline = pipeline_configuration()
     reference = pipeline.label()
     unscored = "" if needs["stability"] is not None else "; they were not scored, so no configuration passes"
+    alone = "" if today else "; today's pipeline was not run twice here, so it is the slack alone"
     lines = ["## Gate", "",
-             f"A configuration passes when its worse run is at least the run {baseline} on recall and on the three "
-             f"fields, at most {100 * GATE_SLACK['precision']:.0f} points below it on precision and at most "
-             f"{100 * GATE_SLACK['over_split']:.0f} points above it on over-split, and its runs are at least as stable "
-             f"as two runs of today's pipeline ({reference}){unscored}.", "",
+             f"A configuration passes when its worse run is at least the run {baseline}, less a margin, on recall, "
+             f"precision and the three fields and at most it, plus a margin, on over-split, and its runs are at least "
+             f"as stable as two runs of today's pipeline ({reference}){unscored}. Each figure's margin is the larger "
+             f"of its slack and its spread between the runs of today's pipeline scored here, which differ that much "
+             f"on noise alone{alone}.", "",
              "| Configuration | Runs | Recall (worse) | Precision (worse) | Three (worse) | Over-split (worse) | "
              "Stability | Passes |",
              "|---|---|--:|--:|--:|--:|--:|---|",
              "| needs | | " + " | ".join(f"{'≤' if m in GATE_LOWER_IS_BETTER else '≥'} {_pct(needs[m])}"
-                                       for m in (*GATE_SLACK, "stability")) + " | |"]
+                                       for m in (*GATE_SLACK, "stability")) + " | |",
+             "| slack (points) | | " + " | ".join(f"{100 * GATE_SLACK[m]:.1f}" for m in GATE_SLACK) + " | | |"]
+    if today:
+        lines.append(f"| spread of today's pipeline (points) | {', '.join(today)} | "
+                     + " | ".join(f"{100 * noise[m]:.1f}" if m in noise else "–" for m in GATE_SLACK) + " | | |")
     for r in results:
         passes = "yes" if not r.failed else f"no: {', '.join(r.failed)}"
         label = r.configuration.label() + (" (today's pipeline)" if r.configuration == pipeline else "")
@@ -943,7 +960,39 @@ def rules_summary(scores: list[RuleScore]) -> dict:
                 "content_share": _ratio(t["same_content"], t["years"])}
 
 
-# --------------------------------------------------------------------------- incremental consolidation: gates
+def score_section(before: list[dict], after: list[dict], docs: list[Doc], decisions: list[Decision]) -> list[str]:
+    """Markdown lines for audit.py's report: the rule scores (score_rule) of two sets of rule files over today's
+    decisions, and the audit's gate; empty without a key."""
+    keys, soft = rule_keys(), soft_rules()
+    if not keys:
+        return []
+    texts, by_id = Texts(), {doc.id: doc for doc in docs}
+    old = [score_rule(key, decisions, before, by_id, texts) for key in keys]
+    new = [score_rule(key, decisions, after, by_id, texts) for key in keys]
+    a = rules_summary([s for s in old if s.slug not in soft])
+    b = rules_summary([s for s in new if s.slug not in soft])
+    lines = ["## Answer key: before → after", "",
+             "evaluate.py's rules scores (score-rules) over today's decisions. Rules: pipeline rules holding the key "
+             "rule's certain events (more than one: fragmented); Found: in the rule holding most of them; Same "
+             "content: years whose version in force was adopted by the key's adopting event.", "",
+             "| Rule | Rules | Found | Elsewhere | Missing | Same content |", "|---|--:|--:|--:|--:|--:|"]
+    for o, n in zip(old, new):
+        name = f"{o.slug} (soft)" if o.slug in soft else o.slug
+        lines.append(f"| {name} | {o.rules} → {n.rules} | {o.found} → {n.found} | {o.elsewhere} → "
+                     f"{n.elsewhere} | {o.missing} → {n.missing} | {o.same_content} → {n.same_content} of "
+                     f"{n.years} |")
+    passes = (b["fragmented"] < a["fragmented"] and b["found"] >= a["found"] and b["same_content"] >= a["same_content"]
+              and b["missing"] <= a["missing"])
+    lines += ["", f"Without soft rules: fragmented rules {a['fragmented']} → {b['fragmented']}; events found in the "
+                  f"right rule {_pct(a['found_share'])} → {_pct(b['found_share'])}; years with the same content in "
+                  f"force {_pct(a['content_share'])} → {_pct(b['content_share'])}; missing events {a['missing']} → "
+                  f"{b['missing']}.", "",
+              f"Gate (fragmented rules fall, found and same content do not fall, no event goes missing): "
+              f"{'passes' if passes else 'fails'}.", ""]
+    return lines
+
+
+# --------------------------------------------------------------------------- incremental consolidation: candidates
 
 @dataclass(frozen=True)
 class Hidden:
@@ -1028,283 +1077,19 @@ def recall_report(hidden: Sequence[Hidden], single: int) -> str:
     return "\n".join(lines) + "\n"
 
 
-@dataclass(frozen=True)
-class Holdout:
-    """The documents a replay withholds, per part of its spec: "newest:20" tests filing new minutes, "random:10" mostly
-    older documents, which land before rules' newest versions (late insertion)."""
-    spec: str  # e.g. "newest:20,random:10"
-    seed: int
-    parts: tuple[tuple[str, tuple[str, ...]], ...]  # (part, its documents), in the spec's order
-
-    @property
-    def documents(self) -> tuple[str, ...]:
-        return tuple(doc_id for _, docs in self.parts for doc_id in docs)
-
-
-def holdout_parts(spec: str, decisions: Sequence[Decision], seed: int) -> tuple[tuple[str, tuple[str, ...]], ...]:
-    """The documents each part of a holdout spec names, among those with decisions: "newest:N" the N newest (by meeting
-    date, then id), "random:N" N drawn with the seed from those not chosen yet; parts are taken in order."""
-    dates: dict[str, str] = {}
-    for d in decisions:
-        dates[d.doc_id] = max(dates.get(d.doc_id, ""), d.dato or "")
-    newest_first = sorted(dates, key=lambda doc_id: (dates[doc_id], doc_id), reverse=True)
-    chosen: list[str] = []
-    parts = []
-    for part in filter(None, spec.split(",")):
-        kind, _, count = part.partition(":")
-        if kind not in ("newest", "random") or not count.isdigit():
-            raise SystemExit(f"--holdout {spec!r}: give parts like newest:20 or random:10, separated by commas")
-        rest = [doc_id for doc_id in newest_first if doc_id not in chosen]
-        n = min(int(count), len(rest))
-        picked = rest[:n] if kind == "newest" else sorted(random.Random(f"{seed}:{part}").sample(sorted(rest), n))
-        chosen += picked
-        parts.append((part, tuple(picked)))
-    return tuple(parts)
-
-
-def withhold(files: Mapping[str, dict], registry: matching.SlugRegistry,
-             refs: Collection[str]) -> tuple[dict[str, dict], matching.SlugRegistry]:
-    """The rule files and slug history as if the decisions `refs` had never been consolidated: their versions,
-    one-off and unassigned entries gone, rules left without versions gone with their slugs, and former slugs that
-    stood for nothing but those decisions forgotten. Later versions keep their texts: a replay that files the
-    decisions again rewrites them from where they belong."""
-    out = {}
-    for category, stored in files.items():
-        rules = []
-        for rule in stored["regler"]:
-            versions = [v for v in rule["versioner"] if v["ref"] not in refs]
-            if versions:
-                rules.append({**rule, "versioner": versions})
-        out[category] = {**stored, "regler": rules,
-                         **{key: [ref for ref in stored.get(key, []) if ref not in refs]
-                            for key in ("udeladt", "ikke_tildelt")}}
-    kept = {slug: f for slug, f in registry.former().items() if not f.refs or not f.refs <= set(refs)}
-    return out, matching.SlugRegistry.of(kept)
-
-
-def replay_dir(name: str) -> Path:
-    return EVAL_DIR / "replays" / name
-
-
-@contextmanager
-def data_paths(root: Path) -> Iterator[None]:
-    """Point analyze's decisions, rules and slug history at a copy of data/ under eval/ while a replay runs: the
-    consolidation writes where these lead, and must never write data/."""
-    if not root.resolve().is_relative_to(EVAL_DIR.resolve()):
-        raise ValueError(f"{root} is outside {EVAL_DIR}; a replay runs on a copy there")
-    saved = analyze.DECISIONS_DIR, analyze.RULES_DIR, analyze.SLUGS_PATH
-    analyze.DECISIONS_DIR, analyze.RULES_DIR, analyze.SLUGS_PATH = (root / "beslutninger", root / "regler",
-                                                                    root / "slugs.json")
-    try:
-        yield
-    finally:
-        analyze.DECISIONS_DIR, analyze.RULES_DIR, analyze.SLUGS_PATH = saved
-
-
-def prepare_replay(name: str, holdout: Holdout, mode: str, force: bool) -> Path:
-    """eval/replays/<name>/data: a copy of data/'s decisions, rules and slug history without the held-out documents'
-    decisions in the rules. A copy made for the same holdout and mode is kept, so a cut-off replay continues; another
-    one needs --force. For `full`, the categories of the held-out decisions get no input_hash, so they are
-    consolidated anew, as a monthly full run would."""
-    root = replay_dir(name)
-    meta_path = root / "holdout.json"
-    meta = {"spec": holdout.spec, "seed": holdout.seed, "mode": mode, "documents": list(holdout.documents),
-            "parts": {part: list(docs) for part, docs in holdout.parts}}
-    if meta_path.exists():
-        stored = read_json(meta_path)
-        if {k: stored.get(k) for k in meta} == meta:
-            print(f"Continuing the replay in {root}", flush=True)
-            return root / "data"
-        if not force:
-            raise SystemExit(f"{root} holds a replay of another holdout or mode; pass --force to replace it")
-    data = root / "data"
-    if root.exists():
-        shutil.rmtree(root)
-    decisions = analyze.load_decisions(scrape.load_manifest())
-    held = {d.ref for d in decisions if d.doc_id in holdout.documents}
-    files = {path.stem: read_json(path) for path in sorted(analyze.RULES_DIR.glob("*.json"))}
-    files, registry = withhold(files, analyze.load_slugs(), held)
-    if mode == "full":
-        stale = {d.kategori for d in decisions if d.ref in held}
-        files = {c: {**stored, "input_hash": None} if c in stale else stored for c, stored in files.items()}
-    for path in sorted(analyze.DECISIONS_DIR.glob("*.json")):
-        write_text(data / "beslutninger" / path.name, path.read_text())
-    for category, stored in files.items():
-        write_json(data / "regler" / f"{category}.json", stored)
-    with data_paths(data):
-        analyze._save_slugs(registry)
-    write_json(meta_path, {**meta, "withheld_decisions": len(held), "time": datetime.now(timezone.utc)
-                           .isoformat(timespec="seconds")})
-    return data
-
-
-def side_decisions(rules_dir: Path, decisions_dir: Path | None) -> Path:
-    """The decisions a rules directory was built from: --decisions-dir, else the beslutninger/ next to it (a replay's
-    copy, or data/), else data/beslutninger."""
-    if decisions_dir is not None:
-        return decisions_dir
-    sibling = rules_dir.parent / "beslutninger"
-    return sibling if sibling.is_dir() else analyze.DECISIONS_DIR
-
-
-def clusters_of(raw_rules: list[dict], live: Collection[str]) -> dict[str, frozenset[str]]:
-    """Each current decision in a rule -> the current decisions of that rule (itself included)."""
-    found = {}
-    for raw in raw_rules:
-        refs = frozenset(v["ref"] for v in raw["versioner"] if v["ref"] in live)
-        for ref in refs:
-            found.setdefault(ref, refs)
-    return found
-
-
-def bcubed(a: Mapping[str, frozenset[str]], b: Mapping[str, frozenset[str]],
-           items: Iterable[str]) -> tuple[float | None, float | None, float | None]:
-    """B-cubed precision, recall and F1 of grouping A against grouping B over the items: per item, the share of its
-    A-cluster that shares its B-cluster (precision) and the reverse (recall). A decision in no rule is a cluster of
-    its own."""
-    precision, recall = [], []
-    for ref in items:
-        ca, cb = a.get(ref, frozenset({ref})), b.get(ref, frozenset({ref}))
-        precision.append(len(ca & cb) / len(ca))
-        recall.append(len(ca & cb) / len(cb))
-    if not precision:
-        return None, None, None
-    p, r = statistics.fmean(precision), statistics.fmean(recall)
-    return p, r, 2 * p * r / (p + r) if p + r else 0.0
-
-
-def in_force(rules: list[render.Rule], cutoffs: Sequence[str]) -> dict[str, tuple[frozenset[str], frozenset[str]]]:
-    """Per cutoff, the decisions in force (one per rule in force) and the decisions that adopted their content."""
-    found = {}
-    for cutoff in cutoffs:
-        shown = [(rule, v) for rule in rules if (v := rule.in_force(cutoff)) is not None]
-        found[cutoff] = (frozenset(v.decision.ref for _, v in shown),
-                         frozenset(rule.adopted(v, cutoff).decision.ref for rule, v in shown))
-    return found
-
-
-def jaccard(a: frozenset[str], b: frozenset[str]) -> tuple[int, int]:
-    """(shared, either): pooled over years, their sums give the agreement."""
-    return len(a & b), len(a | b)
-
-
-@dataclass(frozen=True)
-class Agreement:
-    """How far two consolidations agree, over all decisions or those of some documents."""
-    decisions: int  # in a rule on either side
-    bcubed: tuple[float | None, float | None, float | None]  # A against B
-    # Per cutoff: ((same decision in force, decisions in force on either side), (same adopting decision, either)),
-    # counting the rules that hold one of the decisions.
-    years: Mapping[str, tuple[tuple[int, int], tuple[int, int]]]
-    effects: tuple[int, int]  # (same effect, decisions in a rule on both sides)
-
-    def shares(self) -> dict[str, float | None]:
-        event = [sum(y[0][i] for y in self.years.values()) for i in (0, 1)]
-        content = [sum(y[1][i] for y in self.years.values()) for i in (0, 1)]
-        return {"bcubed_precision": self.bcubed[0], "bcubed_recall": self.bcubed[1], "bcubed_f1": self.bcubed[2],
-                "event_agreement": _ratio(*event), "content_agreement": _ratio(*content),
-                "effect_agreement": _ratio(*self.effects)}
-
-
-@dataclass(frozen=True)
-class RulesComparison:
-    overall: Agreement
-    parts: Mapping[str, Agreement]  # per holdout part, over its documents' decisions
-    only_a: int  # decisions in a rule in A, in none in B
-    only_b: int
-
-
-def compare_rules(raw_a: list[dict], raw_b: list[dict], decisions_a: list[Decision], decisions_b: list[Decision],
-                  as_of: date, parts: Mapping[str, Collection[str]] | None = None) -> RulesComparison:
-    """How far two consolidations agree: B-cubed over how they group the decisions both have, what each shows in
-    force at every year's cutoff (by the decision in force, and by the one that adopted its content), and the effect
-    each gives a decision both put in a rule. `parts` (holdout part -> its documents) adds the same over each part's
-    decisions alone, counting in force only the rules that hold one of them."""
-    live = {d.ref for d in decisions_a} & {d.ref for d in decisions_b}
-    a, b = clusters_of(raw_a, live), clusters_of(raw_b, live)
-    rules_a = render.build_rules(raw_a, {d.ref: d for d in decisions_a})
-    rules_b = render.build_rules(raw_b, {d.ref: d for d in decisions_b})
-    cutoffs = [render.year_cutoff(year, as_of) for year in render.covered_years([*decisions_a, *decisions_b], as_of)]
-    effect_a = {v["ref"]: v["effekt"] for raw in raw_a for v in raw["versioner"]}
-    effect_b = {v["ref"]: v["effekt"] for raw in raw_b for v in raw["versioner"]}
-
-    def agreement(refs: Collection[str] | None) -> Agreement:
-        items = sorted(ref for ref in a.keys() | b.keys() if refs is None or ref in refs)
-
-        def holding(rules: list[render.Rule]) -> list[render.Rule]:
-            return rules if refs is None else [r for r in rules if any(v.decision.ref in refs for v in r.versions)]
-
-        force_a, force_b = in_force(holding(rules_a), cutoffs), in_force(holding(rules_b), cutoffs)
-        years = {c: (jaccard(force_a[c][0], force_b[c][0]), jaccard(force_a[c][1], force_b[c][1])) for c in cutoffs}
-        both = [ref for ref in effect_a.keys() & effect_b.keys() & live if refs is None or ref in refs]
-        return Agreement(len(items), bcubed(a, b, items), years,
-                         (sum(effect_a[ref] == effect_b[ref] for ref in both), len(both)))
-
-    held = {part: {ref for ref in live if ref.rpartition("#")[0] in docs} for part, docs in (parts or {}).items()}
-    return RulesComparison(agreement(None), {part: agreement(refs) for part, refs in held.items()},
-                           len(a.keys() - b.keys()), len(b.keys() - a.keys()))
-
-
-def holdout_of(rules_dir: Path) -> Holdout | None:
-    """The holdout of a replay's rules directory (eval/replays/<name>/data/regler), None for any other."""
-    meta = rules_dir.parent.parent / "holdout.json"
-    if not meta.exists():
-        return None
-    stored = read_json(meta)
-    parts = stored.get("parts") or {stored["spec"]: stored["documents"]}
-    return Holdout(stored["spec"], stored["seed"], tuple((part, tuple(docs)) for part, docs in parts.items()))
-
-
-def _agreement_lines(agreement: Agreement) -> list[str]:
-    s = agreement.shares()
-    return [f"- Grouping of decisions, B-cubed precision / recall / F1 (A against B): "
-            f"{' / '.join(_pct(v) for v in agreement.bcubed)}",
-            f"- In force at the year cutoffs, pooled: same decision {_pct(s['event_agreement'])}, same adopting "
-            f"decision {_pct(s['content_agreement'])}",
-            f"- Same effect for decisions both put in a rule: {_pct(s['effect_agreement'])} of {agreement.effects[1]}"]
-
-
-def comparison_report(label_a: str, label_b: str, c: RulesComparison,
-                      keys: Mapping[str, list[RuleScore]] | None, soft: Mapping[str, str]) -> str:
-    lines = [f"# {label_a} against {label_b}", "", *_agreement_lines(c.overall),
-             f"- Decisions in a rule in A only: {c.only_a}; in B only: {c.only_b}", ""]
-    for part, agreement in c.parts.items():
-        kind = "late insertion: mostly older documents" if part.startswith("random") else "the newest documents"
-        lines += [f"## Held out: {part} ({kind}, {agreement.decisions} decisions)", "", *_agreement_lines(agreement),
-                  ""]
-    lines += ["## Per year, all rules", "", "| Year | Same decision in force | Same adopting decision |",
-              "|---|--:|--:|"]
-    for cutoff, ((event, either_e), (content, either_c)) in c.overall.years.items():
-        lines.append(f"| {cutoff[:4]} | {event}/{either_e} | {content}/{either_c} |")
-    if keys is not None:
-        summaries = {side: rules_summary([s for s in scores if s.slug not in soft]) for side, scores in keys.items()}
-        lines += ["", "## Against the rules key", "", f"| Measure | {label_a} | {label_b} |", "|---|--:|--:|"]
-        for name, measure in (("Events found", "found_share"), ("Effects agree", "effect_share"),
-                              ("Fragmented rules", "fragmented"), ("Years, same event", "event_share"),
-                              ("Years, same content", "content_share")):
-            cells = [summaries[side][measure] for side in ("a", "b")]
-            shown = [str(v) if isinstance(v, int) else _pct(v) for v in cells]
-            lines.append(f"| {name} | {shown[0]} | {shown[1]} |")
-        lines += ["", "Per rule: events found of certain events, rules holding them, years with the same content in "
-                  "force of certain years" + (" (soft rules are left out of the totals above)." if soft else "."), "",
-                  f"| Rule | {label_a} | {label_b} |", "|---|---|---|"]
-        for s_a, s_b in zip(keys["a"], keys["b"]):
-            name = f"{s_a.slug} (soft)" if s_a.slug in soft else s_a.slug
-            lines.append(f"| {name} | {_rule_cell(s_a)} | {_rule_cell(s_b)} |")
-    return "\n".join(lines) + "\n"
-
-
-def _rule_cell(s: RuleScore) -> str:
-    return f"{s.found}/{s.events} found, {s.rules} rules, {s.same_content}/{s.years} years"
-
-
 # --------------------------------------------------------------------------- commands
 
 def cmd_extract(args: argparse.Namespace) -> None:
     run = check_run_name(args.name)
     docs = selected_docs(load_selection(), args.pilot, args.docs)
-    if run == STORED_RUN:
-        copied = copy_stored(docs, args.force)
+    if args.from_data:
+        calling = [flag for flag, value in (("--model", args.model), ("--max-cost", args.max_cost),
+                                            ("--prompt", args.prompt), ("--effort", args.effort),
+                                            ("--workers", args.workers)) if value is not None]
+        if calling:
+            raise SystemExit(f"--from-data copies data/beslutninger without calling Claude, so it takes no "
+                             f"{', '.join(calling)}")
+        copied = copy_from_data(run, docs, args.force)
         print(f"Copied {len(copied)} of {len(docs)} extractions from {analyze.DECISIONS_DIR} to {run_dir(run)}")
         return
     if not args.model or args.max_cost is None:
@@ -1337,6 +1122,10 @@ def cmd_extract(args: argparse.Namespace) -> None:
 
 def cmd_score(args: argparse.Namespace) -> None:
     runs = [check_run_name(run) for run in args.run]
+    # A baseline named on purpose must be scored; the default's gate is left out when it is not.
+    if args.baseline is not None and check_run_name(args.baseline) not in runs:
+        raise SystemExit(f"--baseline {args.baseline}: also pass --run {args.baseline}")
+    baseline = args.baseline or BASELINE_RUN
     corrections = load_corrections()
     keys = {path.stem: correct_decisions_key(read_json(path), corrections)
             for path in sorted(key_dir("decisions").glob("*.json"))}
@@ -1358,12 +1147,13 @@ def cmd_score(args: argparse.Namespace) -> None:
                                    for a, b in combinations(members, 2) for doc_id in doc_ids)
                  for config, members in groups.items()}
     by_run = {run: by_config[config] for config, members in groups.items() for run in members}
-    results: list[GateResult] = []
     gate_lines: list[str] = []
-    if STORED_RUN in runs and groups:
-        needs = gate_needs(total(scores[STORED_RUN]), by_config.get(pipeline_configuration()))
-        results = gate({run: total(s) for run, s in scores.items()}, groups, by_config, needs)
-        gate_lines = gate_section(results, needs, STORED_RUN)
+    if baseline in runs and groups:
+        totals = {run: total(s) for run, s in scores.items()}
+        today = groups.get(pipeline_configuration(), [])  # the baseline among them when it has today's configuration
+        noise = spread([totals[run] for run in today])
+        needs = gate_needs(totals[baseline], by_config.get(pipeline_configuration()), noise)
+        gate_lines = gate_section(gate(totals, groups, by_config, needs), needs, baseline, today, noise)
     report = decisions_report(scores, doc_ids, {doc_id: keys[doc_id] for doc_id in doc_ids}, args.seed, warnings,
                               by_run, gate_lines)
     if left_out:
@@ -1371,13 +1161,6 @@ def cmd_score(args: argparse.Namespace) -> None:
     name = args.report or f"decisions-{'+'.join(runs)}"
     write_text(report_path(name), report)
     print(report)
-    metrics = {run: {m: _round(METRICS[m](total(s))) for m in METRICS}
-               | {"recall_doc_avg": _round(per_document(s, METRICS["recall"])),
-                  "precision_doc_avg": _round(per_document(s, METRICS["precision"])),
-                  "stability": _round(by_run.get(run))} for run, s in scores.items()}
-    log_run("score", {"runs": runs, "documents": len(doc_ids), "report": f"reports/{name}.md", "metrics": metrics,
-                      "gate": {r.configuration.label(): {"runs": list(r.runs), "failed": list(r.failed)}
-                               for r in results}})
 
 
 def cmd_score_rules(args: argparse.Namespace) -> None:
@@ -1396,9 +1179,6 @@ def cmd_score_rules(args: argparse.Namespace) -> None:
     name = args.report or f"rules-{rules_dir.name}"
     write_text(report_path(name), report)
     print(report)
-    summary = rules_summary([s for s in scores if s.slug not in soft])
-    log_run("score-rules", {"rules_dir": str(rules_dir), "rules": len(scores), "soft": sorted(soft),
-                            "report": f"reports/{name}.md", "metrics": {k: _round(v) for k, v in summary.items()}})
 
 
 def cmd_candidate_recall(args: argparse.Namespace) -> None:
@@ -1411,92 +1191,6 @@ def cmd_candidate_recall(args: argparse.Namespace) -> None:
     report = recall_report(hidden, single)
     write_text(report_path("candidate-recall"), report)
     print(report)
-    log_run("candidate-recall", {"decisions": len(hidden), "single": single, "k": choose_k(hidden),
-                                 "recall": {f"@{k}": _round(recall_at(hidden, k)) for k in RECALL_KS},
-                                 "relabelled": {f"@{k}": _round(recall_at(hidden, k, relabelled=True))
-                                                for k in RECALL_KS}})
-
-
-def cmd_replay(args: argparse.Namespace) -> None:
-    """Withhold documents from a copy of data/ and consolidate them again on that copy; data/ is only read."""
-    run = check_run_name(args.name)
-    docs = scrape.load_manifest()
-    holdout = Holdout(args.holdout, args.seed, holdout_parts(args.holdout, analyze.load_decisions(docs), args.seed))
-    data = prepare_replay(run, holdout, args.mode, args.force)
-    budget = RunBudget(minutes=args.time_budget, max_cost_usd=args.max_cost)
-    workers = workers_for(args)
-    with data_paths(data):
-        decisions = analyze.load_decisions(docs)
-        if args.mode == "incremental":
-            queue = incremental.work_queue(decisions, incremental.RuleBook.load(), docs)
-            print(f"Replay {run}: {len(queue)} documents with {sum(len(w.new) for w in queue)} decisions to file "
-                  f"({', '.join(f'{part}: {len(ids)}' for part, ids in holdout.parts)} withheld); per document 3 votes "
-                  f"by {args.assign_model} and one call per touched rule to {args.model}, until {args.max_cost:.2f} "
-                  f"USD", flush=True)
-            settings = incremental.Settings(args.assign_model, args.model, args.effort, workers)
-            step = incremental.consolidate(docs, decisions, settings, budget)
-        else:
-            step = analyze.consolidate(decisions, {d.id: d.organ_label for d in docs}, model=args.model,
-                                       effort=args.effort, workers=workers, budget=budget)
-    print(f"Replayed rule files: {data / 'regler'}")
-    log_run("replay", {"run": run, "mode": args.mode, "holdout": args.holdout, "seed": args.seed,
-                       "parts": {part: list(ids) for part, ids in holdout.parts}, "rules_dir": str(data / "regler")},
-            {"consolidate": step})
-    finish({"consolidate": step})
-
-
-def rules_label(rules_dir: Path) -> str:
-    """A short name for a rules directory in reports: the replay's name, else its last two path parts."""
-    holdout_meta = rules_dir.parent.parent / "holdout.json"
-    name = rules_dir.parent.parent.name if holdout_meta.exists() else f"{rules_dir.parent.name}-{rules_dir.name}"
-    return re.sub(r"[^\w.-]+", "-", name)
-
-
-def cmd_compare_rules(args: argparse.Namespace) -> None:
-    keys = rule_keys()
-    if not keys and not args.no_key:
-        raise SystemExit(f"No rules key in {key_dir('rules')} (built once: eval/README.md); pass --no-key to compare "
-                         f"without it")
-    soft = soft_rules()
-    docs = scrape.load_manifest()
-    dirs = {"a": args.a, "b": args.b}
-    rules: dict[str, list[dict]] = {}
-    decisions: dict[str, list[Decision]] = {}
-    for side, rules_dir in dirs.items():
-        if not rules_dir.is_dir():
-            raise SystemExit(f"{rules_dir} is not a directory of rule files")
-        rules[side] = analyze.load_rules(rules_dir)
-        decisions[side] = analyze.load_decisions(docs, side_decisions(rules_dir, args.decisions_dir))
-    parts: dict[str, set[str]] = {}  # the holdout parts of a side that is a replay
-    for rules_dir in dirs.values():
-        holdout = holdout_of(rules_dir)
-        for part, ids in holdout.parts if holdout else ():
-            parts.setdefault(part, set()).update(ids)
-    comparison = compare_rules(rules["a"], rules["b"], decisions["a"], decisions["b"], args.as_of or date.today(),
-                               parts)
-    scores = None
-    if keys:
-        texts, by_id = Texts(), {doc.id: doc for doc in docs}
-        scores = {side: [score_rule(key, decisions[side], rules[side], by_id, texts) for key in keys] for side in dirs}
-    label_a, label_b = rules_label(args.a), rules_label(args.b)
-    report = comparison_report(label_a, label_b, comparison, scores, soft)
-    name = args.report or f"compare-{label_a}-vs-{label_b}"
-    write_text(report_path(name), report)
-    print(report)
-    metrics = {k: _round(v) for k, v in comparison.overall.shares().items()}
-    metrics |= {part: {k: _round(v) for k, v in agreement.shares().items()}
-                for part, agreement in comparison.parts.items()}
-    key = None
-    if scores:
-        key = {side: {k: _round(v) for k, v in rules_summary([s for s in found if s.slug not in soft]).items()}
-               for side, found in scores.items()}
-    log_run("compare-rules", {"a": str(args.a), "b": str(args.b), "report": f"reports/{name}.md",
-                              "metrics": metrics, "key": key})
-
-
-def _round(value: float | int | None) -> float | int | None:
-    """A figure for the run log: a share to four decimals; a count or None as it is."""
-    return round(value, 4) if isinstance(value, float) else value
 
 
 def _ids(text: str) -> list[str]:
@@ -1508,13 +1202,16 @@ def parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
 
     extract = sub.add_parser("extract", help="run today's extraction on the selected documents")
-    extract.add_argument("--name", required=True, help=f"run name; '{STORED_RUN}' copies data/beslutninger")
+    extract.add_argument("--name", required=True, help="run name: eval/runs/<name>/")
+    extract.add_argument("--from-data", action="store_true",
+                         help="copy data/beslutninger's extractions as they are instead of calling Claude: a baseline "
+                              "run, e.g. after a migration")
     extract.add_argument("--model", help="model id, e.g. claude-sonnet-5-5")
     extract.add_argument("--effort", choices=EFFORTS, help="effort (default: Claude Code's own)")
     extract.add_argument("--prompt", choices=list(analyze.EXTRACT_PROMPTS),
                          help=f"extraction prompt (default: the pipeline's, v{analyze.EXTRACT_VERSION})")
     extract.add_argument("--force", action="store_true",
-                         help="replace extractions of another file version, prompt or effort (paid; for 'stored': "
+                         help="replace extractions of another file version, prompt or effort (paid; with --from-data: "
                               "other copies)")
     extract.add_argument("--max-cost", type=float, metavar="USD",
                          help="start no new Claude calls once this much is used at list price")
@@ -1529,6 +1226,10 @@ def parser() -> argparse.ArgumentParser:
 
     score = sub.add_parser("score", help="score extraction runs against the decisions key (no Claude)")
     score.add_argument("--run", action="append", required=True, help="a run to score; repeat to compare runs")
+    score.add_argument("--baseline", metavar="RUN",
+                       help=f"the run the gate measures against, which must be among the --run (default: "
+                            f"{BASELINE_RUN}, today's data/ after the v3 migration; the gate is left out when it is "
+                            f"not scored)")
     score.add_argument("--seed", type=int, default=SEED, help="bootstrap seed")
     score.add_argument("--report", help="report name under eval/reports/")
     score.set_defaults(func=cmd_score)
@@ -1543,38 +1244,6 @@ def parser() -> argparse.ArgumentParser:
                             help="incremental gate: how often the candidate ranking offers a decision's own rule (no "
                                  "Claude)")
     recall.set_defaults(func=cmd_candidate_recall)
-
-    replay = sub.add_parser("replay", help="incremental gate: withhold documents from a copy of data/ and consolidate "
-                                           "them again on that copy")
-    replay.add_argument("--name", required=True, help="the replay's name: eval/replays/<name>/")
-    replay.add_argument("--holdout", required=True, metavar="SPEC",
-                        help="documents to withhold, e.g. newest:20,random:10 (the N newest, N drawn with the seed)")
-    replay.add_argument("--seed", type=int, default=SEED, help=f"seed for random: (default: {SEED})")
-    replay.add_argument("--mode", choices=update.CONSOLIDATE_MODES, default="incremental",
-                        help="how to consolidate them (default: incremental)")
-    replay.add_argument("--assign-model", default="claude-sonnet-5-5", help="incremental: the voting model")
-    replay.add_argument("--model", default="claude-opus-5-5",
-                        help="the consolidation model; in incremental mode it breaks ties and updates the rules")
-    replay.add_argument("--effort", choices=EFFORTS, help="consolidation effort (default: Claude Code's own)")
-    replay.add_argument("--max-cost", type=float, required=True, metavar="USD",
-                        help="start no new Claude calls once this much is used at list price")
-    replay.add_argument("--time-budget", type=float, metavar="MIN", help="start no new Claude calls after this long")
-    replay.add_argument("--workers", type=int, help="parallel Claude calls (default: 1 below "
-                                                    f"{SMALL_BUDGET_USD:.0f} USD, else 4)")
-    replay.add_argument("--force", action="store_true", help="replace a replay of another holdout or mode")
-    replay.set_defaults(func=cmd_replay)
-
-    compare = sub.add_parser("compare-rules", help="compare two rules directories and score both against the rules "
-                                                   "key (no Claude)")
-    compare.add_argument("a", type=Path, help="a rules directory, e.g. eval/replays/<name>/data/regler")
-    compare.add_argument("b", type=Path, help="another, e.g. data/regler")
-    compare.add_argument("--decisions-dir", type=Path,
-                         help="decisions of both (default: the beslutninger/ next to each, else data/beslutninger)")
-    compare.add_argument("--as-of", type=date.fromisoformat,
-                         help="the date of the current year's cutoff (default: today)")
-    compare.add_argument("--no-key", action="store_true", help="compare without the rules key (eval/key/rules)")
-    compare.add_argument("--report", help="report name under eval/reports/")
-    compare.set_defaults(func=cmd_compare_rules)
     return p
 
 

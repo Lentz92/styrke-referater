@@ -9,10 +9,8 @@
 # ///
 """Audit the rules' structure: merge, split, rename and move rules through a reviewed ops file.
 
-    uv run audit.py candidates                 # rules that may be one rule, and their recall on the answer key (free)
     uv run audit.py propose --max-cost 25      # Opus proposes ops per category, twice: data/regler_ops.json
     uv run audit.py apply --max-cost 10        # the agreed ops applied to data/; merged and split rules rewritten
-    uv run audit.py score                      # the answer key's rule scores, git HEAD against data/ (free)
 
 Incremental consolidation files each new decision into a rule and never merges, splits or renames rules, so a rule
 spread over several stays spread. The audit fixes the structure: code finds rules whose words are close (candidates.py,
@@ -34,7 +32,6 @@ import copy
 import hashlib
 import json
 import logging
-import subprocess
 import tempfile
 from collections import Counter, defaultdict
 from collections.abc import Callable, Collection, Iterator, Mapping, Sequence
@@ -42,7 +39,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass, field
 from functools import cached_property
 from datetime import date, datetime, timezone
-from itertools import combinations, groupby
+from itertools import groupby
 from pathlib import Path
 
 import analyze
@@ -64,7 +61,6 @@ log = logging.getLogger(__name__)
 OPS_PATH = scrape.DATA_DIR / "regler_ops.json"
 CACHE_DIR = scrape.DATA_DIR / "audit"  # every Claude answer, by call
 REPORT = scrape.ROOT / "audit-report.md"
-CANDIDATES_REPORT = "audit-candidates"  # eval/reports/<name>.md
 OPS_VERSION = 1
 MODEL = "claude-opus-5-5"
 EFFORT = "high"
@@ -72,14 +68,12 @@ RUNS = 2
 OP_KINDS = ("merge", "split", "rename", "move")
 # Rules whose TF-IDF vectors (candidates.py's profiles: title, latest text, kort_regel and the emne of each decision)
 # have at least this cosine similarity may be one rule. A propose call gets its category's rules and every rule of
-# another category this similar to one of them. Chosen with `audit.py candidates` on the answer key: at least
-# RECALL_TARGET of the pairs of rules a key rule is spread over must land in one call. Before the v3 migration 0.1 was
-# the highest threshold that did (97%; 0.12: 94%); on the migrated data it puts 100% into one call, and 0.15 only
-# 96.7%, one pair above the target, so 0.1 keeps a margin for about 2 USD more per audit
+# another category this similar to one of them. Chosen on the answer key with the retired `audit.py candidates`
+# (commit 9f39874): at least 95% of the pairs of rules a key rule is spread over must land in one call. Before the v3
+# migration 0.1 was the highest threshold that did (97%; 0.12: 94%); on the migrated data it puts 100% into one call,
+# and 0.15 only 96.7%, one pair above the target, so 0.1 keeps a margin for about 2 USD more per audit
 # (eval/reports/audit-candidates.md).
 SIMILARITY = 0.1
-THRESHOLDS = (0.05, 0.08, 0.1, 0.12, 0.15, 0.2, 0.25)
-RECALL_TARGET = 0.95
 # The closest rules a rule lists as `ligner` in the propose prompt: a hint, not a limit.
 SIMILAR_SHOWN = 5
 SHORT_TEXT = 200  # characters of a decision's tekst shown where a version has no kort
@@ -292,114 +286,11 @@ def data_fingerprint() -> str:
 
 # --------------------------------------------------------------------------- candidates
 
-def similarities(data: Data) -> dict[str, list[tuple[str, float]]]:
-    """Slug -> every other rule, in any category, with the cosine similarity of their vectors, most similar first."""
-    index = incremental.candidate_index(data.book, data.by_ref)
-    return {slug: index.similar(slug) for slug in index.vectors}
-
-
 def similar_rules(data: Data) -> dict[str, list[tuple[str, float]]]:
     """Slug -> the other rules, in any category, at least SIMILARITY similar to it, most similar first."""
-    return {slug: [(other, score) for other, score in scored if score >= SIMILARITY]
-            for slug, scored in similarities(data).items()}
-
-
-@dataclass(frozen=True)
-class FragmentPair:
-    """Two pipeline rules holding certain events of one answer-key rule: they may be one rule."""
-    key: str  # the key rule's slug
-    soft: bool  # a loosely scoped key rule, left out of the measure (evaluate.soft_rules)
-    a: str
-    b: str
-    same_category: bool
-    similarity: float
-
-
-def fragment_pairs(data: Data, texts: evaluate.Texts,
-                   scores: Mapping[str, list[tuple[str, float]]]) -> list[FragmentPair]:
-    """Every pair of rules a key rule's certain events are in (evaluate.score_rule's holders), with its similarity
-    from `scores` (similarities)."""
-    keys, soft = evaluate.rule_keys(), evaluate.soft_rules()
-    by_doc: dict[str, list[Decision]] = defaultdict(list)
-    for d in data.decisions:
-        by_doc[d.doc_id].append(d)
-    rule_of = {v["ref"]: (category, rule["slug"]) for category, rule in data.book.rules() for v in rule["versioner"]}
-    pairs = []
-    for key in keys:
-        mapped = evaluate.map_events(key, by_doc, {doc.id: doc for doc in data.docs}, texts)
-        holders = sorted({rule_of[mapped[e["id"]]] for e in key["events"]
-                          if e["status"] == "certain" and mapped.get(e["id"]) in rule_of})
-        for (category_a, a), (category_b, b) in combinations(holders, 2):
-            pairs.append(FragmentPair(key["slug"], key["slug"] in soft, a, b, category_a == category_b,
-                                      dict(scores[a])[b]))
-    return pairs
-
-
-@dataclass(frozen=True)
-class Recall:
-    threshold: float
-    flagged: float | None  # share of fragment pairs at least this similar
-    in_call: float | None  # share flagged or in one category: shown in one propose call
-    per_rule: float  # similar rules per rule, mean
-    per_call: tuple[float, int]  # rules of other categories per propose call: mean, max
-
-
-def recall(pairs: Sequence[FragmentPair], data: Data, scores: Mapping[str, list[tuple[str, float]]]) -> list[Recall]:
-    category = {slug: c for slug, (c, _) in data.located().items()}
-    gated = [p for p in pairs if not p.soft]
-    found = []
-    for t in THRESHOLDS:
-        others: dict[str, set[str]] = defaultdict(set)
-        for slug, scored in scores.items():
-            others[category[slug]].update(o for o, s in scored if s >= t and category[o] != category[slug])
-        sizes = [len(others[c]) for c in set(category.values())]
-        found.append(Recall(
-            t, evaluate._ratio(sum(p.similarity >= t for p in gated), len(gated)),
-            evaluate._ratio(sum(p.similarity >= t or p.same_category for p in gated), len(gated)),
-            sum(sum(s >= t for _, s in scored) for scored in scores.values()) / max(len(scores), 1),
-            (sum(sizes) / max(len(sizes), 1), max(sizes, default=0))))
-    return found
-
-
-def choose_threshold(rows: Sequence[Recall]) -> float | None:
-    """The highest threshold that puts at least RECALL_TARGET of the fragment pairs into one call."""
-    passing = [row.threshold for row in rows if (row.in_call or 0) >= RECALL_TARGET]
-    return max(passing, default=None)
-
-
-def candidates_report(pairs: Sequence[FragmentPair], rows: Sequence[Recall]) -> str:
-    chosen = choose_threshold(rows)
-    lines = ["# Audit candidates", "",
-             "Rules that may be one rule: pairs whose TF-IDF vectors (candidates.py's profiles: title, latest text, "
-             "kort_regel and the emne of each decision) have at least the threshold's cosine similarity, in any "
-             "category. A propose call gets its category's rules and every rule of another category this similar to "
-             "one of them. Recall on the answer key: for each key rule whose certain events are in more than one "
-             "pipeline rule (fragmented), every pair of those rules. Flagged: the pair is at least that similar; In "
-             "one call: flagged, or in one category (a call shows all of its category's rules). Soft rules are left "
-             "out.", "",
-             "| Threshold | Flagged | In one call | Similar rules per rule | Other-category rules per call (mean, max) "
-             "|",
-             "|--:|--:|--:|--:|--:|"]
-    for row in rows:
-        lines.append(f"| {row.threshold} | {evaluate._pct(row.flagged)} | {evaluate._pct(row.in_call)} | "
-                     f"{row.per_rule:.1f} | {row.per_call[0]:.0f}, {row.per_call[1]} |")
-    current = next(row for row in rows if row.threshold == SIMILARITY)  # THRESHOLDS holds SIMILARITY
-    reached = (current.in_call or 0) >= RECALL_TARGET
-    verdict = (f"audit.SIMILARITY is {SIMILARITY}: {evaluate._pct(current.in_call)} of the fragment pairs in one "
-               f"call, {'at least' if reached else 'below'} the target of {RECALL_TARGET:.0%}. "
-               + (f"The highest threshold reaching the target is {chosen}." if chosen is not None
-                  else "No threshold reaches it."))
-    if not reached and chosen is not None:
-        verdict += f" Set audit.SIMILARITY to {chosen}."
-    gated = [p for p in pairs if not p.soft]
-    lines += ["", verdict, "", f"## Fragment pairs: {len(gated)}", "",
-              "| Key rule | Rule | Rule | Same category | Similarity |", "|---|---|---|---|--:|"]
-    lines += [f"| {p.key} | {p.a} | {p.b} | {'yes' if p.same_category else 'no'} | {p.similarity:.3f} |"
-              for p in sorted(gated, key=lambda p: (p.key, -p.similarity))]
-    soft = [p for p in pairs if p.soft]
-    if soft:
-        lines += ["", "Left out (soft): " + "; ".join(f"{p.a} ~ {p.b} ({p.similarity:.3f})" for p in soft) + "."]
-    return "\n".join(lines) + "\n"
+    index = incremental.candidate_index(data.book, data.by_ref)
+    return {slug: [(other, score) for other, score in index.similar(slug) if score >= SIMILARITY]
+            for slug in index.vectors}
 
 
 # --------------------------------------------------------------------------- Claude calls, kept by fingerprint
@@ -1279,7 +1170,7 @@ def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minu
         applied = {**document, "ops": [{**entry, "applied": out.applied.get(entry["id"])} for entry in document["ops"]],
                    "applied": {"time": _now(), "data": result.fingerprint}}
         report = audit_report(applied, steps, "apply", history=result.history,
-                              score=score_section(before, result.raw_rules, data))
+                              score=evaluate.score_section(before, result.raw_rules, data.docs, data.decisions))
     except Exception as exc:  # nothing is written: the report says why, the log has the traceback
         log.exception("Applying the ops failed")
         return _not_applied(document, steps, [f"{type(exc).__name__}: {exc}"])
@@ -1333,69 +1224,6 @@ def ledger(audit_id: str, command: str, steps: Mapping[str, StepSummary]) -> dic
 def log_command(command: str, audit_id: str, steps: Mapping[str, StepSummary]) -> None:
     """One line in data/runs.jsonl for a command that called Claude, as update.py logs its runs."""
     update.record_run(dict(steps), {"command": f"audit {command}", "audit": audit_id})
-
-
-# --------------------------------------------------------------------------- score
-
-def score_section(before: list[dict], after: list[dict], data: Data) -> list[str]:
-    """The answer key's rule scores (evaluate.score_rule) of two sets of rule files over today's decisions; empty
-    without a key."""
-    keys, soft = evaluate.rule_keys(), evaluate.soft_rules()
-    if not keys:
-        return []
-    texts, by_id = evaluate.Texts(), {doc.id: doc for doc in data.docs}
-    old = [evaluate.score_rule(key, data.decisions, before, by_id, texts) for key in keys]
-    new = [evaluate.score_rule(key, data.decisions, after, by_id, texts) for key in keys]
-    a = evaluate.rules_summary([s for s in old if s.slug not in soft])
-    b = evaluate.rules_summary([s for s in new if s.slug not in soft])
-    lines = ["## Answer key: before → after", "",
-             "evaluate.py's rules scores (score-rules) over today's decisions. Rules: pipeline rules holding the key "
-             "rule's certain events (more than one: fragmented); Found: in the rule holding most of them; Same "
-             "content: years whose version in force was adopted by the key's adopting event.", "",
-             "| Rule | Rules | Found | Elsewhere | Missing | Same content |", "|---|--:|--:|--:|--:|--:|"]
-    for o, n in zip(old, new):
-        name = f"{o.slug} (soft)" if o.slug in soft else o.slug
-        lines.append(f"| {name} | {o.rules} → {n.rules} | {o.found} → {n.found} | {o.elsewhere} → "
-                     f"{n.elsewhere} | {o.missing} → {n.missing} | {o.same_content} → {n.same_content} of "
-                     f"{n.years} |")
-    passes = (b["fragmented"] < a["fragmented"] and b["found"] >= a["found"] and b["same_content"] >= a["same_content"]
-              and b["missing"] <= a["missing"])
-    lines += ["", f"Without soft rules: fragmented rules {a['fragmented']} → {b['fragmented']}; events found in the "
-                  f"right rule {evaluate._pct(a['found_share'])} → {evaluate._pct(b['found_share'])}; years with the "
-                  f"same content in force {evaluate._pct(a['content_share'])} → {evaluate._pct(b['content_share'])}; "
-                  f"missing events {a['missing']} → {b['missing']}.", "",
-              f"Gate (fragmented rules fall, found and same content do not fall, no event goes missing): "
-              f"{'passes' if passes else 'fails'}.", ""]
-    return lines
-
-
-def git_rules(revision: str, root: Path) -> Path:
-    """data/regler/ as it was at a git revision, written under `root`."""
-    rules_dir = analyze.RULES_DIR.relative_to(scrape.ROOT).as_posix()
-    names = subprocess.run(["git", "ls-tree", "--name-only", f"{revision}:{rules_dir}"], cwd=scrape.ROOT, check=True,
-                           capture_output=True, text=True).stdout.split()
-    out = root / "regler"
-    out.mkdir(parents=True)
-    for name in names:
-        content = subprocess.run(["git", "show", f"{revision}:{rules_dir}/{name}"], cwd=scrape.ROOT, check=True,
-                                 capture_output=True, text=True).stdout
-        (out / name).write_text(content)
-    return out
-
-
-def score(before_rev: str, before_dir: Path | None, after_dir: Path | None, report: str | None) -> None:
-    data = Data.load()
-    after = analyze.load_rules(after_dir)
-    with tempfile.TemporaryDirectory() as tmp:
-        before = analyze.load_rules(before_dir or git_rules(before_rev, Path(tmp)))
-    lines = score_section(before, after, data)
-    if not lines:
-        raise SystemExit(f"No rules key in {evaluate.key_dir('rules')}")
-    label = str(before_dir) if before_dir else f"git {before_rev}"
-    text = "\n".join([f"# Audit score: {label} → {after_dir or analyze.RULES_DIR}", "", *lines])
-    print(text)
-    if report:
-        evaluate.write_text(evaluate.report_path(report), text)
 
 
 # --------------------------------------------------------------------------- report
@@ -1511,15 +1339,6 @@ def history_section(history: checks.HistoryCheck) -> list[str]:
 
 # --------------------------------------------------------------------------- command line
 
-def candidates_command(report: str) -> None:
-    data = Data.load()
-    scores = similarities(data)
-    pairs = fragment_pairs(data, evaluate.Texts(), scores)
-    text = candidates_report(pairs, recall(pairs, data, scores))
-    evaluate.write_text(evaluate.report_path(report), text)
-    print(text)
-
-
 def _categories(text: str | None) -> list[str]:
     chosen = [c for c in (text or "").split(",") if c] or list(CATEGORIES)
     if unknown := [c for c in chosen if c not in CATEGORIES]:
@@ -1530,8 +1349,6 @@ def _categories(text: str | None) -> list[str]:
 def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="command", required=True)
-    c = sub.add_parser("candidates", help="rules that may be one rule, and their recall on the answer key (no Claude)")
-    c.add_argument("--report", default=CANDIDATES_REPORT, help="eval/reports/<name>.md")
     pr = sub.add_parser("propose", help="Opus proposes ops per category, in two runs; writes data/regler_ops.json")
     pr.add_argument("--categories", help="comma-separated categories (default: all)")
     ap = sub.add_parser("apply", help="apply the agreed ops to data/ and rewrite the merged and split rules' texts")
@@ -1542,11 +1359,6 @@ def parser() -> argparse.ArgumentParser:
         paid.add_argument("--time-budget", type=float, default=DEFAULT_TIME_BUDGET, metavar="MIN",
                           help=f"start no new Claude calls after this many minutes (default: {DEFAULT_TIME_BUDGET}; "
                                f"the workflow gives apply what propose left of it)")
-    s = sub.add_parser("score", help="the answer key's rule scores before and after (no Claude)")
-    s.add_argument("--before", default="HEAD", help="git revision whose data/regler is before (default: HEAD)")
-    s.add_argument("--before-dir", type=Path, help="a rules directory to use as before instead")
-    s.add_argument("--after-dir", type=Path, help="a rules directory to use as after (default: data/regler)")
-    s.add_argument("--report", help="also write eval/reports/<name>.md")
     return p
 
 
@@ -1554,14 +1366,9 @@ def main(argv: list[str] | None = None) -> None:
     args = parser().parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
-    if args.command == "candidates":
-        candidates_command(args.report)
-    elif args.command == "propose":
+    if args.command == "propose":
         raise SystemExit(propose(_categories(args.categories), args.max_cost, args.workers, args.time_budget))
-    elif args.command == "apply":
-        raise SystemExit(apply(args.max_cost, args.workers, args.time_budget))
-    else:
-        score(args.before, args.before_dir, args.after_dir, args.report)
+    raise SystemExit(apply(args.max_cost, args.workers, args.time_budget))
 
 
 if __name__ == "__main__":

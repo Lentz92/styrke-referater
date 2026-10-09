@@ -1,10 +1,9 @@
-"""evaluate.py: extraction runs, scoring against the answer key and the incremental consolidation's gates, on a tiny
-corpus in tmp_path; Claude calls go to the fake `claude` from conftest.py."""
+"""evaluate.py: extraction runs, scoring against the answer key and the incremental consolidation's candidate gate,
+on a tiny corpus in tmp_path; Claude calls go to the fake `claude` from conftest.py."""
 
 import hashlib
 import json
 from dataclasses import asdict
-from datetime import date
 from pathlib import Path
 
 import pytest
@@ -14,7 +13,7 @@ import evaluate
 import scrape
 from analyze import DocWords, quote_fields
 from evaluate import DocScore
-from matching import FormerSlug, SlugRegistry, quote_span
+from matching import quote_span
 from scrape import Doc
 
 FILLER = " ".join(["mødet drøftede andre sager"] * 35)  # 140 words
@@ -152,10 +151,15 @@ def test_items_are_named_in_selection_order_and_exclude_a_pilot(corpus):
 def test_extraction_runs_use_the_pipeline_prompt_and_write_only_under_eval(corpus, fake_claude):
     _selection(corpus, "rep2024", "rep2010")
     before = corpus.data_fingerprint()
-    evaluate.main(["extract", "--name", "stored"])
+    evaluate.main(["extract", "--name", "stored", "--from-data"])
     stored = json.loads(evaluate.run_path("stored", "rep2024").read_text())
     assert [d["id"] for d in stored["beslutninger"]] == ["rep2024#1", "rep2024#2"]
     assert fake_claude.invocations("call") == 0
+    with pytest.raises(SystemExit, match="--model and --max-cost"):  # without --from-data, every name calls Claude
+        evaluate.main(["extract", "--name", "stored"])
+    with pytest.raises(SystemExit, match="without calling Claude, so it takes no --model, --max-cost"):
+        evaluate.main(["extract", "--name", "x", "--from-data", "--model", "claude-sonnet-5-5", "--max-cost", "5"])
+    assert not evaluate.run_dir("x").exists()
 
     fake_claude.answer({"moededato": None, "beslutninger": [STORED["rep2024"][0]]})
     evaluate.main(["extract", "--name", "sonnet-1", "--model", "claude-sonnet-5-5", "--max-cost", "5",
@@ -197,18 +201,19 @@ def test_an_extraction_of_other_input_is_replaced_only_with_force(corpus, fake_c
     assert fake_claude.invocations("call") == 2
 
 
-def test_the_stored_run_is_not_replaced_silently(corpus):
+def test_a_run_copied_from_data_is_not_replaced_silently(corpus):
     _selection(corpus, "rep2024")
-    evaluate.main(["extract", "--name", "stored"])
+    command = ["extract", "--name", "migrated", "--from-data"]
+    evaluate.main(command)
     source = analyze.DECISIONS_DIR / "rep2024.json"
     changed = json.loads(source.read_text())
     changed["beslutninger"][0]["tekst"] = "Licensgebyret er 350 kr."
     source.write_text(json.dumps(changed))
     with pytest.raises(SystemExit, match="rep2024.*--force"):
-        evaluate.main(["extract", "--name", "stored"])
-    evaluate.main(["extract", "--name", "stored", "--force"])
-    copied = json.loads(evaluate.run_path("stored", "rep2024").read_text())
-    assert copied["beslutninger"][0]["tekst"] == "Licensgebyret er 350 kr."
+        evaluate.main(command)
+    evaluate.main([*command, "--force"])
+    copied = json.loads(evaluate.run_path("migrated", "rep2024").read_text())
+    assert copied["run"] == "migrated" and copied["beslutninger"][0]["tekst"] == "Licensgebyret er 350 kr."
 
 
 def test_pilot_and_cost_limit_are_respected(corpus, fake_claude):
@@ -326,7 +331,6 @@ def test_score_reports_pooled_and_per_document_figures_and_warns(corpus):
     assert "decision doc rep2024, id K2 (K2)" in report
     assert "Not candidate runs: a, b" in report and "run b extracted another version of rep2024" in report
     assert "- stored: 2 of 3 kept" in report
-    assert _runs_log(corpus)[-1]["metrics"]["a"]["recall_doc_avg"] == 1
 
 
 def test_stability_is_the_share_of_two_runs_decisions_matched_one_to_one_pooled_over_documents():
@@ -375,12 +379,17 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
     _configured_run("sonnet-v3-2", split, prompt="v3")
     runs = ["stored", "sonnet-1", "sonnet-2", "opus-v3-1", "opus-v3-2", "haiku-v3-1", "haiku-v3-2", "sonnet-v3-1",
             "sonnet-v3-2"]
-    evaluate.main(["score", *(arg for run in runs for arg in ("--run", run)), "--report", "gate"])
+    evaluate.main(["score", *(arg for run in runs for arg in ("--run", run)), "--baseline", "stored", "--report",
+                   "gate"])
 
     report = (evaluate.EVAL_DIR / "reports" / "gate.md").read_text()
+    assert "worse run is at least the run stored, less a margin, on recall" in report
     assert "| 1 | 0 | 0 | 0 | 0 | – |" in report  # the stored run is no other run's repeat
     assert report.count("| 2 | 0 | 0 | 0 | 0 | 100.0% |") == 2  # the opus runs found the same decisions
-    assert "| needs | | ≥ 50.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
+    # Today's pipeline found one and two of the key's two decisions: its recall spreads 50 points, so the floor drops
+    # by that much below the stored run's 50%.
+    assert "| needs | | ≥ 0.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
+    assert "| spread of today's pipeline (points) | sonnet-1, sonnet-2 | 50.0 | 0.0 | 0.0 | 0.0 | | |" in report
     pipeline = "claude-sonnet-5-5, prompt v2, effort default (today's pipeline)"
     assert f"| {pipeline} | sonnet-1, sonnet-2 | 50.0% | 100.0% | 100.0% | 0.0% | 66.7% | yes |" in report
     assert ("| claude-opus-5-5, prompt v3, effort default | opus-v3-1, opus-v3-2 | 100.0% | 100.0% | 100.0% | 0.0% | "
@@ -389,14 +398,37 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
             "40.0% | no: precision, stability |") in report
     assert ("| claude-sonnet-5-5, prompt v3, effort default | sonnet-v3-1, sonnet-v3-2 | 100.0% | 100.0% | 100.0% | "
             "50.0% | 100.0% | no: over_split |") in report
-    line = _runs_log(corpus)[-1]
-    assert line["metrics"]["sonnet-1"]["stability"] == pytest.approx(0.6667, abs=1e-4)
-    assert line["metrics"]["stored"]["stability"] is None
-    assert line["gate"]["claude-opus-5-5, prompt v3, effort default"]["failed"] == []
 
-    evaluate.main(["score", "--run", "stored", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "unpaired"])
+    # By default the gate measures against the run migrated, and only when it is scored.
+    evaluate.main(["score", "--run", "stored", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "no-baseline"])
+    assert "## Gate" not in (evaluate.EVAL_DIR / "reports" / "no-baseline.md").read_text()
+    _configured_run("migrated", [_run("Licensgebyr", 0), _run("Startgebyr", 20)])  # recall 100%
+    evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "unpaired"])
     report = (evaluate.EVAL_DIR / "reports" / "unpaired.md").read_text()
+    assert "at least the run migrated, less a margin" in report and "| needs | | ≥ 100.0% |" in report
+    assert "today's pipeline was not run twice here, so it is the slack alone" in report
     assert "were not scored, so no configuration passes" in report and "| no: stability |" in report
+    # A baseline named on purpose that is not scored, or mistyped, stops the command instead of dropping the gate.
+    for name, why in (("migrate", "--baseline migrate: also pass --run migrate"), ("Migrated", "Run name 'Migrated'")):
+        with pytest.raises(SystemExit, match=why):
+            evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--baseline", name])
+
+
+def test_a_worse_run_within_the_spread_of_todays_pipeline_passes_and_one_outside_it_fails():
+    def run(found: int) -> DocScore:  # found of 100 key decisions, nothing false or split, every field right
+        return DocScore(100, found, 0, 0, 0, 0, 0, {"three": found}, {"three": found})
+
+    totals = {"today-1": run(90), "today-2": run(94), "within-1": run(87), "within-2": run(95), "outside-1": run(85),
+              "outside-2": run(95)}
+    within, outside = (evaluate.Configuration("claude-haiku-5-5", prompt, "default") for prompt in ("a", "b"))
+    groups = {within: ["within-1", "within-2"], outside: ["outside-1", "outside-2"]}
+    stable = {within: 0.95, outside: 0.95}
+    # Today's pipeline ran at 90% and 94% recall: 4 points of noise below the baseline's 90% are allowed.
+    needs = evaluate.gate_needs(totals["today-1"], 0.9, evaluate.spread([totals["today-1"], totals["today-2"]]))
+    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [(), ("recall",)]
+    # Run once, today's pipeline shows no noise, and the slack alone (none on recall) fails both.
+    needs = evaluate.gate_needs(totals["today-1"], 0.9, evaluate.spread([totals["today-1"]]))
+    assert [r.failed for r in evaluate.gate(totals, groups, stable, needs)] == [("recall",)] * 2
 
 
 # ---------------------------------------------------------------- scoring rules
@@ -587,7 +619,6 @@ def test_soft_rules_and_corrections_are_reported_apart(corpus):
     assert "| licensgebyr (soft) | licensgebyr | 4 |" in report and "| **all** | | 0 | 0 |" in report
     assert "left out of the totals and the summary: licensgebyr: loosely scoped" in report
     assert "(NOTHING: the key has changed, check the correction)" in report
-    assert _runs_log(corpus)[-1]["soft"] == ["licensgebyr"]
 
 
 def test_score_rules_reads_another_rules_directory_and_writes_a_report(corpus):
@@ -601,7 +632,6 @@ def test_score_rules_reads_another_rules_directory_and_writes_a_report(corpus):
     evaluate.main(["score-rules", "--rules-dir", str(other)])
     report = (evaluate.EVAL_DIR / "reports" / "rules-other-rules.md").read_text()
     assert "| licensgebyr | licensgebyr | 4 | 3 | 0 | 1 | 1 | 3 | 1 | 17 | 17 | 17 |" in report
-    assert _runs_log(corpus)[-1]["metrics"]["content_share"] == 1.0
     assert corpus.data_fingerprint() == before
 
 
@@ -627,8 +657,6 @@ def test_candidate_recall_hides_each_decision_from_its_rule_and_picks_the_smalle
     # Licensgebyr's three decisions and Startgebyr's two; the two one-decision rules are left out.
     assert "| **all** | 5 | 100.0% |" in report and "2 decisions are their rule's only one" in report
     assert "Chosen K: 3" in report and "| @3 relabelled |" in report
-    assert _runs_log(corpus)[-1]["k"] == 3 and set(_runs_log(corpus)[-1]["relabelled"]) == {"@3", "@5", "@8", "@10",
-                                                                                              "@15"}
     # Relabelled, the decision ranks with another category's boost: here every rule is okonomi's, so it still finds
     # its rule among the three.
     hidden = evaluate.hide_one_ranks(analyze.load_rules(), analyze.load_decisions(corpus.docs))
@@ -641,134 +669,3 @@ def test_recall_at_k_and_the_chosen_k():
     assert evaluate.choose_k(hidden) == 5
     assert evaluate.choose_k(hidden[:97] + [evaluate.Hidden("x#1", "r", "okonomi", 99)] * 3) is None
 
-
-def test_a_holdout_takes_the_newest_documents_then_seeded_draws_from_the_rest(corpus):
-    decisions = analyze.load_decisions(corpus.docs)
-    assert evaluate.holdout_parts("newest:2", decisions, 1) == (("newest:2", ("rep2024", "rep2019")),)
-    (newest, drawn) = evaluate.holdout_parts("newest:1,random:2", decisions, 7)
-    assert newest == ("newest:1", ("rep2024",)) and drawn[0] == "random:2"
-    assert len(set(drawn[1])) == 2 and "rep2024" not in drawn[1]
-    assert (newest, drawn) == evaluate.holdout_parts("newest:1,random:2", decisions, 7)
-    with pytest.raises(SystemExit, match="newest:20"):
-        evaluate.holdout_parts("oldest:2", decisions, 1)
-
-
-def test_withholding_removes_decisions_their_empty_rules_and_slugs_that_stood_for_nothing_else():
-    files = {"okonomi": {"kategori": "okonomi", "regler": [
-        {"titel": "A", "slug": "a", "versioner": [{"ref": "x#1"}, {"ref": "y#1"}]},
-        {"titel": "B", "slug": "b", "versioner": [{"ref": "y#2"}]}], "udeladt": ["y#3", "x#2"], "ikke_tildelt": []}}
-    registry = SlugRegistry.of({"old-b": FormerSlug("okonomi", "B", frozenset({"y#2"}), "b"),
-                                "old-a": FormerSlug("okonomi", "A", frozenset({"x#1", "y#1"}), "a")})
-    out, kept = evaluate.withhold(files, registry, {"y#1", "y#2", "y#3"})
-    assert [(r["slug"], [v["ref"] for v in r["versioner"]]) for r in out["okonomi"]["regler"]] == [("a", ["x#1"])]
-    assert out["okonomi"]["udeladt"] == ["x#2"]
-    assert set(kept.former()) == {"old-a"}
-
-
-def _reflect_unassigned(corpus) -> None:
-    """rep2016 and rep2019 left out as one-offs, so the corpus has no work but what a replay withholds."""
-    path = analyze.RULES_DIR / "okonomi.json"
-    path.write_text(json.dumps({**json.loads(path.read_text()), "udeladt": ["rep2016#1", "rep2019#1"]}))
-
-
-REPLAY = ["replay", "--holdout", "newest:1", "--name", "r1", "--max-cost", "5", "--workers", "1"]
-
-
-def test_a_replay_files_the_withheld_documents_again_on_a_copy_and_never_writes_data(corpus, fake_claude):
-    _reflect_unassigned(corpus)
-    before = corpus.data_fingerprint()
-    vote = {"answers": [{"ref": "rep2024#1", "choice": "licensgebyr", "title": None},
-                        {"ref": "rep2024#2", "choice": "new", "title": "Klubskifte"}]}
-
-    def updated(ref):
-        return {"versioner": [{"ref": ref, "effekt": "aendret", "tekst": "x", "kort": "x", "kort_regel": "x"}],
-                "vigtig": True, "note": None}
-
-    fake_claude.answers(vote, vote, vote, updated("rep2024#1"), updated("rep2024#2"))
-    evaluate.main(REPLAY)
-
-    assert corpus.data_fingerprint() == before
-    replayed = evaluate.replay_dir("r1") / "data" / "regler"
-    rules = {r["slug"]: [v["ref"] for v in r["versioner"]] for r in analyze.load_rules(replayed)}
-    assert rules == {"licensgebyr": ["rep2010#1", "rep2013#3", "rep2013#1", "rep2024#1"],
-                     "startgebyr": ["rep2010#2", "rep2013#2"], "klubskifte": ["rep2024#2"]}
-    stored = evaluate.read_json(evaluate.replay_dir("r1") / "holdout.json")
-    assert (stored["documents"], stored["parts"]) == (["rep2024"], {"newest:1": ["rep2024"]})
-    assert _runs_log(corpus)[-1]["command"] == "replay"
-
-    evaluate.main(REPLAY)  # continues on the copy: nothing is left, so nothing is asked
-    assert fake_claude.invocations("call") == 5
-    with pytest.raises(SystemExit, match="another holdout or mode; pass --force"):
-        evaluate.main([*REPLAY[:2], "newest:2", *REPLAY[3:]])
-    assert corpus.data_fingerprint() == before
-
-
-def test_a_full_replay_consolidates_the_withheld_documents_categories_anew(corpus, fake_claude):
-    _reflect_unassigned(corpus)
-    before = corpus.data_fingerprint()
-    fake_claude.answer({"regler": [{"titel": "Alt", "vigtig": True, "note": None, "versioner": [
-        {"ref": ref, "effekt": "indfoert", "tekst": None, "kort": "x", "kort_regel": None}
-        for ref in ("rep2010#1", "rep2024#1", "rep2024#2")]}], "udeladt": []})
-    evaluate.main([*REPLAY[:4], "f1", *REPLAY[5:], "--mode", "full"])
-    assert fake_claude.invocations("call") == 2  # okonomi and medlemskab, the categories rep2024 has decisions in
-    assert corpus.data_fingerprint() == before
-
-
-def test_b_cubed_compares_two_groupings_per_decision():
-    a = {"x": frozenset("xy"), "y": frozenset("xy")}  # z in no rule: a cluster of its own
-    b = {"y": frozenset("yz"), "z": frozenset("yz")}
-    assert evaluate.bcubed(a, b, "xyz") == pytest.approx((2 / 3, 2 / 3, 2 / 3))
-    assert evaluate.bcubed(a, a, "xyz") == (1.0, 1.0, 1.0)
-    assert evaluate.bcubed(a, b, []) == (None, None, None)
-
-
-def _rules_dir(corpus, name: str, rules: dict):
-    directory = corpus.root / name
-    directory.mkdir()
-    corpus.rules(rules, directory)
-    return directory
-
-
-SPLIT = {"okonomi": [("Licensgebyr", "licensgebyr", [("rep2010#1", "indfoert"), ("rep2013#1", "bekraeftet")]),
-                     ("Licensgebyr 2024", "licensgebyr-2024", [("rep2024#1", "indfoert")])]}
-MERGED = {"okonomi": [("Licensgebyr", "licensgebyr", [("rep2010#1", "indfoert"), ("rep2013#1", "bekraeftet"),
-                                                      ("rep2024#1", "aendret")])]}
-
-
-def test_two_consolidations_compare_on_grouping_years_in_force_and_effects(corpus):
-    decisions = analyze.load_decisions(corpus.docs)
-    split, merged = (analyze.load_rules(_rules_dir(corpus, name, rules))
-                     for name, rules in (("split", SPLIT), ("merged", MERGED)))
-    c = evaluate.compare_rules(split, merged, decisions, decisions, date(2026, 10, 8), {"random:1": {"rep2024"}})
-    # Split puts 2024 apart: precision 1, recall (2/3 + 2/3 + 1/3) / 3.
-    assert c.overall.bcubed == pytest.approx((1.0, 5 / 9, 10 / 14))
-    # 2010-2023 agree; from 2024 split also shows 2010's licence next to 2024's.
-    years = c.overall.years
-    assert years["2023-12-31"] == ((1, 1), (1, 1)) and years["2024-12-31"] == ((1, 2), (1, 2))
-    shares = c.overall.shares()
-    assert (shares["event_agreement"], shares["content_agreement"]) == (17 / 20, 17 / 20)
-    assert c.overall.effects == (2, 3)
-    # The held-out document alone: rep2024#1 sits apart in split; in force, only the rules holding it count, so
-    # merged's licence of 2010-2023 is in force where split's rule of 2024 is not yet.
-    held = c.parts["random:1"]
-    assert held.decisions == 1 and held.bcubed == pytest.approx((1.0, 1 / 3, 0.5))
-    assert held.shares()["event_agreement"] == 3 / 17 and held.effects == (0, 1)
-    report = evaluate.comparison_report("split", "merged", c, None, {})
-    assert "## Held out: random:1 (late insertion: mostly older documents, 1 decisions)" in report
-
-
-def test_compare_rules_needs_the_key_or_no_key_and_writes_a_report(corpus):
-    split, merged = (_rules_dir(corpus, name, rules) for name, rules in (("split", SPLIT), ("merged", MERGED)))
-    with pytest.raises(SystemExit, match="No rules key in .*eval/README.md.*--no-key"):
-        evaluate.main(["compare-rules", str(split), str(merged)])
-    evaluate.main(["compare-rules", str(split), str(merged), "--no-key", "--as-of", "2026-10-08"])
-    report = (evaluate.EVAL_DIR / "reports" / f"compare-{corpus.root.name}-split-vs-{corpus.root.name}-merged.md"
-              ).read_text()
-    assert "B-cubed precision / recall / F1 (A against B): 100.0% / 55.6% / 71.4%" in report
-    assert "| 2024 | 1/2 | 1/2 |" in report and "Against the rules key" not in report
-
-    evaluate.write_json(evaluate.key_dir("rules") / "licensgebyr.json", _rule_key(corpus))
-    evaluate.main(["compare-rules", str(split), str(merged), "--as-of", "2026-10-08", "--report", "with-key"])
-    report = (evaluate.EVAL_DIR / "reports" / "with-key.md").read_text()
-    assert "## Against the rules key" in report and "| Fragmented rules | 1 | 0 |" in report
-    assert "| licensgebyr | 2/4 found, 2 rules, " in report and " | 3/4 found, 1 rules, " in report
