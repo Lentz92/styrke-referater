@@ -294,7 +294,10 @@ class Plan:
 class Work:
     """The Claude work a run would start with, as the rebuild guard judges it."""
     documents: frozenset[str]  # ids of the documents to extract
-    categories: frozenset[str]  # categories to consolidate
+    categories: frozenset[str]  # categories to consolidate (in incremental mode, to file decisions in)
+    # Categories whose rules must be redone: in full mode those to consolidate; in incremental mode those of changed
+    # and retired decisions, as filing the new decisions of documents already extracted is ordinary work.
+    redone: frozenset[str]
     lost: frozenset[str]  # categories among them with decisions but no rule file
     outdated: frozenset[str]  # categories consolidated with another CONSOLIDATE_VERSION: only `full` migrates them
     sources: dict[str, frozenset[str]]  # category -> ids of the documents its cached decisions come from
@@ -314,8 +317,10 @@ class Work:
         they touch consolidated, so before extraction (almost) no category needs it. This catches:
         - more than REBUILD_SHARE of the documents to extract: a new EXTRACT_VERSION, or lost extractions;
         - a category with decisions but no rule file: lost rules;
-        - more than REBUILD_CATEGORY_SHARE of the categories to consolidate: a new CONSOLIDATE_VERSION, a
-          change to the consolidation input, edited decisions, or what a cut-off run left;
+        - more than REBUILD_CATEGORY_SHARE of the categories to redo: a new CONSOLIDATE_VERSION, a change to the
+          consolidation input, edited decisions, or what a cut-off full run left. New decisions waiting to be filed
+          incrementally do not count, however many categories a cut-off month left them in: the next plain run
+          files them;
         - in incremental mode, a migration (see migration).
         """
         reasons = []
@@ -324,8 +329,8 @@ class Work:
         if self.lost:
             lost = ", ".join(sorted(self.lost))
             reasons.append(f"categories with decisions but no rule file in data/regler/: {lost}")
-        if len(self.categories) > REBUILD_CATEGORY_SHARE * self.total_categories:
-            reasons.append(f"{len(self.categories)} of {self.total_categories} categories need consolidating again")
+        if len(self.redone) > REBUILD_CATEGORY_SHARE * self.total_categories:
+            reasons.append(f"{len(self.redone)} of {self.total_categories} categories need consolidating again")
         if self.mode == "incremental":  # in full mode this is ordinary work to extract and consolidate
             reasons += self.migration()
         return reasons
@@ -355,18 +360,21 @@ def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE, prompt: 
                  model: str = EXTRACT_MODEL) -> Work:
     """The work before extraction with the extraction prompt named `prompt` (None: the pipeline's) and `model`, from
     data/ alone: no Claude call. The categories to consolidate are those whose input changed (full), or those the
-    incremental work queue changes (incremental.queue_categories); in incremental mode, those consolidated with another
-    CONSOLIDATE_VERSION, and documents extracted with another prompt or model, are a migration: only `full` does it."""
+    incremental work queue changes (incremental.queue_categories), of which those of changed and retired decisions are
+    redone (Work.redone). In incremental mode, categories consolidated with another CONSOLIDATE_VERSION, and documents
+    extracted with another prompt or model, are a migration: only `full` does it."""
     decisions = analyze.load_decisions(docs)
     book = incremental.RuleBook.load()
     outdated = frozenset(category for category, stored in book.files.items()
                          if stored.get("version") != analyze.CONSOLIDATE_VERSION)
     if mode == "incremental":
-        categories = incremental.queue_categories(incremental.work_queue(decisions, book, docs), decisions, book)
+        queue = incremental.work_queue(decisions, book, docs)
+        categories = incremental.queue_categories(queue, decisions, book)
+        redone = incremental.queue_categories([replace(work, new=()) for work in queue], decisions, book)
         lost = frozenset(category for category in categories if category not in book.files)
     else:
         todo = analyze.consolidation_todo(decisions, {d.id: d.organ_label for d in docs})
-        categories = frozenset(job.category for job in todo)
+        categories = redone = frozenset(job.category for job in todo)
         lost = frozenset(job.category for job in todo if job.rules_missing)
     sources: dict[str, set[str]] = {}
     home = analyze.home_categories(decisions, analyze.load_rules())
@@ -375,6 +383,7 @@ def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE, prompt: 
     return Work(
         documents=frozenset(analyze.missing_extractions(docs, prompt, model=model)),
         categories=categories,
+        redone=redone,
         lost=lost,
         outdated=outdated,
         sources={category: frozenset(ids) for category, ids in sources.items()},

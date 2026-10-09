@@ -507,6 +507,35 @@ def test_a_cut_off_migration_is_finished_by_its_command_which_skips_the_categori
     assert update.pending_work(world.docs).reasons() == [] and update.pending_work(world.docs).outdated == set()
 
 
+def test_decisions_a_cut_off_month_left_in_most_categories_are_filed_by_the_next_plain_run(world, fake_claude, run):
+    # A big meeting with new decisions in every category, extracted by a run whose filing was then cut off.
+    world.document("rep2024", "2024-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
+                   _decision("Klubskifte", "Et klubskifte kræver fire måneders karantæne.", "medlemskab"))
+    fake_claude.plan("error")
+    with pytest.raises(SystemExit, match="Claude calls failed"):
+        run()
+    assert update.pending_work(world.docs).categories == {"okonomi", "medlemskab"}  # 2 of 2: ordinary work all the same
+    calls = fake_claude.invocations("call")
+    fake_claude.plan("ok")
+    vote = _votes({"rep2024#1": "licensgebyr", "rep2024#2": "klubskifte"})
+    fake_claude.answers(*[{}] * calls, vote, vote, vote, _update("rep2024#2"), _update("rep2024#1"))
+    run()  # the next monthly run, without --allow-rebuild
+    assert fake_claude.invocations("call") == calls + 5
+    assert [v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]][-1] == "rep2024#1"
+    assert [v["ref"] for v in world.rule("medlemskab", "klubskifte")["versioner"]][-1] == "rep2024#2"
+
+
+def test_changed_decisions_in_most_categories_still_stop_a_plain_run(world, fake_claude, run):
+    # rep2020 read again: its decision in each category changed, so every category's rules are to be redone.
+    world.document("rep2020", "2020-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 325 kr. pr. løfter."),
+                   _decision("Klubskifte", "Et klubskifte kræver fire måneders karantæne.", "medlemskab"))
+    with pytest.raises(SystemExit):
+        run()
+    report = (world.root / "run-report.md").read_text()
+    assert "Stopped before any Claude call: 2 of 2 categories need consolidating again" in report
+    assert fake_claude.calls() == []
+
+
 def test_the_workflow_runs_the_default_mode_unless_full_is_ticked():
     workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
     full = workflow[workflow.index("\n      full:\n"):workflow.index("\npermissions:")]
