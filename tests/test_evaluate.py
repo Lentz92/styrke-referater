@@ -383,7 +383,8 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
                    "gate"])
 
     report = (evaluate.EVAL_DIR / "reports" / "gate.md").read_text()
-    assert "than the run stored less its slack or than the worst run of today's pipeline" in report
+    assert "than the run stored moved by its slack or than the worst run of today's pipeline" in report
+    assert "noise alone" not in report  # the run stored is no run of today's pipeline
     assert "| 1 | 0 | 0 | 0 | 0 | – |" in report  # the stored run is no other run's repeat
     assert report.count("| 2 | 0 | 0 | 0 | 0 | 100.0% |") == 2  # the opus runs found the same decisions
     assert "| needs | | ≥ 50.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
@@ -405,8 +406,8 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
     _configured_run("migrated", [_run("Licensgebyr", 0), _run("Startgebyr", 20)])  # recall 100%
     evaluate.main(["score", "--run", "migrated", "--run", "opus-v3-1", "--run", "opus-v3-2", "--report", "unpaired"])
     report = (evaluate.EVAL_DIR / "reports" / "unpaired.md").read_text()
-    assert "than the run migrated less its slack" in report and "| needs | | ≥ 100.0% |" in report
-    assert "it was not run twice here, so only the slack counts" in report
+    assert "| needs | | ≥ 100.0% |" in report
+    assert "than the run migrated moved by its slack (today's pipeline was not run twice here)" in report
     assert "were not scored, so no configuration passes" in report and "| no: stability |" in report
     # A baseline named on purpose that is not scored, or mistyped, stops the command instead of dropping the gate; one
     # that is scored with no configuration run twice says that no gate was computed.

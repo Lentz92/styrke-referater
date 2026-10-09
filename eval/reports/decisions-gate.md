@@ -22,7 +22,7 @@ Not candidate runs: sonnet-v3-1, sonnet-v3-2, opus-v3-1, opus-v3-2, migrated. Th
 
 ## Gate
 
-A configuration passes when its worse run is no worse, on recall, precision, the three fields and over-split, than the run migrated less its slack or than the worst run of today's pipeline (claude-opus-5-5, prompt v3, effort default), whichever is looser, and its runs are at least as stable as the runs of today's pipeline. Runs of today's pipeline differ from migrated on noise alone, so a candidate as good as its worst run passes.
+A configuration passes when its worse run is no worse, on recall, precision, the three fields and over-split, than the run migrated moved by its slack or than the worst run of today's pipeline, whichever is looser, and its runs are at least as stable as the runs of today's pipeline (claude-opus-5-5, prompt v3, effort default). The run migrated is one of today's pipeline's runs, which differ on noise alone, so a candidate as good as their worst passes.
 
 | Configuration | Runs | Recall (worse) | Precision (worse) | Three (worse) | Over-split (worse) | Stability | Passes |
 |---|---|--:|--:|--:|--:|--:|---|

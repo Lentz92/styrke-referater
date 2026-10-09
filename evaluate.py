@@ -61,7 +61,9 @@ SEED = 2026
 # The gate's default baseline: today's data, data/beslutninger copied after the migration to Opus with prompt v3
 # (extract --name migrated --from-data). It is one run of today's pipeline, whose runs differ on noise alone (two Opus
 # v3 runs: 88.7% and 95.5% on the three fields), so a candidate need only be no worse than today's pipeline's worst run
-# where that is looser than the baseline less its slack (gate_needs).
+# where that is looser than the baseline moved by its slack (gate_needs). The worst is taken over every scored run of
+# today's pipeline, so one outlier run loosens that figure's bound; the report's row "today's pipeline, worst run per
+# figure" lists the runs it comes from.
 BASELINE_RUN = "migrated"
 # Calls already running finish after the cost limit is reached, so a run can overshoot it by one call per worker;
 # below this limit the default is one worker.
@@ -760,13 +762,17 @@ def gate_section(results: Sequence[GateResult], needs: Mapping[str, float | None
     pipeline = pipeline_configuration()
     reference = pipeline.label()
     unscored = "" if needs["stability"] is not None else "; they were not scored, so no configuration passes"
-    alone = "" if today else "; it was not run twice here, so only the slack counts"
+    if today:
+        bound = (f"than the run {baseline} moved by its slack or than the worst run of today's pipeline, whichever is "
+                 f"looser")
+    else:
+        bound = f"than the run {baseline} moved by its slack (today's pipeline was not run twice here)"
+    noise =(f" The run {baseline} is one of today's pipeline's runs, which differ on noise alone, so a candidate as "
+             f"good as their worst passes." if baseline in today else "")
     lines = ["## Gate", "",
              f"A configuration passes when its worse run is no worse, on recall, precision, the three fields and "
-             f"over-split, than the run {baseline} less its slack or than the worst run of today's pipeline "
-             f"({reference}), whichever is looser, and its runs are at least as stable as the runs of today's "
-             f"pipeline{unscored}. Runs of today's pipeline differ from {baseline} on noise alone, so a candidate as "
-             f"good as its worst run passes{alone}.", "",
+             f"over-split, {bound}, and its runs are at least as stable as the runs of today's pipeline "
+             f"({reference}){unscored}.{noise}", "",
              "| Configuration | Runs | Recall (worse) | Precision (worse) | Three (worse) | Over-split (worse) | "
              "Stability | Passes |",
              "|---|---|--:|--:|--:|--:|--:|---|",
