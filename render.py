@@ -9,7 +9,7 @@ from datetime import date
 from urllib.parse import quote
 
 from analyze import CATEGORIES, Decision, has_slug, version_matches
-from scrape import ROOT, Doc
+from scrape import MONTHS, ROOT, Doc
 
 OUT_DIR = ROOT / "regelsaet"
 AREA_DIR = "regler"  # subfolder of OUT_DIR with one full page per area
@@ -54,8 +54,7 @@ CONTENT_EFFECTS = ("indfoert", "aendret", "bekraeftet")
 PROPOSAL_EFFECTS = ("forkastet", "trukket")
 # Not news on a year page: a confirmation (unless it is the first sighting) or an undecided proposal.
 QUIET_EFFECTS = ("bekraeftet", "foreslaaet")
-MONTH_NAMES = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august",
-               "september", "oktober", "november", "december"]
+MONTH_NAMES = list(MONTHS)
 WARNING = "⚠"
 STALE_AFTER_YEARS = 5
 # Letters spelled out in Markdown anchors, which GitHub's viewer does not scroll to unless they are ASCII; other

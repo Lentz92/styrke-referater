@@ -22,7 +22,7 @@ from functools import lru_cache
 import snowballstemmer
 
 # How many ranked rules the assignment offers per decision: the smallest K whose recall reaches 98 % when each
-# decision of today's rules is hidden from its rule (`evaluate.py candidate-recall`: 98.2 % at 15, 96.9 % at 10).
+# decision of today's rules is hidden from its rule (`evaluate.py candidate-recall`: 98.2 % at 15, 96.8 % at 10).
 CANDIDATE_K = 15
 # The score of a rule in the decision's own category is multiplied by 1 + CATEGORY_BOOST. Today's rules never mix
 # categories (each was consolidated per category), so the recall gate rewards any boost; this one is kept moderate so
@@ -149,10 +149,6 @@ class CandidateIndex:
                 score *= 1 + CATEGORY_BOOST
             scored.append((slug, score))
         return sorted(scored, key=lambda item: (-item[1], self.order[item[0]]))
-
-    def top(self, query: Query, k: int = CANDIDATE_K) -> list[str]:
-        """The slugs of the k best rules."""
-        return [slug for slug, _ in self.rank(query)[:k]]
 
     def similar(self, slug: str) -> list[tuple[str, float]]:
         """Every other rule with the cosine similarity of its vector to this rule's, best first; no category boost

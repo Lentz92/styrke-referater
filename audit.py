@@ -34,7 +34,6 @@ import copy
 import hashlib
 import json
 import logging
-import os
 import subprocess
 import tempfile
 from collections import Counter, defaultdict
@@ -309,28 +308,18 @@ def similar_rules(data: Data) -> dict[str, list[tuple[str, float]]]:
 class FragmentPair:
     """Two pipeline rules holding certain events of one answer-key rule: they may be one rule."""
     key: str  # the key rule's slug
-    soft: bool  # a loosely scoped key rule, left out of the measure (evaluate.SOFT_RULES)
+    soft: bool  # a loosely scoped key rule, left out of the measure (evaluate.soft_rules)
     a: str
     b: str
     same_category: bool
     similarity: float
 
 
-def rule_keys() -> tuple[list[dict], set[str]]:
-    """The answer key's rules with their corrections applied, and the slugs of those marked soft
-    (evaluate.SOFT_RULES), as `evaluate.py score-rules` reads them."""
-    corrections = evaluate.load_corrections()
-    keys = [evaluate.correct_rule_key(evaluate.read_json(path), corrections)
-            for path in sorted(evaluate.key_dir("rules").glob("*.json"))]
-    selection = evaluate.load_selection() if evaluate.selection_path().exists() else {"rules": []}
-    return keys, {r["slug"] for r in selection["rules"] if r.get("soft")}
-
-
 def fragment_pairs(data: Data, texts: evaluate.Texts,
                    scores: Mapping[str, list[tuple[str, float]]]) -> list[FragmentPair]:
     """Every pair of rules a key rule's certain events are in (evaluate.score_rule's holders), with its similarity
     from `scores` (similarities)."""
-    keys, soft = rule_keys()
+    keys, soft = evaluate.rule_keys(), evaluate.soft_rules()
     by_doc: dict[str, list[Decision]] = defaultdict(list)
     for d in data.decisions:
         by_doc[d.doc_id].append(d)
@@ -365,8 +354,8 @@ def recall(pairs: Sequence[FragmentPair], data: Data, scores: Mapping[str, list[
             others[category[slug]].update(o for o, s in scored if s >= t and category[o] != category[slug])
         sizes = [len(others[c]) for c in set(category.values())]
         found.append(Recall(
-            t, _share(sum(p.similarity >= t for p in gated), len(gated)),
-            _share(sum(p.similarity >= t or p.same_category for p in gated), len(gated)),
+            t, evaluate._ratio(sum(p.similarity >= t for p in gated), len(gated)),
+            evaluate._ratio(sum(p.similarity >= t or p.same_category for p in gated), len(gated)),
             sum(sum(s >= t for _, s in scored) for scored in scores.values()) / max(len(scores), 1),
             (sum(sizes) / max(len(sizes), 1), max(sizes, default=0))))
     return found
@@ -392,12 +381,12 @@ def candidates_report(pairs: Sequence[FragmentPair], rows: Sequence[Recall]) -> 
              "|",
              "|--:|--:|--:|--:|--:|"]
     for row in rows:
-        lines.append(f"| {row.threshold} | {_pct(row.flagged)} | {_pct(row.in_call)} | {row.per_rule:.1f} | "
-                     f"{row.per_call[0]:.0f}, {row.per_call[1]} |")
+        lines.append(f"| {row.threshold} | {evaluate._pct(row.flagged)} | {evaluate._pct(row.in_call)} | "
+                     f"{row.per_rule:.1f} | {row.per_call[0]:.0f}, {row.per_call[1]} |")
     current = next(row for row in rows if row.threshold == SIMILARITY)  # THRESHOLDS holds SIMILARITY
     reached = (current.in_call or 0) >= RECALL_TARGET
-    verdict = (f"audit.SIMILARITY is {SIMILARITY}: {_pct(current.in_call)} of the fragment pairs in one call, "
-               f"{'at least' if reached else 'below'} the target of {RECALL_TARGET:.0%}. "
+    verdict = (f"audit.SIMILARITY is {SIMILARITY}: {evaluate._pct(current.in_call)} of the fragment pairs in one "
+               f"call, {'at least' if reached else 'below'} the target of {RECALL_TARGET:.0%}. "
                + (f"The highest threshold reaching the target is {chosen}." if chosen is not None
                   else "No threshold reaches it."))
     if not reached and chosen is not None:
@@ -411,14 +400,6 @@ def candidates_report(pairs: Sequence[FragmentPair], rows: Sequence[Recall]) -> 
     if soft:
         lines += ["", "Left out (soft): " + "; ".join(f"{p.a} ~ {p.b} ({p.similarity:.3f})" for p in soft) + "."]
     return "\n".join(lines) + "\n"
-
-
-def _share(part: int, whole: int) -> float | None:
-    return part / whole if whole else None
-
-
-def _pct(value: float | None) -> str:
-    return "–" if value is None else f"{value:.1%}"
 
 
 # --------------------------------------------------------------------------- Claude calls, kept by fingerprint
@@ -461,10 +442,10 @@ def ask(call: Call, budget: RunBudget, cli: str, accept: Callable[[dict], object
     with analyze.usage_kept(usage):
         if accept is not None:
             accept(output)
-        _replace(call.path, _json_bytes({
+        scrape._write_atomic(call.path, analyze.json_text({
             "fingerprint": call.fingerprint(), "time": _now(),
             "provenance": analyze.provenance(usage, cli, call.system, call.schema, EFFORT),
-            "usage": evaluate.usage_json(usage), "output": output}))
+            "usage": evaluate.usage_json(usage), "output": output}).encode())
     return f"{call.name}: {evaluate.describe_usage(usage)}", usage
 
 
@@ -921,7 +902,7 @@ def _propose(categories: Sequence[str], data: Data, audit_id: str, budget: RunBu
             titles, notes = chosen_titles(slots, output)
             name_titles(proposed, titles)
     document = ops_document(audit_id, categories, proposed, rejected + conflicting, missing, notes)
-    _replace(OPS_PATH, _json_bytes(document))
+    scrape._write_atomic(OPS_PATH, analyze.json_text(document).encode())
     write_report(audit_report(document, steps, "propose"))
     agreed = sum(p.agreed for p in proposed)
     print(f"Wrote {OPS_PATH.name}: {agreed} agreed ops, {len(proposed) - agreed} not agreed, "
@@ -1305,14 +1286,14 @@ def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minu
     # As a consolidation writes (analyze._consolidate_one): the slug history first, with every slug in it a rule
     # takes up again, so whichever write fails every slug stays taken (a merged-away slug that is still live then is
     # reported by checks.py and dropped by resolve_slugs); then the rule files, the final history and the ops file.
-    _replace(analyze.SLUGS_PATH, result.taken)
+    scrape._write_atomic(analyze.SLUGS_PATH, result.taken)
     for name, content in result.files.items():
         path = analyze.RULES_DIR / name
         if not path.exists() or path.read_bytes() != content:
-            _replace(path, content)
+            scrape._write_atomic(path, content)
     if result.taken != result.slugs:
-        _replace(analyze.SLUGS_PATH, result.slugs)
-    _replace(OPS_PATH, _json_bytes(applied))
+        scrape._write_atomic(analyze.SLUGS_PATH, result.slugs)
+    scrape._write_atomic(OPS_PATH, analyze.json_text(applied).encode())
     render.write_pages(result.pages)
     website.write_site(result.html)
     write_report(report)
@@ -1336,31 +1317,15 @@ def _not_applied(document: dict, steps: Mapping[str, StepSummary], failures: Seq
     return 1
 
 
-def _json_bytes(value: object) -> bytes:
-    """JSON as analyze._write_json writes it."""
-    return (json.dumps(value, ensure_ascii=False, indent=1) + "\n").encode()
-
-
-def _replace(path: Path, content: bytes) -> None:
-    """Write a file whole: to a temporary file next to it, then renamed over it, so a run killed meanwhile leaves the
-    old file or the new one, never part of one."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(f".{path.name}.tmp")
-    temporary.write_bytes(content)
-    os.replace(temporary, path)
-
-
 # --------------------------------------------------------------------------- the audit's cost
 
 def ledger(audit_id: str, command: str, steps: Mapping[str, StepSummary]) -> dict[str, float]:
     """USD at list price per command of this audit, every call counted (failed attempts and rejected answers too): the
     lines data/runs.jsonl has for it, and this command's steps, which it logs when it ends."""
     spent: dict[str, float] = defaultdict(float)
-    if update.RUNS_LOG.exists():
-        for line in update.RUNS_LOG.read_text().splitlines():
-            entry = json.loads(line) if line.strip() else {}
-            if entry.get("audit") == audit_id:
-                spent[entry["command"].removeprefix("audit ")] += sum(s["cost_usd"] for s in entry["steps"].values())
+    for entry in update._log_lines(update.RUNS_LOG):
+        if entry.get("audit") == audit_id:
+            spent[entry["command"].removeprefix("audit ")] += sum(s["cost_usd"] for s in entry["steps"].values())
     spent[command] += sum(step.usage.cost_usd for step in steps.values())
     return dict(spent)
 
@@ -1375,7 +1340,7 @@ def log_command(command: str, audit_id: str, steps: Mapping[str, StepSummary]) -
 def score_section(before: list[dict], after: list[dict], data: Data) -> list[str]:
     """The answer key's rule scores (evaluate.score_rule) of two sets of rule files over today's decisions; empty
     without a key."""
-    keys, soft = rule_keys()
+    keys, soft = evaluate.rule_keys(), evaluate.soft_rules()
     if not keys:
         return []
     texts, by_id = evaluate.Texts(), {doc.id: doc for doc in data.docs}
@@ -1396,9 +1361,9 @@ def score_section(before: list[dict], after: list[dict], data: Data) -> list[str
     passes = (b["fragmented"] < a["fragmented"] and b["found"] >= a["found"] and b["same_content"] >= a["same_content"]
               and b["missing"] <= a["missing"])
     lines += ["", f"Without soft rules: fragmented rules {a['fragmented']} → {b['fragmented']}; events found in the "
-                  f"right rule {_pct(a['found_share'])} → {_pct(b['found_share'])}; years with the same content in "
-                  f"force {_pct(a['content_share'])} → {_pct(b['content_share'])}; missing events {a['missing']} → "
-                  f"{b['missing']}.", "",
+                  f"right rule {evaluate._pct(a['found_share'])} → {evaluate._pct(b['found_share'])}; years with the "
+                  f"same content in force {evaluate._pct(a['content_share'])} → {evaluate._pct(b['content_share'])}; "
+                  f"missing events {a['missing']} → {b['missing']}.", "",
               f"Gate (fragmented rules fall, found and same content do not fall, no event goes missing): "
               f"{'passes' if passes else 'fails'}.", ""]
     return lines
@@ -1436,7 +1401,7 @@ def score(before_rev: str, before_dir: Path | None, after_dir: Path | None, repo
 # --------------------------------------------------------------------------- report
 
 def write_report(text: str) -> None:
-    _replace(REPORT, text.encode())
+    scrape._write_atomic(REPORT, text.encode())
 
 
 # The report's first line, which .github/scripts/route-audit.sh reads to title the pull request.
@@ -1533,23 +1498,15 @@ def history_section(history: checks.HistoryCheck) -> list[str]:
         lines.append("No rule in force changed in any year.")
     else:
         lines += ["| Rule | Years | Before | After |", "|---|---|---|---|"]
-        for (title, slugs, was, now), run in groupby(changes, key=lambda c: (c.title, c.slugs, _state(c.before),
-                                                                             _state(c.after))):
-            lines.append(f"| {_cell(title)} (`{slugs}`) | {checks.years(c.cutoff for c in run)} | {_cell(was)} | "
-                         f"{_cell(now)} |")
+        for (title, slugs, was, now), run in groupby(changes, key=lambda c: (c.title, c.slugs, update._state(c.before),
+                                                                             update._state(c.after))):
+            lines.append(f"| {update._cell(title)} (`{slugs}`) | {checks.years(c.cutoff for c in run)} | "
+                         f"{update._cell(was)} | {update._cell(now)} |")
     wording = {c.title for c in history.changes if c.kind == "history-text"}
     if wording:
         lines += ["", f"Only the wording in force changed for {len(wording)} rules (rewritten texts): "
                       f"{', '.join(sorted(wording))}."]
     return lines + [""]
-
-
-def _state(rules: Sequence[checks.InForce]) -> str:
-    return " + ".join(rule.label() for rule in rules) or "not in force"
-
-
-def _cell(text: str) -> str:
-    return text.replace("|", "\\|")
 
 
 # --------------------------------------------------------------------------- command line

@@ -157,11 +157,15 @@ def _profile(slug: str, category: str, title: str, text: str = "") -> RuleProfil
     return RuleProfile(slug, category, title, text, None, ())
 
 
+def _top(index: CandidateIndex, query: Query, k: int) -> list[str]:
+    return [slug for slug, _ in index.rank(query)[:k]]
+
+
 def test_compound_words_find_the_rule_named_by_their_parts():
     index = CandidateIndex.of([_profile("dragt", "landshold", "Dragt til landshold"),
                                _profile("licens", "okonomi", "Licens og gebyr"),
                                _profile("andet", "staevner", "Indvejning ved stævner")])
-    assert index.top(Query("Landsholdsdragt", "Ny landsholdsdragt fra 2025.", "andet"), 1) == ["dragt"]
+    assert _top(index, Query("Landsholdsdragt", "Ny landsholdsdragt fra 2025.", "andet"), 1) == ["dragt"]
 
 
 def test_the_category_boosts_but_does_not_filter():
@@ -170,10 +174,10 @@ def test_the_category_boosts_but_does_not_filter():
              _profile("licens", "okonomi", "Licensgebyr for løftere")]
     index = CandidateIndex.of(rules)
     # Equally close: the decision's own category first; its category does not lift an unrelated rule above both.
-    assert index.top(Query("Startgebyr", "Startgebyr ved stævner", "okonomi"), 3)[:2] == ["start-b", "start-a"]
-    assert index.top(Query("Startgebyr", "Startgebyr ved stævner", "staevner"), 2) == ["start-a", "start-b"]
+    assert _top(index, Query("Startgebyr", "Startgebyr ved stævner", "okonomi"), 3)[:2] == ["start-b", "start-a"]
+    assert _top(index, Query("Startgebyr", "Startgebyr ved stævner", "staevner"), 2) == ["start-a", "start-b"]
     # A clearly closer rule of another category still comes first.
-    assert index.top(Query("Licensgebyr", "Licensgebyr for løftere", "staevner"), 1) == ["licens"]
+    assert _top(index, Query("Licensgebyr", "Licensgebyr for løftere", "staevner"), 1) == ["licens"]
 
 
 # ---------------------------------------------------------------- votes

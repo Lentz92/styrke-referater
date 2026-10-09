@@ -430,14 +430,14 @@ def test_a_failure_before_the_writes_writes_nothing(proposed, monkeypatch, faili
 def _recorded(monkeypatch) -> list[tuple[str, bytes]]:
     """What apply replaces, in order, besides the answers it keeps."""
     written: list[tuple[str, bytes]] = []
-    replace = audit._replace
+    replace = scrape._write_atomic
 
     def record(path: Path, content: bytes) -> None:
         if not path.name.startswith(("text-", "propose-", "titles")):
             written.append((path.name, content))
         replace(path, content)
 
-    monkeypatch.setattr(audit, "_replace", record)
+    monkeypatch.setattr(scrape, "_write_atomic", record)
     return written
 
 

@@ -759,7 +759,7 @@ def test_two_consolidations_compare_on_grouping_years_in_force_and_effects(corpu
 
 def test_compare_rules_needs_the_key_or_no_key_and_writes_a_report(corpus):
     split, merged = (_rules_dir(corpus, name, rules) for name, rules in (("split", SPLIT), ("merged", MERGED)))
-    with pytest.raises(SystemExit, match="No rules key in .*key-rules.*--no-key"):
+    with pytest.raises(SystemExit, match="No rules key in .*eval/README.md.*--no-key"):
         evaluate.main(["compare-rules", str(split), str(merged)])
     evaluate.main(["compare-rules", str(split), str(merged), "--no-key", "--as-of", "2026-10-08"])
     report = (evaluate.EVAL_DIR / "reports" / f"compare-{corpus.root.name}-split-vs-{corpus.root.name}-merged.md"

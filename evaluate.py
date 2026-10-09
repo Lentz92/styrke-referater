@@ -22,9 +22,8 @@ Two extraction runs agree on only ~90% of decisions, so comparing runs cannot te
 change (models, prompts, consolidation) is scored against the key instead. Opus judges built it once, for the
 documents and recurring rules in eval/selection.json: each document's decisions (key/decisions/<doc>.json) and each
 rule's timeline with what was in force every year (key/rules/<slug>.json). Errors a check against the minutes found
-in it are in key/corrections.json, applied whenever a key is scored. The commands that made the selection and built
-the key (select, key-decisions, key-rules) are at commit 9f39874: `git worktree add ../key-build 9f39874` checks it
-out with their tests.
+in it are in key/corrections.json, applied whenever a key is scored. eval/README.md says how the key was built and
+where the commands that built it are.
 
 Everything is written under eval/: runs/<run>/<doc>.json, reports/<name>.md, replays/<name>/ and runs.jsonl. Nothing
 is written to data/ or regelsaet/: a replay withholds documents from a copy of data/ in eval/replays/<name>/data and
@@ -103,7 +102,7 @@ def write_text(path: Path, text: str) -> None:
 
 
 def write_json(path: Path, value: object) -> None:
-    write_text(path, json.dumps(value, ensure_ascii=False, indent=1) + "\n")
+    write_text(path, analyze.json_text(value))
 
 
 def read_json(path: Path) -> dict:
@@ -152,7 +151,7 @@ class Texts:
 def load_selection() -> dict:
     path = selection_path()
     if not path.exists():
-        raise SystemExit(f"{path} is missing; it was made with the answer key (`evaluate.py select` at commit 9f39874)")
+        raise SystemExit(f"{path} is missing; it was made with the answer key (eval/README.md)")
     return read_json(path)
 
 
@@ -1341,8 +1340,7 @@ def cmd_score(args: argparse.Namespace) -> None:
     keys = {path.stem: correct_decisions_key(read_json(path), corrections)
             for path in sorted(key_dir("decisions").glob("*.json"))}
     if not keys:
-        raise SystemExit(f"No decisions key in {key_dir('decisions')}; it is built by `evaluate.py key-decisions` "
-                         f"at commit 9f39874")
+        raise SystemExit(f"No decisions key in {key_dir('decisions')}; it was built once (eval/README.md)")
     doc_ids = [doc_id for doc_id in keys if all(run_path(run, doc_id).exists() for run in runs)]
     left_out = sorted(set(keys) - set(doc_ids))
     if not doc_ids:
@@ -1384,8 +1382,7 @@ def cmd_score(args: argparse.Namespace) -> None:
 def cmd_score_rules(args: argparse.Namespace) -> None:
     keys = rule_keys()
     if not keys:
-        raise SystemExit(f"No rules key in {key_dir('rules')}; it is built by `evaluate.py key-rules` at commit "
-                         f"9f39874")
+        raise SystemExit(f"No rules key in {key_dir('rules')}; it was built once (eval/README.md)")
     soft = soft_rules()
     rules_dir = args.rules_dir or analyze.RULES_DIR
     docs = scrape.load_manifest()
@@ -1457,8 +1454,8 @@ def rules_label(rules_dir: Path) -> str:
 def cmd_compare_rules(args: argparse.Namespace) -> None:
     keys = rule_keys()
     if not keys and not args.no_key:
-        raise SystemExit(f"No rules key in {key_dir('rules')} (built by `evaluate.py key-rules` at commit 9f39874); "
-                         f"pass --no-key to compare without it")
+        raise SystemExit(f"No rules key in {key_dir('rules')} (built once: eval/README.md); pass --no-key to compare "
+                         f"without it")
     soft = soft_rules()
     docs = scrape.load_manifest()
     dirs = {"a": args.a, "b": args.b}

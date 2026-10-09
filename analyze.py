@@ -204,8 +204,8 @@ Return an empty list if there are no such decisions.
 
 # v3 adds one field rule. Under v2 a budget line setting several fees was one decision, which only one rule can hold,
 # so one fee's yearly confirmations ended up in another fee's rule (the licence fee's in "Årsafgift"). It splits only
-# what belongs to different rules, as the answer key's judges were told to (GRANULARITY in evaluate.py at 9f39874):
-# the tiers of one fee or one list of deadlines stay one decision. Everything else is v2 verbatim.
+# what belongs to different rules, as the answer key's judges were told to (eval/README.md): the tiers of one fee or
+# one list of deadlines stay one decision. Everything else is v2 verbatim.
 EXTRACT_SPLIT_RULE = """\
 - One decision per rule a decision sets, changes or confirms: a budget line that sets or \
 confirms different fees or rates, each its own rule (e.g. licens, årsafgift and startgebyr), \
@@ -339,8 +339,7 @@ def _made_by(cached: dict, model: str) -> bool:
 
 
 def document_prompt(doc: Doc, text: str) -> str:
-    """The document as Claude gets it: its id, organ, title and date from styrke.dk, then its text. The extraction
-    sends exactly this, and the answer key's judges got it before the candidates."""
+    """The document as Claude gets it: its id, organ, title and date from styrke.dk, then its text."""
     return (
         f"Dokument-id: {doc.id}\nOrgan: {doc.organ_label}\nTitel på styrke.dk: {doc.title}\n"
         f"Dato ifølge styrke.dk: {doc.date or 'ukendt'}\n\n<dokument>\n{text}\n</dokument>"
@@ -850,13 +849,18 @@ def home_categories(decisions: Iterable[Decision], raw_rules: Iterable[dict]) ->
     covers) goes to its own category, as it always has. A decision two rules hold (an error checks.py reports) counts
     with the first in category order."""
     by_ref = {d.ref: d for d in decisions}
-    order = list(CATEGORIES)
     holder: dict[str, str] = {}
-    for raw in sorted(raw_rules, key=lambda r: order.index(r["kategori"]) if r["kategori"] in order else len(order)):
+    for raw in sorted(raw_rules, key=lambda r: category_order(r["kategori"])):
         for v in raw["versioner"]:
             if v["ref"] in by_ref and version_matches(v, by_ref[v["ref"]]):
                 holder.setdefault(v["ref"], raw["kategori"])
     return {ref: holder.get(ref, d.kategori) for ref, d in by_ref.items()}
+
+
+def category_order(category: str) -> int:
+    """Where a category sorts: in the order of CATEGORIES, an unknown one last."""
+    order = list(CATEGORIES)
+    return order.index(category) if category in order else len(order)
 
 
 def _consolidation_input(d: Decision, organ: str) -> dict:
@@ -1345,5 +1349,10 @@ def _hash(value: object, version: int) -> str:
     return hashlib.sha256(json.dumps([version, value], ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
+def json_text(value: object) -> str:
+    """A data file's JSON: indented by one space, letters as they are, ending in a newline."""
+    return json.dumps(value, ensure_ascii=False, indent=1) + "\n"
+
+
 def _write_json(path: Path, value: object) -> None:
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=1) + "\n")
+    path.write_text(json_text(value))

@@ -10,7 +10,7 @@ import re
 from collections.abc import Collection, Mapping, Sequence
 from dataclasses import dataclass, field, replace
 
-# A pair of decisions scoring at least this is the same decision; see score().
+# A pair of decisions scoring at least this is the same decision; see _score().
 #
 # Measured on the two extractions of all 236 documents in the history (EXTRACT_VERSION 1 at commit 861adee and
 # the current one; 959 and 1017 decisions). Pairs that share a quote score 1 or more. On text alone the
@@ -63,26 +63,8 @@ def quote_overlap(a: tuple[int, int] | None, b: tuple[int, int] | None) -> float
     return max(shared, 0) / min(a[1] - a[0], b[1] - b[0])
 
 
-def text_similarity(a: Candidate, b: Candidate) -> float:
-    """Jaccard similarity of the word trigrams of emne and tekst."""
-    return _jaccard(_grams(a), _grams(b))
-
-
-def score(old: Candidate, new: Candidate) -> float:
-    """Quote overlap plus text similarity, each from 0 to 1.
-
-    The quote says where in the document a decision stands and survives rewording; the text tells apart
-    decisions that share one quote (a rule document listing four requirements under one heading). Without a
-    shared quote (one was not located, or Claude quoted another sentence) the text alone must carry the match,
-    and then the outcome must agree too: a rejected proposal and an adopted one can read alike. When both
-    quotes were located, at different places, the text must reach LOCATED_APART_TEXT as well.
-    """
-    return _score(old, new, text_similarity(old, new))
-
-
-def match_decisions(old: Sequence[Candidate], new: Sequence[Candidate],
-                    threshold: float = MATCH_THRESHOLD) -> list[Match]:
-    """Pair old and new decisions one to one, best score first, leaving out pairs below the threshold.
+def match_decisions(old: Sequence[Candidate], new: Sequence[Candidate]) -> list[Match]:
+    """Pair old and new decisions one to one, best score first (_score), leaving out pairs below MATCH_THRESHOLD.
 
     Greedy: the best-scoring pair is taken, its two decisions leave the pool, and so on. Equal scores go to the
     earlier old, then the earlier new decision, so the result is deterministic. Sorted by new decision.
@@ -93,7 +75,7 @@ def match_decisions(old: Sequence[Candidate], new: Sequence[Candidate],
     for i, o in enumerate(old):
         for j, n in enumerate(new):
             value = _score(o, n, _jaccard(old_grams[i], new_grams[j]))
-            if value >= threshold:
+            if value >= MATCH_THRESHOLD:
                 pairs.append(Match(i, j, value))
     pairs.sort(key=lambda m: (-m.score, m.old, m.new))
     matches: list[Match] = []
@@ -108,6 +90,15 @@ def match_decisions(old: Sequence[Candidate], new: Sequence[Candidate],
 
 
 def _score(old: Candidate, new: Candidate, text: float) -> float:
+    """Quote overlap plus text similarity (`text`: the Jaccard similarity of the word trigrams of emne and tekst),
+    each from 0 to 1.
+
+    The quote says where in the document a decision stands and survives rewording; the text tells apart
+    decisions that share one quote (a rule document listing four requirements under one heading). Without a
+    shared quote (one was not located, or Claude quoted another sentence) the text alone must carry the match,
+    and then the outcome must agree too: a rejected proposal and an adopted one can read alike. When both
+    quotes were located, at different places, the text must reach LOCATED_APART_TEXT as well.
+    """
     quote = quote_overlap(old.span, new.span)
     if quote > 0:
         return quote + text
