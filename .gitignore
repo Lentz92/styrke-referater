@@ -13,3 +13,6 @@ _site/
 
 # The outcome of the last update.py run (the body of the review pull request)
 run-report.md
+
+# Replay copies of data/ (regenerable with evaluate.py replay; summaries are in eval/reports/)
+eval/replays/

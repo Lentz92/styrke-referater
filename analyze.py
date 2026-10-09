@@ -309,12 +309,22 @@ def missing_extractions(docs: list[Doc], prompt: str | None = None) -> list[str]
     return sorted(doc.id for doc in docs if not _extraction_is_current(doc, version))
 
 
-def _extraction_is_current(doc: Doc, version: int) -> bool:
+def reprompted_extractions(docs: list[Doc], prompt: str | None = None) -> list[str]:
+    """Ids of documents whose cached extraction was made with another extraction prompt than the one named `prompt`
+    (None: the pipeline's): extracting them again may change any of their decisions."""
+    version = extract_prompt(prompt).version
+    return sorted(doc.id for doc in docs if (cached := _cached_extraction(doc)) is not None
+                  and cached.get("version") != version)
+
+
+def _cached_extraction(doc: Doc) -> dict | None:
     path = DECISIONS_DIR / f"{doc.id}.json"
-    if not path.exists():
-        return False
-    cached = json.loads(path.read_text())
-    return cached.get("sha256") == doc.sha256 and cached.get("version") == version
+    return json.loads(path.read_text()) if path.exists() else None
+
+
+def _extraction_is_current(doc: Doc, version: int) -> bool:
+    cached = _cached_extraction(doc)
+    return cached is not None and cached.get("sha256") == doc.sha256 and cached.get("version") == version
 
 
 def document_prompt(doc: Doc, text: str) -> str:
@@ -1269,6 +1279,7 @@ class StepSummary:
     skipped: int  # jobs that never started because a limit was reached; they run next time
     usage: Usage  # summed over every attempt, failed ones included
     seconds: float  # wall-clock time of the step
+    notes: dict[str, tuple[str, ...]] = field(default_factory=dict)  # heading -> lines to review, for run-report.md
 
 
 def run_parallel(jobs: list, fn, workers: int, label: str, budget: RunBudget | None = None) -> StepSummary:

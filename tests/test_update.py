@@ -14,8 +14,10 @@ from analyze import StepSummary, Usage
 from scrape import Doc
 
 CATEGORIES = ["okonomi", "master", "dommere", "staevner"]
-# The extraction prompt the pipeline does not use (v3 until a migration makes it the default).
+# The extraction prompt the pipeline does not use.
 OTHER_PROMPT = next(name for name in analyze.EXTRACT_PROMPTS if name != analyze.extract_prompt().name)
+# The guard's tests are about full consolidation unless they say otherwise.
+FULL = update.Plan(mode="full")
 
 
 @pytest.fixture
@@ -77,8 +79,9 @@ def analysed(data, monkeypatch):
 
 # ---------------------------------------------------------------- rebuild guard
 
-def _reasons(docs: list[Doc]) -> str:
-    return "; ".join(update.pending_work(docs).reasons())
+def _reasons(docs: list[Doc], mode: str = "full") -> str:
+    """Why the rebuild guard stops a run; these tests are about full consolidation unless they say otherwise."""
+    return "; ".join(update.pending_work(docs, mode).reasons())
 
 
 def test_a_few_new_documents_pass_the_rebuild_guard(data, monkeypatch):
@@ -123,51 +126,51 @@ def _edit_decision(doc: Doc, **changes) -> None:
 
 def test_the_approval_is_saved_before_any_claude_call(data):
     docs = _docs(data, 3)
-    update.check_rebuild(docs, allowed=True)
+    update.check_rebuild(docs, allowed=True, plan=FULL)
     marker = json.loads(update.REBUILD_MARKER.read_text())
     assert marker["documents"] == ["doc0", "doc1", "doc2"]
 
 
 def test_new_minutes_may_arrive_while_an_approved_rebuild_is_unfinished(analysed, data, monkeypatch):
     monkeypatch.setattr(analyze, "EXTRACT_VERSION", analyze.EXTRACT_VERSION + 1)
-    update.check_rebuild(analysed, allowed=True)  # all 20 documents to extract again
-    update.check_rebuild(_docs(data, 22), allowed=False)  # plus 2 new ones: ordinary on their own
+    update.check_rebuild(analysed, allowed=True, plan=FULL)  # all 20 documents to extract again
+    update.check_rebuild(_docs(data, 22), allowed=False, plan=FULL)  # plus 2 new ones: ordinary on their own
 
 
 def test_the_approval_covers_categories_that_approved_documents_move_into(analysed, monkeypatch):
     monkeypatch.setattr(analyze, "EXTRACT_VERSION", analyze.EXTRACT_VERSION + 1)
-    update.check_rebuild(analysed, allowed=True)  # all 20 documents to extract again
+    update.check_rebuild(analysed, allowed=True, plan=FULL)  # all 20 documents to extract again
     _extracted(analysed)  # the new prompt puts every decision in a category nobody approved
     for doc in analysed:
         _edit_decision(doc, kategori="andet")
     assert "no rule file in data/regler/: andet" in _reasons(analysed)
-    update.check_rebuild(analysed, allowed=False)
+    update.check_rebuild(analysed, allowed=False, plan=FULL)
 
 
 def test_an_approval_does_not_cover_lost_extractions(analysed, monkeypatch):
     monkeypatch.setattr(analyze, "CONSOLIDATE_VERSION", analyze.CONSOLIDATE_VERSION + 1)
-    update.check_rebuild(analysed, allowed=True)  # all 4 categories to consolidate again
+    update.check_rebuild(analysed, allowed=True, plan=FULL)  # all 4 categories to consolidate again
     for path in analyze.DECISIONS_DIR.glob("*.json"):
         path.unlink()
     with pytest.raises(SystemExit, match="beyond the work approved in rebuild.json, 20 of 20 documents"):
-        update.check_rebuild(analysed, allowed=False)
+        update.check_rebuild(analysed, allowed=False, plan=FULL)
 
 
 def test_an_approval_of_one_category_does_not_cover_a_changed_consolidation_input(analysed, monkeypatch):
     (analyze.RULES_DIR / "master.json").unlink()
-    update.check_rebuild(analysed, allowed=True)
+    update.check_rebuild(analysed, allowed=True, plan=FULL)
     assert json.loads(update.REBUILD_MARKER.read_text())["categories"] == ["master"]
 
     original = analyze._consolidation_input
     monkeypatch.setattr(analyze, "_consolidation_input", lambda d, organ: {**original(d, organ), "ny": 1})
     with pytest.raises(SystemExit, match="beyond the work approved in rebuild.json, 3 of 4 categories"):
-        update.check_rebuild(analysed, allowed=False)
+        update.check_rebuild(analysed, allowed=False, plan=FULL)
 
 
 def test_the_refusal_names_the_reason_and_the_github_checkbox(analysed):
     (analyze.RULES_DIR / "master.json").unlink()
     with pytest.raises(SystemExit) as refusal:
-        update.check_rebuild(analysed, allowed=False)
+        update.check_rebuild(analysed, allowed=False, plan=FULL)
     assert "no rule file in data/regler/: master" in str(refusal.value)
     assert update.REBUILD_INPUT_LABEL in str(refusal.value)
     workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
@@ -197,13 +200,13 @@ def test_a_rebuild_is_priced_from_measured_extractions_and_the_last_full_consoli
           "steps": {"consolidate": _logged_step(30, 3.0, opus)}})
     work = update.pending_work(analysed, prompt=OTHER_PROMPT)  # all 20 documents, and their 4 categories
 
-    estimate = update.estimate_cost(work, update.Plan(OTHER_PROMPT, opus, opus))
+    estimate = update.estimate_cost(work, update.Plan(OTHER_PROMPT, opus, "full", opus))
     assert estimate.extract_usd == pytest.approx(20 * 0.15)  # the runs with this prompt only
     assert estimate.consolidate_usd == pytest.approx(4 * 0.5)  # the full consolidation of November
     assert estimate.total_usd == pytest.approx(5.0)
     assert "more than --max-cost 4" in estimate.describe(4.0) and "--max-cost" not in estimate.describe(15.0)
 
-    sonnet = update.estimate_cost(work, update.Plan(OTHER_PROMPT, "claude-sonnet-5-5", "claude-sonnet-5-5"))
+    sonnet = update.estimate_cost(work, update.Plan(OTHER_PROMPT, "claude-sonnet-5-5", "full", "claude-sonnet-5-5"))
     assert sonnet.extract_usd is None and sonnet.total_usd is None  # no Sonnet extraction measured
     assert sonnet.consolidate_usd == pytest.approx(update.FULL_CONSOLIDATION_USD)  # none logged: the README's
     assert "unknown" in sonnet.describe(15.0)
@@ -217,19 +220,20 @@ def _one_rule_each(docs: list[Doc]) -> dict:
             "udeladt": []}
 
 
-def test_a_migration_to_another_prompt_is_approved_resumed_on_its_model_and_reviewed_when_cut_off(
+def test_a_migration_to_another_prompt_is_approved_continued_with_its_settings_and_reviewed_when_cut_off(
         run, data, fake_claude, monkeypatch, caplog):
     docs = _docs(data, 20)
     _extracted(docs)
     _consolidated(docs, monkeypatch, _one_rule_each(docs))
     opus = ("--extract-prompt", OTHER_PROMPT, "--extract-model", "claude-opus-5-5")
     resume = f"uv run update.py --extract-prompt {OTHER_PROMPT} --extract-model claude-opus-5-5"
+    migrate = (f"uv run update.py --consolidate-mode full --extract-prompt {OTHER_PROMPT} --extract-model "
+               f"claude-opus-5-5 --allow-rebuild")
     # Each document's decision comes back reworded, in order (one worker); each category keeps its rules.
     fake_claude.answers(*({"moededato": None, "beslutninger": [_raw(CATEGORIES[i % 4], f"Regel {doc.id}, ny")],
                            **_one_rule_each(docs)} for i, doc in enumerate(docs)))
 
-    with pytest.raises(SystemExit, match=f"20 of 20 documents need extraction.*claude-opus-5-5.*`{resume} "
-                                         f"--allow-rebuild`"):
+    with pytest.raises(SystemExit, match=f"20 of 20 documents need extraction.*claude-opus-5-5.*`{migrate}`"):
         run(docs, *opus)
     assert fake_claude.invocations("call") == 0 and "Estimated cost at list price" in caplog.text
 
@@ -238,17 +242,26 @@ def test_a_migration_to_another_prompt_is_approved_resumed_on_its_model_and_revi
         update.EXIT_REVIEW
     assert "- **stale**" in update.RUN_REPORT.read_text()
     marker = json.loads(update.REBUILD_MARKER.read_text())
-    assert (marker["extract_prompt"], marker["extract_model"], len(marker["documents"])) == \
-        (OTHER_PROMPT, "claude-opus-5-5", 10)
+    assert {k: marker[k] for k in ("extract_prompt", "extract_model", "mode", "consolidate_model",
+                                   "consolidate_effort")} == {
+        "extract_prompt": OTHER_PROMPT, "extract_model": "claude-opus-5-5", "mode": "full",
+        "consolidate_model": "claude-opus-5-5", "consolidate_effort": None}
+    assert len(marker["documents"]) == 10
 
-    # Stopped before any call, each says how to continue; the stale rules still send the result to review.
-    assert _exit_code(run, docs) == update.EXIT_REVIEW  # it would extract the first ten back with the default prompt
-    assert re.search(f"holds an unfinished rebuild.*`{resume}` continues it", update.RUN_REPORT.read_text())
-    assert _exit_code(run, docs, "--extract-prompt", OTHER_PROMPT) == update.EXIT_REVIEW  # the rest with Sonnet
-    assert re.search(f"extracts with claude-opus-5-5, not claude-sonnet-5-5.*`{resume}`", update.RUN_REPORT.read_text())
+    # A plain run would extract the first ten back with the default prompt, and one with the migration's prompt but
+    # another model would mix two: each stops before any call and names the command that continues; the stale rules
+    # still send the result to review.
+    assert _exit_code(run, docs, mode=None) == update.EXIT_REVIEW
+    assert re.search(f"holds an unfinished rebuild approved for extraction prompt {OTHER_PROMPT}: `{resume}` continues "
+                     f"it", update.RUN_REPORT.read_text())
+    assert _exit_code(run, docs, "--extract-prompt", OTHER_PROMPT, "--extract-model", "claude-sonnet-5-5") == \
+        update.EXIT_REVIEW
+    assert re.search(f"extracted with --extract-prompt {OTHER_PROMPT} --extract-model claude-opus-5-5 .*, not "
+                     f"--extract-model claude-sonnet-5-5\\. Run `{resume}` without them", update.RUN_REPORT.read_text())
     assert fake_claude.invocations("call") == 10
 
-    run(docs, *opus, "--workers", "1")  # the same options continue it without a new approval
+    # Its prompt alone continues it, with the approved model and in full.
+    run(docs, "--extract-prompt", OTHER_PROMPT, "--workers", "1", mode=None)
     chosen = analyze.extract_prompt(OTHER_PROMPT)
     systems = [argv[argv.index("--system-prompt") + 1] for argv in fake_claude.calls()]
     assert systems == [chosen.system] * 20 + [analyze.CONSOLIDATE_SYSTEM] * 4  # then every category in full
@@ -261,21 +274,27 @@ def test_a_migration_to_another_prompt_is_approved_resumed_on_its_model_and_revi
     assert {k: _run_log()[-1][k] for k in ("extract_prompt", "consolidate_mode")} == \
         {"extract_prompt": OTHER_PROMPT, "consolidate_mode": "full"}
 
-    with pytest.raises(SystemExit) as refused:  # a changed extraction is consolidated in full, never incrementally
-        run(docs, *opus, "--consolidate-mode", "incremental")
-    assert refused.value.code == 2  # argparse's usage error
+    # Until the migrated prompt is the default, a plain run would extract every document back, which incremental
+    # consolidation refuses; once it is, a plain run has nothing to do.
+    with pytest.raises(SystemExit, match=f"20 of 20 documents were extracted with another prompt than "
+                                         f"{analyze.extract_prompt().name}.*Migrate with `{update.MIGRATE}`"):
+        run(docs, mode=None)
+    monkeypatch.setattr(analyze, "EXTRACT_VERSION", chosen.version)
+    monkeypatch.setattr(analyze, "EXTRACT_SYSTEM", chosen.system)
+    run(docs, mode=None)
+    assert fake_claude.invocations("call") == 24 and update.pending_work(docs).reasons() == []
 
 
-def test_a_few_approved_documents_left_keep_the_approval_and_its_model(analysed, monkeypatch):
-    plan = update.Plan(OTHER_PROMPT, "claude-opus-5-5")
+def test_a_few_approved_documents_left_keep_the_approval_and_its_settings(analysed):
+    plan = update.Plan(OTHER_PROMPT, "claude-opus-5-5", "full")
     update.check_rebuild(analysed, allowed=True, plan=plan)  # all 20 documents
     _extracted(analysed)  # 19 of them done with the other prompt: one left is ordinary, but keeps the approval
     for doc in analysed[1:]:
         _edit_version(doc, analyze.extract_prompt(OTHER_PROMPT).version)
-    update.update_rebuild_marker(analysed, plan=plan)
-    assert json.loads(update.REBUILD_MARKER.read_text())["documents"] == ["doc0"]
-    with pytest.raises(SystemExit, match="1 of its documents are left"):
-        update.check_rebuild(analysed, allowed=False, plan=update.Plan(OTHER_PROMPT))
+    update.update_rebuild_marker(analysed, plan)
+    marker = json.loads(update.REBUILD_MARKER.read_text())
+    assert (marker["documents"], marker["extract_prompt"], marker["extract_model"]) == \
+        (["doc0"], OTHER_PROMPT, "claude-opus-5-5")
     update.check_rebuild(analysed, allowed=False, plan=plan)
 
 
@@ -301,9 +320,12 @@ def run(data, fake_claude, monkeypatch):
     monkeypatch.setattr(update.website, "build", lambda *args: scrape.ROOT / "_site" / "index.html")
     monkeypatch.delenv("GITHUB_STEP_SUMMARY", raising=False)
 
-    def main(docs: list[Doc], *args: str) -> None:
+    def main(docs: list[Doc], *args: str, mode: str | None = "full") -> None:
+        """A run with full consolidation, which the fake answers here are for; incremental runs (the default) are
+        tested in test_incremental.py. `mode` None passes no --consolidate-mode, as a plain run."""
         monkeypatch.setattr(update.scrape, "load_manifest", lambda: docs)
-        monkeypatch.setattr(sys, "argv", ["update.py", "--offline", *args])
+        mode_args = ("--consolidate-mode", mode) if mode else ()
+        monkeypatch.setattr(sys, "argv", ["update.py", "--offline", *mode_args, *args])
         update.main()
 
     return main
@@ -429,9 +451,9 @@ def test_an_ordinary_run_cut_off_with_most_categories_left_is_continued(run, dat
 
 # ---------------------------------------------------------------- outcome: exit code and run report
 
-def _exit_code(run, *args) -> int:
+def _exit_code(run, *args, **options) -> int:
     with pytest.raises(SystemExit) as stopped:
-        run(*args)
+        run(*args, **options)
     return stopped.value.code if isinstance(stopped.value.code, int) else 1
 
 
