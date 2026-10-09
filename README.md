@@ -218,8 +218,9 @@ left for `full`. A decision filed under another category's rule is consolidated 
 no decision lands in two rules (`checks.py` reports one that does).
 
 The gate runs on today's data (`eval/reports/compare-*.md`, holding out the 20 newest and 10 random documents) chose
-this default: against the answer key, incremental and full show the same content in force (51.5% vs 51.9% of years),
-while two incremental runs agree on what was in force in 99.1% of years, two full ones in 87.6%.
+this default: against the answer key, incremental and full show the same content in force (51.5% vs 51.9% of years,
+with the event mapping of then), while two incremental runs agree on what was in force in 99.1% of years, two full
+ones in 87.6%.
 
 Known limits: a document dated anew only on styrke.dk can leave a category for a full consolidation (the run report
 says so), and a new prompt or `CONSOLIDATE_VERSION` takes a full consolidation (see Update). Until October 2026 the
@@ -335,7 +336,8 @@ Measured on the decisions key (25 documents, 193 certain decisions;
 
 Sonnet misses a fifth to a third of the decisions, mostly in the large congress documents. And v2 extracts a budget
 line that sets or confirms several fees as one decision, which only one rule can hold, so the licence fee's yearly
-confirmations end up in "Årsafgift": a main cause of the rules key's 51.9% years with the same content in force. Prompt
+confirmations end up in "Årsafgift": a main cause of the rules key's low share of years with the same content in
+force (46.6% with today's event mapping, see below). Prompt
 v3 (`analyze.EXTRACT_PROMPTS["v3"]`) is v2 plus one field rule (`analyze.EXTRACT_SPLIT_RULE`) that applies the key's
 own granularity: one decision per rule, so a budget line setting or confirming different fees (licens, årsafgift,
 startgebyr) gives one decision per fee, while the tiers of one fee and a list adopted as a whole for one rule (a
@@ -387,6 +389,27 @@ prompt: updating every rule one by one would cost more and leave the rules less 
 under "Run workflow" (see Monthly run on GitHub). A run cut off before every category is consolidated leaves rules out
 (stale), so its result goes to review; plain runs continue it with the approved settings until it ends without
 failures.
+
+The migration ran on 9 October 2026 for 25.32 USD at list price (extraction 16.74, consolidation 8.58). The full
+consolidation left one decision in no rule, and the next plain run filed it for 0.11 USD; the run after that made no
+Claude call. Of the 470 earlier rule slugs, 373 are unchanged, 51 lead to the rule that took over their decisions,
+and 46 are retired: they held only decisions Opus no longer reads as decisions (reminders, items for information).
+Against the key (`eval/reports/decisions-migrated.md`, `eval/reports/rules-premigration.md`,
+`eval/reports/rules-migrated.md`):
+
+| | Before (Sonnet, v2) | After (Opus, v3) |
+|---|--:|--:|
+| Decisions: recall / precision | 79.8% / 93.9% | 90.2% / 98.3% |
+| Decisions: all four fields / three | 63.8% / 75.2% | 85.6% / 94.3% |
+| Rules: years with the same content in force (of 206) | 96 (46.6%) | 106 (51.5%) |
+| Rules: key events in their home rule / elsewhere / missing (of 131) | 81 / 28 / 22 | 82 / 32 / 17 |
+| Rules: effects that agree | 68 of 81 | 70 of 81 |
+| Rules: key rules spread over several pipeline rules (of 19) | 10 | 14 |
+
+Both rule columns use the event mapping that gives a key event quoting a whole budget line to its own fee's decision
+(the earlier figure of 51.9% came from the mapping before, which gave the licence fee's events to the annual fee).
+Licensgebyr is now one rule holding ten of its eleven certain key events (the eleventh is not extracted), where
+before its events were spread over three rules; more of the key's other events land in a rule beside their own. Regrouping rules is the audit's work, not the extraction's.
 
 A later configuration that passes the gate is migrated the same way before it becomes the default: run the command
 above with `--extract-prompt v<n>` and `--extract-model <model>`, continue a cut-off run with
