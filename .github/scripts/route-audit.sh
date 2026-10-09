@@ -17,7 +17,7 @@
 set -euo pipefail
 
 mode=${1:?usage: route-audit.sh check|route}
-report=${AUDIT_REPORT:-audit-report.md}
+report=audit-report.md  # audit.py's REPORT
 applied_marker="<!-- audit: applied -->"  # audit.py's APPLIED
 max_body=60000  # GitHub refuses a pull request body over 65536 characters
 today=${AUDIT_TODAY:-$(date -u +%Y-%m-%d)}
