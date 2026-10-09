@@ -463,10 +463,9 @@ function init() {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); $("q").focus(); }
   });
   window.addEventListener("hashchange", () => { navigatedHere = location.hash.startsWith("#regel/"); syncWithHash(); });
-  $("foot").innerHTML = `<span>Opdateret ${longD(TODAY)} · ${D.documents} referater og regeldokumenter ·
-      <a href="https://styrke.dk/?page=referater" target="_blank" rel="noopener">styrke.dk</a> ·
-      <a href="https://github.com/Lentz92/styrke-referater" target="_blank" rel="noopener">GitHub</a></span>
-    <span>Udtrukket automatisk – referatet er altid den gældende kilde. Besøg tælles anonymt uden cookies.</span>`;
+  $("foot").innerHTML = `<span>Opdateret ${longD(TODAY)}</span>
+    <span><a href="https://styrke.dk/?page=referater" target="_blank" rel="noopener">styrke.dk</a> ·
+      <a href="https://github.com/Lentz92/styrke-referater" target="_blank" rel="noopener">GitHub</a></span>`;
   draw();
   // A reload with a rule open starts at the top (its entry opts out of scroll restoration), so return to the saved spot.
   if (history.state?.pinnedAt) window.scrollTo(0, history.state.pinnedAt);

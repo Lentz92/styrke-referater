@@ -105,7 +105,6 @@ def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[d
         "today": today.isoformat(),
         "years": years,
         "areas": [area.title for area in render.AREAS],
-        "documents": len(docs),
         "rules": out_rules,
         "aliases": dict(aliases),
         "inForce": in_force,

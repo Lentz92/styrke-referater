@@ -76,7 +76,7 @@ const start = html.indexOf("/* The open rule lives in the URL"), end = html.inde
 if (start < 0 || end < 0) throw new Error("popup code not found");
 const code = html.slice(start, end);
 
-const D = { aliases: {}, years: [2026], documents: 2 };
+const D = { aliases: {}, years: [2026] };
 const R = [{ slug: "startgebyr" }, { slug: "licensgebyr" }];
 const TODAY = "2026-10-09", state = { year: 2026 };
 const href = (ri) => `#regel/${R[ri].slug}`;
