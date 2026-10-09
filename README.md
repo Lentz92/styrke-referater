@@ -16,7 +16,8 @@ The same overview as Markdown, starting at [regelsaet/README.md](regelsaet/READM
 
 ## Update
 
-Requires [uv](https://docs.astral.sh/uv/) and a logged-in Claude Code CLI (`claude`). No API key needed.
+Requires [uv](https://docs.astral.sh/uv/) and a logged-in Claude Code CLI (`claude`), preferably the version
+pinned for the monthly run (below). No API key needed.
 
 ```bash
 uv run update.py
@@ -26,14 +27,30 @@ Only new or changed documents are sent to Claude, so a run with nothing new fini
 A full rebuild of all ~240 documents costs about 12 USD at list price (about 7 for extraction, 5 for
 consolidation), counted against the Claude subscription; a few new minutes cost well under 2.
 
+A run with more than an ordinary month's work stops before calling Claude and says why: more than 10% of
+the documents to extract, a category with decisions but no file in `data/regler/`, or more than half the
+categories to consolidate again before anything new is extracted (a new `CONSOLIDATE_VERSION`, for example).
+If that work is intended, run `uv run update.py --allow-rebuild`. The approval is saved in
+`data/rebuild.json` before any Claude call: the documents to extract, the categories to consolidate (plus
+those the documents' decisions are in, since re-extracting them changes those categories), and the prompt
+versions. When the time or cost limit or failed calls cut the work off, run `uv run update.py` again,
+without the flag, until it ends without failures; the monthly run does the same. A later run goes ahead
+while everything outside the approval would pass on its own (a few new minutes may arrive meanwhile);
+anything more, or another prompt version, needs a new approval. The file is removed once the remaining work
+is ordinary. A run that is cut off with much left in an ordinary month (consolidation failing for most
+categories after a big meeting) leaves the same kind of approval for what is left.
+
 | Option | Use |
 |---|---|
 | `--offline` | skip styrke.dk and use the files already in `referater/` |
 | `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
-| `--only REGEX` | only extract documents whose id matches (testing) |
-| `--extract-model`, `--consolidate-model` | defaults `sonnet` and `opus` |
+| `--only REGEX` | only extract documents whose id matches, and only consolidate the categories their decisions are in, before or after extraction (testing); skips the rebuild check |
+| `--extract-model`, `--consolidate-model` | defaults `claude-sonnet-5-5` and `claude-opus-5-5`; a full id fails the call if Claude Code answers with another model |
+| `--extract-effort`, `--consolidate-effort` | `low` … `max`; default is Claude Code's own |
 | `--workers N` | parallel Claude calls (default 4) |
 | `--time-budget MIN` | start no new Claude calls after this many minutes (default 75); the rest runs next time |
+| `--max-cost USD` | start no new Claude calls once the run has used this much at list price (default 15) |
+| `--allow-rebuild` | approve work the rebuild check stops (see above) |
 
 To preview the website locally, open `_site/index.html` after a run, or build only the site with
 `uv run website.py`.
@@ -67,6 +84,19 @@ claude setup-token
 GH_TOKEN=$(gh auth token --user Lentz92) gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo Lentz92/styrke-referater
 ```
 
+The workflow installs a pinned Claude Code version (`CLAUDE_CODE_VERSION` in `update.yml`, with auto-update
+off) and stops if another one is installed: the version decides which model an alias means and what list
+price it reports (2.1.289 got Haiku's price wrong by about 100×). Its smoke test also checks that a full
+model id is answered by that model. To upgrade, change the version there and run the workflow by hand; it
+fails if the new version is not installed or answers with another model. A run with nothing new writes no
+line to `data/runs.jsonl`, so compare cost and tokens at the next run that analyses documents. To approve
+a rebuild on GitHub, tick "Allow a rebuild (--allow-rebuild)" under "Run workflow"; the following monthly
+runs finish it if it is cut off.
+
+Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls,
+failures, skipped calls, tokens, list-price cost, models and seconds. The Actions run page shows the same
+numbers with the counts from the checks below.
+
 `.github/workflows/pages.yml` then rebuilds the website and publishes it on GitHub Pages. It runs after
 each monthly update, on pushes that change `data/`, `website/` or the scripts, and via "Run workflow".
 It does not call Claude.
@@ -83,7 +113,9 @@ It does not call Claude.
 
 `update.py` runs the steps in order. Step 2 reruns for a document when its file changes; step 3 reruns
 for a category when its decisions change. After editing a prompt in `analyze.py`, bump
-`EXTRACT_VERSION` or `CONSOLIDATE_VERSION` so cached results are recomputed.
+`EXTRACT_VERSION` or `CONSOLIDATE_VERSION` so cached results are recomputed (a rebuild, see Update).
+Each result records its `provenance`: the model that answered, the CLI version, a fingerprint of the prompt
+and schema, and the effort. It is not part of the cache key, so changing the model alone reruns nothing.
 
 Files that disappear from styrke.dk stay in `referater/` and in the analysis, because they still
 document the rules of their year; when their link stops working, they are cited without one. A file

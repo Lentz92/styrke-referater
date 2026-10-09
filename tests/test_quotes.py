@@ -3,7 +3,7 @@ import json
 import pytest
 
 import analyze
-from analyze import DocWords, load_decisions, locate_quote, quote_fields
+from analyze import DocWords, Usage, load_decisions, locate_quote, quote_fields
 from scrape import Doc
 
 TEXT = (
@@ -137,9 +137,10 @@ def test_extraction_stores_where_each_quote_is(tmp_path, monkeypatch):
             del d[key]
     monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path)
     monkeypatch.setattr(analyze, "document_text", lambda doc: TEXT)
-    monkeypatch.setattr(analyze, "ask_claude", lambda *args, **kwargs: (claude_output, 0.0))
+    monkeypatch.setattr(analyze, "ask_claude", lambda *args, **kwargs: (claude_output, Usage()))
 
-    analyze._extract_one(Doc("doc", "repraesentantskab", "Referat", "2024", "doc.pdf", None, "sha"), "sonnet", None, None)
+    analyze._extract_one(Doc("doc", "repraesentantskab", "Referat", "2024", "doc.pdf", None, "sha"),
+                         model="sonnet", effort=None, cli="2.1.294")
 
     saved = json.loads((tmp_path / "doc.json").read_text())["beslutninger"]
     assert [(d["citat_fundet"], d["citat_side"]) for d in saved] == [(True, 1), (True, 2)]
