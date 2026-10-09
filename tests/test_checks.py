@@ -1,3 +1,6 @@
+from dataclasses import replace
+from datetime import date
+
 from analyze import decision_hash
 from checks import date_traps, effect_mismatches, stale_versions
 from conftest import decision
@@ -59,14 +62,14 @@ def test_stale_rule_is_reported_once_with_each_reason():
     assert stale_versions(raw, {"a#1": changed}) == []
 
 
-def test_every_problem_kind_is_counted_on_the_index_page():
+def test_every_problem_kind_of_the_data_is_counted_on_the_index_page():
     from collections import Counter
     from datetime import date
 
     import render
-    from checks import PROBLEM_KINDS
+    from checks import DATA_KINDS
 
-    counts = Counter({kind: 101 + i for i, kind in enumerate(PROBLEM_KINDS)})
+    counts = Counter({kind: 101 + i for i, kind in enumerate(DATA_KINDS)})
     page = render._index_page([2026], [], [], [], {}, [], counts, date(2026, 10, 8))
     assert all(f"{n}" in page for n in counts.values())
 
@@ -140,3 +143,168 @@ def test_consistent_ids_and_slugs_report_nothing():
                                   "licens": FormerSlug("okonomi", "Licens", frozenset({"b#8"}), "licensgebyr")},
                          retired={"x": FormerSlug("okonomi", "X", frozenset({"q#1"}))})
     assert identity_problems([decision(ref="a#1")], {"r#1"}, raw, slugs) == []
+
+
+# ---------------------------------------------------------------- severity and unassigned decisions
+
+def test_errors_block_publishing_and_warnings_are_reported_only():
+    from checks import SEVERITY, Problem, errors
+
+    assert {kind for kind, severity in SEVERITY.items() if severity == "error"} == {"stale", "identity", "unassigned",
+                                                                                   "history"}
+    assert {kind for kind, severity in SEVERITY.items() if severity == "warning"} == {"effect", "date",
+                                                                                     "history-text"}
+    assert errors([Problem("date", "a"), Problem("stale", "b")]) == [Problem("stale", "b")]
+
+
+def test_a_decision_in_no_rule_and_not_left_out_as_a_one_off_is_unassigned():
+    from checks import unassigned_decisions
+
+    in_rule, one_off, dropped = decision(ref="a#1"), decision(ref="b#1"), decision(ref="c#1")
+    elsewhere = decision(ref="d#1")  # left out by another category's consolidation, which no longer has it
+    waiting = decision(ref="e#1", kategori="master")  # master is to be consolidated again: not wrong, just missing
+    raw = [{"titel": "Regel", "versioner": [{"ref": "a#1"}]}]
+    one_offs = {"okonomi": {"b#1"}, "master": {"d#1"}}
+
+    problems = unassigned_decisions([in_rule, one_off, dropped, elsewhere, waiting], raw, one_offs, {"master"})
+    assert [(p.kind, p.message.split()[0]) for p in problems] == [("unassigned", "c#1"), ("unassigned", "d#1")]
+
+
+# ---------------------------------------------------------------- history
+
+TODAY = date(2026, 10, 8)
+OLD = decision(ref="old#1", dato="2015-03-01")
+NEW = decision(ref="new#1", dato="2024-03-01", emne="Ny", tekst="Licensgebyret er 300 kr.")
+
+
+def _rule(slug, *versions):
+    """A rule from (decision, effekt) or (decision, effekt, version fields) versions."""
+    return {"titel": slug.capitalize(), "slug": slug, "kategori": "okonomi", "vigtig": True, "note": None,
+            "versioner": [{"ref": d.ref, "effekt": effekt, "tekst": None, "kort": None, "kort_regel": None,
+                           "dhash": decision_hash(d), **(fields[0] if fields else {})}
+                          for d, effekt, *fields in versions]}
+
+
+def _data(decisions, rules, one_offs=None, pending=()):
+    from checks import Data
+    from matching import SlugRegistry
+
+    return Data(list(decisions), rules, one_offs or {}, frozenset(pending), set(), SlugRegistry())
+
+
+def _history(before_rules, after_rules, aliases=None, before=(OLD,), after=(OLD, NEW), **before_data):
+    from checks import check_history, snapshot
+
+    return check_history(snapshot(_data(before, before_rules, **before_data), TODAY),
+                         snapshot(_data(after, after_rules), TODAY), aliases or {})
+
+
+def test_history_before_the_rules_earliest_new_decision_must_not_change():
+    check = _history([_rule("gebyr", (OLD, "indfoert"))], [_rule("gebyr", (NEW, "indfoert"))])
+
+    assert {c.cutoff[:4] for c in check.changes} == {str(year) for year in range(2015, 2024)}
+    assert {c.since for c in check.changes} == {"2024-03-01"}
+    (problem,) = check.problems()
+    assert problem.kind == "history"
+    assert problem.message == ("Gebyr (gebyr): what was in force in 2015–2023 changed, although none of its "
+                               "decisions before 2024-03-01 did")
+
+
+def test_history_from_the_rules_earliest_new_decision_on_may_change():
+    check = _history([_rule("gebyr", (OLD, "indfoert"))], [_rule("gebyr", (OLD, "indfoert"), (NEW, "aendret"))])
+    assert check.changes == [] and check.problems() == []
+
+
+def test_a_new_decision_in_one_rule_does_not_open_the_history_of_another():
+    early = decision(ref="early#1", dato="2012-05-01", kategori="master", emne="Masterlicens")
+    before = [_rule("gebyr", (OLD, "indfoert")), _rule("master", (early, "indfoert"))]
+    changed = replace(early, tekst="Ændret")  # re-extracted: 2012 is open for its own rule only
+    after = [_rule("gebyr", (OLD, "foreslaaet")), _rule("master", (changed, "indfoert"))]
+
+    problems = _history(before, after, before=(OLD, early), after=(OLD, changed)).problems()
+    assert [p.message.split(":")[0] for p in problems] == ["Gebyr (gebyr)"]
+    assert "2015–2026 changed, although none of its decisions did" in problems[0].message
+
+
+def test_an_undated_new_decision_opens_only_its_own_rules_history():
+    undated = decision(ref="u#1", dato=None, emne="Udateret")
+    before = [_rule("gebyr", (OLD, "indfoert"))]
+    after = [_rule("gebyr", (OLD, "foreslaaet")), _rule("udateret", (undated, "indfoert"))]
+
+    problems = _history(before, after, after=(OLD, undated)).problems()
+    assert [p.message.split(":")[0] for p in problems] == ["Gebyr (gebyr)"]
+
+
+def test_new_wording_for_the_same_decisions_is_a_warning():
+    check = _history([_rule("gebyr", (OLD, "indfoert"))],
+                     [_rule("gebyr", (OLD, "indfoert", {"tekst": "Ny formulering"}))])
+    assert [(p.kind, "2015–2026" in p.message) for p in check.problems()] == [("history-text", True)]
+
+
+def test_a_new_short_form_on_the_year_pages_is_a_warning():
+    check = _history([_rule("gebyr", (OLD, "indfoert"))],
+                     [_rule("gebyr", (OLD, "indfoert", {"kort_regel": "Licens 200 kr."}))])
+    assert [p.kind for p in check.problems()] == ["history-text"]
+
+
+def test_a_slug_that_became_an_alias_is_compared_with_the_rule_it_leads_to():
+    before, after = [_rule("gebyr", (OLD, "indfoert"))], [_rule("licens", (OLD, "indfoert"))]
+    assert _history(before, after, {"gebyr": "licens"}).problems() == []
+
+    messages = [p.message for p in _history(before, after).problems()]  # without the alias: one gone, one new
+    assert [m.split(":")[0] for m in messages] == ["Gebyr (gebyr)", "Licens (licens)"]
+
+
+def test_rules_merged_into_one_are_compared_by_what_they_showed_between_them():
+    repealed = decision(ref="old#2", dato="2018-03-01", handling="ophaevelse")
+    later = decision(ref="later#1", dato="2019-03-01")
+    before = [_rule("gebyr", (OLD, "indfoert"), (repealed, "ophaevet")), _rule("licens", (later, "indfoert"))]
+    after = [_rule("licens", (OLD, "indfoert"), (repealed, "ophaevet"), (later, "indfoert"))]
+    decisions = (OLD, repealed, later)
+
+    assert _history(before, after, {"gebyr": "licens"}, before=decisions, after=decisions).problems() == []
+
+
+def test_a_decision_the_rules_did_not_reflect_yet_counts_as_new():
+    # A run whose consolidation failed left pending#1 in no rule; the next one adds it to the rule.
+    pending = decision(ref="pending#1", dato="2024-03-01")
+    before, after = [_rule("gebyr", (OLD, "indfoert"))], [_rule("gebyr", (OLD, "indfoert"), (pending, "aendret"))]
+    decisions = (OLD, pending)
+
+    assert _history(before, after, before=decisions, after=decisions).problems() == []
+    # Left out as a one-off by a consolidation that saw it, it was reflected: the rule may not take it back silently.
+    assert _history(before, after, before=decisions, after=decisions,
+                    one_offs={"okonomi": {"pending#1"}}).problems() != []
+
+
+def test_unreflected_decisions():
+    from checks import unreflected
+
+    built, changed, one_off, waiting, dropped = (decision(ref=f"{name}#1") for name in ("built", "changed",
+                                                                                         "oneoff", "waiting", "drop"))
+    rules = [_rule("gebyr", (built, "indfoert"), (replace(changed, tekst="Før"), "aendret"))]
+    one_offs = {"okonomi": {"oneoff#1", "waiting#1"}}
+    data = _data([built, changed, one_off, waiting, dropped], rules, one_offs)
+    assert unreflected(data) == {"changed#1", "drop#1"}
+    # In a category to be consolidated again, being left out as a one-off proves nothing.
+    data = _data([built, changed, one_off, waiting, dropped], rules, one_offs, pending={"okonomi"})
+    assert unreflected(data) == {"changed#1", "drop#1", "oneoff#1", "waiting#1"}
+
+
+def test_a_run_that_changes_no_decision_must_not_change_any_year():
+    check = _history([_rule("gebyr", (OLD, "indfoert"))], [_rule("gebyr", (OLD, "foreslaaet"))], after=(OLD,))
+    assert {c.since for c in check.changes} == {None}
+    (problem,) = check.problems()
+    assert "2015–2026 changed, although none of its decisions did" in problem.message
+
+
+def test_changed_decisions_include_removed_and_undated_ones():
+    from checks import changed_decisions, snapshot
+
+    def of(*decisions):  # every decision left out as a one-off: reflected, so only differences count
+        return snapshot(_data(decisions, [], {"okonomi": {d.ref for d in decisions}}), TODAY)
+
+    assert changed_decisions(of(OLD, NEW), of(OLD, NEW)) == {}
+    assert changed_decisions(of(OLD, NEW), of(NEW)) == {"old#1": "2015-03-01"}  # removed
+    assert changed_decisions(of(OLD), of(replace(OLD, dato="2014-01-01"))) == {"old#1": "2014-01-01"}
+    assert changed_decisions(of(NEW), of(NEW, replace(OLD, dato=None))) == {"old#1": ""}  # may apply always

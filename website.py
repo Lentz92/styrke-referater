@@ -66,7 +66,7 @@ def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[d
     for rule in rules:
         # A rule is international when the decision behind its latest content came from IPF/EPF/DIF/ADD.
         content = [v for v in rule.versions if v.effekt in render.CONTENT_EFFECTS] or list(rule.versions)
-        origin = rule.adopted(content[-1]).decision
+        origin = rule.adopted(content[-1], today.isoformat()).decision
         international = origin.niveau == "eksternt_krav"
         out_rules.append({
             "title": rule.titel,
@@ -87,7 +87,7 @@ def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[d
         for i, rule in enumerate(rules):
             v = rule.in_force(cutoff)
             if v:
-                rows.append([i, rule.versions.index(v), rule.versions.index(rule.adopted(v))])
+                rows.append([i, rule.versions.index(v), rule.versions.index(rule.adopted(v, cutoff))])
         in_force[year] = rows  # [rule, version in force, version that adopted its content]
 
     return {

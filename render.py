@@ -117,14 +117,17 @@ class Rule:
         expires = state.decision.gaelder_til if state else None
         return None if expires and expires < cutoff else state
 
-    def adopted(self, current: Version) -> Version:
-        """The decision that last changed the rule's content, as of `current`."""
+    def adopted(self, current: Version, cutoff: str) -> Version:
+        """The decision that last changed the rule's content, as of `current` on the cutoff date. Like in_force,
+        it skips decisions not yet made then: a later decision that applies retroactively changed nothing yet."""
         if current.effekt != "bekraeftet":
             return current
         origin = current
         for v in self.versions:
             if v is current:
                 break
+            if (v.decision.dato or "") > cutoff:
+                continue
             if v.effekt in ("indfoert", "aendret"):
                 origin = v
             elif v.effekt == "ophaevet":
@@ -139,7 +142,9 @@ def render(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], mi
            problems: Counter[str], today: date) -> list[str]:
     """Write all pages to regelsaet/ and return their paths.
 
-    `missing` = docs not yet analysed; `problems` = number of problems per kind found by checks.py.
+    `missing` = docs not yet analysed; `problems` = number of problems per kind found by checks.py. The index
+    page counts the kinds data/ shows on its own (checks.DATA_KINDS): a render-only run must write the same
+    pages as the run before it, and only an analysing run can compare the history before and after.
     """
     pages = build_pages({d.id: d for d in docs}, decisions, raw_rules, missing, problems, today)
     for stale in OUT_DIR.rglob("*.md"):
@@ -299,7 +304,7 @@ def _year_page(year: int, years: list[int], rules: list[Rule], today: date, link
             if len(area.categories) > 1:
                 lines += [f"*{CATEGORIES[category]}*", ""]
             for rule, v in items:
-                origin = rule.adopted(v)
+                origin = rule.adopted(v, cutoff)
                 stale = _stale_note(rule, cutoff)
                 lines.append(f"- {link(rule)}: {v.essence} · siden {origin.effective[:4]} "
                              f"{links.source(origin.decision)}{f' · {stale}' if stale else ''}")
@@ -360,7 +365,7 @@ def _rule_entry(rule: Rule, cutoff: str, links: _Links) -> list[str]:
     lines = [f'<a id="{anchor(rule)}"></a>', f"### {rule.titel}", "", status, "",
              shown.text if content else shown.decision.tekst, ""]
     if content:
-        lines += [f"*{' · '.join(_meta(rule, shown, links))}*", ""]
+        lines += [f"*{' · '.join(_meta(rule, shown, cutoff, links))}*", ""]
     for v in rule.versions:
         starts = f" (fra {_short_date(v.effective)})" if v.decision.gaelder_fra else ""
         lines.append(f"- {_short_date(v.decision.dato)} · {_labelled_change(v)}{starts} · {links.source(v.decision)}")
@@ -370,8 +375,8 @@ def _rule_entry(rule: Rule, cutoff: str, links: _Links) -> list[str]:
     return lines
 
 
-def _meta(rule: Rule, v: Version, links: _Links) -> list[str]:
-    origin = rule.adopted(v)
+def _meta(rule: Rule, v: Version, cutoff: str, links: _Links) -> list[str]:
+    origin = rule.adopted(v, cutoff)
     d = origin.decision
     verb = "fastslået" if origin.effekt == "bekraeftet" else "vedtaget"
     adopted = f"{verb} {_short_date(d.dato)} af {links.organ(d)}" + (f" ({d.stemmer})" if d.stemmer else "")
@@ -466,6 +471,8 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         f"{sum(1 for d in decisions if d.side_rettet)}",
         f"- Engangsbeslutninger uden for reglerne (kun i data/beslutninger): "
         f"{sum(1 for d in decisions if d.ref not in assigned)}",
+        f"- Beslutninger som konsolideringen hverken har lagt i en regel eller udeladt som engangsbeslutning "
+        f"(vises ikke): {problems['unassigned']}",
         f"- Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: "
         f"{problems['stale']}",
         f"- Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): "

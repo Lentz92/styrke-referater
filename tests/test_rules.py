@@ -56,6 +56,18 @@ def test_end_date_expires_the_rule():
     assert rule.in_force("2024-06-01") is None
 
 
+def test_a_confirmation_was_adopted_by_a_decision_made_by_the_cutoff():
+    # A decision of August 2020 that applies from 2019 did not yet adopt what a December 2019 confirmation said.
+    adopted = decision(ref="a#1", dato="2016-12-04", gaelder_fra="2018-01-01")
+    late = decision(ref="b#1", dato="2020-08-16", gaelder_fra="2019-01-01")
+    confirmed = decision(ref="c#1", dato="2019-12-07")
+    rule = _built([adopted, late, confirmed], _version(adopted), _version(late, "aendret"),
+                  _version(confirmed, "bekraeftet"))
+    for cutoff, origin in (("2019-12-31", adopted), ("2020-12-31", late)):
+        current = rule.in_force(cutoff)
+        assert current.decision is confirmed and rule.adopted(current, cutoff).decision is origin
+
+
 def test_year_only_date_applies_from_the_start_of_the_year():
     a = decision(ref="a#1", dato="2015")
     rule = _built([a], _version(a))

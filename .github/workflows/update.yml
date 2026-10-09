@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write  # a result the checks do not trust goes to a pull request (auto/update)
 
 concurrency:
   group: update
@@ -67,26 +68,35 @@ jobs:
           fi
 
       - name: Download new minutes and update the rule overview
+        id: update
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           REBUILD: ${{ inputs.rebuild }}
         run: |
+          # Exit code 0: publish; 3: the checks found errors, so the result goes to a pull request; else the run
+          # failed. Record it instead of stopping here, so the next step can route the result.
+          set +e
           if [ "$REBUILD" = "true" ]; then
             uv run update.py --allow-rebuild
           else
             uv run update.py
           fi
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
 
-      - name: Commit and push changes
-        # Also after a failed update: partial results are valid cache and are retried next run.
-        if: success() || failure()
+      - name: Publish the result, or send it to a pull request for review
+        if: steps.update.outputs.code != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CODE: ${{ steps.update.outputs.code }}
+        run: bash .github/scripts/route-update.sh "$CODE"
+
+      - name: Fail when update.py failed
+        # After the routing: partial results are valid cache, kept for the next run when the checks pass.
+        if: steps.update.outputs.code != '0' && steps.update.outputs.code != '3'
+        env:
+          CODE: ${{ steps.update.outputs.code }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No new minutes."
-          else
-            git commit -m "Monthly rule overview update $(date -u +%Y-%m-%d)"
-            git push
-          fi
+          echo "::error::update.py failed (exit code $CODE); see its log above."
+          exit 1

@@ -10,3 +10,6 @@ __pycache__/
 
 # Built website (published by .github/workflows/pages.yml)
 _site/
+
+# The outcome of the last update.py run (the body of the review pull request)
+run-report.md

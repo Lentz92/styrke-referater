@@ -60,6 +60,7 @@ Regler ophæves sjældent formelt, så en regel gælder her, indtil et senere re
 - Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 0
 - Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): 6
 - Engangsbeslutninger uden for reglerne (kun i data/beslutninger): 55
+- Beslutninger som konsolideringen hverken har lagt i en regel eller udeladt som engangsbeslutning (vises ikke): 0
 - Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: 0
 - Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): 4
 - Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, eller en senere beslutning der gælder fra før en tidligere): 20

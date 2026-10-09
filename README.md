@@ -74,7 +74,8 @@ To share a year as Word: `pandoc regelsaet/2026.md -o DSF-regelsaet-2026.docx`.
 ### Monthly run on GitHub
 
 `.github/workflows/update.yml` runs `update.py` at 06:00 UTC on the 1st of every month (or via
-"Run workflow" in the Actions tab) and commits any changes to `main`. Claude runs on the Claude
+"Run workflow" in the Actions tab) and commits any changes to `main`, or to a pull request when the checks
+find errors (see Review below). Claude runs on the Claude
 subscription through the repository secret `CLAUDE_CODE_OAUTH_TOKEN`; the workflow refuses to run if
 an `ANTHROPIC_API_KEY` is present, since that would be billed as API usage. The token is valid for one
 year. To create or renew it:
@@ -91,15 +92,53 @@ model id is answered by that model. To upgrade, change the version there and run
 fails if the new version is not installed or answers with another model. A run with nothing new writes no
 line to `data/runs.jsonl`, so compare cost and tokens at the next run that analyses documents. To approve
 a rebuild on GitHub, tick "Allow a rebuild (--allow-rebuild)" under "Run workflow"; the following monthly
-runs finish it if it is cut off.
+runs finish it if it is cut off. A rebuild that rewrites earlier years, or is cut off with rules left out, goes
+to review: merge the pull request so the following runs continue from it.
 
 Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls,
-failures, skipped calls, tokens, list-price cost, models and seconds. The Actions run page shows the same
-numbers with the counts from the checks below.
+failures, skipped calls, tokens, list-price cost, models and seconds. The Actions run page shows the run
+report: the same numbers, every error and warning from the checks below, and what changed in earlier years.
 
-`.github/workflows/pages.yml` then rebuilds the website and publishes it on GitHub Pages. It runs after
-each monthly update, on pushes that change `data/`, `website/` or the scripts, and via "Run workflow".
-It does not call Claude.
+`.github/workflows/pages.yml` then rebuilds the website from `main` and publishes it on GitHub Pages. It runs
+after a successful monthly update that changed `main`, on pushes that change `data/`, `website/` or the
+scripts, and via "Run workflow". It runs `uv run checks.py` first and publishes nothing when it finds an error,
+so the site stays as it was. It does not call Claude.
+
+#### Review
+
+`update.py` ends with the checks and writes their outcome to `run-report.md` (not committed). Errors are
+results the pipeline does not trust: a rule left out because a decision behind it changed (stale), a decision
+the consolidation neither put in a rule nor left out as a one-off (unassigned), decision ids or slugs that are
+missing, used twice or lead nowhere (identity), and a run that changes what applied in earlier years
+(history). Each month with new minutes consolidates whole categories again, and Claude may rewrite rules that
+no new decision touches. So for every year page and every rule (by slug; rules merged into one, through
+`data/slugs.json`, count together), `update.py` compares the decision in force, the one that adopted its
+content, and its wording before and after the analysis. A rule may change from the earliest date of its own
+decisions that the run added, changed or removed, or that its last consolidation had not seen (a call that
+failed); a difference in an earlier year is an error, or a warning when only the wording changed. A history
+check that fails is an error too. The effect and date findings are warnings.
+
+| `update.py` exits | The workflow |
+|---|---|
+| 0: no errors | commits to `main` and closes a review pull request left open; the website is rebuilt |
+| 3: errors | force-pushes the result to the branch `auto/update` and opens the pull request "Monthly update needs review" with the run report as its body, or updates the open one; `main` and the website stay as they are |
+| 1: the run failed | commits the partial results to `main` when its run report says the checks passed, so the next run continues from them, else does as for 3; the run is marked failed and the website is not rebuilt |
+
+A result that cannot be pushed to `main` because it moved during the run goes to review as well. A run started
+by hand on another branch uses `auto/update-<branch>` and a pull request into that branch.
+
+There is never more than one review branch or pull request: every run starts from `main`, and a later one
+replaces the branch and the report. To review, read the errors and the history table, and check the rules that
+changed against the minutes (the diff of `regelsaet/` shows them as text). When the only errors are history,
+merge to accept the result: the push to `main` rebuilds the website (history is checked only by `update.py`, so
+merging accepts what changed there). Other errors must be fixed first, since the website workflow runs
+`uv run checks.py` and publishes nothing while it finds one: push the fix to the branch after running
+`uv run update.py --render-only` and `uv run checks.py` there, before the next monthly run replaces it. Close
+the pull request to discard the result, its line in `data/runs.jsonl` included; the next monthly run tries
+again. GitHub does not run the tests on a pull request a workflow opened; close and reopen it to run them.
+
+Opening the pull request needs "Allow GitHub Actions to create and approve pull requests" under Settings >
+Actions > General > Workflow permissions. The routing is `.github/scripts/route-update.sh`.
 
 ## How it works
 
@@ -142,11 +181,15 @@ Code checks Claude's work where it can:
   re-analysed and the decision changes, the whole rule is left out until its category is consolidated
   again (leaving out only that version could bring back a repealed rule).
 - The effect of an undecided, rejected or withdrawn proposal follows from its outcome, whatever Claude says.
-- `checks.py` reports versions where the extraction and the rule disagree about the effect, possible
-  date traps (a seasonal rule confirmed without an end date, a newer decision that takes effect before an
-  older one), and decision ids or slugs that are missing, used twice or lead nowhere.
+- `checks.py` reports errors: rules left out as above, decisions in no rule that the consolidation did not
+  leave out as one-offs, and decision ids or slugs that are missing, used twice or lead nowhere; and
+  warnings: versions where the extraction and the rule disagree about the effect, and possible date traps (a
+  seasonal rule confirmed without an end date, a newer decision that takes effect before an older one).
+  `uv run checks.py` lists them and exits 1 on an error. `update.py` also checks what a run changed in earlier
+  years (see Review).
 
-`update.py` logs every finding, and `regelsaet/README.md` ends with the counts. The extraction is
+`update.py` logs every finding, and `regelsaet/README.md` ends with the counts of those `data/` shows on its
+own. The extraction is
 automatic: the minutes are always the authoritative source.
 
 ### Tests
