@@ -239,6 +239,11 @@ def test_the_pipeline_prompt_keeps_its_cache_and_a_new_one_extracts_again(fake_c
         assert saved["provenance"]["prompt"] == hashes[other.name]
     assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == []
 
+    # Back to the first prompt: the cache now holds the other prompt's extractions, so both are extracted again.
+    monkeypatch.setattr(analyze, "EXTRACT_VERSION", pipeline.version)
+    monkeypatch.setattr(analyze, "EXTRACT_SYSTEM", pipeline.system)
+    assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
+
 
 def test_an_extraction_by_another_model_than_the_one_asked_for_is_extracted_again(fake_claude, data):
     fake_claude.answer(NOTHING_FOUND)

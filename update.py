@@ -84,12 +84,12 @@ RERUN = ("A rebuild cut off by its cost or time budget, or by failed calls, is f
 # What the rebuild guard's refusal says after its reasons. The boxes are the workflow inputs as update.yml describes
 # them; the workflow passes no limits, so every run on GitHub keeps to the default ones.
 HOW_TO_PROCEED = (
-    f"If this work is intended, add --allow-rebuild to the command; the run then stops at its --max-cost "
-    f"({DEFAULT_MAX_COST} USD by default). To migrate a new extraction prompt or model, or a new CONSOLIDATE_VERSION, "
-    f"run `{MIGRATE}` (it stops at {MIGRATION_MAX_COST} USD); once it is finished, plain runs go on incrementally. On "
-    f"GitHub: Actions > Update rule overview > Run workflow with 'Allow a rebuild (--allow-rebuild)' ticked, and to "
-    f"migrate also 'Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)'; each run "
-    f"there stops at {DEFAULT_MAX_COST} USD or {DEFAULT_TIME_BUDGET} minutes, so a migration may take several. {RERUN}")
+    f"If this work is intended, run with --allow-rebuild (the run then stops at its --max-cost, {DEFAULT_MAX_COST} USD "
+    f"by default); where a reason says only a full consolidation takes it in or migrates it, run `{MIGRATE}` instead "
+    f"(it stops at {MIGRATION_MAX_COST} USD), after which plain runs go on incrementally. On GitHub: Actions > Update "
+    f"rule overview > Run workflow with 'Allow a rebuild (--allow-rebuild)' ticked, and for a migration also "
+    f"'Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)'; each run there stops at "
+    f"{DEFAULT_MAX_COST} USD or {DEFAULT_TIME_BUDGET} minutes, so a migration may take several. {RERUN}")
 # What the run found, for the pull request that reviews it (its body) and the GitHub step summary; not committed.
 RUN_REPORT = scrape.ROOT / "run-report.md"
 EXIT_FAILED = 1
@@ -476,7 +476,7 @@ def _outcome(code: int, problems: list[checks.Problem], failures: list[str], cut
     workflow's checks pass: they see every error but history, which only a run can compare. A rebuild that was cut off
     (`cut_off`) is finished by running it again (RERUN), from the merged pull request if the run opened one: closing it
     would throw away what the run has paid for."""
-    failed = "; ".join(failures)
+    failed = "; ".join(failure.rstrip(".") for failure in failures)  # each is followed by more text
     if code == 0:
         return "**Ready to publish**: the checks found no errors."
     if code == EXIT_FAILED:

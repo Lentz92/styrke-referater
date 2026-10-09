@@ -326,6 +326,7 @@ def test_the_guard_refuses_a_missing_rule_file_before_any_call(run, analysed, fa
     assert fake_claude.invocations("call") == 0
     report = update.RUN_REPORT.read_text()  # new downloads are kept: the data passes the checks
     assert report.startswith(update.CHECKS_PASSED) and "**The run failed**: Stopped before any Claude call" in report
+    assert "only the rest. The checks found no errors" in report  # the refusal's own full stop is not doubled
 
 
 # ---------------------------------------------------------------- outcome: exit code and run report
