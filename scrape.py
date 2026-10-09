@@ -98,7 +98,7 @@ def load_manifest() -> list[Doc]:
 
 
 def sync() -> list[Doc]:
-    """Download new documents, index everything under referater/ and write the manifest."""
+    """Download new and replaced documents, index everything under referater/ and write the manifest."""
     previous = {doc.id: doc for doc in load_manifest()} if MANIFEST.exists() else {}
     local = {
         p.name.lower(): p
@@ -114,32 +114,44 @@ def sync() -> list[Doc]:
 
         docs: dict[str, Doc] = {}
         for link in links:
-            path = local.get(link.filename.lower()) or _download(client, link)
+            path = local.get(link.filename.lower())
+            url: str | None
             if path is None:
-                continue
+                downloaded = _download(client, link)
+                if downloaded is None:
+                    continue
+                path, url = downloaded
+            else:
+                old = previous.get(path.stem)
+                url = _refresh(client, link.url, path, fallback=old.url if old and old.url else link.url)
             local[path.name.lower()] = path
-            doc = _make_doc(path, link.title, link.organ, link.url)
+            doc = _make_doc(path, link.title, link.organ, url)
             if doc.date is None:
                 # Standing rule documents (e.g. Adfaerdskodeks) carry no date in name or title.
-                doc = replace(doc, date=_last_modified(client, link.url))
+                doc = replace(doc, date=_last_modified(client, url or link.url))
             docs.setdefault(doc.id, doc)
 
-    # Files we still have but styrke.dk no longer links to (e.g. last year's deadlines) keep
-    # their history value, so they stay in the manifest.
-    linked = {doc.path for doc in docs.values()}
-    for path in sorted(local.values()):
-        rel = str(path.relative_to(ROOT))
-        if rel in linked:
-            continue
-        old = previous.get(path.stem)
-        doc = _make_doc(path, old.title if old else path.stem, old.organ if old else path.parent.name,
-                        old.url if old else None)
-        if old and doc.date is None:
-            doc = replace(doc, date=old.date)
-        if doc.id in docs:
-            log.warning("Dublet-id %s: %s ignoreres", doc.id, rel)
-            continue
-        docs[doc.id] = doc
+        # Files we still have but styrke.dk no longer links to (e.g. last year's deadlines) keep
+        # their history value, so they stay in the manifest, citing their old URL while it works.
+        linked = {doc.path for doc in docs.values()}
+        for path in sorted(local.values()):
+            rel = str(path.relative_to(ROOT))
+            if rel in linked:
+                continue
+            old = previous.get(path.stem)
+            url = old.url if old else None
+            if url:
+                working = _working_url(client, url)
+                if working is None:
+                    log.warning("Linket til %s virker ikke længere – bruger kopien i %s", url, rel)
+                url = working
+            doc = _make_doc(path, old.title if old else path.stem, old.organ if old else path.parent.name, url)
+            if old and doc.date is None:
+                doc = replace(doc, date=old.date)
+            if doc.id in docs:
+                log.warning("Dublet-id %s: %s ignoreres", doc.id, rel)
+                continue
+            docs[doc.id] = doc
 
     result = sorted(docs.values(), key=lambda d: (d.organ, d.date or "", d.id))
     DATA_DIR.mkdir(exist_ok=True)
@@ -235,15 +247,94 @@ def _make_doc(path: Path, title: str, organ: str, url: str | None) -> Doc:
     )
 
 
-def _download(client: httpx.Client, link: Link) -> Path | None:
+def _variants(url: str) -> list[str]:
     # The file server is case-sensitive and some links say .pdf for files named .PDF.
-    candidates = [link.url]
-    if link.url.endswith(".pdf"):
-        candidates.append(link.url[:-4] + ".PDF")
-    elif link.url.endswith(".PDF"):
-        candidates.append(link.url[:-4] + ".pdf")
+    if url.endswith(".pdf"):
+        return [url, url[:-4] + ".PDF"]
+    if url.endswith(".PDF"):
+        return [url, url[:-4] + ".pdf"]
+    return [url]
 
-    for url in candidates:
+
+def _head(client: httpx.Client, url: str) -> httpx.Response | None:
+    """HEAD response for the first variant of the URL that exists; None when all answer 404.
+
+    The response's URL is the variant that answered, which is the one to cite.
+    Raises httpx.HTTPError when styrke.dk can't be reached.
+    """
+    for variant in _variants(url):
+        response = client.head(variant)
+        if response.status_code != 404:
+            return response
+    return None
+
+
+def _working_url(client: httpx.Client, url: str) -> str | None:
+    """The variant of the URL that answers, or None when every variant answers 404.
+
+    An unreachable server is not the same as a gone file, so then the URL is kept as it is.
+    """
+    try:
+        response = _head(client, url)
+    except httpx.HTTPError:
+        return url
+    return str(response.url) if response else None
+
+
+def _refresh(client: httpx.Client, url: str, path: Path, fallback: str) -> str | None:
+    """Check a file we already have against styrke.dk and return the URL to cite for it.
+
+    A file with another size than ours has been replaced there, so it is downloaded again. A link
+    that answers 404 is dead: the copy in referater/ stays, and the document gets no URL. When
+    styrke.dk can't be reached, `fallback` (the URL cited so far) is kept.
+    """
+    cited = fallback
+    try:
+        response = _head(client, url)
+        if response is None:
+            log.warning("Linket til %s virker ikke længere – bruger kopien i %s", url, path.relative_to(ROOT))
+            return None
+        cited = str(response.url)
+        size = _plain_size(response)
+        if response.is_success and size is not None and size != path.stat().st_size:
+            fresh = client.get(cited)
+            if not fresh.is_success:
+                log.warning("HTTP %s for %s – beholder kopien", fresh.status_code, cited)
+            elif len(fresh.content) != size:
+                # A cut-off transfer must not replace a good copy.
+                log.warning("%s gav %d bytes, ikke %d – beholder kopien", cited, len(fresh.content), size)
+            else:
+                _write_atomic(path, fresh.content)
+                log.info("%s var ændret på styrke.dk og er hentet igen", path.relative_to(ROOT))
+    except httpx.HTTPError as exc:
+        log.warning("Kunne ikke tjekke %s: %s", url, exc)
+    except OSError as exc:
+        log.warning("Kunne ikke gemme %s: %s", path.relative_to(ROOT), exc)
+    time.sleep(0.1)
+    return cited
+
+
+def _plain_size(response: httpx.Response) -> int | None:
+    """The file's size from a HEAD response; None when unknown or when it is the compressed size."""
+    size = response.headers.get("content-length", "")
+    if "content-encoding" in response.headers or not size.isdigit():
+        return None
+    return int(size)
+
+
+def _write_atomic(path: Path, content: bytes) -> None:
+    """Write via a temporary file in the same folder, so an interrupted write never leaves half a file."""
+    tmp = path.with_name(f".{path.name}.tmp")
+    try:
+        tmp.write_bytes(content)
+        tmp.replace(path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
+def _download(client: httpx.Client, link: Link) -> tuple[Path, str] | None:
+    """Download a new document; returns where it was saved and the URL that answered."""
+    for url in _variants(link.url):
         try:
             response = client.get(url)
         except httpx.HTTPError as exc:
@@ -255,11 +346,15 @@ def _download(client: httpx.Client, link: Link) -> Path | None:
             log.warning("HTTP %s for %s", response.status_code, url)
             return None
         dest = PDF_ROOT / link.organ / unquote(url.rsplit("/", maxsplit=1)[-1])
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_bytes(response.content)
+        try:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            _write_atomic(dest, response.content)
+        except OSError as exc:
+            log.error("Kunne ikke gemme %s: %s", dest.relative_to(ROOT), exc)
+            return None
         log.info("Hentet %s (%.0f KB)", dest.relative_to(ROOT), len(response.content) / 1024)
         time.sleep(0.5)
-        return dest
+        return dest, str(response.url)
 
     log.warning("404 for %s", link.url)
     return None

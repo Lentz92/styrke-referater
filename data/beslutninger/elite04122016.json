@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 265,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav klassisk bænkpres",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2017-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 360,
+   "citat_side": 2
   },
   {
    "emne": "Kvalifikationskrav klassisk styrkeløft",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2018-01-01",
    "gaelder_til": "2018-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 344,
+   "citat_side": 2
   },
   {
    "emne": "BænkpresLandshold struktur",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 462,
+   "citat_side": 2
   }
  ]
 }

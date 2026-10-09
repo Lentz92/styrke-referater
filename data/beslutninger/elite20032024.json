@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 126,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav bænkpres og udstyr",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 429,
+   "citat_side": 2
   }
  ]
 }

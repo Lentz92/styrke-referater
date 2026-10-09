@@ -18,7 +18,9 @@
    "stemmer": "23 for, 6 imod",
    "gaelder_fra": "2016-10-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 281,
+   "citat_side": 2
   },
   {
    "emne": "Passiv licens og genindmeldelse",
@@ -33,7 +35,9 @@
    "stemmer": "23 for, 6 imod",
    "gaelder_fra": "2016-10-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 408,
+   "citat_side": 2
   },
   {
    "emne": "Karantæne for klubløse løftere og varsel om udmeldelse",
@@ -48,7 +52,9 @@
    "stemmer": "23 for, 6 imod",
    "gaelder_fra": "2016-10-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 518,
+   "citat_side": 3
   },
   {
    "emne": "Klubsanktion ved positive licensløftere",
@@ -63,7 +69,9 @@
    "stemmer": "26 for, 1 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1186,
+   "citat_side": 4
   },
   {
    "emne": "Klubsanktion ved positive licensløftere",
@@ -78,7 +86,9 @@
    "stemmer": "6 for, 15 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1028,
+   "citat_side": 3
   },
   {
    "emne": "SM/JM i klassisk bænkpres og klassisk styrkeløft",
@@ -93,7 +103,9 @@
    "stemmer": "26 for, 0 imod",
    "gaelder_fra": "2018-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1252,
+   "citat_side": 4
   },
   {
    "emne": "Krav om deltagelse i SM/JM og DM",
@@ -108,7 +120,9 @@
    "stemmer": "6 for, 24 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1428,
+   "citat_side": 4
   },
   {
    "emne": "Udstyrsregler",
@@ -123,7 +137,9 @@
    "stemmer": "8 for, 16 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2125,
+   "citat_side": 6
   },
   {
    "emne": "Udstyrsregler",
@@ -138,7 +154,9 @@
    "stemmer": "18 for, 3 imod",
    "gaelder_fra": "2017-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2090,
+   "citat_side": 6
   }
  ]
 }

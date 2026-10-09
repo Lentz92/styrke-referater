@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 98,
+   "citat_side": 1
   },
   {
    "emne": "ADEL-certifikat gyldighed",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 137,
+   "citat_side": 1
   },
   {
    "emne": "Akkreditering af trænere ved EM/VM",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 259,
+   "citat_side": 1
   },
   {
    "emne": "Startgebyr og stævnehotel ved EPF/IPF-stævner",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 307,
+   "citat_side": 1
   }
  ]
 }

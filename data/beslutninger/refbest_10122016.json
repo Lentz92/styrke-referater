@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 594,
+   "citat_side": 3
   },
   {
    "emne": "Headcoach for klubber ved nationale stævner",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 667,
+   "citat_side": 3
   },
   {
    "emne": "Stævneleders mandat til diskvalifikation ved upassende opførsel",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 701,
+   "citat_side": 3
   },
   {
    "emne": "Medaljebestilling",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": "2017-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 824,
+   "citat_side": 3
   },
   {
    "emne": "Dommerafgift for klubber uden stillet dommer",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1156,
+   "citat_side": 4
   }
  ]
 }

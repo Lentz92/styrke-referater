@@ -33,6 +33,7 @@ consolidation), counted against the Claude subscription; a few new minutes cost 
 | `--only REGEX` | only extract documents whose id matches (testing) |
 | `--extract-model`, `--consolidate-model` | defaults `sonnet` and `opus` |
 | `--workers N` | parallel Claude calls (default 4) |
+| `--time-budget MIN` | start no new Claude calls after this many minutes (default 75); the rest runs next time |
 
 To preview the website locally, open `_site/index.html` after a run, or build only the site with
 `uv run website.py`.
@@ -85,11 +86,33 @@ for a category when its decisions change. After editing a prompt in `analyze.py`
 `EXTRACT_VERSION` or `CONSOLIDATE_VERSION` so cached results are recomputed.
 
 Files that disappear from styrke.dk stay in `referater/` and in the analysis, because they still
-document the rules of their year.
+document the rules of their year; when their link stops working, they are cited without one. A file
+that styrke.dk replaces under the same name (a different size) is downloaded again and re-analysed.
 
-Quotes that cannot be found verbatim in the document text are flagged ⚠, and
-`regelsaet/README.md` ends with data-quality counts. The extraction is automatic: the minutes
-are always the authoritative source.
+Code checks Claude's work where it can:
+
+- Each quote is looked up in the document text, allowing for line-break hyphenation and a page header
+  inside it (at least 80% of its word triplets in place). One that cannot be found is flagged ⚠; one
+  found only on another page than Claude cited gets the page where it actually stands.
+- Decisions within a document are ordered by where their quote stands.
+- Each rule version stores a fingerprint of the decision it was built from. If the document is
+  re-analysed and the decision changes, the whole rule is left out until its category is consolidated
+  again (leaving out only that version could bring back a repealed rule).
+- The effect of an undecided, rejected or withdrawn proposal follows from its outcome, whatever Claude says.
+- `checks.py` reports versions where the extraction and the rule disagree about the effect, and possible
+  date traps (a seasonal rule confirmed without an end date, a newer decision that takes effect before an
+  older one).
+
+`update.py` logs every finding, and `regelsaet/README.md` ends with the counts. The extraction is
+automatic: the minutes are always the authoritative source.
+
+### Tests
+
+```bash
+uv run --with-requirements tests/requirements.txt pytest
+```
+
+`.github/workflows/tests.yml` runs them, and a render-only build, on every pull request.
 
 `DSF_Generelt_Regelsaet.docx` and `DSF_Verificeringsrapport.docx` are the earlier manual analysis
 (March 2026), kept for reference.

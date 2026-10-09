@@ -18,7 +18,9 @@
    "stemmer": "41 for, 2 imod, 2 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 531,
+   "citat_side": 3
   },
   {
    "emne": "Tilmeldings- og betalingsfrist til stævner",
@@ -33,7 +35,9 @@
    "stemmer": "32 for",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 678,
+   "citat_side": 4
   },
   {
    "emne": "Danske rekorder kun ved bestemte stævner",
@@ -48,7 +52,9 @@
    "stemmer": "18 for, 25 imod, 2 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 856,
+   "citat_side": 4
   },
   {
    "emne": "Fast pris på medaljesæt",
@@ -63,7 +69,9 @@
    "stemmer": "32 for",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 895,
+   "citat_side": 4
   },
   {
    "emne": "Kvalifikationskrav DM, klassisk senior",
@@ -78,7 +86,9 @@
    "stemmer": "45 for",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1681,
+   "citat_side": 7
   },
   {
    "emne": "Optagelse af ny klub",
@@ -93,7 +103,9 @@
    "stemmer": "33 for, 2 imod, 8 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1972,
+   "citat_side": 8
   },
   {
    "emne": "Licens som privilegium og klubbers antidopingansvar",
@@ -108,7 +120,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2335,
+   "citat_side": 9
   },
   {
    "emne": "Medlemstid i klub før licens",
@@ -123,7 +137,9 @@
    "stemmer": "4 for, 37 imod, 2 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2852,
+   "citat_side": 10
   },
   {
    "emne": "Deltagelse i divisionsfinalen",
@@ -138,7 +154,9 @@
    "stemmer": "31 for, 2 imod, 10 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2982,
+   "citat_side": 10
   },
   {
    "emne": "Karensperiode for løftere der vender tilbage",
@@ -153,7 +171,9 @@
    "stemmer": "28 for, 14 imod, 1 blank",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3147,
+   "citat_side": 11
   },
   {
    "emne": "Fravigelse af IPF's udstyrskrav",
@@ -168,7 +188,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3309,
+   "citat_side": 11
   },
   {
    "emne": "Adskillelse af udstyrs- og klassiske rekorder",
@@ -183,7 +205,9 @@
    "stemmer": "12 for, 19 imod, 12 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3399,
+   "citat_side": 12
   },
   {
    "emne": "Terminsliste JM/SM styrkeløft og klassisk",
@@ -198,7 +222,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3544,
+   "citat_side": 12
   },
   {
    "emne": "Placering af åben og master/junior ved DM",
@@ -213,7 +239,9 @@
    "stemmer": "42 for, 1 blank",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3648,
+   "citat_side": 12
   },
   {
    "emne": "Tilmelding til stævner efter IPF's regler",
@@ -228,7 +256,9 @@
    "stemmer": "19 for, 19 imod, 5 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3698,
+   "citat_side": 13
   },
   {
    "emne": "Faktura for licens og årsafgift",
@@ -243,7 +273,9 @@
    "stemmer": "5 for, 30 imod, 8 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3755,
+   "citat_side": 13
   },
   {
    "emne": "Betaling af medaljer",
@@ -258,7 +290,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 3811,
+   "citat_side": 13
   },
   {
    "emne": "Indvejning af løftere ved dommer af samme køn",
@@ -273,7 +307,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4052,
+   "citat_side": 14
   },
   {
    "emne": "Egne sokker til at trække knækogere op",
@@ -288,7 +324,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 4102,
+   "citat_side": 14
   }
  ]
 }

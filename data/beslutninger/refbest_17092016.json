@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 259,
+   "citat_side": 2
   },
   {
    "emne": "Headcoach ved master-stævner, tilstedeværelse ved min. antal deltagere",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 342,
+   "citat_side": 2
   },
   {
    "emne": "Headcoachs pligter ved stævner",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 358,
+   "citat_side": 2
   },
   {
    "emne": "Rekordliste og rekordprocedure ved stævner",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 418,
+   "citat_side": 2
   },
   {
    "emne": "Headcoach for hver klub til nationale stævner",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 496,
+   "citat_side": 3
   },
   {
    "emne": "Frist for betaling af stævnegebyr",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 592,
+   "citat_side": 3
   }
  ]
 }

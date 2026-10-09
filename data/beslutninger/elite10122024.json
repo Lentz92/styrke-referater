@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-07-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 239,
+   "citat_side": 1
   },
   {
    "emne": "Booking af rejser for landshold",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-01-01",
    "gaelder_til": "2025-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 289,
+   "citat_side": 2
   },
   {
    "emne": "Stævner hvor kvalifikationskrav kan opnås",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 447,
+   "citat_side": 2
   },
   {
    "emne": "Egenbetaling landshold",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 479,
+   "citat_side": 2
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": "30 for, 2 undlod",
    "gaelder_fra": "2022-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 591,
+   "citat_side": 2
   },
   {
    "emne": "Tidspunkt for SM og JM i styrkeløft og bænkpres",
@@ -33,7 +35,9 @@
    "stemmer": "32 for",
    "gaelder_fra": "2021-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 694,
+   "citat_side": 3
   },
   {
    "emne": "Kvalifikationskrav DM klassisk, senior",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2022-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 735,
+   "citat_side": 3
   },
   {
    "emne": "Danske rekorder i nye vægtklasser, kvinder",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 921,
+   "citat_side": 4
   },
   {
    "emne": "Corona-retningslinjer ved stævneafvikling",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 137,
+   "citat_side": 1
   },
   {
    "emne": "Plakater ved DM",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 992,
+   "citat_side": 4
   }
  ]
 }

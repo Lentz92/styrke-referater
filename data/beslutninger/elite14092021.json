@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2022-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 225,
+   "citat_side": 2
   },
   {
    "emne": "Uddannelsesdage for landsholdstrænere og klubtrænere",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2022-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 245,
+   "citat_side": 2
   },
   {
    "emne": "Bestilling og udlevering af landsholdsdragter",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2022-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 296,
+   "citat_side": 2
   }
  ]
 }

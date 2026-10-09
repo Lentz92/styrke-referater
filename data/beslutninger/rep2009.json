@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 460,
+   "citat_side": null
   },
   {
    "emne": "Holdkonkurrence DM Bænk, damer",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 603,
+   "citat_side": null
   },
   {
    "emne": "Sammenlægning af DM B, C og Diverse",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 676,
+   "citat_side": null
   },
   {
    "emne": "Dommerkrav i Divisionsturneringen",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 690,
+   "citat_side": null
   },
   {
    "emne": "Startgebyr ved stævner",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 712,
+   "citat_side": null
   },
   {
    "emne": "Deltagerkrav DM B",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 793,
+   "citat_side": null
   },
   {
    "emne": "Licensbetaling ved stævnetilmelding",
@@ -108,7 +120,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 822,
+   "citat_side": null
   }
  ]
 }

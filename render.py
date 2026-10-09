@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import re
+from collections import Counter
 from dataclasses import dataclass
 from datetime import date
 from urllib.parse import quote
 
-from analyze import CATEGORIES, Decision
+from analyze import CATEGORIES, Decision, version_matches
 from scrape import ROOT, Doc
 
 OUT_DIR = ROOT / "regelsaet"
@@ -130,9 +131,12 @@ class Rule:
 
 
 def render(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], missing: list[str],
-           today: date) -> list[str]:
-    """Write all pages to regelsaet/ and return their paths. `missing` = docs not yet analysed."""
-    pages = build_pages({d.id: d for d in docs}, decisions, raw_rules, missing, today)
+           problems: Counter[str], today: date) -> list[str]:
+    """Write all pages to regelsaet/ and return their paths.
+
+    `missing` = docs not yet analysed; `problems` = number of problems per kind found by checks.py.
+    """
+    pages = build_pages({d.id: d for d in docs}, decisions, raw_rules, missing, problems, today)
     for stale in OUT_DIR.rglob("*.md"):
         if stale.relative_to(OUT_DIR).as_posix() not in pages:
             stale.unlink()
@@ -144,7 +148,7 @@ def render(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], mi
 
 
 def build_pages(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[dict], missing: list[str],
-                today: date) -> dict[str, str]:
+                problems: Counter[str], today: date) -> dict[str, str]:
     rules = build_rules(raw_rules, {d.ref: d for d in decisions})
     years = covered_years(decisions, today)
 
@@ -157,7 +161,7 @@ def build_pages(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list
         targets.update({key: f"{AREA_DIR}/{area.file}.md#{anchor}" for key, anchor in anchors.items()})
     for year in years:
         pages[f"{year}.md"] = _year_page(year, years, rules, today, _Links(docs, "../"), targets)
-    pages["README.md"] = _index_page(years, rules, decisions, raw_rules, docs, missing, today)
+    pages["README.md"] = _index_page(years, rules, decisions, raw_rules, docs, missing, problems, today)
     return pages
 
 
@@ -167,16 +171,30 @@ def covered_years(decisions: list[Decision], today: date) -> list[int]:
     return list(range(min(known_years), max(known_years) + 1))
 
 
+def stale_refs(raw: dict, by_ref: dict[str, Decision]) -> list[str]:
+    """Refs of a consolidated rule whose decision is gone or has changed since the consolidation."""
+    return [v["ref"] for v in raw["versioner"] if v["ref"] not in by_ref or not version_matches(v, by_ref[v["ref"]])]
+
+
 def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule]:
+    """Rules with their versions in effective order.
+
+    A rule with a stale version (see stale_refs) is left out whole until its category is
+    consolidated again, and checks.py reports it. Dropping just that version could bring back a
+    repealed rule or show an older text as current, since each version builds on the ones before.
+    """
     rules = []
     for raw in raw_rules:
-        versions = [
-            Version(by_ref[v["ref"]], v["effekt"], v["tekst"], v.get("kort"), v.get("kort_regel"))
-            for v in raw["versioner"] if v["ref"] in by_ref
-        ]
-        if not versions:
+        if not raw["versioner"] or stale_refs(raw, by_ref):
             continue
-        versions.sort(key=lambda v: (v.effective, v.decision.dato or "", v.decision.ref))
+        # Claude writes each version's text as the rule after the versions before it, so versions
+        # decided the same day keep the order Claude gave them.
+        current = [
+            (i, Version(by_ref[v["ref"]], v["effekt"], v["tekst"], v.get("kort"), v.get("kort_regel")))
+            for i, v in enumerate(raw["versioner"])
+        ]
+        current.sort(key=lambda item: (item[1].effective, item[1].decision.dato or "", item[0]))
+        versions = [v for _, v in current]
         rules.append(Rule(raw["titel"], raw["kategori"], raw.get("vigtig", True), raw["note"], tuple(versions)))
     category_order = list(CATEGORIES)
     return sorted(rules, key=lambda r: (category_order.index(r.kategori), r.titel.lower()))
@@ -381,7 +399,7 @@ def _stale_note(rule: Rule, cutoff: str) -> str | None:
 # --------------------------------------------------------------------------- index
 
 def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], raw_rules: list[dict],
-                docs: dict[str, Doc], missing: list[str], today: date) -> str:
+                docs: dict[str, Doc], missing: list[str], problems: Counter[str], today: date) -> str:
     lines = [
         "# DSF-regelsæt – oversigt",
         "",
@@ -440,8 +458,16 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         f"- Dokumenter uden regelbeslutninger (fx budgetmøder): {without_decisions}",
         f"- Beslutninger hvor citatet ikke kunne genfindes ordret ({WARNING}): "
         f"{sum(1 for d in decisions if not d.citat_fundet)}",
+        f"- Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): "
+        f"{sum(1 for d in decisions if d.side_rettet)}",
         f"- Engangsbeslutninger uden for reglerne (kun i data/beslutninger): "
         f"{sum(1 for d in decisions if d.ref not in assigned)}",
+        f"- Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: "
+        f"{problems['forældet']}",
+        f"- Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): "
+        f"{problems['virkning']}",
+        f"- Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, "
+        f"eller en senere beslutning der gælder fra før en tidligere): {problems['dato']}",
         "",
         "Udtrækket er lavet automatisk af Claude og kan indeholde fejl. Referatet er altid den gældende kilde.",
     ]

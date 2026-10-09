@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2020-12-01",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 127,
+   "citat_side": 1
   },
   {
    "emne": "Dispensation fra kvalifikationskrav, DM klassisk",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2021-01-01",
    "gaelder_til": "2021-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 494,
+   "citat_side": 3
   },
   {
    "emne": "Dækning af øgede stævneudgifter pga. Covid-19",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2021-01-01",
    "gaelder_til": "2021-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 504,
+   "citat_side": 3
   },
   {
    "emne": "Officielle stævner i digital form",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 459,
+   "citat_side": 3
   }
  ]
 }

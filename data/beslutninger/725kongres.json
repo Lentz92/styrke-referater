@@ -18,7 +18,9 @@
    "stemmer": "alle for",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 429,
+   "citat_side": 2
   },
   {
    "emne": "Doping- og deltagelsesgebyr EPF-mesterskaber",
@@ -33,7 +35,9 @@
    "stemmer": "17 for, 2 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 505,
+   "citat_side": 2
   },
   {
    "emne": "Medaljer ved EPF-mesterskaber",
@@ -48,7 +52,9 @@
    "stemmer": "18 for, 1 imod",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 598,
+   "citat_side": 2
   },
   {
    "emne": "International dommer på nationalt hold ved EPF-mesterskaber",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 818,
+   "citat_side": 3
   }
  ]
 }

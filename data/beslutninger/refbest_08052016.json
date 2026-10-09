@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 172,
+   "citat_side": 1
   },
   {
    "emne": "Licensregel, frist før stævnedeltagelse",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 203,
+   "citat_side": 1
   },
   {
    "emne": "Udlevering af medaljer og pokaler",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 287,
+   "citat_side": 2
   },
   {
    "emne": "Streaming fra danske mesterskaber",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": "2018-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 715,
+   "citat_side": 3
   }
  ]
 }

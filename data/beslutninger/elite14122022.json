@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 36,
+   "citat_side": 1
   },
   {
    "emne": "Egenbetaling landshold",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2023-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 116,
+   "citat_side": 1
   },
   {
    "emne": "Landsholds-T-shirts ved internationale stævner",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 155,
+   "citat_side": 1
   },
   {
    "emne": "Registrering af sanktioner og afbud på landsholdet",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 182,
+   "citat_side": 1
   },
   {
    "emne": "Sportschefens afsnit i Eliteudvalgets årsberetning",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 248,
+   "citat_side": 1
   }
  ]
 }

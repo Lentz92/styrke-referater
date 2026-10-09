@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 173,
+   "citat_side": 1
   },
   {
    "emne": "Minimum antal deltagere for pokal til bedste løfter",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 573,
+   "citat_side": 2
   },
   {
    "emne": "Personligt fremmøde ved medalje- og pokalmodtagelse",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 688,
+   "citat_side": 3
   },
   {
    "emne": "Information om dommerpåsætning på stævnedagen",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 857,
+   "citat_side": 3
   },
   {
    "emne": "Pauser ved DM-hold",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 973,
+   "citat_side": 4
   },
   {
    "emne": "Uddeling af medaljer og pokaler",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1039,
+   "citat_side": 4
   }
  ]
 }

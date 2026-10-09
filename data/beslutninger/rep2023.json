@@ -18,7 +18,9 @@
    "stemmer": "31 for, 7 imod, 7 blanke",
    "gaelder_fra": "2024-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5743,
+   "citat_side": 14
   },
   {
    "emne": "Rekorder i divisionsturneringen",
@@ -33,7 +35,9 @@
    "stemmer": "43 for, 2 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5963,
+   "citat_side": 14
   },
   {
    "emne": "Honorering af dommerstillende klubber og forhøjede gebyrer",
@@ -48,7 +52,9 @@
    "stemmer": "34 imod, 7 for, 4 blanke",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 6052,
+   "citat_side": 15
   },
   {
    "emne": "Gebyrer og årsafgift",
@@ -63,7 +69,9 @@
    "stemmer": "enstemmigt",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 5639,
+   "citat_side": 14
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2020-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 48,
+   "citat_side": 1
   },
   {
    "emne": "Tilmelding af masterløftere til internationale stævner",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 321,
+   "citat_side": 2
   }
  ]
 }

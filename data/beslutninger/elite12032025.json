@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-07-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 24,
+   "citat_side": 1
   },
   {
    "emne": "Dispensation for deltagelse i stævner uden for Danmark",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 122,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav ved start i lavere vægtklasse til EM og VM",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 192,
+   "citat_side": 1
   },
   {
    "emne": "Afbud til DM på grund af akut sygdom",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 168,
+   "citat_side": 1
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 63,
+   "citat_side": 1
   },
   {
    "emne": "Deltagelse i internationale stævner ud over EM/VM",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 166,
+   "citat_side": 2
   },
   {
    "emne": "Opdatering af kvalifikationskrav",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 193,
+   "citat_side": 2
   },
   {
    "emne": "Advarsler ved landsholdssamling",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 325,
+   "citat_side": 2
   }
  ]
 }

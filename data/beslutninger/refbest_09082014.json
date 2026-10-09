@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 53,
+   "citat_side": 1
   },
   {
    "emne": "Minimumskrav til hold i ligafinale",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 419,
+   "citat_side": 2
   },
   {
    "emne": "Klubtræner på landsholdssamlinger",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 680,
+   "citat_side": 3
   },
   {
    "emne": "Crossfitstævner i forbundsregi",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 739,
+   "citat_side": 3
   },
   {
    "emne": "Kettlebell som aktivitet i forbundet",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 781,
+   "citat_side": 3
   },
   {
    "emne": "Medlemskort til styrkeløftklubber",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 835,
+   "citat_side": 3
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2028-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 69,
+   "citat_side": 1
   },
   {
    "emne": "Landsholdsdragt",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2027-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 129,
+   "citat_side": 1
   },
   {
    "emne": "Datokollision DM-uge og VM",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2027-01-01",
    "gaelder_til": "2027-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 212,
+   "citat_side": 1
   },
   {
    "emne": "Klassiske totaler som kvalifikation til udstyrsstævner",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 240,
+   "citat_side": 1
   },
   {
    "emne": "Skift af vægtklasse",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 314,
+   "citat_side": 1
   },
   {
    "emne": "Deltagelse i EM og VM ved opfyldt krav",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 438,
+   "citat_side": 1
   }
  ]
 }

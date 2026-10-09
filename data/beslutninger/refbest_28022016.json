@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 228,
+   "citat_side": 2
   },
   {
    "emne": "Sanktioner mod klubber med positive løftere",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 310,
+   "citat_side": 2
   },
   {
    "emne": "Løfteres betalte trænerrolle for andre licensløftere",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 539,
+   "citat_side": 3
   },
   {
    "emne": "Rejsetidspunkt til internationale stævner",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 620,
+   "citat_side": 3
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 59,
+   "citat_side": 1
   },
   {
    "emne": "Ejerskab af udleveret landsholdsudstyr",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 70,
+   "citat_side": 1
   },
   {
    "emne": "Provisorisk indstilling til forhåndsnominering til VM klassisk",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 232,
+   "citat_side": 1
   },
   {
    "emne": "Udtagelsesprincip EM/EPC på hjemmebane",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2020-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 258,
+   "citat_side": 2
   },
   {
    "emne": "Elitestrategi",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": "2020-01-01",
    "gaelder_til": "2025-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 337,
+   "citat_side": 2
   },
   {
    "emne": "Netværksmøder i landsholdssamlinger",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 433,
+   "citat_side": 2
   }
  ]
 }

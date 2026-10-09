@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 517,
+   "citat_side": 2
   },
   {
    "emne": "Uddeling af medaljer og pokaler",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 406,
+   "citat_side": 2
   },
   {
    "emne": "Holdpræmier ved DM, SM og JM",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 454,
+   "citat_side": 2
   },
   {
    "emne": "DM-hold finale i DM-ugen",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": "2026-01-01",
    "gaelder_til": "2026-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 546,
+   "citat_side": 2
   },
   {
    "emne": "Færøerne under DSF's regler",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 844,
+   "citat_side": 3
   }
  ]
 }

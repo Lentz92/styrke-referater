@@ -88,7 +88,7 @@ DSF's antidopingpolitik, godkendt af Anti Doping Danmark og af DSF's bestyrelse,
 *Bestyrelsesbeslutning · vedtaget 13.12.2015 af Bestyrelsen*
 
 - 14.01.2012 · indført: DIF's ændringer medfører ingen ændring i DSF's dopingpolitik · [refbest_14012012 s. 3](https://filer.styrke.dk/referater/refbest_14012012.pdf#page=3)
-- 13.12.2015 · ændret: ny antidopingpolitik godkendt efter ADD-godkendelse · [refbest_13122015 s. 2](https://filer.styrke.dk/referater/refbest_13122015.pdf#page=2) ⚠
+- 13.12.2015 · ændret: ny antidopingpolitik godkendt efter ADD-godkendelse · [refbest_13122015 s. 2](https://filer.styrke.dk/referater/refbest_13122015.pdf#page=2)
 
 ### Klubsanktion ved positive licensløftere
 

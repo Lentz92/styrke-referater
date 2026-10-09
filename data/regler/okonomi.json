@@ -1,7 +1,7 @@
 {
  "kategori": "okonomi",
  "version": 7,
- "input_hash": "f29d489953395a7eff825af8e7bb6cd435d8828a7c5d4d33fad63bcd72feef26",
+ "input_hash": "714c3dbe1a09ef105acdd833e8669ee410ed551484f41179b613201066680bbd",
  "model": "opus",
  "regler": [
   {
@@ -14,77 +14,88 @@
      "effekt": "indfoert",
      "tekst": "Startgebyret ved stævner er 150 kr.",
      "kort": "hævet fra 100 til 150 kr.",
-     "kort_regel": "150 kr. pr. start"
+     "kort_regel": "150 kr. pr. start",
+     "dhash": "9eaa203deb7b"
     },
     {
      "ref": "rep2012#2",
      "effekt": "aendret",
      "tekst": "Startgebyret ved stævner er 150 kr. Andet og tredje afsnit i reglen om startgebyr er slettet.",
      "kort": "KSK: andet og tredje afsnit i reglen slettet",
-     "kort_regel": "150 kr. pr. start"
+     "kort_regel": "150 kr. pr. start",
+     "dhash": "89c4437e69f9"
     },
     {
      "ref": "refbest_10032013#5",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen indstiller 200 kr., heraf 150 kr. til klubberne",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "0a120305d2c1"
     },
     {
      "ref": "rep2013#3",
      "effekt": "aendret",
      "tekst": "Startgebyret er 200 kr. og fordeles med 150 kr. til klubberne og 50 kr. til forbundet.",
      "kort": "hævet fra 150 til 200 kr., 50 kr. til forbundet",
-     "kort_regel": "200 kr.; 150 kr. til klub, 50 kr. til forbund"
+     "kort_regel": "200 kr.; 150 kr. til klub, 50 kr. til forbund",
+     "dhash": "00c1abec0196"
     },
     {
      "ref": "refbest_16112013#1",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår betaling direkte til arrangør, som får hele gebyret",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "f54e1e023ad8"
     },
     {
      "ref": "refbest_09022014#1",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen ønsker hele startgebyret på 200 kr. til klubberne",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "ee0f6d3ccfee"
     },
     {
      "ref": "rep2014#1",
      "effekt": "aendret",
      "tekst": "Startgebyret er 200 kr., og hele beløbet udbetales til arrangørklubben.",
      "kort": "hele gebyret på 200 kr. går til arrangørklubben",
-     "kort_regel": "200 kr., hele beløbet til arrangørklubben"
+     "kort_regel": "200 kr., hele beløbet til arrangørklubben",
+     "dhash": "bc8901012e6b"
     },
     {
      "ref": "rep2015#1",
      "effekt": "aendret",
      "tekst": "Startgebyret er 300 kr. (fra 1. juni 2015), og hele beløbet tilfalder arrangørklubben.",
      "kort": "hævet fra 200 til 300 kr. fra 1.6.2015",
-     "kort_regel": "300 kr., hele beløbet til arrangørklubben"
+     "kort_regel": "300 kr., hele beløbet til arrangørklubben",
+     "dhash": "5f5aa620b300"
     },
     {
      "ref": "rep2025#3",
      "effekt": "aendret",
      "tekst": "Startgebyret til DSF-stævner er 350 kr. for trekamp og 300 kr. for bænkpres. Gebyret betales til arrangøren, som inden stævnestart overfører 50 kr. pr. deltager til DSF. Gælder fra 1. juni 2025 for DM og JM/SM.",
      "kort": "trekamp hævet til 350 kr.; 50 kr. pr. deltager til DSF",
-     "kort_regel": "trekamp 350 kr., bænkpres 300 kr.; 50 kr. til DSF"
+     "kort_regel": "trekamp 350 kr., bænkpres 300 kr.; 50 kr. til DSF",
+     "dhash": "2dfdc194adf3"
     },
     {
      "ref": "rep2025#7",
      "effekt": "trukket",
      "tekst": null,
      "kort": "Aarhus AK: trekamp 350 kr., bænkpres 250 kr. – trukket",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "3afb738e23cd"
     },
     {
      "ref": "rep2026#17",
      "effekt": "bekraeftet",
      "tekst": "Startgebyret til DSF-stævner er 350 kr. for trekamp og 300 kr. for bænkpres. Gebyret betales til arrangøren, som inden stævnestart overfører 50 kr. pr. deltager til DSF.",
      "kort": "fastholdt uændret med budgettet",
-     "kort_regel": "trekamp 350 kr., bænkpres 300 kr.; 50 kr. til DSF"
+     "kort_regel": "trekamp 350 kr., bænkpres 300 kr.; 50 kr. til DSF",
+     "dhash": "e860276596bc"
     }
    ]
   },
@@ -98,42 +109,48 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår krav om dokumentation for betalt startgebyr",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "a8ff81b49fe2"
     },
     {
      "ref": "rep2010#5",
      "effekt": "indfoert",
      "tekst": "Løftere skal kunne dokumentere betalt startgebyr for at stille op ved stævner.",
      "kort": "krav om dokumentation for betalt startgebyr indført",
-     "kort_regel": "dokumentation for betalt startgebyr kræves for at stille op"
+     "kort_regel": "dokumentation for betalt startgebyr kræves for at stille op",
+     "dhash": "bf8286fe9968"
     },
     {
      "ref": "rep2015#10",
      "effekt": "aendret",
      "tekst": "Rettidig og bindende tilmelding sker via online system senest tre uger før stævnet, og startgebyret betales til arrangørens konto efter oplysningerne i invitationen.",
      "kort": "online tilmelding senest 3 uger før; betaling til arrangørens konto",
-     "kort_regel": "tilmelding senest 3 uger før; betaling til arrangør"
+     "kort_regel": "tilmelding senest 3 uger før; betaling til arrangør",
+     "dhash": "0c7bf529fe5d"
     },
     {
      "ref": "refbest_17092016#6",
      "effekt": "bekraeftet",
      "tekst": "Rettidig og bindende tilmelding sker via online system senest tre uger før stævnet. Startgebyret betales til den afholdende klubs konto senest på den dato, der står i invitationen/tilmeldingen. Betales der ikke rettidigt, må den afholdende klub udelukke den klub, som ikke har betalt.",
      "kort": "præciseret: manglende rettidig betaling kan medføre udelukkelse",
-     "kort_regel": "betaling til arrangør inden fristen, ellers udelukkelse"
+     "kort_regel": "betaling til arrangør inden fristen, ellers udelukkelse",
+     "dhash": "002aa2c2e7c2"
     },
     {
      "ref": "refbest_140320#4",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "Holstebro foreslår atleters egen betaling via Billetto",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "427120fdb61c"
     },
     {
      "ref": "rep2020#4",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Holstebros forslag om atleters egen betaling forkastet, 32 imod",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "5a9c6ee12d72"
     }
    ]
   },
@@ -147,35 +164,40 @@
      "effekt": "indfoert",
      "tekst": "Licensgebyret er 150 kr.",
      "kort": "licensgebyr på 150 kr. bekræftet i budget 2010",
-     "kort_regel": "150 kr. pr. løfter pr. år"
+     "kort_regel": "150 kr. pr. løfter pr. år",
+     "dhash": "266b4e97d05f"
     },
     {
      "ref": "rep2013#2",
      "effekt": "aendret",
      "tekst": "Licensgebyret er 200 kr.",
      "kort": "fastholdt på 200 kr., enstemmigt",
-     "kort_regel": "200 kr. pr. løfter pr. år"
+     "kort_regel": "200 kr. pr. løfter pr. år",
+     "dhash": "f9cf958805ac"
     },
     {
      "ref": "refbest_130124#1",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår licens hævet til 300 kr.",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "f267da6ce60c"
     },
     {
      "ref": "rep2024#1",
      "effekt": "aendret",
      "tekst": "Licensgebyret er 300 kr.",
      "kort": "hævet fra 200 til 300 kr.",
-     "kort_regel": "300 kr. pr. løfter pr. år"
+     "kort_regel": "300 kr. pr. løfter pr. år",
+     "dhash": "554f0e5b5414"
     },
     {
      "ref": "rep2026#16",
      "effekt": "bekraeftet",
      "tekst": "Licensgebyret er 300 kr.",
      "kort": "fastholdt uændret",
-     "kort_regel": "300 kr. pr. løfter pr. år"
+     "kort_regel": "300 kr. pr. løfter pr. år",
+     "dhash": "e2cba99f2a6e"
     }
    ]
   },
@@ -189,21 +211,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "opkrævning to gange årligt ud fra nomineringslister",
-     "kort_regel": "opkræves ca. 1.7. og 1.12.; ubetalt giver startforbud"
+     "kort_regel": "opkræves ca. 1.7. og 1.12.; ubetalt giver startforbud",
+     "dhash": "9e060a77fc77"
     },
     {
      "ref": "rep2015#5",
      "effekt": "aendret",
      "tekst": "DSF sender regning på licens to gange om året, ca. 1.6. og 1.12., til de klubber, der har haft løftere på nomineringslisten. Alle på nomineringslisten betaler, også selvom der meldes afbud. Betales der ikke, kan den pågældende løfter ikke stille op til næste stævne.",
      "kort": "regning ca. 1.6. og 1.12.; også ved afbud",
-     "kort_regel": "bagudrettet regning 1.6./1.12.; alle nominerede betaler"
+     "kort_regel": "bagudrettet regning 1.6./1.12.; alle nominerede betaler",
+     "dhash": "baed8e058ba9"
     },
     {
      "ref": "rep2017#16",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Aalborg SK: egentlig faktura for licens og årsafgift – forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "0e489d8e263e"
     }
    ]
   },
@@ -217,7 +242,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ingen passiv licens; 12 måneders karens, 2.500 kr. ved genindmeldelse",
-     "kort_regel": "genindmeldt: 12 mdr. på listen, 2.500 kr. inden 4 år"
+     "kort_regel": "genindmeldt: 12 mdr. på listen, 2.500 kr. inden 4 år",
+     "dhash": "a40356bc6e32"
     }
    ]
   },
@@ -231,63 +257,72 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen indstiller årsafgift fastholdt på 1.000 kr.",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "1ad2218ddf2d"
     },
     {
      "ref": "rep2013#1",
      "effekt": "indfoert",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt på 1.000 kr., enstemmigt",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "f7867a999297"
     },
     {
      "ref": "rep2019#14",
      "effekt": "bekraeftet",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt med budget 2019",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "e7c1d7db62c5"
     },
     {
      "ref": "rep2020#6",
      "effekt": "bekraeftet",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt med budgettet 2020",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "d176815185b8"
     },
     {
      "ref": "rep2022#7",
      "effekt": "bekraeftet",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt med budgettet 2022",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "59c904d53509"
     },
     {
      "ref": "rep2023#4",
      "effekt": "bekraeftet",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt med budgettet 2023",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "c872735b6d47"
     },
     {
      "ref": "rep2024#5",
      "effekt": "bekraeftet",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt med budgettet 2024",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "3f4f268ec223"
     },
     {
      "ref": "rep2025#11",
      "effekt": "bekraeftet",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt med budgettet 2025",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "cf0a4257ed58"
     },
     {
      "ref": "rep2026#15",
      "effekt": "bekraeftet",
      "tekst": "Årsafgiften er 1.000 kr.",
      "kort": "fastholdt uændret",
-     "kort_regel": "1.000 kr. pr. klub pr. år"
+     "kort_regel": "1.000 kr. pr. klub pr. år",
+     "dhash": "bc734513a162"
     }
    ]
   },
@@ -301,7 +336,8 @@
      "effekt": "indfoert",
      "tekst": "En klub, der tilmelder sig DSF for første gang, betaler ikke årsafgift i tilmeldingsåret. Alle andre betaler fuld årsafgift.",
      "kort": "nye klubber fritaget første år; 1/12-reglen slettet",
-     "kort_regel": "ny klub betaler ikke årsafgift i tilmeldingsåret"
+     "kort_regel": "ny klub betaler ikke årsafgift i tilmeldingsåret",
+     "dhash": "4650c703c0a5"
     }
    ]
   },
@@ -315,14 +351,16 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår frist flyttet til 1.–15. januar",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "cbe3a435a65f"
     },
     {
      "ref": "rep2018#1",
      "effekt": "indfoert",
      "tekst": "Årsafgiften betales mellem 1. og 15. januar (tidligere 15. december).",
      "kort": "frist ændret fra 15. december til 1.–15. januar",
-     "kort_regel": "årsafgift betales 1.–15. januar"
+     "kort_regel": "årsafgift betales 1.–15. januar",
+     "dhash": "f55bbd35a019"
     }
    ]
   },
@@ -336,7 +374,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "100 kr. gebyr pr. mangel; udelukkelse 14 dage efter rykker",
-     "kort_regel": "100 kr. pr. mangel; udelukkelse efter 14 dage"
+     "kort_regel": "100 kr. pr. mangel; udelukkelse efter 14 dage",
+     "dhash": "3202baca5589"
     }
    ]
   },
@@ -350,7 +389,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "klubber skal angive formål med indbetalinger",
-     "kort_regel": "indbetalinger skal tydeligt angive formål"
+     "kort_regel": "indbetalinger skal tydeligt angive formål",
+     "dhash": "cae715c4f9b5"
     }
    ]
   },
@@ -364,21 +404,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "500 kr. pr. klub fra 2010, ikke pr. hold",
-     "kort_regel": "500 kr. pr. klub"
+     "kort_regel": "500 kr. pr. klub",
+     "dhash": "f7a47bea06c8"
     },
     {
      "ref": "rep2010#3",
      "effekt": "bekraeftet",
      "tekst": "Tilmelding til divisionsturneringen betales pr. klub, uanset antal tilmeldte hold; prisen er 500 kr. pr. klub.",
      "kort": "Repræsentantskabet bekræfter betaling pr. klub i stedet for pr. hold",
-     "kort_regel": "500 kr. pr. klub uanset antal hold"
+     "kort_regel": "500 kr. pr. klub uanset antal hold",
+     "dhash": "1526ae1d6a1d"
     },
     {
      "ref": "rep2026#11",
      "effekt": "aendret",
      "tekst": "Tilmelding til DM Hold betales pr. klub, uanset antal hold; deltagergebyret er hævet med 1.000 kr. pr. klub. Arrangøren af én runde får 5.000 kr.; ekstrabeløbet for at afholde alle tre runder er fjernet. Finalen afvikles så vidt muligt skiftevis i øst og vest.",
      "kort": "arrangørbetaling 2.500→5.000 kr.; deltagergebyr +1.000 kr. pr. klub",
-     "kort_regel": "gebyr pr. klub +1.000 kr.; arrangør får 5.000 kr. pr. runde"
+     "kort_regel": "gebyr pr. klub +1.000 kr.; arrangør får 5.000 kr. pr. runde",
+     "dhash": "4a093703de31"
     }
    ]
   },
@@ -392,21 +435,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "medaljer bestilles udelukkende gennem Forma",
-     "kort_regel": "medaljer bestilles kun via Forma"
+     "kort_regel": "medaljer bestilles kun via Forma",
+     "dhash": "5ed1f0f82bda"
     },
     {
      "ref": "rep2017#17",
      "effekt": "trukket",
      "tekst": null,
      "kort": "Aalborg SK: faktura direkte fra FORMO – trukket",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "fd487f282b64"
     },
     {
      "ref": "rep2017#4",
      "effekt": "aendret",
      "tekst": "Medaljer bestilles via forbundets officielle medaljeforhandler. Arrangerende klubber betaler en fast pris på 100 kr. pr. medaljesæt (bronze, sølv, guld og disciplinmedaljer); samme pris gælder for bænkpres.",
      "kort": "fast pris 100 kr. pr. medaljesæt",
-     "kort_regel": "100 kr. pr. medaljesæt for arrangørklubben"
+     "kort_regel": "100 kr. pr. medaljesæt for arrangørklubben",
+     "dhash": "0845c396000f"
     }
    ]
   },
@@ -420,7 +466,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "takster for dommere, udvalg og landsholdsatleter; krav inden 14 dage",
-     "kort_regel": "2,50/3,00 kr./km; atleter 1,50/2,00; krav inden 14 dage"
+     "kort_regel": "2,50/3,00 kr./km; atleter 1,50/2,00; krav inden 14 dage",
+     "dhash": "cafdd7c78c91"
     }
    ]
   },
@@ -434,21 +481,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "bilag attesteres af leder på stedet; indsendes inden 14 dage",
-     "kort_regel": "attesteret bilag senest 14 dage efter"
+     "kort_regel": "attesteret bilag senest 14 dage efter",
+     "dhash": "82864fd3aa44"
     },
     {
      "ref": "refbest_30052010#3",
      "effekt": "aendret",
      "tekst": "Dommerens afregningsbilag attesteres af stævnelederen på stævnestedet; bilag fra træningssamlinger og stævner attesteres af den ansvarlige leder på stedet. Bilag skal indsendes senest 14 dage efter stævnet/samlingen, og kassereren betaler modtagne bilag inden 14 dage.",
      "kort": "kassereren skal betale bilag inden 14 dage",
-     "kort_regel": "bilag inden 14 dage; betaling inden 14 dage"
+     "kort_regel": "bilag inden 14 dage; betaling inden 14 dage",
+     "dhash": "b4abe63175fe"
     },
     {
      "ref": "rep2017#1",
      "effekt": "aendret",
      "tekst": "Dommerens afregningsbilag attesteres af stævnelederen på stævnestedet; bilag fra træningssamlinger og stævner attesteres af den ansvarlige leder på stedet. Bilag for tilgodehavender hos DSF skal være kassereren i hænde senest 3 uger efter hjemkomst/afholdt aktivitet, ellers bortfalder de uden mulighed for dispensation. Kassereren betaler inden for 8 hverdage i næstkommende måned (vedtægternes §9, stk. 5).",
      "kort": "frist 3 uger, ellers bortfald; betaling inden 8 hverdage",
-     "kort_regel": "bilag inden 3 uger, ellers bortfald"
+     "kort_regel": "bilag inden 3 uger, ellers bortfald",
+     "dhash": "3922de3f5e31"
     }
    ]
   },
@@ -462,28 +512,32 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "1.700 kr. til bestyrelse, webmaster og billetansvarlig",
-     "kort_regel": "1.700 kr.; andre udvalgsmedlemmer intet"
+     "kort_regel": "1.700 kr.; andre udvalgsmedlemmer intet",
+     "dhash": "02e419cedf71"
     },
     {
      "ref": "rep2013#4",
      "effekt": "bekraeftet",
      "tekst": "Kontorhold og telefonpenge er 1.700 kr. til bestyrelsesmedlemmer, webmaster og den ansvarlige for billetbestilling i eliteudvalget. Andre udvalgsmedlemmer modtager ikke kontor-/telefonpenge.",
      "kort": "fastholdt på 1.700 kr., enstemmigt",
-     "kort_regel": "1.700 kr. til bestyrelsesmedlemmer m.fl."
+     "kort_regel": "1.700 kr. til bestyrelsesmedlemmer m.fl.",
+     "dhash": "289b3671cf3e"
     },
     {
      "ref": "rep2021#2",
      "effekt": "aendret",
      "tekst": "Kontorhold og telefonpenge er 2.000 kr. til bestyrelsesmedlemmer, webmaster og den ansvarlige for billetbestilling i eliteudvalget. Andre udvalgsmedlemmer modtager ikke kontor-/telefonpenge.",
      "kort": "hævet fra 1.700 til 2.000 kr. med budgettet",
-     "kort_regel": "2.000 kr. til bestyrelsesmedlemmer m.fl."
+     "kort_regel": "2.000 kr. til bestyrelsesmedlemmer m.fl.",
+     "dhash": "fd966d712b46"
     },
     {
      "ref": "rep2026#18",
      "effekt": "bekraeftet",
      "tekst": "Kontorhold og telefonpenge er 2.000 kr. til bestyrelsesmedlemmer, webmaster og den ansvarlige for billetbestilling i eliteudvalget. Andre udvalgsmedlemmer modtager ikke kontor-/telefonpenge.",
      "kort": "fastholdt uændret på 2.000 kr.",
-     "kort_regel": "2.000 kr. til bestyrelsesmedlemmer m.fl."
+     "kort_regel": "2.000 kr. til bestyrelsesmedlemmer m.fl.",
+     "dhash": "1973ea4c1dea"
     }
    ]
   },
@@ -497,7 +551,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "arrangørklub betaler 10.000 kr. til DSF",
-     "kort_regel": "10.000 kr. plus ophold og forplejning til officials"
+     "kort_regel": "10.000 kr. plus ophold og forplejning til officials",
+     "dhash": "e785da35d40b"
     }
    ]
   },
@@ -511,7 +566,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "logoafgift fra 500 til 2.500 kr. efter brug",
-     "kort_regel": "person 500, klub 1.000, generelt 2.500 kr."
+     "kort_regel": "person 500, klub 1.000, generelt 2.500 kr.",
+     "dhash": "7bdbd84498ef"
     }
    ]
   },
@@ -525,21 +581,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "reklamer tilladt; 500 kr. årligt for links",
-     "kort_regel": "500 kr. årligt; ikke stødende reklamer"
+     "kort_regel": "500 kr. årligt; ikke stødende reklamer",
+     "dhash": "c2d955dee5e5"
     },
     {
      "ref": "refmedie05012019#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "Medieudvalget foreslår 500 kr. årligt for logoer/links",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "0a77c561d0ce"
     },
     {
      "ref": "refbest_19012019.2#3",
      "effekt": "bekraeftet",
      "tekst": "Der må være reklamer på hjemmesiden, som ikke må være stødende jf. IPF's retningslinjer. Links til reklamer koster 500 kr. årligt, og bestyrelsen vurderer fra sag til sag, hvem der må reklamere.",
      "kort": "500 kr. årligt bekræftet; bestyrelsen vurderer annoncører",
-     "kort_regel": "500 kr. årligt; bestyrelsen godkender annoncører"
+     "kort_regel": "500 kr. årligt; bestyrelsen godkender annoncører",
+     "dhash": "d709e25b4472"
     }
    ]
   },
@@ -553,7 +612,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "2.500 kr. til klub ved skoleprojekt med DSF",
-     "kort_regel": "2.500 kr.; kontakt udviklingskonsulenten først"
+     "kort_regel": "2.500 kr.; kontakt udviklingskonsulenten først",
+     "dhash": "4a6d44b7ce50"
     }
    ]
   },
@@ -567,7 +627,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "2.500 kr. til klubudviklingsprojekt med forbundet",
-     "kort_regel": "2.500 kr. pr. klubudviklingsprojekt"
+     "kort_regel": "2.500 kr. pr. klubudviklingsprojekt",
+     "dhash": "799cf30b240d"
     }
    ]
   },
@@ -581,7 +642,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår tilskud til leje af lys og lyd",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "9f5ee2b974da"
     }
    ]
   },
@@ -595,7 +657,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "midler til aktiviteter, der mindst går i nul",
-     "kort_regel": "støtte hvis aktiviteten mindst giver nul"
+     "kort_regel": "støtte hvis aktiviteten mindst giver nul",
+     "dhash": "ff671244bac4"
     }
    ]
   },
@@ -609,7 +672,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "rejseudgifter betales så vidt muligt hjemmefra",
-     "kort_regel": "betal mest muligt hjemmefra"
+     "kort_regel": "betal mest muligt hjemmefra",
+     "dhash": "22f8d71d2160"
     }
    ]
   },
@@ -623,7 +687,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "dommere og trænere opfordres til selv at bestille rejser",
-     "kort_regel": "selvbestilling inden for udvalgets rejsebudget"
+     "kort_regel": "selvbestilling inden for udvalgets rejsebudget",
+     "dhash": "738157794221"
     }
    ]
   },
@@ -637,7 +702,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "hurtig betaling; kvittering til teammanager før afrejse",
-     "kort_regel": "kvitteringer til teammanager inden afrejse"
+     "kort_regel": "kvitteringer til teammanager inden afrejse",
+     "dhash": "800bc2728835"
     }
    ]
   },
@@ -651,7 +717,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "internationale stævner på samme konto",
-     "kort_regel": "budgetteres og bogføres på én konto"
+     "kort_regel": "budgetteres og bogføres på én konto",
+     "dhash": "7cc3edf6c08f"
     }
    ]
   },
@@ -665,7 +732,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "30% af kontant sponsorbeløb som honorar",
-     "kort_regel": "30% af kontantbeløbet til sponsorskaffer"
+     "kort_regel": "30% af kontantbeløbet til sponsorskaffer",
+     "dhash": "cdb317e8d660"
     }
    ]
   },
@@ -679,7 +747,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "pulje på ca. 500.000 kr.; ansøgning senest 30.9.2020",
-     "kort_regel": "klubber kan søge puljen inden 30.9.2020"
+     "kort_regel": "klubber kan søge puljen inden 30.9.2020",
+     "dhash": "a7497a29c327"
     }
    ]
   },
@@ -693,21 +762,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "klubber kan søge dækning af tabte stævneindtægter og merudgifter",
-     "kort_regel": "dækning efter konkret ansøgning"
+     "kort_regel": "dækning efter konkret ansøgning",
+     "dhash": "91b493f9666b"
     },
     {
      "ref": "refbest_171020#1",
      "effekt": "aendret",
      "tekst": "Klubber kan efter konkret ansøgning få dækket manglende indtægter fra aflyste stævner og merudgifter ved afholdte stævner. Ansøgninger skal være kassereren i hænde senest 1. december 2020, være motiveret og fratrukket udgifter til fortæring, medaljer, lys, lyd o.l., og det skal oplyses, om der er søgt kompensation andre steder, fx hos DIF.",
      "kort": "ansøgningsfrist 1.12.2020 og krav til ansøgningen",
-     "kort_regel": "motiveret ansøgning senest 1.12.2020"
+     "kort_regel": "motiveret ansøgning senest 1.12.2020",
+     "dhash": "bb490bc1c9b4"
     },
     {
      "ref": "refbest_171020#3",
      "effekt": "aendret",
      "tekst": "Klubber kan efter konkret ansøgning få dækket manglende indtægter fra aflyste stævner (ansøgning senest 1. december 2020, motiveret og fratrukket sparede udgifter, med oplysning om anden kompensation). Øgede stævneudgifter i forbindelse med Covid-19 i 2021 dækkes af DSF.",
      "kort": "DSF dækker øgede Covid-19-stævneudgifter i 2021",
-     "kort_regel": "øgede Covid-udgifter i 2021 dækkes af DSF"
+     "kort_regel": "øgede Covid-udgifter i 2021 dækkes af DSF",
+     "dhash": "f832a6fc8a8a"
     }
    ]
   },
@@ -721,7 +793,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag: 2.000 kr. pr. klub, refunderes ved afholdt stævne",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "b247de714ef5"
     }
    ]
   }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 294,
+   "citat_side": 1
   },
   {
    "emne": "Juryens overrulingsknap",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 310,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikation til World Games, direkte kvalifikation",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-01-01",
    "gaelder_til": "2025-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 343,
+   "citat_side": 1
   }
  ]
 }

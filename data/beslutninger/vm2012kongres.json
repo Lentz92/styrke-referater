@@ -18,7 +18,9 @@
    "stemmer": "stort flertal",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 363,
+   "citat_side": 1
   },
   {
    "emne": "Forbud mod Superkatana-bænkpresdragt",
@@ -33,7 +35,9 @@
    "stemmer": "17 stemmer afgivet af 52 mulige",
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 583,
+   "citat_side": 2
   },
   {
    "emne": "Understøttende bænkprestrøje",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 503,
+   "citat_side": 1
   },
   {
    "emne": "Certifikat til løftere med problemer med at strække armene",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 346,
+   "citat_side": 1
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2010-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 281,
+   "citat_side": 1
   },
   {
    "emne": "Dommerpåsætning i ligaturnering",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2010-01-01",
    "gaelder_til": "2010-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 292,
+   "citat_side": 1
   },
   {
    "emne": "Tilmeldingsfrist ligaturnering",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2010-01-10",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 315,
+   "citat_side": 1
   },
   {
    "emne": "Ny struktur på ligaturnering",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": "2010-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 260,
+   "citat_side": 1
   }
  ]
 }

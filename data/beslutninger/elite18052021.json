@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2021-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 144,
+   "citat_side": 1
   },
   {
    "emne": "Udtagelse til EM og VM af atleter med A- og B-krav",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 249,
+   "citat_side": 2
   },
   {
    "emne": "Rejsearrangement ved internationale mesterskaber",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 280,
+   "citat_side": 2
   },
   {
    "emne": "IPF obligatorisk WADA-modul ADEL",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 400,
+   "citat_side": 2
   }
  ]
 }

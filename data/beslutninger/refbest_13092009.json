@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 31,
+   "citat_side": 1
   },
   {
    "emne": "Referatskrivning og sekretær",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 115,
+   "citat_side": 1
   },
   {
    "emne": "Udtagelse til VM masters bænkpres",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2011-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 196,
+   "citat_side": 1
   },
   {
    "emne": "Krav til DM bænk og medaljer",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 330,
+   "citat_side": 1
   },
   {
    "emne": "Tilmelding som dommer til stævner",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 473,
+   "citat_side": 2
   },
   {
    "emne": "Angivelse af betalingsformål",
@@ -93,7 +103,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 604,
+   "citat_side": 2
   },
   {
    "emne": "Deltagelse i stærkmandskonkurrencer",
@@ -108,7 +120,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 737,
+   "citat_side": 3
   }
  ]
 }

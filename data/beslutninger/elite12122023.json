@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2024-01-01",
    "gaelder_til": "2024-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 61,
+   "citat_side": 1
   },
   {
    "emne": "Dispensation fra obligatorisk deltagelse ved DM klassisk",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2024-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 573,
+   "citat_side": 2
   },
   {
    "emne": "Udtagelse EM udstyr, vægtklasse -84 kg damer",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2024-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 370,
+   "citat_side": 2
   },
   {
    "emne": "Dommerniveau nationale stævner, dybde i squat og bænkpres",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 664,
+   "citat_side": 2
   },
   {
    "emne": "Familiereglen på landsholdet",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 721,
+   "citat_side": 3
   }
  ]
 }

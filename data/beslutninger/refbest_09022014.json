@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 226,
+   "citat_side": 1
   },
   {
    "emne": "Dommer ved mastersstævner",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 332,
+   "citat_side": 1
   },
   {
    "emne": "Dommeraktivitet, sletning af inaktive dommere",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": "2014-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 451,
+   "citat_side": 2
   },
   {
    "emne": "Atleters træning i klub",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 859,
+   "citat_side": 3
   },
   {
    "emne": "Udsendelse af repræsentantskabsmødets dagsorden",
@@ -78,7 +86,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1047,
+   "citat_side": 3
   }
  ]
 }

@@ -15,10 +15,10 @@ Ved danske mesterskaber er der adgangskontrol til opvarmnings- og forberedelseso
 *Bestyrelsesbeslutning · vedtaget 23.11.2025 af Bestyrelsen · senest bekræftet 29.03.2026*
 
 - 23.08.2025 · indført: adgangskontrol til opvarmning ved alle DM-uger · [refbest_230825 s. 2](https://filer.styrke.dk/referater/refbest_230825.pdf#page=2)
-- 23.11.2025 · ændret: adgangskontrol ved alle DM fra 2026, kort ved indvejning (fra 01.01.2026) · [refbest_231125 s. 2](https://filer.styrke.dk/referater/refbest_231125.pdf#page=2)
-- 23.11.2025 · ændret: trænerkvote ved udstyrs-DM, højst 6 pr. gruppe (fra 01.01.2026) · [refbest_231125 s. 2](https://filer.styrke.dk/referater/refbest_231125.pdf#page=2)
-- 23.11.2025 · ændret: trænerkvote ved klassisk DM, højst 4 (fra 01.01.2026) · [refbest_231125 s. 2](https://filer.styrke.dk/referater/refbest_231125.pdf#page=2)
-- 23.11.2025 · ændret: én taske pr. udøver og oprydningspligt (fra 01.01.2026) · [refbest_231125 s. 2](https://filer.styrke.dk/referater/refbest_231125.pdf#page=2)
+- 23.11.2025 · ændret: adgangskontrol ved alle DM fra 2026, kort ved indvejning (fra 01.01.2026) · [refbest_231125 s. 3](https://filer.styrke.dk/referater/refbest_231125.pdf#page=3)
+- 23.11.2025 · ændret: trænerkvote ved udstyrs-DM, højst 6 pr. gruppe (fra 01.01.2026) · [refbest_231125 s. 3](https://filer.styrke.dk/referater/refbest_231125.pdf#page=3)
+- 23.11.2025 · ændret: trænerkvote ved klassisk DM, højst 4 (fra 01.01.2026) · [refbest_231125 s. 3](https://filer.styrke.dk/referater/refbest_231125.pdf#page=3)
+- 23.11.2025 · ændret: én taske pr. udøver og oprydningspligt (fra 01.01.2026) · [refbest_231125 s. 3](https://filer.styrke.dk/referater/refbest_231125.pdf#page=3)
 - 29.03.2026 · bekræftet: Repræsentantskabet vedtager reglerne i stævnereglerne · [rep2026 s. 28](https://filer.styrke.dk/referater/rep2026.pdf#page=28)
 
 ### Afvikling og placering af DM styrkeløft (udstyr)
@@ -196,8 +196,8 @@ Der løftes efter IPF's regler; lokale runder kræver aftale med stævneudvalget
 - 24.03.2013 · ændret: RAW-afdeling indført, finale fire hold pr. afdeling · [rep2013 s. 4](https://filer.styrke.dk/referater/rep2013.pdf#page=4)
 - 09.08.2014 · indkommet forslag: minimum 10 finalehold; to runder i stedet for tre undersøges · [refbest_09082014 s. 2](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=2)
 - 31.03.2019 · ændret: IPF-regler, 4 bedste hold pr. afdeling i finalen · [rep2019 s. 16](https://filer.styrke.dk/referater/rep2019.pdf#page=16)
-- 29.03.2026 · forslag forkastet: AAK foreslår kvalifikation via stævner og én decemberfinale · [rep2026 s. 35](https://filer.styrke.dk/referater/rep2026.pdf#page=35)
 - 29.03.2026 · forslag forkastet: OBBC foreslår individuel indvejning efter lotnummer · [rep2026 s. 31](https://filer.styrke.dk/referater/rep2026.pdf#page=31)
+- 29.03.2026 · forslag forkastet: AAK foreslår kvalifikation via stævner og én decemberfinale · [rep2026 s. 35](https://filer.styrke.dk/referater/rep2026.pdf#page=35)
 
 ### DM i bænkpres for veteraner
 
@@ -231,7 +231,7 @@ DM klassisk senior afvikles særskilt i DM-ugen fra 2022 i samarbejde med DIF; a
 
 *Stævneregel · vedtaget 30.08.2020 af Repræsentantskabet (30 for, 2 undlod) · senest bekræftet 06.02.2021*
 
-- 03.09.2011 · indkommet forslag: bestyrelsen vil gøre Nordland Cup officiel · [refbest_03092011 s. 2](https://filer.styrke.dk/referater/refbest_03092011.PDF#page=2)
+- 03.09.2011 · indkommet forslag: bestyrelsen vil gøre Nordland Cup officiel · [refbest_03092011 s. 2](https://filer.styrke.dk/referater/refbest_03092011.pdf#page=2)
 - 25.03.2012 · indført: Nordland Cup (Raw) bliver officielt dansk Raw-mesterskab · [rep2012 s. 4](https://filer.styrke.dk/referater/rep2012.pdf#page=4)
 - 14.03.2020 · indkommet forslag: forslag om DM klassisk senior i DM-ugen (fra 01.01.2021) · [refbest_140320 s. 1](https://filer.styrke.dk/referater/refbest_140320.pdf#page=1)
 - 30.08.2020 · ændret: senior i DM-ugen fra 2022; øvrige i april (fra 01.01.2022) · [rep2020 s. 17](https://filer.styrke.dk/referater/rep2020.pdf#page=17)
@@ -281,7 +281,7 @@ Der er indført en handlingsplan for akutte hændelser ved styrkeløftstævner i
 
 *Bestyrelsesbeslutning · vedtaget 15.12.2024 af Bestyrelsen*
 
-- 15.12.2024 · indført: handlingsplan i tre faser; stævneleder standser stævnet · [refbest_151224 s. 2](https://filer.styrke.dk/referater/refbest_151224.pdf#page=2)
+- 15.12.2024 · indført: handlingsplan i tre faser; stævneleder standser stævnet · [refbest_151224 s. 3](https://filer.styrke.dk/referater/refbest_151224.pdf#page=3)
 
 ### Holdpræmier for bedste klubber
 
@@ -335,8 +335,8 @@ DSF sender invitationen senest seks uger før stævnet. Sidste frist for tilmeld
 
 - 25.03.2012 · indført: invitation 6 uger før, tilmelding og betaling 3 uger før · [rep2012 s. 1](https://filer.styrke.dk/referater/rep2012.pdf#page=1)
 - 25.03.2012 · forslag forkastet: TSK foreslår løbende tilmelding; forkastet · [rep2012 s. 2](https://filer.styrke.dk/referater/rep2012.pdf#page=2)
-- 26.03.2017 · forslag forkastet: Aalborg SK foreslår IPF's tilmeldingsregler; stemmelighed · [rep2017 s. 13](https://filer.styrke.dk/referater/rep2017.pdf#page=13)
 - 26.03.2017 · ændret: frist 21 dage; betalingskontrol 3 bankdage efter · [rep2017 s. 4](https://filer.styrke.dk/referater/rep2017.pdf#page=4)
+- 26.03.2017 · forslag forkastet: Aalborg SK foreslår IPF's tilmeldingsregler; stemmelighed · [rep2017 s. 13](https://filer.styrke.dk/referater/rep2017.pdf#page=13)
 - 14.03.2020 · indkommet forslag: AASK foreslår IPF-frister 60 og 21 dage · [refbest_140320 s. 2](https://filer.styrke.dk/referater/refbest_140320.pdf#page=2)
 - 30.08.2020 · forslag forkastet: AASK's forslag om IPF-frister nedstemt · [rep2020 s. 17](https://filer.styrke.dk/referater/rep2020.pdf#page=17)
 - 02.10.2021 · indkommet forslag: bestyrelsen foreslår 21-dagesfrist og medaljebetaling indskrevet (fra 01.01.2022) · [refbest_021021 s. 3](https://filer.styrke.dk/referater/refbest_021021.pdf#page=3)
@@ -600,7 +600,7 @@ Ved stævner sørges for større afstand mellem indvejninger, mere styring af op
 
 - 22.08.2020 · indført: mundbind for spottere; små grupper; stævneleder kan lukke · [refbest_220820 s. 1](https://filer.styrke.dk/referater/refbest_220820.pdf#page=1)
 - 06.12.2020 · ændret: afstand ved indvejning, teknisk controller tilføjes · [refbest_061220 s. 1](https://filer.styrke.dk/referater/refbest_061220.pdf#page=1)
-- 06.02.2021 · bekræftet: retningslinjerne gentaget · [refbest_060221 s. 2](https://filer.styrke.dk/referater/refbest_060221.pdf#page=2)
+- 06.02.2021 · bekræftet: retningslinjerne gentaget · [refbest_060221 s. 1](https://filer.styrke.dk/referater/refbest_060221.pdf#page=1)
 
 ### Streaming ved danske mesterskaber
 
@@ -662,7 +662,7 @@ Forbundets stævneregler skal følge IPF's tekniske regler; opdaterede stævnere
 
 *Bestyrelsesbeslutning · vedtaget 03.09.2011 af Bestyrelsen · senest bekræftet 26.07.2015*
 
-- 03.09.2011 · indført: stævneregler skal følge IPF's tekniske regler · [refbest_03092011 s. 3](https://filer.styrke.dk/referater/refbest_03092011.PDF#page=3)
+- 03.09.2011 · indført: stævneregler skal følge IPF's tekniske regler · [refbest_03092011 s. 3](https://filer.styrke.dk/referater/refbest_03092011.pdf#page=3)
 - 24.03.2013 · bekræftet: generel opdatering, bestyrelsen får carte blanche · [rep2013 s. 3](https://filer.styrke.dk/referater/rep2013.pdf#page=3)
 - 08.02.2015 · indkommet forslag: forslag om udstyr og licensbetaling i stævnereglerne · [refbest_08022015 s. 7](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=7)
 - 26.07.2015 · bekræftet: opdaterede stævneregler og kalender godkendt · [refbest_26072015 s. 4](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=4)
@@ -1131,8 +1131,8 @@ Stødende logoer er forbudt, og logoer skal godkendes af DSF. Der opkræves ikke
 
 - 22.04.2017 · indført: stødende logoer forbudt; logoer godkendes af bestyrelsen · [refbest_22042017 s. 2](https://filer.styrke.dk/referater/refbest_22042017.pdf#page=2)
 - 19.01.2019 · ændret: afgifter 500/1.000/2.500 kr. og liste på hjemmesiden · [refbest_19012019.2 s. 2](https://filer.styrke.dk/referater/refbest_19012019.2.pdf#page=2)
-- 31.03.2019 · ændret: 500 kr.-afgift afskaffet; store sponsorlogoer på godkendt liste · [rep2019 s. 19](https://filer.styrke.dk/referater/rep2019.pdf#page=19)
 - 31.03.2019 · forslag trukket tilbage: bestyrelsens forslag om logoafgifter trukket · [rep2019 s. 18](https://filer.styrke.dk/referater/rep2019.pdf#page=18)
+- 31.03.2019 · ændret: 500 kr.-afgift afskaffet; store sponsorlogoer på godkendt liste · [rep2019 s. 19](https://filer.styrke.dk/referater/rep2019.pdf#page=19)
 - 24.05.2020 · bekræftet: liste over godkendte sponsorlogoer oprettes på hjemmesiden · [refbest_240520 s. 1](https://filer.styrke.dk/referater/refbest_240520.pdf#page=1)
 - 12.03.2026 · bekræftet: Master Løfter-T-shirt tilladt, hvis logo godkendt og registreret · [refstaevne12032026 s. 2](https://filer.styrke.dk/referater/refstaevne12032026.pdf#page=2)
 
@@ -1197,7 +1197,7 @@ DSF's udstyr, herunder streamingudstyr, kan lånes af klubberne til stævner. Kl
 *Bestyrelsesbeslutning · vedtaget 29.10.2017 af Bestyrelsen*
 
 - 15.04.2012 · indført: udstyrsliste lægges på hjemmesiden til klubbernes lån · [refbest_14042012 s. 1](https://filer.styrke.dk/referater/refbest_14042012.pdf#page=1)
-- 04.08.2012 · ændret: lån via kontoret, afhentning i Horsens · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.pdf#page=2)
+- 04.08.2012 · ændret: lån via kontoret, afhentning i Horsens · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.PDF#page=2)
 - 09.08.2014 · ændret: webkamera købt; låneseddel og mail ved udlån · [refbest_09082014 s. 1](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=1)
 - 07.12.2014 · ændret: følgeseddel, to sæt i kufferter, mangler rapporteres · [refbest_07122014 s. 4](https://filer.styrke.dk/referater/refbest_07122014.pdf#page=4)
 - 29.10.2017 · ændret: bestilling senest tre uger før stævnet · [refbest_29102017 s. 3](https://filer.styrke.dk/referater/refbest_29102017.pdf#page=3)

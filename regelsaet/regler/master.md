@@ -315,7 +315,7 @@ Masterudvalget får støtte efter det budget, der vedtages på repræsentantskab
 - 08.10.2011 · indført: støtte efter repræsentantskabets vedtagne budget · [ReferatMastermoede_okt2011 s. 1](https://filer.styrke.dk/referater/ReferatMastermoede_okt2011.pdf#page=1)
 - 25.03.2012 · forslag trukket tilbage: AK Atlas foreslår tilskud hævet fra 25.000 til 100.000 kr. (fra 01.01.2012) · [rep2012 s. 3](https://filer.styrke.dk/referater/rep2012.pdf#page=3)
 - 25.03.2012 · forslag forkastet: TSK foreslår 50.000 kr. til Master · [rep2012 s. 2](https://filer.styrke.dk/referater/rep2012.pdf#page=2)
-- 04.08.2012 · ændret: yderligere ansøgninger om midler forventes ikke godkendt · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.pdf#page=2)
+- 04.08.2012 · ændret: yderligere ansøgninger om midler forventes ikke godkendt · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.PDF#page=2)
 - 23.03.2014 · ændret: budget for masters forhøjet til 59.600 kr. · [rep2014 s. 3](https://filer.styrke.dk/referater/rep2014.pdf#page=3)
 - 27.06.2015 · ændret: udvalget indstiller årligt budget til repræsentantskabet · [ReglerForMasterudvalget s. 2](https://filer.styrke.dk/masterudvalg/ReglerForMasterudvalget.pdf#page=2)
 - 13.12.2015 · forslag forkastet: Kenneth Kyvsgaard foreslår overført overskud fra 2015 til 2016 · [refbest_13122015 s. 1](https://filer.styrke.dk/referater/refbest_13122015.pdf#page=1)
@@ -340,9 +340,9 @@ Masterudvalget består af 3-7 personer, og mindst formanden skal være medlem af
 
 *Udvalgsbeslutning · vedtaget 27.06.2015 af Masterudvalget*
 
-- 03.09.2011 · indkommet forslag: Masterklubben opløses og vender tilbage som udvalg · [refbest_03092011 s. 1](https://filer.styrke.dk/referater/refbest_03092011.PDF#page=1)
+- 03.09.2011 · indkommet forslag: Masterklubben opløses og vender tilbage som udvalg · [refbest_03092011 s. 1](https://filer.styrke.dk/referater/refbest_03092011.pdf#page=1)
 - 08.10.2011 · indført: veteranudvalg på 3-5 personer, heraf ét bestyrelsesmedlem · [ReferatMastermoede_okt2011 s. 1](https://filer.styrke.dk/referater/ReferatMastermoede_okt2011.pdf#page=1)
-- 04.08.2012 · indkommet forslag: bestyrelsen foreslår selvstændigt udvalg uden for Breddeudvalget · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.pdf#page=2)
+- 04.08.2012 · indkommet forslag: bestyrelsen foreslår selvstændigt udvalg uden for Breddeudvalget · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.PDF#page=2)
 - 08.02.2015 · indkommet forslag: forslag om at placere udvalget under eliteudvalget · [refbest_08022015 s. 5](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=5)
 - 27.06.2015 · ændret: 3-7 medlemmer, formanden udpeges af bestyrelsen · [ReglerForMasterudvalget s. 1](https://filer.styrke.dk/masterudvalg/ReglerForMasterudvalget.pdf#page=1)
 

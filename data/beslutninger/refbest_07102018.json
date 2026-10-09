@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 279,
+   "citat_side": 2
   },
   {
    "emne": "Deltagelse i danske mesterskaber og danske rekorder for udlændinge/dobbelt licens",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 440,
+   "citat_side": 2
   },
   {
    "emne": "Klubskifte under igangværende divisionsturnering",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 525,
+   "citat_side": 2
   },
   {
    "emne": "Deltagelse i ikke-sanktionerede stævner",
@@ -63,7 +69,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 630,
+   "citat_side": 3
   }
  ]
 }

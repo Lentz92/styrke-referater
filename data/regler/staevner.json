@@ -1,7 +1,7 @@
 {
  "kategori": "staevner",
  "version": 7,
- "input_hash": "c04710e8cf9f2850f46ba1086043de28aa98e848bfb5384ddcd2607d73b7ac66",
+ "input_hash": "3185482b90c21affd833e3103440a601dd5b7986a90ec2e325d96cd18a116323",
  "model": "opus",
  "regler": [
   {
@@ -14,35 +14,40 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "DM-A flyttes til 2. weekend i marts",
-     "kort_regel": "DM-A afholdes 2. weekend i marts"
+     "kort_regel": "DM-A afholdes 2. weekend i marts",
+     "dhash": "77f05df6bd34"
     },
     {
      "ref": "rep2012#9",
      "effekt": "trukket",
      "tekst": null,
      "kort": "Videbæk foreslår B-grupper og åben søndag; trukket",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "b8e58840c17c"
     },
     {
      "ref": "refbest_08022015#10",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen vil samle alt DM udstyr i én weekend",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "abdffae4cb4f"
     },
     {
      "ref": "rep2015#9",
      "effekt": "aendret",
      "tekst": "Der afholdes ét samlet DM styrkeløft (udstyr) for subjunior, junior, senior og masters; særskilte DM for subjunior, junior og masters afskaffes. DM afholdes 2. weekend i marts.",
      "kort": "særskilte aldersgruppe-DM afskaffes, ét samlet DM udstyr",
-     "kort_regel": "ét samlet DM udstyr for alle aldersgrupper"
+     "kort_regel": "ét samlet DM udstyr for alle aldersgrupper",
+     "dhash": "48b312f87cf4"
     },
     {
      "ref": "rep2017#14",
      "effekt": "aendret",
      "tekst": "Der afholdes ét samlet DM styrkeløft (udstyr) for subjunior, junior, senior og masters, 2. weekend i marts. Der er ingen fast regel om, at åben løfter lørdag og master, junior og sub-junior søndag.",
      "kort": "fast fordeling åben lørdag/øvrige søndag fjernet",
-     "kort_regel": "samlet DM udstyr, ingen fast dagsfordeling af kategorier"
+     "kort_regel": "samlet DM udstyr, ingen fast dagsfordeling af kategorier",
+     "dhash": "eb4993515e03"
     }
    ]
   },
@@ -56,7 +61,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "DM Diverse flyttes til 1. hele weekend i april",
-     "kort_regel": "DM Diverse 1. hele weekend i april"
+     "kort_regel": "DM Diverse 1. hele weekend i april",
+     "dhash": "6028f9770681"
     }
    ]
   },
@@ -70,7 +76,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Eliteudvalgets forslag om DM bænk i juni forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "39dd9657927b"
     }
    ]
   },
@@ -84,21 +91,24 @@
      "effekt": "trukket",
      "tekst": null,
      "kort": "AK Nordland foreslår kun én kategori ved DM bænk",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "c771300b43d9"
     },
     {
      "ref": "rep2009#2",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "højst 10 damer: præmiering på Wilks, udenfor holdkonkurrence",
-     "kort_regel": "ved højst 10 damer præmieres top 3 på Wilks"
+     "kort_regel": "ved højst 10 damer præmieres top 3 på Wilks",
+     "dhash": "036f228e1d2d"
     },
     {
      "ref": "refbest_13092009#4",
      "effekt": "aendret",
      "tekst": "Ved DM bænkpres uddeles medaljer i vægtklasserne kun, hvis der er mindst 10 tilmeldte løftere i kategorien; ved 9 eller færre løfter alle på Wilks-point, og nr. 1-3 præmieres efter Wilks. Damer, der præmieres på Wilks, tæller ikke med i holdkonkurrencen.",
      "kort": "medaljer i vægtklasser kun ved mindst 10 tilmeldte pr. kategori",
-     "kort_regel": "vægtklassemedaljer kræver 10 tilmeldte, ellers Wilks"
+     "kort_regel": "vægtklassemedaljer kræver 10 tilmeldte, ellers Wilks",
+     "dhash": "4595ee516c09"
     }
    ]
   },
@@ -112,14 +122,16 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen forbereder forslag om at fjerne kravene",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "81c6c26a2059"
     },
     {
      "ref": "rep2014#8",
      "effekt": "ophaevet",
      "tekst": null,
      "kort": "kvalifikationskrav til DM A og DM bænkpres fjernet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "60154f6a4291"
     }
    ]
   },
@@ -133,21 +145,24 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "AK Nordland foreslår DM B, C og Diverse samlet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "6a572c55cf80"
     },
     {
      "ref": "rep2009#6",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "krav til DM B ændret fra 3 år til 1 år",
-     "kort_regel": "DM B for løftere uden gulddiplom og 3-kamp sidste år"
+     "kort_regel": "DM B for løftere uden gulddiplom og 3-kamp sidste år",
+     "dhash": "a4f4209331ad"
     },
     {
      "ref": "rep2014#7",
      "effekt": "ophaevet",
      "tekst": null,
      "kort": "DM B og DM C afskaffet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "0cbae5c32c1a"
     }
    ]
   },
@@ -161,70 +176,80 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "AK Nordland foreslår kun én dommer; forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "dfe78b988085"
     },
     {
      "ref": "refbest_05122009#4",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "ny struktur fra 2010 drøftet, Tommy arbejder videre",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "4192c5c7bdb6"
     },
     {
      "ref": "refbest_21012010#3",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsens ændringer forelægges repræsentantskabet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "22724b6af8d5"
     },
     {
      "ref": "refbest_28022010#3",
      "effekt": "indfoert",
      "tekst": "Et hold kan få points i ligaturneringen uden at stille fuldt hold.",
      "kort": "point uden fuldt hold bevares indtil videre",
-     "kort_regel": "hold kan få points uden fuldt hold"
+     "kort_regel": "hold kan få points uden fuldt hold",
+     "dhash": "cb14b1249826"
     },
     {
      "ref": "refbest_10032013#11",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "AK Frem og AK Nordland foreslår RAW-afdeling",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "f210c784a394"
     },
     {
      "ref": "rep2013#13",
      "effekt": "aendret",
      "tekst": "Divisionsturneringen har en afdeling for udstyr og en for RAW, afholdt samme tid og sted i de tre runder; finalen har fire hold i hver afdeling. Et hold kan få points uden at stille fuldt hold.",
      "kort": "RAW-afdeling indført, finale fire hold pr. afdeling",
-     "kort_regel": "udstyrs- og RAW-afdeling, finale med fire hold hver"
+     "kort_regel": "udstyrs- og RAW-afdeling, finale med fire hold hver",
+     "dhash": "843073af390f"
     },
     {
      "ref": "refbest_09082014#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "minimum 10 finalehold; to runder i stedet for tre undersøges",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "65bef1a50705"
     },
     {
      "ref": "rep2019#5",
      "effekt": "aendret",
      "tekst": "Der løftes efter IPF's regler; lokale runder kræver aftale med stævneudvalget og officiel resultatliste underskrevet af dommerne. Tre runder kårer vinder i Øst- og Vestdanmark i hver kategori, og de 4 bedste hold i hver afdeling går i finalen, max ét hold pr. klub pr. kategori. I finalen overføres ingen points, alle løfter i samme pulje, og der må foretages to ændringer af 3. forsøg i dødløft.",
      "kort": "IPF-regler, 4 bedste hold pr. afdeling i finalen",
-     "kort_regel": "tre runder øst/vest, 4 hold pr. afdeling i finalen"
+     "kort_regel": "tre runder øst/vest, 4 hold pr. afdeling i finalen",
+     "dhash": "f3260cdd35f4"
     },
     {
      "ref": "rep2026#9",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "OBBC foreslår individuel indvejning efter lotnummer",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "ee6cef024957"
     },
     {
      "ref": "rep2026#14",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "AAK foreslår kvalifikation via stævner og én decemberfinale",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "44dbaffa7f3a"
     }
    ]
   },
@@ -238,56 +263,64 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "holdopstilling før start, finalekrav og klubskiftekarantæne indført",
-     "kort_regel": "min. én af tre afdelinger for finale; klubskifte næste år"
+     "kort_regel": "min. én af tre afdelinger for finale; klubskifte næste år",
+     "dhash": "4aee3bdfe5d5"
     },
     {
      "ref": "refbest_12062016#1",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen vil foreslå navnetilmelding fire dage før",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "9999c746314d"
     },
     {
      "ref": "rep2017#9",
      "effekt": "aendret",
      "tekst": "Holdopstillinger skal være overdommeren i hænde før start og må ændres fra runde til runde. Der kræves ikke deltagelse i indledende afdelinger for at deltage i finalen. Skifter en atlet klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering.",
      "kort": "krav om deltagelse i én afdeling før finale fjernet",
-     "kort_regel": "intet afdelingskrav for finale; klubskifte giver karantæne"
+     "kort_regel": "intet afdelingskrav for finale; klubskifte giver karantæne",
+     "dhash": "0bf639c55426"
     },
     {
      "ref": "refbest_07102018#3",
      "effekt": "aendret",
      "tekst": "Holdopstillinger skal være overdommeren i hænde før start og må ændres fra runde til runde. Der kræves ikke deltagelse i indledende afdelinger for at deltage i finalen. Skifter en atlet klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering, medmindre den tidligere klub ikke har et hold med i turneringen.",
      "kort": "klubskiftekarantæne gælder ikke, hvis gammel klub mangler hold",
-     "kort_regel": "klubskiftekarantæne kun hvis gammel klub har hold"
+     "kort_regel": "klubskiftekarantæne kun hvis gammel klub har hold",
+     "dhash": "f093e86de410"
     },
     {
      "ref": "rep2019#3",
      "effekt": "aendret",
      "tekst": "Et hold består af tre løftere (squat, bænkpres, dødløft), og alle hold deltager i samme turnering. Hold tilmeldes via hjemmesiden senest 2 dage før hver runde, og opstillingen må ændres fra runde til runde. Der kræves ikke deltagelse i indledende afdelinger for at deltage i finalen. Skifter en atlet klub under en igangværende turnering, kan atleten først deltage på den nye klubs hold i næstkommende års turnering, medmindre den tidligere klub ikke har et hold med i turneringen.",
      "kort": "hold af tre løftere, tilmelding senest 2 dage før",
-     "kort_regel": "tre løftere pr. hold, tilmelding 2 dage før runde"
+     "kort_regel": "tre løftere pr. hold, tilmelding 2 dage før runde",
+     "dhash": "da7080b29d13"
     },
     {
      "ref": "rep2019#4",
      "effekt": "bekraeftet",
      "tekst": "Et hold består af tre løftere (squat, bænkpres, dødløft), og alle hold deltager i samme turnering. Hold tilmeldes via hjemmesiden senest 2 dage før hver runde, og opstillingen må ændres fra runde til runde. Der kræves ikke deltagelse i indledende afdelinger for at deltage i finalen. Skifter en atlet klub under en igangværende turnering, kan atleten først deltage for den nye klub i næste års turnering, men kun hvis den gamle klub har et hold tilmeldt.",
      "kort": "Repræsentantskabet vedtager klubskifteregel med undtagelse",
-     "kort_regel": "klubskiftekarantæne kun hvis gammel klub har hold"
+     "kort_regel": "klubskiftekarantæne kun hvis gammel klub har hold",
+     "dhash": "c9b5be4bfc5a"
     },
     {
      "ref": "rep2022#6",
      "effekt": "trukket",
      "tekst": null,
      "kort": "Haderslev foreslår reserve ved akut sygdom; trukket",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "af997fba77b7"
     },
     {
      "ref": "refstaevne04062024#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "frist for antal tilmeldte hold skal præciseres",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "1e78bef30b28"
     }
    ]
   },
@@ -301,14 +334,16 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår kvinder på mixhold med herre-Wilks",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "e6d31258aaaa"
     },
     {
      "ref": "rep2010#2",
      "effekt": "indfoert",
      "tekst": "Mixhold er tilladt i divisionsturneringen, og kvinder på mixhold deltager med Wilkskoefficient efter kvindetabellen.",
      "kort": "mixhold tilladt, kvinder regnes efter kvinde-Wilks",
-     "kort_regel": "mixhold tilladt; kvinder med kvinde-Wilks"
+     "kort_regel": "mixhold tilladt; kvinder med kvinde-Wilks",
+     "dhash": "6ed7809aa856"
     }
    ]
   },
@@ -322,21 +357,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "2.500 kr. pr. runde; gebyr 500/1.000 kr.",
-     "kort_regel": "arrangør 2.500 kr.; gebyr 500 kr. første hold"
+     "kort_regel": "arrangør 2.500 kr.; gebyr 500 kr. første hold",
+     "dhash": "b191fb947e13"
     },
     {
      "ref": "refbest_08022015#11",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "foreslår 10.000 kr. og finale ved alle tre runder",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "ee4c79235c0b"
     },
     {
      "ref": "rep2015#6",
      "effekt": "aendret",
      "tekst": "I de indledende runder får arrangøren 2.500 kr. pr. stævne. En klub, der afholder alle tre indledende runder, får i alt 10.000 kr. udbetalt efter 3. runde og tilbydes at afholde finalen på de gældende betingelser; finalen afvikles så vidt muligt skiftevis i øst og vest. Tilmeldingsgebyret er 500 kr. for første hold og 1.000 kr. ved mere end ét hold.",
      "kort": "alle tre runder giver 10.000 kr. og tilbud om finale",
-     "kort_regel": "2.500 kr. pr. runde, 10.000 kr. for alle tre"
+     "kort_regel": "2.500 kr. pr. runde, 10.000 kr. for alle tre",
+     "dhash": "163f2bf7b945"
     }
    ]
   },
@@ -350,28 +388,32 @@
      "effekt": "indfoert",
      "tekst": "Der kan ikke sættes rekorder i divisionsturneringen, heller ikke i enkeltdisciplinen bænkpres.",
      "kort": "ingen rekorder i divisionsturneringen, heller ikke bænkpres",
-     "kort_regel": "ingen rekorder i divisionsturneringen"
+     "kort_regel": "ingen rekorder i divisionsturneringen",
+     "dhash": "260ba1858869"
     },
     {
      "ref": "refbest_080123#4",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår divisionsrekorder og disciplinmedaljer",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "c78b7d47b59b"
     },
     {
      "ref": "rep2023#2",
      "effekt": "aendret",
      "tekst": "Der kan sættes divisionsturneringens rekorder i squat, bænkpres og dødløft, registreret i vægtklasser og på point i hver disciplin. Ved finalen uddeles medaljer til de bedste løftere på point i hver disciplin baseret på de 3 indledende runder samt finalen.",
      "kort": "divisionsrekorder og disciplinmedaljer på point indført",
-     "kort_regel": "divisionsrekorder i vægtklasser og point; disciplinmedaljer i finalen"
+     "kort_regel": "divisionsrekorder i vægtklasser og point; disciplinmedaljer i finalen",
+     "dhash": "27be990e8dba"
     },
     {
      "ref": "refstaevne07112023#1",
      "effekt": "bekraeftet",
      "tekst": "Der kan sættes divisionsturneringens rekorder i squat, bænkpres og dødløft, registreret i vægtklasser og på point i hver disciplin. Ved finalen uddeles medaljer til de bedste løftere på point i hver disciplin baseret på de 3 indledende runder samt finalen.",
      "kort": "indskrevet i stævnereglerne",
-     "kort_regel": "divisionsrekorder i vægtklasser og point; disciplinmedaljer i finalen"
+     "kort_regel": "divisionsrekorder i vægtklasser og point; disciplinmedaljer i finalen",
+     "dhash": "4f99be09cae9"
     }
    ]
   },
@@ -385,7 +427,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "resultater på hjemmesiden senest 14 dage efter runde",
-     "kort_regel": "resultater online senest 14 dage efter hver runde"
+     "kort_regel": "resultater online senest 14 dage efter hver runde",
+     "dhash": "4f73e390aff3"
     }
    ]
   },
@@ -399,7 +442,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "alle divisionsregler samles i særskilt regelsæt",
-     "kort_regel": "divisionsregler kun i Regler for divisionsturneringen"
+     "kort_regel": "divisionsregler kun i Regler for divisionsturneringen",
+     "dhash": "e00dcc498342"
     }
    ]
   },
@@ -413,7 +457,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "omdøbt til DM Hold runde 1-3 og Finale",
-     "kort_regel": "DM Hold runde 1-3 øst/vest og DM Hold Finale"
+     "kort_regel": "DM Hold runde 1-3 øst/vest og DM Hold Finale",
+     "dhash": "22d6a2fa5455"
     }
    ]
   },
@@ -427,14 +472,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ens pauser, 10 minutter ved runder og finale",
-     "kort_regel": "10 minutters pause mellem discipliner"
+     "kort_regel": "10 minutters pause mellem discipliner",
+     "dhash": "6917eb51ff36"
     },
     {
      "ref": "rep2026#12",
      "effekt": "aendret",
      "tekst": "Pausen mellem discipliner ved DM Hold runder og finale skal være ens og 20 minutter.",
      "kort": "pause hævet fra 10 til 20 minutter",
-     "kort_regel": "20 minutters pause mellem discipliner"
+     "kort_regel": "20 minutters pause mellem discipliner",
+     "dhash": "8143d52ca9cf"
     }
    ]
   },
@@ -448,35 +495,40 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "stævneudvalget foreslår finalen i DM-ugen 2026",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "612ef99d9408"
     },
     {
      "ref": "refbest_201024#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår DM-ugen som DM-hold finale",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "30f43d4d2156"
     },
     {
      "ref": "refstaevne03122024#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag til R-møde 2025 om finale i DM-ugen",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "97be88e26a8c"
     },
     {
      "ref": "refbest_151224#5",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår finalen i DM-ugen",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "36e3b7ac069f"
     },
     {
      "ref": "rep2025#5",
      "effekt": "trukket",
      "tekst": null,
      "kort": "bestyrelsens forslag om finale i DM-ugen trukket",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "06a7e649b314"
     }
    ]
   },
@@ -490,7 +542,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "dommerlys udlånes; arrangør hæfter for skader",
-     "kort_regel": "gratis lån af dommerlys; arrangør hæfter for skader"
+     "kort_regel": "gratis lån af dommerlys; arrangør hæfter for skader",
+     "dhash": "678a5a047951"
     }
    ]
   },
@@ -504,14 +557,16 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "TSK's forslag om indkøb af stævneudstyr afvist",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "50df25482361"
     },
     {
      "ref": "rep2010#7",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "TSK's forslag erstattet af tilskud til lys og lyd",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "82c124044e48"
     }
    ]
   },
@@ -525,7 +580,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "AK Atlas foreslår fast løftested, evt. Odense",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "1d40ae9feda2"
     }
    ]
   },
@@ -539,7 +595,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "tilskud til lys og lyd efter stævneudvalgets bedømmelse",
-     "kort_regel": "tilskud til lys- og lydleje ved DSF-stævner"
+     "kort_regel": "tilskud til lys- og lydleje ved DSF-stævner",
+     "dhash": "63b5fcb9e51c"
     }
    ]
   },
@@ -553,14 +610,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "to sæt stævneudstyr indkøbes for højst 20.000 kr.",
-     "kort_regel": "to sæt samlet stævneudstyr, afprøves ved DM"
+     "kort_regel": "to sæt samlet stævneudstyr, afprøves ved DM",
+     "dhash": "27480f3ffb15"
     },
     {
      "ref": "refbest_03022018#7",
      "effekt": "aendret",
      "tekst": "DSF har samlet stævneudstyr i kufferter til udlån. Klubber kvitterer med repræsentantens navn og dato ved lån og kvitterer ved tilbagelevering for, at alt udstyr er til stede.",
      "kort": "kvittering ved lån og tilbagelevering; nye hardcase-kufferter",
-     "kort_regel": "lån af udstyrskuffert kræver kvittering ud og ind"
+     "kort_regel": "lån af udstyrskuffert kræver kvittering ud og ind",
+     "dhash": "46aaf8000345"
     }
    ]
   },
@@ -574,7 +633,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "flytning meldes til Peter Andersen; følger næste arrangør",
-     "kort_regel": "udstyr følger næste arrangør, flytning meldes"
+     "kort_regel": "udstyr følger næste arrangør, flytning meldes",
+     "dhash": "f0e5ff688769"
     }
    ]
   },
@@ -588,7 +648,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "to vægte udlånes mod tro og love-erklæring",
-     "kort_regel": "indvejningsvægte udlånes mod tro og love-erklæring"
+     "kort_regel": "indvejningsvægte udlånes mod tro og love-erklæring",
+     "dhash": "e3011cfc4250"
     }
    ]
   },
@@ -602,7 +663,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "DM skal bruge DSF's udlånte indvejningsvægt",
-     "kort_regel": "DSF's indvejningsvægt skal bruges ved DM"
+     "kort_regel": "DSF's indvejningsvægt skal bruges ved DM",
+     "dhash": "2b084306e1dd"
     }
    ]
   },
@@ -616,49 +678,56 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "stævneansvarlig som bindeled mellem arrangør og forbund",
-     "kort_regel": "stævneansvarlig bindeled, sikrer materialer, evaluerer"
+     "kort_regel": "stævneansvarlig bindeled, sikrer materialer, evaluerer",
+     "dhash": "75fecc951d04"
     },
     {
      "ref": "refbest_30052010#4",
      "effekt": "aendret",
      "tekst": "Til alle forbundsstævner (DM, SM, JM) udpeges en stævneansvarlig fra stævneudvalget ved udsendelse af startlisten. Vedkommende er bindeled mellem arrangør og bestyrelse/kontor, besigtiger stævnestedet og sikrer betaling af startgebyr, stævnepapirer, udstyrsstempler, podie, opvarmning, lokaler til indvejning og dopingkontrol samt at stævnepapirer afleveres til kontoret med kopi til webmaster, og evaluerer stævnet.",
      "kort": "stævneansvarlig fra stævneudvalget ved alle forbundsstævner",
-     "kort_regel": "stævneansvarlig ved DM/SM/JM, besigtiger og sikrer faciliteter"
+     "kort_regel": "stævneansvarlig ved DM/SM/JM, besigtiger og sikrer faciliteter",
+     "dhash": "5d990f3b1721"
     },
     {
      "ref": "refstaevne07112023#3",
      "effekt": "bekraeftet",
      "tekst": "Til hvert forbundsstævne er udpeget en ansvarlig fra stævneudvalget, som er bindeled mellem arrangør og forbund, besigtiger stævnestedet og sikrer faciliteter, stævnepapirer og evaluering.",
      "kort": "ansvarlig udpeget til hvert stævne",
-     "kort_regel": "stævneansvarlig fra stævneudvalget ved hvert stævne"
+     "kort_regel": "stævneansvarlig fra stævneudvalget ved hvert stævne",
+     "dhash": "79a70804aa22"
     },
     {
      "ref": "refstaevne08022024#4",
      "effekt": "aendret",
      "tekst": "For alle stævner under DSF (ikke privatstævner) knyttes en stævneansvarlig fra stævneudvalget, som støtter arrangørklubben i at opfylde kravene til afvikling af danske mesterskaber, udarbejder stævneplaner med dommerpåsætning, godkender invitationer, udlåner stævnevægt og dommerlys og formidler ekspertbistand til konkurrencestyringssystem og andet udstyr.",
      "kort": "støtter arrangør, laver stævneplan, godkender invitationer, udlåner udstyr",
-     "kort_regel": "stævneansvarlig ved alle DSF-stævner, ikke privatstævner"
+     "kort_regel": "stævneansvarlig ved alle DSF-stævner, ikke privatstævner",
+     "dhash": "5c28edf435f7"
     },
     {
      "ref": "refstaevne04042024#2",
      "effekt": "aendret",
      "tekst": "For alle stævner under DSF (ikke privatstævner) knyttes en stævneansvarlig fra stævneudvalget, som kontakter og præsenterer sig for arrangørklubben, gennemgår DSF's krav til afvikling af danske mesterskaber, støtter klubben i at opfylde dem, formidler kontakter til andre klubber og ressourcepersoner, udarbejder stævneplaner med dommerpåsætning, godkender invitationer og udlåner stævnevægt og dommerlys. Spørgsmål om medaljer og pokaler rettes til den medaljeansvarlige.",
      "kort": "ansvarsperson præsenterer sig og gennemgår DM-kravene",
-     "kort_regel": "ansvarsperson kontakter arrangør og gennemgår kravene"
+     "kort_regel": "ansvarsperson kontakter arrangør og gennemgår kravene",
+     "dhash": "e92c5fffb576"
     },
     {
      "ref": "refstaevne16052024#2",
      "effekt": "bekraeftet",
      "tekst": "For alle stævner under DSF (ikke privatstævner) knyttes en stævneansvarlig fra stævneudvalget, som står til rådighed for arrangørklubben, gennemgår og sikrer overholdelse af kravene til afvikling af stævner, formidler kontakter, udarbejder stævneplaner med dommerpåsætning, godkender invitationer og udlåner stævnevægt og dommerlys. Spørgsmål om medaljer og pokaler rettes til den medaljeansvarlige.",
      "kort": "stævner fordelt mellem udvalgets medlemmer",
-     "kort_regel": "ansvarsperson sikrer at stævnekrav overholdes"
+     "kort_regel": "ansvarsperson sikrer at stævnekrav overholdes",
+     "dhash": "fbc225d30c07"
     },
     {
      "ref": "refstaevne18092025#1",
      "effekt": "aendret",
      "tekst": "For alle stævner under DSF (ikke privatstævner) knyttes en stævneansvarlig fra stævneudvalget, som præsenterer sig for arrangørklubben, gennemgår kravene til afholdelse af danske mesterskaber, sikrer at stævneprogrammet er sat rigtigt op og står til rådighed, formidler kontakter, udarbejder stævneplaner med dommerpåsætning, godkender invitationer og udlåner stævnevægt og dommerlys. Ved afbud fra dommere informerer den stævneansvarlige stævnelederen om afbuddet og om, hvilke dommere der står for indvejning og udstyrskontrol.",
      "kort": "tjekker stævneprogram; informerer stævneleder ved dommerafbud",
-     "kort_regel": "stævneansvarlig sikrer program og informerer om dommerafbud"
+     "kort_regel": "stævneansvarlig sikrer program og informerer om dommerafbud",
+     "dhash": "f46a84478b5b"
     }
    ]
   },
@@ -672,14 +741,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "regler for stævneudvalget opdateret",
-     "kort_regel": "udvalget vejleder arrangører, bestiller præmier, gennemgår regler årligt"
+     "kort_regel": "udvalget vejleder arrangører, bestiller præmier, gennemgår regler årligt",
+     "dhash": "a020a587b3da"
     },
     {
      "ref": "refstaevne08022024#5",
      "effekt": "bekraeftet",
      "tekst": "Stævneudvalget vejleder og støtter arrangørklubber, udarbejder stævneplaner, bestiller medaljer og pokaler, udlåner stævnevægt, dommerlys og konkurrencestyringssystem, mødes 2-4 gange årligt og gennemgår stævnereglerne som fast punkt i starten af januar.",
      "kort": "årlig gennemgang af stævnereglerne i januar",
-     "kort_regel": "stævneregler gennemgås hvert år i januar"
+     "kort_regel": "stævneregler gennemgås hvert år i januar",
+     "dhash": "a7c6d7c8f041"
     }
    ]
   },
@@ -693,7 +764,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "Trine Bagger godkender rekorder",
-     "kort_regel": "rekordgodkendelse varetages af udpeget udvalgsmedlem"
+     "kort_regel": "rekordgodkendelse varetages af udpeget udvalgsmedlem",
+     "dhash": "01093704c8bd"
     }
    ]
   },
@@ -707,14 +779,16 @@
      "effekt": "indfoert",
      "tekst": "Der kan sættes danske rekorder under de nye regler; kravene til rekorderne er offentliggjort på forbundets hjemmeside.",
      "kort": "rekorder under nye regler, krav på hjemmesiden",
-     "kort_regel": "rekordkrav offentliggjort på hjemmesiden"
+     "kort_regel": "rekordkrav offentliggjort på hjemmesiden",
+     "dhash": "b98e7c5e5a7b"
     },
     {
      "ref": "rep2011#5",
      "effekt": "aendret",
      "tekst": "Forbundet udsender forbundskrav som rekordgrundlag, men pr. 1.1.2012 nulstilles disse og erstattes af det bedste løft i hver vægtklasse. Hvis ingen har løftet, står der \"0\" ud for kategorien.",
      "kort": "forbundskrav nulstilles 1.1.2012, bedste løft bliver rekord",
-     "kort_regel": "rekord er bedste løft i vægtklassen, ellers 0"
+     "kort_regel": "rekord er bedste løft i vægtklassen, ellers 0",
+     "dhash": "53e16ba4acd4"
     }
    ]
   },
@@ -728,49 +802,56 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "RAW-rekorder ved udstyrsstævner kun i multiplum af 2,5 kg",
-     "kort_regel": "RAW-rekord ved udstyrsstævne kun i 2,5 kg-spring"
+     "kort_regel": "RAW-rekord ved udstyrsstævne kun i 2,5 kg-spring",
+     "dhash": "2ec736503962"
     },
     {
      "ref": "rep2015#3",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "ER Equipment foreslår at fjerne RAW-indvejning ved udstyrsstævner",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "1b9a3f7c7893"
     },
     {
      "ref": "refbest_12062016#6",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "Danny M. beder R-mødet om klassisk rekord som udstyrsrekord",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "01421f0eb463"
     },
     {
      "ref": "rep2017#12",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Aarhus AK foreslår adskillelse af klassiske og udstyrsrekorder",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "7dccf136f8cf"
     },
     {
      "ref": "rep2018#5",
      "effekt": "aendret",
      "tekst": "Rekorder i individuelle løft kan kun sættes, hvis der er opnået en total i trekamp. Bænkpresrekorder sat i enkeltdisciplinen under en trekamp kræver ikke total, men et reelt forsøg (bona fide) i squat og dødløft. Der kan ikke sættes klassiske rekorder eller registreres klassisk resultat ved udstyrsstævner.",
      "kort": "total kræves; ingen klassiske rekorder ved udstyrsstævner",
-     "kort_regel": "enkeltløftsrekord kræver total; ingen klassisk ved udstyrsstævne"
+     "kort_regel": "enkeltløftsrekord kræver total; ingen klassisk ved udstyrsstævne",
+     "dhash": "5bc77ceee564"
     },
     {
      "ref": "refbest_29032018#2",
      "effekt": "bekraeftet",
      "tekst": "Rekorder i individuelle løft kan kun sættes, hvis der er opnået en total i trekamp. Bænkpresrekorder sat i enkeltdisciplinen under en trekamp kræver ikke total, men et reelt forsøg (bona fide) i squat og dødløft. Der kan ikke sættes klassiske rekorder eller registreres klassisk resultat ved udstyrsstævner, og stævnesystemet tillader ikke klassisk tilmelding til udstyrsstævner.",
      "kort": "stævnesystem blokerer klassisk tilmelding til udstyrsstævner",
-     "kort_regel": "ingen klassisk tilmelding eller rekord ved udstyrsstævner"
+     "kort_regel": "ingen klassisk tilmelding eller rekord ved udstyrsstævner",
+     "dhash": "1835f8a16fab"
     },
     {
      "ref": "490#35",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "EPF/TC-forslag mod bænkrekorder i styrkeløft nedstemt",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "dc198a61fd65"
     }
    ]
   },
@@ -784,21 +865,24 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "bestyrelsen foreslår rekorder kun ved nationale/IPF-stævner",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "045a9c12d903"
     },
     {
      "ref": "rep2018#4",
      "effekt": "trukket",
      "tekst": null,
      "kort": "HSK foreslår rekorder kun ved DM og JM/SM",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "67c35d23cd74"
     },
     {
      "ref": "refbest_310722#1",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "rekorder kræver forhåndsudpeget jury og dommere",
-     "kort_regel": "rekord kun med forhåndsgodkendt jury og dommere"
+     "kort_regel": "rekord kun med forhåndsgodkendt jury og dommere",
+     "dhash": "06dbea889074"
     }
    ]
   },
@@ -812,7 +896,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "1, 1,5 og 2 kg skiver tilføjet til rekordforsøg",
-     "kort_regel": "1, 1,5 og 2 kg skiver til rekordsætning"
+     "kort_regel": "1, 1,5 og 2 kg skiver til rekordsætning",
+     "dhash": "4b17c51de262"
     }
    ]
   },
@@ -826,7 +911,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "72 kg-rekorder til 76 kg, 63 kg til 69 kg",
-     "kort_regel": "gamle rekorder overføres til nye kvindevægtklasser"
+     "kort_regel": "gamle rekorder overføres til nye kvindevægtklasser",
+     "dhash": "fb80f1d54f55"
     }
    ]
   },
@@ -840,7 +926,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "printet rekordliste; A-dommer tilkaldes ved rekordforsøg",
-     "kort_regel": "rekordliste ved bordet; A-dommer ved rekord"
+     "kort_regel": "rekordliste ved bordet; A-dommer ved rekord",
+     "dhash": "d669047f5959"
     }
    ]
   },
@@ -854,7 +941,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "øvrige rekordforsøgende øger 0,5 kg",
-     "kort_regel": "øvrige rekordforsøg øges 0,5 kg efter protest"
+     "kort_regel": "øvrige rekordforsøg øges 0,5 kg efter protest",
+     "dhash": "221318436b6b"
     }
    ]
   },
@@ -868,35 +956,40 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "protokolhåndtering tilføjet som krav til DM",
-     "kort_regel": "dokument om protokolhåndtering er krav ved DM"
+     "kort_regel": "dokument om protokolhåndtering er krav ved DM",
+     "dhash": "745a1a0106c0"
     },
     {
      "ref": "refbest_240520#3",
      "effekt": "aendret",
      "tekst": "Stævnelederen indsamler stævneprotokollerne og videregiver dem til den rekordansvarlige (Henning Thorsen), så danske rekorder kan opdateres.",
      "kort": "stævneleder indsamler, sender til rekordansvarlig",
-     "kort_regel": "stævneleder sender protokoller til rekordansvarlig"
+     "kort_regel": "stævneleder sender protokoller til rekordansvarlig",
+     "dhash": "13e1bff53b10"
     },
     {
      "ref": "refstaevne05102023#1",
      "effekt": "aendret",
      "tekst": "Stævneprotokollerne er tilstrækkelige stævnepapirer efter stævner. Stævnelederen indsamler dem, og der kan tages billeder af dem, som lægges i Dropbox, så rekorder kan opdateres.",
      "kort": "protokoller tilstrækkelige; billeder kan lægges i Dropbox",
-     "kort_regel": "protokoller er stævnepapirerne, billeder i Dropbox"
+     "kort_regel": "protokoller er stævnepapirerne, billeder i Dropbox",
+     "dhash": "bf5aee89926a"
     },
     {
      "ref": "refbest_130124#4",
      "effekt": "aendret",
      "tekst": "Efter hvert stævne sender stævnelederen stævneprotokollerne som PDF eller billede til stævneudvalget på staevneudvalg@styrke.dk, hvorefter rekorderne godkendes på styrke.dk. Protokollerne er tilstrækkelige stævnepapirer.",
      "kort": "protokoller sendes til staevneudvalg@styrke.dk",
-     "kort_regel": "stævneleder sender protokol til staevneudvalg@styrke.dk"
+     "kort_regel": "stævneleder sender protokol til staevneudvalg@styrke.dk",
+     "dhash": "b1f8ae014a1b"
     },
     {
      "ref": "refdom12032026#7",
      "effekt": "bekraeftet",
      "tekst": "Efter hvert stævne sender stævnelederen stævneprotokollerne som PDF eller billede til stævneudvalget på staevneudvalg@styrke.dk, hvorefter rekorderne godkendes på styrke.dk. Dommerudvalget minder stævnelederne om indsendelsen ved dommerpåsætningen.",
      "kort": "dommerudvalget minder stævneledere om indsendelse",
-     "kort_regel": "stævneleder sender protokol til staevneudvalg@styrke.dk"
+     "kort_regel": "stævneleder sender protokol til staevneudvalg@styrke.dk",
+     "dhash": "197b4cf43576"
     }
    ]
   },
@@ -910,7 +1003,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "dommere og stævneleder skriver navne tydeligt på protokol",
-     "kort_regel": "dommere og stævneleder angiver navn på protokollen"
+     "kort_regel": "dommere og stævneleder angiver navn på protokollen",
+     "dhash": "afb034ea28ad"
     }
    ]
   },
@@ -924,28 +1018,32 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "stævneregler skal følge IPF's tekniske regler",
-     "kort_regel": "stævneregler følger IPF's tekniske regler"
+     "kort_regel": "stævneregler følger IPF's tekniske regler",
+     "dhash": "38d1792ad117"
     },
     {
      "ref": "rep2013#11",
      "effekt": "bekraeftet",
      "tekst": "Forbundets stævneregler skal følge IPF's tekniske regler og opdateres; bestyrelsen færdiggør opdateringen med Repræsentantskabets vedtagne ændringer.",
      "kort": "generel opdatering, bestyrelsen får carte blanche",
-     "kort_regel": "stævneregler følger IPF; bestyrelsen færdiggør opdateringer"
+     "kort_regel": "stævneregler følger IPF; bestyrelsen færdiggør opdateringer",
+     "dhash": "3de04876f296"
     },
     {
      "ref": "refbest_08022015#16",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om udstyr og licensbetaling i stævnereglerne",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "183075ce1542"
     },
     {
      "ref": "refbest_26072015#3",
      "effekt": "bekraeftet",
      "tekst": "Forbundets stævneregler skal følge IPF's tekniske regler; opdaterede stævneregler og stævnekalender er godkendt.",
      "kort": "opdaterede stævneregler og kalender godkendt",
-     "kort_regel": "stævneregler følger IPF's tekniske regler"
+     "kort_regel": "stævneregler følger IPF's tekniske regler",
+     "dhash": "0d2a7b0694c2"
     }
    ]
   },
@@ -959,42 +1057,48 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen vil gøre Nordland Cup officiel",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "288953483f41"
     },
     {
      "ref": "rep2012#11",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "Nordland Cup (Raw) bliver officielt dansk Raw-mesterskab",
-     "kort_regel": "officielt DM i Raw/klassisk styrkeløft"
+     "kort_regel": "officielt DM i Raw/klassisk styrkeløft",
+     "dhash": "95d37f545b4f"
     },
     {
      "ref": "refbest_140320#1",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om DM klassisk senior i DM-ugen",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "7f5c4e009077"
     },
     {
      "ref": "rep2020#1",
      "effekt": "aendret",
      "tekst": "DM klassisk senior afvikles særskilt i DM-ugen fra 2022 i samarbejde med DIF; aflyser DIF DM-ugen, afvikles DM klassisk senior samme uge. DM klassisk subjunior, junior og masters afvikles særskilt i første halvdel af april.",
      "kort": "senior i DM-ugen fra 2022; øvrige i april",
-     "kort_regel": "senior i DM-ugen; øvrige aldre første halvdel april"
+     "kort_regel": "senior i DM-ugen; øvrige aldre første halvdel april",
+     "dhash": "9a064fc894ba"
     },
     {
      "ref": "refbest_060221#1",
      "effekt": "bekraeftet",
      "tekst": "DM klassisk senior afvikles særskilt i DM-ugen fra 2022 i samarbejde med DIF; aflyser DIF DM-ugen, afvikles DM klassisk senior samme uge. DM klassisk subjunior, junior og masters afvikles særskilt i første halvdel af april.",
      "kort": "bestyrelsen gentager placeringen",
-     "kort_regel": "senior i DM-ugen; øvrige aldre første halvdel april"
+     "kort_regel": "senior i DM-ugen; øvrige aldre første halvdel april",
+     "dhash": "b0198e14cf97"
     },
     {
      "ref": "refbest_230423#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om fire DM klassisk: master, subjunior, junior, senior",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "8cfa087fb10e"
     }
    ]
   },
@@ -1008,7 +1112,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "Eliteudvalget foreslår DM mindst 70 dage før VM/EM",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "9f7fd3ea0de4"
     }
    ]
   },
@@ -1022,35 +1127,40 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår officielt RAW bænkpresstævne fra 2014",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "c283e794a47f"
     },
     {
      "ref": "rep2013#10",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "DM bænkpres RAW i alle aldersklasser fra 2014",
-     "kort_regel": "DM bænkpres RAW for alle aldre og køn"
+     "kort_regel": "DM bænkpres RAW for alle aldre og køn",
+     "dhash": "cbd734a80a5d"
     },
     {
      "ref": "refbest_201024#1",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår flytning til foråret",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "a0bbb2fe7681"
     },
     {
      "ref": "refbest_151224#4",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår samlet med DM styrkeløft i foråret",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "063f71bc0399"
     },
     {
      "ref": "rep2025#4",
      "effekt": "aendret",
      "tekst": "Der afholdes officielt DM i klassisk bænkpres i alle alderskategorier for herrer og damer. Stævnet afvikles i foråret, formodentlig i februar.",
      "kort": "Aarhus AK: flyttes til foråret, formodentlig februar",
-     "kort_regel": "DM klassisk bænkpres i foråret"
+     "kort_regel": "DM klassisk bænkpres i foråret",
+     "dhash": "7a00bc323500"
     }
    ]
   },
@@ -1064,7 +1174,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "IPF indfører klassiske bænkpresmesterskaber i alle aldre",
-     "kort_regel": "internationale klassiske bænkpresmesterskaber"
+     "kort_regel": "internationale klassiske bænkpresmesterskaber",
+     "dhash": "094169a6137c"
     }
    ]
   },
@@ -1078,77 +1189,88 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om JM og SM samlet i én weekend",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "892645f71d72"
     },
     {
      "ref": "rep2015#8",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "JM og SM 3-kamp og bænk samles over to dage",
-     "kort_regel": "JM og SM hver ét stævne over to dage"
+     "kort_regel": "JM og SM hver ét stævne over to dage",
+     "dhash": "84632fefcd57"
     },
     {
      "ref": "rep2016#6",
      "effekt": "aendret",
      "tekst": "JM og SM i 3-kamp og bænkpres afvikles hver som ét stævne over to dage med 3-kamp den ene dag og bænkpres den anden. Fra 2018 arrangeres også SM/JM i klassisk bænkpres og klassisk 3-kamp.",
      "kort": "SM/JM i klassisk bænk og 3-kamp fra 2018",
-     "kort_regel": "SM/JM også i klassisk fra 2018"
+     "kort_regel": "SM/JM også i klassisk fra 2018",
+     "dhash": "0f0e748fe1c1"
     },
     {
      "ref": "rep2017#13",
      "effekt": "trukket",
      "tekst": null,
      "kort": "Aalborg SK foreslår samlet udstyr og klassisk JM/SM",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "43b96b3fa4a6"
     },
     {
      "ref": "refbest_140320#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om samlet JM sidste weekend i august",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "b637da74fbec"
     },
     {
      "ref": "rep2020#2",
      "effekt": "aendret",
      "tekst": "SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM i klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021.",
      "kort": "udstyr og klassisk samlet, 1. eller 2. weekend september",
-     "kort_regel": "samlet SM/JM første eller anden weekend i september"
+     "kort_regel": "samlet SM/JM første eller anden weekend i september",
+     "dhash": "2b6842534ec6"
     },
     {
      "ref": "refbest_060221#2",
      "effekt": "bekraeftet",
      "tekst": "SM og JM i styrkeløft og bænkpres afvikles sammen med SM og JM i klassisk styrkeløft og klassisk bænkpres første eller anden weekend i september fra 2021.",
      "kort": "bestyrelsen gentager placeringen",
-     "kort_regel": "samlet SM/JM første eller anden weekend i september"
+     "kort_regel": "samlet SM/JM første eller anden weekend i september",
+     "dhash": "36e4a5193385"
     },
     {
      "ref": "refbest_230423#3",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om JM opdelt med herre klassisk for sig",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "441c558e2e39"
     },
     {
      "ref": "rep2024#4",
      "effekt": "trukket",
      "tekst": null,
      "kort": "Aarhus AK foreslår JM 2024 samlet i én weekend",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "6d61c4104d51"
     },
     {
      "ref": "rep2025#6",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "bestyrelsens aldersopdeling af JM/SM fra 2026 forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "92b31fa5028f"
     },
     {
      "ref": "rep2026#13",
      "effekt": "aendret",
      "tekst": "SM og JFM i styrkeløft og bænkpres afvikles sammen med klassisk styrkeløft og klassisk bænkpres. Fra 2027 er sidste weekend i august JFM/SM Open, og den følgende weekend JFM for sub-junior, junior og masters. SM afvikles som udgangspunkt over én weekend; stævneudvalget kan med bestyrelsens godkendelse afvige.",
      "kort": "fra 2027 Open og aldersklasser i hver sin weekend",
-     "kort_regel": "JFM/SM Open sidste august-weekend, aldersklasser weekenden efter"
+     "kort_regel": "JFM/SM Open sidste august-weekend, aldersklasser weekenden efter",
+     "dhash": "5a627eefcf68"
     }
    ]
   },
@@ -1162,7 +1284,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "tilmelding i klubbens egen landsdel",
-     "kort_regel": "JM/SM-tilmelding i klubbens landsdel"
+     "kort_regel": "JM/SM-tilmelding i klubbens landsdel",
+     "dhash": "71cf10498ab0"
     }
    ]
   },
@@ -1176,7 +1299,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "Jyske Mesterskaber omdøbt til Jysk-Fynske Mesterskaber (JFM)",
-     "kort_regel": "regionsmesterskab vest hedder JFM"
+     "kort_regel": "regionsmesterskab vest hedder JFM",
+     "dhash": "d802c0141af0"
     }
    ]
   },
@@ -1190,7 +1314,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "navne: DM klassisk styrkeløft og DM styrkeløft",
-     "kort_regel": "DM klassisk styrkeløft og DM styrkeløft"
+     "kort_regel": "DM klassisk styrkeløft og DM styrkeløft",
+     "dhash": "bf9234b5bf6f"
     }
    ]
   },
@@ -1204,7 +1329,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "ER Equipment foreslår SM/JM-krav for DM; forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "e1ab29ab68d7"
     }
    ]
   },
@@ -1218,42 +1344,48 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "kilokrav pr. vægtklasse for DM klassisk senior",
-     "kort_regel": "totalkrav pr. vægtklasse opnået sæsonen før"
+     "kort_regel": "totalkrav pr. vægtklasse opnået sæsonen før",
+     "dhash": "cde94f697e01"
     },
     {
      "ref": "refbest_29102017#1",
      "effekt": "aendret",
      "tekst": "Der gælder kilokrav (total) pr. vægtklasse for deltagelse i DM klassisk, åben kategori. Et krav opnået i en hvilken som helst klasse giver adgang, og kravet kan opnås fra 1. januar året før og indtil sidste tilmelding til stævnet.",
      "kort": "krav fra enhver klasse; fra 1. januar året før",
-     "kort_regel": "totalkrav fra enhver klasse, op til 15 måneder før"
+     "kort_regel": "totalkrav fra enhver klasse, op til 15 måneder før",
+     "dhash": "597d82044364"
     },
     {
      "ref": "refbest_060221#3",
      "effekt": "aendret",
      "tekst": "Fra 1.1.2022 gælder opdaterede kilokrav (total) til DM klassisk senior i åbne vægtklasser. Kravet skal laves i sæsonen inden DM, og løftere må skifte vægtklasse op og ned uanset hvor kravet er lavet.",
      "kort": "opdaterede krav fra 2022; frit vægtklasseskifte",
-     "kort_regel": "opdaterede totalkrav, laves sæsonen før DM"
+     "kort_regel": "opdaterede totalkrav, laves sæsonen før DM",
+     "dhash": "4a6fd75f7f89"
     },
     {
      "ref": "refstaevne12032026#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "stævneudvalget vil skærpe krav pga. for mange deltagere",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "d331f5c96e66"
     },
     {
      "ref": "refdom04062026#1",
      "effekt": "aendret",
      "tekst": "Kvalifikationskravene til DM i klassisk styrkeløft open er sat til et niveau på ca. 78-79 IPF-point med sigte på omkring 70 deltagere og fremgår af DSF's hjemmeside. Kravet skal laves i sæsonen inden DM, og løftere må skifte vægtklasse uanset hvor kravet er lavet.",
      "kort": "nye krav på ca. 78-79 IPF-point",
-     "kort_regel": "krav svarende til ca. 78-79 IPF-point"
+     "kort_regel": "krav svarende til ca. 78-79 IPF-point",
+     "dhash": "de34d3ac0d93"
     },
     {
      "ref": "refstaevne0406026#1",
      "effekt": "bekraeftet",
      "tekst": "Kvalifikationskravene til DM i klassisk styrkeløft open er sat til et niveau på ca. 78-79 IPF-point med sigte på omkring 70 deltagere og fremgår af DSF's hjemmeside. Kravet skal laves i sæsonen inden DM, og løftere må skifte vægtklasse uanset hvor kravet er lavet.",
      "kort": "stævneudvalget godkender samme krav",
-     "kort_regel": "krav svarende til ca. 78-79 IPF-point"
+     "kort_regel": "krav svarende til ca. 78-79 IPF-point",
+     "dhash": "7e6885cdc0d7"
     }
    ]
   },
@@ -1267,56 +1399,64 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "invitation 6 uger før, tilmelding og betaling 3 uger før",
-     "kort_regel": "tilmelding og betaling senest tre uger før"
+     "kort_regel": "tilmelding og betaling senest tre uger før",
+     "dhash": "954372ad804b"
     },
     {
      "ref": "rep2012#5",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "TSK foreslår løbende tilmelding; forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "a167f9b5bbc9"
     },
     {
      "ref": "rep2017#2",
      "effekt": "aendret",
      "tekst": "DSF sender invitationen senest seks uger før stævnet. Sidste frist for tilmelding og betaling af startgebyr (og evt. licens) er 21 dage før stævnestart; tilmelding er kun rettidig, hvis betalingen er rettidig. 3 bankdage efter fristen kontrollerer den arrangerende klub betalingerne, og DSF's sekretær meddeler klubber med løftere, der ikke har betalt, at disse ikke kan deltage; klubben orienterer sine løftere.",
      "kort": "frist 21 dage; betalingskontrol 3 bankdage efter",
-     "kort_regel": "tilmelding og betaling senest 21 dage før"
+     "kort_regel": "tilmelding og betaling senest 21 dage før",
+     "dhash": "721cc96df665"
     },
     {
      "ref": "rep2017#15",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Aalborg SK foreslår IPF's tilmeldingsregler; stemmelighed",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "bab895094bf2"
     },
     {
      "ref": "refbest_140320#3",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "AASK foreslår IPF-frister 60 og 21 dage",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "7e619efe874c"
     },
     {
      "ref": "rep2020#3",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "AASK's forslag om IPF-frister nedstemt",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "31c2179ba0d4"
     },
     {
      "ref": "refbest_021021#7",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår 21-dagesfrist og medaljebetaling indskrevet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "469c578879ce"
     },
     {
      "ref": "rep2026#6",
      "effekt": "aendret",
      "tekst": "DSF sender invitationen senest seks uger før stævnet. Sidste frist for tilmelding og betaling af startgebyr er 30 dage før stævnestart, medmindre andet fremgår af invitationen; tilmelding er kun rettidig, hvis betalingen er rettidig. Den arrangerende klub kontrollerer betalingen og giver besked om løftere, der ikke kan deltage.",
      "kort": "frist ændret fra 21 til 30 dage; sekretær udgår",
-     "kort_regel": "tilmelding og betaling senest 30 dage før"
+     "kort_regel": "tilmelding og betaling senest 30 dage før",
+     "dhash": "78ce447a1bf9"
     }
    ]
   },
@@ -1330,21 +1470,24 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "KSK foreslår sen tilmelding mod dobbelt startgebyr",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "1940e9bfbc45"
     },
     {
      "ref": "rep2014#6",
      "effekt": "ophaevet",
      "tekst": null,
      "kort": "eftertilmelding mod dobbelt startgebyr fjernet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "46643145671a"
     },
     {
      "ref": "refbest_08052016#1",
      "effekt": "bekraeftet",
      "tekst": "Eftertilmelding til stævner er ikke mulig. Klubberne skal kende reglen og vejlede deres medlemmer.",
      "kort": "eftertilmelding ikke mulig; klubber vejleder medlemmer",
-     "kort_regel": "ingen eftertilmelding til stævner"
+     "kort_regel": "ingen eftertilmelding til stævner",
+     "dhash": "6b3d523207bc"
     }
    ]
   },
@@ -1358,49 +1501,56 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen vil præcisere holdpræmieregler",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "2dd38510dfd4"
     },
     {
      "ref": "rep2013#9",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "1 holdpræmie under 15 deltagere, ellers 3",
-     "kort_regel": "1 holdpræmie under 15 deltagere, 3 ved flere"
+     "kort_regel": "1 holdpræmie under 15 deltagere, 3 ved flere",
+     "dhash": "3164d86db5f3"
     },
     {
      "ref": "rep2014#10",
      "effekt": "aendret",
      "tekst": "Der gives holdpræmier til de bedste foreninger ved DM i udstyr, RAW og bænkpres og ved øvrige stævner: 1 holdpræmie ved under 15 deltagere og 3 ved flere. Ved SM og JM afgøres holdkonkurrencen med Wilks-points for foreningens bedste 5 løftere; ved pointlighed vinder foreningen med flest førstepladser.",
      "kort": "SM/JM afgøres på Wilks for bedste 5 løftere",
-     "kort_regel": "SM/JM: bedste 5 løfteres Wilks-points"
+     "kort_regel": "SM/JM: bedste 5 løfteres Wilks-points",
+     "dhash": "c8763f5cf97e"
     },
     {
      "ref": "rep2015#4",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Aarhus AK foreslår Wilks også ved DM; forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "503a161d65a2"
     },
     {
      "ref": "refbest_021021#6",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen foreslår ny pointfordeling og IPF-points",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "cb03051e46d7"
     },
     {
      "ref": "rep2022#1",
      "effekt": "aendret",
      "tekst": "Holdpræmie beregnes med pointfordeling 12, 9, 8, 7, 6, 5, 4, 3, 2 for de 9 første placeringer i hver vægtklasse og 1 point til de efterfølgende; kun de fem bedst placerede fra hver forening tæller, og der kræves ikke bona fide-forsøg. 1 holdpræmie ved under 15 deltagere og 3 ved flere. Ved DM, SM og JM afgøres holdkonkurrencer med IPF-points for foreningens bedste 5 løftere; ved pointlighed vinder foreningen med flest førstepladser.",
      "kort": "ny pointfordeling; DM/SM/JM på IPF-points",
-     "kort_regel": "DM/SM/JM: bedste 5 løfteres IPF-points"
+     "kort_regel": "DM/SM/JM: bedste 5 løfteres IPF-points",
+     "dhash": "c08d7da9487b"
     },
     {
      "ref": "refstaevne10092024#3",
      "effekt": "bekraeftet",
      "tekst": "Holdpræmie beregnes med pointfordeling 12, 9, 8, 7, 6, 5, 4, 3, 2 for de 9 første placeringer i hver vægtklasse og 1 point til de efterfølgende; kun de fem bedst placerede fra hver forening tæller. 1 holdpræmie ved under 15 deltagere og 3 ved flere. Ved DM, SM og JM afgøres holdkonkurrencer med IPF-points for foreningens bedste 5 løftere; ved pointlighed vinder foreningen med flest førstepladser.",
      "kort": "IPF-points ved DM, SM og JM gentaget",
-     "kort_regel": "DM/SM/JM: bedste 5 løfteres IPF-points"
+     "kort_regel": "DM/SM/JM: bedste 5 løfteres IPF-points",
+     "dhash": "ec09e7898e68"
     }
    ]
   },
@@ -1414,14 +1564,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "disciplinmedaljer ved alle DM, med tilbagevirkende kraft",
-     "kort_regel": "disciplinmedaljer ved alle typer DM"
+     "kort_regel": "disciplinmedaljer ved alle typer DM",
+     "dhash": "37f2622d114b"
     },
     {
      "ref": "rep2019#10",
      "effekt": "aendret",
      "tekst": "Disciplinmedaljer udleveres kun ved nationale mesterskaber (DM styrkeløft og DM klassisk trekamp), ikke ved øvrige stævner og ikke i bænkpres.",
      "kort": "Hvidovre: kun ved nationale mesterskaber",
-     "kort_regel": "disciplinmedaljer kun ved DM i trekamp"
+     "kort_regel": "disciplinmedaljer kun ved DM i trekamp",
+     "dhash": "957fc1b54398"
     }
    ]
   },
@@ -1435,56 +1587,64 @@
      "effekt": "indfoert",
      "tekst": "Klubberne bestiller medaljer via et skema og betaler ved at overføre beløbet til DSF, som betaler leverandøren. Bestyrelsen betaler for pokaler.",
      "kort": "klubber bestiller via skema og betaler; disciplinmedaljer overalt",
-     "kort_regel": "klubber betaler medaljer via DSF; DSF betaler pokaler"
+     "kort_regel": "klubber betaler medaljer via DSF; DSF betaler pokaler",
+     "dhash": "a3779d1ac90e"
     },
     {
      "ref": "refbest_10122016#4",
      "effekt": "aendret",
      "tekst": "Fra 1.1.2017 bestiller klubberne selv medaljer og sørger for genbestilling og levering af manglende medaljer. Bestyrelsen betaler for pokaler.",
      "kort": "klubber bestiller selv medaljer fra 2017",
-     "kort_regel": "klubber bestiller og betaler selv medaljer"
+     "kort_regel": "klubber bestiller og betaler selv medaljer",
+     "dhash": "e50306aa5e6f"
     },
     {
      "ref": "refbest_14012017#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om central bestilling og fast pris pr. medalje",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "89915406f1ce"
     },
     {
      "ref": "refbest_09062018#6",
      "effekt": "aendret",
      "tekst": "Et medaljesæt består af en hovedmedalje og 3 disciplinmedaljer og koster 100 kr. Klubberne betaler for medaljerne, og forbundet betaler for pokaler.",
      "kort": "medaljesæt koster 100 kr.",
-     "kort_regel": "medaljesæt 100 kr. betales af klubben"
+     "kort_regel": "medaljesæt 100 kr. betales af klubben",
+     "dhash": "3448d1103026"
     },
     {
      "ref": "refbest_021021#2",
      "effekt": "aendret",
      "tekst": "Stævneudvalget bestiller medaljer og pokaler 3 uger før stævnestart, umiddelbart efter tilmeldingen er lukket, og de skal være formanden for arrangørklubben i hænde senest en uge før; udvalget tjekker leveringen telefonisk. Et medaljesæt koster arrangøren 100 kr.; forbundet betaler pokaler.",
      "kort": "udvalget bestiller 3 uger før; levering senest uge før",
-     "kort_regel": "udvalget bestiller; levering senest en uge før"
+     "kort_regel": "udvalget bestiller; levering senest en uge før",
+     "dhash": "74b3bb075f0f"
     },
     {
      "ref": "rep2022#2",
      "effekt": "aendret",
      "tekst": "Forbundet bestiller medaljerne hos sin officielle forhandler, og arrangørerne opkræves 100 kr. pr. medaljesæt; pokaler betales af forbundet. Medaljer og pokaler skal være arrangørklubben i hænde senest en uge før stævnestart.",
      "kort": "Repræsentantskabet: forbund bestiller, arrangør betaler 100 kr./sæt",
-     "kort_regel": "forbundet bestiller; arrangør betaler 100 kr. pr. sæt"
+     "kort_regel": "forbundet bestiller; arrangør betaler 100 kr. pr. sæt",
+     "dhash": "b65102ac604a"
     },
     {
      "ref": "refbest_150723#2",
      "effekt": "aendret",
      "tekst": "Forbundet bestiller medaljerne hos sin officielle forhandler, og arrangørerne opkræves 100 kr. pr. medaljesæt; pokaler betales af forbundet. Medaljer og pokaler skal være arrangørklubben i hænde senest en uge før stævnestart, og stævneprogrammet skal være sat op en uge før, så stævneudvalget kan kontrollere det.",
      "kort": "stævneprogram skal være sat op en uge før",
-     "kort_regel": "præmier og stævneprogram klar en uge før"
+     "kort_regel": "præmier og stævneprogram klar en uge før",
+     "dhash": "f73838ae723c"
     },
     {
      "ref": "refstaevne07112023#4",
      "effekt": "aendret",
      "tekst": "Medaljer og pokaler bestilles efter en fast procedure i tæt kontakt mellem arrangør og pokalbutik med skabeloner og en samlet årsoversigt; arrangørerne opkræves 100 kr. pr. medaljesæt, og pokaler betales af forbundet. Medaljer og pokaler skal være arrangørklubben i hænde senest en uge før stævnestart, og stævneprogrammet skal være sat op en uge før.",
      "kort": "fast bestillingsprocedure med pokalbutik og skabeloner",
-     "kort_regel": "bestilling via fast procedure; 100 kr. pr. sæt"
+     "kort_regel": "bestilling via fast procedure; 100 kr. pr. sæt",
+     "dhash": "38eb1a9a400d"
     }
    ]
   },
@@ -1498,7 +1658,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "loft på 50.000 kr. til medaljer",
-     "kort_regel": "medaljeindkøb højst 50.000 kr."
+     "kort_regel": "medaljeindkøb højst 50.000 kr.",
+     "dhash": "e37e34f2c598"
     }
    ]
   },
@@ -1512,14 +1673,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "overskud gives videre til udvalg/bestyrelse til genbrug",
-     "kort_regel": "overskydende præmier afleveres til genbrug"
+     "kort_regel": "overskydende præmier afleveres til genbrug",
+     "dhash": "02b69c6f6c2c"
     },
     {
      "ref": "refstaevne18022025#1",
      "effekt": "bekraeftet",
      "tekst": "Overskydende pokaler og medaljer skal returneres til stævneudvalget, så de kan genbruges; den stævneansvarlige minder arrangørklubben om det.",
      "kort": "overskud returneres til stævneudvalget",
-     "kort_regel": "overskydende præmier returneres til stævneudvalget"
+     "kort_regel": "overskydende præmier returneres til stævneudvalget",
+     "dhash": "741eef558db0"
     }
    ]
   },
@@ -1533,49 +1696,56 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "fraværende aftaler aflevering med arrangørklubben",
-     "kort_regel": "præmier kan afleveres efter aftale med arrangør"
+     "kort_regel": "præmier kan afleveres efter aftale med arrangør",
+     "dhash": "36c696b26157"
     },
     {
      "ref": "refbest_07102018#1",
      "effekt": "aendret",
      "tekst": "Deltagelse i medaljeceremonien er obligatorisk. Ved udeblivelse orienteres løfterens klub, og medaljer eftersendes ikke.",
      "kort": "ceremoni obligatorisk; ingen eftersendelse",
-     "kort_regel": "pligt til ceremoni; udeblevne får ingen medalje"
+     "kort_regel": "pligt til ceremoni; udeblevne får ingen medalje",
+     "dhash": "54d6e48d396d"
     },
     {
      "ref": "rep2019#12",
      "effekt": "aendret",
      "tekst": "Ved danske mesterskaber holdes medaljeceremoni efter hvert stævneafsnit med fælles indmarch. Fraværende atleter beholder placeringen men modtager ikke medalje/pokal, og stand-in kan ikke bruges. Juryen kan i særlige tilfælde dispensere.",
      "kort": "ceremoni efter hvert afsnit; ingen stand-in",
-     "kort_regel": "fraværende beholder placering, får ingen præmie"
+     "kort_regel": "fraværende beholder placering, får ingen præmie",
+     "dhash": "557e9a9ec0c9"
     },
     {
      "ref": "refstaevne10092024#2",
      "effekt": "aendret",
      "tekst": "Ved danske mesterskaber uddeles medaljer og pokaler med fælles indmarch lige efter afslutningen af hver kategori, ikke først ved stævnets slutning. Fraværende atleter beholder placeringen men modtager ikke medalje/pokal, og stand-in kan ikke bruges. Juryen kan i særlige tilfælde dispensere.",
      "kort": "uddeling straks efter hver kategori",
-     "kort_regel": "præmier efter hver kategori; fraværende får intet"
+     "kort_regel": "præmier efter hver kategori; fraværende får intet",
+     "dhash": "2336bc15a6db"
     },
     {
      "ref": "refstaevne16122025#3",
      "effekt": "bekraeftet",
      "tekst": "Medaljer og pokaler uddeles lige efter hver kategori og skal modtages personligt; andre kan ikke modtage på vegne af fraværende, og præmier eftersendes ikke. Fraværende beholder placeringen, og pladsen på podiet står tom; juryen kan dispensere i særlige tilfælde. Undtaget er pokaler for årets løfter forrige år og medaljer til DM-hold finale. Reglen nævnes i invitationer.",
      "kort": "personligt fremmøde; påmindelse i invitationer",
-     "kort_regel": "præmier kun ved personligt fremmøde"
+     "kort_regel": "præmier kun ved personligt fremmøde",
+     "dhash": "dbfaa9dda402"
     },
     {
      "ref": "rep2026#5",
      "effekt": "trukket",
      "tekst": null,
      "kort": "bestyrelsens forslag om træningstøj og sportssko trukket",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "a3945b12601e"
     },
     {
      "ref": "rep2026#8",
      "effekt": "aendret",
      "tekst": "Medaljer og pokaler uddeles lige efter hver kategori og skal modtages personligt; andre kan ikke modtage på vegne af fraværende, og præmier eftersendes ikke. Fraværende beholder placeringen, og pladsen på podiet står tom; juryen kan dispensere i særlige tilfælde. Er en løfter forhindret pga. ny indvejning, udleveres medaljen til en repræsentant fra løfterens klub. Undtaget er pokaler for årets løfter forrige år og medaljer til DM-hold finale.",
      "kort": "ved ny indvejning modtager klubrepræsentant medaljen",
-     "kort_regel": "personligt fremmøde; klubrepræsentant ved ny indvejning"
+     "kort_regel": "personligt fremmøde; klubrepræsentant ved ny indvejning",
+     "dhash": "eef7507c27e4"
     }
    ]
   },
@@ -1589,14 +1759,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "opfordring til to uddelere; stævneleder kender pokalerne",
-     "kort_regel": "to personer deler ud, stævneleder kender pokaler"
+     "kort_regel": "to personer deler ud, stævneleder kender pokaler",
+     "dhash": "02e5f97c4426"
     },
     {
      "ref": "refstaevne16122025#6",
      "effekt": "aendret",
      "tekst": "Ved uddeling af medaljer og pokaler skal to personer dobbelttjekke, at rette præmie overrækkes, præmierne skal ligge i god orden, og stævnelederen skal vide, hvilke pokaler der uddeles.",
      "kort": "krav om dobbelttjek ved to personer",
-     "kort_regel": "to personer dobbelttjekker hver overrækkelse"
+     "kort_regel": "to personer dobbelttjekker hver overrækkelse",
+     "dhash": "adff674dde97"
     }
    ]
   },
@@ -1610,42 +1782,48 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "3 pokaler over 14 deltagere, ellers én",
-     "kort_regel": "1 pokal under 15 deltagere, ellers 3"
+     "kort_regel": "1 pokal under 15 deltagere, ellers 3",
+     "dhash": "cf3f3205ba28"
     },
     {
      "ref": "rep2018#2",
      "effekt": "aendret",
      "tekst": "Ved individuelle DM gives pokaler for bedste løfter på Wilks-point i alle kategorier (senior, sub-junior, junior, master 1-4): 1 pokal under 15 deltagere og 3 ved flere.",
      "kort": "pokaler på Wilks i alle aldersklasser ved DM",
-     "kort_regel": "DM: pokaler på Wilks i alle kategorier"
+     "kort_regel": "DM: pokaler på Wilks i alle kategorier",
+     "dhash": "4686303f2bce"
     },
     {
      "ref": "rep2019#7",
      "effekt": "aendret",
      "tekst": "Ved individuelle DM gives pokaler til bedste herre- og dameløfter på gældende IPF-point i alle kategorier: 1 pokal under 15 deltagere og 3 ved flere.",
      "kort": "IPF-point i stedet for Wilks; herrer og damer",
-     "kort_regel": "DM: pokaler på IPF-point for herrer og damer"
+     "kort_regel": "DM: pokaler på IPF-point for herrer og damer",
+     "dhash": "a1a186f97c45"
     },
     {
      "ref": "refstaevne16122025#2",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "stævneudvalget foreslår pokal kun ved mindst 3 deltagere",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "b6f81de44d11"
     },
     {
      "ref": "refstaevne20082026#1",
      "effekt": "aendret",
      "tekst": "Ved individuelle DM gives pokaler til bedste herre- og dameløfter på IPF-point i alle kategorier: 1 pokal under 15 deltagere og 3 ved flere. Ved SM og JFM bestilles der ikke pokaler til bedste løfter.",
      "kort": "ingen pokaler for bedste løfter ved SM og JFM",
-     "kort_regel": "bedste løfter-pokaler kun ved DM"
+     "kort_regel": "bedste løfter-pokaler kun ved DM",
+     "dhash": "aced51ed22e2"
     },
     {
      "ref": "refbest_290826.2#1",
      "effekt": "bekraeftet",
      "tekst": "Ved individuelle DM gives pokaler til bedste herre- og dameløfter på IPF-point i alle kategorier: 1 pokal under 15 deltagere og 3 ved flere. Ved SM og JFM gives ikke pokal for bedste løfter, men fortsat pokaler for bedste klub.",
      "kort": "bestyrelsen bekræfter; klubpokaler fortsætter ved JFM",
-     "kort_regel": "bedste løfter-pokaler kun ved DM"
+     "kort_regel": "bedste løfter-pokaler kun ved DM",
+     "dhash": "cdfe883e715c"
     }
    ]
   },
@@ -1659,14 +1837,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ny IPF-formel fra januar 2020",
-     "kort_regel": "IPF-formel fra 2020"
+     "kort_regel": "IPF-formel fra 2020",
+     "dhash": "0e847600ffa3"
     },
     {
      "ref": "refbest_240520#1",
      "effekt": "aendret",
      "tekst": "DSF bruger IPF's Goodlift-point med virkning fra 1.1.2020. Gamle IPF-point fra DM 2020 bevares separat, og kåringen af bedste løfter ved DM 2020 ændres ikke.",
      "kort": "overgang til Goodlift-point fra 1.1.2020",
-     "kort_regel": "Goodlift-point anvendes"
+     "kort_regel": "Goodlift-point anvendes",
+     "dhash": "24f114d2600d"
     }
    ]
   },
@@ -1680,49 +1860,56 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "bestyrelsen udarbejder bindende krav til DM-afholdelse",
-     "kort_regel": "skriftlige krav til afholdelse af DM skal følges"
+     "kort_regel": "skriftlige krav til afholdelse af DM skal følges",
+     "dhash": "c4c58626a83c"
     },
     {
      "ref": "refbest_07122014#1",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "betaling først efter tilfredsstillende stævne afvist",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "110b3fa007fd"
     },
     {
      "ref": "refbest_08022015#1",
      "effekt": "bekraeftet",
      "tekst": "Der gælder retningslinjer for afholdelse af stævner, som står på hjemmesiden og sendes til klubben, når den vælger at arrangere et stævne; en særskilt stævnekontrakt er overflødig.",
      "kort": "ingen stævnekontrakt; retningslinjer sendes til arrangør",
-     "kort_regel": "retningslinjer sendes til arrangørklubben"
+     "kort_regel": "retningslinjer sendes til arrangørklubben",
+     "dhash": "ef59d1f0a3ff"
     },
     {
      "ref": "refbest_021021#3",
      "effekt": "aendret",
      "tekst": "Der gælder krav og en tjekliste for stævneafvikling på styrke.dk, som sendes til arrangørklubben og skal overholdes, især ved danske mesterskaber; stævneudvalget følger op.",
      "kort": "opdateret tjekliste skal overholdes; udvalget følger op",
-     "kort_regel": "tjekliste for stævneafvikling skal overholdes"
+     "kort_regel": "tjekliste for stævneafvikling skal overholdes",
+     "dhash": "408eb2186439"
     },
     {
      "ref": "rep2022#4",
      "effekt": "trukket",
      "tekst": null,
      "kort": "Randers foreslår forbund som medarrangør og lokaleleje",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "da358b950e5a"
     },
     {
      "ref": "refstaevne07112023#2",
      "effekt": "aendret",
      "tekst": "Der gælder opdaterede krav og en tjekliste for afholdelse af danske mesterskaber, som sendes til arrangørklubben og skal overholdes; stævneudvalget følger op.",
      "kort": "kravene til DM opdateret",
-     "kort_regel": "opdaterede DM-krav skal overholdes"
+     "kort_regel": "opdaterede DM-krav skal overholdes",
+     "dhash": "ee53d7d49274"
     },
     {
      "ref": "refstaevne04042024#1",
      "effekt": "aendret",
      "tekst": "Ved danske mesterskaber har DSF ansvar for dommere, jury og stævneleder og stiller efter aftale konkurrencestyringssystem og streamingudstyr samt landsdækkende presse og evt. TV til rådighed; den arrangerende klub har ansvar for resten, jf. 'DSF's krav til afvikling af Danske mesterskaber i styrkeløft', som skal overholdes.",
      "kort": "ansvarsfordeling mellem DSF og arrangør præciseret",
-     "kort_regel": "DSF: officials og systemer; arrangør: resten"
+     "kort_regel": "DSF: officials og systemer; arrangør: resten",
+     "dhash": "adb57e89ebd6"
     }
    ]
   },
@@ -1736,35 +1923,40 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "streaming fra alle DM fra 2018; kurser forinden",
-     "kort_regel": "streaming fra alle DM fra 2018"
+     "kort_regel": "streaming fra alle DM fra 2018",
+     "dhash": "b773555d6427"
     },
     {
      "ref": "refbest_29102017#2",
      "effekt": "aendret",
      "tekst": "Fra 2018 er der krav om livestreaming af DM, JM og SM, og arrangørklubben skal i stævnekontrakten sørge for internet til streaming.",
      "kort": "krav også ved JM/SM; arrangør sikrer internet",
-     "kort_regel": "livestreaming af DM/JM/SM; arrangør leverer internet"
+     "kort_regel": "livestreaming af DM/JM/SM; arrangør leverer internet",
+     "dhash": "61454000c9e3"
     },
     {
      "ref": "refbest_03022018#8",
      "effekt": "bekraeftet",
      "tekst": "Der er krav om livestreaming af DM, JM og SM, og arrangørklubben skal sørge for internet; udstyrslisten på hjemmesiden opdateres med streamingkrav.",
      "kort": "udstyrsliste opdateres med streamingkrav",
-     "kort_regel": "livestreaming af DM/JM/SM; arrangør leverer internet"
+     "kort_regel": "livestreaming af DM/JM/SM; arrangør leverer internet",
+     "dhash": "0d7bb3cba696"
     },
     {
      "ref": "refbest_130425#1",
      "effekt": "aendret",
      "tekst": "Der er krav om livestreaming af DM, JM og SM, og arrangørklubben skal sørge for internet. DM-kravene præciseres om livestreaming og klubbers mulighed for selv at streame.",
      "kort": "præcisering om klubbers egen streaming",
-     "kort_regel": "livestreaming krævet; regler for klubbers egen streaming"
+     "kort_regel": "livestreaming krævet; regler for klubbers egen streaming",
+     "dhash": "cbdce41db980"
     },
     {
      "ref": "refstaevne24042025#1",
      "effekt": "aendret",
      "tekst": "Ved danske mesterskaber er streaming og konkurrencestyringssystem DSF's ansvar; arrangøren sørger for internetforbindelse. Kravet om at melde egen streaming 60 dage før er fjernet.",
      "kort": "streaming og styringssystem under DSF; 60-dagesmelding slettet",
-     "kort_regel": "DSF står for streaming; arrangør leverer internet"
+     "kort_regel": "DSF står for streaming; arrangør leverer internet",
+     "dhash": "70403394095d"
     }
    ]
   },
@@ -1778,28 +1970,32 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "stævneplakat bruges ved officielle stævner",
-     "kort_regel": "fælles stævneplakat ved officielle stævner"
+     "kort_regel": "fælles stævneplakat ved officielle stævner",
+     "dhash": "8a84f995a30c"
     },
     {
      "ref": "refbest_060221#6",
      "effekt": "aendret",
      "tekst": "Den fælles stævneplakat bruges ved officielle stævner, og krav om plakater indskrives i reglerne for afholdelse af DM.",
      "kort": "plakatkrav indskrevet i DM-regler",
-     "kort_regel": "plakater er krav ved DM"
+     "kort_regel": "plakater er krav ved DM",
+     "dhash": "17f8742eec46"
     },
     {
      "ref": "refbest_310722#8",
      "effekt": "aendret",
      "tekst": "Plakater er krav ved DM, og DSF leverer bannere i fire designs, ét til hvert DM, som skal bruges ved danske mesterskaber.",
      "kort": "DSF leverer fire DM-bannere",
-     "kort_regel": "plakater og DSF-bannere ved DM"
+     "kort_regel": "plakater og DSF-bannere ved DM",
+     "dhash": "95d838c74563"
     },
     {
      "ref": "refstaevne24042025#2",
      "effekt": "aendret",
      "tekst": "Plakater er krav ved DM, og DSF's bannere bruges ved danske mesterskaber. DSF har ansvar for bagtæppet; laver arrangøren selv bagtæppe, skal det godkendes af DSF.",
      "kort": "DSF ansvarlig for bagtæppe; eget kræver godkendelse",
-     "kort_regel": "DSF-bannere og bagtæppe ved DM"
+     "kort_regel": "DSF-bannere og bagtæppe ved DM",
+     "dhash": "362826669b78"
     }
    ]
   },
@@ -1813,42 +2009,48 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "adgangskontrol til opvarmning ved alle DM-uger",
-     "kort_regel": "adgangskontrol til opvarmning ved DM-uger"
+     "kort_regel": "adgangskontrol til opvarmning ved DM-uger",
+     "dhash": "3c91032134d7"
     },
     {
      "ref": "refbest_231125#4",
      "effekt": "aendret",
      "tekst": "Fra 2026 er der adgangskontrol til opvarmningen ved alle danske mesterskaber; arrangøren udpeger en official, og adgangskort udleveres ved indvejningen.",
      "kort": "adgangskontrol ved alle DM fra 2026, kort ved indvejning",
-     "kort_regel": "adgangskort ved alle DM; arrangør udpeger official"
+     "kort_regel": "adgangskort ved alle DM; arrangør udpeger official",
+     "dhash": "e86ef0964c3b"
     },
     {
      "ref": "refbest_231125#5",
      "effekt": "aendret",
      "tekst": "Fra 2026 er der adgangskontrol til opvarmningen ved alle danske mesterskaber; arrangøren udpeger en official, og adgangskort udleveres ved indvejningen. Ved DM i udstyrsløft må der pr. løftergruppe være: 1 løfter 2 trænere, 2 løftere 4, 3 løftere 5, 4 løftere højst 6 trænere.",
      "kort": "trænerkvote ved udstyrs-DM, højst 6 pr. gruppe",
-     "kort_regel": "adgangskort; udstyr højst 6 trænere pr. gruppe"
+     "kort_regel": "adgangskort; udstyr højst 6 trænere pr. gruppe",
+     "dhash": "8af0779874ba"
     },
     {
      "ref": "refbest_231125#6",
      "effekt": "aendret",
      "tekst": "Fra 2026 er der adgangskontrol til opvarmningen ved alle danske mesterskaber; arrangøren udpeger en official, og adgangskort udleveres ved indvejningen. Ved DM i udstyrsløft må der pr. løftergruppe være: 1 løfter 2 trænere, 2 løftere 4, 3 løftere 5, 4 løftere højst 6 trænere. Ved DM i klassisk styrkeløft højst 2 trænere i én gruppe ved 1-3 løftere, 3 trænere i to grupper ved 3 løftere og 4 trænere i to grupper ved 4 løftere.",
      "kort": "trænerkvote ved klassisk DM, højst 4",
-     "kort_regel": "udstyr højst 6, klassisk højst 4 trænere"
+     "kort_regel": "udstyr højst 6, klassisk højst 4 trænere",
+     "dhash": "21486db49f52"
     },
     {
      "ref": "refbest_231125#7",
      "effekt": "aendret",
      "tekst": "Fra 2026 er der adgangskontrol til opvarmningen ved alle danske mesterskaber; arrangøren udpeger en official, og adgangskort udleveres ved indvejningen. Ved DM i udstyrsløft må der pr. løftergruppe være: 1 løfter 2 trænere, 2 løftere 4, 3 løftere 5, 4 løftere højst 6 trænere. Ved DM i klassisk styrkeløft højst 2 trænere i én gruppe ved 1-3 løftere, 3 trænere i to grupper ved 3 løftere og 4 trænere i to grupper ved 4 løftere. Højst én taske pr. udøver; overtøj og udesko opbevares i omklædning eller anviste områder, og der ryddes op efter løft.",
      "kort": "én taske pr. udøver og oprydningspligt",
-     "kort_regel": "trænerkvoter, adgangskort, én taske, oprydning"
+     "kort_regel": "trænerkvoter, adgangskort, én taske, oprydning",
+     "dhash": "fd0a2bc22c8f"
     },
     {
      "ref": "rep2026#4",
      "effekt": "bekraeftet",
      "tekst": "Ved danske mesterskaber er der adgangskontrol til opvarmnings- og forberedelsesområdet; arrangøren udpeger en official, og adgangskort udleveres ved indvejningen. Antal trænere pr. klub pr. løftergruppe begrænses: udstyrsløft 1 løfter 2 trænere, 2 løftere 4, 3 løftere 5, 4 løftere højst 6; klassisk højst 2 trænere i én gruppe ved 1-3 løftere, 3 i to grupper ved 3 løftere og 4 i to grupper ved 4 løftere. Højst én taske pr. udøver, og der ryddes op efter løft.",
      "kort": "Repræsentantskabet vedtager reglerne i stævnereglerne",
-     "kort_regel": "trænerkvoter, adgangskort, én taske, oprydning"
+     "kort_regel": "trænerkvoter, adgangskort, én taske, oprydning",
+     "dhash": "7a5a212d54a0"
     }
    ]
   },
@@ -1862,14 +2064,16 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "arrangør skal kontrollere antal trænere i opvarmning",
-     "kort_regel": "kontrol med antal trænere i opvarmningslokalet"
+     "kort_regel": "kontrol med antal trænere i opvarmningslokalet",
+     "dhash": "557dd8e63f0a"
     },
     {
      "ref": "490#38",
      "effekt": "aendret",
      "tekst": "Arrangøren af et internationalt stævne skal kontrollere antallet af trænere i opvarmningslokalet. Antallet af tilmeldte trænere skal følge retningslinjerne for Head Coach, og de har fri adgang til stævnet.",
      "kort": "trænerantal efter Head Coach-retningslinjer, fri adgang",
-     "kort_regel": "trænere efter Head Coach-retningslinjer, kontrolleret adgang"
+     "kort_regel": "trænere efter Head Coach-retningslinjer, kontrolleret adgang",
+     "dhash": "7a3fcfacf60f"
     }
    ]
   },
@@ -1883,21 +2087,24 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "mundbind for spottere; små grupper; stævneleder kan lukke",
-     "kort_regel": "mundbind, små grupper, DSF betaler værnemidler"
+     "kort_regel": "mundbind, små grupper, DSF betaler værnemidler",
+     "dhash": "c8c5cc575b12"
     },
     {
      "ref": "refbest_061220#1",
      "effekt": "aendret",
      "tekst": "Ved stævner sørges for større afstand mellem indvejninger, mere styring af opvarmningsområdet, færre personer i grupperne og en teknisk controller, der sikrer overholdelse af retningslinjerne.",
      "kort": "afstand ved indvejning, teknisk controller tilføjes",
-     "kort_regel": "spredt indvejning, små grupper, teknisk controller"
+     "kort_regel": "spredt indvejning, små grupper, teknisk controller",
+     "dhash": "b2a92e37dca5"
     },
     {
      "ref": "refbest_060221#5",
      "effekt": "bekraeftet",
      "tekst": "Ved stævner sørges for større afstand mellem indvejninger, mere styring af opvarmningsområdet, færre personer i grupperne og en teknisk controller, der sikrer overholdelse af retningslinjerne.",
      "kort": "retningslinjerne gentaget",
-     "kort_regel": "spredt indvejning, små grupper, teknisk controller"
+     "kort_regel": "spredt indvejning, små grupper, teknisk controller",
+     "dhash": "b4e7daaf2c5b"
     }
    ]
   },
@@ -1911,7 +2118,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "officielle stævner kan ikke afvikles digitalt",
-     "kort_regel": "ingen digitale officielle stævner"
+     "kort_regel": "ingen digitale officielle stævner",
+     "dhash": "d604b3565d9f"
     }
    ]
   },
@@ -1925,7 +2133,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "§13: udvalget kan ændre stævner, varsel 8 uger",
-     "kort_regel": "udvalg kan ændre stævner med 8 ugers varsel"
+     "kort_regel": "udvalg kan ændre stævner med 8 ugers varsel",
+     "dhash": "bac8b45374fb"
     }
    ]
   },
@@ -1939,28 +2148,32 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ansøgning 12 måneder før; skiftevis øst og vest",
-     "kort_regel": "ansøgning 12 måneder før; skift øst/vest"
+     "kort_regel": "ansøgning 12 måneder før; skift øst/vest",
+     "dhash": "819c70586e31"
     },
     {
      "ref": "refstaevne08022024#1",
      "effekt": "aendret",
      "tekst": "Klubber skal ansøge om stævner senest 12 måneder før, og svar gives senest to måneder efter fristen. Ved flere ansøgere tildeles stævnet til den klub, der bedst opfylder kravene, og den først kontaktede klub orienteres af den stævneansvarlige, når en anden byder ind. Stævner afholdes som udgangspunkt skiftevis i Øst- og Vestdanmark; stævneudvalget kan dispensere ved mangel på ansøgere.",
      "kort": "først kontaktede klub orienteres ved konkurrerende bud",
-     "kort_regel": "ansøgning 12 måneder før; skift øst/vest"
+     "kort_regel": "ansøgning 12 måneder før; skift øst/vest",
+     "dhash": "cea90e4baa5a"
     },
     {
      "ref": "refbest_140424#2",
      "effekt": "aendret",
      "tekst": "Klubber, der vil afholde stævner, sender ansøgning til stævneudvalget inden fristen. Udvalget tildeler mesterskaberne efter demografi og ansøgninger og udarbejder terminslisten med stævneansvarlige. Ved konkurrerende bud orienteres den først kontaktede klub. Stævner afholdes som udgangspunkt skiftevis i øst og vest.",
      "kort": "udvalget tildeler efter demografi og laver terminsliste",
-     "kort_regel": "udvalget tildeler efter demografi og ansøgninger"
+     "kort_regel": "udvalget tildeler efter demografi og ansøgninger",
+     "dhash": "029aa4c4671f"
     },
     {
      "ref": "refstaevne16052024#1",
      "effekt": "bekraeftet",
      "tekst": "Klubber, der vil afholde stævner, sender ansøgning til stævneudvalget inden fristen. Udvalget tildeler mesterskaberne efter demografi og ansøgninger, så DM'erne som udgangspunkt skiftevis afholdes i øst og vest, med afvigelser hvis ingen har budt ind, og udarbejder terminslisten med stævneansvarlige.",
      "kort": "DM skiftevis øst og vest bekræftet",
-     "kort_regel": "DM skiftevis i øst og vest"
+     "kort_regel": "DM skiftevis i øst og vest",
+     "dhash": "3a46665cee1a"
     }
    ]
   },
@@ -1974,7 +2187,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "stævneleder kan diskvalificere ved upassende opførsel",
-     "kort_regel": "stævneleder kan diskvalificere for upassende opførsel"
+     "kort_regel": "stævneleder kan diskvalificere for upassende opførsel",
+     "dhash": "f6633baa5006"
     }
    ]
   },
@@ -1988,14 +2202,16 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "bestyrelsen drøfter headcoach pr. klub",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "1b68b2bc6291"
     },
     {
      "ref": "refbest_10122016#2",
      "effekt": "forkastet",
      "tekst": null,
      "kort": "ingen headcoach; klubber ansvarlige for opførsel",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "a03affc0ae8d"
     }
    ]
   },
@@ -2009,7 +2225,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "jury af 3 A-dommere; klubben stiller meet director",
-     "kort_regel": "jury af tre A-dommere og meet director"
+     "kort_regel": "jury af tre A-dommere og meet director",
+     "dhash": "2e9a72b6f535"
     }
    ]
   },
@@ -2023,7 +2240,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "handlingsplan i tre faser; stævneleder standser stævnet",
-     "kort_regel": "stævneleder standser, tovholder tilkalder hjælp, rapport"
+     "kort_regel": "stævneleder standser, tovholder tilkalder hjælp, rapport",
+     "dhash": "954028a57066"
     }
    ]
   },
@@ -2037,7 +2255,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "arrangør står for overnatning, morgenmad og dommerforplejning",
-     "kort_regel": "arrangør dækker overnatning og forplejning"
+     "kort_regel": "arrangør dækker overnatning og forplejning",
+     "dhash": "a2da11cdfd66"
     }
    ]
   },
@@ -2051,14 +2270,16 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "uofficielle konkurrencer afvist; diplom- og klubstævner findes",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "8cc6b1d8d8f6"
     },
     {
      "ref": "refbest_221023#4",
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "skel mellem officielle og uofficielle konkurrencer i app",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "231723a6446c"
     }
    ]
   },
@@ -2072,7 +2293,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "introstævner med lempede regler, også uden licens",
-     "kort_regel": "introstævner åbne for DSF-medlemmer uden licens"
+     "kort_regel": "introstævner åbne for DSF-medlemmer uden licens",
+     "dhash": "f10b847ba696"
     }
    ]
   },
@@ -2086,7 +2308,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "DSF stiller officials til nye klubbers diplomstævner",
-     "kort_regel": "DSF stiller dommer m.m. til nye klubbers diplomstævner"
+     "kort_regel": "DSF stiller dommer m.m. til nye klubbers diplomstævner",
+     "dhash": "297b3d6bd804"
     }
    ]
   },
@@ -2100,7 +2323,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "privatstævner får ikke samme service som DSF-stævner",
-     "kort_regel": "privatstævner får begrænset service"
+     "kort_regel": "privatstævner får begrænset service",
+     "dhash": "0edfa796abab"
     }
    ]
   },
@@ -2114,7 +2338,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "forslag om DSF-rettigheder til tv, streaming og sponsorater",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "6b652945fd72"
     }
    ]
   },
@@ -2128,7 +2353,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "forslag om individuel bænkpresliga forkastet",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "f3fbe7700455"
     }
    ]
   },
@@ -2142,7 +2368,8 @@
      "effekt": "foreslaaet",
      "tekst": null,
      "kort": "crossfitstævner under DSF undersøges",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "5d43116a343e"
     }
    ]
   },
@@ -2156,7 +2383,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "officielt veteran-DM i bænkpres efter Invictus-regler",
-     "kort_regel": "gratis veteran-DM bænkpres, medaljer på IPF-point"
+     "kort_regel": "gratis veteran-DM bænkpres, medaljer på IPF-point",
+     "dhash": "e17618df2166"
     }
    ]
   },
@@ -2170,7 +2398,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "OBBC foreslår plan offentliggjort 14 dage før",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "303ef9d4f768"
     }
    ]
   },
@@ -2184,7 +2413,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "KSK må holde årligt udstyrsfrit bænkstævne, ikke ved DM",
-     "kort_regel": "årligt udstyrsfrit KSK-bænkstævne, ikke samtidig med DM"
+     "kort_regel": "årligt udstyrsfrit KSK-bænkstævne, ikke samtidig med DM",
+     "dhash": "4456db0fa816"
     }
    ]
   },
@@ -2198,7 +2428,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "betingelse: udstyrsfri afdeling",
-     "kort_regel": "TSK Cup skal have udstyrsfri afdeling"
+     "kort_regel": "TSK Cup skal have udstyrsfri afdeling",
+     "dhash": "156d903f31e7"
     }
    ]
   },
@@ -2212,7 +2443,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "årligt open-stævne uden deltagerbegrænsning, helst oktober",
-     "kort_regel": "AAK Open årligt, helst i oktober"
+     "kort_regel": "AAK Open årligt, helst i oktober",
+     "dhash": "0ec3897aa1fd"
     }
    ]
   },
@@ -2226,7 +2458,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "ekstra afstand mellem rack og dommere i Tårnby",
-     "kort_regel": "ekstra afstand rack-dommere i Tårnby"
+     "kort_regel": "ekstra afstand rack-dommere i Tårnby",
+     "dhash": "62cffe4e3597"
     }
    ]
   },
@@ -2240,7 +2473,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "grundigere vejledning om dokumenter, indvejning og præmier",
-     "kort_regel": "udvalget vejleder arrangører af DM-hold runder"
+     "kort_regel": "udvalget vejleder arrangører af DM-hold runder",
+     "dhash": "125bf4487037"
     }
    ]
   },
@@ -2254,7 +2488,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "forsøg med kraftklubber tilknyttet mindre klubber",
-     "kort_regel": "mindre klubber tilknyttes nærliggende kraftklub"
+     "kort_regel": "mindre klubber tilknyttes nærliggende kraftklub",
+     "dhash": "ee7e8892c58b"
     }
    ]
   },
@@ -2268,7 +2503,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "IPF afviser alderskategori dreng/pige",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "c85e8b575646"
     }
    ]
   },
@@ -2282,7 +2518,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "genindførelse af åben klasse ved NM afvist",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "c87fdbd51dd9"
     }
    ]
   },
@@ -2296,7 +2533,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "løfter skal møde ved 1. indvejningsrunde",
-     "kort_regel": "fremmøde ved første indvejningsrunde krævet"
+     "kort_regel": "fremmøde ved første indvejningsrunde krævet",
+     "dhash": "7e80b2da9589"
     }
    ]
   },
@@ -2310,7 +2548,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "A-gruppe ændret fra 8-12 til 8-14 løftere",
-     "kort_regel": "A-gruppe på 8-14 løftere"
+     "kort_regel": "A-gruppe på 8-14 løftere",
+     "dhash": "1e2a74e9049e"
     }
    ]
   },
@@ -2324,14 +2563,16 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Norges forslag om 30 min ved én gruppe nedstemt",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "9975850157ea"
     },
     {
      "ref": "490#24",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "pause ved flere grupper hævet fra 5 til 10 min",
-     "kort_regel": "10 min pause ved flere grupper, 20 ved én"
+     "kort_regel": "10 min pause ved flere grupper, 20 ved én",
+     "dhash": "4c6a443070d5"
     }
    ]
   },
@@ -2345,7 +2586,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Frankrigs forslag om 0,5 kg-øgninger nedstemt",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "10598219b299"
     }
    ]
   },
@@ -2359,7 +2601,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "henvendelse til teknisk kontrollør, ellers overdommer",
-     "kort_regel": "rengøring anmodes hos teknisk kontrollør"
+     "kort_regel": "rengøring anmodes hos teknisk kontrollør",
+     "dhash": "49227e987496"
     }
    ]
   },
@@ -2373,7 +2616,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Sveriges forslag om afskaffelse forkastet uden sekundant",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "dd7b94b17b81"
     }
    ]
   },
@@ -2387,7 +2631,8 @@
      "effekt": "indfoert",
      "tekst": null,
      "kort": "løfter efterfølger sig selv i dødløft/bænk 3. runde",
-     "kort_regel": "nyt 3. forsøg: løfteren efterfølger sig selv"
+     "kort_regel": "nyt 3. forsøg: løfteren efterfølger sig selv",
+     "dhash": "f8e3050d55ad"
     }
    ]
   },
@@ -2401,7 +2646,8 @@
      "effekt": "forkastet",
      "tekst": null,
      "kort": "Sveriges forslag om stop efter bomb-out nedstemt",
-     "kort_regel": null
+     "kort_regel": null,
+     "dhash": "d2d7a0398777"
     }
    ]
   }

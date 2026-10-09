@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 2082,
+   "citat_side": 6
   },
   {
    "emne": "Rettigheder til DSF-stævner",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": "2025-01-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 1640,
+   "citat_side": 6
   }
  ]
 }

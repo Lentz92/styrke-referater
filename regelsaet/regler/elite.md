@@ -207,7 +207,7 @@ Landsholdsløftere skal umiddelbart efter træningssamlinger og internationale s
 
 *Bestyrelsesbeslutning · vedtaget 25.07.2010 af Bestyrelsen*
 
-- 25.07.2010 · indført: kørselsbilag skal være kassereren i hænde senest 14 dage efter · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.PDF#page=1)
+- 25.07.2010 · indført: kørselsbilag skal være kassereren i hænde senest 14 dage efter · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.pdf#page=1)
 
 ### Frist for opfyldelse af kvalifikationskrav
 
@@ -326,18 +326,6 @@ Der oprettes en særlig kvalifikationspulje i eliteudvalgets budget til atleter,
 *Udvalgsbeslutning · vedtaget 03.08.2012 af Eliteudvalget*
 
 - 03.08.2012 · indført: pulje til atleter, der klarer EM/VM-krav i løbet af året · [elite03082012 s. 1](https://filer.styrke.dk/referater/elite03082012.pdf#page=1)
-
-### Kørselspenge til samlinger
-
-**I kraft**
-
-Der ydes ikke tilskud til kørsel til landsholdssamlinger.
-
-*Bestyrelsesbeslutning · fastslået 03.02.2018 af Bestyrelsen*
-
-- 10.12.2016 · indført: kørselspenge kun ved samkørsel med mindst én anden · [refbest_10122016 s. 3](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=3)
-- 10.12.2017 · ophævet: kørselspenge bortfalder pga. ændrede DIF-tilskudsregler · [elite10122017 s. 3](https://filer.styrke.dk/referater/elite10122017.pdf#page=3)
-- 03.02.2018 · bekræftet: bestyrelsen bekræfter bortfald af kørselstilskud · [refbest_03022018 s. 5](https://filer.styrke.dk/referater/refbest_03022018.pdf#page=5)
 
 ### Landsholdsløftere som betalte trænere
 
@@ -709,7 +697,7 @@ Kassereren har 14 dage til at udbetale pengene til løfterne efter modtagelse af
 
 *Bestyrelsesbeslutning · vedtaget 25.07.2010 af Bestyrelsen*
 
-- 25.07.2010 · indført: kassereren udbetaler senest 14 dage efter modtaget afregning · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.PDF#page=1)
+- 25.07.2010 · indført: kassereren udbetaler senest 14 dage efter modtaget afregning · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.pdf#page=1)
 
 ### Kraftcentre
 
@@ -838,6 +826,18 @@ Egenbetalinger, herunder ekstraomkostninger ved forlængelse af den DSF-planlagt
 
 - 07.12.2019 · indført: kvittering sendes senest på dato angivet ved udtagelse · [elite07122019 s. 2](https://filer.styrke.dk/referater/elite07122019.pdf#page=2)
 - 08.03.2022 · ændret: betaling senest 10 dage før final nomination (fra 01.01.2022) · [elite08032022 s. 2](https://filer.styrke.dk/referater/elite08032022.pdf#page=2)
+
+### Kørselspenge til samlinger
+
+**Ikke længere i kraft**
+
+Løftere modtager kun kørselspenge til samlinger, hvis de kører sammen med mindst én anden. I særlige tilfælde kan lederen af samlingen vurdere, om der alligevel kan gives kørselspenge. Ordningen evalueres næste år.
+
+*Bestyrelsesbeslutning · vedtaget 10.12.2016 af Bestyrelsen*
+
+- 10.12.2016 · indført: kørselspenge kun ved samkørsel med mindst én anden · [refbest_10122016 s. 3](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=3)
+- 10.12.2017 · ophævet: kørselspenge bortfalder pga. ændrede DIF-tilskudsregler · [elite10122017 s. 3](https://filer.styrke.dk/referater/elite10122017.pdf#page=3)
+- 03.02.2018 · ophævet: bestyrelsen noterer, at kørselstilskuddet er bortfaldet · [refbest_03022018 s. 5](https://filer.styrke.dk/referater/refbest_03022018.pdf#page=5)
 
 ### Rejseplanlægning og booking
 

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 193,
+   "citat_side": 1
   },
   {
    "emne": "Nordland Cup som officielt stævne",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 330,
+   "citat_side": 2
   },
   {
    "emne": "Stævneregler i overensstemmelse med IPF's tekniske regler",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 559,
+   "citat_side": 3
   }
  ]
 }

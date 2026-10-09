@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": "2022-07-01",
    "gaelder_til": null,
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 64,
+   "citat_side": 1
   },
   {
    "emne": "Udtagelsesprocedure VM",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2022-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 147,
+   "citat_side": 1
   },
   {
    "emne": "Supplering af VM-hold med atleter uden for landsholdet",
@@ -48,7 +52,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2022-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 226,
+   "citat_side": 1
   }
  ]
 }

@@ -18,7 +18,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2011-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 134,
+   "citat_side": 1
   },
   {
    "emne": "Kvalifikationskrav til internationale stævner",
@@ -33,7 +35,9 @@
    "stemmer": null,
    "gaelder_fra": null,
    "gaelder_til": "2011-12-31",
-   "citat_fundet": true
+   "citat_fundet": true,
+   "citat_pos": 268,
+   "citat_side": 2
   }
  ]
 }
