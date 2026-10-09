@@ -154,6 +154,14 @@ class CandidateIndex:
         """The slugs of the k best rules."""
         return [slug for slug, _ in self.rank(query)[:k]]
 
+    def similar(self, slug: str) -> list[tuple[str, float]]:
+        """Every other rule with the cosine similarity of its vector to this rule's, best first; no category boost
+        (audit.py looks for one rule spread over several, in any category)."""
+        own = self.vectors[slug]
+        scored = [(other, sum(w * vector.get(t, 0.0) for t, w in own.items()))
+                  for other, vector in self.vectors.items() if other != slug]
+        return sorted(scored, key=lambda item: (-item[1], self.order[item[0]]))
+
 
 def _unit(vector: dict[str, float]) -> dict[str, float]:
     norm = math.sqrt(sum(w * w for w in vector.values()))

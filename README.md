@@ -176,6 +176,62 @@ run them.
 Opening the pull request needs "Allow GitHub Actions to create and approve pull requests" under Settings >
 Actions > General > Workflow permissions. The routing is `.github/scripts/route-update.sh`.
 
+## Audit
+
+Incremental consolidation files each new decision into a rule and never merges, splits or renames rules, so its
+mistakes stay: one rule spread over several (a fee's yearly confirmations filed under another fee), one rule holding
+decisions about different things, a title that no longer fits, a rule in the wrong category. On the answer key 10 of
+19 rules were spread over several rules (`eval/reports/rules-regler.md`). The audit fixes the structure (`audit.py`):
+
+```bash
+uv run audit.py propose --max-cost 25     # Opus proposes ops, in two runs: data/regler_ops.json
+uv run audit.py apply --max-cost 10       # the agreed ops applied to data/, the pages rebuilt
+uv run audit.py score                     # the answer key's rule scores: git HEAD against data/ (no Claude)
+uv run audit.py candidates                # the similarity threshold's recall on the answer key (no Claude)
+```
+
+1. Code finds rules that may be one rule, in any category: rule against rule, with the TF-IDF profiles incremental
+   consolidation ranks its candidates by (`candidates.py`), at a cosine similarity of at least `audit.SIMILARITY`
+   (0.1). On the answer key that puts 97% of the pairs of rules a key rule is spread over into one call
+   (`eval/reports/audit-candidates.md`, on the data before the v3 migration).
+2. Opus (`claude-opus-5-5`, effort high) reviews one category per call: its rules with every version (date, organ,
+   effect, emne, what it did), and in brief the similar rules of other categories. It answers with ops (merge,
+   split, rename, move), each with its reason and the decisions it rests on. Two independent runs read the rules in
+   different orders. Code rejects ops naming slugs or decisions the call was not shown, splits whose parts do not
+   divide the rule's decisions exactly, and ops of one run that share a rule (only a rename and a move may go
+   together). An op is agreed when both runs propose it: a merge of the same rules, a split into the same parts, a
+   move to the same category, a rename of the same rule. Where their titles differ, and for every rename, a third
+   Opus call chooses between them or keeps the old title.
+3. `data/regler_ops.json` lists every op with its proposals (run, reason, cited decisions), whether it is agreed,
+   the answers code rejected, and after apply what each op did. Every Claude answer is kept in `data/audit/` with a
+   fingerprint of what it was asked, so a cut-off or repeated command never pays for the same question twice.
+4. `apply` applies the agreed ops in code, only to the rules they were proposed for (it stops when `data/regler/`
+   changed since). A merge keeps the slug of the rule with most versions (on a tie the one whose first version is
+   oldest), takes the union of their versions, and leaves the other slugs in `data/slugs.json` as aliases, so their
+   links lead to it; a split keeps the slug on its largest part and gives the others new slugs; a move changes the
+   rule's file, a rename only its title. Each merged or split rule then gets one Opus call with its whole history
+   that rewrites every version's effect, text and short forms (incremental's update call, told why:
+   `audit.AUDIT_UPDATE_SYSTEM`); code checks that the answer keeps exactly the versions and the order apply set and
+   changes nothing else. `apply` writes `data/` only when the result has no check errors, leaves `update.py` nothing
+   to do (no decision is filed again because the audit moved it), every old slug still leads to a rule and the pages
+   build; then it rebuilds `regelsaet/` and `_site/`.
+
+Run it on settled data, e.g. quarterly or after a migration: it stops while `update.py` has decisions to file or a
+category to consolidate, and a later full consolidation (a migration) regroups categories anew, undoing it. On GitHub:
+Actions > "Audit rules" > Run workflow, optionally naming categories and the cost limit (for `propose` and `apply`
+each, default 25 USD). It never publishes: an audit changes what earlier years show by design, so its result always
+goes to a pull request on `auto/audit-<date>` (`.github/scripts/route-audit.sh`), whose body (`audit-report.md`, not
+committed) lists the applied ops with their reasons, the ops only one run proposed, the answers code rejected, what
+each year shows before and after for every rule that changed, the answer key's scores before and after, and the cost.
+To review, read the applied ops and check the merged and split rules against the minutes (the diff of `regelsaet/`
+shows them); merge to publish, or close to discard. An audit cut off by its cost limit or failed calls still opens
+the pull request with what it paid for; run the workflow on that branch to finish it without paying again. Locally,
+the same commands leave the changes in the working tree for a pull request; `uv run audit.py score` compares the
+answer key's scores of git HEAD (`--before REV`, or `--before-dir`) with `data/regler/`.
+
+Cost at list price: on the data of October 2026 (470 rules) `propose` is 24 calls of 3K to 60K tokens, about 10 USD,
+printed before the first call; each merged or split rule's rewrite about 0.1 USD; the title choice a few cents.
+
 ## How it works
 
 | Step | File | Output |

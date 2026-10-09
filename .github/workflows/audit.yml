@@ -1,0 +1,104 @@
+name: Audit rules
+
+# Opus proposes merges, splits, renames and moves of rules, and the ops both of its runs agree on are applied
+# (audit.py). An audit changes what earlier years show by design, so its result always goes to a pull request on
+# auto/audit-<date> (.github/scripts/route-audit.sh), never to main or the website: merging it publishes it.
+on:
+  workflow_dispatch:
+    inputs:
+      categories:
+        description: "Categories to audit, comma-separated (empty: all)"
+        type: string
+        default: ""
+      max_cost:
+        description: "Cost limit in USD at list price, for propose and for apply each (--max-cost)"
+        type: string
+        default: "25"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update  # never alongside the monthly update: both write data/
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      # Pinned as in update.yml (tests/test_audit.py checks they agree).
+      CLAUDE_CODE_VERSION: "2.1.294"
+      DISABLE_AUTOUPDATER: "1"
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install uv and Claude Code
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          curl -fsSL https://claude.ai/install.sh | bash -s "$CLAUDE_CODE_VERSION"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Check Claude runs on the subscription
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          # An API key takes precedence over the subscription token and would be billed separately.
+          if [ -n "${ANTHROPIC_API_KEY:-}" ]; then
+            echo "::error::ANTHROPIC_API_KEY is set; refusing to run on API billing."
+            exit 1
+          fi
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::error::Secret CLAUDE_CODE_OAUTH_TOKEN is missing. Create it with 'claude setup-token'."
+            exit 1
+          fi
+          version=$(claude --version)
+          echo "$version"
+          if [ "${version%% *}" != "$CLAUDE_CODE_VERSION" ]; then
+            echo "::error::Claude Code $version is installed, expected $CLAUDE_CODE_VERSION."
+            exit 1
+          fi
+          result=$(echo "Reply with only the word ok." | claude -p --tools "" --safe-mode --no-session-persistence \
+            --model claude-haiku-5-5 --output-format json)
+          echo "$result" | jq '{is_error, result, total_cost_usd, models: [.modelUsage[]?.canonicalModel]}'
+          if ! echo "$result" | jq -e '.is_error == false
+              and ([.modelUsage[]?.canonicalModel] | index("claude-haiku-5-5") != null)' > /dev/null; then
+            echo "::error::The smoke test did not get an answer from claude-haiku-5-5."
+            exit 1
+          fi
+
+      - name: Propose and apply
+        id: audit
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CATEGORIES: ${{ inputs.categories }}
+          MAX_COST: ${{ inputs.max_cost }}
+        run: |
+          # Record the exit code instead of stopping here: what the audit paid for so far goes to the pull request
+          # either way, and a run on its branch continues it without paying again.
+          propose=(--max-cost "$MAX_COST")
+          if [ -n "$CATEGORIES" ]; then propose+=(--categories "$CATEGORIES"); fi
+          set +e
+          uv run audit.py propose "${propose[@]}"
+          code=$?
+          if [ "$code" = 0 ]; then
+            uv run audit.py apply --max-cost "$MAX_COST"
+            code=$?
+          fi
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+
+      - name: Send the result to a pull request
+        if: steps.audit.outputs.code != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/route-audit.sh
+
+      - name: Fail when audit.py failed
+        if: steps.audit.outputs.code != '0'
+        env:
+          CODE: ${{ steps.audit.outputs.code }}
+        run: |
+          echo "::error::audit.py failed (exit code $CODE); see its log and the pull request's report."
+          exit 1
