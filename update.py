@@ -455,7 +455,8 @@ def write_report(code: int, steps: dict[str, StepSummary], problems: list[checks
 def run_report(code: int, steps: dict[str, StepSummary], problems: list[checks.Problem],
                history: checks.HistoryCheck | None, failures: list[str], today: date) -> str:
     """Markdown for the pull request that reviews a run, and for its run page: the outcome, the Claude calls,
-    every error and warning, and what the run would change in earlier years."""
+    every error and warning, what a step asks to have looked at (its notes), and what the run would change in earlier
+    years."""
     lines = [_marker(code), f"# Rule overview update {today.isoformat()}", "", _outcome(code, problems, failures),
              ""]
     if steps:
@@ -465,6 +466,9 @@ def run_report(code: int, steps: dict[str, StepSummary], problems: list[checks.P
         lines += [f"## {heading}: {len(found)}", ""]
         if found:
             lines += [f"- **{problem.kind}**: {problem.message}" for problem in found] + [""]
+    for step in steps.values():
+        for heading, notes in step.notes.items():
+            lines += [f"## {heading}: {len(notes)}", "", *(f"- {note}" for note in notes), ""]
     if history is not None:
         lines += _history_section(history)
     return "\n".join(lines).rstrip() + "\n"

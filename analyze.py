@@ -1211,6 +1211,7 @@ class StepSummary:
     skipped: int  # jobs that never started because a limit was reached; they run next time
     usage: Usage  # summed over every attempt, failed ones included
     seconds: float  # wall-clock time of the step
+    notes: dict[str, tuple[str, ...]] = field(default_factory=dict)  # heading -> lines to review, for run-report.md
 
 
 def run_parallel(jobs: list, fn, workers: int, label: str, budget: RunBudget | None = None) -> StepSummary:

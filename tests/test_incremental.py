@@ -125,10 +125,12 @@ def _votes(*choices: dict) -> dict:
     return {"answers": answers}
 
 
-def _update(*refs: str, vigtig: bool = True, note: str | None = None, misfiled: tuple[str, ...] = ()) -> dict:
+def _update(*refs: str, vigtig: bool = True, note: str | None = None, misfiled: tuple = ()) -> dict:
+    """An update answer; `misfiled` lists refs, or (ref, suggested title) pairs."""
     return {"versioner": [{"ref": ref, "effekt": "aendret", "tekst": f"Ny tekst {ref}", "kort": f"ny {ref}",
                            "kort_regel": f"ny regel {ref}"} for ref in refs], "vigtig": vigtig, "note": note,
-            "misfiled": list(misfiled)}
+            "misfiled": [{"ref": m, "title": None} if isinstance(m, str) else {"ref": m[0], "title": m[1]}
+                         for m in misfiled]}
 
 
 def _models(fake_claude) -> list[str]:
@@ -424,6 +426,25 @@ def test_an_incremental_month_passes_the_history_check_and_renders(world, fake_c
     assert checks.find_problems(checks.Data.load(world.docs)) == []
 
 
+def test_a_category_left_for_a_full_consolidation_is_listed_in_the_run_report(world, fake_claude, run):
+    # styrke.dk dated rep2015 anew before this run: nothing reflects the old date, so okonomi cannot be settled.
+    world.document("rep2015", "2016-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
+    run("--consolidate-mode", "incremental")
+    report = (world.root / "run-report.md").read_text()
+    assert f"## {incremental.UNSEEN}: 1\n\n- okonomi may reflect decisions that changed unseen" in report
+    assert "run `update.py --consolidate-mode full` for it" in report
+
+
+def test_the_run_report_lists_what_a_step_asks_to_have_looked_at():
+    step = analyze.StepSummary("Consolidate", 9, 0, 0, analyze.Usage(), 1.0,
+                               {incremental.MISFILED_TWICE: ("x#1 (Emne): misfiled in `a`, `b`; filed as the new rule "
+                                                             "Emne (`emne`)",)})
+    report = update.run_report(0, {"consolidate": step}, [], None, [], datetime(2026, 10, 9).date())
+    assert (f"## {incremental.MISFILED_TWICE}: 1\n\n- x#1 (Emne): misfiled in `a`, `b`; filed as the new rule Emne "
+            f"(`emne`)\n") in report
+
+
 def test_full_remains_the_default_mode(run, world, fake_claude, monkeypatch):
     called = []
     monkeypatch.setattr(analyze, "consolidate", lambda *args, **kwargs: called.append("full") or
@@ -592,11 +613,34 @@ def test_a_misfiled_decision_is_voted_on_again_without_that_rule(world, fake_cla
     assert "rep2024#1" not in {v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]}
 
 
-def test_a_decision_misfiled_twice_leaves_the_document_for_the_next_run(world, fake_claude, caplog):
-    world.document("rep2024", "2024-03-01", _decision("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
-    before = world.files()
+def test_a_decision_misfiled_twice_is_filed_as_a_new_rule_and_listed_for_review(world, fake_claude, caplog):
+    world.document("rep2024", "2024-03-01", _decision("Startgebyr", "Juniorer betaler halvt startgebyr."))
     fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
-                        *[_votes({"rep2024#1": "startgebyr"})] * 3, _update(misfiled=("rep2024#1",)))
+                        *[_votes({"rep2024#1": "startgebyr"})] * 3,
+                        _update(misfiled=(("rep2024#1", "Startgebyr for juniorer"),)), _update("rep2024#1"))
     step = world.consolidate(k=3)
-    assert (step.calls, step.failed) == (8, 1)
-    assert world.files() == before and "misfiled again (rep2024#1 in startgebyr)" in caplog.text
+    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS, OPUS]
+    assert (step.calls, step.failed, step.skipped) == (9, 0, 0)  # filed, not left pending for every later run
+    rule = world.stored("okonomi")["regler"][-1]
+    assert (rule["titel"], rule["slug"], [v["ref"] for v in rule["versioner"]]) == (
+        "Startgebyr for juniorer", "startgebyr-for-juniorer", ["rep2024#1"])
+    note = ("rep2024#1 (Startgebyr): misfiled in `licensgebyr`, `startgebyr`; filed as the new rule Startgebyr for "
+            "juniorer (`startgebyr-for-juniorer`)")
+    assert step.notes == {incremental.MISFILED_TWICE: (note,)} and note in caplog.text
+    assert incremental.work_queue(world.decisions(), incremental.RuleBook.load(), world.docs) == []
+
+
+def test_a_new_rule_after_two_misfilings_is_checked_for_a_namesake_once(world, fake_claude):
+    # No title suggested: the emne, "Klubskifte", names a live rule, which the tie-break picks; misfiled there too,
+    # the decision gets its own rule.
+    world.document("rep2024", "2024-03-01", _decision("Klubskifte", "Klubskiftegebyret er 100 kr."))
+    fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
+                        *[_votes({"rep2024#1": "startgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
+                        _votes({"rep2024#1": "klubskifte"}), _update(misfiled=("rep2024#1",)), _update("rep2024#1"))
+    step = world.consolidate(k=3)
+    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS] * 4
+    assert _section(fake_claude.prompts()[8], "beslutninger")[0]["kandidater"] == ["klubskifte"]
+    assert [r["slug"] for r in world.stored("okonomi")["regler"]] == ["licensgebyr", "startgebyr", "klubskifte-2"]
+    assert step.notes[incremental.MISFILED_TWICE] == (
+        "rep2024#1 (Klubskifte): misfiled in `klubskifte`, `licensgebyr`, `startgebyr`; filed as the new rule "
+        "Klubskifte (`klubskifte-2`)",)

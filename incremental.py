@@ -176,9 +176,10 @@ or add a real caveat.
 
 {PRECEDENCE}
 
-misfiled: the refs of decisions with status new that do not belong to this rule at all, because they are about \
-something it does not regulate; they are filed elsewhere, and you may leave them out of versioner. Almost always \
-empty, and always for a new rule (vigtig null).
+misfiled: the decisions with status new that do not belong to this rule at all, because they are about something it \
+does not regulate; they are filed elsewhere, and you may leave them out of versioner. Give each one's ref and title: \
+a short Danish title for the rule it does belong to, as for a new rule (without years or amounts), or null. Almost \
+always empty, and always for a new rule (vigtig null).
 """
 
 UPDATE_SCHEMA = {
@@ -187,7 +188,15 @@ UPDATE_SCHEMA = {
         "versioner": analyze.CONSOLIDATE_SCHEMA["properties"]["regler"]["items"]["properties"]["versioner"],
         "vigtig": {"type": "boolean"},
         "note": {"type": ["string", "null"]},
-        "misfiled": {"type": "array", "items": {"type": "string"}},
+        "misfiled": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {"ref": {"type": "string"}, "title": {"type": ["string", "null"]}},
+                "required": ["ref", "title"],
+                "additionalProperties": False,
+            },
+        },
     },
     "required": ["versioner", "vigtig", "note", "misfiled"],
     "additionalProperties": False,
@@ -522,11 +531,9 @@ def assign(work: DocumentWork, refs: Sequence[str], book: RuleBook, ctx: Context
             del decided[ref]
             open_.append(ref)
     if open_:
-        tie = _parallel([0], lambda _: ask(ctx.settings.update_model, 0, open_, "tie-break"),
-                        f"Tie-break {work.doc_id}", ctx, steps)
-        if tie is None:
+        settled = tie_break(work, {ref: offered[ref] for ref in open_}, book, ctx, steps)
+        if settled is None:
             return None
-        settled = read_vote(tie[0], {ref: offered[ref] for ref in open_})
         missing = [ref for ref in open_ if ref not in settled]
         if missing:
             log.error("%s: the tie-break gave no valid choice for %s", work.doc_id, ", ".join(missing))
@@ -535,6 +542,35 @@ def assign(work: DocumentWork, refs: Sequence[str], book: RuleBook, ctx: Context
     log.info("%s: %d decisions assigned, %d by two of three votes, %d by the tie-break", work.doc_id, len(refs),
              len(refs) - len(open_), len(open_))
     return decided
+
+
+def tie_break(work: DocumentWork, offered: Mapping[str, Sequence[str]], book: RuleBook, ctx: Context,
+              steps: list[StepSummary]) -> dict[str, Choice] | None:
+    """One Opus call on these decisions, with the same prompt the votes get and blind to them: its valid choices
+    (those it gave none for are missing), or None when the call failed or was skipped."""
+    refs = list(offered)
+    prompt = assign_prompt(work, refs, offered, book, ctx, 0)
+    answer = _parallel([0], lambda _: (*ctx.ask(ASSIGN_SYSTEM, prompt, ASSIGN_SCHEMA, model=ctx.settings.update_model,
+                                                effort=None, timeout=ASSIGN_TIMEOUT), f"{work.doc_id} tie-break"),
+                       f"Tie-break {work.doc_id}", ctx, steps)
+    return None if answer is None else read_vote(answer[0], offered)
+
+
+def file_as_new(work: DocumentWork, titles: Mapping[str, str], namesakes: set[str], book: RuleBook, ctx: Context,
+                steps: list[StepSummary], excluded: Mapping[str, set[str]]) -> dict[str, Choice] | None:
+    """Choices for decisions misfiled twice: a new rule titled as the update call suggested (else by the decision's
+    emne), so the document is filed, not left pending at every run. As for a voted new rule, a title named like a live
+    rule the decision was not misfiled in goes to the Opus tie-break with that rule offered, once (`namesakes`: the
+    refs to check); without a valid answer, and after that, the new rule stands: a new rule is never misfiled."""
+    choices = {ref: Choice(NEW, title) for ref, title in titles.items()}
+    offered = {ref: [same] for ref, title in titles.items() if ref in namesakes
+               and (same := namesake(book, title)) is not None and same not in excluded.get(ref, ())}
+    if offered:
+        settled = tie_break(work, offered, book, ctx, steps)
+        if settled is None:
+            return None
+        choices |= settled
+    return choices
 
 
 # --------------------------------------------------------------------------- update
@@ -682,7 +718,7 @@ class Updated:
 @dataclass(frozen=True)
 class Misfiled:
     """An update call found new decisions that do not belong to its rule at all."""
-    refs: tuple[str, ...]
+    found: tuple[tuple[str, str | None], ...]  # (ref, a title for the rule it belongs to, or None)
 
 
 def run_update(update: RuleUpdate, ctx: Context, passages: Mapping[str, dict]) -> tuple[Updated | Misfiled, Usage]:
@@ -699,7 +735,8 @@ def run_update(update: RuleUpdate, ctx: Context, passages: Mapping[str, dict]) -
         except ClaudeError as exc:
             raise ClaudeError(str(exc), usage + exc.usage) from exc
         usage += spent
-        misfiled = tuple(ref for ref in output.get("misfiled", []) if ref in added) if update.slug else ()
+        misfiled = tuple((item["ref"], (item.get("title") or "").strip() or None) for item in output.get("misfiled", [])
+                         if isinstance(item, dict) and item.get("ref") in added) if update.slug else ()
         if misfiled:
             return Misfiled(misfiled), usage
         stamp = {"model": spent.answered_by, "prompt": analyze.prompt_hash(UPDATE_SYSTEM, UPDATE_SCHEMA),
@@ -805,7 +842,13 @@ class Context:
     worked: frozenset[str] = frozenset()  # categories with queued work when the run started
     processed: set[str] = field(default_factory=set)  # refs this run filed or rewrote, at their current fingerprint
     calls: int = 0  # Claude calls asked
+    notes: dict[str, list[str]] = field(default_factory=dict)  # heading -> lines for run-report.md
     _lock: threading.Lock = field(default_factory=threading.Lock)
+
+    def note(self, heading: str, line: str) -> None:
+        """Something to look at, logged and listed under `heading` in run-report.md."""
+        log.warning("%s: %s", heading, line)
+        self.notes.setdefault(heading, []).append(line)
 
     def organ(self, doc_id: str) -> str:
         doc = self.docs.get(doc_id)
@@ -940,43 +983,70 @@ def process_document(work: DocumentWork, book: RuleBook, ctx: Context, steps: li
 
     Its retired decisions leave their rules, its changed ones are rewritten where they stand, and its new ones are
     filed by vote; every rule this touches is then updated by one call, or, when it only lost versions at its end,
-    by code. A new decision an update call finds misfiled is voted on once more without that rule; misfiled again,
-    the document is left for the next run."""
+    by code. A new decision an update call finds misfiled is voted on once more without that rule; misfiled again, it
+    is filed as a new rule (file_as_new) and listed for review. Every misfiling excludes a rule and a new rule is never
+    misfiled, so this ends."""
     choices = assign(work, work.new, book, ctx, steps) if work.new else {}
     if choices is None:
         return None
     excluded: dict[str, set[str]] = {}
+    misfilings: Counter[str] = Counter()
     answered: list[tuple[RuleUpdate, Updated]] = []
-    for attempt in (1, 2):
+    while True:
         plan = plan_document(work, book, ctx, choices)
         results = run_updates(plan, answered, ctx, steps, f"Update {work.doc_id}")
         if results is None:
             return None
-        misfiled = {ref: u.slug for u, r in zip(plan.updates, results) if isinstance(r, Misfiled) for ref in r.refs}
+        misfiled = {ref: (u.slug, title) for u, r in zip(plan.updates, results) if isinstance(r, Misfiled)
+                    for ref, title in r.found}
         if not misfiled:
-            _apply(work, book, ctx, plan, [r for r in results if isinstance(r, Updated)])
+            _apply(work, book, ctx, plan, results, {ref: excluded[ref] for ref in misfilings if misfilings[ref] >= 2})
             filed = len(work.new) - len(plan.one_offs) - sum(len(u.expected) for u in plan.updates if u.slug is None)
             return (f"{work.doc_id}: {len(work.new)} new ({filed} into existing rules, {plan.new_rules} new rules, "
                     f"{len(plan.one_offs)} one-offs), {len(work.changed)} changed, {len(work.retired)} retired; "
                     f"{len(plan.updates)} rules updated, {sum(1 for keep in plan.kept.values() if not keep)} retired")
-        listed = ", ".join(f"{ref} in {slug}" for ref, slug in sorted(misfiled.items()))
-        if attempt == 2:
-            log.error("%s: misfiled again (%s); the document is left for the next run", work.doc_id, listed)
-            return None
-        log.warning("%s: misfiled (%s); voting on them again without those rules", work.doc_id, listed)
         answered += [(u, r) for u, r in zip(plan.updates, results) if isinstance(r, Updated)]
-        for ref, slug in misfiled.items():
+        for ref, (slug, _) in misfiled.items():
             excluded.setdefault(ref, set()).add(slug)
-        again = assign(work, sorted(misfiled), book, ctx, steps, excluded)
+            misfilings[ref] += 1
+        revote = sorted(ref for ref in misfiled if misfilings[ref] == 1)
+        fallback = {ref: title or ctx.by_ref[ref].emne for ref, (_, title) in sorted(misfiled.items())
+                    if misfilings[ref] >= 2}
+        listed = ", ".join(f"{ref} in {slug}" for ref, (slug, _) in sorted(misfiled.items()))
+        log.warning("%s: misfiled (%s); %s", work.doc_id, listed, "; ".join(filter(None, [
+            f"voting on {', '.join(revote)} again without those rules" if revote else "",
+            f"filing {', '.join(fallback)} as a new rule" if fallback else ""])))
+        again = assign(work, revote, book, ctx, steps, excluded) if revote else {}
         if again is None:
             return None
+        if fallback:
+            again |= file_as_new(work, fallback, {ref for ref in fallback if misfilings[ref] == 2}, book, ctx, steps,
+                                 excluded) or {}
+            if not all(ref in again for ref in fallback):
+                return None  # the namesake tie-break failed or was skipped: the next run tries again
         choices = {**choices, **again}
-    return None
 
 
-def _apply(work: DocumentWork, book: RuleBook, ctx: Context, plan: DocumentPlan, results: Sequence[Updated]) -> None:
+MISFILED_TWICE = "Filed as a new rule after two misfilings"
+UNSEEN = "Categories that may have changed unseen (left for a full consolidation)"
+
+
+def _misfiled_note(ref: str, rules: set[str], plan: DocumentPlan, new: Sequence[tuple[RuleUpdate, str]],
+                   ctx: Context) -> str:
+    """Where a decision misfiled twice went, for review: a new rule, or what the namesake tie-break chose."""
+    d = ctx.by_ref[ref]
+    where = next((f"filed as the new rule {u.title} (`{slug}`)" for u, slug in new if ref in u.expected), None)
+    where = where or next((f"filed in `{u.slug}` by the tie-break on a rule named like it" for u in plan.updates
+                           if u.slug is not None and ref in u.expected), None)
+    where = where or "left out as a one-off by the tie-break on a rule named like it"
+    return f"{ref} ({d.emne}): misfiled in {', '.join(f'`{slug}`' for slug in sorted(rules))}; {where}"
+
+
+def _apply(work: DocumentWork, book: RuleBook, ctx: Context, plan: DocumentPlan, results: Sequence[Updated],
+           misfiled_twice: Mapping[str, set[str]] | None = None) -> None:
     """Write one document's edits: rule versions, new and retired rules, one-offs, the files' fingerprints of what they
-    reflect (`inputs`) and the slug history.
+    reflect (`inputs`) and the slug history; note for review where each decision misfiled twice went
+    (`misfiled_twice`: ref -> the rules it was misfiled in).
 
     As in analyze._consolidate_one, the slug history is written first with revived slugs still in it, so whichever
     write fails, every slug stays taken. Slugs of rules retired here are taken before new rules get theirs."""
@@ -1006,6 +1076,9 @@ def _apply(work: DocumentWork, book: RuleBook, ctx: Context, plan: DocumentPlan,
                 {"titel": u.title, "slug": slug, "vigtig": updated.vigtig, "note": updated.note,
                  "versioner": updated.versions})
             changed.add(u.category)
+        for ref, rules in sorted((misfiled_twice or {}).items()):
+            ctx.note(MISFILED_TWICE, _misfiled_note(ref, rules, plan, [(u, s) for (u, _), s in zip(new, slugs.slugs)],
+                                                    ctx))
         filed = {*work.retired, *work.new}  # no longer one-offs or unassigned, unless one-offs now
         for category, stored in book.files.items():
             for key in ("udeladt", "ikke_tildelt"):
@@ -1090,7 +1163,8 @@ def consolidate(docs: list[Doc], decisions: list[Decision], settings: Settings, 
     log.info("Consolidate (incremental) done: %d of %d documents filed, %d Claude calls (%.2f USD at API list price)",
              done, len(attempted), ctx.calls, usage.cost_usd)
     return StepSummary("Consolidate", ctx.calls, failed + sum(step.failed for step in steps),
-                       skipped + sum(step.skipped for step in steps), usage, time.monotonic() - started)
+                       skipped + sum(step.skipped for step in steps), usage, time.monotonic() - started,
+                       {heading: tuple(lines) for heading, lines in ctx.notes.items()})
 
 
 def settle(book: RuleBook, decisions: Sequence[Decision], docs: Sequence[Doc], ctx: Context) -> set[str]:
@@ -1114,10 +1188,10 @@ def settle(book: RuleBook, decisions: Sequence[Decision], docs: Sequence[Doc], c
             continue
         unseen = sorted(ref for ref in book.held(category) if ref in ctx.by_ref and not ctx.verified(ref))
         if category not in ctx.known.current and category not in ctx.worked or unseen:
-            log.warning("Consolidate: %s may reflect decisions that changed unseen (%s); it stays to be consolidated: "
-                        "run `update.py --consolidate-mode full` for it", category,
-                        f"no recorded input for {', '.join(unseen[:5])}" if unseen else
-                        "its input changed before this run, and nothing was queued for it")
+            why = (f"no recorded input for {', '.join(unseen[:5])}{' …' if len(unseen) > 5 else ''}" if unseen else
+                   "its input changed before this run, and nothing was queued for it")
+            ctx.note(UNSEEN, f"{category} may reflect decisions that changed unseen ({why}); it stays to be "
+                             f"consolidated: run `update.py --consolidate-mode full` for it")
             continue
         stored["input_hash"], stored["inputs"] = input_hash, ctx.inputs(book, category)
         changed.add(category)
