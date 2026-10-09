@@ -34,15 +34,18 @@ the documents to extract, a category with decisions but no file in `data/regler/
 categories to consolidate again before anything new is extracted. If that work is intended, run
 `uv run update.py --allow-rebuild`. A new prompt or `EXTRACT_VERSION`/`CONSOLIDATE_VERSION` is migrated with
 `uv run update.py --consolidate-mode full --allow-rebuild`, which consolidates the changed categories anew; the
-incremental default cannot migrate rules made with another `CONSOLIDATE_VERSION`, and stops until that is done. The approval is saved in
-`data/rebuild.json` before any Claude call: the documents to extract, the categories to consolidate (plus
-those the documents' decisions are in, since re-extracting them changes those categories), and the prompt
-versions. When the time or cost limit or failed calls cut the work off, run `uv run update.py` again,
-without the flag, until it ends without failures; the monthly run does the same. A later run goes ahead
+incremental default cannot migrate rules made with another `CONSOLIDATE_VERSION`, and stops until that is done.
+The approval is saved in `data/rebuild.json` before any Claude call: the documents to extract, the categories to
+consolidate (plus those the documents' decisions are in, since re-extracting them changes those categories), the
+prompt versions and the consolidation mode. When the time or cost limit or failed calls cut the work off, run
+`uv run update.py` again, without the flags, until it ends without failures; the monthly run does the same. A run
+without `--consolidate-mode` continues an unfinished approval in the mode it was given for, so a cut-off full
+migration is finished in full; an approval saved before modes were recorded counts as full. A later run goes ahead
 while everything outside the approval would pass on its own (a few new minutes may arrive meanwhile);
 anything more, or another prompt version, needs a new approval. The file is removed once the remaining work
-is ordinary. A run that is cut off with much left in an ordinary month (consolidation failing for most
-categories after a big meeting) leaves the same kind of approval for what is left.
+is ordinary and no category waits for a full migration; the runs after that consolidate incrementally. A run
+that is cut off with much left in an ordinary month (consolidation failing for most categories after a big meeting)
+leaves the same kind of approval for what is left.
 
 | Option | Use |
 |---|---|
@@ -98,9 +101,10 @@ model id is answered by that model. To upgrade, change the version there and run
 fails if the new version is not installed or answers with another model. A run with nothing new writes no
 line to `data/runs.jsonl`, so compare cost and tokens at the next run that analyses documents. To approve
 a rebuild on GitHub, tick "Allow a rebuild (--allow-rebuild)" under "Run workflow", and to migrate a prompt or
-version change also "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)"; the
-following monthly runs, incremental again, finish it if it is cut off. A rebuild that rewrites earlier years, or is cut off with rules left out, goes
-to review: merge the pull request so the following runs continue from it.
+version change also "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)". If it is
+cut off, the following monthly runs finish it in the mode it was approved for (full), then go on incrementally. A
+rebuild that rewrites earlier years, or is cut off with rules left out, goes to review: merge the pull request so the
+following runs continue from it.
 
 Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls,
 failures, skipped calls, tokens, list-price cost, models and seconds. The Actions run page shows the run

@@ -87,10 +87,11 @@ def main() -> None:
     parser.add_argument("--assign-model", default="claude-sonnet-5-5",
                         help="model for the votes on which rule a new decision belongs to, in incremental mode "
                              "(default: claude-sonnet-5-5); --consolidate-model breaks ties and updates the rules")
-    parser.add_argument("--consolidate-mode", choices=CONSOLIDATE_MODES, default=DEFAULT_CONSOLIDATE_MODE,
+    parser.add_argument("--consolidate-mode", choices=CONSOLIDATE_MODES,
                         help="incremental: file each new decision into its rule and leave every other rule as it is; "
                              "full: consolidate each category with changed decisions anew, to migrate a new prompt or "
-                             f"CONSOLIDATE_VERSION (with --allow-rebuild) (default: {DEFAULT_CONSOLIDATE_MODE})")
+                             f"CONSOLIDATE_VERSION (with --allow-rebuild) (default: {DEFAULT_CONSOLIDATE_MODE}, or "
+                             "full while a full consolidation approved in data/rebuild.json is unfinished)")
     parser.add_argument("--extract-effort", choices=EFFORTS, help="effort for extraction (default: Claude Code's own)")
     parser.add_argument("--consolidate-effort", choices=EFFORTS,
                         help="effort for consolidation (default: Claude Code's own)")
@@ -100,12 +101,16 @@ def main() -> None:
     parser.add_argument("--max-cost", type=float, default=15, metavar="USD",
                         help="start no new Claude calls once the run has used this much at list price (default: 15)")
     parser.add_argument("--allow-rebuild", action="store_true",
-                        help="allow work the rebuild guard stops, e.g. after a new prompt version")
+                        help="allow work the rebuild guard stops: many documents to extract, lost rule files, many "
+                             "rules to update; with --consolidate-mode full, the migration after a new prompt or "
+                             "version")
     args = parser.parse_args()
     budget = analyze.RunBudget(minutes=args.time_budget, max_cost_usd=args.max_cost)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
+    if not args.render_only:
+        args.consolidate_mode = consolidation_mode(args.consolidate_mode)
 
     docs = scrape.load_manifest() if args.offline or args.render_only else scrape.sync()
     today = date.today()
@@ -228,10 +233,11 @@ class Work:
     documents: frozenset[str]  # ids of the documents to extract
     categories: frozenset[str]  # categories to consolidate
     lost: frozenset[str]  # categories among them with decisions but no rule file
-    outdated: frozenset[str]  # incremental mode: categories consolidated with another CONSOLIDATE_VERSION
+    outdated: frozenset[str]  # categories consolidated with another CONSOLIDATE_VERSION: only `full` migrates them
     sources: dict[str, frozenset[str]]  # category -> ids of the documents its cached decisions come from
     total_documents: int
     total_categories: int
+    mode: str = DEFAULT_CONSOLIDATE_MODE  # the consolidation mode the work is judged for
 
     def reasons(self) -> list[str]:
         """Why this is more than an ordinary month's work; empty when it is ordinary.
@@ -251,10 +257,15 @@ class Work:
             reasons.append(f"categories with decisions but no rule file in data/regler/: {lost}")
         if len(self.categories) > REBUILD_CATEGORY_SHARE * self.total_categories:
             reasons.append(f"{len(self.categories)} of {self.total_categories} categories need consolidating again")
-        if self.outdated:
+        if self.outdated and self.mode == "incremental":  # in full mode they are categories to consolidate
             reasons.append(f"categories consolidated with another CONSOLIDATE_VERSION, which only a full "
                            f"consolidation migrates: {', '.join(sorted(self.outdated))}")
         return reasons
+
+    def unfinished(self) -> bool:
+        """Whether an approval of this work must stay: more than an ordinary month's work is left, or categories still
+        wait for a full consolidation (a migration cut off with only a few left)."""
+        return bool(self.reasons() or self.outdated)
 
     def approved_categories(self) -> frozenset[str]:
         """What an approval of this work lets later runs consolidate: the categories to consolidate now, and
@@ -273,9 +284,24 @@ class Work:
 @dataclass(frozen=True)
 class Approval:
     """Work approved with --allow-rebuild (or left by a run that was allowed to start it), for the prompt
-    versions in force then. Saved in data/rebuild.json so plain runs, the monthly one included, finish it."""
+    versions in force then, and the consolidation mode it was approved for. Saved in data/rebuild.json so plain runs,
+    the monthly one included, finish it, in that mode."""
     documents: frozenset[str]
     categories: frozenset[str]
+    mode: str = "full"  # a marker from before modes were recorded was written by a full consolidation
+
+
+def consolidation_mode(asked: str | None) -> str:
+    """The mode a run consolidates in: the one asked for with --consolidate-mode; else full while an approval given
+    for a full consolidation is unfinished (a migration the time or cost limit cut off: plain runs, the monthly one
+    included, finish it as approved); else the default."""
+    if asked is not None:
+        return asked
+    approval = _load_approval()
+    if approval is not None and approval.mode == "full":
+        logging.warning("Continuing the full consolidation approved in %s", REBUILD_MARKER.name)
+        return "full"
+    return DEFAULT_CONSOLIDATE_MODE
 
 
 def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> Work:
@@ -283,13 +309,12 @@ def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> Work:
     input changed (full), or those the incremental work queue changes (incremental.queue_categories); in incremental
     mode, those consolidated with another CONSOLIDATE_VERSION are outdated: only `full` migrates them."""
     decisions = analyze.load_decisions(docs)
-    outdated: frozenset[str] = frozenset()
+    book = incremental.RuleBook.load()
+    outdated = frozenset(category for category, stored in book.files.items()
+                         if stored.get("version") != analyze.CONSOLIDATE_VERSION)
     if mode == "incremental":
-        book = incremental.RuleBook.load()
         categories = incremental.queue_categories(incremental.work_queue(decisions, book, docs), decisions, book)
         lost = frozenset(category for category in categories if category not in book.files)
-        outdated = frozenset(category for category, stored in book.files.items()
-                             if stored.get("version") != analyze.CONSOLIDATE_VERSION)
     else:
         todo = analyze.consolidation_todo(decisions, {d.id: d.organ_label for d in docs})
         categories = frozenset(job.category for job in todo)
@@ -306,6 +331,7 @@ def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> Work:
         sources={category: frozenset(ids) for category, ids in sources.items()},
         total_documents=len(docs),
         total_categories=len(sources),
+        mode=mode,
     )
 
 
@@ -320,43 +346,51 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = DEFAULT_CONSOLI
     reasons = work.reasons()
     if not reasons:
         return
-    if work.outdated:  # incremental mode cannot do this work, approved or not
+    approval = _load_approval()
+    if work.outdated and mode == "incremental":  # incremental mode cannot do this work, approved or not
+        unfinished = (f" (or run `uv run update.py` without --consolidate-mode: it continues the full consolidation "
+                      f"approved in {REBUILD_MARKER.name})" if approval is not None and approval.mode == "full" else "")
         raise SystemExit(
-            f"Stopped before any Claude call: {'; '.join(reasons)}. Migrate them with `{MIGRATE}`, or on GitHub: "
-            f"Actions > Update rule overview > Run workflow with '{REBUILD_INPUT_LABEL}' and '{MODE_INPUT_LABEL}' "
-            f"ticked; the monthly runs then go on incrementally.")
+            f"Stopped before any Claude call: {'; '.join(reasons)}. Migrate them with `{MIGRATE}`{unfinished}, or on "
+            f"GitHub: Actions > Update rule overview > Run workflow with '{REBUILD_INPUT_LABEL}' and "
+            f"'{MODE_INPUT_LABEL}' ticked; plain runs finish a migration that is cut off, and then go on "
+            f"incrementally.")
     if allowed:
         _save_approval(work)
         logging.warning("Approved, saved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
         return
-    approval = _load_approval()
     if approval is not None:
         outside = work.outside(approval).reasons()
         if not outside:
             logging.warning("Continuing the work approved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
             return
         reasons = [f"beyond the work approved in {REBUILD_MARKER.name}, {reason}" for reason in outside]
+    full = mode == "full"
+    command = MIGRATE if full else "uv run update.py --allow-rebuild"
+    boxes = f"'{REBUILD_INPUT_LABEL}'" + (f" and '{MODE_INPUT_LABEL}'" if full else "")
+    migrate = "" if full else (f" A new prompt or EXTRACT_VERSION/CONSOLIDATE_VERSION is migrated with `{MIGRATE}` "
+                               f"(on GitHub, also tick '{MODE_INPUT_LABEL}').")
     raise SystemExit(
-        f"Stopped before any Claude call: {'; '.join(reasons)}. If this work is intended, run "
-        f"`uv run update.py --allow-rebuild`, or on GitHub: Actions > Update rule overview > Run workflow with "
-        f"'{REBUILD_INPUT_LABEL}' ticked. The approval is saved in data/rebuild.json, and plain runs, the "
-        f"monthly one included, continue the work if it is cut off. A new prompt or EXTRACT_VERSION/"
-        f"CONSOLIDATE_VERSION is migrated with `{MIGRATE}` (on GitHub, also tick '{MODE_INPUT_LABEL}')."
+        f"Stopped before any Claude call: {'; '.join(reasons)}. If this work is intended, run `{command}`, or on "
+        f"GitHub: Actions > Update rule overview > Run workflow with {boxes} ticked. The approval is saved in "
+        f"data/rebuild.json, and plain runs, the monthly one included, continue the work if it is cut off"
+        f"{', in full mode' if full else ''}.{migrate}"
     )
 
 
 def update_rebuild_marker(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> None:
-    """After the analysis: approve what is left while it is more than ordinary, else remove the approval.
+    """After the analysis: approve what is left while it is more than ordinary or still to migrate, else remove the
+    approval.
 
     Leftovers of an ordinary run count too (consolidation failing for most categories after a big meeting):
     the run was allowed to start that work, so the following runs may finish it. The new approval covers
-    only what is left.
+    only what is left, in the mode this run consolidated in.
     """
     work = pending_work(docs, mode)
-    reasons = work.reasons()
-    if reasons:
+    if work.unfinished():
         _save_approval(work)
-        logging.warning("Unfinished: %s. Plain runs continue it (approval in %s)", "; ".join(reasons),
+        left = work.reasons() or [f"categories still to migrate: {', '.join(sorted(work.outdated))}"]
+        logging.warning("Unfinished: %s. Plain runs continue it in %s mode (approval in %s)", "; ".join(left), mode,
                         REBUILD_MARKER.name)
     elif REBUILD_MARKER.exists():
         REBUILD_MARKER.unlink(missing_ok=True)
@@ -369,6 +403,7 @@ def _save_approval(work: Work) -> None:
         "consolidate_version": analyze.CONSOLIDATE_VERSION,
         "documents": sorted(work.documents),
         "categories": sorted(work.approved_categories()),
+        "mode": work.mode,
         "reasons": work.reasons(),
         "time": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
@@ -387,7 +422,8 @@ def _load_approval() -> Approval | None:
     if not isinstance(marker, dict) or marker.get("extract_version") != analyze.EXTRACT_VERSION \
             or marker.get("consolidate_version") != analyze.CONSOLIDATE_VERSION:
         return None
-    return Approval(frozenset(marker.get("documents") or ()), frozenset(marker.get("categories") or ()))
+    return Approval(frozenset(marker.get("documents") or ()), frozenset(marker.get("categories") or ()),
+                    marker.get("mode") or "full")
 
 
 # --------------------------------------------------------------------------- run log

@@ -464,22 +464,71 @@ def test_a_new_consolidation_version_is_migrated_in_full_only(run, world, fake_c
             run(*args)
         assert update.MIGRATE in (world.root / "run-report.md").read_text()
     assert fake_claude.calls() == [] and update.MIGRATE == "uv run update.py --consolidate-mode full --allow-rebuild"
-    with pytest.raises(SystemExit, match="Stopped before any Claude call.*" + update.MIGRATE.replace(" ", ".")):
-        run("--consolidate-mode", "full")  # the refusal of a full run names the migration too
-    rules = [{k: rule[k] for k in ("titel", "vigtig", "note")} | {"versioner": [
-        {k: v[k] for k in ("ref", "effekt", "tekst", "kort", "kort_regel")} for v in rule["versioner"]]}
-        for category in ("okonomi", "medlemskab") for rule in world.stored(category)["regler"]]
-    fake_claude.answer({"regler": rules, "udeladt": []})  # the same rules again: the past does not change
+    with pytest.raises(SystemExit, match="If this work is intended, run `" + update.MIGRATE.replace(" ", ".")):
+        run("--consolidate-mode", "full")  # a full run that hits the guard is told the full command
+    fake_claude.answer(_same_rules(world))
     run("--consolidate-mode", "full", "--allow-rebuild")
     assert fake_claude.invocations("call") == 2  # both categories consolidated anew under the new version
     assert update.pending_work(world.docs).reasons() == []  # the following monthly runs go on incrementally
 
 
+def _same_rules(world) -> dict:
+    """A full consolidation answer that gives every rule of both categories again as it is: the past does not
+    change."""
+    rules = [{k: rule[k] for k in ("titel", "vigtig", "note")} | {"versioner": [
+        {k: v[k] for k in ("ref", "effekt", "tekst", "kort", "kort_regel")} for v in rule["versioner"]]}
+        for category in ("okonomi", "medlemskab") for rule in world.stored(category)["regler"]]
+    return {"regler": rules, "udeladt": []}
+
+
+def test_a_cut_off_migration_is_finished_in_full_by_plain_runs_then_they_go_on_incrementally(world, fake_claude, run,
+                                                                                              monkeypatch):
+    monkeypatch.setattr(analyze, "CONSOLIDATE_VERSION", analyze.CONSOLIDATE_VERSION + 1)
+    fake_claude.answer(_same_rules(world))
+    fake_claude.plan("ok", "error")  # okonomi is migrated, then medlemskab's call fails: the migration is cut off
+    with pytest.raises(SystemExit, match="1 Claude calls failed"):
+        run("--consolidate-mode", "full", "--allow-rebuild")
+    new, old = analyze.CONSOLIDATE_VERSION, analyze.CONSOLIDATE_VERSION - 1
+    assert (world.stored("okonomi")["version"], world.stored("medlemskab")["version"]) == (new, old)
+    assert json.loads(update.REBUILD_MARKER.read_text())["mode"] == "full"  # 1 of 2 left: ordinary, but outdated
+
+    # Asked for incrementally, the run refuses and says how to go on.
+    with pytest.raises(SystemExit, match="only a full consolidation migrates: medlemskab.*continues the full "
+                                         "consolidation approved in rebuild.json"):
+        run("--consolidate-mode", "incremental")
+    calls = fake_claude.invocations("call")
+    fake_claude.plan("ok")
+    run()  # a plain run (the monthly one) finishes the migration in full, as approved
+    assert fake_claude.invocations("call") == calls + 1 and world.stored("medlemskab")["version"] == new
+    assert not update.REBUILD_MARKER.exists()
+    run()  # and the next plain run is incremental, with nothing to do
+    assert fake_claude.invocations("call") == calls + 1 and update.consolidation_mode(None) == "incremental"
+    assert update.pending_work(world.docs).reasons() == [] and update.pending_work(world.docs).outdated == set()
+
+
+def test_an_unfinished_approval_without_a_mode_was_given_for_full(run, world):
+    def marker(**extra) -> None:
+        update.REBUILD_MARKER.write_text(json.dumps({
+            "extract_version": analyze.EXTRACT_VERSION, "consolidate_version": analyze.CONSOLIDATE_VERSION,
+            "documents": [], "categories": ["okonomi"], **extra}))
+
+    assert update.consolidation_mode(None) == "incremental"  # no approval: the default
+    marker()  # written before modes were recorded: every earlier approval was full
+    assert update.consolidation_mode(None) == "full" and update.consolidation_mode("incremental") == "incremental"
+    marker(mode="incremental")
+    assert update.consolidation_mode(None) == "incremental"
+    marker(mode="full", consolidate_version=analyze.CONSOLIDATE_VERSION - 1)  # given for other versions: void
+    assert update.consolidation_mode(None) == "incremental"
+
+
 def test_the_workflow_runs_the_default_mode_unless_full_is_ticked():
     workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
-    assert f'description: "{update.MODE_INPUT_LABEL}"' in workflow
-    assert 'if [ "$FULL" = "true" ]; then args+=(--consolidate-mode full); fi' in workflow
-    assert 'uv run update.py "${args[@]}"' in workflow and "--consolidate-mode incremental" not in workflow
+    full = workflow[workflow.index("\n      full:\n"):workflow.index("\npermissions:")]
+    assert f'description: "{update.MODE_INPUT_LABEL}"' in full and "type: boolean" in full and "default: false" in full
+    step = workflow[workflow.index("- name: Download new minutes and update the rule overview"):]
+    assert "FULL: ${{ inputs.full }}" in step and "REBUILD: ${{ inputs.rebuild }}" in step
+    assert 'if [ "$FULL" = "true" ]; then args+=(--consolidate-mode full); fi' in step
+    assert 'uv run update.py "${args[@]}"' in step and "--consolidate-mode incremental" not in workflow
 
 
 # ---------------------------------------------------------------- review fixes
