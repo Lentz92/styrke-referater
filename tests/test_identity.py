@@ -7,7 +7,7 @@ from datetime import date
 import pytest
 from conftest import decision, extracted, rule
 
-from styrke import analyze, checks, render, website
+from styrke import analyze, checks, claude, render, website
 from styrke.analyze import decision_hash
 from styrke.matching import FormerSlug, SlugRegistry
 from styrke.scrape import Doc
@@ -189,7 +189,7 @@ def test_a_revived_slug_stays_taken_when_its_rule_file_fails_to_write(fake_claud
     fake_claude.answer({"regler": [rule("Gebyrer", None, "b#1"), rule("Klubtilskud", None, "a#1")], "udeladt": []})
     with monkeypatch.context() as m:
         m.setattr(analyze, "_write_json", full_disk_for_rules)
-        with pytest.raises(analyze.ClaudeError, match="No space left"):
+        with pytest.raises(claude.ClaudeError, match="No space left"):
             consolidate("okonomi", decision(ref="a#1"), decision(ref="b#1"))
     assert "tilskud" in analyze.load_slugs().taken()
 

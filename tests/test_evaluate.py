@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 from conftest import extracted, rule
 
-from styrke import analyze, evaluate, scrape
+from styrke import analyze, claude, evaluate, scrape
 from styrke.analyze import DocWords, quote_fields
 from styrke.evaluate import DocScore
 from styrke.matching import quote_span
@@ -159,7 +159,7 @@ def test_extraction_runs_use_the_pipeline_prompt_and_write_only_under_eval(corpu
     assert fake_claude.option("--json-schema") == [json.dumps(analyze.EXTRACT_SCHEMA)]
     run = json.loads(evaluate.run_path("sonnet-1", "rep2024").read_text())
     assert run["beslutninger"][0]["citat_fundet"] and run["beslutninger"][0]["citat_pos"] is not None
-    assert run["provenance"]["prompt"] == analyze.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA)
+    assert run["provenance"]["prompt"] == claude.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA)
 
     evaluate.main(["extract", "--name", "sonnet-1", "--model", "claude-sonnet-5-5", "--max-cost", "5"])
     assert fake_claude.invocations("call") == 2  # the pilot's document is not extracted again
@@ -228,8 +228,8 @@ def test_an_extraction_run_can_use_another_prompt_and_its_provenance_tells_them_
     assert fake_claude.option("--system-prompt") == [analyze.EXTRACT_PROMPTS["v3"]]
     run = json.loads(evaluate.run_path("sonnet-v3-1", "rep2024").read_text())
     assert run["prompt"] == "v3"
-    assert run["provenance"]["prompt"] == analyze.prompt_hash(analyze.EXTRACT_PROMPTS["v3"], analyze.EXTRACT_SCHEMA)
-    assert run["provenance"]["prompt"] != analyze.prompt_hash(analyze.EXTRACT_PROMPTS["v2"], analyze.EXTRACT_SCHEMA)
+    assert run["provenance"]["prompt"] == claude.prompt_hash(analyze.EXTRACT_PROMPTS["v3"], analyze.EXTRACT_SCHEMA)
+    assert run["provenance"]["prompt"] != claude.prompt_hash(analyze.EXTRACT_PROMPTS["v2"], analyze.EXTRACT_SCHEMA)
     assert _runs_log(corpus)[-1]["prompt"] == "v3"
 
     evaluate.main([*command, "--prompt", "v3"])
@@ -337,14 +337,14 @@ def _configured_run(run: str, decisions: list[dict], model: str | None = None, p
     pipeline = evaluate.pipeline_configuration()
     provenance = None if run == "stored" else {
         "model": model or pipeline.model, "cli": "2.1.294", "effort": "default",
-        "prompt": analyze.prompt_hash(analyze.extract_prompt(prompt).system, analyze.EXTRACT_SCHEMA)}
+        "prompt": claude.prompt_hash(analyze.extract_prompt(prompt).system, analyze.EXTRACT_SCHEMA)}
     evaluate.write_json(evaluate.run_path(run, "rep2024"),
                         {"sha256": "sha-rep2024", "provenance": provenance, "beslutninger": decisions})
 
 
 def test_todays_pipeline_is_opus_with_prompt_v3():
     assert evaluate.pipeline_configuration() == evaluate.Configuration(
-        "claude-opus-5-5", analyze.prompt_hash(analyze.EXTRACT_PROMPTS["v3"], analyze.EXTRACT_SCHEMA), "default")
+        "claude-opus-5-5", claude.prompt_hash(analyze.EXTRACT_PROMPTS["v3"], analyze.EXTRACT_SCHEMA), "default")
     assert evaluate.pipeline_configuration().label() == "claude-opus-5-5, prompt v3, effort default"
 
 

@@ -1,13 +1,12 @@
 import json
 from collections import Counter
 from dataclasses import replace
-from datetime import datetime, timezone
 
 import pytest
 from conftest import extracted, rule
 
 from styrke import analyze, update
-from styrke.analyze import StepSummary, Usage
+from styrke.claude import StepSummary, Usage
 
 CATEGORIES = ["okonomi", "master", "dommere", "staevner"]
 # The fake answers here are for full consolidation; incremental runs (the default) are tested in test_incremental.py.
@@ -352,30 +351,6 @@ def _step(label: str, calls: int, cost: float) -> StepSummary:
     usage = Usage(model="claude-sonnet-5-5", output_by_model={"claude-sonnet-5-5": 52}, input_tokens=2,
                   cache_read_tokens=967, cache_write_tokens=2514, cost_usd=cost, attempts=calls)
     return StepSummary(label, calls=calls, failed=1, skipped=2, usage=usage, seconds=61.4)
-
-
-def test_each_run_appends_one_line_to_the_run_log(tmp_path):
-    path = tmp_path / "runs.jsonl"
-    steps = {"extract": _step("Extract", 3, 0.123456), "consolidate": _step("Consolidate", 0, 0.0)}
-    when = datetime(2026, 11, 1, 6, 0, tzinfo=timezone.utc)
-
-    update.append_run_log(path, steps, "2.1.294", when)
-    update.append_run_log(path, steps, "2.1.294", when)
-
-    lines = [json.loads(line) for line in path.read_text().splitlines()]
-    assert len(lines) == 2
-    assert lines[0] == {
-        "time": "2026-11-01T06:00:00+00:00",
-        "cli": "2.1.294",
-        "steps": {
-            "extract": {"calls": 3, "failed": 1, "skipped": 2,
-                        "tokens": {"input": 2, "output": 52, "cache_read": 967, "cache_write": 2514},
-                        "cost_usd": 0.1235, "models": ["claude-sonnet-5-5"], "seconds": 61},
-            "consolidate": {"calls": 0, "failed": 1, "skipped": 2,
-                            "tokens": {"input": 2, "output": 52, "cache_read": 967, "cache_write": 2514},
-                            "cost_usd": 0.0, "models": ["claude-sonnet-5-5"], "seconds": 61},
-        },
-    }
 
 
 def test_a_run_log_that_cannot_be_written_only_warns(tmp_path, fake_claude, caplog, monkeypatch):

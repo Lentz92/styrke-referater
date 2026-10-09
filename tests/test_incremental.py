@@ -10,7 +10,7 @@ from datetime import datetime
 import pytest
 from conftest import extracted, rule, section
 
-from styrke import analyze, candidates, checks, incremental, update
+from styrke import analyze, candidates, checks, claude, incremental, update
 from styrke.analyze import decision_hash
 from styrke.candidates import CandidateIndex, Query, RuleProfile
 from styrke.incremental import NEW, ONE_OFF, Choice
@@ -341,9 +341,9 @@ def test_a_category_left_for_a_full_consolidation_is_listed_in_the_run_report(wo
 
 
 def test_the_run_report_lists_what_a_step_asks_to_have_looked_at():
-    step = analyze.StepSummary("Consolidate", 9, 0, 0, analyze.Usage(), 1.0,
-                               {incremental.MISFILED_TWICE: ("x#1 (Emne): misfiled in `a`, `b`; filed as the new rule "
-                                                             "Emne (`emne`)",)})
+    step = claude.StepSummary("Consolidate", 9, 0, 0, claude.Usage(), 1.0,
+                              {incremental.MISFILED_TWICE: ("x#1 (Emne): misfiled in `a`, `b`; filed as the new rule "
+                                                            "Emne (`emne`)",)})
     report = update.run_report(0, {"consolidate": step}, [], None, [], datetime(2026, 10, 9).date())
     assert (f"## {incremental.MISFILED_TWICE}: 1\n\n- x#1 (Emne): misfiled in `a`, `b`; filed as the new rule Emne "
             f"(`emne`)\n") in report
@@ -352,9 +352,9 @@ def test_the_run_report_lists_what_a_step_asks_to_have_looked_at():
 def test_incremental_is_the_default_mode_and_full_is_asked_for(run, world, fake_claude, monkeypatch):
     called = []
     monkeypatch.setattr(analyze, "consolidate", lambda *args, **kwargs: called.append("full") or
-                        analyze.StepSummary("Consolidate", 0, 0, 0, analyze.Usage(), 0))
+                        claude.StepSummary("Consolidate", 0, 0, 0, claude.Usage(), 0))
     monkeypatch.setattr(incremental, "consolidate", lambda *args, **kwargs: called.append("incremental") or
-                        analyze.StepSummary("Consolidate", 0, 0, 0, analyze.Usage(), 0))
+                        claude.StepSummary("Consolidate", 0, 0, 0, claude.Usage(), 0))
     run()
     run("--consolidate-mode", "full")
     assert called == ["incremental", "full"]

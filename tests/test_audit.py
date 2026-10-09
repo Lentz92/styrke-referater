@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 from conftest import extracted, rule, section
 
-from styrke import analyze, audit, checks, evaluate, incremental, render, scrape, update, website
+from styrke import analyze, audit, checks, claude, evaluate, incremental, render, scrape, update, website
 from styrke.incremental import UpdateRejected
 from styrke.matching import FormerSlug, SlugRegistry
 
@@ -291,8 +291,8 @@ def test_apply_merges_splits_moves_and_renames_and_keeps_every_link(proposed, fa
     assert [v["ref"] for v in licens["versioner"]] == ["rep2010#1", "rep2015#1", "rep2020#1"]
     assert licens["versioner"][2]["tekst"] == "Samlet rep2020#1" and licens["note"] == "Samlet."
     assert licens["vigtig"] is True  # kept by code, whatever the answer says
-    assert licens["versioner"][0]["updated"]["prompt"] == analyze.prompt_hash(audit.AUDIT_UPDATE_SYSTEM,
-                                                                            incremental.UPDATE_SCHEMA)
+    assert licens["versioner"][0]["updated"]["prompt"] == claude.prompt_hash(audit.AUDIT_UPDATE_SYSTEM,
+                                                                           incremental.UPDATE_SCHEMA)
     registry = analyze.load_slugs()
     assert registry.aliases["licens-for-løftere"].to == "licensgebyr"
     assert json.loads(analyze.SLUGS_PATH.read_text())["aliases"]["licens-for-løftere"] == {

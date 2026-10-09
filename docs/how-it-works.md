@@ -11,8 +11,10 @@ levels 1 to 3.
 | 4. Work out which version applied in each year and write Markdown | `styrke/render.py` | `regelsaet/` |
 | 5. Embed the same rules and per-year state in one static page with search | `styrke/website.py`, `website/` | `_site/` |
 
-`styrke/update.py` runs the steps in order. Step 2 reruns for a document when its file changes, or when it was
-extracted with another prompt or model; step 3 takes the decisions the rule files do not reflect yet. A new extraction
+`styrke/update.py` runs the steps in order. Steps 2 and 3 ask Claude through `styrke/claude.py`, which runs `claude -p`
+on the subscription, checks that the model asked for answered, keeps the run's cost and time limits and records what
+each call used. Step 2 reruns for a document when its file changes, or when it was extracted with another prompt or
+model; step 3 takes the decisions the rule files do not reflect yet. A new extraction
 prompt goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, where `uv run -m styrke.evaluate extract --prompt v<n>` can measure it
 against the answer key; an extraction records the n of the prompt it was made with, so setting `EXTRACT_VERSION` to n
 makes it the pipeline's and every document due for extraction with it. After editing the consolidation prompt, bump

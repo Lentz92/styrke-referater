@@ -34,8 +34,9 @@ from datetime import date, datetime, timezone
 from itertools import combinations
 from pathlib import Path
 
-from styrke import analyze, candidates, incremental, matching, render, scrape, update
-from styrke.analyze import Decision, DocWords, RunBudget, StepSummary, Usage
+from styrke import analyze, candidates, claude, incremental, matching, render, scrape, update
+from styrke.analyze import Decision, DocWords
+from styrke.claude import RunBudget, StepSummary, Usage
 from styrke.matching import Candidate
 from styrke.scrape import Doc
 
@@ -66,8 +67,6 @@ GATE_TOLERANCE = 1e-9
 # The candidate-recall gate: recall@K for these K, and the recall the chosen K must reach.
 RECALL_KS = (3, 5, 8, 10, 15)
 RECALL_TARGET = 0.98
-# For the call estimate printed before a command starts: Danish text runs about this many characters per token.
-CHARS_PER_TOKEN = 3.2
 EFFORTS = ["low", "medium", "high", "xhigh", "max"]  # the efforts Claude Code takes (--effort)
 
 # The coded fields of a decision, whose agreement with the key is scored.
@@ -163,33 +162,15 @@ def selected_docs(selection: dict, pilot: int | None = None, named: Sequence[str
     return [docs[doc_id] for doc_id in chosen]
 
 
-# --------------------------------------------------------------------------- usage and the run log
-
-def usage_json(usage: Usage) -> dict:
-    return {"input": usage.input_tokens, "cache_read": usage.cache_read_tokens,
-            "cache_write": usage.cache_write_tokens, "output": usage.output_tokens,
-            "cost_usd": round(usage.cost_usd, 4), "seconds": round(usage.duration_s), "attempts": usage.attempts,
-            "models": list(usage.models)}
-
-
-def describe_usage(usage: Usage) -> str:
-    return (f"{usage.all_input_tokens:,} tokens in, {usage.output_tokens:,} out, {usage.cost_usd:.2f} USD, "
-            f"{usage.duration_s:.0f} s")
-
-
-def estimate_tokens(system: str, prompt: str, schema: dict) -> int:
-    return round((len(system) + len(prompt) + len(json.dumps(schema))) / CHARS_PER_TOKEN)
-
+# --------------------------------------------------------------------------- the run log
 
 def log_run(command: str, details: dict, steps: Mapping[str, StepSummary]) -> None:
-    """Append one line to eval/runs.jsonl: the command, its settings and, per step, what its Claude calls used (as
-    data/runs.jsonl has it): the record of what each evaluation run paid."""
-    line = {"time": datetime.now(timezone.utc).isoformat(timespec="seconds"), "command": command, **details,
-            "cli": analyze.cli_version(), "steps": {name: update.step_json(step) for name, step in steps.items()}}
+    """Append one line to eval/runs.jsonl (claude.append_run_log): the command, its settings, the CLI version and, per
+    step, what its Claude calls used (as data/runs.jsonl has it): the record of what each evaluation run paid."""
+    header = {"command": command, **details, "cli": claude.cli_version()}
     path = runs_log_path()
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a") as out:  # under eval/, like write_text
-        out.write(json.dumps(line, ensure_ascii=False) + "\n")
+    path.parent.mkdir(parents=True, exist_ok=True)  # under eval/, like write_text
+    claude.append_run_log(path, datetime.now(timezone.utc), header, steps)
 
 
 def finish(steps: Mapping[str, StepSummary]) -> None:
@@ -259,7 +240,7 @@ def run_state(run: str, doc: Doc, model: str, effort: str | None, prompt: str | 
     provenance = stored.get("provenance") or {}
     system = analyze.extract_prompt(prompt).system
     current = (stored["sha256"] == doc.sha256
-               and provenance.get("prompt") == analyze.prompt_hash(system, analyze.EXTRACT_SCHEMA)
+               and provenance.get("prompt") == claude.prompt_hash(system, analyze.EXTRACT_SCHEMA)
                and provenance.get("effort") == (effort or "default"))
     return "current" if current else "stale"
 
@@ -270,14 +251,15 @@ def extract_into_run(doc: Doc, run: str, *, model: str, effort: str | None, cli:
     (None: the pipeline's), written to eval/runs/<run>/."""
     chosen = analyze.extract_prompt(prompt)
     extraction, usage = analyze.run_extraction(doc, model=model, effort=effort, budget=budget, prompt=prompt)
-    with analyze.usage_kept(usage):
+    with claude.usage_kept(usage):
         write_json(run_path(run, doc.id), {
             "doc_id": doc.id, "sha256": doc.sha256, "run": run, "model": model, "prompt": chosen.name,
-            "provenance": analyze.provenance(usage, cli, chosen.system, analyze.EXTRACT_SCHEMA, effort),
-            "usage": usage_json(usage), "moededato": extraction.moededato, "beslutninger": extraction.decisions,
+            "provenance": claude.provenance(usage, cli, chosen.system, analyze.EXTRACT_SCHEMA, effort),
+            "usage": claude.usage_json(usage), "moededato": extraction.moededato, "beslutninger": extraction.decisions,
         })
     missing = sum(not d["citat_fundet"] for d in extraction.decisions)
-    message = f"{doc.id}: {len(extraction.decisions)} decisions, {missing} quotes not found; {describe_usage(usage)}"
+    message = (f"{doc.id}: {len(extraction.decisions)} decisions, {missing} quotes not found; "
+               f"{claude.describe_usage(usage)}")
     return message, usage
 
 
@@ -638,11 +620,11 @@ def decisions_report(scores: Mapping[str, list[DocScore]], doc_ids: list[str], k
 class Configuration:
     """What produced an extraction run: the model that answered, the prompt's fingerprint and the effort."""
     model: str
-    prompt: str  # analyze.prompt_hash of the system prompt and the schema
+    prompt: str  # claude.prompt_hash of the system prompt and the schema
     effort: str
 
     def label(self) -> str:
-        names = {analyze.prompt_hash(text, analyze.EXTRACT_SCHEMA): name
+        names = {claude.prompt_hash(text, analyze.EXTRACT_SCHEMA): name
                  for name, text in analyze.EXTRACT_PROMPTS.items()}
         return f"{self.model}, prompt {names.get(self.prompt, self.prompt)}, effort {self.effort}"
 
@@ -661,7 +643,7 @@ def configuration(records: Iterable[dict]) -> Configuration | None:
 
 def pipeline_configuration() -> Configuration:
     """Today's pipeline: styrke/update.py's extraction model and prompt, at Claude Code's default effort."""
-    return Configuration(update.EXTRACT_MODEL, analyze.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA),
+    return Configuration(update.EXTRACT_MODEL, claude.prompt_hash(analyze.EXTRACT_SYSTEM, analyze.EXTRACT_SCHEMA),
                          "default")
 
 
@@ -1098,16 +1080,16 @@ def cmd_extract(args: argparse.Namespace) -> None:
         raise SystemExit(f"Run {run} has extractions of {', '.join(stale)} from another file version, prompt or "
                          f"effort; pass --force to extract them again (paid), or use another --name")
     todo = [doc for doc in docs if states[doc.id] != "current"]
-    tokens_in = sum(estimate_tokens(prompt.system, analyze.document_prompt(doc, analyze.document_text(doc)),
-                                    analyze.EXTRACT_SCHEMA) for doc in todo)
+    tokens_in = sum(claude.estimate_tokens(prompt.system, analyze.document_prompt(doc, analyze.document_text(doc)),
+                                           analyze.EXTRACT_SCHEMA) for doc in todo)
     print(f"Extract {run}: {len(todo)} Claude calls to {args.model} (effort {args.effort or 'default'}), about "
           f"{tokens_in / 1000:.0f}K input tokens, prompt {prompt.name}; {len(docs) - len(todo)} of {len(docs)} "
           f"documents extracted already", flush=True)
     if not todo:
         return
     budget = RunBudget(max_cost_usd=args.max_cost)
-    cli = analyze.cli_version()
-    step = analyze.run_parallel(
+    cli = claude.cli_version()
+    step = claude.run_parallel(
         todo, lambda doc: extract_into_run(doc, run, model=args.model, effort=args.effort, cli=cli, budget=budget,
                                            prompt=args.prompt),
         workers_for(args), f"Extract {run}", budget)

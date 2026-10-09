@@ -32,10 +32,10 @@ from collections.abc import Callable, Iterator, Mapping, Sequence
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
-from styrke import analyze, matching, render
-from styrke.analyze import (CATEGORIES, PROPOSAL_EFFECT, ClaudeError, Decision, RunBudget, StepSummary, Usage,
-                            decision_hash)
+from styrke import analyze, claude, matching, render
+from styrke.analyze import CATEGORIES, PROPOSAL_EFFECT, Decision, decision_hash
 from styrke.candidates import CANDIDATE_K, CandidateIndex, Query, RuleProfile
+from styrke.claude import ClaudeError, RunBudget, StepSummary, Usage
 from styrke.matching import FormerSlug, RuleRefs
 from styrke.scrape import Doc
 
@@ -733,10 +733,10 @@ def run_update(update: RuleUpdate, ctx: Context, passages: Mapping[str, dict]) -
                          if isinstance(item, dict) and item.get("ref") in added) if update.slug else ()
         if misfiled:
             return Misfiled(misfiled), usage
-        stamp = {"model": spent.answered_by, "prompt": analyze.prompt_hash(UPDATE_SYSTEM, UPDATE_SCHEMA),
+        stamp = {"model": spent.answered_by, "prompt": claude.prompt_hash(UPDATE_SYSTEM, UPDATE_SCHEMA),
                  "time": ctx.time}
         try:
-            with analyze.usage_kept(usage):
+            with claude.usage_kept(usage):
                 return Updated(merge(update, output, ctx.by_ref, stamp), output["vigtig"], output["note"]), usage
         except ClaudeError as exc:
             if not isinstance(exc.__cause__, UpdateRejected):
@@ -877,8 +877,7 @@ class Context:
             timeout: float) -> tuple[dict, Usage]:
         with self._lock:
             self.calls += 1
-        return analyze.ask_claude(system, prompt, schema, model=model, effort=effort, timeout=timeout,
-                                  budget=self.budget)
+        return claude.ask(system, prompt, schema, model=model, effort=effort, timeout=timeout, budget=self.budget)
 
 
 def _parallel(jobs: list, fn: Callable[[object], tuple], label: str, ctx: Context,
@@ -892,7 +891,7 @@ def _parallel(jobs: list, fn: Callable[[object], tuple], label: str, ctx: Contex
         results[item] = output
         return message, usage
 
-    step = analyze.run_parallel(jobs, job, ctx.settings.workers, label, ctx.budget)
+    step = claude.run_parallel(jobs, job, ctx.settings.workers, label, ctx.budget)
     steps.append(step)
     return results if len(results) == len(jobs) else None
 

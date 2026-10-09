@@ -33,8 +33,9 @@ from datetime import date, datetime, timezone
 from itertools import groupby
 from pathlib import Path
 
-from styrke import analyze, checks, evaluate, incremental, matching, render, scrape, update, website
-from styrke.analyze import CATEGORIES, ClaudeError, Decision, RunBudget, StepSummary, Usage
+from styrke import analyze, checks, claude, evaluate, incremental, matching, render, scrape, update, website
+from styrke.analyze import CATEGORIES, Decision
+from styrke.claude import ClaudeError, RunBudget, StepSummary, Usage
 from styrke.incremental import REWRITE, Entry, RuleBook, RuleUpdate, UpdateRejected
 from styrke.matching import FormerSlug, RuleRefs, SlugRegistry
 from styrke.scrape import Doc
@@ -305,22 +306,22 @@ class Call:
 
     def estimate(self) -> tuple[int, float]:
         """Input tokens and list-price USD, roughly."""
-        tokens = evaluate.estimate_tokens(self.system, self.prompt, self.schema)
+        tokens = claude.estimate_tokens(self.system, self.prompt, self.schema)
         return tokens, tokens * PROMPT_USD + self.output_tokens * OUTPUT_USD
 
 
 def ask(call: Call, budget: RunBudget, cli: str, accept: Callable[[dict], object] | None = None) -> tuple[str, Usage]:
     """Ask Claude and keep the answer; `accept` checks it first (raising keeps it out of the cache)."""
-    output, usage = analyze.ask_claude(call.system, call.prompt, call.schema, model=MODEL, effort=EFFORT,
-                                       timeout=call.timeout, budget=budget)
-    with analyze.usage_kept(usage):
+    output, usage = claude.ask(call.system, call.prompt, call.schema, model=MODEL, effort=EFFORT, timeout=call.timeout,
+                               budget=budget)
+    with claude.usage_kept(usage):
         if accept is not None:
             accept(output)
         scrape._write_atomic(call.path, analyze.json_text({
             "fingerprint": call.fingerprint(), "time": _now(),
-            "provenance": analyze.provenance(usage, cli, call.system, call.schema, EFFORT),
-            "usage": evaluate.usage_json(usage), "output": output}).encode())
-    return f"{call.name}: {evaluate.describe_usage(usage)}", usage
+            "provenance": claude.provenance(usage, cli, call.system, call.schema, EFFORT),
+            "usage": claude.usage_json(usage), "output": output}).encode())
+    return f"{call.name}: {claude.describe_usage(usage)}", usage
 
 
 def plan_calls(label: str, calls: Sequence[Call], max_cost: float, note: str = "") -> list[Call]:
@@ -340,8 +341,8 @@ def run_calls(label: str, calls: Sequence[Call], budget: RunBudget, workers: int
               job: Callable[[Call, RunBudget, str], tuple[str, Usage]] = ask) -> StepSummary | None:
     if not calls:
         return None
-    cli = analyze.cli_version()
-    return analyze.run_parallel(list(calls), lambda call: job(call, budget, cli), workers, label, budget)
+    cli = claude.cli_version()
+    return claude.run_parallel(list(calls), lambda call: job(call, budget, cli), workers, label, budget)
 
 
 def _now() -> str:
@@ -979,7 +980,7 @@ def rewritten(u: RuleUpdate, output: dict, stamp: dict, by_ref: Mapping[str, Dec
 def stamp_of(stored: dict) -> dict:
     """The `updated` provenance of a rewritten version, from the kept answer, so a repeated apply writes the same."""
     return {"model": stored["provenance"]["model"],
-            "prompt": analyze.prompt_hash(AUDIT_UPDATE_SYSTEM, incremental.UPDATE_SCHEMA), "time": stored["time"]}
+            "prompt": claude.prompt_hash(AUDIT_UPDATE_SYSTEM, incremental.UPDATE_SCHEMA), "time": stored["time"]}
 
 
 def ask_text(call: Call, budget: RunBudget, cli: str, u: RuleUpdate,
@@ -1198,7 +1199,7 @@ def ledger(audit_id: str, command: str, steps: Mapping[str, StepSummary]) -> dic
     """USD at list price per command of this audit, every call counted (failed attempts and rejected answers too): the
     lines data/runs.jsonl has for it, and this command's steps, which it logs when it ends."""
     spent: dict[str, float] = defaultdict(float)
-    for entry in update._log_lines(update.RUNS_LOG):
+    for entry in claude.read_run_log(update.RUNS_LOG):
         if entry.get("audit") == audit_id:
             spent[entry["command"].removeprefix("audit ")] += sum(s["cost_usd"] for s in entry["steps"].values())
     spent[command] += sum(step.usage.cost_usd for step in steps.values())

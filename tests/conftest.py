@@ -7,8 +7,9 @@ from pathlib import Path
 
 import pytest
 
-from styrke import analyze, incremental, render, update
-from styrke.analyze import Decision, RunBudget, decision_hash
+from styrke import analyze, claude, incremental, render, update
+from styrke.analyze import Decision, decision_hash
+from styrke.claude import RunBudget, StepSummary
 from styrke.scrape import Doc
 
 _BASE = Decision(
@@ -135,7 +136,7 @@ class World:
     def files(self) -> dict[str, bytes]:
         return {p.name: p.read_bytes() for p in sorted(analyze.RULES_DIR.glob("*.json"))}
 
-    def consolidate(self, known: incremental.Known | None = None, **settings) -> analyze.StepSummary:
+    def consolidate(self, known: incremental.Known | None = None, **settings) -> StepSummary:
         """An incremental consolidation with one worker, so the fake answers its calls in order."""
         return incremental.consolidate(self.docs, self.decisions(), incremental.Settings(workers=1, **settings),
                                        RunBudget(), now=NOW, known=known)
@@ -277,7 +278,7 @@ def fake_claude(tmp_path, monkeypatch):
     script.write_text(f"#!{sys.executable}\n{FAKE_CLAUDE}")
     script.chmod(0o755)
     monkeypatch.setenv("PATH", f"{bin_dir}{os.pathsep}{os.environ['PATH']}")
-    monkeypatch.setattr(analyze.time, "sleep", lambda _: None)  # the back-off between attempts
-    analyze.cli_version.cache_clear()
+    monkeypatch.setattr(claude.time, "sleep", lambda _: None)  # the back-off between attempts
+    claude.cli_version.cache_clear()
     yield FakeClaude(bin_dir)
-    analyze.cli_version.cache_clear()
+    claude.cli_version.cache_clear()

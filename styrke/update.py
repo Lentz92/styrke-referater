@@ -21,7 +21,6 @@ results are kept). A render-only run reports what the checks find and exits 0 wh
 from __future__ import annotations
 
 import argparse
-import json
 import logging
 import os
 import re
@@ -29,10 +28,9 @@ from collections import Counter
 from dataclasses import dataclass, replace
 from datetime import date, datetime, timezone
 from itertools import groupby
-from pathlib import Path
 
-from styrke import analyze, checks, incremental, render, scrape, website
-from styrke.analyze import StepSummary
+from styrke import analyze, checks, claude, incremental, render, scrape, website
+from styrke.claude import StepSummary
 from styrke.scrape import Doc
 
 # The models the pipeline calls, each at Claude Code's default effort (effort None); it extracts with the prompt of
@@ -105,7 +103,7 @@ def main() -> None:
                              "files, many rules to update; with --consolidate-mode full, the migration after a new "
                              "prompt or version. Cut off, it is finished by running the same command again")
     args = parser.parse_args()
-    budget = analyze.RunBudget(minutes=args.time_budget, max_cost_usd=args.max_cost)
+    budget = claude.RunBudget(minutes=args.time_budget, max_cost_usd=args.max_cost)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
@@ -182,7 +180,7 @@ def main() -> None:
         raise stop
 
 
-def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget, steps: dict[str, StepSummary],
+def analyse(args: argparse.Namespace, docs: list[Doc], budget: claude.RunBudget, steps: dict[str, StepSummary],
             failures: list[str]) -> Exception | None:
     """Extract and consolidate what changed, in the run's --consolidate-mode, filling in `steps`. An exception is
     returned, not raised: what was written before it is checked all the same."""
@@ -338,48 +336,18 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str) -> bool:
 
 # --------------------------------------------------------------------------- run log
 
-def _log_lines(path: Path) -> list[dict]:
-    """The lines of a run log; none when it does not exist yet."""
-    if not path.exists():
-        return []
-    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
-
-
 def record_run(steps: dict[str, StepSummary], settings: dict | None = None) -> None:
-    """Append the run's Claude usage to data/runs.jsonl, with its `settings` (prompt, consolidation mode). A run
-    without calls adds nothing: the log follows what runs cost, not how often they ran. A write error only warns,
-    so it never hides the run's outcome."""
+    """Append the run's Claude usage to data/runs.jsonl (claude.append_run_log) after the CLI version and the run's
+    `settings` (prompt, consolidation mode), which tell a full consolidation from an incremental one. A run without
+    calls adds nothing: the log follows what runs cost, not how often they ran. A write error only warns, so it never
+    hides the run's outcome."""
     if not any(step.calls for step in steps.values()):
         return
     try:
-        append_run_log(RUNS_LOG, steps, analyze.cli_version(), datetime.now(timezone.utc), settings)
+        header = {"cli": claude.cli_version(), **(settings or {})}
+        claude.append_run_log(RUNS_LOG, datetime.now(timezone.utc), header, steps)
     except OSError as exc:
         logging.warning("Could not write %s: %s", RUNS_LOG, exc)
-
-
-def append_run_log(path: Path, steps: dict[str, StepSummary], cli: str, now: datetime,
-                   settings: dict | None = None) -> None:
-    """Add one JSON line with what the run's Claude calls used, so cost and time can be followed over months; the
-    settings tell a full consolidation from an incremental one."""
-    line = {"time": now.isoformat(timespec="seconds"), "cli": cli, **(settings or {}),
-            "steps": {name: step_json(step) for name, step in steps.items()}}
-    with path.open("a") as log:
-        log.write(json.dumps(line, ensure_ascii=False) + "\n")
-
-
-def step_json(step: StepSummary) -> dict:
-    """One step's Claude usage as a line of a run log stores it (also styrke/evaluate.py's eval/runs.jsonl)."""
-    usage = step.usage
-    return {
-        "calls": step.calls,
-        "failed": step.failed,
-        "skipped": step.skipped,
-        "tokens": {"input": usage.input_tokens, "output": usage.output_tokens,
-                   "cache_read": usage.cache_read_tokens, "cache_write": usage.cache_write_tokens},
-        "cost_usd": round(usage.cost_usd, 4),
-        "models": list(usage.models),
-        "seconds": round(step.seconds),
-    }
 
 
 def step_summary(steps: dict[str, StepSummary], problem_counts: Counter[str]) -> str:

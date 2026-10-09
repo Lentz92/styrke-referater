@@ -31,8 +31,8 @@ flowchart LR
 - Orange boxes are Claude calls; the blue box after one is the code that checks its answer.
 - "Effort not set" means the code passes no `--effort`, so Claude Code's own default applies. `styrke/update.py` never
   passes one; the audit does (high), and `uv run -m styrke.evaluate extract` with `--effort`.
-- Every pipeline Claude call goes through `analyze.ask_claude`: `claude -p` with no tools, a system prompt and a JSON
-  schema, on the subscription. "USD" means the CLI's list-price estimate, which the caps count.
+- Every Claude call goes through `claude.ask` in `styrke/claude.py`: `claude -p` with no tools, a system prompt and a
+  JSON schema, on the subscription. "USD" means the CLI's list-price estimate, which the caps count.
 
 ---
 
@@ -47,7 +47,7 @@ flowchart TB
   %% Work.reasons and Work.migration; its refusal ends with update.HOW_TO_PROCEED and RERUN.
   %% Caps: styrke/update.py DEFAULT_MAX_COST 15 and DEFAULT_TIME_BUDGET 75, update.yml timeout-minutes 120.
   %% Models: update.EXTRACT_MODEL, CONSOLIDATE_MODEL and ASSIGN_MODEL, no options. styrke/update.py --workers default 4,
-  %% analyze.EXTRACT_VERSION 3, analyze.EXTRACT_TIMEOUT 600, analyze.ask_claude attempts 3 with a 15 s times attempt
+  %% analyze.EXTRACT_VERSION 3, analyze.EXTRACT_TIMEOUT 600, claude.ask attempts 3 with a 15 s times attempt
   %% pause.
   %% Quote check: analyze.QUOTE_THRESHOLD 0.8. Id carry-over: matching.MATCH_THRESHOLD 0.25.
   %% Meeting date: analyze._meeting_date uses styrke.dk's date when the two years differ by 2 or more.
@@ -79,8 +79,8 @@ flowchart TB
     route{"<b>route-update.sh</b><br/>[Bash]"}:::code
   end
 
-  caps{{"<b>Cost and time caps</b><br/>[analyze.RunBudget]<br/>no new call or retry after 15 USD or 75 min,<br/>running calls finish, the job ends at 120 min"}}:::guard
-  model{{"<b>Model check</b><br/>[analyze.ask_claude]<br/>an answer from another model than the full id asked:<br/>ModelMismatch, the rest of the run is skipped"}}:::guard
+  caps{{"<b>Cost and time caps</b><br/>[claude.RunBudget]<br/>no new call or retry after 15 USD or 75 min,<br/>running calls finish, the job ends at 120 min"}}:::guard
+  model{{"<b>Model check</b><br/>[claude.ask]<br/>an answer from another model than the full id asked:<br/>ModelMismatch, the rest of the run is skipped"}}:::guard
 
   main["<b>main</b><br/>[GitHub repository branch]<br/>commit, an open review PR is closed"]:::ext
   pr["<b>Review pull request</b><br/>[GitHub, branch auto/update]<br/>Monthly update needs review, the run report as body"]:::ext
@@ -249,7 +249,7 @@ flowchart TB
 
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
   pre{{"<b>Before any call</b><br/>[audit.yml, route-audit.sh check, .github/actions/claude-cli]<br/>no update.yml run active or queued, no other auto/audit-* branch,<br/>not in a month's last 2 days, CLI pin and smoke test"}}:::guard
-  caps{{"<b>Caps</b><br/>[analyze.RunBudget, audit.plan_calls]<br/>cost estimate printed first, --max-cost per command (workflow: 25 USD),<br/>75 min for propose and apply together, step 110 min, job 120 min"}}:::guard
+  caps{{"<b>Caps</b><br/>[claude.RunBudget, audit.plan_calls]<br/>cost estimate printed first, --max-cost per command (workflow: 25 USD),<br/>75 min for propose and apply together, step 110 min, job 120 min"}}:::guard
   regler[("<b>data/regler/, data/slugs.json</b><br/>[JSON]<br/>the rules as the monthly runs left them")]:::store
 
   subgraph PROP["uv run -m styrke.audit propose"]
@@ -585,9 +585,9 @@ merges it by keeping both sides' lines (`.gitattributes`).
 
 ```mermaid
 flowchart TB
-  %% Sources. The import lines and calls in styrke/update.py, styrke/analyze.py, styrke/incremental.py, styrke/checks.py
-  %% and styrke/render.py.
-  %% analyze.ask_claude is the only place that runs the claude binary for answers. The smoke test in
+  %% Sources. The import lines and calls in styrke/update.py, styrke/analyze.py, styrke/incremental.py, styrke/claude.py,
+  %% styrke/checks.py and styrke/render.py.
+  %% claude.ask is the only place that runs the claude binary for answers. The smoke test in
   %% .github/actions/claude-cli calls the binary directly.
   %% scrape.document_text decodes .htm itself (scrape._decode_html), so BeautifulSoup consults no charset detector.
 
@@ -596,8 +596,9 @@ flowchart TB
   end
   subgraph COMP["Pipeline components"]
     scrape["<b>styrke/scrape.py</b><br/>[module]<br/>styrke.dk sync, manifest, document text:<br/>PDF with page markers, HTM decoded by fixed rules"]:::code
-    analyze["<b>styrke/analyze.py</b><br/>[module]<br/>extraction, full consolidation, slug history,<br/>ask_claude: the one caller of the CLI"]:::code
+    analyze["<b>styrke/analyze.py</b><br/>[module]<br/>extraction, full consolidation, slug history"]:::code
     incremental["<b>styrke/incremental.py</b><br/>[module]<br/>work queue, votes, tie-break, rule updates"]:::code
+    claudepy["<b>styrke/claude.py</b><br/>[module]<br/>ask: the one caller of the CLI, model check,<br/>run budget, parallel calls, usage, provenance"]:::code
     candidates["<b>styrke/candidates.py</b><br/>[module, pure]<br/>TF-IDF ranking over Danish stems"]:::code
     matching["<b>styrke/matching.py</b><br/>[module, pure]<br/>decision ids across re-extractions, slug carry-over"]:::code
     checks["<b>styrke/checks.py</b><br/>[module and CLI]<br/>data problems, snapshots, history check"]:::code
@@ -610,15 +611,18 @@ flowchart TB
   update -->|"sync or load_manifest"| scrape
   update -->|"extract, and consolidate in full mode"| analyze
   update -->|"consolidate in incremental mode"| incremental
+  update -->|"run budget, run log line"| claudepy
   update -->|"find_problems, snapshot, check_history"| checks
   update -->|"render"| render
   update -->|"build"| website
   scrape -->|"HTTP GET"| styrke
   analyze -->|"document_text"| scrape
   analyze -->|"match_decisions, carry_slugs"| matching
-  analyze -->|"claude -p with system prompt and JSON schema"| claude
+  analyze -->|"ask, run_parallel, provenance"| claudepy
+  claudepy -->|"claude -p with system prompt and JSON schema"| claude
   incremental -->|"rank: 15 candidates"| candidates
-  incremental -->|"ask_claude, quote locator, slug history"| analyze
+  incremental -->|"ask, run_parallel"| claudepy
+  incremental -->|"quote locator, slug history"| analyze
   incremental -->|"carry_slugs for new rules"| matching
   incremental -->|"version order"| render
   checks -->|"build_rules, in_force"| render
@@ -637,8 +641,9 @@ flowchart TB
   classDef guard fill:#8e244d,stroke:#5f1833,color:#ffffff
 ```
 
-`styrke/analyze.py` is the hub: it alone runs `claude -p`, and the other modules reach Claude only through its
-`ask_claude`. `styrke/candidates.py` and `styrke/matching.py` are pure functions, which keeps the ranking and the id
+`styrke/claude.py` alone runs `claude -p`: the other modules reach Claude only through its `ask`, and it keeps the
+run's cost and time limits and what each call used. `styrke/analyze.py` is the hub for the data: it loads and writes
+the decisions, rules and slug history the others build on. `styrke/candidates.py` and `styrke/matching.py` are pure functions, which keeps the ranking and the id
 rules testable without Claude. `styrke/checks.py` and `styrke/website.py` work out what is in force through
 `styrke/render.py`, so the checks, the Markdown pages and the website always agree. Imports of shared constants (for
 example `analyze.CATEGORIES` in `styrke/render.py`) are left out, and so is what the `styrke/checks.py` and
@@ -656,7 +661,8 @@ flowchart TB
   end
   subgraph COMP["Reused components"]
     update["<b>styrke/update.py</b><br/>[Python CLI, used as a module]<br/>pending work, run log, extraction model"]:::code
-    analyze["<b>styrke/analyze.py</b><br/>[module]<br/>ask_claude, extraction, slug history"]:::code
+    analyze["<b>styrke/analyze.py</b><br/>[module]<br/>extraction, slug history"]:::code
+    claudepy["<b>styrke/claude.py</b><br/>[module]<br/>ask, run_parallel, provenance, usage records"]:::code
     incremental["<b>styrke/incremental.py</b><br/>[module]<br/>candidate index, update prompt and merge"]:::code
     candidates["<b>styrke/candidates.py</b><br/>[module, pure]"]:::code
     matching["<b>styrke/matching.py</b><br/>[module, pure]"]:::code
@@ -667,10 +673,11 @@ flowchart TB
   claude["<b>Claude Code CLI</b><br/>[External]"]:::ext
 
   audit -->|"pending_work for the settled check, record_run"| update
-  audit -->|"ask_claude, slug history"| analyze
+  audit -->|"slug history"| analyze
+  audit -->|"ask, run_parallel, estimate_tokens,<br/>usage_json, describe_usage, read_run_log"| claudepy
   audit -->|"candidate_index, update prompt, merge"| incremental
   audit -->|"find_problems, snapshot, check_history"| checks
-  audit -->|"score_section for the report,<br/>estimate_tokens, usage_json, describe_usage"| evaluate
+  audit -->|"score_section for the report"| evaluate
   audit -->|"carry_slugs for split parts"| matching
   audit -->|"pages from the checked copy"| render
   audit -->|"page_html"| website
@@ -679,8 +686,10 @@ flowchart TB
   evaluate -->|"terms and index, for recall"| candidates
   evaluate -->|"match_decisions against the key"| matching
   evaluate -->|"in force per year"| render
-  evaluate -->|"EXTRACT_MODEL, step_json"| update
-  analyze -->|"claude -p"| claude
+  evaluate -->|"EXTRACT_MODEL"| update
+  evaluate -->|"run_parallel, provenance, estimate_tokens,<br/>usage_json, append_run_log"| claudepy
+  analyze -->|"ask"| claudepy
+  claudepy -->|"claude -p"| claude
 
   style ENTRY fill:none,stroke:#8a8a8a,stroke-dasharray:6 4
   style COMP fill:none,stroke:#8a8a8a,stroke-dasharray:6 4
@@ -692,9 +701,9 @@ flowchart TB
   classDef guard fill:#8e244d,stroke:#5f1833,color:#ffffff
 ```
 
-Neither tool has its own Claude or matching logic: the audit reuses incremental consolidation's prompt and merge
-check for its rewrites, and the evaluation runs the pipeline's own extraction code and candidate ranking, so what it
-measures is what the pipeline does. `styrke/audit.py` also depends on `styrke/evaluate.py` for its answer-key score and
+Neither tool has its own Claude or matching logic: both call Claude and record what it used through
+`styrke/claude.py`, the audit reuses incremental consolidation's prompt and merge check for its rewrites, and the
+evaluation runs the pipeline's own extraction code and candidate ranking, so what it measures is what the pipeline does. `styrke/audit.py` also depends on `styrke/evaluate.py` for its answer-key score and
 on `styrke/update.py` to refuse an audit while a monthly run has work left.
 
 ### 2.6 Level 3: Which module owns which file
@@ -705,12 +714,14 @@ flowchart LR
   %% update.RUNS_LOG and RUN_REPORT, render.OUT_DIR, website.OUT_DIR, audit.OPS_PATH, CACHE_DIR and REPORT, evaluate.EVAL_DIR.
   %% Owns means: defines the path and writes it. Other writes go through the owner's helpers, except that audit.apply
   %% builds the rule files and slug history with analyze's helpers in a temporary copy, then replaces each file with
-  %% scrape._write_atomic.
+  %% scrape._write_atomic. claude.append_run_log appends the line the owner of a run log builds
+  %% (update.record_run, evaluate.log_run) to the path it gives.
 
   subgraph MOD["Modules"]
     scrape["<b>styrke/scrape.py</b><br/>[module]"]:::code
     analyze["<b>styrke/analyze.py</b><br/>[module]"]:::code
     incremental["<b>styrke/incremental.py</b><br/>[module]"]:::code
+    claudepy["<b>styrke/claude.py</b><br/>[module]"]:::code
     update["<b>styrke/update.py</b><br/>[Python CLI]"]:::code
     render["<b>styrke/render.py</b><br/>[module]"]:::code
     website["<b>styrke/website.py</b><br/>[module and CLI]"]:::code
@@ -741,6 +752,8 @@ flowchart LR
   analyze -->|"owns: full consolidation"| regler
   analyze -->|"owns: _save_slugs builds every version"| slugs
   incremental -->|"writes the categories it changed"| regler
+  claudepy -->|"append_run_log: the line record_run builds"| runs
+  claudepy -->|"append_run_log: the line log_run builds"| evruns
   update -->|"owns: a line per paid run"| runs
   update -->|"owns"| runreport
   render -->|"owns"| md
@@ -769,7 +782,8 @@ flowchart LR
 (`styrke/incremental.py`) and an audit's apply (`styrke/audit.py`). All three write the slug history first, so a slug is
 never lost if a later write fails. `styrke/render.py` and `styrke/website.py` write only derived output, which any run
 can rebuild from `data/` (`uv run -m styrke.update --render-only`). `styrke/candidates.py`, `styrke/matching.py` and
-`styrke/checks.py` write no files.
+`styrke/checks.py` write no files; `styrke/claude.py` only appends the run-log lines its callers build, to the log they
+name.
 
 ---
 
