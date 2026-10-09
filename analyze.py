@@ -32,7 +32,7 @@ from scrape import DATA_DIR, Doc, document_text
 
 # Bump when a prompt or schema changes so cached results are recomputed. The pipeline extracts with
 # EXTRACT_PROMPTS[f"v{EXTRACT_VERSION}"]; bumping it to another prompt's number switches the default to that prompt.
-EXTRACT_VERSION = 2
+EXTRACT_VERSION = 3
 CONSOLIDATE_VERSION = 7
 
 DECISIONS_DIR = DATA_DIR / "beslutninger"

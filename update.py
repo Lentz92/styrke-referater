@@ -51,7 +51,7 @@ from analyze import StepSummary
 from scrape import Doc
 
 EFFORTS = ["low", "medium", "high", "xhigh", "max"]
-EXTRACT_MODEL = "claude-sonnet-5-5"  # the pipeline's extraction model (--extract-model's default)
+EXTRACT_MODEL = "claude-opus-5-5"  # the pipeline's extraction model (--extract-model's default)
 CONSOLIDATE_MODEL = "claude-opus-5-5"  # --consolidate-model's default
 # How rule files are brought up to date: "incremental" (the default) files each new decision into its rule and leaves
 # the others as they are (incremental.py); "full" consolidates each changed category anew (analyze.consolidate), which
@@ -60,8 +60,14 @@ CONSOLIDATE_MODES = ("incremental", "full")
 DEFAULT_CONSOLIDATE_MODE = "incremental"
 # The workflow input (update.yml) that runs the consolidation in full, as GitHub shows it.
 MODE_INPUT_LABEL = "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)"
+# A migration (a full consolidation with --allow-rebuild) extracts every document again after a new extraction
+# prompt or model (about 22 USD at list price with Opus) and consolidates every category anew (about 5): its limits
+# let it finish in one run, and it runs offline, so no new minutes arrive meanwhile (the next run adds them).
+MIGRATION_MAX_COST = 40
+MIGRATION_TIME_BUDGET = 150
 # The command that migrates with the default settings (Plan.command of a full run with --allow-rebuild).
-MIGRATE = "uv run update.py --consolidate-mode full --allow-rebuild"
+MIGRATE = (f"uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost {MIGRATION_MAX_COST} "
+           f"--time-budget {MIGRATION_TIME_BUDGET}")
 # The run report's heading for decisions a run continuing an unfinished migration leaves until it is finished.
 WAITING = "Waiting for the full migration to finish"
 RUNS_LOG = scrape.DATA_DIR / "runs.jsonl"
@@ -433,8 +439,11 @@ class Plan:
         return analyze.extract_prompt(self.prompt).name
 
     def command(self, *, allow_rebuild: bool = False) -> str:
-        """The update.py command that does the work with these settings; options at their default are left out."""
-        options = ["--consolidate-mode full"] if self.mode == "full" else []
+        """The update.py command that does the work with these settings; options at their default are left out. With
+        --allow-rebuild in full mode it is a migration: offline, with the migration's limits (MIGRATE)."""
+        migration = allow_rebuild and self.mode == "full"
+        options = ["--offline"] if migration else []
+        options += ["--consolidate-mode full"] if self.mode == "full" else []
         options += [f"--extract-prompt {self.prompt_name}"] if self.prompt_name != analyze.extract_prompt().name \
             else []
         options += [f"--extract-model {self.extract_model}"] if self.extract_model != EXTRACT_MODEL else []
@@ -442,6 +451,7 @@ class Plan:
             else []
         options += [f"--consolidate-effort {self.consolidate_effort}"] if self.consolidate_effort else []
         options += ["--allow-rebuild"] if allow_rebuild else []
+        options += [f"--max-cost {MIGRATION_MAX_COST}", f"--time-budget {MIGRATION_TIME_BUDGET}"] if migration else []
         return " ".join(["uv run update.py", *options])
 
     def on_github(self) -> bool:
@@ -549,7 +559,7 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, plan: Plan = Plan()) -> Non
         return
     approval = _load_approval(plan.prompt)
     if plan.mode == "incremental" and work.migration():  # incremental mode cannot do this work, approved or not
-        migrate = replace(plan, mode="full", continued=None)
+        migrate = replace(plan, mode="full", max_cost=MIGRATION_MAX_COST, continued=None)
         log_estimate(pending_work(docs, "full", plan.prompt), migrate)
         unfinished = (f" (or run `{approval.continuation()}` without --consolidate-mode: it continues the full "
                       f"consolidation approved in {REBUILD_MARKER.name})"

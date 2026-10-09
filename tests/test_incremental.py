@@ -463,7 +463,7 @@ def test_a_new_consolidation_version_is_migrated_in_full_only(run, world, fake_c
         with pytest.raises(SystemExit, match="only a full consolidation migrates: medlemskab, okonomi"):
             run(*args)
         assert update.MIGRATE in (world.root / "run-report.md").read_text()
-    assert fake_claude.calls() == [] and update.MIGRATE == "uv run update.py --consolidate-mode full --allow-rebuild"
+    assert fake_claude.calls() == [] and update.MIGRATE == update.Plan(mode="full").command(allow_rebuild=True)
     with pytest.raises(SystemExit, match="If this work is intended, run `" + update.MIGRATE.replace(" ", ".")):
         run("--consolidate-mode", "full")  # a full run that hits the guard is told the full command
     fake_claude.answer(_same_rules(world))

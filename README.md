@@ -26,8 +26,10 @@ uv run update.py
 Only new or changed documents are sent to Claude, so a run with nothing new finishes in seconds. Their
 decisions are then filed into the rules they belong to, and every other rule is left as it is (incremental
 consolidation, the default; see How it works).
-A full rebuild of all ~240 documents costs about 12 USD at list price (about 7 for extraction, 5 for
-consolidation), counted against the Claude subscription; a few new minutes cost well under 2.
+Opus reads each document with extraction prompt v3 (see Extraction model and prompt): about 0.09 USD per document at
+list price, the mean measured on the answer key's documents (the large congress documents cost more), counted against
+the Claude subscription. A month with a few new minutes costs well under 2 USD, consolidation included; a full rebuild
+of all ~240 documents about 27 (about 22 for extraction, 5 for consolidation).
 
 A run with more than an ordinary month's work stops before calling Claude and says why: more than 10% of
 the documents to extract, a category with decisions but no file in `data/regler/`, or more than half the
@@ -36,9 +38,12 @@ estimated cost at list price: each document at the mean cost of one extraction b
 `eval/runs.jsonl` (with the chosen prompt when measured), in full mode each category at its share of the last full
 consolidation in `data/runs.jsonl` (the 5 USD above until one is logged), and whether `--max-cost` will cut the run
 off. If that work is intended, run `uv run update.py --allow-rebuild`. A new prompt or
-`EXTRACT_VERSION`/`CONSOLIDATE_VERSION` is migrated with `uv run update.py --consolidate-mode full --allow-rebuild`,
-which consolidates the changed categories anew; the incremental default cannot migrate rules made with another
-`CONSOLIDATE_VERSION`, or more than 10% of the documents extracted with another prompt, and stops until that is done.
+`EXTRACT_VERSION`/`CONSOLIDATE_VERSION` is migrated with
+`uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost 40 --time-budget 150`, which
+consolidates the changed categories anew, offline so no new minutes arrive meanwhile (the next run adds them), with
+limits a re-extraction of every document fits in; the incremental default cannot migrate rules made with another
+`CONSOLIDATE_VERSION`, or more than 10% of the documents extracted with another prompt, and stops until that is done,
+naming this command.
 The approval is saved in `data/rebuild.json` before any Claude call: the documents to extract, the categories to
 consolidate (plus those the documents' decisions are in, since re-extracting them changes those categories), the
 prompt versions, the extraction prompt and model, and the consolidation mode, model and effort. When the time or cost
@@ -63,8 +68,8 @@ migration; the runs after that consolidate incrementally. A run that is cut off 
 | `--offline` | skip styrke.dk and use the files already in `referater/` |
 | `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
 | `--only REGEX` | only extract documents whose id matches, and only consolidate the categories their decisions are in, before or after extraction (testing); skips the rebuild check |
-| `--extract-model`, `--consolidate-model` | defaults `claude-sonnet-5-5` and `claude-opus-5-5`, or those the open approval in `data/rebuild.json` was given with; a full id fails the call if Claude Code answers with another model |
-| `--extract-prompt` | the extraction prompt, `v2` (default) or `v3` (`analyze.EXTRACT_PROMPTS`); another than the default extracts every document again, a migration (see Extraction model and prompt) |
+| `--extract-model`, `--consolidate-model` | both default to `claude-opus-5-5`, or to those the open approval in `data/rebuild.json` was given with; a full id fails the call if Claude Code answers with another model |
+| `--extract-prompt` | the extraction prompt, `v3` (default) or `v2` (`analyze.EXTRACT_PROMPTS`, kept for evaluation); another than the default extracts every document again, a migration (see Extraction model and prompt) |
 | `--consolidate-mode` | `incremental` (default): file each new decision into its rule and leave every other rule as it is; `full`: consolidate each category with changed decisions anew, to migrate a prompt or version change (with `--allow-rebuild`) |
 | `--assign-model` | incremental mode: the model that votes on which rule a new decision belongs to (default `claude-sonnet-5-5`) |
 | `--extract-effort`, `--consolidate-effort` | `low` … `max`; default is Claude Code's own |
@@ -111,12 +116,14 @@ off) and stops if another one is installed: the version decides which model an a
 price it reports (2.1.289 got Haiku's price wrong by about 100×). Its smoke test also checks that a full
 model id is answered by that model. To upgrade, change the version there and run the workflow by hand; it
 fails if the new version is not installed or answers with another model. A run with nothing new writes no
-line to `data/runs.jsonl`, so compare cost and tokens at the next run that analyses documents. To approve
-a rebuild on GitHub, tick "Allow a rebuild (--allow-rebuild)" under "Run workflow", and to migrate a prompt or
-version change also "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)". If it is
-cut off, the following monthly runs finish it in the mode it was approved for (full), then go on incrementally. A
-rebuild that rewrites earlier years, or is cut off with rules left out, goes to review: merge the pull request so the
-following runs continue from it.
+line to `data/runs.jsonl`, so compare cost and tokens at the next run that analyses documents. The workflow passes
+no extraction model or prompt, so it extracts with the defaults (Opus, prompt v3). To approve a rebuild on GitHub,
+tick "Allow a rebuild (--allow-rebuild)" under "Run workflow", and to migrate a prompt or version change also
+"Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)": both ticked are the CI way to
+run the migration. It runs with the default limits (15 USD, 75 minutes), so a re-extraction of every document (about
+27 USD) is cut off; the following monthly runs (or "Run workflow" with nothing ticked) finish it in the mode and with
+the settings it was approved with, then go on incrementally. A rebuild that rewrites earlier years, or is cut off with
+rules left out, goes to review: merge the pull request so the following runs continue from it.
 
 Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls,
 failures, skipped calls, tokens, list-price cost, models and seconds. The Actions run page shows the run
@@ -206,10 +213,10 @@ The gate runs on today's data (`eval/reports/compare-*.md`, holding out the 20 n
 this default: against the answer key, incremental and full show the same content in force (51.5% vs 51.9% of years),
 while two incremental runs agree on what was in force in 99.1% of years, two full ones in 87.6%.
 
-Known limits: under extraction prompt v2, a decision that sets several rules at once (a budget setting several fees)
-is one decision, and goes to one rule, until the migration to v3 splits such decisions (see Extraction model and
-prompt); a document dated anew only on styrke.dk can leave a category for a full consolidation (the run report says
-so); and a new prompt or `CONSOLIDATE_VERSION` takes a full consolidation (see Update).
+Known limits: a document dated anew only on styrke.dk can leave a category for a full consolidation (the run report
+says so), and a new prompt or `CONSOLIDATE_VERSION` takes a full consolidation (see Update). Until October 2026 the
+extraction prompt was v2, under which a decision that set several rules at once (a budget setting several fees) was one
+decision, held by one rule; v3, in force since, gives one decision per rule (see Extraction model and prompt).
 
 Decisions and rules keep their identity when Claude redoes them, so links never break. Each decision has a
 stored id (`<document>#<n>`). When a document is extracted again, each new decision is matched to a previous
@@ -306,13 +313,14 @@ reason and evidence (document and quote). They are applied on top of the judges 
 scored, and listed in the reports. A rule marked `soft` in `eval/selection.json` (loosely scoped, so which
 decisions are its events is arbitrary) is reported but left out of the overall rules figures.
 
-**Extraction model and prompt.** The pipeline extracts with Sonnet and prompt v2 until another configuration passes
-the gate below. Measured on the decisions key (25 documents, 193 certain decisions;
+**Extraction model and prompt.** The pipeline extracts with Opus (`update.EXTRACT_MODEL`) and prompt v3
+(`analyze.EXTRACT_VERSION`), chosen with the gate below in October 2026; until then it was Sonnet with prompt v2.
+Measured on the decisions key (25 documents, 193 certain decisions;
 `eval/reports/decisions-stored+sonnet-1+sonnet-2+haiku-1+opus-1.md`):
 
 | Run | Recall | Precision | All four fields | Three (no handling) | Stability |
 |---|--:|--:|--:|--:|--:|
-| stored (today's `data/`, Sonnet, v2) | 79.8% | 93.9% | 63.8% | 75.2% | – |
+| stored (`data/` then, Sonnet, v2) | 79.8% | 93.9% | 63.8% | 75.2% | – |
 | fresh Sonnet, v2, two runs | 67.4% / 71.5% | 92.2% / 93.9% | 69.2% / 73.5% | 81.5% / 85.4% | 91.7% |
 | Haiku, v2 | 91.7% | 92.7% | 44.6% | 54.2% | – |
 | Opus, v2 | 91.2% | 96.7% | 93.7% | 95.4% | – |
@@ -341,20 +349,43 @@ ids over), per document and pooled. The key cannot show it, and an unstable extr
 document is extracted again. The gate, in the report: a configuration passes when its worse run is at least the stored
 run on recall and on the three fields, at most 2 points below it on precision and at most 2 points above it on
 over-split (a prompt that splits more than the key asks for would otherwise pass on recall), and its two runs are at
-least as stable as the two fresh runs of today's pipeline.
+least as stable as two runs of the pipeline's configuration (`evaluate.pipeline_configuration`: Sonnet with v2 when v3
+was chosen, Opus with v3 since). The result
+(`eval/reports/decisions-stored+sonnet-1+sonnet-2+sonnet-v3-1+sonnet-v3-2+opus-1+opus-v3-1+opus-v3-2.md`), each
+configuration by its worse run:
 
-To migrate to a configuration that passes, run
-`uv run update.py --consolidate-mode full --extract-prompt v3 --extract-model <model> --allow-rebuild`, with
-`--max-cost 35` for Opus (the default 15 would cut it off). It logs the estimate first (with today's measurements
-about 14 USD with Sonnet and 27 with Opus, consolidation included), extracts every document again, carries the
-decision ids over, and consolidates every category in full (incremental consolidation refuses documents extracted with
-another prompt: updating every rule one by one would cost more and leave the rules less clean). A run cut off before
-every category is consolidated leaves rules out (stale), so its result goes to review; run
-`uv run update.py --extract-prompt v3` until it ends without failures (the approval supplies the model and the full
-mode). A plain run stops instead of extracting everything back with v2, and one with another model stops instead of
-mixing the two; both name the command that continues. Then commit the data with `EXTRACT_VERSION = 3` (and
-`EXTRACT_MODEL` in `update.py`, if the model changes), which makes v3 the default. Bumping first and running
-`uv run update.py --consolidate-mode full --extract-model <model> --allow-rebuild` does the same.
+| Configuration | Recall | Precision | Three fields | Over-split | Stability | Passes |
+|---|--:|--:|--:|--:|--:|---|
+| needs | ≥ 79.8% | ≥ 91.9% | ≥ 75.2% | ≤ 3.3% | ≥ 91.7% | |
+| Sonnet, v2 (the pipeline then) | 67.4% | 92.2% | 81.5% | 0.8% | 91.7% | no: recall |
+| Sonnet, v3 | 79.8% | 93.3% | 75.3% | 0.6% | 93.4% | yes, narrowly |
+| Opus, v3 | 91.7% | 97.3% | 88.7% | 1.7% | 94.4% | yes |
+
+Opus with v3 passes clearly: its worse run finds 91.7% of the key's decisions (the stored Sonnet extraction: 79.8%).
+Sonnet with v3 only matches the stored run on recall and the three fields, so the pipeline moved to Opus, which costs
+about 0.09 USD per document with v3 against Sonnet's 0.04.
+
+The move is one migration, which extracts every document again with v3 and Opus (the defaults), carries the decision
+ids over and consolidates every category in full:
+
+```bash
+uv run update.py --offline --consolidate-mode full --allow-rebuild --max-cost 40 --time-budget 150
+```
+
+It logs the estimate first (about 27 USD at list price: 236 documents at 0.093 USD, the mean of the Opus v3 runs in
+`eval/runs.jsonl`, and 5 for the consolidation). Until it has run, the monthly run stops before any Claude call on the
+data extracted with v2 and names this command (incremental consolidation refuses documents extracted with another
+prompt: updating every rule one by one would cost more and leave the rules less clean). On GitHub, tick both boxes
+under "Run workflow" (see Monthly run on GitHub). A run cut off before every category is consolidated leaves rules out
+(stale), so its result goes to review; plain runs continue it with the approved settings until it ends without
+failures.
+
+A later configuration that passes the gate is migrated the same way before it becomes the default: run the command
+above with `--extract-prompt v<n>` and `--extract-model <model>`, continue a cut-off run with
+`uv run update.py --extract-prompt v<n>` (the approval supplies the model and the full mode; a plain run stops instead
+of extracting everything back with the default prompt, and one with another model stops instead of mixing the two,
+both naming the command that continues), then commit the data with `EXTRACT_VERSION` (and `EXTRACT_MODEL` in
+`update.py`) changed. Or change those first and run the command as it stands, as was done for v3.
 
 `DSF_Generelt_Regelsaet.docx` and `DSF_Verificeringsrapport.docx` are the earlier manual analysis
 (March 2026), kept for reference.

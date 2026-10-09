@@ -14,8 +14,9 @@ from analyze import StepSummary, Usage
 from scrape import Doc
 
 CATEGORIES = ["okonomi", "master", "dommere", "staevner"]
-# The extraction prompt the pipeline does not use.
+# The extraction prompt and a model the pipeline does not extract with.
 OTHER_PROMPT = next(name for name in analyze.EXTRACT_PROMPTS if name != analyze.extract_prompt().name)
+OTHER_MODEL = next(model for model in ("claude-sonnet-5-5", "claude-opus-5-5") if model != update.EXTRACT_MODEL)
 # The guard's tests are about full consolidation unless they say otherwise.
 FULL = update.Plan(mode="full")
 
@@ -188,7 +189,8 @@ def _logged_step(calls: int, cost: float, model: str) -> dict:
 def test_a_rebuild_is_priced_from_measured_extractions_and_the_last_full_consolidation(analysed):
     opus = "claude-opus-5-5"
     _log(update.EVAL_RUNS_LOG,
-         {"command": "extract", "model": opus, "steps": {"extract": _logged_step(10, 1.0, opus)}},  # v2: no prompt
+         {"command": "extract", "model": opus, "prompt": analyze.extract_prompt().name,
+          "steps": {"extract": _logged_step(10, 1.0, opus)}},
          {"command": "extract", "model": opus, "prompt": OTHER_PROMPT,
           "steps": {"extract": _logged_step(4, 0.6, opus)}},
          {"command": "score", "runs": ["stored"]})
@@ -225,26 +227,27 @@ def test_a_migration_to_another_prompt_is_approved_continued_with_its_settings_a
     docs = _docs(data, 20)
     _extracted(docs)
     _consolidated(docs, monkeypatch, _one_rule_each(docs))
-    opus = ("--extract-prompt", OTHER_PROMPT, "--extract-model", "claude-opus-5-5")
-    resume = f"uv run update.py --extract-prompt {OTHER_PROMPT} --extract-model claude-opus-5-5"
-    migrate = (f"uv run update.py --consolidate-mode full --extract-prompt {OTHER_PROMPT} --extract-model "
-               f"claude-opus-5-5 --allow-rebuild")
+    other = ("--extract-prompt", OTHER_PROMPT, "--extract-model", OTHER_MODEL)
+    resume = f"uv run update.py --extract-prompt {OTHER_PROMPT} --extract-model {OTHER_MODEL}"
+    migrate = (f"uv run update.py --offline --consolidate-mode full --extract-prompt {OTHER_PROMPT} --extract-model "
+               f"{OTHER_MODEL} --allow-rebuild --max-cost {update.MIGRATION_MAX_COST} --time-budget "
+               f"{update.MIGRATION_TIME_BUDGET}")
     # Each document's decision comes back reworded, in order (one worker); each category keeps its rules.
     fake_claude.answers(*({"moededato": None, "beslutninger": [_raw(CATEGORIES[i % 4], f"Regel {doc.id}, ny")],
                            **_one_rule_each(docs)} for i, doc in enumerate(docs)))
 
-    with pytest.raises(SystemExit, match=f"20 of 20 documents need extraction.*claude-opus-5-5.*`{migrate}`"):
-        run(docs, *opus)
+    with pytest.raises(SystemExit, match=f"20 of 20 documents need extraction.*{OTHER_MODEL}.*`{migrate}`"):
+        run(docs, *other)
     assert fake_claude.invocations("call") == 0 and "Estimated cost at list price" in caplog.text
 
     # Cut off after 10 extractions (0.25 USD each): their rules are stale, so the result goes to review.
-    assert _exit_code(run, docs, *opus, "--allow-rebuild", "--workers", "1", "--max-cost", "2.5") == \
+    assert _exit_code(run, docs, *other, "--allow-rebuild", "--workers", "1", "--max-cost", "2.5") == \
         update.EXIT_REVIEW
     assert "- **stale**" in update.RUN_REPORT.read_text()
     marker = json.loads(update.REBUILD_MARKER.read_text())
     assert {k: marker[k] for k in ("extract_prompt", "extract_model", "mode", "consolidate_model",
                                    "consolidate_effort")} == {
-        "extract_prompt": OTHER_PROMPT, "extract_model": "claude-opus-5-5", "mode": "full",
+        "extract_prompt": OTHER_PROMPT, "extract_model": OTHER_MODEL, "mode": "full",
         "consolidate_model": "claude-opus-5-5", "consolidate_effort": None}
     assert len(marker["documents"]) == 10
 
@@ -254,10 +257,11 @@ def test_a_migration_to_another_prompt_is_approved_continued_with_its_settings_a
     assert _exit_code(run, docs, mode=None) == update.EXIT_REVIEW
     assert re.search(f"holds an unfinished rebuild approved for extraction prompt {OTHER_PROMPT}: `{resume}` continues "
                      f"it", update.RUN_REPORT.read_text())
-    assert _exit_code(run, docs, "--extract-prompt", OTHER_PROMPT, "--extract-model", "claude-sonnet-5-5") == \
+    assert _exit_code(run, docs, "--extract-prompt", OTHER_PROMPT, "--extract-model", update.EXTRACT_MODEL) == \
         update.EXIT_REVIEW
-    assert re.search(f"extracted with --extract-prompt {OTHER_PROMPT} --extract-model claude-opus-5-5 .*, not "
-                     f"--extract-model claude-sonnet-5-5\\. Run `{resume}` without them", update.RUN_REPORT.read_text())
+    assert re.search(f"extracted with --extract-prompt {OTHER_PROMPT} --extract-model {OTHER_MODEL} .*, not "
+                     f"--extract-model {update.EXTRACT_MODEL}\\. Run `{resume}` without them",
+                     update.RUN_REPORT.read_text())
     assert fake_claude.invocations("call") == 10
 
     # Its prompt alone continues it, with the approved model and in full.
@@ -267,26 +271,69 @@ def test_a_migration_to_another_prompt_is_approved_continued_with_its_settings_a
     assert systems == [chosen.system] * 20 + [analyze.CONSOLIDATE_SYSTEM] * 4  # then every category in full
     for doc in docs:
         saved = json.loads((analyze.DECISIONS_DIR / f"{doc.id}.json").read_text())
-        assert (saved["version"], saved["model"]) == (chosen.version, "claude-opus-5-5")
+        assert (saved["version"], saved["model"]) == (chosen.version, OTHER_MODEL)
         assert [d["id"] for d in saved["beslutninger"]] == [f"{doc.id}#1"]  # carried over
         assert saved["provenance"]["prompt"] == analyze.prompt_hash(chosen.system, analyze.EXTRACT_SCHEMA)
     assert "**Ready to publish**" in update.RUN_REPORT.read_text() and not update.REBUILD_MARKER.exists()
     assert {k: _run_log()[-1][k] for k in ("extract_prompt", "consolidate_mode")} == \
         {"extract_prompt": OTHER_PROMPT, "consolidate_mode": "full"}
 
-    # Until the migrated prompt is the default, a plain run would extract every document back, which incremental
-    # consolidation refuses; once it is, a plain run has nothing to do.
-    with pytest.raises(SystemExit, match=f"20 of 20 documents were extracted with another prompt than "
-                                         f"{analyze.extract_prompt().name}.*Migrate with `{update.MIGRATE}`"):
-        run(docs, mode=None)
-    monkeypatch.setattr(analyze, "EXTRACT_VERSION", chosen.version)
-    monkeypatch.setattr(analyze, "EXTRACT_SYSTEM", chosen.system)
-    run(docs, mode=None)
+
+def _extracted_with_v2(docs: list[Doc]) -> None:
+    """The cached extractions as prompt v2 made them, before v3 became the pipeline's."""
+    for doc in docs:
+        _edit_version(doc, analyze.extract_prompt("v2").version)
+
+
+def test_the_monthly_run_on_data_extracted_with_v2_refuses_before_any_call_and_names_the_migration(
+        run, analysed, fake_claude, caplog):
+    _extracted_with_v2(analysed)
+    for options in ((), ("--allow-rebuild",)):  # incremental consolidation does not migrate, approved or not
+        with pytest.raises(SystemExit) as refused:
+            run(analysed, *options, mode=None)
+        message = str(refused.value)
+        assert (f"20 of 20 documents were extracted with another prompt than {analyze.extract_prompt().name}, which "
+                f"only a full consolidation takes in. Migrate with `{update.MIGRATE}`") in message
+        assert f"'{update.REBUILD_INPUT_LABEL}' and '{update.MODE_INPUT_LABEL}' ticked" in message
+    assert fake_claude.invocations("call") == 0 and not update.REBUILD_MARKER.exists()
+    assert "Estimated cost at list price" in caplog.text
+
+
+def test_a_migration_of_v2_data_cut_off_on_github_is_finished_by_plain_runs_which_then_have_nothing_to_do(
+        run, data, fake_claude, monkeypatch):
+    docs = _docs(data, 20)
+    _extracted(docs)
+    _consolidated(docs, monkeypatch, _one_rule_each(docs))
+    _extracted_with_v2(docs)
+    fake_claude.answers(*({"moededato": None, "beslutninger": [_raw(CATEGORIES[i % 4], f"Regel {doc.id}, ny")],
+                           **_one_rule_each(docs)} for i, doc in enumerate(docs)))
+
+    # The workflow with 'Allow a rebuild' and 'Consolidate in full' ticked, cut off after 10 extractions.
+    assert _exit_code(run, docs, "--allow-rebuild", "--workers", "1", "--max-cost", "2.5", mode="full") == \
+        update.EXIT_REVIEW
+    marker = json.loads(update.REBUILD_MARKER.read_text())
+    assert {k: marker[k] for k in ("extract_prompt", "extract_model", "mode", "consolidate_model")} == {
+        "extract_prompt": analyze.extract_prompt().name, "extract_model": update.EXTRACT_MODEL, "mode": "full",
+        "consolidate_model": update.CONSOLIDATE_MODEL}
+
+    run(docs, "--workers", "1", mode=None)  # the next monthly run finishes it in full, with the approved settings
+    calls = fake_claude.calls()
+    assert [argv[argv.index("--system-prompt") + 1] for argv in calls] == \
+        [analyze.EXTRACT_SYSTEM] * 20 + [analyze.CONSOLIDATE_SYSTEM] * 4
+    assert {argv[argv.index("--model") + 1] for argv in calls[:20]} == {update.EXTRACT_MODEL}
+    for doc in docs:
+        saved = json.loads((analyze.DECISIONS_DIR / f"{doc.id}.json").read_text())
+        assert (saved["version"], saved["model"]) == (analyze.EXTRACT_VERSION, update.EXTRACT_MODEL)
+        assert [d["id"] for d in saved["beslutninger"]] == [f"{doc.id}#1"]  # carried over
+    assert "**Ready to publish**" in update.RUN_REPORT.read_text() and not update.REBUILD_MARKER.exists()
+
+    run(docs, mode=None)  # and the one after has nothing to do
     assert fake_claude.invocations("call") == 24 and update.pending_work(docs).reasons() == []
+    assert update.pending_work(docs).documents == frozenset()
 
 
 def test_a_few_approved_documents_left_keep_the_approval_and_its_settings(analysed):
-    plan = update.Plan(OTHER_PROMPT, "claude-opus-5-5", "full")
+    plan = update.Plan(OTHER_PROMPT, OTHER_MODEL, "full")
     update.check_rebuild(analysed, allowed=True, plan=plan)  # all 20 documents
     _extracted(analysed)  # 19 of them done with the other prompt: one left is ordinary, but keeps the approval
     for doc in analysed[1:]:
@@ -294,7 +341,7 @@ def test_a_few_approved_documents_left_keep_the_approval_and_its_settings(analys
     update.update_rebuild_marker(analysed, plan)
     marker = json.loads(update.REBUILD_MARKER.read_text())
     assert (marker["documents"], marker["extract_prompt"], marker["extract_model"]) == \
-        (["doc0"], OTHER_PROMPT, "claude-opus-5-5")
+        (["doc0"], OTHER_PROMPT, OTHER_MODEL)
     update.check_rebuild(analysed, allowed=False, plan=plan)
 
 

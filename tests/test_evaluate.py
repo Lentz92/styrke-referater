@@ -788,7 +788,11 @@ def _configured_run(run: str, decisions: list[dict], model: str | None = None, p
                         {"sha256": "sha-rep2024", "provenance": provenance, "beslutninger": decisions})
 
 
-def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpus):
+def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpus, monkeypatch):
+    # The gate as it ran to choose v3: today's pipeline was then Sonnet with prompt v2.
+    monkeypatch.setattr(evaluate.update, "EXTRACT_MODEL", "claude-sonnet-5-5")
+    monkeypatch.setattr(analyze, "EXTRACT_VERSION", 2)
+    monkeypatch.setattr(analyze, "EXTRACT_SYSTEM", analyze.EXTRACT_PROMPTS["v2"])
     evaluate.write_json(evaluate.key_dir("decisions") / "rep2024.json", {**KEY, "sha256": "sha-rep2024",
                                                                          "doc_id": "rep2024"})
     both = [_run("Licensgebyr", 0), _run("Startgebyr", 20)]
@@ -810,7 +814,7 @@ def test_score_reports_stability_and_the_gate_for_configurations_run_twice(corpu
     assert "| 1 | 0 | 0 | 0 | 0 | – |" in report  # the stored run is no other run's repeat
     assert report.count("| 2 | 0 | 0 | 0 | 0 | 100.0% |") == 2  # the opus runs found the same decisions
     assert "| needs | | ≥ 50.0% | ≥ 98.0% | ≥ 100.0% | ≤ 2.0% | ≥ 66.7% | |" in report
-    pipeline = f"claude-sonnet-5-5, prompt {analyze.extract_prompt().name}, effort default (today's pipeline)"
+    pipeline = "claude-sonnet-5-5, prompt v2, effort default (today's pipeline)"
     assert f"| {pipeline} | sonnet-1, sonnet-2 | 50.0% | 100.0% | 100.0% | 0.0% | 66.7% | yes |" in report
     assert ("| claude-opus-5-5, prompt v3, effort default | opus-v3-1, opus-v3-2 | 100.0% | 100.0% | 100.0% | 0.0% | "
             "100.0% | yes |") in report
