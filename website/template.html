@@ -99,10 +99,14 @@
   .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 64px; padding: 24px 0 64px;
     border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 
-  /* rule popup – same font and scale as the page */
-  .scrim { position: fixed; inset: 0; z-index: 20; background: rgba(17,17,17,.28); opacity: 0; pointer-events: none; transition: opacity .15s; }
+  /* rule popup – same font and scale as the page. The page behind stays still while it is open (see pinPage): the gutter
+     keeps it from shifting sideways when a desktop scrollbar goes away, a drag on the scrim does not pan it, and
+     scrolling past either end of the popup stops there. */
+  html { scrollbar-gutter: stable; }
+  .scrim { position: fixed; inset: 0; z-index: 20; background: rgba(17,17,17,.28); opacity: 0; pointer-events: none; transition: opacity .15s;
+    touch-action: none; }
   .modal { position: fixed; left: 50%; top: 50%; z-index: 21; width: min(640px, 94vw); max-height: 85vh; overflow: auto; padding: 32px;
-    background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,.16);
+    overscroll-behavior: contain; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,.16);
     opacity: 0; pointer-events: none; transform: translate(-50%, -47%); transition: opacity .15s, transform .15s; }
   .is-open .scrim, .is-open .modal { opacity: 1; pointer-events: auto; }
   .is-open .modal { transform: translate(-50%, -50%); }
@@ -382,8 +386,22 @@ function countRuleOpen(ri) {
   if (window.goatcounter?.count) send();
   else $("goatcounter")?.addEventListener("load", send, { once: true });
 }
+// iOS Safari scrolls the page despite overflow:hidden, so the page is pinned in place while a rule is open
+// and scrolled back to the same spot when it closes. A pinned page reports scroll 0, which the browser saves with
+// the rule's history entry and would restore (jumping to the top) when Forward reopens it; that entry opts out.
+let pinnedAt = 0;
+function pinPage() {
+  pinnedAt = window.scrollY;
+  history.scrollRestoration = "manual";
+  Object.assign(document.body.style, { position: "fixed", top: `-${pinnedAt}px`, width: "100%" });
+}
+function unpinPage() {
+  Object.assign(document.body.style, { position: "", top: "", width: "" });
+  history.scrollRestoration = "auto";
+  window.scrollTo(0, pinnedAt);
+}
 function showRule(ri) {
-  if (openRule < 0) returnFocus = document.activeElement;
+  if (openRule < 0) { returnFocus = document.activeElement; pinPage(); }
   if (openRule !== ri) countRuleOpen(ri); // not when the year changes under an open rule
   openRule = ri;
   $("modal").innerHTML = ruleDetail(ri);
@@ -395,6 +413,7 @@ function hideRule() {
   if (openRule < 0) return;
   openRule = -1;
   document.body.classList.remove("is-open");
+  unpinPage();
   returnFocus?.focus({ preventScroll: true });
 }
 // The slug in #regel/<slug>, or "" when there is none or it is malformed (a cut-off %-escape).
