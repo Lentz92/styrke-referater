@@ -1,7 +1,7 @@
 {
  "kategori": "master",
  "version": 7,
- "input_hash": "b4c13b9b948ca9b736a4b1fce2da6ffcff7ef444475ec22f2c789f4f11776fba",
+ "input_hash": "0e03e9bf1473f0dbb04e3df64361bb42639d12b4c46c37e755e00d9d26e6942e",
  "model": "claude-opus-5-5",
  "provenance": {
   "model": "claude-opus-5-5",
@@ -1035,38 +1035,6 @@
    ]
   },
   {
-   "titel": "Trænerakkreditering ved EM og VM",
-   "slug": "trænerakkreditering-ved-em-og-vm",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "Tilmeldingsfrister2026#4",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "loft over trænere og akkrediteringsgebyr på 50 euro",
-     "kort_regel": "begrænset antal trænere, gebyr 50 euro",
-     "dhash": "b8b007cb54bb"
-    }
-   ]
-  },
-  {
-   "titel": "Ophold på stævnehotel",
-   "slug": "ophold-på-stævnehotel",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "Tilmeldingsfrister2026#7",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "EPF/IPF-krav om ophold på stævnehotel hele perioden",
-     "kort_regel": "bo på stævnehotellet i hele stævneperioden",
-     "dhash": "c5968c079c24"
-    }
-   ]
-  },
-  {
    "titel": "VM for masters i klassisk styrkeløft",
    "slug": "vm-for-masters-klassisk-raw",
    "vigtig": true,
@@ -1159,6 +1127,22 @@
      "kort": "John Terragni foreslår placering med GL-point × MAC",
      "kort_regel": null,
      "dhash": "1a107e588b98"
+    }
+   ]
+  },
+  {
+   "titel": "Nordisk mesterskab for masters",
+   "slug": "nordisk-mesterskab-for-masters",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2026#27",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Danmarks forslag om nordisk masters-mesterskab forkastet",
+     "kort_regel": null,
+     "dhash": "4486209c813b"
     }
    ]
   }

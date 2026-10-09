@@ -1,0 +1,57 @@
+{
+ "fingerprint": "de30f62fe43b8d26",
+ "time": "2026-10-09T10:29:12+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 0,
+  "cache_write": 36171,
+  "output": 2636,
+  "cost_usd": 0.3421,
+  "seconds": 25,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "split",
+    "rules": [
+     "bopælskrav-nationalitet-og-dobbelt-licens-ved-danske-mesterskaber"
+    ],
+    "title": null,
+    "category": null,
+    "parts": [
+     {
+      "title": "Bopælskrav for udlændinge ved danske mesterskaber",
+      "refs": [
+       "rep2013#8",
+       "refbest_07102018#6",
+       "rep2026#3"
+      ]
+     },
+     {
+      "title": "Deltagelse i danske mesterskaber for løftere der repræsenterer en anden nation",
+      "refs": [
+       "refbest_07102018#5"
+      ]
+     }
+    ],
+    "reason": "The rule holds the residence requirement for foreigners (24 months, later 6 months) and a separate ban on lifters who represent another nation taking part in DM/JM/SM or setting records. These are two different requirements, and each needs its own version in force.",
+    "refs": [
+     "rep2013#8",
+     "refbest_07102018#5",
+     "refbest_07102018#6",
+     "rep2026#3"
+    ]
+   }
+  ]
+ }
+}

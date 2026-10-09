@@ -8,19 +8,19 @@ Hver årsside starter med, hvad der er nyt det år, og viser derefter de regler,
 
 | År | Ændringer i året | Centrale regler i kraft | Interne procedurer og detaljer i kraft |
 |---|---|---|---|
-| [2027](2027.md) (kommende) | 2 | 346 | 121 |
-| [2026](2026.md) (indeværende) | 73 | 347 | 121 |
-| [2025](2025.md) | 58 | 319 | 113 |
-| [2024](2024.md) | 79 | 303 | 105 |
-| [2023](2023.md) | 43 | 278 | 90 |
-| [2022](2022.md) | 35 | 265 | 79 |
-| [2021](2021.md) | 23 | 253 | 75 |
-| [2020](2020.md) | 25 | 246 | 70 |
-| [2019](2019.md) | 44 | 239 | 70 |
-| [2018](2018.md) | 61 | 222 | 65 |
-| [2017](2017.md) | 33 | 181 | 61 |
-| [2016](2016.md) | 31 | 172 | 58 |
-| [2015](2015.md) | 85 | 154 | 57 |
+| [2027](2027.md) (kommende) | 3 | 345 | 120 |
+| [2026](2026.md) (indeværende) | 72 | 346 | 120 |
+| [2025](2025.md) | 58 | 318 | 112 |
+| [2024](2024.md) | 79 | 302 | 105 |
+| [2023](2023.md) | 42 | 277 | 90 |
+| [2022](2022.md) | 35 | 264 | 79 |
+| [2021](2021.md) | 23 | 252 | 75 |
+| [2020](2020.md) | 25 | 245 | 70 |
+| [2019](2019.md) | 44 | 238 | 70 |
+| [2018](2018.md) | 62 | 221 | 65 |
+| [2017](2017.md) | 33 | 180 | 61 |
+| [2016](2016.md) | 30 | 171 | 58 |
+| [2015](2015.md) | 86 | 154 | 57 |
 | [2014](2014.md) | 45 | 108 | 39 |
 | [2013](2013.md) | 34 | 88 | 26 |
 | [2012](2012.md) | 41 | 70 | 19 |
@@ -33,13 +33,13 @@ Hver årsside starter med, hvad der er nyt det år, og viser derefter de regler,
 
 Fuld tekst og historik for hver regel:
 
-- [Medlemskab, licens og gebyrer](regler/medlemskab.md) – 43 regler i kraft, 50 i alt
-- [Stævner og konkurrenceregler](regler/staevner.md) – 81 regler i kraft, 97 i alt
-- [Dommere](regler/dommere.md) – 44 regler i kraft, 45 i alt
-- [Elite og landshold](regler/elite.md) – 185 regler i kraft, 238 i alt
-- [Master](regler/master.md) – 45 regler i kraft, 48 i alt
+- [Medlemskab, licens og gebyrer](regler/medlemskab.md) – 45 regler i kraft, 52 i alt
+- [Stævner og konkurrenceregler](regler/staevner.md) – 80 regler i kraft, 96 i alt
+- [Dommere](regler/dommere.md) – 44 regler i kraft, 44 i alt
+- [Elite og landshold](regler/elite.md) – 185 regler i kraft, 237 i alt
+- [Master](regler/master.md) – 43 regler i kraft, 47 i alt
 - [Antidoping](regler/antidoping.md) – 15 regler i kraft, 16 i alt
-- [Forbund og organisation](regler/organisation.md) – 55 regler i kraft, 61 i alt
+- [Forbund og organisation](regler/organisation.md) – 54 regler i kraft, 60 i alt
 
 ## Sådan læses reglerne
 

@@ -142,6 +142,25 @@ Ved forbundsstævner arbejdes der som udgangspunkt med én platform. Dette gæld
 
 - 12.09.2023 · indført: én platform ved forbundsstævner · [refdom12092023 s. 3](https://filer.styrke.dk/referater/refdom12092023.pdf#page=3)
 
+<a id="regel/bestilling-betaling-og-levering-af-medaljer-og-pokaler"></a>
+### Bestilling, betaling og levering af medaljer og pokaler
+
+**I kraft**
+
+Forbundet bestiller medaljerne hos sin officielle medaljeforhandler (via stævneudvalget, 3 uger før stævnestart, når tilmeldingen er lukket), og arrangøren opkræves 100 kr. pr. medaljesæt (en placeringsmedalje plus eventuelle tilhørende disciplinmedaljer); i øvrigt betales pokaler og medaljer af forbundet. Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Der uddeles disciplinmedaljer i alle kategorier ved de nationale mesterskaber DM styrkeløft og DM klassisk trekamp.
+
+*Stævneregel · vedtaget 26.03.2022 af Repræsentantskabet (enstemmigt) · senest bekræftet 15.07.2023*
+
+- 22.03.2015 · indført: arrangør bestiller og betaler medaljer; forbund betaler pokaler (fra 01.06.2015) · [rep2015 s. 6](https://filer.styrke.dk/referater/rep2015.pdf#page=6)
+- 10.12.2016 · bekræftet: klubber bestiller selv fra 2017 og genbestiller manglende medaljer (fra 01.01.2017) · [refbest_10122016 s. 3](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=3)
+- 14.01.2017 · indkommet forslag: bestyrelsen foreslår central medaljebestilling hos Formo mod fast beløb · [refbest_14012017 s. 3](https://filer.styrke.dk/referater/refbest_14012017.pdf#page=3)
+- 02.10.2021 · ændret: stævneudvalget bestiller 3 uger før; levering senest en uge før · [refbest_021021 s. 1](https://filer.styrke.dk/referater/refbest_021021.pdf#page=1)
+- 02.10.2021 · indkommet forslag: bestyrelsen foreslår 100 kr. pr. medaljesæt; disciplinmedaljer kun ved DM · [refbest_021021 s. 3](https://filer.styrke.dk/referater/refbest_021021.pdf#page=3)
+- 26.03.2022 · ændret: forbund bestiller; arrangør betaler 100 kr. pr. medaljesæt · [rep2022 s. 15](https://filer.styrke.dk/referater/rep2022.pdf#page=15)
+- 15.07.2023 · bekræftet: bekræfter levering af pokaler og medaljer senest en uge før · [refbest_150723 s. 1](https://filer.styrke.dk/referater/refbest_150723.pdf#page=1)
+
+> **Bemærk:** Fra 2015 bestilte klubberne selv medaljer efter Repræsentantskabets beslutning. Bestyrelsen lod i 2021 stævneudvalget bestille dem, før Repræsentantskabet ændrede reglen i 2022.
+
 <a id="regel/bopaelskrav-for-danske-rekorder"></a>
 ### Bopælskrav for danske rekorder
 
@@ -187,6 +206,21 @@ DSF hjælper nye klubber med at afholde diplomstævner ved at stille et par offi
 *Bestyrelsesbeslutning · vedtaget 09.11.2019 af Bestyrelsen*
 
 - 09.11.2019 · indført: DSF stiller officials til diplomstævner i nye klubber · [refbest_091119 s. 2](https://filer.styrke.dk/referater/refbest_091119.pdf#page=2)
+
+<a id="regel/disciplinmedaljer"></a>
+### Disciplinmedaljer
+
+**I kraft**
+
+Disciplinmedaljer uddeles i alle kategorier kun ved nationale mesterskaber, dvs. DM-styrkeløft og DM klassisk trekamp, og ikke længere ved alle stævner. I bænkpres uddeles der ikke disciplinmedaljer.
+
+*Stævneregel · vedtaget 31.03.2019 af Repræsentantskabet (42 for, 0 imod, 4 blanke)*
+
+- 03.05.2014 · indført: disciplinmedaljer ved alle typer DM, med virkning fra 2014 (fra 01.01.2014) · [refbest_03052014 s. 2](https://filer.styrke.dk/referater/refbest_03052014.pdf#page=2)
+- 26.07.2015 · ændret: udvidet fra alle DM til alle stævner · [refbest_26072015 s. 3](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=3)
+- 31.03.2019 · ændret: Hvidovre: kun ved nationale mesterskaber, ikke i bænkpres · [rep2019 s. 18](https://filer.styrke.dk/referater/rep2019.pdf#page=18)
+
+> **Bemærk:** Beslutningen fra 2019 nævner også DM-bænk og DM-bænk klassisk, men siger samtidig, at der ikke gives disciplinmedaljer i bænkpres. Den er derfor læst, som om den kun gælder DM i trekamp.
 
 <a id="regel/dm-i-baenkpres-for-veteraner"></a>
 ### DM i bænkpres for veteraner
@@ -410,28 +444,6 @@ Medaljer og pokaler uddeles lige efter hver kategori og skal modtages personligt
 - 29.03.2026 · bekræftet: personlig modtagelse bekræftet og håndhæves · [rep2026 s. 21](https://filer.styrke.dk/referater/rep2026.pdf#page=21)
 - 29.03.2026 · forslag trukket tilbage: bestyrelsen foreslår træningstøj og sportssko ved præmieoverrækkelse · [rep2026 s. 29](https://filer.styrke.dk/referater/rep2026.pdf#page=29)
 - 29.03.2026 · ændret: klubrepræsentant må modtage ved ny indvejning · [rep2026 s. 31](https://filer.styrke.dk/referater/rep2026.pdf#page=31)
-
-<a id="regel/bestilling-betaling-og-levering-af-medaljer-og-pokaler"></a>
-### Medaljer og disciplinmedaljer ved mesterskaber
-
-**I kraft**
-
-Forbundet bestiller medaljerne hos sin officielle forhandler, og arrangøren opkræves 100 kr. pr. medaljesæt; i øvrigt betaler forbundet. Pokaler og medaljer skal være arrangøren i hænde senest en uge før stævnestart, og stævneprogrammet skal være sat op en uge før, så stævneudvalget kan kontrollere det. Disciplinmedaljer uddeles i alle kategorier ved DM styrkeløft og DM klassisk trekamp.
-
-*Udvalgsbeslutning · vedtaget 15.07.2023 af Bestyrelsen*
-
-- 03.05.2014 · indført: disciplinmedaljer ved alle typer DM, fra 2014 (fra 01.01.2014) · [refbest_03052014 s. 2](https://filer.styrke.dk/referater/refbest_03052014.pdf#page=2)
-- 22.03.2015 · ændret: klub bestiller og betaler medaljer; disciplinmedaljer ved alle stævner (fra 01.06.2015) · [rep2015 s. 6](https://filer.styrke.dk/referater/rep2015.pdf#page=6)
-- 26.07.2015 · bekræftet: disciplinmedaljer ved alle stævner bekræftet · [refbest_26072015 s. 3](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=3)
-- 10.12.2016 · bekræftet: klubber bestiller selv og genbestiller manglende medaljer (fra 01.01.2017) · [refbest_10122016 s. 3](https://filer.styrke.dk/referater/refbest_10122016.pdf#page=3)
-- 14.01.2017 · indkommet forslag: bestyrelsen foreslår central medaljebestilling hos Formo · [refbest_14012017 s. 3](https://filer.styrke.dk/referater/refbest_14012017.pdf#page=3)
-- 31.03.2019 · ændret: disciplinmedaljer kun ved nationale trekamps-DM · [rep2019 s. 18](https://filer.styrke.dk/referater/rep2019.pdf#page=18)
-- 02.10.2021 · ændret: stævneudvalget bestiller 3 uger før; levering uge før · [refbest_021021 s. 1](https://filer.styrke.dk/referater/refbest_021021.pdf#page=1)
-- 02.10.2021 · indkommet forslag: bestyrelsen foreslår 100 kr. pr. medaljesæt fra arrangør · [refbest_021021 s. 3](https://filer.styrke.dk/referater/refbest_021021.pdf#page=3)
-- 26.03.2022 · ændret: forbund bestiller; arrangør betaler 100 kr. pr. sæt · [rep2022 s. 15](https://filer.styrke.dk/referater/rep2022.pdf#page=15)
-- 15.07.2023 · ændret: stævneprogram skal være sat op en uge før · [refbest_150723 s. 1](https://filer.styrke.dk/referater/refbest_150723.pdf#page=1)
-
-> **Bemærk:** Fra 2015 bestilte klubberne selv medaljer efter Repræsentantskabets beslutning. Bestyrelsen lod i 2021 stævneudvalget bestille dem, før Repræsentantskabet ændrede reglen i 2022.
 
 <a id="regel/meet-director"></a>
 ### Meet director
@@ -711,48 +723,28 @@ Ved tilmelding til Jyske Mesterskaber (JM) og Sjællandske Mesterskaber (SM) ska
 
 **I kraft**
 
-DSF sender invitation senest seks uger før stævnet. Sidste frist for tilmelding til DSF-mesterskaber og betaling af startgebyr er 30 dage før stævnestart, medmindre andet står i invitationen. 3 bankdage efter fristen kontrollerer den arrangerende klub, hvem der har betalt, og giver selv klubber med løftere, der ikke har betalt, besked om, at de ikke kan deltage. Arrangøren overfører 50 kr. pr. deltager til DSF efter faktura. Licenser opkræves bagudrettet af DSF.
+DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding til DSF-mesterskaber via online system og for betaling af startgebyr til arrangørens konto er 30 dage før stævnestart, medmindre andet er påført invitationen. 3 bankdage efter fristens udløb kontrollerer den arrangerende klub, hvem der har betalt, og giver selv klubber med løftere, der ikke har betalt, besked om, at de ikke kan deltage. Arrangøren overfører fortsat 50 kr. pr. deltager til DSF efter faktura.
 
 *Stævneregel · vedtaget 29.03.2026 af Repræsentantskabet (enstemmigt)*
 
+- 28.02.2010 · indkommet forslag: bestyrelsen foreslår dokumentation for betalt startgebyr før start · [refbest_28022010 s. 1](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=1)
 - 14.03.2010 · indført: krav om dokumentation for betalt startgebyr · [rep2010 s. 5](https://filer.styrke.dk/referater/rep2010.pdf#page=5)
 - 25.03.2012 · ændret: invitation 6 uger før, tilmelding og betaling 3 uger før · [rep2012 s. 1](https://filer.styrke.dk/referater/rep2012.pdf#page=1)
 - 25.03.2012 · indkommet forslag: KSK foreslår bindende vægtklasser og deltagerliste 14 dage før · [rep2012 s. 2](https://filer.styrke.dk/referater/rep2012.pdf#page=2)
-- 25.03.2012 · forslag forkastet: TSK foreslår løbende tilmelding · [rep2012 s. 2](https://filer.styrke.dk/referater/rep2012.pdf#page=2)
+- 25.03.2012 · forslag forkastet: TSK's forslag om løbende tilmelding forkastet · [rep2012 s. 2](https://filer.styrke.dk/referater/rep2012.pdf#page=2)
 - 22.03.2015 · ændret: online tilmelding; startgebyr til arrangør; licens opkræves bagud · [rep2015 s. 6](https://filer.styrke.dk/referater/rep2015.pdf#page=6)
-- 26.03.2017 · ændret: frist 21 dage før; ubetalte løftere udelukkes · [rep2017 s. 4](https://filer.styrke.dk/referater/rep2017.pdf#page=4)
+- 17.09.2016 · bekræftet: betalingsfrist er tilmeldingsdatoen; arrangør må udelukke ikke-betalende klub · [refbest_17092016 s. 3](https://filer.styrke.dk/referater/refbest_17092016.pdf#page=3)
+- 26.03.2017 · ændret: frist 21 dage før; ubetalte løftere kan ikke deltage · [rep2017 s. 4](https://filer.styrke.dk/referater/rep2017.pdf#page=4)
 - 26.03.2017 · forslag forkastet: Aalborg foreslår IPF's tilmeldingsregler, forkastet ved stemmelighed · [rep2017 s. 13](https://filer.styrke.dk/referater/rep2017.pdf#page=13)
-- 18.03.2018 · forslag trukket tilbage: Jan Vestergaard foreslår tilmelding 60 dage før · [rep2018 s. 9](https://filer.styrke.dk/referater/rep2018.pdf#page=9)
-- 14.03.2020 · indkommet forslag: AASK foreslår forhåndstilmelding 60 dage før · [refbest_140320 s. 2](https://filer.styrke.dk/referater/refbest_140320.pdf#page=2)
-- 30.08.2020 · forslag forkastet: AASK's forslag om IPF-frister forkastet · [rep2020 s. 17](https://filer.styrke.dk/referater/rep2020.pdf#page=17)
+- 18.03.2018 · forslag trukket tilbage: Jan Vestergaard foreslår tilmelding 60 dage før, trukket · [rep2018 s. 9](https://filer.styrke.dk/referater/rep2018.pdf#page=9)
+- 14.03.2020 · indkommet forslag: AASK foreslår forhåndstilmelding 60 dage før; bestyrelsen imod · [refbest_140320 s. 2](https://filer.styrke.dk/referater/refbest_140320.pdf#page=2)
+- 14.03.2020 · indkommet forslag: Holstebro foreslår atleter betaler selv via Billetto; bestyrelsen imod · [refbest_140320 s. 2](https://filer.styrke.dk/referater/refbest_140320.pdf#page=2)
+- 30.08.2020 · forslag forkastet: AASK's forslag om IPF-frister (60/21 dage) forkastet · [rep2020 s. 17](https://filer.styrke.dk/referater/rep2020.pdf#page=17)
+- 30.08.2020 · forslag forkastet: Holstebros forslag om betaling via Billetto forkastet · [rep2020 s. 18](https://filer.styrke.dk/referater/rep2020.pdf#page=18)
 - 02.10.2021 · indkommet forslag: bestyrelsen foreslår 21-dages fristen videreført i stævneregler 2022 · [refbest_021021 s. 3](https://filer.styrke.dk/referater/refbest_021021.pdf#page=3)
 - 26.03.2022 · bekræftet: 21-dages frist og betalingskontrol bekræftet · [rep2022 s. 15](https://filer.styrke.dk/referater/rep2022.pdf#page=15)
 - 29.03.2026 · ændret: frist ændret fra 21 til 30 dage før · [rep2026 s. 29](https://filer.styrke.dk/referater/rep2026.pdf#page=29)
 - 29.03.2026 · ændret: arrangøren giver besked om manglende betaling, ikke sekretæren · [rep2026 s. 29](https://filer.styrke.dk/referater/rep2026.pdf#page=29)
-
-<a id="regel/divisionsturnering-arrangoertilskud-og-tilmeldingsgebyr"></a>
-### Tilskud til arrangør af divisionsturneringens runder
-
-**I kraft**
-
-En klub, der påtager sig at afholde alle tre indledende runder i divisionsturneringen, får i alt 10.000 kr., udbetalt efter 3. runde, og tilbydes at afholde finalen på gældende betingelser. Er der en sådan klub i både øst og vest, afvikles finalen så vidt muligt skiftevis i øst og vest.
-
-*Stævneregel · vedtaget 22.03.2015 af Repræsentantskabet (35 for, 0 imod)*
-
-- 08.02.2015 · indkommet forslag: forslag om 10.000 kr. og finale til arrangør af alle runder · [refbest_08022015 s. 5](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=5)
-- 22.03.2015 · indført: 10.000 kr. for alle tre runder plus tilbud om finale · [rep2015 s. 4](https://filer.styrke.dk/referater/rep2015.pdf#page=4)
-
-<a id="regel/tilskud-til-leje-af-lys-og-lyd"></a>
-### Tilskud til lys- og lydudstyr ved stævner
-
-**I kraft**
-
-Klubber, der afholder DSF-stævner i passende omgivelser, får tilskud fra DSF til leje af lys- og lydudstyr efter stævneudvalgets bedømmelse. Reglen erstatter TSK's oprindelige forslag om, at forbundet skulle købe stævneudstyr. Ændringen skal skrives ind i stævnereglerne, og beløbsrammen skal diskuteres senere.
-
-*Stævneregel · vedtaget 14.03.2010 af Repræsentantskabet (stort flertal)*
-
-- 28.02.2010 · indkommet forslag: TSK foreslår, at forbundet køber stævneudstyr · [refbest_28022010 s. 2](https://filer.styrke.dk/referater/refbest_28022010.PDF#page=2)
-- 14.03.2010 · indført: tilskud til leje af lys og lyd i stedet for køb · [rep2010 s. 6](https://filer.styrke.dk/referater/rep2010.pdf#page=6)
 
 <a id="regel/transkoennedes-deltagelse"></a>
 ### Transkønnedes deltagelse i stævner
@@ -941,15 +933,6 @@ I stævnereglerne om øvrige officielle stævner, pkt. 15 (TSK Cup), ændres par
 
 - 25.03.2012 · indført: betingelse: der skal afholdes en udstyrsfri afdeling · [rep2012 s. 1](https://filer.styrke.dk/referater/rep2012.pdf#page=1)
 
-<a id="regel/seksmaanedersreglen-for-staevnedeltagelse"></a>
-### 6-månedersreglen for stævnedeltagelse
-
-**Kun forslag – aldrig vedtaget**
-
-Det blev foreslået at tage en afskaffelse af 6-månedersreglen for deltagelse i stævner op på Repræsentantskabsmødet. Bestyrelsen ville ikke fremsætte forslaget, men var parat til at drøfte en særregel for helt nye klubber.
-
-- 07.12.2014 · forslag forkastet: bestyrelsen vil ikke foreslå afskaffelse af reglen · [refbest_07122014 s. 3](https://filer.styrke.dk/referater/refbest_07122014.pdf#page=3)
-
 <a id="regel/dagsfordeling-af-kategorier-ved-dm-styrkeloeft"></a>
 ### Dagsfordeling af kategorier ved DM styrkeløft
 
@@ -1096,13 +1079,12 @@ Forslag om at DSF etablerer et fast løftested med fast professionelt udstyr til
 
 **I kraft**
 
-Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden afgift. Sponsorlogoer ud over klublogoet, der er større end 5x2 cm, skal godkendes af DSF og opføres på listen på hjemmesiden. En T-shirt med Master Løfter-logo er ikke en klub-T-shirt og må kun bruges i konkurrence, hvis logoet er godkendt og registreret.
+Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden afgift. Sponsorlogoer (dokumenteret sponsor) ud over klublogoet, der er større end 5x2 cm, skal indsendes til DSF til godkendelse og opføres på den godkendte liste på hjemmesiden. En T-shirt med Master Løfter-logo er ikke en klub-T-shirt og må kun bruges under konkurrence, hvis logoet er godkendt af DSF og registreret på hjemmesiden.
 
 *Stævneregel · vedtaget 31.03.2019 af Repræsentantskabet (41 for, 0 imod, 5 blanke) · senest bekræftet 12.03.2026*
 
 - 22.04.2017 · indført: stødende logoer forbudt; alle logoer godkendes af bestyrelsen · [refbest_22042017 s. 2](https://filer.styrke.dk/referater/refbest_22042017.pdf#page=2)
 - 19.01.2019 · ændret: liste over godkendte logoer lægges på hjemmesiden · [refbest_19012019.2 s. 2](https://filer.styrke.dk/referater/refbest_19012019.2.pdf#page=2)
-- 31.03.2019 · forslag trukket tilbage: bestyrelsens forslag om logoafgifter 500-2.500 kr. trukket · [rep2019 s. 18](https://filer.styrke.dk/referater/rep2019.pdf#page=18)
 - 31.03.2019 · ændret: sponsorafgift 500 kr. afskaffet; logoer over 5x2 cm godkendes · [rep2019 s. 19](https://filer.styrke.dk/referater/rep2019.pdf#page=19)
 - 12.03.2026 · bekræftet: Master Løfter-T-shirt kræver godkendt, registreret logo · [refstaevne12032026 s. 2](https://filer.styrke.dk/referater/refstaevne12032026.pdf#page=2)
 
@@ -1194,6 +1176,22 @@ IPF har besluttet, at det fra 31.12.2023 ikke længere er tilladt at bruge produ
 
 > **Bemærk:** At produkterne fortsat må bruges nationalt kan stride mod Repræsentantskabets krav om udstyr fra IPF-sanktionerede forhandlere.
 
+<a id="regel/udlaan-af-forbundets-udstyr"></a>
+### Udlån af forbundets udstyr
+
+**I kraft**
+
+Udstyrsgruppen fører et fælles register (Excel-ark) over låneudstyr. Løftere kan låne udstyr fra forbundet ved at udfylde en låneseddel, enten ved udstyrssamlinger eller ved at kontakte udviklingskonsulenten og få udstyret tilsendt. Samme låneseddel bruges i begge tilfælde. Lånesedlerne gemmes i Dropbox og fysisk i mapper.
+
+*Udvalgsbeslutning · vedtaget 10.07.2025 af Udstyrsgruppen*
+
+- 04.08.2012 · indført: udstyrsliste på hjemmesiden, lån via kontoret, afhentning i Horsens · [refbest_04082012 s. 2](https://filer.styrke.dk/referater/refbest_04082012.PDF#page=2)
+- 09.08.2014 · ændret: lån via mail til jacob@styrke.dk, låneseddel skal underskrives · [refbest_09082014 s. 1](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=1)
+- 06.03.2025 · ændret: fælles låneregister; lån via Adam Engsig Karø · [refudstyr06032025 s. 1](https://filer.styrke.dk/referater/refudstyr06032025.pdf#page=1)
+- 10.07.2025 · ændret: lån via låneseddel ved samlinger eller udviklingskonsulent · [refudstyr10072025 s. 2](https://filer.styrke.dk/referater/refudstyr10072025.pdf#page=2)
+
+> **Bemærk:** Udstyrsgruppens ordning fra 2025 gælder udstyr til at træne i. Det er uklart, om bestyrelsens ordning fra 2014 (mail til jacob@styrke.dk) stadig gælder for andet udstyr, f.eks. streamingudstyr.
+
 <a id="regel/udlaan-af-indvejningsvaegte-2"></a>
 ### Udlån af indvejningsvægte
 
@@ -1205,18 +1203,6 @@ Forbundets to indvejningsvægte opbevares hos Peter Andersen og i HSK. De lånes
 
 - 23.04.2023 · indført: to vægte hos Peter Andersen og HSK, tro og love-erklæring · [refbest_230423 s. 4](https://filer.styrke.dk/referater/refbest_230423.pdf#page=4)
 
-<a id="regel/udlaan-af-udstyr-til-nye-udstyrsloeftere"></a>
-### Udlån af udstyr til løftere
-
-**I kraft** · intern procedure/detalje
-
-Løftere kan låne udstyr fra forbundet ved at udfylde en låneseddel, enten ved udstyrssamlinger eller ved at kontakte udviklingskonsulenten og få udstyret tilsendt. Samme låneseddel bruges i begge tilfælde. Lånesedlerne gemmes i Dropbox og fysisk i mapper.
-
-*Udvalgsbeslutning · vedtaget 10.07.2025 af Udstyrsgruppen*
-
-- 06.03.2025 · indført: fælles låneregister; kontakt Adam Engsig Karø · [refudstyr06032025 s. 1](https://filer.styrke.dk/referater/refudstyr06032025.pdf#page=1)
-- 10.07.2025 · ændret: lån via låneseddel ved samlinger eller udviklingskonsulent · [refudstyr10072025 s. 2](https://filer.styrke.dk/referater/refudstyr10072025.pdf#page=2)
-
 <a id="regel/forbud-mod-superkatana-baenkpresdragt"></a>
 ### Godkendelse af understøttende bænkpresstrøjer
 
@@ -1226,5 +1212,14 @@ DSF's forslag til IPF om at gøre bænkpresstrøjen Superkatana ulovlig blev ikk
 
 - 28.10.2012 · forslag trukket tilbage: IPF EC trak forslag om regler for understøttende trøjer · [vm2012kongres s. 1](https://styrke.dk/pages/R/vm2012kongres.pdf#page=1)
 - 28.10.2012 · forslag forkastet: DSF's forslag om forbud mod Superkatana forkastet · [vm2012kongres s. 2](https://styrke.dk/pages/R/vm2012kongres.pdf#page=2)
+
+<a id="regel/logoafgift"></a>
+### Logoafgift
+
+**Kun forslag – aldrig vedtaget**
+
+Forslag om nye logoafgifter: 500 kr. for logo til én person, 1.000 kr. for et klublogo for alle medlemmer, 1.000 kr. for et spotterhold ved ét mesterskab (medmindre klublogo er betalt) og 2.500 kr. for et logo til brug for enhver under DSF. Logoer skal godkendes af bestyrelsen og opføres på listen over godkendt udstyr. Forslaget blev trukket.
+
+- 31.03.2019 · forslag trukket tilbage: bestyrelsens forslag om logoafgifter 500-2.500 kr. trukket · [rep2019 s. 18](https://filer.styrke.dk/referater/rep2019.pdf#page=18)
 
 ⚠ ved en kilde betyder, at Claudes citat ikke kunne genfindes ordret i referatet.

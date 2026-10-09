@@ -1,0 +1,53 @@
+{
+ "fingerprint": "aaa48f872a57b8b4",
+ "time": "2026-10-09T10:30:18+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 73073,
+  "output": 3463,
+  "cost_usd": 0.6543,
+  "seconds": 34,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "merge",
+    "rules": [
+     "a-dommer-ved-rekordforsøg",
+     "stævner-og-officials-ved-rekordsætning"
+    ],
+    "title": null,
+    "category": "staevner",
+    "parts": [],
+    "reason": "Both rules set the judge requirement for Danish record attempts: the 2016 requirement of an A-judge at record attempts was later replaced by the rule that B-judges are sufficient for records, so they are versions of one requirement.",
+    "refs": [
+     "refbest_17092016#7"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "honorering-af-dommerstillende-klubber"
+    ],
+    "title": null,
+    "category": "okonomi",
+    "parts": [],
+    "reason": "The only decision is a rejected proposal to raise the start fee to 350 kr. and allocate 100 kr. per start as payment to clubs providing judges, a pure fee and fee-distribution decision.",
+    "refs": [
+     "rep2023#3"
+    ]
+   }
+  ]
+ }
+}

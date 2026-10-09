@@ -1,0 +1,57 @@
+{
+ "fingerprint": "d7231aec8a34d2ec",
+ "time": "2026-10-09T10:33:41+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 2267,
+  "output": 1575,
+  "cost_usd": 0.0502,
+  "seconds": 16,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "refbest_04082012#2",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "udstyrsliste på hjemmesiden, lån via kontoret, afhentning i Horsens",
+    "kort_regel": "udstyr lånes via kontoret og hentes i Horsens"
+   },
+   {
+    "ref": "refbest_09082014#7",
+    "effekt": "aendret",
+    "tekst": "Der laves en liste over DSF's udstyr, som lægges ud på forbundets hjemmeside. Klubber og andre, der vil låne forbundets udstyr (f.eks. streamingudstyr), skal sende en mail til forbundet på jacob@styrke.dk og underskrive en låneseddel ved lån af udstyret. Udstyret hentes i Horsens.",
+    "kort": "lån via mail til jacob@styrke.dk, låneseddel skal underskrives",
+    "kort_regel": "lån via mail til jacob@styrke.dk mod underskrevet låneseddel"
+   },
+   {
+    "ref": "refudstyr06032025#1",
+    "effekt": "aendret",
+    "tekst": "Udstyrsgruppen fører et fælles register (Excel-ark) over låneudstyr i hele udstyrsgruppen. Løftere, der gerne vil prøve at træne i udstyr, men hvis klub ikke har det rette udstyr, kan kontakte Adam Engsig Karø om at låne udstyr.",
+    "kort": "fælles låneregister; lån via Adam Engsig Karø",
+    "kort_regel": "lån via Adam Engsig Karø, fælles register over låneudstyr"
+   },
+   {
+    "ref": "refudstyr10072025#2",
+    "effekt": "aendret",
+    "tekst": "Udstyrsgruppen fører et fælles register (Excel-ark) over låneudstyr. Løftere kan låne udstyr fra forbundet ved at udfylde en låneseddel, enten ved udstyrssamlinger eller ved at kontakte udviklingskonsulenten og få udstyret tilsendt. Samme låneseddel bruges i begge tilfælde. Lånesedlerne gemmes i Dropbox og fysisk i mapper.",
+    "kort": "lån via låneseddel ved samlinger eller udviklingskonsulent",
+    "kort_regel": "låneseddel; lån ved samling eller tilsendt af konsulent"
+   }
+  ],
+  "vigtig": true,
+  "note": "Udstyrsgruppens ordning fra 2025 gælder udstyr til at træne i. Det er uklart, om bestyrelsens ordning fra 2014 (mail til jacob@styrke.dk) stadig gælder for andet udstyr, f.eks. streamingudstyr.",
+  "misfiled": []
+ }
+}

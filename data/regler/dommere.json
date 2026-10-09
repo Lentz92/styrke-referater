@@ -1,7 +1,7 @@
 {
  "kategori": "dommere",
  "version": 7,
- "input_hash": "904c0ce4c32e87613693f119d84def95f9eb82feb3908282b3eedfdc1423d352",
+ "input_hash": "3d07d6e80f763f5354ee8073be3beb88c425e9f53700692083e1017f760c6da1",
  "model": "claude-opus-5-5",
  "provenance": {
   "model": "claude-opus-5-5",
@@ -78,7 +78,12 @@
      "tekst": null,
      "kort": "påklædning efter IPF's regler indskærpes",
      "kort_regel": "dommere klædes efter IPF's regler",
-     "dhash": "69bd6d11f83f"
+     "dhash": "69bd6d11f83f",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:16+00:00"
+     }
     },
     {
      "ref": "vm2013#9",
@@ -86,7 +91,25 @@
      "tekst": "Dommerne skal være påklædt efter IPF's regler og skal bære sorte sko og sorte strømper.",
      "kort": "krav om sorte sko og sorte strømper",
      "kort_regel": "IPF-påklædning med sorte sko og sorte strømper",
-     "dhash": "307416ed39df"
+     "dhash": "307416ed39df",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:16+00:00"
+     }
+    },
+    {
+     "ref": "490#28",
+     "effekt": "aendret",
+     "tekst": "Dommerne skal være påklædt efter IPF's regler og skal bære sorte sko og sorte strømper. Grå jeans er ikke tilladt.",
+     "kort": "præciseret at grå jeans ikke er tilladt",
+     "kort_regel": "IPF-påklædning, sorte sko og strømper, ikke grå jeans",
+     "dhash": "db4a2ef29425",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:16+00:00"
+     }
     },
     {
      "ref": "refdom12092023#4",
@@ -94,23 +117,38 @@
      "tekst": null,
      "kort": "dommeres forslag om shorts om sommeren afvist",
      "kort_regel": null,
-     "dhash": "ad89934f6284"
+     "dhash": "ad89934f6284",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:16+00:00"
+     }
     },
     {
      "ref": "refdom02072024_2#2",
      "effekt": "aendret",
-     "tekst": "Dommere skal overholde dresscoden til stævner efter de tekniske regler: slips skal bæres med hvid skjorte. Kvinder kan vælge bluse eller skjorte; ved bluse bæres tørklæde i stedet for slips. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper.",
+     "tekst": "Dommere skal overholde dresscoden til stævner efter IPF's tekniske regler: slips skal bæres med hvid skjorte. Kvinder kan vælge bluse eller skjorte; ved bluse bæres tørklæde i stedet for slips. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
      "kort": "dresscode præciseret: hvid skjorte, slips/tørklæde, ikke sneakers",
      "kort_regel": "hvid skjorte med slips/tørklæde, sorte sko og strømper",
-     "dhash": "8e662b8864d5"
+     "dhash": "8e662b8864d5",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:16+00:00"
+     }
     },
     {
      "ref": "refdom01102024#1",
      "effekt": "aendret",
-     "tekst": "Dommere skal overholde dresscoden til stævner efter de tekniske regler: hvid skjorte med IPF-slips; kvinder kan vælge bluse eller skjorte og ved bluse bære IPF-tørklæde i stedet for slips. Kun IPF-slips eller IPF-tørklæde er tilladt. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper.",
+     "tekst": "Dommere skal overholde dresscoden til stævner efter IPF's tekniske regler: hvid skjorte med IPF-slips; kvinder kan vælge bluse eller skjorte og ved bluse bære IPF-tørklæde i stedet for slips. Kun IPF-slips eller IPF-tørklæde er tilladt. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
      "kort": "kun IPF-slips eller IPF-tørklæde tilladt",
      "kort_regel": "hvid skjorte, kun IPF-slips/-tørklæde, sorte sko og strømper",
-     "dhash": "1400ead3d6d7"
+     "dhash": "1400ead3d6d7",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:16+00:00"
+     }
     }
    ]
   },
@@ -367,22 +405,6 @@
      "kort": "Ares foreslår årlig opgørelse, også arrangerende klub",
      "kort_regel": null,
      "dhash": "841ddf8616d6"
-    }
-   ]
-  },
-  {
-   "titel": "Honorering af klubber, der stiller dommere",
-   "slug": "honorering-af-dommerstillende-klubber",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "rep2023#3",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "HaSK foreslår startgebyr 350 kr. til dommerhonorar",
-     "kort_regel": null,
-     "dhash": "4cb72a7b42f3"
     }
    ]
   },

@@ -1,0 +1,52 @@
+{
+ "fingerprint": "a0ef9b9871a7ae1d",
+ "time": "2026-10-09T10:32:02+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 108404,
+  "output": 3662,
+  "cost_usd": 0.941,
+  "seconds": 36,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "move",
+    "rules": [
+     "nordisk-mesterskab-for-masters"
+    ],
+    "title": null,
+    "category": "master",
+    "parts": [],
+    "reason": "The only decision is Denmark's rejected NPF proposal to create a Nordic championship for masters. It concerns only masters and is not an IPF/EPF/DIF requirement.",
+    "refs": [
+     "rep2026#27"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "dopinggebyr-ved-nm"
+    ],
+    "title": null,
+    "category": "okonomi",
+    "parts": [],
+    "reason": "The Representantskab decided when the doping fee at the Nordic championships is paid (only when a test is actually done). This is a pure fee decision by DSF, not an IPF/EPF/DIF requirement.",
+    "refs": [
+     "rep2026#26"
+    ]
+   }
+  ]
+ }
+}

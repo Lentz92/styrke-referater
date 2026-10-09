@@ -1,0 +1,72 @@
+{
+ "fingerprint": "e25bcda261ca4f12",
+ "time": "2026-10-09T10:31:29+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 23589,
+  "output": 2634,
+  "cost_usd": 0.2419,
+  "seconds": 26,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "split",
+    "rules": [
+     "godkendelse-af-logoer-på-løftertøj"
+    ],
+    "title": null,
+    "category": null,
+    "parts": [
+     {
+      "title": "Godkendelse af logoer og sponsorreklame",
+      "refs": [
+       "refbest_22042017#2",
+       "refbest_19012019.2#5",
+       "rep2019#11",
+       "refstaevne12032026#3"
+      ]
+     },
+     {
+      "title": "Logoafgift",
+      "refs": [
+       "rep2019#23"
+      ]
+     }
+    ],
+    "reason": "The rule regulates which logos may be worn on lifting clothing and how they are approved and registered. The withdrawn 2019 proposal concerned a separate logo fee of 500-2,500 kr., which belongs to the logo-fee rule.",
+    "refs": [
+     "rep2019#23",
+     "refbest_22042017#2",
+     "refstaevne12032026#3"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "udlån-af-udstyr-til-nye-udstyrsløftere",
+     "udlån-af-forbundets-udstyr"
+    ],
+    "title": "Udlån af forbundets udstyr",
+    "category": "udstyr",
+    "parts": [],
+    "reason": "Both rules set the procedure for lifters to borrow the federation's own equipment against a signed loan slip (låneseddel), so the 2025 decisions replace the earlier procedure.",
+    "refs": [
+     "refudstyr06032025#1",
+     "refudstyr10072025#2"
+    ]
+   }
+  ]
+ }
+}

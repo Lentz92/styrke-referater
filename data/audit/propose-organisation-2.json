@@ -1,0 +1,39 @@
+{
+ "fingerprint": "36caddf760eaff71",
+ "time": "2026-10-09T10:31:41+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 67052,
+  "output": 2363,
+  "cost_usd": 0.5842,
+  "seconds": 23,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "rename",
+    "rules": [
+     "breddeudvalgets-aktiviteter-og-sammensætning"
+    ],
+    "title": "Adgang til Breddeudvalgets lejre",
+    "category": null,
+    "parts": [],
+    "reason": "The only decision regulates who may take part in Breddeudvalget's camps: they are for DSF members, and outsiders can join if there is room and they pay. It says nothing about the committee's composition.",
+    "refs": [
+     "refbest_09062018#12"
+    ]
+   }
+  ]
+ }
+}

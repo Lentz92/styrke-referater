@@ -1,0 +1,67 @@
+{
+ "fingerprint": "faf8ad98fda603f8",
+ "time": "2026-10-09T10:31:05+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 81532,
+  "output": 4618,
+  "cost_usd": 0.7451,
+  "seconds": 46,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "merge",
+    "rules": [
+     "ophold-på-stævnehotel",
+     "ophold-på-stævnehotel-og-bindende-tilmelding"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "Both rules regulate the EPF/IPF requirement that lifters stay at the official competition hotel for the whole event period; the 2026 decision is a version of the same international requirement.",
+    "refs": [
+     "Tilmeldingsfrister2026#7"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "trænerakkreditering-ved-em-og-vm",
+     "trænergebyr-og-trænerakkreditering-ved-em-vm"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "Both regulate the EPF coach accreditation fee of 50 euro at EM/VM; the internationalt rule already holds decisions on 'Trænerakkreditering ved EM og VM'.",
+    "refs": [
+     "Tilmeldingsfrister2026#4"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "adel-uddannelse-for-trænere"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "The rule regulates the ADEL coach-education requirement for accreditation at international EPF/IPF competitions, which applies to all coaches rather than only to masters.",
+    "refs": [
+     "Tilmeldingsfrister2026#6"
+    ]
+   }
+  ]
+ }
+}

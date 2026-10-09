@@ -1,7 +1,7 @@
 {
  "kategori": "udstyr",
  "version": 7,
- "input_hash": "17637e0945db5f0a20896eb38c8c6a18b1258d3a2474a5116589d2c2530aee6d",
+ "input_hash": "d2743d9de70600447d851f4d78b6f61fb8a166ec0726f324a670a5b9f8e4c87d",
  "model": "claude-opus-5-5",
  "provenance": {
   "model": "claude-opus-5-5",
@@ -198,7 +198,12 @@
      "tekst": null,
      "kort": "stødende logoer forbudt; alle logoer godkendes af bestyrelsen",
      "kort_regel": "alle logoer godkendes af bestyrelsen",
-     "dhash": "762de8091ded"
+     "dhash": "762de8091ded",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:06+00:00"
+     }
     },
     {
      "ref": "refbest_19012019.2#5",
@@ -206,15 +211,12 @@
      "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. Derfor skal alle logoer forelægges bestyrelsen til godkendelse. Listen over godkendte logoer lægges på hjemmesiden under reglerne for godkendt udstyr.",
      "kort": "liste over godkendte logoer lægges på hjemmesiden",
      "kort_regel": "logoer godkendes af bestyrelsen, liste på hjemmesiden",
-     "dhash": "85f06e90ac46"
-    },
-    {
-     "ref": "rep2019#23",
-     "effekt": "trukket",
-     "tekst": null,
-     "kort": "bestyrelsens forslag om logoafgifter 500-2.500 kr. trukket",
-     "kort_regel": null,
-     "dhash": "57171488eb48"
+     "dhash": "85f06e90ac46",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:06+00:00"
+     }
     },
     {
      "ref": "rep2019#11",
@@ -222,15 +224,46 @@
      "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt; afgiften på 500 kr. pr. sponsorreklame pr. år er afskaffet. Sponsorlogoer (dokumenteret sponsor) ud over klublogoet, der er større end 5x2 cm, skal indsendes til DSF til godkendelse og opføres på en godkendt liste på hjemmesiden.",
      "kort": "sponsorafgift 500 kr. afskaffet; logoer over 5x2 cm godkendes",
      "kort_regel": "sponsorlogoer over 5x2 cm godkendes, ingen afgift",
-     "dhash": "ea79013cbdc4"
+     "dhash": "ea79013cbdc4",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:06+00:00"
+     }
     },
     {
      "ref": "refstaevne12032026#3",
      "effekt": "bekraeftet",
-     "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden afgift. Sponsorlogoer ud over klublogoet, der er større end 5x2 cm, skal godkendes af DSF og opføres på listen på hjemmesiden. En T-shirt med Master Løfter-logo er ikke en klub-T-shirt og må kun bruges i konkurrence, hvis logoet er godkendt og registreret.",
+     "tekst": "Logoer, der er stødende eller kan give sporten et dårligt ry, er forbudt. En klub eller atlet med en sponsor må bære sponsorens reklame på løftedragt eller T-shirt uden afgift. Sponsorlogoer (dokumenteret sponsor) ud over klublogoet, der er større end 5x2 cm, skal indsendes til DSF til godkendelse og opføres på den godkendte liste på hjemmesiden. En T-shirt med Master Løfter-logo er ikke en klub-T-shirt og må kun bruges under konkurrence, hvis logoet er godkendt af DSF og registreret på hjemmesiden.",
      "kort": "Master Løfter-T-shirt kræver godkendt, registreret logo",
-     "kort_regel": "ikke-klublogoer kræver DSF-godkendelse og registrering",
-     "dhash": "a7ddc9c66a0b"
+     "kort_regel": "ikke-klublogoer kræver DSF-godkendelse og registrering på hjemmesiden",
+     "dhash": "a7ddc9c66a0b",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:06+00:00"
+     }
+    }
+   ]
+  },
+  {
+   "titel": "Logoafgift",
+   "slug": "logoafgift",
+   "vigtig": true,
+   "note": null,
+   "versioner": [
+    {
+     "ref": "rep2019#23",
+     "effekt": "trukket",
+     "tekst": null,
+     "kort": "bestyrelsens forslag om logoafgifter 500-2.500 kr. trukket",
+     "kort_regel": null,
+     "dhash": "57171488eb48",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:03+00:00"
+     }
     }
    ]
   },
@@ -251,30 +284,6 @@
    ]
   },
   {
-   "titel": "Udlån af udstyr til løftere",
-   "slug": "udlån-af-udstyr-til-nye-udstyrsløftere",
-   "vigtig": false,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refudstyr06032025#1",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "fælles låneregister; kontakt Adam Engsig Karø",
-     "kort_regel": "lån via Adam Engsig Karø, fælles register",
-     "dhash": "533db3cebebe"
-    },
-    {
-     "ref": "refudstyr10072025#2",
-     "effekt": "aendret",
-     "tekst": "Løftere kan låne udstyr fra forbundet ved at udfylde en låneseddel, enten ved udstyrssamlinger eller ved at kontakte udviklingskonsulenten og få udstyret tilsendt. Samme låneseddel bruges i begge tilfælde. Lånesedlerne gemmes i Dropbox og fysisk i mapper.",
-     "kort": "lån via låneseddel ved samlinger eller udviklingskonsulent",
-     "kort_regel": "låneseddel; lån ved samling eller tilsendt af konsulent",
-     "dhash": "85aaabd2ca77"
-    }
-   ]
-  },
-  {
    "titel": "Straps i dødløft",
    "slug": "straps-i-dødløft",
    "vigtig": true,
@@ -287,6 +296,66 @@
      "kort": "ingen dispensation for straps, heller ikke ved manglende fingre",
      "kort_regel": "straps i dødløft forbudt, ingen dispensation",
      "dhash": "74798b1c335c"
+    }
+   ]
+  },
+  {
+   "titel": "Udlån af forbundets udstyr",
+   "slug": "udlån-af-forbundets-udstyr",
+   "vigtig": true,
+   "note": "Udstyrsgruppens ordning fra 2025 gælder udstyr til at træne i. Det er uklart, om bestyrelsens ordning fra 2014 (mail til jacob@styrke.dk) stadig gælder for andet udstyr, f.eks. streamingudstyr.",
+   "versioner": [
+    {
+     "ref": "refbest_04082012#2",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "udstyrsliste på hjemmesiden, lån via kontoret, afhentning i Horsens",
+     "kort_regel": "udstyr lånes via kontoret og hentes i Horsens",
+     "dhash": "739ae5cab9c4",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "refbest_09082014#7",
+     "effekt": "aendret",
+     "tekst": "Der laves en liste over DSF's udstyr, som lægges ud på forbundets hjemmeside. Klubber og andre, der vil låne forbundets udstyr (f.eks. streamingudstyr), skal sende en mail til forbundet på jacob@styrke.dk og underskrive en låneseddel ved lån af udstyret. Udstyret hentes i Horsens.",
+     "kort": "lån via mail til jacob@styrke.dk, låneseddel skal underskrives",
+     "kort_regel": "lån via mail til jacob@styrke.dk mod underskrevet låneseddel",
+     "dhash": "ec23abd075fc",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "refudstyr06032025#1",
+     "effekt": "aendret",
+     "tekst": "Udstyrsgruppen fører et fælles register (Excel-ark) over låneudstyr i hele udstyrsgruppen. Løftere, der gerne vil prøve at træne i udstyr, men hvis klub ikke har det rette udstyr, kan kontakte Adam Engsig Karø om at låne udstyr.",
+     "kort": "fælles låneregister; lån via Adam Engsig Karø",
+     "kort_regel": "lån via Adam Engsig Karø, fælles register over låneudstyr",
+     "dhash": "533db3cebebe",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "refudstyr10072025#2",
+     "effekt": "aendret",
+     "tekst": "Udstyrsgruppen fører et fælles register (Excel-ark) over låneudstyr. Løftere kan låne udstyr fra forbundet ved at udfylde en låneseddel, enten ved udstyrssamlinger eller ved at kontakte udviklingskonsulenten og få udstyret tilsendt. Samme låneseddel bruges i begge tilfælde. Lånesedlerne gemmes i Dropbox og fysisk i mapper.",
+     "kort": "lån via låneseddel ved samlinger eller udviklingskonsulent",
+     "kort_regel": "låneseddel; lån ved samling eller tilsendt af konsulent",
+     "dhash": "85aaabd2ca77",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     }
    ]
   }

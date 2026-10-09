@@ -36,6 +36,17 @@
     "refbest_10032013#2"
    ]
   },
+  "betaling-af-startgebyr-og-tilmelding": {
+   "to": "invitation-tilmeldings-og-betalingsfrist-til-stævner",
+   "category": "okonomi",
+   "title": "Betaling af startgebyr til arrangørklub",
+   "refs": [
+    "refbest_140320#5",
+    "refbest_17092016#6",
+    "refbest_28022010#1",
+    "rep2020#11"
+   ]
+  },
   "bona-fide-forsøg": {
    "to": "bona-fide-forsøg-2",
    "category": "staevner",
@@ -60,13 +71,21 @@
     "refbest_09082014#4"
    ]
   },
-  "disciplinmedaljer": {
-   "to": "bestilling-betaling-og-levering-af-medaljer-og-pokaler",
+  "divisionsturnering-arrangørtilskud-og-tilmeldingsgebyr": {
+   "to": "arrangørtilskud-ved-dm-hold-divisionsturnering",
    "category": "staevner",
-   "title": "Disciplinmedaljer",
+   "title": "Tilskud til arrangør af divisionsturneringens runder",
    "refs": [
-    "refbest_03052014#1",
-    "rep2019#10"
+    "refbest_08022015#11",
+    "rep2015#6"
+   ]
+  },
+  "dommerpåklædning-2": {
+   "to": "dommerpåklædning",
+   "category": "internationalt",
+   "title": "Dommerpåklædning",
+   "refs": [
+    "490#28"
    ]
   },
   "doping-og-deltagergebyr-ved-epf-mesterskaber": {
@@ -238,6 +257,14 @@
     "refstaevne04062024#1"
    ]
   },
+  "ophold-på-stævnehotel": {
+   "to": "ophold-på-stævnehotel-og-bindende-tilmelding",
+   "category": "master",
+   "title": "Ophold på stævnehotel",
+   "refs": [
+    "Tilmeldingsfrister2026#7"
+   ]
+  },
   "overførsel-af-sanktioner-fra-u-landshold": {
    "to": "deltagelse-i-landsholdssamlinger-og-advarsler",
    "category": "landshold",
@@ -323,6 +350,14 @@
     "490#37"
    ]
   },
+  "seksmånedersreglen-for-stævnedeltagelse": {
+   "to": "ventetid-fra-licens-til-stævnedeltagelse",
+   "category": "staevner",
+   "title": "6-månedersreglen for stævnedeltagelse",
+   "refs": [
+    "refbest_07122014#3"
+   ]
+  },
   "skiver-til-rekordsætning": {
    "to": "vægtskiver-til-rekordforsøg",
    "category": "staevner",
@@ -384,6 +419,22 @@
     "elite10122017#1"
    ]
   },
+  "tilskud-til-leje-af-lys-og-lydudstyr": {
+   "to": "tilskud-til-leje-af-lys-og-lyd",
+   "category": "okonomi",
+   "title": "Tilskud til lys og lyd ved stævner",
+   "refs": [
+    "refbest_28022010#5"
+   ]
+  },
+  "trænerakkreditering-ved-em-og-vm": {
+   "to": "trænergebyr-og-trænerakkreditering-ved-em-vm",
+   "category": "master",
+   "title": "Trænerakkreditering ved EM og VM",
+   "refs": [
+    "Tilmeldingsfrister2026#4"
+   ]
+  },
   "trænere-ved-internationale-stævner": {
    "to": "arrangørens-kontrol-af-trænere-i-opvarmningslokalet",
    "category": "staevner",
@@ -399,6 +450,15 @@
    "title": "Udlån af indvejningsvægte",
    "refs": [
     "refbest_230423#1"
+   ]
+  },
+  "udlån-af-udstyr-til-nye-udstyrsløftere": {
+   "to": "udlån-af-forbundets-udstyr",
+   "category": "udstyr",
+   "title": "Udlån af udstyr til løftere",
+   "refs": [
+    "refudstyr06032025#1",
+    "refudstyr10072025#2"
    ]
   },
   "ugentlig-klubtræning-for-landsholdsudøvere": {

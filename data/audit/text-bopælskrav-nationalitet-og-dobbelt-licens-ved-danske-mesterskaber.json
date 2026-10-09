@@ -1,0 +1,50 @@
+{
+ "fingerprint": "3e860e576458b65c",
+ "time": "2026-10-09T10:33:51+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 2341,
+  "output": 1012,
+  "cost_usd": 0.0395,
+  "seconds": 10,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "rep2013#8",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "udlændinge kræver 24 måneders fast bopæl i Danmark",
+    "kort_regel": "udlænding: 24 måneders bopæl; danskere i udlandet efter aftale"
+   },
+   {
+    "ref": "refbest_07102018#6",
+    "effekt": "bekraeftet",
+    "tekst": "En udlænding skal have haft fast bopæl i Danmark i 24 på hinanden følgende måneder for at kunne deltage i danske mesterskaber. En dansk statsborger, der i en periode bor eller studerer i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber, hvis DSF/Eliteudvalget har en aftale med vedkommende om det.",
+    "kort": "24 måneders bopælskrav og udlandsaftale bekræftet",
+    "kort_regel": "udlænding: 24 måneders bopæl; danskere i udlandet efter aftale"
+   },
+   {
+    "ref": "rep2026#3",
+    "effekt": "aendret",
+    "tekst": "For at deltage i et mesterskab under DSF skal en udlænding have haft fast bopæl i Danmark i 6 på hinanden følgende måneder. En dansk statsborger, der i en periode bor eller studerer i udlandet, kan repræsentere Danmark og deltage i danske mesterskaber efter aftale med DSF/Eliteudvalget. Man kan ikke have licens i flere lande samtidig. Kravene skal være opfyldt for registrering af danske rekorder.",
+    "kort": "bopælskrav nedsat fra 24 til 6 måneder (IPF)",
+    "kort_regel": "udlænding: 6 måneders bopæl for mesterskaber og rekorder"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

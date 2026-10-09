@@ -1,0 +1,64 @@
+{
+ "fingerprint": "720b5234a87712d2",
+ "time": "2026-10-09T10:33:41+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 2550,
+  "output": 2331,
+  "cost_usd": 0.0676,
+  "seconds": 21,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "elite20032024#1",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "ingen coach fee for atleter, der er assistenter",
+    "kort_regel": "atleter som assistenter fritaget, hvis de bor på officielt hotel"
+   },
+   {
+    "ref": "epf_kongres_2025#9",
+    "effekt": "aendret",
+    "tekst": "Trænere ved EPF-stævner skal betale coach capitation fee, medmindre de selv deltager i samme stævne som atlet eller dommer.",
+    "kort": "også dommere fritaget, Danmark undlod at stemme",
+    "kort_regel": "coach fee, undtagen for atleter og dommere i stævnet"
+   },
+   {
+    "ref": "Tilmeldingsfrister2026#4",
+    "effekt": "aendret",
+    "tekst": "Der er loft over antallet af trænere ved Europa- og Verdensmesterskaber. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro, medmindre de selv deltager i samme stævne som atlet eller dommer.",
+    "kort": "loft over antal trænere og gebyr på 50 euro",
+    "kort_regel": "begrænset antal trænere, akkrediteringsgebyr 50 euro"
+   },
+   {
+    "ref": "Tilmeldingsfrister2027#3",
+    "effekt": "aendret",
+    "tekst": "Der er loft over antallet af trænere ved Europa- og Verdensmesterskaber. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr på 50 euro og have gennemført ADEL, medmindre de selv deltager i samme stævne som atlet eller dommer. Trænere skal kontakte masterudvalget.",
+    "kort": "krav om gennemført ADEL tilføjet, kontakt masterudvalget",
+    "kort_regel": "50 euro og ADEL for trænerakkreditering ved EM/VM"
+   },
+   {
+    "ref": "epf_kongres_2026#5",
+    "effekt": "bekraeftet",
+    "tekst": "Der er loft over antallet af trænere ved Europa- og Verdensmesterskaber. Alle, der ønsker akkreditering som træner ved Europa- og Verdensmesterskaber, skal betale et gebyr (coach capitation fee) på 50 euro fra 2027 og have gennemført ADEL, medmindre de selv deltager i samme stævne som atlet eller dommer. Trænere skal kontakte masterudvalget.",
+    "kort": "EPF-forslag 16.7: trænergebyr 50 euro fra 2027",
+    "kort_regel": "50 euro og ADEL for trænerakkreditering"
+   }
+  ],
+  "vigtig": true,
+  "note": "Det er uklart, om fritagelsen for trænere, der selv deltager som atlet eller dommer, stadig gælder efter indførelsen af gebyret på 50 euro.",
+  "misfiled": []
+ }
+}

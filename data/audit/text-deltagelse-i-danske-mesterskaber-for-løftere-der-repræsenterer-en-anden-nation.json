@@ -1,0 +1,36 @@
+{
+ "fingerprint": "bb4f325f9fdf6f11",
+ "time": "2026-10-09T10:33:47+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 1346,
+  "output": 439,
+  "cost_usd": 0.0201,
+  "seconds": 6,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "refbest_07102018#5",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "løftere for anden IPF-nation udelukket fra DM/JM/SM og rekorder",
+    "kort_regel": "anden nation: ingen DM/JM/SM eller rekorder før 2 års bopæl"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

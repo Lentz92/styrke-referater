@@ -1,0 +1,85 @@
+{
+ "fingerprint": "8614f58c15074bcf",
+ "time": "2026-10-09T10:29:28+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 0,
+  "cache_write": 36171,
+  "output": 4265,
+  "cost_usd": 0.3747,
+  "seconds": 41,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "split",
+    "rules": [
+     "bopælskrav-nationalitet-og-dobbelt-licens-ved-danske-mesterskaber"
+    ],
+    "title": null,
+    "category": null,
+    "parts": [
+     {
+      "title": "Bopælskrav for udlændinge ved mesterskaber",
+      "refs": [
+       "rep2013#8",
+       "refbest_07102018#6",
+       "rep2026#3"
+      ]
+     },
+     {
+      "title": "Deltagelse i danske mesterskaber for løftere der repræsenterer en anden nation",
+      "refs": [
+       "refbest_07102018#5"
+      ]
+     }
+    ],
+    "reason": "Three decisions set the residence period required of foreigners (24 months, confirmed, then 6 months), while one decision bars lifters representing another nation from DM/JM/SM and records, a separate rule.",
+    "refs": [
+     "rep2013#8",
+     "refbest_07102018#5",
+     "refbest_07102018#6",
+     "rep2026#3"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "karantæne-ved-deltagelse-i-bodybuilding-og-stærkmandskonkurrencer",
+     "deltagelse-i-stærkmands-og-bodybuildingkonkurrencer"
+    ],
+    "title": "Deltagelse i stærkmands- og bodybuildingkonkurrencer",
+    "category": "antidoping",
+    "parts": [],
+    "reason": "The rejected 2014 proposal of a 1-year quarantine for competing in bodybuilding/strongman federations would have changed the existing rule on DSF lifters' participation in strongman competitions and its quarantine.",
+    "refs": [
+     "rep2014#5"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "navn-og-licensnummer-ved-licensbetaling",
+     "opkrævning-af-licens"
+    ],
+    "title": null,
+    "category": "okonomi",
+    "parts": [],
+    "reason": "The 2009 rule on stating name and licence number when paying the annual licence is about how the licence is paid, which was later replaced by the licence being invoiced.",
+    "refs": [
+     "rep2009#7"
+    ]
+   }
+  ]
+ }
+}

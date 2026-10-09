@@ -1,0 +1,64 @@
+{
+ "fingerprint": "d1da63ed990ed8cc",
+ "time": "2026-10-09T10:33:27+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 2625,
+  "output": 1274,
+  "cost_usd": 0.047,
+  "seconds": 12,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "rep2013#14",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "3 måneder på licenslisten før stævner, krav fra DIF/ADD",
+    "kort_regel": "3 måneder på licenslisten før officielle stævner, ingen dispensation"
+   },
+   {
+    "ref": "rep2014#9",
+    "effekt": "aendret",
+    "tekst": "En løfter skal have været medlem af en klub under DSF i 3 måneder, før løfteren kan søge om licens. Licensen træder i kraft 3 måneder efter, at ansøgningen er registreret.",
+    "kort": "3 måneders medlemskab før licensansøgning, licens gyldig efter 3 måneder",
+    "kort_regel": "3 måneders medlemskab, derefter 3 måneders ventetid på licens"
+   },
+   {
+    "ref": "refbest_07122014#3",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "bestyrelsen vil ikke foreslå afskaffelse af 6-månedersreglen",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2015#2",
+    "effekt": "aendret",
+    "tekst": "En løfter skal være medlem af en forening under DSF for at anmode om licens og skal have været registreret på DSF's liste over forventede licensløftere i mindst tre måneder, før vedkommende kan deltage i stævner.",
+    "kort": "krav om 3 måneders medlemskab før licensansøgning slettet",
+    "kort_regel": "medlemskab kræves; 3 måneder på listen før stævner"
+   },
+   {
+    "ref": "refbest_08052016#2",
+    "effekt": "bekraeftet",
+    "tekst": "En løfter skal være medlem af en forening under DSF for at anmode om licens og skal have haft licens i 3 måneder fra ansøgningsdatoen, før vedkommende kan deltage i et stævne. Der gives ikke dispensation fra reglen.",
+    "kort": "3 måneder fra ansøgningsdato, ingen dispensation",
+    "kort_regel": "3 måneders licens før stævne, ingen dispensation"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

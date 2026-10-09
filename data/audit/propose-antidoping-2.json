@@ -1,0 +1,52 @@
+{
+ "fingerprint": "d5e0b5f9a2159f36",
+ "time": "2026-10-09T10:29:44+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 34631,
+  "output": 2249,
+  "cost_usd": 0.3225,
+  "seconds": 23,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "move",
+    "rules": [
+     "indberetning-af-dopingkontrolresultater-til-ipf"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "The rule is an IPF requirement binding DSF to report doping control results annually by 31 March under penalty of a 500 euro fine and suspension, like the other IPF/EPF obligations filed under internationalt.",
+    "refs": [
+     "vm2013#1"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "behandling-af-dopingsager-i-dif"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "The rule records a DIF decision abolishing DIF's doping tribunals and adapting to the 2027 WADA code, a DIF requirement that binds how DSF's doping cases are handled.",
+    "refs": [
+     "dif_budgetmoede_2026#1"
+    ]
+   }
+  ]
+ }
+}

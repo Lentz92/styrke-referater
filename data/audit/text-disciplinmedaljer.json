@@ -1,0 +1,50 @@
+{
+ "fingerprint": "352a9e6b80989aa1",
+ "time": "2026-10-09T10:33:41+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 1924,
+  "output": 1362,
+  "cost_usd": 0.0432,
+  "seconds": 14,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "refbest_03052014#1",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "disciplinmedaljer ved alle typer DM, med virkning fra 2014",
+    "kort_regel": "disciplinmedaljer ved alle typer DM"
+   },
+   {
+    "ref": "refbest_26072015#8",
+    "effekt": "aendret",
+    "tekst": "Der uddeles disciplinmedaljer ved alle stævner.",
+    "kort": "udvidet fra alle DM til alle stævner",
+    "kort_regel": "disciplinmedaljer ved alle stævner"
+   },
+   {
+    "ref": "rep2019#10",
+    "effekt": "aendret",
+    "tekst": "Disciplinmedaljer uddeles i alle kategorier kun ved nationale mesterskaber, dvs. DM-styrkeløft og DM klassisk trekamp, og ikke længere ved alle stævner. I bænkpres uddeles der ikke disciplinmedaljer.",
+    "kort": "Hvidovre: kun ved nationale mesterskaber, ikke i bænkpres",
+    "kort_regel": "disciplinmedaljer kun ved DM i trekamp, ikke bænkpres"
+   }
+  ],
+  "vigtig": true,
+  "note": "Beslutningen fra 2019 nævner også DM-bænk og DM-bænk klassisk, men siger samtidig, at der ikke gives disciplinmedaljer i bænkpres. Den er derfor læst, som om den kun gælder DM i trekamp.",
+  "misfiled": []
+ }
+}

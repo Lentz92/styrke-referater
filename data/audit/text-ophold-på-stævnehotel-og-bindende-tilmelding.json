@@ -1,0 +1,57 @@
+{
+ "fingerprint": "b4103fe7bf97f80d",
+ "time": "2026-10-09T10:33:21+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 785,
+  "cache_write": 4012,
+  "output": 1746,
+  "cost_usd": 0.0672,
+  "seconds": 17,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "467kongres#3",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "Great Britain PF foreslår 100 euro bøde i stedet; faldt snævert",
+    "kort_regel": null
+   },
+   {
+    "ref": "epf_kongres_2025#6",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "minimum 2 sammenhængende nætter på officielt hotel ved EM",
+    "kort_regel": "mindst 2 sammenhængende nætter på officielt hotel ved EM"
+   },
+   {
+    "ref": "Tilmeldingsfrister2026#7",
+    "effekt": "aendret",
+    "tekst": "Deltagere skal bo på stævnehotellet i hele deres stævneperiode, fx 4 overnatninger, hvis man løfter mandag og hjælper en anden løfter torsdag. Ved europamesterskaber er minimumsopholdet på det officielle hotel 2 på hinanden følgende nætter.",
+    "kort": "krav om ophold på stævnehotel i hele stævneperioden",
+    "kort_regel": "bo på stævnehotel hele stævneperioden, ved EM mindst 2 nætter"
+   },
+   {
+    "ref": "Tilmeldingsfrister2027#6",
+    "effekt": "bekraeftet",
+    "tekst": "Atleter og trænere skal bo på det eller de officielle stævnehoteller i hele stævneperioden for at beholde deres akkreditering, fx 4 overnatninger, hvis man løfter mandag og hjælper en anden løfter torsdag. Ved europamesterskaber er minimumsopholdet på det officielle hotel 2 på hinanden følgende nætter.",
+    "kort": "bekræftet; ophold på officielt hotel krav for akkreditering",
+    "kort_regel": "officielt hotel hele stævneperioden påkrævet for akkreditering"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

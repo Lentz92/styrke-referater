@@ -1,0 +1,50 @@
+{
+ "fingerprint": "075225558a1f6394",
+ "time": "2026-10-09T10:33:25+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 1699,
+  "output": 690,
+  "cost_usd": 0.028,
+  "seconds": 9,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "refbest_28022010#9",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "TSK foreslår, at forbundet køber stævneudstyr",
+    "kort_regel": null
+   },
+   {
+    "ref": "refbest_28022010#5",
+    "effekt": "foreslaaet",
+    "tekst": null,
+    "kort": "bestyrelsen foreslår tilskud til lys og lyd uden for klublokaler",
+    "kort_regel": null
+   },
+   {
+    "ref": "rep2010#6",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "tilskud til leje af lys og lyd i stedet for køb",
+    "kort_regel": "tilskud til leje efter stævneudvalgets bedømmelse"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "fingerprint": "b8a1c6e0d20320c0",
+ "time": "2026-10-09T10:33:16+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 785,
+  "cache_write": 4725,
+  "output": 1329,
+  "cost_usd": 0.0645,
+  "seconds": 12,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "refbest_13092009#9",
+    "effekt": "indfoert",
+    "tekst": null,
+    "kort": "påklædning efter IPF's regler indskærpes",
+    "kort_regel": "dommere klædes efter IPF's regler"
+   },
+   {
+    "ref": "vm2013#9",
+    "effekt": "aendret",
+    "tekst": "Dommerne skal være påklædt efter IPF's regler og skal bære sorte sko og sorte strømper.",
+    "kort": "krav om sorte sko og sorte strømper",
+    "kort_regel": "IPF-påklædning med sorte sko og sorte strømper"
+   },
+   {
+    "ref": "490#28",
+    "effekt": "aendret",
+    "tekst": "Dommerne skal være påklædt efter IPF's regler og skal bære sorte sko og sorte strømper. Grå jeans er ikke tilladt.",
+    "kort": "præciseret at grå jeans ikke er tilladt",
+    "kort_regel": "IPF-påklædning, sorte sko og strømper, ikke grå jeans"
+   },
+   {
+    "ref": "refdom12092023#4",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "dommeres forslag om shorts om sommeren afvist",
+    "kort_regel": null
+   },
+   {
+    "ref": "refdom02072024_2#2",
+    "effekt": "aendret",
+    "tekst": "Dommere skal overholde dresscoden til stævner efter IPF's tekniske regler: slips skal bæres med hvid skjorte. Kvinder kan vælge bluse eller skjorte; ved bluse bæres tørklæde i stedet for slips. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
+    "kort": "dresscode præciseret: hvid skjorte, slips/tørklæde, ikke sneakers",
+    "kort_regel": "hvid skjorte med slips/tørklæde, sorte sko og strømper"
+   },
+   {
+    "ref": "refdom01102024#1",
+    "effekt": "aendret",
+    "tekst": "Dommere skal overholde dresscoden til stævner efter IPF's tekniske regler: hvid skjorte med IPF-slips; kvinder kan vælge bluse eller skjorte og ved bluse bære IPF-tørklæde i stedet for slips. Kun IPF-slips eller IPF-tørklæde er tilladt. Der skal bæres sorte sko, som ikke er sneakers, og sorte strømper. Grå jeans er ikke tilladt.",
+    "kort": "kun IPF-slips eller IPF-tørklæde tilladt",
+    "kort_regel": "hvid skjorte, kun IPF-slips/-tørklæde, sorte sko og strømper"
+   }
+  ],
+  "vigtig": true,
+  "note": null,
+  "misfiled": []
+ }
+}

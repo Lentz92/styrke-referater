@@ -1,0 +1,71 @@
+{
+ "fingerprint": "5daa53689280ba32",
+ "time": "2026-10-09T10:33:59+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "bc4e551364a0",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2803,
+  "cache_write": 3106,
+  "output": 2014,
+  "cost_usd": 0.0657,
+  "seconds": 18,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "versioner": [
+   {
+    "ref": "rep2016#11",
+    "effekt": "forkastet",
+    "tekst": null,
+    "kort": "ER Equipment foreslår DM-krav for international repræsentation",
+    "kort_regel": null
+   },
+   {
+    "ref": "elite29032021#2",
+    "effekt": "indfoert",
+    "tekst": "Landsholdsløftere skal deltage i DM. Atleter, der deltager i VM klassisk i september/oktober 2021, får dispensation fra DM klassisk i september 2021.",
+    "kort": "VM klassisk-deltagere fritaget for DM klassisk 2021",
+    "kort_regel": "DM-pligt; VM-deltagere 2021 fritaget"
+   },
+   {
+    "ref": "refbest_310722#5",
+    "effekt": "bekraeftet",
+    "tekst": "Landsholdsløftere skal som udgangspunkt deltage i DM.",
+    "kort": "landsholdsløftere skal som udgangspunkt deltage i DM",
+    "kort_regel": "DM-deltagelse som udgangspunkt"
+   },
+   {
+    "ref": "elite12122023#2",
+    "effekt": "aendret",
+    "tekst": "Landsholdsløftere skal som udgangspunkt deltage i DM. Deltagere ved VM klassisk 2024 får dispensation fra den obligatoriske deltagelse ved DM klassisk 2024, da stævnerne afholdes i samme uge; deltagelse ved DM klassisk er dog velkommen, hvis det er praktisk muligt.",
+    "kort": "VM klassisk 2024-deltagere fritaget for DM klassisk",
+    "kort_regel": "DM-pligt; dispensation ved VM samme uge"
+   },
+   {
+    "ref": "elite30042026#1",
+    "effekt": "aendret",
+    "tekst": "Landsholdsløftere skal deltage ved DM, også når DM ligger kort efter et internationalt mesterskab. Der gives ikke dispensation fra deltagelsen.",
+    "kort": "DM-pligt fastholdes; ingen dispensation",
+    "kort_regel": "DM-pligt uden dispensation"
+   },
+   {
+    "ref": "elite15092026#3",
+    "effekt": "bekraeftet",
+    "tekst": "Landsholdsløftere skal deltage ved DM, også når DM ligger kort efter et internationalt mesterskab. Der gives ikke dispensation fra deltagelsen. Ved datosammenfald i 2027 mellem DM-ugen og VM Open Klassisk gælder samme procedure som i 2026 for atleter, der deltager ved VM og samtidig er forpligtet til at deltage ved DM.",
+    "kort": "samme procedure ved datosammenfald i 2027",
+    "kort_regel": "DM-pligt; 2026-procedure ved sammenfald 2027"
+   }
+  ],
+  "vigtig": true,
+  "note": "Repræsentantskabet forkastede i 2016 et krav om DM-deltagelse, men Eliteudvalget har senere indført og strammet kravet. Det er også uklart, hvilken procedure der gælder ved datosammenfald i 2027, når der fra 2026 ikke gives dispensation.",
+  "misfiled": []
+ }
+}

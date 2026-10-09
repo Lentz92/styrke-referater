@@ -1,0 +1,80 @@
+{
+ "fingerprint": "f88d80716473bd0f",
+ "time": "2026-10-09T10:32:24+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 2396,
+  "cache_write": 108402,
+  "output": 5926,
+  "cost_usd": 0.9862,
+  "seconds": 54,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "merge",
+    "rules": [
+     "dommerpåklædning-2",
+     "dommerpåklædning"
+    ],
+    "title": null,
+    "category": "dommere",
+    "parts": [],
+    "reason": "Both rules regulate the dress code for referees; the IPF clarification that grey jeans are not allowed is a version of the same referee dress code.",
+    "refs": [
+     "490#28"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "godkendt-udstyr-ved-internationale-stævner",
+     "udstyrsregler-for-løftere-der-repræsenterer-danmark"
+    ],
+    "title": null,
+    "category": "internationalt",
+    "parts": [],
+    "reason": "Both rules state the same requirement: lifters competing internationally may only use equipment on IPF's approved list.",
+    "refs": [
+     "refbest_07122014#6"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "dopinggebyr-ved-nm"
+    ],
+    "title": null,
+    "category": "okonomi",
+    "parts": [],
+    "reason": "A Representative Council decision that the doping fee at the Nordic championship is only paid when testing occurs; a pure fee decision, not one made by IPF, EPF or DIF.",
+    "refs": [
+     "rep2026#26"
+    ]
+   },
+   {
+    "op": "move",
+    "rules": [
+     "nordisk-mesterskab-for-masters"
+    ],
+    "title": null,
+    "category": "master",
+    "parts": [],
+    "reason": "The rejected Danish proposal to create a Nordic championship for masters concerns only masters.",
+    "refs": [
+     "rep2026#27"
+    ]
+   }
+  ]
+ }
+}

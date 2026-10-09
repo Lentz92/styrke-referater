@@ -1,0 +1,85 @@
+{
+ "fingerprint": "d7f53ab7a63b3a07",
+ "time": "2026-10-09T10:29:33+00:00",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "fc627ff7cc3d",
+  "effort": "high"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 0,
+  "cache_write": 63524,
+  "output": 4334,
+  "cost_usd": 0.5949,
+  "seconds": 47,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "output": {
+  "ops": [
+   {
+    "op": "merge",
+    "rules": [
+     "tilskud-til-leje-af-lys-og-lydudstyr",
+     "tilskud-til-leje-af-lys-og-lyd"
+    ],
+    "title": null,
+    "category": "okonomi",
+    "parts": [],
+    "reason": "The board's February 2010 proposal of a subsidy for renting light and sound equipment for meets held outside club premises is the proposal the March 2010 decision in the staevner rule settled; both regulate the same subsidy.",
+    "refs": [
+     "refbest_28022010#5"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "arrangørtilskud-ved-dm-hold-divisionsturnering",
+     "divisionsturnering-arrangørtilskud-og-tilmeldingsgebyr"
+    ],
+    "title": null,
+    "category": "okonomi",
+    "parts": [],
+    "reason": "Both regulate the subsidy paid to clubs that host DM-Hold (divisionsturnering) rounds; the 2026 decision raising the per-round subsidy explicitly removed the 10,000 kr. arrangement filed under the other rule.",
+    "refs": [
+     "rep2012#10",
+     "rep2026#23"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "betaling-af-startgebyr-og-tilmelding",
+     "invitation-tilmeldings-og-betalingsfrist-til-stævner"
+    ],
+    "title": null,
+    "category": "staevner",
+    "parts": [],
+    "reason": "Both regulate when and how clubs pay the entry fee to the host club at registration for meets (proof of payment, deadline, Billetto proposal); the decisions share the same subjects across the two rules.",
+    "refs": [
+     "refbest_28022010#1",
+     "refbest_17092016#6",
+     "rep2020#11"
+    ]
+   },
+   {
+    "op": "merge",
+    "rules": [
+     "selvbestilling-af-rejser",
+     "rejseplanlægning-og-booking"
+    ],
+    "title": null,
+    "category": "landshold",
+    "parts": [],
+    "reason": "The 2024 decision letting national-team lifters book their own travel within the committee's budget changes the national-team rule on booking travel to international meets, which already covers lifters booking their own flights.",
+    "refs": [
+     "refbest_151224#3"
+    ]
+   }
+  ]
+ }
+}

@@ -1,7 +1,7 @@
 {
  "kategori": "staevner",
  "version": 7,
- "input_hash": "d59bfb36179e814b57adebbda57f73e7fdc1725f4574addf9f4ec79499721c7a",
+ "input_hash": "80e6a1ed64bfc31569eb71266665c23a1cd703e27b71bff9375947d7209a6dd1",
  "model": "claude-opus-5-5",
  "provenance": {
   "model": "claude-opus-5-5",
@@ -427,30 +427,6 @@
    ]
   },
   {
-   "titel": "Tilskud til arrangør af divisionsturneringens runder",
-   "slug": "divisionsturnering-arrangørtilskud-og-tilmeldingsgebyr",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_08022015#11",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "forslag om 10.000 kr. og finale til arrangør af alle runder",
-     "kort_regel": null,
-     "dhash": "e1942e436c41"
-    },
-    {
-     "ref": "rep2015#6",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "10.000 kr. for alle tre runder plus tilbud om finale",
-     "kort_regel": "10.000 kr. for tre runder; finale skiftevis øst/vest",
-     "dhash": "3afd788a0ddc"
-    }
-   ]
-  },
-  {
    "titel": "Offentliggørelse af resultater i divisionsturneringen",
    "slug": "divisionsturnering-offentliggørelse-af-resultater",
    "vigtig": true,
@@ -585,20 +561,43 @@
    "note": null,
    "versioner": [
     {
+     "ref": "refbest_28022010#1",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "bestyrelsen foreslår dokumentation for betalt startgebyr før start",
+     "kort_regel": null,
+     "dhash": "f13a237c6c82",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
      "ref": "rep2010#5",
      "effekt": "indfoert",
      "tekst": null,
      "kort": "krav om dokumentation for betalt startgebyr",
-     "kort_regel": "dokumentation for betalt startgebyr kræves",
-     "dhash": "d804bfee5712"
+     "kort_regel": "dokumentation for betalt startgebyr kræves for at stille op",
+     "dhash": "d804bfee5712",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2012#3",
      "effekt": "aendret",
-     "tekst": "DSF sender invitationen til foreningerne senest seks uger før stævnet, og tilmeldinger sendes via e-mail til DSF senest tre uger før stævnet. Samtidig overføres startgebyr og evt. licens til DSF's bankkonto; en tilmelding er kun rettidig, hvis også startgebyr og evt. licens er overført rettidigt. Der skal være dokumentation for, at løfterne har betalt startgebyr.",
+     "tekst": "DSF sender invitationen til foreningerne senest seks uger før stævnet, og tilmeldinger skal sendes via e-mail til DSF senest tre uger før stævnet. Samtidig med tilmeldingen overføres startgebyr og evt. licens til DSF's bankkonto; en tilmelding er kun rettidig, hvis også startgebyr og evt. licens er overført rettidigt. Der skal være dokumentation for, at løfterne har betalt startgebyr.",
      "kort": "invitation 6 uger før, tilmelding og betaling 3 uger før",
-     "kort_regel": "tilmelding og betaling senest tre uger før",
-     "dhash": "e1e9c7c02ca0"
+     "kort_regel": "tilmelding og betaling til DSF senest tre uger før",
+     "dhash": "e1e9c7c02ca0",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2012#14",
@@ -606,31 +605,64 @@
      "tekst": null,
      "kort": "KSK foreslår bindende vægtklasser og deltagerliste 14 dage før",
      "kort_regel": null,
-     "dhash": "1bcaea9cc1ea"
+     "dhash": "1bcaea9cc1ea",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2012#5",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "TSK foreslår løbende tilmelding",
+     "kort": "TSK's forslag om løbende tilmelding forkastet",
      "kort_regel": null,
-     "dhash": "ca49d7945591"
+     "dhash": "ca49d7945591",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2015#10",
      "effekt": "aendret",
-     "tekst": null,
+     "tekst": "DSF sender invitation senest seks uger før stævnet, og rettidig og bindende tilmelding skal ske til DSF via online system senest tre uger før stævnet. Startgebyr betales til arrangørens konto efter oplysningerne i invitationen og ikke længere til DSF samtidig med tilmeldingen; licens betales ikke ved tilmeldingen, men opkræves bagudrettet af DSF ud fra nomineringslisterne. Der skal fortsat være dokumentation for, at løfterne har betalt startgebyr.",
      "kort": "online tilmelding; startgebyr til arrangør; licens opkræves bagud",
-     "kort_regel": "online tilmelding 3 uger før; gebyr til arrangør",
-     "dhash": "35d970509f6d"
+     "kort_regel": "online tilmelding 3 uger før; startgebyr til arrangørens konto",
+     "dhash": "35d970509f6d",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "refbest_17092016#6",
+     "effekt": "bekraeftet",
+     "tekst": "DSF sender invitation senest seks uger før stævnet, og rettidig og bindende tilmelding skal ske til DSF via online system senest tre uger før stævnet. Startgebyr betales til arrangørens konto efter oplysningerne i invitationen; fristen for indbetalingen er den dato, der står på tilmeldingen. Betales der ikke rettidigt, må den afholdende klub udelukke den klub, som ikke har betalt.",
+     "kort": "betalingsfrist er tilmeldingsdatoen; arrangør må udelukke ikke-betalende klub",
+     "kort_regel": "betaling inden tilmeldingsfrist, ellers kan arrangør udelukke klubben",
+     "dhash": "070f8dfe3e96",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2017#2",
      "effekt": "aendret",
-     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding via online system og for betaling af startgebyr til arrangørens konto er 21 dage før stævnestart. 3 bankdage efter fristen kontrollerer den arrangerende klub, hvem der har betalt, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage; klubberne orienterer selv løfterne. Licenser opkræves bagudrettet af DSF ud fra nomineringslisterne.",
-     "kort": "frist 21 dage før; ubetalte løftere udelukkes",
-     "kort_regel": "tilmelding og betaling senest 21 dage før",
-     "dhash": "ce5ef7f5c274"
+     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding via online system og for betaling af startgebyr til arrangørens konto er 21 dage før stævnestart. 3 bankdage efter fristens udløb kontrollerer den arrangerende klub, hvem der har betalt, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Klubberne orienterer selv deres løftere.",
+     "kort": "frist 21 dage før; ubetalte løftere kan ikke deltage",
+     "kort_regel": "tilmelding og betaling senest 21 dage før stævnestart",
+     "dhash": "ce5ef7f5c274",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2017#26",
@@ -638,31 +670,77 @@
      "tekst": null,
      "kort": "Aalborg foreslår IPF's tilmeldingsregler, forkastet ved stemmelighed",
      "kort_regel": null,
-     "dhash": "16368fd5450a"
+     "dhash": "16368fd5450a",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2018#17",
      "effekt": "trukket",
      "tekst": null,
-     "kort": "Jan Vestergaard foreslår tilmelding 60 dage før",
+     "kort": "Jan Vestergaard foreslår tilmelding 60 dage før, trukket",
      "kort_regel": null,
-     "dhash": "4ee5bf548b07"
+     "dhash": "4ee5bf548b07",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "refbest_140320#3",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "AASK foreslår forhåndstilmelding 60 dage før",
+     "kort": "AASK foreslår forhåndstilmelding 60 dage før; bestyrelsen imod",
      "kort_regel": null,
-     "dhash": "fcf9df4da204"
+     "dhash": "fcf9df4da204",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "refbest_140320#5",
+     "effekt": "foreslaaet",
+     "tekst": null,
+     "kort": "Holstebro foreslår atleter betaler selv via Billetto; bestyrelsen imod",
+     "kort_regel": null,
+     "dhash": "8ea8f9c28992",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2020#3",
      "effekt": "forkastet",
      "tekst": null,
-     "kort": "AASK's forslag om IPF-frister forkastet",
+     "kort": "AASK's forslag om IPF-frister (60/21 dage) forkastet",
      "kort_regel": null,
-     "dhash": "718edb54e56d"
+     "dhash": "718edb54e56d",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "rep2020#11",
+     "effekt": "forkastet",
+     "tekst": null,
+     "kort": "Holstebros forslag om betaling via Billetto forkastet",
+     "kort_regel": null,
+     "dhash": "5ebff9c46592",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "refbest_021021#9",
@@ -670,31 +748,51 @@
      "tekst": null,
      "kort": "bestyrelsen foreslår 21-dages fristen videreført i stævneregler 2022",
      "kort_regel": null,
-     "dhash": "b488f1ad4716"
+     "dhash": "b488f1ad4716",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2022#2",
      "effekt": "bekraeftet",
-     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for tilmelding via online system og for betaling af startgebyr er 21 dage før stævnestart. 3 bankdage efter fristen kontrollerer arrangøren betalingerne, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Licenser opkræves bagudrettet af DSF.",
+     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding via online system og for betaling af startgebyr til arrangørens konto er 21 dage før stævnestart. 3 bankdage efter fristens udløb kontrollerer arrangøren betalingerne, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Klubberne orienterer selv deres løftere.",
      "kort": "21-dages frist og betalingskontrol bekræftet",
-     "kort_regel": "tilmelding og betaling senest 21 dage før",
-     "dhash": "193e6f192cf1"
+     "kort_regel": "tilmelding og betaling senest 21 dage før stævnestart",
+     "dhash": "193e6f192cf1",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2026#6",
      "effekt": "aendret",
-     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for tilmelding til DSF-mesterskaber og betaling af startgebyr er 30 dage før stævnestart, medmindre andet står i invitationen. 3 bankdage efter fristen kontrollerer arrangøren betalingerne, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Licenser opkræves bagudrettet af DSF.",
+     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding til DSF-mesterskaber via online system og for betaling af startgebyr til arrangørens konto er 30 dage før stævnestart, medmindre andet er påført invitationen. 3 bankdage efter fristens udløb kontrollerer arrangøren betalingerne, og klubber med løftere, der ikke har betalt, får besked fra DSF's sekretær om, at løfterne ikke kan deltage. Klubberne orienterer selv deres løftere.",
      "kort": "frist ændret fra 21 til 30 dage før",
-     "kort_regel": "tilmelding og betaling senest 30 dage før",
-     "dhash": "dfdeaa4fe271"
+     "kort_regel": "tilmelding og betaling senest 30 dage før, medmindre invitation siger andet",
+     "dhash": "dfdeaa4fe271",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "rep2026#22",
      "effekt": "aendret",
-     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for tilmelding til DSF-mesterskaber og betaling af startgebyr er 30 dage før stævnestart, medmindre andet står i invitationen. 3 bankdage efter fristen kontrollerer den arrangerende klub, hvem der har betalt, og giver selv klubber med løftere, der ikke har betalt, besked om, at de ikke kan deltage. Arrangøren overfører 50 kr. pr. deltager til DSF efter faktura. Licenser opkræves bagudrettet af DSF.",
+     "tekst": "DSF sender invitation senest seks uger før stævnet. Sidste frist for bindende tilmelding til DSF-mesterskaber via online system og for betaling af startgebyr til arrangørens konto er 30 dage før stævnestart, medmindre andet er påført invitationen. 3 bankdage efter fristens udløb kontrollerer den arrangerende klub, hvem der har betalt, og giver selv klubber med løftere, der ikke har betalt, besked om, at de ikke kan deltage. Arrangøren overfører fortsat 50 kr. pr. deltager til DSF efter faktura.",
      "kort": "arrangøren giver besked om manglende betaling, ikke sekretæren",
-     "kort_regel": "frist 30 dage; arrangør kontrollerer og giver besked",
-     "dhash": "78dccdfd55ef"
+     "kort_regel": "frist 30 dage; arrangør kontrollerer betaling og giver besked",
+     "dhash": "78dccdfd55ef",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     }
    ]
   },
@@ -743,30 +841,6 @@
      "kort": "løftere tilmeldes i klubbens landsdel",
      "kort_regel": "JM/SM-tilmelding i klubbens landsdel",
      "dhash": "96ffa330dbc0"
-    }
-   ]
-  },
-  {
-   "titel": "Tilskud til lys- og lydudstyr ved stævner",
-   "slug": "tilskud-til-leje-af-lys-og-lyd",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_28022010#9",
-     "effekt": "foreslaaet",
-     "tekst": null,
-     "kort": "TSK foreslår, at forbundet køber stævneudstyr",
-     "kort_regel": null,
-     "dhash": "bc30b0087406"
-    },
-    {
-     "ref": "rep2010#6",
-     "effekt": "indfoert",
-     "tekst": null,
-     "kort": "tilskud til leje af lys og lyd i stedet for køb",
-     "kort_regel": "tilskud til leje efter stævneudvalgets bedømmelse",
-     "dhash": "dd9a8f5e0e65"
     }
    ]
   },
@@ -1587,90 +1661,148 @@
    ]
   },
   {
-   "titel": "Medaljer og disciplinmedaljer ved mesterskaber",
-   "slug": "bestilling-betaling-og-levering-af-medaljer-og-pokaler",
+   "titel": "Disciplinmedaljer",
+   "slug": "disciplinmedaljer",
    "vigtig": true,
-   "note": "Fra 2015 bestilte klubberne selv medaljer efter Repræsentantskabets beslutning. Bestyrelsen lod i 2021 stævneudvalget bestille dem, før Repræsentantskabet ændrede reglen i 2022.",
+   "note": "Beslutningen fra 2019 nævner også DM-bænk og DM-bænk klassisk, men siger samtidig, at der ikke gives disciplinmedaljer i bænkpres. Den er derfor læst, som om den kun gælder DM i trekamp.",
    "versioner": [
     {
      "ref": "refbest_03052014#1",
      "effekt": "indfoert",
      "tekst": null,
-     "kort": "disciplinmedaljer ved alle typer DM, fra 2014",
-     "kort_regel": "disciplinmedaljer ved alle DM",
-     "dhash": "54230dbbb068"
-    },
-    {
-     "ref": "rep2015#1",
-     "effekt": "aendret",
-     "tekst": null,
-     "kort": "klub bestiller og betaler medaljer; disciplinmedaljer ved alle stævner",
-     "kort_regel": "arrangør betaler medaljer; disciplinmedaljer ved alle stævner",
-     "dhash": "e726116adfa1"
+     "kort": "disciplinmedaljer ved alle typer DM, med virkning fra 2014",
+     "kort_regel": "disciplinmedaljer ved alle typer DM",
+     "dhash": "54230dbbb068",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
     },
     {
      "ref": "refbest_26072015#8",
-     "effekt": "bekraeftet",
-     "tekst": "Den arrangerende klub bestiller og betaler medaljerne hos forbundets officielle medaljeforhandler, og forbundet betaler pokalerne. Der uddeles disciplinmedaljer ved alle stævner.",
-     "kort": "disciplinmedaljer ved alle stævner bekræftet",
+     "effekt": "aendret",
+     "tekst": "Der uddeles disciplinmedaljer ved alle stævner.",
+     "kort": "udvidet fra alle DM til alle stævner",
+     "kort_regel": "disciplinmedaljer ved alle stævner",
+     "dhash": "5378899fe3af",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    },
+    {
+     "ref": "rep2019#10",
+     "effekt": "aendret",
+     "tekst": "Disciplinmedaljer uddeles i alle kategorier kun ved nationale mesterskaber, dvs. DM-styrkeløft og DM klassisk trekamp, og ikke længere ved alle stævner. I bænkpres uddeles der ikke disciplinmedaljer.",
+     "kort": "Hvidovre: kun ved nationale mesterskaber, ikke i bænkpres",
+     "kort_regel": "disciplinmedaljer kun ved DM i trekamp, ikke bænkpres",
+     "dhash": "d14bb007a42f",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:33:41+00:00"
+     }
+    }
+   ]
+  },
+  {
+   "titel": "Bestilling, betaling og levering af medaljer og pokaler",
+   "slug": "bestilling-betaling-og-levering-af-medaljer-og-pokaler",
+   "vigtig": true,
+   "note": "Fra 2015 bestilte klubberne selv medaljer efter Repræsentantskabets beslutning. Bestyrelsen lod i 2021 stævneudvalget bestille dem, før Repræsentantskabet ændrede reglen i 2022.",
+   "versioner": [
+    {
+     "ref": "rep2015#1",
+     "effekt": "indfoert",
+     "tekst": null,
+     "kort": "arrangør bestiller og betaler medaljer; forbund betaler pokaler",
      "kort_regel": "arrangør betaler medaljer; disciplinmedaljer ved alle stævner",
-     "dhash": "5378899fe3af"
+     "dhash": "e726116adfa1",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:02+00:00"
+     }
     },
     {
      "ref": "refbest_10122016#4",
      "effekt": "bekraeftet",
-     "tekst": "Fra 1. januar 2017 bestiller klubberne selv medaljerne hos forbundets officielle forhandler, betaler dem og sørger selv for genbestilling og levering af manglende medaljer. Forbundet betaler pokaler. Der uddeles disciplinmedaljer ved alle stævner.",
-     "kort": "klubber bestiller selv og genbestiller manglende medaljer",
+     "tekst": "Fra 1. januar 2017 bestiller den arrangerende klub selv medaljerne hos forbundets officielle medaljeforhandler, betaler dem og sørger selv for, at manglende medaljer bliver genbestilt og leveret til den rette modtager. Pokaler betales af forbundet. Der udleveres disciplinmedaljer i alle kategorier til alle stævner.",
+     "kort": "klubber bestiller selv fra 2017 og genbestiller manglende medaljer",
      "kort_regel": "klubber bestiller, betaler og genbestiller medaljer",
-     "dhash": "abc2d7b2a0f8"
+     "dhash": "abc2d7b2a0f8",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:02+00:00"
+     }
     },
     {
      "ref": "refbest_14012017#2",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "bestyrelsen foreslår central medaljebestilling hos Formo",
+     "kort": "bestyrelsen foreslår central medaljebestilling hos Formo mod fast beløb",
      "kort_regel": null,
-     "dhash": "a433382093e6"
-    },
-    {
-     "ref": "rep2019#10",
-     "effekt": "aendret",
-     "tekst": "Den arrangerende klub bestiller og betaler medaljerne hos forbundets officielle forhandler, og forbundet betaler pokaler. Disciplinmedaljer uddeles i alle kategorier kun ved nationale mesterskaber (DM-styrkeløft og DM klassisk trekamp), ikke i bænkpres og ikke ved øvrige stævner.",
-     "kort": "disciplinmedaljer kun ved nationale trekamps-DM",
-     "kort_regel": "disciplinmedaljer kun ved DM i trekamp",
-     "dhash": "d14bb007a42f"
+     "dhash": "a433382093e6",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:02+00:00"
+     }
     },
     {
      "ref": "refbest_021021#2",
      "effekt": "aendret",
-     "tekst": "Stævneudvalget bestiller medaljer og pokaler 3 uger før stævnestart, når tilmeldingen er lukket, og de skal være formanden for den arrangerende klub i hænde senest en uge før; stævneudvalget tjekker leveringen telefonisk. Disciplinmedaljer uddeles kun ved DM-styrkeløft og DM klassisk trekamp.",
-     "kort": "stævneudvalget bestiller 3 uger før; levering uge før",
-     "kort_regel": "stævneudvalget bestiller; levering senest uge før",
-     "dhash": "e5041d21f87a"
+     "tekst": "Stævneudvalget bestiller medaljer og pokaler 3 uger før stævnestart, umiddelbart efter at tilmeldingen er lukket. Medaljer og pokaler skal være formanden for den arrangerende klub i hænde senest en uge før stævnestart, og stævneudvalget kontakter formanden telefonisk en uge før for at tjekke leveringen. Den arrangerende klub betaler medaljerne, mens pokaler betales af forbundet. Der udleveres disciplinmedaljer i alle kategorier til alle stævner.",
+     "kort": "stævneudvalget bestiller 3 uger før; levering senest en uge før",
+     "kort_regel": "stævneudvalget bestiller; levering senest en uge før stævnet",
+     "dhash": "e5041d21f87a",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:02+00:00"
+     }
     },
     {
      "ref": "refbest_021021#7",
      "effekt": "foreslaaet",
      "tekst": null,
-     "kort": "bestyrelsen foreslår 100 kr. pr. medaljesæt fra arrangør",
+     "kort": "bestyrelsen foreslår 100 kr. pr. medaljesæt; disciplinmedaljer kun ved DM",
      "kort_regel": null,
-     "dhash": "0b3273e631c4"
+     "dhash": "0b3273e631c4",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:02+00:00"
+     }
     },
     {
      "ref": "rep2022#12",
      "effekt": "aendret",
-     "tekst": "Forbundet bestiller medaljerne hos sin officielle forhandler, og arrangøren opkræves 100 kr. pr. medaljesæt (placeringsmedalje plus evt. disciplinmedaljer); i øvrigt betaler forbundet pokaler og medaljer. Medaljer og pokaler skal være arrangøren i hænde senest en uge før stævnet. Disciplinmedaljer uddeles i alle kategorier ved DM styrkeløft og DM klassisk trekamp.",
-     "kort": "forbund bestiller; arrangør betaler 100 kr. pr. sæt",
-     "kort_regel": "arrangør betaler 100 kr. pr. medaljesæt",
-     "dhash": "767a3ec271b5"
+     "tekst": "Forbundet bestiller medaljerne hos sin officielle medaljeforhandler (via stævneudvalget, 3 uger før stævnestart, når tilmeldingen er lukket), og arrangøren opkræves 100 kr. pr. medaljesæt (en placeringsmedalje plus eventuelle tilhørende disciplinmedaljer); i øvrigt betales pokaler og medaljer af forbundet. Medaljer og pokaler skal være formanden for den arrangerende klub i hænde senest en uge før stævnestart, og stævneudvalget tjekker leveringen telefonisk. Der uddeles disciplinmedaljer i alle kategorier ved de nationale mesterskaber DM styrkeløft og DM klassisk trekamp.",
+     "kort": "forbund bestiller; arrangør betaler 100 kr. pr. medaljesæt",
+     "kort_regel": "arrangør betaler 100 kr. pr. sæt; disciplinmedaljer kun ved DM",
+     "dhash": "767a3ec271b5",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:02+00:00"
+     }
     },
     {
      "ref": "refbest_150723#2",
-     "effekt": "aendret",
-     "tekst": "Forbundet bestiller medaljerne hos sin officielle forhandler, og arrangøren opkræves 100 kr. pr. medaljesæt; i øvrigt betaler forbundet. Pokaler og medaljer skal være arrangøren i hænde senest en uge før stævnestart, og stævneprogrammet skal være sat op en uge før, så stævneudvalget kan kontrollere det. Disciplinmedaljer uddeles i alle kategorier ved DM styrkeløft og DM klassisk trekamp.",
-     "kort": "stævneprogram skal være sat op en uge før",
-     "kort_regel": "præmier og stævneprogram klar en uge før",
-     "dhash": "9949dff96067"
+     "effekt": "bekraeftet",
+     "tekst": "Forbundet bestiller medaljerne hos sin officielle medaljeforhandler (via stævneudvalget, 3 uger før stævnestart, når tilmeldingen er lukket), og arrangøren opkræves 100 kr. pr. medaljesæt (en placeringsmedalje plus eventuelle tilhørende disciplinmedaljer); i øvrigt betales pokaler og medaljer af forbundet. Pokaler og medaljer skal være den arrangerende klub i hænde senest en uge før stævnestart. Der uddeles disciplinmedaljer i alle kategorier ved de nationale mesterskaber DM styrkeløft og DM klassisk trekamp.",
+     "kort": "bekræfter levering af pokaler og medaljer senest en uge før",
+     "kort_regel": "arrangør betaler 100 kr. pr. sæt; levering uge før",
+     "dhash": "9949dff96067",
+     "updated": {
+      "model": "claude-opus-5-5",
+      "prompt": "bc4e551364a0",
+      "time": "2026-10-09T10:34:02+00:00"
+     }
     }
    ]
   },
@@ -2343,22 +2475,6 @@
      "kort": "DSF stiller officials til diplomstævner i nye klubber",
      "kort_regel": "DSF stiller dommer m.fl. til nye klubbers diplomstævner",
      "dhash": "5855fdff171b"
-    }
-   ]
-  },
-  {
-   "titel": "6-månedersreglen for stævnedeltagelse",
-   "slug": "seksmånedersreglen-for-stævnedeltagelse",
-   "vigtig": true,
-   "note": null,
-   "versioner": [
-    {
-     "ref": "refbest_07122014#3",
-     "effekt": "forkastet",
-     "tekst": null,
-     "kort": "bestyrelsen vil ikke foreslå afskaffelse af reglen",
-     "kort_regel": null,
-     "dhash": "e527f69d37fb"
     }
    ]
   },
