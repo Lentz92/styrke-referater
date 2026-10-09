@@ -149,12 +149,6 @@ def test_fragments_of_one_rule_are_found_across_categories(world):
     assert _view("okonomi", 2).full == ("startgebyr", "licensgebyr")  # the second run reads them rotated
 
 
-def test_the_threshold_is_the_highest_that_puts_enough_fragment_pairs_into_one_call():
-    rows = [audit.Recall(t, None, share, 0, (0, 0)) for t, share in ((0.05, 1.0), (0.1, 0.96), (0.15, 0.9))]
-    assert audit.choose_threshold(rows) == 0.1
-    assert audit.choose_threshold(rows[2:]) is None
-
-
 # ---------------------------------------------------------------- validation and agreement
 
 @pytest.mark.parametrize(("raw", "why"), [
@@ -413,7 +407,7 @@ def test_a_rejected_rewrite_writes_nothing_and_the_rest_is_not_paid_again(world,
     assert world.rule("medlemskab", "klubskifte")["versioner"][1]["tekst"] == "Samlet rep2020#2"
 
 
-@pytest.mark.parametrize("failing", [(audit, "score_section"), (render, "build_pages"), (website, "page_html")])
+@pytest.mark.parametrize("failing", [(evaluate, "score_section"), (render, "build_pages"), (website, "page_html")])
 def test_a_failure_before_the_writes_writes_nothing(proposed, monkeypatch, failing):
     def fail(*args, **kwargs):
         raise RuntimeError("boom")
