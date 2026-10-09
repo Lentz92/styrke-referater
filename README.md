@@ -37,10 +37,14 @@ categories to consolidate again before anything new is extracted. If that work i
 incremental default cannot migrate rules made with another `CONSOLIDATE_VERSION`, and stops until that is done.
 The approval is saved in `data/rebuild.json` before any Claude call: the documents to extract, the categories to
 consolidate (plus those the documents' decisions are in, since re-extracting them changes those categories), the
-prompt versions and the consolidation mode. When the time or cost limit or failed calls cut the work off, run
-`uv run update.py` again, without the flags, until it ends without failures; the monthly run does the same. A run
-without `--consolidate-mode` continues an unfinished approval in the mode it was given for, so a cut-off full
-migration is finished in full; an approval saved before modes were recorded counts as full. A later run goes ahead
+prompt versions and the consolidation mode, model and effort. When the time or cost limit or failed calls cut the
+work off, run `uv run update.py` again, without the flags, until it ends without failures; the monthly run does the
+same. A run without `--consolidate-mode` continues an unfinished approval in the mode it was given for (one saved
+before modes were recorded counts as full), and always with the model and effort it was approved with: a run asking
+for others is refused and told what to run. A cut-off full migration is continued in full only for what it approved
+(the categories still on the old version, the approved ones and those of approved documents); new minutes in other
+categories are filed incrementally in the same run once the migration is finished, and wait until then, listed in the
+run report. Ticking "Allow a rebuild" while such a migration is open approves nothing more. A later run goes ahead
 while everything outside the approval would pass on its own (a few new minutes may arrive meanwhile);
 anything more, or another prompt version, needs a new approval. The file is removed once the remaining work
 is ordinary and no category waits for a full migration; the runs after that consolidate incrementally. A run

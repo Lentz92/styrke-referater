@@ -35,6 +35,7 @@ import logging
 import os
 import re
 from collections import Counter
+from collections.abc import Collection
 from dataclasses import dataclass, replace
 from datetime import date, datetime, timezone
 from itertools import groupby
@@ -58,6 +59,9 @@ DEFAULT_CONSOLIDATE_MODE = "incremental"
 # The workflow input (update.yml) that runs the consolidation in full, as GitHub shows it.
 MODE_INPUT_LABEL = "Consolidate in full, to migrate a prompt or version change (--consolidate-mode full)"
 MIGRATE = "uv run update.py --consolidate-mode full --allow-rebuild"
+DEFAULT_CONSOLIDATE_MODEL = "claude-opus-5-5"
+# The run report's heading for decisions a run continuing an unfinished migration leaves until it is finished.
+WAITING = "Waiting for the full migration to finish"
 RUNS_LOG = scrape.DATA_DIR / "runs.jsonl"
 # An approved rebuild that is not finished yet; plain runs continue it while it matches the prompt versions.
 REBUILD_MARKER = scrape.DATA_DIR / "rebuild.json"
@@ -82,8 +86,9 @@ def main() -> None:
                              "decisions are in (for testing; skips the rebuild guard)")
     parser.add_argument("--extract-model", default="claude-sonnet-5-5",
                         help="model for extraction per document (default: claude-sonnet-5-5)")
-    parser.add_argument("--consolidate-model", default="claude-opus-5-5",
-                        help="model for consolidation (default: claude-opus-5-5)")
+    parser.add_argument("--consolidate-model",
+                        help=f"model for consolidation (default: {DEFAULT_CONSOLIDATE_MODEL}, or the one the work "
+                             f"approved in data/rebuild.json was approved with)")
     parser.add_argument("--assign-model", default="claude-sonnet-5-5",
                         help="model for the votes on which rule a new decision belongs to, in incremental mode "
                              "(default: claude-sonnet-5-5); --consolidate-model breaks ties and updates the rules")
@@ -94,7 +99,8 @@ def main() -> None:
                              "full while a full consolidation approved in data/rebuild.json is unfinished)")
     parser.add_argument("--extract-effort", choices=EFFORTS, help="effort for extraction (default: Claude Code's own)")
     parser.add_argument("--consolidate-effort", choices=EFFORTS,
-                        help="effort for consolidation (default: Claude Code's own)")
+                        help="effort for consolidation (default: Claude Code's own, or the one the work approved in "
+                             "data/rebuild.json was approved with)")
     parser.add_argument("--workers", type=int, default=4, help="parallel Claude calls (default: 4)")
     parser.add_argument("--time-budget", type=float, default=75, metavar="MIN",
                         help="start no new Claude calls after this many minutes (default: 75)")
@@ -109,8 +115,6 @@ def main() -> None:
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
-    if not args.render_only:
-        args.consolidate_mode = consolidation_mode(args.consolidate_mode)
 
     docs = scrape.load_manifest() if args.offline or args.render_only else scrape.sync()
     today = date.today()
@@ -122,14 +126,18 @@ def main() -> None:
     if not args.render_only:
         RUN_REPORT.unlink(missing_ok=True)  # the routing trusts a report only from the run that wrote it
         try:
+            run = resolve_consolidation(args.consolidate_mode, args.consolidate_model, args.consolidate_effort,
+                                        args.allow_rebuild)
             if not args.only:  # a test run on a few documents
-                check_rebuild(docs, allowed=args.allow_rebuild, mode=args.consolidate_mode)
+                # Continuing an open full approval, --allow-rebuild approves nothing more: no silent widening.
+                check_rebuild(docs, allowed=args.allow_rebuild and run.continued is None, mode=run.mode,
+                              model=run.model, effort=run.effort)
         except SystemExit as exc:  # nothing is analysed, but the data is checked and the pages written as usual
             failures.append(str(exc))
             stop = exc
         else:
             before = checks.snapshot(checks.Data.load(docs), today)
-            stop = analyse(args, docs, budget, steps, failures)
+            stop = analyse(args, run, docs, budget, steps, failures)
     failed = sum(step.failed + step.skipped for step in steps.values())
     if failed:
         failures.append(f"{failed} Claude calls failed or were skipped")
@@ -180,22 +188,23 @@ def main() -> None:
         raise stop
 
 
-def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget, steps: dict[str, StepSummary],
-            failures: list[str]) -> Exception | None:
+def analyse(args: argparse.Namespace, run: Consolidation, docs: list[Doc], budget: analyze.RunBudget,
+            steps: dict[str, StepSummary], failures: list[str]) -> Exception | None:
     """Extract and consolidate what changed, filling in `steps`. An exception is returned, not raised: what was
     written before it is checked all the same."""
     targets = [d for d in docs if re.search(args.only, d.id)] if args.only else docs
     # A test run consolidates only the categories its documents had decisions in, or now have.
     selected = _categories_of(targets) if args.only else None
+    settings = incremental.Settings(args.assign_model, run.model, run.effort, args.workers)
     try:
         # What the rule files reflect before the extraction, so a decision it only re-dates still reaches its rule.
         known = (incremental.known_inputs(analyze.load_decisions(docs), incremental.RuleBook.load(), docs)
-                 if args.consolidate_mode == "incremental" else None)
+                 if run.mode == "incremental" or run.continued else None)
         steps["extract"] = analyze.extract(targets, model=args.extract_model, effort=args.extract_effort,
                                            workers=args.workers, budget=budget)
-        if args.consolidate_mode == "incremental":
-            settings = incremental.Settings(args.assign_model, args.consolidate_model, args.consolidate_effort,
-                                            args.workers)
+        if run.continued is not None:
+            continue_migration(run, docs, settings, budget, steps, known)
+        elif run.mode == "incremental":
             steps["consolidate"] = incremental.consolidate(
                 docs, analyze.load_decisions(docs), settings, budget,
                 documents=None if not args.only else {d.id for d in targets}, known=known)
@@ -203,8 +212,8 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
             steps["consolidate"] = analyze.consolidate(
                 analyze.load_decisions(docs),
                 {d.id: d.organ_label for d in docs},
-                model=args.consolidate_model,
-                effort=args.consolidate_effort,
+                model=run.model,
+                effort=run.effort,
                 workers=args.workers,
                 budget=budget,
                 categories=None if selected is None else selected | _categories_of(targets),
@@ -216,8 +225,55 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
     finally:
         record_run(steps)
     if not args.only:
-        update_rebuild_marker(docs, args.consolidate_mode)
+        update_rebuild_marker(docs, run)
     return None
+
+
+def continue_migration(run: Consolidation, docs: list[Doc], settings: incremental.Settings,
+                       budget: analyze.RunBudget, steps: dict[str, StepSummary], known: incremental.Known) -> None:
+    """A run continuing an unfinished full approval: a full consolidation of the approval's scope only
+    (migration_scope). Once the migration is finished, the rest (new minutes in other categories) is filed
+    incrementally in the same run, which keeps what the full consolidation wrote; until then it waits, listed in the
+    run report."""
+    assert run.continued is not None
+    scope = migration_scope(docs, run.continued)
+    decisions = analyze.load_decisions(docs)
+    steps["consolidate"] = analyze.consolidate(decisions, {d.id: d.organ_label for d in docs}, model=run.model,
+                                               effort=run.effort, workers=settings.workers, budget=budget,
+                                               categories=set(scope))
+    book = incremental.RuleBook.load()
+    categories, documents = migration_left(docs, run.continued)
+    if categories or documents:
+        queue = incremental.work_queue(decisions, book, docs, known)
+        waiting = sorted(incremental.queue_categories(queue, decisions, book) - scope)
+        unfinished = ", ".join([*sorted(categories), *sorted(documents)])
+        lines = tuple(f"{category}: its new or changed decisions are filed once the full migration ({unfinished}) "
+                      f"is finished" for category in waiting)
+        if lines:
+            steps["consolidate"] = replace(steps["consolidate"], notes={WAITING: lines})
+            for line in lines:
+                logging.warning("%s: %s", WAITING, line)
+        return
+    # The scope was just consolidated from today's input: that is what its files reflect now.
+    after = incremental.known_inputs(decisions, book, docs)
+    held = {ref for category in scope for ref in book.held(category)}
+    fresh = {ref: fp for ref, fp in after.fingerprints.items() if ref in held}
+    known = incremental.Known({**known.fingerprints, **fresh}, known.current | (after.current & scope))
+    steps["consolidate-incremental"] = incremental.consolidate(docs, decisions, settings, budget, known=known)
+
+
+def migration_scope(docs: list[Doc], approval: Approval) -> frozenset[str]:
+    """The categories a continued full approval may consolidate: those still on another CONSOLIDATE_VERSION, those
+    approved, and those holding decisions of approved documents (the coverage Work.outside judges by)."""
+    work = pending_work(docs, "full")
+    return work.outdated | approval.categories | {c for c, ids in work.sources.items() if ids & approval.documents}
+
+
+def migration_left(docs: list[Doc], approval: Approval) -> tuple[frozenset[str], frozenset[str]]:
+    """What is left of a continued full approval: its categories still to consolidate in full, and its documents
+    still to extract; both empty when the migration is finished."""
+    work = pending_work(docs, "full")
+    return work.outdated | (work.categories & migration_scope(docs, approval)), work.documents & approval.documents
 
 
 def _categories_of(docs: list[Doc]) -> set[str]:
@@ -289,6 +345,17 @@ class Approval:
     documents: frozenset[str]
     categories: frozenset[str]
     mode: str = "full"  # a marker from before modes were recorded was written by a full consolidation
+    settings: tuple[str, str | None] | None = None  # (consolidation model, effort) approved; None: not recorded
+
+
+@dataclass(frozen=True)
+class Consolidation:
+    """How a run consolidates: its mode, model and effort, and the unfinished full approval it continues because no
+    mode was asked for (it consolidates in full only within that approval's scope, see continue_migration)."""
+    mode: str
+    model: str
+    effort: str | None
+    continued: Approval | None = None
 
 
 def consolidation_mode(asked: str | None) -> str:
@@ -298,10 +365,35 @@ def consolidation_mode(asked: str | None) -> str:
     if asked is not None:
         return asked
     approval = _load_approval()
-    if approval is not None and approval.mode == "full":
-        logging.warning("Continuing the full consolidation approved in %s", REBUILD_MARKER.name)
-        return "full"
-    return DEFAULT_CONSOLIDATE_MODE
+    return "full" if approval is not None and approval.mode == "full" else DEFAULT_CONSOLIDATE_MODE
+
+
+def resolve_consolidation(asked: str | None, model: str | None, effort: str | None, allowed: bool) -> Consolidation:
+    """How this run consolidates. A run that asks for a mode with --allow-rebuild approves its work anew, through
+    check_rebuild's scope check. Any other run continues an unfinished approval: in full, within its scope, when it
+    was given for full and no mode is asked for; and with the consolidation model and effort it was approved with,
+    so a migration is never finished with other settings than it was started with. A run asking for other ones is
+    refused (SystemExit), naming what to run instead."""
+    approval = None if allowed and asked is not None else _load_approval()
+    continued = approval if approval is not None and approval.mode == "full" and asked is None else None
+    if approval is not None and approval.settings is not None:
+        bound_model, bound_effort = approval.settings
+        other = ([f"--consolidate-model {model}"] if model is not None and model != bound_model else []) + (
+            [f"--consolidate-effort {effort}"] if effort is not None and effort != bound_effort else [])
+        if other:
+            approved = f"--consolidate-model {bound_model}" + (f" --consolidate-effort {bound_effort}"
+                                                                if bound_effort else " and Claude Code's own effort")
+            raise SystemExit(
+                f"Stopped before any Claude call: the work approved in {REBUILD_MARKER.name} is consolidated with "
+                f"{approved}, not {' '.join(other)}. Run `uv run update.py` without them to continue it, or approve "
+                f"the work anew with yours: `uv run update.py --consolidate-mode {approval.mode} --allow-rebuild "
+                f"{' '.join(other)}`.")
+        model, effort = bound_model, bound_effort
+    if continued is not None:
+        logging.warning("Continuing the full consolidation approved in %s, within its scope%s", REBUILD_MARKER.name,
+                        "; --allow-rebuild approves nothing more until it is finished" if allowed else "")
+    return Consolidation(asked or ("full" if continued else DEFAULT_CONSOLIDATE_MODE),
+                         model or DEFAULT_CONSOLIDATE_MODEL, effort, continued)
 
 
 def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> Work:
@@ -335,7 +427,8 @@ def pending_work(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> Work:
     )
 
 
-def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = DEFAULT_CONSOLIDATE_MODE) -> None:
+def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = DEFAULT_CONSOLIDATE_MODE,
+                  model: str = DEFAULT_CONSOLIDATE_MODEL, effort: str | None = None) -> None:
     """Stop before any Claude call when the run would do more than an ordinary month's work unapproved.
 
     --allow-rebuild approves the work and saves it in data/rebuild.json before anything starts. A later run
@@ -356,7 +449,7 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = DEFAULT_CONSOLI
             f"'{MODE_INPUT_LABEL}' ticked; plain runs finish a migration that is cut off, and then go on "
             f"incrementally.")
     if allowed:
-        _save_approval(work)
+        _save_approval(work, model, effort)
         logging.warning("Approved, saved in %s: %s", REBUILD_MARKER.name, "; ".join(reasons))
         return
     if approval is not None:
@@ -378,17 +471,25 @@ def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = DEFAULT_CONSOLI
     )
 
 
-def update_rebuild_marker(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE) -> None:
+def update_rebuild_marker(docs: list[Doc], run: Consolidation) -> None:
     """After the analysis: approve what is left while it is more than ordinary or still to migrate, else remove the
     approval.
 
     Leftovers of an ordinary run count too (consolidation failing for most categories after a big meeting):
     the run was allowed to start that work, so the following runs may finish it. The new approval covers
-    only what is left, in the mode this run consolidated in.
+    only what is left, in the mode and with the settings this run consolidated with; for a continued migration, only
+    what is left of its scope (a finished one went on incrementally).
     """
+    categories, documents = migration_left(docs, run.continued) if run.continued is not None else ((), ())
+    if categories or documents:
+        _save_approval(pending_work(docs, "full"), run.model, run.effort, documents=documents, categories=categories)
+        logging.warning("Unfinished: the full migration of %s. Plain runs continue it (approval in %s)",
+                        ", ".join([*sorted(categories), *sorted(documents)]), REBUILD_MARKER.name)
+        return
+    mode = DEFAULT_CONSOLIDATE_MODE if run.continued is not None else run.mode
     work = pending_work(docs, mode)
     if work.unfinished():
-        _save_approval(work)
+        _save_approval(work, run.model, run.effort)
         left = work.reasons() or [f"categories still to migrate: {', '.join(sorted(work.outdated))}"]
         logging.warning("Unfinished: %s. Plain runs continue it in %s mode (approval in %s)", "; ".join(left), mode,
                         REBUILD_MARKER.name)
@@ -397,13 +498,18 @@ def update_rebuild_marker(docs: list[Doc], mode: str = DEFAULT_CONSOLIDATE_MODE)
         logging.info("Approved work finished; removed %s", REBUILD_MARKER.name)
 
 
-def _save_approval(work: Work) -> None:
+def _save_approval(work: Work, model: str, effort: str | None, documents: Collection[str] | None = None,
+                   categories: Collection[str] | None = None) -> None:
+    """data/rebuild.json: the work (by default all of it, else `documents` and `categories`), the prompt versions, and
+    the consolidation mode, model and effort it is to be done with."""
     marker = {
         "extract_version": analyze.EXTRACT_VERSION,
         "consolidate_version": analyze.CONSOLIDATE_VERSION,
-        "documents": sorted(work.documents),
-        "categories": sorted(work.approved_categories()),
+        "documents": sorted(work.documents if documents is None else documents),
+        "categories": sorted(work.approved_categories() if categories is None else categories),
         "mode": work.mode,
+        "consolidate_model": model,
+        "consolidate_effort": effort,
         "reasons": work.reasons(),
         "time": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
@@ -422,8 +528,10 @@ def _load_approval() -> Approval | None:
     if not isinstance(marker, dict) or marker.get("extract_version") != analyze.EXTRACT_VERSION \
             or marker.get("consolidate_version") != analyze.CONSOLIDATE_VERSION:
         return None
+    settings = (marker["consolidate_model"], marker.get("consolidate_effort")) if marker.get("consolidate_model") \
+        else None
     return Approval(frozenset(marker.get("documents") or ()), frozenset(marker.get("categories") or ()),
-                    marker.get("mode") or "full")
+                    marker.get("mode") or "full", settings)
 
 
 # --------------------------------------------------------------------------- run log

@@ -506,6 +506,80 @@ def test_a_cut_off_migration_is_finished_in_full_by_plain_runs_then_they_go_on_i
     assert update.pending_work(world.docs).reasons() == [] and update.pending_work(world.docs).outdated == set()
 
 
+@pytest.fixture
+def migrating(world, run):
+    """A full migration cut off with okonomi and medlemskab still on the previous CONSOLIDATE_VERSION, approved in
+    rebuild.json; dommere and staevner are current. Then new minutes (dom2024) with decisions in those two."""
+    world.document("dom2019", "2019-05-01",
+                   _decision("Dommerkrav", "Klubber stiller én dommer pr. stævne.", "dommere"),
+                   _decision("Vægtklasser", "Der konkurreres i IPF's vægtklasser.", "staevner"))
+    world.rules("dommere", ("Dommerkrav", "dommerkrav", [("dom2019#1", "indfoert")]))
+    world.rules("staevner", ("Vægtklasser", "vaegtklasser", [("dom2019#2", "indfoert")]))
+    world.consolidated()
+    for category in ("okonomi", "medlemskab"):
+        analyze._write_json(analyze.RULES_DIR / f"{category}.json",
+                            {**world.stored(category), "version": analyze.CONSOLIDATE_VERSION - 1, "input_hash": "old"})
+    update.REBUILD_MARKER.write_text(json.dumps({
+        "extract_version": analyze.EXTRACT_VERSION, "consolidate_version": analyze.CONSOLIDATE_VERSION,
+        "documents": [], "categories": ["medlemskab", "okonomi"], "mode": "full", "consolidate_model": OPUS,
+        "consolidate_effort": None}))
+    world.document("dom2024", "2024-05-01",
+                   _decision("Dommerkrav", "Klubber stiller to dommere pr. stævne.", "dommere"),
+                   _decision("Vægtklasser", "Nye vægtklasser fra 2025.", "staevner"))
+    return world
+
+
+def _filed_dom2024(world) -> list[dict]:
+    vote = _votes({"dom2024#1": "dommerkrav", "dom2024#2": "vaegtklasser"})
+    return [_same_rules(world), _same_rules(world), vote, vote, vote, _update("dom2024#1"), _update("dom2024#2")]
+
+
+def test_a_continued_migration_consolidates_only_its_scope_in_full_and_files_the_rest(migrating, fake_claude, run):
+    world = migrating
+    dommerkrav = world.rule("dommere", "dommerkrav")["versioner"][0]
+    fake_claude.answers(*_filed_dom2024(world))
+    run()  # the monthly run
+    assert _models(fake_claude) == [OPUS, OPUS] + [SONNET] * 3 + [OPUS, OPUS]
+    # Only the approved, outdated categories were consolidated whole; dommere and staevner got only the new decisions.
+    assert [prompt.split("\n")[0] for prompt in fake_claude.prompts()[:2]] == [
+        "Kategori: Gebyrer og økonomi", "Kategori: Medlemskab, licens og klubskifte"]
+    assert {world.stored(c)["version"] for c in ("okonomi", "medlemskab")} == {analyze.CONSOLIDATE_VERSION}
+    assert world.rule("dommere", "dommerkrav")["versioner"][0] == dommerkrav
+    assert [v["ref"] for v in world.rule("dommere", "dommerkrav")["versioner"]] == ["dom2019#1", "dom2024#1"]
+    assert not update.REBUILD_MARKER.exists() and update.pending_work(world.docs).reasons() == []
+
+
+def test_a_continued_migration_cut_off_again_leaves_the_rest_waiting_and_allow_rebuild_does_not_widen_it(
+        migrating, fake_claude, run):
+    world = migrating
+    before = {name: data for name, data in world.files().items() if name in ("dommere.json", "staevner.json")}
+    fake_claude.answer(_same_rules(world))
+    fake_claude.plan("ok", "error")  # okonomi is migrated, medlemskab fails again
+    with pytest.raises(SystemExit, match="Claude calls failed"):
+        run("--allow-rebuild")  # ticked alone: the open approval is continued as a plain run would
+    assert fake_claude.invocations("call") == 1 + 3  # okonomi, and medlemskab's three attempts; nothing else
+    assert {name: data for name, data in world.files().items() if name in before} == before
+    marker = json.loads(update.REBUILD_MARKER.read_text())
+    assert (marker["mode"], marker["categories"]) == ("full", ["medlemskab"])  # not widened to dommere, staevner
+    report = (world.root / "run-report.md").read_text()
+    assert (f"## {update.WAITING}: 2\n\n- dommere: its new or changed decisions are filed once the full migration "
+            f"(medlemskab) is finished") in report
+
+
+def test_a_continued_migration_keeps_the_model_and_effort_it_was_approved_with(migrating, fake_claude, run):
+    marker = json.loads(update.REBUILD_MARKER.read_text())
+    update.REBUILD_MARKER.write_text(json.dumps({**marker, "consolidate_effort": "high"}))
+    for asked in (("--consolidate-effort", "low"), ("--consolidate-model", SONNET)):
+        with pytest.raises(SystemExit, match=f"consolidated with --consolidate-model {OPUS} --consolidate-effort high, "
+                                             f"not {' '.join(asked)}. Run `uv run update.py` without them"):
+            run(*asked)
+    assert fake_claude.calls() == []
+    fake_claude.answers(*_filed_dom2024(migrating))
+    run()  # a plain run uses what the migration was approved with, in both of its parts
+    efforts = [args[args.index("--effort") + 1] if "--effort" in args else None for args in fake_claude.calls()]
+    assert efforts == ["high", "high", None, None, None, "high", "high"]  # the votes have no consolidation effort
+
+
 def test_an_unfinished_approval_without_a_mode_was_given_for_full(run, world):
     def marker(**extra) -> None:
         update.REBUILD_MARKER.write_text(json.dumps({
