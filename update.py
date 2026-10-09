@@ -60,8 +60,8 @@ ASSIGN_MODEL = "claude-sonnet-5-5"  # incremental mode: the votes on which rule 
 CONSOLIDATE_MODES = ("incremental", "full")
 DEFAULT_CONSOLIDATE_MODE = "incremental"
 # A migration (a full consolidation with --allow-rebuild) extracts every document again after a new extraction
-# prompt or model (about 22 USD at list price with Opus) and consolidates every category anew (about 5): its limits
-# let it finish in one run, and it runs offline, so no new minutes arrive meanwhile (the next run adds them).
+# prompt or model (16.74 USD at list price with Opus in October 2026) and consolidates every category anew (8.58):
+# its limits let it finish in one run, and it runs offline, so no new minutes arrive meanwhile (the next run adds them).
 MIGRATION_MAX_COST = 40
 MIGRATION_TIME_BUDGET = 150
 # The command that migrates: a full consolidation with --allow-rebuild, offline, with the migration's limits.

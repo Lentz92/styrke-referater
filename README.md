@@ -107,7 +107,7 @@ The workflow passes no limit, so every run has the defaults: 15 USD and 75 minut
 unless asked otherwise (`update.py` has no model or prompt options). "Run workflow" has two boxes: "Allow a rebuild
 (--allow-rebuild)" approves the work the rebuild guard stops, and with "Consolidate in full, to migrate a prompt or
 version change (--consolidate-mode full)" ticked too it runs the migration. Within the default limits a
-re-extraction of every document (about 27 USD) takes several runs: after each, merge its review pull request if it
+re-extraction of every document (16.74 USD in the October 2026 migration) takes several runs: after each, merge its review pull request if it
 opened one, so what it paid for reaches `main`, and run the workflow again with the same boxes ticked.
 
 Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls, failures,

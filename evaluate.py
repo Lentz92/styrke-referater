@@ -198,7 +198,7 @@ def estimate_tokens(system: str, prompt: str, schema: dict) -> int:
 
 def log_run(command: str, details: dict, steps: Mapping[str, StepSummary]) -> None:
     """Append one line to eval/runs.jsonl: the command, its settings and, per step, what its Claude calls used (as
-    data/runs.jsonl has it). update.py prices a rebuild from these lines."""
+    data/runs.jsonl has it): the record of what each evaluation run paid."""
     line = {"time": datetime.now(timezone.utc).isoformat(timespec="seconds"), "command": command, **details,
             "cli": analyze.cli_version(), "steps": {name: update.step_json(step) for name, step in steps.items()}}
     path = runs_log_path()
