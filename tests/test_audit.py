@@ -27,7 +27,6 @@ from test_incremental import World, _decision
 from test_route_update import Repo
 
 ROOT = Path(audit.__file__).parent
-OPS = ("merge", "split", "rename", "move")
 
 
 def _rules(world: World, category: str, *rules: tuple) -> None:
@@ -414,8 +413,6 @@ def test_a_rejected_rewrite_writes_nothing_and_the_rest_is_not_paid_again(world,
     assert world.rule("medlemskab", "klubskifte")["versioner"][1]["tekst"] == "Samlet rep2020#2"
 
 
-
-
 @pytest.mark.parametrize("failing", [(audit, "score_section"), (render, "build_pages"), (website, "page_html")])
 def test_a_failure_before_the_writes_writes_nothing(proposed, monkeypatch, failing):
     def fail(*args, **kwargs):
@@ -433,14 +430,14 @@ def test_a_failure_before_the_writes_writes_nothing(proposed, monkeypatch, faili
 def _recorded(monkeypatch) -> list[tuple[str, bytes]]:
     """What apply replaces, in order, besides the answers it keeps."""
     written: list[tuple[str, bytes]] = []
-    replace = audit._replace
+    replace = scrape._write_atomic
 
     def record(path: Path, content: bytes) -> None:
         if not path.name.startswith(("text-", "propose-", "titles")):
             written.append((path.name, content))
         replace(path, content)
 
-    monkeypatch.setattr(audit, "_replace", record)
+    monkeypatch.setattr(scrape, "_write_atomic", record)
     return written
 
 

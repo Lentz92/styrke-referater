@@ -344,7 +344,9 @@ def _plain_size(response: httpx.Response) -> int | None:
 
 
 def _write_atomic(path: Path, content: bytes) -> None:
-    """Write via a temporary file in the same folder, so an interrupted write never leaves half a file."""
+    """Write a file whole: to a temporary file next to it, then renamed over it, so a run killed meanwhile leaves the
+    old file or the new one, never part of one."""
+    path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(f".{path.name}.tmp")
     try:
         tmp.write_bytes(content)
@@ -368,7 +370,6 @@ def _download(client: httpx.Client, link: Link) -> tuple[Path, str] | None:
             return None
         dest = PDF_ROOT / link.organ / unquote(url.rsplit("/", maxsplit=1)[-1])
         try:
-            dest.parent.mkdir(parents=True, exist_ok=True)
             _write_atomic(dest, response.content)
         except OSError as exc:
             log.error("Could not save %s: %s", dest.relative_to(ROOT), exc)

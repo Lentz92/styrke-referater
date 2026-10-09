@@ -34,7 +34,6 @@ import copy
 import hashlib
 import json
 import logging
-import os
 import subprocess
 import tempfile
 from collections import Counter, defaultdict
@@ -47,7 +46,6 @@ from itertools import combinations, groupby
 from pathlib import Path
 
 import analyze
-import candidates
 import checks
 import evaluate
 import incremental
@@ -294,41 +292,38 @@ def data_fingerprint() -> str:
 
 # --------------------------------------------------------------------------- candidates
 
-def rule_profiles(data: Data) -> list[candidates.RuleProfile]:
-    by_ref = data.by_ref
-    return [incremental.rule_profile(category, rule, by_ref) for category, rule in data.book.rules()]
+def similarities(data: Data) -> dict[str, list[tuple[str, float]]]:
+    """Slug -> every other rule, in any category, with the cosine similarity of their vectors, most similar first."""
+    index = incremental.candidate_index(data.book, data.by_ref)
+    return {slug: index.similar(slug) for slug in index.vectors}
 
 
-def similar_rules(data: Data, threshold: float = SIMILARITY) -> dict[str, list[tuple[str, float]]]:
-    """Slug -> the other rules, in any category, at least `threshold` similar to it, most similar first."""
-    index = candidates.CandidateIndex.of(rule_profiles(data))
-    return {slug: [(other, score) for other, score in index.similar(slug) if score >= threshold]
-            for slug in index.vectors}
+def similar_rules(data: Data) -> dict[str, list[tuple[str, float]]]:
+    """Slug -> the other rules, in any category, at least SIMILARITY similar to it, most similar first."""
+    return {slug: [(other, score) for other, score in scored if score >= SIMILARITY]
+            for slug, scored in similarities(data).items()}
 
 
 @dataclass(frozen=True)
 class FragmentPair:
     """Two pipeline rules holding certain events of one answer-key rule: they may be one rule."""
     key: str  # the key rule's slug
-    soft: bool  # a loosely scoped key rule, left out of the measure (evaluate.SOFT_RULES)
+    soft: bool  # a loosely scoped key rule, left out of the measure (evaluate.soft_rules)
     a: str
     b: str
     same_category: bool
     similarity: float
 
 
-def fragment_pairs(data: Data, texts: evaluate.Texts) -> list[FragmentPair]:
-    """Every pair of rules a key rule's certain events are in (evaluate.score_rule's holders)."""
-    corrections = evaluate.load_corrections()
-    keys = [evaluate.correct_rule_key(evaluate.read_json(path), corrections)
-            for path in sorted(evaluate.key_dir("rules").glob("*.json"))]
-    selection = evaluate.load_selection() if evaluate.selection_path().exists() else {"rules": []}
-    soft = {r["slug"] for r in selection["rules"] if r.get("soft")}
+def fragment_pairs(data: Data, texts: evaluate.Texts,
+                   scores: Mapping[str, list[tuple[str, float]]]) -> list[FragmentPair]:
+    """Every pair of rules a key rule's certain events are in (evaluate.score_rule's holders), with its similarity
+    from `scores` (similarities)."""
+    keys, soft = evaluate.rule_keys(), evaluate.soft_rules()
     by_doc: dict[str, list[Decision]] = defaultdict(list)
     for d in data.decisions:
         by_doc[d.doc_id].append(d)
     rule_of = {v["ref"]: (category, rule["slug"]) for category, rule in data.book.rules() for v in rule["versioner"]}
-    index = candidates.CandidateIndex.of(rule_profiles(data))
     pairs = []
     for key in keys:
         mapped = evaluate.map_events(key, by_doc, {doc.id: doc for doc in data.docs}, texts)
@@ -336,7 +331,7 @@ def fragment_pairs(data: Data, texts: evaluate.Texts) -> list[FragmentPair]:
                           if e["status"] == "certain" and mapped.get(e["id"]) in rule_of})
         for (category_a, a), (category_b, b) in combinations(holders, 2):
             pairs.append(FragmentPair(key["slug"], key["slug"] in soft, a, b, category_a == category_b,
-                                      dict(index.similar(a))[b]))
+                                      dict(scores[a])[b]))
     return pairs
 
 
@@ -349,9 +344,7 @@ class Recall:
     per_call: tuple[float, int]  # rules of other categories per propose call: mean, max
 
 
-def recall(pairs: Sequence[FragmentPair], data: Data) -> list[Recall]:
-    index = candidates.CandidateIndex.of(rule_profiles(data))
-    scores = {slug: index.similar(slug) for slug in index.vectors}
+def recall(pairs: Sequence[FragmentPair], data: Data, scores: Mapping[str, list[tuple[str, float]]]) -> list[Recall]:
     category = {slug: c for slug, (c, _) in data.located().items()}
     gated = [p for p in pairs if not p.soft]
     found = []
@@ -361,8 +354,8 @@ def recall(pairs: Sequence[FragmentPair], data: Data) -> list[Recall]:
             others[category[slug]].update(o for o, s in scored if s >= t and category[o] != category[slug])
         sizes = [len(others[c]) for c in set(category.values())]
         found.append(Recall(
-            t, _share(sum(p.similarity >= t for p in gated), len(gated)),
-            _share(sum(p.similarity >= t or p.same_category for p in gated), len(gated)),
+            t, evaluate._ratio(sum(p.similarity >= t for p in gated), len(gated)),
+            evaluate._ratio(sum(p.similarity >= t or p.same_category for p in gated), len(gated)),
             sum(sum(s >= t for _, s in scored) for scored in scores.values()) / max(len(scores), 1),
             (sum(sizes) / max(len(sizes), 1), max(sizes, default=0))))
     return found
@@ -388,12 +381,12 @@ def candidates_report(pairs: Sequence[FragmentPair], rows: Sequence[Recall]) -> 
              "|",
              "|--:|--:|--:|--:|--:|"]
     for row in rows:
-        lines.append(f"| {row.threshold} | {_pct(row.flagged)} | {_pct(row.in_call)} | {row.per_rule:.1f} | "
-                     f"{row.per_call[0]:.0f}, {row.per_call[1]} |")
-    current = next((row for row in rows if row.threshold == SIMILARITY), None)
-    reached = current is not None and (current.in_call or 0) >= RECALL_TARGET
-    verdict = (f"audit.SIMILARITY is {SIMILARITY}: {_pct(current.in_call) if current else 'not measured'} of the "
-               f"fragment pairs in one call, {'at least' if reached else 'below'} the target of {RECALL_TARGET:.0%}. "
+        lines.append(f"| {row.threshold} | {evaluate._pct(row.flagged)} | {evaluate._pct(row.in_call)} | "
+                     f"{row.per_rule:.1f} | {row.per_call[0]:.0f}, {row.per_call[1]} |")
+    current = next(row for row in rows if row.threshold == SIMILARITY)  # THRESHOLDS holds SIMILARITY
+    reached = (current.in_call or 0) >= RECALL_TARGET
+    verdict = (f"audit.SIMILARITY is {SIMILARITY}: {evaluate._pct(current.in_call)} of the fragment pairs in one "
+               f"call, {'at least' if reached else 'below'} the target of {RECALL_TARGET:.0%}. "
                + (f"The highest threshold reaching the target is {chosen}." if chosen is not None
                   else "No threshold reaches it."))
     if not reached and chosen is not None:
@@ -407,14 +400,6 @@ def candidates_report(pairs: Sequence[FragmentPair], rows: Sequence[Recall]) -> 
     if soft:
         lines += ["", "Left out (soft): " + "; ".join(f"{p.a} ~ {p.b} ({p.similarity:.3f})" for p in soft) + "."]
     return "\n".join(lines) + "\n"
-
-
-def _share(part: int, whole: int) -> float | None:
-    return part / whole if whole else None
-
-
-def _pct(value: float | None) -> str:
-    return "–" if value is None else f"{value:.1%}"
 
 
 # --------------------------------------------------------------------------- Claude calls, kept by fingerprint
@@ -457,10 +442,10 @@ def ask(call: Call, budget: RunBudget, cli: str, accept: Callable[[dict], object
     with analyze.usage_kept(usage):
         if accept is not None:
             accept(output)
-        _replace(call.path, _json_bytes({
+        scrape._write_atomic(call.path, analyze.json_text({
             "fingerprint": call.fingerprint(), "time": _now(),
             "provenance": analyze.provenance(usage, cli, call.system, call.schema, EFFORT),
-            "usage": evaluate.usage_json(usage), "output": output}))
+            "usage": evaluate.usage_json(usage), "output": output}).encode())
     return f"{call.name}: {evaluate.describe_usage(usage)}", usage
 
 
@@ -748,8 +733,8 @@ def agree(proposals: Sequence[Proposal]) -> tuple[list[Proposed], list[Rejection
                 by_key.setdefault(p.op.key(), []).append(p)
         valid[run] = set(ops) - set(bad)
     found = [Proposed(given[0].op, given, all(key in valid[run] for run in valid)) for key, given in by_key.items()]
-    order = {kind: i for i, kind in enumerate(OP_KINDS)}
-    return sorted(found, key=lambda p: (not p.agreed, order[p.op.kind], p.op.rules, str(p.op.category))), rejected
+    found.sort(key=lambda p: (not p.agreed, OP_KINDS.index(p.op.kind), p.op.rules, str(p.op.category)))
+    return found, rejected
 
 
 def survivor(rules: Sequence[tuple[str, dict]], by_ref: Mapping[str, Decision]) -> int:
@@ -866,14 +851,14 @@ def name_titles(proposed: Sequence[Proposed], titles: Mapping[str, str]) -> None
 
 def propose(categories: Sequence[str], max_cost: float, workers: int, minutes: float = DEFAULT_TIME_BUDGET) -> int:
     previous = json.loads(OPS_PATH.read_text()) if OPS_PATH.exists() else None
-    if previous and (previous.get("applied") or {}).get("data") == data_fingerprint():
+    if previous and (previous["applied"] or {}).get("data") == data_fingerprint():
         raise SystemExit(f"Stopped before any Claude call: {OPS_PATH.name} was applied to exactly these rules. Merge "
                          f"or close its pull request first; to audit the result again, delete {OPS_PATH.name}.")
     data = Data.load()
     if reasons := unsettled(data):
         raise SystemExit(f"Stopped before any Claude call: data/ is not ready for an audit: {'; '.join(reasons)}.")
     # An audit not applied yet goes on (its cost adds up in data/runs.jsonl); else this is a new one.
-    audit_id = previous["audit"] if previous and not previous.get("applied") and previous.get("audit") else _now()
+    audit_id = previous["audit"] if previous and not previous["applied"] else _now()
     steps: dict[str, StepSummary] = {}
     try:
         return _propose(categories, data, audit_id, RunBudget(minutes=minutes, max_cost_usd=max_cost), max_cost,
@@ -917,7 +902,7 @@ def _propose(categories: Sequence[str], data: Data, audit_id: str, budget: RunBu
             titles, notes = chosen_titles(slots, output)
             name_titles(proposed, titles)
     document = ops_document(audit_id, categories, proposed, rejected + conflicting, missing, notes)
-    _replace(OPS_PATH, _json_bytes(document))
+    scrape._write_atomic(OPS_PATH, analyze.json_text(document).encode())
     write_report(audit_report(document, steps, "propose"))
     agreed = sum(p.agreed for p in proposed)
     print(f"Wrote {OPS_PATH.name}: {agreed} agreed ops, {len(proposed) - agreed} not agreed, "
@@ -1003,8 +988,7 @@ def restructure(data: Data, ops: Sequence[dict]) -> Restructured:
     by_ref = data.by_ref
     taken = data.book.slugs() | data.registry.taken()
     order = {slug: i for i, slug in enumerate(data.located())}
-    kinds = {kind: i for i, kind in enumerate(OP_KINDS)}
-    for entry in sorted(ops, key=lambda e: (kinds[e["op"]], e["id"])):
+    for entry in sorted(ops, key=lambda e: (OP_KINDS.index(e["op"]), e["id"])):
         if entry["op"] == "merge":
             rules = [out.rule(slug) for slug in sorted(entry["rules"], key=order.__getitem__)]
             category, kept = rules[survivor(rules, by_ref)]
@@ -1124,27 +1108,25 @@ def stamp_of(stored: dict) -> dict:
             "prompt": analyze.prompt_hash(AUDIT_UPDATE_SYSTEM, incremental.UPDATE_SCHEMA), "time": stored["time"]}
 
 
-def ask_text(u: RuleUpdate, by_ref: Mapping[str, Decision]) -> Callable[[Call, RunBudget, str], tuple[str, Usage]]:
-    """One text call, asked once more when code rejects its answer (as incremental.run_update); a second rejection
+def ask_text(call: Call, budget: RunBudget, cli: str, u: RuleUpdate,
+             by_ref: Mapping[str, Decision]) -> tuple[str, Usage]:
+    """`u`'s text call, asked once more when code rejects its answer (as incremental.run_update); a second rejection
     fails it, and apply writes nothing."""
-    def job(call: Call, budget: RunBudget, cli: str) -> tuple[str, Usage]:
-        usage = Usage()
-        error: Exception | None = None
-        for attempt in (1, 2):
-            if attempt > 1 and (limit := budget.exhausted()):
-                raise ClaudeError(f"answer rejected: {error}; not asked again because {limit}", usage)
-            try:
-                message, spent = ask(call, budget, cli, lambda output: rewritten(u, output, {}, by_ref))
-                return message, usage + spent
-            except ClaudeError as exc:
-                usage += exc.usage
-                if not isinstance(exc.__cause__, UpdateRejected):  # a ModelMismatch stays one: it stops the run
-                    raise type(exc)(str(exc), usage) from exc
-                error = exc.__cause__
-                log.warning("Rewrite %s, attempt %d: %s", u.name, attempt, error)
-        raise ClaudeError(f"answer rejected twice: {error}", usage)
-
-    return job
+    usage = Usage()
+    error: Exception | None = None
+    for attempt in (1, 2):
+        if attempt > 1 and (limit := budget.exhausted()):
+            raise ClaudeError(f"answer rejected: {error}; not asked again because {limit}", usage)
+        try:
+            message, spent = ask(call, budget, cli, lambda output: rewritten(u, output, {}, by_ref))
+            return message, usage + spent
+        except ClaudeError as exc:
+            usage += exc.usage
+            if not isinstance(exc.__cause__, UpdateRejected):  # a ModelMismatch stays one: it stops the run
+                raise type(exc)(str(exc), usage) from exc
+            error = exc.__cause__
+            log.warning("Rewrite %s, attempt %d: %s", u.name, attempt, error)
+    raise ClaudeError(f"answer rejected twice: {error}", usage)
 
 
 # --------------------------------------------------------------------------- apply: the command
@@ -1182,9 +1164,9 @@ def verify(after: checks.Data, docs: list[Doc], old_slugs: Collection[str]) -> l
     no work for update.py (no decision is filed again because the audit moved it), and every slug that led to a rule
     still does (itself, or as an alias)."""
     failures = [f"check error ({p.kind}): {p.message}" for p in checks.errors(checks.find_problems(after))]
-    work = update.pending_work(docs)
-    if work.categories or work.lost or work.outdated:
-        failures.append(f"update.py would have work: {', '.join(sorted(work.categories | work.lost | work.outdated))}")
+    work = update.pending_work(docs)  # incremental: its lost categories are among those to consolidate
+    if work.categories or work.outdated:
+        failures.append(f"update.py would have work: {', '.join(sorted(work.categories | work.outdated))}")
     if after.pending:
         failures.append(f"categories to consolidate again: {', '.join(sorted(after.pending))}")
     live = {rule["slug"] for rule in after.raw_rules}
@@ -1242,15 +1224,15 @@ def apply(max_cost: float, workers: int, minutes: float = DEFAULT_TIME_BUDGET) -
     if not OPS_PATH.exists():
         raise SystemExit(f"No {OPS_PATH.name}: run `uv run audit.py propose` first")
     document = json.loads(OPS_PATH.read_text())
-    if document.get("applied"):
+    if document["applied"]:
         raise SystemExit(f"{OPS_PATH.name} was applied already ({document['applied']['time']}); propose again for "
                          f"another audit")
-    if not document.get("complete"):
-        raise SystemExit(f"{OPS_PATH.name} is incomplete (missing: {', '.join(document.get('missing', []))}); run "
+    if not document["complete"]:
+        raise SystemExit(f"{OPS_PATH.name} is incomplete (missing: {', '.join(document['missing'])}); run "
                          f"`uv run audit.py propose` again to finish it (kept answers are not paid again)")
     if document["data"] != data_fingerprint():
-        raise SystemExit(f"data/regler/ or data/slugs.json changed since the ops were proposed; run `uv run audit.py "
-                         f"propose` again (answers to unchanged questions are not paid again)")
+        raise SystemExit("data/regler/ or data/slugs.json changed since the ops were proposed; run `uv run audit.py "
+                         "propose` again (answers to unchanged questions are not paid again)")
     data = Data.load()
     if reasons := unsettled(data):
         raise SystemExit(f"Stopped before any Claude call: data/ is not ready for an audit: {'; '.join(reasons)}.")
@@ -1261,13 +1243,13 @@ def apply(max_cost: float, workers: int, minutes: float = DEFAULT_TIME_BUDGET) -
     try:
         return _apply(document, data, agreed, max_cost, minutes, workers, steps)
     finally:
-        log_command("apply", document.get("audit"), steps)
+        log_command("apply", document["audit"], steps)
 
 
 def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minutes: float, workers: int,
            steps: dict[str, StepSummary]) -> int:
     """Everything that can fail first: the structure, the texts (Claude), the checks, the pages, the scores and the
-    report, with nothing written but the answers kept. Then the rule files, the slug history and the ops file, each
+    report, with nothing written but the answers kept. Then the slug history, the rule files and the ops file, each
     replaced whole, and the pages."""
     today = date.today()
     budget = RunBudget(minutes=minutes, max_cost_usd=max_cost)
@@ -1279,7 +1261,7 @@ def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minu
     calls = {slug: text_call(u, ctx) for slug, u in updates.items()}
     by_call = {call.name: updates[slug] for slug, call in calls.items()}
     if step := run_calls("Rewrite", plan_calls("Rewrite", list(calls.values()), max_cost), budget, workers,
-                         lambda call, spend, cli: ask_text(by_call[call.name], by_ref)(call, spend, cli)):
+                         lambda call, spend, cli: ask_text(call, spend, cli, by_call[call.name], by_ref)):
         steps["rewrite"] = step
     if missing := [slug for slug, call in calls.items() if call.stored() is None]:
         return _not_applied(document, steps, [f"no accepted rewrite of {', '.join(missing)} yet"])
@@ -1304,14 +1286,14 @@ def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minu
     # As a consolidation writes (analyze._consolidate_one): the slug history first, with every slug in it a rule
     # takes up again, so whichever write fails every slug stays taken (a merged-away slug that is still live then is
     # reported by checks.py and dropped by resolve_slugs); then the rule files, the final history and the ops file.
-    _replace(analyze.SLUGS_PATH, result.taken)
+    scrape._write_atomic(analyze.SLUGS_PATH, result.taken)
     for name, content in result.files.items():
         path = analyze.RULES_DIR / name
         if not path.exists() or path.read_bytes() != content:
-            _replace(path, content)
+            scrape._write_atomic(path, content)
     if result.taken != result.slugs:
-        _replace(analyze.SLUGS_PATH, result.slugs)
-    _replace(OPS_PATH, _json_bytes(applied))
+        scrape._write_atomic(analyze.SLUGS_PATH, result.slugs)
+    scrape._write_atomic(OPS_PATH, analyze.json_text(applied).encode())
     render.write_pages(result.pages)
     website.write_site(result.html)
     write_report(report)
@@ -1335,36 +1317,20 @@ def _not_applied(document: dict, steps: Mapping[str, StepSummary], failures: Seq
     return 1
 
 
-def _json_bytes(value: object) -> bytes:
-    """JSON as analyze._write_json writes it."""
-    return (json.dumps(value, ensure_ascii=False, indent=1) + "\n").encode()
-
-
-def _replace(path: Path, content: bytes) -> None:
-    """Write a file whole: to a temporary file next to it, then renamed over it, so a run killed meanwhile leaves the
-    old file or the new one, never part of one."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(f".{path.name}.tmp")
-    temporary.write_bytes(content)
-    os.replace(temporary, path)
-
-
 # --------------------------------------------------------------------------- the audit's cost
 
-def ledger(audit_id: str | None, command: str, steps: Mapping[str, StepSummary]) -> dict[str, float]:
+def ledger(audit_id: str, command: str, steps: Mapping[str, StepSummary]) -> dict[str, float]:
     """USD at list price per command of this audit, every call counted (failed attempts and rejected answers too): the
     lines data/runs.jsonl has for it, and this command's steps, which it logs when it ends."""
     spent: dict[str, float] = defaultdict(float)
-    if audit_id and update.RUNS_LOG.exists():
-        for line in update.RUNS_LOG.read_text().splitlines():
-            entry = json.loads(line) if line.strip() else {}
-            if entry.get("audit") == audit_id:
-                spent[entry["command"].removeprefix("audit ")] += sum(s["cost_usd"] for s in entry["steps"].values())
+    for entry in update._log_lines(update.RUNS_LOG):
+        if entry.get("audit") == audit_id:
+            spent[entry["command"].removeprefix("audit ")] += sum(s["cost_usd"] for s in entry["steps"].values())
     spent[command] += sum(step.usage.cost_usd for step in steps.values())
     return dict(spent)
 
 
-def log_command(command: str, audit_id: str | None, steps: Mapping[str, StepSummary]) -> None:
+def log_command(command: str, audit_id: str, steps: Mapping[str, StepSummary]) -> None:
     """One line in data/runs.jsonl for a command that called Claude, as update.py logs its runs."""
     update.record_run(dict(steps), {"command": f"audit {command}", "audit": audit_id})
 
@@ -1374,13 +1340,9 @@ def log_command(command: str, audit_id: str | None, steps: Mapping[str, StepSumm
 def score_section(before: list[dict], after: list[dict], data: Data) -> list[str]:
     """The answer key's rule scores (evaluate.score_rule) of two sets of rule files over today's decisions; empty
     without a key."""
-    corrections = evaluate.load_corrections()
-    keys = [evaluate.correct_rule_key(evaluate.read_json(path), corrections)
-            for path in sorted(evaluate.key_dir("rules").glob("*.json"))]
+    keys, soft = evaluate.rule_keys(), evaluate.soft_rules()
     if not keys:
         return []
-    selection = evaluate.load_selection() if evaluate.selection_path().exists() else {"rules": []}
-    soft = {r["slug"] for r in selection["rules"] if r.get("soft")}
     texts, by_id = evaluate.Texts(), {doc.id: doc for doc in data.docs}
     old = [evaluate.score_rule(key, data.decisions, before, by_id, texts) for key in keys]
     new = [evaluate.score_rule(key, data.decisions, after, by_id, texts) for key in keys]
@@ -1399,9 +1361,9 @@ def score_section(before: list[dict], after: list[dict], data: Data) -> list[str
     passes = (b["fragmented"] < a["fragmented"] and b["found"] >= a["found"] and b["same_content"] >= a["same_content"]
               and b["missing"] <= a["missing"])
     lines += ["", f"Without soft rules: fragmented rules {a['fragmented']} → {b['fragmented']}; events found in the "
-                  f"right rule {_pct(a['found_share'])} → {_pct(b['found_share'])}; years with the same content in "
-                  f"force {_pct(a['content_share'])} → {_pct(b['content_share'])}; missing events {a['missing']} → "
-                  f"{b['missing']}.", "",
+                  f"right rule {evaluate._pct(a['found_share'])} → {evaluate._pct(b['found_share'])}; years with the "
+                  f"same content in force {evaluate._pct(a['content_share'])} → {evaluate._pct(b['content_share'])}; "
+                  f"missing events {a['missing']} → {b['missing']}.", "",
               f"Gate (fragmented rules fall, found and same content do not fall, no event goes missing): "
               f"{'passes' if passes else 'fails'}.", ""]
     return lines
@@ -1439,7 +1401,7 @@ def score(before_rev: str, before_dir: Path | None, after_dir: Path | None, repo
 # --------------------------------------------------------------------------- report
 
 def write_report(text: str) -> None:
-    _replace(REPORT, text.encode())
+    scrape._write_atomic(REPORT, text.encode())
 
 
 # The report's first line, which .github/scripts/route-audit.sh reads to title the pull request.
@@ -1453,7 +1415,7 @@ def audit_report(document: dict, steps: Mapping[str, StepSummary], command: str,
                  history: checks.HistoryCheck | None = None, score: Sequence[str] = ()) -> str:
     """Markdown for the pull request: the outcome and how to go on, what the audit cost, the ops (applied, not agreed,
     rejected), what each year shows before and after, and the answer key's scores. `command`: the one writing it."""
-    applied = bool(document.get("applied"))
+    applied = bool(document["applied"])
     agreed = [entry for entry in document["ops"] if entry["agreed"]]
     if failures:
         outcome = (f"**Not applied**: {'; '.join(failures)}. Nothing was written to data/ but the answers kept in "
@@ -1462,7 +1424,7 @@ def audit_report(document: dict, steps: Mapping[str, StepSummary], command: str,
         outcome = ("**Review**: the audit applied the agreed ops below to data/ and rebuilt the pages. It changes what "
                    "earlier years show by design (In force by year): check the merged and split rules against the "
                    "minutes, then merge the pull request to publish it, or close it to discard it.")
-    elif not document.get("complete"):
+    elif not document["complete"]:
         outcome = (f"**Unfinished**: the cost or time limit, or failed calls, left "
                    f"{', '.join(document['missing'])}. {CONTINUE}")
     else:
@@ -1471,17 +1433,14 @@ def audit_report(document: dict, steps: Mapping[str, StepSummary], command: str,
              *calls_section(document, steps, command)]
     lines += [f"Ops proposed for {', '.join(document['categories'])} by {document['model']} (effort "
               f"{document['effort']}), {RUNS} runs each; an op is applied when both propose it.", ""]
-    lines += [f"## {'Applied' if applied else 'Agreed'} ops: {len(agreed)}", ""]
-    lines += [f"- {_describe(entry)}" for entry in agreed] or ["None."]
-    others = [entry for entry in document["ops"] if not entry["agreed"]]
-    lines += ["", f"## Not agreed: {len(others)}", ""]
-    lines += [f"- {_describe(entry)}" for entry in others] or ["None."]
-    lines += ["", f"## Rejected by code: {len(document['rejected'])}", ""]
-    lines += [f"- run {r['run']}, {r['call']}: {r['op'].get('op')} {', '.join(map(str, r['op'].get('rules', [])))}: "
-              f"{r['why']}" for r in document["rejected"]] or ["None."]
-    if document.get("notes"):
-        lines += ["", "## Notes", "", *(f"- {note}" for note in document["notes"])]
-    lines.append("")
+    rejected = [f"run {r['run']}, {r['call']}: {r['op'].get('op')} {', '.join(map(str, r['op'].get('rules', [])))}: "
+                f"{r['why']}" for r in document["rejected"]]
+    for heading, items in ((f"{'Applied' if applied else 'Agreed'} ops", [_describe(entry) for entry in agreed]),
+                           ("Not agreed", [_describe(entry) for entry in document["ops"] if not entry["agreed"]]),
+                           ("Rejected by code", rejected)):
+        lines += [f"## {heading}: {len(items)}", "", *([f"- {item}" for item in items] or ["None."]), ""]
+    if document["notes"]:
+        lines += ["## Notes", "", *(f"- {note}" for note in document["notes"]), ""]
     if history is not None:
         lines += history_section(history)
     lines += score
@@ -1497,28 +1456,28 @@ def calls_section(document: dict, steps: Mapping[str, StepSummary], command: str
         lines += [f"| {name} | {s.calls} | {s.failed} | {s.skipped} | {s.usage.all_input_tokens} | "
                   f"{s.usage.output_tokens} | {s.usage.cost_usd:.2f} |" for name, s in steps.items()]
         lines.append("")
-    spent = ledger(document.get("audit"), command, steps)
+    spent = ledger(document["audit"], command, steps)
     cost = ", ".join(f"{name} {usd:.2f} USD" for name, usd in sorted(spent.items(), key=lambda kv: kv[0] != "propose"))
     return lines + [f"Cost of this audit at list price, every call counted (failed attempts and rejected answers "
                     f"too): {cost or 'nothing'}.", ""]
 
 
 def _describe(entry: dict) -> str:
-    rules = " + ".join(f"`{slug}`" for slug in entry["rules"])
-    done = entry.get("applied") or {}
-    if entry["op"] == "merge" and entry["agreed"]:
-        what = f"merge {rules} → `{entry['keeps']}` “{entry['title']}”" + (
-            f" in {entry['category']}" if entry.get("category") else "")
-    elif entry["op"] == "split" and entry["agreed"]:
-        parts = ", ".join(f"“{part['title']}” ({_versions(len(part['refs']))}"
-                          f"{', keeps the slug' if part['keeps'] else ''})" for part in entry["parts"])
-        what = f"split {rules} into {parts}" + (f" → {', '.join(f'`{s}`' for s in done['slugs'])}" if done else "")
-    elif entry["op"] == "rename" and entry["agreed"]:
-        what = f"rename {rules} to “{entry['title']}”"
-    elif entry["op"] == "move" and entry["agreed"]:
-        what = f"move {rules} to {entry['category']}"
-    else:
-        what = f"{entry['op']} {rules}"
+    what = f"{entry['op']} " + " + ".join(f"`{slug}`" for slug in entry["rules"])
+    if entry["agreed"]:
+        if entry["op"] == "merge":
+            what += f" → `{entry['keeps']}` “{entry['title']}”"
+            if entry["category"]:
+                what += f" in {entry['category']}"
+        elif entry["op"] == "split":
+            what += " into " + ", ".join(f"“{part['title']}” ({_versions(len(part['refs']))}"
+                                         f"{', keeps the slug' if part['keeps'] else ''})" for part in entry["parts"])
+            if entry["applied"]:
+                what += " → " + ", ".join(f"`{slug}`" for slug in entry["applied"]["slugs"])
+        elif entry["op"] == "rename":
+            what += f" to “{entry['title']}”"
+        else:
+            what += f" to {entry['category']}"
     reasons = "; ".join(f"run {q['run']} ({q['call']}): {q['reason']} [{', '.join(q['refs'])}]"
                         for q in entry["proposals"])
     return f"{what}. {reasons}"
@@ -1539,10 +1498,10 @@ def history_section(history: checks.HistoryCheck) -> list[str]:
         lines.append("No rule in force changed in any year.")
     else:
         lines += ["| Rule | Years | Before | After |", "|---|---|---|---|"]
-        for (title, slugs, was, now), run in groupby(changes, key=lambda c: (c.title, c.slugs, _state(c.before),
-                                                                             _state(c.after))):
-            lines.append(f"| {_cell(title)} (`{slugs}`) | {checks.years(c.cutoff for c in run)} | {_cell(was)} | "
-                         f"{_cell(now)} |")
+        for (title, slugs, was, now), run in groupby(changes, key=lambda c: (c.title, c.slugs, update._state(c.before),
+                                                                             update._state(c.after))):
+            lines.append(f"| {update._cell(title)} (`{slugs}`) | {checks.years(c.cutoff for c in run)} | "
+                         f"{update._cell(was)} | {update._cell(now)} |")
     wording = {c.title for c in history.changes if c.kind == "history-text"}
     if wording:
         lines += ["", f"Only the wording in force changed for {len(wording)} rules (rewritten texts): "
@@ -1550,20 +1509,13 @@ def history_section(history: checks.HistoryCheck) -> list[str]:
     return lines + [""]
 
 
-def _state(rules: Sequence[checks.InForce]) -> str:
-    return " + ".join(rule.label() for rule in rules) or "not in force"
-
-
-def _cell(text: str) -> str:
-    return text.replace("|", "\\|")
-
-
 # --------------------------------------------------------------------------- command line
 
 def candidates_command(report: str) -> None:
     data = Data.load()
-    pairs = fragment_pairs(data, evaluate.Texts())
-    text = candidates_report(pairs, recall(pairs, data))
+    scores = similarities(data)
+    pairs = fragment_pairs(data, evaluate.Texts(), scores)
+    text = candidates_report(pairs, recall(pairs, data, scores))
     evaluate.write_text(evaluate.report_path(report), text)
     print(text)
 

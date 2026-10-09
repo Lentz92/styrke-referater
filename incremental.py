@@ -223,7 +223,7 @@ class RuleBook:
 
     def rules(self) -> Iterator[tuple[str, dict]]:
         """(category, rule) of every rule, in category order and then file order (analyze.live_rules' order)."""
-        for category in sorted(self.files, key=_category_order):
+        for category in sorted(self.files, key=analyze.category_order):
             for rule in self.files[category]["regler"]:
                 yield category, rule
 
@@ -255,8 +255,8 @@ class RuleBook:
         return {rule["slug"] for _, rule in self.rules()}
 
     def file(self, category: str, model: str) -> dict:
-        """The category's file, created empty when it has none yet (only an approved run gets here: the rebuild
-        guard stops a category with decisions but no file)."""
+        """The category's file, created empty when it has none yet (only a run with --allow-rebuild gets here: the
+        rebuild guard stops a category with decisions but no file)."""
         if category not in self.files:
             self.files[category] = {"kategori": category, "version": analyze.CONSOLIDATE_VERSION, "input_hash": None,
                                     "model": model, "regler": [], "udeladt": [], "ikke_tildelt": []}
@@ -265,11 +265,6 @@ class RuleBook:
     def write(self, categories: set[str]) -> None:
         for category in sorted(categories):
             analyze._write_json(analyze.RULES_DIR / f"{category}.json", self.files[category])
-
-
-def _category_order(category: str) -> int:
-    order = list(CATEGORIES)
-    return order.index(category) if category in order else len(order)
 
 
 # --------------------------------------------------------------------------- what the rule files reflect
