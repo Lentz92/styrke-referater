@@ -18,9 +18,12 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: read  # to see whether the monthly update runs
 
+# Its own group: one audit at a time. Sharing update.yml's group would let a queued audit cancel a pending monthly
+# update (a group keeps one pending run); instead the first step refuses to start while an update runs or is queued.
 concurrency:
-  group: update  # never alongside the monthly update: both write data/
+  group: audit
   cancel-in-progress: false
 
 jobs:
@@ -31,8 +34,22 @@ jobs:
       # Pinned as in update.yml (tests/test_audit.py checks they agree).
       CLAUDE_CODE_VERSION: "2.1.294"
       DISABLE_AUTOUPDATER: "1"
+      # Minutes after which audit.py starts no new Claude call, propose and apply together (audit.DEFAULT_TIME_BUDGET):
+      # a call running then may take 30 more, and the result must still be routed before the job's 120 are up.
+      TIME_BUDGET: "75"
     steps:
       - uses: actions/checkout@v5
+
+      - name: Check that no update runs and no other audit is open
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          active=$(gh run list --workflow update.yml --json status --jq 'map(select(.status != "completed")) | length')
+          if [ "$active" != 0 ]; then
+            echo "::error::The monthly update (update.yml) is running or queued; run the audit once it has finished."
+            exit 1
+          fi
+          bash .github/scripts/route-audit.sh check
 
       - name: Install uv and Claude Code
         run: |
@@ -70,35 +87,43 @@ jobs:
 
       - name: Propose and apply
         id: audit
+        # Ends before the job does, so even a run past its time budget is routed with what it paid for.
+        timeout-minutes: 110
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           CATEGORIES: ${{ inputs.categories }}
           MAX_COST: ${{ inputs.max_cost }}
         run: |
           # Record the exit code instead of stopping here: what the audit paid for so far goes to the pull request
-          # either way, and a run on its branch continues it without paying again.
-          propose=(--max-cost "$MAX_COST")
+          # either way, and a run on its branch continues it without paying again. apply gets the time propose left.
+          started=$(date +%s)
+          propose=(--max-cost "$MAX_COST" --time-budget "$TIME_BUDGET")
           if [ -n "$CATEGORIES" ]; then propose+=(--categories "$CATEGORIES"); fi
           set +e
           uv run audit.py propose "${propose[@]}"
           code=$?
-          if [ "$code" = 0 ]; then
-            uv run audit.py apply --max-cost "$MAX_COST"
+          left=$(( TIME_BUDGET - ($(date +%s) - started) / 60 ))
+          if [ "$code" = 0 ] && [ "$left" -gt 0 ]; then
+            uv run audit.py apply --max-cost "$MAX_COST" --time-budget "$left"
             code=$?
+          elif [ "$code" = 0 ]; then
+            echo "::warning::No time left to apply the ops; run the workflow on the audit's branch to apply them."
+            code=1
           fi
           set -e
           echo "code=$code" >> "$GITHUB_OUTPUT"
 
       - name: Send the result to a pull request
-        if: steps.audit.outputs.code != ''
+        # Also after the step above failed or timed out: the answers kept so far must reach the audit's branch.
+        if: ${{ !cancelled() && steps.audit.outcome != 'skipped' }}
         env:
           GH_TOKEN: ${{ github.token }}
-        run: bash .github/scripts/route-audit.sh
+        run: bash .github/scripts/route-audit.sh route
 
       - name: Fail when audit.py failed
-        if: steps.audit.outputs.code != '0'
+        if: ${{ !cancelled() && steps.audit.outcome != 'skipped' && steps.audit.outputs.code != '0' }}
         env:
           CODE: ${{ steps.audit.outputs.code }}
         run: |
-          echo "::error::audit.py failed (exit code $CODE); see its log and the pull request's report."
+          echo "::error::audit.py failed or was cut off (exit code ${CODE:-none}); see its log and the pull request's report."
           exit 1

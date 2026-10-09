@@ -38,6 +38,12 @@ ASSETS = ("logo.png", "search.js", "vendor/minisearch.js")  # copied next to the
 def build(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], aliases: Mapping[str, str],
           today: date) -> Path:
     """Write _site/ and return the path of the page. `aliases`: old slug -> current slug (data/slugs.json)."""
+    return write_site(page_html(docs, decisions, raw_rules, aliases, today))
+
+
+def page_html(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], aliases: Mapping[str, str],
+              today: date) -> str:
+    """The page: website/template.html with the data embedded."""
     template = (SRC_DIR / "template.html").read_text()
     if template.count(DATA_MARKER) != 1:
         raise ValueError(f"website/template.html must contain {DATA_MARKER} exactly once")
@@ -45,9 +51,14 @@ def build(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], ali
     data["synonyms"] = json.loads((SRC_DIR / "synonyms.json").read_text())["groups"]
     # "</" inside a JSON string would close the <script> element early.
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    return template.replace(DATA_MARKER, payload)
+
+
+def write_site(html: str) -> Path:
+    """Write the page built by page_html and its assets to _site/, and return the page's path."""
     OUT_DIR.mkdir(exist_ok=True)
     page = OUT_DIR / "index.html"
-    page.write_text(template.replace(DATA_MARKER, payload))
+    page.write_text(html)
     for asset in ASSETS:
         (OUT_DIR / asset).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(SRC_DIR / asset, OUT_DIR / asset)

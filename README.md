@@ -212,9 +212,10 @@ uv run audit.py candidates                # the similarity threshold's recall on
    rule's file, a rename only its title. Each merged or split rule then gets one Opus call with its whole history
    that rewrites every version's effect, text and short forms (incremental's update call, told why:
    `audit.AUDIT_UPDATE_SYSTEM`); code checks that the answer keeps exactly the versions and the order apply set and
-   changes nothing else. `apply` writes `data/` only when the result has no check errors, leaves `update.py` nothing
-   to do (no decision is filed again because the audit moved it), every old slug still leads to a rule and the pages
-   build; then it rebuilds `regelsaet/` and `_site/`.
+   changes nothing else. `apply` builds the whole result first, in a copy: it writes `data/` only when the result has
+   no check errors, leaves `update.py` nothing to do (no decision is filed again because the audit moved it), every
+   old slug still leads to a rule, and the pages, the scores and the report are built. Then it replaces the rule
+   files, `data/slugs.json` and the ops file, each whole (a temporary file renamed over it), and the pages.
 
 Run it on settled data, e.g. quarterly or after a migration: it stops while `update.py` has decisions to file or a
 category to consolidate, and a later full consolidation (a migration) regroups categories anew, undoing it. On GitHub:
@@ -224,13 +225,27 @@ goes to a pull request on `auto/audit-<date>` (`.github/scripts/route-audit.sh`)
 committed) lists the applied ops with their reasons, the ops only one run proposed, the answers code rejected, what
 each year shows before and after for every rule that changed, the answer key's scores before and after, and the cost.
 To review, read the applied ops and check the merged and split rules against the minutes (the diff of `regelsaet/`
-shows them); merge to publish, or close to discard. An audit cut off by its cost limit or failed calls still opens
-the pull request with what it paid for; run the workflow on that branch to finish it without paying again. Locally,
-the same commands leave the changes in the working tree for a pull request; `uv run audit.py score` compares the
-answer key's scores of git HEAD (`--before REV`, or `--before-dir`) with `data/regler/`.
+shows them); merge to publish, or close to discard. Locally, the same commands leave the changes in the working tree
+for a pull request; `uv run audit.py score` compares the answer key's scores of git HEAD (`--before REV`, or
+`--before-dir`) with `data/regler/`.
+
+An audit can be cut off: by its cost limit, by failed calls, or by its time budget (`--time-budget`, 75 minutes by
+default: no new call starts after it; in the workflow `propose` and `apply` share it, so with the calls still running
+the result reaches its pull request well within the job's 120 minutes). Then the pull request is titled "(unfinished)"
+and holds what the audit paid for: the answers kept in `data/audit/`, the ops file, and nothing in `data/regler/` (an
+`apply` that cannot finish writes no rule). Run the workflow on that pull request's branch to finish it: kept answers
+are not paid again. For the same reason a new audit refuses to start while another audit's branch is on GitHub (it
+would overwrite the paid answers): finish that audit, or merge or close its pull request and delete its branch.
+
+An open audit pull request conflicts with the monthly update in `data/regler/`, so merge or close it before the 1st:
+the workflow refuses to start an audit in the last two days of a month, and while an update runs or is queued. The
+two workflows do not share a concurrency group, so an audit never cancels a pending monthly run; a monthly run that did
+not happen (or ran into a conflict) is started by hand with "Run workflow" in update.yml.
 
 Cost at list price: on the data of October 2026 (470 rules) `propose` is 24 calls of 3K to 60K tokens, about 10 USD,
-printed before the first call; each merged or split rule's rewrite about 0.1 USD; the title choice a few cents.
+printed before the first call; each merged or split rule's rewrite about 0.1 USD; the title choice a few cents. Each
+`propose` and `apply` that calls Claude adds a line to `data/runs.jsonl` (as `update.py` does, with the audit's id),
+and the pull request shows the audit's whole cost from those lines: failed attempts and rejected answers included.
 
 ## How it works
 

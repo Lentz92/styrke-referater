@@ -1,26 +1,59 @@
 #!/usr/bin/env bash
-# Send the result of `uv run audit.py propose` and `apply` to review: commit everything they changed (the ops file,
-# the answers kept in data/audit/, and once applied data/regler/, data/slugs.json and regelsaet/) to the branch
-# auto/audit-<date> and open its pull request into the branch the audit ran on, or update the open one, with
-# audit-report.md as the body. An audit changes earlier years by design, so it is never pushed to the branch it ran
-# on: merging the pull request publishes it. A run on an auto/audit-* branch itself (finishing a cut-off audit, whose
-# kept answers are on that branch) commits there and updates its pull request into main. Run from the repository
-# root after audit.py, with GH_TOKEN set for gh.
+# The audit workflow's branch handling (.github/workflows/audit.yml), run from the repository root.
+#
+#   route-audit.sh check   before any Claude call: fail when another audit's branch is on origin (its pull request
+#                          holds answers already paid for, which a new audit's branch of the same day would overwrite)
+#                          or when the month ends within two days (the monthly update runs on the 1st, and an open
+#                          audit pull request conflicts with it in data/regler/).
+#   route-audit.sh route   after `uv run audit.py propose` and `apply`, finished or cut off: commit everything they
+#                          changed (the ops file, the answers kept in data/audit/, data/runs.jsonl, and once applied
+#                          data/regler/, data/slugs.json and regelsaet/) to auto/audit-<date> and open its pull request
+#                          into the branch the audit ran on, or update the open one, with audit-report.md as the body.
+#
+# An audit changes earlier years by design, so it is never pushed to the branch it ran on: merging the pull request
+# publishes it. A run on an auto/audit-* branch itself (finishing a cut-off audit, whose kept answers are on that
+# branch) commits there and updates its pull request into main. GH_TOKEN must be set for gh; AUDIT_TODAY (YYYY-MM-DD)
+# replaces today's date in tests.
 set -euo pipefail
 
+mode=${1:?usage: route-audit.sh check|route}
 report=${AUDIT_REPORT:-audit-report.md}
+applied_marker="<!-- audit: applied -->"  # audit.py's APPLIED
 max_body=60000  # GitHub refuses a pull request body over 65536 characters
+today=${AUDIT_TODAY:-$(date -u +%Y-%m-%d)}
 
-base=$(git rev-parse --abbrev-ref HEAD)
-if [ "$base" = HEAD ]; then
-  echo "::error::Not on a branch; check out the branch the audit ran on." >&2
+current=$(git rev-parse --abbrev-ref HEAD)
+if [ "$current" = HEAD ]; then
+  echo "::error::Not on a branch; check out the branch the audit runs on." >&2
   exit 1
 fi
-case $base in
-  auto/audit-*) review_branch=$base; base=main ;;
-  *) review_branch="auto/audit-$(date -u +%Y-%m-%d)" ;;
+case $current in
+  auto/audit-*) review_branch=$current; base=main ;;
+  *) review_branch="auto/audit-$today"; base=$current ;;
 esac
+
+if [ "$mode" = check ]; then
+  month_end=$(python3 -c 'import datetime as d, sys; t = d.date.fromisoformat(sys.argv[1]); print(int((t + d.timedelta(days=2)).month != t.month))' "$today")
+  if [ "$month_end" = 1 ]; then
+    echo "::error::The month ends within two days: the monthly update runs on the 1st, and an open audit pull request would conflict with it. Run the audit after the 1st's update." >&2
+    exit 1
+  fi
+  open=$(git ls-remote --heads origin 'auto/audit-*' | sed 's|.*refs/heads/||' | grep -vxF "$current" | paste -sd ' ' - || true)
+  if [ -n "$open" ]; then
+    echo "::error::An audit is open on $open: its pull request holds answers already paid for. Run this workflow on that branch to finish it, or merge or close its pull request and delete the branch, then start a new audit." >&2
+    exit 1
+  fi
+  exit 0
+fi
+
+if [ "$mode" != route ]; then
+  echo "usage: route-audit.sh check|route" >&2
+  exit 2
+fi
 title="Rule audit ${review_branch#auto/audit-}"
+if ! { [ -f "$report" ] && head -n 1 "$report" | grep -qxF "$applied_marker"; }; then
+  title="$title (unfinished)"
+fi
 
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

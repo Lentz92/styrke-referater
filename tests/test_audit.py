@@ -4,12 +4,12 @@ Calls run with one worker, so the fake answers them in order: two propose runs p
 order), the title choice, then one text rewrite per merged or split rule (merges first)."""
 
 import json
-import re
+import os
 import subprocess
-from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
+import yaml
 
 import analyze
 import audit
@@ -75,6 +75,7 @@ def world(tmp_path, monkeypatch):
     monkeypatch.setattr(evaluate, "EVAL_DIR", tmp_path / "eval")  # no answer key: the report has no scores
     monkeypatch.setattr(render, "OUT_DIR", tmp_path / "regelsaet")
     monkeypatch.setattr(website, "OUT_DIR", tmp_path / "site")
+    monkeypatch.setattr(update, "RUNS_LOG", tmp_path / "runs.jsonl")
     assert audit.unsettled(audit.Data.load()) == []
     return w
 
@@ -85,6 +86,7 @@ def _op(op: str, rules: list[str], refs: list[str], title: str | None = None, ca
             "parts": [{"title": t, "refs": r} for t, r in parts], "reason": "Det er sådan.", "refs": refs}
 
 
+CATEGORIES = ["medlemskab", "okonomi", "staevner"]  # those with rules, in the order they are called
 MERGE = _op("merge", ["licens-for-løftere", "licensgebyr"], ["rep2020#1"])
 
 
@@ -206,7 +208,7 @@ def test_ops_of_one_run_that_share_a_rule_conflict_and_are_not_applied():
 
 def test_two_runs_must_propose_the_same_op(world, fake_claude):
     fake_claude.answers(*PROPOSALS, TITLES)
-    assert audit.propose(["medlemskab", "okonomi", "staevner"], 10, 1) == 0
+    assert audit.propose(CATEGORIES, 10, 1) == 0
 
     args = fake_claude.calls()
     models = [a[a.index("--model") + 1] for a in args]
@@ -234,24 +236,79 @@ def test_two_runs_must_propose_the_same_op(world, fake_claude):
         ("2.2", None, ["Dommerkrav for klubber", "Klubbers dommerkrav"]),
         ("3", "Startgebyr", ["Startgebyr ved stævner", "Startgebyr for stævner", "Startgebyr"])]
     report = audit.REPORT.read_text()
-    assert "**Proposed**: 4 agreed ops" in report and "## Not agreed: 1" in report
+    assert report.startswith(f"{audit.UNFINISHED}\n") and "**Unfinished**: 4 agreed ops, not applied yet" in report
+    assert "## Not agreed: 1" in report and "Cost of this audit at list price" in report
 
 
 def test_kept_answers_are_never_paid_twice(world, fake_claude):
     fake_claude.answers(*PROPOSALS, TITLES)
-    audit.propose(["medlemskab", "okonomi", "staevner"], 10, 1)
+    audit.propose(CATEGORIES, 10, 1)
     first = _ops()
-    audit.propose(["medlemskab", "okonomi", "staevner"], 10, 1)
+    audit.propose(CATEGORIES, 10, 1)
     assert fake_claude.invocations("call") == 7
     assert {k: v for k, v in _ops().items() if k != "proposed"} == {k: v for k, v in first.items() if k != "proposed"}
 
 
 def test_a_cut_off_proposal_is_incomplete_and_cannot_be_applied(world, fake_claude):
     fake_claude.answers(*PROPOSALS, TITLES)
-    assert audit.propose(["medlemskab", "okonomi", "staevner"], 0, 1) == 1  # the limit stops every call
+    assert audit.propose(CATEGORIES, 0, 1) == 1  # the limit stops every call
     assert fake_claude.invocations("call") == 0 and not _ops()["complete"]
     with pytest.raises(SystemExit, match="incomplete"):
         audit.apply(10, 1)
+
+
+def test_runs_that_differ_on_the_rules_the_parts_or_the_target_do_not_agree():
+    def part(title: str, *refs: str) -> audit.Part:
+        return audit.Part(title, refs)
+
+    runs = {1: [audit.Op("merge", ("a", "b")),
+                audit.Op("split", ("s",), parts=(part("x", "s#1"), part("y", "s#2", "s#3"))),
+                audit.Op("move", ("m",), category="master")],
+            2: [audit.Op("merge", ("a", "b", "c")),
+                audit.Op("split", ("s",), parts=(part("x", "s#1", "s#2"), part("y", "s#3"))),
+                audit.Op("move", ("m",), category="landshold")]}
+    proposed, rejected = audit.agree([audit.Proposal(op, run, "okonomi", "", ("s#1",))
+                                      for run, ops in runs.items() for op in ops])
+    assert rejected == [] and len(proposed) == 6 and not any(p.agreed for p in proposed)
+    # The same partition is agreed, whatever each run calls its parts (the third call chooses).
+    same = [audit.Proposal(audit.Op("split", ("s",), parts=(part(x, "s#1"), part(y, "s#2", "s#3"))), run, "okonomi",
+                           "", ("s#1",)) for run, (x, y) in ((1, ("x", "y")), (2, ("z", "w")))]
+    assert [p.agreed for p in audit.agree(same)[0]] == [True]
+
+
+def test_a_changed_question_is_asked_again_and_the_same_one_is_not(world, fake_claude):
+    fake_claude.answers(*PROPOSALS, TITLES, PROPOSALS[0], PROPOSALS[1])
+    audit.propose(CATEGORIES, 10, 1)
+    medlemskab = world.stored("medlemskab")
+    medlemskab["regler"][1]["titel"] = "Klubskifte og karantæne"
+    analyze._write_json(analyze.RULES_DIR / "medlemskab.json", medlemskab)
+    assert audit.propose(CATEGORIES, 10, 1) == 0
+    asked = fake_claude.prompts()[7:]  # only medlemskab's two runs show the changed title
+    assert len(asked) == 2 and all("Klubskifte og karantæne" in prompt for prompt in asked)
+
+
+def test_a_cut_off_audit_keeps_what_it_paid_for_says_how_to_go_on_and_counts_every_call(world, fake_claude):
+    fake_claude.answers(*PROPOSALS, TITLES)
+    assert audit.propose(CATEGORIES, 0.5, 1) == 1  # each fake call costs 0.25: two calls, then the limit
+    assert sorted(path.stem for path in audit.CACHE_DIR.glob("*.json")) == ["propose-medlemskab-1",
+                                                                          "propose-medlemskab-2"]
+    report = audit.REPORT.read_text()
+    assert report.startswith(f"{audit.UNFINISHED}\n") and audit.CONTINUE in report
+    assert "left propose okonomi run 1, propose okonomi run 2, propose staevner run 1" in report
+    (line,) = [json.loads(line) for line in update.RUNS_LOG.read_text().splitlines()]
+    assert (line["command"], line["audit"], line["steps"]["propose"]["cost_usd"]) == (
+        "audit propose", _ops()["audit"], 0.5)
+
+    assert audit.propose(CATEGORIES, 10, 1) == 0
+    assert fake_claude.invocations("call") == 7  # the kept answers were not asked again
+    assert "every call counted (failed attempts and rejected answers too): propose 1.75 USD." in \
+        audit.REPORT.read_text()
+
+
+def test_no_call_starts_once_the_time_budget_is_spent(world, fake_claude):
+    assert audit.propose(CATEGORIES, 10, 1, minutes=0) == 1
+    assert fake_claude.invocations("call") == 0 and not _ops()["complete"]
+    assert audit.REPORT.read_text().startswith(audit.UNFINISHED)
 
 
 # ---------------------------------------------------------------- apply
@@ -259,7 +316,7 @@ def test_a_cut_off_proposal_is_incomplete_and_cannot_be_applied(world, fake_clau
 @pytest.fixture
 def proposed(world, fake_claude):
     fake_claude.answers(*PROPOSALS, TITLES, *TEXTS)
-    audit.propose(["medlemskab", "okonomi", "staevner"], 10, 1)
+    audit.propose(CATEGORIES, 10, 1)
     return world
 
 
@@ -315,7 +372,7 @@ def test_apply_merges_splits_moves_and_renames_and_keeps_every_link(proposed, fa
     with pytest.raises(SystemExit, match="applied already"):
         audit.apply(10, 1)
     with pytest.raises(SystemExit, match="was applied to exactly these rules"):  # e.g. a rerun on the audit's branch
-        audit.propose(["medlemskab", "okonomi", "staevner"], 10, 1)
+        audit.propose(CATEGORIES, 10, 1)
     assert fake_claude.invocations("call") == 10
 
 
@@ -343,7 +400,7 @@ def test_the_rewrite_may_change_only_texts_and_never_the_versions_or_their_order
 
 def test_a_rejected_rewrite_writes_nothing_and_the_rest_is_not_paid_again(world, fake_claude):
     fake_claude.answers(*PROPOSALS, TITLES, TEXTS[0], _text("rep2016#1"), _text("rep2016#1"), TEXTS[2], TEXTS[1])
-    audit.propose(["medlemskab", "okonomi", "staevner"], 10, 1)
+    audit.propose(CATEGORIES, 10, 1)
     before, ops = _stored(world), audit.OPS_PATH.read_bytes()
     assert audit.apply(10, 1) == 1  # klubskifte's rewrite left out rep2020#2, twice
     assert _stored(world) == before and audit.OPS_PATH.read_bytes() == ops
@@ -351,7 +408,36 @@ def test_a_rejected_rewrite_writes_nothing_and_the_rest_is_not_paid_again(world,
 
     assert audit.apply(10, 1) == 0
     assert fake_claude.invocations("call") == 12  # only klubskifte's rewrite was asked again
+    # The cost counts the rejected answers too: four calls in the first apply, one in the second.
+    assert "propose 1.75 USD, apply 1.25 USD." in audit.REPORT.read_text()
     assert world.rule("medlemskab", "klubskifte")["versioner"][1]["tekst"] == "Samlet rep2020#2"
+
+
+
+
+@pytest.mark.parametrize("failing", [(audit, "score_section"), (render, "build_pages"), (website, "page_html")])
+def test_a_failure_before_the_writes_writes_nothing(proposed, monkeypatch, failing):
+    def fail(*args, **kwargs):
+        raise RuntimeError("boom")
+
+    monkeypatch.setattr(*failing, fail)
+    before, ops = _stored(proposed), audit.OPS_PATH.read_bytes()
+    assert audit.apply(10, 1) == 1
+    assert _stored(proposed) == before and audit.OPS_PATH.read_bytes() == ops
+    assert not render.OUT_DIR.exists() and not website.OUT_DIR.exists()
+    report = audit.REPORT.read_text()
+    assert report.startswith(f"{audit.UNFINISHED}\n") and "**Not applied**: RuntimeError: boom" in report
+
+
+def test_apply_replaces_the_rule_files_then_the_slugs_then_the_ops_file(proposed, monkeypatch):
+    written = []
+    replace = audit._replace
+    monkeypatch.setattr(audit, "_replace", lambda path, content: written.append(path.name) or replace(path, content))
+    assert audit.apply(10, 1) == 0
+    data = [name for name in written if not name.startswith(("text-", "propose-", "titles"))]
+    assert data == ["antidoping.json", "medlemskab.json", "okonomi.json", "staevner.json", "slugs.json",
+                    "regler_ops.json", "audit-report.md"]
+    assert not list(proposed.root.rglob(".*.tmp"))
 
 
 def test_apply_keeps_only_this_audits_answers(proposed):
@@ -379,46 +465,116 @@ def test_an_audit_waits_for_decisions_update_py_has_not_filed(world, fake_claude
 # ---------------------------------------------------------------- the workflow
 
 AUDIT_SCRIPT = ROOT / ".github" / "scripts" / "route-audit.sh"
+TODAY = "2026-10-09"
 
 
-def _route(repo: Repo, data: str, report: str, branch: str = "main") -> subprocess.CompletedProcess:
+def _workflow(name: str) -> dict:
+    return yaml.safe_load((ROOT / ".github" / "workflows" / name).read_text())
+
+
+def _job(workflow: dict) -> dict:
+    (job,) = workflow["jobs"].values()
+    return job
+
+
+def _step(job: dict, found: str) -> dict:
+    return next(step for step in job["steps"] if found in (step.get("name", ""), step.get("id", "")))
+
+
+def _script(repo: Repo, mode: str, branch: str = "main", today: str = TODAY, data: str | None = None,
+            report: str | None = None) -> subprocess.CompletedProcess:
+    """route-audit.sh in a fresh checkout of `branch`, after audit.py wrote `data` and `report`."""
     work = repo.clone(branch)
-    (work / "data.json").write_text(data + "\n")
-    (work / "audit-report.md").write_text(report)
-    return subprocess.run(["bash", str(AUDIT_SCRIPT)], cwd=work, env=repo.env, capture_output=True, text=True,
-                          check=False)
+    if data is not None:
+        (work / "data.json").write_text(data + "\n")
+    if report is not None:
+        (work / "audit-report.md").write_text(report)
+    return subprocess.run(["bash", str(AUDIT_SCRIPT), mode], cwd=work, env={**repo.env, "AUDIT_TODAY": today},
+                          capture_output=True, text=True, check=False)
+
+
+@pytest.fixture
+def repo(tmp_path) -> Repo:
+    repo = Repo(tmp_path)
+    repo.commit_elsewhere("main", ".gitignore", "run-report.md\naudit-report.md\n")
+    return repo
+
+
+def test_the_audit_workflow_is_manual_reviewed_and_pinned_like_the_monthly_run():
+    audit_yml, update_yml = _workflow("audit.yml"), _workflow("update.yml")
+    assert set(audit_yml.get("on", audit_yml.get(True))) == {"workflow_dispatch"}  # PyYAML reads `on` as True
+    job = _job(audit_yml)
+    assert job["env"]["CLAUDE_CODE_VERSION"] == _job(update_yml)["env"]["CLAUDE_CODE_VERSION"]
+    # Its own concurrency group: a queued audit never cancels a pending monthly update.
+    assert audit_yml["concurrency"]["group"] != update_yml["concurrency"]["group"]
+    names = [step.get("name", step.get("uses")) for step in job["steps"]]
+    check, smoke, run = (names.index(name) for name in ("Check that no update runs and no other audit is open",
+                                                          "Check Claude runs on the subscription", "Propose and apply"))
+    assert check < smoke < run  # nothing is paid before the checks
+    assert "gh run list --workflow update.yml" in job["steps"][check]["run"]
+    assert "route-audit.sh check" in job["steps"][check]["run"]
+    # The result is routed to review whatever the audit step ended with, timed out included, and never published.
+    route = _step(job, "Send the result to a pull request")
+    assert route["run"] == "bash .github/scripts/route-audit.sh route"
+    assert route["if"] == "${{ !cancelled() && steps.audit.outcome != 'skipped' }}"
+    assert not any("route-update.sh" in step.get("run", "") or "git push" in step.get("run", "")
+                   for step in job["steps"])
+    # The time budget, a call still running at its end and the routing fit into the job.
+    budget = int(job["env"]["TIME_BUDGET"])
+    assert budget == audit.DEFAULT_TIME_BUDGET
+    assert budget + audit.PROPOSE_TIMEOUT / 60 < _step(job, "audit")["timeout-minutes"] < job["timeout-minutes"] - 5
+
+
+@pytest.mark.parametrize(("propose_code", "budget", "applied", "code"), [
+    (0, "75", True, 0), (1, "75", False, 1), (0, "0", False, 1)])
+def test_the_workflow_applies_a_complete_proposal_within_the_time_left(tmp_path, propose_code, budget, applied, code):
+    step = _step(_job(_workflow("audit.yml")), "audit")
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+    (bin_dir / "uv").write_text(f'#!/bin/sh\necho "$*" >> {tmp_path}/uv.log\n'
+                                f'[ "$3" = propose ] && exit "$PROPOSE_CODE"\nexit 0\n')
+    (bin_dir / "uv").chmod(0o755)
+    script = tmp_path / "step.sh"
+    script.write_text(step["run"])
+    env = {"PATH": f"{bin_dir}{os.pathsep}/usr/bin{os.pathsep}/bin", "MAX_COST": "25", "CATEGORIES": "okonomi,dommere",
+           "TIME_BUDGET": budget, "GITHUB_OUTPUT": str(tmp_path / "output"), "PROPOSE_CODE": str(propose_code)}
+    subprocess.run(["bash", "--noprofile", "--norc", "-eo", "pipefail", str(script)], env=env, check=True)  # as GitHub
+    calls = (tmp_path / "uv.log").read_text().splitlines()
+    assert calls[0] == f"run audit.py propose --max-cost 25 --time-budget {budget} --categories okonomi,dommere"
+    assert calls[1:] == (["run audit.py apply --max-cost 25 --time-budget 75"] if applied else [])
+    assert (tmp_path / "output").read_text() == f"code={code}\n"
+
+
+def test_a_new_audit_waits_for_an_open_one_and_for_the_monthly_update(repo):
+    assert _script(repo, "check").returncode == 0
+    month_end = _script(repo, "check", today="2026-10-30")
+    assert month_end.returncode == 1 and "The month ends within two days" in month_end.stderr
+    assert _script(repo, "check", today="2026-10-29").returncode == 0
+    repo.commit_elsewhere(f"auto/audit-{TODAY}", "answers.json", "{}\n")  # an audit cut off earlier today
+    again = _script(repo, "check")
+    assert again.returncode == 1 and f"An audit is open on auto/audit-{TODAY}" in again.stderr
+    assert _script(repo, "check", branch=f"auto/audit-{TODAY}").returncode == 0  # a run that finishes it
 
 
 @pytest.mark.skipif(subprocess.run(["which", "jq"], capture_output=True).returncode != 0,
                     reason="the fake gh applies --jq with jq")
-def test_an_audit_goes_to_a_pull_request_and_never_to_main(tmp_path):
-    repo = Repo(tmp_path)
-    repo.commit_elsewhere("main", ".gitignore", "run-report.md\naudit-report.md\n")
-    main = repo.git("rev-parse", "main")
-    branch = f"auto/audit-{datetime.now(timezone.utc).date().isoformat()}"
-
-    result = _route(repo, '{"audited": 1}', "# Rule audit\n")
-    assert result.returncode == 0, result.stderr
+def test_an_audit_goes_to_a_pull_request_and_never_to_main(repo):
+    main, branch = repo.git("rev-parse", "main"), f"auto/audit-{TODAY}"
+    cut_off = _script(repo, "route", data='{"audited": 1}', report=f"{audit.UNFINISHED}\n# Rule audit\n")
+    assert cut_off.returncode == 0, cut_off.stderr
     assert repo.git("rev-parse", "main") == main and repo.file(branch) == '{"audited": 1}'
     (pr,) = repo.prs()
-    assert (pr["headRefName"], pr["baseRefName"], pr["body"]) == (branch, "main", "# Rule audit\n")
+    assert (pr["headRefName"], pr["baseRefName"], pr["body"]) == (branch, "main", f"{audit.UNFINISHED}\n# Rule audit\n")
+    assert repo.gh_calls()[-1]["args"][-3] == f"Rule audit {TODAY} (unfinished)"
     assert "audit-report.md" not in repo.git("ls-tree", "--name-only", branch)
 
-    # A run on the audit's branch (finishing a cut-off audit) commits there and updates its pull request.
+    # A run on the audit's branch finishes it: it commits there and updates its pull request.
     first = repo.git("rev-parse", branch)
-    again = _route(repo, '{"audited": 2}', "# Finished\n", branch=branch)
-    assert again.returncode == 0, again.stderr
+    finished = _script(repo, "route", branch=branch, today="2026-10-10", data='{"audited": 2}',
+                       report=f"{audit.APPLIED}\n# Finished\n")
+    assert finished.returncode == 0, finished.stderr
     assert repo.git("rev-parse", f"{branch}~1") == first and repo.file(branch) == '{"audited": 2}'
     (pr,) = repo.prs()
-    assert (pr["baseRefName"], pr["body"]) == ("main", "# Finished\n") and repo.git("rev-parse", "main") == main
-
-
-def test_the_audit_workflow_proposes_applies_and_routes_to_review_with_the_monthly_runs_claude():
-    audit_yml = (ROOT / ".github" / "workflows" / "audit.yml").read_text()
-    update_yml = (ROOT / ".github" / "workflows" / "update.yml").read_text()
-    pinned = [re.search(r'CLAUDE_CODE_VERSION: "([^"]+)"', text)[1] for text in (audit_yml, update_yml)]
-    assert pinned[0] == pinned[1]
-    assert 'uv run audit.py propose "${propose[@]}"' in audit_yml and "propose=(--max-cost" in audit_yml
-    assert 'uv run audit.py apply --max-cost "$MAX_COST"' in audit_yml
-    assert "bash .github/scripts/route-audit.sh" in audit_yml and "route-update.sh" not in audit_yml
-    assert "group: update" in audit_yml and "workflow_dispatch:" in audit_yml and "schedule:" not in audit_yml
+    assert (pr["baseRefName"], pr["body"]) == ("main", f"{audit.APPLIED}\n# Finished\n")
+    edited = repo.gh_calls()[-1]["args"]
+    assert edited[edited.index("--title") + 1] == f"Rule audit {TODAY}" and repo.git("rev-parse", "main") == main

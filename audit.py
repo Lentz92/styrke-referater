@@ -23,7 +23,8 @@ changes earlier years by design, so it always goes to a pull request (.github/wo
 the website.
 
 Every Claude answer is kept under data/audit/ with a fingerprint of what it was asked, so a cut-off or repeated command
-never pays twice for the same question. audit-report.md (not committed) is the pull request's body.
+never pays twice for the same question; each command that calls Claude adds a line to data/runs.jsonl, from which the
+report counts what the audit cost. audit-report.md (not committed) is the pull request's body.
 """
 
 from __future__ import annotations
@@ -33,6 +34,7 @@ import copy
 import hashlib
 import json
 import logging
+import os
 import subprocess
 import tempfile
 from collections import Counter, defaultdict
@@ -83,6 +85,10 @@ SIMILAR_SHOWN = 5
 SHORT_TEXT = 200  # characters of a decision's tekst shown where a version has no kort
 PROPOSE_TIMEOUT = 1800
 TITLE_TIMEOUT = 600
+# Minutes after which no new Claude call starts, for propose and apply together in the workflow (it gives apply what
+# propose left). A call running then may go on for PROPOSE_TIMEOUT (30 minutes), and the result must still reach its
+# pull request before the job's 120 minutes are up, kept answers included, or a rerun pays for them again.
+DEFAULT_TIME_BUDGET = 75
 TEXT_TIMEOUT = incremental.UPDATE_TIMEOUT
 # List price per token of MODEL as Claude Code reports it, fitted to every Opus step in eval/runs.jsonl (exactly): a
 # new prompt is written to the cache at 8 USD per million tokens, output costs 20. Output per call is a guess at
@@ -445,24 +451,23 @@ def ask(call: Call, budget: RunBudget, cli: str, accept: Callable[[dict], object
     with analyze.usage_kept(usage):
         if accept is not None:
             accept(output)
-        CACHE_DIR.mkdir(parents=True, exist_ok=True)
-        analyze._write_json(call.path, {
+        _replace(call.path, _json_bytes({
             "fingerprint": call.fingerprint(), "time": _now(),
             "provenance": analyze.provenance(usage, cli, call.system, call.schema, EFFORT),
-            "usage": evaluate.usage_json(usage), "output": output})
+            "usage": evaluate.usage_json(usage), "output": output}))
     return f"{call.name}: {evaluate.describe_usage(usage)}", usage
 
 
-def plan_calls(label: str, calls: Sequence[Call], budget_usd: float, note: str = "") -> list[Call]:
+def plan_calls(label: str, calls: Sequence[Call], max_cost: float, note: str = "") -> list[Call]:
     """The calls without a kept answer; prints how many and what they should cost before any is made."""
     todo = [call for call in calls if call.stored() is None]
     tokens = sum(call.estimate()[0] for call in todo)
     usd = sum(call.estimate()[1] for call in todo)
     over = "; more than the limit, so the calls left when it is reached are asked by the next run" \
-        if usd > budget_usd else ""
+        if usd > max_cost else ""
     print(f"{label}: {len(todo)} Claude calls to {MODEL} (effort {EFFORT}), {len(calls) - len(todo)} answers kept "
           f"already; about {tokens / 1000:.0f}K tokens in, {sum(c.output_tokens for c in todo) / 1000:.0f}K out: "
-          f"about {usd:.2f} USD at list price{note} (limit {budget_usd:.2f}{over})", flush=True)
+          f"about {usd:.2f} USD at list price{note} (limit {max_cost:.2f}{over})", flush=True)
     return todo
 
 
@@ -853,28 +858,38 @@ def name_titles(proposed: Sequence[Proposed], titles: Mapping[str, str]) -> None
 
 # --------------------------------------------------------------------------- propose: the command
 
-def propose(categories: Sequence[str], max_cost: float, workers: int) -> int:
-    if OPS_PATH.exists() and (json.loads(OPS_PATH.read_text()).get("applied") or {}).get("data") == data_fingerprint():
+def propose(categories: Sequence[str], max_cost: float, workers: int, minutes: float = DEFAULT_TIME_BUDGET) -> int:
+    previous = json.loads(OPS_PATH.read_text()) if OPS_PATH.exists() else None
+    if previous and (previous.get("applied") or {}).get("data") == data_fingerprint():
         raise SystemExit(f"Stopped before any Claude call: {OPS_PATH.name} was applied to exactly these rules. Merge "
                          f"or close its pull request first; to audit the result again, delete {OPS_PATH.name}.")
     data = Data.load()
     if reasons := unsettled(data):
         raise SystemExit(f"Stopped before any Claude call: data/ is not ready for an audit: {'; '.join(reasons)}.")
-    budget = RunBudget(max_cost_usd=max_cost)
+    # An audit not applied yet goes on (its cost adds up in data/runs.jsonl); else this is a new one.
+    audit_id = previous["audit"] if previous and not previous.get("applied") and previous.get("audit") else _now()
+    steps: dict[str, StepSummary] = {}
+    try:
+        return _propose(categories, data, audit_id, RunBudget(minutes=minutes, max_cost_usd=max_cost), max_cost,
+                        workers, steps)
+    finally:
+        log_command("propose", audit_id, steps)
+
+
+def _propose(categories: Sequence[str], data: Data, audit_id: str, budget: RunBudget, max_cost: float, workers: int,
+             steps: dict[str, StepSummary]) -> int:
     shown = views(data, categories, similar_rules(data))
     todo = plan_calls("Propose", [view.call for view in shown], max_cost,
                       "; then one call choosing titles where the runs differ")
-    step = run_calls("Propose", todo, budget, workers)
-    steps = {"propose": step} if step else {}
+    if step := run_calls("Propose", todo, budget, workers):
+        steps["propose"] = step
     located, by_ref = data.located(), data.by_ref
     proposals, rejected, missing = [], [], []
-    kept: list[dict] = []  # the answers the ops rest on
     for view in shown:
         stored = view.call.stored()
         if stored is None:
             missing.append(f"propose {view.category} run {view.run}")
             continue
-        kept.append(stored)
         found, refused = read_answer(stored["output"], view, located, by_ref)
         proposals += found
         rejected += refused
@@ -892,14 +907,12 @@ def propose(categories: Sequence[str], max_cost: float, workers: int) -> int:
             output = stored["output"] if stored else None
             if stored is None:
                 missing.append("title choice")
-            else:
-                kept.append(stored)
         if not missing:
             titles, notes = chosen_titles(slots, output)
             name_titles(proposed, titles)
-    document = ops_document(categories, proposed, rejected + conflicting, missing, notes, _cost(kept))
-    analyze._write_json(OPS_PATH, document)
-    write_report(audit_report(document, steps))
+    document = ops_document(audit_id, categories, proposed, rejected + conflicting, missing, notes)
+    _replace(OPS_PATH, _json_bytes(document))
+    write_report(audit_report(document, steps, "propose"))
     agreed = sum(p.agreed for p in proposed)
     print(f"Wrote {OPS_PATH.name}: {agreed} agreed ops, {len(proposed) - agreed} not agreed, "
           f"{len(rejected) + len(conflicting)} rejected" + (f"; missing: {', '.join(missing)}" if missing else ""),
@@ -908,15 +921,11 @@ def propose(categories: Sequence[str], max_cost: float, workers: int) -> int:
     return 1 if missing or failed else 0
 
 
-def _cost(answers: Sequence[dict]) -> float:
-    """What kept answers cost at list price when they were asked."""
-    return round(sum(answer["usage"]["cost_usd"] for answer in answers), 4)
-
-
-def ops_document(categories: Sequence[str], proposed: Sequence[Proposed], rejected: Sequence[Rejection],
-                 missing: Sequence[str], notes: Sequence[str], cost_usd: float) -> dict:
+def ops_document(audit_id: str, categories: Sequence[str], proposed: Sequence[Proposed],
+                 rejected: Sequence[Rejection], missing: Sequence[str], notes: Sequence[str]) -> dict:
     return {
         "version": OPS_VERSION,
+        "audit": audit_id,  # names this audit's lines in data/runs.jsonl, which hold what it cost
         "proposed": _now(),
         "model": MODEL,
         "effort": EFFORT,
@@ -925,7 +934,6 @@ def ops_document(categories: Sequence[str], proposed: Sequence[Proposed], reject
         "data": data_fingerprint(),
         "complete": not missing,
         "missing": list(missing),
-        "cost_usd": cost_usd,  # of the answers the ops rest on, whenever they were asked
         "notes": list(notes),
         "ops": [proposed_json(p, number) for number, p in enumerate(proposed, start=1)],
         "rejected": [{"run": r.run, "call": r.call, "op": r.answer, "why": r.why} for r in rejected],
@@ -1159,31 +1167,64 @@ def settle_inputs(files: dict[str, dict], categories: Collection[str], data: Dat
                                 for ref in sorted(book.held(category)) if ref in by_ref}
 
 
-def verify(docs: list[Doc], old_slugs: Collection[str], today: date) -> list[str]:
+def verify(after: checks.Data, docs: list[Doc], old_slugs: Collection[str]) -> list[str]:
     """What must hold after an audit, read where analyze points: no check errors (history is compared by the report),
-    no work for update.py (no decision is filed again because the audit moved it), every slug that led to a rule
-    still does (itself, or as an alias), and the pages and the website build."""
-    data = checks.Data.load(docs)
-    failures = [f"check error ({p.kind}): {p.message}" for p in checks.errors(checks.find_problems(data))]
+    no work for update.py (no decision is filed again because the audit moved it), and every slug that led to a rule
+    still does (itself, or as an alias)."""
+    failures = [f"check error ({p.kind}): {p.message}" for p in checks.errors(checks.find_problems(after))]
     work = update.pending_work(docs)
     if work.categories or work.lost or work.outdated:
         failures.append(f"update.py would have work: {', '.join(sorted(work.categories | work.lost | work.outdated))}")
-    if data.pending:
-        failures.append(f"categories to consolidate again: {', '.join(sorted(data.pending))}")
-    live = {rule["slug"] for rule in data.raw_rules}
-    targets = data.slugs.targets()
-    lost = sorted(slug for slug in old_slugs if slug not in live and targets.get(slug) not in live)
-    if lost:
+    if after.pending:
+        failures.append(f"categories to consolidate again: {', '.join(sorted(after.pending))}")
+    live = {rule["slug"] for rule in after.raw_rules}
+    targets = after.slugs.targets()
+    if lost := sorted(slug for slug in old_slugs if slug not in live and targets.get(slug) not in live):
         failures.append(f"slugs that lead nowhere now: {', '.join(lost)}")
-    try:
-        render.build_pages({doc.id: doc for doc in docs}, data.decisions, data.raw_rules, [], Counter(), today)
-        website.site_data({doc.id: doc for doc in docs}, data.decisions, data.raw_rules, targets, today)
-    except Exception as exc:  # what would stop the pages is a finding, not a crash
-        failures.append(f"the pages do not build: {type(exc).__name__}: {exc}")
     return failures
 
 
-def apply(max_cost: float, workers: int) -> int:
+@dataclass(frozen=True)
+class Checked:
+    """The agreed ops' result as built and checked in a temporary copy of data/: what apply writes, byte for byte, and
+    what it shows."""
+    failures: list[str]  # why it must not be written; empty when it may
+    files: dict[str, bytes]  # rule file name -> its content
+    slugs: bytes  # data/slugs.json, every former slug resolved
+    fingerprint: str  # data_fingerprint() once written
+    raw_rules: list[dict]
+    history: checks.HistoryCheck  # what each year shows before and after
+    pages: dict[str, str]  # regelsaet/
+    html: str  # _site/index.html
+
+
+def checked(out: Restructured, data: Data, today: date) -> Checked:
+    """Write the result to a temporary copy of data/regler and data/slugs.json, resolve the slugs there as a
+    consolidation does, check it (verify) and build the pages from it."""
+    old_slugs = data.book.slugs() | set(data.registry.targets())
+    before = checks.snapshot(checks.Data.load(data.docs), today)
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        (root / "regler").mkdir()
+        for category, stored in out.files.items():
+            analyze._write_json(root / "regler" / f"{category}.json", stored)
+        with rules_at(root):
+            analyze._save_slugs(data.registry.with_former(out.former))
+            analyze.resolve_slugs(data.by_ref)
+            after = checks.Data.load(data.docs)
+            failures = verify(after, data.docs, old_slugs)
+            problems = Counter(problem.kind for problem in checks.find_problems(after))
+            missing = analyze.missing_extractions(data.docs, model=update.EXTRACT_MODEL)
+            return Checked(
+                failures, {path.name: path.read_bytes() for path in sorted(analyze.RULES_DIR.glob("*.json"))},
+                analyze.SLUGS_PATH.read_bytes(), data_fingerprint(), after.raw_rules,
+                checks.check_history(before, checks.snapshot(after, today), after.slugs.targets()),
+                render.build_pages({doc.id: doc for doc in data.docs}, after.decisions, after.raw_rules, missing,
+                                   problems, today),
+                website.page_html(data.docs, after.decisions, after.raw_rules, after.slugs.targets(), today))
+
+
+def apply(max_cost: float, workers: int, minutes: float = DEFAULT_TIME_BUDGET) -> int:
     if not OPS_PATH.exists():
         raise SystemExit(f"No {OPS_PATH.name}: run `uv run audit.py propose` first")
     document = json.loads(OPS_PATH.read_text())
@@ -1202,7 +1243,20 @@ def apply(max_cost: float, workers: int) -> int:
     agreed = [entry for entry in document["ops"] if entry["agreed"]]
     if problems := check_ops(agreed, data):
         raise SystemExit(f"The agreed ops do not apply to data/: {'; '.join(problems)}")
+    steps: dict[str, StepSummary] = {}
+    try:
+        return _apply(document, data, agreed, max_cost, minutes, workers, steps)
+    finally:
+        log_command("apply", document.get("audit"), steps)
+
+
+def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minutes: float, workers: int,
+           steps: dict[str, StepSummary]) -> int:
+    """Everything that can fail first: the structure, the texts (Claude), the checks, the pages, the scores and the
+    report, with nothing written but the answers kept. Then the rule files, the slug history and the ops file, each
+    replaced whole, and the pages."""
     today = date.today()
+    budget = RunBudget(minutes=minutes, max_cost_usd=max_cost)
     out = restructure(data, agreed)
     by_ref = data.by_ref
     ctx = incremental.Context(incremental.Settings(), RunBudget(), by_ref, {doc.id: doc for doc in data.docs}, _now(),
@@ -1210,44 +1264,42 @@ def apply(max_cost: float, workers: int) -> int:
     updates = {u.slug: u for u in (rule_update(*out.rule(slug)) for slug in out.rewrite)}
     calls = {slug: text_call(u, ctx) for slug, u in updates.items()}
     by_call = {call.name: updates[slug] for slug, call in calls.items()}
-    budget = RunBudget(max_cost_usd=max_cost)
-    step = run_calls("Rewrite", plan_calls("Rewrite", list(calls.values()), max_cost), budget, workers,
-                     lambda call, spend, cli: ask_text(by_call[call.name], by_ref)(call, spend, cli))
-    steps = {"rewrite": step} if step else {}
-    failures = [f"no accepted rewrite of {slug} yet" for slug, call in calls.items() if call.stored() is None]
-    if failures:
-        return _not_applied(document, steps, failures)
-    for slug, u in updates.items():
-        stored = calls[slug].stored()
-        _, rule = out.rule(slug)
-        rule["versioner"] = rewritten(u, stored["output"], stamp_of(stored), by_ref)
-        rule["note"] = stored["output"]["note"]
-    settle_inputs(out.files, out.touched, data)
-    before_raw = analyze.load_rules()
-    failures, history, raw_after = checked(out, data, today)
-    if failures:
-        return _not_applied(document, steps, failures)
-    analyze._save_slugs(data.registry.with_former(out.former))  # the history first: every slug stays taken
-    for category in sorted(out.touched):
-        analyze._write_json(analyze.RULES_DIR / f"{category}.json", out.files[category])
-    analyze.resolve_slugs(by_ref)
-    for entry in document["ops"]:
-        entry["applied"] = out.applied.get(entry["id"])
-    cost = _cost([call.stored() for call in calls.values()])
-    document["applied"] = {"time": _now(), "cost_usd": cost, "data": data_fingerprint()}
-    analyze._write_json(OPS_PATH, document)
+    if step := run_calls("Rewrite", plan_calls("Rewrite", list(calls.values()), max_cost), budget, workers,
+                         lambda call, spend, cli: ask_text(by_call[call.name], by_ref)(call, spend, cli)):
+        steps["rewrite"] = step
+    if missing := [slug for slug, call in calls.items() if call.stored() is None]:
+        return _not_applied(document, steps, [f"no accepted rewrite of {', '.join(missing)} yet"])
+    try:
+        for slug, u in updates.items():
+            stored = calls[slug].stored()
+            _, rule = out.rule(slug)
+            rule["versioner"] = rewritten(u, stored["output"], stamp_of(stored), by_ref)
+            rule["note"] = stored["output"]["note"]
+        settle_inputs(out.files, out.touched, data)
+        before = analyze.load_rules()
+        result = checked(out, data, today)
+        if result.failures:
+            return _not_applied(document, steps, result.failures)
+        applied = {**document, "ops": [{**entry, "applied": out.applied.get(entry["id"])} for entry in document["ops"]],
+                   "applied": {"time": _now(), "data": result.fingerprint}}
+        report = audit_report(applied, steps, "apply", history=result.history,
+                              score=score_section(before, result.raw_rules, data))
+    except Exception as exc:  # nothing is written: the report says why, the log has the traceback
+        log.exception("Applying the ops failed")
+        return _not_applied(document, steps, [f"{type(exc).__name__}: {exc}"])
+    for name, content in result.files.items():
+        path = analyze.RULES_DIR / name
+        if not path.exists() or path.read_bytes() != content:
+            _replace(path, content)
+    _replace(analyze.SLUGS_PATH, result.slugs)
+    _replace(OPS_PATH, _json_bytes(applied))
+    render.write_pages(result.pages)
+    website.write_site(result.html)
+    write_report(report)
     prune({call.name for call in calls.values()} | {f"propose-{c}-{run}" for c in document["categories"]
                                                   for run in range(1, RUNS + 1)} | {"titles"})
-    written = checks.Data.load(data.docs)
-    problems = checks.find_problems(written)
-    render.render(data.docs, written.decisions, written.raw_rules,
-                  analyze.missing_extractions(data.docs, model=update.EXTRACT_MODEL),
-                  Counter(problem.kind for problem in problems), today)
-    website.build(data.docs, written.decisions, written.raw_rules, written.slugs.targets(), today)
-    score = score_section(before_raw, raw_after, data)
-    write_report(audit_report(document, steps, history=history, score=score))
-    print(f"Applied {len(agreed)} ops ({cost:.2f} USD at list price); the pages are rebuilt. Review the diff and "
-          f"{REPORT.name}, and send it to a pull request.", flush=True)
+    print(f"Applied {len(agreed)} ops; the pages are rebuilt. Review the diff and {REPORT.name}, and send it to a "
+          f"pull request.", flush=True)
     return 0
 
 
@@ -1259,28 +1311,43 @@ def prune(kept: Collection[str]) -> None:
 
 
 def _not_applied(document: dict, steps: Mapping[str, StepSummary], failures: Sequence[str]) -> int:
-    write_report(audit_report(document, steps, failures=failures))
+    write_report(audit_report(document, steps, "apply", failures=failures))
     print(f"Nothing written to data/: {'; '.join(failures)}", flush=True)
     return 1
 
 
-def checked(out: Restructured, data: Data, today: date) -> tuple[list[str], checks.HistoryCheck, list[dict]]:
-    """Write the result to a temporary copy of data/regler and data/slugs.json, resolve the slugs there as a
-    consolidation does, and check it (verify); also what the year pages show before and after, and the rules after."""
-    old_slugs = data.book.slugs() | set(data.registry.targets())
-    before = checks.snapshot(checks.Data.load(data.docs), today)
-    with tempfile.TemporaryDirectory() as tmp:
-        root = Path(tmp)
-        (root / "regler").mkdir()
-        for category, stored in out.files.items():
-            analyze._write_json(root / "regler" / f"{category}.json", stored)
-        with rules_at(root):
-            analyze._save_slugs(data.registry.with_former(out.former))
-            analyze.resolve_slugs(data.by_ref)
-            failures = verify(data.docs, old_slugs, today)
-            after_data = checks.Data.load(data.docs)
-            history = checks.check_history(before, checks.snapshot(after_data, today), after_data.slugs.targets())
-            return failures, history, after_data.raw_rules
+def _json_bytes(value: object) -> bytes:
+    """JSON as analyze._write_json writes it."""
+    return (json.dumps(value, ensure_ascii=False, indent=1) + "\n").encode()
+
+
+def _replace(path: Path, content: bytes) -> None:
+    """Write a file whole: to a temporary file next to it, then renamed over it, so a run killed meanwhile leaves the
+    old file or the new one, never part of one."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_bytes(content)
+    os.replace(temporary, path)
+
+
+# --------------------------------------------------------------------------- the audit's cost
+
+def ledger(audit_id: str | None, command: str, steps: Mapping[str, StepSummary]) -> dict[str, float]:
+    """USD at list price per command of this audit, every call counted (failed attempts and rejected answers too): the
+    lines data/runs.jsonl has for it, and this command's steps, which it logs when it ends."""
+    spent: dict[str, float] = defaultdict(float)
+    if audit_id and update.RUNS_LOG.exists():
+        for line in update.RUNS_LOG.read_text().splitlines():
+            entry = json.loads(line) if line.strip() else {}
+            if entry.get("audit") == audit_id:
+                spent[entry["command"].removeprefix("audit ")] += sum(s["cost_usd"] for s in entry["steps"].values())
+    spent[command] += sum(step.usage.cost_usd for step in steps.values())
+    return dict(spent)
+
+
+def log_command(command: str, audit_id: str | None, steps: Mapping[str, StepSummary]) -> None:
+    """One line in data/runs.jsonl for a command that called Claude, as update.py logs its runs."""
+    update.record_run(dict(steps), {"command": f"audit {command}", "audit": audit_id})
 
 
 # --------------------------------------------------------------------------- score
@@ -1353,28 +1420,36 @@ def score(before_rev: str, before_dir: Path | None, after_dir: Path | None, repo
 # --------------------------------------------------------------------------- report
 
 def write_report(text: str) -> None:
-    REPORT.write_text(text)
+    _replace(REPORT, text.encode())
 
 
-def audit_report(document: dict, steps: Mapping[str, StepSummary], *, failures: Sequence[str] = (),
+# The report's first line, which .github/scripts/route-audit.sh reads to title the pull request.
+APPLIED = "<!-- audit: applied -->"
+UNFINISHED = "<!-- audit: unfinished -->"
+CONTINUE = ("To continue, run the workflow “Audit rules” on this pull request's branch, or `uv run audit.py propose` "
+            "and then `uv run audit.py apply` on it: the answers kept in data/audit/ are not paid again.")
+
+
+def audit_report(document: dict, steps: Mapping[str, StepSummary], command: str, *, failures: Sequence[str] = (),
                  history: checks.HistoryCheck | None = None, score: Sequence[str] = ()) -> str:
-    """Markdown for the pull request: the outcome, the Claude calls, the ops (applied, not agreed, rejected), what
-    each year shows before and after, and the answer key's scores."""
+    """Markdown for the pull request: the outcome and how to go on, what the audit cost, the ops (applied, not agreed,
+    rejected), what each year shows before and after, and the answer key's scores. `command`: the one writing it."""
     applied = bool(document.get("applied"))
     agreed = [entry for entry in document["ops"] if entry["agreed"]]
     if failures:
-        outcome = (f"**Not applied**: {'; '.join(failures)}. Nothing was written to data/ but the ops file and the "
-                   f"answers kept in data/audit/.")
+        outcome = (f"**Not applied**: {'; '.join(failures)}. Nothing was written to data/ but the answers kept in "
+                   f"data/audit/. {CONTINUE}")
     elif applied:
         outcome = ("**Review**: the audit applied the agreed ops below to data/ and rebuilt the pages. It changes what "
                    "earlier years show by design (In force by year): check the merged and split rules against the "
                    "minutes, then merge the pull request to publish it, or close it to discard it.")
     elif not document.get("complete"):
-        outcome = (f"**Unfinished**: missing {', '.join(document.get('missing', []))}. Run `uv run audit.py propose` "
-                   f"again; answers kept in data/audit/ are not paid again.")
+        outcome = (f"**Unfinished**: the cost or time limit, or failed calls, left "
+                   f"{', '.join(document['missing'])}. {CONTINUE}")
     else:
-        outcome = f"**Proposed**: {len(agreed)} agreed ops, not applied yet (`uv run audit.py apply`)."
-    lines = [f"# Rule audit {date.today().isoformat()}", "", outcome, "", *calls_section(document, steps)]
+        outcome = f"**Unfinished**: {len(agreed)} agreed ops, not applied yet. {CONTINUE}"
+    lines = [APPLIED if applied else UNFINISHED, f"# Rule audit {date.today().isoformat()}", "", outcome, "",
+             *calls_section(document, steps, command)]
     lines += [f"Ops proposed for {', '.join(document['categories'])} by {document['model']} (effort "
               f"{document['effort']}), {RUNS} runs each; an op is applied when both propose it.", ""]
     lines += [f"## {'Applied' if applied else 'Agreed'} ops: {len(agreed)}", ""]
@@ -1394,9 +1469,8 @@ def audit_report(document: dict, steps: Mapping[str, StepSummary], *, failures: 
     return "\n".join(lines).rstrip() + "\n"
 
 
-def calls_section(document: dict, steps: Mapping[str, StepSummary]) -> list[str]:
-    """This command's Claude calls, and what the audit cost at list price (answers kept from an earlier run cost
-    nothing again)."""
+def calls_section(document: dict, steps: Mapping[str, StepSummary], command: str) -> list[str]:
+    """This command's Claude calls, and what the whole audit has cost at list price (ledger)."""
     lines = ["## Claude calls", ""]
     if steps:
         lines += ["| Step | Calls | Failed | Skipped | Tokens in | Tokens out | USD (list price) |",
@@ -1404,11 +1478,10 @@ def calls_section(document: dict, steps: Mapping[str, StepSummary]) -> list[str]
         lines += [f"| {name} | {s.calls} | {s.failed} | {s.skipped} | {s.usage.all_input_tokens} | "
                   f"{s.usage.output_tokens} | {s.usage.cost_usd:.2f} |" for name, s in steps.items()]
         lines.append("")
-    applied = document.get("applied") or {}
-    spent = sum(s.usage.cost_usd for s in steps.values())
-    cost = f"propose {document['cost_usd']:.2f} USD" + (
-        f", apply {applied['cost_usd']:.2f} USD" if applied else f", this command {spent:.2f} USD" if spent else "")
-    return lines + [f"Cost at list price: {cost}.", ""]
+    spent = ledger(document.get("audit"), command, steps)
+    cost = ", ".join(f"{name} {usd:.2f} USD" for name, usd in sorted(spent.items(), key=lambda kv: kv[0] != "propose"))
+    return lines + [f"Cost of this audit at list price, every call counted (failed attempts and rejected answers "
+                    f"too): {cost or 'nothing'}.", ""]
 
 
 def _describe(entry: dict) -> str:
@@ -1495,6 +1568,9 @@ def parser() -> argparse.ArgumentParser:
         paid.add_argument("--max-cost", type=float, required=True, metavar="USD",
                           help="start no new Claude calls once this command has used this much at list price")
         paid.add_argument("--workers", type=int, default=4, help="parallel Claude calls (default: 4)")
+        paid.add_argument("--time-budget", type=float, default=DEFAULT_TIME_BUDGET, metavar="MIN",
+                          help=f"start no new Claude calls after this many minutes (default: {DEFAULT_TIME_BUDGET}; "
+                               f"the workflow gives apply what propose left of it)")
     s = sub.add_parser("score", help="the answer key's rule scores before and after (no Claude)")
     s.add_argument("--before", default="HEAD", help="git revision whose data/regler is before (default: HEAD)")
     s.add_argument("--before-dir", type=Path, help="a rules directory to use as before instead")
@@ -1510,9 +1586,9 @@ def main(argv: list[str] | None = None) -> None:
     if args.command == "candidates":
         candidates_command(args.report)
     elif args.command == "propose":
-        raise SystemExit(propose(_categories(args.categories), args.max_cost, args.workers))
+        raise SystemExit(propose(_categories(args.categories), args.max_cost, args.workers, args.time_budget))
     elif args.command == "apply":
-        raise SystemExit(apply(args.max_cost, args.workers))
+        raise SystemExit(apply(args.max_cost, args.workers, args.time_budget))
     else:
         score(args.before, args.before_dir, args.after_dir, args.report)
 

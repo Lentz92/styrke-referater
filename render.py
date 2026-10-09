@@ -146,7 +146,11 @@ def render(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], mi
     page counts the kinds data/ shows on its own (checks.DATA_KINDS): a render-only run must write the same
     pages as the run before it, and only an analysing run can compare the history before and after.
     """
-    pages = build_pages({d.id: d for d in docs}, decisions, raw_rules, missing, problems, today)
+    return write_pages(build_pages({d.id: d for d in docs}, decisions, raw_rules, missing, problems, today))
+
+
+def write_pages(pages: dict[str, str]) -> list[str]:
+    """Write pages built by build_pages to regelsaet/, removing any other page there, and return their paths."""
     for stale in OUT_DIR.rglob("*.md"):
         if stale.relative_to(OUT_DIR).as_posix() not in pages:
             stale.unlink()
