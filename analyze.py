@@ -204,8 +204,8 @@ Return an empty list if there are no such decisions.
 
 # v3 adds one field rule. Under v2 a budget line setting several fees was one decision, which only one rule can hold,
 # so one fee's yearly confirmations ended up in another fee's rule (the licence fee's in "Årsafgift"). It splits only
-# what belongs to different rules, as the answer key's granularity does (evaluate.GRANULARITY): the tiers of one fee
-# or one list of deadlines stay one decision. Everything else is v2 verbatim.
+# what belongs to different rules, as the answer key's judges were told to (GRANULARITY in evaluate.py at 9f39874):
+# the tiers of one fee or one list of deadlines stay one decision. Everything else is v2 verbatim.
 EXTRACT_SPLIT_RULE = """\
 - One decision per rule a decision sets, changes or confirms: a budget line that sets or \
 confirms different fees or rates, each its own rule (e.g. licens, årsafgift and startgebyr), \
@@ -229,8 +229,8 @@ EXTRACT_SYSTEM_V3 = _inserted_after(EXTRACT_SYSTEM_V2, "Field rules:\n- Write ev
 # The extraction prompts by name, "v<n>": a result made with one records n as its version (extract_prompt). Kept
 # after the pipeline moves on, so evaluate.py can still run and score an earlier prompt.
 EXTRACT_PROMPTS = {"v2": EXTRACT_SYSTEM_V2, "v3": EXTRACT_SYSTEM_V3}
-# The pipeline's prompt; the incremental votes quote its list of what is no decision (the answer key's judges quote
-# the prompt the key was judged by, evaluate.KEY_PROMPT).
+# The pipeline's prompt; the incremental votes quote its list of what is no decision (the answer key's judges quoted
+# v2's).
 EXTRACT_SYSTEM = EXTRACT_PROMPTS[f"v{EXTRACT_VERSION}"]
 
 EXTRACT_SCHEMA = {
@@ -340,7 +340,7 @@ def _made_by(cached: dict, model: str) -> bool:
 
 def document_prompt(doc: Doc, text: str) -> str:
     """The document as Claude gets it: its id, organ, title and date from styrke.dk, then its text. The extraction
-    sends exactly this; the answer key's judge (evaluate.py) sends it before the candidates."""
+    sends exactly this, and the answer key's judges got it before the candidates."""
     return (
         f"Dokument-id: {doc.id}\nOrgan: {doc.organ_label}\nTitel på styrke.dk: {doc.title}\n"
         f"Dato ifølge styrke.dk: {doc.date or 'ukendt'}\n\n<dokument>\n{text}\n</dokument>"
