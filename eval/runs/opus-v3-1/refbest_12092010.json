@@ -1,0 +1,27 @@
+{
+ "doc_id": "refbest_12092010",
+ "sha256": "176cacec9eb92a99ea4a611c61051913436addd720bb6fc017f3054b6353b463",
+ "run": "opus-v3-1",
+ "model": "claude-opus-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 1201,
+  "output": 123,
+  "cost_usd": 0.0127,
+  "seconds": 4,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "moededato": "2010-09-12",
+ "beslutninger": []
+}

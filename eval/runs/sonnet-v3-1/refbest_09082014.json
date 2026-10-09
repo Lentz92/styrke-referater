@@ -1,0 +1,113 @@
+{
+ "doc_id": "refbest_09082014",
+ "sha256": "2c6747bf70d49dd66a0e5cc160a93bcf721eb5214efb6e5f3a0420443db41000",
+ "run": "sonnet-v3-1",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 4260,
+  "output": 1227,
+  "cost_usd": 0.0299,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2014-08-09",
+ "beslutninger": [
+  {
+   "emne": "Minimumskrav til antal hold i ligafinale",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "For at afholde ligastævner (finale) kræves minimum 10 hold fordelt mellem junior, raw og udstyr.",
+   "citat": "Kravet er, at der minimum skal være 10 hold til finalen fordelt mellem junior, raw og udstyr.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 419,
+   "citat_side": 2
+  },
+  {
+   "emne": "Klubtræner ved landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forslag om klubtrænerdeltagelse ved landsholdssamlinger: deltagelse skal være udgiftsneutral og være op til landstræneren og assistenterne at vurdere. Forslaget tages op på næste eliteudvalgsmøde.",
+   "citat": "Hvis en klubtræner skulle deltage, må det være udgift neutralt.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 680,
+   "citat_side": 3
+  },
+  {
+   "emne": "Crossfitstævner i forbundsregi",
+   "kategori": "staevner",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forslag om at afholde Crossfitstævner i forbundsregi, hvilket kræver licens og at DSF's regler overholdes. Muligheden undersøges, og der fremlægges oplæg til næste møde.",
+   "citat": "Dette vil kræve, at Crossfit skal have licens og være underlagt DSF’s regler.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 739,
+   "citat_side": 3
+  },
+  {
+   "emne": "Kettlebell som aktivitet i forbundet",
+   "kategori": "organisation",
+   "udfald": "ikke_afgjort",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forslag om at indlemme kettlebell som aktivitet i forbundet; der fremlægges oplæg til næste bestyrelsesmøde.",
+   "citat": "Indlemmelse af Kettlebell som aktivitet i forbundet",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 781,
+   "citat_side": 3
+  },
+  {
+   "emne": "Medlemskort til klubber",
+   "kategori": "medlemskab",
+   "udfald": "forkastet",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Forslag om medlemskort til styrkeløftklubber blev afvist som for omstændigt; klubberne opfordres til at lade løftere fra andre klubber træne gratis i kortere perioder.",
+   "citat": "Et medlemskort vil være for omstændigt, men bestyrelsen opfordrer klubberne til at lade styrkeløftere fra andre klubber træne gratis i kortere perioder.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 835,
+   "citat_side": 3
+  }
+ ]
+}

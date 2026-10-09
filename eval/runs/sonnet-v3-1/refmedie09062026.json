@@ -1,0 +1,45 @@
+{
+ "doc_id": "refmedie09062026",
+ "sha256": "e9ad2b874fba4f1637e56073e6b6a2a9095dd9139e1e0a45f1cf071705f52702",
+ "run": "sonnet-v3-1",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 2137,
+  "output": 508,
+  "cost_usd": 0.0143,
+  "seconds": 6,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2026-06-09",
+ "beslutninger": [
+  {
+   "emne": "Medieudvalgets kontaktpersoner ved stævner",
+   "kategori": "organisation",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved kommende stævner har medieudvalget en kontaktperson, der sørger for at den arrangerende klub får login til Instagram for at poste op til og fra stævnet, at klubben laver en kort præsentation af venue, og at opslag med link til invitation, plan og livestream løbende kommer op.",
+   "citat": "Arrangerende klubber modtager login til instagram med henblik på at poste indhold op til og fra stævnerne.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 59,
+   "citat_side": 1
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "doc_id": "refdom12032026",
+ "sha256": "38bdc22c99fd984206727b32051ca5d2900ac0cf4469435893f29f80f9b55133",
+ "run": "sonnet-v3-2",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 2385,
+  "output": 1163,
+  "cost_usd": 0.0218,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2026-03-12",
+ "beslutninger": [
+  {
+   "emne": "Obligatorisk brush-up kursus for B-dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Dommerudvalget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der afholdes et onlinekursus (brush-up) for B-dommere i efteråret 2026, som er obligatorisk.",
+   "citat": "Det vil blive afholdt i efteråret og vil være obligatorisk.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2026-12-31",
+   "citat_fundet": true,
+   "citat_pos": 266,
+   "citat_side": 1
+  },
+  {
+   "emne": "Dommerbriefing ved stævner",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Dommerudvalget",
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommerbriefing skal afvikles ved alle stævner, hvor stævnelederen kan fremhæve særligt vigtige regler og ændringer.",
+   "citat": "Det er vigtigt, at vi holder fast i at afvikle den ved alle stævner.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 278,
+   "citat_side": 1
+  },
+  {
+   "emne": "Erfaren dommer ved siden af nye dommere",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Dommerudvalget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Ved nye dommeres første stævne skal de have en erfaren dommer ved deres side, særligt ved indvejningen.",
+   "citat": "Ved første stævne er det vigtigt, at nye dommere har en erfaren dommer ved deres side, særligt ved indvejningen.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 202,
+   "citat_side": 1
+  },
+  {
+   "emne": "Dispensation for dommere i pausekategori",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Dommerudvalget",
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Dommere, der ikke har dømt nok, kan fremover kun få dispensation fra udvalget ved helt særlige forhold.",
+   "citat": "Derfor vil der fremover kun blive givet dispensation fra udvalget ved helt særlige forhold.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 451,
+   "citat_side": 2
+  },
+  {
+   "emne": "Nye dommere skal dømme inden for første år",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": "Dommerudvalget",
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "En B-dommer, der ikke dømmer inden for en periode efter et år efter bestået dommereksamen, tages af dommerlisten.",
+   "citat": "hvis en B-dommer ikke dømmer inden for en periode efter et år efter bestået dommereksamen, bliver personen taget af dommerlisten.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 507,
+   "citat_side": 2
+  }
+ ]
+}

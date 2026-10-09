@@ -1,0 +1,96 @@
+{
+ "doc_id": "refbest_30052010",
+ "sha256": "e7408e963276f4eafb729419a0f5a1ea55ef3fed9ef43109380fc2da5e784efe",
+ "run": "sonnet-v3-1",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 3004,
+  "output": 1185,
+  "cost_usd": 0.0245,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2010-05-30",
+ "beslutninger": [
+  {
+   "emne": "Dommerpligt i divisionsturneringen",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Klubberne skal tilmelde minimum én dommer pr. runde i divisionsturneringen. Der er kun givet dispensation til klubber, der endnu ikke har en dommer, og de opfordres til at tilmelde folk til førstkommende dommerkursus.",
+   "citat": "Klubberne skal tilmelde minimum én dommer pr. runde. Der er kun givet dispensation til de klubber, der endnu ikke har en dommer.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 108,
+   "citat_side": 1
+  },
+  {
+   "emne": "Masterudvalgets kompetence til udtagelseskriterier",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Masterklubben er kun et udvalg på lige fod med andre udvalg og kan ikke fastsætte udtagelseskriterier til internationale masterstævner. Udtagelseskriterier skal køre under eliteudvalget, som udtager de landsholdsløftere DSF betaler for.",
+   "citat": "Masterklubben kan dermed ikke eksempelvis fastsætte udtagelseskriterier",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 255,
+   "citat_side": 1
+  },
+  {
+   "emne": "Betalingsfrist for bilag",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Kassereren skal overholde betalingsfristen på 14 dage for modtagne bilag.",
+   "citat": "Klaus opfordres til at overholde betalingsfristen på 14 dage for modtaget bilag.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 348,
+   "citat_side": 1
+  },
+  {
+   "emne": "Stævneansvarlig ved forbundsstævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Til alle forbundsstævner (DM, SM, JM, ikke Thy Cup, Nordland Cup og TSK Cup) udpeges en stævneansvarlig fra stævneudvalget ved udsendelsen af startlisten. Vedkommende sikrer betalt startgebyr (kvittering medbringes), stævnepapirer, stempler til udstyrsgodkendelse, podie og opvarmning, lokaler til indvejning og dopingkontrol, transport af stævnevægt og -lys hvis Helge ikke er til stede, samt aflevering af stævnepapirer til kontor og webmaster.",
+   "citat": "En fra stævneudvalget udpeges i forbindelse med udsendelsen af startlisten",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 578,
+   "citat_side": 2
+  }
+ ]
+}

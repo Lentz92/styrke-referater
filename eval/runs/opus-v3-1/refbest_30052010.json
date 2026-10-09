@@ -1,0 +1,113 @@
+{
+ "doc_id": "refbest_30052010",
+ "sha256": "e7408e963276f4eafb729419a0f5a1ea55ef3fed9ef43109380fc2da5e784efe",
+ "run": "opus-v3-1",
+ "model": "claude-opus-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 3000,
+  "output": 2010,
+  "cost_usd": 0.0648,
+  "seconds": 17,
+  "attempts": 1,
+  "models": [
+   "claude-opus-5-5"
+  ]
+ },
+ "moededato": "2010-05-30",
+ "beslutninger": [
+  {
+   "emne": "Klubbers dommerforpligtelse i divisionsturneringen",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "I divisionsturneringen skal hver klub tilmelde mindst én dommer pr. runde. Der gives kun dispensation til klubber, der endnu ikke har en dommer, og de opfordres til at tilmelde folk til førstkommende dommerkursus.",
+   "citat": "Klubberne skal tilmelde minimum én dommer pr. runde. Der er kun givet dispensation til de klubber, der endnu ikke har en dommer.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 108,
+   "citat_side": 1
+  },
+  {
+   "emne": "Masterudvalgets status og kompetence",
+   "kategori": "master",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Masterklubben er kun et udvalg på lige fod med forbundets øvrige udvalg og ikke en selvstændig forening. Masterudvalget kan derfor ikke fastsætte udtagelseskriterier for internationale masterstævner; udtagelseskriterier hører under eliteudvalget.",
+   "citat": "Helge understregede, at Masterklubben kun er et udvalg på lige fod med alle andre udvalg i forbundet. Man kan ikke have en forening i foreningen. Masterklubben kan dermed ikke eksempelvis fastsætte udtagelseskriterier",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 230,
+   "citat_side": 1
+  },
+  {
+   "emne": "Betalingsfrist for refusion af udlæg",
+   "kategori": "okonomi",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Kassereren skal udbetale refusion for indsendte kvitteringer/bilag inden for en betalingsfrist på 14 dage efter modtagelse.",
+   "citat": "Klaus opfordres til at overholde betalingsfristen på 14 dage for modtaget bilag.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 348,
+   "citat_side": 1
+  },
+  {
+   "emne": "Mødepligt til landsholdssamlinger",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Alle landsholdsløftere har mødepligt til landsholdets træningssamlinger.",
+   "citat": "alle landsholdsløftere har mødepligt til træningssamlingerne",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 464,
+   "citat_side": 2
+  },
+  {
+   "emne": "Stævneansvarlig ved forbundsstævner",
+   "kategori": "staevner",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "bestyrelsesbeslutning",
+   "tekst": "Til alle forbundsstævner (DM, SM og JM, men ikke Thy Cup, Nordland Cup og TSK Cup) udpeges en stævneansvarlig fra stævneudvalget i forbindelse med udsendelsen af startlisten. Den stævneansvarlige skal bl.a. sikre at alle deltagere har betalt (løftere/klubber skal medbringe kvittering for betalt startgebyr), at stævnepapirer, udstyrsgodkendelsesstempler, podie, opvarmning samt lokaler til indvejning og dopingkontrol er i orden, og at stævnepapirer afleveres til kontoret og webmaster efter stævnet. Den stævneansvarlige skal se stævnestedet inden stævnet.",
+   "citat": "Alle forbundsstævner (dvs. DM'er, SM'er, JM'er, men ikke Thy Cup, Nordland Cup og TSK Cup) • En fra stævneudvalget udpeges i forbindelse med udsendelsen af startlisten",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 560,
+   "citat_side": 2
+  }
+ ]
+}

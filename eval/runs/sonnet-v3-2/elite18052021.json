@@ -1,0 +1,113 @@
+{
+ "doc_id": "elite18052021",
+ "sha256": "d237038c675e658fc6c7b83bea950392bbd4ca5b553b6d42809a80217a35999a",
+ "run": "sonnet-v3-2",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 2150,
+  "output": 1239,
+  "cost_usd": 0.0216,
+  "seconds": 8,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2021-05-18",
+ "beslutninger": [
+  {
+   "emne": "Egenbetaling landshold A-krav",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Egenbetaling for atleter til EM Equipped 2021 i Pilsen er kr. 1000 for atleter med A-krav.",
+   "citat": "Egenbetaling A- krav:\nKr. 1000,00",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2021-12-31",
+   "citat_fundet": true,
+   "citat_pos": 144,
+   "citat_side": 1
+  },
+  {
+   "emne": "Egenbetaling landshold B-krav",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Egenbetaling for atleter til EM Equipped 2021 i Pilsen er kr. 1500 for atleter med B-krav.",
+   "citat": "B-krav:\nKr. 1500,00",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": "2021-12-31",
+   "citat_fundet": true,
+   "citat_pos": 150,
+   "citat_side": 1
+  },
+  {
+   "emne": "Udtagelse til EM og VM efter A- og B-krav",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Alle kvalificerede atleter med A-krav udtages som udgangspunkt til EM og VM. Der ses velvilligt på at finde finansiering til atleter, som har klaret B-krav.",
+   "citat": "Alle kvalificerede atleter med A-krav vil som udgangspunkt blive udtaget til EM og VM og der ses velvilligt på, at finde finansiering til atleter som har klaret B-krav",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 249,
+   "citat_side": 2
+  },
+  {
+   "emne": "Planlægning af rejser til mesterskaber i udlandet",
+   "kategori": "landshold",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Som udgangspunkt er det DSF, der arrangerer og planlægger rejser i forbindelse med deltagelse ved mesterskaber i udlandet.",
+   "citat": "Som udgangspunkt er det DSF der arrangerer og planlægger rejser i forbindelse med deltagelse ved mesterskaber i udlandet.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 280,
+   "citat_side": 2
+  },
+  {
+   "emne": "Obligatorisk WADA-modul ADEL",
+   "kategori": "antidoping",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "eksternt_krav",
+   "tekst": "IPFs nye antidopingretningslinjer medfører obligatorisk gennemførelse af et online WADA-modul, ADEL. Nærmere information offentliggøres, når DSF modtager den fra IPF.",
+   "citat": "IPFs nye retningslinjer i forbindelse med antidoping arbejdet som bl.a. medfører obligatorisk gennemførelse at et online WADA modul, ADEL.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 400,
+   "citat_side": 2
+  }
+ ]
+}

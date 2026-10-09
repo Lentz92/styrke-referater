@@ -1,0 +1,79 @@
+{
+ "doc_id": "refdom07012025",
+ "sha256": "b4b6a5fd2cc321825f35b03d246e79f97d1b70ce63c1f3e89903ef7227f3f690",
+ "run": "sonnet-v3-1",
+ "model": "claude-sonnet-5-5",
+ "prompt": "v3",
+ "provenance": {
+  "model": "claude-sonnet-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "usage": {
+  "input": 2,
+  "cache_read": 3171,
+  "cache_write": 3286,
+  "output": 878,
+  "cost_usd": 0.0226,
+  "seconds": 6,
+  "attempts": 1,
+  "models": [
+   "claude-sonnet-5-5"
+  ]
+ },
+ "moededato": "2025-01-07",
+ "beslutninger": [
+  {
+   "emne": "Indstilling til A-dommerprøve",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "aendring",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Kun klubløse dommere kan indstille sig selv til A-dommerprøve. En B-dommer, der ønsker at blive indstillet, skal indstilles via klubformand til dommerudvalget. Indstillinger bliver fast punkt på dommerudvalgets dagsorden.",
+   "citat": "Dette ændres til at det kun er klubløbe dommere der kan indstille sig selv. Hvis en B-dommer ønsker at indstilles, skal dette ske via klubformand til dommerudvalget.",
+   "side": 1,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 137,
+   "citat_side": 1
+  },
+  {
+   "emne": "Tilmelding til B-dommerprøve med to stævner",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "bekraeftelse",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Man kan ikke tilmelde sig B-dommerprøven uden at have valgt to stævner, man vil dømme ved efter bestået prøve. Efter bestået uddannelse bliver dommeren sat på de valgte stævner.",
+   "citat": "En person kan ikke tilmelde sig en dommerprøve uden at have udvalgt sig to stævner han vil dømme ved, når han har bestået dommerprøven.",
+   "side": 2,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 446,
+   "citat_side": 2
+  },
+  {
+   "emne": "Dommerpåsætning direkte i dommerdatabasen",
+   "kategori": "dommere",
+   "udfald": "vedtaget",
+   "forslagsstiller": null,
+   "handling": "ny",
+   "niveau": "udvalgsbeslutning",
+   "tekst": "Der udvikles en udvidet funktion i dommerdatabasen, så dommerudvalget kan påsætte dommere til stævner direkte uden at gå via en klub. Prisen skal godkendes af udvalget inden endelig godkendelse.",
+   "citat": "Det blev godkendt at gå videre med at udvikle en sådan funktion.",
+   "side": 3,
+   "stemmer": null,
+   "gaelder_fra": null,
+   "gaelder_til": null,
+   "citat_fundet": true,
+   "citat_pos": 750,
+   "citat_side": 3
+  }
+ ]
+}
