@@ -38,7 +38,11 @@ if [ "$mode" = check ]; then
     echo "::error::The month ends within two days: the monthly update runs on the 1st, and an open audit pull request would conflict with it. Run the audit after the 1st's update." >&2
     exit 1
   fi
-  open=$(git ls-remote --heads origin 'auto/audit-*' | sed 's|.*refs/heads/||' | grep -vxF "$current" | paste -sd ' ' - || true)
+  if ! heads=$(git ls-remote --heads origin 'auto/audit-*'); then
+    echo "::error::Cannot list origin's audit branches, so cannot tell whether another audit is open; try again." >&2
+    exit 1
+  fi
+  open=$(printf '%s\n' "$heads" | sed 's|.*refs/heads/||' | { grep -vxF -e "$current" -e '' || true; } | paste -sd ' ' -)
   if [ -n "$open" ]; then
     echo "::error::An audit is open on $open: its pull request holds answers already paid for. Run this workflow on that branch to finish it, or merge or close its pull request and delete the branch, then start a new audit." >&2
     exit 1
@@ -53,6 +57,17 @@ fi
 title="Rule audit ${review_branch#auto/audit-}"
 if ! { [ -f "$report" ] && head -n 1 "$report" | grep -qxF "$applied_marker"; }; then
   title="$title (unfinished)"
+  # Not applied, or cut off while applying: the rules, the slug history and the pages stay as they were, so a
+  # half-applied state is never committed, and neither is an ops file that says it was applied. What was paid for
+  # (data/audit/, the ops file, data/runs.jsonl) is kept.
+  for path in data/regler data/slugs.json regelsaet; do
+    if git cat-file -e "HEAD:$path" 2>/dev/null; then git checkout -q HEAD -- "$path"; fi
+  done
+  git clean -fdq -- data/regler regelsaet
+  ops=data/regler_ops.json
+  if [ -f "$ops" ] && python3 -c 'import json, sys; sys.exit(not json.load(open(sys.argv[1])).get("applied"))' "$ops"; then
+    if git cat-file -e "HEAD:$ops" 2>/dev/null; then git checkout -q HEAD -- "$ops"; else rm "$ops"; fi
+  fi
 fi
 
 git config user.name "github-actions[bot]"

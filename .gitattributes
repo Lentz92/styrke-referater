@@ -1,0 +1,2 @@
+# update.yml and audit.yml both append to the run log; a merge keeps both sides' lines (readers order by time).
+data/runs.jsonl merge=union

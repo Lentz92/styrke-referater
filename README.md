@@ -214,8 +214,9 @@ uv run audit.py candidates                # the similarity threshold's recall on
    `audit.AUDIT_UPDATE_SYSTEM`); code checks that the answer keeps exactly the versions and the order apply set and
    changes nothing else. `apply` builds the whole result first, in a copy: it writes `data/` only when the result has
    no check errors, leaves `update.py` nothing to do (no decision is filed again because the audit moved it), every
-   old slug still leads to a rule, and the pages, the scores and the report are built. Then it replaces the rule
-   files, `data/slugs.json` and the ops file, each whole (a temporary file renamed over it), and the pages.
+   old slug still leads to a rule, and the pages, the scores and the report are built. Then it replaces
+   `data/slugs.json`, the rule files and the ops file, in that order as a consolidation does, each whole (a temporary
+   file renamed over it), and the pages.
 
 Run it on settled data, e.g. quarterly or after a migration: it stops while `update.py` has decisions to file or a
 category to consolidate, and a later full consolidation (a migration) regroups categories anew, undoing it. On GitHub:
@@ -232,8 +233,9 @@ for a pull request; `uv run audit.py score` compares the answer key's scores of 
 An audit can be cut off: by its cost limit, by failed calls, or by its time budget (`--time-budget`, 75 minutes by
 default: no new call starts after it; in the workflow `propose` and `apply` share it, so with the calls still running
 the result reaches its pull request well within the job's 120 minutes). Then the pull request is titled "(unfinished)"
-and holds what the audit paid for: the answers kept in `data/audit/`, the ops file, and nothing in `data/regler/` (an
-`apply` that cannot finish writes no rule). Run the workflow on that pull request's branch to finish it: kept answers
+and holds what the audit paid for: the answers kept in `data/audit/`, the ops file and `data/runs.jsonl`, but no
+change to `data/regler/`, `data/slugs.json` or `regelsaet/` (an `apply` that cannot finish writes none, and the routing
+restores them should one be cut off while writing). Run the workflow on that pull request's branch to finish it: kept answers
 are not paid again. For the same reason a new audit refuses to start while another audit's branch is on GitHub (it
 would overwrite the paid answers): finish that audit, or merge or close its pull request and delete its branch.
 
@@ -246,6 +248,8 @@ Cost at list price: on the data of October 2026 (470 rules) `propose` is 24 call
 printed before the first call; each merged or split rule's rewrite about 0.1 USD; the title choice a few cents. Each
 `propose` and `apply` that calls Claude adds a line to `data/runs.jsonl` (as `update.py` does, with the audit's id),
 and the pull request shows the audit's whole cost from those lines: failed attempts and rejected answers included.
+Both workflows append to that file, so git merges it by keeping both sides' lines (`.gitattributes`); what reads it
+orders the lines by time.
 
 ## How it works
 

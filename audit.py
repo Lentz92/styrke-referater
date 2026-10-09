@@ -980,6 +980,7 @@ class Restructured:
     files: dict[str, dict]
     former: dict[str, FormerSlug] = field(default_factory=dict)  # merged-away slugs -> alias to the kept rule
     rewrite: list[str] = field(default_factory=list)  # slugs of merged and split rules: their texts are rewritten
+    revived: set[str] = field(default_factory=set)  # former slugs a split-off part takes up again
     touched: set[str] = field(default_factory=set)  # categories whose file changes
     applied: dict[int, dict] = field(default_factory=dict)  # op id -> what apply did, for the ops file
 
@@ -1038,6 +1039,7 @@ def restructure(data: Data, ops: Sequence[dict]) -> Restructured:
             at = next(i for i, other in enumerate(stored) if other is rule)
             stored[at:at + 1] = new
             taken |= set(plan.slugs)
+            out.revived |= set(plan.revived)
             out.touched.add(category)
             out.rewrite += plan.slugs
             out.applied[entry["id"]] = {"slugs": list(plan.slugs), "category": category,
@@ -1123,6 +1125,8 @@ def ask_text(u: RuleUpdate, by_ref: Mapping[str, Decision]) -> Callable[[Call, R
         usage = Usage()
         error: Exception | None = None
         for attempt in (1, 2):
+            if attempt > 1 and (limit := budget.exhausted()):
+                raise ClaudeError(f"answer rejected: {error}; not asked again because {limit}", usage)
             try:
                 message, spent = ask(call, budget, cli, lambda output: rewritten(u, output, {}, by_ref))
                 return message, usage + spent
@@ -1191,6 +1195,7 @@ class Checked:
     failures: list[str]  # why it must not be written; empty when it may
     files: dict[str, bytes]  # rule file name -> its content
     slugs: bytes  # data/slugs.json, every former slug resolved
+    taken: bytes  # the same with the slugs a split-off part takes up again still in it, written before the rules
     fingerprint: str  # data_fingerprint() once written
     raw_rules: list[dict]
     history: checks.HistoryCheck  # what each year shows before and after
@@ -1215,9 +1220,12 @@ def checked(out: Restructured, data: Data, today: date) -> Checked:
             failures = verify(after, data.docs, old_slugs)
             problems = Counter(problem.kind for problem in checks.find_problems(after))
             missing = analyze.missing_extractions(data.docs, model=update.EXTRACT_MODEL)
+            files = {path.name: path.read_bytes() for path in sorted(analyze.RULES_DIR.glob("*.json"))}
+            slugs, fingerprint = analyze.SLUGS_PATH.read_bytes(), data_fingerprint()
+            former = data.registry.former()
+            analyze._save_slugs(after.slugs.with_former({slug: former[slug] for slug in out.revived}))
             return Checked(
-                failures, {path.name: path.read_bytes() for path in sorted(analyze.RULES_DIR.glob("*.json"))},
-                analyze.SLUGS_PATH.read_bytes(), data_fingerprint(), after.raw_rules,
+                failures, files, slugs, analyze.SLUGS_PATH.read_bytes(), fingerprint, after.raw_rules,
                 checks.check_history(before, checks.snapshot(after, today), after.slugs.targets()),
                 render.build_pages({doc.id: doc for doc in data.docs}, after.decisions, after.raw_rules, missing,
                                    problems, today),
@@ -1287,11 +1295,16 @@ def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minu
     except Exception as exc:  # nothing is written: the report says why, the log has the traceback
         log.exception("Applying the ops failed")
         return _not_applied(document, steps, [f"{type(exc).__name__}: {exc}"])
+    # As a consolidation writes (analyze._consolidate_one): the slug history first, with every slug in it a rule
+    # takes up again, so whichever write fails every slug stays taken (a merged-away slug that is still live then is
+    # reported by checks.py and dropped by resolve_slugs); then the rule files, the final history and the ops file.
+    _replace(analyze.SLUGS_PATH, result.taken)
     for name, content in result.files.items():
         path = analyze.RULES_DIR / name
         if not path.exists() or path.read_bytes() != content:
             _replace(path, content)
-    _replace(analyze.SLUGS_PATH, result.slugs)
+    if result.taken != result.slugs:
+        _replace(analyze.SLUGS_PATH, result.slugs)
     _replace(OPS_PATH, _json_bytes(applied))
     render.write_pages(result.pages)
     website.write_site(result.html)

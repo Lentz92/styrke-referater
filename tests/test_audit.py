@@ -22,6 +22,7 @@ import update
 import website
 from analyze import RunBudget, decision_hash
 from incremental import UpdateRejected
+from matching import FormerSlug, SlugRegistry
 from test_incremental import World, _decision
 from test_route_update import Repo
 
@@ -429,15 +430,49 @@ def test_a_failure_before_the_writes_writes_nothing(proposed, monkeypatch, faili
     assert report.startswith(f"{audit.UNFINISHED}\n") and "**Not applied**: RuntimeError: boom" in report
 
 
-def test_apply_replaces_the_rule_files_then_the_slugs_then_the_ops_file(proposed, monkeypatch):
-    written = []
+def _recorded(monkeypatch) -> list[tuple[str, bytes]]:
+    """What apply replaces, in order, besides the answers it keeps."""
+    written: list[tuple[str, bytes]] = []
     replace = audit._replace
-    monkeypatch.setattr(audit, "_replace", lambda path, content: written.append(path.name) or replace(path, content))
+
+    def record(path: Path, content: bytes) -> None:
+        if not path.name.startswith(("text-", "propose-", "titles")):
+            written.append((path.name, content))
+        replace(path, content)
+
+    monkeypatch.setattr(audit, "_replace", record)
+    return written
+
+
+def test_apply_replaces_the_slugs_then_the_rule_files_then_the_ops_file(proposed, monkeypatch):
+    written = _recorded(monkeypatch)
     assert audit.apply(10, 1) == 0
-    data = [name for name in written if not name.startswith(("text-", "propose-", "titles"))]
-    assert data == ["antidoping.json", "medlemskab.json", "okonomi.json", "staevner.json", "slugs.json",
-                    "regler_ops.json", "audit-report.md"]
+    assert [name for name, _ in written] == ["slugs.json", "antidoping.json", "medlemskab.json", "okonomi.json",
+                                             "staevner.json", "regler_ops.json", "audit-report.md"]
     assert not list(proposed.root.rglob(".*.tmp"))
+
+
+def test_a_slug_a_split_takes_up_again_stays_taken_until_the_rules_hold_it(world, fake_claude, monkeypatch):
+    # A rule once split off and merged back: its slug leads to klubskifte, which holds its decision.
+    analyze._save_slugs(SlugRegistry.of({"dommerkrav": FormerSlug("medlemskab", "Dommerkrav", frozenset({"rep2018#1"}),
+                                                                  "klubskifte")}))
+    fake_claude.answers(*PROPOSALS, TITLES, *TEXTS)
+    audit.propose(CATEGORIES, 10, 1)
+    written = _recorded(monkeypatch)
+    assert audit.apply(10, 1) == 0
+    assert [name for name, _ in written][:2] == ["slugs.json", "antidoping.json"] and written[5][0] == "slugs.json"
+    assert "dommerkrav" in json.loads(written[0][1])["aliases"]  # until the rule files hold it
+    assert "dommerkrav" not in analyze.load_slugs().former()
+    assert [r["slug"] for r in world.stored("medlemskab")["regler"]] == ["klubskifte", "dommerkrav"]
+
+
+def test_a_rejected_rewrite_is_not_asked_again_once_the_budget_is_spent(world, fake_claude, caplog):
+    fake_claude.answers(*PROPOSALS, TITLES, _text("rep2010#1"))
+    audit.propose(CATEGORIES, 10, 1)
+    assert audit.apply(0.25, 1) == 1  # the first rewrite is rejected, and the 0.25 it cost is the limit
+    assert fake_claude.invocations("call") == 8
+    assert "not asked again because the cost limit of 0.25 USD is reached" in caplog.text
+    assert "no accepted rewrite of licensgebyr, klubskifte, klubbers-dommerkrav yet" in audit.REPORT.read_text()
 
 
 def test_apply_keeps_only_this_audits_answers(proposed):
@@ -482,13 +517,20 @@ def _step(job: dict, found: str) -> dict:
 
 
 def _script(repo: Repo, mode: str, branch: str = "main", today: str = TODAY, data: str | None = None,
-            report: str | None = None) -> subprocess.CompletedProcess:
-    """route-audit.sh in a fresh checkout of `branch`, after audit.py wrote `data` and `report`."""
+            report: str | None = None, files: dict[str, str | None] | None = None) -> subprocess.CompletedProcess:
+    """route-audit.sh in a fresh checkout of `branch`, after audit.py wrote `data`, `report` and `files` (None:
+    removed)."""
     work = repo.clone(branch)
     if data is not None:
         (work / "data.json").write_text(data + "\n")
     if report is not None:
         (work / "audit-report.md").write_text(report)
+    for name, content in (files or {}).items():
+        if content is None:
+            (work / name).unlink()
+        else:
+            (work / name).parent.mkdir(parents=True, exist_ok=True)
+            (work / name).write_text(content)
     return subprocess.run(["bash", str(AUDIT_SCRIPT), mode], cwd=work, env={**repo.env, "AUDIT_TODAY": today},
                           capture_output=True, text=True, check=False)
 
@@ -578,3 +620,34 @@ def test_an_audit_goes_to_a_pull_request_and_never_to_main(repo):
     assert (pr["baseRefName"], pr["body"]) == ("main", f"{audit.APPLIED}\n# Finished\n")
     edited = repo.gh_calls()[-1]["args"]
     assert edited[edited.index("--title") + 1] == f"Rule audit {TODAY}" and repo.git("rev-parse", "main") == main
+
+
+def test_a_new_audit_does_not_start_when_origin_cannot_be_asked(repo):
+    work = repo.clone("main")
+    repo.git("remote", "set-url", "origin", str(repo.root / "gone.git"), cwd=work)
+    result = subprocess.run(["bash", str(AUDIT_SCRIPT), "check"], cwd=work, env={**repo.env, "AUDIT_TODAY": TODAY},
+                            capture_output=True, text=True, check=False)
+    assert result.returncode == 1 and "Cannot list origin's audit branches" in result.stderr
+
+
+@pytest.mark.skipif(subprocess.run(["which", "jq"], capture_output=True).returncode != 0,
+                    reason="the fake gh applies --jq with jq")
+def test_an_unfinished_audit_commits_what_it_paid_for_and_no_rule(repo):
+    work = repo.clone("main")
+    for name, content in (("data/regler/okonomi.json", "{}\n"), ("data/slugs.json", "{}\n"),
+                          ("regelsaet/2026.md", "# 2026\n")):
+        (work / name).parent.mkdir(parents=True, exist_ok=True)
+        (work / name).write_text(content)
+    repo.git("add", "-A", cwd=work)
+    repo.git("-c", "user.name=Someone", "-c", "user.email=someone@example.com", "commit", "-q", "-m", "data", cwd=work)
+    repo.git("push", "-q", "origin", "HEAD:refs/heads/main", cwd=work)
+    branch = f"auto/audit-{TODAY}"
+    half = {"data/regler/okonomi.json": '{"half": 1}\n', "data/regler/antidoping.json": "{}\n",
+            "data/slugs.json": '{"half": 1}\n', "regelsaet/2026.md": None,
+            "data/regler_ops.json": '{"applied": {"time": "now"}}\n', "data/audit/propose-okonomi-1.json": "{}\n"}
+    result = _script(repo, "route", report=f"{audit.UNFINISHED}\n# Cut off\n", files=half)
+    assert result.returncode == 0, result.stderr
+    committed = set(repo.git("ls-tree", "-r", "--name-only", branch).split())
+    assert {"data/audit/propose-okonomi-1.json", "regelsaet/2026.md"} <= committed
+    assert not {"data/regler/antidoping.json", "data/regler_ops.json"} & committed  # its ops file claims applied
+    assert repo.file(branch, "data/regler/okonomi.json") == "{}" and repo.file(branch, "data/slugs.json") == "{}"
