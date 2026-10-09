@@ -64,41 +64,47 @@ def test_old_links_lead_to_the_current_rule_and_odd_hashes_open_nothing(tmp_path
         assert case["opened"] == -1 and case["events"] == []
 
 
-# Runs the popup's code (from the open-rule comment up to init(), plus init's hashchange listener) against a model
-# of the browser: a page that cannot scroll while its body is position:fixed (as on iOS), and session history whose
-# entries save their scroll and restore it on Back/Forward unless their scroll restoration is "manual". Prints, after
-# each step, whether the page is pinned and which offset of the page the reader sees.
+# Loads the popup's code and init() (from the open-rule comment to the end of init) into a model of the browser: a
+# page that cannot scroll while its body is position:fixed (as on iOS), and session history whose entries keep a
+# state, save their scroll and restore it on Back, Forward and reload unless their scroll restoration is "manual".
+# Prints, after each step, whether the page is pinned, which offset of the page the reader sees, the address and the
+# current entry's scroll restoration.
 POPUP_PROBE = r"""
 const fs = require("fs");
 const html = fs.readFileSync(process.argv[2], "utf8");
-const start = html.indexOf("/* The open rule lives in the URL"), end = html.indexOf("\nfunction init()");
+const start = html.indexOf("/* The open rule lives in the URL"), end = html.indexOf("\ninit();");
 if (start < 0 || end < 0) throw new Error("popup code not found");
-const onHashchange = html.match(/addEventListener\("hashchange", (.+)\);$/m)[1];
+const code = html.slice(start, end);
 
-const D = { aliases: {} };
+const D = { aliases: {}, years: [2026], documents: 2 };
 const R = [{ slug: "startgebyr" }, { slug: "licensgebyr" }];
+const TODAY = "2026-10-09", state = { year: 2026 };
 const href = (ri) => `#regel/${R[ri].slug}`;
-const ruleDetail = () => "";
-const el = () => ({ innerHTML: "", scrollTop: 0, focus() {} });
-const els = { modal: el(), close: el() };
-const $ = (id) => els[id];
+const ruleDetail = () => "", draw = () => {}, longD = () => "";
+let els = {}, listeners = {}; // the current document's elements and window listeners
+const $ = (id) => (els[id] ??= { innerHTML: "", scrollTop: 0, focus() {}, addEventListener() {} });
 
 let y = 0; // the window's scroll offset on a 5000px page in an 800px window
 const body = { classList: { add() {}, remove() {} }, style: { top: "", width: "", _position: "",
   get position() { return this._position; },
   set position(v) { this._position = v; if (v === "fixed") y = 0; } } };
-const document = { body, activeElement: el() };
+const document = { body, activeElement: $("link") };
 const pinned = () => body.style.position === "fixed";
-const window = { get scrollY() { return y; }, scrollTo(_x, to) { y = pinned() ? 0 : Math.max(0, Math.min(to, 4200)); } };
+const window = { get scrollY() { return y; }, scrollTo(_x, to) { y = pinned() ? 0 : Math.max(0, Math.min(to, 4200)); },
+  addEventListener(type, fn) { listeners[type] = fn; } };
 const seen = () => (pinned() ? -parseFloat(body.style.top) : y);
 
 const location = { hash: "", pathname: "/", search: "" };
-const entries = [{ hash: "", scroll: 0, restore: "auto" }];
-let at = 0, fire = null;
+const entries = [{ hash: "", state: null, scroll: 0, restore: "auto" }];
+let at = 0;
 const history = {
+  get state() { return entries[at].state; },
   get scrollRestoration() { return entries[at].restore; },
   set scrollRestoration(v) { entries[at].restore = v; },
-  replaceState(_s, _t, url) { entries[at].hash = location.hash = url.startsWith("#") ? url : ""; },
+  replaceState(s, _t, url) {
+    entries[at].state = structuredClone(s);
+    if (url !== undefined) entries[at].hash = location.hash = url.startsWith("#") ? url : "";
+  },
   back() { go(at - 1); },
   forward() { go(at + 1); },
 };
@@ -106,28 +112,38 @@ function go(to) {
   entries[at].scroll = y;
   at = to; location.hash = entries[at].hash;
   if (entries[at].restore === "auto") window.scrollTo(0, entries[at].scroll);
-  fire();
+  listeners.hashchange();
 }
 function follow(hash) { // a link to a rule: a new entry that inherits the current one's restoration mode
   entries[at].scroll = y;
-  entries.splice(at + 1, Infinity, { hash, scroll: 0, restore: entries[at].restore });
+  entries.splice(at + 1, Infinity, { hash, state: null, scroll: 0, restore: entries[at].restore });
   at += 1; location.hash = hash;
-  fire();
+  listeners.hashchange();
 }
+function load() { // a fresh document for the current entry; the browser restores the scroll after the load
+  els = {}; listeners = {}; body.style.position = body.style.top = body.style.width = ""; y = 0;
+  location.hash = entries[at].hash;
+  eval(`(() => { ${code}\n init(); })()`);
+  if (entries[at].restore === "auto") window.scrollTo(0, entries[at].scroll);
+}
+const reload = () => { entries[at].scroll = y; load(); };
+const closeButton = () => els.modal.onclick({ target: { closest: (sel) => (sel === "#close" ? {} : null) } });
 
-const page = eval(`(() => { ${html.slice(start, end)}\n fire = ${onHashchange}; return { syncWithHash, closeRule }; })()`);
 const out = [];
-const step = (name, action) => { action(); out.push([name, pinned(), seen(), location.hash]); };
-entries[0].hash = location.hash = "#regel/startgebyr";
-step("opened by a shared link", () => page.syncWithHash());
-step("closed with the close button", () => page.closeRule());
+const step = (name, action) => { action(); out.push([name, pinned(), seen(), location.hash, history.scrollRestoration]); };
+entries[0].hash = "#regel/startgebyr";
+step("opened by a shared link", load);
+step("closed with the close button", closeButton);
 step("opened from a link further down", () => { window.scrollTo(0, 1500); follow("#regel/startgebyr"); });
 step("another rule while open", () => follow("#regel/licensgebyr"));
 step("Back to the first rule", () => history.back());
 step("Back to the page", () => history.back());
 step("Forward to the rule", () => history.forward());
-step("closed with Esc", () => page.closeRule());
-step("Esc again with nothing open", () => page.closeRule());
+step("closed with the scrim", () => els.scrim.onclick());
+step("Forward to the rule again", () => history.forward());
+step("reloaded", reload);
+step("closed with Esc", () => listeners.keydown({ key: "Escape" }));
+step("Esc again with nothing open", () => listeners.keydown({ key: "Escape" }));
 console.log(JSON.stringify(out));
 """
 
@@ -138,16 +154,20 @@ def test_an_open_rule_holds_the_page_still_and_closing_returns_to_the_same_spot(
     script.write_text(POPUP_PROBE)
     result = subprocess.run([NODE, str(script), str(TEMPLATE)], capture_output=True, text=True, check=True, timeout=30)
 
-    # [step, page pinned, offset the reader sees, address]: open pins the page where the reader was, switching rules
-    # and Back/Forward between open rules keep that spot, and every close unpins and scrolls back to it.
+    # [step, page pinned, offset the reader sees, address, scroll restoration]: opening pins the page where the reader
+    # was; switching rules, Back/Forward between open rules and a reload keep that spot; every close unpins, scrolls
+    # back to it and leaves the browser's scroll restoration as it was.
     assert json.loads(result.stdout) == [
-        ["opened by a shared link", True, 0, "#regel/startgebyr"],
-        ["closed with the close button", False, 0, ""],
-        ["opened from a link further down", True, 1500, "#regel/startgebyr"],
-        ["another rule while open", True, 1500, "#regel/licensgebyr"],
-        ["Back to the first rule", True, 1500, "#regel/startgebyr"],
-        ["Back to the page", False, 1500, ""],
-        ["Forward to the rule", True, 1500, "#regel/startgebyr"],
-        ["closed with Esc", False, 1500, ""],
-        ["Esc again with nothing open", False, 1500, ""],
+        ["opened by a shared link", True, 0, "#regel/startgebyr", "manual"],
+        ["closed with the close button", False, 0, "", "auto"],
+        ["opened from a link further down", True, 1500, "#regel/startgebyr", "manual"],
+        ["another rule while open", True, 1500, "#regel/licensgebyr", "manual"],
+        ["Back to the first rule", True, 1500, "#regel/startgebyr", "manual"],
+        ["Back to the page", False, 1500, "", "auto"],
+        ["Forward to the rule", True, 1500, "#regel/startgebyr", "manual"],
+        ["closed with the scrim", False, 1500, "", "auto"],
+        ["Forward to the rule again", True, 1500, "#regel/startgebyr", "manual"],
+        ["reloaded", True, 1500, "#regel/startgebyr", "manual"],
+        ["closed with Esc", False, 1500, "", "auto"],
+        ["Esc again with nothing open", False, 1500, "", "auto"],
     ]

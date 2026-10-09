@@ -105,7 +105,7 @@
   html { scrollbar-gutter: stable; }
   .scrim { position: fixed; inset: 0; z-index: 20; background: rgba(17,17,17,.28); opacity: 0; pointer-events: none; transition: opacity .15s;
     touch-action: none; }
-  .modal { position: fixed; left: 50%; top: 50%; z-index: 21; width: min(640px, 94vw); max-height: 85vh; overflow: auto; padding: 32px;
+  .modal { position: fixed; left: 50%; top: 50%; z-index: 21; width: min(640px, 94vw); max-height: 85vh; max-height: 85dvh; overflow: auto; padding: 32px;
     overscroll-behavior: contain; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,.16);
     opacity: 0; pointer-events: none; transform: translate(-50%, -47%); transition: opacity .15s, transform .15s; }
   .is-open .scrim, .is-open .modal { opacity: 1; pointer-events: auto; }
@@ -388,12 +388,14 @@ function countRuleOpen(ri) {
 }
 // iOS Safari scrolls the page despite overflow:hidden, so the page is pinned in place while a rule is open
 // and scrolled back to the same spot when it closes. A pinned page reports scroll 0, which the browser saves with
-// the rule's history entry and would restore (jumping to the top) when Forward reopens it; that entry opts out.
+// the rule's history entry and would restore (jumping to the top) when Forward reopens it; that entry opts out
+// and keeps the spot in its state instead, for a reload (see init).
 let pinnedAt = 0;
 function pinPage() {
   pinnedAt = window.scrollY;
+  history.replaceState({ ...history.state, pinnedAt }, "");
   history.scrollRestoration = "manual";
-  Object.assign(document.body.style, { position: "fixed", top: `-${pinnedAt}px`, width: "100%" });
+  Object.assign(document.body.style, { position: "fixed", top: `${-pinnedAt}px`, width: "100%" });
 }
 function unpinPage() {
   Object.assign(document.body.style, { position: "", top: "", width: "" });
@@ -466,6 +468,8 @@ function init() {
       <a href="https://github.com/Lentz92/styrke-referater" target="_blank" rel="noopener">GitHub</a></span>
     <span>Udtrukket automatisk – referatet er altid den gældende kilde. Besøg tælles anonymt uden cookies.</span>`;
   draw();
+  // A reload with a rule open starts at the top (its entry opts out of scroll restoration), so return to the saved spot.
+  if (history.state?.pinnedAt) window.scrollTo(0, history.state.pinnedAt);
   syncWithHash();
 }
 init();
