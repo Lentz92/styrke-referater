@@ -62,8 +62,11 @@ uv run evaluate.py candidate-recall          # hide each decision from its rule:
   found there, elsewhere or missing, whether their effects agree, how many pipeline rules hold the events (more than
   one: fragmented), and for each year whether the version in force was adopted by the key's adopting decision (same
   content, the main measure) or is the key's event itself (same event). A key event quoting a whole budget line is
-  mapped to its own fee's decision, which prompt v3 extracts apart. To score another revision's rules, copy them
-  with `git archive REV data/regler | tar -x -C DIR` and pass `--rules-dir DIR/data/regler` and a `--report` name.
+  mapped to its own fee's decision, which prompt v3 extracts apart. To score another revision, copy its rules and
+  decisions with `git archive REV data/regler data/beslutninger | tar -x -C DIR` and pass `--rules-dir
+  DIR/data/regler`, `--decisions-dir DIR/data/beslutninger` and a `--report` name; the decisions may be left out only
+  when they are today's too, as across an audit (without them the pre-migration rules score 1.0% same content, not
+  46.6%).
 - `candidate-recall` hides each decision of today's rules from its rule and ranks the candidates for it from the
   rest, as incremental consolidation does; it also ranks each as if its category were another one.
 
@@ -132,8 +135,9 @@ Since the migration the gate measures against today's data: `score --baseline RU
 today's pipeline's, whose runs differ on noise alone (the two Opus v3 runs: 88.7% and 95.5% on the three fields). So
 each figure's bound is the looser of the baseline moved by its slack (`evaluate.GATE_SLACK`: 2 points on precision
 and over-split, none on recall and the three fields) and the worst run of today's pipeline on that figure
-(`evaluate.gate_needs`; when today's pipeline was not run twice, the slack alone), and a configuration's runs must be
-at least as stable as today's pipeline's. On all ten runs:
+(`evaluate.gate_needs`), and a configuration's runs must be at least as stable as today's pipeline's. When today's
+pipeline was not run twice, the figures have the slack alone and stability has no bound, so no configuration
+passes. On all ten runs:
 
 ```bash
 uv run evaluate.py score --run stored --run sonnet-1 --run sonnet-2 --run haiku-1 --run opus-1 --run sonnet-v3-1 \
@@ -188,8 +192,8 @@ Incremental consolidation offers each new decision the 15 rules whose words are 
 from its rule, 98.2% at 15 and 96.8% at 10 (`reports/candidate-recall.md`, run before the migration).
 
 Replays on the data of then, holding out the 20 newest and 10 random documents, chose incremental consolidation as
-the default (`replay` and `compare-rules`, retired since, commit 9f39874; `reports/compare-*.md`, where `data-regler`
-is the full consolidation then in `data/regler`):
+the default (`replay` and `compare-rules`, retired since; their code is in commit 9f39874. `reports/compare-*.md`,
+where `data-regler` is the full consolidation then in `data/regler`):
 
 | Comparison | Grouping, B-cubed F1 | Same adopting decision in force | Years with the same content as the key |
 |---|--:|--:|--:|
@@ -205,13 +209,13 @@ of then), while two incremental runs agree on what was in force in 99.1% of year
 The audit's propose calls see a category's rules and every rule of another category at least `audit.SIMILARITY`
 (0.1) similar to one of them. On the answer key that puts all the pairs of rules a key rule is spread over into one
 call on the migrated data, 97% before the migration (`reports/audit-candidates.md`, measured with `audit.py
-candidates`, retired since, commit 9f39874).
+candidates`, retired since; its code is in commit 9f39874).
 
 The first audit (commit 9f39874) applied the 16 ops both Opus runs proposed: 8 merges, 4 splits and 4 category moves;
 the 18 that only one run proposed are listed in `data/regler_ops.json` and were left out. It cost 14.11 USD at list
 price (propose 13.21, rewrites 0.91). Against the answer key, without soft rules (measured with `audit.py score
---before 9f39874~1`, retired since; `evaluate.py score-rules` on the rules of `9f39874~1` and of `9f39874` gives the
-same figures, see What is scored):
+--before 9f39874~1`, retired since, whose code is in commit 9f39874; `evaluate.py score-rules` on the rules of
+`9f39874~1` and of `9f39874` gives the same figures, see What is scored):
 
 | | Before | After |
 |---|--:|--:|

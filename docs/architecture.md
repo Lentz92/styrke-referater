@@ -322,7 +322,7 @@ flowchart TB
   %% Judges' model and effort: provenance in eval/key/judges, claude-opus-5-5 at effort high.
   %% evaluate.py: BASELINE_RUN migrated, GATE_SLACK precision 0.02 and over_split 0.02, gate_needs, RECALL_KS 3 to 15,
   %% RECALL_TARGET 0.98, SMALL_BUDGET_USD 10. audit.SIMILARITY 0.1, chosen with audit.py candidates.
-  %% Retired since, with replay and compare-rules: commit 9f39874. Their reports stay in eval/reports/.
+  %% Retired since, with replay and compare-rules; their code is in commit 9f39874, their reports in eval/reports/.
 
   sel[("<b>eval/selection.json</b><br/>[JSON]<br/>25 documents and 20 recurring rules")]:::store
   judges["<b>Answer key, built once in October 2026</b><br/>[Claude Opus 5.5 judges, effort high]<br/>2 judges per document and rule, a 3rd answers blind where<br/>they disagree, 2 of 3 decide, what stays split is left out"]:::claude
@@ -371,9 +371,9 @@ Two extraction runs agree on only about 90 % of decisions, so the pipeline's cho
 key that Opus judged once, not against each other. The gates only report: a person changes a constant, and a new
 model or prompt then reaches `data/` through a migration. This loop chose Opus with prompt v3 (recall 91.7 % against
 the stored Sonnet run's 79.8 %), 15 candidates, incremental mode as the default, and the audit's threshold of 0.1;
-the replays and the threshold calibration behind the last two were retired once decided (commit 9f39874). Since the
-migration the gate measures against today's data, `migrated`: Opus with v3 passes as the reference, Sonnet with v2
-or v3 fails (`eval/reports/decisions-gate.md`).
+the replays and the threshold calibration behind the last two were retired once decided; their code is in commit
+9f39874. Since the migration the gate measures against today's data, `migrated`: Opus with v3 passes as the
+reference, Sonnet with v2 or v3 fails (`eval/reports/decisions-gate.md`).
 
 ---
 

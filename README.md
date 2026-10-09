@@ -30,9 +30,9 @@ A run downloads what is new on styrke.dk, has Claude extract the decisions of ne
 extraction prompt v3), files each new decision into the rule it belongs to and leaves every other rule as it is
 (incremental consolidation, see How it works), runs the checks (see Review) and writes `regelsaet/` and `_site/`. A
 run with nothing new finishes in seconds. Claude runs on the subscription; at list price an extraction costs about
-0.09 USD per document (the large congress documents cost more), so a month with a few new minutes costs well under
-2 USD, and extracting and consolidating all ~240 documents again about 25 (the migration in October 2026: 16.74
-for extraction, 8.58 for consolidation).
+0.07 USD per document (the migration in `data/runs.jsonl`: 16.74 USD for 236; the large congress documents cost
+more), so a month with a few new minutes costs well under 2 USD, and extracting and consolidating all ~240 documents
+again about 25 (the migration in October 2026: 16.74 for extraction, 8.58 for consolidation).
 
 | Option | Use |
 |---|---|
@@ -107,8 +107,9 @@ The workflow passes no limit, so every run has the defaults: 15 USD and 75 minut
 unless asked otherwise (`update.py` has no model or prompt options). "Run workflow" has two boxes: "Allow a rebuild
 (--allow-rebuild)" approves the work the rebuild guard stops, and with "Consolidate in full, to migrate a prompt or
 version change (--consolidate-mode full)" ticked too it runs the migration. Within the default limits a
-re-extraction of every document (16.74 USD in the October 2026 migration) takes several runs: after each, merge its review pull request if it
-opened one, so what it paid for reaches `main`, and run the workflow again with the same boxes ticked.
+re-extraction of every document (16.74 USD in the October 2026 migration) takes two runs: after the first, merge its
+review pull request if it opened one, so what it paid for reaches `main`, and run the workflow again with the same
+boxes ticked.
 
 Each run that calls Claude adds a line to `data/runs.jsonl`: time, CLI version and, per step, calls, failures,
 skipped calls, tokens, list-price cost, models and seconds. A run with nothing new adds none, so compare cost and
@@ -205,8 +206,9 @@ answers code rejected, what each year shows before and after for every rule that
 before and after, and the cost. To review, read the applied ops and check the merged and split rules against the
 minutes (the diff of `regelsaet/` shows them); merge to publish, or close to discard. Locally, the same commands leave
 the changes in the working tree. To score the rules against the answer key before and after, run `uv run evaluate.py
-score-rules` on `data/regler/` and on a copy of an earlier revision's (`git archive REV data/regler | tar -x -C DIR`,
-then `--rules-dir DIR/data/regler`), each with its own `--report` name.
+score-rules` on `data/` and on a copy of an earlier revision's (`git archive REV data/regler data/beslutninger | tar
+-x -C DIR`, then `--rules-dir DIR/data/regler --decisions-dir DIR/data/beslutninger`), each with its own `--report`
+name; across an audit, which leaves the decisions as they are, `--rules-dir` alone does.
 
 An audit can be cut off: by its cost limit, by failed calls, or by its time budget (`--time-budget`, 75 minutes by
 default; in the workflow `propose` and `apply` share it, so the result reaches its pull request within the job's 120
@@ -221,7 +223,8 @@ the workflow refuses to start an audit in the last two days of a month, and whil
 monthly run that did not happen (or ran into a conflict) is started by hand with "Run workflow" in `update.yml`.
 
 Cost at list price: on the migrated data (555 rules) `propose` is 24 calls of up to 66K tokens, estimated at
-about 11 USD before the first call (the first audit's cost 13.21); each merged or split rule's rewrite about 0.1 USD; the title choice a few cents. Each
+about 11 USD before the first call (the first audit's cost 13.21); each merged or split rule's rewrite about 0.05 USD
+(the first audit's 17 rewrites: 0.91 in `data/runs.jsonl`); the title choice a few cents. Each
 `propose` and `apply` that calls Claude adds a line to `data/runs.jsonl` (with the audit's id), and the pull request
 shows the audit's whole cost from those lines, failed attempts and rejected answers included. Both workflows append
 to that file, so git merges it by keeping both sides' lines (`.gitattributes`); what reads it orders the lines by
