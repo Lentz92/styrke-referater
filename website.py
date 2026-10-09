@@ -146,7 +146,7 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     docs = scrape.load_manifest()
     page = build(docs, analyze.load_decisions(docs), analyze.load_rules(), date.today())
-    logging.info("Skrev %s (%d KB)", page.relative_to(ROOT), page.stat().st_size // 1024)
+    logging.info("Wrote %s (%d KB)", page.relative_to(ROOT), page.stat().st_size // 1024)
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ Steps: 1) scrape.py downloads new documents and writes data/manifest.json.
 2) analyze.py asks Claude (via the `claude` CLI) to extract decisions from new or changed
 documents and to consolidate them per category into rule histories; both are cached in data/.
 A run that calls Claude adds a line with its tokens, cost and models to data/runs.jsonl.
-3) render.py writes regelsaet/<år>.md, regelsaet/regler/<område>.md and regelsaet/README.md.
+3) render.py writes regelsaet/<year>.md, regelsaet/regler/<area>.md and regelsaet/README.md.
 4) website.py writes the website to _site/ (published on GitHub Pages by .github/workflows/pages.yml).
 """
 
@@ -54,8 +54,8 @@ REBUILD_INPUT_LABEL = "Allow a rebuild (--allow-rebuild)"
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--offline", action="store_true", help="spring download over")
-    parser.add_argument("--render-only", action="store_true", help="kun Markdown og hjemmeside ud fra data/")
+    parser.add_argument("--offline", action="store_true", help="skip the download from styrke.dk")
+    parser.add_argument("--render-only", action="store_true", help="only build the Markdown and the website from data/")
     parser.add_argument("--only", metavar="REGEX",
                         help="only extract documents whose id matches, and only consolidate the categories their "
                              "decisions are in (for testing; skips the rebuild guard)")
@@ -66,9 +66,9 @@ def main() -> None:
     parser.add_argument("--extract-effort", choices=EFFORTS, help="effort for extraction (default: Claude Code's own)")
     parser.add_argument("--consolidate-effort", choices=EFFORTS,
                         help="effort for consolidation (default: Claude Code's own)")
-    parser.add_argument("--workers", type=int, default=4, help="parallelle Claude-kald (default: 4)")
+    parser.add_argument("--workers", type=int, default=4, help="parallel Claude calls (default: 4)")
     parser.add_argument("--time-budget", type=float, default=75, metavar="MIN",
-                        help="start ingen nye Claude-kald efter så mange minutter (default: 75)")
+                        help="start no new Claude calls after this many minutes (default: 75)")
     parser.add_argument("--max-cost", type=float, default=15, metavar="USD",
                         help="start no new Claude calls once the run has used this much at list price (default: 15)")
     parser.add_argument("--allow-rebuild", action="store_true",
@@ -108,14 +108,14 @@ def main() -> None:
     decisions, raw_rules, today = analyze.load_decisions(docs), analyze.load_rules(), date.today()
     problems = checks.find_problems(decisions, raw_rules)
     for problem in problems:
-        logging.warning("Kontrol (%s): %s", problem.kind, problem.message)
+        logging.warning("Check (%s): %s", problem.kind, problem.message)
     problem_counts = Counter(problem.kind for problem in problems)
     if steps:
         write_step_summary(steps, problem_counts)
     pages = render.render(docs, decisions, raw_rules, analyze.missing_extractions(docs), problem_counts, today)
-    logging.info("Skrev %d sider i %s", len(pages), render.OUT_DIR.relative_to(scrape.ROOT))
+    logging.info("Wrote %d pages to %s", len(pages), render.OUT_DIR.relative_to(scrape.ROOT))
     site = website.build(docs, decisions, raw_rules, today)
-    logging.info("Skrev hjemmesiden til %s", site.relative_to(scrape.ROOT))
+    logging.info("Wrote the website to %s", site.relative_to(scrape.ROOT))
     failures = sum(step.failed + step.skipped for step in steps.values())
     if failures:
         # Partial results are cached and the pages are written; fail so CI reports it.
@@ -221,7 +221,7 @@ def check_rebuild(docs: list[Doc], *, allowed: bool) -> None:
         reasons = [f"beyond the work approved in {REBUILD_MARKER.name}, {reason}" for reason in outside]
     raise SystemExit(
         f"Stopped before any Claude call: {'; '.join(reasons)}. If this work is intended, run "
-        f"`uv run update.py --allow-rebuild`, or on GitHub: Actions > Opdater regelsæt > Run workflow with "
+        f"`uv run update.py --allow-rebuild`, or on GitHub: Actions > Update rule overview > Run workflow with "
         f"'{REBUILD_INPUT_LABEL}' ticked. The approval is saved in data/rebuild.json, and plain runs, the "
         f"monthly one included, continue the work if it is cut off."
     )

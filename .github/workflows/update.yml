@@ -1,4 +1,4 @@
-name: Opdater regelsæt
+name: Update rule overview
 
 on:
   schedule:
@@ -57,7 +57,7 @@ jobs:
           claude auth status | grep -E '"(loggedIn|authMethod|apiProvider)"' || true
           # A tiny call proves the token works (and catches expiry) even in months with nothing new,
           # and that this CLI answers a full model id with that model.
-          result=$(echo "Svar kun med ordet ok." | claude -p --tools "" --safe-mode --no-session-persistence \
+          result=$(echo "Reply with only the word ok." | claude -p --tools "" --safe-mode --no-session-persistence \
             --model claude-haiku-5-5 --output-format json)
           echo "$result" | jq '{is_error, result, total_cost_usd, models: [.modelUsage[]?.canonicalModel]}'
           if ! echo "$result" | jq -e '.is_error == false
@@ -85,8 +85,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
-            echo "Ingen nye referater."
+            echo "No new minutes."
           else
-            git commit -m "Månedlig opdatering af regelsæt $(date -u +%Y-%m-%d)"
+            git commit -m "Monthly rule overview update $(date -u +%Y-%m-%d)"
             git push
           fi

@@ -238,7 +238,7 @@ def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int,
     """
     DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
     todo = [doc for doc in docs if not _extraction_is_current(doc)]
-    log.info("Udtræk: %d af %d dokumenter skal analyseres", len(todo), len(docs))
+    log.info("Extract: %d of %d documents need extracting", len(todo), len(docs))
     cli = cli_version() if todo else ""
     return _run_parallel(todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget),
                          workers, "Extract", budget)
@@ -337,7 +337,7 @@ def _reading_order(raw: list[dict]) -> list[int]:
 def _meeting_date(extracted: str | None, doc: Doc) -> str | None:
     found = _valid_date(extracted)
     if found and doc.date and abs(int(found[:4]) - int(doc.date[:4])) > 1:
-        log.warning("%s: mødedato %s passer ikke med styrke.dk (%s) – bruger sidstnævnte", doc.id, found, doc.date)
+        log.warning("%s: meeting date %s does not match styrke.dk (%s); using the latter", doc.id, found, doc.date)
         return doc.date
     return found or doc.date
 
@@ -971,7 +971,7 @@ def _run_parallel(jobs: list, fn, workers: int, label: str, budget: RunBudget | 
                 failed += 1
                 if isinstance(exc, ClaudeError):
                     usage += exc.usage
-                log.error("%s [%d/%d] fejlede: %s", label, done, len(jobs), exc)
+                log.error("%s [%d/%d] failed: %s", label, done, len(jobs), exc)
                 continue
             usage += job_usage
             log.info("%s [%d/%d] %s", label, done, len(jobs), message)
