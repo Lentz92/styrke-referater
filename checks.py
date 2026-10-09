@@ -96,7 +96,8 @@ def errors(problems: Iterable[Problem]) -> list[Problem]:
 
 def identity_problems(decisions: list[Decision], retired_ids: Collection[str], raw_rules: list[dict],
                       slugs: SlugRegistry) -> list[Problem]:
-    """Decision ids and rule slugs that are missing, used twice, or lead nowhere or to the wrong rule.
+    """Decision ids and rule slugs that are missing, used twice, or lead nowhere or to the wrong rule, and decisions
+    held by more than one rule (consolidation modes mixed: each rule would show it).
 
     A version whose decision was retired is a stale rule (stale_versions); one whose ref was never a decision
     id is reported here. Rules without a slug are left out of the pages (render.build_rules). Former slugs are
@@ -109,6 +110,8 @@ def identity_problems(decisions: list[Decision], retired_ids: Collection[str], r
     problems += [_identity(f"decision id {ref} is both in use and retired")
                  for ref in sorted(set(live_ids) & set(retired_ids))]
     known = set(live_ids) | set(retired_ids)
+    holders = Counter(ref for raw in raw_rules for ref in {v["ref"] for v in raw["versioner"]})
+    problems += [_identity(f"decision {ref} is in {n} rules") for ref, n in sorted(holders.items()) if n > 1]
     for raw in raw_rules:
         problems += [_identity(f"{raw['titel']}: version {v['ref']} refers to no decision") for v in raw["versioner"]
                      if v["ref"] not in known]

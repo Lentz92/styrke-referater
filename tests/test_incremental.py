@@ -89,9 +89,13 @@ class World:
     def files(self) -> dict[str, bytes]:
         return {p.name: p.read_bytes() for p in sorted(analyze.RULES_DIR.glob("*.json"))}
 
-    def consolidate(self, **settings) -> analyze.StepSummary:
+    def consolidate(self, known: incremental.Known | None = None, **settings) -> analyze.StepSummary:
         return incremental.consolidate(self.docs, self.decisions(), Settings(workers=1, **settings), RunBudget(),
-                                       now=NOW)
+                                       now=NOW, known=known)
+
+    def known(self) -> incremental.Known:
+        """What the rule files reflect now, as update.py takes it before the extraction."""
+        return incremental.known_inputs(self.decisions(), incremental.RuleBook.load(), self.docs)
 
 
 @pytest.fixture
@@ -121,9 +125,10 @@ def _votes(*choices: dict) -> dict:
     return {"answers": answers}
 
 
-def _update(*refs: str, vigtig: bool = True, note: str | None = None) -> dict:
+def _update(*refs: str, vigtig: bool = True, note: str | None = None, misfiled: tuple[str, ...] = ()) -> dict:
     return {"versioner": [{"ref": ref, "effekt": "aendret", "tekst": f"Ny tekst {ref}", "kort": f"ny {ref}",
-                           "kort_regel": f"ny regel {ref}"} for ref in refs], "vigtig": vigtig, "note": note}
+                           "kort_regel": f"ny regel {ref}"} for ref in refs], "vigtig": vigtig, "note": note,
+            "misfiled": list(misfiled)}
 
 
 def _models(fake_claude) -> list[str]:
@@ -225,7 +230,7 @@ def test_votes_file_new_decisions_and_only_the_touched_rule_changes(world, fake_
     step = world.consolidate()
 
     assert _models(fake_claude) == [SONNET, SONNET, SONNET, OPUS, OPUS]
-    assert (step.calls, step.failed, step.skipped) == (1, 0, 0)
+    assert (step.calls, step.failed, step.skipped) == (5, 0, 0)  # Claude calls, not documents
     licens = world.rule("okonomi", "licensgebyr")
     assert [v["ref"] for v in licens["versioner"]] == ["rep2010#1", "rep2015#1", "rep2020#1", "rep2024#1"]
     old = json.loads(before["okonomi.json"])["regler"][0]["versioner"]
@@ -240,8 +245,11 @@ def test_votes_file_new_decisions_and_only_the_touched_rule_changes(world, fake_
     assert [a[a.index("--system-prompt") + 1] for a in args] == [incremental.ASSIGN_SYSTEM] * 4 + [
         incremental.UPDATE_SYSTEM]
     assert "rep2024#1" not in fake_claude.prompts()[3]  # the tie-break is asked about the split decision only
-    # The category reflects all its decisions again: full sees nothing to do, the checks nothing pending.
+    # The category reflects all its decisions again: full sees nothing to do, the checks nothing pending; the file
+    # records the fingerprint of each decision it reflects.
     assert analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs}) == []
+    assert set(world.stored("okonomi")["inputs"]) == {"rep2010#1", "rep2015#1", "rep2015#2", "rep2020#1",
+                                                      "rep2024#1", "rep2024#2"}
 
 
 def _section(prompt: str, tag: str):
@@ -261,24 +269,24 @@ def test_the_votes_see_the_ranked_candidates_and_the_update_the_minutes(world, f
     statuses = [(v["ref"], v["status"]) for v in _section(rule_update, "regel")["versioner"]]
     assert statuses == [("rep2010#1", "keep"), ("rep2015#1", "keep"), ("rep2020#1", "keep"), ("rep2024#1", "new")]
     (source,) = _section(rule_update, "kilder")
-    # 150 words on either side of the quote, as written in the document (the agenda before them is left out).
+    # 100 words before the quote, as written in the document (the agenda before them is left out), and on to the end.
     quote = "Licensgebyret hæves til 350 kr. pr. løfter"
-    assert quote in source["passage"] and "Dagsorden" not in source["passage"]
-    assert len(analyze._words(source["passage"])) == 150 + len(analyze._words(quote)) + 150
+    before, _, after = source["passage"].partition(quote)
+    assert len(analyze._words(before)) == 100 and after.endswith("Eventuelt intet")
 
 
 def test_a_new_rule_gets_a_title_slug_that_no_live_or_former_rule_has(world, fake_claude):
-    analyze._save_slugs(SlugRegistry.of({"licensgebyr-2": FormerSlug("okonomi", "Licensgebyr", frozenset({"z#1"}))}))
+    analyze._save_slugs(SlugRegistry.of({"juniorlicens": FormerSlug("okonomi", "Juniorlicens", frozenset({"z#1"}))}))
     world.document("rep2024", "2024-03-01", _decision("Licensgebyr for juniorer", "Juniorer betaler 100 kr."),
                    _decision("Licensgebyr for juniorer", "Juniorlicensen gælder fra 1. januar."))
-    title = (NEW, "Licensgebyr")
+    title = (NEW, "Juniorlicens")
     fake_claude.answers(_votes({"rep2024#1": title, "rep2024#2": title}), _votes({"rep2024#1": title,
                                                                                   "rep2024#2": title}),
                         _votes({"rep2024#1": ONE_OFF, "rep2024#2": title}),
                         _update("rep2024#1", "rep2024#2", vigtig=False, note="Kun juniorer."))
     world.consolidate()
     rule = world.stored("okonomi")["regler"][-1]
-    assert (rule["titel"], rule["slug"], rule["vigtig"], rule["note"]) == ("Licensgebyr", "licensgebyr-3", False,
+    assert (rule["titel"], rule["slug"], rule["vigtig"], rule["note"]) == ("Juniorlicens", "juniorlicens-2", False,
                                                                           "Kun juniorer.")
     assert [v["ref"] for v in rule["versioner"]] == ["rep2024#1", "rep2024#2"]
     assert checks.identity_problems(world.decisions(), set(), analyze.load_rules(), analyze.load_slugs()) == []
@@ -289,10 +297,9 @@ def test_a_new_rule_gets_a_title_slug_that_no_live_or_former_rule_has(world, fak
 def test_a_late_decision_rewrites_from_where_it_belongs_on(world, fake_claude):
     world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     before = world.rule("okonomi", "licensgebyr")["versioner"]
-    keep, entries = incremental.plan_update(before, {d.ref: d for d in world.decisions()}, set(), set(),
-                                            ["rep2017#1"])
-    assert keep == before[:2]
-    assert [(e.ref, e.status) for e in entries] == [("rep2010#1", "keep"), ("rep2015#1", "keep"),
+    plan = incremental.plan_update(before, {d.ref: d for d in world.decisions()}, set(), set(), ["rep2017#1"])
+    assert (list(plan.keep), plan.point) == (before[:2], 2)
+    assert [(e.ref, e.status) for e in plan.entries] == [("rep2010#1", "keep"), ("rep2015#1", "keep"),
                                                     ("rep2017#1", "new"), ("rep2020#1", "rewrite")]
 
     fake_claude.answers(*[_votes({"rep2017#1": "licensgebyr"})] * 3, _update("rep2017#1", "rep2020#1"))
@@ -310,7 +317,7 @@ def test_an_answer_that_rewrites_earlier_versions_is_asked_again_then_left_for_t
                         _update("rep2010#1", "rep2017#1", "rep2020#1"))  # rewrites 2010: rejected, twice
     step = world.consolidate()
     assert _models(fake_claude) == [SONNET] * 3 + [OPUS] * 2
-    assert (step.calls, step.failed) == (1, 1)
+    assert (step.calls, step.failed) == (5, 1)
     assert world.files() == before
 
 
@@ -318,8 +325,8 @@ def test_an_update_answer_must_return_exactly_the_versions_from_the_insertion_po
     world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     by_ref = {d.ref: d for d in world.decisions()}
     versions = world.rule("okonomi", "licensgebyr")["versioner"]
-    keep, entries = incremental.plan_update(versions, by_ref, set(), set(), ["rep2017#1"])
-    planned = incremental.RuleUpdate("okonomi", "licensgebyr", "Licensgebyr", True, None, tuple(entries), tuple(keep))
+    plan = incremental.plan_update(versions, by_ref, set(), set(), ["rep2017#1"])
+    planned = incremental.RuleUpdate("okonomi", "licensgebyr", "Licensgebyr", True, None, plan, tuple(versions))
     with pytest.raises(incremental.UpdateRejected, match="before the insertion point .rep2010#1"):
         incremental.merge(planned, _update("rep2010#1", "rep2017#1", "rep2020#1"), by_ref, {})
     with pytest.raises(incremental.UpdateRejected, match="returned rep2017#1 instead of rep2017#1, rep2020#1"):
@@ -366,7 +373,7 @@ def test_a_rule_touched_by_one_document_also_drops_another_documents_retired_dec
     world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
     fake_claude.answers(*[_votes({"rep2017#1": "licensgebyr"})] * 3, _update("rep2017#1"))
     step = world.consolidate()
-    assert (step.calls, step.failed, fake_claude.invocations("call")) == (1, 0, 4)  # rep2020 had nothing left
+    assert (step.calls, step.failed, fake_claude.invocations("call")) == (4, 0, 4)  # rep2020 had nothing left
     assert [v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]] == ["rep2010#1", "rep2015#1",
                                                                                     "rep2017#1"]
     assert incremental.work_queue(world.decisions(), incremental.RuleBook.load(), world.docs) == []
@@ -423,3 +430,173 @@ def test_full_remains_the_default_mode(run, world, fake_claude, monkeypatch):
                         analyze.StepSummary("Consolidate", 0, 0, 0, analyze.Usage(), 0))
     run()
     assert called == ["full"]
+
+
+# ---------------------------------------------------------------- review fixes
+
+def _full(world, fake_claude, answer: dict) -> None:
+    fake_claude.answer(answer)
+    analyze.consolidate(world.decisions(), {d.id: d.organ_label for d in world.docs}, model=OPUS, effort=None,
+                        workers=1)
+
+
+def test_a_decision_filed_under_another_categorys_rule_is_never_consolidated_twice(world, fake_claude):
+    # Incremental files a medlemskab decision into okonomi's Licensgebyr; a later full run of medlemskab must not
+    # take it again: it is consolidated with the rule that holds it.
+    world.document("rep2024", "2024-03-01", _decision("Licens ved klubskifte", "Licensen følger med ved klubskifte.",
+                                                      "medlemskab"))
+    fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update("rep2024#1"))
+    world.consolidate()
+    assert analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs}) == []
+
+    world.document("rep2025", "2025-03-01", _decision("Klubskifte", "Klubskifte kræver to måneders karantæne.",
+                                                      "medlemskab"))
+    todo = analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs})
+    assert [(job.category, [i["ref"] for i in job.items]) for job in todo] == [("medlemskab", ["rep2020#2",
+                                                                                               "rep2025#1"])]
+    _full(world, fake_claude, {"regler": [{"titel": "Klubskifte", "vigtig": True, "note": None, "versioner": [
+        {"ref": ref, "effekt": "indfoert", "tekst": None, "kort": "x", "kort_regel": None}
+        for ref in ("rep2020#2", "rep2024#1", "rep2025#1")]}], "udeladt": []})
+    held = [r["slug"] for r in analyze.load_rules() if "rep2024#1" in {v["ref"] for v in r["versioner"]}]
+    assert held == ["licensgebyr"]
+    problems = checks.identity_problems(world.decisions(), set(), analyze.load_rules(), analyze.load_slugs())
+    assert not [p for p in problems if "rules" in p.message]
+
+
+def test_a_redated_document_reaches_its_rules_although_its_decisions_did_not_change(world, fake_claude):
+    known = world.known()  # update.py takes it before the extraction
+    world.document("rep2015", "2016-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))  # re-read: another date only
+    fake_claude.answers(_update("rep2015#1", "rep2020#1"), _update("rep2015#2"))
+    world.consolidate(known)
+    assert _models(fake_claude) == [OPUS, OPUS]  # no vote: they stay where they are
+    assert [v["tekst"] for v in world.rule("okonomi", "licensgebyr")["versioner"]] == [
+        "Tekst rep2010#1", "Ny tekst rep2015#1", "Ny tekst rep2020#1"]
+    assert analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs}) == []
+
+
+def test_a_category_that_may_have_changed_unseen_is_not_settled(world, fake_claude, caplog):
+    stale = world.stored("okonomi")["input_hash"]
+    world.document("rep2015", "2016-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. stævne."))
+    world.consolidate()  # no baseline from before the change, and the file records no fingerprints
+    assert fake_claude.calls() == [] and world.stored("okonomi")["input_hash"] == stale
+    assert "okonomi may reflect decisions that changed unseen" in caplog.text
+    todo = analyze.consolidation_todo(world.decisions(), {d.id: d.organ_label for d in world.docs})
+    assert [job.category for job in todo] == ["okonomi"]  # still pending for full and for the checks
+
+
+def test_a_one_off_counts_only_in_its_own_category(world):
+    world.document("rep2012", "2012-03-01", _decision("Jubilæum", "Forbundet fejrer jubilæum.", "medlemskab"))
+    path = analyze.RULES_DIR / "okonomi.json"
+    path.write_text(json.dumps({**world.stored("okonomi"), "udeladt": ["rep2012#1"]}))  # left out under okonomi
+    queue = incremental.work_queue(world.decisions(), incremental.RuleBook.load(), world.docs)
+    assert [(w.doc_id, w.new) for w in queue] == [("rep2012", ("rep2012#1",))]
+
+
+def test_the_check_before_the_insertion_point_compares_with_the_stored_versions(world):
+    world.document("rep2017", "2017-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 275 kr. pr. løfter."))
+    by_ref = {d.ref: d for d in world.decisions()}
+    versions = world.rule("okonomi", "licensgebyr")["versioner"]
+    plan = incremental.plan_update(versions, by_ref, set(), set(), ["rep2017#1"])
+    tampered = replace(plan, keep=({**plan.keep[0], "tekst": "Ændret"}, plan.keep[1]))
+    planned = incremental.RuleUpdate("okonomi", "licensgebyr", "Licensgebyr", True, None, tampered, tuple(versions))
+    with pytest.raises(AssertionError, match="not those stored"):
+        incremental.merge(planned, _update("rep2017#1", "rep2020#1"), by_ref, {})
+
+
+def test_a_removed_version_is_placed_by_its_documents_date_not_its_place_in_the_file(world):
+    by_ref = {d.ref: d for d in world.decisions()}
+    licens = {v["ref"]: v for v in world.rule("okonomi", "licensgebyr")["versioner"]}
+    versions = [licens["rep2010#1"], licens["rep2020#1"], licens["rep2015#1"]]  # file order is not render's order
+    del by_ref["rep2020#1"]  # retired
+    plan = incremental.plan_update(versions, by_ref, {"rep2020#1"}, set(), [], {"rep2020#1": "2020-03-01"})
+    assert plan.entries is None and [v["ref"] for v in plan.keep] == ["rep2010#1", "rep2015#1"]  # it was the last
+    plan = incremental.plan_update(versions, by_ref, {"rep2020#1"}, set(), [], {"rep2020#1": "2012-03-01"})
+    assert [(e.ref, e.status) for e in plan.entries] == [("rep2010#1", "keep"), ("rep2020#1", "removed"),
+                                                         ("rep2015#1", "rewrite")]
+
+
+def test_a_slug_retired_by_a_document_is_not_given_to_a_new_rule_of_the_same_document(world, fake_claude):
+    # Startgebyr's only decision is read again as a new one, which the votes and the tie-break file as a new rule.
+    world.document("rep2015", "2015-03-01", _decision("Licensgebyr", "Licensgebyret hæves til 250 kr. pr. løfter."),
+                   _decision("Startgebyr", "Startgebyret er 150 kr. pr. start.", id="rep2015#3"),
+                   retired=("rep2015#2",))
+    new = _votes({"rep2015#3": (NEW, "Startgebyr")})
+    fake_claude.answers(new, new, new, new, _update("rep2015#3"))
+    world.consolidate()
+    assert [r["slug"] for r in world.stored("okonomi")["regler"]] == ["licensgebyr", "startgebyr-2"]
+    assert analyze.load_slugs().targets() == {"startgebyr": "startgebyr-2"}
+
+
+def test_new_decisions_with_the_same_new_title_form_one_rule_whatever_their_category(world, fake_claude):
+    world.document("rep2024", "2024-03-01", _decision("Klubrabat", "Klubber får rabat på licens."),
+                   _decision("Klubrabat", "Rabatten gælder nye klubber.", "medlemskab"))
+    fake_claude.answers(*[_votes({"rep2024#1": (NEW, "Klubrabat"), "rep2024#2": (NEW, "klubrabat")})] * 3,
+                        _update("rep2024#1", "rep2024#2"))
+    world.consolidate()
+    assert [r["slug"] for r in world.stored("okonomi")["regler"]] == ["licensgebyr", "startgebyr", "klubrabat"]
+    assert [r["slug"] for r in world.stored("medlemskab")["regler"]] == ["klubskifte"]
+
+
+def test_a_new_rule_named_like_a_live_one_goes_to_the_tie_break_with_that_rule_offered(world, fake_claude):
+    world.document("rep2024", "2024-03-01", _decision("Juniorkontingent", "Juniorer betaler halv pris."))
+    fake_claude.answers(*[_votes({"rep2024#1": (NEW, "Licensgebyr")})] * 3, _votes({"rep2024#1": "licensgebyr"}),
+                        _update("rep2024#1"))
+    world.consolidate(k=1)
+    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] * 2
+    assert "licensgebyr" in _section(fake_claude.prompts()[3], "beslutninger")[0]["kandidater"]
+    assert [r["slug"] for r in world.stored("okonomi")["regler"]] == ["licensgebyr", "startgebyr"]
+    assert "rep2024#1" in {v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]}
+
+
+def test_the_voters_get_the_extraction_criteria_for_one_offs_and_no_rule_categories(world):
+    listed = incremental.NOT_DECISIONS
+    assert listed in analyze.EXTRACT_SYSTEM and listed in incremental.ASSIGN_SYSTEM
+    assert listed.startswith("- one-off tasks") and listed.endswith("competition results")
+    prompt = incremental.ASSIGN_SYSTEM.replace("\n", " ")
+    assert "These are not one-offs: a fee or rate set or confirmed with a budget" in prompt
+    assert "Prefer an existing rule when the decision touches any part of what it regulates" in prompt
+    by_ref = {d.ref: d for d in world.decisions()}
+    assert "kategori" not in incremental.rule_view("okonomi", world.rule("okonomi", "licensgebyr"), by_ref)
+
+
+def test_the_update_keeps_the_fields_when_the_minutes_contradict_them():
+    prompt = incremental.UPDATE_SYSTEM.replace("\n", " ")
+    assert "When the minutes contradict a decision's fields, keep the fields and say so in note." in prompt
+    assert "the minutes decide" not in prompt
+
+
+def test_the_passage_reaches_from_before_the_quote_to_the_vote():
+    filler = "Debatten fortsatte længe. " * 150  # 450 words
+    text = (f"[Side 1]\n{'Indledning. ' * 120}Forslag om at hæve licensgebyret til 400 kr. {filler}"
+            f"Forslaget blev vedtaget med 31 stemmer for, 7 imod og 2 blanke. {'Eventuelt. ' * 600}")
+    quote = "Forslag om at hæve licensgebyret til 400 kr"
+    found = incremental.passage(text, quote, 1, "31 for, 7 imod, 2 blanke")
+    assert found.startswith("Indledning.") and len(analyze._words(found.partition(quote)[0])) == 100
+    assert found.endswith("7 imod og 2 blanke")
+    plain = incremental.passage(text, quote, 1)
+    assert len(analyze._words(plain.partition(quote)[2])) == 400 and "31 stemmer" not in plain
+
+
+def test_a_misfiled_decision_is_voted_on_again_without_that_rule(world, fake_claude):
+    world.document("rep2024", "2024-03-01", _decision("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
+    fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
+                        *[_votes({"rep2024#1": "startgebyr"})] * 3, _update("rep2024#1"))
+    step = world.consolidate(k=3)
+    assert _models(fake_claude) == [SONNET] * 3 + [OPUS] + [SONNET] * 3 + [OPUS]
+    assert (step.calls, step.failed) == (8, 0)
+    assert "licensgebyr" in _section(fake_claude.prompts()[0], "beslutninger")[0]["kandidater"]
+    assert "licensgebyr" not in _section(fake_claude.prompts()[4], "beslutninger")[0]["kandidater"]
+    assert [v["ref"] for v in world.rule("okonomi", "startgebyr")["versioner"]] == ["rep2015#2", "rep2024#1"]
+    assert "rep2024#1" not in {v["ref"] for v in world.rule("okonomi", "licensgebyr")["versioner"]}
+
+
+def test_a_decision_misfiled_twice_leaves_the_document_for_the_next_run(world, fake_claude, caplog):
+    world.document("rep2024", "2024-03-01", _decision("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
+    before = world.files()
+    fake_claude.answers(*[_votes({"rep2024#1": "licensgebyr"})] * 3, _update(misfiled=("rep2024#1",)),
+                        *[_votes({"rep2024#1": "startgebyr"})] * 3, _update(misfiled=("rep2024#1",)))
+    step = world.consolidate(k=3)
+    assert (step.calls, step.failed) == (8, 1)
+    assert world.files() == before and "misfiled again (rep2024#1 in startgebyr)" in caplog.text

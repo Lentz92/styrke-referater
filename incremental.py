@@ -13,14 +13,18 @@ document at a time in date order, so later documents see the rules earlier ones 
    of the minutes around each quote. Claude writes the versions from the earliest touched one on (the insertion
    point); the versions before it stay byte-identical, which code checks, and no other rule is touched.
 
-A document is applied only when all its calls succeed: a failure leaves it, whole, for the next run.
+A document is applied only when all its calls succeed: a failure leaves it, whole, for the next run. What a rule file
+reflects is known by fingerprints of each decision's whole consolidation input (fingerprint), date and organ
+included, taken when the run starts: a decision whose document was dated anew is rewritten like a changed one.
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 import math
+import threading
 import time
 from collections import Counter
 from collections.abc import Callable, Iterator, Mapping, Sequence
@@ -44,8 +48,13 @@ VOTES = 3
 # Seconds one assign or update call may take before it is retried.
 ASSIGN_TIMEOUT = 600
 UPDATE_TIMEOUT = 1200
-# Words of the minutes around a quote that an update call gets.
-PASSAGE_WORDS = 150
+# The passage of the minutes an update call gets: words before a quote and after it, extended to the decision's vote
+# count (stemmer) when that stands within VOTE_REACH words after the quote; a vote count's numbers stand at most
+# VOTE_SPAN words apart ("31 stemmer for, 7 imod og 7 blanke").
+PASSAGE_BEFORE = 100
+PASSAGE_AFTER = 400
+VOTE_REACH = 2000
+VOTE_SPAN = 12
 # Latest decisions of a candidate rule that the assign prompt shows.
 HISTORY_SHOWN = 6
 
@@ -56,7 +65,18 @@ RETURNED = (ADDED, CHANGED, REWRITE)
 
 # --------------------------------------------------------------------------- prompts
 
-ASSIGN_SYSTEM = """\
+def _not_decisions() -> str:
+    """EXTRACT_SYSTEM's list of what is no decision, verbatim: a one-off is what the extraction should have left out."""
+    _, found, rest = analyze.EXTRACT_SYSTEM.partition("Do NOT extract:\n")
+    listed, found_end, _ = rest.partition("\n\nField rules:")
+    if not (found and found_end):
+        raise ValueError("EXTRACT_SYSTEM no longer has the list of what not to extract that the assign prompt quotes")
+    return listed
+
+
+NOT_DECISIONS = _not_decisions()
+
+ASSIGN_SYSTEM = f"""\
 You file new decisions from the minutes of Dansk Styrkeløft Forbund (DSF), the Danish powerlifting federation, into \
 an overview of its rules, which shows the version of each rule in force in each year. A rule is one thing of which \
 exactly one version is in force at a time; a later decision changes, confirms or abolishes it (e.g. "Licensgebyr": \
@@ -65,17 +85,21 @@ exactly one version is in force at a time; a later decision changes, confirms or
 The input lists new decisions from one document (<beslutninger>). Each has a ref, date (dato), organ, udfald, \
 handling, niveau, kategori, emne, tekst, optionally stemmer, forslagsstiller, gaelder_fra and gaelder_til, and \
 kandidater: the slugs of the existing rules whose words are closest to it, in no particular order. <regler> \
-describes each candidate rule: its title, category, the rule as it stands now (regel) and its latest decisions \
-(historik).
+describes each candidate rule: its title, the rule as it stands now (regel) and its latest decisions (historik).
 
 Answer for every decision with its ref and one choice:
 - the slug of one of its own candidates, when the decision is about that rule: it introduces, changes, confirms, \
-abolishes or proposes to change the same thing, whatever its wording, amount or category;
+abolishes or proposes to change the same thing, whatever its wording or amount. Prefer an existing rule when the \
+decision touches any part of what it regulates; when two candidates fit, pick the one whose current version it \
+changes or confirms;
 - "new", when it concerns a standing rule none of its candidates is about. Then give title: a short Danish title for \
 the new rule, without years or amounts, that would stay the same if the rule changed later, e.g. "Licensgebyr", \
 "Klubskifte", "Kvalifikationskrav EM, klassisk senior". Decisions of this document about the same new rule get \
 exactly the same title;
-- "one-off", when the decision is clearly not a standing rule (a one-off decision).
+- "one-off", only when the decision is one of the things the extraction should have left out:
+{NOT_DECISIONS}
+  These are not one-offs: a fee or rate set or confirmed with a budget, a rule for one season, year or competition \
+(one with gaelder_til), and proposals, also rejected or withdrawn ones; they belong to a rule.
 title is null unless the choice is "new".
 
 Decisions about different things must be separate rules even when their emne is similar. Decisions describing the \
@@ -136,8 +160,9 @@ kort, kort_regel), and a status:
 must still state the whole rule in force after it, and its effekt must still compare it with the version before it. \
 Keep what is still right.
 - removed: a decision that no longer exists, shown only so you can see what the later versions built on.
-<kilder> has the passage of the minutes around the quote of each new or changed decision (only the quote where the \
-passage could not be found); where the minutes and a decision's fields differ, the minutes decide.
+<kilder> has the passage of the minutes around the quote of each new or changed decision, from about 100 words \
+before it to its vote count or about 400 words after it (only the quote where the passage could not be found). When \
+the minutes contradict a decision's fields, keep the fields and say so in note.
 
 Return versioner: exactly the versions with status new, changed or rewrite, each once, in chronological order, each \
 with
@@ -150,6 +175,10 @@ or add a real caveat.
 {RULE_FIELDS}
 
 {PRECEDENCE}
+
+misfiled: the refs of decisions with status new that do not belong to this rule at all, because they are about \
+something it does not regulate; they are filed elsewhere, and you may leave them out of versioner. Almost always \
+empty, and always for a new rule (vigtig null).
 """
 
 UPDATE_SCHEMA = {
@@ -158,8 +187,9 @@ UPDATE_SCHEMA = {
         "versioner": analyze.CONSOLIDATE_SCHEMA["properties"]["regler"]["items"]["properties"]["versioner"],
         "vigtig": {"type": "boolean"},
         "note": {"type": ["string", "null"]},
+        "misfiled": {"type": "array", "items": {"type": "string"}},
     },
-    "required": ["versioner", "vigtig", "note"],
+    "required": ["versioner", "vigtig", "note", "misfiled"],
     "additionalProperties": False,
 }
 
@@ -188,6 +218,10 @@ class RuleBook:
             for rule in self.files[category]["regler"]:
                 yield category, rule
 
+    def raw_rules(self) -> list[dict]:
+        """The rules with their category, as analyze.load_rules gives them."""
+        return [{**rule, "kategori": category} for category, rule in self.rules()]
+
     def rule(self, category: str, slug: str) -> dict:
         return next(rule for rule in self.files[category]["regler"] if rule["slug"] == slug)
 
@@ -203,8 +237,10 @@ class RuleBook:
                 found.setdefault(ref, (category, None))
         return found
 
-    def one_offs(self) -> set[str]:
-        return {ref for stored in self.files.values() for ref in stored.get("udeladt", [])}
+    def held(self, category: str) -> set[str]:
+        """The refs a category's file reflects: those of its rules' versions and its one-offs."""
+        stored = self.files.get(category, {"regler": []})
+        return {v["ref"] for rule in stored["regler"] for v in rule["versioner"]} | set(stored.get("udeladt", []))
 
     def slugs(self) -> set[str]:
         return {rule["slug"] for _, rule in self.rules()}
@@ -227,6 +263,61 @@ def _category_order(category: str) -> int:
     return order.index(category) if category in order else len(order)
 
 
+# --------------------------------------------------------------------------- what the rule files reflect
+
+def fingerprint(d: Decision, organ: str) -> str:
+    """Everything a consolidation reads of a decision: its consolidation input, date and organ included, and its
+    category. decision_hash leaves the date and organ out (they belong to the document); a re-dated document must
+    still reach the rules it is in."""
+    text = json.dumps([analyze._consolidation_input(d, organ), d.kategori], ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(text.encode()).hexdigest()[:12]
+
+
+def organs(docs: Sequence[Doc]) -> dict[str, str]:
+    return {doc.id: doc.organ_label for doc in docs}
+
+
+def category_items(decisions: Sequence[Decision], home: Mapping[str, str],
+                   organ: Mapping[str, str]) -> dict[str, list[dict]]:
+    """Each home category's consolidation input, as analyze.consolidation_todo hashes it."""
+    items: dict[str, list[dict]] = {}
+    for d in decisions:
+        items.setdefault(home[d.ref], []).append(analyze._consolidation_input(d, organ[d.doc_id]))
+    return items
+
+
+@dataclass(frozen=True)
+class Known:
+    """What the rule files are known to reflect when a run starts."""
+    fingerprints: Mapping[str, str]  # ref -> the decision's fingerprint as the rule files reflect it
+    current: frozenset[str]  # categories whose input_hash matched their input then
+
+
+def known_inputs(decisions: Sequence[Decision], book: RuleBook, docs: Sequence[Doc]) -> Known:
+    """The fingerprint of every decision a category's file holds, as the files reflect it: all of them when the
+    category's input_hash matches its current input, with or without the decisions no file holds yet (the file
+    reflects exactly the others), else those the file stores (`inputs`, which incremental runs write). update.py takes
+    this before the extraction, so a decision whose date or organ changes in the extraction differs from it."""
+    organ = organs(docs)
+    by_ref = {d.ref: d for d in decisions}
+    items = category_items(decisions, analyze.home_categories(decisions, book.raw_rules()), organ)
+    held_anywhere = set().union(*(book.held(category) for category in book.files))
+    unfiled = by_ref.keys() - held_anywhere
+    found: dict[str, str] = {}
+    current = set()
+    for category, stored in book.files.items():
+        held = book.held(category) & by_ref.keys()
+        version = stored.get("version")
+        inputs = items.get(category, [])
+        if stored.get("input_hash") in (analyze._hash(inputs, version),
+                                        analyze._hash([i for i in inputs if i["ref"] not in unfiled], version)):
+            current.add(category)
+            found.update({ref: fingerprint(by_ref[ref], organ[by_ref[ref].doc_id]) for ref in held})
+        else:
+            found.update({ref: fp for ref, fp in stored.get("inputs", {}).items() if ref in held})
+    return Known(found, frozenset(current))
+
+
 # --------------------------------------------------------------------------- work queue
 
 @dataclass(frozen=True)
@@ -234,29 +325,37 @@ class DocumentWork:
     """What the rule files do not reflect yet of one document's decisions."""
     doc_id: str
     date: str | None
-    new: tuple[str, ...]  # in no rule and not a one-off, in reading order
-    changed: tuple[str, ...]  # in a rule whose version was built from other content (its fingerprint differs)
+    new: tuple[str, ...]  # in no rule and not a one-off of its category, in reading order
+    changed: tuple[str, ...]  # in a rule whose version was built from other content (dhash, or date or organ)
     retired: tuple[str, ...]  # named by a rule, the one-offs or ikke_tildelt, but no current decision any more
 
 
-def work_queue(decisions: Sequence[Decision], book: RuleBook, docs: Sequence[Doc]) -> list[DocumentWork]:
+def work_queue(decisions: Sequence[Decision], book: RuleBook, docs: Sequence[Doc],
+               known: Known | None = None) -> list[DocumentWork]:
     """The decisions the rule files do not reflect, per document, documents in date order (undated last).
 
-    A one-off stays one while its id lives: a re-extraction keeps an id only for the same decision (matching.py), and
-    the one-offs keep no fingerprint to tell otherwise. Retired ids belong to the document their id names."""
+    A decision is reflected by a rule version built from it (its fingerprint, dhash), or as a one-off of its own
+    category (udeladt; a one-off filed under another category's file is not one of its category). With `known`, a
+    decision whose fingerprint differs from the one the files reflect is queued too: in a rule as changed, as a
+    one-off as new. Retired ids belong to the document their id names."""
     live = {d.ref: d for d in decisions}
     versions = {v["ref"]: v for _, rule in book.rules() for v in rule["versioner"]}
-    one_offs = book.one_offs()
+    organ = organs(docs)
     by_doc: dict[str, dict[str, list[str]]] = {}
 
     def add(doc_id: str, kind: str, ref: str) -> None:
         by_doc.setdefault(doc_id, {"new": [], "changed": [], "retired": []})[kind].append(ref)
 
+    def moved(d: Decision) -> bool:
+        was = known.fingerprints.get(d.ref) if known is not None else None
+        return was is not None and was != fingerprint(d, organ[d.doc_id])
+
     for d in decisions:
-        if d.ref not in versions and d.ref not in one_offs:
+        if d.ref in versions:
+            if not analyze.version_matches(versions[d.ref], d) or moved(d):
+                add(d.doc_id, "changed", d.ref)
+        elif d.ref not in book.files.get(d.kategori, {}).get("udeladt", []) or moved(d):
             add(d.doc_id, "new", d.ref)
-        elif d.ref in versions and not analyze.version_matches(versions[d.ref], d):
-            add(d.doc_id, "changed", d.ref)
     for ref in sorted(set(book.holders()) - set(live)):
         add(ref.rpartition("#")[0], "retired", ref)
     dates = {doc.id: doc.date for doc in docs} | {d.doc_id: d.dato for d in decisions}
@@ -354,6 +453,13 @@ def _first(given: Sequence[Choice], target: str) -> int:
     return next(i for i, c in enumerate(given) if c.target == target)
 
 
+def namesake(book: RuleBook, title: str) -> str | None:
+    """The slug of the first live rule a new rule of this title would be named like: the same title, or its slug."""
+    wanted = matching.slugify(title)
+    return next((rule["slug"] for _, rule in book.rules()
+                 if matching.slugify(rule["titel"]) == wanted or rule["slug"] == wanted), None)
+
+
 def rotated(items: Sequence[str], vote: int) -> list[str]:
     """The candidates starting a third further on for each vote, so the votes do not read them in the same order."""
     k = vote * len(items) // VOTES
@@ -378,26 +484,30 @@ def assign_prompt(work: DocumentWork, refs: Sequence[str], offered: Mapping[str,
 
 
 def rule_view(category: str, rule: dict, by_ref: Mapping[str, Decision]) -> dict:
-    """A candidate rule as the assign prompt shows it: the rule now and its latest decisions."""
+    """A candidate rule as the assign prompt shows it: the rule now and its latest decisions. Its category is left
+    out: the voters should judge by what the rule regulates, and extraction categories are noisy."""
     profile = rule_profile(category, rule, by_ref)
     shown = ordered_versions(rule["versioner"], by_ref)[-HISTORY_SHOWN:]
     history = [f"{by_ref[v['ref']].dato or 'ukendt dato'}: {render.EFFEKT_LABELS[v['effekt']]}: "
                f"{v.get('kort') or by_ref[v['ref']].tekst}" for v in shown]
-    return {"slug": rule["slug"], "titel": rule["titel"], "kategori": category, "regel": profile.text,
-            "historik": history}
+    return {"slug": rule["slug"], "titel": rule["titel"], "regel": profile.text, "historik": history}
 
 
-def assign(work: DocumentWork, book: RuleBook, ctx: Context, steps: list[StepSummary]) -> dict[str, Choice] | None:
-    """The choice for each new decision of the document, or None when a call failed or was skipped, or the tie-break
-    gave no valid choice."""
-    refs = list(work.new)
+def assign(work: DocumentWork, refs: Sequence[str], book: RuleBook, ctx: Context, steps: list[StepSummary],
+           excluded: Mapping[str, set[str]] | None = None) -> dict[str, Choice] | None:
+    """The choice for each of these new decisions, or None when a call failed or was skipped, or the tie-break gave
+    no valid choice. `excluded`: rules an update call found a decision misfiled in, which it is not offered again.
+
+    A "new" rule named like a live rule (namesake) goes to the Opus tie-break with that rule offered: once filed, a
+    wrong new rule is never merged back."""
+    excluded = excluded or {}
     index = candidate_index(book, ctx.by_ref)
-    offered = {ref: index.top(query(ctx.by_ref[ref]), ctx.settings.k) for ref in refs}
+    offered = {ref: [slug for slug, _ in index.rank(query(ctx.by_ref[ref])) if slug not in excluded.get(ref, ())]
+               [:ctx.settings.k] for ref in refs}
 
     def ask(model: str, vote: int, asked: Sequence[str], label: str) -> tuple[dict, Usage, str]:
-        output, usage = analyze.ask_claude(ASSIGN_SYSTEM, assign_prompt(work, asked, offered, book, ctx, vote),
-                                           ASSIGN_SCHEMA, model=model, effort=None, timeout=ASSIGN_TIMEOUT,
-                                           budget=ctx.budget)
+        output, usage = ctx.ask(ASSIGN_SYSTEM, assign_prompt(work, asked, offered, book, ctx, vote), ASSIGN_SCHEMA,
+                                model=model, effort=None, timeout=ASSIGN_TIMEOUT)
         return output, usage, f"{work.doc_id} {label}"
 
     answers = _parallel(list(range(VOTES)), lambda vote: ask(ctx.settings.assign_model, vote, refs, f"vote {vote + 1}"),
@@ -405,6 +515,12 @@ def assign(work: DocumentWork, book: RuleBook, ctx: Context, steps: list[StepSum
     if answers is None:
         return None
     decided, open_ = tally([read_vote(answers[vote], offered) for vote in range(VOTES)], refs)
+    for ref, choice in list(decided.items()):
+        same = namesake(book, choice.title) if choice.target == NEW else None
+        if same is not None and same not in excluded.get(ref, ()):
+            offered[ref] = offered[ref] if same in offered[ref] else [*offered[ref], same]
+            del decided[ref]
+            open_.append(ref)
     if open_:
         tie = _parallel([0], lambda _: ask(ctx.settings.update_model, 0, open_, "tie-break"),
                         f"Tie-break {work.doc_id}", ctx, steps)
@@ -432,16 +548,28 @@ class Entry:
 
 
 @dataclass(frozen=True)
+class Plan:
+    """What happens to one rule's versions: those kept as they are, and, when a call is needed, what it sees."""
+    keep: tuple[dict, ...]  # the versions before the insertion point, in file order
+    entries: tuple[Entry, ...] | None  # chronological, removed versions where they stood; None: no call needed
+    point: int  # the insertion point: how many stored versions, in render's order, come before it
+
+
+@dataclass(frozen=True)
 class RuleUpdate:
-    """One update call: a rule (slug None for a new one), its versions as the call sees them, and the versions before
-    the insertion point, which are written back as they are."""
+    """One update call: a rule (slug None for a new one), its versions as the call sees them and as they are stored."""
     category: str
     slug: str | None
     title: str
     vigtig: bool | None
     note: str | None
-    entries: tuple[Entry, ...]  # chronological; removed versions where they stood
-    keep: tuple[dict, ...]  # the versions before the insertion point, in file order
+    plan: Plan
+    stored: tuple[dict, ...] = ()  # the rule's versions as stored, in file order
+    removed: frozenset[str] = frozenset()  # refs of versions whose decision is gone
+
+    @property
+    def entries(self) -> tuple[Entry, ...]:
+        return self.plan.entries or ()
 
     @property
     def expected(self) -> list[str]:
@@ -453,31 +581,32 @@ class RuleUpdate:
 
 
 def plan_update(versions: Sequence[dict], by_ref: Mapping[str, Decision], removed: set[str], changed: set[str],
-                new: Sequence[str]) -> tuple[list[dict], list[Entry] | None]:
-    """The versions kept as they are and, when a call is needed, what it sees.
+                new: Sequence[str], removed_dates: Mapping[str, str | None] | None = None) -> Plan:
+    """The insertion point of a rule's changes and what an update call sees.
 
     In render's order (render.version_key) the insertion point is the earliest of: a changed decision; where a new
-    decision sorts (after versions with the same dates, as if appended); the first version after a removed one, by
-    file order (a removed version leaves no decision to date it; file order is render's order for all but a few
-    rules). From there on every version is rewritten. A removed version with nothing after it needs no call: the
-    versions before it never depended on it.
+    decision sorts (after versions with the same dates, as if appended); where a removed one stood, by the date of
+    its document (`removed_dates`; it has no decision left to date it). From there on every version is rewritten. A
+    removed version with nothing after it needs no call: the versions before it never depended on it.
     """
+    removed_dates = removed_dates or {}
     live = [(i, v) for i, v in enumerate(versions) if v["ref"] not in removed]
     order = sorted(live, key=lambda iv: render.version_key(by_ref[iv[1]["ref"]], iv[0]))
     rank = {i: r for r, (i, _) in enumerate(order)}
+    keys = [render.version_key(by_ref[v["ref"]], i) for i, v in order]
     removed_at: dict[int, list[dict]] = {}
     for j, v in enumerate(versions):
         if v["ref"] in removed:
-            removed_at.setdefault(min((rank[i] for i, _ in live if i > j), default=len(order)), []).append(v)
+            day = removed_dates.get(v["ref"]) or ""
+            removed_at.setdefault(sum(1 for key in keys if key < (day, day, j)), []).append(v)
     new_at: dict[int, list[str]] = {}
-    for position, ref in sorted((_position(ref, order, by_ref), ref) for ref in new):
+    for position, ref in sorted((_position(ref, keys, by_ref), ref) for ref in new):
         new_at.setdefault(position, []).append(ref)
     starts = [r for r in removed_at if r < len(order)] + [rank[i] for i, v in live if v["ref"] in changed]
     starts += list(new_at)
     if not starts:
-        return [v for _, v in live], None
+        return Plan(tuple(v for _, v in live), None, len(order))
     p = min(starts)
-    keep = [v for i, v in live if rank[i] < p]
     entries: list[Entry] = []
     for r in range(len(order) + 1):
         entries += [Entry(v["ref"], REMOVED, v) for v in removed_at.get(r, [])]
@@ -486,13 +615,13 @@ def plan_update(versions: Sequence[dict], by_ref: Mapping[str, Decision], remove
             v = order[r][1]
             status = KEEP if r < p else CHANGED if v["ref"] in changed else REWRITE
             entries.append(Entry(v["ref"], status, v))
-    return keep, entries
+    return Plan(tuple(v for i, v in live if rank[i] < p), tuple(entries), p)
 
 
-def _position(ref: str, order: Sequence[tuple[int, dict]], by_ref: Mapping[str, Decision]) -> int:
+def _position(ref: str, keys: Sequence[tuple], by_ref: Mapping[str, Decision]) -> int:
     """How many versions sort before a new decision: those with the same dates or earlier ones."""
     key = render.version_key(by_ref[ref], math.inf)
-    return sum(1 for i, v in order if render.version_key(by_ref[v["ref"]], i) <= key)
+    return sum(1 for k in keys if k <= key)
 
 
 def update_prompt(update: RuleUpdate, ctx: Context, passages: Mapping[str, dict]) -> str:
@@ -518,7 +647,8 @@ class UpdateRejected(ValueError):
 def merge(update: RuleUpdate, output: dict, by_ref: Mapping[str, Decision], stamp: dict) -> list[dict]:
     """The rule's versions after an update answer: the kept ones as they were, then Claude's, sorted as render shows
     them (Claude's order on equal dates), each with its proposal effect fixed by its outcome, its fingerprint and
-    `updated` provenance. Raises UpdateRejected unless the answer has exactly the expected versions."""
+    `updated` provenance. Raises UpdateRejected unless the answer has exactly the expected versions, and fails when
+    the versions before the insertion point, in render's order, are not those stored."""
     got = [v["ref"] for v in output["versioner"]]
     expected = update.expected
     if sorted(got) != sorted(expected):
@@ -530,9 +660,11 @@ def merge(update: RuleUpdate, output: dict, by_ref: Mapping[str, Decision], stam
     written = [{"ref": v["ref"], "effekt": PROPOSAL_EFFECT.get(by_ref[v["ref"]].udfald, v["effekt"]),
                 "tekst": v["tekst"], "kort": v["kort"], "kort_regel": v["kort_regel"],
                 "dhash": decision_hash(by_ref[v["ref"]]), "updated": stamp} for _, v in tail]
-    versions = [*update.keep, *written]
-    if _dump(versions[:len(update.keep)]) != _dump(update.keep):
-        raise AssertionError(f"{update.name}: versions before the insertion point changed")
+    versions = [*update.plan.keep, *written]
+    stored = [v for v in update.stored if v["ref"] not in update.removed]
+    point = update.plan.point
+    if _dump(ordered_versions(versions, by_ref)[:point]) != _dump(ordered_versions(stored, by_ref)[:point]):
+        raise AssertionError(f"{update.name}: the versions before the insertion point are not those stored")
     return versions
 
 
@@ -547,19 +679,29 @@ class Updated:
     note: str | None
 
 
-def run_update(update: RuleUpdate, ctx: Context, passages: Mapping[str, dict]) -> tuple[Updated, Usage]:
+@dataclass(frozen=True)
+class Misfiled:
+    """An update call found new decisions that do not belong to its rule at all."""
+    refs: tuple[str, ...]
+
+
+def run_update(update: RuleUpdate, ctx: Context, passages: Mapping[str, dict]) -> tuple[Updated | Misfiled, Usage]:
     """One update call, asked once more when code rejects its answer; a second rejection fails the call (the
-    document is then left for the next run)."""
+    document is then left for the next run). Misfiled new decisions of an existing rule come back as Misfiled."""
     usage = Usage()
     error: UpdateRejected | None = None
+    added = {e.ref for e in update.entries if e.status == ADDED}
     for attempt in (1, 2):
         try:
-            output, spent = analyze.ask_claude(UPDATE_SYSTEM, update_prompt(update, ctx, passages), UPDATE_SCHEMA,
-                                               model=ctx.settings.update_model, effort=ctx.settings.update_effort,
-                                               timeout=UPDATE_TIMEOUT, budget=ctx.budget)
+            output, spent = ctx.ask(UPDATE_SYSTEM, update_prompt(update, ctx, passages), UPDATE_SCHEMA,
+                                    model=ctx.settings.update_model, effort=ctx.settings.update_effort,
+                                    timeout=UPDATE_TIMEOUT)
         except ClaudeError as exc:
             raise ClaudeError(str(exc), usage + exc.usage) from exc
         usage += spent
+        misfiled = tuple(ref for ref in output.get("misfiled", []) if ref in added) if update.slug else ()
+        if misfiled:
+            return Misfiled(misfiled), usage
         stamp = {"model": spent.answered_by, "prompt": analyze.prompt_hash(UPDATE_SYSTEM, UPDATE_SCHEMA),
                  "time": ctx.time}
         try:
@@ -573,16 +715,45 @@ def run_update(update: RuleUpdate, ctx: Context, passages: Mapping[str, dict]) -
     raise ClaudeError(f"answer rejected twice: {error}", usage)
 
 
-def passage(text: str, quote: str, page: int | None, context: int = PASSAGE_WORDS) -> str | None:
-    """The document's own text from `context` words before the quote to `context` words after it; None when the
-    quote is not in the document."""
+def passage(text: str, quote: str, page: int | None, stemmer: str | None = None) -> str | None:
+    """The document's own text from PASSAGE_BEFORE words before the quote to PASSAGE_AFTER words after it, or on to
+    the decision's vote count when that stands further on (minutes often state the vote after the debate); None when
+    the quote is not in the document."""
     words = analyze.DocWords.of(text)
     start = analyze.locate_quote(quote, words, page)
     if start is None:
         return None
     spans = analyze.word_spans(text)
-    first, last = max(start - context, 0), min(start + len(analyze._words(quote)) + context, len(spans)) - 1
+    after = start + len(analyze._words(quote))
+    end = max(after + PASSAGE_AFTER, _vote_end(words.words, stemmer, after) or 0)
+    first, last = max(start - PASSAGE_BEFORE, 0), min(end, len(spans)) - 1
     return text[spans[first][0]:spans[last][1]]
+
+
+def _vote_end(words: Sequence[str], stemmer: str | None, after: int) -> int | None:
+    """The word offset just after the decision's vote count in the document, looked for from `after` on: its numbers
+    (or, without numbers, its words) in order, each at most VOTE_SPAN words after the one before, and then the words
+    the vote count ends with ("2 blanke"); None when not found."""
+    tokens = analyze._words(stemmer or "")
+    numbers = [t for t in tokens if t.isdigit()]
+    wanted = numbers or tokens
+    if not wanted:
+        return None
+    trailing = tokens[len(tokens) - tokens[::-1].index(numbers[-1]):] if numbers else []
+    for i in range(after, min(after + VOTE_REACH, len(words))):
+        if words[i] == wanted[0] and (at := _follow(words, i, wanted[1:])) is not None:
+            return (_follow(words, at, trailing) or at) + 1
+    return None
+
+
+def _follow(words: Sequence[str], at: int, tokens: Sequence[str]) -> int | None:
+    """The offset of the last of `tokens` found in order after `at`, each at most VOTE_SPAN words after the one
+    before; None when one is missing."""
+    for token in tokens:
+        at = next((j for j in range(at + 1, min(at + 1 + VOTE_SPAN, len(words))) if words[j] == token), None)
+        if at is None:
+            return None
+    return at
 
 
 def passages(refs: Sequence[str], ctx: Context) -> dict[str, dict]:
@@ -595,7 +766,7 @@ def passages(refs: Sequence[str], ctx: Context) -> dict[str, dict]:
         if d.doc_id not in texts:
             texts[d.doc_id] = _text(ctx.docs.get(d.doc_id))
         text = texts[d.doc_id]
-        located = passage(text, d.citat, d.side) if text is not None else None
+        located = passage(text, d.citat, d.side, d.stemmer) if text is not None else None
         found[ref] = {"ref": ref, "dokument": d.doc_id, "side": d.side,
                       **({"passage": located} if located else {"passage": None, "citat": d.citat})}
     return found
@@ -624,23 +795,53 @@ class Settings:
 
 @dataclass
 class Context:
-    """What every document of a run shares."""
+    """What every document of a run shares, and what the run has done so far."""
     settings: Settings
     budget: RunBudget
     by_ref: dict[str, Decision]
     docs: dict[str, Doc]
     time: str  # the run's start, for the `updated` provenance
+    known: Known  # what the rule files reflected when the run started
+    worked: frozenset[str] = frozenset()  # categories with queued work when the run started
+    processed: set[str] = field(default_factory=set)  # refs this run filed or rewrote, at their current fingerprint
+    calls: int = 0  # Claude calls asked
+    _lock: threading.Lock = field(default_factory=threading.Lock)
 
     def organ(self, doc_id: str) -> str:
         doc = self.docs.get(doc_id)
         return doc.organ_label if doc else "?"
 
+    def fingerprint(self, ref: str) -> str:
+        d = self.by_ref[ref]
+        return fingerprint(d, self.organ(d.doc_id))
 
-@dataclass
-class Touched:
-    """An existing rule a document touches: the new decisions filed into it (its gone and changed ones follow from
-    the rule itself)."""
-    new: list[str] = field(default_factory=list)
+    def verified(self, ref: str) -> bool:
+        """Whether the rule files reflect the decision as it is now: this run filed or rewrote it, or it is
+        unchanged since the run started."""
+        return ref in self.processed or self.known.fingerprints.get(ref) == self.fingerprint(ref)
+
+    def inputs(self, book: RuleBook, category: str) -> dict[str, str]:
+        """The fingerprints a category's file records (`inputs`): those of the decisions it reflects as they are."""
+        return {ref: self.fingerprint(ref) for ref in sorted(book.held(category))
+                if ref in self.by_ref and self.verified(ref)}
+
+    def document_date(self, doc_id: str) -> str | None:
+        dates = [d.dato for d in self.by_ref.values() if d.doc_id == doc_id and d.dato]
+        doc = self.docs.get(doc_id)
+        return dates[0] if dates else doc.date if doc else None
+
+    def reflect(self, refs: set[str]) -> None:
+        """The rule files now reflect these decisions as they are: they are verified, and no longer queued as moved."""
+        self.processed |= refs
+        self.known = Known({**self.known.fingerprints, **{ref: self.fingerprint(ref) for ref in refs}},
+                           self.known.current)
+
+    def ask(self, system: str, prompt: str, schema: dict, *, model: str, effort: str | None,
+            timeout: float) -> tuple[dict, Usage]:
+        with self._lock:
+            self.calls += 1
+        return analyze.ask_claude(system, prompt, schema, model=model, effort=effort, timeout=timeout,
+                                  budget=self.budget)
 
 
 def _parallel(jobs: list, fn: Callable[[object], tuple], label: str, ctx: Context,
@@ -659,99 +860,148 @@ def _parallel(jobs: list, fn: Callable[[object], tuple], label: str, ctx: Contex
     return results if len(results) == len(jobs) else None
 
 
-def process_document(work: DocumentWork, book: RuleBook, ctx: Context, steps: list[StepSummary]) -> str | None:
-    """Assign, update and write one document's work; a summary, or None when it was left for the next run (nothing
-    of it is written then).
+@dataclass(frozen=True)
+class DocumentPlan:
+    """What one document does to the rules, given the choices for its new decisions."""
+    updates: tuple[RuleUpdate, ...]  # one call each
+    kept: Mapping[tuple[str, str], tuple[dict, ...]]  # rules that only lose versions at their end; none left: retired
+    one_offs: tuple[str, ...]
+    new_rules: int
 
-    Its retired decisions leave their rules, its changed ones are rewritten where they stand, and its new ones are
-    filed by vote; every rule this touches is then updated by one call, or, when it only lost versions at its end,
-    by code."""
+
+def plan_document(work: DocumentWork, book: RuleBook, ctx: Context, choices: Mapping[str, Choice]) -> DocumentPlan:
+    """The update calls and code edits for a document. Every rule it touches is brought fully up to date, also where
+    another document's decision is gone or changed (that document's work then no longer lists it). New decisions
+    that chose the same new title (by slug) form one new rule, in the first one's category."""
     holders = book.holders()
-    touched: dict[tuple[str, str], Touched] = {}
+    touched: dict[tuple[str, str], list[str]] = {}
     for ref in (*work.retired, *work.changed):
         category, slug = holders[ref]
         if slug is not None:
-            touched.setdefault((category, slug), Touched())
-
-    choices = assign(work, book, ctx, steps) if work.new else {}
-    if choices is None:
-        return None
-    new_rules: dict[tuple[str, str], tuple[str, list[str]]] = {}  # (category, slugified title) -> (title, refs)
+            touched.setdefault((category, slug), [])
+    new_rules: dict[str, tuple[str, str, list[str]]] = {}  # slugified title -> (category, title, refs)
     one_offs: list[str] = []
     for ref in work.new:
         choice = choices[ref]
         if choice.target == ONE_OFF:
             one_offs.append(ref)
         elif choice.target == NEW:
-            category = ctx.by_ref[ref].kategori
-            new_rules.setdefault((category, matching.slugify(choice.title)), (choice.title, []))[1].append(ref)
+            new_rules.setdefault(matching.slugify(choice.title), (ctx.by_ref[ref].kategori, choice.title, []))[2] \
+                .append(ref)
         else:
-            touched.setdefault(_locate(book, choice.target), Touched()).new.append(ref)
-
+            touched.setdefault(_locate(book, choice.target), []).append(ref)
     updates: list[RuleUpdate] = []
-    kept: dict[tuple[str, str], list[dict]] = {}  # rules that only lose a version at their end
-    for (category, slug), change in sorted(touched.items()):
+    kept: dict[tuple[str, str], tuple[dict, ...]] = {}
+    for (category, slug), new in sorted(touched.items()):
         rule = book.rule(category, slug)
-        # A touched rule is brought fully up to date, also where another document's decision is gone or changed
-        # (that document's work then no longer lists it).
         removed = {v["ref"] for v in rule["versioner"] if v["ref"] not in ctx.by_ref}
-        changed = {v["ref"] for v in rule["versioner"]
-                   if v["ref"] in ctx.by_ref and not analyze.version_matches(v, ctx.by_ref[v["ref"]])}
-        keep, entries = plan_update(rule["versioner"], ctx.by_ref, removed, changed, change.new)
-        if entries is None:
-            kept[category, slug] = keep
+        changed = {v["ref"] for v in rule["versioner"] if v["ref"] in ctx.by_ref and (
+            not analyze.version_matches(v, ctx.by_ref[v["ref"]]) or _moved(v["ref"], ctx))}
+        plan = plan_update(rule["versioner"], ctx.by_ref, removed, changed, new,
+                           {ref: ctx.document_date(ref.rpartition("#")[0]) for ref in removed})
+        if plan.entries is None:
+            kept[category, slug] = plan.keep
         else:
-            updates.append(RuleUpdate(category, slug, rule["titel"], rule.get("vigtig", True), rule["note"],
-                                      tuple(entries), tuple(keep)))
-    for (category, _), (title, refs) in sorted(new_rules.items()):
-        _, entries = plan_update([], ctx.by_ref, set(), set(), refs)
-        updates.append(RuleUpdate(category, None, title, None, None, tuple(entries), ()))
+            updates.append(RuleUpdate(category, slug, rule["titel"], rule.get("vigtig", True), rule["note"], plan,
+                                      tuple(rule["versioner"]), frozenset(removed)))
+    for _, (category, title, refs) in sorted(new_rules.items()):
+        updates.append(RuleUpdate(category, None, title, None, None, plan_update([], ctx.by_ref, set(), set(), refs)))
+    return DocumentPlan(tuple(updates), kept, tuple(one_offs), len(new_rules))
 
-    needed = [e.ref for u in updates for e in u.entries if e.status in (ADDED, CHANGED)]
-    sources = passages(needed, ctx)
-    results = _parallel(list(range(len(updates))), lambda i: (*run_update(updates[i], ctx, sources),
-                                                               f"{updates[i].name}: updated"),
-                        f"Update {work.doc_id}", ctx, steps) if updates else {}
-    if results is None:
-        return None
-    _apply(work, book, ctx, kept, [(updates[i], results[i]) for i in range(len(updates))], one_offs)
-    filed = len(work.new) - len(one_offs) - sum(len(refs) for _, refs in new_rules.values())
-    return (f"{work.doc_id}: {len(work.new)} new ({filed} into existing rules, {len(new_rules)} new rules, "
-            f"{len(one_offs)} one-offs), {len(work.changed)} changed, {len(work.retired)} retired; {len(updates)} "
-            f"rules updated, {sum(1 for keep in kept.values() if not keep)} retired")
+
+def _moved(ref: str, ctx: Context) -> bool:
+    """The decision's date or organ (or other input) changed since the run started: it is rewritten like a changed
+    one."""
+    was = ctx.known.fingerprints.get(ref)
+    return was is not None and was != ctx.fingerprint(ref) and ref not in ctx.processed
 
 
 def _locate(book: RuleBook, slug: str) -> tuple[str, str]:
     return next((category, rule["slug"]) for category, rule in book.rules() if rule["slug"] == slug)
 
 
-def _apply(work: DocumentWork, book: RuleBook, ctx: Context, kept: Mapping[tuple[str, str], list[dict]],
-           results: Sequence[tuple[RuleUpdate, Updated]], one_offs: Sequence[str]) -> None:
-    """Write one document's edits: rule versions, new and retired rules, one-offs and the slug history.
+def run_updates(plan: DocumentPlan, answered: Sequence[tuple[RuleUpdate, Updated]], ctx: Context,
+                steps: list[StepSummary], label: str) -> list[Updated | Misfiled] | None:
+    """Each planned update's answer: one asked before for exactly the same update is reused, the others are asked."""
+    reused = {i: next(result for prev, result in answered if prev == u) for i, u in enumerate(plan.updates)
+              if any(prev == u for prev, _ in answered)}
+    todo = [i for i in range(len(plan.updates)) if i not in reused]
+    sources = passages([e.ref for i in todo for e in plan.updates[i].entries if e.status in (ADDED, CHANGED)], ctx)
+    results = _parallel(todo, lambda i: (*run_update(plan.updates[i], ctx, sources), f"{plan.updates[i].name}: done"),
+                        label, ctx, steps) if todo else {}
+    if results is None:
+        return None
+    return [reused[i] if i in reused else results[i] for i in range(len(plan.updates))]
+
+
+def process_document(work: DocumentWork, book: RuleBook, ctx: Context, steps: list[StepSummary]) -> str | None:
+    """Assign, update and write one document's work; a summary, or None when it was left for the next run (nothing
+    of it is written then).
+
+    Its retired decisions leave their rules, its changed ones are rewritten where they stand, and its new ones are
+    filed by vote; every rule this touches is then updated by one call, or, when it only lost versions at its end,
+    by code. A new decision an update call finds misfiled is voted on once more without that rule; misfiled again,
+    the document is left for the next run."""
+    choices = assign(work, work.new, book, ctx, steps) if work.new else {}
+    if choices is None:
+        return None
+    excluded: dict[str, set[str]] = {}
+    answered: list[tuple[RuleUpdate, Updated]] = []
+    for attempt in (1, 2):
+        plan = plan_document(work, book, ctx, choices)
+        results = run_updates(plan, answered, ctx, steps, f"Update {work.doc_id}")
+        if results is None:
+            return None
+        misfiled = {ref: u.slug for u, r in zip(plan.updates, results) if isinstance(r, Misfiled) for ref in r.refs}
+        if not misfiled:
+            _apply(work, book, ctx, plan, [r for r in results if isinstance(r, Updated)])
+            filed = len(work.new) - len(plan.one_offs) - sum(len(u.expected) for u in plan.updates if u.slug is None)
+            return (f"{work.doc_id}: {len(work.new)} new ({filed} into existing rules, {plan.new_rules} new rules, "
+                    f"{len(plan.one_offs)} one-offs), {len(work.changed)} changed, {len(work.retired)} retired; "
+                    f"{len(plan.updates)} rules updated, {sum(1 for keep in plan.kept.values() if not keep)} retired")
+        listed = ", ".join(f"{ref} in {slug}" for ref, slug in sorted(misfiled.items()))
+        if attempt == 2:
+            log.error("%s: misfiled again (%s); the document is left for the next run", work.doc_id, listed)
+            return None
+        log.warning("%s: misfiled (%s); voting on them again without those rules", work.doc_id, listed)
+        answered += [(u, r) for u, r in zip(plan.updates, results) if isinstance(r, Updated)]
+        for ref, slug in misfiled.items():
+            excluded.setdefault(ref, set()).add(slug)
+        again = assign(work, sorted(misfiled), book, ctx, steps, excluded)
+        if again is None:
+            return None
+        choices = {**choices, **again}
+    return None
+
+
+def _apply(work: DocumentWork, book: RuleBook, ctx: Context, plan: DocumentPlan, results: Sequence[Updated]) -> None:
+    """Write one document's edits: rule versions, new and retired rules, one-offs, the files' fingerprints of what they
+    reflect (`inputs`) and the slug history.
 
     As in analyze._consolidate_one, the slug history is written first with revived slugs still in it, so whichever
-    write fails, every slug stays taken."""
+    write fails, every slug stays taken. Slugs of rules retired here are taken before new rules get theirs."""
     changed: set[str] = set()
     with analyze._SLUGS_LOCK:
         registry = analyze.load_slugs()
         former: dict[str, FormerSlug] = {}
-        for (category, slug), keep in kept.items():
+        for (category, slug), keep in plan.kept.items():
             rule = book.rule(category, slug)
             if keep:
-                rule["versioner"] = keep
+                rule["versioner"] = list(keep)
             else:  # every version is gone: the rule is retired, and resolve_slugs leads its slug on
                 former[slug] = FormerSlug(category, rule["titel"], analyze._refs(rule))
                 book.files[category]["regler"].remove(rule)
             changed.add(category)
-        for u, updated in results:
+        for u, updated in zip(plan.updates, results):
             if u.slug is not None:
                 rule = book.rule(u.category, u.slug)
                 rule["versioner"], rule["note"] = updated.versions, updated.note
                 changed.add(u.category)
-        new = [(u, updated) for u, updated in results if u.slug is None]
-        plan = matching.carry_slugs([], [RuleRefs(u.title, frozenset(v["ref"] for v in updated.versions))
-                                         for u, updated in new], book.slugs() | registry.taken(), registry.former())
-        for (u, updated), slug in zip(new, plan.slugs):
+        history = registry.with_former(former)
+        new = [(u, updated) for u, updated in zip(plan.updates, results) if u.slug is None]
+        slugs = matching.carry_slugs([], [RuleRefs(u.title, frozenset(v["ref"] for v in updated.versions))
+                                          for u, updated in new], book.slugs() | history.taken(), history.former())
+        for (u, updated), slug in zip(new, slugs.slugs):
             book.file(u.category, ctx.settings.update_model)["regler"].append(
                 {"titel": u.title, "slug": slug, "vigtig": updated.vigtig, "note": updated.note,
                  "versioner": updated.versions})
@@ -763,41 +1013,49 @@ def _apply(work: DocumentWork, book: RuleBook, ctx: Context, kept: Mapping[tuple
                 if remaining != stored.get(key, []):
                     stored[key] = remaining
                     changed.add(category)
-        for ref in one_offs:
+        for ref in plan.one_offs:
             category = ctx.by_ref[ref].kategori
             book.file(category, ctx.settings.update_model)["udeladt"].append(ref)
             changed.add(category)
-        history = registry.with_former(former)
+        ctx.reflect({ref for u in plan.updates for ref in u.expected} | set(plan.one_offs))
+        for category in changed:
+            book.files[category]["inputs"] = ctx.inputs(book, category)
         analyze._save_slugs(history)
         book.write(changed)
-        if plan.revived:
-            analyze._save_slugs(history.without(plan.revived))
+        if slugs.revived:
+            analyze._save_slugs(history.without(slugs.revived))
 
 
 # --------------------------------------------------------------------------- the step
 
 def consolidate(docs: list[Doc], decisions: list[Decision], settings: Settings, budget: RunBudget | None = None,
-                documents: set[str] | None = None, now: datetime | None = None) -> StepSummary:
+                documents: set[str] | None = None, now: datetime | None = None,
+                known: Known | None = None) -> StepSummary:
     """Bring the rule files up to date with the decisions, one document at a time; `documents` limits the work to
-    those documents (update.py --only).
+    those documents (update.py --only). `known`: what the rule files reflected when the run started (known_inputs,
+    before the extraction); taken now when not given.
 
     A document whose call fails or is skipped is left whole for the next run, and later documents go on. Categories
     whose decisions are then all reflected get the input_hash of their current input (settle), so the checks and
-    `full` see them as consolidated; the slug history is resolved as after a full consolidation."""
+    `full` see them as consolidated; the slug history is resolved as after a full consolidation. The step counts
+    Claude calls; failed and skipped also count documents left for a reason other than a call (a tie-break without a
+    valid answer, misfiled twice, the cost limit reached before they started)."""
     started = time.monotonic()
     budget = budget if budget is not None else RunBudget()
     book = RuleBook.load()
+    ctx = Context(settings, budget, {d.ref: d for d in decisions}, {doc.id: doc for doc in docs},
+                  (now or datetime.now(timezone.utc)).isoformat(timespec="seconds"),
+                  known if known is not None else known_inputs(decisions, book, docs))
 
     def pending(attempted: set[str]) -> list[DocumentWork]:
         """The queue as the rule files stand now: a document's update may have settled another's work."""
-        return [work for work in work_queue(decisions, book, docs)
+        return [work for work in work_queue(decisions, book, docs, ctx.known)
                 if work.doc_id not in attempted and (documents is None or work.doc_id in documents)]
 
     queue = pending(set())
+    ctx.worked = queue_categories(queue, decisions, book)
     log.info("Consolidate (incremental): %d documents with %d decisions to file, %d changed, %d retired", len(queue),
              sum(len(w.new) for w in queue), sum(len(w.changed) for w in queue), sum(len(w.retired) for w in queue))
-    ctx = Context(settings, budget, {d.ref: d for d in decisions}, {doc.id: doc for doc in docs},
-                  (now or datetime.now(timezone.utc)).isoformat(timespec="seconds"))
     steps: list[StepSummary] = []
     attempted: set[str] = set()
     done = failed = skipped = 0
@@ -816,48 +1074,52 @@ def consolidate(docs: list[Doc], decisions: list[Decision], settings: Settings, 
                 book = RuleBook.load()  # drop whatever the failure left half-edited in memory
                 message, failed = None, failed + 1
             else:
-                if message is None and any(step.failed for step in steps[before:]):
-                    failed += 1
-                elif message is None:
-                    skipped += 1
+                if message is None and not any(step.failed or step.skipped for step in steps[before:]):
+                    failed += 1  # left without a failed call: no valid tie-break, or misfiled twice
             if message is None:
                 log.warning("Consolidate [%d] %s is left for the next run", n, work.doc_id)
             else:
                 done += 1
                 log.info("Consolidate [%d] %s", n, message)
         queue = pending(attempted)
-    settled = settle(book, decisions, docs, settings.update_model)
+    settled = settle(book, decisions, docs, ctx)
     if settled:
         log.info("Consolidate: %s reflect all their decisions again (input_hash updated)", ", ".join(sorted(settled)))
     analyze.resolve_slugs(ctx.by_ref)
     usage = sum((step.usage for step in steps), Usage())
-    log.info("Consolidate (incremental) done: %d documents filed, %d failed, %d left (%.2f USD at API list price)",
-             done, failed, skipped, usage.cost_usd)
-    return StepSummary("Consolidate", done + failed, failed, skipped, usage, time.monotonic() - started)
+    log.info("Consolidate (incremental) done: %d of %d documents filed, %d Claude calls (%.2f USD at API list price)",
+             done, len(attempted), ctx.calls, usage.cost_usd)
+    return StepSummary("Consolidate", ctx.calls, failed + sum(step.failed for step in steps),
+                       skipped + sum(step.skipped for step in steps), usage, time.monotonic() - started)
 
 
-def settle(book: RuleBook, decisions: Sequence[Decision], docs: Sequence[Doc], model: str) -> set[str]:
+def settle(book: RuleBook, decisions: Sequence[Decision], docs: Sequence[Doc], ctx: Context) -> set[str]:
     """Give each category whose decisions the rule files all reflect the input_hash of its current input, under the
-    version its file was written with, and write it; returns the categories written.
+    version its file was written with, and write it with the fingerprints it reflects; returns the categories written.
 
     input_hash then keeps meaning "this file reflects these decisions": a run of `full` redoes nothing an incremental
     run finished (but still everything after a new CONSOLIDATE_VERSION), and the checks treat only categories with
-    work left as pending (checks.Data.pending). A category whose decisions all went to other categories' rules gets an
-    empty file, so `full` does not take it for lost."""
-    open_ = queue_categories(work_queue(decisions, book, docs), decisions, book)
-    organ = {doc.id: doc.organ_label for doc in docs}
-    items: dict[str, list[dict]] = {}
-    for d in decisions:
-        items.setdefault(d.kategori, []).append(analyze._consolidation_input(d, organ[d.doc_id]))
+    work left as pending (checks.Data.pending). A category is never settled while one of its decisions may have
+    changed unseen: its input_hash was stale when the run started and nothing was queued for it, or a decision it
+    holds has no known fingerprint. A category whose decisions all went to other categories' rules gets an empty file,
+    so `full` does not take it for lost."""
+    open_ = queue_categories(work_queue(decisions, book, docs, ctx.known), decisions, book)
+    items = category_items(decisions, analyze.home_categories(decisions, book.raw_rules()), organs(docs))
     for category in items.keys() - book.files.keys() - open_:
-        book.file(category, model)
+        book.file(category, ctx.settings.update_model)
     changed = set()
     for category, stored in book.files.items():
-        if category in open_:
-            continue
         input_hash = analyze._hash(items.get(category, []), stored.get("version"))
-        if stored.get("input_hash") != input_hash:
-            stored["input_hash"] = input_hash
-            changed.add(category)
+        if category in open_ or stored.get("input_hash") == input_hash:
+            continue
+        unseen = sorted(ref for ref in book.held(category) if ref in ctx.by_ref and not ctx.verified(ref))
+        if category not in ctx.known.current and category not in ctx.worked or unseen:
+            log.warning("Consolidate: %s may reflect decisions that changed unseen (%s); it stays to be consolidated: "
+                        "run `update.py --consolidate-mode full` for it", category,
+                        f"no recorded input for {', '.join(unseen[:5])}" if unseen else
+                        "its input changed before this run, and nothing was queued for it")
+            continue
+        stored["input_hash"], stored["inputs"] = input_hash, ctx.inputs(book, category)
+        changed.add(category)
     book.write(changed)
     return changed

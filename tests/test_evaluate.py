@@ -910,8 +910,13 @@ def test_candidate_recall_hides_each_decision_from_its_rule_and_picks_the_smalle
     report = (evaluate.EVAL_DIR / "reports" / "candidate-recall.md").read_text()
     # Licensgebyr's three decisions and Startgebyr's two; the two one-decision rules are left out.
     assert "| **all** | 5 | 100.0% |" in report and "2 decisions are their rule's only one" in report
-    assert "Chosen K: 3" in report
-    assert _runs_log(corpus)[-1]["k"] == 3
+    assert "Chosen K: 3" in report and "| @3 relabelled |" in report
+    assert _runs_log(corpus)[-1]["k"] == 3 and set(_runs_log(corpus)[-1]["relabelled"]) == {"@3", "@5", "@8", "@10",
+                                                                                              "@15"}
+    # Relabelled, the decision ranks with another category's boost: here every rule is okonomi's, so it still finds
+    # its rule among the three.
+    hidden = evaluate.hide_one_ranks(analyze.load_rules(), analyze.load_decisions(corpus.docs))
+    assert evaluate.relabel("okonomi") == "antidoping" and all(h.relabelled <= 3 for h in hidden)
 
 
 def test_recall_at_k_and_the_chosen_k():
@@ -923,12 +928,13 @@ def test_recall_at_k_and_the_chosen_k():
 
 def test_a_holdout_takes_the_newest_documents_then_seeded_draws_from_the_rest(corpus):
     decisions = analyze.load_decisions(corpus.docs)
-    assert evaluate.holdout_documents("newest:2", decisions, 1) == ["rep2024", "rep2019"]
-    drawn = evaluate.holdout_documents("newest:1,random:2", decisions, 7)
-    assert drawn[0] == "rep2024" and len(set(drawn)) == 3
-    assert drawn == evaluate.holdout_documents("newest:1,random:2", decisions, 7)
+    assert evaluate.holdout_parts("newest:2", decisions, 1) == (("newest:2", ("rep2024", "rep2019")),)
+    (newest, drawn) = evaluate.holdout_parts("newest:1,random:2", decisions, 7)
+    assert newest == ("newest:1", ("rep2024",)) and drawn[0] == "random:2"
+    assert len(set(drawn[1])) == 2 and "rep2024" not in drawn[1]
+    assert (newest, drawn) == evaluate.holdout_parts("newest:1,random:2", decisions, 7)
     with pytest.raises(SystemExit, match="newest:20"):
-        evaluate.holdout_documents("oldest:2", decisions, 1)
+        evaluate.holdout_parts("oldest:2", decisions, 1)
 
 
 def test_withholding_removes_decisions_their_empty_rules_and_slugs_that_stood_for_nothing_else():
@@ -970,7 +976,8 @@ def test_a_replay_files_the_withheld_documents_again_on_a_copy_and_never_writes_
     rules = {r["slug"]: [v["ref"] for v in r["versioner"]] for r in analyze.load_rules(replayed)}
     assert rules == {"licensgebyr": ["rep2010#1", "rep2013#3", "rep2013#1", "rep2024#1"],
                      "startgebyr": ["rep2010#2", "rep2013#2"], "klubskifte": ["rep2024#2"]}
-    assert evaluate.read_json(evaluate.replay_dir("r1") / "holdout.json")["documents"] == ["rep2024"]
+    stored = evaluate.read_json(evaluate.replay_dir("r1") / "holdout.json")
+    assert (stored["documents"], stored["parts"]) == (["rep2024"], {"newest:1": ["rep2024"]})
     assert _runs_log(corpus)[-1]["command"] == "replay"
 
     evaluate.main(REPLAY)  # continues on the copy: nothing is left, so nothing is asked
@@ -1016,14 +1023,22 @@ def test_two_consolidations_compare_on_grouping_years_in_force_and_effects(corpu
     decisions = analyze.load_decisions(corpus.docs)
     split, merged = (analyze.load_rules(_rules_dir(corpus, name, rules))
                      for name, rules in (("split", SPLIT), ("merged", MERGED)))
-    c = evaluate.compare_rules(split, merged, decisions, decisions, date(2026, 10, 8))
+    c = evaluate.compare_rules(split, merged, decisions, decisions, date(2026, 10, 8), {"random:1": {"rep2024"}})
     # Split puts 2024 apart: precision 1, recall (2/3 + 2/3 + 1/3) / 3.
-    assert c.bcubed == pytest.approx((1.0, 5 / 9, 10 / 14))
+    assert c.overall.bcubed == pytest.approx((1.0, 5 / 9, 10 / 14))
     # 2010-2023 agree; from 2024 split also shows 2010's licence next to 2024's.
-    assert c.years["2023-12-31"] == ((1, 1), (1, 1)) and c.years["2024-12-31"] == ((1, 2), (1, 2))
-    shares = c.shares()
+    years = c.overall.years
+    assert years["2023-12-31"] == ((1, 1), (1, 1)) and years["2024-12-31"] == ((1, 2), (1, 2))
+    shares = c.overall.shares()
     assert (shares["event_agreement"], shares["content_agreement"]) == (17 / 20, 17 / 20)
-    assert c.effects == (2, 3)
+    assert c.overall.effects == (2, 3)
+    # The held-out document alone: rep2024#1 sits apart in split; in force, only the rules holding it count, so
+    # merged's licence of 2010-2023 is in force where split's rule of 2024 is not yet.
+    held = c.parts["random:1"]
+    assert held.decisions == 1 and held.bcubed == pytest.approx((1.0, 1 / 3, 0.5))
+    assert held.shares()["event_agreement"] == 3 / 17 and held.effects == (0, 1)
+    report = evaluate.comparison_report("split", "merged", c, None, {})
+    assert "## Held out: random:1 (late insertion: mostly older documents, 1 decisions)" in report
 
 
 def test_compare_rules_needs_the_key_or_no_key_and_writes_a_report(corpus):
@@ -1040,3 +1055,4 @@ def test_compare_rules_needs_the_key_or_no_key_and_writes_a_report(corpus):
     evaluate.main(["compare-rules", str(split), str(merged), "--as-of", "2026-10-08", "--report", "with-key"])
     report = (evaluate.EVAL_DIR / "reports" / "with-key.md").read_text()
     assert "## Against the rules key" in report and "| Fragmented rules | 1 | 0 |" in report
+    assert "| licensgebyr | 2/4 found, 2 rules, " in report and " | 3/4 found, 1 rules, " in report

@@ -2311,11 +2311,19 @@ def rules_summary(scores: list[RuleScore]) -> dict:
 
 @dataclass(frozen=True)
 class Hidden:
-    """One decision hidden from its rule, and where its rule ranked among the candidates built from the rest."""
+    """One decision hidden from its rule, and where its rule ranked among the candidates built from the rest: with
+    the decision's own category, and with it relabelled to another category (an extraction that got it wrong)."""
     ref: str
     slug: str
     category: str
     rank: int  # 1 = the best candidate
+    relabelled: int | None = None
+
+
+def relabel(category: str) -> str:
+    """The category a hidden decision is relabelled to: the next one in CATEGORIES (the first after the last)."""
+    order = list(analyze.CATEGORIES)
+    return order[(order.index(category) + 1) % len(order)]
 
 
 def hide_one_ranks(raw_rules: list[dict], decisions: list[Decision]) -> list[Hidden]:
@@ -2340,13 +2348,16 @@ def hide_one_ranks(raw_rules: list[dict], decisions: list[Decision]) -> list[Hid
             rest = {**raw, "versioner": [w for w in raw["versioner"] if w is not v]}
             index = candidates.CandidateIndex({**counts, raw["slug"]: incremental.rule_profile(
                 raw["kategori"], rest, by_ref).terms(vocab)}, categories, vocab)
-            ranking = [slug for slug, _ in index.rank(incremental.query(by_ref[v["ref"]]))]
-            found.append(Hidden(v["ref"], raw["slug"], raw["kategori"], ranking.index(raw["slug"]) + 1))
+            q = incremental.query(by_ref[v["ref"]])
+            ranks = [[slug for slug, _ in index.rank(each)].index(raw["slug"]) + 1
+                     for each in (q, replace(q, category=relabel(q.category)))]
+            found.append(Hidden(v["ref"], raw["slug"], raw["kategori"], *ranks))
     return found
 
 
-def recall_at(hidden: Sequence[Hidden], k: int) -> float | None:
-    return _ratio(sum(h.rank <= k for h in hidden), len(hidden))
+def recall_at(hidden: Sequence[Hidden], k: int, relabelled: bool = False) -> float | None:
+    ranks = [h.relabelled if relabelled else h.rank for h in hidden]
+    return _ratio(sum(rank is not None and rank <= k for rank in ranks), len(hidden))
 
 
 def choose_k(hidden: Sequence[Hidden]) -> int | None:
@@ -2356,52 +2367,63 @@ def choose_k(hidden: Sequence[Hidden]) -> int | None:
 
 def recall_report(hidden: Sequence[Hidden], single: int) -> str:
     chosen = choose_k(hidden)
-    header = " | ".join(f"@{k}" for k in RECALL_KS)
+    k = chosen or RECALL_KS[-1]
+    header = " | ".join(f"@{n}" for n in RECALL_KS)
     lines = ["# Candidate recall", "",
              "Each decision of today's rules is hidden from its rule, and the candidates for it are ranked from the "
              f"rest (candidates.py: TF-IDF over Danish stems, category boost {candidates.CATEGORY_BOOST}). Recall@K: "
              f"the share whose rule is among the K best. {single} decisions are their rule's only one and are left out "
-             "(hidden, the right answer is a new rule).", "",
-             f"| Category | Decisions | {header} |", f"|---|--:|{'--:|' * len(RECALL_KS)}"]
+             "(hidden, the right answer is a new rule). Relabelled: the same, with the decision's category changed to "
+             "the next one (an extraction that got the category wrong); today's rules never mix categories, so this "
+             "is how much the category boost carries.", "",
+             f"| Category | Decisions | {header} | @{k} relabelled |", f"|---|--:|{'--:|' * (len(RECALL_KS) + 1)}"]
     groups = [("**all**", list(hidden))] + [(c, [h for h in hidden if h.category == c]) for c in analyze.CATEGORIES]
     for name, group in groups:
         if group:
-            cells = " | ".join(_pct(recall_at(group, k)) for k in RECALL_KS)
-            lines.append(f"| {name} | {len(group)} | {cells} |")
+            cells = " | ".join(_pct(recall_at(group, n)) for n in RECALL_KS)
+            lines.append(f"| {name} | {len(group)} | {cells} | {_pct(recall_at(group, k, relabelled=True))} |")
     verdict = (f"Chosen K: {chosen}, the smallest with at least {RECALL_TARGET:.0%} overall." if chosen else
                f"No K of {', '.join(map(str, RECALL_KS))} reaches {RECALL_TARGET:.0%}.")
     if chosen and chosen != candidates.CANDIDATE_K:
         verdict += f" candidates.CANDIDATE_K is {candidates.CANDIDATE_K}: set it to {chosen}."
-    misses = sorted((h for h in hidden if h.rank > (chosen or RECALL_KS[-1])), key=lambda h: (-h.rank, h.ref))
-    lines += ["", verdict, "", f"## Ranked below {chosen or RECALL_KS[-1]}", ""]
+    misses = sorted((h for h in hidden if h.rank > k), key=lambda h: (-h.rank, h.ref))
+    lines += ["", verdict, "", f"## Ranked below {k}", ""]
     lines += [f"- {h.ref} in {h.slug} ({h.category}): rank {h.rank}" for h in misses] or ["None."]
     return "\n".join(lines) + "\n"
 
 
 @dataclass(frozen=True)
 class Holdout:
-    """The documents a replay withholds: how they were chosen, and which."""
+    """The documents a replay withholds, per part of its spec: "newest:20" tests filing new minutes, "random:10" mostly
+    older documents, which land before rules' newest versions (late insertion)."""
     spec: str  # e.g. "newest:20,random:10"
     seed: int
-    documents: tuple[str, ...]
+    parts: tuple[tuple[str, tuple[str, ...]], ...]  # (part, its documents), in the spec's order
+
+    @property
+    def documents(self) -> tuple[str, ...]:
+        return tuple(doc_id for _, docs in self.parts for doc_id in docs)
 
 
-def holdout_documents(spec: str, decisions: Sequence[Decision], seed: int) -> list[str]:
-    """The documents a holdout spec names, among those with decisions: "newest:N" the N newest (by meeting date, then
-    id), "random:N" N drawn with the seed from those not chosen yet; parts are taken in order."""
+def holdout_parts(spec: str, decisions: Sequence[Decision], seed: int) -> tuple[tuple[str, tuple[str, ...]], ...]:
+    """The documents each part of a holdout spec names, among those with decisions: "newest:N" the N newest (by meeting
+    date, then id), "random:N" N drawn with the seed from those not chosen yet; parts are taken in order."""
     dates: dict[str, str] = {}
     for d in decisions:
         dates[d.doc_id] = max(dates.get(d.doc_id, ""), d.dato or "")
     newest_first = sorted(dates, key=lambda doc_id: (dates[doc_id], doc_id), reverse=True)
     chosen: list[str] = []
+    parts = []
     for part in filter(None, spec.split(",")):
         kind, _, count = part.partition(":")
         if kind not in ("newest", "random") or not count.isdigit():
             raise SystemExit(f"--holdout {spec!r}: give parts like newest:20 or random:10, separated by commas")
         rest = [doc_id for doc_id in newest_first if doc_id not in chosen]
         n = min(int(count), len(rest))
-        chosen += rest[:n] if kind == "newest" else sorted(random.Random(f"{seed}:{part}").sample(sorted(rest), n))
-    return chosen
+        picked = rest[:n] if kind == "newest" else sorted(random.Random(f"{seed}:{part}").sample(sorted(rest), n))
+        chosen += picked
+        parts.append((part, tuple(picked)))
+    return tuple(parts)
 
 
 def withhold(files: Mapping[str, dict], registry: matching.SlugRegistry,
@@ -2450,7 +2472,8 @@ def prepare_replay(name: str, holdout: Holdout, mode: str, force: bool) -> Path:
     consolidated anew, as a monthly full run would."""
     root = replay_dir(name)
     meta_path = root / "holdout.json"
-    meta = {"spec": holdout.spec, "seed": holdout.seed, "mode": mode, "documents": list(holdout.documents)}
+    meta = {"spec": holdout.spec, "seed": holdout.seed, "mode": mode, "documents": list(holdout.documents),
+            "parts": {part: list(docs) for part, docs in holdout.parts}}
     if meta_path.exists():
         stored = read_json(meta_path)
         if {k: stored.get(k) for k in meta} == meta:
@@ -2530,44 +2553,60 @@ def jaccard(a: frozenset[str], b: frozenset[str]) -> tuple[int, int]:
 
 
 @dataclass(frozen=True)
-class RulesComparison:
-    bcubed: tuple[float | None, float | None, float | None]
-    bcubed_focus: tuple[float | None, float | None, float | None] | None  # over the held-out decisions only
-    only_a: int  # decisions in a rule in A, in none in B
-    only_b: int
-    # cutoff -> ((same decision in force, decisions in force on either side), (same adopting decision, either))
-    years: dict[str, tuple[tuple[int, int], tuple[int, int]]]
+class Agreement:
+    """How far two consolidations agree, over all decisions or those of some documents."""
+    decisions: int  # in a rule on either side
+    bcubed: tuple[float | None, float | None, float | None]  # A against B
+    # Per cutoff: ((same decision in force, decisions in force on either side), (same adopting decision, either)),
+    # counting the rules that hold one of the decisions.
+    years: Mapping[str, tuple[tuple[int, int], tuple[int, int]]]
     effects: tuple[int, int]  # (same effect, decisions in a rule on both sides)
 
     def shares(self) -> dict[str, float | None]:
         event = [sum(y[0][i] for y in self.years.values()) for i in (0, 1)]
         content = [sum(y[1][i] for y in self.years.values()) for i in (0, 1)]
         return {"bcubed_precision": self.bcubed[0], "bcubed_recall": self.bcubed[1], "bcubed_f1": self.bcubed[2],
-                "bcubed_f1_focus": self.bcubed_focus[2] if self.bcubed_focus else None,
                 "event_agreement": _ratio(*event), "content_agreement": _ratio(*content),
                 "effect_agreement": _ratio(*self.effects)}
 
 
+@dataclass(frozen=True)
+class RulesComparison:
+    overall: Agreement
+    parts: Mapping[str, Agreement]  # per holdout part, over its documents' decisions
+    only_a: int  # decisions in a rule in A, in none in B
+    only_b: int
+
+
 def compare_rules(raw_a: list[dict], raw_b: list[dict], decisions_a: list[Decision], decisions_b: list[Decision],
-                  as_of: date, focus: Collection[str] = ()) -> RulesComparison:
+                  as_of: date, parts: Mapping[str, Collection[str]] | None = None) -> RulesComparison:
     """How far two consolidations agree: B-cubed over how they group the decisions both have, what each shows in
     force at every year's cutoff (by the decision in force, and by the one that adopted its content), and the effect
-    each gives a decision both put in a rule. `focus` (the held-out documents) adds B-cubed over their decisions."""
+    each gives a decision both put in a rule. `parts` (holdout part -> its documents) adds the same over each part's
+    decisions alone, counting in force only the rules that hold one of them."""
     live = {d.ref for d in decisions_a} & {d.ref for d in decisions_b}
     a, b = clusters_of(raw_a, live), clusters_of(raw_b, live)
-    items = sorted(a.keys() | b.keys())
-    focused = [ref for ref in items if ref.rpartition("#")[0] in focus]
     rules_a = render.build_rules(raw_a, {d.ref: d for d in decisions_a})
     rules_b = render.build_rules(raw_b, {d.ref: d for d in decisions_b})
     cutoffs = [render.year_cutoff(year, as_of) for year in render.covered_years([*decisions_a, *decisions_b], as_of)]
-    force_a, force_b = in_force(rules_a, cutoffs), in_force(rules_b, cutoffs)
-    years = {c: (jaccard(force_a[c][0], force_b[c][0]), jaccard(force_a[c][1], force_b[c][1])) for c in cutoffs}
     effect_a = {v["ref"]: v["effekt"] for raw in raw_a for v in raw["versioner"]}
     effect_b = {v["ref"]: v["effekt"] for raw in raw_b for v in raw["versioner"]}
-    both = (effect_a.keys() & effect_b.keys()) & live
-    return RulesComparison(bcubed(a, b, items), bcubed(a, b, focused) if focus else None,
-                           len(a.keys() - b.keys()), len(b.keys() - a.keys()), years,
-                           (sum(effect_a[ref] == effect_b[ref] for ref in both), len(both)))
+
+    def agreement(refs: Collection[str] | None) -> Agreement:
+        items = sorted(ref for ref in a.keys() | b.keys() if refs is None or ref in refs)
+
+        def holding(rules: list[render.Rule]) -> list[render.Rule]:
+            return rules if refs is None else [r for r in rules if any(v.decision.ref in refs for v in r.versions)]
+
+        force_a, force_b = in_force(holding(rules_a), cutoffs), in_force(holding(rules_b), cutoffs)
+        years = {c: (jaccard(force_a[c][0], force_b[c][0]), jaccard(force_a[c][1], force_b[c][1])) for c in cutoffs}
+        both = [ref for ref in effect_a.keys() & effect_b.keys() & live if refs is None or ref in refs]
+        return Agreement(len(items), bcubed(a, b, items), years,
+                         (sum(effect_a[ref] == effect_b[ref] for ref in both), len(both)))
+
+    held = {part: {ref for ref in live if ref.rpartition("#")[0] in docs} for part, docs in (parts or {}).items()}
+    return RulesComparison(agreement(None), {part: agreement(refs) for part, refs in held.items()},
+                           len(a.keys() - b.keys()), len(b.keys() - a.keys()))
 
 
 def holdout_of(rules_dir: Path) -> Holdout | None:
@@ -2576,35 +2615,51 @@ def holdout_of(rules_dir: Path) -> Holdout | None:
     if not meta.exists():
         return None
     stored = read_json(meta)
-    return Holdout(stored["spec"], stored["seed"], tuple(stored["documents"]))
+    parts = stored.get("parts") or {stored["spec"]: stored["documents"]}
+    return Holdout(stored["spec"], stored["seed"], tuple((part, tuple(docs)) for part, docs in parts.items()))
 
 
-def comparison_report(label_a: str, label_b: str, c: RulesComparison, keys: Mapping[str, dict] | None) -> str:
-    s = c.shares()
+def _agreement_lines(agreement: Agreement) -> list[str]:
+    s = agreement.shares()
+    return [f"- Grouping of decisions, B-cubed precision / recall / F1 (A against B): "
+            f"{' / '.join(_pct(v) for v in agreement.bcubed)}",
+            f"- In force at the year cutoffs, pooled: same decision {_pct(s['event_agreement'])}, same adopting "
+            f"decision {_pct(s['content_agreement'])}",
+            f"- Same effect for decisions both put in a rule: {_pct(s['effect_agreement'])} of {agreement.effects[1]}"]
 
-    def triple(values) -> str:
-        return " / ".join(_pct(v) for v in values)
 
-    lines = [f"# {label_a} against {label_b}", "",
-             f"- Grouping of decisions, B-cubed precision / recall / F1 (A against B): {triple(c.bcubed)}"]
-    if c.bcubed_focus is not None:
-        lines.append(f"- The same over the held-out documents' decisions: {triple(c.bcubed_focus)}")
-    lines += [f"- Decisions in a rule in A only: {c.only_a}; in B only: {c.only_b}",
-              f"- In force at the year cutoffs, pooled: same decision {_pct(s['event_agreement'])}, same adopting "
-              f"decision {_pct(s['content_agreement'])}",
-              f"- Same effect for decisions both put in a rule: {_pct(s['effect_agreement'])} of {c.effects[1]}", "",
-              "| Year | Same decision in force | Same adopting decision |", "|---|--:|--:|"]
-    for cutoff, ((event, either_e), (content, either_c)) in c.years.items():
+def comparison_report(label_a: str, label_b: str, c: RulesComparison,
+                      keys: Mapping[str, list[RuleScore]] | None, soft: Mapping[str, str]) -> str:
+    lines = [f"# {label_a} against {label_b}", "", *_agreement_lines(c.overall),
+             f"- Decisions in a rule in A only: {c.only_a}; in B only: {c.only_b}", ""]
+    for part, agreement in c.parts.items():
+        kind = "late insertion: mostly older documents" if part.startswith("random") else "the newest documents"
+        lines += [f"## Held out: {part} ({kind}, {agreement.decisions} decisions)", "", *_agreement_lines(agreement),
+                  ""]
+    lines += ["## Per year, all rules", "", "| Year | Same decision in force | Same adopting decision |",
+              "|---|--:|--:|"]
+    for cutoff, ((event, either_e), (content, either_c)) in c.overall.years.items():
         lines.append(f"| {cutoff[:4]} | {event}/{either_e} | {content}/{either_c} |")
     if keys is not None:
+        summaries = {side: rules_summary([s for s in scores if s.slug not in soft]) for side, scores in keys.items()}
         lines += ["", "## Against the rules key", "", f"| Measure | {label_a} | {label_b} |", "|---|--:|--:|"]
         for name, measure in (("Events found", "found_share"), ("Effects agree", "effect_share"),
                               ("Fragmented rules", "fragmented"), ("Years, same event", "event_share"),
                               ("Years, same content", "content_share")):
-            cells = [keys[side][measure] for side in ("a", "b")]
+            cells = [summaries[side][measure] for side in ("a", "b")]
             shown = [str(v) if isinstance(v, int) else _pct(v) for v in cells]
             lines.append(f"| {name} | {shown[0]} | {shown[1]} |")
+        lines += ["", "Per rule: events found of certain events, rules holding them, years with the same content in "
+                  "force of certain years" + (" (soft rules are left out of the totals above)." if soft else "."), "",
+                  f"| Rule | {label_a} | {label_b} |", "|---|---|---|"]
+        for s_a, s_b in zip(keys["a"], keys["b"]):
+            name = f"{s_a.slug} (soft)" if s_a.slug in soft else s_a.slug
+            lines.append(f"| {name} | {_rule_cell(s_a)} | {_rule_cell(s_b)} |")
     return "\n".join(lines) + "\n"
+
+
+def _rule_cell(s: RuleScore) -> str:
+    return f"{s.found}/{s.events} found, {s.rules} rules, {s.same_content}/{s.years} years"
 
 
 # --------------------------------------------------------------------------- commands
@@ -2852,15 +2907,16 @@ def cmd_candidate_recall(args: argparse.Namespace) -> None:
     write_text(report_path("candidate-recall"), report)
     print(report)
     log_run("candidate-recall", {"decisions": len(hidden), "single": single, "k": choose_k(hidden),
-                                 "recall": {f"@{k}": _round(recall_at(hidden, k)) for k in RECALL_KS}})
+                                 "recall": {f"@{k}": _round(recall_at(hidden, k)) for k in RECALL_KS},
+                                 "relabelled": {f"@{k}": _round(recall_at(hidden, k, relabelled=True))
+                                                for k in RECALL_KS}})
 
 
 def cmd_replay(args: argparse.Namespace) -> None:
     """Withhold documents from a copy of data/ and consolidate them again on that copy; data/ is only read."""
     run = check_run_name(args.name)
     docs = scrape.load_manifest()
-    holdout = Holdout(args.holdout, args.seed,
-                      tuple(holdout_documents(args.holdout, analyze.load_decisions(docs), args.seed)))
+    holdout = Holdout(args.holdout, args.seed, holdout_parts(args.holdout, analyze.load_decisions(docs), args.seed))
     data = prepare_replay(run, holdout, args.mode, args.force)
     budget = RunBudget(minutes=args.time_budget, max_cost_usd=args.max_cost)
     workers = workers_for(args)
@@ -2869,8 +2925,9 @@ def cmd_replay(args: argparse.Namespace) -> None:
         if args.mode == "incremental":
             queue = incremental.work_queue(decisions, incremental.RuleBook.load(), docs)
             print(f"Replay {run}: {len(queue)} documents with {sum(len(w.new) for w in queue)} decisions to file "
-                  f"({len(holdout.documents)} withheld); per document 3 votes by {args.assign_model} and one call "
-                  f"per touched rule to {args.model}, until {args.max_cost:.2f} USD", flush=True)
+                  f"({', '.join(f'{part}: {len(ids)}' for part, ids in holdout.parts)} withheld); per document 3 votes "
+                  f"by {args.assign_model} and one call per touched rule to {args.model}, until {args.max_cost:.2f} "
+                  f"USD", flush=True)
             settings = incremental.Settings(args.assign_model, args.model, args.effort, workers)
             step = incremental.consolidate(docs, decisions, settings, budget)
         else:
@@ -2878,7 +2935,7 @@ def cmd_replay(args: argparse.Namespace) -> None:
                                        effort=args.effort, workers=workers, budget=budget)
     print(f"Replayed rule files: {data / 'regler'}")
     log_run("replay", {"run": run, "mode": args.mode, "holdout": args.holdout, "seed": args.seed,
-                       "documents": list(holdout.documents), "rules_dir": str(data / "regler")},
+                       "parts": {part: list(ids) for part, ids in holdout.parts}, "rules_dir": str(data / "regler")},
             {"consolidate": step})
     finish({"consolidate": step})
 
@@ -2891,10 +2948,13 @@ def rules_label(rules_dir: Path) -> str:
 
 
 def cmd_compare_rules(args: argparse.Namespace) -> None:
-    keys = [read_json(path) for path in sorted(key_dir("rules").glob("*.json"))]
+    corrections = load_corrections()
+    keys = [correct_rule_key(read_json(path), corrections) for path in sorted(key_dir("rules").glob("*.json"))]
     if not keys and not args.no_key:
         raise SystemExit(f"No rules key in {key_dir('rules')}: build it with `evaluate.py key-rules`, or pass --no-key "
                          f"to compare without it")
+    selection = load_selection() if selection_path().exists() else {"rules": []}
+    soft = {r["slug"]: r.get("soft_reason", "soft") for r in selection["rules"] if r.get("soft")}
     docs = scrape.load_manifest()
     sides = {}
     for side, rules_dir in (("a", args.a), ("b", args.b)):
@@ -2902,23 +2962,32 @@ def cmd_compare_rules(args: argparse.Namespace) -> None:
             raise SystemExit(f"{rules_dir} is not a directory of rule files")
         sides[side] = (analyze.load_rules(rules_dir),
                        analyze.load_decisions(docs, side_decisions(rules_dir, args.decisions_dir)))
-    focus = {doc_id for rules_dir in (args.a, args.b) if (h := holdout_of(rules_dir)) for doc_id in h.documents}
+    parts: dict[str, set[str]] = {}
+    for rules_dir in (args.a, args.b):
+        for part, ids in (holdout.parts if (holdout := holdout_of(rules_dir)) else ()):
+            parts.setdefault(part, set()).update(ids)
     comparison = compare_rules(sides["a"][0], sides["b"][0], sides["a"][1], sides["b"][1], args.as_of or today(),
-                               focus)
+                               parts)
     scores = None
     if keys:
         texts, by_id = Texts(), {doc.id: doc for doc in docs}
-        scores = {side: rules_summary([score_rule(key, decisions, raw, by_id, texts) for key in keys])
+        scores = {side: [score_rule(key, decisions, raw, by_id, texts) for key in keys]
                   for side, (raw, decisions) in sides.items()}
     label_a, label_b = rules_label(args.a), rules_label(args.b)
-    report = comparison_report(label_a, label_b, comparison, scores)
+    report = comparison_report(label_a, label_b, comparison, scores, soft)
     name = args.report or f"compare-{label_a}-vs-{label_b}"
     write_text(report_path(name), report)
     print(report)
+    metrics = {k: _round(v) for k, v in comparison.overall.shares().items()}
+    metrics |= {part: {k: _round(v) for k, v in agreement.shares().items()}
+                for part, agreement in comparison.parts.items()}
+    key = None
+    if scores:
+        key = {side: {k: _round(v) if isinstance(v, float) else v
+                      for k, v in rules_summary([s for s in found if s.slug not in soft]).items()}
+               for side, found in scores.items()}
     log_run("compare-rules", {"a": str(args.a), "b": str(args.b), "report": f"reports/{name}.md",
-                              "metrics": {k: _round(v) for k, v in comparison.shares().items()},
-                              "key": {side: {k: _round(v) if isinstance(v, float) else v for k, v in summary.items()}
-                                      for side, summary in scores.items()} if scores else None})
+                              "metrics": metrics, "key": key})
 
 
 def _round(value: float | None) -> float | None:

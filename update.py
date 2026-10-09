@@ -177,6 +177,9 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
     # A test run consolidates only the categories its documents had decisions in, or now have.
     selected = _categories_of(targets) if args.only else None
     try:
+        # What the rule files reflect before the extraction, so a decision it only re-dates still reaches its rule.
+        known = (incremental.known_inputs(analyze.load_decisions(docs), incremental.RuleBook.load(), docs)
+                 if args.consolidate_mode == "incremental" else None)
         steps["extract"] = analyze.extract(targets, model=args.extract_model, effort=args.extract_effort,
                                            workers=args.workers, budget=budget)
         if args.consolidate_mode == "incremental":
@@ -184,7 +187,7 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
                                             args.workers)
             steps["consolidate"] = incremental.consolidate(
                 docs, analyze.load_decisions(docs), settings, budget,
-                documents=None if not args.only else {d.id for d in targets})
+                documents=None if not args.only else {d.id for d in targets}, known=known)
         else:
             steps["consolidate"] = analyze.consolidate(
                 analyze.load_decisions(docs),
@@ -207,7 +210,8 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
 
 
 def _categories_of(docs: list[Doc]) -> set[str]:
-    return {d.kategori for d in analyze.load_decisions(docs)}
+    """The home categories (analyze.home_categories) of the documents' decisions."""
+    return set(analyze.home_categories(analyze.load_decisions(docs), analyze.load_rules()).values())
 
 
 # --------------------------------------------------------------------------- rebuild guard
@@ -277,8 +281,9 @@ def pending_work(docs: list[Doc], mode: str = "full") -> Work:
         categories = frozenset(job.category for job in todo)
         lost = frozenset(job.category for job in todo if job.rules_missing)
     sources: dict[str, set[str]] = {}
+    home = analyze.home_categories(decisions, analyze.load_rules())
     for d in decisions:
-        sources.setdefault(d.kategori, set()).add(d.doc_id)
+        sources.setdefault(home[d.ref], set()).add(d.doc_id)
     return Work(
         documents=frozenset(analyze.missing_extractions(docs)),
         categories=categories,

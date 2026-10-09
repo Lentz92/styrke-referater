@@ -19,7 +19,7 @@ import tempfile
 import threading
 import time
 from collections import defaultdict
-from collections.abc import Collection, Iterator
+from collections.abc import Collection, Iterable, Iterator
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from contextlib import contextmanager
 from dataclasses import dataclass, field, fields
@@ -706,7 +706,7 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
     fail or are skipped are retried on the next run.
     """
     RULES_DIR.mkdir(parents=True, exist_ok=True)
-    with_decisions = {d.kategori for d in decisions}
+    with_decisions = set(home_categories(decisions, load_rules()).values())
     fingerprints = {d.ref: decision_hash(d) for d in decisions}
 
     for stale in RULES_DIR.glob("*.json"):
@@ -744,10 +744,12 @@ class CategoryJob:
 
 def consolidation_todo(decisions: list[Decision], organ_of: dict[str, str]) -> list[CategoryJob]:
     """Categories whose rule file is missing or was built from other input: other decisions, or another
-    CONSOLIDATE_VERSION. Reads data/regler/ only, so the rebuild guard can ask before any Claude call."""
+    CONSOLIDATE_VERSION. Each decision counts in its home category (home_categories). Reads data/regler/ only, so the
+    rebuild guard can ask before any Claude call."""
+    home = home_categories(decisions, load_rules())
     by_category: dict[str, list[dict]] = {}
     for d in decisions:
-        by_category.setdefault(d.kategori, []).append(_consolidation_input(d, organ_of[d.doc_id]))
+        by_category.setdefault(home[d.ref], []).append(_consolidation_input(d, organ_of[d.doc_id]))
     todo = []
     for category, items in by_category.items():
         input_hash = _hash(items, CONSOLIDATE_VERSION)
@@ -757,6 +759,25 @@ def consolidation_todo(decisions: list[Decision], organ_of: dict[str, str]) -> l
         elif json.loads(path.read_text()).get("input_hash") != input_hash:
             todo.append(CategoryJob(category, items, input_hash, rules_missing=False))
     return todo
+
+
+def home_categories(decisions: Iterable[Decision], raw_rules: Iterable[dict]) -> dict[str, str]:
+    """Ref -> the category a decision is consolidated in: that of the rule holding it while that rule's version still
+    matches the decision (version_matches), else its own kategori.
+
+    Incremental consolidation (incremental.py) may file a decision under a rule of another category; a full
+    consolidation then takes it with that rule's category, so it is never consolidated in two categories and held by
+    two rules. A decision that changed since (a re-extraction may give it another kategori, which the fingerprint
+    covers) goes to its own category, as it always has. A decision two rules hold (an error checks.py reports) counts
+    with the first in category order."""
+    by_ref = {d.ref: d for d in decisions}
+    order = list(CATEGORIES)
+    holder: dict[str, str] = {}
+    for raw in sorted(raw_rules, key=lambda r: order.index(r["kategori"]) if r["kategori"] in order else len(order)):
+        for v in raw["versioner"]:
+            if v["ref"] in by_ref and version_matches(v, by_ref[v["ref"]]):
+                holder.setdefault(v["ref"], raw["kategori"])
+    return {ref: holder.get(ref, d.kategori) for ref, d in by_ref.items()}
 
 
 def _consolidation_input(d: Decision, organ: str) -> dict:

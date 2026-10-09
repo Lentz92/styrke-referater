@@ -153,23 +153,31 @@ Actions > General > Workflow permissions. The routing is `.github/scripts/route-
 | 5. Embed the same rules and per-year state in one static page with search | `website.py`, `website/` | `_site/` |
 
 `update.py` runs the steps in order. Step 2 reruns for a document when its file changes; step 3 reruns
-for a category when its decisions change.
-
-With `--consolidate-mode incremental`, step 3 does not rewrite whole categories. It takes the decisions the rule
-files do not reflect yet (new, changed or retired ids), one document at a time in date order (`incremental.py`).
-Code ranks the 15 rules whose words are closest to each new decision (`candidates.py`: TF-IDF over Danish stems and
-compound parts, as the website's search; the decision's category weighs in but filters nothing). Three Sonnet votes
-put each decision in one of those rules, in a new rule or among the category's one-offs; two of three decide, else
-Opus does, blind to the votes. Then one Opus call per touched rule gets its whole history, the new decisions and the
-passage of the minutes around each quote, and writes the versions from the new decision on: earlier versions, and
-every other rule, stay byte-identical (checked). A decision that belongs before a rule's newest version is placed
-where it belongs and the versions after it are rewritten; a retired decision leaves its rule (an Opus call rewrites
-what came after it), and a rule left empty is retired with its slug. A document is written only when all its calls
-succeed; otherwise the next run tries it again. A category whose decisions are all reflected gets the `input_hash`
-of its input, so `full` and the checks see it as consolidated. After editing a prompt in `analyze.py`, bump
+for a category when its decisions change. After editing a prompt in `analyze.py`, bump
 `EXTRACT_VERSION` or `CONSOLIDATE_VERSION` so cached results are recomputed (a rebuild, see Update).
 Each result records its `provenance`: the model that answered, the CLI version, a fingerprint of the prompt
 and schema, and the effort. It is not part of the cache key, so changing the model alone reruns nothing.
+
+With `--consolidate-mode incremental`, step 3 does not rewrite whole categories. It takes the decisions the rule
+files do not reflect yet (new, changed or retired ids, or a decision whose date or organ changed), one document at a
+time in date order (`incremental.py`). Code ranks the 15 rules whose words are closest to each new decision
+(`candidates.py`: TF-IDF over Danish stems and compound parts, as the website's search; the decision's category weighs
+in but filters nothing). Three Sonnet votes put each decision in one of those rules, in a new rule or among its
+category's one-offs (what the extraction prompt lists as no decision); two of three decide, else Opus does, blind to
+the votes, and also when a "new" rule would be named like a live one. Then one Opus call per touched rule gets its
+whole history, the new decisions and the minutes from 100 words before each quote to its vote count (or 400 words
+after), and writes the versions from the new decision on: earlier versions, and every other rule, stay byte-identical
+(checked). A decision that belongs before a rule's newest version is placed where it belongs and the versions after it
+are rewritten; a retired decision leaves its rule (an Opus call rewrites what came after it), and a rule left empty is
+retired with its slug. When the call finds a new decision misfiled, the votes are asked once more without that rule.
+A document is written only when all its calls succeed; otherwise the next run tries it again. Each rule file records a
+fingerprint of every decision it reflects (`inputs`); a category whose decisions are all reflected gets the
+`input_hash` of its input, so `full` and the checks see it as consolidated, and one that may have changed unseen is
+left for `full`. A decision filed under another category's rule is consolidated with that category by `full` too, so
+no decision lands in two rules (`checks.py` reports one that does).
+
+Known limit: a decision that sets several rules at once (a budget setting several fees) is one decision, and goes to
+one rule; splitting it is left for a later change.
 
 Decisions and rules keep their identity when Claude redoes them, so links never break. Each decision has a
 stored id (`<document>#<n>`). When a document is extracted again, each new decision is matched to a previous
@@ -249,8 +257,10 @@ uv run evaluate.py compare-rules eval/replays/inc-1/data/regler data/regler
 `replay` copies `data/` to `eval/replays/<name>/data`, removes the held-out documents' decisions from the rules there
 (rules left empty go with their slugs), and consolidates them again on the copy (`--mode incremental`, or `full`, which
 redoes their categories); a cut-off replay continues where it stopped. `compare-rules` reports how two rule directories
-group the decisions (B-cubed), what each shows in force every year and with which effect, and how each scores against
-the rules key (it stops without the key unless `--no-key`): two `full` replays give the noise floor.
+group the decisions (B-cubed), what each shows in force every year and with which effect, the same over each holdout
+part of a replay (`random:` mostly tests decisions filed before a rule's newest version), and how each scores against
+the rules key, per rule (it stops without the key unless `--no-key`): two `full` replays give the noise floor.
+`candidate-recall` also ranks each hidden decision as if its category were another one.
 
 Every command that calls Claude takes `--max-cost` and `--pilot N` or `--docs`/`--rules`, prints how many calls it
 plans, and adds a line to `eval/runs.jsonl`; the scores go to `eval/reports/`. Every answer is kept, so a cut-off
