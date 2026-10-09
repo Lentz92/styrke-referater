@@ -5,6 +5,7 @@ import hashlib
 import json
 from dataclasses import asdict, replace
 from datetime import date
+from pathlib import Path
 
 import pytest
 
@@ -899,6 +900,31 @@ def test_the_home_rule_holds_most_events_and_years_compare_event_and_content(cor
     score = _score(corpus, rules)
     assert (score.home, score.found, score.elsewhere, score.rules, score.effects, score.years, score.same_event,
             score.same_content) == expected
+
+
+def test_a_key_quote_spanning_one_decision_per_fee_maps_to_the_fee_of_its_rule(corpus, monkeypatch):
+    # A budget line extracted as one decision per fee (prompt v3); the key quotes the whole line for each fee's rule.
+    # Both decisions lie inside the quote, and the licence's value shares no word trigram with its decision.
+    line = "Årsafgift: kr. 1.000,- (Uændret) - Licens: kr. 200,- (Uændret)."
+    monkeypatch.setitem(TEXTS, "rep2013", f"Repræsentantskabsmøde 2013. Takster: {line} Mødet sluttede.")
+    Path(corpus.doc("rep2013").path).write_text(f"<p>{TEXTS['rep2013']}</p>")
+    corpus.extract(corpus.doc("rep2013"), [
+        _decision("Årsafgift", "okonomi", "vedtaget", "bekraeftelse", "Årsafgift: kr. 1.000,- (Uændret)",
+                  tekst="Klubbernes årsafgift til DSF fastholdes uændret på 1.000 kr."),
+        _decision("Licensgebyr", "okonomi", "vedtaget", "bekraeftelse", "Licens: kr. 200,- (Uændret)",
+                  tekst="Licensgebyret fastholdes uændret på 200 kr.")],
+        analyze.DECISIONS_DIR / "rep2013.json", ids=True)
+    by_doc = {"rep2013": [d for d in analyze.load_decisions(corpus.docs) if d.doc_id == "rep2013"]}
+    docs = {d.id: d for d in corpus.docs}
+    licence = _rule_key(corpus, [_event("E1", "rep2013", "bekraeftet", "200 kr. pr. løfter pr. år", line)])
+    fee = {**_rule_key(corpus, [_event("E1", "rep2013", "bekraeftet", "1.000 kr. pr. klub pr. år", line)]),
+           "slug": "årsafgift", "titel": "Årsafgift"}
+    assert evaluate.map_events(licence, by_doc, docs, evaluate.Texts()) == {"E1": "rep2013#2"}
+    assert evaluate.map_events(fee, by_doc, docs, evaluate.Texts()) == {"E1": "rep2013#1"}
+    # Two events quoting the line still get one decision each.
+    twice = _rule_key(corpus, [_event("E1", "rep2013", "bekraeftet", "200 kr. pr. løfter pr. år", line),
+                               _event("E2", "rep2013", "bekraeftet", "200 kr. pr. løfter pr. år", line)])
+    assert sorted(evaluate.map_events(twice, by_doc, docs, evaluate.Texts()).values()) == ["rep2013#1", "rep2013#2"]
 
 
 CORRECTIONS = [
