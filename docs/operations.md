@@ -5,7 +5,8 @@ How to run the monthly update locally and on GitHub, review what it sends to a p
 ## Monthly update
 
 Requires [uv](https://docs.astral.sh/uv/) and a logged-in Claude Code CLI (`claude`), preferably the version
-pinned for the monthly run (see [Monthly run](#monthly-run)). No API key needed.
+pinned for the monthly run (see [Monthly run](#monthly-run)). No API key needed. Run every command from the
+repository root: the package `styrke/` is found there.
 
 ```bash
 uv run -m styrke.update

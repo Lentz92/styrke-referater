@@ -969,8 +969,8 @@ def score_section(before: list[dict], after: list[dict], docs: list[Doc], decisi
     a = rules_summary([s for s in old if s.slug not in soft])
     b = rules_summary([s for s in new if s.slug not in soft])
     lines = ["## Answer key: before → after", "",
-             "styrke/evaluate.py's rules scores (score-rules) over today's decisions. Rules: pipeline rules holding the "
-             "key rule's certain events (more than one: fragmented); Found: in the rule holding most of them; Same "
+             "styrke/evaluate.py's rules scores (score-rules) over today's decisions. Rules: pipeline rules holding "
+             "the key rule's certain events (more than one: fragmented); Found: in the rule holding most of them; Same "
              "content: years whose version in force was adopted by the key's adopting event.", "",
              "| Rule | Rules | Found | Elsewhere | Missing | Same content |", "|---|--:|--:|--:|--:|--:|"]
     for o, n in zip(old, new):
@@ -1197,7 +1197,8 @@ def _ids(text: str) -> list[str]:
 
 
 def parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = argparse.ArgumentParser(prog="uv run -m styrke.evaluate", description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="command", required=True)
 
     extract = sub.add_parser("extract", help="run today's extraction on the selected documents")

@@ -23,7 +23,7 @@ from functools import lru_cache
 import snowballstemmer
 
 # How many ranked rules the assignment offers per decision: the smallest K whose recall reaches 98 % when each
-# decision of today's rules is hidden from its rule (`styrke/evaluate.py candidate-recall`: 98.2 % at 15, 96.8 % at 10).
+# decision of today's rules is hidden from its rule (`uv run -m styrke.evaluate candidate-recall`: 98.2 % at 15, 96.8 % at 10).
 CANDIDATE_K = 15
 # The score of a rule in the decision's own category is multiplied by 1 + CATEGORY_BOOST. Today's rules never mix
 # categories (each was consolidated per category), so the recall gate rewards any boost; this one is kept moderate so

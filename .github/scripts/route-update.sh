@@ -12,7 +12,7 @@ set -euo pipefail
 # shellcheck source=SCRIPTDIR/pr.sh
 source "$(dirname "${BASH_SOURCE[0]}")/pr.sh"
 
-code=${1:?usage: route-update.sh EXIT_CODE_OF_UPDATE_PY}
+code=${1:?usage: route-update.sh EXIT_CODE_OF_STYRKE_UPDATE}
 report=${RUN_REPORT:-run-report.md}
 checks_passed="<!-- checks: passed -->"  # update.CHECKS_PASSED
 title="Monthly update needs review"
@@ -71,6 +71,6 @@ body=$(mktemp)
 if [ -n "$note" ]; then
   printf '%s\n\n' "$note" > "$body"
 fi
-pr_body "$report" "the run page has all of it." "styrke/update.py wrote no run report; the run's log has what it found." \
-  >> "$body"
+pr_body "$report" "the run page has all of it." \
+  "styrke/update.py wrote no run report; the run's log has what it found." >> "$body"
 open_or_update_pr "$review_branch" "$base" "$title" "$body"

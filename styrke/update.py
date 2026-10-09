@@ -83,7 +83,8 @@ EXIT_REVIEW = 3  # the checks found errors: the data is written, but must go to 
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(prog="uv run -m styrke.update", description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--offline", action="store_true", help="skip the download from styrke.dk")
     parser.add_argument("--render-only", action="store_true", help="only build the Markdown and the website from data/")
     parser.add_argument("--only", metavar="REGEX",

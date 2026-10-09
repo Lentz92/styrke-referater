@@ -13,7 +13,7 @@ levels 1 to 3.
 
 `styrke/update.py` runs the steps in order. Step 2 reruns for a document when its file changes, or when it was
 extracted with another prompt or model; step 3 takes the decisions the rule files do not reflect yet. A new extraction
-prompt goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, where `styrke/evaluate.py extract --prompt v<n>` can measure it
+prompt goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, where `uv run -m styrke.evaluate extract --prompt v<n>` can measure it
 against the answer key; an extraction records the n of the prompt it was made with, so setting `EXTRACT_VERSION` to n
 makes it the pipeline's and every document due for extraction with it. After editing the consolidation prompt, bump
 `CONSOLIDATE_VERSION`. Either way a migration follows (see [Rebuilds and migrations](operations.md#rebuilds-and-migrations)). Each result records its

@@ -252,8 +252,8 @@ def unsettled(data: Data) -> list[str]:
     if errors:
         reasons.append(f"{len(errors)} check errors (`uv run -m styrke.checks` lists them)")
     if work.documents:
-        log.warning("%d documents are not extracted yet (%s …); the audit goes ahead, and styrke/update.py files their "
-                    "decisions into the audited rules later", len(work.documents),
+        log.warning("%d documents are not extracted yet (%s …); the audit goes ahead, and styrke/update.py files "
+                    "their decisions into the audited rules later", len(work.documents),
                     ", ".join(sorted(work.documents)[:3]))
     return reasons
 
@@ -1332,7 +1332,8 @@ def _categories(text: str | None) -> list[str]:
 
 
 def parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = argparse.ArgumentParser(prog="uv run -m styrke.audit", description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="command", required=True)
     pr = sub.add_parser("propose", help="Opus proposes ops per category, in two runs; writes data/regler_ops.json")
     pr.add_argument("--categories", help="comma-separated categories (default: all)")

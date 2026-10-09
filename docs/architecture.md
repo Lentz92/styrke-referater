@@ -30,7 +30,7 @@ flowchart LR
   repository). Arrows are labelled with what flows along them.
 - Orange boxes are Claude calls; the blue box after one is the code that checks its answer.
 - "Effort not set" means the code passes no `--effort`, so Claude Code's own default applies. `styrke/update.py` never
-  passes one; the audit does (high), and `styrke/evaluate.py extract` with `--effort`.
+  passes one; the audit does (high), and `uv run -m styrke.evaluate extract` with `--effort`.
 - Every pipeline Claude call goes through `analyze.ask_claude`: `claude -p` with no tools, a system prompt and a JSON
   schema, on the subscription. "USD" means the CLI's list-price estimate, which the caps count.
 
@@ -89,11 +89,11 @@ flowchart TB
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
 
   subgraph MIG["Side lane: migration, started by hand"]
-    mig["<b>Migration run</b><br/>[styrke/update.py --offline --consolidate-mode full --allow-rebuild<br/>--max-cost 40 --time-budget 150]<br/>after a new prompt, model or CONSOLIDATE_VERSION:<br/>extracts every document again, then consolidates in full"]:::code
+    mig["<b>Migration run</b><br/>[uv run -m styrke.update --offline --consolidate-mode full --allow-rebuild<br/>--max-cost 40 --time-budget 150]<br/>after a new prompt, model or CONSOLIDATE_VERSION:<br/>extracts every document again, then consolidates in full"]:::code
     full["<b>Full consolidation</b><br/>[Claude Opus 5.5]<br/>1 call per changed category (12 at most), up to 4 in parallel,<br/>effort not set, 1800 s. Code drops unknown refs, lists<br/>refs in no rule as unassigned, carries slugs over."]:::claude
   end
   subgraph AUD["Side lane: audit, started by hand (detail in 1.3)"]
-    audit["<b>styrke/audit.py propose, apply</b><br/>[Claude Opus 5.5, effort high]<br/>2 independent runs per category,<br/>only the ops both propose are applied"]:::claude
+    audit["<b>uv run -m styrke.audit propose, apply</b><br/>[Claude Opus 5.5, effort high]<br/>2 independent runs per category,<br/>only the ops both propose are applied"]:::claude
   end
   subgraph MEAS["Side lane: measurement loop (detail in 1.4)"]
     evalu["<b>styrke/evaluate.py</b><br/>[Python CLI: scoring is plain code,<br/>extract calls Claude]<br/>extraction gate, rule scores, candidate recall"]:::code
@@ -480,7 +480,7 @@ flowchart LR
   nicki -->|"reviews and merges"| repo
   repo -->|"triggers"| wfpages
   repo -->|"triggers"| wftests
-  wftests -->|"styrke/update.py --render-only"| update
+  wftests -->|"uv run -m styrke.update --render-only"| update
   wfpages -->|"uv run -m styrke.checks"| checks
   wfpages -->|"uv run -m styrke.website"| website
   DATA -->|"reads"| checks
@@ -644,7 +644,7 @@ rules testable without Claude. `styrke/checks.py` and `styrke/website.py` work o
 example `analyze.CATEGORIES` in `styrke/render.py`) are left out, and so is what the `styrke/checks.py` and
 `styrke/website.py` CLIs load on their own (`scrape.load_manifest`, and in `styrke/website.py` the `analyze` loaders).
 
-### 2.5 Level 3: How styrke/audit.py and styrke/evaluate.py reuse the components
+### 2.5 Level 3: How audit.py and evaluate.py reuse the components
 
 ```mermaid
 flowchart TB
@@ -777,5 +777,5 @@ can rebuild from `data/` (`uv run -m styrke.update --render-only`). `styrke/cand
 
 - The gates in 1.4 and the audit's answer-key gate only report a verdict. A person acts on it; no code reads it.
 - Effort: only the audit (`audit.EFFORT = "high"`), the answer-key judges (effort `high` in their recorded
-  provenance) and `styrke/evaluate.py extract --effort` set one. The monthly run and the migration use Claude Code's
+  provenance) and `uv run -m styrke.evaluate extract --effort` set one. The monthly run and the migration use Claude Code's
   default, which the code does not record beyond `"default"`.

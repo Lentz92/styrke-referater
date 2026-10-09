@@ -19,7 +19,7 @@ writes is under `eval/`, and it never touches `data/` or `regelsaet/`. The loop 
 
 ## How the key was built
 
-The key was built in October 2026 with commands that are no longer in `styrke/evaluate.py` (`select`, `key-decisions`,
+The key was built in October 2026 with commands that are no longer in `evaluate.py` (now `styrke/evaluate.py`) (`select`, `key-decisions`,
 `key-rules`, with `--rejudge` and `--rederive`); `git worktree add ../key-build 9f39874` checks them out with their
 tests.
 
@@ -214,7 +214,7 @@ candidates`, retired since; its code is in commit 9f39874).
 The first audit (commit 9f39874) applied the 16 ops both Opus runs proposed: 8 merges, 4 splits and 4 category moves;
 the 18 that only one run proposed are listed in `data/regler_ops.json` and were left out. It cost 14.11 USD at list
 price (propose 13.21, rewrites 0.91). Against the answer key, without soft rules (measured with `audit.py score
---before 9f39874~1`, retired since, whose code is in commit 9f39874; `styrke/evaluate.py score-rules` on the rules of
+--before 9f39874~1`, retired since, whose code is in commit 9f39874; `uv run -m styrke.evaluate score-rules` on the rules of
 `9f39874~1` and of `9f39874` gives the same figures, see What is scored):
 
 | | Before | After |

@@ -356,7 +356,7 @@ def run_extraction(doc: Doc, *, model: str, effort: str | None, budget: RunBudge
     quote; writes nothing.
 
     The one place the extraction prompt runs, so the pipeline (_extract_one, which adds ids and caches the result
-    in data/) and the evaluation (styrke/evaluate.py extract) measure the same thing. An error after the call carries
+    in data/) and the evaluation (uv run -m styrke.evaluate extract) measure the same thing. An error after the call carries
     the call's usage (ClaudeError).
     """
     text = document_text(doc)
@@ -775,7 +775,7 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
                 workers: int, budget: RunBudget | None = None, categories: set[str] | None = None) -> StepSummary:
     """Group decisions into rule histories, one Claude call per category whose input changed.
 
-    `categories` limits the calls to those categories (styrke/update.py --only); None means all. Categories that
+    `categories` limits the calls to those categories (uv run -m styrke.update --only); None means all. Categories that
     fail or are skipped are retried on the next run.
     """
     RULES_DIR.mkdir(parents=True, exist_ok=True)

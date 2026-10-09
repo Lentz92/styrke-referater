@@ -81,6 +81,6 @@ git commit -q -m "$title"
 git push -q --force origin "HEAD:refs/heads/$review_branch"
 
 body=$(mktemp)
-pr_body "$report" "data/regler_ops.json has every op." "styrke/audit.py wrote no report; the run's log has what it did." \
-  > "$body"
+pr_body "$report" "data/regler_ops.json has every op." \
+  "styrke/audit.py wrote no report; the run's log has what it did." > "$body"
 open_or_update_pr "$review_branch" "$base" "$title" "$body"

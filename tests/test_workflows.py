@@ -354,6 +354,13 @@ def test_the_website_waits_for_queued_builds_and_skips_an_update_that_changed_no
     assert build["needs"] == "gate" and build["if"] == "needs.gate.outputs.changed == 'true'"
 
 
+
+def test_the_website_rebuilds_when_the_code_or_its_locked_dependencies_change():
+    # In a push filter `*` does not cross `/`: without its own entry a change in styrke/ would not redeploy the site.
+    paths = _workflow("pages.yml")[True]["push"]["paths"]  # YAML reads the key `on` as True
+    assert {"styrke/**", "pyproject.toml", "uv.lock", "data/**", "website/**"} <= set(paths)
+
+
 # ---------------------------------------------------------------- the audit (audit.yml, route-audit.sh)
 
 TODAY = "2026-10-09"

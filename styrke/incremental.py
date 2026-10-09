@@ -1099,7 +1099,7 @@ def consolidate(docs: list[Doc], decisions: list[Decision], settings: Settings, 
                 documents: set[str] | None = None, now: datetime | None = None,
                 known: Known | None = None) -> StepSummary:
     """Bring the rule files up to date with the decisions, one document at a time; `documents` limits the work to
-    those documents (styrke/update.py --only). `known`: what the rule files reflected when the run started
+    those documents (uv run -m styrke.update --only). `known`: what the rule files reflected when the run started
     (known_inputs, before the extraction); taken now when not given.
 
     A document whose call fails or is skipped is left whole for the next run, and later documents go on. Categories
