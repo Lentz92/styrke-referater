@@ -35,7 +35,7 @@ def _slug_registry(tmp_path_factory, monkeypatch):
 # "helper-before"/"helper-after" (a helper model that writes less, sorting before/after the main one);
 # "keyed" (modelUsage keyed by another name than canonicalModel, plus an entry that is not an object).
 # output.json, if present, is the structured output; outputs.json, if present, lists one per call (the last
-# repeats). Each call's arguments are appended to argv.jsonl.
+# repeats). Each call's arguments are appended to argv.jsonl, and its prompt (stdin) to prompts.jsonl.
 FAKE_CLAUDE = """\
 import json, sys, time
 from pathlib import Path
@@ -46,6 +46,8 @@ with (here / "invocations").open("a") as log:
 if sys.argv[1:] != ["--version"]:
     with (here / "argv.jsonl").open("a") as log:
         log.write(json.dumps(sys.argv[1:]) + "\\n")
+    with (here / "prompts.jsonl").open("a") as log:
+        log.write(json.dumps(sys.stdin.read()) + "\\n")
 if sys.argv[1:] == ["--version"]:
     if (here / "version_fails").exists():
         sys.exit(1)
@@ -101,6 +103,11 @@ class FakeClaude:
     def calls(self) -> list[list[str]]:
         """The arguments of every Claude call so far, in order."""
         log = self.bin_dir / "argv.jsonl"
+        return [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
+
+    def prompts(self) -> list[str]:
+        """The prompt (stdin) of every Claude call so far, in order."""
+        log = self.bin_dir / "prompts.jsonl"
         return [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
 
     def fail_version(self) -> None:

@@ -46,6 +46,8 @@ categories after a big meeting) leaves the same kind of approval for what is lef
 | `--render-only` | only rebuild `regelsaet/` and `_site/` from `data/` (e.g. after editing `render.py`) |
 | `--only REGEX` | only extract documents whose id matches, and only consolidate the categories their decisions are in, before or after extraction (testing); skips the rebuild check |
 | `--extract-model`, `--consolidate-model` | defaults `claude-sonnet-5-5` and `claude-opus-5-5`; a full id fails the call if Claude Code answers with another model |
+| `--consolidate-mode` | `full` (default): consolidate each category with changed decisions anew; `incremental`: file each new decision into its rule and leave every other rule as it is (see below) |
+| `--assign-model` | incremental mode: the model that votes on which rule a new decision belongs to (default `claude-sonnet-5-5`) |
 | `--extract-effort`, `--consolidate-effort` | `low` … `max`; default is Claude Code's own |
 | `--workers N` | parallel Claude calls (default 4) |
 | `--time-budget MIN` | start no new Claude calls after this many minutes (default 75); the rest runs next time |
@@ -151,7 +153,20 @@ Actions > General > Workflow permissions. The routing is `.github/scripts/route-
 | 5. Embed the same rules and per-year state in one static page with search | `website.py`, `website/` | `_site/` |
 
 `update.py` runs the steps in order. Step 2 reruns for a document when its file changes; step 3 reruns
-for a category when its decisions change. After editing a prompt in `analyze.py`, bump
+for a category when its decisions change.
+
+With `--consolidate-mode incremental`, step 3 does not rewrite whole categories. It takes the decisions the rule
+files do not reflect yet (new, changed or retired ids), one document at a time in date order (`incremental.py`).
+Code ranks the 15 rules whose words are closest to each new decision (`candidates.py`: TF-IDF over Danish stems and
+compound parts, as the website's search; the decision's category weighs in but filters nothing). Three Sonnet votes
+put each decision in one of those rules, in a new rule or among the category's one-offs; two of three decide, else
+Opus does, blind to the votes. Then one Opus call per touched rule gets its whole history, the new decisions and the
+passage of the minutes around each quote, and writes the versions from the new decision on: earlier versions, and
+every other rule, stay byte-identical (checked). A decision that belongs before a rule's newest version is placed
+where it belongs and the versions after it are rewritten; a retired decision leaves its rule (an Opus call rewrites
+what came after it), and a rule left empty is retired with its slug. A document is written only when all its calls
+succeed; otherwise the next run tries it again. A category whose decisions are all reflected gets the `input_hash`
+of its input, so `full` and the checks see it as consolidated. After editing a prompt in `analyze.py`, bump
 `EXTRACT_VERSION` or `CONSOLIDATE_VERSION` so cached results are recomputed (a rebuild, see Update).
 Each result records its `provenance`: the model that answered, the CLI version, a fingerprint of the prompt
 and schema, and the effort. It is not part of the cache key, so changing the model alone reruns nothing.
@@ -222,6 +237,20 @@ accuracy is scored only on the fields the judges agree on. The rules key gives t
 documents (around the rule's decisions, other decisions using its title's words, and its keywords, amounts first)
 and asks for its true timeline and what was in force each year, or that it is unknown. Where two judges disagree, a
 third answers blind, and two of three decide; what is still split is left out of the scores.
+
+The incremental consolidation (above) has three gates of its own, which only read `data/`:
+
+```bash
+uv run evaluate.py candidate-recall          # hide each decision from its rule: is the rule among the top K?
+uv run evaluate.py replay --holdout newest:20,random:10 --seed 1 --name inc-1 --max-cost 20
+uv run evaluate.py compare-rules eval/replays/inc-1/data/regler data/regler
+```
+
+`replay` copies `data/` to `eval/replays/<name>/data`, removes the held-out documents' decisions from the rules there
+(rules left empty go with their slugs), and consolidates them again on the copy (`--mode incremental`, or `full`, which
+redoes their categories); a cut-off replay continues where it stopped. `compare-rules` reports how two rule directories
+group the decisions (B-cubed), what each shows in force every year and with which effect, and how each scores against
+the rules key (it stops without the key unless `--no-key`): two `full` replays give the noise floor.
 
 Every command that calls Claude takes `--max-cost` and `--pilot N` or `--docs`/`--rules`, prints how many calls it
 plans, and adds a line to `eval/runs.jsonl`; the scores go to `eval/reports/`. Every answer is kept, so a cut-off

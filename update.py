@@ -4,6 +4,7 @@
 #   "httpx>=0.27",
 #   "beautifulsoup4>=4.12",
 #   "pymupdf>=1.24",
+#   "snowballstemmer>=2.2",
 # ]
 # ///
 """Bring the DSF rule overview up to date.
@@ -41,6 +42,7 @@ from pathlib import Path
 
 import analyze
 import checks
+import incremental
 import render
 import scrape
 import website
@@ -48,6 +50,9 @@ from analyze import StepSummary
 from scrape import Doc
 
 EFFORTS = ["low", "medium", "high", "xhigh", "max"]
+# How rule files are brought up to date: "full" consolidates each changed category anew (analyze.consolidate);
+# "incremental" files each new decision into its rule and leaves the others as they are (incremental.py).
+CONSOLIDATE_MODES = ("full", "incremental")
 RUNS_LOG = scrape.DATA_DIR / "runs.jsonl"
 # An approved rebuild that is not finished yet; plain runs continue it while it matches the prompt versions.
 REBUILD_MARKER = scrape.DATA_DIR / "rebuild.json"
@@ -74,6 +79,12 @@ def main() -> None:
                         help="model for extraction per document (default: claude-sonnet-5-5)")
     parser.add_argument("--consolidate-model", default="claude-opus-5-5",
                         help="model for consolidation (default: claude-opus-5-5)")
+    parser.add_argument("--assign-model", default="claude-sonnet-5-5",
+                        help="model for the votes on which rule a new decision belongs to, in incremental mode "
+                             "(default: claude-sonnet-5-5); --consolidate-model breaks ties and updates the rules")
+    parser.add_argument("--consolidate-mode", choices=CONSOLIDATE_MODES, default="full",
+                        help="full: consolidate each category with changed decisions anew; incremental: file each "
+                             "new decision into its rule and leave every other rule as it is (default: full)")
     parser.add_argument("--extract-effort", choices=EFFORTS, help="effort for extraction (default: Claude Code's own)")
     parser.add_argument("--consolidate-effort", choices=EFFORTS,
                         help="effort for consolidation (default: Claude Code's own)")
@@ -101,7 +112,7 @@ def main() -> None:
         RUN_REPORT.unlink(missing_ok=True)  # the routing trusts a report only from the run that wrote it
         try:
             if not args.only:  # a test run on a few documents
-                check_rebuild(docs, allowed=args.allow_rebuild)
+                check_rebuild(docs, allowed=args.allow_rebuild, mode=args.consolidate_mode)
         except SystemExit as exc:  # nothing is analysed, but the data is checked and the pages written as usual
             failures.append(str(exc))
             stop = exc
@@ -168,15 +179,22 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
     try:
         steps["extract"] = analyze.extract(targets, model=args.extract_model, effort=args.extract_effort,
                                            workers=args.workers, budget=budget)
-        steps["consolidate"] = analyze.consolidate(
-            analyze.load_decisions(docs),
-            {d.id: d.organ_label for d in docs},
-            model=args.consolidate_model,
-            effort=args.consolidate_effort,
-            workers=args.workers,
-            budget=budget,
-            categories=None if selected is None else selected | _categories_of(targets),
-        )
+        if args.consolidate_mode == "incremental":
+            settings = incremental.Settings(args.assign_model, args.consolidate_model, args.consolidate_effort,
+                                            args.workers)
+            steps["consolidate"] = incremental.consolidate(
+                docs, analyze.load_decisions(docs), settings, budget,
+                documents=None if not args.only else {d.id for d in targets})
+        else:
+            steps["consolidate"] = analyze.consolidate(
+                analyze.load_decisions(docs),
+                {d.id: d.organ_label for d in docs},
+                model=args.consolidate_model,
+                effort=args.consolidate_effort,
+                workers=args.workers,
+                budget=budget,
+                categories=None if selected is None else selected | _categories_of(targets),
+            )
     except Exception as exc:
         logging.error("The analysis failed: %s; checking what it wrote before failing the run", exc)
         failures.append(f"the analysis stopped: {type(exc).__name__}: {exc}")
@@ -184,7 +202,7 @@ def analyse(args: argparse.Namespace, docs: list[Doc], budget: analyze.RunBudget
     finally:
         record_run(steps)
     if not args.only:
-        update_rebuild_marker(docs)
+        update_rebuild_marker(docs, args.consolidate_mode)
     return None
 
 
@@ -246,31 +264,39 @@ class Approval:
     categories: frozenset[str]
 
 
-def pending_work(docs: list[Doc]) -> Work:
-    """The work before extraction, from data/ alone: no Claude call."""
+def pending_work(docs: list[Doc], mode: str = "full") -> Work:
+    """The work before extraction, from data/ alone: no Claude call. The categories to consolidate are those whose
+    input changed (full), or those the incremental work queue changes (incremental.queue_categories)."""
     decisions = analyze.load_decisions(docs)
-    todo = analyze.consolidation_todo(decisions, {d.id: d.organ_label for d in docs})
+    if mode == "incremental":
+        book = incremental.RuleBook.load()
+        categories = incremental.queue_categories(incremental.work_queue(decisions, book, docs), decisions, book)
+        lost = frozenset(category for category in categories if category not in book.files)
+    else:
+        todo = analyze.consolidation_todo(decisions, {d.id: d.organ_label for d in docs})
+        categories = frozenset(job.category for job in todo)
+        lost = frozenset(job.category for job in todo if job.rules_missing)
     sources: dict[str, set[str]] = {}
     for d in decisions:
         sources.setdefault(d.kategori, set()).add(d.doc_id)
     return Work(
         documents=frozenset(analyze.missing_extractions(docs)),
-        categories=frozenset(job.category for job in todo),
-        lost=frozenset(job.category for job in todo if job.rules_missing),
+        categories=categories,
+        lost=lost,
         sources={category: frozenset(ids) for category, ids in sources.items()},
         total_documents=len(docs),
         total_categories=len(sources),
     )
 
 
-def check_rebuild(docs: list[Doc], *, allowed: bool) -> None:
+def check_rebuild(docs: list[Doc], *, allowed: bool, mode: str = "full") -> None:
     """Stop before any Claude call when the run would do more than an ordinary month's work unapproved.
 
     --allow-rebuild approves the work and saves it in data/rebuild.json before anything starts. A later run
     goes ahead while the part of its work outside that approval is ordinary: new minutes may arrive while a
     rebuild is unfinished, but other extra work (lost data, another prompt change) needs a new approval.
     """
-    work = pending_work(docs)
+    work = pending_work(docs, mode)
     reasons = work.reasons()
     if not reasons:
         return
@@ -293,14 +319,14 @@ def check_rebuild(docs: list[Doc], *, allowed: bool) -> None:
     )
 
 
-def update_rebuild_marker(docs: list[Doc]) -> None:
+def update_rebuild_marker(docs: list[Doc], mode: str = "full") -> None:
     """After the analysis: approve what is left while it is more than ordinary, else remove the approval.
 
     Leftovers of an ordinary run count too (consolidation failing for most categories after a big meeting):
     the run was allowed to start that work, so the following runs may finish it. The new approval covers
     only what is left.
     """
-    work = pending_work(docs)
+    work = pending_work(docs, mode)
     reasons = work.reasons()
     if reasons:
         _save_approval(work)

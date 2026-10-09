@@ -187,6 +187,12 @@ def stale_refs(raw: dict, by_ref: dict[str, Decision]) -> list[str]:
     return [v["ref"] for v in raw["versioner"] if v["ref"] not in by_ref or not version_matches(v, by_ref[v["ref"]])]
 
 
+def version_key(d: Decision, index: float) -> tuple[str, str, float]:
+    """Where a version sorts in its rule: by the date it takes effect, then the date it was decided, then its place
+    in the rule file (`index`), which is Claude's order for versions decided the same day."""
+    return d.gaelder_fra or d.dato or "", d.dato or "", index
+
+
 def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule]:
     """Rules with their versions in effective order.
 
@@ -205,7 +211,7 @@ def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule
             (i, Version(by_ref[v["ref"]], v["effekt"], v["tekst"], v.get("kort"), v.get("kort_regel")))
             for i, v in enumerate(raw["versioner"])
         ]
-        current.sort(key=lambda item: (item[1].effective, item[1].decision.dato or "", item[0]))
+        current.sort(key=lambda item: version_key(item[1].decision, item[0]))
         versions = [v for _, v in current]
         rules.append(Rule(raw["titel"], raw["slug"], raw["kategori"], raw.get("vigtig", True), raw["note"],
                           tuple(versions)))

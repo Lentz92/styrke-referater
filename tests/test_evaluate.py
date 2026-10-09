@@ -14,6 +14,7 @@ import scrape
 from analyze import DocWords, quote_fields
 from conftest import decision
 from evaluate import DocChoice, DocScore, RuleChoice, Verdict
+from matching import FormerSlug, SlugRegistry
 from scrape import Doc
 
 FILLER = " ".join(["mødet drøftede andre sager"] * 35)  # 140 words
@@ -764,3 +765,142 @@ def test_a_judge_that_times_out_is_given_up_after_two_attempts(corpus, fake_clau
         evaluate.main(["key-rules", "--max-cost", "5", "--workers", "2"])
     assert fake_claude.invocations("call") == 2 * evaluate.JUDGE_ATTEMPTS
     assert "licensgebyr judge 1 timed out" in caplog.text and "report no cost" in caplog.text
+
+
+# ---------------------------------------------------------------- incremental consolidation gates
+
+def test_candidate_recall_hides_each_decision_from_its_rule_and_picks_the_smallest_k(corpus):
+    evaluate.main(["candidate-recall"])
+    report = (evaluate.EVAL_DIR / "reports" / "candidate-recall.md").read_text()
+    # Licensgebyr's three decisions and Startgebyr's two; the two one-decision rules are left out.
+    assert "| **all** | 5 | 100.0% |" in report and "2 decisions are their rule's only one" in report
+    assert "Chosen K: 3" in report
+    assert _runs_log(corpus)[-1]["k"] == 3
+
+
+def test_recall_at_k_and_the_chosen_k():
+    hidden = [evaluate.Hidden(f"d#{i}", "r", "okonomi", rank) for i, rank in enumerate([1] * 97 + [4, 9, 12])]
+    assert [evaluate.recall_at(hidden, k) for k in (3, 5, 10)] == [0.97, 0.98, 0.99]
+    assert evaluate.choose_k(hidden) == 5
+    assert evaluate.choose_k(hidden[:97] + [evaluate.Hidden("x#1", "r", "okonomi", 99)] * 3) is None
+
+
+def test_a_holdout_takes_the_newest_documents_then_seeded_draws_from_the_rest(corpus):
+    decisions = analyze.load_decisions(corpus.docs)
+    assert evaluate.holdout_documents("newest:2", decisions, 1) == ["rep2024", "rep2019"]
+    drawn = evaluate.holdout_documents("newest:1,random:2", decisions, 7)
+    assert drawn[0] == "rep2024" and len(set(drawn)) == 3
+    assert drawn == evaluate.holdout_documents("newest:1,random:2", decisions, 7)
+    with pytest.raises(SystemExit, match="newest:20"):
+        evaluate.holdout_documents("oldest:2", decisions, 1)
+
+
+def test_withholding_removes_decisions_their_empty_rules_and_slugs_that_stood_for_nothing_else():
+    files = {"okonomi": {"kategori": "okonomi", "regler": [
+        {"titel": "A", "slug": "a", "versioner": [{"ref": "x#1"}, {"ref": "y#1"}]},
+        {"titel": "B", "slug": "b", "versioner": [{"ref": "y#2"}]}], "udeladt": ["y#3", "x#2"], "ikke_tildelt": []}}
+    registry = SlugRegistry.of({"old-b": FormerSlug("okonomi", "B", frozenset({"y#2"}), "b"),
+                                "old-a": FormerSlug("okonomi", "A", frozenset({"x#1", "y#1"}), "a")})
+    out, kept = evaluate.withhold(files, registry, {"y#1", "y#2", "y#3"})
+    assert [(r["slug"], [v["ref"] for v in r["versioner"]]) for r in out["okonomi"]["regler"]] == [("a", ["x#1"])]
+    assert out["okonomi"]["udeladt"] == ["x#2"]
+    assert set(kept.former()) == {"old-a"}
+
+
+def _reflect_unassigned(corpus) -> None:
+    """rep2016 and rep2019 left out as one-offs, so the corpus has no work but what a replay withholds."""
+    path = analyze.RULES_DIR / "okonomi.json"
+    path.write_text(json.dumps({**json.loads(path.read_text()), "udeladt": ["rep2016#1", "rep2019#1"]}))
+
+
+REPLAY = ["replay", "--holdout", "newest:1", "--name", "r1", "--max-cost", "5", "--workers", "1"]
+
+
+def test_a_replay_files_the_withheld_documents_again_on_a_copy_and_never_writes_data(corpus, fake_claude):
+    _reflect_unassigned(corpus)
+    before = corpus.data_fingerprint()
+    vote = {"answers": [{"ref": "rep2024#1", "choice": "licensgebyr", "title": None},
+                        {"ref": "rep2024#2", "choice": "new", "title": "Klubskifte"}]}
+
+    def updated(ref):
+        return {"versioner": [{"ref": ref, "effekt": "aendret", "tekst": "x", "kort": "x", "kort_regel": "x"}],
+                "vigtig": True, "note": None}
+
+    fake_claude.answers(vote, vote, vote, updated("rep2024#1"), updated("rep2024#2"))
+    evaluate.main(REPLAY)
+
+    assert corpus.data_fingerprint() == before
+    replayed = evaluate.replay_dir("r1") / "data" / "regler"
+    rules = {r["slug"]: [v["ref"] for v in r["versioner"]] for r in analyze.load_rules(replayed)}
+    assert rules == {"licensgebyr": ["rep2010#1", "rep2013#3", "rep2013#1", "rep2024#1"],
+                     "startgebyr": ["rep2010#2", "rep2013#2"], "klubskifte": ["rep2024#2"]}
+    assert evaluate.read_json(evaluate.replay_dir("r1") / "holdout.json")["documents"] == ["rep2024"]
+    assert _runs_log(corpus)[-1]["command"] == "replay"
+
+    evaluate.main(REPLAY)  # continues on the copy: nothing is left, so nothing is asked
+    assert fake_claude.invocations("call") == 5
+    with pytest.raises(SystemExit, match="another holdout or mode; pass --force"):
+        evaluate.main([*REPLAY[:2], "newest:2", *REPLAY[3:]])
+    assert corpus.data_fingerprint() == before
+
+
+def test_a_full_replay_consolidates_the_withheld_documents_categories_anew(corpus, fake_claude):
+    _reflect_unassigned(corpus)
+    before = corpus.data_fingerprint()
+    fake_claude.answer({"regler": [{"titel": "Alt", "vigtig": True, "note": None, "versioner": [
+        {"ref": ref, "effekt": "indfoert", "tekst": None, "kort": "x", "kort_regel": None}
+        for ref in ("rep2010#1", "rep2024#1", "rep2024#2")]}], "udeladt": []})
+    evaluate.main([*REPLAY[:4], "f1", *REPLAY[5:], "--mode", "full"])
+    assert fake_claude.invocations("call") == 2  # okonomi and medlemskab, the categories rep2024 has decisions in
+    assert corpus.data_fingerprint() == before
+
+
+def test_b_cubed_compares_two_groupings_per_decision():
+    a = {"x": frozenset("xy"), "y": frozenset("xy")}  # z in no rule: a cluster of its own
+    b = {"y": frozenset("yz"), "z": frozenset("yz")}
+    assert evaluate.bcubed(a, b, "xyz") == pytest.approx((2 / 3, 2 / 3, 2 / 3))
+    assert evaluate.bcubed(a, a, "xyz") == (1.0, 1.0, 1.0)
+    assert evaluate.bcubed(a, b, []) == (None, None, None)
+
+
+def _rules_dir(corpus, name: str, rules: dict):
+    directory = corpus.root / name
+    directory.mkdir()
+    corpus.rules(rules, directory)
+    return directory
+
+
+SPLIT = {"okonomi": [("Licensgebyr", "licensgebyr", [("rep2010#1", "indfoert"), ("rep2013#1", "bekraeftet")]),
+                     ("Licensgebyr 2024", "licensgebyr-2024", [("rep2024#1", "indfoert")])]}
+MERGED = {"okonomi": [("Licensgebyr", "licensgebyr", [("rep2010#1", "indfoert"), ("rep2013#1", "bekraeftet"),
+                                                      ("rep2024#1", "aendret")])]}
+
+
+def test_two_consolidations_compare_on_grouping_years_in_force_and_effects(corpus):
+    decisions = analyze.load_decisions(corpus.docs)
+    split, merged = (analyze.load_rules(_rules_dir(corpus, name, rules))
+                     for name, rules in (("split", SPLIT), ("merged", MERGED)))
+    c = evaluate.compare_rules(split, merged, decisions, decisions, date(2026, 10, 8))
+    # Split puts 2024 apart: precision 1, recall (2/3 + 2/3 + 1/3) / 3.
+    assert c.bcubed == pytest.approx((1.0, 5 / 9, 10 / 14))
+    # 2010-2023 agree; from 2024 split also shows 2010's licence next to 2024's.
+    assert c.years["2023-12-31"] == ((1, 1), (1, 1)) and c.years["2024-12-31"] == ((1, 2), (1, 2))
+    shares = c.shares()
+    assert (shares["event_agreement"], shares["content_agreement"]) == (17 / 20, 17 / 20)
+    assert c.effects == (2, 3)
+
+
+def test_compare_rules_needs_the_key_or_no_key_and_writes_a_report(corpus):
+    split, merged = (_rules_dir(corpus, name, rules) for name, rules in (("split", SPLIT), ("merged", MERGED)))
+    with pytest.raises(SystemExit, match="No rules key in .*key-rules.*--no-key"):
+        evaluate.main(["compare-rules", str(split), str(merged)])
+    evaluate.main(["compare-rules", str(split), str(merged), "--no-key", "--as-of", "2026-10-08"])
+    report = (evaluate.EVAL_DIR / "reports" / f"compare-{corpus.root.name}-split-vs-{corpus.root.name}-merged.md"
+              ).read_text()
+    assert "B-cubed precision / recall / F1 (A against B): 100.0% / 55.6% / 71.4%" in report
+    assert "| 2024 | 1/2 | 1/2 |" in report and "Against the rules key" not in report
+
+    evaluate.write_json(evaluate.key_dir("rules") / "licensgebyr.json", _rule_key(corpus))
+    evaluate.main(["compare-rules", str(split), str(merged), "--as-of", "2026-10-08", "--report", "with-key"])
+    report = (evaluate.EVAL_DIR / "reports" / "with-key.md").read_text()
+    assert "## Against the rules key" in report and "| Fragmented rules | 1 | 0 |" in report

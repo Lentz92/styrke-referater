@@ -508,6 +508,20 @@ class DocWords:
         return cls(words, pages, dict(index))
 
 
+def word_spans(text: str) -> list[tuple[int, int]]:
+    """Where each word DocWords counts stands in the text: every word outside the [Side N] markers, so a word
+    offset leads back to the text as written."""
+    markers = [m.span() for m in _PAGE_MARKER.finditer(text)]
+    spans, k = [], 0
+    for m in re.finditer(r"\w+", text):
+        while k < len(markers) and markers[k][1] <= m.start():
+            k += 1
+        if k < len(markers) and markers[k][0] <= m.start() < markers[k][1]:
+            continue
+        spans.append(m.span())
+    return spans
+
+
 def locate_quote(quote: str, doc: DocWords, page: int | None = None) -> int | None:
     """Word offset where the quote starts in the document, or None when it is not there.
 
