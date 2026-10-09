@@ -16,6 +16,7 @@ from urllib.parse import quote, unquote, urljoin, urlparse
 import httpx
 import pymupdf
 from bs4 import BeautifulSoup
+from bs4.dammit import EncodingDetector
 
 ROOT = Path(__file__).parent
 PDF_ROOT = ROOT / "referater"
@@ -188,9 +189,26 @@ def document_text(doc: Doc) -> str:
     """Plain text with [Side N] markers so extracted decisions can cite pages."""
     path = ROOT / doc.path
     if path.suffix.lower() == ".htm":
-        return BeautifulSoup(path.read_bytes(), "html.parser").get_text("\n")
+        return BeautifulSoup(_decode_html(path.read_bytes()), "html.parser").get_text("\n")
     with pymupdf.open(path) as pdf:
         return "\n".join(f"[Side {number}]\n{page.get_text()}" for number, page in enumerate(pdf, start=1))
+
+
+def _decode_html(data: bytes) -> str:
+    """The declared charset, else UTF-8 if the bytes are valid UTF-8, else windows-1252.
+
+    Given bytes, BeautifulSoup asks whichever charset detector happens to be importable (chardet on GitHub's
+    runner read undeclared UTF-8 as windows-1252), so we decode here and hand it text: no detector is consulted.
+    """
+    if declared := EncodingDetector.find_declared_encoding(data, is_html=True):
+        try:
+            return data.decode(declared, errors="replace")
+        except LookupError:  # a charset Python does not know
+            pass
+    try:
+        return data.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        return data.decode("windows-1252", errors="replace")
 
 
 def parse_date(title: str, filename: str) -> str | None:
