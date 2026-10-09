@@ -286,36 +286,32 @@ def extract_prompt(name: str | None = None) -> ExtractPrompt:
 
 
 def extract(docs: list[Doc], *, model: str, effort: str | None, workers: int,
-            budget: RunBudget | None = None, prompt: str | None = None) -> StepSummary:
-    """Extract decisions from every document whose cached result is missing or outdated, with the extraction
-    prompt named `prompt` (None: the pipeline's) and `model`.
+            budget: RunBudget | None = None) -> StepSummary:
+    """Extract decisions from every document whose cached result is missing or outdated, with the pipeline's
+    extraction prompt (EXTRACT_VERSION) and `model`.
 
     Documents that fail or are skipped are retried on the next run.
     """
     DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
-    version = extract_prompt(prompt).version
-    todo = [doc for doc in docs if not _extraction_is_current(doc, version, model)]
-    log.info("Extract: %d of %d documents need extracting with prompt v%d", len(todo), len(docs), version)
+    todo = [doc for doc in docs if not _extraction_is_current(doc, model)]
+    log.info("Extract: %d of %d documents need extracting with prompt v%d", len(todo), len(docs), EXTRACT_VERSION)
     cli = cli_version() if todo else ""
     return run_parallel(
-        todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget, prompt=prompt),
+        todo, lambda doc: _extract_one(doc, model=model, effort=effort, cli=cli, budget=budget),
         workers, "Extract", budget)
 
 
-def missing_extractions(docs: list[Doc], prompt: str | None = None, *, model: str) -> list[str]:
+def missing_extractions(docs: list[Doc], *, model: str) -> list[str]:
     """Ids of documents without a current extraction (new, changed, made with another prompt or model, or a failed
-    Claude call); `prompt` names the extraction prompt (None: the pipeline's), `model` the extraction model."""
-    version = extract_prompt(prompt).version
-    return sorted(doc.id for doc in docs if not _extraction_is_current(doc, version, model))
+    Claude call); `model` is the extraction model."""
+    return sorted(doc.id for doc in docs if not _extraction_is_current(doc, model))
 
 
-def superseded_extractions(docs: list[Doc], prompt: str | None = None, *, model: str) -> list[str]:
-    """Ids of documents whose cached extraction was made with another extraction prompt than the one named `prompt`
-    (None: the pipeline's), or by another model than `model`: extracting them again may change any of their
-    decisions."""
-    version = extract_prompt(prompt).version
+def superseded_extractions(docs: list[Doc], *, model: str) -> list[str]:
+    """Ids of documents whose cached extraction was made with another extraction prompt than the pipeline's
+    (EXTRACT_VERSION), or by another model than `model`: extracting them again may change any of their decisions."""
     return sorted(doc.id for doc in docs if (cached := _cached_extraction(doc)) is not None
-                  and (cached.get("version") != version or not _made_by(cached, model)))
+                  and (cached.get("version") != EXTRACT_VERSION or not _made_by(cached, model)))
 
 
 def _cached_extraction(doc: Doc) -> dict | None:
@@ -323,9 +319,9 @@ def _cached_extraction(doc: Doc) -> dict | None:
     return json.loads(path.read_text()) if path.exists() else None
 
 
-def _extraction_is_current(doc: Doc, version: int, model: str) -> bool:
+def _extraction_is_current(doc: Doc, model: str) -> bool:
     cached = _cached_extraction(doc)
-    return cached is not None and cached.get("sha256") == doc.sha256 and cached.get("version") == version \
+    return cached is not None and cached.get("sha256") == doc.sha256 and cached.get("version") == EXTRACT_VERSION \
         and _made_by(cached, model)
 
 
@@ -373,23 +369,22 @@ def run_extraction(doc: Doc, *, model: str, effort: str | None, budget: RunBudge
     return extraction, usage
 
 
-def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str, budget: RunBudget | None = None,
-                 prompt: str | None = None) -> tuple[str, Usage]:
+def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str,
+                 budget: RunBudget | None = None) -> tuple[str, Usage]:
     path = DECISIONS_DIR / f"{doc.id}.json"
     # Read before the call, so a previous result without ids fails before it costs anything.
     previous = _with_ids(json.loads(path.read_text()), path) if path.exists() else None
     referenced = _referenced_ids()
-    chosen = extract_prompt(prompt)
-    extraction, usage = run_extraction(doc, model=model, effort=effort, budget=budget, prompt=prompt)
+    extraction, usage = run_extraction(doc, model=model, effort=effort, budget=budget)
     with usage_kept(usage):
         decisions = extraction.decisions
         ids = assign_ids(doc.id, previous, decisions, extraction.words, date.today(), referenced)
         result = {
             "doc_id": doc.id,
             "sha256": doc.sha256,
-            "version": chosen.version,
+            "version": EXTRACT_VERSION,
             "model": model,
-            "provenance": provenance(usage, cli, chosen.system, EXTRACT_SCHEMA, effort),
+            "provenance": provenance(usage, cli, EXTRACT_SYSTEM, EXTRACT_SCHEMA, effort),
             "moededato": extraction.moededato,
             "next_number": ids.next_number,
             "retired": ids.retired,

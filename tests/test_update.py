@@ -14,11 +14,6 @@ from analyze import StepSummary, Usage
 from scrape import Doc
 
 CATEGORIES = ["okonomi", "master", "dommere", "staevner"]
-# The extraction prompt and a model the pipeline does not extract with.
-OTHER_PROMPT = next(name for name in analyze.EXTRACT_PROMPTS if name != analyze.extract_prompt().name)
-OTHER_MODEL = next(model for model in ("claude-sonnet-5-5", "claude-opus-5-5") if model != update.EXTRACT_MODEL)
-# The guard's tests are about full consolidation unless they say otherwise.
-FULL = update.Plan(mode="full")
 
 
 @pytest.fixture
@@ -26,7 +21,6 @@ def data(tmp_path, monkeypatch):
     monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path / "beslutninger")
     monkeypatch.setattr(analyze, "RULES_DIR", tmp_path / "regler")
     monkeypatch.setattr(update, "RUNS_LOG", tmp_path / "runs.jsonl")
-    monkeypatch.setattr(update, "EVAL_RUNS_LOG", tmp_path / "eval-runs.jsonl")
     monkeypatch.setattr(update, "RUN_REPORT", tmp_path / "run-report.md")
     analyze.DECISIONS_DIR.mkdir()
     analyze.RULES_DIR.mkdir()
@@ -134,54 +128,16 @@ def test_the_workflow_job_outlasts_a_run_on_the_default_limits():
     assert timeout > update.DEFAULT_TIME_BUDGET + analyze.CONSOLIDATE_TIMEOUT / 60
 
 
-def test_the_refusal_names_the_reason_and_the_github_checkbox(analysed):
+def test_the_refusal_names_the_reason_and_the_workflow_checkboxes(analysed):
     (analyze.RULES_DIR / "master.json").unlink()
     with pytest.raises(SystemExit) as refusal:
-        update.check_rebuild(analysed, allowed=False, plan=FULL)
-    assert "no rule file in data/regler/: master" in str(refusal.value)
-    assert update.REBUILD_INPUT_LABEL in str(refusal.value)
+        update.check_rebuild(analysed, allowed=False, mode="full")
+    message = str(refusal.value)
+    assert "no rule file in data/regler/: master" in message and update.HOW_TO_PROCEED in message
     workflow = (Path(update.__file__).parent / ".github" / "workflows" / "update.yml").read_text()
-    assert f'description: "{update.REBUILD_INPUT_LABEL}"' in workflow
-
-
-def _log(path: Path, *lines: dict) -> None:
-    path.write_text("".join(json.dumps(line) + "\n" for line in lines))
-
-
-def _logged_step(calls: int, cost: float, model: str) -> dict:
-    return {"calls": calls, "failed": 0, "skipped": 0, "cost_usd": cost, "models": [model]}
-
-
-def test_a_rebuild_is_priced_from_measured_extractions_and_the_last_full_consolidation(analysed):
-    opus = "claude-opus-5-5"
-    _log(update.EVAL_RUNS_LOG,
-         {"command": "extract", "model": opus, "prompt": analyze.extract_prompt().name,
-          "steps": {"extract": _logged_step(10, 1.0, opus)}},
-         {"command": "extract", "model": opus, "prompt": OTHER_PROMPT,
-          "steps": {"extract": _logged_step(4, 0.6, opus)}},
-         {"command": "score", "runs": ["stored"]})
-    _log(update.RUNS_LOG,
-         {"time": "2026-10-01T06:00:00+00:00", "steps": {"consolidate": _logged_step(4, 4.0, opus)}},
-         {"time": "2026-11-01T06:00:00+00:00", "steps": {"consolidate": _logged_step(4, 2.0, opus)}},
-         {"time": "2026-12-01T06:00:00+00:00", "consolidate_mode": "full",
-          "steps": {"consolidate": _logged_step(1, 0.9, opus)}},  # one category: no full consolidation
-         {"time": "2027-01-01T06:00:00+00:00", "consolidate_mode": "incremental",
-          "steps": {"consolidate": _logged_step(30, 3.0, opus)}},
-         # Merged from another branch (.gitattributes): later in the file, earlier in time.
-         {"time": "2026-09-01T06:00:00+00:00", "steps": {"consolidate": _logged_step(4, 8.0, opus)}})
-    work = update.pending_work(analysed, prompt=OTHER_PROMPT)  # all 20 documents, and their 4 categories
-
-    estimate = update.estimate_cost(work, update.Plan(OTHER_PROMPT, opus, mode="full", consolidate_model=opus))
-    assert estimate.extract_usd == pytest.approx(20 * 0.15)  # the runs with this prompt only
-    assert estimate.consolidate_usd == pytest.approx(4 * 0.5)  # the full consolidation of November
-    assert estimate.total_usd == pytest.approx(5.0)
-    assert "more than --max-cost 4" in estimate.describe(4.0) and "--max-cost" not in estimate.describe(15.0)
-
-    sonnet = update.estimate_cost(work, update.Plan(OTHER_PROMPT, "claude-sonnet-5-5", mode="full",
-                                                    consolidate_model="claude-sonnet-5-5"))
-    assert sonnet.extract_usd is None and sonnet.total_usd is None  # no Sonnet extraction measured
-    assert sonnet.consolidate_usd == pytest.approx(update.FULL_CONSOLIDATION_USD)  # none logged: the README's
-    assert "unknown" in sonnet.describe(15.0)
+    inputs = workflow[workflow.index("workflow_dispatch:"):workflow.index("\npermissions:")]
+    labels = re.findall(r'description: "(.*)"', inputs)  # 'Allow a rebuild …' and 'Consolidate in full …'
+    assert len(labels) == 2 and all(f"'{label}'" in message for label in labels)
 
 
 def _one_rule_each(docs: list[Doc]) -> dict:
@@ -199,24 +155,16 @@ def _extracted_with_v2(docs: list[Doc]) -> None:
 
 
 def test_the_monthly_run_on_data_extracted_with_v2_refuses_before_any_call_and_names_the_migration(
-        run, analysed, fake_claude, caplog):
+        run, analysed, fake_claude):
     _extracted_with_v2(analysed)
-    model = update.EXTRACT_MODEL
-    _log(update.EVAL_RUNS_LOG, {"command": "extract", "model": model, "prompt": analyze.extract_prompt().name,
-                                "steps": {"extract": _logged_step(1, 1.0, model)}})  # 20 documents: 20 USD, and 5
     for options in ((), ("--allow-rebuild",)):  # incremental consolidation does not migrate, allowed or not
         with pytest.raises(SystemExit) as refused:
             run(analysed, *options, mode=None)
         message = str(refused.value)
-        assert (f"20 of 20 documents were extracted with another prompt or model than {analyze.extract_prompt().name} "
-                f"and {model}, which only a full consolidation takes in. Migrate with `{update.MIGRATE}` (estimated "
-                f"25.00 USD at list price, within its --max-cost {update.MIGRATION_MAX_COST})") in message
-        # On GitHub every run keeps to the default limits, so it takes several.
-        assert (f"'{update.REBUILD_INPUT_LABEL}' and '{update.MODE_INPUT_LABEL}' ticked, where each run keeps to the "
-                f"default limits ({update.DEFAULT_MAX_COST} USD, {update.DEFAULT_TIME_BUDGET} minutes): at an "
-                f"estimated 25.00 USD it takes several runs there") in message
+        assert (f"20 of 20 documents were extracted with another prompt or model than v{analyze.EXTRACT_VERSION} "
+                f"and {update.EXTRACT_MODEL}, which only a full consolidation takes in") in message
+        assert update.HOW_TO_PROCEED in message and update.MIGRATE in message
     assert fake_claude.invocations("call") == 0
-    assert "Estimated cost at list price" in caplog.text
 
 
 def _reworded(docs: list[Doc]) -> list[dict]:
@@ -241,16 +189,12 @@ def test_a_cut_off_migration_is_finished_by_running_its_command_again_and_plain_
     assert _exit_code(run, docs, *migrate, "--workers", "1", "--max-cost", "2.5", mode=None) == update.EXIT_REVIEW
     report = update.RUN_REPORT.read_text()
     assert "- **stale**" in report and "Merge the pull request, so what the run has paid for is kept" in report
-    assert (f"**Unfinished rebuild**: the run was cut off before it finished the work --allow-rebuild let it do. To "
-            f"finish it, run `{update.MIGRATE}` again; on GitHub, merge the review pull request of the cut-off run "
-            f"first, if it opened one, so what it paid for reaches main, then run the workflow again with "
-            f"'{update.REBUILD_INPUT_LABEL}' and '{update.MODE_INPUT_LABEL}' ticked: what was done is kept, so it does "
-            f"only the rest.") in report
+    assert "**Unfinished rebuild**" in report and update.RERUN in report
 
     # A plain run (the monthly one) stops before any call and names that command.
     assert _exit_code(run, docs, mode=None) == update.EXIT_REVIEW and fake_claude.invocations("call") == 10
     report = update.RUN_REPORT.read_text()
-    assert f"Migrate with `{update.MIGRATE}`" in report and f"If it is cut off, run `{update.MIGRATE}` again" in report
+    assert "which only a full consolidation takes in" in report and update.HOW_TO_PROCEED in report
 
     # The same command again does only the rest: the 10 documents left, then the 4 categories in full.
     run(docs, *migrate, "--workers", "1", mode=None)
@@ -261,43 +205,12 @@ def test_a_cut_off_migration_is_finished_by_running_its_command_again_and_plain_
         assert (saved["version"], saved["model"]) == (analyze.EXTRACT_VERSION, update.EXTRACT_MODEL)
         assert [d["id"] for d in saved["beslutninger"]] == [f"{doc.id}#1"]  # carried over
     assert "**Ready to publish**" in update.RUN_REPORT.read_text()
+    # The run log records what was paid for: the pipeline's prompt, in full mode.
+    assert {k: _run_log()[-1][k] for k in ("extract_prompt", "consolidate_mode")} == \
+        {"extract_prompt": f"v{analyze.EXTRACT_VERSION}", "consolidate_mode": "full"}
 
     run(docs, mode=None)  # and a plain run then has nothing to do
     assert fake_claude.invocations("call") == 24
-
-
-def test_a_migration_to_another_prompt_and_model_is_named_and_finished_with_them(run, data, fake_claude, monkeypatch,
-                                                                                caplog):
-    docs = _docs(data, 20)
-    _extracted(docs)
-    _consolidated(docs, monkeypatch, _one_rule_each(docs))
-    fake_claude.answers(*_reworded(docs))
-    migrate = (f"uv run update.py --offline --consolidate-mode full --extract-prompt {OTHER_PROMPT} --extract-model "
-               f"{OTHER_MODEL} --allow-rebuild --max-cost {update.MIGRATION_MAX_COST} --time-budget "
-               f"{update.MIGRATION_TIME_BUDGET}")
-
-    with pytest.raises(SystemExit, match=f"20 of 20 documents need extraction.*{OTHER_MODEL}.*`{migrate}`"):
-        run(docs, "--extract-prompt", OTHER_PROMPT, "--extract-model", OTHER_MODEL)
-    assert fake_claude.invocations("call") == 0 and "Estimated cost at list price" in caplog.text
-
-    # Cut off after 10 extractions, its report names the same command; the workflow cannot run it.
-    assert _exit_code(run, docs, *migrate.split()[3:], "--workers", "1", "--max-cost", "2.5", mode=None) == \
-        update.EXIT_REVIEW
-    assert f"To finish it, run `{migrate}` again: what was done is kept" in update.RUN_REPORT.read_text()
-
-    # Run again, it extracts the other 10 with that prompt and model, and consolidates every category in full.
-    run(docs, *migrate.split()[3:], "--workers", "1", mode=None)
-    chosen = analyze.extract_prompt(OTHER_PROMPT)
-    systems = [argv[argv.index("--system-prompt") + 1] for argv in fake_claude.calls()]
-    assert systems == [chosen.system] * 20 + [analyze.CONSOLIDATE_SYSTEM] * 4
-    assert {argv[argv.index("--model") + 1] for argv in fake_claude.calls()[:20]} == {OTHER_MODEL}
-    for doc in docs:
-        saved = json.loads((analyze.DECISIONS_DIR / f"{doc.id}.json").read_text())
-        assert (saved["version"], saved["model"]) == (chosen.version, OTHER_MODEL)
-        assert saved["provenance"]["prompt"] == analyze.prompt_hash(chosen.system, analyze.EXTRACT_SCHEMA)
-    assert "**Ready to publish**" in update.RUN_REPORT.read_text()
-    assert {k: _run_log()[-1][k] for k in ("extract_prompt", "consolidate_mode")} == \
-        {"extract_prompt": OTHER_PROMPT, "consolidate_mode": "full"}
 
 
 def _edit_version(doc: Doc, version: int) -> None:

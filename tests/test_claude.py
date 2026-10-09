@@ -212,29 +212,32 @@ def test_v3_is_v2_plus_the_rule_to_split_fees_and_nothing_else():
         analyze.extract_prompt("v9")
 
 
-def test_the_pipeline_prompt_keeps_its_cache_and_another_prompt_extracts_again(fake_claude, data):
+def test_the_pipeline_prompt_keeps_its_cache_and_a_new_one_extracts_again(fake_claude, data, monkeypatch):
     fake_claude.answer(NOTHING_FOUND)
     pipeline = analyze.extract_prompt()
-    other = next(name for name in analyze.EXTRACT_PROMPTS if name != pipeline.name)  # one the pipeline does not use
+    other = analyze.extract_prompt(next(name for name in analyze.EXTRACT_PROMPTS if name != pipeline.name))
     docs = _docs(data, "a", "b")
-    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
-    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1, prompt=pipeline.name)
-    assert fake_claude.invocations("call") == 2  # the pipeline's prompt by name is the same prompt: cached
+    for _ in range(2):
+        analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
+    assert fake_claude.invocations("call") == 2  # the second run finds both current
     assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == []
-    assert analyze.missing_extractions(docs, other, model="claude-sonnet-5-5") == ["a", "b"]
+    assert analyze.superseded_extractions(docs, model="claude-sonnet-5-5") == []
 
-    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1, prompt=other)
+    # The pipeline moves to the other prompt (a new EXTRACT_VERSION): every document is extracted again with it.
+    monkeypatch.setattr(analyze, "EXTRACT_VERSION", other.version)
+    monkeypatch.setattr(analyze, "EXTRACT_SYSTEM", other.system)
+    assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
+    assert analyze.superseded_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
+    analyze.extract(docs, model="claude-sonnet-5-5", effort=None, workers=1)
     systems = [argv[argv.index("--system-prompt") + 1] for argv in fake_claude.calls()]
-    assert systems == [pipeline.system] * 2 + [analyze.EXTRACT_PROMPTS[other]] * 2
-    hashes = {name: analyze.prompt_hash(analyze.EXTRACT_PROMPTS[name], analyze.EXTRACT_SCHEMA)
-              for name in (pipeline.name, other)}
-    assert hashes[pipeline.name] != hashes[other]
+    assert systems == [pipeline.system] * 2 + [other.system] * 2
+    hashes = {prompt.name: analyze.prompt_hash(prompt.system, analyze.EXTRACT_SCHEMA) for prompt in (pipeline, other)}
+    assert hashes[pipeline.name] != hashes[other.name]
     for doc in docs:
         saved = _saved(data, doc)
-        assert saved["version"] == analyze.extract_prompt(other).version
-        assert saved["provenance"]["prompt"] == hashes[other]
-    assert analyze.missing_extractions(docs, other, model="claude-sonnet-5-5") == []
-    assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == ["a", "b"]
+        assert saved["version"] == other.version
+        assert saved["provenance"]["prompt"] == hashes[other.name]
+    assert analyze.missing_extractions(docs, model="claude-sonnet-5-5") == []
 
 
 def test_an_extraction_by_another_model_than_the_one_asked_for_is_extracted_again(fake_claude, data):
