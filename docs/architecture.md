@@ -48,10 +48,12 @@ flowchart TB
   %% Extraction: update.EXTRACT_MODEL, update.py --workers default 4, analyze.EXTRACT_VERSION 3,
   %% analyze.EXTRACT_TIMEOUT 600, analyze.ask_claude attempts 3 with a 15 s times attempt pause.
   %% Quote check: analyze.QUOTE_THRESHOLD 0.8. Id carry-over: matching.MATCH_THRESHOLD 0.25.
-  %% Meeting date: analyze._meeting_date uses styrke.dk's date when the two differ by more than a year.
+  %% Meeting date: analyze._meeting_date uses styrke.dk's date when the two years differ by 2 or more.
   %% Migration: update.MIGRATE with MIGRATION_MAX_COST 40 and MIGRATION_TIME_BUDGET 150.
   %% Full consolidation: analyze.CONSOLIDATE_TIMEOUT 1800, 12 categories in analyze.CATEGORIES.
   %% Exit codes: update.py EXIT_REVIEW 3, EXIT_FAILED 1. Routing: .github/scripts/route-update.sh.
+  %% pages.yml triggers: workflow_run after update.yml, push to main on data/**, website/**, *.py or the
+  %% workflow file itself, and workflow_dispatch. evaluate.py: extract and replay call Claude, the rest does not.
   %% Document text: scrape.document_text. An .htm file goes through scrape._decode_html: the byte-order mark,
   %% else the declared charset if the bytes fit it, else UTF-8, else windows-1252. No charset detector is asked.
 
@@ -79,7 +81,7 @@ flowchart TB
 
   main["<b>main</b><br/>[GitHub repository branch]<br/>commit, an open review PR is closed"]:::ext
   pr["<b>Review pull request</b><br/>[GitHub, branch auto/update]<br/>Monthly update needs review, the run report as body"]:::ext
-  pages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>runs checks.py again (an error publishes nothing),<br/>then website.py, then deploys"]:::code
+  pages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>also on a push to main touching data/, website/,<br/>*.py or pages.yml, and on Run workflow.<br/>Runs checks.py again (an error publishes nothing),<br/>then website.py, then deploys"]:::code
   ghp["<b>GitHub Pages</b><br/>[External hosting]"]:::ext
   nicki(["<b>Nicki</b><br/>[Person]"]):::person
 
@@ -91,7 +93,7 @@ flowchart TB
     audit["<b>audit.py propose, apply</b><br/>[Claude Opus 5.5, effort high]<br/>2 independent runs per category,<br/>only the ops both propose are applied"]:::claude
   end
   subgraph MEAS["Side lane: measurement loop (detail in 1.4)"]
-    evalu["<b>evaluate.py</b><br/>[plain code against the answer key]<br/>extraction gate, candidate recall, replays"]:::code
+    evalu["<b>evaluate.py</b><br/>[Python CLI: scoring is plain code,<br/>extract and replay call Claude]<br/>extraction gate, candidate recall, replays"]:::code
   end
 
   styrke -->|"index page, PDF and HTM files"| scrape
@@ -441,7 +443,7 @@ flowchart LR
   subgraph CI["Workflows: GitHub Actions"]
     wfup["<b>update.yml</b><br/>[GitHub Actions workflow]<br/>06:00 UTC on the 1st, or Run workflow<br/>with the rebuild and full boxes"]:::code
     rtup["<b>route-update.sh</b><br/>[Bash]<br/>by exit code: commit to main, or force-push<br/>auto/update and open or update the PR"]:::code
-    wfpages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>after an update that changed main, or a push<br/>to main touching data/, website/ or *.py"]:::code
+    wfpages["<b>pages.yml</b><br/>[GitHub Actions workflow]<br/>after an update that changed main, a push to main<br/>touching data/, website/, *.py or pages.yml,<br/>or Run workflow"]:::code
     wftests["<b>tests.yml</b><br/>[GitHub Actions workflow]<br/>pytest and a render-only build<br/>on pull requests and pushes to main"]:::code
   end
 
@@ -582,7 +584,7 @@ by keeping both sides' lines (`.gitattributes`).
 
 ```mermaid
 flowchart TB
-  %% Sources. The import lines and calls in update.py, analyze.py, incremental.py and checks.py.
+  %% Sources. The import lines and calls in update.py, analyze.py, incremental.py, checks.py and render.py.
   %% analyze.ask_claude is the only place that runs the claude binary for answers. update.yml's smoke test calls it directly.
   %% scrape.document_text decodes .htm itself (scrape._decode_html), so BeautifulSoup consults no charset detector.
 
@@ -618,6 +620,8 @@ flowchart TB
   incremental -->|"version order"| render
   checks -->|"build_rules, in_force"| render
   checks -->|"loads data/"| analyze
+  checks -->|"holder, same_title for former slugs"| matching
+  render -->|"version_matches, has_slug"| analyze
   website -->|"the same in-force logic"| render
 
   style ENTRY fill:none,stroke:#8a8a8a,stroke-dasharray:6 4
