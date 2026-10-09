@@ -5,7 +5,7 @@
     uv run -m styrke.update --render-only    # only rebuild the Markdown and the website from data/
 
 Steps: 1) styrke/scrape.py downloads new documents and writes data/manifest.json.
-2) styrke/analyze.py asks Claude (via the `claude` CLI) to extract decisions from new or changed
+2) styrke/analyze.py asks Claude (through styrke/claude.py) to extract decisions from new or changed
 documents and to consolidate them per category into rule histories; both are cached in data/.
 A run that calls Claude adds a line with its tokens, cost and models to data/runs.jsonl.
 3) styrke/checks.py checks the result, including what the analysis changed in the past; the outcome goes to

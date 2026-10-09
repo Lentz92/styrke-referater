@@ -31,8 +31,8 @@ flowchart LR
 - Orange boxes are Claude calls; the blue box after one is the code that checks its answer.
 - "Effort not set" means the code passes no `--effort`, so Claude Code's own default applies. `styrke/update.py` never
   passes one; the audit does (high), and `uv run -m styrke.evaluate extract` with `--effort`.
-- Every Claude call goes through `claude.ask` in `styrke/claude.py`: `claude -p` with no tools, a system prompt and a
-  JSON schema, on the subscription. "USD" means the CLI's list-price estimate, which the caps count.
+- Every Claude call from `styrke/` goes through `claude.ask` in `styrke/claude.py`: `claude -p` with no tools, a system
+  prompt and a JSON schema, on the subscription. "USD" means the CLI's list-price estimate, which the caps count.
 
 ---
 
@@ -585,11 +585,10 @@ merges it by keeping both sides' lines (`.gitattributes`).
 
 ```mermaid
 flowchart TB
-  %% Sources. The import lines and calls in styrke/update.py, styrke/analyze.py, styrke/incremental.py, styrke/claude.py,
-  %% styrke/checks.py and styrke/render.py.
-  %% claude.ask is the only place that runs the claude binary for answers. The smoke test in
-  %% .github/actions/claude-cli calls the binary directly.
-  %% scrape.document_text decodes .htm itself (scrape._decode_html), so BeautifulSoup consults no charset detector.
+  %% Sources. The import lines and calls in styrke/update.py, styrke/analyze.py, styrke/incremental.py,
+  %% styrke/claude.py, styrke/checks.py and styrke/render.py. claude.ask is the only place that runs the claude binary
+  %% for answers. The smoke test in .github/actions/claude-cli calls the binary directly. scrape.document_text decodes
+  %% .htm itself (scrape._decode_html), so BeautifulSoup consults no charset detector.
 
   subgraph ENTRY["Entry point"]
     update["<b>styrke/update.py</b><br/>[Python CLI]<br/>runs the steps in order, rebuild guard, run log, run report"]:::code
@@ -643,11 +642,12 @@ flowchart TB
 
 `styrke/claude.py` alone runs `claude -p`: the other modules reach Claude only through its `ask`, and it keeps the
 run's cost and time limits and what each call used. `styrke/analyze.py` is the hub for the data: it loads and writes
-the decisions, rules and slug history the others build on. `styrke/candidates.py` and `styrke/matching.py` are pure functions, which keeps the ranking and the id
-rules testable without Claude. `styrke/checks.py` and `styrke/website.py` work out what is in force through
-`styrke/render.py`, so the checks, the Markdown pages and the website always agree. Imports of shared constants (for
-example `analyze.CATEGORIES` in `styrke/render.py`) are left out, and so is what the `styrke/checks.py` and
-`styrke/website.py` CLIs load on their own (`scrape.load_manifest`, and in `styrke/website.py` the `analyze` loaders).
+the decisions, rules and slug history the others build on. `styrke/candidates.py` and `styrke/matching.py` are pure
+functions, which keeps the ranking and the id rules testable without Claude. `styrke/checks.py` and `styrke/website.py`
+work out what is in force through `styrke/render.py`, so the checks, the Markdown pages and the website always agree.
+Imports of shared constants (for example `analyze.CATEGORIES` in `styrke/render.py`) are left out, and so is what the
+`styrke/checks.py` and `styrke/website.py` CLIs load on their own (`scrape.load_manifest`, and in `styrke/website.py`
+the `analyze` loaders).
 
 ### 2.5 Level 3: How audit.py and evaluate.py reuse the components
 
@@ -703,19 +703,21 @@ flowchart TB
 
 Neither tool has its own Claude or matching logic: both call Claude and record what it used through
 `styrke/claude.py`, the audit reuses incremental consolidation's prompt and merge check for its rewrites, and the
-evaluation runs the pipeline's own extraction code and candidate ranking, so what it measures is what the pipeline does. `styrke/audit.py` also depends on `styrke/evaluate.py` for its answer-key score and
-on `styrke/update.py` to refuse an audit while a monthly run has work left.
+evaluation runs the pipeline's own extraction code and candidate ranking, so what it measures is what the pipeline does.
+`styrke/audit.py` also depends on `styrke/evaluate.py` for its answer-key score and on `styrke/update.py` to refuse an
+audit while a monthly run has work left.
 
 ### 2.6 Level 3: Which module owns which file
 
 ```mermaid
 flowchart LR
   %% Sources. Path constants: scrape.PDF_ROOT and MANIFEST, analyze.DECISIONS_DIR, RULES_DIR and SLUGS_PATH,
-  %% update.RUNS_LOG and RUN_REPORT, render.OUT_DIR, website.OUT_DIR, audit.OPS_PATH, CACHE_DIR and REPORT, evaluate.EVAL_DIR.
+  %% update.RUNS_LOG and RUN_REPORT, render.OUT_DIR, website.OUT_DIR, audit.OPS_PATH, CACHE_DIR and REPORT,
+  %% evaluate.EVAL_DIR.
   %% Owns means: defines the path and writes it. Other writes go through the owner's helpers, except that audit.apply
   %% builds the rule files and slug history with analyze's helpers in a temporary copy, then replaces each file with
-  %% scrape._write_atomic. claude.append_run_log appends the line the owner of a run log builds
-  %% (update.record_run, evaluate.log_run) to the path it gives.
+  %% scrape._write_atomic. claude.append_run_log writes a line to the log its caller names (update.record_run,
+  %% evaluate.log_run): the time, the caller's fields, then each step's usage.
 
   subgraph MOD["Modules"]
     scrape["<b>styrke/scrape.py</b><br/>[module]"]:::code
@@ -752,8 +754,8 @@ flowchart LR
   analyze -->|"owns: full consolidation"| regler
   analyze -->|"owns: _save_slugs builds every version"| slugs
   incremental -->|"writes the categories it changed"| regler
-  claudepy -->|"append_run_log: the line record_run builds"| runs
-  claudepy -->|"append_run_log: the line log_run builds"| evruns
+  claudepy -->|"append_run_log: time, record_run's fields, steps"| runs
+  claudepy -->|"append_run_log: time, log_run's fields, steps"| evruns
   update -->|"owns: a line per paid run"| runs
   update -->|"owns"| runreport
   render -->|"owns"| md
@@ -782,14 +784,14 @@ flowchart LR
 (`styrke/incremental.py`) and an audit's apply (`styrke/audit.py`). All three write the slug history first, so a slug is
 never lost if a later write fails. `styrke/render.py` and `styrke/website.py` write only derived output, which any run
 can rebuild from `data/` (`uv run -m styrke.update --render-only`). `styrke/candidates.py`, `styrke/matching.py` and
-`styrke/checks.py` write no files; `styrke/claude.py` only appends the run-log lines its callers build, to the log they
-name.
+`styrke/checks.py` write no files; `styrke/claude.py` only appends a line to the run log its caller names: the time, the
+caller's fields, then each step's usage.
 
 ---
 
 ## Notes
 
 - The gates in 1.4 and the audit's answer-key gate only report a verdict. A person acts on it; no code reads it.
-- Effort: only the audit (`audit.EFFORT = "high"`), the answer-key judges (effort `high` in their recorded
-  provenance) and `uv run -m styrke.evaluate extract --effort` set one. The monthly run and the migration use Claude Code's
-  default, which the code does not record beyond `"default"`.
+- Effort: only the audit (`audit.EFFORT = "high"`), the answer-key judges (effort `high` in their recorded provenance)
+  and `uv run -m styrke.evaluate extract --effort` set one. The monthly run and the migration use Claude Code's default,
+  which the code does not record beyond `"default"`.

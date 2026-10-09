@@ -14,14 +14,15 @@ levels 1 to 3.
 `styrke/update.py` runs the steps in order. Steps 2 and 3 ask Claude through `styrke/claude.py`, which runs `claude -p`
 on the subscription, checks that the model asked for answered, keeps the run's cost and time limits and records what
 each call used. Step 2 reruns for a document when its file changes, or when it was extracted with another prompt or
-model; step 3 takes the decisions the rule files do not reflect yet. A new extraction
-prompt goes into `analyze.EXTRACT_PROMPTS` as `v<n>`, where `uv run -m styrke.evaluate extract --prompt v<n>` can measure it
-against the answer key; an extraction records the n of the prompt it was made with, so setting `EXTRACT_VERSION` to n
-makes it the pipeline's and every document due for extraction with it. After editing the consolidation prompt, bump
-`CONSOLIDATE_VERSION`. Either way a migration follows (see [Rebuilds and migrations](operations.md#rebuilds-and-migrations)). Each result records its
-`provenance`: the model that answered, the CLI version, a fingerprint of the prompt and schema, and the effort. Only
-the extraction's model is part of a cache key: an extraction is current only when the model in its provenance is the
-extraction model asked for by full id (an alias counts for whichever model answers).
+model; step 3 takes the decisions the rule files do not reflect yet. A new extraction prompt goes into
+`analyze.EXTRACT_PROMPTS` as `v<n>`, where `uv run -m styrke.evaluate extract --prompt v<n>` can measure it against the
+answer key; an extraction records the n of the prompt it was made with, so setting `EXTRACT_VERSION` to n makes it the
+pipeline's and every document due for extraction with it. After editing the consolidation prompt, bump
+`CONSOLIDATE_VERSION`. Either way a migration follows (see [Rebuilds and
+migrations](operations.md#rebuilds-and-migrations)). Each result records its `provenance`: the model that answered, the
+CLI version, a fingerprint of the prompt and schema, and the effort. Only the extraction's model is part of a cache key:
+an extraction is current only when the model in its provenance is the extraction model asked for by full id (an alias
+counts for whichever model answers).
 
 Incremental consolidation (`styrke/incremental.py`) takes the decisions the rule files do not reflect yet (new, changed
 or retired, or re-dated), one document at a time in date order. Code ranks the 15 rules whose words are closest to each

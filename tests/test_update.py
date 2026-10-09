@@ -133,6 +133,8 @@ def test_a_cut_off_migration_is_finished_by_running_its_command_again_and_plain_
     # The run log records what was paid for: the pipeline's prompt, in full mode.
     assert {k: _run_log()[-1][k] for k in ("extract_prompt", "consolidate_mode")} == \
         {"extract_prompt": f"v{analyze.EXTRACT_VERSION}", "consolidate_mode": "full"}
+    # in the stored field order, which every earlier line of data/runs.jsonl has
+    assert list(_run_log()[-1]) == ["time", "cli", "extract_prompt", "consolidate_mode", "steps"]
 
     run()  # and a plain run then has nothing to do
     assert fake_claude.invocations("call") == 24

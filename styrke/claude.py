@@ -173,7 +173,7 @@ class BudgetExhausted(RuntimeError):
 @contextmanager
 def usage_kept(usage: Usage) -> Iterator[None]:
     """Errors after a successful call (a quote that breaks the locator, a full disk) still carry the call's
-    usage, so its cost reaches the step summary and data/runs.jsonl."""
+    usage, so its cost reaches the step summary and the run log."""
     try:
         yield
     except Exception as exc:
@@ -183,7 +183,7 @@ def usage_kept(usage: Usage) -> Iterator[None]:
 def provenance(usage: Usage, cli: str, system: str, schema: dict, effort: str | None) -> dict:
     """What produced a cached result, to tell results apart when the model, CLI, prompt or effort changes.
 
-    Only the model is part of a cache key, the extraction's (analyze._made_by): switching from an alias to the id it
+    Only the model is part of a cache key, the extraction's: switching from an alias to the id it
     stands for must not re-run anything. Claude Code does not report its default effort, so an unset one is recorded
     as "default".
     """
@@ -350,7 +350,8 @@ def run_parallel(jobs: list, fn, workers: int, label: str, budget: RunBudget | N
 # --------------------------------------------------------------------------- usage records
 
 def usage_json(usage: Usage) -> dict:
-    """One call's usage as a kept answer records it (styrke/audit.py's data/audit/, styrke/evaluate.py's runs)."""
+    """One call's usage as a kept answer records it (styrke/audit.py's data/audit/, styrke/evaluate.py's
+    eval/runs/<run>/)."""
     return {"input": usage.input_tokens, "cache_read": usage.cache_read_tokens,
             "cache_write": usage.cache_write_tokens, "output": usage.output_tokens,
             "cost_usd": round(usage.cost_usd, 4), "seconds": round(usage.duration_s), "attempts": usage.attempts,
@@ -368,7 +369,7 @@ def estimate_tokens(system: str, prompt: str, schema: dict) -> int:
     return round((len(system) + len(prompt) + len(json.dumps(schema))) / CHARS_PER_TOKEN)
 
 
-def step_json(step: StepSummary) -> dict:
+def _step_json(step: StepSummary) -> dict:
     """One step's Claude usage as a line of a run log stores it (data/runs.jsonl, eval/runs.jsonl)."""
     usage = step.usage
     return {
@@ -386,9 +387,9 @@ def step_json(step: StepSummary) -> dict:
 def append_run_log(path: Path, now: datetime, header: Mapping[str, object],
                    steps: Mapping[str, StepSummary]) -> None:
     """Add one JSON line to a run log, so cost and time can be followed over months: the time, the caller's `header`
-    fields in the order given (each log has its own), then what each step's Claude calls used (step_json)."""
+    fields in the order given (each log has its own), then what each step's Claude calls used."""
     line = {"time": now.isoformat(timespec="seconds"), **header,
-            "steps": {name: step_json(step) for name, step in steps.items()}}
+            "steps": {name: _step_json(step) for name, step in steps.items()}}
     with path.open("a") as out:
         out.write(json.dumps(line, ensure_ascii=False) + "\n")
 

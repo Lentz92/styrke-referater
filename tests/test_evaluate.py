@@ -218,6 +218,8 @@ def test_pilot_and_cost_limit_are_respected(corpus, fake_claude):
     assert fake_claude.invocations("call") == 3  # one worker under a small limit: the first call reached it
     line = _runs_log(corpus)[-1]
     assert line["steps"]["extract"]["skipped"] == 2 and line["documents"] == ["rep2024"]
+    # in the stored field order, which every earlier line of eval/runs.jsonl has
+    assert list(line) == ["time", "command", "run", "model", "prompt", "effort", "documents", "cli", "steps"]
 
 
 def test_an_extraction_run_can_use_another_prompt_and_its_provenance_tells_them_apart(corpus, fake_claude):
