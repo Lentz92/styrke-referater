@@ -546,6 +546,25 @@ def test_of_decisions_as_much_about_the_rule_the_one_most_inside_the_quote_wins(
                   tekst="Licensgebyret er uændret 200 kr.")])
     titel, keywords, value = FEE_KEYS["licence"]
     licence_event = _event("E1", "rep2019", "bekraeftet", value, "Licens: kr. 200,- (Uændret).")
+    import sys, platform, matching, candidates
+    key = {**_rule_key(corpus, [licence_event]), "titel": titel, "keywords": keywords}
+    print("DEBUG python", sys.version, platform.platform())
+    print("DEBUG event span", key["events"][0]["span"])
+    texts = evaluate.Texts()
+    doc = corpus.doc("rep2019")
+    print("DEBUG doc text", repr(analyze.document_text(doc)))
+    words = texts.words(doc)
+    for d in by_doc["rep2019"]:
+        loc = analyze.locate_quote(d.citat, words, d.side)
+        print("DEBUG decision", d.ref, repr(d.citat), d.side, loc, matching.quote_span(loc, d.citat))
+    vocab = candidates.vocabulary([titel, *keywords, *(t for d in by_doc["rep2019"] for t in (d.emne, d.tekst))])
+    terms = evaluate.key_terms(key, key["events"][0], vocab)
+    for d in by_doc["rep2019"]:
+        print("DEBUG sim", d.ref, evaluate.key_similarity(terms, d, vocab))
+    m2 = matching
+    found = [m2.Candidate(d.emne, d.tekst, d.udfald, m2.quote_span(analyze.locate_quote(d.citat, words, d.side), d.citat)) for d in by_doc["rep2019"]]
+    wanted = [m2.Candidate(titel, value, "vedtaget", tuple(key["events"][0]["span"]))]
+    print("DEBUG matches", m2.match_decisions(wanted, found))
     assert _map(corpus, by_doc, titel, keywords, [licence_event]) == {"E1": "rep2019#2"}
 
 
