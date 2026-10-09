@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-07-26",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_26072015#1",
    "emne": "Kurser og uofficielle konkurrencer for dopede eller karantæneramte",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_26072015#2",
    "emne": "Medaljer og pokaler ved stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_26072015#3",
    "emne": "Stævneregler og stævnekalender",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_26072015#4",
    "emne": "Licensregistrering",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_26072015#5",
    "emne": "Tilskud til klubudviklingsprojekter",
    "kategori": "okonomi",
    "udfald": "vedtaget",

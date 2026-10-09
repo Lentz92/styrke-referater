@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Udtagelse til internationale masterstævner",
+   "slug": "udtagelse-til-internationale-masterstævner",
    "vigtig": true,
    "note": "Bestyrelsen lagde i 2010 udtagelseskriterierne under eliteudvalget. Masterudvalgets egne retningslinjer fra 2015 og 2024 fastsætter alligevel kriterierne, uden at en ny bestyrelsesbeslutning om kompetencen er registreret.",
    "versioner": [
@@ -69,6 +70,7 @@
   },
   {
    "titel": "Dækning af udgifter ved internationale masterstævner",
+   "slug": "dækning-af-udgifter-ved-internationale-masterstævner",
    "vigtig": true,
    "note": "Masterudvalgets retningslinje fra 2024 nævner kun, at løftere, der har klaret kvalifikationskravene, selv kan betale startgebyret. Det ser ud til at stride mod Repræsentantskabets beslutning fra 2021, som også giver ikke-kvalificerede ret til at deltage for egen regning.",
    "versioner": [
@@ -108,6 +110,7 @@
   },
   {
    "titel": "Head coach ved internationale masterstævner",
+   "slug": "head-coach-ved-internationale-masterstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -139,6 +142,7 @@
   },
   {
    "titel": "Head coachs pligter ved masterstævner",
+   "slug": "head-coachs-pligter-ved-masterstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -162,6 +166,7 @@
   },
   {
    "titel": "Koordinatorer for internationale masterstævner",
+   "slug": "koordinatorer-for-internationale-masterstævner",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -193,6 +198,7 @@
   },
   {
    "titel": "Klubbers hæftelse for startgebyr ved udeblivelse",
+   "slug": "klubbers-hæftelse-for-startgebyr-ved-udeblivelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -224,6 +230,7 @@
   },
   {
    "titel": "Betalingsfrist for internationale masterstævner",
+   "slug": "betalingsfrist-for-internationale-masterstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -247,6 +254,7 @@
   },
   {
    "titel": "Tilmelding til internationale masterstævner",
+   "slug": "tilmelding-til-internationale-masterstævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -278,6 +286,7 @@
   },
   {
    "titel": "Antidopinguddannelse for masterløftere",
+   "slug": "antidopinguddannelse-for-masterløftere",
    "vigtig": true,
    "note": "Tilmeldingskravene fra 2027 kræver et gyldigt ADEL-certifikat, så Anti Doping Danmarks uddannelse er formentlig ikke længere nok.",
    "versioner": [
@@ -293,6 +302,7 @@
   },
   {
    "titel": "Fastsættelse af kvalifikationskrav for masters",
+   "slug": "fastsættelse-af-kvalifikationskrav-for-masters",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -332,6 +342,7 @@
   },
   {
    "titel": "Kvalifikationskrav master klassisk, herrer 3-kamp",
+   "slug": "kvalifikationskrav-master-klassisk-herrer-3-kamp",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -347,6 +358,7 @@
   },
   {
    "titel": "Kvalifikationskrav master klassisk, herrer bænkpres",
+   "slug": "kvalifikationskrav-master-klassisk-herrer-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -362,6 +374,7 @@
   },
   {
    "titel": "Kvalifikationskrav master klassisk, damer 3-kamp",
+   "slug": "kvalifikationskrav-master-klassisk-damer-3-kamp",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -377,6 +390,7 @@
   },
   {
    "titel": "Kvalifikationskrav master klassisk, damer bænkpres",
+   "slug": "kvalifikationskrav-master-klassisk-damer-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -392,6 +406,7 @@
   },
   {
    "titel": "Kvalifikationskrav master udstyr, herrer 3-kamp",
+   "slug": "kvalifikationskrav-master-udstyr-herrer-3-kamp",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -407,6 +422,7 @@
   },
   {
    "titel": "Kvalifikationskrav master udstyr, herrer bænkpres",
+   "slug": "kvalifikationskrav-master-udstyr-herrer-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -422,6 +438,7 @@
   },
   {
    "titel": "Kvalifikationskrav master udstyr, damer 3-kamp",
+   "slug": "kvalifikationskrav-master-udstyr-damer-3-kamp",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -437,6 +454,7 @@
   },
   {
    "titel": "Kvalifikationskrav master udstyr, damer bænkpres",
+   "slug": "kvalifikationskrav-master-udstyr-damer-bænkpres",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -452,6 +470,7 @@
   },
   {
    "titel": "Masterudvalgets sammensætning og placering",
+   "slug": "masterudvalgets-sammensætning-og-placering",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -499,6 +518,7 @@
   },
   {
    "titel": "Masterudvalgets møder og sekretær",
+   "slug": "masterudvalgets-møder-og-sekretær",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -522,6 +542,7 @@
   },
   {
    "titel": "Masterudvalgets budget",
+   "slug": "masterudvalgets-budget",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -593,6 +614,7 @@
   },
   {
    "titel": "Salg og lån af landsholdsdragter til masterløftere",
+   "slug": "salg-og-lån-af-landsholdsdragter-til-masterløftere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -608,6 +630,7 @@
   },
   {
    "titel": "Adfærdskodeks, generel adfærd",
+   "slug": "adfærdskodeks-generel-adfærd",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -623,6 +646,7 @@
   },
   {
    "titel": "Adfærdskodeks, adfærd under konkurrencer",
+   "slug": "adfærdskodeks-adfærd-under-konkurrencer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -638,6 +662,7 @@
   },
   {
    "titel": "Adfærdskodeks, alkohol",
+   "slug": "adfærdskodeks-alkohol",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -653,6 +678,7 @@
   },
   {
    "titel": "Masterforeningens forhold til DSF",
+   "slug": "masterforeningens-forhold-til-dsf",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -668,6 +694,7 @@
   },
   {
    "titel": "DM i squat og dødløft for masters",
+   "slug": "dm-i-squat-og-dødløft-for-masters",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -699,6 +726,7 @@
   },
   {
    "titel": "Pointberegning ved DM masters klassisk",
+   "slug": "pointberegning-ved-dm-masters-klassisk",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -714,6 +742,7 @@
   },
   {
    "titel": "Masterskategori ved DM Hold",
+   "slug": "masterskategori-ved-dm-hold",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -729,6 +758,7 @@
   },
   {
    "titel": "VM for masters, klassisk (RAW)",
+   "slug": "vm-for-masters-klassisk-raw",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -744,6 +774,7 @@
   },
   {
    "titel": "Master 3-rekorder i øvrige kategorier",
+   "slug": "master-3-rekorder-i-øvrige-kategorier",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -759,6 +790,7 @@
   },
   {
    "titel": "Medaljer for master 4 herrer og master 3 damer",
+   "slug": "medaljer-for-master-4-herrer-og-master-3-damer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -774,6 +806,7 @@
   },
   {
    "titel": "IPF Masterkommission",
+   "slug": "ipf-masterkommission",
    "vigtig": false,
    "note": null,
    "versioner": [

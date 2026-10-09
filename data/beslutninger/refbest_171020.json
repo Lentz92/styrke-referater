@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2020-10-17",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_171020#1",
    "emne": "Kompensation for manglende stævneindtægter",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_171020#2",
    "emne": "Dispensation fra kvalifikationskrav, DM klassisk",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_171020#3",
    "emne": "Dækning af øgede stævneudgifter pga. Covid-19",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_171020#4",
    "emne": "Officielle stævner i digital form",
    "kategori": "staevner",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": null,
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "Tilmeldingsfrister2026#1",
    "emne": "Consent Form ved EPF/IPF-stævner",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "Tilmeldingsfrister2026#2",
    "emne": "ADEL antidopinguddannelse ved internationale stævner",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "Tilmeldingsfrister2026#3",
    "emne": "Startgebyr og stævnehotel ved internationale stævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "Tilmeldingsfrister2026#4",
    "emne": "Trænerakkreditering ved internationale mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-08-20",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom20082026#1",
    "emne": "Brush-up kursus for B-dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom20082026#2",
    "emne": "Opfølgning på dommere med for lav dommeraktivitet",
    "kategori": "dommere",
    "udfald": "vedtaget",

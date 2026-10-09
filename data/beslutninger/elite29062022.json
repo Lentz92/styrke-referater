@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-06-29",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite29062022#1",
    "emne": "Tilmelding til internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite29062022#2",
    "emne": "Egenbetaling ved dobbelt senior deltagelse",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite29062022#3",
    "emne": "Dispensationer fra landsholdskrav",
    "kategori": "landshold",
    "udfald": "vedtaget",

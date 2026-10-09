@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2012-03-25",
+ "next_number": 14,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2012#1",
    "emne": "TSK Cup som officielt stævne",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "rep2012#2",
    "emne": "Startgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "rep2012#3",
    "emne": "Invitation og tilmelding til stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "rep2012#4",
    "emne": "Sen tilmelding til stævner",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "rep2012#5",
    "emne": "Løbende tilmelding ved nationale stævner",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -91,6 +98,7 @@
    "citat_side": 2
   },
   {
+   "id": "rep2012#6",
    "emne": "Tilskud til Masterudvalget",
    "kategori": "master",
    "udfald": "forkastet",
@@ -108,6 +116,7 @@
    "citat_side": 2
   },
   {
+   "id": "rep2012#7",
    "emne": "Fast løftested til officielle stævner",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -125,6 +134,7 @@
    "citat_side": 2
   },
   {
+   "id": "rep2012#8",
    "emne": "Tilskud til Masterudvalget",
    "kategori": "master",
    "udfald": "trukket",
@@ -142,6 +152,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2012#9",
    "emne": "Afvikling af Danske mesterskaber med B-grupper",
    "kategori": "staevner",
    "udfald": "trukket",
@@ -159,6 +170,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2012#10",
    "emne": "Divisionsturnering, arrangørtilskud og tilmeldingsgebyr",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -176,6 +188,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2012#11",
    "emne": "Nordland Cup (Raw) som dansk mesterskab",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -193,6 +206,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2012#12",
    "emne": "Kørselsgodtgørelse",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -210,6 +224,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2012#13",
    "emne": "Individuel bænkpresliga",
    "kategori": "staevner",
    "udfald": "forkastet",

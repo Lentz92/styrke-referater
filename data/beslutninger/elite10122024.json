@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-12-10",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite10122024#1",
    "emne": "Landsholdskrav styrkeløft med udstyr",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite10122024#2",
    "emne": "Booking af rejser for landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite10122024#3",
    "emne": "Stævner hvor kvalifikationskrav kan opnås",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite10122024#4",
    "emne": "Egenbetaling landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",

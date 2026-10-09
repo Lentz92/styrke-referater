@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2012-04-15",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_14042012#1",
    "emne": "Deltagelse i internationale konkurrencer for dopingdømte masterløftere",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_14042012#2",
    "emne": "Udstyrsliste på hjemmesiden",
    "kategori": "udstyr",
    "udfald": "vedtaget",

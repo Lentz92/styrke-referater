@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-04-30",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite30042026#1",
    "emne": "Deltagelse ved DM og dispensation",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite30042026#2",
    "emne": "Bona fide-forsøg ved DM",
    "kategori": "landshold",
    "udfald": "vedtaget",

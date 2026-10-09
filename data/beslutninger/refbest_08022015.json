@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-02-08",
+ "next_number": 17,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_08022015#1",
    "emne": "Stævnekontrakt",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_08022015#2",
    "emne": "Støtte til aktiviteter og aflønning",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_08022015#3",
    "emne": "Medaljebudget",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_08022015#4",
    "emne": "Samlet stævneudstyr",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_08022015#5",
    "emne": "Dommeraktivitetskrav",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_08022015#6",
    "emne": "Stævneplakat",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_08022015#7",
    "emne": "Frivillighedspris",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_08022015#8",
    "emne": "Masterudvalget under eliteudvalget",
    "kategori": "master",
    "udfald": "ikke_afgjort",
@@ -142,6 +152,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_08022015#9",
    "emne": "Sammenlægning af JM og SM",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -159,6 +170,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_08022015#10",
    "emne": "Sammenlægning af DM i udstyr",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -176,6 +188,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_08022015#11",
    "emne": "Divisionsturnering, finale og tilskud",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -193,6 +206,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_08022015#12",
    "emne": "Reklamer på hjemmesiden",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -210,6 +224,7 @@
    "citat_side": 6
   },
   {
+   "id": "refbest_08022015#13",
    "emne": "DSF kraftcenter",
    "kategori": "organisation",
    "udfald": "ikke_afgjort",
@@ -227,6 +242,7 @@
    "citat_side": 6
   },
   {
+   "id": "refbest_08022015#14",
    "emne": "Salg af landsholdsdragter til masterløftere",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -244,6 +260,7 @@
    "citat_side": 6
   },
   {
+   "id": "refbest_08022015#15",
    "emne": "Forslag til EPF om fri RAW-udstyrsvalg",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -261,6 +278,7 @@
    "citat_side": 6
   },
   {
+   "id": "refbest_08022015#16",
    "emne": "Stævneregler om udstyr og licensbetaling",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",

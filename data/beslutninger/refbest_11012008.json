@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2008-01-11",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_11012008#1",
    "emne": "Mediekontakt",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_11012008#2",
    "emne": "Attestering af afregningsbilag",
    "kategori": "okonomi",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2013-06-02",
+ "next_number": 10,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "vm2013#1",
    "emne": "Indberetning af dopingkontrol",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "vm2013#2",
    "emne": "Atletrepræsentant i IPF's bestyrelse",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "vm2013#3",
    "emne": "Ydelse til IPF's bestyrelse",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "vm2013#4",
    "emne": "Ansvarsdokument for cheftrænere",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "vm2013#5",
    "emne": "Frist for endelig nominering",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -91,6 +98,7 @@
    "citat_side": 1
   },
   {
+   "id": "vm2013#6",
    "emne": "Verdensmesterskab for masters, udstyrsfrit",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 2
   },
   {
+   "id": "vm2013#7",
    "emne": "Skulderstropper på dragt",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 2
   },
   {
+   "id": "vm2013#8",
    "emne": "Knævarmere",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -142,6 +152,7 @@
    "citat_side": 2
   },
   {
+   "id": "vm2013#9",
    "emne": "Dommernes fodtøj",
    "kategori": "dommere",
    "udfald": "vedtaget",

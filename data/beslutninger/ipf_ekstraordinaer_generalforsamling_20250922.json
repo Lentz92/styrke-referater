@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-09-22",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "ipf_ekstraordinaer_generalforsamling_20250922#1",
    "emne": "Udelukkelse ved deltagelse i ikke-godkendte events",
    "kategori": "internationalt",
    "udfald": "trukket",

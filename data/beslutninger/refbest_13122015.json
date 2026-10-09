@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-12-13",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_13122015#1",
    "emne": "Overførsel af masterudvalgets overskud",
    "kategori": "master",
    "udfald": "forkastet",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_13122015#2",
    "emne": "Antidopingpolitik",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_13122015#3",
    "emne": "Udstyrsregler",
    "kategori": "udstyr",
    "udfald": "vedtaget",

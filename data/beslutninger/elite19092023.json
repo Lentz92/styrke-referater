@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-09-19",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite19092023#1",
    "emne": "Lægeerklæring ved afbud",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite19092023#2",
    "emne": "Assistenttræner ved mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite19092023#3",
    "emne": "Offentliggørelse af bruttolandshold og orlov",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite19092023#4",
    "emne": "Fællestræning og sparring på tværs af landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2014-03-23",
+ "next_number": 12,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2014#1",
    "emne": "Startgebyr, fordeling til arrangørklub",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2014#2",
    "emne": "Budget for masters",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2014#3",
    "emne": "Årsafgift for nye klubber",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2014#4",
    "emne": "Bestyrelsens sammensætning",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2014#5",
    "emne": "Karantæne ved deltagelse i bodybuilding- eller stærkmandsforbund",
    "kategori": "antidoping",
    "udfald": "forkastet",
@@ -91,6 +98,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2014#6",
    "emne": "Eftertilmelding og dobbelt startgebyr",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2014#7",
    "emne": "DM B og C",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2014#8",
    "emne": "Kvalifikationskrav DM A og DM bænkpres",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -142,6 +152,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2014#9",
    "emne": "Licens, krav om klubmedlemskab forud",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -159,6 +170,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2014#10",
    "emne": "Holdpræmie",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -176,6 +188,7 @@
    "citat_side": 6
   },
   {
+   "id": "rep2014#11",
    "emne": "Udtagelse af juniorer og sub-juniorer til internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",

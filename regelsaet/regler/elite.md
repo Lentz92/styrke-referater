@@ -6,6 +6,7 @@ Alle regler i området med fuld tekst og historik – også dem, der ikke længe
 
 ## Landshold og udtagelse
 
+<a id="regel/a-og-b-bruttotrup"></a>
 ### A- og B-bruttotrup
 
 **I kraft**
@@ -16,6 +17,7 @@ Eliteudvalget arbejder fremover med både en A- og en B-bruttotrup.
 
 - 01.06.2012 · indført: eliteudvalget arbejder med A- og B-bruttotrup · [elite01062012 s. 2](https://filer.styrke.dk/referater/elite01062012.pdf#page=2)
 
+<a id="regel/afbud-til-nm-efter-nominering"></a>
 ### Afbud til NM efter nominering
 
 **I kraft**
@@ -26,6 +28,7 @@ En løfter, der melder fra til NM efter nominering, skal betale forbundets udgif
 
 - 09.09.2017 · indført: afbud efter nominering: betal udgifter og karantæne · [elite09092017 s. 3](https://filer.styrke.dk/referater/elite09092017.pdf#page=3)
 
+<a id="regel/anskaffelse-af-landsholdsdragt"></a>
 ### Anskaffelse af landsholdsdragt
 
 **I kraft**
@@ -39,6 +42,7 @@ Kun løftere, der udtages til stævner, får udleveret en landsholdstrikot. Løf
 - 29.08.2026 · indkommet forslag: bestyrelsen drøfter egenbetaling for dragter fra 2027 (fra 01.01.2027) · [refbest_290826.2 s. 5](https://filer.styrke.dk/referater/refbest_290826.2.pdf#page=5)
 - 15.09.2026 · ændret: fra 2027 køber løftere selv dragt fra JAKO, 615 kr. (fra 01.01.2027) · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
 
+<a id="regel/atletkontrakter"></a>
 ### Atletkontrakter
 
 **I kraft**
@@ -52,6 +56,7 @@ Der indgås landsholdskontrakt med alle atleter på landshold og bruttotrup samt
 - 09.12.2025 · ændret: underskrevet kontrakt senest 30.12.2025, ellers ude af truppen · [elite09122025 s. 3](https://filer.styrke.dk/referater/elite09122025.pdf#page=3)
 - 16.09.2025 · ændret: kontrakt opdateres for 2026 (fra 01.01.2026) · [elite16092025.2 s. 2](https://filer.styrke.dk/referater/elite16092025.2.pdf#page=2)
 
+<a id="regel/betingelser-for-forhaandsudtagelse"></a>
 ### Betingelser for forhåndsudtagelse
 
 **I kraft**
@@ -62,6 +67,7 @@ Forhåndsudtagelser forudsætter deltagelse i nationale mesterskaber i kategorie
 
 - 15.12.2013 · indført: forhåndsudtagelse kræver DM med stabilitetskrav og samlinger · [elite15122013 s. 2](https://filer.styrke.dk/referater/elite15122013.pdf#page=2)
 
+<a id="regel/bonus-for-medaljer"></a>
 ### Bonus for medaljer
 
 **I kraft**
@@ -73,6 +79,7 @@ Bonusser for medaljer i 2017 udbetales, og bonus kan bruges hos ER eller SPD med
 - 10.12.2017 · ophævet: belønningssystemet bortfalder for at frigøre midler · [elite10122017 s. 3](https://filer.styrke.dk/referater/elite10122017.pdf#page=3)
 - 09.09.2017 · indført: 2017-bonusser udbetales; systemet revideres pr. 1.1.2018 (fra 01.01.2018) · [elite09092017 s. 3](https://filer.styrke.dk/referater/elite09092017.pdf#page=3)
 
+<a id="regel/bruttolandshold-udtagelsesrunder-og-karenstid"></a>
 ### Bruttolandshold: udtagelsesrunder og karenstid
 
 **I kraft**
@@ -87,6 +94,7 @@ Bonusser for medaljer i 2017 udbetales, og bonus kan bruges hos ER eller SPD med
 - 16.08.2020 · ændret: ingen nye udtagelser før 1. januar 2021 · [elite16082020 s. 1](https://filer.styrke.dk/referater/elite16082020.pdf#page=1)
 - 14.12.2021 · ændret: trupperne evalueres halvårligt fra 1. juli 2022 (fra 01.07.2022) · [elite14122021 s. 1](https://filer.styrke.dk/referater/elite14122021.pdf#page=1)
 
+<a id="regel/baenkpreslandshold"></a>
 ### Bænkpreslandshold
 
 **I kraft**
@@ -99,6 +107,7 @@ Bænkpreslandsholdet omfatter både klassiske løftere og udstyrsløftere; som u
 - 04.12.2016 · ændret: fælles klassisk/udstyr bænkpreslandshold, højst 2 konkurrencer årligt · [elite04122016 s. 2](https://filer.styrke.dk/referater/elite04122016.pdf#page=2)
 - 15.12.2018 · ændret: junior bænkpres flyttes til sub-junior/junior-projektet · [elite15122018 s. 1](https://filer.styrke.dk/referater/elite15122018.pdf#page=1)
 
+<a id="regel/deltagelse-i-andre-internationale-staevner"></a>
 ### Deltagelse i andre internationale stævner
 
 **I kraft**
@@ -111,6 +120,7 @@ Landsholdsløftere må deltage i Arnold Classic for egen regning, hvis det ikke 
 - 31.07.2022 · ændret: Arnold Classic tilladt uden kontraktkonflikt, egen regning · [refbest_310722 s. 3](https://filer.styrke.dk/referater/refbest_310722.pdf#page=3)
 - 01.07.2026 · ændret: andre stævner vurderes individuelt fra sag til sag · [elite01072026.2 s. 2](https://filer.styrke.dk/referater/elite01072026.2.pdf#page=2)
 
+<a id="regel/deltagelse-i-landsholdssamlinger-og-advarsler"></a>
 ### Deltagelse i landsholdssamlinger og advarsler
 
 **I kraft**
@@ -122,6 +132,7 @@ Deltagelse i de fastlagte bruttolandsholdssamlinger er obligatorisk; udeblivelse
 - 31.05.2014 · indført: udeblivelse giver skriftlig advarsel og evt. udelukkelse · [elite31052014 s. 1](https://filer.styrke.dk/referater/elite31052014.pdf#page=1)
 - 05.12.2015 · ændret: kun sygdom gyldigt afbud; advarsel gælder 24 måneder · [elite05122015 s. 3](https://filer.styrke.dk/referater/elite05122015.pdf#page=3)
 
+<a id="regel/dispensation-fra-landsholdskrav"></a>
 ### Dispensation fra landsholdskrav
 
 **I kraft**
@@ -135,6 +146,7 @@ Dispensationer kan kun gives af eliteudvalget. Atleten henvender sig til Bjarte,
 
 > **Bemærk:** Bestyrelsens forslag fra 2017 om at lægge dispensationskompetencen hos bestyrelsen ses ikke vedtaget; i 2022 giver eliteudvalget selv dispensationer.
 
+<a id="regel/egenbetaling-ved-dobbelt-deltagelse"></a>
 ### Egenbetaling ved dobbelt deltagelse
 
 **I kraft**
@@ -146,6 +158,7 @@ Ved dobbelt deltagelse (klassisk + udstyr) ved EM/VM bænkpres betaler atleten e
 - 29.06.2022 · indført: dobbelt egenbetaling ved dobbelt seniordeltagelse fra 2023 (fra 01.01.2023) · [elite29062022 s. 1](https://filer.styrke.dk/referater/elite29062022.pdf#page=1)
 - 23.10.2024 · ændret: bænk-dobbeltstart: primær egenbetaling plus ekstra hotel og gebyrer · [elite23102024 s. 2](https://filer.styrke.dk/referater/elite23102024.pdf#page=2)
 
+<a id="regel/egenbetaling-ved-internationale-mesterskaber"></a>
 ### Egenbetaling ved internationale mesterskaber
 
 **I kraft**
@@ -179,6 +192,7 @@ For 2026 er egenbetalingen 3000 kr. for løftere udtaget på EM A- og VM A-krav,
 - 09.12.2025 · ændret: 2026: EM B/VM B fuld egenbetaling af transport og hotel (fra 01.01.2026) · [elite09122025 s. 4](https://filer.styrke.dk/referater/elite09122025.pdf#page=4)
 - 09.12.2025 · ændret: 2026: EM A/VM A egenbetaling 3000 kr. (fra 01.01.2026) · [elite09122025 s. 4](https://filer.styrke.dk/referater/elite09122025.pdf#page=4)
 
+<a id="regel/ejerskab-af-udleveret-landsholdsudstyr"></a>
 ### Ejerskab af udleveret landsholdsudstyr
 
 **I kraft**
@@ -189,6 +203,7 @@ Udstyr, der uden beregning udleveres til landsholdsatleter, tilhører DSF i 12 m
 
 - 16.02.2019 · indført: gratis udstyr tilhører DSF i 12 måneder · [elite16022019.2 s. 1](https://filer.styrke.dk/referater/elite16022019.2.pdf#page=1)
 
+<a id="regel/forbud-mod-konkurrence-i-relaterede-idraetsgrene"></a>
 ### Forbud mod konkurrence i relaterede idrætsgrene
 
 **I kraft**
@@ -199,6 +214,7 @@ Atleter, der takker ja til bruttolandsholdsudtagelse, må ikke konkurrere i rela
 
 - 31.05.2014 · indført: ingen konkurrence i crossfit, bodybuilding, strongman, vægtløftning · [elite31052014 s. 3](https://filer.styrke.dk/referater/elite31052014.pdf#page=3)
 
+<a id="regel/frist-for-indsendelse-af-koerselsbilag"></a>
 ### Frist for indsendelse af kørselsbilag
 
 **I kraft**
@@ -209,6 +225,7 @@ Landsholdsløftere skal umiddelbart efter træningssamlinger og internationale s
 
 - 25.07.2010 · indført: kørselsbilag skal være kassereren i hænde senest 14 dage efter · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.pdf#page=1)
 
+<a id="regel/frist-for-opfyldelse-af-kvalifikationskrav"></a>
 ### Frist for opfyldelse af kvalifikationskrav
 
 **I kraft**
@@ -219,6 +236,7 @@ Krav skal være indfriet senest 70 dage før et mesterskab (jf. IPF's 60-dagesre
 
 - 10.11.2012 · indført: krav indfriet senest 70 dage før mesterskab · [elite10112012 s. 2](https://filer.styrke.dk/referater/elite10112012.pdf#page=2)
 
+<a id="regel/henvendelser-og-afbud-om-landsholdssamlinger"></a>
 ### Henvendelser og afbud om landsholdssamlinger
 
 **I kraft**
@@ -229,6 +247,7 @@ Alle afbud og henvendelser om landsholdssamlinger rettes til eliteudvalg@styrke.
 
 - 25.04.2015 · indført: afbud kun via eliteudvalg@styrke.dk · [elite25042015 s. 2](https://filer.styrke.dk/referater/elite25042015.pdf#page=2)
 
+<a id="regel/holddefinition-og-holdscore"></a>
 ### Holddefinition og holdscore
 
 **I kraft**
@@ -239,6 +258,7 @@ Holdscoren får større betydning i Eliteudvalgets strategi. Et hold defineres s
 
 - 10.11.2012 · indført: hold mindst 5 løftere; fem bedste tæller · [elite10112012 s. 1](https://filer.styrke.dk/referater/elite10112012.pdf#page=1)
 
+<a id="regel/juniorer-kun-i-egen-kategori-internationalt"></a>
 ### Juniorer kun i egen kategori internationalt
 
 **I kraft**
@@ -252,6 +272,7 @@ Løftere kan kun deltage internationalt i den kategori, de er på landsholdet i,
 
 > **Bemærk:** Vedtaget med svagt flertal (17 for, 14 imod).
 
+<a id="regel/juniorer-paa-seniorsamlinger"></a>
 ### Juniorer på seniorsamlinger
 
 **I kraft**
@@ -262,6 +283,7 @@ Udvalgte juniorer kan fremover inviteres til seniorsamlinger i forbindelse med o
 
 - 23.10.2024 · indført: udvalgte juniorer kan inviteres til seniorsamlinger · [elite23102024 s. 1](https://filer.styrke.dk/referater/elite23102024.pdf#page=1)
 
+<a id="regel/kompetence-til-udtagelse"></a>
 ### Kompetence til udtagelse
 
 **I kraft**
@@ -274,6 +296,7 @@ Landstræneren indstiller, og Eliteudvalget foretager den endelige udtagelse; ud
 - 29.06.2011 · ændret: udtagelser cleares internt før offentliggørelse · [elite29062011 s. 1](https://filer.styrke.dk/referater/elite29062011.pdf#page=1)
 - 01.06.2012 · ændret: udtagelse uden møde kræver flertal i udvalget · [elite01062012 s. 3](https://filer.styrke.dk/referater/elite01062012.pdf#page=3)
 
+<a id="regel/kontant-protestgebyr"></a>
 ### Kontant protestgebyr
 
 **I kraft**
@@ -284,6 +307,7 @@ Head coachen medbringer fremadrettet altid kontant 75 euro til internationale st
 
 - 19.12.2020 · indført: head coach medbringer 75 euro kontant til protest · [elite19122020 s. 2](https://filer.styrke.dk/referater/elite19122020.pdf#page=2)
 
+<a id="regel/kvalifikationskrav-til-landshold-og-internationale-mesterskaber"></a>
 ### Kvalifikationskrav til landshold og internationale mesterskaber
 
 **I kraft**
@@ -317,6 +341,7 @@ Kvalifikationskrav fastsættes efter modellen med VM A-krav som gennemsnit af 8.
 - 01.07.2026 · ændret: 2028-krav efter samme model; årlig opdatering fremover · [elite01072026.2 s. 2](https://filer.styrke.dk/referater/elite01072026.2.pdf#page=2)
 - 15.09.2026 · ændret: fra 2028 snit af hidtidige og beregnede krav (fra 01.01.2028) · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
 
+<a id="regel/kvalifikationspulje"></a>
 ### Kvalifikationspulje
 
 **I kraft**
@@ -327,6 +352,7 @@ Der oprettes en særlig kvalifikationspulje i eliteudvalgets budget til atleter,
 
 - 03.08.2012 · indført: pulje til atleter, der klarer EM/VM-krav i løbet af året · [elite03082012 s. 1](https://filer.styrke.dk/referater/elite03082012.pdf#page=1)
 
+<a id="regel/landsholdsloeftere-som-betalte-traenere"></a>
 ### Landsholdsløftere som betalte trænere
 
 **I kraft**
@@ -337,6 +363,7 @@ Landsholdsløftere må fortsat agere trænere for andre licensløftere mod betal
 
 - 28.02.2016 · indført: landsholdsløftere må fortsat træne andre mod betaling · [refbest_28022016 s. 3](https://filer.styrke.dk/referater/refbest_28022016.pdf#page=3)
 
+<a id="regel/landstraenerens-kompetence-og-coaching"></a>
 ### Landstrænerens kompetence og coaching
 
 **I kraft**
@@ -350,6 +377,7 @@ Landstræneren udstikker retningslinjerne for træning. Det er de af DSF udpeged
 - 17.09.2016 · ændret: løfter vælger ikke coach og bestemmer ikke alene vægte · [refbest_17092016 s. 2](https://filer.styrke.dk/referater/refbest_17092016.pdf#page=2)
 - 14.01.2017 · ændret: headcoach altid påkrævet; ellers ingen deltagelse · [refbest_14012017 s. 1](https://filer.styrke.dk/referater/refbest_14012017.pdf#page=1)
 
+<a id="regel/ledsagelse-af-loeftere-under-mesterskab"></a>
 ### Ledsagelse af løftere under mesterskab
 
 **I kraft**
@@ -364,6 +392,7 @@ Landstræneren udstikker retningslinjerne for træning. Det er de af DSF udpeged
 
 > **Bemærk:** Familiereglen er ifølge referaterne vedtaget af landsholdsløfterne i oktober 2022, men den beslutning findes ikke blandt de foreliggende beslutninger.
 
+<a id="regel/laegeerklaering-ved-afbud"></a>
 ### Lægeerklæring ved afbud
 
 **I kraft**
@@ -375,6 +404,7 @@ Ved sygdomsafbud til samlinger og internationale mesterskaber efter final nomina
 - 25.04.2015 · indført: lægeerklæring kræves ved sygdomsafbud · [elite25042015 s. 2](https://filer.styrke.dk/referater/elite25042015.pdf#page=2)
 - 19.09.2023 · ændret: lægeerklæring kan kræves; udgift refunderes · [elite19092023 s. 1](https://filer.styrke.dk/referater/elite19092023.pdf#page=1)
 
+<a id="regel/obligatorisk-spoergeskema-for-landsholdsatleter"></a>
 ### Obligatorisk spørgeskema for landsholdsatleter
 
 **I kraft**
@@ -385,6 +415,7 @@ Landsholdsatleter skal besvare de udsendte spørgeskemaer, som er obligatoriske.
 
 - 29.03.2021 · indført: spørgeskemaer er obligatoriske; manglende svar kan få konsekvenser · [elite29032021 s. 1](https://filer.styrke.dk/referater/elite29032021.pdf#page=1)
 
+<a id="regel/opfyldt-em-vm-krav-gaelder-til-naeste-aars-mesterskab"></a>
 ### Opfyldt EM/VM-krav gælder til næste års mesterskab
 
 **I kraft**
@@ -395,6 +426,7 @@ Løftere, der klarer et EM- eller VM-krav ved et mesterskab, har stadig klaret k
 
 - 10.11.2012 · indført: krav klaret ved mesterskab gælder også næste år · [elite10112012 s. 2](https://filer.styrke.dk/referater/elite10112012.pdf#page=2)
 
+<a id="regel/opholdslaengde-ved-internationale-staevner"></a>
 ### Opholdslængde ved internationale stævner
 
 **I kraft**
@@ -406,6 +438,7 @@ Tommelfingerreglen om ankomst to dage før og hjemrejse dagen efter konkurrencen
 - 15.12.2013 · indført: 3 dages regel; længere ophold mod egenbetaling via kasserer · [elite15122013 s. 3](https://filer.styrke.dk/referater/elite15122013.pdf#page=3)
 - 28.02.2016 · ændret: eliteudvalget må ændre rejsetidspunkter inden for budget · [refbest_28022016 s. 3](https://filer.styrke.dk/referater/refbest_28022016.pdf#page=3)
 
+<a id="regel/opvarmning-ved-internationale-mesterskaber"></a>
 ### Opvarmning ved internationale mesterskaber
 
 **I kraft**
@@ -416,6 +449,7 @@ Fremover er det et krav, at opvarmningen til disciplinerne ved internationale me
 
 - 10.12.2011 · indført: opvarmning færdig i tide til ændring af startvægt · [elite10122011 s. 1](https://filer.styrke.dk/referater/elite10122011.pdf#page=1)
 
+<a id="regel/orientering-og-offentliggoerelse-af-udtagelser"></a>
 ### Orientering og offentliggørelse af udtagelser
 
 **I kraft**
@@ -429,6 +463,7 @@ Udtagelser er først gældende, når de er godkendt af DSF og offentliggjort på
 - 19.09.2023 · ændret: bruttolandshold og orlov vises på landsholdssiden · [elite19092023 s. 1](https://filer.styrke.dk/referater/elite19092023.pdf#page=1)
 - 09.12.2025 · ændret: løftere med orlov fjernes fra oversigten · [elite09122025 s. 1](https://filer.styrke.dk/referater/elite09122025.pdf#page=1)
 
+<a id="regel/orlov-fra-landsholdet"></a>
 ### Orlov fra landsholdet
 
 **I kraft**
@@ -439,6 +474,7 @@ Ved bevilget orlov skal atleten deltage i mindst to landsholdssamlinger før nom
 
 - 01.07.2026 · indført: efter orlov kræves 2 samlinger før nominering · [elite01072026.2 s. 1](https://filer.styrke.dk/referater/elite01072026.2.pdf#page=1)
 
+<a id="regel/overfoersel-af-sanktioner-fra-u-landshold"></a>
 ### Overførsel af sanktioner fra U-landshold
 
 **I kraft**
@@ -449,6 +485,7 @@ Sanktioner tildelt som deltager på U-landsholdet overføres til seniorlandshold
 
 - 12.03.2025 · indført: U-landsholdssanktioner følger med til seniorlandsholdet fra 1.7.2025 (fra 01.07.2025) · [elite12032025 s. 1](https://filer.styrke.dk/referater/elite12032025.pdf#page=1)
 
+<a id="regel/overgang-fra-junior-til-seniorlandshold"></a>
 ### Overgang fra junior- til seniorlandshold
 
 **I kraft**
@@ -459,6 +496,7 @@ Løftere på sub-junior/juniorlandsholdet, der bliver seniorløftere i 2019, ove
 
 - 08.09.2018 · indført: juniorer overgår automatisk; 2 år til at klare elitekrav (fra 01.01.2019) · [elite08092018 s. 2](https://filer.styrke.dk/referater/elite08092018.pdf#page=2)
 
+<a id="regel/pligt-til-dm-deltagelse"></a>
 ### Pligt til DM-deltagelse
 
 **I kraft**
@@ -472,6 +510,7 @@ Landsholdsløftere skal deltage i DM; afbud ved akut sygdom godtages. Der er ing
 - 30.04.2026 · bekræftet: DM-krav fastholdt; frit vægtklassevalg, ingen maksimalkrav · [elite30042026 s. 1](https://filer.styrke.dk/referater/elite30042026.pdf#page=1)
 - 30.04.2026 · ændret: bona fide-forsøg: mindst 80 % af bedste VM-løft · [elite30042026 s. 1](https://filer.styrke.dk/referater/elite30042026.pdf#page=1)
 
+<a id="regel/provisorisk-indstilling-til-forhaandsnominering-til-vm-klassisk"></a>
 ### Provisorisk indstilling til forhåndsnominering til VM klassisk
 
 **I kraft**
@@ -482,6 +521,7 @@ Hvis trænerteamet blandt de øvrige atleter finder potentielle atleter, der kan
 
 - 16.02.2019 · indført: potentielle VM-atleter kan forhåndsnomineres før DM Klassisk · [elite16022019.2 s. 1](https://filer.styrke.dk/referater/elite16022019.2.pdf#page=1)
 
+<a id="regel/paaklaedning-ved-internationale-staevner"></a>
 ### Påklædning ved internationale stævner
 
 **I kraft**
@@ -495,6 +535,7 @@ Fra 2026 er alle landshold ens klædt på i dragter fra ER Equipment. Dragterne 
 - 14.12.2022 · ændret: ER Equipment T-shirts skal bruges ved internationale stævner · [elite14122022 s. 1](https://filer.styrke.dk/referater/elite14122022.pdf#page=1)
 - 23.11.2025 · ændret: fra 2026 ens ER-dragter til alle officielle internationale aktiviteter (fra 01.01.2026) · [refbest_231125 s. 2](https://filer.styrke.dk/referater/refbest_231125.pdf#page=2)
 
+<a id="regel/refusion-af-egenbetaling-ved-medaljer-og-placeringer"></a>
 ### Refusion af egenbetaling ved medaljer og placeringer
 
 **I kraft**
@@ -505,6 +546,7 @@ Ved DIF-anerkendt EM-medalje refunderes egenbetalingen med 50% (bronze), 75% (s�
 
 - 25.06.2024 · indført: EM-medalje 50/75/100 %; VM top 5 25 % (fra 01.01.2025) · [elite25062024_2 s. 2](https://filer.styrke.dk/referater/elite25062024_2.pdf#page=2)
 
+<a id="regel/skift-af-vaegtklasse-ved-internationale-mesterskaber"></a>
 ### Skift af vægtklasse ved internationale mesterskaber
 
 **I kraft**
@@ -517,6 +559,7 @@ Som udgangspunkt tilhører atleten den vægtklasse, der er anført i den undersk
 - 12.03.2025 · ændret: lavere klasse kræver krav opnået inden for 12 måneder · [elite12032025 s. 1](https://filer.styrke.dk/referater/elite12032025.pdf#page=1)
 - 15.09.2026 · ændret: kontraktens vægtklasse gælder; sportschef og udvalg afgør skift · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
 
+<a id="regel/start-i-flere-kategorier"></a>
 ### Start i flere kategorier
 
 **I kraft**
@@ -528,6 +571,7 @@ Kvalificerede atleter kan deltage i flere kategorier (trekamp, bænkpres, klassi
 - 31.05.2014 · indført: dobbeltstart ved NM frarådes men kan tillades · [elite31052014 s. 4](https://filer.styrke.dk/referater/elite31052014.pdf#page=4)
 - 29.03.2021 · ændret: kvalificerede kan deltage i flere kategorier efter vurdering · [elite29032021 s. 1](https://filer.styrke.dk/referater/elite29032021.pdf#page=1)
 
+<a id="regel/startgebyr-haeftelse-ved-manglende-kvalifikation"></a>
 ### Startgebyr-hæftelse ved manglende kvalifikation
 
 **I kraft**
@@ -538,6 +582,7 @@ Løftere uden A- eller B-krav til EM kan deltage, hvis kravet opnås ved DM. Da 
 
 - 15.12.2018 · indført: løfter hæfter for 140 euro, hvis krav ikke nås ved DM · [elite15122018 s. 2](https://filer.styrke.dk/referater/elite15122018.pdf#page=2)
 
+<a id="regel/startvaegte-ved-internationale-mesterskaber"></a>
 ### Startvægte ved internationale mesterskaber
 
 **I kraft**
@@ -548,6 +593,7 @@ Senior landsholdsløftere må fremover ikke have startvægte over deres personli
 
 - 21.10.2011 · indført: seniorer må ikke starte over personlig rekord · [elite21102011 s. 1](https://filer.styrke.dk/referater/elite21102011.pdf#page=1)
 
+<a id="regel/struktur-paa-landsholdssamlinger"></a>
 ### Struktur på landsholdssamlinger
 
 **I kraft**
@@ -560,6 +606,7 @@ Der holdes regionale samlinger og 4 hovedsamlinger årligt; kan de ikke afvikles
 - 16.03.2021 · ændret: virtuelle samlinger, når fysiske ikke er mulige · [elite17032021 s. 1](https://filer.styrke.dk/referater/elite17032021.pdf#page=1)
 - 19.09.2023 · ændret: fra 2024 mere fællestræning på tværs af landshold (fra 01.01.2024) · [elite19092023 s. 1](https://filer.styrke.dk/referater/elite19092023.pdf#page=1)
 
+<a id="regel/staevner-hvor-kvalifikationskrav-kan-opnaas"></a>
 ### Stævner hvor kvalifikationskrav kan opnås
 
 **I kraft**
@@ -576,6 +623,7 @@ Kvalifikationskrav til internationale mesterskaber skal opnås ved JM, SM eller 
 - 12.03.2025 · bekræftet: ingen dispensation for kvalifikation ved stævner uden for Danmark · [elite12032025 s. 1](https://filer.styrke.dk/referater/elite12032025.pdf#page=1)
 - 15.09.2026 · ændret: klassiske totaler kan kvalificere til udstyrsstævner · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
 
+<a id="regel/sub-junior-og-juniorlandshold"></a>
 ### Sub-junior- og juniorlandshold
 
 **I kraft**
@@ -587,6 +635,7 @@ Alle subjuniorer og juniorer (klassisk/udstyr/talent) samles i én trup beståen
 - 03.08.2012 · indført: nyt sub-/juniorprojekt med NM 2014 som mål · [elite03082012 s. 1](https://filer.styrke.dk/referater/elite03082012.pdf#page=1)
 - 10.12.2017 · ændret: alle sub-/juniorer samles i én trup · [elite10122017 s. 1](https://filer.styrke.dk/referater/elite10122017.pdf#page=1)
 
+<a id="regel/tilmelding-og-nominering-til-internationale-mesterskaber"></a>
 ### Tilmelding og nominering til internationale mesterskaber
 
 **I kraft**
@@ -599,6 +648,7 @@ Alle løftere til internationale mesterskaber tilmeldes via deres respektive lan
 - 09.09.2017 · ændret: nomineringer flyttes til den enkelte landsholdsansvarlige · [elite09092017 s. 1](https://filer.styrke.dk/referater/elite09092017.pdf#page=1)
 - 29.06.2022 · bekræftet: tilmelding kun via landsholdsansvarlig · [elite29062022 s. 1](https://filer.styrke.dk/referater/elite29062022.pdf#page=1)
 
+<a id="regel/traening-i-hjemklub-for-bruttolandsholdsatleter"></a>
 ### Træning i hjemklub for bruttolandsholdsatleter
 
 **I kraft**
@@ -610,6 +660,7 @@ Atleten skal henlægge hovedparten af sin træning i sin hjemklub under DSF, sub
 - 31.05.2014 · indført: hovedparten af træningen i DSF-hjemklub eller ADD-aftaleklub · [elite31052014 s. 3](https://filer.styrke.dk/referater/elite31052014.pdf#page=3)
 - 15.06.2019 · ændret: løftere med job i udlandet accepteres på betingelser · [elite15062019 s. 2](https://filer.styrke.dk/referater/elite15062019.pdf#page=2)
 
+<a id="regel/traeningskrav-paa-landsholdssamlinger-90-reglen"></a>
 ### Træningskrav på landsholdssamlinger (90 %-reglen)
 
 **I kraft**
@@ -623,6 +674,7 @@ Kravet om at løfte +90 % og, for udstyrsløftere, i udstyr gælder, medmindre a
 - 07.12.2019 · ændret: udstyrsløftere træner i udstyr medmindre andet aftales · [elite07122019 s. 1](https://filer.styrke.dk/referater/elite07122019.pdf#page=1)
 - 29.03.2021 · ændret: fravalg kræver begrundet besked til sportschef før samling · [elite29032021 s. 2](https://filer.styrke.dk/referater/elite29032021.pdf#page=2)
 
+<a id="regel/udtagelse-til-em-klassisk-ved-flere-kvalificerede"></a>
 ### Udtagelse til EM klassisk ved flere kvalificerede
 
 **I kraft**
@@ -633,6 +685,7 @@ Til EM klassisk udtages de 8 kvinder med højest opnåede procent af EM-A-kravet
 
 - 27.06.2023 · indført: 8 kvinder efter procent af krav; højst 2 herrer pr. klasse · [elite27062023 s. 1](https://filer.styrke.dk/referater/elite27062023.pdf#page=1)
 
+<a id="regel/udtagelse-til-em-og-vm-paa-baggrund-af-a-og-b-krav"></a>
 ### Udtagelse til EM og VM på baggrund af A- og B-krav
 
 **I kraft**
@@ -647,6 +700,7 @@ Alle kvalificerede atleter med A-krav udtages som udgangspunkt til EM og VM; der
 - 18.05.2021 · ændret: A-kravsatleter udtages som udgangspunkt til EM og VM · [elite18052021 s. 2](https://filer.styrke.dk/referater/elite18052021.pdf#page=2)
 - 15.09.2026 · ændret: atlet med krav skal deltage i mindst ét mesterskab · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
 
+<a id="regel/udtagelseskriterier-til-bruttolandshold"></a>
 ### Udtagelseskriterier til bruttolandshold
 
 **I kraft**
@@ -659,6 +713,7 @@ For subjunior/junior kræves potentiale og engagement; NM har høj prioritet, og
 - 20.05.2017 · bekræftet: 10-14 ungdomsløftere udtages til NM, hvis budgettet tillader · [elite20052017 s. 1](https://filer.styrke.dk/referater/elite20052017.pdf#page=1)
 - 18.03.2018 · forslag trukket tilbage: OBBC's forslag om totalkrav, licens og 3 stævner trukket · [rep2018 s. 11](https://filer.styrke.dk/referater/rep2018.pdf#page=11)
 
+<a id="regel/assistenter-udpeget-af-den-arrangementsansvarlige"></a>
 ### Assistenter udpeget af den arrangementsansvarlige
 
 **I kraft** · intern procedure/detalje
@@ -669,6 +724,7 @@ Den ansvarlige for et arrangement kan, hvis det skønnes nødvendigt, udpege ass
 
 - 31.05.2014 · indført: ansvarlig kan udpege assistenter med ansvar over for udvalget · [elite31052014 s. 3](https://filer.styrke.dk/referater/elite31052014.pdf#page=3)
 
+<a id="regel/budgetoverskridelser-i-eliteudvalget"></a>
 ### Budgetoverskridelser i eliteudvalget
 
 **I kraft** · intern procedure/detalje
@@ -679,6 +735,7 @@ Der må ikke forekomme budgetoverskridelser, som ikke på forhånd er aftalt med
 
 - 01.06.2012 · indført: ingen budgetoverskridelser uden forudgående aftale · [elite01062012 s. 1](https://filer.styrke.dk/referater/elite01062012.pdf#page=1)
 
+<a id="regel/centralt-lager-for-landsholdsudstyr"></a>
 ### Centralt lager for landsholdsudstyr
 
 **I kraft** · intern procedure/detalje
@@ -689,6 +746,7 @@ Der etableres et centralt lager for alt udstyr, der vedrører landsholdene.
 
 - 16.02.2019 · indført: centralt lager for landsholdsudstyr oprettes · [elite16022019.2 s. 1](https://filer.styrke.dk/referater/elite16022019.2.pdf#page=1)
 
+<a id="regel/kassererens-frist-for-udbetaling-til-landsholdsloeftere"></a>
 ### Kassererens frist for udbetaling til landsholdsløftere
 
 **I kraft** · intern procedure/detalje
@@ -699,6 +757,7 @@ Kassereren har 14 dage til at udbetale pengene til løfterne efter modtagelse af
 
 - 25.07.2010 · indført: kassereren udbetaler senest 14 dage efter modtaget afregning · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.pdf#page=1)
 
+<a id="regel/kraftcentre"></a>
 ### Kraftcentre
 
 **I kraft** · intern procedure/detalje
@@ -711,6 +770,7 @@ Kraftcentrene er Horsens og Rødby. Et kraftcenter kompenseres med 2.500 kr. pr.
 - 15.12.2018 · indkommet forslag: kontrakt med kraftcentrene udarbejdes til gennemlæsning · [elite15122018 s. 3](https://filer.styrke.dk/referater/elite15122018.pdf#page=3)
 - 02.10.2021 · ændret: kraftcentre får 2.500 kr. pr. samling · [refbest_021021 s. 2](https://filer.styrke.dk/referater/refbest_021021.pdf#page=2)
 
+<a id="regel/landsholdsmedlemmer-som-assistenttraenere"></a>
 ### Landsholdsmedlemmer som assistenttrænere
 
 **I kraft** · intern procedure/detalje
@@ -721,6 +781,7 @@ Landsholdsmedlemmer kan af Eliteudvalget udtages som assistenttræner til specif
 
 - 19.09.2023 · indført: landsholdsmedlemmer kan udtages som assistenttræner · [elite19092023 s. 1](https://filer.styrke.dk/referater/elite19092023.pdf#page=1)
 
+<a id="regel/ligestilling-af-grene-i-elitearbejdet"></a>
 ### Ligestilling af grene i elitearbejdet
 
 **I kraft** · intern procedure/detalje
@@ -731,6 +792,7 @@ Udstyrstrekamp, RAW trekamp og bænkpres opfattes som ligeværdige grene i samli
 
 - 10.11.2012 · indført: udstyr, RAW og bænkpres ligeværdige og tildeles midler · [elite10112012 s. 1](https://filer.styrke.dk/referater/elite10112012.pdf#page=1)
 
+<a id="regel/praesentation-af-landsholdsloeftere-paa-sociale-medier"></a>
 ### Præsentation af landsholdsløftere på sociale medier
 
 **I kraft** · intern procedure/detalje
@@ -741,6 +803,7 @@ Præsentation af landsholdsløftere og trænere på sociale medier, bl.a. med bi
 
 - 29.03.2021 · indført: præsentation af løftere og trænere skal prioriteres · [elite29032021 s. 2](https://filer.styrke.dk/referater/elite29032021.pdf#page=2)
 
+<a id="regel/rapportering-fra-internationale-mesterskaber"></a>
 ### Rapportering fra internationale mesterskaber
 
 **I kraft** · intern procedure/detalje
@@ -752,6 +815,7 @@ Det er Teammanagerens ansvar, at der udarbejdes rapporter, billeder og video til
 - 29.06.2011 · indført: teammanager rapporterer; mini-PC og kamera indkøbes · [elite29062011 s. 2](https://filer.styrke.dk/referater/elite29062011.pdf#page=2)
 - 10.12.2011 · ændret: også video; rapporter skal være seriøse · [elite10122011 s. 2](https://filer.styrke.dk/referater/elite10122011.pdf#page=2)
 
+<a id="regel/regionale-traenere"></a>
 ### Regionale trænere
 
 **I kraft** · intern procedure/detalje
@@ -762,6 +826,7 @@ Landstræneren får regionale trænere stillet til rådighed for mere dialog med
 
 - 01.06.2012 · indført: landstræneren får regionale trænere til rådighed · [elite01062012 s. 1](https://filer.styrke.dk/referater/elite01062012.pdf#page=1)
 
+<a id="regel/registrering-af-advarsler-og-sanktioner"></a>
 ### Registrering af advarsler og sanktioner
 
 **I kraft** · intern procedure/detalje
@@ -773,6 +838,7 @@ Aftaler, afbud, påtaler/advarsler, sanktioner og udløbsdatoer registreres på 
 - 09.09.2017 · indført: landsholdsansvarlig registrerer advarsler og afbud, samles årligt · [elite09092017 s. 2](https://filer.styrke.dk/referater/elite09092017.pdf#page=2)
 - 14.12.2022 · ændret: fælles platform til registrering af sanktioner · [elite14122022 s. 1](https://filer.styrke.dk/referater/elite14122022.pdf#page=1)
 
+<a id="regel/oekonomisk-ansvar-paa-landsholdsrejser"></a>
 ### Økonomisk ansvar på landsholdsrejser
 
 **I kraft** · intern procedure/detalje
@@ -783,6 +849,7 @@ Teammanageren, subsidiært træneren, er økonomisk ansvarlig på rejser i udlan
 
 - 29.06.2011 · indført: teammanager, subsidiært træner, økonomisk ansvarlig på rejser · [elite29062011 s. 1](https://filer.styrke.dk/referater/elite29062011.pdf#page=1)
 
+<a id="regel/bevarelse-af-plads-i-bruttolandsholdet"></a>
 ### Bevarelse af plads i bruttolandsholdet
 
 **Ikke længere i kraft**
@@ -793,6 +860,7 @@ Atleter på bruttolandsholdet, som ikke har opnået elitekravet, skal for at bib
 
 - 19.12.2020 · indført: atleter uden elitekrav skal klare det ved DM 2021 (fra 01.01.2021) · [elite19122020 s. 1](https://filer.styrke.dk/referater/elite19122020.pdf#page=1)
 
+<a id="regel/deltagelse-i-wec"></a>
 ### Deltagelse i WEC
 
 **Ikke længere i kraft**
@@ -804,6 +872,7 @@ Der sendes ikke deltagere til WEC i 2016, da senior trekampsløfterne har EM A- 
 - 25.04.2015 · indført: 2015: EM B-kravsløftere kan deltage uden at fortrænge målgruppen (fra 01.01.2015) · [elite25042015 s. 1](https://filer.styrke.dk/referater/elite25042015.pdf#page=1)
 - 05.12.2015 · ændret: ingen WEC-deltagelse i 2016 · [elite05122015 s. 3](https://filer.styrke.dk/referater/elite05122015.pdf#page=3)
 
+<a id="regel/dispensation-fra-dm-ved-kollision-med-vm"></a>
 ### Dispensation fra DM ved kollision med VM
 
 **Vedtaget, gælder fra 01.01.2027**
@@ -816,6 +885,7 @@ Atleter, der deltager ved VM og samtidig er forpligtet til DM, følger i 2027 sa
 - 12.12.2023 · bekræftet: samme dispensation i 2024 · [elite12122023 s. 2](https://filer.styrke.dk/referater/elite12122023.pdf#page=2)
 - 15.09.2026 · bekræftet: samme procedure i 2027 som i 2026 (fra 01.01.2027) · [elite15092026 s. 1](https://filer.styrke.dk/referater/elite15092026.pdf#page=1)
 
+<a id="regel/frist-for-betaling-af-egenbetaling"></a>
 ### Frist for betaling af egenbetaling
 
 **Ikke længere i kraft**
@@ -827,6 +897,7 @@ Egenbetalinger, herunder ekstraomkostninger ved forlængelse af den DSF-planlagt
 - 07.12.2019 · indført: kvittering sendes senest på dato angivet ved udtagelse · [elite07122019 s. 2](https://filer.styrke.dk/referater/elite07122019.pdf#page=2)
 - 08.03.2022 · ændret: betaling senest 10 dage før final nomination (fra 01.01.2022) · [elite08032022 s. 2](https://filer.styrke.dk/referater/elite08032022.pdf#page=2)
 
+<a id="regel/koerselspenge-til-samlinger"></a>
 ### Kørselspenge til samlinger
 
 **Ikke længere i kraft**
@@ -839,6 +910,7 @@ Løftere modtager kun kørselspenge til samlinger, hvis de kører sammen med min
 - 10.12.2017 · ophævet: kørselspenge bortfalder pga. ændrede DIF-tilskudsregler · [elite10122017 s. 3](https://filer.styrke.dk/referater/elite10122017.pdf#page=3)
 - 03.02.2018 · ophævet: bestyrelsen noterer, at kørselstilskuddet er bortfaldet · [refbest_03022018 s. 5](https://filer.styrke.dk/referater/refbest_03022018.pdf#page=5)
 
+<a id="regel/rejseplanlaegning-og-booking"></a>
 ### Rejseplanlægning og booking
 
 **Ikke længere i kraft**
@@ -853,6 +925,7 @@ Atleter og trænere booker som udgangspunkt selv fly. Booker man via forbundet, 
 - 25.06.2024 · ændret: valg af booking ved preliminary; rejsedetaljer 10 dage før final (fra 01.01.2025) · [elite25062024_2 s. 2](https://filer.styrke.dk/referater/elite25062024_2.pdf#page=2)
 - 10.12.2024 · ændret: egen flybooking som udgangspunkt; DSF-booking koster bookingfee (fra 01.01.2025) · [elite10122024 s. 2](https://filer.styrke.dk/referater/elite10122024.pdf#page=2)
 
+<a id="regel/eksterne-undervisere-paa-landsholdssamlinger"></a>
 ### Eksterne undervisere på landsholdssamlinger
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -861,6 +934,7 @@ Forslaget om at bruge eksterne undervisere på samlingerne blev afvist af økono
 
 - 12.09.2010 · forslag forkastet: eksterne undervisere afvist af økonomiske årsager · [elite12092010 s. 1](https://filer.styrke.dk/referater/elite12092010.pdf#page=1)
 
+<a id="regel/elitestrategi"></a>
 ### Elitestrategi
 
 **Ikke længere i kraft** · intern procedure/detalje
@@ -871,6 +945,7 @@ Der udarbejdes en opdateret elitestrategi, som er gældende fra 1/1-2020 til og 
 
 - 16.02.2019 · indført: opdateret elitestrategi for 2020-2025 (fra 01.01.2020) · [elite16022019.2 s. 2](https://filer.styrke.dk/referater/elite16022019.2.pdf#page=2)
 
+<a id="regel/klubtraenere-paa-landsholdssamlinger"></a>
 ### Klubtrænere på landsholdssamlinger
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -879,6 +954,7 @@ Forslag om klubtrænerdeltagelse ved landsholdssamlinger: deltagelse skal være 
 
 - 09.08.2014 · indkommet forslag: udgiftsneutral klubtrænerdeltagelse foreslås, sendes til eliteudvalget · [refbest_09082014 s. 3](https://filer.styrke.dk/referater/refbest_09082014.pdf#page=3)
 
+<a id="regel/netvaerksmoeder-i-landsholdssamlinger"></a>
 ### Netværksmøder i landsholdssamlinger
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -889,6 +965,7 @@ Det foreslås, at de påkrævede netværksmøder indarbejdes i de eksisterende l
 
 ## Internationale krav (IPF/EPF/DIF)
 
+<a id="regel/adel-og-dokumentkrav-for-internationale-loeftere"></a>
 ### ADEL og dokumentkrav for internationale løftere
 
 **I kraft**
@@ -900,6 +977,7 @@ Alle nominerede løftere til EM skal have gennemført ADEL-kursus for internatio
 - 18.05.2021 · indført: obligatorisk WADA-modul ADEL · [elite18052021 s. 2](https://filer.styrke.dk/referater/elite18052021.pdf#page=2)
 - 15.07.2023 · ændret: EM-løftere: ADEL, Consent Form og foto · [refbest_150723 s. 3](https://filer.styrke.dk/referater/refbest_150723.pdf#page=3)
 
+<a id="regel/akkreditering-af-assistentcoaches-og-traeningstid"></a>
 ### Akkreditering af assistentcoaches og træningstid
 
 **I kraft**
@@ -910,6 +988,7 @@ Head Coach skal sikre, at hver assistentcoach får et badge med foto for adgang 
 
 - 24.08.2015 · indført: fotobadge til assistentcoaches; fast træningstid aftales · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/alkoholforbud-i-opvarmnings-og-wrapping-omraade"></a>
 ### Alkoholforbud i opvarmnings- og wrapping-område
 
 **I kraft**
@@ -920,6 +999,7 @@ Indtagelse af alkohol er strengt forbudt for head coach, assistentcoaches og lø
 
 - 24.08.2015 · indført: alkohol forbudt for coaches og løftere i områderne · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/ansvarsdokument-for-cheftraenere"></a>
 ### Ansvarsdokument for cheftrænere
 
 **I kraft**
@@ -930,6 +1010,7 @@ Det i EPF anvendte ansvarsdokument for cheftrænere gælder nu også for IPF.
 
 - 02.06.2013 · indført: EPF's ansvarsdokument for cheftrænere gælder også i IPF · [vm2013 s. 1](https://filer.styrke.dk/beretninger/vm2013.pdf#page=1)
 
+<a id="regel/antal-coaches-i-opvarmningsomraadet"></a>
 ### Antal coaches i opvarmningsområdet
 
 **I kraft**
@@ -940,6 +1021,7 @@ IPF begrænser antal coaches pr. løftegruppe i opvarmningsområdet: 1 atlet = 3
 
 - 24.08.2015 · indført: 1 atlet 3, 2-3 atleter 5, max 6 coaches · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/antal-coaches-i-wrapping-omraadet"></a>
 ### Antal coaches i wrapping-området
 
 **I kraft**
@@ -950,6 +1032,7 @@ IPF begrænser antal coaches pr. løftegruppe i wrapping-området: 1 atlet = 2 c
 
 - 24.08.2015 · indført: 1 atlet 2, 2-3 atleter 3, max 4 coaches · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/antal-kvinder-paa-nationshold-ved-vm"></a>
 ### Antal kvinder på nationshold ved VM
 
 **I kraft**
@@ -960,6 +1043,7 @@ Der må tilmeldes en ekstra kvinde pr. nation, så der i open er 8 kvinder og i 
 
 - 04.11.2018 · indført: 8 kvinder i open, 9 i subjunior/junior · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 
+<a id="regel/antal-officielle-repraesentanter-ved-ipf-konkurrencer"></a>
 ### Antal officielle repræsentanter ved IPF-konkurrencer
 
 **I kraft**
@@ -970,6 +1054,7 @@ Ved åbne konkurrencer må der højst nomineres 4 officielle repræsentanter, og
 
 - 12.06.2026 · indført: max 4 ved åbne, 6 ved kombinerede konkurrencer · [1071kongres s. 14](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=14)
 
+<a id="regel/atleters-selvbetaling-ved-international-konkurrence"></a>
 ### Atleters selvbetaling ved international konkurrence
 
 **I kraft**
@@ -980,6 +1065,7 @@ Ved begrænsede økonomiske midler kan en atlet selv betale for deltagelse ved i
 
 - 12.06.2026 · indført: atlet kan selv betale ved begrænsede midler · [1071kongres s. 15](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=15)
 
+<a id="regel/beskyttelse-af-sub-junior-atleter"></a>
 ### Beskyttelse af sub-junior atleter
 
 **I kraft**
@@ -990,6 +1076,7 @@ Alle sub-junior atleter skal indsende en IPF Safeguard Acknowledgement Form for 
 
 - 12.06.2026 · indført: Safeguard-formular, safeguarding officer og indkvarteringskrav · [1071kongres s. 18](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=18)
 
+<a id="regel/best-lifter-priser-ved-epf-staevner"></a>
 ### Best Lifter-priser ved EPF-stævner
 
 **I kraft**
@@ -1000,6 +1087,7 @@ Ved EPF-stævner skal de tre bedste løftere i hver aldersklasse og køn, inklus
 
 - 19.03.2025 · indført: top-3 efter GL-point i alle klasser inkl. masters · [epf_kongres_2025 s. 6](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2025.pdf#page=6)
 
+<a id="regel/best-team-pris-ved-em"></a>
 ### Best Team-pris ved EM
 
 **I kraft**
@@ -1010,6 +1098,7 @@ EPF By-Law 104.3 ændres, så 'Best Team'-prisen (5 medaljer) til hold på 1.-3.
 
 - 02.05.2022 · indført: Best Team-pris ved stævnet eller banket med repræsentant · [725kongres s. 2](https://styrke.dk/filer/rapporter/725kongres.pdf#page=2)
 
+<a id="regel/betaling-af-hotelomkostninger-ved-epf-staevner"></a>
 ### Betaling af hotelomkostninger ved EPF-stævner
 
 **I kraft**
@@ -1020,6 +1109,7 @@ Hotelomkostninger skal betales ved bankoverførsel 14 dage inden stævnet eller 
 
 - 06.05.2014 · indført: hotel betales 14 dage før via bank eller kreditkort · [em2014kongres s. 1](https://filer.styrke.dk/beretninger/em2014kongres.pdf#page=1)
 
+<a id="regel/boede-for-dommeres-sene-aendring-af-opgaver"></a>
 ### Bøde for dommeres sene ændring af opgaver
 
 **I kraft**
@@ -1030,6 +1120,7 @@ Dommere, der ændrer deres opgaver senere end 14 dage før stævnet, pålægges 
 
 - 01.01.2019 · indført: 100 euro bøde ved ændring senere end 14 dage før · [467kongres s. 3](https://styrke.dk/filer/rapporter/467kongres.pdf#page=3)
 
+<a id="regel/boede-for-overpriser-paa-staevnehoteller"></a>
 ### Bøde for overpriser på stævnehoteller
 
 **I kraft**
@@ -1041,6 +1132,7 @@ Der fastsættes en bøde på op til 5.000 euro, hvis en stævnearrangør sætter
 - 01.01.2015 · indført: bøde op til 5.000 euro ved overpriser · [241kongres s. 1](https://styrke.dk/filer/rapporter/241kongres.pdf#page=1)
 - 01.01.2019 · forslag trukket tilbage: Great Britain trak forslag om overpriser og sanktioner · [467kongres s. 3](https://styrke.dk/filer/rapporter/467kongres.pdf#page=3)
 
+<a id="regel/coachlicens-og-ipf-traeneruddannelse"></a>
 ### Coachlicens og IPF-træneruddannelse
 
 **I kraft**
@@ -1054,6 +1146,7 @@ Head coaches nomineret til internationale, internationale regionale eller verden
 - 23.11.2025 · bekræftet: head coach kræver IPF-uddannelse fra 2026 (fra 01.01.2026) · [refbest_231125 s. 2](https://filer.styrke.dk/referater/refbest_231125.pdf#page=2)
 - 23.08.2025 · ændret: også trænere og assistenter fra 2027 (fra 01.01.2027) · [refbest_230825 s. 5](https://filer.styrke.dk/referater/refbest_230825.pdf#page=5)
 
+<a id="regel/deltagelse-i-flere-kategorier-ved-kombinationsstaevner"></a>
 ### Deltagelse i flere kategorier ved kombinationsstævner
 
 **I kraft**
@@ -1064,6 +1157,7 @@ Ved IPF-kombinationsstævner kan en løfter deltage i flere kategorier, f.eks. b
 
 - 04.11.2018 · indført: flere kategorier mod startgebyr og doping fee i hver · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 
+<a id="regel/deltagelse-i-ikke-sanktionerede-konkurrencer"></a>
 ### Deltagelse i ikke-sanktionerede konkurrencer
 
 **I kraft**
@@ -1076,6 +1170,7 @@ Deltager en løfter, træner, dommer eller official i en international konkurren
 - 31.03.2019 · bekræftet: optaget i vedtægterne, 45 for, 0 imod · [rep2019 s. 15](https://filer.styrke.dk/referater/rep2019.pdf#page=15)
 - 22.09.2025 · forslag trukket tilbage: USA trak forslag om udvidelse til nationale events · [ipf_ekstraordinaer_generalforsamling_20250922 s. 6](https://filer.styrke.dk/referater/dif_internationalt/ipf_ekstraordinaer_generalforsamling_20250922.pdf#page=6)
 
+<a id="regel/dokumentation-og-udstyrskontrol-ved-vejning"></a>
 ### Dokumentation og udstyrskontrol ved vejning
 
 **I kraft**
@@ -1086,6 +1181,7 @@ Head Coach skal sikre, at løftere ved vejning afleverer Appendix 2, løfterprof
 
 - 24.08.2015 · indført: Appendix 2, løfterprofil og pas afleveres ved vejning · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/dommerkrav-for-nationer-ved-epf-staevner"></a>
 ### Dommerkrav for nationer ved EPF-stævner
 
 **I kraft**
@@ -1097,6 +1193,7 @@ En nation, der har været IPF-medlem i mere end 5 år og deltager med mere end 3
 - 06.05.2014 · indført: dommerkrav ved flere end 3 løftere (før 4) · [em2014kongres s. 1](https://filer.styrke.dk/beretninger/em2014kongres.pdf#page=1)
 - 02.05.2022 · ændret: international dommer til rådighed mindst to hele konkurrencedage · [725kongres s. 3](https://styrke.dk/filer/rapporter/725kongres.pdf#page=3)
 
+<a id="regel/doping-og-deltagergebyr-ved-epf-mesterskaber"></a>
 ### Doping- og deltagergebyr ved EPF-mesterskaber
 
 **I kraft**
@@ -1110,6 +1207,7 @@ Deltagende nationale forbund betaler et dopingtestgebyr pr. tilmeldt løfter eft
 - 19.03.2025 · ændret: 30 euro pr. deltagergebyr til støtte af arrangører · [epf_kongres_2025 s. 5](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2025.pdf#page=5)
 - 18.03.2026 · ændret: fra 2027: 95/110/125 euro; Danmark imod (fra 01.01.2027) · [epf_kongres_2026 s. 4](https://filer.styrke.dk/referater/dif_internationalt/epf_kongres_2026.pdf#page=4)
 
+<a id="regel/frist-for-afmelding-fra-epf-nomineringsliste"></a>
 ### Frist for afmelding fra EPF-nomineringsliste
 
 **I kraft**
@@ -1120,6 +1218,7 @@ Seneste tidspunkt for at trække en løfter fra nomineringslisten og dermed undg
 
 - 06.05.2014 · indført: afmelding uden gebyrer senest 14 dage før teknisk møde · [em2014kongres s. 1](https://filer.styrke.dk/beretninger/em2014kongres.pdf#page=1)
 
+<a id="regel/frist-for-afmelding-fra-ipf-nomineringsliste"></a>
 ### Frist for afmelding fra IPF-nomineringsliste
 
 **I kraft**
@@ -1130,6 +1229,7 @@ Sidste frist for at trække sig fra nomineringslisten uden at betale afgifter er
 
 - 02.11.2014 · indført: frist ændret fra 7 til 14 dage · [199kongres s. 1](https://styrke.dk/filer/rapporter/199kongres.pdf#page=1)
 
+<a id="regel/faeroeerne-under-dsf-s-regler"></a>
 ### Færøerne under DSF's regler
 
 **I kraft**
@@ -1140,6 +1240,7 @@ Indtil Det Færøske Forbund optages i IPF, er det under DSF og følger DSF's re
 
 - 10.09.2024 · indført: Færøerne under DSF indtil optagelse i IPF · [refstaevne10092024 s. 3](https://filer.styrke.dk/referater/refstaevne10092024.pdf#page=3)
 
+<a id="regel/godkendt-udstyr-ved-internationale-staevner"></a>
 ### Godkendt udstyr ved internationale stævner
 
 **I kraft**
@@ -1152,6 +1253,7 @@ IPF's liste over godkendte produkter skal overholdes internationalt. Fra 31.12.2
 - 08.02.2015 · indkommet forslag: DSF foreslår EPF frit udstyrsvalg i RAW · [refbest_08022015 s. 6](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=6)
 - 31.07.2022 · ændret: fem producenter forbudt internationalt fra 31.12.2023 (fra 31.12.2023) · [refbest_310722 s. 4](https://filer.styrke.dk/referater/refbest_310722.pdf#page=4)
 
+<a id="regel/head-coachs-ansvar-for-adfaerd-og-coachingzone"></a>
 ### Head coachs ansvar for adfærd og coachingzone
 
 **I kraft**
@@ -1162,6 +1264,7 @@ Head Coach skal sikre, at kun én coach følger atleterne til coachingzonen, og 
 
 - 24.08.2015 · indført: kun én korrekt klædt coach i coachingzonen · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/hotelkrav-for-coaches-og-dommere-ved-ipf-mesterskaber"></a>
 ### Hotelkrav for coaches og dommere ved IPF-mesterskaber
 
 **I kraft**
@@ -1172,6 +1275,7 @@ Coaches, officials og dommere skal minimum bo to på hinanden følgende nætter 
 
 - 12.06.2026 · indført: mindst to nætter på officielt hotel; ikrafttræden ubestemt · [1071kongres s. 18](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=18)
 
+<a id="regel/implementering-af-ipf-s-regler-i-dsf"></a>
 ### Implementering af IPF's regler i DSF
 
 **I kraft**
@@ -1183,6 +1287,7 @@ IPF's regler implementeres i DSF. Regelændringerne vedtaget på IPF-kongressen 
 - 27.03.2011 · indført: IPF's regler implementeres; deltagelse trods nul i en disciplin · [rep2011 s. 2](https://filer.styrke.dk/referater/rep2011.pdf#page=2)
 - 19.01.2019 · bekræftet: IPF-regelændringer fra nov. 2018 gælder fra 1.1.2019 (fra 01.01.2019) · [refbest_19012019.2 s. 1](https://filer.styrke.dk/referater/refbest_19012019.2.pdf#page=1)
 
+<a id="regel/ipf-s-deltagergebyr-for-atleter"></a>
 ### IPF's deltagergebyr for atleter
 
 **I kraft**
@@ -1196,6 +1301,7 @@ IPF's deltagergebyr er 100 euro pr. atlet, og ved hver international konkurrence
 
 > **Bemærk:** Andelen til arrangøren blev vedtaget med meget svag opbakning (13 for, 6 imod, 15 blanke).
 
+<a id="regel/klage-til-juryen-over-loefter-fra-anden-nation"></a>
 ### Klage til juryen over løfter fra anden nation
 
 **I kraft**
@@ -1206,6 +1312,7 @@ Det er ikke længere muligt at klage til juryen over en løfter fra en anden nat
 
 - 01.01.2023 · indført: klage over anden nations løfter ikke længere muligt · [806kongres s. 1](https://styrke.dk/filer/rapporter/806kongres.pdf#page=1)
 
+<a id="regel/klassisk-em-for-subjuniorer-juniorer-og-aaben-klasse"></a>
 ### Klassisk EM for subjuniorer, juniorer og åben klasse
 
 **I kraft**
@@ -1216,6 +1323,7 @@ Der indføres klassisk (raw) EM for subjuniorer, juniorer og åben klasse i ét 
 
 - 06.05.2014 · indført: klassisk EM i ét stævne fra 2015, uden masters (fra 01.01.2015) · [em2014kongres s. 1](https://filer.styrke.dk/beretninger/em2014kongres.pdf#page=1)
 
+<a id="regel/kvalificerings-og-nomineringsproces-for-atleter"></a>
 ### Kvalificerings- og nomineringsproces for atleter
 
 **I kraft**
@@ -1226,6 +1334,7 @@ Medlemslande skal have en klar og transparent kvalificerings- og nomineringsproc
 
 - 12.06.2026 · indført: krav om klar og transparent nomineringsproces · [1071kongres s. 15](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=15)
 
+<a id="regel/medaljer-ved-epf-mesterskaber"></a>
 ### Medaljer ved EPF-mesterskaber
 
 **I kraft**
@@ -1236,6 +1345,7 @@ EPF By-Law 104.4.1 ændres, så EPF's standardiserede medaljer er obligatoriske;
 
 - 02.05.2022 · indført: standardmedaljer obligatoriske; total krævet for præmie · [725kongres s. 2](https://styrke.dk/filer/rapporter/725kongres.pdf#page=2)
 
+<a id="regel/nomineringsfrist-til-ipf-konkurrencer"></a>
 ### Nomineringsfrist til IPF-konkurrencer
 
 **I kraft**
@@ -1247,6 +1357,7 @@ Nominering af atleter og coaches skal ske 30 dage før konkurrencen i stedet for
 - 02.06.2013 · forslag forkastet: forslag om 28 dage før teknisk møde afvist · [vm2013 s. 1](https://filer.styrke.dk/beretninger/vm2013.pdf#page=1)
 - 12.06.2026 · indført: nominering 30 dage før i stedet for 21 · [1071kongres s. 14](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=14)
 
+<a id="regel/observationszone-for-coaches"></a>
 ### Observationszone for coaches
 
 **I kraft**
@@ -1257,6 +1368,7 @@ Arrangøren skal indrette en observationszone for coaches i wrapping-området me
 
 - 24.08.2015 · indført: arrangør indretter observationszone med TV-monitor · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/ophold-paa-staevnehotel-og-bindende-tilmelding"></a>
 ### Ophold på stævnehotel og bindende tilmelding
 
 **I kraft**
@@ -1272,6 +1384,7 @@ Deltagere er bundet af forhåndstilmeldingen og hæfter for startgebyret, også 
 
 > **Bemærk:** Minimumskravet på 2 nætter ved EM og kravet om ophold i hele stævneperioden stemmer ikke helt overens.
 
+<a id="regel/oprydning-af-udstyr-og-traeningsomraade"></a>
 ### Oprydning af udstyr og træningsområde
 
 **I kraft**
@@ -1282,6 +1395,7 @@ Head Coach skal sikre, at udstyr sættes tilbage på stativer, og at platforme o
 
 - 24.08.2015 · indført: head coach sikrer oprydning efter træning og stævne · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/raw-som-officielt-verdensmesterskab"></a>
 ### RAW som officielt verdensmesterskab
 
 **I kraft**
@@ -1292,6 +1406,7 @@ IPF's kongres godkendte DSF's forslag om at indføre RAW som officielt verdensme
 
 - 28.10.2012 · indført: DSF-forslag om RAW-VM vedtaget, evaluering efter to år · [vm2012kongres s. 1](https://styrke.dk/pages/R/vm2012kongres.pdf#page=1)
 
+<a id="regel/skift-af-nationalt-tilhoersforhold"></a>
 ### Skift af nationalt tilhørsforhold
 
 **I kraft**
@@ -1303,6 +1418,7 @@ Nye IPF-regler for nationalt tilhørsforhold for løftere, trænere og dommere. 
 - 02.11.2014 · indført: tre års karantæne ved nationsskift, kan nedsættes · [199kongres s. 1](https://styrke.dk/filer/rapporter/199kongres.pdf#page=1)
 - 01.01.2024 · forslag forkastet: Sloveniens forslag om løft for flere lande afvist · [921kongres s. 4](https://styrke.dk/filer/rapporter/921kongres.pdf#page=4)
 
+<a id="regel/test-af-rekorder"></a>
 ### Test af rekorder
 
 **I kraft**
@@ -1313,6 +1429,7 @@ EPF's By law 104.11 præciseres, så det fremgår hvilke rekorder der skal teste
 
 - 01.01.2019 · indført: By law 104.11 præciseret efter IPF's regler · [467kongres s. 3](https://styrke.dk/filer/rapporter/467kongres.pdf#page=3)
 
+<a id="regel/traenergebyr-og-traenerakkreditering-ved-em-vm"></a>
 ### Trænergebyr og trænerakkreditering ved EM/VM
 
 **I kraft**
@@ -1330,6 +1447,7 @@ Der er loft over antallet af trænere. Akkreditering som træner ved Europa- og 
 
 > **Bemærk:** Tilmeldingsfristerne siger, at alle trænere betaler 50 euro, hvilket strider mod EPF's fritagelse for trænere, der også løfter eller dømmer.
 
+<a id="regel/world-cup-for-universitetsstuderende"></a>
 ### World Cup for universitetsstuderende
 
 **I kraft**
@@ -1340,6 +1458,7 @@ IPF afholder en World Cup for universitetsstuderende.
 
 - 01.01.2015 · indført: IPF afholder World Cup for universitetsstuderende · [257kongres s. 1](https://styrke.dk/filer/rapporter/257kongres.pdf#page=1)
 
+<a id="regel/atletrepraesentant-i-ipf-s-bestyrelse"></a>
 ### Atletrepræsentant i IPF's bestyrelse
 
 **I kraft** · intern procedure/detalje
@@ -1350,6 +1469,7 @@ IPF's Athletes' Commission vælger fremover en atlet, som indstilles til IPF's b
 
 - 02.06.2013 · indført: Athletes' Commission indstiller atlet til IPF's bestyrelse · [vm2013 s. 1](https://filer.styrke.dk/beretninger/vm2013.pdf#page=1)
 
+<a id="regel/epf-s-medlemsafgift-for-nationer"></a>
 ### EPF's medlemsafgift for nationer
 
 **I kraft** · intern procedure/detalje
@@ -1360,6 +1480,7 @@ EPF's medlemsafgift for nationer er steget til 300 euro.
 
 - 06.05.2014 · indført: medlemsafgift steget til 300 euro · [em2014kongres s. 1](https://filer.styrke.dk/beretninger/em2014kongres.pdf#page=1)
 
+<a id="regel/epf-s-sanktionsgebyr-for-staevner"></a>
 ### EPF's sanktionsgebyr for stævner
 
 **I kraft** · intern procedure/detalje
@@ -1370,6 +1491,7 @@ EPF's sanktionsgebyr for afholdelse af stævner er 1000 euro.
 
 - 06.05.2014 · indført: hævet fra 750 til 1000 euro · [em2014kongres s. 1](https://filer.styrke.dk/beretninger/em2014kongres.pdf#page=1)
 
+<a id="regel/formand-for-teknisk-komite-i-ipf-s-bestyrelse"></a>
 ### Formand for teknisk komité i IPF's bestyrelse
 
 **I kraft** · intern procedure/detalje
@@ -1380,6 +1502,7 @@ Formanden for IPF's tekniske komité er medlem af IPF's bestyrelse.
 
 - 01.01.2015 · indført: formand for teknisk komité i IPF's bestyrelse · [257kongres s. 1](https://styrke.dk/filer/rapporter/257kongres.pdf#page=1)
 
+<a id="regel/gebyr-for-klager-og-anker-i-ipf"></a>
 ### Gebyr for klager og anker i IPF
 
 **I kraft** · intern procedure/detalje
@@ -1390,6 +1513,7 @@ De første 3 klager til Court of Justice og de første 3 anker til Court of Appe
 
 - 12.06.2026 · indført: 3 gratis årligt, derefter 500 euro (før 1000) · [1071kongres s. 12](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=12)
 
+<a id="regel/godtgoerelse-til-epf-officials"></a>
 ### Godtgørelse til EPF-officials
 
 **I kraft** · intern procedure/detalje
@@ -1400,6 +1524,7 @@ Der ydes et mindre beløb til EPF-officials hvert år.
 
 - 01.01.2015 · indført: mindre årligt beløb til EPF-officials · [241kongres s. 1](https://styrke.dk/filer/rapporter/241kongres.pdf#page=1)
 
+<a id="regel/godtgoerelse-til-ipf-s-ledelse"></a>
 ### Godtgørelse til IPF's ledelse
 
 **I kraft** · intern procedure/detalje
@@ -1411,6 +1536,7 @@ Månedlig godtgørelse til IPF's præsident, vicepræsident, generalsekretær og
 - 02.06.2013 · indført: ydelse indført; 900 euro/md. til formand og generalsekretær · [vm2013 s. 1](https://filer.styrke.dk/beretninger/vm2013.pdf#page=1)
 - 12.06.2026 · ændret: hævet fra 1200 til 2000 euro; DSF imod · [1071kongres s. 1](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=1)
 
+<a id="regel/holdpokaler-ved-ipf-mesterskaber"></a>
 ### Holdpokaler ved IPF-mesterskaber
 
 **I kraft** · intern procedure/detalje
@@ -1421,6 +1547,7 @@ Holdpokaler ved IPF-mesterskaber erstattes med certifikater.
 
 - 04.11.2018 · indført: holdpokaler erstattes med certifikater · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 
+<a id="regel/indberetning-af-dopingkontrol-til-ipf"></a>
 ### Indberetning af dopingkontrol til IPF
 
 **I kraft** · intern procedure/detalje
@@ -1431,6 +1558,7 @@ Hvert medlemsland skal senest 31. marts indsende resultaterne af dopingkontrol f
 
 - 02.06.2013 · indført: indberetning senest 31. marts; ellers 500 euro og suspension · [vm2013 s. 1](https://filer.styrke.dk/beretninger/vm2013.pdf#page=1)
 
+<a id="regel/indberetning-af-internationale-medaljer-til-dif"></a>
 ### Indberetning af internationale medaljer til DIF
 
 **I kraft** · intern procedure/detalje
@@ -1441,6 +1569,7 @@ Der oprettes en fast procedure efter hvert internationalt stævne, så medaljer 
 
 - 22.01.2022 · indført: medaljer indberettes til DIF senest 7 dage efter · [refbest_220122 s. 1](https://filer.styrke.dk/referater/refbest_220122.pdf#page=1)
 
+<a id="regel/ipf-s-medlemsgebyr"></a>
 ### IPF's medlemsgebyr
 
 **I kraft** · intern procedure/detalje
@@ -1454,6 +1583,7 @@ IPF's medlemsgebyr for medlemslande er 500 euro.
 
 > **Bemærk:** Vedtaget med meget svagt flertal (19 for, 15 imod, 18 blanke).
 
+<a id="regel/koensbalance-i-ledelsesorganer"></a>
 ### Kønsbalance i ledelsesorganer
 
 **I kraft** · intern procedure/detalje
@@ -1464,6 +1594,7 @@ Standard om 40% af hvert køn i ledelsesorganer. Medlemslande skal dokumentere k
 
 - 12.06.2026 · indført: 40 % af hvert køn; dokumentation før valg · [1071kongres s. 11](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=11)
 
+<a id="regel/priser-til-aarets-loeftere-i-epf"></a>
 ### Priser til årets løftere i EPF
 
 **I kraft** · intern procedure/detalje
@@ -1474,6 +1605,7 @@ Der overrækkes fremover priser til årets løftere både i klassisk styrkeløft
 
 - 01.01.2015 · indført: årets løfter-priser i klassisk og udstyr · [241kongres s. 1](https://styrke.dk/filer/rapporter/241kongres.pdf#page=1)
 
+<a id="regel/procedure-for-aendring-af-ipf-s-tekniske-regler"></a>
 ### Procedure for ændring af IPF's tekniske regler
 
 **I kraft** · intern procedure/detalje
@@ -1488,6 +1620,7 @@ IPF's tekniske regler kan kun ændres én gang pr. kalenderår efter en fast pro
 - 12.06.2026 · ændret: ændring én gang årligt efter fast procedure · [1071kongres s. 19](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=19)
 - 12.06.2026 · ændret: forslag via formular, vurderes af Rules Group · [1071kongres s. 11](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=11)
 
+<a id="regel/antal-coaches-ved-kombinerede-baenkpresstaevner"></a>
 ### Antal coaches ved kombinerede bænkpresstævner
 
 **Vedtaget, gælder fra 01.01.2027**
@@ -1498,6 +1631,7 @@ Der må tilmeldes 24 coaches i stedet for 20 for alle aldersgrupper ved kombiner
 
 - 12.06.2026 · indført: 24 coaches i stedet for 20 fra 2027 (fra 01.01.2027) · [1071kongres s. 14](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=14)
 
+<a id="regel/bedste-loefter-pokal-ved-ipf-mesterskaber"></a>
 ### Bedste løfter-pokal ved IPF-mesterskaber
 
 **Kun forslag – aldrig vedtaget**
@@ -1506,6 +1640,7 @@ Forslag om at erstatte bedste løfter-pokalen med certifikater blev trukket, men
 
 - 04.11.2018 · forslag trukket tilbage: forslag om certifikater trukket; løftere skal deltage i banket · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 
+<a id="regel/boede-for-manglende-dommer-ved-ipf-masterstaevner"></a>
 ### Bøde for manglende dommer ved IPF-masterstævner
 
 **Kun forslag – aldrig vedtaget**
@@ -1514,6 +1649,7 @@ Der er forslag på næste IPF-kongres om, at en nation med 3 eller flere deltage
 
 - 08.10.2011 · indkommet forslag: IPF-forslag: 1.000 euro ved 3+ deltagere uden dommer · [ReferatMastermoede_okt2011 s. 1](https://filer.styrke.dk/referater/ReferatMastermoede_okt2011.pdf#page=1)
 
+<a id="regel/certifikat-ved-problemer-med-at-straekke-armene"></a>
 ### Certifikat ved problemer med at strække armene
 
 **Kun forslag – aldrig vedtaget**
@@ -1522,6 +1658,7 @@ Canadas forslag om certifikat til løftere, der har problemer med at strække ar
 
 - 28.10.2012 · forslag forkastet: Canadas forslag om armcertifikat afvist · [vm2012kongres s. 1](https://styrke.dk/pages/R/vm2012kongres.pdf#page=1)
 
+<a id="regel/dopingsager-i-dif-s-love"></a>
 ### Dopingsager i DIF's love
 
 **Ikke længere i kraft**
@@ -1532,6 +1669,7 @@ DIF's love ændres, så de lever op til 2027 World Anti-Doping Code: Dopingnævn
 
 - 02.11.2026 · indført: Dopingnævnene udgår af DIF jf. 2027 WADA Code · [dif_budgetmoede_2026 s. 1](https://filer.styrke.dk/referater/dif_internationalt/dif_budgetmoede_2026.pdf#page=1)
 
+<a id="regel/frist-for-endelig-nominering-til-epf-staevner"></a>
 ### Frist for endelig nominering til EPF-stævner
 
 **Kun forslag – aldrig vedtaget**
@@ -1540,6 +1678,7 @@ Forslag om at sætte fristen for endelig nominering til 28 dage før stævnestar
 
 - 06.05.2014 · forslag forkastet: forslag om 28 dage afvist; fortsat 21 dage · [em2014kongres s. 1](https://filer.styrke.dk/beretninger/em2014kongres.pdf#page=1)
 
+<a id="regel/indsendelse-af-nationale-mesterskabsresultater-til-ipf"></a>
 ### Indsendelse af nationale mesterskabsresultater til IPF
 
 **Vedtaget, gælder fra 01.01.2027**
@@ -1550,6 +1689,7 @@ Hvert medlemsland skal indsende officielle resultater fra deres årlige national
 
 - 12.06.2026 · indført: resultater på engelsk; ellers risiko for afviste nomineringer (fra 01.01.2027) · [1071kongres s. 14](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=14)
 
+<a id="regel/konkurrenceplatform"></a>
 ### Konkurrenceplatform
 
 **Kun forslag – aldrig vedtaget**
@@ -1558,6 +1698,7 @@ DSF foreslår over for IPF's kongres 2021, at alle løft udføres på en platfor
 
 - 06.06.2021 · indkommet forslag: DSF foreslår IPF platformkrav, ingen gummimåtter · [refbest_060621 s. 2](https://filer.styrke.dk/referater/refbest_060621.pdf#page=2)
 
+<a id="regel/kvalifikationskrav-til-vm"></a>
 ### Kvalifikationskrav til VM
 
 **Kun forslag – aldrig vedtaget**
@@ -1566,6 +1707,7 @@ Norges forslag om kvalifikationskrav til VM blev trukket tilbage.
 
 - 04.11.2018 · forslag trukket tilbage: Norges forslag om VM-kvalifikationskrav trukket · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 
+<a id="regel/registrering-af-europarekorder-ved-nordiske-mesterskaber"></a>
 ### Registrering af europarekorder ved Nordiske Mesterskaber
 
 **Kun forslag – aldrig vedtaget**
@@ -1574,6 +1716,7 @@ DSF sender på vegne af Nordic Powerlifting Federation forslag til EPF's kongres
 
 - 13.01.2024 · indkommet forslag: DSF/NPF foreslår EPF registrering af europarekorder ved NM · [refbest_130124 s. 4](https://filer.styrke.dk/referater/refbest_130124.pdf#page=4)
 
+<a id="regel/reserveloefter-ved-forhaandstilmelding"></a>
 ### Reserveløfter ved forhåndstilmelding
 
 **Kun forslag – aldrig vedtaget**
@@ -1582,6 +1725,7 @@ EPF annullerer reglen om, at en reserveløfter skal erstatte en forhåndstilmeld
 
 - 01.01.2019 · ophævet: krav om at reserve erstatter tilmeldt løfter annulleret · [467kongres s. 3](https://styrke.dk/filer/rapporter/467kongres.pdf#page=3)
 
+<a id="regel/startalder-for-sub-juniorer"></a>
 ### Startalder for sub-juniorer
 
 **Kun forslag – aldrig vedtaget**
@@ -1590,6 +1734,7 @@ Forslag om at sub-junior-status starter i hele det kalenderår, hvor man fylder 
 
 - 04.11.2018 · forslag forkastet: Sveriges forslag om kalenderårsregel for 14-årige nedstemt · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 
+<a id="regel/world-games-format-og-kvalifikation"></a>
 ### World Games format og kvalifikation
 
 **Ikke længere i kraft**
@@ -1601,6 +1746,7 @@ Nyt format for World Games 2025 i Chengdu: kombineret klassisk og udstyr med 64 
 - 04.11.2018 · forslag trukket tilbage: Frankrigs forslag om klassisk World Games fra 2021 trukket · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 - 01.01.2023 · indført: World Games 2025 kombineret format; top-3 ved VM 2024 (fra 01.01.2025) · [806kongres s. 1](https://styrke.dk/filer/rapporter/806kongres.pdf#page=1)
 
+<a id="regel/afgift-for-afholdelse-af-ipf-mesterskab"></a>
 ### Afgift for afholdelse af IPF-mesterskab
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1611,6 +1757,7 @@ Forslag om at øge afgiften for at afholde et IPF-mesterskab med 500 euro blev n
 
 > **Bemærk:** Gebyret for at søge VM og kombinationsstævner blev hævet fra 1000 til 1500 euro i 1071kongres#1.
 
+<a id="regel/boede-for-udeblivelse-fra-teknisk-moede"></a>
 ### Bøde for udeblivelse fra teknisk møde
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1619,6 +1766,7 @@ Forslag om en bøde på 250 euro for manglende deltagelse i det tekniske møde, 
 
 - 01.01.2019 · forslag forkastet: forslag om 250 euro bøde nedstemt · [467kongres s. 4](https://styrke.dk/filer/rapporter/467kongres.pdf#page=4)
 
+<a id="regel/ec-s-autoritet-over-ipf-s-by-laws"></a>
 ### EC's autoritet over IPF's By-Laws
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1627,6 +1775,7 @@ EC foreslog, at EC får fuld autoritet over By-Laws uden medlemslandenes stemmer
 
 - 12.06.2026 · indkommet forslag: EC-forslag bortfaldt, kun 71 af 81 lande · [1071kongres s. 1](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=1)
 
+<a id="regel/em-arrangoers-betaling-af-ophold-for-epf-repraesentanter"></a>
 ### EM-arrangørs betaling af ophold for EPF-repræsentanter
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1635,6 +1784,7 @@ EPF foreslog, at arrangøren af et EM skulle betale for 4 personers ophold i enk
 
 - 01.01.2015 · forslag forkastet: EPF's forslag om betalt ophold for 4 personer nedstemt · [241kongres s. 1](https://styrke.dk/filer/rapporter/241kongres.pdf#page=1)
 
+<a id="regel/suspendering-af-medlemmer-i-epf"></a>
 ### Suspendering af medlemmer i EPF
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1643,6 +1793,7 @@ Forslag om ændring af EPF's constitution 13.10 og 13.11 om suspendering af medl
 
 - 01.01.2019 · forslag forkastet: Great Britains forslag om suspendering nedstemt · [467kongres s. 3](https://styrke.dk/filer/rapporter/467kongres.pdf#page=3)
 
+<a id="regel/aendring-af-epf-s-forfatning-om-by-laws"></a>
 ### Ændring af EPF's forfatning om By-Laws
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -1653,6 +1804,7 @@ Forslag om at tilføje 'By-Laws' i forfatningens afsnit om ændringsforslag og r
 
 ## Trænere og uddannelse
 
+<a id="regel/certificering-af-hjaelpere-til-udstyrsloeftere"></a>
 ### Certificering af hjælpere til udstyrsløftere
 
 **I kraft**
@@ -1663,6 +1815,7 @@ Udstyrsgruppen afholder korte workshops i, hvordan man hjælper en udstyrsløfte
 
 - 15.05.2025 · indført: workshops med certificering af hjælpere til udstyrsløftere · [refudstyr15052025 s. 2](https://filer.styrke.dk/referater/refudstyr15052025.pdf#page=2)
 
+<a id="regel/kursus-i-staevnestyringsprogram"></a>
 ### Kursus i stævnestyringsprogram
 
 **I kraft**
@@ -1673,6 +1826,7 @@ Deltagere på kurset i stævnestyringsprogrammet skal udvælge to stævner, hvor
 
 - 04.04.2024 · indført: krav om praksis ved to stævner, max ti pladser · [refstaevne04042024 s. 2](https://filer.styrke.dk/referater/refstaevne04042024.pdf#page=2)
 
+<a id="regel/uddannelsesdage-for-landsholds-og-klubtraenere"></a>
 ### Uddannelsesdage for landsholds- og klubtrænere
 
 **I kraft**
@@ -1683,6 +1837,7 @@ Fra 2022 afholdes uddannelsesdage for alle trænere tilknyttet DSF's landshold s
 
 - 14.09.2021 · indført: uddannelsesdage for landsholds- og klubtrænere fra 2022 (fra 01.01.2022) · [elite14092021 s. 2](https://filer.styrke.dk/referater/elite14092021.pdf#page=2)
 
+<a id="regel/traeneruddannelsens-udformning"></a>
 ### Træneruddannelsens udformning
 
 **I kraft** · intern procedure/detalje
@@ -1693,6 +1848,7 @@ Breddeudvalgets udkast til udformning af træneruddannelsen er godkendt, og udva
 
 - 10.03.2013 · indført: Breddeudvalgets udkast til træneruddannelse godkendt · [refbest_10032013 s. 1](https://filer.styrke.dk/referater/refbest_10032013.pdf#page=1)
 
+<a id="regel/krav-til-coaches-ved-ipf-nominering"></a>
 ### Krav til coaches ved IPF-nominering
 
 **Vedtaget, gælder fra 01.01.2029**

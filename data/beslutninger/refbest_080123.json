@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-01-08",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_080123#1",
    "emne": "Fortolkning af nye dommerregler, bænkpres",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_080123#2",
    "emne": "Inaktive dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_080123#3",
    "emne": "Dommerforpligtelse ved DM, JM og SM",
    "kategori": "dommere",
    "udfald": "ikke_afgjort",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_080123#4",
    "emne": "Rekorder i divisionsturneringen",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",

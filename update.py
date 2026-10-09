@@ -106,7 +106,8 @@ def main() -> None:
             update_rebuild_marker(docs)
 
     decisions, raw_rules, today = analyze.load_decisions(docs), analyze.load_rules(), date.today()
-    problems = checks.find_problems(decisions, raw_rules)
+    slugs = analyze.load_slugs()
+    problems = checks.find_problems(decisions, raw_rules, analyze.load_retired_ids(docs), slugs)
     for problem in problems:
         logging.warning("Check (%s): %s", problem.kind, problem.message)
     problem_counts = Counter(problem.kind for problem in problems)
@@ -114,7 +115,7 @@ def main() -> None:
         write_step_summary(steps, problem_counts)
     pages = render.render(docs, decisions, raw_rules, analyze.missing_extractions(docs), problem_counts, today)
     logging.info("Wrote %d pages to %s", len(pages), render.OUT_DIR.relative_to(scrape.ROOT))
-    site = website.build(docs, decisions, raw_rules, today)
+    site = website.build(docs, decisions, raw_rules, slugs.targets(), today)
     logging.info("Wrote the website to %s", site.relative_to(scrape.ROOT))
     failures = sum(step.failed + step.skipped for step in steps.values())
     if failures:

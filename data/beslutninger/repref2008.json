@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2008-03-09",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "repref2008#1",
    "emne": "Placering af DM i styrkeløft (A-DM)",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "repref2008#2",
    "emne": "Placering af DM Diverse",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "repref2008#3",
    "emne": "Placering af DM Bænkpres",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "repref2008#4",
    "emne": "Divisionsturnering, holdopstillinger, finaledeltagelse og klubskifte",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "repref2008#5",
    "emne": "Rekorder i divisionsturnering",
    "kategori": "staevner",
    "udfald": "vedtaget",

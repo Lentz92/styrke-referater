@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2016-03-20",
+ "next_number": 10,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2016#1",
    "emne": "Klubskifte og licens",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "rep2016#2",
    "emne": "Passiv licens og genindmeldelse",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "rep2016#3",
    "emne": "Karantæne for klubløse løftere og varsel om udmeldelse",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2016#4",
    "emne": "Klubsanktion ved positive licensløftere",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2016#5",
    "emne": "Klubsanktion ved positive licensløftere",
    "kategori": "antidoping",
    "udfald": "forkastet",
@@ -91,6 +98,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2016#6",
    "emne": "SM/JM i klassisk bænkpres og klassisk styrkeløft",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2016#7",
    "emne": "Krav om deltagelse i SM/JM og DM",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -125,6 +134,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2016#8",
    "emne": "Udstyrsregler",
    "kategori": "udstyr",
    "udfald": "forkastet",
@@ -142,6 +152,7 @@
    "citat_side": 6
   },
   {
+   "id": "rep2016#9",
    "emne": "Udstyrsregler",
    "kategori": "udstyr",
    "udfald": "vedtaget",

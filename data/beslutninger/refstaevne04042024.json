@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-04-04",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne04042024#1",
    "emne": "Ansvarsfordeling DSF og arrangør ved danske mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne04042024#2",
    "emne": "Ansvarsperson for stævne",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne04042024#3",
    "emne": "Kursus i stævnestyringsprogram",
    "kategori": "uddannelse",
    "udfald": "vedtaget",

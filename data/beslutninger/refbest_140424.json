@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-04-14",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_140424#1",
    "emne": "Dommertilmeldingssystem",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_140424#2",
    "emne": "Tildeling af stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_140424#3",
    "emne": "Fordeling af stævnegebyr ved DM-ugen",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_140424#4",
    "emne": "Pointberegning DM masters klassisk",
    "kategori": "master",
    "udfald": "forkastet",

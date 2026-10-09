@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2014-05-06",
+ "next_number": 8,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "em2014kongres#1",
    "emne": "Sanktionsgebyr for stævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "em2014kongres#2",
    "emne": "EPF medlemsafgift",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "em2014kongres#3",
    "emne": "Dommertilmelding ved EPF-stævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "em2014kongres#4",
    "emne": "Klassisk EM for subjuniorer, juniorer og åben klasse",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "em2014kongres#5",
    "emne": "Betaling af hotelomkostninger ved EPF-stævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 1
   },
   {
+   "id": "em2014kongres#6",
    "emne": "Frist for endelig nominering til EPF-stævner",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -108,6 +116,7 @@
    "citat_side": 1
   },
   {
+   "id": "em2014kongres#7",
    "emne": "Frist for at trække løfter fra nomineringslisten",
    "kategori": "internationalt",
    "udfald": "vedtaget",

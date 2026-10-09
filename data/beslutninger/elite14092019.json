@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-09-14",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite14092019#1",
    "emne": "Egenbetaling EM klassisk",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14092019#2",
    "emne": "Antal dommere ved EM",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14092019#3",
    "emne": "Ekstern kommunikation i Eliteudvalget",
    "kategori": "organisation",
    "udfald": "vedtaget",

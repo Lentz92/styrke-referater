@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2020-12-19",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite19122020#1",
    "emne": "Fastholdelse af plads i bruttolandsholdet",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite19122020#2",
    "emne": "Kvalifikationskrav i nye vægtklasser",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite19122020#3",
    "emne": "Udtagelse til internationale stævner og gyldighed af krav",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite19122020#4",
    "emne": "Kontant protestgebyr for head coach",
    "kategori": "landshold",
    "udfald": "vedtaget",

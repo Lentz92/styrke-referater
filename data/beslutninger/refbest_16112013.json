@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2013-11-16",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_16112013#1",
    "emne": "Betaling af startgebyr til arrangør",
    "kategori": "okonomi",
    "udfald": "ikke_afgjort",

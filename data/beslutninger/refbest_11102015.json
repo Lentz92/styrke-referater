@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-10-11",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_11102015#1",
    "emne": "Nyhedsfolder",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_11102015#2",
    "emne": "Overflytning af licens mellem klubber",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_11102015#3",
    "emne": "Pokaler til bedste løfter",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_11102015#4",
    "emne": "Dommerkrav om antal stævner",
    "kategori": "dommere",
    "udfald": "ikke_afgjort",

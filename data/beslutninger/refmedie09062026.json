@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-06-09",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refmedie09062026#1",
    "emne": "Medieudvalgets kontaktpersoner og opgaver ved stævner",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmedie09062026#2",
    "emne": "Medieudvalgets dækning af internationale stævner",
    "kategori": "organisation",
    "udfald": "vedtaget",

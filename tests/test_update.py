@@ -43,11 +43,11 @@ def _docs(tmp_path, n: int) -> list[Doc]:
 def _extracted(docs: list[Doc]) -> None:
     """Cached extractions, document i with one decision in CATEGORIES[i % 4]."""
     for i, doc in enumerate(docs):
-        decision = {**_raw(CATEGORIES[i % len(CATEGORIES)], f"Regel {doc.id}"),
+        decision = {"id": f"{doc.id}#1", **_raw(CATEGORIES[i % len(CATEGORIES)], f"Regel {doc.id}"),
                     "citat_fundet": False, "citat_pos": None, "citat_side": None}
         (analyze.DECISIONS_DIR / f"{doc.id}.json").write_text(json.dumps(
             {"doc_id": doc.id, "sha256": doc.sha256, "version": analyze.EXTRACT_VERSION, "model": "sonnet",
-             "moededato": None, "beslutninger": [decision]}))
+             "moededato": None, "next_number": 2, "retired": [], "beslutninger": [decision]}))
 
 
 def _consolidated(docs: list[Doc], monkeypatch) -> None:

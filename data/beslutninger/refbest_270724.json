@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-07-27",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_270724#1",
    "emne": "Wildcards til landsholdet ved NM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 6
   },
   {
+   "id": "refbest_270724#2",
    "emne": "Rettigheder til DSF-stævner",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",

@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-import re
+import unicodedata
 from collections import Counter
 from dataclasses import dataclass
 from datetime import date
 from urllib.parse import quote
 
-from analyze import CATEGORIES, Decision, version_matches
+from analyze import CATEGORIES, Decision, has_slug, version_matches
 from scrape import ROOT, Doc
 
 OUT_DIR = ROOT / "regelsaet"
@@ -58,6 +58,10 @@ MONTH_NAMES = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "au
                "september", "oktober", "november", "december"]
 WARNING = "⚠"
 STALE_AFTER_YEARS = 5
+# Letters spelled out in Markdown anchors, which GitHub's viewer does not scroll to unless they are ASCII; other
+# accented letters lose their accent (NFKD), and anything else outside ASCII is dropped.
+ANCHOR_LETTERS = str.maketrans({"æ": "ae", "ø": "oe", "å": "aa", "Æ": "Ae", "Ø": "Oe", "Å": "Aa", "é": "e",
+                                "É": "E", "ü": "u", "Ü": "U", "ö": "o", "Ö": "O", "ä": "a", "Ä": "A", "ß": "ss"})
 
 
 @dataclass(frozen=True)
@@ -89,6 +93,7 @@ class Version:
 @dataclass(frozen=True)
 class Rule:
     titel: str
+    slug: str  # permanent identity and URL fragment; the title may change, the slug never does
     kategori: str
     vigtig: bool  # central rule vs. internal routine or detail
     note: str | None
@@ -156,9 +161,10 @@ def build_pages(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list
     targets: dict[int, str] = {}  # id(rule) -> link from a year page to the rule on its area page
     for area in AREAS:
         area_rules = [rule for rule in rules if rule.kategori in area.categories]
-        page, anchors = _area_page(area, area_rules, today, _Links(docs, "../../"))
-        pages[f"{AREA_DIR}/{area.file}.md"] = page
-        targets.update({key: f"{AREA_DIR}/{area.file}.md#{anchor}" for key, anchor in anchors.items()})
+        page = f"{AREA_DIR}/{area.file}.md"
+        _check_anchors(page, area_rules)
+        pages[page] = _area_page(area, area_rules, today, _Links(docs, "../../"))
+        targets.update({id(rule): f"{page}#{anchor(rule)}" for rule in area_rules})
     for year in years:
         pages[f"{year}.md"] = _year_page(year, years, rules, today, _Links(docs, "../"), targets)
     pages["README.md"] = _index_page(years, rules, decisions, raw_rules, docs, missing, problems, today)
@@ -182,10 +188,11 @@ def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule
     A rule with a stale version (see stale_refs) is left out whole until its category is
     consolidated again, and checks.py reports it. Dropping just that version could bring back a
     repealed rule or show an older text as current, since each version builds on the ones before.
+    A rule without a slug has no address to link to; it is left out too, and checks.py reports it.
     """
     rules = []
     for raw in raw_rules:
-        if not raw["versioner"] or stale_refs(raw, by_ref):
+        if not raw["versioner"] or stale_refs(raw, by_ref) or not has_slug(raw):
             continue
         # Claude writes each version's text as the rule after the versions before it, so versions
         # decided the same day keep the order Claude gave them.
@@ -195,7 +202,8 @@ def build_rules(raw_rules: list[dict], by_ref: dict[str, Decision]) -> list[Rule
         ]
         current.sort(key=lambda item: (item[1].effective, item[1].decision.dato or "", item[0]))
         versions = [v for _, v in current]
-        rules.append(Rule(raw["titel"], raw["kategori"], raw.get("vigtig", True), raw["note"], tuple(versions)))
+        rules.append(Rule(raw["titel"], raw["slug"], raw["kategori"], raw.get("vigtig", True), raw["note"],
+                          tuple(versions)))
     category_order = list(CATEGORIES)
     return sorted(rules, key=lambda r: (category_order.index(r.kategori), r.titel.lower()))
 
@@ -306,12 +314,9 @@ def _year_page(year: int, years: list[int], rules: list[Rule], today: date, link
 
 # --------------------------------------------------------------------------- area pages
 
-def _area_page(area: Area, rules: list[Rule], today: date, links: _Links) -> tuple[str, dict[int, str]]:
-    """Full text and history of every rule in the area; returns the page and each rule's anchor."""
+def _area_page(area: Area, rules: list[Rule], today: date, links: _Links) -> str:
+    """Full text and history of every rule in the area, each under an anchor named by its slug."""
     cutoff = today.isoformat()
-    anchors = _Anchors()
-    anchors.add(area.title)
-    rule_anchors: dict[int, str] = {}
     lines = [
         f"# {area.title}",
         "",
@@ -326,15 +331,13 @@ def _area_page(area: Area, rules: list[Rule], today: date, links: _Links) -> tup
         if not in_category:
             continue
         if len(area.categories) > 1:
-            anchors.add(CATEGORIES[category])
             lines += [f"## {CATEGORIES[category]}", ""]
         # Rules in force first, central before minor, then alphabetical.
         in_category.sort(key=lambda r: (r.in_force(cutoff) is None, not r.vigtig, r.titel.lower()))
         for rule in in_category:
-            rule_anchors[id(rule)] = anchors.add(rule.titel)
             lines += _rule_entry(rule, cutoff, links)
     lines += [f"{WARNING} ved en kilde betyder, at Claudes citat ikke kunne genfindes ordret i referatet.", ""]
-    return "\n".join(lines).rstrip() + "\n", rule_anchors
+    return "\n".join(lines).rstrip() + "\n"
 
 
 def _rule_entry(rule: Rule, cutoff: str, links: _Links) -> list[str]:
@@ -354,7 +357,8 @@ def _rule_entry(rule: Rule, cutoff: str, links: _Links) -> list[str]:
     if not rule.vigtig:
         status += " · intern procedure/detalje"
 
-    lines = [f"### {rule.titel}", "", status, "", shown.text if content else shown.decision.tekst, ""]
+    lines = [f'<a id="{anchor(rule)}"></a>', f"### {rule.titel}", "", status, "",
+             shown.text if content else shown.decision.tekst, ""]
     if content:
         lines += [f"*{' · '.join(_meta(rule, shown, links))}*", ""]
     for v in rule.versions:
@@ -468,6 +472,7 @@ def _index_page(years: list[int], rules: list[Rule], decisions: list[Decision], 
         f"{problems['effect']}",
         f"- Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, "
         f"eller en senere beslutning der gælder fra før en tidligere): {problems['date']}",
+        f"- Fejl i beslutningers id'er eller reglers adresser (slugs), som skal rettes i data/: {problems['identity']}",
         "",
         "Udtrækket er lavet automatisk af Claude og kan indeholde fejl. Referatet er altid den gældende kilde.",
     ]
@@ -498,18 +503,35 @@ class _Links:
         return doc.organ_label if doc else "?"
 
 
-class _Anchors:
-    """Heading anchors as GitHub generates them: lowercase, punctuation dropped, each space a
-    hyphen, and repeated headings suffixed -1, -2 … in document order."""
+def anchor(rule: Rule) -> str:
+    """The id of a rule's place on its area page: "regel/<slug>" like the website's #regel/<slug>, in ASCII.
 
-    def __init__(self) -> None:
-        self.seen: dict[str, int] = {}
+    Explicit, because the heading's own anchor follows the title, which may change. The "/" keeps it apart from
+    GitHub's heading anchors, which never contain one: GitHub jumps to the first element with a matching id,
+    and a heading named like another rule's slug (a renamed rule's old title, or a title used twice) would win.
+    GitHub renders the id as user-content-regel/<slug> and scrolls to it for #regel/<slug>, but only when the
+    anchor is ASCII ("kørselspenge" stays at the top of the page), hence ascii_anchor. The website keeps the slug.
+    """
+    return f"regel/{ascii_anchor(rule.slug)}"
 
-    def add(self, heading: str) -> str:
-        base = re.sub(r"[^\w\- ]", "", heading.strip().lower()).replace(" ", "-")
-        count = self.seen.get(base, 0)
-        self.seen[base] = count + 1
-        return base if count == 0 else f"{base}-{count}"
+
+def ascii_anchor(slug: str) -> str:
+    """The slug in ASCII: æ, ø and å spelled ae, oe and aa (ANCHOR_LETTERS), other accents dropped."""
+    decomposed = unicodedata.normalize("NFKD", slug.translate(ANCHOR_LETTERS))
+    return decomposed.encode("ascii", "ignore").decode()
+
+
+def _check_anchors(page: str, rules: list[Rule]) -> None:
+    """Fail when two rules of one page would get the same ASCII anchor ("kæmpe" and "kaempe"): GitHub would take
+    every link to either to the first, and a wrong link must not pass silently."""
+    by_anchor: dict[str, list[str]] = {}
+    for rule in rules:
+        by_anchor.setdefault(anchor(rule), []).append(rule.slug)
+    clashes = {a: slugs for a, slugs in by_anchor.items() if len(slugs) > 1}
+    if clashes:
+        listed = "; ".join(f"{a}: {', '.join(slugs)}" for a, slugs in sorted(clashes.items()))
+        raise ValueError(f"{OUT_DIR.name}/{page}: rules would share an anchor ({listed}); give one rule another "
+                         f"slug in data/regler/ and keep the old one as an alias in data/slugs.json")
 
 
 def _is_news(v: Version, index: int) -> bool:

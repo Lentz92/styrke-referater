@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-02-18",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne18022025#1",
    "emne": "Returnering af overskydende medaljer og pokaler",
    "kategori": "staevner",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2017-01-14",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_14012017#1",
    "emne": "Headcoach ved stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_14012017#2",
    "emne": "Bestilling af medaljer",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_14012017#3",
    "emne": "Dommere til private stævner",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_14012017#4",
    "emne": "Dispensation fra kvalifikationskrav til internationale stævner",
    "kategori": "landshold",
    "udfald": "ikke_afgjort",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2011-01-30",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite30012011#1",
    "emne": "Udtagelse til EM, 3-kamp",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite30012011#2",
    "emne": "Kvalifikationskrav til internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",

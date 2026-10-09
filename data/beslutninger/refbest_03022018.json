@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2018-02-03",
+ "next_number": 9,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_03022018#1",
    "emne": "Egenbetaling landsholdsløftere",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_03022018#2",
    "emne": "Licens i flere lande / deltagelse uden dansk licens",
    "kategori": "medlemskab",
    "udfald": "forkastet",
@@ -40,6 +44,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_03022018#3",
    "emne": "Betalingsdato for årsafgift",
    "kategori": "okonomi",
    "udfald": "ikke_afgjort",
@@ -57,6 +62,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_03022018#4",
    "emne": "Begynderstævne",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_03022018#5",
    "emne": "Tilskud til kørsel til samlinger",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_03022018#6",
    "emne": "Masterforeningen og internationale stævner",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_03022018#7",
    "emne": "Lån af stævneudstyrskuffert",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_03022018#8",
    "emne": "Udstyrsliste til stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",

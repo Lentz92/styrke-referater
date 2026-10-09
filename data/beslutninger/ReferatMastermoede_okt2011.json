@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2011-10-08",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "ReferatMastermoede_okt2011#1",
    "emne": "Veteranudvalgets/masterudvalgets sammensætning",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "ReferatMastermoede_okt2011#2",
    "emne": "Veteranudvalgets støtte og budget",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "ReferatMastermoede_okt2011#3",
    "emne": "Gebyr for manglende dommer ved internationale masterstævner",
    "kategori": "internationalt",
    "udfald": "ikke_afgjort",

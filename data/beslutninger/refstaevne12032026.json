@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-03-12",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne12032026#1",
    "emne": "Vejledning til klubber ved DM-hold runder",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne12032026#2",
    "emne": "Kvalifikationskrav DM klassisk styrkeløft",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne12032026#3",
    "emne": "Master løfter logo på T-shirt i konkurrence",
    "kategori": "udstyr",
    "udfald": "vedtaget",

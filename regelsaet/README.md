@@ -63,5 +63,6 @@ Regler ophæves sjældent formelt, så en regel gælder her, indtil et senere re
 - Regler der vises ikke, fordi en af deres beslutninger er ændret siden konsolideringen: 0
 - Regelversioner hvor udtrækket og reglen er uenige om virkningen (bør tjekkes mod referatet): 4
 - Regelversioner der bør efterses for en mulig datofælde (tidsbegrænset regel bekræftet uden slutdato, eller en senere beslutning der gælder fra før en tidligere): 20
+- Fejl i beslutningers id'er eller reglers adresser (slugs), som skal rettes i data/: 0
 
 Udtrækket er lavet automatisk af Claude og kan indeholde fejl. Referatet er altid den gældende kilde.

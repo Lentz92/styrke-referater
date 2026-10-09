@@ -4,6 +4,7 @@
 
 Alle regler i området med fuld tekst og historik – også dem, der ikke længere gælder. Årssiderne viser, hvad der gjaldt i et bestemt år.
 
+<a id="regel/adfaerdskodeks-adfaerd-under-konkurrencer"></a>
 ### Adfærdskodeks, adfærd under konkurrencer
 
 **I kraft**
@@ -14,6 +15,7 @@ Under konkurrencer skal man deltage i de aktiviteter DSF eller arrangøren forve
 
 - 24.08.2015 · indført: deltagelse i præmieoverrækkelse, påklædningsregler, gensidig opbakning · [Adfaerdskodeks s. 1](https://filer.styrke.dk/masterudvalg/Adfaerdskodeks.pdf#page=1)
 
+<a id="regel/adfaerdskodeks-alkohol"></a>
 ### Adfærdskodeks, alkohol
 
 **I kraft**
@@ -24,6 +26,7 @@ Alkohol indtages kun i henhold til aftale, f.eks. ved den afsluttende banket. I 
 
 - 24.08.2015 · indført: alkohol kun efter aftale, holdlederen afgør tvivl · [Adfaerdskodeks s. 1](https://filer.styrke.dk/masterudvalg/Adfaerdskodeks.pdf#page=1)
 
+<a id="regel/adfaerdskodeks-generel-adfaerd"></a>
 ### Adfærdskodeks, generel adfærd
 
 **I kraft**
@@ -34,6 +37,7 @@ Personer der repræsenterer DSF i masterudvalget (konkurrencedeltagere, holdlede
 
 - 24.08.2015 · indført: pæn og respektfuld omgang blandt DSF-repræsentanter · [Adfaerdskodeks s. 1](https://filer.styrke.dk/masterudvalg/Adfaerdskodeks.pdf#page=1)
 
+<a id="regel/antidopinguddannelse-for-masterloeftere"></a>
 ### Antidopinguddannelse for masterløftere
 
 **I kraft**
@@ -46,6 +50,7 @@ IPF har indtil videre givet tilladelse til, at danske masterløftere bruger Anti
 
 > **Bemærk:** Tilmeldingskravene fra 2027 kræver et gyldigt ADEL-certifikat, så Anti Doping Danmarks uddannelse er formentlig ikke længere nok.
 
+<a id="regel/betalingsfrist-for-internationale-masterstaevner"></a>
 ### Betalingsfrist for internationale masterstævner
 
 **I kraft**
@@ -57,6 +62,7 @@ Beløb for startgebyr og evt. forudbetalt hotel og transport faktureres til klub
 - 09.06.2018 · indført: betaling senest 28 dage før, ellers fjernes løfteren · [refbest_09062018 s. 3](https://filer.styrke.dk/referater/refbest_09062018.pdf#page=3)
 - 2024 · bekræftet: 28-dages betalingsfrist bekræftet · [KravForInternationalDeltagelse2024 s. 1](https://filer.styrke.dk/masterudvalg/KravForInternationalDeltagelse2024.pdf#page=1)
 
+<a id="regel/dm-i-squat-og-doedloeft-for-masters"></a>
 ### DM i squat og dødløft for masters
 
 **I kraft**
@@ -69,6 +75,7 @@ DM i squat og dødløft for masters afvikles som et kombineret, uofficielt DM i 
 - 26.03.2022 · forslag trukket tilbage: Randers Styrke og Motion foreslår klassisk eller kombineret afvikling · [rep2022 s. 15](https://filer.styrke.dk/referater/rep2022.pdf#page=15)
 - 13.05.2022 · ændret: kombineret uofficielt DM, klassisk og udstyr · [refmaster13052022 s. 1](https://filer.styrke.dk/referater/refmaster13052022.pdf#page=1)
 
+<a id="regel/daekning-af-udgifter-ved-internationale-masterstaevner"></a>
 ### Dækning af udgifter ved internationale masterstævner
 
 **I kraft**
@@ -84,6 +91,7 @@ Masterudvalget betaler startgebyr for et antal løftere ud fra udvalgets økonom
 
 > **Bemærk:** Masterudvalgets retningslinje fra 2024 nævner kun, at løftere, der har klaret kvalifikationskravene, selv kan betale startgebyret. Det ser ud til at stride mod Repræsentantskabets beslutning fra 2021, som også giver ikke-kvalificerede ret til at deltage for egen regning.
 
+<a id="regel/fastsaettelse-af-kvalifikationskrav-for-masters"></a>
 ### Fastsættelse af kvalifikationskrav for masters
 
 **I kraft**
@@ -97,6 +105,7 @@ Masterudvalget opstiller kvalifikationskrav i hver kategori og klasse for løfte
 - 09.11.2019 · bekræftet: bestyrelsen godkender klassiske krav fra 1.1.2020 (fra 01.01.2020) · [refbest_091119 s. 4](https://filer.styrke.dk/referater/refbest_091119.pdf#page=4)
 - 13.05.2022 · ændret: kravene for kvinder i 69 og 76 kg opdateret · [refmaster13052022 s. 1](https://filer.styrke.dk/referater/refmaster13052022.pdf#page=1)
 
+<a id="regel/head-coach-ved-internationale-masterstaevner"></a>
 ### Head coach ved internationale masterstævner
 
 **I kraft**
@@ -109,6 +118,7 @@ Masterudvalget skal i god tid før hvert internationalt stævne sikre, at der ud
 - 27.06.2015 · ændret: Masterudvalget sikrer udpegning af ajourført head coach · [ReglerForMasterudvalget s. 1](https://filer.styrke.dk/masterudvalg/ReglerForMasterudvalget.pdf#page=1)
 - 17.09.2016 · ændret: head coach kun ved mindst 4 danske deltagere · [refbest_17092016 s. 2](https://filer.styrke.dk/referater/refbest_17092016.pdf#page=2)
 
+<a id="regel/head-coachs-pligter-ved-masterstaevner"></a>
 ### Head coachs pligter ved masterstævner
 
 **I kraft**
@@ -120,6 +130,7 @@ Head coach sikrer, at kravene i Coach Responsibility overholdes, og er til stede
 - 17.09.2016 · indført: pligter: teknisk møde, coaching, beretning og banket · [refbest_17092016 s. 2](https://filer.styrke.dk/referater/refbest_17092016.pdf#page=2)
 - 29.04.2018 · ændret: krav i Coach Responsibility skal overholdes · [refmaster29042018 s. 1](https://filer.styrke.dk/referater/refmaster29042018.pdf#page=1)
 
+<a id="regel/klubbers-haeftelse-for-startgebyr-ved-udeblivelse"></a>
 ### Klubbers hæftelse for startgebyr ved udeblivelse
 
 **I kraft**
@@ -132,6 +143,7 @@ Klubber, der tilmelder løftere til et internationalt masterstævne uden at løf
 - 09.06.2018 · bekræftet: bestyrelsen godkender hæftelse for 140 euro · [refbest_09062018 s. 3](https://filer.styrke.dk/referater/refbest_09062018.pdf#page=3)
 - 2024 · ændret: startgebyr hævet fra 140 til 150 euro · [KravForInternationalDeltagelse2024 s. 1](https://filer.styrke.dk/masterudvalg/KravForInternationalDeltagelse2024.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-klassisk-damer-3-kamp"></a>
 ### Kvalifikationskrav master klassisk, damer 3-kamp
 
 **I kraft**
@@ -142,6 +154,7 @@ Kvalifikationskrav for dame master i klassisk 3-kamp (total i kg) pr. 1-1-2022, 
 
 - 2022 · indført: totalkrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravKlassisk2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravKlassisk2022.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-klassisk-damer-baenkpres"></a>
 ### Kvalifikationskrav master klassisk, damer bænkpres
 
 **I kraft**
@@ -152,6 +165,7 @@ Kvalifikationskrav for dame master i klassisk bænkpres (kg) pr. 1-1-2022, Maste
 
 - 2022 · indført: bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravKlassisk2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravKlassisk2022.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-klassisk-herrer-3-kamp"></a>
 ### Kvalifikationskrav master klassisk, herrer 3-kamp
 
 **I kraft**
@@ -162,6 +176,7 @@ Kvalifikationskrav for herre master i klassisk 3-kamp (total i kg) pr. 1-1-2022,
 
 - 2022 · indført: totalkrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravKlassisk2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravKlassisk2022.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-klassisk-herrer-baenkpres"></a>
 ### Kvalifikationskrav master klassisk, herrer bænkpres
 
 **I kraft**
@@ -172,6 +187,7 @@ Kvalifikationskrav for herre master i klassisk bænkpres (kg) pr. 1-1-2022, Mast
 
 - 2022 · indført: bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravKlassisk2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravKlassisk2022.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-udstyr-damer-3-kamp"></a>
 ### Kvalifikationskrav master udstyr, damer 3-kamp
 
 **I kraft**
@@ -182,6 +198,7 @@ Kvalifikationskrav for masterløftere med udstyr, damer 3-kamp (total i kg, Mast
 
 - 2022 · indført: totalkrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravUdstyr2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravUdstyr2022.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-udstyr-damer-baenkpres"></a>
 ### Kvalifikationskrav master udstyr, damer bænkpres
 
 **I kraft**
@@ -192,6 +209,7 @@ Kvalifikationskrav for masterløftere med udstyr, damer bænkpres (kg, Master 1/
 
 - 2022 · indført: bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravUdstyr2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravUdstyr2022.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-udstyr-herrer-3-kamp"></a>
 ### Kvalifikationskrav master udstyr, herrer 3-kamp
 
 **I kraft**
@@ -202,6 +220,7 @@ Kvalifikationskrav for masterløftere med udstyr, herrer 3-kamp (total i kg, Mas
 
 - 2022 · indført: totalkrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravUdstyr2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravUdstyr2022.pdf#page=1)
 
+<a id="regel/kvalifikationskrav-master-udstyr-herrer-baenkpres"></a>
 ### Kvalifikationskrav master udstyr, herrer bænkpres
 
 **I kraft**
@@ -212,6 +231,7 @@ Kvalifikationskrav for masterløftere med udstyr, herrer bænkpres (kg, Master 1
 
 - 2022 · indført: bænkpreskrav pr. vægtklasse og masterklasse fra 1.1.2022 (fra 01.01.2022) · [KvalifikationskravUdstyr2022 s. 1](https://filer.styrke.dk/masterudvalg/KvalifikationskravUdstyr2022.pdf#page=1)
 
+<a id="regel/master-3-rekorder-i-oevrige-kategorier"></a>
 ### Master 3-rekorder i øvrige kategorier
 
 **I kraft**
@@ -222,6 +242,7 @@ En master 3-rekord, der er højere end master 2, master 1 og åben klasse, skal 
 
 - 04.11.2018 · indført: master 3-rekord noteres i alle lavere kategorier · [490 s. 5](https://styrke.dk/filer/rapporter/490.pdf#page=5)
 
+<a id="regel/masterforeningens-forhold-til-dsf"></a>
 ### Masterforeningens forhold til DSF
 
 **I kraft**
@@ -232,6 +253,7 @@ Masterforeningen er en forening uden for DSF, og medlemskab af den kræves ikke 
 
 - 03.02.2018 · indført: medlemskab af Masterforeningen kræves ikke internationalt · [refbest_03022018 s. 5](https://filer.styrke.dk/referater/refbest_03022018.pdf#page=5)
 
+<a id="regel/salg-og-laan-af-landsholdsdragter-til-masterloeftere"></a>
 ### Salg og lån af landsholdsdragter til masterløftere
 
 **I kraft**
@@ -242,6 +264,7 @@ Landsholdsdragter sælges til masterløftere for 350 kr., og indbetalingen går 
 
 - 08.02.2015 · indført: dragter sælges for 350 kr. eller lånes · [refbest_08022015 s. 6](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=6)
 
+<a id="regel/tilmelding-til-internationale-masterstaevner"></a>
 ### Tilmelding til internationale masterstævner
 
 **I kraft**
@@ -254,6 +277,7 @@ Tilmelding til internationale masterstævner sker via tilmeldingsskema inkl. lif
 - 09.03.2019 · ændret: billede og profildata kræves på grund af Goodlift · [refmaster09032019 s. 2](https://filer.styrke.dk/referater/refmaster09032019.pdf#page=2)
 - 2027 · ændret: Consent Form og gyldigt ADEL-certifikat kræves · [Tilmeldingsfrister2027 s. 1](https://filer.styrke.dk/masterudvalg/Tilmeldingsfrister2027.pdf#page=1)
 
+<a id="regel/udtagelse-til-internationale-masterstaevner"></a>
 ### Udtagelse til internationale masterstævner
 
 **I kraft**
@@ -272,6 +296,7 @@ For at deltage i internationale stævner (EM/VM Master) kræves deltagelse i det
 
 > **Bemærk:** Bestyrelsen lagde i 2010 udtagelseskriterierne under eliteudvalget. Masterudvalgets egne retningslinjer fra 2015 og 2024 fastsætter alligevel kriterierne, uden at en ny bestyrelsesbeslutning om kompetencen er registreret.
 
+<a id="regel/vm-for-masters-klassisk-raw"></a>
 ### VM for masters, klassisk (RAW)
 
 **I kraft**
@@ -282,6 +307,7 @@ Der indføres verdensmesterskaber for masters i RAW. Det første afholdes næste
 
 - 02.06.2013 · indført: VM for masters i RAW indføres, første gang i Sydafrika · [vm2013 s. 2](https://filer.styrke.dk/beretninger/vm2013.pdf#page=2)
 
+<a id="regel/ipf-masterkommission"></a>
 ### IPF Masterkommission
 
 **I kraft** · intern procedure/detalje
@@ -292,6 +318,7 @@ Der oprettes en Master-kommission under IPF på grund af den store tilgang af ma
 
 - 12.06.2026 · indført: IPF opretter Master-kommission · [1071kongres s. 11](https://styrke.dk/filer/rapporter/1071kongres.pdf#page=11)
 
+<a id="regel/koordinatorer-for-internationale-masterstaevner"></a>
 ### Koordinatorer for internationale masterstævner
 
 **I kraft** · intern procedure/detalje
@@ -304,6 +331,7 @@ For hver kategori (klassisk, bænkpres, styrkeløft) er der en koordinator, som 
 - 29.04.2018 · ændret: frist 7 dage før forhåndstilmelding, fælles budgetansvar med formand · [refmaster29042018 s. 1](https://filer.styrke.dk/referater/refmaster29042018.pdf#page=1)
 - 09.06.2018 · bekræftet: bestyrelsen godkender koordinatorordningen · [refbest_09062018 s. 3](https://filer.styrke.dk/referater/refbest_09062018.pdf#page=3)
 
+<a id="regel/masterudvalgets-budget"></a>
 ### Masterudvalgets budget
 
 **I kraft** · intern procedure/detalje
@@ -321,6 +349,7 @@ Masterudvalget får støtte efter det budget, der vedtages på repræsentantskab
 - 13.12.2015 · forslag forkastet: Kenneth Kyvsgaard foreslår overført overskud fra 2015 til 2016 · [refbest_13122015 s. 1](https://filer.styrke.dk/referater/refbest_13122015.pdf#page=1)
 - 18.03.2018 · forslag forkastet: Kim Dahl, Tårnby, foreslår 88.000 kr. i stedet for 50.000 kr. · [rep2018 s. 12](https://filer.styrke.dk/referater/rep2018.pdf#page=12)
 
+<a id="regel/masterudvalgets-moeder-og-sekretaer"></a>
 ### Masterudvalgets møder og sekretær
 
 **I kraft** · intern procedure/detalje
@@ -332,6 +361,7 @@ Udvalget mødes ved behov, dog mindst én gang om året, og formand og sekretær
 - 27.06.2015 · indført: møde mindst én gang årligt, dagsorden en uge før · [ReglerForMasterudvalget s. 1](https://filer.styrke.dk/masterudvalg/ReglerForMasterudvalget.pdf#page=1)
 - 29.04.2018 · ændret: sekretæren offentliggør referater på hjemmesiden · [refmaster29042018 s. 1](https://filer.styrke.dk/referater/refmaster29042018.pdf#page=1)
 
+<a id="regel/masterudvalgets-sammensaetning-og-placering"></a>
 ### Masterudvalgets sammensætning og placering
 
 **I kraft** · intern procedure/detalje
@@ -346,6 +376,7 @@ Masterudvalget består af 3-7 personer, og mindst formanden skal være medlem af
 - 08.02.2015 · indkommet forslag: forslag om at placere udvalget under eliteudvalget · [refbest_08022015 s. 5](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=5)
 - 27.06.2015 · ændret: 3-7 medlemmer, formanden udpeges af bestyrelsen · [ReglerForMasterudvalget s. 1](https://filer.styrke.dk/masterudvalg/ReglerForMasterudvalget.pdf#page=1)
 
+<a id="regel/masterskategori-ved-dm-hold"></a>
 ### Masterskategori ved DM Hold
 
 **Kun forslag – aldrig vedtaget**
@@ -354,6 +385,7 @@ Forslag om at DM Hold udvides med en samlet Masters-kategori (M1-M4) i både kla
 
 - 29.03.2026 · forslag forkastet: RSM foreslår samlet masterskategori M1-M4 ved DM Hold · [rep2026 s. 32](https://filer.styrke.dk/referater/rep2026.pdf#page=32)
 
+<a id="regel/medaljer-for-master-4-herrer-og-master-3-damer"></a>
 ### Medaljer for master 4 herrer og master 3 damer
 
 **Kun forslag – aldrig vedtaget**
@@ -362,6 +394,7 @@ Forslag om at afskaffe vægtklassemedaljer til master 4 herrer og master 3 damer
 
 - 04.11.2018 · forslag forkastet: EC foreslår kun IPF-formel uden vægtklassemedaljer · [490 s. 2](https://styrke.dk/filer/rapporter/490.pdf#page=2)
 
+<a id="regel/pointberegning-ved-dm-masters-klassisk"></a>
 ### Pointberegning ved DM masters klassisk
 
 **Kun forslag – aldrig vedtaget**

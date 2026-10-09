@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-10-22",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_221023#1",
    "emne": "Dommerudvalgets regler",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_221023#2",
    "emne": "Dommerprøver og krav til dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_221023#3",
    "emne": "Jury og meet director ved officielle stævner",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_221023#4",
    "emne": "Officielle og uofficielle konkurrencer i app",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -74,6 +80,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_221023#5",
    "emne": "Appbrugeres samtykke til dopingtest",
    "kategori": "antidoping",
    "udfald": "vedtaget",

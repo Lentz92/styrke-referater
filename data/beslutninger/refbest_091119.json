@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-11-09",
+ "next_number": 9,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_091119#1",
    "emne": "Etiske retningslinjer for Facebookgrupper",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_091119#2",
    "emne": "Diplomstævner for nye klubber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_091119#3",
    "emne": "Kvalifikationskrav landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_091119#4",
    "emne": "Kvalifikationskrav master, klassiske internationale stævner",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_091119#5",
    "emne": "Dommeruddannelse B-dommer",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_091119#6",
    "emne": "Dommeruddannelse A-dommer",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_091119#7",
    "emne": "Dommeruddannelse international dommer",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 5
   },
   {
+   "id": "refbest_091119#8",
    "emne": "Krav om aktivitet for dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",

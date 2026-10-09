@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-05-25",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite25042022#1",
    "emne": "Egenbetaling ved deltagelse i ikke-landsholdsstævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite25042022#2",
    "emne": "Krav om ugentlig træning i klub for landsholdsudøvere",
    "kategori": "antidoping",
    "udfald": "vedtaget",

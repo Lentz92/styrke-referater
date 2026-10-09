@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-08-24",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite24082022#1",
    "emne": "Landsholdets rammer ved VM, overnatning",
    "kategori": "landshold",
    "udfald": "vedtaget",

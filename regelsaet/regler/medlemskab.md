@@ -6,6 +6,7 @@ Alle regler i området med fuld tekst og historik – også dem, der ikke længe
 
 ## Medlemskab, licens og klubskifte
 
+<a id="regel/bopaelskrav-nationalitet-og-dobbelt-licens-ved-danske-mesterskaber"></a>
 ### Bopælskrav, nationalitet og dobbelt licens ved danske mesterskaber
 
 **I kraft**
@@ -19,6 +20,7 @@ En udlænding skal have haft fast bopæl i Danmark i 6 på hinanden følgende m�
 - 07.10.2018 · bekræftet: 24 måneders bopæl og forbud mod dobbelt licens bekræftet · [refbest_07102018 s. 2](https://filer.styrke.dk/referater/refbest_07102018.pdf#page=2)
 - 29.03.2026 · ændret: bopælskrav nedsat fra 24 til 6 måneder · [rep2026 s. 27](https://filer.styrke.dk/referater/rep2026.pdf#page=27)
 
+<a id="regel/karantaene-ved-klubloeshed-udmeldelse-og-genindmeldelse"></a>
 ### Karantæne ved klubløshed, udmeldelse og genindmeldelse
 
 **I kraft**
@@ -34,6 +36,7 @@ Der skelnes mellem udmeldelse fra forbundet og klubløs. Genindmeldelse inden fo
 
 > **Bemærk:** Ændringen i 2018 blev vedtaget med kun 5 stemmer for, 3 imod og 40 blanke.
 
+<a id="regel/klubskifte-og-overflytning-af-licens"></a>
 ### Klubskifte og overflytning af licens
 
 **I kraft**
@@ -50,6 +53,7 @@ Klubskifte for licensløftere anmodes skriftligt til licens@styrke.dk af løfter
 - 10.01.2026 · indkommet forslag: bestyrelsen foreslår anmodning via licens@styrke.dk fra ny klub · [refbest_100126 s. 3](https://filer.styrke.dk/referater/refbest_100126.pdf#page=3)
 - 29.03.2026 · ændret: ny klub anmoder via licens@styrke.dk, 14 dages indsigelsesfrist · [rep2026 s. 27](https://filer.styrke.dk/referater/rep2026.pdf#page=27)
 
+<a id="regel/krav-om-traening-i-egen-klub"></a>
 ### Krav om træning i egen klub
 
 **I kraft**
@@ -63,6 +67,7 @@ For at stille op for en klub skal atleten træne regelmæssigt i klubben, mindst
 - 31.08.2019 · ændret: dispensation skal nu godkendes af dopingkontroludvalget · [refbest_310819 s. 2](https://filer.styrke.dk/referater/refbest_310819.pdf#page=2)
 - 23.08.2025 · bekræftet: , dispensation godkendes af Antidoping-udvalget · [refbest_230825 s. 5](https://filer.styrke.dk/referater/refbest_230825.pdf#page=5)
 
+<a id="regel/licenstildeling-via-licenserklaering"></a>
 ### Licenstildeling via licenserklæring
 
 **I kraft**
@@ -74,6 +79,7 @@ Licens tildeles, når atletens klub har indsendt udfyldt licenserklæring til li
 - 10.01.2026 · indkommet forslag: bestyrelsen foreslår licens ved klubbens licenserklæring · [refbest_100126 s. 2](https://filer.styrke.dk/referater/refbest_100126.pdf#page=2)
 - 29.03.2026 · indført: licens tildeles ved licenserklæring til licens@styrke.dk · [rep2026 s. 27](https://filer.styrke.dk/referater/rep2026.pdf#page=27)
 
+<a id="regel/meddelelse-om-flytning"></a>
 ### Meddelelse om flytning
 
 **I kraft**
@@ -84,6 +90,7 @@ Løfterne skal huske at melde flytning i klubben og/eller til kontoret, så adre
 
 - 25.07.2010 · indført: løftere skal melde flytning til klub eller kontor · [refbest_25072010 s. 1](https://filer.styrke.dk/referater/refbest_25072010.pdf#page=1)
 
+<a id="regel/navn-og-licensnummer-ved-licensbetaling"></a>
 ### Navn og licensnummer ved licensbetaling
 
 **I kraft**
@@ -94,6 +101,7 @@ Navn og licensnummer skal fremover skrives på, når årslicens betales ved før
 
 - 17.03.2009 · indført: navn og licensnummer påføres ved betaling af årslicens · [rep2009](https://filer.styrke.dk/referater/rep2009.htm)
 
+<a id="regel/transkoennedes-deltagelse"></a>
 ### Transkønnedes deltagelse
 
 **I kraft**
@@ -104,6 +112,7 @@ DSF følger DIF's retningslinjer. Styrkeløft er en kønnet idræt, så transkø
 
 - 22.01.2022 · indført: DIF's retningslinjer følges; ikke adgang til officielle stævner · [refbest_220122 s. 2](https://filer.styrke.dk/referater/refbest_220122.pdf#page=2)
 
+<a id="regel/ventetid-fra-licens-til-staevnedeltagelse"></a>
 ### Ventetid fra licens til stævnedeltagelse
 
 **I kraft**
@@ -117,6 +126,7 @@ Licens kan søges uden krav om forudgående medlemstid i en forening under DSF. 
 - 22.03.2015 · ændret: krav om 3 måneders medlemskab før licensansøgning slettet · [rep2015 s. 2](https://filer.styrke.dk/referater/rep2015.pdf#page=2)
 - 08.05.2016 · bekræftet: 3 måneders frist bekræftet, ingen dispensation · [refbest_08052016 s. 1](https://filer.styrke.dk/referater/refbest_08052016.pdf#page=1)
 
+<a id="regel/ansvar-for-licensregistrering"></a>
 ### Ansvar for licensregistrering
 
 **I kraft** · intern procedure/detalje
@@ -127,6 +137,7 @@ Licensregistrering flyttes fra KUF til Peter Andersen fra 1. september 2015 for 
 
 - 26.07.2015 · indført: licensregistrering flyttet fra KUF til Peter Andersen 1.9.2015 (fra 01.09.2015) · [refbest_26072015 s. 5](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=5)
 
+<a id="regel/seksmaanedersreglen-for-staevnedeltagelse"></a>
 ### Seksmånedersreglen for stævnedeltagelse
 
 **Kun forslag – aldrig vedtaget**
@@ -135,6 +146,7 @@ Forslag om at afskaffe 6-måneders-reglen blev ikke fremsat som forslag til repr
 
 - 07.12.2014 · forslag forkastet: forslag om afskaffelse ikke sendt videre til repræsentantskabet · [refbest_07122014 s. 3](https://filer.styrke.dk/referater/refbest_07122014.pdf#page=3)
 
+<a id="regel/medlemskort-til-styrkeloeftklubber"></a>
 ### Medlemskort til styrkeløftklubber
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje
@@ -145,6 +157,7 @@ Forslag om medlemskort til styrkeløftklubber afvises som for omstændigt. Besty
 
 ## Gebyrer og økonomi
 
+<a id="regel/administrationsgebyr-og-udelukkelse-ved-manglende-betaling"></a>
 ### Administrationsgebyr og udelukkelse ved manglende betaling
 
 **I kraft**
@@ -155,6 +168,7 @@ Betaler en klub ikke årsafgift og/eller licens til tiden, pålægges et adminis
 
 - 31.03.2019 · indført: 100 kr. gebyr pr. mangel; udelukkelse 14 dage efter rykker · [rep2019 s. 17](https://filer.styrke.dk/referater/rep2019.pdf#page=17)
 
+<a id="regel/afgift-for-brug-af-logo"></a>
 ### Afgift for brug af logo
 
 **I kraft**
@@ -165,6 +179,7 @@ Afgift for logo: ét logo for én person koster 500 kr., for alle medlemmer af e
 
 - 22.04.2017 · indført: logoafgift fra 500 til 2.500 kr. efter brug · [refbest_22042017 s. 2](https://filer.styrke.dk/referater/refbest_22042017.pdf#page=2)
 
+<a id="regel/afregningsbilag-og-tilgodehavender"></a>
 ### Afregningsbilag og tilgodehavender
 
 **I kraft**
@@ -177,6 +192,7 @@ Dommerens afregningsbilag attesteres af stævnelederen på stævnestedet; bilag 
 - 30.05.2010 · ændret: kassereren skal betale bilag inden 14 dage · [refbest_30052010 s. 1](https://filer.styrke.dk/referater/refbest_30052010.PDF#page=1)
 - 26.03.2017 · ændret: frist 3 uger, ellers bortfald; betaling inden 8 hverdage · [rep2017 s. 3](https://filer.styrke.dk/referater/rep2017.pdf#page=3)
 
+<a id="regel/angivelse-af-betalingsformaal"></a>
 ### Angivelse af betalingsformål
 
 **I kraft**
@@ -187,6 +203,7 @@ Klubberne skal skrive tydeligt, hvad deres indbetalinger til forbundet vedrører
 
 - 13.09.2009 · indført: klubber skal angive formål med indbetalinger · [refbest_13092009 s. 2](https://filer.styrke.dk/referater/refbest_13092009.PDF#page=2)
 
+<a id="regel/betaling-af-startgebyr-og-tilmelding"></a>
 ### Betaling af startgebyr og tilmelding
 
 **I kraft**
@@ -202,6 +219,7 @@ Rettidig og bindende tilmelding sker via online system senest tre uger før stæ
 - 14.03.2020 · indkommet forslag: Holstebro foreslår atleters egen betaling via Billetto · [refbest_140320 s. 2](https://filer.styrke.dk/referater/refbest_140320.pdf#page=2)
 - 30.08.2020 · forslag forkastet: Holstebros forslag om atleters egen betaling forkastet, 32 imod · [rep2020 s. 18](https://filer.styrke.dk/referater/rep2020.pdf#page=18)
 
+<a id="regel/betalingsdato-for-aarsafgift"></a>
 ### Betalingsdato for årsafgift
 
 **I kraft**
@@ -213,6 +231,7 @@ Rettidig og bindende tilmelding sker via online system senest tre uger før stæ
 - 03.02.2018 · indkommet forslag: bestyrelsen foreslår frist flyttet til 1.–15. januar · [refbest_03022018 s. 5](https://filer.styrke.dk/referater/refbest_03022018.pdf#page=5)
 - 18.03.2018 · indført: frist ændret fra 15. december til 1.–15. januar · [rep2018 s. 6](https://filer.styrke.dk/referater/rep2018.pdf#page=6)
 
+<a id="regel/deltagergebyr-og-arrangoerbetaling-i-holdturneringen"></a>
 ### Deltagergebyr og arrangørbetaling i holdturneringen
 
 **I kraft**
@@ -227,6 +246,7 @@ Tilmelding til DM Hold betales pr. klub, uanset antal hold; deltagergebyret er h
 
 > **Bemærk:** Det aktuelle deltagergebyr efter forhøjelsen på 1.000 kr. er ikke angivet; sidst kendte beløb er 500 kr. pr. klub fra 2010.
 
+<a id="regel/koerselsgodtgoerelse"></a>
 ### Kørselsgodtgørelse
 
 **I kraft**
@@ -237,6 +257,7 @@ Dommere og udvalgsmedlemmer får 2,50 kr./km alene og 3,00 kr./km ved samkørsel
 
 - 25.03.2012 · indført: takster for dommere, udvalg og landsholdsatleter; krav inden 14 dage · [rep2012 s. 4](https://filer.styrke.dk/referater/rep2012.pdf#page=4)
 
+<a id="regel/licensgebyr"></a>
 ### Licensgebyr
 
 **I kraft**
@@ -253,6 +274,7 @@ Licensgebyret er 300 kr.
 
 > **Bemærk:** Stigningen fra 150 til 200 kr. er ikke dokumenteret i referaterne, og begrundelsen i 2024 om uændret gebyr i over 20 år passer ikke med 150 kr. i 2010.
 
+<a id="regel/medaljer-til-staevner"></a>
 ### Medaljer til stævner
 
 **I kraft**
@@ -265,6 +287,7 @@ Medaljer bestilles via forbundets officielle medaljeforhandler. Arrangerende klu
 - 26.03.2017 · forslag trukket tilbage: Aalborg SK: faktura direkte fra FORMO – trukket · [rep2017 s. 13](https://filer.styrke.dk/referater/rep2017.pdf#page=13)
 - 26.03.2017 · ændret: fast pris 100 kr. pr. medaljesæt · [rep2017 s. 4](https://filer.styrke.dk/referater/rep2017.pdf#page=4)
 
+<a id="regel/opkraevning-af-licens"></a>
 ### Opkrævning af licens
 
 **I kraft**
@@ -277,6 +300,7 @@ DSF sender regning på licens to gange om året, ca. 1.6. og 1.12., til de klubb
 - 22.03.2015 · ændret: regning ca. 1.6. og 1.12.; også ved afbud · [rep2015 s. 4](https://filer.styrke.dk/referater/rep2015.pdf#page=4)
 - 26.03.2017 · forslag forkastet: Aalborg SK: egentlig faktura for licens og årsafgift – forkastet · [rep2017 s. 13](https://filer.styrke.dk/referater/rep2017.pdf#page=13)
 
+<a id="regel/passiv-licens-og-genindmeldelse"></a>
 ### Passiv licens og genindmeldelse
 
 **I kraft**
@@ -287,6 +311,7 @@ En opnået licens kan ikke gøres passiv; ønsker man ikke at stå på licenslis
 
 - 20.03.2016 · indført: ingen passiv licens; 12 måneders karens, 2.500 kr. ved genindmeldelse (fra 01.10.2016) · [rep2016 s. 2](https://filer.styrke.dk/referater/rep2016.pdf#page=2)
 
+<a id="regel/startgebyr-ved-staevner"></a>
 ### Startgebyr ved stævner
 
 **I kraft**
@@ -307,6 +332,7 @@ Startgebyret til DSF-stævner er 350 kr. for trekamp og 300 kr. for bænkpres. G
 - 23.03.2025 · ændret: trekamp hævet til 350 kr.; 50 kr. pr. deltager til DSF (fra 01.06.2025) · [rep2025 s. 22](https://filer.styrke.dk/referater/rep2025.pdf#page=22)
 - 29.03.2026 · bekræftet: fastholdt uændret med budgettet · [rep2026 s. 26](https://filer.styrke.dk/referater/rep2026.pdf#page=26)
 
+<a id="regel/staevneafgift-ved-internationale-staevner-i-danmark"></a>
 ### Stævneafgift ved internationale stævner i Danmark
 
 **I kraft**
@@ -317,6 +343,7 @@ Klubber, der arrangerer internationale stævner i Danmark, betaler fremover en s
 
 - 26.08.2017 · indført: arrangørklub betaler 10.000 kr. til DSF · [refbest_26082017 s. 3](https://filer.styrke.dk/referater/refbest_26082017.pdf#page=3)
 
+<a id="regel/tilskud-til-klubudviklingsprojekter"></a>
 ### Tilskud til klubudviklingsprojekter
 
 **I kraft**
@@ -327,6 +354,7 @@ Klubber, der gennemfører et klubudviklingsprojekt i samarbejde med forbundet, k
 
 - 26.07.2015 · indført: 2.500 kr. til klubudviklingsprojekt med forbundet · [refbest_26072015 s. 5](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=5)
 
+<a id="regel/tilskud-til-skoleprojekter"></a>
 ### Tilskud til skoleprojekter
 
 **I kraft**
@@ -337,6 +365,7 @@ Ved skolearrangementer/projekter, der involverer samarbejde mellem DSF og en klu
 
 - 03.05.2014 · indført: 2.500 kr. til klub ved skoleprojekt med DSF · [refbest_03052014 s. 3](https://filer.styrke.dk/referater/refbest_03052014.pdf#page=3)
 
+<a id="regel/aarsafgift"></a>
 ### Årsafgift
 
 **I kraft**
@@ -355,6 +384,7 @@ Ved skolearrangementer/projekter, der involverer samarbejde mellem DSF og en klu
 - 23.03.2025 · bekræftet: fastholdt med budgettet 2025 · [rep2025 s. 21](https://filer.styrke.dk/referater/rep2025.pdf#page=21)
 - 29.03.2026 · bekræftet: fastholdt uændret · [rep2026 s. 26](https://filer.styrke.dk/referater/rep2026.pdf#page=26)
 
+<a id="regel/aarsafgift-for-nye-klubber"></a>
 ### Årsafgift for nye klubber
 
 **I kraft**
@@ -365,6 +395,7 @@ En klub, der tilmelder sig DSF for første gang, betaler ikke årsafgift i tilme
 
 - 23.03.2014 · indført: nye klubber fritaget første år; 1/12-reglen slettet · [rep2014 s. 3](https://filer.styrke.dk/referater/rep2014.pdf#page=3)
 
+<a id="regel/betaling-af-rejseudgifter"></a>
 ### Betaling af rejseudgifter
 
 **I kraft** · intern procedure/detalje
@@ -375,6 +406,7 @@ Ved rejser til stævner skal så meget som muligt betales hjemmefra, så der ikk
 
 - 24.08.2013 · indført: rejseudgifter betales så vidt muligt hjemmefra · [refbest_24082013 s. 2](https://filer.styrke.dk/referater/refbest_24082013.pdf#page=2)
 
+<a id="regel/bogfoering-af-internationale-staevner"></a>
 ### Bogføring af internationale stævner
 
 **I kraft** · intern procedure/detalje
@@ -385,6 +417,7 @@ Internationale stævner budgetteres og bogføres fremover på samme konto.
 
 - 02.10.2021 · indført: internationale stævner på samme konto · [refbest_021021 s. 1](https://filer.styrke.dk/referater/refbest_021021.pdf#page=1)
 
+<a id="regel/honorar-for-sponsorindhentning"></a>
 ### Honorar for sponsorindhentning
 
 **I kraft** · intern procedure/detalje
@@ -395,6 +428,7 @@ Forbundet tilbyder 30% af det kontante beløb som honorar til personer, der skaf
 
 - 08.03.2025 · indført: 30% af kontant sponsorbeløb som honorar · [refbest_080325 s. 3](https://filer.styrke.dk/referater/refbest_080325.pdf#page=3)
 
+<a id="regel/kontorhold-og-telefonpenge"></a>
 ### Kontorhold og telefonpenge
 
 **I kraft** · intern procedure/detalje
@@ -408,6 +442,7 @@ Kontorhold og telefonpenge er 2.000 kr. til bestyrelsesmedlemmer, webmaster og d
 - 20.06.2021 · ændret: hævet fra 1.700 til 2.000 kr. med budgettet · [rep2021 s. 11](https://filer.styrke.dk/referater/rep2021.pdf#page=11)
 - 29.03.2026 · bekræftet: fastholdt uændret på 2.000 kr. · [rep2026 s. 26](https://filer.styrke.dk/referater/rep2026.pdf#page=26)
 
+<a id="regel/procedure-for-internationale-betalinger"></a>
 ### Procedure for internationale betalinger
 
 **I kraft** · intern procedure/detalje
@@ -418,6 +453,7 @@ Internationale betalinger skal foretages hurtigt. Kvitteringer for betalingerne 
 
 - 15.07.2023 · indført: hurtig betaling; kvittering til teammanager før afrejse · [refbest_150723 s. 1](https://filer.styrke.dk/referater/refbest_150723.pdf#page=1)
 
+<a id="regel/reklamer-og-links-paa-hjemmesiden"></a>
 ### Reklamer og links på hjemmesiden
 
 **I kraft** · intern procedure/detalje
@@ -430,6 +466,7 @@ Der må være reklamer på hjemmesiden, som ikke må være stødende jf. IPF's r
 - 05.01.2019 · indkommet forslag: Medieudvalget foreslår 500 kr. årligt for logoer/links · [refmedie05012019 s. 1](https://filer.styrke.dk/referater/refmedie05012019.pdf#page=1)
 - 19.01.2019 · bekræftet: 500 kr. årligt bekræftet; bestyrelsen vurderer annoncører · [refbest_19012019.2 s. 2](https://filer.styrke.dk/referater/refbest_19012019.2.pdf#page=2)
 
+<a id="regel/selvbestilling-af-rejser"></a>
 ### Selvbestilling af rejser
 
 **I kraft** · intern procedure/detalje
@@ -440,6 +477,7 @@ Dommere og trænere opfordres til selv at bestille rejser, som løftere på land
 
 - 15.12.2024 · indført: dommere og trænere opfordres til selv at bestille rejser · [refbest_151224 s. 2](https://filer.styrke.dk/referater/refbest_151224.pdf#page=2)
 
+<a id="regel/stoette-til-aktiviteter"></a>
 ### Støtte til aktiviteter
 
 **I kraft** · intern procedure/detalje
@@ -450,6 +488,7 @@ Der kan gives midler til uddannelse, breddetræf og andre aktiviteter, hvis de s
 
 - 08.02.2015 · indført: midler til aktiviteter, der mindst går i nul · [refbest_08022015 s. 1](https://filer.styrke.dk/referater/refbest_08022015.pdf#page=1)
 
+<a id="regel/faelles-staevnepulje-for-klubber"></a>
 ### Fælles stævnepulje for klubber
 
 **Kun forslag – aldrig vedtaget**
@@ -458,6 +497,7 @@ Forslag om at alle klubber betaler 2000 kr. i starten af året, som refunderes h
 
 - 04.06.2026 · indkommet forslag: forslag: 2.000 kr. pr. klub, refunderes ved afholdt stævne · [refstaevne0406026 s. 3](https://filer.styrke.dk/referater/refstaevne0406026.pdf#page=3)
 
+<a id="regel/kompensation-for-manglende-kontingentindtaegter-covid-19"></a>
 ### Kompensation for manglende kontingentindtægter (Covid-19)
 
 **Ikke længere i kraft**
@@ -468,6 +508,7 @@ Der afsættes en pulje på fx 500.000 kr., som medlemsklubber kan ansøge DSF om
 
 - 22.08.2020 · indført: pulje på ca. 500.000 kr.; ansøgning senest 30.9.2020 · [refbest_220820 s. 1](https://filer.styrke.dk/referater/refbest_220820.pdf#page=1)
 
+<a id="regel/kompensation-for-staevneindtaegter-og-merudgifter-covid-19"></a>
 ### Kompensation for stævneindtægter og merudgifter (Covid-19)
 
 **Ikke længere i kraft**
@@ -480,6 +521,7 @@ Klubber kan efter konkret ansøgning få dækket manglende indtægter fra aflyst
 - 17.10.2020 · ændret: ansøgningsfrist 1.12.2020 og krav til ansøgningen · [refbest_171020 s. 1](https://filer.styrke.dk/referater/refbest_171020.pdf#page=1)
 - 17.10.2020 · ændret: DSF dækker øgede Covid-19-stævneudgifter i 2021 (fra 01.01.2021) · [refbest_171020 s. 3](https://filer.styrke.dk/referater/refbest_171020.pdf#page=3)
 
+<a id="regel/tilskud-til-leje-af-lys-og-lydudstyr"></a>
 ### Tilskud til leje af lys- og lydudstyr
 
 **Kun forslag – aldrig vedtaget**

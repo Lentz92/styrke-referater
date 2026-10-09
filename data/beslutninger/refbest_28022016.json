@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2016-02-28",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_28022016#1",
    "emne": "Forslag om ændring af licensregler",
    "kategori": "medlemskab",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_28022016#2",
    "emne": "Sanktioner mod klubber med positive løftere",
    "kategori": "antidoping",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_28022016#3",
    "emne": "Løfteres betalte trænerrolle for andre licensløftere",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_28022016#4",
    "emne": "Rejsetidspunkt til internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",

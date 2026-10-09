@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-03-22",
+ "next_number": 13,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2015#1",
    "emne": "Startgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 6
   },
   {
+   "id": "rep2015#2",
    "emne": "Licens: medlemskab før licensanmodning",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "rep2015#3",
    "emne": "Indvejning som RAW-løfter til udstyrsstævne",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "rep2015#4",
    "emne": "Holdkonkurrence ved DM",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -74,6 +80,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2015#5",
    "emne": "Betaling af licens",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2015#6",
    "emne": "Divisionsturnering, afholdelse af alle indledende runder",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2015#7",
    "emne": "Betegnelse for åbne danske mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2015#8",
    "emne": "Sammenlægning af JM og SM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -142,6 +152,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2015#9",
    "emne": "DM udstyr, aldersgrupper",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -159,6 +170,7 @@
    "citat_side": 5
   },
   {
+   "id": "rep2015#10",
    "emne": "Betaling af startgebyr og tilmelding",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -176,6 +188,7 @@
    "citat_side": 6
   },
   {
+   "id": "rep2015#11",
    "emne": "Offentliggørelse af dopingtests",
    "kategori": "antidoping",
    "udfald": "forkastet",
@@ -193,6 +206,7 @@
    "citat_side": 7
   },
   {
+   "id": "rep2015#12",
    "emne": "Genoptagelse af ekskluderet klub",
    "kategori": "medlemskab",
    "udfald": "forkastet",

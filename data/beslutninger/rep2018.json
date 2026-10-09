@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2018-03-18",
+ "next_number": 10,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2018#1",
    "emne": "Betalingsdato for årsafgift",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 6
   },
   {
+   "id": "rep2018#2",
    "emne": "Pokaler for bedste løfter ved DM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 6
   },
   {
+   "id": "rep2018#3",
    "emne": "Jury og dommere ved officielle stævner",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 7
   },
   {
+   "id": "rep2018#4",
    "emne": "Danske rekorder, betingelser for rekordsætning",
    "kategori": "staevner",
    "udfald": "trukket",
@@ -74,6 +80,7 @@
    "citat_side": 7
   },
   {
+   "id": "rep2018#5",
    "emne": "Rekorder i individuelle løft og klassiske rekorder",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 8
   },
   {
+   "id": "rep2018#6",
    "emne": "Offentliggørelse af stævne- og dommerplan",
    "kategori": "staevner",
    "udfald": "forkastet",
@@ -108,6 +116,7 @@
    "citat_side": 8
   },
   {
+   "id": "rep2018#7",
    "emne": "Udmeldelse, klubløs og karantæne",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 10
   },
   {
+   "id": "rep2018#8",
    "emne": "Udtagelseskrav til landsholdet",
    "kategori": "landshold",
    "udfald": "trukket",
@@ -142,6 +152,7 @@
    "citat_side": 11
   },
   {
+   "id": "rep2018#9",
    "emne": "Budget for masterudvalget",
    "kategori": "master",
    "udfald": "forkastet",

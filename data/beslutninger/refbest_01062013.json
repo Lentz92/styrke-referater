@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2013-06-01",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_01062013#1",
    "emne": "Landsholdsdragt ved præmieoverrækkelse",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_01062013#2",
    "emne": "Krav om træning i egen klub",
    "kategori": "medlemskab",
    "udfald": "vedtaget",

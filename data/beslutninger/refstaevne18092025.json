@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-09-18",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne18092025#1",
    "emne": "Stævneansvarliges opgaver ved danske mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",

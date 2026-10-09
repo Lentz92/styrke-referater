@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-08-29",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_290826.2#1",
    "emne": "Pokal for bedste løfter ved JFM",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_290826.2#2",
    "emne": "Obligatorisk brush up-kursus for B-dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_290826.2#3",
    "emne": "Egenbetaling for landsholdsdragter",
    "kategori": "landshold",
    "udfald": "ikke_afgjort",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-12-07",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite07122019#1",
    "emne": "Forventninger til atleter på landsholdssamlinger",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite07122019#2",
    "emne": "Udtagelse til bruttolandshold trekamp",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite07122019#3",
    "emne": "Udtagelse EM trekamp, 93 og 105 kg herrer",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite07122019#4",
    "emne": "Kvalifikationskrav offentliggørelse",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite07122019#5",
    "emne": "Kvittering for egenbetaling landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-01-05",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refmedie05012019#1",
    "emne": "Oprettelse af stævner på sociale medier",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmedie05012019#2",
    "emne": "Betalende logoer og links på hjemmesiden",
    "kategori": "okonomi",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmedie05012019#3",
    "emne": "Procedure for kontakt til nyhedsmedier om udlandsløftere",
    "kategori": "organisation",
    "udfald": "vedtaget",

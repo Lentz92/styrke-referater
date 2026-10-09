@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Navn og licensnummer ved licensbetaling",
+   "slug": "navn-og-licensnummer-ved-licensbetaling",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -21,6 +22,7 @@
   },
   {
    "titel": "Meddelelse om flytning",
+   "slug": "meddelelse-om-flytning",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -36,6 +38,7 @@
   },
   {
    "titel": "Ventetid fra licens til stævnedeltagelse",
+   "slug": "ventetid-fra-licens-til-stævnedeltagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -75,6 +78,7 @@
   },
   {
    "titel": "Seksmånedersreglen for stævnedeltagelse",
+   "slug": "seksmånedersreglen-for-stævnedeltagelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -90,6 +94,7 @@
   },
   {
    "titel": "Licenstildeling via licenserklæring",
+   "slug": "licenstildeling-via-licenserklæring",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -113,6 +118,7 @@
   },
   {
    "titel": "Klubskifte og overflytning af licens",
+   "slug": "klubskifte-og-overflytning-af-licens",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -176,6 +182,7 @@
   },
   {
    "titel": "Bopælskrav, nationalitet og dobbelt licens ved danske mesterskaber",
+   "slug": "bopælskrav-nationalitet-og-dobbelt-licens-ved-danske-mesterskaber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -215,6 +222,7 @@
   },
   {
    "titel": "Krav om træning i egen klub",
+   "slug": "krav-om-træning-i-egen-klub",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -254,6 +262,7 @@
   },
   {
    "titel": "Medlemskort til styrkeløftklubber",
+   "slug": "medlemskort-til-styrkeløftklubber",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -269,6 +278,7 @@
   },
   {
    "titel": "Ansvar for licensregistrering",
+   "slug": "ansvar-for-licensregistrering",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -284,6 +294,7 @@
   },
   {
    "titel": "Karantæne ved klubløshed, udmeldelse og genindmeldelse",
+   "slug": "karantæne-ved-klubløshed-udmeldelse-og-genindmeldelse",
    "vigtig": true,
    "note": "Ændringen i 2018 blev vedtaget med kun 5 stemmer for, 3 imod og 40 blanke.",
    "versioner": [
@@ -323,6 +334,7 @@
   },
   {
    "titel": "Transkønnedes deltagelse",
+   "slug": "transkønnedes-deltagelse",
    "vigtig": true,
    "note": null,
    "versioner": [

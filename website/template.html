@@ -184,7 +184,8 @@
 <script>
 /* Data shape (see website.py): rules[] = { title, category, area, central, note, international, origin, slug,
    versions[] = { date, effective, from, effect, change, essence, text, organ, congress, votes, proposer, doc, docUrl, source, url } };
-   inForce[year] = [[rule index, version in force, version that adopted its content], …]; synonyms = [[word, …], …] */
+   inForce[year] = [[rule index, version in force, version that adopted its content], …]; synonyms = [[word, …], …];
+   aliases = { former slug: current slug } for rules merged, moved or renamed away, so old links still work */
 const D = /*DATA*/null;
 const R = D.rules;
 const TODAY = D.today, CUR = Number(TODAY.slice(0, 4));
@@ -396,9 +397,16 @@ function hideRule() {
   document.body.classList.remove("is-open");
   returnFocus?.focus({ preventScroll: true });
 }
-function syncWithHash() {
+// The slug in #regel/<slug>, or "" when there is none or it is malformed (a cut-off %-escape).
+function hashSlug() {
   const m = location.hash.match(/^#regel\/(.+)$/);
-  const ri = m ? R.findIndex((r) => r.slug === decodeURIComponent(m[1])) : -1;
+  try { return m ? decodeURIComponent(m[1]) : ""; } catch { return ""; }
+}
+function syncWithHash() {
+  const asked = hashSlug();
+  const slug = Object.hasOwn(D.aliases, asked) ? D.aliases[asked] : asked; // a former slug leads to its rule
+  const ri = slug ? R.findIndex((r) => r.slug === slug) : -1;
+  if (ri >= 0 && slug !== asked) history.replaceState(null, "", href(ri)); // show and share the current address
   ri >= 0 ? showRule(ri) : hideRule();
 }
 function closeRule() {

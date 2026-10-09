@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2014-05-31",
+ "next_number": 9,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite31052014#1",
    "emne": "Deltagelse i bruttolandsholdssamlinger",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite31052014#2",
    "emne": "Egenbetaling for VM B-krav",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite31052014#3",
    "emne": "Arnold Classic deltagelse og dommer",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite31052014#4",
    "emne": "Rapportering fra internationale mesterskaber",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite31052014#5",
    "emne": "Krav for bruttolandsholdet: primær træning i hjemklub",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 3
   },
   {
+   "id": "elite31052014#6",
    "emne": "Forbud mod konkurrence i relaterede idrætsgrene for bruttolandsholdsatleter",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 3
   },
   {
+   "id": "elite31052014#7",
    "emne": "Officielle DSF-repræsentanter ved internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 3
   },
   {
+   "id": "elite31052014#8",
    "emne": "Start i både trekamp og bænkpres ved NM",
    "kategori": "landshold",
    "udfald": "vedtaget",

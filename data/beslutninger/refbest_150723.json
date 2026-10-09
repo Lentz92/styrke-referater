@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-07-15",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_150723#1",
    "emne": "Procedure for internationale betalinger",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_150723#2",
    "emne": "Levering af pokaler og medaljer samt opsætning af stævneprogram",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_150723#3",
    "emne": "Strategiplan",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_150723#4",
    "emne": "Coach licens for head coaches ved internationale mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_150723#5",
    "emne": "Dokumentkrav for nominerede løftere til EM",
    "kategori": "internationalt",
    "udfald": "vedtaget",

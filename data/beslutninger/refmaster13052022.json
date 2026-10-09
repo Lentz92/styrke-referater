@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-05-13",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refmaster13052022#1",
    "emne": "DM master i squat og dødløft",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmaster13052022#2",
    "emne": "Kvalifikationskrav master kvinder",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refmaster13052022#3",
    "emne": "Anti-doping uddannelse for masterløftere",
    "kategori": "antidoping",
    "udfald": "vedtaget",

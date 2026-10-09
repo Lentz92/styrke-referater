@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-01-13",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_130124#1",
    "emne": "Licensgebyr",
    "kategori": "okonomi",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_130124#2",
    "emne": "Regler for stævneudvalget",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_130124#3",
    "emne": "Ansøgning om afholdelse af mesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_130124#4",
    "emne": "Procedure efter endt stævne",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 4
   },
   {
+   "id": "refbest_130124#5",
    "emne": "Registrering af europarekorder ved Nordiske Mesterskaber",
    "kategori": "internationalt",
    "udfald": "ikke_afgjort",

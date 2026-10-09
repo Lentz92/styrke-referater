@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2013-01-12",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_12012013#1",
    "emne": "Intern post via mail",
    "kategori": "organisation",
    "udfald": "vedtaget",

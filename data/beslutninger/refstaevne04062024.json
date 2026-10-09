@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-06-04",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refstaevne04062024#1",
    "emne": "Opbevaring af DSF's konkurrenceudstyr",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne04062024#2",
    "emne": "Tilmelding af hold til DM hold",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refstaevne04062024#3",
    "emne": "Stævneudvalgets adgang til dommerdatabasen",
    "kategori": "dommere",
    "udfald": "vedtaget",

@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Deltagelse i stærkmands- og bodybuildingkonkurrencer",
+   "slug": "deltagelse-i-stærkmands-og-bodybuildingkonkurrencer",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -29,6 +30,7 @@
   },
   {
    "titel": "Sletning af rekorder og resultater ved dopingdom",
+   "slug": "sletning-af-rekorder-og-resultater-ved-dopingdom",
    "vigtig": true,
    "note": "Repræsentantskabet 2019 omtaler fjernelse af rekorder bagud uden betingelsen om mindst 2 års udelukkelse; det er uklart, om betingelsen fra 2011 stadig gælder.",
    "versioner": [
@@ -60,6 +62,7 @@
   },
   {
    "titel": "Poster efter dopingkarantæne",
+   "slug": "poster-efter-dopingkarantæne",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -75,6 +78,7 @@
   },
   {
    "titel": "Dopingdømtes deltagelse på landshold og internationalt",
+   "slug": "dopingdømtes-deltagelse-på-landshold-og-internationalt",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -98,6 +102,7 @@
   },
   {
    "titel": "DSF's antidopingpolitik",
+   "slug": "dsf-s-antidopingpolitik",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -121,6 +126,7 @@
   },
   {
    "titel": "WADA-regler indarbejdet i IPF's regler",
+   "slug": "wada-regler-indarbejdet-i-ipf-s-regler",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -136,6 +142,7 @@
   },
   {
    "titel": "Bundethed af IPF's antidopingregler i vedtægterne",
+   "slug": "bundethed-af-ipf-s-antidopingregler-i-vedtægterne",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -159,6 +166,7 @@
   },
   {
    "titel": "Offentliggørelse af dopingtests",
+   "slug": "offentliggørelse-af-dopingtests",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -182,6 +190,7 @@
   },
   {
    "titel": "Kurser og uofficielle konkurrencer for dopede",
+   "slug": "kurser-og-uofficielle-konkurrencer-for-dopede",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -197,6 +206,7 @@
   },
   {
    "titel": "Coaches' forpligtelse til IPF's antidopingregler",
+   "slug": "coaches-forpligtelse-til-ipf-s-antidopingregler",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -212,6 +222,7 @@
   },
   {
    "titel": "Klubsanktion ved positive licensløftere",
+   "slug": "klubsanktion-ved-positive-licensløftere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -243,6 +254,7 @@
   },
   {
    "titel": "Licens som privilegium og klubbers antidopingansvar",
+   "slug": "licens-som-privilegium-og-klubbers-antidopingansvar",
    "vigtig": true,
    "note": "Retningsgivende erklæring, ikke indført i stævnereglerne.",
    "versioner": [
@@ -258,6 +270,7 @@
   },
   {
    "titel": "Nationale forbunds pligt til dopingtest (IPF-forslag)",
+   "slug": "nationale-forbunds-pligt-til-dopingtest-ipf-forslag",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -273,6 +286,7 @@
   },
   {
    "titel": "Tro og love-erklæring om antidoping ved tilmelding",
+   "slug": "tro-og-love-erklæring-om-antidoping-ved-tilmelding",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -288,6 +302,7 @@
   },
   {
    "titel": "ADEL-antidopinguddannelse",
+   "slug": "adel-antidopinguddannelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -319,6 +334,7 @@
   },
   {
    "titel": "Ugentlig klubtræning for landsholdsudøvere",
+   "slug": "ugentlig-klubtræning-for-landsholdsudøvere",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -334,6 +350,7 @@
   },
   {
    "titel": "Appbrugeres samtykke til dopingtest",
+   "slug": "appbrugeres-samtykke-til-dopingtest",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -349,6 +366,7 @@
   },
   {
    "titel": "Consent Form ved EPF/IPF-stævner",
+   "slug": "consent-form-ved-epf-ipf-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [

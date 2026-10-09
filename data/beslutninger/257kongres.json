@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-01-01",
+ "next_number": 11,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "257kongres#1",
    "emne": "IPF-kongres: World Cup for universitetsstuderende",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#2",
    "emne": "Klassiske bænkpresmesterskaber",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#3",
    "emne": "Formand for teknisk komité i IPF's bestyrelse",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#4",
    "emne": "Sponsorlogo størrelse",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#5",
    "emne": "Kontrol med trænere i opvarmningslokalet",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#6",
    "emne": "Ændring af tekniske regler",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#7",
    "emne": "IPF medlemsafgift",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -125,6 +134,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#8",
    "emne": "IPF afgift for afholdelse af mesterskab",
    "kategori": "internationalt",
    "udfald": "forkastet",
@@ -142,6 +152,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#9",
    "emne": "Dragt for muslimske kvinder",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -159,6 +170,7 @@
    "citat_side": 1
   },
   {
+   "id": "257kongres#10",
    "emne": "Verdensrekord i dødløft efter protest",
    "kategori": "staevner",
    "udfald": "vedtaget",

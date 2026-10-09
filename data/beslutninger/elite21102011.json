@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2011-10-21",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite21102011#1",
    "emne": "Startvægte over PR ved internationale mesterskaber",
    "kategori": "landshold",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2014-02-09",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_09022014#1",
    "emne": "Startgebyr, klubbernes andel",
    "kategori": "okonomi",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_09022014#2",
    "emne": "Dommer ved mastersstævner",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_09022014#3",
    "emne": "Dommeraktivitet, sletning af inaktive dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_09022014#4",
    "emne": "Atleters træning i klub",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_09022014#5",
    "emne": "Udsendelse af repræsentantskabsmødets dagsorden",
    "kategori": "organisation",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-03-06",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refudstyr06032025#1",
    "emne": "Udlån af udstyr til nye udstyrsløftere",
    "kategori": "udstyr",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-01-22",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_220122#1",
    "emne": "Indberetning af internationale medaljer",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_220122#2",
    "emne": "Transkønnede i styrkeløft",
    "kategori": "medlemskab",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_220122#3",
    "emne": "Universitetsmesterskaber, finansiering",
    "kategori": "andet",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2014-08-09",
+ "next_number": 7,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_09082014#1",
    "emne": "Anskaffelse af streamingudstyr",
    "kategori": "udstyr",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_09082014#2",
    "emne": "Minimumskrav til hold i ligafinale",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_09082014#3",
    "emne": "Klubtræner på landsholdssamlinger",
    "kategori": "landshold",
    "udfald": "ikke_afgjort",
@@ -57,6 +62,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_09082014#4",
    "emne": "Crossfitstævner i forbundsregi",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -74,6 +80,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_09082014#5",
    "emne": "Kettlebell som aktivitet i forbundet",
    "kategori": "organisation",
    "udfald": "ikke_afgjort",
@@ -91,6 +98,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_09082014#6",
    "emne": "Medlemskort til styrkeløftklubber",
    "kategori": "medlemskab",
    "udfald": "forkastet",

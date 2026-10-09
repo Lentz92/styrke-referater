@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2023-09-12",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom12092023#1",
    "emne": "Dommers aktivitetskrav",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom12092023#2",
    "emne": "Diæter til dommere",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refdom12092023#3",
    "emne": "Kørselsgodtgørelse til dommere ved private stævner",
    "kategori": "dommere",
    "udfald": "forkastet",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refdom12092023#4",
    "emne": "Dommerpåklædning",
    "kategori": "dommere",
    "udfald": "forkastet",

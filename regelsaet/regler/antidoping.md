@@ -4,6 +4,7 @@
 
 Alle regler i området med fuld tekst og historik – også dem, der ikke længere gælder. Årssiderne viser, hvad der gjaldt i et bestemt år.
 
+<a id="regel/adel-antidopinguddannelse"></a>
 ### ADEL-antidopinguddannelse
 
 **I kraft**
@@ -16,6 +17,7 @@ Løftere skal gennemføre IPF's antidopinguddannelse ADEL og sende kursusbeviset
 - 2026 · ændret: ADEL obligatorisk for løftere og trænere, fornyes hvert 2. år · [Tilmeldingsfrister2026 s. 2](../../referater/andet/Tilmeldingsfrister2026.pdf)
 - 2027 · bekræftet: certifikat gyldigt 2 år, skal gælde på stævnedagen · [Tilmeldingsfrister2027 s. 1](https://filer.styrke.dk/masterudvalg/Tilmeldingsfrister2027.pdf#page=1)
 
+<a id="regel/appbrugeres-samtykke-til-dopingtest"></a>
 ### Appbrugeres samtykke til dopingtest
 
 **I kraft**
@@ -26,6 +28,7 @@ Appen kræver mobilnummer, billede og mail, og udøvere samtykker ved optagelse 
 
 - 22.10.2023 · indført: appbrugere samtykker til test fra Anti Doping Danmark · [refbest_221023 s. 4](https://filer.styrke.dk/referater/refbest_221023.pdf#page=4)
 
+<a id="regel/bundethed-af-ipf-s-antidopingregler-i-vedtaegterne"></a>
 ### Bundethed af IPF's antidopingregler i vedtægterne
 
 **I kraft**
@@ -37,6 +40,7 @@ DSF's vedtægter skal indeholde, at DSF og alle dets medlemmer, atleter og perso
 - 09.06.2018 · indkommet forslag: bestyrelsen foreslår IPF-antidopingbestemmelser i vedtægterne · [refbest_09062018 s. 2](https://filer.styrke.dk/referater/refbest_09062018.pdf#page=2)
 - 31.03.2019 · indført: vedtægter: alle bundet af IPF's antidopingregler, artikel 17 · [rep2019 s. 15](https://filer.styrke.dk/referater/rep2019.pdf#page=15)
 
+<a id="regel/coaches-forpligtelse-til-ipf-s-antidopingregler"></a>
 ### Coaches' forpligtelse til IPF's antidopingregler
 
 **I kraft**
@@ -47,6 +51,7 @@ Head Coach og assistentcoaches i opvarmnings-, wrapping- og løfteområdet skal 
 
 - 24.08.2015 · indført: coaches skal anerkende IPF's antidopingregler · [CoachResponsibility s. 1](https://filer.styrke.dk/masterudvalg/CoachResponsibility.pdf#page=1)
 
+<a id="regel/consent-form-ved-epf-ipf-staevner"></a>
 ### Consent Form ved EPF/IPF-stævner
 
 **I kraft**
@@ -57,6 +62,7 @@ Alle løftere, der deltager i EPF/IPF-konkurrencer, skal udfylde en Consent Form
 
 - 2026 · indført: Consent Form sendes inden tilmeldingsfrist · [Tilmeldingsfrister2026 s. 1](../../referater/andet/Tilmeldingsfrister2026.pdf)
 
+<a id="regel/deltagelse-i-staerkmands-og-bodybuildingkonkurrencer"></a>
 ### Deltagelse i stærkmands- og bodybuildingkonkurrencer
 
 **I kraft**
@@ -68,6 +74,7 @@ Bestyrelsen fraråder løfterne at deltage i stærkmandskonkurrencer. Stiller ma
 - 13.09.2009 · indført: bestyrelsen fraråder deltagelse i stærkmandskonkurrencer · [refbest_13092009 s. 3](https://filer.styrke.dk/referater/refbest_13092009.PDF#page=3)
 - 23.03.2014 · forslag forkastet: HSF foreslår 1 års karantæne ved bodybuilding/stærkmand; faldet · [rep2014 s. 4](https://filer.styrke.dk/referater/rep2014.pdf#page=4)
 
+<a id="regel/dopingdoemtes-deltagelse-paa-landshold-og-internationalt"></a>
 ### Dopingdømtes deltagelse på landshold og internationalt
 
 **I kraft**
@@ -79,6 +86,7 @@ Reglerne for international deltagelse for dopingdømte gælder som beskrevet i v
 - 15.04.2012 · indført: vedtægtens regler for dopingdømte gælder også masters · [refbest_14042012 s. 1](https://filer.styrke.dk/referater/refbest_14042012.pdf#page=1)
 - 31.07.2022 · bekræftet: dopingdømte kan ikke kåres til årets løfter · [refbest_310722 s. 4](https://filer.styrke.dk/referater/refbest_310722.pdf#page=4)
 
+<a id="regel/dsf-s-antidopingpolitik"></a>
 ### DSF's antidopingpolitik
 
 **I kraft**
@@ -90,6 +98,7 @@ DSF's antidopingpolitik, godkendt af Anti Doping Danmark og af DSF's bestyrelse,
 - 14.01.2012 · indført: DIF's ændringer medfører ingen ændring i DSF's dopingpolitik · [refbest_14012012 s. 3](https://filer.styrke.dk/referater/refbest_14012012.pdf#page=3)
 - 13.12.2015 · ændret: ny antidopingpolitik godkendt efter ADD-godkendelse · [refbest_13122015 s. 2](https://filer.styrke.dk/referater/refbest_13122015.pdf#page=2)
 
+<a id="regel/klubsanktion-ved-positive-licensloeftere"></a>
 ### Klubsanktion ved positive licensløftere
 
 **I kraft**
@@ -102,6 +111,7 @@ Har en klub én positiv licensløfter, skal DSF bede ADD skærpe kontrollen, og 
 - 20.03.2016 · indført: klubsuspension 4 måneder ved to positive inden for et år · [rep2016 s. 4](https://filer.styrke.dk/referater/rep2016.pdf#page=4)
 - 20.03.2016 · forslag forkastet: forslag om 12/24 måneders suspension nedstemt 6-15 · [rep2016 s. 3](https://filer.styrke.dk/referater/rep2016.pdf#page=3)
 
+<a id="regel/kurser-og-uofficielle-konkurrencer-for-dopede"></a>
 ### Kurser og uofficielle konkurrencer for dopede
 
 **I kraft**
@@ -112,6 +122,7 @@ Medlemmer af DSF's bestyrelse og/eller udvalg må ikke afholde kurser eller uoff
 
 - 26.07.2015 · indført: forbud mod kurser for dopede eller karantæneramte · [refbest_26072015 s. 2](https://filer.styrke.dk/referater/refbest_26072015.pdf#page=2)
 
+<a id="regel/licens-som-privilegium-og-klubbers-antidopingansvar"></a>
 ### Licens som privilegium og klubbers antidopingansvar
 
 **I kraft**
@@ -124,6 +135,7 @@ Repræsentantskabet erklærer sig enig i, at licens er et privilegium, og at klu
 
 > **Bemærk:** Retningsgivende erklæring, ikke indført i stævnereglerne.
 
+<a id="regel/offentliggoerelse-af-dopingtests"></a>
 ### Offentliggørelse af dopingtests
 
 **I kraft**
@@ -135,6 +147,7 @@ Positive dopingtests meldes officielt ud, så snart der foreligger en endelig do
 - 22.03.2015 · forslag forkastet: AK Ares foreslår offentliggørelse af alle tests; 11 for, 25 imod · [rep2015 s. 7](https://filer.styrke.dk/referater/rep2015.pdf#page=7)
 - 31.08.2019 · indført: positive tests meldes ud ved endelig dom · [refbest_310819 s. 2](https://filer.styrke.dk/referater/refbest_310819.pdf#page=2)
 
+<a id="regel/sletning-af-rekorder-og-resultater-ved-dopingdom"></a>
 ### Sletning af rekorder og resultater ved dopingdom
 
 **I kraft**
@@ -149,6 +162,7 @@ Hvis en løfter er kendt skyldig i dopingbrud af Anti-doping Danmark, og Anti-do
 
 > **Bemærk:** Repræsentantskabet 2019 omtaler fjernelse af rekorder bagud uden betingelsen om mindst 2 års udelukkelse; det er uklart, om betingelsen fra 2011 stadig gælder.
 
+<a id="regel/tro-og-love-erklaering-om-antidoping-ved-tilmelding"></a>
 ### Tro og love-erklæring om antidoping ved tilmelding
 
 **I kraft**
@@ -159,6 +173,7 @@ Der tilføjes en tro og love-erklæring om overholdelse af antidopingreglerne p�
 
 - 02.10.2021 · indført: tro og love-erklæring krævet før stævnetilmelding · [refbest_021021 s. 2](https://filer.styrke.dk/referater/refbest_021021.pdf#page=2)
 
+<a id="regel/ugentlig-klubtraening-for-landsholdsudoevere"></a>
 ### Ugentlig klubtræning for landsholdsudøvere
 
 **I kraft**
@@ -169,6 +184,7 @@ Antidoping-politikken foreskriver, at landsholdsudøvere som minimum træner i d
 
 - 25.05.2022 · indført: landsholdsudøvere træner mindst 1 gang ugentligt i klubben · [elite25042022 s. 1](https://filer.styrke.dk/referater/elite25042022.pdf#page=1)
 
+<a id="regel/wada-regler-indarbejdet-i-ipf-s-regler"></a>
 ### WADA-regler indarbejdet i IPF's regler
 
 **I kraft**
@@ -179,6 +195,7 @@ WADA's nye regler om doping blev indarbejdet i IPF's regler.
 
 - 02.11.2014 · indført: WADA's nye dopingregler indarbejdet i IPF's regler · [199kongres s. 1](https://styrke.dk/filer/rapporter/199kongres.pdf#page=1)
 
+<a id="regel/poster-efter-dopingkarantaene"></a>
 ### Poster efter dopingkarantæne
 
 **Kun forslag – aldrig vedtaget**
@@ -187,6 +204,7 @@ Forslag om at ændre § 5 med specificering af, hvilke poster man ikke må bestr
 
 - 27.03.2011 · forslag forkastet: Videbæk foreslår præcisering af § 5 om poster; forkastet · [rep2011 s. 3](https://filer.styrke.dk/referater/rep2011.pdf#page=3)
 
+<a id="regel/nationale-forbunds-pligt-til-dopingtest-ipf-forslag"></a>
 ### Nationale forbunds pligt til dopingtest (IPF-forslag)
 
 **Kun forslag – aldrig vedtaget** · intern procedure/detalje

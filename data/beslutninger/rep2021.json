@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2021-06-20",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "rep2021#1",
    "emne": "Divisionsturnering, placering af regler",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 11
   },
   {
+   "id": "rep2021#2",
    "emne": "Årsafgift, licens og startgebyr",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 11
   },
   {
+   "id": "rep2021#3",
    "emne": "Kvalifikationskrav landshold, udsættelse af nye krav",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 4
   },
   {
+   "id": "rep2021#4",
    "emne": "Dommerkrav, nulstilling",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 7
   },
   {
+   "id": "rep2021#5",
    "emne": "Masterinternational deltagelse, egenbetaling",
    "kategori": "master",
    "udfald": "vedtaget",

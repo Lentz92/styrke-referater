@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2009-12-05",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_05122009#1",
    "emne": "Ligaturnering pris",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_05122009#2",
    "emne": "Dommerpåsætning i ligaturnering",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_05122009#3",
    "emne": "Tilmeldingsfrist ligaturnering",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_05122009#4",
    "emne": "Ny struktur på ligaturnering",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-01-07",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refdom07012025#1",
    "emne": "Indstilling til A-dommerprøve",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom07012025#2",
    "emne": "Indstillinger til A-dommerprøve som fast dagsordenspunkt",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refdom07012025#3",
    "emne": "Tilmelding til B-dommerprøve med to stævner",
    "kategori": "dommere",
    "udfald": "vedtaget",

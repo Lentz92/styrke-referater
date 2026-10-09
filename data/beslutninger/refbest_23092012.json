@@ -4,5 +4,7 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2012-09-23",
+ "next_number": 1,
+ "retired": [],
  "beslutninger": []
 }

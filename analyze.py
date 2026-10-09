@@ -19,13 +19,15 @@ import tempfile
 import threading
 import time
 from collections import defaultdict
-from collections.abc import Iterator
+from collections.abc import Collection, Iterator
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from contextlib import contextmanager
 from dataclasses import dataclass, field, fields
 from datetime import date
 from pathlib import Path
 
+import matching
+from matching import Candidate, FormerSlug, LiveRule, RuleRefs, SlugRegistry
 from scrape import DATA_DIR, Doc, document_text
 
 # Bump when a prompt or schema changes so cached results are recomputed.
@@ -34,6 +36,8 @@ CONSOLIDATE_VERSION = 7
 
 DECISIONS_DIR = DATA_DIR / "beslutninger"
 RULES_DIR = DATA_DIR / "regler"
+# Slugs no rule holds any more, with what each last stood for; never handed out again.
+SLUGS_PATH = DATA_DIR / "slugs.json"
 
 # Seconds one Claude call may take before it is retried.
 EXTRACT_TIMEOUT = 600
@@ -74,7 +78,7 @@ log = logging.getLogger(__name__)
 
 @dataclass(frozen=True)
 class Decision:
-    ref: str  # "<doc id>#<n>"
+    ref: str  # the decision's stored id, "<doc id>#<n>"; kept when the document is extracted again
     doc_id: str
     dato: str | None  # meeting date (ISO) or year
     emne: str
@@ -259,6 +263,10 @@ def _extraction_is_current(doc: Doc) -> bool:
 
 def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str,
                  budget: RunBudget | None = None) -> tuple[str, Usage]:
+    path = DECISIONS_DIR / f"{doc.id}.json"
+    # Read before the call, so a previous result without ids fails before it costs anything.
+    previous = _with_ids(json.loads(path.read_text()), path) if path.exists() else None
+    referenced = _referenced_ids()
     text = document_text(doc)
     prompt = (
         f"Dokument-id: {doc.id}\nOrgan: {doc.organ_label}\nTitel på styrke.dk: {doc.title}\n"
@@ -269,6 +277,7 @@ def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str,
     with _usage_kept(usage):
         words = DocWords.of(text)
         decisions = [{**d, **quote_fields(d["citat"], words, d["side"])} for d in output["beslutninger"]]
+        ids = assign_ids(doc.id, previous, decisions, words, date.today(), referenced)
         result = {
             "doc_id": doc.id,
             "sha256": doc.sha256,
@@ -276,12 +285,92 @@ def _extract_one(doc: Doc, *, model: str, effort: str | None, cli: str,
             "model": model,
             "provenance": provenance(usage, cli, EXTRACT_SYSTEM, EXTRACT_SCHEMA, effort),
             "moededato": output["moededato"],
-            "beslutninger": decisions,
+            "next_number": ids.next_number,
+            "retired": ids.retired,
+            "beslutninger": [{"id": id_, **d} for id_, d in zip(ids.ids, decisions)],
         }
-        _write_json(DECISIONS_DIR / f"{doc.id}.json", result)
+        _write_json(path, result)
     missing = sum(not d["citat_fundet"] for d in decisions)
     note = f", {missing} quotes not found in the document" if missing else ""
+    if previous is not None:
+        retired_now = len(ids.retired) - len(previous["retired"])
+        note += f"; ids: {ids.carried} carried over, {len(decisions) - ids.carried} new, {retired_now} retired"
     return f"{doc.id}: {len(decisions)} decisions{note}", usage
+
+
+@dataclass(frozen=True)
+class DecisionIds:
+    ids: list[str]  # one per new decision, in order
+    next_number: int  # the next unused number in the document
+    retired: list[dict]  # every retired decision of the document: {"id", "emne", "reason", "date"}
+    carried: int  # new decisions that kept the id of a previous one
+
+
+def assign_ids(doc_id: str, previous: dict | None, decisions: list[dict], words: DocWords, today: date,
+               referenced: Collection[str] = ()) -> DecisionIds:
+    """Ids for a document's newly extracted decisions.
+
+    A new decision matched to one of the previous extraction (matching.match_decisions) keeps its id; the
+    others get "<doc>#<n>" in the order Claude listed them, from the document's next_number up. Previous
+    decisions left without a match are retired. Numbers only grow, so an id is never handed out twice; they
+    also start above every id of the document that `referenced` (rules, the slug history) still names, so a
+    lost decision file cannot hand a rule's old id to another decision. The previous quotes are located again
+    in the current text: a replaced document can move every word offset.
+    """
+    known = set(referenced)
+    if previous is not None:
+        known |= {d["id"] for d in previous["beslutninger"]} | {r["id"] for r in previous["retired"]}
+    first = max(previous["next_number"] if previous else 1, _highest_number(doc_id, known) + 1)
+    if previous is None:
+        ids = [f"{doc_id}#{n}" for n in range(first, first + len(decisions))]
+        return DecisionIds(ids, first + len(decisions), [], 0)
+    old = previous["beslutninger"]
+    old_candidates = [_candidate(d, quote_fields(d["citat"], words, d["side"])["citat_pos"]) for d in old]
+    new_candidates = [_candidate(d, d["citat_pos"]) for d in decisions]
+    matches = matching.match_decisions(old_candidates, new_candidates)
+    carried = {m.new: old[m.old]["id"] for m in matches}
+    ids, next_number = [], first
+    for j in range(len(decisions)):
+        if j in carried:
+            ids.append(carried[j])
+        else:
+            ids.append(f"{doc_id}#{next_number}")
+            next_number += 1
+    kept = {m.old for m in matches}
+    retired = [{"id": d["id"], "emne": d["emne"], "reason": "no match in a re-extraction", "date": today.isoformat()}
+               for i, d in enumerate(old) if i not in kept]
+    return DecisionIds(ids, next_number, previous["retired"] + retired, len(matches))
+
+
+def _highest_number(doc_id: str, ids: Collection[str]) -> int:
+    """The highest n among the ids "<doc_id>#<n>", 0 when there is none."""
+    numbers = [int(n) for prefix, _, n in (id_.rpartition("#") for id_ in ids) if prefix == doc_id and n.isdigit()]
+    return max(numbers, default=0)
+
+
+def _referenced_ids() -> set[str]:
+    """Every decision id that data/regler/ and data/slugs.json name."""
+    refs: set[str] = set()
+    for path in RULES_DIR.glob("*.json"):
+        cached = json.loads(path.read_text())
+        refs.update(v["ref"] for rule in cached["regler"] for v in rule["versioner"])
+        refs.update(cached.get("udeladt", []), cached.get("ikke_tildelt", []))
+    registry = load_slugs()
+    for former in [*registry.aliases.values(), *registry.retired.values()]:
+        refs.update(former.refs)
+    return refs
+
+
+def _candidate(d: dict, pos: int | None) -> Candidate:
+    return Candidate(d["emne"], d["tekst"], d["udfald"], matching.quote_span(pos, d["citat"]))
+
+
+def _with_ids(cached: dict, path: Path) -> dict:
+    """A cached extraction, checked to carry ids: every result written since ids exist does, so one without
+    them is a bug or a file from before the migration, and guessing ids could give a rule the wrong decision."""
+    if "next_number" not in cached or "retired" not in cached or any("id" not in d for d in cached["beslutninger"]):
+        raise ValueError(f"{path}: decisions without stored ids (\"id\", \"next_number\", \"retired\")")
+    return cached
 
 
 def load_decisions(docs: list[Doc]) -> list[Decision]:
@@ -291,13 +380,13 @@ def load_decisions(docs: list[Doc]) -> list[Decision]:
         path = DECISIONS_DIR / f"{doc.id}.json"
         if not path.exists():
             continue
-        cached = json.loads(path.read_text())
+        cached = _with_ids(json.loads(path.read_text()), path)
         meeting_date = _meeting_date(cached.get("moededato"), doc)
         raw = cached["beslutninger"]
-        for n, (d, rank) in enumerate(zip(raw, _reading_order(raw)), start=1):
+        for d, rank in zip(raw, _reading_order(raw)):
             located_page, claude_page = d.get("citat_side"), d["side"]
             decisions.append(Decision(
-                ref=f"{doc.id}#{n}",
+                ref=d["id"],
                 doc_id=doc.id,
                 dato=meeting_date,
                 emne=d["emne"],
@@ -318,6 +407,16 @@ def load_decisions(docs: list[Doc]) -> list[Decision]:
                 gaelder_til=_valid_date(d["gaelder_til"]),
             ))
     return sorted(decisions, key=lambda d: (d.dato or "", d.doc_id, d.rank))
+
+
+def load_retired_ids(docs: list[Doc]) -> set[str]:
+    """Ids of the decisions that re-extractions of the given documents retired."""
+    retired: set[str] = set()
+    for doc in docs:
+        path = DECISIONS_DIR / f"{doc.id}.json"
+        if path.exists():
+            retired.update(r["id"] for r in _with_ids(json.loads(path.read_text()), path)["retired"])
+    return retired
 
 
 def _reading_order(raw: list[dict]) -> list[int]:
@@ -569,7 +668,12 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
 
     for stale in RULES_DIR.glob("*.json"):
         if stale.stem not in with_decisions:
-            stale.unlink()
+            with _SLUGS_LOCK:  # its decisions went elsewhere or are gone; resolve_slugs follows them
+                orphans = {rule["slug"]: _former(rule, stale.stem) for rule in _rules_in(stale)}
+                _save_slugs(load_slugs().with_former(orphans))
+                stale.unlink()
+            log.info("Consolidate: removed %s, which has no decisions any more (%d slugs to resolve)",
+                     stale.name, len(orphans))
 
     todo = consolidation_todo(decisions, organ_of)
     if categories is not None:
@@ -577,12 +681,14 @@ def consolidate(decisions: list[Decision], organ_of: dict[str, str], *, model: s
     log.info("Consolidate: %d of %d categories need updating%s", len(todo), len(with_decisions),
              "" if categories is None else f" among those of the selected documents ({len(categories)})")
     cli = cli_version() if todo else ""
-    return _run_parallel(
+    summary = _run_parallel(
         todo,
         lambda job: _consolidate_one(job.category, job.items, job.input_hash, fingerprints, model=model,
                                      effort=effort, cli=cli, budget=budget),
         workers, "Consolidate", budget,
     )
+    resolve_slugs({d.ref for d in decisions})
+    return summary
 
 
 @dataclass(frozen=True)
@@ -622,6 +728,9 @@ def _consolidation_input(d: Decision, organ: str) -> dict:
 
 def _consolidate_one(category: str, items: list[dict], input_hash: str, fingerprints: dict[str, str], *,
                      model: str, effort: str | None, cli: str, budget: RunBudget | None = None) -> tuple[str, Usage]:
+    path = RULES_DIR / f"{category}.json"
+    # Read before the call, so rules without slugs fail before it costs anything.
+    previous = _rules_in(path) if path.exists() else []
     prompt = (
         f"Kategori: {CATEGORIES[category]}\n\n<beslutninger>\n"
         f"{json.dumps(items, ensure_ascii=False, indent=0)}\n</beslutninger>"
@@ -630,18 +739,35 @@ def _consolidate_one(category: str, items: list[dict], input_hash: str, fingerpr
                                timeout=CONSOLIDATE_TIMEOUT, budget=budget)
     with _usage_kept(usage):
         rules, skipped, unassigned = _rules_from(output, items, fingerprints)
-        _write_json(RULES_DIR / f"{category}.json", {
-            "kategori": category,
-            "version": CONSOLIDATE_VERSION,
-            "input_hash": input_hash,
-            "model": model,
-            "provenance": provenance(usage, cli, CONSOLIDATE_SYSTEM, CONSOLIDATE_SCHEMA, effort),
-            "regler": rules,
-            "udeladt": skipped,
-            "ikke_tildelt": unassigned,
-        })
+        with _SLUGS_LOCK:  # categories run in parallel, and a new slug must be unique across all of them
+            registry = load_slugs()
+            plan = matching.carry_slugs([RuleRefs(rule["slug"], _refs(rule)) for rule in previous],
+                                        [RuleRefs(rule["titel"], _refs(rule)) for rule in rules],
+                                        _live_slugs() | registry.taken(), registry.former())
+            by_slug = {rule["slug"]: rule for rule in previous}
+            former = {slug: _former(by_slug[slug], category, to) for slug, to in plan.aliases.items()}
+            former |= {slug: _former(by_slug[slug], category) for slug in plan.orphaned}
+            # The history first, revived slugs still in it: whichever write fails, every slug stays taken, in a
+            # rule file or in the history (resolve_slugs drops a slug from the history once a rule holds it).
+            history = registry.with_former(former)
+            _save_slugs(history)
+            _write_json(path, {
+                "kategori": category,
+                "version": CONSOLIDATE_VERSION,
+                "input_hash": input_hash,
+                "model": model,
+                "provenance": provenance(usage, cli, CONSOLIDATE_SYSTEM, CONSOLIDATE_SCHEMA, effort),
+                "regler": [{"titel": rule["titel"], "slug": slug, **rule} for rule, slug in zip(rules, plan.slugs)],
+                "udeladt": skipped,
+                "ikke_tildelt": unassigned,
+            })
+            if plan.revived:
+                _save_slugs(history.without(plan.revived))
     note = f", {len(unassigned)} unassigned" if unassigned else ""
-    return f"{category}: {len(items)} decisions -> {len(rules)} rules{note}", usage
+    minted = len(rules) - plan.kept - len(plan.revived)
+    slugs = (f"; slugs: {plan.kept} kept, {len(plan.revived)} taken up again, {minted} new, {len(plan.aliases)} "
+             f"merged into another rule, {len(plan.orphaned)} without a successor in the category")
+    return f"{category}: {len(items)} decisions -> {len(rules)} rules{note}{slugs}", usage
 
 
 def _rules_from(output: dict, items: list[dict],
@@ -670,6 +796,82 @@ def load_rules() -> list[dict]:
         cached = json.loads(path.read_text())
         rules.extend({**rule, "kategori": cached["kategori"]} for rule in cached["regler"])
     return rules
+
+
+# --------------------------------------------------------------------------- rule slugs
+
+# Held while slugs are handed out or retired and the files holding them are written: consolidations run in
+# parallel, and a slug must be unique across every category and data/slugs.json.
+_SLUGS_LOCK = threading.Lock()
+
+
+def load_slugs() -> SlugRegistry:
+    """data/slugs.json: {"aliases": {slug: {"to", "category", "title", "refs"}}, "retired": {slug: {"category",
+    "title", "refs"}}}."""
+    if not SLUGS_PATH.exists():
+        return SlugRegistry()
+    stored = json.loads(SLUGS_PATH.read_text())
+
+    def former(entry: dict, to: str | None) -> FormerSlug:
+        return FormerSlug(entry["category"], entry["title"], frozenset(entry["refs"]), to)
+
+    return SlugRegistry({slug: former(entry, entry["to"]) for slug, entry in stored["aliases"].items()},
+                        {slug: former(entry, None) for slug, entry in stored["retired"].items()})
+
+
+def _save_slugs(registry: SlugRegistry) -> None:
+    def entry(former: FormerSlug) -> dict:
+        return {**({"to": former.to} if former.to else {}), "category": former.category, "title": former.title,
+                "refs": sorted(former.refs)}
+
+    _write_json(SLUGS_PATH, {"aliases": {slug: entry(f) for slug, f in sorted(registry.aliases.items())},
+                             "retired": {slug: entry(f) for slug, f in sorted(registry.retired.items())}})
+
+
+def resolve_slugs(live_ids: Collection[str]) -> None:
+    """Lead every former slug to where its decisions are now (matching.successor); `live_ids` are the ids of all
+    current decisions. Run after all categories of a run are consolidated, whether or not some failed."""
+    with _SLUGS_LOCK:
+        registry = load_slugs()
+        resolved = registry.resolved(live_rules(load_rules()), live_ids)
+        if resolved != registry:
+            _save_slugs(resolved)
+        log.info("Slugs: %d former slugs lead to a live rule, %d lead nowhere (retired)",
+                 len(resolved.aliases), len(resolved.retired))
+
+
+def live_rules(raw_rules: list[dict]) -> list[LiveRule]:
+    """The rules with a slug, in category order and then Claude's order: the order ties are settled in."""
+    order = list(CATEGORIES)
+    ranked = sorted(raw_rules, key=lambda raw: order.index(raw["kategori"]))  # stable: keeps Claude's order
+    return [LiveRule(raw["slug"], raw["kategori"], raw["titel"], _refs(raw)) for raw in ranked if has_slug(raw)]
+
+
+def has_slug(rule: dict) -> bool:
+    """Whether a rule carries a usable slug: a non-empty string."""
+    return isinstance(rule.get("slug"), str) and bool(rule["slug"])
+
+
+def _former(rule: dict, category: str, to: str | None = None) -> FormerSlug:
+    return FormerSlug(category, rule["titel"], _refs(rule), to)
+
+
+def _rules_in(path: Path) -> list[dict]:
+    """The rules of one category file, checked to carry slugs: a rule without one is a bug or a file from before
+    slugs were stored, and giving it a new slug would break its links."""
+    rules = json.loads(path.read_text())["regler"]
+    if not all(has_slug(rule) for rule in rules):
+        raise ValueError(f"{path}: rules without a stored slug (a non-empty string)")
+    return rules
+
+
+def _refs(rule: dict) -> frozenset[str]:
+    return frozenset(v["ref"] for v in rule["versioner"])
+
+
+def _live_slugs() -> set[str]:
+    """The slugs of every rule in data/regler/."""
+    return {rule["slug"] for path in RULES_DIR.glob("*.json") for rule in _rules_in(path)}
 
 
 # --------------------------------------------------------------------------- claude CLI

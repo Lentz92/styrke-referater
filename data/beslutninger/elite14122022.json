@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2022-12-14",
+ "next_number": 6,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite14122022#1",
    "emne": "Landsholdskontrakt",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14122022#2",
    "emne": "Egenbetaling landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14122022#3",
    "emne": "Landsholds-T-shirts ved internationale stævner",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14122022#4",
    "emne": "Registrering af sanktioner og afbud på landsholdet",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite14122022#5",
    "emne": "Sportschefens afsnit i Eliteudvalgets årsberetning",
    "kategori": "organisation",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-06-15",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite15062019#1",
    "emne": "Landsholdsløfter med job i udlandet",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite15062019#2",
    "emne": "Landsholdstrøje",
    "kategori": "landshold",
    "udfald": "vedtaget",

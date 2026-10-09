@@ -18,8 +18,8 @@ from __future__ import annotations
 
 import json
 import logging
-import re
 import shutil
+from collections.abc import Mapping
 from datetime import date
 from pathlib import Path
 
@@ -35,12 +35,13 @@ DATA_MARKER = "/*DATA*/null"
 ASSETS = ("logo.png", "search.js", "vendor/minisearch.js")  # copied next to the page as-is
 
 
-def build(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], today: date) -> Path:
-    """Write _site/ and return the path of the page."""
+def build(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], aliases: Mapping[str, str],
+          today: date) -> Path:
+    """Write _site/ and return the path of the page. `aliases`: old slug -> current slug (data/slugs.json)."""
     template = (SRC_DIR / "template.html").read_text()
     if template.count(DATA_MARKER) != 1:
         raise ValueError(f"website/template.html must contain {DATA_MARKER} exactly once")
-    data = site_data({d.id: d for d in docs}, decisions, raw_rules, today)
+    data = site_data({d.id: d for d in docs}, decisions, raw_rules, aliases, today)
     data["synonyms"] = json.loads((SRC_DIR / "synonyms.json").read_text())["groups"]
     # "</" inside a JSON string would close the <script> element early.
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
@@ -53,16 +54,13 @@ def build(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict], tod
     return page
 
 
-def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[dict], today: date) -> dict:
+def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[dict], aliases: Mapping[str, str],
+              today: date) -> dict:
+    """The page's data. Each rule is addressed by its stored slug; `aliases` lead the slugs of rules that were
+    merged into another to that rule's slug, so links made before the merge still open it."""
     rules = render.build_rules(raw_rules, {d.ref: d for d in decisions})
     area_of = {c: i for i, area in enumerate(render.AREAS) for c in area.categories}
     years = render.covered_years(decisions, today)
-    slugs: dict[str, int] = {}
-
-    def slug(title: str) -> str:
-        base = re.sub(r"[^\w]+", "-", title.lower()).strip("-")
-        slugs[base] = slugs.get(base, 0) + 1
-        return base if slugs[base] == 1 else f"{base}-{slugs[base]}"
 
     out_rules = []
     for rule in rules:
@@ -78,7 +76,7 @@ def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[d
             "note": rule.note,
             "international": international,
             "origin": _origin_label(origin, docs) if international else "DSF",
-            "slug": slug(rule.titel),
+            "slug": rule.slug,
             "versions": [_version(v, docs) for v in rule.versions],
         })
 
@@ -98,6 +96,7 @@ def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[d
         "areas": [area.title for area in render.AREAS],
         "documents": len(docs),
         "rules": out_rules,
+        "aliases": dict(aliases),
         "inForce": in_force,
     }
 
@@ -145,7 +144,8 @@ def _origin_label(d: Decision, docs: dict[str, Doc]) -> str:
 def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     docs = scrape.load_manifest()
-    page = build(docs, analyze.load_decisions(docs), analyze.load_rules(), date.today())
+    aliases = analyze.load_slugs().targets()
+    page = build(docs, analyze.load_decisions(docs), analyze.load_rules(), aliases, date.today())
     logging.info("Wrote %s (%d KB)", page.relative_to(ROOT), page.stat().st_size // 1024)
 
 

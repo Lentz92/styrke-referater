@@ -6,6 +6,7 @@
  "regler": [
   {
    "titel": "Startgebyr ved stævner",
+   "slug": "startgebyr-ved-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -101,6 +102,7 @@
   },
   {
    "titel": "Betaling af startgebyr og tilmelding",
+   "slug": "betaling-af-startgebyr-og-tilmelding",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -156,6 +158,7 @@
   },
   {
    "titel": "Licensgebyr",
+   "slug": "licensgebyr",
    "vigtig": true,
    "note": "Stigningen fra 150 til 200 kr. er ikke dokumenteret i referaterne, og begrundelsen i 2024 om uændret gebyr i over 20 år passer ikke med 150 kr. i 2010.",
    "versioner": [
@@ -203,6 +206,7 @@
   },
   {
    "titel": "Opkrævning af licens",
+   "slug": "opkrævning-af-licens",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -234,6 +238,7 @@
   },
   {
    "titel": "Passiv licens og genindmeldelse",
+   "slug": "passiv-licens-og-genindmeldelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -249,6 +254,7 @@
   },
   {
    "titel": "Årsafgift",
+   "slug": "årsafgift",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -328,6 +334,7 @@
   },
   {
    "titel": "Årsafgift for nye klubber",
+   "slug": "årsafgift-for-nye-klubber",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -343,6 +350,7 @@
   },
   {
    "titel": "Betalingsdato for årsafgift",
+   "slug": "betalingsdato-for-årsafgift",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -366,6 +374,7 @@
   },
   {
    "titel": "Administrationsgebyr og udelukkelse ved manglende betaling",
+   "slug": "administrationsgebyr-og-udelukkelse-ved-manglende-betaling",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -381,6 +390,7 @@
   },
   {
    "titel": "Angivelse af betalingsformål",
+   "slug": "angivelse-af-betalingsformål",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -396,6 +406,7 @@
   },
   {
    "titel": "Deltagergebyr og arrangørbetaling i holdturneringen",
+   "slug": "deltagergebyr-og-arrangørbetaling-i-holdturneringen",
    "vigtig": true,
    "note": "Det aktuelle deltagergebyr efter forhøjelsen på 1.000 kr. er ikke angivet; sidst kendte beløb er 500 kr. pr. klub fra 2010.",
    "versioner": [
@@ -427,6 +438,7 @@
   },
   {
    "titel": "Medaljer til stævner",
+   "slug": "medaljer-til-stævner",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -458,6 +470,7 @@
   },
   {
    "titel": "Kørselsgodtgørelse",
+   "slug": "kørselsgodtgørelse",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -473,6 +486,7 @@
   },
   {
    "titel": "Afregningsbilag og tilgodehavender",
+   "slug": "afregningsbilag-og-tilgodehavender",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -504,6 +518,7 @@
   },
   {
    "titel": "Kontorhold og telefonpenge",
+   "slug": "kontorhold-og-telefonpenge",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -543,6 +558,7 @@
   },
   {
    "titel": "Stævneafgift ved internationale stævner i Danmark",
+   "slug": "stævneafgift-ved-internationale-stævner-i-danmark",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -558,6 +574,7 @@
   },
   {
    "titel": "Afgift for brug af logo",
+   "slug": "afgift-for-brug-af-logo",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -573,6 +590,7 @@
   },
   {
    "titel": "Reklamer og links på hjemmesiden",
+   "slug": "reklamer-og-links-på-hjemmesiden",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -604,6 +622,7 @@
   },
   {
    "titel": "Tilskud til skoleprojekter",
+   "slug": "tilskud-til-skoleprojekter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -619,6 +638,7 @@
   },
   {
    "titel": "Tilskud til klubudviklingsprojekter",
+   "slug": "tilskud-til-klubudviklingsprojekter",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -634,6 +654,7 @@
   },
   {
    "titel": "Tilskud til leje af lys- og lydudstyr",
+   "slug": "tilskud-til-leje-af-lys-og-lydudstyr",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -649,6 +670,7 @@
   },
   {
    "titel": "Støtte til aktiviteter",
+   "slug": "støtte-til-aktiviteter",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -664,6 +686,7 @@
   },
   {
    "titel": "Betaling af rejseudgifter",
+   "slug": "betaling-af-rejseudgifter",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -679,6 +702,7 @@
   },
   {
    "titel": "Selvbestilling af rejser",
+   "slug": "selvbestilling-af-rejser",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -694,6 +718,7 @@
   },
   {
    "titel": "Procedure for internationale betalinger",
+   "slug": "procedure-for-internationale-betalinger",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -709,6 +734,7 @@
   },
   {
    "titel": "Bogføring af internationale stævner",
+   "slug": "bogføring-af-internationale-stævner",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -724,6 +750,7 @@
   },
   {
    "titel": "Honorar for sponsorindhentning",
+   "slug": "honorar-for-sponsorindhentning",
    "vigtig": false,
    "note": null,
    "versioner": [
@@ -739,6 +766,7 @@
   },
   {
    "titel": "Kompensation for manglende kontingentindtægter (Covid-19)",
+   "slug": "kompensation-for-manglende-kontingentindtægter-covid-19",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -754,6 +782,7 @@
   },
   {
    "titel": "Kompensation for stævneindtægter og merudgifter (Covid-19)",
+   "slug": "kompensation-for-stævneindtægter-og-merudgifter-covid-19",
    "vigtig": true,
    "note": null,
    "versioner": [
@@ -785,6 +814,7 @@
   },
   {
    "titel": "Fælles stævnepulje for klubber",
+   "slug": "fælles-stævnepulje-for-klubber",
    "vigtig": true,
    "note": null,
    "versioner": [

@@ -90,7 +90,9 @@ def load(tmp_path, monkeypatch):
     monkeypatch.setattr(analyze, "DECISIONS_DIR", tmp_path)
 
     def run(raw: list[dict]):
-        (tmp_path / "doc.json").write_text(json.dumps({"moededato": "2024-03-24", "beslutninger": raw}))
+        stored = [{"id": f"doc#{n}", **d} for n, d in enumerate(raw, start=1)]
+        (tmp_path / "doc.json").write_text(json.dumps({"moededato": "2024-03-24", "next_number": len(raw) + 1,
+                                                       "retired": [], "beslutninger": stored}))
         return load_decisions([Doc("doc", "repraesentantskab", "Referat", "2024", "doc.pdf", None, "sha")])
 
     return run

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2015-04-19",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_19042015#1",
    "emne": "Ekstern kommunikation",
    "kategori": "organisation",
    "udfald": "vedtaget",

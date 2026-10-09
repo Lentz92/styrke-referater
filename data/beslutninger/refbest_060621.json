@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2021-06-06",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_060621#1",
    "emne": "IPF-forslag: Konkurrenceplatform",
    "kategori": "internationalt",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_060621#2",
    "emne": "IPF-forslag: Nationale forbunds dopingtest",
    "kategori": "antidoping",
    "udfald": "ikke_afgjort",

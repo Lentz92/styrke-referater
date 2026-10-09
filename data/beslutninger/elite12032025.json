@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2025-03-12",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite12032025#1",
    "emne": "Overførsel af sanktioner fra U-landshold til seniorlandshold",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite12032025#2",
    "emne": "Dispensation for deltagelse i stævner uden for Danmark",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite12032025#3",
    "emne": "Kvalifikationskrav ved start i lavere vægtklasse til EM og VM",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite12032025#4",
    "emne": "Afbud til DM på grund af akut sygdom",
    "kategori": "landshold",
    "udfald": "vedtaget",

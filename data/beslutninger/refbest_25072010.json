@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2010-07-25",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_25072010#1",
    "emne": "Frist for indsendelse af kørselsbilag for landsholdsløftere",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_25072010#2",
    "emne": "Frist for kassererens udbetaling til landsholdsløftere",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_25072010#3",
    "emne": "Meddelelse om flytning",
    "kategori": "medlemskab",
    "udfald": "vedtaget",

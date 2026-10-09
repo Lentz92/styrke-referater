@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-11-02",
+ "next_number": 2,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "dif_budgetmoede_2026#1",
    "emne": "Dopingnævn i DIF's love",
    "kategori": "internationalt",
    "udfald": "vedtaget",

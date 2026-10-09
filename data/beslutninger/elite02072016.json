@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2016-07-02",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "elite02072016#1",
    "emne": "Udtagelse til EM klassisk, begrænsning af deltagere",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite02072016#2",
    "emne": "Holdstørrelse EM klassisk",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "elite02072016#3",
    "emne": "Landsholdstrikot",
    "kategori": "landshold",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "elite02072016#4",
    "emne": "Kvalifikationskrav landshold",
    "kategori": "landshold",
    "udfald": "vedtaget",

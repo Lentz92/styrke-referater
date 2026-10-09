@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": null,
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "Tilmeldingsfrister2027#1",
    "emne": "Tilmeldingsmateriale til EPF/IPF-stævner",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "Tilmeldingsfrister2027#2",
    "emne": "ADEL-certifikat gyldighed",
    "kategori": "antidoping",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "Tilmeldingsfrister2027#3",
    "emne": "Akkreditering af trænere ved EM/VM",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 1
   },
   {
+   "id": "Tilmeldingsfrister2027#4",
    "emne": "Startgebyr og stævnehotel ved EPF/IPF-stævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",

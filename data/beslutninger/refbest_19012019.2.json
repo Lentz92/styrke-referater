@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2019-01-19",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_19012019.2#1",
    "emne": "IPF-formular til beregning",
    "kategori": "staevner",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_19012019.2#2",
    "emne": "IPF tekniske regler",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 1
   },
   {
+   "id": "refbest_19012019.2#3",
    "emne": "Afgift for reklamelinks på hjemmesiden",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_19012019.2#4",
    "emne": "Afgift for logo på tøj",
    "kategori": "udstyr",
    "udfald": "vedtaget",

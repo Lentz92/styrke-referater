@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-05-14",
+ "next_number": 3,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_140526#1",
    "emne": "Provision ved sponsorfund",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_140526#2",
    "emne": "Geografisk klubsamarbejde om stævneafvikling",
    "kategori": "staevner",
    "udfald": "vedtaget",

@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2026-06-12",
+ "next_number": 21,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "1071kongres#1",
    "emne": "Medlemsgebyr til IPF",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 13
   },
   {
+   "id": "1071kongres#2",
    "emne": "IPF deltagergebyr for atleter",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 13
   },
   {
+   "id": "1071kongres#3",
    "emne": "IPF gebyr pr. atlet og andel til arrangør",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 13
   },
   {
+   "id": "1071kongres#4",
    "emne": "IPF gebyr for klager og anker",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -74,6 +80,7 @@
    "citat_side": 12
   },
   {
+   "id": "1071kongres#5",
    "emne": "Kønsbalance i IPF-ledelsesorganer",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -91,6 +98,7 @@
    "citat_side": 11
   },
   {
+   "id": "1071kongres#6",
    "emne": "Godtgørelse til IPF EC-medlemmer",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -108,6 +116,7 @@
    "citat_side": 1
   },
   {
+   "id": "1071kongres#7",
    "emne": "IPF Masterkommission",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -125,6 +134,7 @@
    "citat_side": 11
   },
   {
+   "id": "1071kongres#8",
    "emne": "Nomineringsfrist til IPF-konkurrencer",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -142,6 +152,7 @@
    "citat_side": 14
   },
   {
+   "id": "1071kongres#9",
    "emne": "Antal officielle repræsentanter ved IPF-konkurrencer",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -159,6 +170,7 @@
    "citat_side": 14
   },
   {
+   "id": "1071kongres#10",
    "emne": "Krav til coaches ved IPF-nominering",
    "kategori": "uddannelse",
    "udfald": "vedtaget",
@@ -176,6 +188,7 @@
    "citat_side": 14
   },
   {
+   "id": "1071kongres#11",
    "emne": "Antal coaches ved bænkpresstævner",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -193,6 +206,7 @@
    "citat_side": 14
   },
   {
+   "id": "1071kongres#12",
    "emne": "Indsendelse af nationale mesterskabsresultater til IPF",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -210,6 +224,7 @@
    "citat_side": 14
   },
   {
+   "id": "1071kongres#13",
    "emne": "Kvalificerings- og nomineringsproces for atleter",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -227,6 +242,7 @@
    "citat_side": 15
   },
   {
+   "id": "1071kongres#14",
    "emne": "Atlet selvbetaling ved international konkurrence",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -244,6 +260,7 @@
    "citat_side": 15
   },
   {
+   "id": "1071kongres#15",
    "emne": "Dommere ved IPF-landshold",
    "kategori": "dommere",
    "udfald": "vedtaget",
@@ -261,6 +278,7 @@
    "citat_side": 15
   },
   {
+   "id": "1071kongres#16",
    "emne": "Beskyttelse af sub-junior atleter",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -278,6 +296,7 @@
    "citat_side": 18
   },
   {
+   "id": "1071kongres#17",
    "emne": "Hotelkrav for coaches og dommere ved IPF-mesterskaber",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -295,6 +314,7 @@
    "citat_side": 18
   },
   {
+   "id": "1071kongres#18",
    "emne": "Ændring af IPF's tekniske regler",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -312,6 +332,7 @@
    "citat_side": 19
   },
   {
+   "id": "1071kongres#19",
    "emne": "Forslag til IPF's tekniske regler via Rules Group",
    "kategori": "internationalt",
    "udfald": "vedtaget",
@@ -329,6 +350,7 @@
    "citat_side": 11
   },
   {
+   "id": "1071kongres#20",
    "emne": "Ændring af IPF's forfatning om By-Laws",
    "kategori": "internationalt",
    "udfald": "ikke_afgjort",

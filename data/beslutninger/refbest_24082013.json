@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2013-08-24",
+ "next_number": 5,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_24082013#1",
    "emne": "Betaling af rejseudgifter",
    "kategori": "okonomi",
    "udfald": "vedtaget",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_24082013#2",
    "emne": "Tilskud til ledere ved mastersstævner",
    "kategori": "master",
    "udfald": "vedtaget",
@@ -40,6 +44,7 @@
    "citat_side": 3
   },
   {
+   "id": "refbest_24082013#3",
    "emne": "Medieplan",
    "kategori": "organisation",
    "udfald": "vedtaget",
@@ -57,6 +62,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_24082013#4",
    "emne": "Kvalifikationskrav DM A og DM senior bænk",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",

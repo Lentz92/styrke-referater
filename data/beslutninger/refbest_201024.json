@@ -4,8 +4,11 @@
  "version": 2,
  "model": "sonnet",
  "moededato": "2024-10-20",
+ "next_number": 4,
+ "retired": [],
  "beslutninger": [
   {
+   "id": "refbest_201024#1",
    "emne": "Placering af DM Klassisk Bænkpres",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -23,6 +26,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_201024#2",
    "emne": "DM-ugen og DM-hold finalen",
    "kategori": "staevner",
    "udfald": "ikke_afgjort",
@@ -40,6 +44,7 @@
    "citat_side": 2
   },
   {
+   "id": "refbest_201024#3",
    "emne": "Kommunikationsplan i nødsituationer",
    "kategori": "organisation",
    "udfald": "vedtaget",
