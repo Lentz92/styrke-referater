@@ -310,7 +310,7 @@ function draw() {
   }
   $("content").innerHTML = h;
   $("back")?.addEventListener("click", () => { state.area = -1; draw(); });
-  $("more")?.addEventListener("click", () => { state.meetings += 20; draw(); });
+  $("more")?.addEventListener("click", () => { state.meetings += 20; draw(); $("more")?.focus({ preventScroll: true }); });
 
   $("side").innerHTML = `<div class="head">Områder</div><div class="areas">` + D.areas.map((title, i) => {
     const n = inForce(i).filter((o) => R[o.ri].central && keep(o.ri)).length;

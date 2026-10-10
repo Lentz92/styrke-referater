@@ -179,10 +179,10 @@ def test_an_open_rule_holds_the_page_still_and_closing_returns_to_the_same_spot(
 
 
 # Runs the page's whole script, with the data website.py embeds, against a document whose elements only keep their
-# HTML and handlers. Prints, as loaded, the dates of the meetings shown, the button for more, and the text of the areas
-# and of "På vej"; the meetings and the button after one click on it; the text of the content and of "På vej" with the
-# area argv[3] chosen; the hits of a search for argv[4]; and the status
-# line of each rule popup argv[5..].
+# HTML and handlers. Prints, as loaded, the dates of the meetings shown, their rules, the button for more, and the
+# text of the areas and of "På vej"; the meetings and the button after one click on it; the text of the content and of
+# "På vej" with the area argv[3] chosen; the hits of a search for argv[4]; and the status line of each rule popup
+# argv[5..].
 PAGE_PROBE = r"""
 const fs = require("fs"), vm = require("vm");
 const [page, searchJs, area, query, ...slugs] = process.argv.slice(2);
@@ -202,8 +202,9 @@ const text = (html) => html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
 const titles = (cls) => [...els.content.innerHTML.matchAll(new RegExp(`<div class="${cls}">([^<]*)`, "g"))]
   .map((m) => m[1]);
 const more = () => (els.content.innerHTML.match(/id="more">([^<]*)</) || [])[1] || "";
-const out = { meetings: titles("when"), more: more(), side: text(els.side.innerHTML), rail: text(els.rail.innerHTML) };
-els.more.on.click();
+const out = { meetings: titles("when"), feed: titles("title"), more: more(), side: text(els.side.innerHTML),
+  rail: text(els.rail.innerHTML) };
+if (out.more) els.more.on.click();
 Object.assign(out, { moreMeetings: titles("when"), moreAfter: more() });
 els.side.onclick({ target: { closest: () => ({ dataset: { area } }) } });
 Object.assign(out, { area: text(els.content.innerHTML), areaRail: text(els.rail.innerHTML) });
@@ -256,9 +257,12 @@ def test_the_page_lists_todays_rules_and_what_is_on_its_way(tmp_path):
 
 @pytest.mark.skipif(NODE is None, reason="needs node")
 def test_the_latest_meetings_come_five_first_then_twenty_more_at_a_time(tmp_path):
-    decided = [decision(ref=f"m{n}#1", doc_id=f"m{n}", dato=f"{2010 + n}-03-01", tekst=f"Gebyr nr. {n} er {n} kr.")
-               for n in range(7)]
-    raw = [rule(f"Gebyr {n}", f"gebyr-{n}", d, kategori="okonomi") for n, d in enumerate(decided)]
+    # Seven meetings, one decision each; the two newest are on the same date, from two documents.
+    decided = [decision(ref=f"m{n}#1", doc_id=f"m{n}", dato=f"{min(2010 + n, 2015)}-03-01",
+                        tekst=f"Gebyr nr. {n} er {n} kr.") for n in range(7)]
+    # The page holds its rules by title, so "Afgift 6" puts the later document's meeting first.
+    raw = [rule("Afgift 6" if n == 6 else f"Gebyr {n}", f"gebyr-{n}", d, kategori="okonomi")
+           for n, d in enumerate(decided)]
     page = tmp_path / "index.html"
     page.write_text(website.page_html([], decided, raw, {}, date(2026, 10, 9)))
     script = tmp_path / "page.js"
@@ -267,6 +271,9 @@ def test_the_latest_meetings_come_five_first_then_twenty_more_at_a_time(tmp_path
                             capture_output=True, text=True, check=True, timeout=30)
     out = json.loads(result.stdout)
 
-    assert out["meetings"] == [f"1. marts {year}" for year in (2016, 2015, 2014, 2013, 2012)]
+    # Newest first, and meetings on one date in a fixed order (by document), whatever order the rules are in.
+    assert out["meetings"] == [f"1. marts {year}" for year in (2015, 2015, 2014, 2013, 2012)]
+    assert out["feed"] == ["Gebyr 5", "Afgift 6", "Gebyr 4", "Gebyr 3", "Gebyr 2"]
     assert out["more"] == "Vis flere møder (5 af 7)"
-    assert out["moreMeetings"] == [f"1. marts {year}" for year in range(2016, 2009, -1)] and out["moreAfter"] == ""
+    assert out["moreMeetings"] == [f"1. marts {year}" for year in (2015, 2015, 2014, 2013, 2012, 2011, 2010)]
+    assert out["moreAfter"] == ""

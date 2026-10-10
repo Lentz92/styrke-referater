@@ -412,7 +412,8 @@ def read_run_log(path: Path) -> list[dict]:
     if not path.exists():
         return []
     lines = []
-    for number, text in enumerate(path.read_text().splitlines(), 1):
+    # split on newlines only: splitlines() also splits on U+2028 and U+0085, which a line's strings may hold
+    for number, text in enumerate(path.read_text().split("\n"), 1):
         if not text.strip():
             continue
         try:
