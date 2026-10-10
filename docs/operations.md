@@ -65,7 +65,10 @@ and run the command as it stands, as was done for v3.
 or by failed calls, is finished by running the same command again: extractions made with its prompt and model are
 current, and a full consolidation skips each category consolidated with today's input, so it does only the rest.
 Until then a plain run stops before any Claude call while more than an ordinary month's work is left. The refusal
-and the cut-off run's report say exactly what to run.
+and the cut-off run's report say exactly what to run. A run killed outright (a cancelled or timed-out job, a crash)
+leaves every file in `data/` as it was or as written, never half-written, because each is written to a temporary file
+next to it and then renamed over it; only the run log `data/runs.jsonl` is appended to, so it can end in a cut-off
+line. The next run, or the same command again, does what is left.
 
 ## On GitHub
 

@@ -317,7 +317,7 @@ def ask(call: Call, budget: RunBudget, cli: str, accept: Callable[[dict], object
     with claude.usage_kept(usage):
         if accept is not None:
             accept(output)
-        scrape._write_atomic(call.path, analyze.json_text({
+        scrape.write_atomic(call.path, analyze.json_text({
             "fingerprint": call.fingerprint(), "time": _now(),
             "provenance": claude.provenance(usage, cli, call.system, call.schema, EFFORT),
             "usage": claude.usage_json(usage), "output": output}).encode())
@@ -777,7 +777,7 @@ def _propose(categories: Sequence[str], data: Data, audit_id: str, budget: RunBu
             titles, notes = chosen_titles(slots, output)
             name_titles(proposed, titles)
     document = ops_document(audit_id, categories, proposed, rejected + conflicting, missing, notes)
-    scrape._write_atomic(OPS_PATH, analyze.json_text(document).encode())
+    scrape.write_atomic(OPS_PATH, analyze.json_text(document).encode())
     write_report(audit_report(document, steps, "propose"))
     agreed = sum(p.agreed for p in proposed)
     print(f"Wrote {OPS_PATH.name}: {agreed} agreed ops, {len(proposed) - agreed} not agreed, "
@@ -1162,14 +1162,14 @@ def _apply(document: dict, data: Data, agreed: list[dict], max_cost: float, minu
     # takes up again, so whichever write fails every slug stays taken (a merged-away slug that is still live then
     # is reported by styrke/checks.py and dropped by resolve_slugs); then the rule files, the final history and the
     # ops file.
-    scrape._write_atomic(analyze.SLUGS_PATH, result.taken)
+    scrape.write_atomic(analyze.SLUGS_PATH, result.taken)
     for name, content in result.files.items():
         path = analyze.RULES_DIR / name
         if not path.exists() or path.read_bytes() != content:
-            scrape._write_atomic(path, content)
+            scrape.write_atomic(path, content)
     if result.taken != result.slugs:
-        scrape._write_atomic(analyze.SLUGS_PATH, result.slugs)
-    scrape._write_atomic(OPS_PATH, analyze.json_text(applied).encode())
+        scrape.write_atomic(analyze.SLUGS_PATH, result.slugs)
+    scrape.write_atomic(OPS_PATH, analyze.json_text(applied).encode())
     render.write_pages(result.pages)
     website.write_site(result.html)
     write_report(report)
@@ -1214,7 +1214,7 @@ def log_command(command: str, audit_id: str, steps: Mapping[str, StepSummary]) -
 # --------------------------------------------------------------------------- report
 
 def write_report(text: str) -> None:
-    scrape._write_atomic(REPORT, text.encode())
+    scrape.write_atomic(REPORT, text.encode())
 
 
 # The report's first line, which .github/scripts/route-audit.sh reads to title the pull request.

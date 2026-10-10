@@ -122,6 +122,27 @@ def test_new_file_that_cannot_be_saved_is_skipped(local_file, monkeypatch):
     assert scrape._download(_client(_only_upper_case), scrape.Link(URL, "Referat", "repraesentantskab")) is None
 
 
+def _killed_after_three_bytes(path: Path, content: bytes) -> None:
+    with path.open("wb") as file:
+        file.write(content[:3])
+    raise KeyboardInterrupt
+
+
+def _rename_refused(path: Path, target: Path) -> None:
+    raise OSError("Operation not permitted")
+
+
+@pytest.mark.parametrize("method, failure", [("write_bytes", _killed_after_three_bytes), ("replace", _rename_refused)])
+def test_a_write_that_fails_part_way_leaves_the_old_file_and_no_temporary_file(tmp_path, monkeypatch, method, failure):
+    path = tmp_path / "manifest.json"
+    path.write_bytes(b"old content")
+    monkeypatch.setattr(Path, method, failure)
+    with pytest.raises((KeyboardInterrupt, OSError)):
+        scrape.write_atomic(path, b"new content")
+    assert path.read_bytes() == b"old content"
+    assert list(tmp_path.iterdir()) == [path]
+
+
 def _htm_text(tmp_path, monkeypatch, data: bytes) -> str:
     monkeypatch.setattr(scrape, "ROOT", tmp_path)
     (tmp_path / "rep2009.htm").write_bytes(data)

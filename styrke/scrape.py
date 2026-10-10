@@ -155,8 +155,7 @@ def sync() -> list[Doc]:
             docs[doc.id] = doc
 
     result = sorted(docs.values(), key=lambda d: (d.organ, d.date or "", d.id))
-    DATA_DIR.mkdir(exist_ok=True)
-    MANIFEST.write_text(json.dumps([asdict(d) for d in result], ensure_ascii=False, indent=1) + "\n")
+    write_atomic(MANIFEST, (json.dumps([asdict(d) for d in result], ensure_ascii=False, indent=1) + "\n").encode())
     log.info("Manifest: %d documents", len(result))
     return result
 
@@ -325,7 +324,7 @@ def _refresh(client: httpx.Client, url: str, path: Path, fallback: str) -> str |
                 # A cut-off transfer must not replace a good copy.
                 log.warning("%s returned %d bytes, not %d; keeping the copy", cited, len(fresh.content), size)
             else:
-                _write_atomic(path, fresh.content)
+                write_atomic(path, fresh.content)
                 log.info("%s had changed on styrke.dk and was downloaded again", path.relative_to(ROOT))
     except httpx.HTTPError as exc:
         log.warning("Could not check %s: %s", url, exc)
@@ -343,9 +342,12 @@ def _plain_size(response: httpx.Response) -> int | None:
     return int(size)
 
 
-def _write_atomic(path: Path, content: bytes) -> None:
+def write_atomic(path: Path, content: bytes) -> None:
     """Write a file whole: to a temporary file next to it, then renamed over it, so a run killed meanwhile leaves the
-    old file or the new one, never part of one."""
+    old file or the new one, never part of one. Every file under data/, eval/ and referater/ is written this way,
+    except the run logs, which are only appended to. A process killed outright between the write and the rename leaves
+    `.<name>.tmp` behind: no listing reads it (they match `*.json` or the document suffixes), .gitignore keeps it out
+    of commits, and the next write of the file replaces it."""
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(f".{path.name}.tmp")
     try:
@@ -370,7 +372,7 @@ def _download(client: httpx.Client, link: Link) -> tuple[Path, str] | None:
             return None
         dest = PDF_ROOT / link.organ / unquote(url.rsplit("/", maxsplit=1)[-1])
         try:
-            _write_atomic(dest, response.content)
+            write_atomic(dest, response.content)
         except OSError as exc:
             log.error("Could not save %s: %s", dest.relative_to(ROOT), exc)
             return None

@@ -715,9 +715,11 @@ flowchart LR
   %% update.RUNS_LOG and RUN_REPORT, render.OUT_DIR, website.OUT_DIR, audit.OPS_PATH, CACHE_DIR and REPORT,
   %% evaluate.EVAL_DIR.
   %% Owns means: defines the path and writes it. Other writes go through the owner's helpers, except that audit.apply
-  %% builds the rule files and slug history with analyze's helpers in a temporary copy, then replaces each file with
-  %% scrape._write_atomic. claude.append_run_log writes a line to the log its caller names (update.record_run,
-  %% evaluate.log_run): the time, the caller's fields, then each step's usage.
+  %% builds the rule files and slug history with analyze's helpers in a temporary copy, then replaces each file. Every
+  %% file under data/, eval/ and referater/ is written whole with scrape.write_atomic (a temporary file next to it,
+  %% renamed over it; analyze._write_json and evaluate.write_text call it). Only the run logs are appended to:
+  %% claude.append_run_log adds a line to the log its caller names (update.record_run, evaluate.log_run): the time,
+  %% the caller's fields, then each step's usage.
 
   subgraph MOD["Modules"]
     scrape["<b>styrke/scrape.py</b><br/>[module]"]:::code
@@ -782,10 +784,12 @@ flowchart LR
 
 `data/regler/` has three writers: a full consolidation (`styrke/analyze.py`), an incremental one
 (`styrke/incremental.py`) and an audit's apply (`styrke/audit.py`). All three write the slug history first, so a slug is
-never lost if a later write fails. `styrke/render.py` and `styrke/website.py` write only derived output, which any run
-can rebuild from `data/` (`uv run -m styrke.update --render-only`). `styrke/candidates.py`, `styrke/matching.py` and
-`styrke/checks.py` write no files; `styrke/claude.py` only appends a line to the run log its caller names: the time, the
-caller's fields, then each step's usage.
+never lost if a later write fails. Every file under `data/`, `eval/` and `referater/` is written whole
+(`scrape.write_atomic`: a temporary file next to it, renamed over it), so a run killed mid-write leaves the old file or
+the new one; only the run logs are appended to. `styrke/render.py` and `styrke/website.py` write only derived output,
+which any run can rebuild from `data/` (`uv run -m styrke.update --render-only`). `styrke/candidates.py`,
+`styrke/matching.py` and `styrke/checks.py` write no files; `styrke/claude.py` only appends a line to the run log its
+caller names: the time, the caller's fields, then each step's usage.
 
 ---
 

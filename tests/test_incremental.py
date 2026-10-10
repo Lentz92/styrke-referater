@@ -6,9 +6,11 @@ one update per touched rule (existing rules by category and slug, then new rules
 import json
 from dataclasses import replace
 from datetime import datetime
+from functools import partial
+from pathlib import Path
 
 import pytest
-from conftest import extracted, rule, section
+from conftest import NOW, extracted, rule, section
 
 from styrke import analyze, candidates, checks, claude, incremental, update
 from styrke.analyze import decision_hash
@@ -328,6 +330,64 @@ def test_an_incremental_month_passes_the_history_check_and_renders(world, fake_c
     year = (world.root / "regelsaet" / "2024.md").read_text()
     assert "ny rep2024#1" in year and "ny rep2024#2" in year
     assert checks.find_problems(checks.Data.load(world.docs)) == []
+
+
+class _Killed:
+    """A file the run is killed while writing: half of what it writes reaches the file, then KeyboardInterrupt, which
+    no `except Exception` stops, as a kill stops the run."""
+
+    def __init__(self, file) -> None:
+        self.file = file
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc) -> None:
+        self.file.close()
+
+    def write(self, data) -> None:
+        self.file.write(data[:len(data) // 2])
+        self.file.close()
+        raise KeyboardInterrupt
+
+
+def test_a_month_killed_while_it_writes_a_rule_file_leaves_the_rules_whole_and_the_next_run_finishes_it(
+        world, fake_claude, run, monkeypatch):
+    world.document("rep2024", "2024-03-01", extracted("Licensgebyr", "Licensgebyret hæves til 350 kr. pr. løfter."),
+                   extracted("Startgebyr", "Startgebyret er 200 kr. pr. stævne."))
+    month = [_votes({"rep2024#1": "licensgebyr", "rep2024#2": "startgebyr"})] * 3 + [_update("rep2024#1"),
+                                                                                    _update("rep2024#2")]
+    fake_claude.answers(*month * 3)  # an uninterrupted month, the killed one, then the next run
+    monkeypatch.setattr(incremental, "consolidate", partial(incremental.consolidate, now=NOW))  # the same stamps
+    before = world.files()
+
+    def result() -> dict[str, bytes]:
+        return {**world.files(), "slugs.json": analyze.SLUGS_PATH.read_bytes()}
+
+    run()
+    uninterrupted = result()
+    assert uninterrupted["okonomi.json"] != before["okonomi.json"]
+    for name, content in before.items():
+        (analyze.RULES_DIR / name).write_bytes(content)
+
+    # Killed while writing okonomi.json, whichever file the bytes go to first.
+    open_ = Path.open
+
+    def open_okonomi_to_be_killed(path: Path, mode: str = "r", *args, **kwargs):
+        file = open_(path, mode, *args, **kwargs)
+        return _Killed(file) if "w" in mode and path.parent == analyze.RULES_DIR and "okonomi" in path.name else file
+
+    with monkeypatch.context() as m:
+        m.setattr(Path, "open", open_okonomi_to_be_killed)
+        with pytest.raises(KeyboardInterrupt):
+            run()
+    assert world.files() == before  # every rule file whole, as it was
+
+    # A kill that stops the process outright (SIGKILL, a power cut) leaves the half-written temporary file behind;
+    # the next run must not read it.
+    (analyze.RULES_DIR / ".okonomi.json.tmp").write_text('{"kategori": "okonomi", "versi')
+    run()
+    assert result() == uninterrupted
 
 
 def test_a_category_left_for_a_full_consolidation_is_listed_in_the_run_report(world, fake_claude, run):

@@ -19,3 +19,6 @@ audit-report.md
 # Replay copies of data/, written by the retired evaluate.py replay, whose code is in commit 9f39874; summaries are in
 # eval/reports/
 eval/replays/
+
+# A file a run was writing when it was killed (scrape.write_atomic writes to .<name>.tmp, then renames it)
+.*.tmp

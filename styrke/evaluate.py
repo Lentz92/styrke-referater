@@ -83,11 +83,11 @@ log = logging.getLogger("evaluate")
 # --------------------------------------------------------------------------- files
 
 def write_text(path: Path, text: str) -> None:
-    """Write under eval/ only: the evaluation must never touch data/ or regelsaet/."""
+    """Write a file whole (scrape.write_atomic), under eval/ only: the evaluation must never touch data/ or
+    regelsaet/."""
     if not path.resolve().is_relative_to(EVAL_DIR.resolve()):
         raise ValueError(f"{path} is outside {EVAL_DIR}; styrke/evaluate.py writes nowhere else")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text)
+    scrape.write_atomic(path, text.encode())
 
 
 def write_json(path: Path, value: object) -> None:
