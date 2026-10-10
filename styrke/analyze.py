@@ -18,10 +18,10 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
-from styrke import claude, matching
+from styrke import claude, matching, scrape
 from styrke.claude import RunBudget, StepSummary, Usage
 from styrke.matching import Candidate, FormerSlug, LiveRule, RuleRefs, SlugRegistry
-from styrke.scrape import DATA_DIR, Doc, document_text, write_atomic
+from styrke.scrape import DATA_DIR, Doc, document_text
 
 # Bump when a prompt or schema changes so cached results are recomputed. The pipeline extracts with
 # EXTRACT_PROMPTS[f"v{EXTRACT_VERSION}"]; bumping it to another prompt's number switches the default to that prompt.
@@ -1031,4 +1031,4 @@ def json_text(value: object) -> str:
 
 
 def _write_json(path: Path, value: object) -> None:
-    write_atomic(path, json_text(value).encode())
+    scrape.write_atomic(path, json_text(value).encode())  # by attribute, so a test can patch it

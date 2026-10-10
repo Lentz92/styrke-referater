@@ -383,7 +383,7 @@ def test_a_month_killed_while_it_writes_a_rule_file_leaves_the_rules_whole_and_t
             run()
     assert world.files() == before  # every rule file whole, as it was
 
-    # A kill that stops the process outright (SIGKILL, a power cut) leaves the half-written temporary file behind;
+    # A kill that stops the process outright (SIGKILL) leaves the half-written temporary file behind;
     # the next run must not read it.
     (analyze.RULES_DIR / ".okonomi.json.tmp").write_text('{"kategori": "okonomi", "versi')
     run()

@@ -213,3 +213,14 @@ def test_each_run_appends_one_line_to_the_run_log(tmp_path):
     }
     assert path.read_text().startswith('{"time": "2026-11-01T06:00:00+00:00", "cli": "2.1.294", "steps": ')
     assert claude.read_run_log(path) == lines and claude.read_run_log(tmp_path / "none.jsonl") == []
+
+
+def test_a_line_cut_off_by_a_killed_run_costs_only_that_line(tmp_path, caplog):
+    path = tmp_path / "runs.jsonl"
+    when = datetime(2026, 10, 1, 6, 0, tzinfo=timezone.utc)
+    claude.append_run_log(path, when, {"cli": "2.1.294"}, {})
+    with path.open("a") as log_file:  # a run killed while appending its line
+        log_file.write('{"time": "2026-11-01T06:00:00+00:00", "cli": "2.1')
+    claude.append_run_log(path, when, {"cli": "2.1.295"}, {})
+    assert [line["cli"] for line in claude.read_run_log(path)] == ["2.1.294", "2.1.295"]
+    assert "line 2 is not a whole JSON line" in caplog.text

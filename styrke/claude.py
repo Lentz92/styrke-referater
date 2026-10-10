@@ -387,15 +387,36 @@ def _step_json(step: StepSummary) -> dict:
 def append_run_log(path: Path, now: datetime, header: Mapping[str, object],
                    steps: Mapping[str, StepSummary]) -> None:
     """Add one JSON line to a run log, so cost and time can be followed over months: the time, the caller's `header`
-    fields in the order given (each log has its own), then what each step's Claude calls used."""
+    fields in the order given (each log has its own), then what each step's Claude calls used. After a line cut off by
+    a run killed while appending, the new line starts on a line of its own."""
     line = {"time": now.isoformat(timespec="seconds"), **header,
             "steps": {name: _step_json(step) for name, step in steps.items()}}
+    text = json.dumps(line, ensure_ascii=False) + "\n"
+    if _ends_mid_line(path):
+        text = "\n" + text
     with path.open("a") as out:
-        out.write(json.dumps(line, ensure_ascii=False) + "\n")
+        out.write(text)
+
+
+def _ends_mid_line(path: Path) -> bool:
+    if not path.exists() or path.stat().st_size == 0:
+        return False
+    with path.open("rb") as log_file:
+        log_file.seek(-1, os.SEEK_END)
+        return log_file.read(1) != b"\n"
 
 
 def read_run_log(path: Path) -> list[dict]:
-    """The lines of a run log; none when it does not exist yet."""
+    """The lines of a run log; none when it does not exist yet. A line cut off by a run killed while appending it is
+    skipped with a warning: it loses that run's record, not every later report that reads the log."""
     if not path.exists():
         return []
-    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    lines = []
+    for number, text in enumerate(path.read_text().splitlines(), 1):
+        if not text.strip():
+            continue
+        try:
+            lines.append(json.loads(text))
+        except json.JSONDecodeError:
+            log.warning("%s line %d is not a whole JSON line (cut off by a killed run?); skipped", path, number)
+    return lines

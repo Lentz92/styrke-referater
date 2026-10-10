@@ -389,9 +389,11 @@ def _recorded(monkeypatch) -> list[tuple[str, bytes]]:
     """What apply replaces, in order, besides the answers it keeps."""
     written: list[tuple[str, bytes]] = []
     replace = scrape.write_atomic
+    # Taken now: while the result is checked, analyze's paths point at the copy, whose writes are not recorded.
+    real = {analyze.RULES_DIR, analyze.SLUGS_PATH.parent, audit.OPS_PATH.parent, audit.REPORT.parent}
 
     def record(path: Path, content: bytes) -> None:
-        if not path.name.startswith(("text-", "propose-", "titles")):
+        if path.parent in real and not path.name.startswith(("text-", "propose-", "titles")):
             written.append((path.name, content))
         replace(path, content)
 
