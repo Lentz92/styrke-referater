@@ -3,9 +3,9 @@
 Overview of the rules and agreements in Dansk Styrkeløft Forbund (DSF), extracted by Claude from the minutes and
 rule documents published at <https://styrke.dk/?page=referater>. The minutes are always the authoritative source.
 
-**Website: <https://lentz92.github.io/styrke-referater/>** – search the rules, pick a year to see what applied then,
-and open a rule for its text and its history, with each decision linked to the minutes. The same overview as
-Markdown starts at [regelsaet/README.md](regelsaet/README.md).
+**Website: <https://lentz92.github.io/styrke-referater/>** – the rules in force today and what is on its way, with
+search; open a rule for its text and its whole history, with each decision linked to the minutes. The same overview as
+Markdown, with each year's rule set, starts at [regelsaet/README.md](regelsaet/README.md).
 
 ## Run it
 

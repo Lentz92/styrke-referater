@@ -388,7 +388,7 @@ flowchart TB
   %% Token: update.yml and audit.yml read the secret CLAUDE_CODE_OAUTH_TOKEN and refuse ANTHROPIC_API_KEY.
 
   nicki(["<b>Nicki</b><br/>[Person, maintainer]<br/>reviews the bot's pull requests, starts migrations<br/>and audits, tunes the pipeline with the answer key"]):::person
-  visitors(["<b>Site visitors</b><br/>[Person]<br/>look up which DSF rules applied when"]):::person
+  visitors(["<b>Site visitors</b><br/>[Person]<br/>look up which DSF rules apply<br/>and when each was decided"]):::person
   sr["<b>styrke-referater</b><br/>[Software system: Python CLIs and workflows]<br/>turns the minutes into rule histories,<br/>Markdown pages and a static website"]:::code
   styrke["<b>styrke.dk</b><br/>[External website]<br/>DSF's minutes and rule documents at ?page=referater"]:::ext
   claude["<b>Claude Code CLI</b><br/>[External, claude -p on the subscription]<br/>Opus 5.5 and Sonnet 5.5 answer with JSON,<br/>on GitHub signed in with CLAUDE_CODE_OAUTH_TOKEN"]:::ext
@@ -409,7 +409,7 @@ flowchart TB
   nicki -->|"reviews and merges pull requests"| repo
   nicki -->|"Run workflow"| gha
   nicki -->|"uv run on the laptop"| sr
-  visitors -->|"search, browse years over HTTPS"| pages
+  visitors -->|"search and browse the rules over HTTPS"| pages
   pages -->|"page views and opened rules, from the browser"| goat
 
   style GH fill:none,stroke:#8a8a8a,stroke-dasharray:6 4

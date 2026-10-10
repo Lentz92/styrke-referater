@@ -9,7 +9,7 @@ levels 1 to 3.
 | 2. Extract decisions per document, each with a verbatim quote and page | `styrke/analyze.py` | `data/beslutninger/<id>.json` |
 | 3. File decisions into rule histories | `styrke/incremental.py` (`styrke/analyze.py` in full mode) | `data/regler/<kategori>.json` |
 | 4. Work out which version applied in each year and write Markdown | `styrke/render.py` | `regelsaet/` |
-| 5. Embed the same rules and per-year state in one static page with search | `styrke/website.py`, `website/` | `_site/` |
+| 5. Embed the same rules and what is in force today in one static page with search | `styrke/website.py`, `website/` | `_site/` |
 
 `styrke/update.py` runs the steps in order. Steps 2 and 3 ask Claude through `styrke/claude.py`, which runs `claude -p`
 on the subscription, checks that the model asked for answered, keeps the run's cost and time limits and records what
@@ -73,6 +73,10 @@ The Markdown overview starts at `regelsaet/README.md`:
   history.
 
 ## Website
+
+The page shows the rules as of the day it was built (the date in its footer): the latest meetings' decisions, the
+rules in force per area, what is adopted but not yet in force ("På vej"), and per rule its text, where it stands and its
+whole history, each decision linked to the minutes. What applied in an earlier year is on that year's Markdown page.
 
 The search runs in the browser (`website/search.js`): [MiniSearch](https://github.com/lucaong/minisearch) ranks with
 BM25 and tolerates typos and word starts, a Danish Snowball stemmer (same output as Python's `snowballstemmer`)

@@ -1,14 +1,19 @@
-"""The page's hash handling (website/template.html), run in Node against stubs of the browser."""
+"""The page (website/template.html), run in Node against stubs of the browser."""
 
 import json
 import shutil
 import subprocess
+from datetime import date
 from pathlib import Path
 
 import pytest
+from conftest import decision, rule
+
+from styrke import website
 
 NODE = shutil.which("node")
 TEMPLATE = Path(__file__).resolve().parent.parent / "website" / "template.html"
+SEARCH_JS = TEMPLATE.parent / "search.js"
 
 # Takes the template's own functions out of the page and runs them with a stubbed location, history and
 # GoatCounter; prints what happened for each hash.
@@ -76,9 +81,9 @@ const start = html.indexOf("/* The open rule lives in the URL"), end = html.inde
 if (start < 0 || end < 0) throw new Error("popup code not found");
 const code = html.slice(start, end);
 
-const D = { aliases: {}, years: [2026] };
+const D = { aliases: {} };
 const R = [{ slug: "startgebyr" }, { slug: "licensgebyr" }];
-const TODAY = "2026-10-09", state = { year: 2026 };
+const TODAY = "2026-10-09";
 const href = (ri) => `#regel/${R[ri].slug}`;
 const ruleDetail = () => "", draw = () => {}, longD = () => "";
 let els = {}, listeners = {}; // the current document's elements and window listeners
@@ -171,3 +176,74 @@ def test_an_open_rule_holds_the_page_still_and_closing_returns_to_the_same_spot(
         ["closed with Esc", False, 1500, "", "auto"],
         ["Esc again with nothing open", False, 1500, "", "auto"],
     ]
+
+
+# Runs the page's whole script, with the data website.py embeds, against a document whose elements only keep their
+# HTML and handlers. Prints, as loaded, the dates of the meetings shown and the text of the areas and of "På vej"; the
+# text of the content and of "På vej" with the area argv[3] chosen; the hits of a search for argv[4]; and the status
+# line of each rule popup argv[5..].
+PAGE_PROBE = r"""
+const fs = require("fs"), vm = require("vm");
+const [page, searchJs, area, query, ...slugs] = process.argv.slice(2);
+const code = fs.readFileSync(page, "utf8").match(/<script>([\s\S]*?)<\/script>/)[1];
+const els = {}, listeners = {};
+const el = (id) => (els[id] ??= { innerHTML: "", value: "", focus() {}, getBoundingClientRect: () => ({ top: 0 }),
+  addEventListener(type, fn) { (this.on ??= {})[type] = fn; } });
+const location = { hash: "", pathname: "/", search: "" };
+vm.runInNewContext(code, {
+  RuleSearch: require(searchJs), location,
+  document: { getElementById: el, querySelectorAll: () => [], activeElement: null,
+    body: { classList: { add() {}, remove() {} }, style: {} } },
+  window: { scrollY: 0, scrollTo() {}, addEventListener(type, fn) { listeners[type] = fn; } },
+  history: { state: null, replaceState() {} },
+});
+const text = (html) => html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+const titles = (cls) => [...els.content.innerHTML.matchAll(new RegExp(`<div class="${cls}">([^<]*)`, "g"))]
+  .map((m) => m[1]);
+const out = { meetings: titles("when"), side: text(els.side.innerHTML), rail: text(els.rail.innerHTML) };
+els.side.onclick({ target: { closest: () => ({ dataset: { area } }) } });
+Object.assign(out, { area: text(els.content.innerHTML), areaRail: text(els.rail.innerHTML) });
+els.q.on.input({ target: { value: query } });
+out.hits = titles("title");
+out.status = slugs.map((slug) => {
+  location.hash = `#regel/${slug}`;
+  listeners.hashchange();
+  return text(els.modal.innerHTML.match(/<p class="status">([\s\S]*?)<\/p>/)[1]);
+});
+console.log(JSON.stringify(out));
+"""
+
+
+@pytest.mark.skipif(NODE is None, reason="needs node")
+def test_the_page_lists_todays_rules_and_what_is_on_its_way(tmp_path):
+    # Three rules of one area on 9 October 2026: one in force, one repealed, one adopted but in force only from 2027.
+    adopted = decision(ref="rep2024#1", doc_id="rep2024", dato="2024-03-24",
+                       tekst="Licensgebyret er 300 kr. pr. løfter.")
+    started = decision(ref="rep2020#1", doc_id="rep2020", dato="2020-03-01",
+                       tekst="Startgebyret er 200 kr. pr. løfter.")
+    repealed = decision(ref="rep2025#1", doc_id="rep2025", dato="2025-03-30", handling="ophaev",
+                        tekst="Startgebyret pr. løfter er afskaffet.")
+    coming = decision(ref="hb2026#1", doc_id="hb2026", dato="2026-09-15", gaelder_fra="2027-01-01",
+                      tekst="Kontingentet er 100 kr.")
+    raw = [rule("Licensgebyr", "licensgebyr", adopted, kategori="okonomi"),
+           rule("Startgebyr", "startgebyr", started, (repealed, "ophaevet"), kategori="okonomi"),
+           rule("Kontingent", "kontingent", coming, kategori="okonomi")]
+    page = tmp_path / "index.html"
+    page.write_text(website.page_html([], [adopted, started, repealed, coming], raw, {}, date(2026, 10, 9)))
+    script = tmp_path / "page.js"
+    script.write_text(PAGE_PROBE)
+    result = subprocess.run([NODE, str(script), str(page), str(SEARCH_JS), "0", "løfter", "licensgebyr", "startgebyr",
+                             "kontingent"], capture_output=True, text=True, check=True, timeout=30)
+    out = json.loads(result.stdout)
+
+    # The area lists only the rule in force today and counts it; what is adopted but not in force yet is on its way.
+    assert "Licensgebyr" in out["area"] and "Startgebyr" not in out["area"] and "Kontingent" not in out["area"]
+    assert out["side"].startswith("Områder Medlemskab 1 Stævner 0")
+    assert out["rail"] == out["areaRail"] == "På vej Fra 1. januar 2027 Medlemskab Kontingent Kontingentet er 100 kr."
+    # The decisions come newest meeting first, across years.
+    assert out["meetings"] == ["15. september 2026", "30. marts 2025", "24. marts 2024", "1. marts 2020"]
+    # A search ranks the rule in force today above the repealed one, which matches more often.
+    assert out["hits"] == ["Licensgebyr", "Startgebyr"]
+    # Each popup says where the rule stands today.
+    assert out["status"][0].startswith("Gældende i dag. Vedtaget af ? den 24. marts 2024")
+    assert out["status"][1:] == ["Ikke gældende i dag.", "Vedtaget 15. september 2026 – gælder fra 1. januar 2027."]

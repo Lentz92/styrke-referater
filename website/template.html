@@ -19,7 +19,7 @@
   body { margin: 0; background: #fff; color: var(--ink); font: 14px/1.5 "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased; }
   a { color: inherit; text-decoration: underline; text-decoration-color: #d4d4d4; text-underline-offset: 3px; }
-  button, select, input { font: inherit; color: inherit; }
+  button, input { font: inherit; color: inherit; }
   .mono { font-family: "Geist Mono", ui-monospace, monospace; }
 
   /* hero */
@@ -33,13 +33,7 @@
   .search:focus { border-color: #a1a1a1; box-shadow: 0 0 0 3px rgba(0,0,0,.06); }
   .kbd { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted);
     border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; background: var(--soft); }
-  .controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 16px; margin: 20px auto 0; }
-  .year { display: flex; align-items: center; gap: 8px; }
-  .year .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-  .year button { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 6px; background: #fff; font-size: 15px; cursor: pointer; }
-  .year button:hover:not(:disabled) { background: var(--soft); }
-  .year button:disabled { opacity: .4; cursor: default; }
-  .year select { height: 32px; padding: 0 8px; font-weight: 600; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+  .controls { display: flex; justify-content: center; margin: 20px auto 0; }
   .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; padding: 3px; background: var(--soft); }
   .seg button { border: 0; background: none; font-size: 13px; padding: 5px 12px; border-radius: 6px; cursor: pointer; color: var(--muted); }
   .seg button.on { background: #fff; color: var(--ink); font-weight: 500; box-shadow: 0 0 0 1px var(--line), 0 1px 2px rgba(0,0,0,.06); }
@@ -126,7 +120,7 @@
   .hint { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
   .note { margin: 24px 0 0; }
 
-  /* history as a route map: one stop per decision, coloured by its status in the chosen year */
+  /* history as a route map: one stop per decision, coloured by its status today */
   table.versions { width: 100%; border-collapse: collapse; font-size: 13px; }
   .versions td { padding: 8px 12px 8px 0; vertical-align: top; color: var(--muted); }
   .versions td.date { width: 84px; white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -168,8 +162,6 @@
   <p>Hvad gælder – og hvornår blev det besluttet? Uofficiel oversigt udtrukket af DSF's referater.</p>
   <div class="search-wrap"><input class="search" id="q" type="search" placeholder="Søg fx «klubskifte», «licens», «kravtal»…" aria-label="Søg i reglerne"><span class="kbd mono">⌘K</span></div>
   <div class="controls">
-    <div class="year"><label class="lbl mono" for="year">Regler gældende i</label><button id="prev" title="Forrige år" aria-label="Forrige år">‹</button>
-      <select id="year"></select><button id="next" title="Næste år" aria-label="Næste år">›</button></div>
     <div class="seg" id="origin" role="group" aria-label="Oprindelse"><button data-o="all">Alle</button><button data-o="dsf">DSF</button><button data-o="intl">Internationale</button></div>
   </div>
 </header>
@@ -186,13 +178,14 @@
 <script src="vendor/minisearch.js"></script>
 <script src="search.js"></script>
 <script>
-/* Data shape (see website.py): rules[] = { title, category, area, central, note, international, origin, slug,
+/* Data shape (see website.py): rules[] = { title, area, central, note, international, origin, slug,
    versions[] = { date, effective, from, effect, change, essence, text, organ, congress, votes, proposer, doc, docUrl, source, url } };
-   inForce[year] = [[rule index, version in force, version that adopted its content], …]; synonyms = [[word, …], …];
-   aliases = { former slug: current slug } for rules merged, moved or renamed away, so old links still work */
+   inForce = [[rule index, version in force today, version that adopted its content], …]; synonyms = [[word, …], …];
+   aliases = { former slug: current slug } for rules merged, moved or renamed away, so old links still work.
+   The page shows the rules as of today (the day it was built); each year's rule set is in regelsaet/<år>.md. */
 const D = /*DATA*/null;
 const R = D.rules;
-const TODAY = D.today, CUR = Number(TODAY.slice(0, 4));
+const TODAY = D.today;
 const AREA_INK = ["#2563eb", "#c2410c", "#7c3aed", "#b91c1c", "#047857", "#be185d", "#475569"];
 const AREA_SHORT = ["Medlemskab", "Stævner", "Dommere", "Elite", "Master", "Antidoping", "Organisation"];
 const EFFECT = { indfoert: "Indført", aendret: "Ændret", bekraeftet: "Bekræftet", ophaevet: "Ophævet",
@@ -200,11 +193,11 @@ const EFFECT = { indfoert: "Indført", aendret: "Ændret", bekraeftet: "Bekræft
 const PROPOSALS = new Set(["foreslaaet", "forkastet", "trukket"]);
 const STATUS = { cur: "Gældende", soon: "På vej", past: "Tidligere", gone: "Ophævet", prop: "Forslag", later: "Senere" };
 const MONTHS = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"];
-const IDX = {}; // year -> Map(rule index -> { vi: version in force, oi: version that adopted it })
-for (const y of D.years) IDX[y] = new Map((D.inForce[y] || []).map(([ri, vi, oi]) => [ri, { vi, oi }]));
+// rule index -> { vi: version in force, oi: version that adopted it }
+const IDX = new Map(D.inForce.map(([ri, vi, oi]) => [ri, { vi, oi }]));
 
-// Dates are ISO strings, or a bare year when the minutes give no exact date.
-const cutoff = (y) => (y === CUR ? TODAY : `${y}-12-31`);
+// Dates are ISO strings, or a bare year when the minutes give no exact date. Some decisions are dated after today
+// (next year's deadlines): a rule's state counts them only from that date.
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const full = (d) => d && d.length === 10;
 const fmt = (d) => (!d ? "ukendt" : full(d) ? `${d.slice(8, 10)}.${d.slice(5, 7)}.${d.slice(0, 4)}` : d);
@@ -214,24 +207,23 @@ const dkey = (d) => (full(d) ? d : `${d || ""}-00-00`); // year-only dates sort 
 const essence = (v) => v.essence || v.change || v.text || "";
 const src = (v) => (v.url ? `<a class="src" href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.source)}</a>` : esc(v.source));
 
-function inForce(year, area = -1) {
-  return [...IDX[year].entries()].map(([ri, o]) => ({ ri, ...o })).filter((o) => area < 0 || R[o.ri].area === area);
+function inForce(area = -1) {
+  return [...IDX.entries()].map(([ri, o]) => ({ ri, ...o })).filter((o) => area < 0 || R[o.ri].area === area);
 }
-function pending(year) {
-  const c = cutoff(year), out = [];
+function pending() {
+  const out = [];
   R.forEach((r, ri) => r.versions.forEach((v, vi) => {
-    if ((v.date || "") <= c && c < v.effective && ["indfoert", "aendret", "ophaevet"].includes(v.effect)) out.push({ ri, vi });
+    if ((v.date || "") <= TODAY && TODAY < v.effective && ["indfoert", "aendret", "ophaevet"].includes(v.effect)) out.push({ ri, vi });
   }));
   return out.sort((a, b) => (R[a.ri].versions[a.vi].effective < R[b.ri].versions[b.vi].effective ? -1 : 1));
 }
-// Latest date (as a dkey) the rule was mentioned on or before the chosen year's cutoff; "" if never.
-function lastMention(ri, year) {
-  const c = cutoff(year);
-  return R[ri].versions.filter((v) => (v.date || "") <= c).map((v) => dkey(v.date)).sort().pop() || "";
+// Latest date (as a dkey) the rule was mentioned on or before today; "" if never.
+function lastMention(ri) {
+  return R[ri].versions.filter((v) => (v.date || "") <= TODAY).map((v) => dkey(v.date)).sort().pop() || "";
 }
-function staleSince(ri, year) {
-  const last = lastMention(ri, year).slice(0, 4);
-  return Number(last) && year - Number(last) >= 5 ? last : "";
+function staleSince(ri) {
+  const last = lastMention(ri).slice(0, 4);
+  return Number(last) && Number(TODAY.slice(0, 4)) - Number(last) >= 5 ? last : "";
 }
 // Search index over each rule's title, latest wording, whole history, note and area (see search.js).
 const SEARCH = RuleSearch.create(R.map((r, ri) => {
@@ -240,29 +232,30 @@ const SEARCH = RuleSearch.create(R.map((r, ri) => {
     history: r.versions.map((v) => `${v.change || ""} ${v.text || ""}`).join(" ") };
 }), D.synonyms);
 function search(q) {
-  // Rules that apply in the chosen year rank above outdated ones.
-  return SEARCH.search(q, { boostDocument: (ri) => (IDX[state.year].has(ri) ? 1 : 0.6) }).slice(0, 60);
+  // Rules in force today rank above the others.
+  return SEARCH.search(q, { boostDocument: (ri) => (IDX.has(ri) ? 1 : 0.6) }).slice(0, 60);
 }
 // The passage that explains a search hit, with the matched words in <mark>.
 function hitExcerpt(hit) {
-  const r = R[hit.id], cur = IDX[state.year].get(hit.id), v = cur ? r.versions[cur.vi] : r.versions[r.versions.length - 1];
+  const r = R[hit.id], cur = IDX.get(hit.id), v = cur ? r.versions[cur.vi] : r.versions[r.versions.length - 1];
   const inTitle = Object.values(hit.match).some((fields) => fields.includes("title"));
   // A title match is explained by the title; otherwise prefer the wording in force, then the history, newest first.
   const texts = inTitle ? [essence(v)] : [essence(v), v.text, ...[...r.versions].reverse().flatMap((x) => [x.change, x.text]), r.note];
   return SEARCH.excerpt(texts, hit.terms);
 }
 
-const state = { year: CUR, area: -1, q: "", origin: "all", allMeetings: false };
+const state = { area: -1, q: "", origin: "all", allMeetings: false };
 const keep = (ri) => state.origin === "all" || (state.origin === "intl") === R[ri].international;
 const $ = (id) => document.getElementById(id);
 const href = (ri) => `#regel/${encodeURIComponent(R[ri].slug)}`;
 const areaLabel = (ri) => `<span class="lbl-area" style="--ac:${AREA_INK[R[ri].area]}">${AREA_SHORT[R[ri].area]}</span>`;
 const intlMark = (ri) => (R[ri].international ? `<span class="intl">International</span>` : "");
 
-function meetings(y) {
+// The decisions per meeting, newest meeting first.
+function meetings() {
   const groups = new Map();
   R.forEach((r, ri) => r.versions.forEach((v, vi) => {
-    if ((v.date || "").slice(0, 4) !== String(y) || !keep(ri)) return;
+    if (!keep(ri)) return;
     // An undecided proposal is not a decision; a confirmation is news only the first time the rule is seen.
     if (v.effect === "foreslaaet" || (v.effect === "bekraeftet" && vi !== 0)) return;
     const key = `${v.date}|${v.doc}`;
@@ -280,39 +273,36 @@ function decisionItem({ ri, vi }) {
     <div class="desc"><span class="verb">${EFFECT[v.effect]}:</span> ${esc(v.change)}${v.from ? ` (fra ${longD(v.from)})` : ""}</div></div></a>`;
 }
 function ruleItem(ri, descHtml = null) {
-  const r = R[ri], cur = IDX[state.year].get(ri), stale = cur && staleSince(ri, state.year);
+  const r = R[ri], cur = IDX.get(ri), stale = cur && staleSince(ri);
   const v = cur ? r.versions[cur.vi] : r.versions[r.versions.length - 1];
-  const last = lastMention(ri, state.year).replace(/-00-00$/, ""); // undo dkey's padding of year-only dates
+  const last = lastMention(ri).replace(/-00-00$/, ""); // undo dkey's padding of year-only dates
   return `<a class="rule" href="${href(ri)}">${areaLabel(ri)}<div><div class="title">${esc(r.title)}${intlMark(ri)}</div>
     <div class="desc">${descHtml || esc(essence(v))}</div>${last ? `<div class="aux">Sidst nævnt ${longD(last)}${stale ? ` · <span class="warn">kan være forældet</span>` : ""}</div>` : ""}</div></a>`;
 }
 
 function draw() {
-  const y = state.year, when = y === CUR ? "i dag" : `i ${y}`, q = state.q.trim();
+  const q = state.q.trim();
   document.querySelectorAll("#origin button").forEach((b) => b.classList.toggle("on", b.dataset.o === state.origin));
-  $("year").value = y;
-  $("prev").disabled = !D.years.includes(y - 1);
-  $("next").disabled = !D.years.includes(y + 1);
 
   let h;
   if (q) {
     const hits = search(q).filter((x) => keep(x.id));
-    h = `<h2>${hits.length} regler matcher «${esc(q)}»</h2><p class="lede">Bedste match først, med reglerne som de gælder ${when}.</p>
+    h = `<h2>${hits.length} regler matcher «${esc(q)}»</h2><p class="lede">Bedste match først, med reglerne som de gælder i dag.</p>
       <div class="rules">${hits.map((x) => ruleItem(x.id, hitExcerpt(x))).join("")}</div>`;
   } else if (state.area >= 0) {
     // Most recently mentioned first, then alphabetical; the origin filter separates DSF from international.
-    const rules = inForce(y, state.area).filter((o) => keep(o.ri)).map((o) => ({ ...o, last: lastMention(o.ri, y) }))
+    const rules = inForce(state.area).filter((o) => keep(o.ri)).map((o) => ({ ...o, last: lastMention(o.ri) }))
       .sort((a, b) => (a.last < b.last ? 1 : a.last > b.last ? -1 : 0) || R[a.ri].title.localeCompare(R[b.ri].title, "da"));
     const central = rules.filter((o) => R[o.ri].central), minor = rules.filter((o) => !R[o.ri].central);
-    h = `<button class="linkbtn back" id="back">← Alle beslutninger i ${y}</button>
+    h = `<button class="linkbtn back" id="back">← Seneste beslutninger</button>
       <div class="areahead" style="--ac:${AREA_INK[state.area]}"><span class="sq"></span><h2>${esc(D.areas[state.area])}</h2></div>
       <div class="rules">${central.map((o) => ruleItem(o.ri)).join("")}</div>
       ${minor.length ? `<h3>Interne procedurer og detaljer</h3><div class="rules">${minor.map((o) => ruleItem(o.ri)).join("")}</div>` : ""}`;
   } else {
-    const meets = meetings(y), shown = state.allMeetings ? meets : meets.slice(0, 5);
+    const meets = meetings(), shown = state.allMeetings ? meets : meets.slice(0, 5);
     h = shown.map((m) => `<section class="meet"><div><div class="when">${longD(m.date)}</div><div class="who">${esc(m.organ)}</div>
         ${m.docUrl ? `<a class="who" href="${esc(m.docUrl)}" target="_blank" rel="noopener">Referat ↗</a>` : ""}</div>
-        <div>${m.items.map(decisionItem).join("")}</div></section>`).join("") || `<p class="lede">Ingen registrerede beslutninger i ${y}.</p>`;
+        <div>${m.items.map(decisionItem).join("")}</div></section>`).join("") || `<p class="lede">Ingen registrerede beslutninger.</p>`;
     if (meets.length > shown.length) h += `<button class="linkbtn" id="more">Vis alle ${meets.length} møder</button>`;
   }
   $("content").innerHTML = h;
@@ -320,47 +310,47 @@ function draw() {
   $("more")?.addEventListener("click", () => { state.allMeetings = true; draw(); });
 
   $("side").innerHTML = `<div class="head">Områder</div><div class="areas">` + D.areas.map((title, i) => {
-    const n = inForce(y, i).filter((o) => R[o.ri].central && keep(o.ri)).length;
+    const n = inForce(i).filter((o) => R[o.ri].central && keep(o.ri)).length;
     return `<button data-area="${i}" class="${state.area === i && !q ? "on" : ""}" style="--ac:${AREA_INK[i]}" title="${esc(title)}" aria-pressed="${state.area === i && !q}">
       <span class="sq"></span><span class="name">${AREA_SHORT[i]}</span><span class="lead"></span><span class="num">${n}</span></button>`;
   }).join("") + `</div>`;
 
   // Adopted but not yet in force, for the chosen area if any.
-  const pend = q ? [] : pending(y).filter((o) => keep(o.ri) && (state.area < 0 || R[o.ri].area === state.area));
+  const pend = q ? [] : pending().filter((o) => keep(o.ri) && (state.area < 0 || R[o.ri].area === state.area));
   const dates = [...new Set(pend.map((o) => R[o.ri].versions[o.vi].effective))];
   $("rail").innerHTML = pend.length ? `<div class="head">På vej</div>` + dates.map((e) => `<div class="when">Fra ${longD(e)}</div>` +
     pend.filter((o) => R[o.ri].versions[o.vi].effective === e).map((o) => `<a class="pend" href="${href(o.ri)}">${areaLabel(o.ri)}
       <div class="title">${esc(R[o.ri].title)}</div><div class="desc">${esc(R[o.ri].versions[o.vi].change)}</div></a>`).join("")).join("") : "";
 }
 
-function versionStatus(v, i, c, cur) {
-  if ((v.date || "") > c) return "later"; // decided after the chosen year
+function versionStatus(v, i, cur) {
+  if ((v.date || "") > TODAY) return "later"; // dated after today
   if (cur && i === cur.vi) return "cur";
   if (PROPOSALS.has(v.effect)) return "prop";
-  if (c < (v.effective || "")) return "soon";
+  if (TODAY < (v.effective || "")) return "soon";
   return v.effect === "ophaevet" ? "gone" : "past";
 }
 function ruleDetail(ri) {
-  const r = R[ri], y = state.year, c = cutoff(y), cur = IDX[y].get(ri), when = y === CUR ? "i dag" : `i ${y}`;
+  const r = R[ri], cur = IDX.get(ri);
   const withText = r.versions.map((v, i) => i).filter((i) => r.versions[i].text);
-  const upcoming = r.versions.find((v) => (v.date || "") <= c && c < v.effective && ["indfoert", "aendret", "ophaevet"].includes(v.effect));
+  const upcoming = r.versions.find((v) => (v.date || "") <= TODAY && TODAY < v.effective && ["indfoert", "aendret", "ophaevet"].includes(v.effect));
   const shown = r.versions[cur ? cur.vi : withText.length ? withText[withText.length - 1] : r.versions.length - 1];
 
   let status;
   if (cur) {
-    const origin = r.versions[cur.oi], stale = staleSince(ri, y);
-    status = `<b>Gældende ${when}.</b> Vedtaget ${origin.congress ? "på" : "af"} ${esc(origin.organ)} ${onDate(origin.date)}${origin.votes ? ` (${esc(origin.votes)})` : ""}.` +
+    const origin = r.versions[cur.oi], stale = staleSince(ri);
+    status = `<b>Gældende i dag.</b> Vedtaget ${origin.congress ? "på" : "af"} ${esc(origin.organ)} ${onDate(origin.date)}${origin.votes ? ` (${esc(origin.votes)})` : ""}.` +
       (cur.vi !== cur.oi ? ` Senest bekræftet ${onDate(r.versions[cur.vi].date)}.` : "") +
       (stale ? ` <span class="warn">Ikke nævnt i referaterne siden ${stale} – kan være forældet.</span>` : "");
   } else if (upcoming) status = `<b>Vedtaget ${longD(upcoming.date)}</b> – gælder fra ${longD(upcoming.effective)}.`;
-  else if (withText.length) status = `<b>Ikke gældende ${when}.</b>`;
+  else if (withText.length) status = `<b>Ikke gældende i dag.</b>`;
   else status = `<b>Kun forslag – aldrig vedtaget.</b>`;
 
   const kicker = `<span style="color:${AREA_INK[r.area]}">${esc(D.areas[r.area])}</span> · ` +
     (r.international ? `<span style="color:var(--intl)">International · ${esc(r.origin)}</span>` : `<span>DSF-regel</span>`);
 
-  // Newest first; a stretch of track that lies ahead of the chosen year is dashed.
-  const stops = r.versions.map((v, i) => ({ v, st: versionStatus(v, i, c, cur), i }))
+  // Newest first; a stretch of track that lies ahead of today is dashed.
+  const stops = r.versions.map((v, i) => ({ v, st: versionStatus(v, i, cur), i }))
     .sort((a, b) => (dkey(a.v.date) < dkey(b.v.date) ? 1 : dkey(a.v.date) > dkey(b.v.date) ? -1 : b.i - a.i));
   const ahead = (o) => o.st === "later" || o.st === "soon";
   const rows = stops.map(({ v, st }, k) => `<tr class="${st}" ${v.url ? `data-url="${esc(v.url)}" title="Åbn referatet"` : ""}>
@@ -374,7 +364,7 @@ function ruleDetail(ri) {
   return `<button class="close" id="close" title="Luk (Esc)" aria-label="Luk">✕</button><div class="kicker">${kicker}</div><h2 id="modal-title">${esc(r.title)}</h2>
     <p class="status">${status}</p><p class="ruletext">${esc(shown.text || shown.change)}</p>
     <div class="hhead"><h3>Historik</h3><div class="legend">${legend}</div></div>
-    <p class="hint">Klik på en linje for at åbne referatet. Vælg et andet år øverst for at se reglen, som den lød dengang.</p>
+    <p class="hint">Klik på en linje for at åbne referatet.</p>
     <table class="versions">${rows}</table>${r.note ? `<p class="note"><b>Bemærk:</b> ${esc(r.note)}</p>` : ""}`;
 }
 
@@ -404,7 +394,7 @@ function unpinPage() {
 }
 function showRule(ri) {
   if (openRule < 0) { returnFocus = document.activeElement; pinPage(); }
-  if (openRule !== ri) countRuleOpen(ri); // not when the year changes under an open rule
+  if (openRule !== ri) countRuleOpen(ri); // not again when another address of the open rule is followed
   openRule = ri;
   $("modal").innerHTML = ruleDetail(ri);
   $("modal").scrollTop = 0;
@@ -437,11 +427,6 @@ function closeRule() {
 }
 
 function init() {
-  $("year").innerHTML = [...D.years].reverse().map((y) => `<option value="${y}">${y}</option>`).join("");
-  const setYear = (y) => { if (D.years.includes(y)) { state.year = y; state.allMeetings = false; draw(); if (openRule >= 0) showRule(openRule); } };
-  $("year").onchange = (e) => setYear(Number(e.target.value));
-  $("prev").onclick = () => setYear(state.year - 1);
-  $("next").onclick = () => setYear(state.year + 1);
   $("q").addEventListener("input", (e) => { state.q = e.target.value; draw(); });
   $("origin").onclick = (e) => { const b = e.target.closest("button"); if (b) { state.origin = b.dataset.o; draw(); } };
   $("side").onclick = (e) => {

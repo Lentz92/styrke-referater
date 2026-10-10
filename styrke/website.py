@@ -2,8 +2,9 @@
 
     uv run -m styrke.website     # writes _site/index.html; open it in a browser
 
-The page is static: website/template.html with all rules embedded as JSON. In-force state per year
-is computed here with the same logic as the Markdown pages, so both always agree.
+The page is static: website/template.html with all rules embedded as JSON. It shows the rules as of the day it is
+built; which version of each rule is in force then is computed here with the same logic as the Markdown pages, so both
+always agree. Each year's rule set is in the Markdown pages (regelsaet/<år>.md).
 """
 
 from __future__ import annotations
@@ -61,17 +62,16 @@ def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[d
     merged into another to that rule's slug, so links made before the merge still open it."""
     rules = render.build_rules(raw_rules, {d.ref: d for d in decisions})
     area_of = {c: i for i, area in enumerate(render.AREAS) for c in area.categories}
-    years = render.covered_years(decisions, today)
+    now = today.isoformat()
 
     out_rules = []
     for rule in rules:
         # A rule is international when the decision behind its latest content came from IPF/EPF/DIF/ADD.
         content = [v for v in rule.versions if v.effekt in render.CONTENT_EFFECTS] or list(rule.versions)
-        origin = rule.adopted(content[-1], today.isoformat()).decision
+        origin = rule.adopted(content[-1], now).decision
         international = origin.niveau == "eksternt_krav"
         out_rules.append({
             "title": rule.titel,
-            "category": rule.kategori,
             "area": area_of[rule.kategori],
             "central": rule.vigtig,
             "note": rule.note,
@@ -81,19 +81,14 @@ def site_data(docs: dict[str, Doc], decisions: list[Decision], raw_rules: list[d
             "versions": [_version(v, docs) for v in rule.versions],
         })
 
-    in_force = {}
-    for year in years:
-        cutoff = render.year_cutoff(year, today)
-        rows = []
-        for i, rule in enumerate(rules):
-            v = rule.in_force(cutoff)
-            if v:
-                rows.append([i, rule.versions.index(v), rule.versions.index(rule.adopted(v, cutoff))])
-        in_force[year] = rows  # [rule, version in force, version that adopted its content]
+    in_force = []  # [rule, version in force today, version that adopted its content]
+    for i, rule in enumerate(rules):
+        v = rule.in_force(now)
+        if v:
+            in_force.append([i, rule.versions.index(v), rule.versions.index(rule.adopted(v, now))])
 
     return {
-        "today": today.isoformat(),
-        "years": years,
+        "today": now,
         "areas": [area.title for area in render.AREAS],
         "rules": out_rules,
         "aliases": dict(aliases),
