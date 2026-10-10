@@ -179,8 +179,9 @@ def test_an_open_rule_holds_the_page_still_and_closing_returns_to_the_same_spot(
 
 
 # Runs the page's whole script, with the data website.py embeds, against a document whose elements only keep their
-# HTML and handlers. Prints, as loaded, the dates of the meetings shown and the text of the areas and of "På vej"; the
-# text of the content and of "På vej" with the area argv[3] chosen; the hits of a search for argv[4]; and the status
+# HTML and handlers. Prints, as loaded, the dates of the meetings shown, the button for more, and the text of the areas
+# and of "På vej"; the meetings and the button after one click on it; the text of the content and of "På vej" with the
+# area argv[3] chosen; the hits of a search for argv[4]; and the status
 # line of each rule popup argv[5..].
 PAGE_PROBE = r"""
 const fs = require("fs"), vm = require("vm");
@@ -200,7 +201,10 @@ vm.runInNewContext(code, {
 const text = (html) => html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 const titles = (cls) => [...els.content.innerHTML.matchAll(new RegExp(`<div class="${cls}">([^<]*)`, "g"))]
   .map((m) => m[1]);
-const out = { meetings: titles("when"), side: text(els.side.innerHTML), rail: text(els.rail.innerHTML) };
+const more = () => (els.content.innerHTML.match(/id="more">([^<]*)</) || [])[1] || "";
+const out = { meetings: titles("when"), more: more(), side: text(els.side.innerHTML), rail: text(els.rail.innerHTML) };
+els.more.on.click();
+Object.assign(out, { moreMeetings: titles("when"), moreAfter: more() });
 els.side.onclick({ target: { closest: () => ({ dataset: { area } }) } });
 Object.assign(out, { area: text(els.content.innerHTML), areaRail: text(els.rail.innerHTML) });
 els.q.on.input({ target: { value: query } });
@@ -242,8 +246,27 @@ def test_the_page_lists_todays_rules_and_what_is_on_its_way(tmp_path):
     assert out["rail"] == out["areaRail"] == "På vej Fra 1. januar 2027 Medlemskab Kontingent Kontingentet er 100 kr."
     # The decisions come newest meeting first, across years.
     assert out["meetings"] == ["15. september 2026", "30. marts 2025", "24. marts 2024", "1. marts 2020"]
+    assert out["more"] == ""  # all four fit
     # A search ranks the rule in force today above the repealed one, which matches more often.
     assert out["hits"] == ["Licensgebyr", "Startgebyr"]
     # Each popup says where the rule stands today.
     assert out["status"][0].startswith("Gældende i dag. Vedtaget af ? den 24. marts 2024")
     assert out["status"][1:] == ["Ikke gældende i dag.", "Vedtaget 15. september 2026 – gælder fra 1. januar 2027."]
+
+
+@pytest.mark.skipif(NODE is None, reason="needs node")
+def test_the_latest_meetings_come_five_first_then_twenty_more_at_a_time(tmp_path):
+    decided = [decision(ref=f"m{n}#1", doc_id=f"m{n}", dato=f"{2010 + n}-03-01", tekst=f"Gebyr nr. {n} er {n} kr.")
+               for n in range(7)]
+    raw = [rule(f"Gebyr {n}", f"gebyr-{n}", d, kategori="okonomi") for n, d in enumerate(decided)]
+    page = tmp_path / "index.html"
+    page.write_text(website.page_html([], decided, raw, {}, date(2026, 10, 9)))
+    script = tmp_path / "page.js"
+    script.write_text(PAGE_PROBE)
+    result = subprocess.run([NODE, str(script), str(page), str(SEARCH_JS), "0", "gebyr"],
+                            capture_output=True, text=True, check=True, timeout=30)
+    out = json.loads(result.stdout)
+
+    assert out["meetings"] == [f"1. marts {year}" for year in (2016, 2015, 2014, 2013, 2012)]
+    assert out["more"] == "Vis flere møder (5 af 7)"
+    assert out["moreMeetings"] == [f"1. marts {year}" for year in range(2016, 2009, -1)] and out["moreAfter"] == ""

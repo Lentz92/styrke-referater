@@ -244,7 +244,7 @@ function hitExcerpt(hit) {
   return SEARCH.excerpt(texts, hit.terms);
 }
 
-const state = { area: -1, q: "", origin: "all", allMeetings: false };
+const state = { area: -1, q: "", origin: "all", meetings: 5 }; // meetings: how many of the latest are shown
 const keep = (ri) => state.origin === "all" || (state.origin === "intl") === R[ri].international;
 const $ = (id) => document.getElementById(id);
 const href = (ri) => `#regel/${encodeURIComponent(R[ri].slug)}`;
@@ -259,11 +259,13 @@ function meetings() {
     // An undecided proposal is not a decision; a confirmation is news only the first time the rule is seen.
     if (v.effect === "foreslaaet" || (v.effect === "bekraeftet" && vi !== 0)) return;
     const key = `${v.date}|${v.doc}`;
-    if (!groups.has(key)) groups.set(key, { date: v.date, organ: v.organ, docUrl: v.docUrl, items: [] });
+    if (!groups.has(key)) groups.set(key, { key, date: v.date, organ: v.organ, docUrl: v.docUrl, items: [] });
     groups.get(key).items.push({ ri, vi });
   }));
   const prop = (o) => PROPOSALS.has(R[o.ri].versions[o.vi].effect);
-  return [...groups.values()].sort((a, b) => (dkey(a.date) < dkey(b.date) ? 1 : -1)).map((g) => ({
+  // Newest first; meetings on the same date in a fixed order, so the list does not change between visits.
+  const order = (a, b) => (dkey(a.date) > dkey(b.date) ? -1 : dkey(a.date) < dkey(b.date) ? 1 : a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
+  return [...groups.values()].sort(order).map((g) => ({
     ...g, items: g.items.sort((a, b) => prop(a) - prop(b) || R[a.ri].area - R[b.ri].area || R[a.ri].title.localeCompare(R[b.ri].title, "da")),
   }));
 }
@@ -299,15 +301,16 @@ function draw() {
       <div class="rules">${central.map((o) => ruleItem(o.ri)).join("")}</div>
       ${minor.length ? `<h3>Interne procedurer og detaljer</h3><div class="rules">${minor.map((o) => ruleItem(o.ri)).join("")}</div>` : ""}`;
   } else {
-    const meets = meetings(), shown = state.allMeetings ? meets : meets.slice(0, 5);
+    const meets = meetings(), shown = meets.slice(0, state.meetings);
     h = shown.map((m) => `<section class="meet"><div><div class="when">${longD(m.date)}</div><div class="who">${esc(m.organ)}</div>
         ${m.docUrl ? `<a class="who" href="${esc(m.docUrl)}" target="_blank" rel="noopener">Referat ↗</a>` : ""}</div>
         <div>${m.items.map(decisionItem).join("")}</div></section>`).join("") || `<p class="lede">Ingen registrerede beslutninger.</p>`;
-    if (meets.length > shown.length) h += `<button class="linkbtn" id="more">Vis alle ${meets.length} møder</button>`;
+    // 20 more at a time: all 190-odd meetings at once is too much page for a phone.
+    if (meets.length > shown.length) h += `<button class="linkbtn" id="more">Vis flere møder (${shown.length} af ${meets.length})</button>`;
   }
   $("content").innerHTML = h;
   $("back")?.addEventListener("click", () => { state.area = -1; draw(); });
-  $("more")?.addEventListener("click", () => { state.allMeetings = true; draw(); });
+  $("more")?.addEventListener("click", () => { state.meetings += 20; draw(); });
 
   $("side").innerHTML = `<div class="head">Områder</div><div class="areas">` + D.areas.map((title, i) => {
     const n = inForce(i).filter((o) => R[o.ri].central && keep(o.ri)).length;
