@@ -1,0 +1,16 @@
+{
+ "doc_id": "epf_ekstraordinaer_generalforsamling_2026",
+ "sha256": "b86d83444697a142fe58655400ae7a15364880bbf46d69a236d9ee8742477b99",
+ "version": 3,
+ "model": "claude-opus-5-5",
+ "provenance": {
+  "model": "claude-opus-5-5",
+  "cli": "2.1.294",
+  "prompt": "2826c30cf2f3",
+  "effort": "default"
+ },
+ "moededato": "2026-10-01",
+ "next_number": 1,
+ "retired": [],
+ "beslutninger": []
+}

@@ -1,6 +1,6 @@
 # DSF-regelsæt – oversigt
 
-Opdateret 9. oktober 2026 ud fra 236 referater og regeldokumenter fra styrke.dk.
+Opdateret 1. november 2026 ud fra 237 referater og regeldokumenter fra styrke.dk.
 
 ## År
 
@@ -56,7 +56,7 @@ Regler ophæves sjældent formelt, så en regel gælder her, indtil et senere re
 ## Datakvalitet
 
 - Dokumenter der mangler analyse (kør `uv run -m styrke.update` igen): 0
-- Dokumenter uden regelbeslutninger (fx budgetmøder): 34
+- Dokumenter uden regelbeslutninger (fx budgetmøder): 35
 - Beslutninger hvor citatet ikke kunne genfindes ordret (⚠): 4
 - Beslutninger hvor citatet stod på en anden side end Claude angav (siden er rettet): 3
 - Engangsbeslutninger uden for reglerne (kun i data/beslutninger): 22

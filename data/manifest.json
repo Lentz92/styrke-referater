@@ -954,6 +954,15 @@
   "sha256": "85f8bc329eb44d22c867160c28380bed753fde84e1626356a84b3f8255f6d4a8"
  },
  {
+  "id": "epf_ekstraordinaer_generalforsamling_2026",
+  "organ": "dif_internationalt",
+  "title": "EPF Ekstraordinær generalforsamling 2026",
+  "date": "2026",
+  "path": "referater/dif_internationalt/epf_ekstraordinaer_generalforsamling_2026.pdf",
+  "url": "https://filer.styrke.dk/referater/dif_internationalt/epf_ekstraordinaer_generalforsamling_2026.pdf",
+  "sha256": "b86d83444697a142fe58655400ae7a15364880bbf46d69a236d9ee8742477b99"
+ },
+ {
   "id": "epf_kongres_2026",
   "organ": "dif_internationalt",
   "title": "EPF Kongres 2026",
