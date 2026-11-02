@@ -54,6 +54,7 @@
   /* ---- index ---- */
   const tokenize = MiniSearch.getDefault("tokenize");
   const words = (text) => tokenize(text || "").map((t) => t.toLowerCase()).filter((w) => w.length >= 2 && !STOPWORDS.has(w));
+  const allStems = (text) => tokenize(text || "").filter(Boolean).map((t) => stem(t.toLowerCase())); // stop words too
   const processTerm = (term) => {
     const w = term.toLowerCase();
     return w.length < 2 || STOPWORDS.has(w) ? null : stem(w);
@@ -85,19 +86,28 @@
 
     // Thesaurus: each group becomes one concept term, so a rule counts once per group however many of
     // its words it uses (summing a score per synonym would let synonyms outrank the words searched for).
-    const concepts = new Map(); // stem, or stems of a phrase joined by " " -> concept term
-    synonymGroups.forEach((group, g) => group.forEach((term) => concepts.set(words(term).map(stem).join(" "), `zsyn${g}`)));
+    // A phrase keeps its stop words ("betaler selv" is not "betale").
+    const concepts = new Map(); // stem, or stems of a two-word phrase joined by " " -> concept term
+    synonymGroups.forEach((group, g) => group.forEach((term) => concepts.set(allStems(term).join(" "), `zsyn${g}`)));
+    // The concepts of the two-word phrases in a text (MiniSearch processes one word at a time).
+    const phrases = (text) => {
+      const s = allStems(text);
+      return s.slice(1).map((b, i) => concepts.get(`${s[i]} ${b}`)).filter(Boolean);
+    };
 
     const index = new MiniSearch({
       fields: FIELDS,
-      // Indexing: a compound word also counts as each of its parts, and every stem as its concept.
+      // Indexing: a phrase counts as its concept, a compound word also as each of its parts, a stem as its concept.
+      tokenize: (text) => [...tokenize(text), ...phrases(text)],
       processTerm: (term) => {
+        if (/^zsyn\d+$/.test(term)) return term; // a phrase's concept, from tokenize
         const s = processTerm(term);
         if (!s) return null;
         const stems = [s, ...split(term.toLowerCase()).flat().map(stem)];
         return [...new Set([...stems, ...stems.map((x) => concepts.get(x)).filter(Boolean)])];
       },
       searchOptions: {
+        tokenize, // not the indexing one: search() looks up a query's concepts itself
         processTerm,
         boost: BOOST,
         combineWith: "OR",
@@ -111,10 +121,10 @@
       const terms = words(query);
       if (!terms.length) return [];
       const queries = [terms.join(" ")];
-      const stems = terms.map(stem), found = new Set();
-      for (const [i, w] of terms.entries()) {
+      const found = new Set(phrases(query));
+      for (const w of terms) {
         for (const [a, b] of split(w)) queries.push({ queries: [`${a} ${b}`], combineWith: "AND", boost: scaled(0.7) });
-        found.add(concepts.get(stems[i])).add(concepts.get(stems.slice(i, i + 2).join(" ")));
+        found.add(concepts.get(stem(w)));
       }
       for (const c of found) {
         if (c) queries.push({ queries: [c], processTerm: (t) => t, prefix: false, fuzzy: false, boost: scaled(0.5) });
@@ -135,12 +145,19 @@
       for (const text of texts) {
         if (!text) continue;
         const tokens = text.split(/\s+/).filter(Boolean);
-        const first = tokens.findIndex(isHit);
+        // Both words of a matched two-word phrase ("betaler selv") are hits too, as in phrases().
+        const parts = tokens.map((t) => t.toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean));
+        const phraseAt = (i) => {
+          const a = parts[i]?.at(-1), b = parts[i + 1]?.[0];
+          return !!a && !!b && matched.has(concepts.get(`${stem(a)} ${stem(b)}`));
+        };
+        const hits = tokens.map((t, i) => isHit(t) || phraseAt(i - 1) || phraseAt(i));
+        const first = hits.indexOf(true);
         if (first < 0) continue;
         const start = Math.max(0, Math.min(first - 6, tokens.length - maxWords));
         const end = Math.min(tokens.length, start + maxWords);
-        const body = tokens.slice(start, end).map((t) => {
-          if (!isHit(t)) return esc(t);
+        const body = tokens.slice(start, end).map((t, j) => {
+          if (!hits[start + j]) return esc(t);
           const [, lead, core, tail] = t.match(/^([^\p{L}\p{N}]*)(.*?)([^\p{L}\p{N}]*)$/u); // keep punctuation outside <mark>
           return `${esc(lead)}<mark>${esc(core)}</mark>${esc(tail)}`;
         }).join(" ");
