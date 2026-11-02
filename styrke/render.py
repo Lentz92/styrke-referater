@@ -51,6 +51,8 @@ NIVEAU_LABELS = {
     "eksternt_krav": "Eksternt krav",
 }
 CONTENT_EFFECTS = ("indfoert", "aendret", "bekraeftet")
+# Adopted changes: the only versions that are on their way when decided before they apply.
+CHANGE_EFFECTS = ("indfoert", "aendret", "ophaevet")
 PROPOSAL_EFFECTS = ("forkastet", "trukket")
 # Not news on a year page: a confirmation (unless it is the first sighting) or an undecided proposal.
 QUIET_EFFECTS = ("bekraeftet", "foreslaaet")
@@ -284,7 +286,7 @@ def _year_page(year: int, years: list[int], rules: list[Rule], today: date, link
 
     pending = [
         (v, rule) for rule in rules for v in rule.versions
-        if (v.decision.dato or "") <= cutoff < v.effective and v.effekt in ("indfoert", "aendret", "ophaevet")
+        if (v.decision.dato or "") <= cutoff < v.effective and v.effekt in CHANGE_EFFECTS
     ]
     if pending:
         lines += ["## På vej", "", "Vedtaget, men endnu ikke trådt i kraft.", ""]
@@ -357,7 +359,8 @@ def _area_page(area: Area, rules: list[Rule], today: date, links: _Links) -> str
 def _rule_entry(rule: Rule, cutoff: str, links: _Links) -> list[str]:
     current = rule.in_force(cutoff)
     content = [v for v in rule.versions if v.effekt in CONTENT_EFFECTS]
-    upcoming = [v for v in rule.versions if (v.decision.dato or "") <= cutoff < v.effective]
+    upcoming = [v for v in rule.versions
+                if (v.decision.dato or "") <= cutoff < v.effective and v.effekt in CHANGE_EFFECTS]
     shown = current or (content[-1] if content else rule.versions[-1])
 
     if current:

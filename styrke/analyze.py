@@ -603,7 +603,8 @@ def locate_quote(quote: str, doc: DocWords, page: int | None = None) -> int | No
 def _start_pages(start: int, words: list[str], doc: DocWords) -> set[int | None]:
     """Pages the quote located at `start` may begin on. When its first words don't match there,
     they may stand before a page header, so the pages up to QUOTE_GAP words earlier count too."""
-    exact = doc.words[start:start + 3] == words[:3]
+    first = words[:3]  # fewer for a quote of one or two words
+    exact = doc.words[start:start + len(first)] == first
     return set(doc.pages[start if exact else max(start - QUOTE_GAP, 0):start + 1])
 
 

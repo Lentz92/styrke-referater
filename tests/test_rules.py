@@ -3,7 +3,7 @@ from dataclasses import replace
 import pytest
 from conftest import decision, rule
 
-from styrke import analyze
+from styrke import analyze, render
 from styrke.analyze import decision_hash
 from styrke.render import build_rules
 
@@ -74,6 +74,14 @@ def test_proposals_do_not_change_the_rule(effekt):
     b = decision(ref="b#1", dato="2020-04-01", udfald="forkastet")
     rule = _built([a, b], a, (b, effekt))
     assert rule.in_force("2021-12-31").decision is a
+
+
+@pytest.mark.parametrize("effekt", ["foreslaaet", "forkastet", "trukket"])
+def test_a_proposal_to_apply_later_is_not_shown_as_adopted(effekt):
+    # A proposal's start date says when it would apply, not that it was adopted.
+    proposal = decision(ref="a#1", dato="2026-03-01", udfald="forkastet", gaelder_fra="2027-01-01")
+    entry = render._rule_entry(_built([proposal], (proposal, effekt)), "2026-06-01", render._Links({}, ""))
+    assert "**Kun forslag – aldrig vedtaget**" in entry
 
 
 # ---------------------------------------------------------------- order and stale versions

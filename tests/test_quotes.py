@@ -71,6 +71,14 @@ def test_short_quote_is_located_verbatim():
     assert quote_fields("Politikken forkastes.", words, 2)["citat_fundet"] is False
 
 
+def test_short_quote_at_the_top_of_the_next_page_is_not_on_the_cited_page():
+    # A verbatim match starts on its own page, so the cited page before it must not claim it over the first match.
+    text = ("[Side 1]\nAntidopingpolitikken drøftes.\n[Side 2]\nMødet slutter.\n"
+            "[Side 3]\nAntidopingpolitikken godkendes.\n")
+    assert quote_fields("Antidopingpolitikken", DocWords.of(text), 2) == {
+        "citat_fundet": True, "citat_pos": 0, "citat_side": 1}
+
+
 def test_quote_not_in_document():
     fields = quote_fields("klubber skal stille med to dommere", DocWords.of(TEXT), 1)
     assert fields == {"citat_fundet": False, "citat_pos": None, "citat_side": None}

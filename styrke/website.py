@@ -40,8 +40,9 @@ def page_html(docs: list[Doc], decisions: list[Decision], raw_rules: list[dict],
         raise ValueError(f"website/template.html must contain {DATA_MARKER} exactly once")
     data = site_data({d.id: d for d in docs}, decisions, raw_rules, aliases, today)
     data["synonyms"] = json.loads((SRC_DIR / "synonyms.json").read_text())["groups"]
-    # "</" inside a JSON string would close the <script> element early.
-    payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    # No "<" in the data embedded in the <script> element: "</script>" would end it early, and "<!--" followed by
+    # "<script" would keep it from ending. In JSON a "<" can only be inside a string, where "\u003c" reads the same.
+    payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
     return template.replace(DATA_MARKER, payload)
 
 
